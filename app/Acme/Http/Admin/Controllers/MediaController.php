@@ -1,0 +1,96 @@
+<?php
+namespace Admin\Controllers;
+
+use Illuminate\Http\Request;
+use App\Http\Requests;
+
+use Model\Media\ModelName as Media;
+
+class MediaController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $medias = Media::get();
+
+        return view('Admin::media.index', ['medias' => $medias]);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        return view('Admin::media.create', ['media' => new Media()]);
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+
+        Media::create($request->all());
+
+        return redirect()->route('admin.media.index');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Media $media)
+    {
+
+        return view('Admin::media.show', ['media' => $media]);
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Media $media)
+    {
+        return view('Admin::media.edit', ['media' => $media]);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, Media $media)
+    {
+        $media->update($request->all());
+
+        return redirect()->route('admin.media.show', $media);
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Media $media)
+    {
+        $media->delete();
+
+        return redirect()->route('admin.media.index');
+    }
+}
