@@ -3,23 +3,34 @@
 
 @section('content')
 
-<div>
-    {!! Form::open(['route' => ['admin.banner.destroy', $banner], 'method' => 'DELETE', 'onsubmit' => 'return confirm("Вы уверены?")']) !!}
-    <a href="{{ route('admin.banner.edit', $banner) }}" class="btn btn-primary">edit</a>
-    <button class="btn btn-danger" type="submit">delete</button>
-    {!! Form::close() !!}
-</div>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Информация</h3>
 
+    <div class="col-md-12">
+        <h2><span class="label label-default"></span>{{ $banner->getName() }}</h2>
+    </div>
 
-<div>
-    <h3>{{ $banner->getName() }}</h3>
-    <p>category: <a href="{{ route('admin.category.show', $banner->category) }}">{{ $banner->category->getName()  }}</a></p>
-    <hr>
+    <div class="col-md-6">
+        Категория: <a href="{{ route('admin.category.show', $banner->category) }}">{{ $banner->category->getTitle()  }}</a>
+    </div>
+
+    <div class="col-md-4">
+        {!! Form::open(['route' => ['admin.banner.destroy', $banner], 'method' => 'DELETE', 'onsubmit' => 'return confirm("Вы уверены?")']) !!}
+        <a href="{{ route('admin.banner.edit', $banner) }}" class="btn btn-primary">Изменить</a>
+        <button class="btn btn-danger" type="submit">Удалить</button>
+        {!! Form::close() !!}
+    </div>
+  </div>
+  <div class="col-md-12"><hr></div>
+  <div class="panel-body">
     @if($banner->isImage())
     <img src="{{ asset($banner->getFile()) }}">
     @else
     <object width="400" height="200" type="application/x-shockwave-flash" data="{{ asset($banner->getFile()) }}"></object>
     @endif
+
+  </div>
 </div>
 @stop
 

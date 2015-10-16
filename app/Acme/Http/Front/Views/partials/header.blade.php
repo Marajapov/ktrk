@@ -86,9 +86,9 @@
                                 <button class="cn-button" id="cn-button-tv"><img src="{{ asset('images/tv.svg') }}" alt=""/></button>
                                 <div class="cn-wrapper" id="cn-wrapper-tv">
                                     <ul>
-                                        <li><a href="#"><img src="{{ asset('images/channels/balastan.svg') }}" alt="Баластан"/></a></li>
-                                        <li><a href="#"><img src="{{ asset('images/channels/muztv.png') }}" alt="Муз ТВ"/></a></li>
-                                        <li><a href="#"><img src="{{ asset('images/channels/madaniyat.png') }}" alt="Маданият"/></a></li>
+                                        <li><a href="balastan.ktrk.kg"><img src="{{ asset('images/channels/balastan.svg') }}" alt="Баластан"/></a></li>
+                                        <li><a href="muzkanal.ktrk.kg"><img src="{{ asset('images/channels/muztv.png') }}" alt="Муз ТВ"/></a></li>
+                                        <li><a href="madaniayt.ktrk.kg"><img src="{{ asset('images/channels/madaniyat.png') }}" alt="Маданият"/></a></li>
                                     </ul>
                                 </div>
                                 <div id="cn-overlay-tv" class="cn-overlay"></div>

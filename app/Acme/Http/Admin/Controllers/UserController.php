@@ -15,9 +15,14 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::get();
+        $perPage = 15;
 
-        return view('Admin::user.index', ['users' => $users]);
+        $users = User::paginate($perPage);
+
+        return view('Admin::user.index', [
+            'users' => $users,
+            'perPage' => $perPage,
+            ]);
     }
 
     /**

@@ -9,17 +9,17 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="col-md-4 modal-block">
-                        <a href="#">
+                        <a href="{{ route('balastan.home')}}">
                             <img src="{{ asset('images/channels/balastan.jpg') }}" alt=""/>
                         </a>
                     </div>
                     <div class="col-md-4 modal-block">
-                        <a href="#">
+                        <a href="{{ route('muzkanal.home')}}">
                             <img src="{{ asset('images/channels/muztv.jpg') }}" alt=""/>
                         </a>
                     </div>
                     <div class="col-md-4 modal-block">
-                        <a href="#">
+                        <a href="{{ route('madaniyat.home')}}">
                             <img src="{{ asset('images/channels/madaniyat.jpg') }}" alt=""/>
                         </a>
                     </div>

@@ -21,7 +21,7 @@
     @yield('styles')
 
 </head>
-<body>
+<body style="background:url({{ asset($backgroundMain->getFile()) }}) no-repeat !important; background-attachment !important: fixed; background-size: cover !important;">
     @include('Front::partials.modal')
     @include('Front::partials.header')
 

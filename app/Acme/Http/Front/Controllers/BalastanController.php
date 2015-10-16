@@ -11,8 +11,12 @@ class BalastanController extends Controller
     public function Home()
     {
         $channel = \Model\Channel\ModelName::name('balastan')->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
-        return view('Front::channel.balastan.index', ['channel' => $channel]);
+        return view('Front::channel.balastan.index', [
+            'channel' => $channel,
+            'backgroundMain' => $backgroundMain,
+            ]);
     }
 
     public function Posts()

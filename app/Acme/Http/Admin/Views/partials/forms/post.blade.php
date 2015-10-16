@@ -4,15 +4,15 @@
 <div class="row">
     <div class="col-sm-6">
         <div class="form-group">
-            <label class="control-label">channel</label>
+            <label class="control-label">Канал</label>
             {!! Form::select('channel_id', \Model\Channel\ModelName::lists('display', 'id')->toArray(), null, ["class" => "form-control", "required" => true, "title" => ""]) !!}
         </div>
     </div>
 
     <div class="col-sm-6">
         <div class="form-group">
-            <label class="control-label">category</label>
-            {!! Form::select('category_id', \Model\Category\ModelName::lists('name', 'id')->toArray(), null, ["class" => "form-control", "required" => true, "title" => ""]) !!}
+            <label class="control-label">Категория</label>
+            {!! Form::select('category_id', \Model\Category\ModelName::lists('title', 'id')->toArray(), null, ["class" => "form-control", "required" => true, "title" => ""]) !!}
         </div>
     </div>
 
@@ -25,14 +25,14 @@
 
     <div class="col-sm-8">
         <div class="form-group">
-            <label class="control-label">tags</label>
+            <label class="control-label">Теги</label>
             {!! Form::select('tag_list[]', $tags, null, ["class" => "form-control", "id" => "tag_list", "multiple"]) !!}
         </div>
     </div>
 
     <div class="col-sm-2">
         <div class="form-group">
-            <label class="control-label">опубликовать</label>
+            <label class="control-label">Опубликовать</label>
             {!! Form::hidden('published', 0) !!}
             {!! Form::checkbox('published', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
         </div>
@@ -40,7 +40,7 @@
 
     <div class="col-sm-2">
         <div class="form-group">
-            <label class="control-label">general</label>
+            <label class="control-label">Главная</label>
             {!! Form::hidden('general', 0) !!}
             {!! Form::checkbox('general', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
         </div>
@@ -48,21 +48,21 @@
 
     <div class="col-xs-12">
         <div class="form-group">
-            <label class="control-label">тема</label>
+            <label class="control-label">Тема</label>
             {!! Form::text('title', null, ["class" => "form-control", "required" => true]) !!}
         </div>
     </div>
 
     <div class="col-xs-12">
         <div class="form-group">
-            <label class="control-label">текст</label>
+            <label class="control-label">Текст</label>
             {!! Form::textarea('content', null, ["class" => "form-control tinymce-container"]) !!}
         </div>
     </div>
 
     <div class="col-xs-12">
         <div class="form-group">
-            <label class="control-label">описание</label>
+            <label class="control-label">Описание</label>
             {!! Form::textarea('description', null, ["class" => "form-control"]) !!}
         </div>
     </div>

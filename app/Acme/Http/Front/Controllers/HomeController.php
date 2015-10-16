@@ -21,16 +21,16 @@ class HomeController extends Controller
         $mediaAll = \Model\Media\ModelName::get();
         $dayVideos = \Model\Media\ModelName::take(1)->orderBy('viewed','asc')->get();
 
-        $mainBanner = \Model\Banner\ModelName::where('name','=','main')->first();
+        $positionTop = \Model\Banner\ModelName::where('published','=',true,'and','positionTop','=','1')->first();
 
-        //$backgroundMain = \Model\Background\ModelName::where('');
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
         return view('Front::home', [
-            'generalPosts' => $generalPosts,
-            'mediaAll'     => $mediaAll,
-            'dayVideos'    => $dayVideos,
-            'mainBanner'   => $mainBanner,
-
+            'generalPosts'   => $generalPosts,
+            'mediaAll'       => $mediaAll,
+            'dayVideos'      => $dayVideos,
+            'positionTop'    => $positionTop,
+            'backgroundMain' => $backgroundMain,
             ]);
     }
 

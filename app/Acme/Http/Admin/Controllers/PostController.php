@@ -17,7 +17,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $perPage = 5;
+        $perPage = 15;
         $posts = Post::orderBy('id', 'desc')->paginate($perPage);
 
         return view('Admin::post.index', [

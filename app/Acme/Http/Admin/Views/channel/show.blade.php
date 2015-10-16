@@ -5,8 +5,8 @@
 
 <div>
     {!! Form::open(['route' => ['admin.channel.destroy', $channel], 'method' => 'DELETE', 'onsubmit' => 'return confirm("Вы уверены?")']) !!}
-    <a href="{{ route('admin.channel.edit', $channel) }}" class="btn btn-primary">edit</a>
-    <button class="btn btn-danger" type="submit">delete</button>
+    <a href="{{ route('admin.channel.edit', $channel) }}" class="btn btn-primary">Редактировать</a>
+    <button class="btn btn-danger" type="submit">Удалить</button>
     {!! Form::close() !!}
 </div>
 

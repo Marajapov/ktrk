@@ -4,17 +4,15 @@
 @section('content')
 
 <div>
-    <a href="{{ route('admin.banner.create') }}" class="btn btn-primary">create</a>
+    <a href="{{ route('admin.banner.create') }}" class="btn btn-primary">Создать</a>
 </div>
 <hr>
 
+<div class="list-group">
 @foreach($banners as $banner)
-<div>
-    <h3><a href="{{ route('admin.banner.show', $banner) }}">{{ $banner->getName() }}</a> ({{ $banner->category->getName()  }})</h3>
-    <p>{!! $banner->getName() !!}</p>
-</div>
-<hr>
+    <a href="{{ route('admin.banner.show', $banner) }}" class="list-group-item">{{ $banner->getName() }} ({{ $banner->category->getTitle()  }})</a>
 @endforeach
+</div>
 
 @stop
 
