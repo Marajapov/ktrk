@@ -34,7 +34,7 @@
 <script type="text/javascript" src="{{ asset('filter/js/jquery.easing.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('filter/js/jquery.mixitup.min.js') }}"></script>
 
-<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="{{ asset('js/jquery-migrate-1.2.1.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('slick/slick.min.js') }}"></script>
 
 <!--Carousel-->
@@ -43,6 +43,12 @@
         infinite: true,
         slidesToShow: 3,
         slidesToScroll: 1
+    });
+    $('.carousel-post').slick({
+        infinite: true,
+        speed: 500,
+        fade: true,
+        cssEase: 'linear'
     });
 </script>
 

@@ -20,11 +20,14 @@
                                         <a href="{{ route('front.post', $post) }}" class="main-img"><img src="@if(empty($post->getFile()))images/2.jpg @else {{ asset($post->getFile()) }} @endif" alt="img26"><i class="fa fa-play-circle-o"></i></a>
                                         <div class="news-channel">
                                             <a href="channel.html"><img src="images/channels/balastan.png" alt=""/></a>
-                                        </div>
-                                        <figcaption>
-                                            <h2><a href="article.html">{{ $post->getTitle() }}</a></h2>
-                                            <p class="description"><a href="category.html">{{ $post->category('category_id')->first()->name }}</a></p>
-                                        </figcaption>
+                                        </div>                                    
+                                        <p class="description clearfix">
+                                            <a href="category.html">{{ $post->category('category_id')->first()->name }}</a>
+                                            <span><i class="fa fa-play-circle-o"></i></span>
+                                        </p>
+                                        <a class="news-title" href="article.html">
+                                            <h2>{{ $post->getTitle() }}</h2>                                            
+                                        </a>
                                     </figure>
                                 </div>
                                 @endforeach

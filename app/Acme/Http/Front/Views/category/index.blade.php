@@ -1,5 +1,5 @@
 @extends('Front::layouts.default')
-@section('title', $post->getTitle())
+@section('title', $category->getTitle())
 
 @section('content')
         <div class="container main-wrapper">
@@ -12,36 +12,21 @@
                             <div class="panel panel-default panel-article">
                                 <div class="panel-heading">
                                     <h3 class="panel-title">
-                                        Жаңылыктар <span class="divider"><i class="fa fa-circle"></i></span>
-                                        <a href=""><span class="ctg">{{ $post->category('category_id')->first()->title }}</span></a></h3>
+                                        Все категории
                                 </div>
                                 <div class="panel-body">
                                     <div class="col-md-12 block news-block">
-                                        <h4 class="news-title">
-                                            {{ $post->getTitle() }}
-                                            <span><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
-                                        </h4>
+                                        <h4 class="news-title">{{ $category->getTitle() }}</h4>
 
                                         <p>
-                                            @if(!empty($post->getFile()))
-                                            <img src="{{ asset($post->getFile()) }}" alt=""/>
+                                            @if(!empty($category->getFile()))
+                                            <img src="{{ asset($category->getFile()) }}" alt=""/>
                                             @endif
                                         </p>
-                                        <p>
-                                            {!! $post->getContent() !!}
-                                        </p>
-
-                                        <div class="carousel-post">
-                                            <div class="col-md-4"><img src="../images/image.jpeg" alt=""/></div>
-                                            <div class="col-md-4"><img src="../images/ads_300x250.gif" alt=""/></div>
-                                            <div class="col-md-4"><img src="../images/image.jpeg" alt=""/></div>
-                                            <div class="col-md-4"><img src="../images/image.jpeg" alt=""/></div>
-                                            <div class="col-md-4"><img src="../images/image.jpeg" alt=""/></div>
-                                            <div class="col-md-4"><img src="../images/image.jpeg" alt=""/></div>
-                                        </div>
                                     </div>
 
-                                    <footer>                                        
+                                    <footer>
+                                        <span class="badge"><span class="glyphicon glyphicon-eye-open"></span> &nbsp;&nbsp;{{ $category->getViewed() }}</span>
                                         <a href="#">
                                             <span>Бардык жаңылыктар <i class="fa fa-arrow-circle-right"></i></span>
                                         </a>

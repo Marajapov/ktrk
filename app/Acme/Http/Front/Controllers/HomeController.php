@@ -60,11 +60,13 @@ class HomeController extends Controller
         $post->incrementViewed();
         $categories = \Model\Category\ModelName::all();
         $mainBanner = \Model\Background\ModelName::where('name','=','main')->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
         return view('Front::post.post',[
             'post' => $post,
             'categories'=>$categories,
             'mainBanner'   => $mainBanner,
+            'backgroundMain' => $backgroundMain,
             ]);
 
     }
@@ -80,8 +82,13 @@ class HomeController extends Controller
     {
         $channel = \Model\Channel\ModelName::general();
         $categories = \Model\Category\ModelName::all();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
-        return view('Front::post.posts',['channel' => $channel, 'categories'=>$categories,]);
+        return view('Front::post.posts',[
+            'channel' => $channel, 
+            'categories'=>$categories,
+            'backgroundMain' => $backgroundMain,
+            ]);
 
     }
 
@@ -93,6 +100,15 @@ class HomeController extends Controller
         return view('Front::result', [
             'posts' => $posts,
             'pages' => $pages,
+            ]);
+    }
+
+    // Category Page
+    public function categoryPage()
+    {
+        $categories = \Model\Category\ModelName::get();
+        return view('Front::category',[
+            'categories' => $categories,
             ]);
     }
 }
