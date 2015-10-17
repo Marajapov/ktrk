@@ -21,24 +21,15 @@
                                             {{ $post->getTitle() }}
                                             <span><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
                                         </h4>
-
-                                        <p>
-                                            @if(!empty($post->getFile()))
-                                            <img src="{{ asset($post->getFile()) }}" alt=""/>
-                                            @endif
-                                        </p>
                                         <p>
                                             {!! $post->getContent() !!}
                                         </p>
 
+                                        @if(!empty($post->getFile()))
                                         <div class="carousel-post">
-                                            <div class="col-md-4"><img src="../images/image.jpeg" alt=""/></div>
-                                            <div class="col-md-4"><img src="../images/ads_300x250.gif" alt=""/></div>
-                                            <div class="col-md-4"><img src="../images/image.jpeg" alt=""/></div>
-                                            <div class="col-md-4"><img src="../images/image.jpeg" alt=""/></div>
-                                            <div class="col-md-4"><img src="../images/image.jpeg" alt=""/></div>
-                                            <div class="col-md-4"><img src="../images/image.jpeg" alt=""/></div>
+                                            <div class="col-md-4"><img src="{{ asset($post->getFile()) }}" alt=""/></div>
                                         </div>
+                                        @endif
                                     </div>
 
                                     <footer>                                        

@@ -3,7 +3,7 @@
 
 @section('content')
 
-{!! Form::model($post, ['route' => ['admin.post.update', $post], 'method' => 'PUT']) !!}
+{!! Form::model($post, ['route' => ['admin.post.update', $post], 'method' => 'PUT', 'enctype' => 'multipart/form-data']) !!}
 @include('Admin::partials.forms.post', [$post, $tags])
 {!! Form::close() !!}
 

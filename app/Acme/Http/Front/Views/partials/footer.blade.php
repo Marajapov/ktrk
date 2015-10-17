@@ -27,6 +27,10 @@
 <script src="{{ asset('js/bootstrap.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/bootstrap-hover-dropdown.js') }}"></script>
 
+<script src="{{ asset('js/masonry.pkgd.min.js') }}"></script>
+<script src="{{ asset('js/imagesloaded.js') }}"></script>
+<script src="{{ asset('js/classie.js') }}"></script>
+
 <!--Menu concept-->
 <!--<script src="js/polyfills.js"></script>-->
 <!--<script src="js/demo1.js"></script>-->

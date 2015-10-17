@@ -22,10 +22,10 @@
                                             <a href="channel.html"><img src="images/channels/balastan.png" alt=""/></a>
                                         </div>                                    
                                         <p class="description clearfix">
-                                            <a href="category.html">{{ $post->category('category_id')->first()->name }}</a>
-                                            <span><i class="fa fa-play-circle-o"></i></span>
+                                           <a href="{{ route('front.category', $post->category) }}">{{ $post->category('category_id')->first()->title }}</a>
+                                           <span><i class="fa fa-play-circle-o"></i></span>
                                         </p>
-                                        <a class="news-title" href="article.html">
+                                        <a class="news-title" href="{{ route('front.post', $post) }}">
                                             <h2>{{ $post->getTitle() }}</h2>                                            
                                         </a>
                                     </figure>
@@ -142,7 +142,7 @@
                                         </a>
                                     </div>
                                     <div class="news-adds clearfix">
-                                        <a href="#" class="">{{ $post->category('category_id')->first()->name }}</a>
+                                        <a href="{{ route('front.category', $post->category) }}" class="">{{ $post->category('category_id')->first()->title }}</a>
                                         <span class="news-file"><i class="fa fa-play-circle-o"></i></span>
 
                                         <span class="news-time pull-right">{{ $post->getViewed() }}, {{ $post->getCreated() }}</span>
@@ -207,8 +207,30 @@
 
                                 <!-- Tab panes -->
                                 <div class="tab-content">
-                                    @foreach($mediaAll as $key=> $media)
-                                    <div role="tabpanel" class="tab-pane @if($key == 0) active @else active @endif clearfix" id="{{$media->getResourceType()}}">
+
+                                    <div role="tabpanel" class="tab-pane active clearfix" id="all-videos">
+                                        <div class="row">
+
+                                            @foreach($mediaLast as $lastVideo)
+
+                                            <article class="col-md-4">
+                                                <a href="#" class="img">
+                                                    <img src="http://img.youtube.com/vi/{{ $lastVideo->getUrl()}}/mqdefault.jpg" alt=""/>
+                                                    <h4><i class="fa fa-play-circle-o"></i>Замана</h4>
+                                                </a>
+                                                <a href="#" class="title">
+                                                    <h4>{{ $lastVideo->getName()}}</h4>
+                                                </a>
+                                            </article>
+
+                                            @endforeach
+
+                                        </div>
+                                    </div>
+
+                                    @foreach($mediaAll as $media)
+
+                                    <div role="tabpanel" class="tab-pane clearfix" id="{{ $media->getResourceType() }}">
                                         <div class="row">
 
                                             <article class="col-md-4">
@@ -223,7 +245,10 @@
 
                                         </div>
                                     </div>
+                                            
                                     @endforeach
+
+                                    
 
                                 </div>
                             </div>

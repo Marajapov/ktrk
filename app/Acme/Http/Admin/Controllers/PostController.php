@@ -113,7 +113,7 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        $post->update($request->except('tag_list'));
+        $post->update($request->except('tag_list','thumbnail'));
 
         $tags = $request->input('tag_list');
         foreach ($tags as $key => $name)
@@ -131,8 +131,10 @@ class PostController extends Controller
         if($request->hasFile('thumbnail'))
         {
             $file = $request->file('thumbnail');
-            $dir  = 'img/banner';
+            $dir  = 'img/thumbnail';
+
             $name = $post->id().'.'.$file->getClientOriginalExtension();
+            
 
             $storage = \Storage::disk('public');
             $storage->makeDirectory($dir);

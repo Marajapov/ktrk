@@ -19,6 +19,7 @@ class HomeController extends Controller
         $generalPosts = \Model\Post\ModelName::general($channel)->published()->take(6)->skip(0)->orderBy('id', 'desc')->get();
 
         $mediaAll = \Model\Media\ModelName::get();
+        $mediaLast = \Model\Media\ModelName::take(9)->get();
         $dayVideos = \Model\Media\ModelName::take(1)->orderBy('viewed','asc')->get();
 
         $positionTop = \Model\Banner\ModelName::where('published','=',true,'and','positionTop','=','1')->first();
@@ -31,6 +32,7 @@ class HomeController extends Controller
             'dayVideos'      => $dayVideos,
             'positionTop'    => $positionTop,
             'backgroundMain' => $backgroundMain,
+            'mediaLast'      => $mediaLast,
             ]);
     }
 
@@ -59,13 +61,13 @@ class HomeController extends Controller
     {
         $post->incrementViewed();
         $categories = \Model\Category\ModelName::all();
-        $mainBanner = \Model\Background\ModelName::where('name','=','main')->first();
+        $positionTop = \Model\Banner\ModelName::where('published','=',true,'and','positionTop','=','1')->first();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
         return view('Front::post.post',[
             'post' => $post,
             'categories'=>$categories,
-            'mainBanner'   => $mainBanner,
+            'positionTop'    => $positionTop,
             'backgroundMain' => $backgroundMain,
             ]);
 
@@ -104,12 +106,23 @@ class HomeController extends Controller
     }
 
     // Category Page
-    public function categoryPage()
+    public function categoryPage(\Model\Category\ModelName $category)
     {
-        $categories = \Model\Category\ModelName::get();
-        return view('Front::category',[
-            'categories' => $categories,
+        $category_id = $category->id;
+        $posts = \Model\Post\ModelName::where('category_id','=',$category_id)->get();
+
+        $mainBanner = \Model\Background\ModelName::where('name','=','main')->first();
+        $categories = \Model\Category\ModelName::all();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+        return view('Front::category.index',[
+            'posts' => $posts,
+            'mainBanner'   => $mainBanner,
+            'categories'=>$categories,
+            'backgroundMain' => $backgroundMain,
+            'category' => $category,
             ]);
     }
+
 }
 
