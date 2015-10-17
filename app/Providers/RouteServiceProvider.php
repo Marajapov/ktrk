@@ -36,6 +36,7 @@ class RouteServiceProvider extends ServiceProvider
         $router->model('media', \Model\Media\ModelName::class);
         $router->model('post', \Model\Post\ModelName::class);
         $router->model('page', \Model\Page\ModelName::class);
+        $router->model('mediaCategory', \Model\mediaCategory\ModelName::class);
 
         $router->model('background', \Model\Background\ModelName::class);
 
