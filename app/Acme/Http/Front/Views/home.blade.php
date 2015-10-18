@@ -196,41 +196,21 @@
                         <div class="panel-body">                            
                             <div class="col-md-12">
                                 <!-- Nav tabs -->
-                                <ul class="nav nav-tabs videos-block" role="tablist">
-                                    <li role="presentation" class="active"><a href="#all-videos" aria-controls="all-videos" role="tab" data-toggle="tab">Бардык</a></li>
-                                    <li role="presentation"><a href="#tele" aria-controls="tele" role="tab" data-toggle="tab">Телеберүүлөр</a></li>
-                                    <li role="presentation"><a href="#serial" aria-controls="serial" role="tab" data-toggle="tab">Сериалдар</a></li>
-                                    <li role="presentation"><a href="#tasma" aria-controls="tasma" role="tab" data-toggle="tab">Көркөм тасма</a></li>
-                                    <li role="presentation"><a href="#maanai" aria-controls="maanai" role="tab" data-toggle="tab">Маанайшат</a></li>
-                                    <li role="presentation"><a href="#sport" aria-controls="sport" role="tab" data-toggle="tab">Спорт</a></li>
-                                </ul>
+                            <ul class="nav nav-tabs videos-block" role="tablist">
+                                @foreach($mediaCategories as $mediaCategory)
+                                <li role="presentation">
+                                    <a href="#all-videos" aria-controls="{{ $mediaCategory->getResourceType() }}" role="tab" data-toggle="tab">
+                                        {{ $mediaCategory->getName() }}</a>
+                                    </li>
+                                @endforeach
+                            </ul>
 
                                 <!-- Tab panes -->
                                 <div class="tab-content">
 
-                                    <div role="tabpanel" class="tab-pane active clearfix" id="all-videos">
-                                        <div class="row">
-
-                                            @foreach($mediaLast as $lastVideo)
-
-                                            <article class="col-md-4">
-                                                <a href="#" class="img">
-                                                    <img src="http://img.youtube.com/vi/{{ $lastVideo->getUrl()}}/mqdefault.jpg" alt=""/>
-                                                    <h4><i class="fa fa-play-circle-o"></i>Замана</h4>
-                                                </a>
-                                                <a href="#" class="title">
-                                                    <h4>{{ $lastVideo->getName()}}</h4>
-                                                </a>
-                                            </article>
-
-                                            @endforeach
-
-                                        </div>
-                                    </div>
-
                                     @foreach($mediaAll as $media)
 
-                                    <div role="tabpanel" class="tab-pane clearfix" id="{{ $media->getResourceType() }}">
+                                    <div role="tabpanel" class="tab-pane clearfix active" id="{{ $media->getResourceType() }}">
                                         <div class="row">
 
                                             <article class="col-md-4">

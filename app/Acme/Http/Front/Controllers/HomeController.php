@@ -26,6 +26,8 @@ class HomeController extends Controller
 
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
+        $mediaCategories = \Model\MediaCategory\ModelName::published()->get();
+
         return view('Front::home', [
             'generalPosts'   => $generalPosts,
             'mediaAll'       => $mediaAll,
@@ -33,6 +35,7 @@ class HomeController extends Controller
             'positionTop'    => $positionTop,
             'backgroundMain' => $backgroundMain,
             'mediaLast'      => $mediaLast,
+            'mediaCategories'=> $mediaCategories,
             ]);
     }
 

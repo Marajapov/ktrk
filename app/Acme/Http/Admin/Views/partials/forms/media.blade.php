@@ -38,7 +38,7 @@
 
     <div class="col-sm-2">
         <div class="form-group">
-            <label class="control-label">Статус</label>
+            <label class="control-label">Опубликовать</label>
             {!! Form::hidden('published', 0) !!}
             {!! Form::checkbox('published', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
         </div>
