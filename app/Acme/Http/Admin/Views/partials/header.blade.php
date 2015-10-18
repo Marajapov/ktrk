@@ -15,7 +15,7 @@
                 <li class="btn btn-default" style="padding:0;"><a href="{{ route('admin.post.index') }}" target="">Новости</a></li>
                 <li class="btn btn-default" style="padding:0;"><a href="{{ route('admin.category.index') }}" target="">Категории новостей</a></li>
                 <li class="btn btn-default" style="padding:0;"><a href="{{ route('admin.media.index') }}" target="">Медия новости</a></li>
-            <li class="btn btn-default" style="padding:0;"><a href="{{ route('admin.mediaCategory.index') }}" target="">Категории медия</a></li>
+                <li class="btn btn-default" style="padding:0;"><a href="{{ route('admin.mediaCategory.index') }}" target="">Категории медия</a></li>
                 <li class="btn btn-default" style="padding:0;"><a href="{{ route('admin.banner.index') }}" target="">Баннер</a></li>
                 <li class="btn btn-default" style="padding:0;"><a href="{{ route('admin.page.index') }}" target="">Стараницы</a></li>
                 <li class="btn btn-default" style="padding:0;"><a href="{{ route('admin.menu.index') }}" target="">Меню</a></li>

@@ -8,7 +8,7 @@
     <div class="panel-heading">Информация</div>
     <div class="panel-body">
 
-        <div class="col-md-5"><h3>{{ $mediaCategory->getTitle() }}</h3> ({{ $mediaCategory->getName() }})</div>
+        <div class="col-md-5"><h3>{{ $mediaCategory->getName() }}</h3> ({{ $mediaCategory->getResourceType() }})</div>
 
         <div class="col-md-5">
             {!! Form::open(['route' => ['admin.mediaCategory.destroy', $mediaCategory], 'method' => 'DELETE', 'onsubmit' => 'return confirm("Вы уверены?")']) !!}
@@ -21,9 +21,9 @@
 
 <h2><span class="label label-default">Все новости относящий </span></h2>
 <div class="list-group">
-@foreach($mediaCategory->posts as $post)
+@foreach($mediaCategory->medias as $media)
     
-        <a href="{{ route('admin.post.show', $post) }}" class="list-group-item">{{ $post->getTitle() }} ({!! $post->getDescription() !!})</a>
+        <a href="{{ route('admin.media.show', $media) }}" class="list-group-item">{{ $media->getName() }}</a>
         
 @endforeach
 </div>

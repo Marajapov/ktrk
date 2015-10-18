@@ -48,7 +48,7 @@ class ModelName extends Model
 
     public function getResourceType()
     {
-        return $this->resourse_type;
+        return $this->resource_type;
     }
 
 }

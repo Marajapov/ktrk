@@ -11,7 +11,7 @@
     <div class="col-sm-10">
         <div class="form-group">
             <label class="control-label">Выберите тип медии</label>
-            {!! Form::select('resource_type', ['all-videos'=>'Бардык','tele'=>'Телеберүүлөр','serial'=>'Сериалдар','tasma'=>'Көркөм тасма','maanai'=>'Маанайшат','sport'=>'Спорт'], null, ["class" => "form-control", "required" => true, "title" => ""]) !!}
+            {!! Form::select('resource_type', \Model\MediaCategory\ModelName::lists('name', 'id')->toArray(), null, ["class" => "form-control", "required" => true, "title" => ""]) !!}
         </div>
     </div>
 
