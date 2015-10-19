@@ -64,7 +64,7 @@
 .slick-prev:before,
 .slick-next:before
 {
-    font-family: 'slick';
+    font-family: FontAwesome;
     font-size: 20px;
     line-height: 1;
 
@@ -86,11 +86,11 @@
 }
 .slick-prev:before
 {
-    content: '←';
+    content: '\f053';
 }
 [dir='rtl'] .slick-prev:before
 {
-    content: '→';
+    content: '\f054';
 }
 
 .slick-next
@@ -104,11 +104,11 @@
 }
 .slick-next:before
 {
-    content: '→';
+    content: '\f054';
 }
 [dir='rtl'] .slick-next:before
 {
-    content: '←';
+    content: '\f053';
 }
 
 /* Dots */

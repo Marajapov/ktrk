@@ -6,7 +6,7 @@
             <div class="top-header clearfix">
                 <div class="col-md-12 logo-block">
                     <div class="row">
-                        <a class="logo" href="#">
+                        <a class="logo" href="http://ktrk.dev">
                             <img src="{{ asset('images/logo_kg.png') }}" alt=""/>
                         </a>
 

@@ -2066,7 +2066,7 @@ if (typeof jQuery === 'undefined') {
 
   Tab.VERSION = '3.3.5'
 
-  Tab.TRANSITION_DURATION = 150
+  Tab.TRANSITION_DURATION = 300
 
   Tab.prototype.show = function () {
     var $this    = this.element

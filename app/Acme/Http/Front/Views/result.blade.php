@@ -2,17 +2,92 @@
 @section('title', "Главная страница")
 
 @section('content')
-    <h1>Posts</h1>
-    @foreach($posts as $post)
-        <div class="">
-            <a href="{{ route('front.post', $post) }}" target="_blank">{{ $post->getTitle() }}</a>
-        </div>
-    @endforeach
-    <hr>
-    <h1>Pages</h1>
-    @foreach($pages as $page)
-        <div class="">
-            <a href="{{ route('front.page', $page) }}" target="_blank">{{ $page->getName() }}</a>
-        </div>
-    @endforeach
+
+<div class="container main-wrapper">
+    <div class="row">
+        <section class="content clearfix">
+
+            <div class="clearfix">
+                <div class="top-left-block col-md-9">
+                    <div class="panel panel-default panel-articles">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                Результаты на <strong>{{ $searchKey }}</strong>
+                            </h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="col-md-12 block news-block">
+
+                                <div class="row">
+                                    <ul class="grid" id="grid">
+                                    @foreach($posts as $post)
+                                        <li>
+                                            <div class="pin">
+                                                <div class="pin-body">
+                                                    <a class="news-title" href="{{ route('front.post', $post) }}">
+                                                        <h4>{{ $post->getTitle() }}</h4>
+                                                    </a>
+                                                    <div class="news-img">
+                                                        <a class="main-img" href="article.html"><img src="images/image.jpeg" /><i class="fa fa-play-circle-o"></i></a>
+                                                        <div class="news-channel">
+                                                            <a href="channel.html"><img src="images/logo_notext.png" alt=""/></a>
+                                                        </div>
+                                                    </div>
+                                                    <p>
+                                                        {!! $result = substr($post->getContent(),0,300) !!}
+                                                        
+                                                        <a href="{{ route('front.post', $post) }}" class="read-more">толугу менен</a>
+                                                    </p>
+                                                </div>
+                                                <div class="pin-footer">
+                                                    <a class="news-ctg" href="#">
+                                                        <h4>{{ $post->category('category_id')->first()->title }}</h4>
+                                                    </a>
+                                                    <h4 class="news-datetime pull-right">{{ $post->getViewed() }}, {{ $post->getCreated() }}</h4>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    @endforeach 
+                                        
+                                    </ul>
+                                </div>
+
+                                <nav>
+                                    <ul class="pagination">
+                                        <li class="hidden">
+                                            <a href="#" aria-label="Previous">
+                                                <span aria-hidden="true">&laquo;</span>
+                                            </a>
+                                        </li>
+                                        <li class="active"><a href="#">1</a></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">3</a></li>
+                                        <li><a href="#">4</a></li>
+                                        <li><a href="#">5</a></li>
+                                        <li>
+                                            <a href="#" aria-label="Next">
+                                                <span aria-hidden="true">&raquo;</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="#" class="text-center ads">
+                        <img src="images/ads_1.jpg" alt=""/>
+                    </a>
+
+                </div>
+
+                @include('Front::partials.leftCategories')
+
+            </div>
+
+        </section>
+    </div>
+</div>
+
 @stop

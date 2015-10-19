@@ -341,7 +341,7 @@ header{
     vertical-align: middle;
 }
 .logo{
-    position: relative;
+    position: absolute;
 
     display: inline-block;
     /*padding-top: 40px;*/
@@ -370,6 +370,9 @@ header{
 .logo .logo-madaniyat{
     height: 60px;
     width: auto;
+}
+.music .logo img, .balastan .logo img{
+    height: 100px;
 }
 
 /* Top Navigation */
@@ -1540,6 +1543,36 @@ header{
 }
 .pagination li a:focus, .pagination .active a:hover, .pagination .active a:focus{
     background: #4e5e6a;
+}
+/* Анонс */
+.roundabout-holder {
+    padding: 0;
+    margin: 50px auto;
+    height: 300px;
+    width: 80%;
+}
+
+.roundabout-moveable-item {
+    position: relative;
+
+    display:block;
+    height: 393px;
+    overflow: hidden;
+    padding: 10px;
+    width: 750px;
+
+    background: rgba(0, 0, 0, 0.3);
+
+    cursor: pointer;
+}
+
+.roundabout-moveable-item img {
+    height: 100%;
+    width: 100%;
+}
+
+.roundabout-in-focus {
+    cursor: auto;
 }
 
 /* Footer */

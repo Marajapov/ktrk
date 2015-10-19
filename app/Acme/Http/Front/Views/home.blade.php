@@ -26,7 +26,7 @@
                                            <span><i class="fa fa-play-circle-o"></i><i class="fa fa-picture-o"></i></span>
                                         </p>
                                         <a class="news-title" href="{{ route('front.post', $post) }}">
-                                            <h2>{{ $post->getTitle() }}</h2>                                            
+                                            <h2>{!! $result = substr($post->getTitle(),0,75) !!}...</h2>                                            
                                         </a>
                                     </figure>
                                 </div>
@@ -115,9 +115,8 @@
 
                             </div>
                         </div>
-
                         <a href="#" class="text-center ads ads-300x250">
-                            <img src="images/ads_300x250.gif" alt=""/>
+                            <img src="@if(!empty($positionRight->file)) {{ asset($positionRight->file) }} @else images/ads_300x250.gif @endif" alt="phot1"/>
                         </a>
 
                     </div>

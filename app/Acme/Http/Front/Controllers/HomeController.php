@@ -21,7 +21,9 @@ class HomeController extends Controller
         $mediaLast = \Model\Media\ModelName::take(9)->get();
         $dayVideos = \Model\Media\ModelName::take(1)->orderBy('viewed','asc')->get();
 
-        $positionTop = \Model\Banner\ModelName::where('published','=',true,'and','positionTop','=','1')->first();
+        $positionTop = \Model\Banner\ModelName::where('positionTop','=','1')->first();
+        $positionRight = \Model\Banner\ModelName::where('positionRight','=','1')->first();
+
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
         $MediaCategories = \Model\MediaCategory\ModelName::get();
@@ -32,7 +34,10 @@ class HomeController extends Controller
         return view('Front::home', [
             'generalPosts'   => $generalPosts,
             'dayVideos'      => $dayVideos,
+            
             'positionTop'    => $positionTop,
+            'positionRight'  => $positionRight,
+            
             'backgroundMain' => $backgroundMain,
             'mediaLast'      => $mediaLast,
             'MediaCategories'       => $MediaCategories,
@@ -43,8 +48,13 @@ class HomeController extends Controller
     public function Balastan()
     {
         $channel = \Model\Channel\ModelName::name('balastan')->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
-        return view('Front::channel.balastan.index', ['channel' => $channel]);
+        return view('Front::channel.balastan.index', [
+            'channel' => $channel,
+            'backgroundMain' => $backgroundMain,
+
+            ]);
     }
 
     public function Muzkanal()
@@ -102,10 +112,18 @@ class HomeController extends Controller
     {
         $posts = \Model\Post\ModelName::search($request->input('search'))->get();
         $pages = \Model\Page\ModelName::search($request->input('search'))->get();
+        $searchKey = $request->input('search');
+
+        $categories = \Model\Category\ModelName::all();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
         return view('Front::result', [
             'posts' => $posts,
             'pages' => $pages,
+            'searchKey'=>$searchKey,
+
+            'categories'=>$categories,
+            'backgroundMain' => $backgroundMain,
             ]);
     }
 

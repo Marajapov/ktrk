@@ -9,23 +9,23 @@
                 <div class="row">
                     <div class="col-md-4 modal-block">
                         <div>
-                            <a href="#">
+                            <a href="{{ route('balastan.home')}}">
                                 <img src="images/channels/balastan.png" alt=""/>
                             </a>
                             <div class="options">
                                 <a class="link" href="#">Баластан</a>
                                 <span class="divider"></span>
-                                <a class="live" href="#"><i class="fa fa-dot-circle-o"></i></a>
+                                <a class="live" href="{{ route('balastan.home')}}"><i class="fa fa-dot-circle-o"></i></a>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4 modal-block">
                        <div>
-                           <a href="#">
+                           <a href="{{ route('muzkanal.home')}}">
                                <img src="images/channels/muztv.png" alt=""/>
                            </a>
                            <div class="options">
-                               <a class="link" href="#">Музыка</a>
+                               <a class="link" href="{{ route('muzkanal.home')}}">Музыка</a>
                                <span class="divider"></span>
                                <a class="live" href="#"><i class="fa fa-dot-circle-o"></i></a>
                            </div>
@@ -37,7 +37,7 @@
                                 <img src="images/channels/madaniyat.png" alt=""/>
                             </a>
                             <div class="options">
-                                <a class="link" href="#">Маданият</a>
+                                <a class="link" href="{{ route('madaniyat.home')}}">Маданият</a>
                                 <span class="divider"></span>
                                 <a class="live" href="#"><i class="fa fa-dot-circle-o"></i></a>
                             </div>
