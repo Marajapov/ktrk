@@ -18,7 +18,6 @@ class HomeController extends Controller
         $channel = \Model\Channel\ModelName::general();
         $generalPosts = \Model\Post\ModelName::general($channel)->published()->take(6)->skip(0)->orderBy('id', 'desc')->get();
 
-        $mediaAll = \Model\Media\ModelName::get();
         $mediaLast = \Model\Media\ModelName::take(9)->get();
         $dayVideos = \Model\Media\ModelName::take(1)->orderBy('viewed','asc')->get();
 
@@ -26,7 +25,13 @@ class HomeController extends Controller
 
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
-        $mediaCategories = \Model\MediaCategory\ModelName::published()->get();
+
+        $mediaCategories = \Model\MediaCategory\ModelName::byCategory();
+
+        
+        $mediaPosts = \Model\Media\ModelName::byCategory($mediaCategories->published())->get();
+        
+        dd($mediaPosts);
 
         return view('Front::home', [
             'generalPosts'   => $generalPosts,

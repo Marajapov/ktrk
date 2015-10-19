@@ -46,7 +46,7 @@ class ModelName extends Model
         return $this->title_ru;
     }
 
-    public function getResourceType()
+    public function getMediaCategoryResourceType()
     {
         return $this->resource_type;
     }

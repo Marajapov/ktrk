@@ -198,40 +198,37 @@
                                 <!-- Nav tabs -->
                             <ul class="nav nav-tabs videos-block" role="tablist">
                                 @foreach($mediaCategories as $mediaCategory)
-                                <li role="presentation">
-                                    <a href="#all-videos" aria-controls="{{ $mediaCategory->getResourceType() }}" role="tab" data-toggle="tab">
-                                        {{ $mediaCategory->getName() }}</a>
+                                <li role="presentation" @if($mediaCategory->id == 1) class="active" @endif>
+                                    <a href="#{{ $mediaCategory->getMediaCategoryResourceType() }}" aria-controls="{{ $mediaCategory->getMediaCategoryResourceType() }}" role="tab" data-toggle="tab">
+                                        {{ $mediaCategory->getName() }}
+                                    </a>
                                     </li>
                                 @endforeach
                             </ul>
 
-                                <!-- Tab panes -->
-                                <div class="tab-content">
-
-                                    @foreach($mediaAll as $media)
-
-                                    <div role="tabpanel" class="tab-pane clearfix active" id="{{ $media->getResourceType() }}">
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                            @foreach($mediaCategories as $mediaCategory)
+                                    <div role="tabpanel" class="tab-pane clearfix @if($mediaCategory->id==1) active @endif" id="{{ $mediaCategory->getMediaCategoryResourceType() }}">
                                         <div class="row">
-
-                                            <article class="col-md-4">
-                                                <a href="#" class="img">
-                                                    <img src="http://img.youtube.com/vi/{{ $media->getUrl()}}/mqdefault.jpg" alt=""/>
-                                                    <h4><i class="fa fa-play-circle-o"></i>Замана</h4>
-                                                </a>
-                                                <a href="#" class="title">
-                                                    <h4>{{ $media->getName()}}</h4>
-                                                </a>
-                                            </article>
-
+                                            @foreach($mediaAll as $media)
+                                                @if($mediaCategory->getMediaCategoryResourceType() == $media->getResourceType())
+                                                <article class="col-md-4">
+                                                    <a href="#" class="img">
+                                                        <img src="http://img.youtube.com/vi/{{ $media->getUrl()}}/mqdefault.jpg" alt=""/>
+                                                        <h4><i class="fa fa-play-circle-o"></i>Замана</h4>
+                                                    </a>    
+                                                    <a href="#" class="title">
+                                                        <h4>{{ $media->getName()}}</h4>
+                                                    </a>
+                                                </article>
+                                                @endif
+                                            @endforeach
                                         </div>
                                     </div>
-                                            
-                                    @endforeach
-
-                                    
-
-                                </div>
+                                @endforeach 
                             </div>
+                </div>
 
 
                             <div class="clearfix"></div>
