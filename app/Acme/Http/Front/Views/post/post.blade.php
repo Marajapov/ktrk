@@ -25,6 +25,21 @@
                                             {!! $post->getContent() !!}
                                         </p>
 
+                                        <div class="carousel-post">
+                                            <div class="col-md-4"><a href="#"><img src="{{ asset('images/gallery/001.jpg') }}" alt=""/></a></div>
+                                            <div class="col-md-4"><a href="#"><img src="{{ asset('images/gallery/002.jpg') }}" alt=""/></a></div>
+                                            <div class="col-md-4"><a href="#"><img src="{{ asset('images/gallery/003.jpg') }}" alt=""/></a></div>
+                                            <div class="col-md-4"><a href="#"><img src="{{ asset('images/gallery/004.jpg') }}" alt=""/></a></div>
+                                            <div class="col-md-4"><a href="#"><img src="{{ asset('images/gallery/005.jpg') }}" alt=""/></a></div>
+                                            <div class="col-md-4"><a href="#"><img src="{{ asset('images/gallery/006.jpg') }}" alt=""/></a></div>
+                                            <div class="col-md-4"><a href="#"><img src="{{ asset('images/gallery/007.jpg') }}" alt=""/></a></div>
+                                            <div class="col-md-4"><a href="#"><img src="{{ asset('images/gallery/008.jpg') }}" alt=""/></a></div>
+                                            <div class="col-md-4"><a href="#"><img src="{{ asset('images/gallery/009.jpg') }}" alt=""/></a></div>
+                                            <div class="col-md-4"><a href="#"><img src="{{ asset('images/gallery/010.jpg') }}" alt=""/></a></div>
+                                            <div class="col-md-4"><a href="#"><img src="{{ asset('images/gallery/011.jpg') }}" alt=""/></a></div>
+                                            <div class="col-md-4"><a href="#"><img src="{{ asset('images/gallery/012.jpg') }}" alt=""/></a></div>
+                                        </div>
+
                                         @if(!empty($post->getFile()))
                                         <div class="carousel-post">
                                             <div class="col-md-4"><img src="{{ asset($post->getFile()) }}" alt=""/></div>

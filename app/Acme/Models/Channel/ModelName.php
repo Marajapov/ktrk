@@ -40,4 +40,9 @@ class ModelName extends Model
         return $this->published;
     }
 
+    public function getFile()
+    {
+        return $this->url;
+    }
+
 }

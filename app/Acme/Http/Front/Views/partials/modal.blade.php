@@ -87,3 +87,24 @@
         </div>
     </div>
 </div>
+<div class="modal fade" id="liveModal" tabindex="-1" role="dialog" aria-labelledby="liveModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="liveModalLabel">Түз эфир - КТРК</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12 modal-block">
+                        <!-- the second player. uses the same video here but could be different -->
+                        <a class="rtmp" href="mp4:bbb-800"
+                           style="background-image:url(images/live_bg.png)">
+                            <img src="images/live_play.png" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

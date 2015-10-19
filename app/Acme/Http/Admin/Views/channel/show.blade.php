@@ -10,7 +10,16 @@
     {!! Form::close() !!}
 </div>
 
-<h2><span class="label label-default">Все пользователя канала - {{ $channel->getDisplay() }} ({{ $channel->getName()}})</span></h2>
+<h2>
+	<span class="label label-default">Все пользователя канала - {{ $channel->getDisplay() }} ({{ $channel->getName()}})</span>
+
+	    @if($channel->isImage())
+	    <img src="{{ asset($channel->getFile()) }}" width="50" height="50">
+	    @else
+	    <object width="50" height="50" type="application/x-shockwave-flash" data="{{ asset($channel->getFile()) }}"></object>
+	    @endif
+  	
+</h2>
 <div class="list-group">
 @foreach($channel->users as $user)
     <a href="{{ route('admin.user.show', $user) }}" class="list-group-item">{{ $user->getName() }}</a>

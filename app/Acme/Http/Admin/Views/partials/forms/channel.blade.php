@@ -12,18 +12,25 @@
             </div>
         </div>
 
-        <div class="col-sm-2">
-            <div class="form-group">
-                <label class="control-label">Статус</label>
-                {!! Form::hidden('published', 0) !!}
-                {!! Form::checkbox('published', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
-            </div>
-        </div>
-
         <div class="col-sm-10">
             <div class="form-group">
                 <label class="control-label">Дисплей</label>
                 {!! Form::text('display', null, ["class" => "form-control", "required" => true, "title" => ""]) !!}
+            </div>
+        </div>
+
+        <div class="col-xs-12">
+            <div class="form-group">
+                <label class="control-label">File</label>
+                {!! Form::file('url', null, ["class" => "form-control", "required" => true]) !!}
+            </div>
+        </div>
+
+         <div class="col-sm-2">
+            <div class="form-group">
+                <label class="control-label">Опубликовать</label>
+                {!! Form::hidden('published', 0) !!}
+                {!! Form::checkbox('published', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
             </div>
         </div>
 

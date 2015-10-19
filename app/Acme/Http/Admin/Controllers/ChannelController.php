@@ -38,7 +38,22 @@ class ChannelController extends Controller
      */
     public function store(Request $request)
     {
-        Channel::create($request->all());
+        $channel = Channel::create($request->except('url'));
+
+        if($request->hasFile('url'))
+        {
+            $url = $request->url('url');
+            $dir  = 'img/icons';
+            $name = $channel->id().'.'.$url->getClientOriginalExtension();
+
+            $storage = \Storage::disk('public');
+            $storage->makeDirectory($dir);
+            // $storage->put($dir.'/'.$name, $url);
+
+            $channel->url = $dir.'/'.$name;
+            $channel->save();
+            $url->move($dir, $name);
+        }
 
         return redirect()->route('admin.channel.index');
     }
@@ -74,7 +89,22 @@ class ChannelController extends Controller
      */
     public function update(Request $request, Channel $channel)
     {
-        $channel->update($request->all());
+        $channel->update($request->except('url'));
+
+        if($request->hasFile('url'))
+        {
+            $url = $request->url('url');
+            $dir  = 'img/icons';
+            $name = $channel->id().'.'.$url->getClientOriginalExtension();
+
+            $storage = \Storage::disk('public');
+            $storage->makeDirectory($dir);
+            // $storage->put($dir.'/'.$name, $url);
+
+            $channel->url = $dir.'/'.$name;
+            $channel->save();
+            $url->move($dir, $name);
+        }
 
         return redirect()->route('admin.channel.show', $channel);
     }

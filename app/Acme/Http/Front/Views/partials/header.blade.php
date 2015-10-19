@@ -69,7 +69,7 @@
                             </button>
                         </form>
 
-                        <button class="btn btn-danger btn-live">
+                        <button class="btn btn-danger btn-live" data-toggle="modal" data-target="#liveModal">
                             <i class="fa fa-dot-circle-o"></i>
                             түз эфир
                         </button>

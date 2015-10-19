@@ -31,6 +31,11 @@
 <script src="{{ asset('js/imagesloaded.js') }}"></script>
 <script src="{{ asset('js/classie.js') }}"></script>
 
+<script src="{{ asset('js/AnimOnScroll.js') }}"></script>
+<script>
+    new AnimOnScroll( document.getElementById( 'grid' ), {} );
+</script>
+
 <!--Menu concept-->
 <!--<script src="js/polyfills.js"></script>-->
 <!--<script src="js/demo1.js"></script>-->
@@ -53,6 +58,11 @@
         speed: 500,
         fade: true,
         cssEase: 'linear'
+    });
+    $('.carousel-slick').slick({
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1
     });
 </script>
 
@@ -101,6 +111,33 @@
         };
         // Run the show!
         filterList.init();
+    });
+</script>
+
+<script type="text/javascript" src="http://releases.flowplayer.org/js/flowplayer-3.2.13.min.js"></script>
+<script>
+    $f("a.rtmp", "http://releases.flowplayer.org/swf/flowplayer-3.2.18.swf", {
+
+        // configure both players to use rtmp plugin
+        clip: {
+            provider: 'rtmp'
+        },
+
+        // here is our rtpm plugin configuration
+        plugins: {
+            rtmp: {
+
+                // use latest RTMP plugin release
+                url: "flowplayer.rtmp-3.2.13.swf",
+
+            //
+            //netConnectionUrl defines where the streams are found
+            //this is what we have in our HDDN account
+            //
+            netConnectionUrl: 'rtmp://s3b78u0kbtx79q.cloudfront.net/cfx/st'
+    }
+    }
+
     });
 </script>
 
