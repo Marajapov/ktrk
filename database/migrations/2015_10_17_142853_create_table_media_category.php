@@ -15,12 +15,12 @@ class CreateTableMediaCategory extends Migration
         Schema::create('media_category', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('name_ru');
+            $table->string('nameRu');
             $table->string('title');
-            $table->string('title_ru');
+            $table->string('titleRu');
             $table->string('description', 500);
-            $table->string('description_ru', 500);
-            $table->string('resource_type', 200);
+            $table->string('descriptionRu', 500);
+            $table->string('videoType', 200);
             $table->smallInteger('order')->nullable()->default(0);
             $table->boolean('published')->nullable()->default(false);
             $table->timestamps();

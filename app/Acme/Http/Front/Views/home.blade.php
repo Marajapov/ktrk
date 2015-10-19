@@ -23,7 +23,7 @@
                                         </div>                                    
                                         <p class="description clearfix">
                                            <a href="{{ route('front.category', $post->category) }}">{{ $post->category('category_id')->first()->title }}</a>
-                                           <span><i class="fa fa-play-circle-o"></i></span>
+                                           <span><i class="fa fa-play-circle-o"></i><i class="fa fa-picture-o"></i></span>
                                         </p>
                                         <a class="news-title" href="{{ route('front.post', $post) }}">
                                             <h2>{{ $post->getTitle() }}</h2>                                            
@@ -193,43 +193,31 @@
                         <div class="panel-heading">
                             <h3 class="panel-title"><span>Видеопортал</span></h3>
                         </div>
-                        <div class="panel-body">                            
-                            <div class="col-md-12">
-                                <!-- Nav tabs -->
-                            <ul class="nav nav-tabs videos-block" role="tablist">
-                                @foreach($mediaCategories as $mediaCategory)
-                                <li role="presentation" @if($mediaCategory->id == 1) class="active" @endif>
-                                    <a href="#{{ $mediaCategory->getMediaCategoryResourceType() }}" aria-controls="{{ $mediaCategory->getMediaCategoryResourceType() }}" role="tab" data-toggle="tab">
-                                        {{ $mediaCategory->getName() }}
-                                    </a>
-                                    </li>
-                                @endforeach
+                        <div class="panel-body">   
+
+                            <ul id="filters" class="clearfix">
+                            @foreach($MediaCategories as $key => $MediaCategory)
+                                <li><span class="filter @if($key == 0) active @endif" data-filter="{{ $MediaCategory->getVideoType() }}">{{ $MediaCategory->getName() }}</span></li>
+                            @endforeach 
                             </ul>
 
-                            <!-- Tab panes -->
-                            <div class="tab-content">
-                            @foreach($mediaCategories as $mediaCategory)
-                                    <div role="tabpanel" class="tab-pane clearfix @if($mediaCategory->id==1) active @endif" id="{{ $mediaCategory->getMediaCategoryResourceType() }}">
-                                        <div class="row">
-                                            @foreach($mediaAll as $media)
-                                                @if($mediaCategory->getMediaCategoryResourceType() == $media->getResourceType())
-                                                <article class="col-md-4">
-                                                    <a href="#" class="img">
-                                                        <img src="http://img.youtube.com/vi/{{ $media->getUrl()}}/mqdefault.jpg" alt=""/>
-                                                        <h4><i class="fa fa-play-circle-o"></i>Замана</h4>
-                                                    </a>    
-                                                    <a href="#" class="title">
-                                                        <h4>{{ $media->getName()}}</h4>
-                                                    </a>
-                                                </article>
-                                                @endif
-                                            @endforeach
+                        <div id="portfoliolist">
+                        @foreach($mediaPosts as $media)
+                            <div class="portfolio {{ $media->getVideoType() }}" data-cat="{{ $media->getVideoType() }}">
+                                <div class="portfolio-wrapper">
+                                    <a href="{{ route('front.media', $media) }}">
+                                        <img src="http://img.youtube.com/vi/{{ $media->getUrl()}}/mqdefault.jpg" alt="" />
+                                    </a>
+                                    <div class="label">
+                                        <div class="label-text">
+                                            <a class="text-title">{{ $media->getName() }}</a>
                                         </div>
+                                        <div class="label-bg"></div>
                                     </div>
-                                @endforeach 
+                                </div>
                             </div>
-                </div>
-
+                        @endforeach
+                        </div>
 
                             <div class="clearfix"></div>
 
@@ -246,54 +234,29 @@
                         <img src="images/ads_1.jpg" alt=""/>
                     </a>
 
-                    <div class="panel panel-default panel-apps">
-                        <div class="panel-heading">
-                            <h3 class="panel-title"><span>Мобилдүү колдонмолор</span></h3>
-                        </div>
-                        <div class="panel-body">
-                            <div class="col-md-9">
-                                <p>
-                                    Загрузив мобильное приложение Общественной телерадиовещательной корпорации вы сможете смотреть:
-                                </p>
-                                <ul>
-                                    <li>
-                                        прямой эфир Общественного первого канала;
-                                    </li>
-                                    <li>
-                                        прямой эфир телеканала “Музыка”;
-                                    </li>
-                                    <li>
-                                        просмотреть все выпуски новостей и телепередач;
-                                    </li>
-                                    <li>
-                                        слушать радиостанции: Биринчи радио, Кыргыз радиосу, радио “Достук”, радио “Миң кыял FM”.
-                                    </li>
-                                </ul>
-                                <p>
-                                    Скачивайте, делитесь с друзьями и комментируйте! Приложение на кыргызском и русском языках доступно в Google Play Market и AppStore.
-                                </p>
-                                <p>
-                                    <strong>Мобильное приложение КТРК</strong> - это удобно, быстро и легко!
-                                </p>
-                            </div>
-                            <div class="col-md-3 apps-logo">
-                                <div class="row">
-                                    <a href="#" class="android">
-                                        <img src="images/android.png" alt=""/>
-                                    </a>
-                                    <a href="#" class="ios">
-                                        <img src="images/ios.png" alt=""/>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
 
             </section>
 
         </div>
 
+    </div>
+
+    <div class="container">
+            <div class="col-md-12 apps-logo">
+                <div class="row">
+                    <div class="col-md-3 col-md-offset-3">
+                        <a href="#" class="android">
+                            <img src="images/android.png" alt=""/>
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="#" class="ios">
+                            <img src="images/ios.png" alt=""/>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 @stop

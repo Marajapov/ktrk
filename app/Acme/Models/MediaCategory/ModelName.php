@@ -46,9 +46,9 @@ class ModelName extends Model
         return $this->title_ru;
     }
 
-    public function getMediaCategoryResourceType()
+    public function getVideoType()
     {
-        return $this->resource_type;
+        return $this->videoType;
     }
 
 }

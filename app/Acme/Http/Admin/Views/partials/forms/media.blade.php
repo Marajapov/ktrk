@@ -11,7 +11,7 @@
     <div class="col-sm-10">
         <div class="form-group">
             <label class="control-label">Выберите тип медии</label>
-            {!! Form::select('resource_type', \Model\MediaCategory\ModelName::lists('name', 'id')->toArray(), null, ["class" => "form-control", "required" => true, "title" => ""]) !!}
+            {!! Form::select('videoType', \Model\MediaCategory\ModelName::lists('name', 'videoType')->toArray(), null, ["class" => "form-control", "required" => true, "title" => ""]) !!}
         </div>
     </div>
 

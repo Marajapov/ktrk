@@ -1,5 +1,5 @@
 <?php
-namespace Model\MediaCategory;
+namespace Model\Media;
 
 trait ModelScopes {
 
@@ -10,7 +10,7 @@ trait ModelScopes {
 
     public function scopeByCategory($query, $category)
     {
-    	return $query->where('resource_type', '=', $category);
+    	return $query->where('videoType', '=', $category);
     }
 
 }

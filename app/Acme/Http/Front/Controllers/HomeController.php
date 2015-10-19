@@ -22,25 +22,21 @@ class HomeController extends Controller
         $dayVideos = \Model\Media\ModelName::take(1)->orderBy('viewed','asc')->get();
 
         $positionTop = \Model\Banner\ModelName::where('published','=',true,'and','positionTop','=','1')->first();
-
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
+        $MediaCategories = \Model\MediaCategory\ModelName::get();
+        $mediaPosts = \Model\Media\ModelName::get();
 
-        $mediaCategories = \Model\MediaCategory\ModelName::byCategory();
-
+        $videoAll = \Model\Media\ModelName::get();
         
-        $mediaPosts = \Model\Media\ModelName::byCategory($mediaCategories->published())->get();
-        
-        dd($mediaPosts);
-
         return view('Front::home', [
             'generalPosts'   => $generalPosts,
-            'mediaAll'       => $mediaAll,
             'dayVideos'      => $dayVideos,
             'positionTop'    => $positionTop,
             'backgroundMain' => $backgroundMain,
             'mediaLast'      => $mediaLast,
-            'mediaCategories'=> $mediaCategories,
+            'MediaCategories'       => $MediaCategories,
+            'mediaPosts'       => $mediaPosts,
             ]);
     }
 
@@ -125,11 +121,34 @@ class HomeController extends Controller
 
         return view('Front::category.index',[
             'posts' => $posts,
+            'category' => $category,
+
             'mainBanner'   => $mainBanner,
             'categories'=>$categories,
             'backgroundMain' => $backgroundMain,
-            'category' => $category,
             ]);
+    }
+
+    public function mediaPage(\Model\Media\ModelName $media)
+    {
+        
+        /*$mediaPost = \Model\Media\ModelName::where('id','=',$media);
+        dd($mediaPost);*/
+
+
+        $mainBanner = \Model\Background\ModelName::where('name','=','main')->first();
+        $categories = \Model\Category\ModelName::all();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+        return view('Front::media.index',[
+            'mediaPost' => $media,
+            
+            'mainBanner'   => $mainBanner,
+            'categories'=>$categories,
+            'backgroundMain' => $backgroundMain,
+
+            ]
+            );
     }
 
 }

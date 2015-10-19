@@ -11,14 +11,14 @@
     <div class="col-sm-10">
         <div class="form-group">
             <label class="control-label">Название на русском</label>
-            {!! Form::text('name_ru', null, ["class" => "form-control", "required" => true, "title" => ""]) !!}
+            {!! Form::text('nameRu', null, ["class" => "form-control", "required" => true, "title" => ""]) !!}
         </div>
     </div>
 
     <div class="col-sm-10">
         <div class="form-group">
             <label class="control-label">Краткий заголовок на англиском</label>
-            {!! Form::text('resource_type', null, ["class" => "form-control", "required" => true]) !!}
+            {!! Form::text('videoType', null, ["class" => "form-control", "required" => true]) !!}
         </div>
     </div>
 

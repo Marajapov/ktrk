@@ -14,49 +14,49 @@ class MediaCategorySeeder extends Seeder
     	\Model\MediaCategory\ModelName::truncate();
         \Model\MediaCategory\ModelName::create([
             'id'        => 1,
-            'name'      => 'Бардык',
-            'name_ru'     => 'Все',
-            'resource_type'     => 'all',
+            'name'      => 'Жалпы',
+            'nameRu'     => 'Все',
+            'videoType'     => 'all',
             'published' => true,
         ]);
 
         \Model\MediaCategory\ModelName::create([
             'id'        => 2,
             'name'      => 'Телеберүүлөр',
-            'name_ru'     => 'Телепередачи',
-            'resource_type'     => 'tele',
+            'nameRu'     => 'Телепередачи',
+            'videoType'     => 'tele',
             'published' => true,
         ]);
 
         \Model\MediaCategory\ModelName::create([
             'id'        => 3,
             'name'      => 'Сериалдар',
-            'name_ru'     => 'Сериалы',
-            'resource_type'     => 'serials',
+            'nameRu'     => 'Сериалы',
+            'videoType'     => 'serials',
             'published' => true,
         ]);
 
         \Model\MediaCategory\ModelName::create([
             'id'        => 4,
             'name'      => 'Көркөм тасма',
-            'name_ru'     => 'Художественный фильм',
-            'resource_type'     => 'tasma',
+            'nameRu'     => 'Художественный фильм',
+            'videoType'     => 'tasma',
             'published' => true,
         ]);
 
         \Model\MediaCategory\ModelName::create([
             'id'        => 5,
             'name'      => 'Маанайшат',
-            'name_ru'     => 'Развлекательное',
-            'resource_type'     => 'maanai',
+            'nameRu'     => 'Развлекательное',
+            'videoType'     => 'maanai',
             'published' => true,
         ]);
 
         \Model\MediaCategory\ModelName::create([
             'id'        => 6,
             'name'      => 'Спорт',
-            'name_ru'     => 'Спорт',
-            'resource_type'     => 'sport',
+            'nameRu'     => 'Спорт',
+            'videoType'     => 'sport',
             'published' => true,
         ]);
     }

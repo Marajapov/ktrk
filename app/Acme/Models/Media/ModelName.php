@@ -5,7 +5,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ModelName extends Model
 {
-    use ModelHelpers, ModelRelationships;
+    use ModelHelpers, ModelRelationships, ModelScopes;
     /**
      * The database table used by the model.
      *
@@ -58,9 +58,9 @@ class ModelName extends Model
 
     }
 
-     public function getResourceType()
+    public function getVideoType()
     {
-        return $this->resource_type;
+        return $this->videoType;
     }
 
 }

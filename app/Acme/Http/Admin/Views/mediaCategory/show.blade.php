@@ -8,7 +8,7 @@
     <div class="panel-heading">Информация</div>
     <div class="panel-body">
 
-        <div class="col-md-5"><h3>{{ $mediaCategory->getName() }}</h3> ({{ $mediaCategory->getResourceType() }})</div>
+        <div class="col-md-5"><h3>{{ $mediaCategory->getName() }}</h3> ({{ $mediaCategory->getVideoType() }})</div>
 
         <div class="col-md-5">
             {!! Form::open(['route' => ['admin.mediaCategory.destroy', $mediaCategory], 'method' => 'DELETE', 'onsubmit' => 'return confirm("Вы уверены?")']) !!}
