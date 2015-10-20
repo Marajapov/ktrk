@@ -22,7 +22,7 @@
         <div class="col-xs-12">
             <div class="form-group">
                 <label class="control-label">File</label>
-                {!! Form::file('url', null, ["class" => "form-control", "required" => true]) !!}
+                {!! Form::file('file', null, ["class" => "form-control", "required" => true]) !!}
             </div>
         </div>
 

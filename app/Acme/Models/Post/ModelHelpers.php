@@ -22,4 +22,11 @@ trait ModelHelpers
 
         return in_array($type, ['image/png', 'image/jpg', 'image/jpeg', 'image/gif']);
     }
+
+    public function isChannelIcon($query)
+    {        
+        $channel = \Model\Channel\ModelName::where('id','=',$query)->first();
+
+        return $channel->file;
+    }
 }

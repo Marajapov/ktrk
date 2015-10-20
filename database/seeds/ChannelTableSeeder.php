@@ -17,7 +17,7 @@ class ChannelTableSeeder extends Seeder
             'id'        => 1,
             'name'      => 'general',
             'display'   => 'Главная',
-            'url'       => 'images/logo_notext.png',
+            'file'       => 'images/logo_notext.png',
             'published' => true,
         ]);
 

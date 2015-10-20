@@ -16,6 +16,7 @@ class HomeController extends Controller
     public function Home()
     {
         $channel = \Model\Channel\ModelName::general();
+
         $generalPosts = \Model\Post\ModelName::general($channel)->published()->take(6)->skip(0)->orderBy('id', 'desc')->get();
 
         $mediaLast = \Model\Media\ModelName::take(9)->get();
@@ -97,6 +98,7 @@ class HomeController extends Controller
     public function Posts()
     {
         $channel = \Model\Channel\ModelName::general();
+        
         $categories = \Model\Category\ModelName::all();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 

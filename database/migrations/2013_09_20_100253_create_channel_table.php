@@ -17,7 +17,7 @@ class CreateChannelTable extends Migration
             $table->string('name'); // general, KTRK, muzkanal, balastan
             $table->string('display'); // display name
             $table->integer('published'); // live of dead
-            $table->string('url');
+            $table->string('file');
             $table->timestamps();
         });
     }

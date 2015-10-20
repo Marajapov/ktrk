@@ -62,15 +62,15 @@
 
     <div class="col-xs-12">
         <div class="form-group">
-            <label class="control-label">Описание</label>
-            {!! Form::textarea('description', null, ["class" => "form-control"]) !!}
+            <label class="control-label">Миниатюра</label>
+            {!! Form::file('thumbnail', null, ["class" => "form-control"]) !!}
         </div>
     </div>
 
     <div class="col-xs-12">
         <div class="form-group">
-            <label class="control-label">Миниатюра</label>
-            {!! Form::file('thumbnail', null, ["class" => "form-control", "required" => true]) !!}
+            <label class="control-label">Фотогалерея</label>
+            {!! Form::file('photo', null, ["class" => "form-control"]) !!}
         </div>
     </div>
 

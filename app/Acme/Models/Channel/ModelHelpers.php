@@ -11,4 +11,6 @@ trait ModelHelpers
 
         return in_array($type, ['image/png', 'image/jpg', 'image/jpeg', 'image/gif']);
     }
+
+    
 }

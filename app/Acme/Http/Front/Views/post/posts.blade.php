@@ -26,9 +26,11 @@
                                                 <div class="pin-body">
                                                     <a class="news-title" href="#"><h4>{{ $post->getTitle() }}</h4></a>
                                                     <div class="news-img">
-                                                        <a class="main-img" href="article.html"><img src="images/image.jpeg" /><i class="fa fa-play-circle-o"></i></a>
+                                                        <a class="main-img" href="article.html"><img src="{{ asset('images/image.jpeg') }}" /><i class="fa fa-play-circle-o"></i></a>
                                                         <div class="news-channel">
-                                                            <a href="channel.html"><img src="images/logo_notext.png" alt=""/></a>
+                                                            <a href="channel.html">
+                                                                <img src="{{ asset($post->isChannelIcon($post->channel_id))}}" alt=""/>
+                                                            </a>
                                                         </div>
                                                     </div>
                                                     <p>

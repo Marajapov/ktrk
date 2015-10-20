@@ -20,4 +20,6 @@ trait ModelScopes {
         return $query->where('general', '=', true)->orWhere('channel_id', '=', $channel->id());
     }
 
+    
+
 }

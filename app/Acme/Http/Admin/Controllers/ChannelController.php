@@ -38,22 +38,26 @@ class ChannelController extends Controller
      */
     public function store(Request $request)
     {
-        $channel = Channel::create($request->except('url'));
+        $channel = Channel::create($request->except('file'));
 
-        if($request->hasFile('url'))
+        if($request->hasFile('file'))
         {
-            $url = $request->url('url');
+            $file = $request->file('file');
             $dir  = 'img/icons';
-            $name = $channel->id().'.'.$url->getClientOriginalExtension();
+            $name = $channel->id().'.'.$file->getClientOriginalExtension();
 
             $storage = \Storage::disk('public');
             $storage->makeDirectory($dir);
-            // $storage->put($dir.'/'.$name, $url);
+            // $storage->put($dir.'/'.$name, $file);
 
-            $channel->url = $dir.'/'.$name;
+            $channel->file = $dir.'/'.$name;
             $channel->save();
-            $url->move($dir, $name);
+            $file->move($dir, $name);
         }
+
+       
+
+
 
         return redirect()->route('admin.channel.index');
     }
@@ -89,22 +93,23 @@ class ChannelController extends Controller
      */
     public function update(Request $request, Channel $channel)
     {
-        $channel->update($request->except('url'));
+        $channel->update($request->except('file'));
 
-        if($request->hasFile('url'))
+        if($request->hasFile('file'))
         {
-            $url = $request->url('url');
+            $file = $request->file('file');
+
             $dir  = 'img/icons';
-            $name = $channel->id().'.'.$url->getClientOriginalExtension();
+            $name = $channel->id().'.'.$file->getClientOriginalExtension();
 
             $storage = \Storage::disk('public');
             $storage->makeDirectory($dir);
-            // $storage->put($dir.'/'.$name, $url);
 
-            $channel->url = $dir.'/'.$name;
+            $channel->file = $dir.'/'.$name;
             $channel->save();
-            $url->move($dir, $name);
+            $file->move($dir, $name);
         }
+
 
         return redirect()->route('admin.channel.show', $channel);
     }

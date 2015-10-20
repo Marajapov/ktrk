@@ -42,7 +42,7 @@ class ModelName extends Model
 
     public function getFile()
     {
-        return $this->url;
+        return $this->file;
     }
 
 }

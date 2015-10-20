@@ -17,9 +17,13 @@
                                 @foreach($generalPosts as $post)
                                 <div class="col-md-4 block">
                                     <figure class="effect-zoe">
-                                        <a href="{{ route('front.post', $post) }}" class="main-img"><img src="@if(empty($post->getFile()))images/2.jpg @else {{ asset($post->getFile()) }} @endif" alt="img26"><i class="fa fa-play-circle-o"></i></a>
+                                        <a href="{{ route('front.post', $post) }}" class="main-img">
+                                            <img src="@if(empty($post->getFile()))images/2.jpg @else {{ asset($post->getFile()) }} @endif" alt="img26">
+                                            <i class="fa fa-play-circle-o"></i></a>
                                         <div class="news-channel">
-                                            <a href="channel.html"><img src="images/channels/balastan.png" alt=""/></a>
+                                            <a href="channel.html">
+                                                <img src="{{ $post->isChannelIcon($post->channel_id)}}" alt=""/>
+                                            </a>
                                         </div>                                    
                                         <p class="description clearfix">
                                            <a href="{{ route('front.category', $post->category) }}">{{ $post->category('category_id')->first()->title }}</a>
@@ -31,6 +35,7 @@
                                     </figure>
                                 </div>
                                 @endforeach
+                                
 
                                 <footer>
                                     <a href="{{ route('front.general') }}">
@@ -137,7 +142,7 @@
                                     <div class="news-body clearfix">
                                         <a href="{{ route('front.post', $post) }}">
                                             <p class="news-title">{{ $post->getTitle() }}</p>
-                                            <span class="ctg"><img src="images/logo_notext.png" alt=""/></span>
+                                            <span class="ctg"><img src="{{ $post->isChannelIcon($post->channel_id)}}" alt=""/></span>
                                         </a>
                                     </div>
                                     <div class="news-adds clearfix">
