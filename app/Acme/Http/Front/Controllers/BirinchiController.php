@@ -10,11 +10,11 @@ class MadaniyatController extends Controller
 
     public function Home()
     {
-        $channel = \Model\Channel\ModelName::name('madaniyat')->first();
+        $channel = \Model\Channel\ModelName::name('birinchi')->first();
 
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
-        return view('Front::channel.madaniyat.index', [
+        return view('Front::channel.birinchi.index', [
             'channel' => $channel,
             'backgroundMain' => $backgroundMain,
             ]);
@@ -22,9 +22,9 @@ class MadaniyatController extends Controller
 
     public function Posts()
     {
-        $channel = \Model\Channel\ModelName::name('madaniyat')->first();
+        $channel = \Model\Channel\ModelName::name('birinchi')->first();
 
-        return view('Front::channel.madaniyat.posts', ['channel' => $channel]);
+        return view('Front::channel.birinchi.posts', ['channel' => $channel]);
     }
 
 

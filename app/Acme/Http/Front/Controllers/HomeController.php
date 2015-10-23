@@ -24,8 +24,12 @@ class HomeController extends Controller
 
         $positionTop = \Model\Banner\ModelName::where('positionTop','=','1')->first();
         $positionRight = \Model\Banner\ModelName::where('positionRight','=','1')->first();
+        $positionCenter = \Model\Banner\ModelName::where('positionCenter','=','1')->first();
+        $positionBottom = \Model\Banner\ModelName::where('positionBottom','=','1')->first();
+        
 
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        
 
         $MediaCategories = \Model\MediaCategory\ModelName::get();
         $mediaPosts = \Model\Media\ModelName::get();
@@ -38,6 +42,9 @@ class HomeController extends Controller
             
             'positionTop'    => $positionTop,
             'positionRight'  => $positionRight,
+            'positionCenter' => $positionCenter,
+            'positionBottom' => $positionBottom,
+            
             
             'backgroundMain' => $backgroundMain,
             'mediaLast'      => $mediaLast,
@@ -135,7 +142,11 @@ class HomeController extends Controller
         $category_id = $category->id;
         $posts = \Model\Post\ModelName::where('category_id','=',$category_id)->get();
 
-        $mainBanner = \Model\Background\ModelName::where('name','=','main')->first();
+        $positionTop = \Model\Banner\ModelName::where('positionTop','=','1')->first();
+        $positionRight = \Model\Banner\ModelName::where('positionRight','=','1')->first();
+        $positionCenter = \Model\Banner\ModelName::where('positionCenter','=','1')->first();
+        $positionBottom = \Model\Banner\ModelName::where('positionBottom','=','1')->first();
+        
         $categories = \Model\Category\ModelName::all();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
@@ -143,7 +154,11 @@ class HomeController extends Controller
             'posts' => $posts,
             'category' => $category,
 
-            'mainBanner'   => $mainBanner,
+            'positionTop'    => $positionTop,
+            'positionRight'  => $positionRight,
+            'positionCenter' => $positionCenter,
+            'positionBottom' => $positionBottom,
+
             'categories'=>$categories,
             'backgroundMain' => $backgroundMain,
             ]);

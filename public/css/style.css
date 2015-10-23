@@ -1708,3 +1708,128 @@ header{
 
     text-align: center;
 }
+
+/* abakan edit */
+.radios .logo img{
+    height: 120px;
+    padding: 10px;
+
+    background: #ffffff;
+}
+.radios{
+    background: #eff3fa;
+}
+
+/* Persons page*/
+
+.ptitle {
+    position: relative;
+    padding: 10px 0px 0px 79px;
+    z-index: 0;
+    max-width: 730px;
+    left: -5px;
+}
+
+.ptitle:after {
+    content: no-close-quote;
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    bottom: 5px;
+    left: 15px;
+    background: #A1A3A7 repeat;
+    z-index: 1;
+    margin-bottom: 5px;
+}
+.ptitle h4 {
+    position: relative;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+    display: inline-block;
+    background: #FFF;
+    padding: 0px 8px 4px 8px;
+    z-index: 9;
+    text-transform: uppercase;
+    color: #29A2F8;
+}
+
+.persons .img-circle {
+    border-radius: 50%;
+    -webkit-border-radius: 50% !important;
+    -moz-border-radius: 50% !important;
+}
+
+.borderless tbody tr td, .borderless tbody tr th, .borderless thead tr th {
+    border: none;
+    font-size: 14px;
+}
+
+.bordertr tbody tr th {
+    width: 250px;
+}
+
+.border {
+    border-bottom: 1px dashed red;
+}
+
+.years {
+
+}
+
+.years th {
+    color: #29A2F8;
+    left: 0px;
+    /* top: -5px; */
+    position: relative;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    max-width: 61px;
+    text-align: center;
+}
+
+.workplace {
+
+}
+.workplace h3 {
+    display: initial;
+    font-size: 14px;
+}
+
+.table {
+    margin-bottom: 0px;
+    margin-left: 10px;
+    max-width: 730px;
+}
+
+.table h5 {
+    margin-top: 0px;
+    text-align: left;
+    margin-bottom: 0px;
+    text-transform: lowercase;
+    text-align: center;
+
+}
+
+.table>tbody>tr>td {
+    vertical-align: middle;
+    font-size: 14px;
+}
+.table-hover > tbody > tr:hover {
+    background-color: #E1E1E1;
+}
+.table>tbody>tr>td:hover {
+    background: #60C7FF ;
+    color: #121212;
+}
+
+.table > tbody > tr > th:hover {
+    background: #60C7FF ;
+    color:#303030;
+}
+.rightblock {
+    max-width: 93%;
+}
+
+/* Direktors page */

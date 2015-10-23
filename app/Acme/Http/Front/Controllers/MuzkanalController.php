@@ -22,5 +22,10 @@ class MuzkanalController extends Controller
         return view('Front::channel.muzkanal.posts', ['channel' => $channel]);
     }
 
+    public function radio()
+    {
+        return view('Front::channel.muzkanal.radio');
+    }
+
 
 }

@@ -27,17 +27,19 @@
                                         <li>
                                             <div class="pin">
                                                 <div class="pin-body">
-                                                    <a class="news-title" href="#"><h4>{{ $post->getTitle() }}</h4></a>
+                                                    <a class="news-title" href="{{ route('front.post', $post) }}"><h4>{{ $post->getTitle() }}</h4></a>
                                                     @if($post->isImage())
                                                     <div class="news-img">
-                                                        <a class="main-img" href="article.html"><img src="{{ asset($post->getFile()) }}" /></a>
+                                                        <a class="main-img" href="{{ route('front.post', $post) }}"><img src="{{ asset($post->getFile()) }}" /></a>
                                                     </div>
-                                                    @endif
+                                                    @else
                                                     
                                                     <p>
                                                         {!! $post->getContent()!!}
-                                                        <a href="{{ route('front.post', $post) }}" class="read-more">толугу менен</a>
+                                                        
                                                     </p>
+                                                    @endif
+                                                    <a href="{{ route('front.post', $post) }}" class="read-more">толугу менен</a>
                                                 </div>
                                                 <div class="pin-footer clearfix">
                                                     <h4 class="news-datetime pull-right">30.09.2015 16:05</h4>

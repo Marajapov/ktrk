@@ -1,7 +1,7 @@
 <?php
 namespace Front\Controllers;
 //use Illuminate\Http\Request;
-class MadaniyatController extends Controller
+class BaldarController extends Controller
 {
     public function __construct()
     {
@@ -10,11 +10,11 @@ class MadaniyatController extends Controller
 
     public function Home()
     {
-        $channel = \Model\Channel\ModelName::name('madaniyat')->first();
+        $channel = \Model\Channel\ModelName::name('baldar')->first();
 
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
-        return view('Front::channel.madaniyat.index', [
+        return view('Front::channel.baldar.index', [
             'channel' => $channel,
             'backgroundMain' => $backgroundMain,
             ]);
@@ -22,9 +22,9 @@ class MadaniyatController extends Controller
 
     public function Posts()
     {
-        $channel = \Model\Channel\ModelName::name('madaniyat')->first();
+        $channel = \Model\Channel\ModelName::name('baldar')->first();
 
-        return view('Front::channel.madaniyat.posts', ['channel' => $channel]);
+        return view('Front::channel.baldar.posts', ['channel' => $channel]);
     }
 
 

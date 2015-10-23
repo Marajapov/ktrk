@@ -45,7 +45,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        $post = Post::create($request->except('tag_list','thumbnail'));
+        $post = Post::create($request->except('tag_list','thumbnail','photo1','photo2','photo3','photo4','photo5','photo6','photo7','photo8','photo9','photo10'));
 
         $tags = $request->input('tag_list');
         foreach ($tags as $key => $name)
@@ -72,6 +72,166 @@ class PostController extends Controller
             // $storage->put($dir.'/'.$name, $file);
 
             $post->thumbnail = $dir.'/'.$name;
+            $post->save();
+            $file->move($dir, $name);
+        }
+
+        if($request->hasFile('photo1'))
+        {
+            $file = $request->file('photo1');
+            $dir  = 'img/photogalery';
+            $time = rand();
+            $name = $time.'.'.$file->getClientOriginalExtension();
+
+            $storage = \Storage::disk('public');
+            $storage->makeDirectory($dir);
+            // $storage->put($dir.'/'.$name, $file);
+
+            $post->photo1 = $dir.'/'.$name;
+            $post->save();
+            $file->move($dir, $name);
+        }
+
+        if($request->hasFile('photo2'))
+        {
+            $file = $request->file('photo2');
+            $dir  = 'img/photogalery';
+            $time = rand();
+            $name = $time.'.'.$file->getClientOriginalExtension();
+
+            $storage = \Storage::disk('public');
+            $storage->makeDirectory($dir);
+            // $storage->put($dir.'/'.$name, $file);
+
+            $post->photo2 = $dir.'/'.$name;
+            $post->save();
+            $file->move($dir, $name);
+        }
+
+        if($request->hasFile('photo3'))
+        {
+            $file = $request->file('photo3');
+            $dir  = 'img/photogalery';
+            $time = rand();
+            $name = $time.'.'.$file->getClientOriginalExtension();
+
+            $storage = \Storage::disk('public');
+            $storage->makeDirectory($dir);
+            // $storage->put($dir.'/'.$name, $file);
+
+            $post->photo3 = $dir.'/'.$name;
+            $post->save();
+            $file->move($dir, $name);
+        }
+
+        if($request->hasFile('photo4'))
+        {
+            $file = $request->file('photo4');
+            $dir  = 'img/photogalery';
+            $time = rand();
+            $name = $time.'.'.$file->getClientOriginalExtension();
+
+            $storage = \Storage::disk('public');
+            $storage->makeDirectory($dir);
+            // $storage->put($dir.'/'.$name, $file);
+
+            $post->photo4 = $dir.'/'.$name;
+            $post->save();
+            $file->move($dir, $name);
+        }
+
+        if($request->hasFile('photo5'))
+        {
+            $file = $request->file('photo5');
+            $dir  = 'img/photogalery';
+            $time = rand();
+            $name = $time.'.'.$file->getClientOriginalExtension();
+
+            $storage = \Storage::disk('public');
+            $storage->makeDirectory($dir);
+            // $storage->put($dir.'/'.$name, $file);
+
+            $post->photo5 = $dir.'/'.$name;
+            $post->save();
+            $file->move($dir, $name);
+        }
+
+        if($request->hasFile('photo6'))
+        {
+            $file = $request->file('photo6');
+            $dir  = 'img/photogalery';
+            $time = rand();
+            $name = $time.'.'.$file->getClientOriginalExtension();
+
+            $storage = \Storage::disk('public');
+            $storage->makeDirectory($dir);
+            // $storage->put($dir.'/'.$name, $file);
+
+            $post->photo6 = $dir.'/'.$name;
+            $post->save();
+            $file->move($dir, $name);
+        }
+
+        if($request->hasFile('photo7'))
+        {
+            $file = $request->file('photo7');
+            $dir  = 'img/photogalery';
+            $time = rand();
+            $name = $time.'.'.$file->getClientOriginalExtension();
+
+            $storage = \Storage::disk('public');
+            $storage->makeDirectory($dir);
+            // $storage->put($dir.'/'.$name, $file);
+
+            $post->photo7 = $dir.'/'.$name;
+            $post->save();
+            $file->move($dir, $name);
+        }
+
+        if($request->hasFile('photo8'))
+        {
+            $file = $request->file('photo8');
+            $dir  = 'img/photogalery';
+            $time = rand();
+            $name = $time.'.'.$file->getClientOriginalExtension();
+
+            $storage = \Storage::disk('public');
+            $storage->makeDirectory($dir);
+            // $storage->put($dir.'/'.$name, $file);
+
+            $post->photo8 = $dir.'/'.$name;
+            $post->save();
+            $file->move($dir, $name);
+        }
+
+        if($request->hasFile('photo9'))
+        {
+            $file = $request->file('photo9');
+            $dir  = 'img/photogalery';
+            $time = rand();
+            $name = $time.'.'.$file->getClientOriginalExtension();
+
+            $storage = \Storage::disk('public');
+            $storage->makeDirectory($dir);
+            // $storage->put($dir.'/'.$name, $file);
+
+            $post->photo9 = $dir.'/'.$name;
+            $post->save();
+            $file->move($dir, $name);
+        }
+
+        if($request->hasFile('photo10'))
+        {
+            $file = $request->file('photo10');
+            $dir  = 'img/photogalery';
+            $time = rand();
+            $name = $time.'.'.$file->getClientOriginalExtension();
+
+            $storage = \Storage::disk('public');
+            $storage->makeDirectory($dir);
+            // $storage->put($dir.'/'.$name, $file);
+
+            $post->photo10 = $dir.'/'.$name;
             $post->save();
             $file->move($dir, $name);
         }
@@ -113,7 +273,7 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        $post->update($request->except('tag_list','thumbnail'));
+        $post->update($request->except('tag_list','thumbnail','photo1','photo2','photo3','photo4','photo5','photo6','photo7','photo8','photo9','photo10'));
 
         $tags = $request->input('tag_list');
         foreach ($tags as $key => $name)
@@ -140,6 +300,166 @@ class PostController extends Controller
             $storage->makeDirectory($dir);
 
             $post->thumbnail = $dir.'/'.$name;
+            $post->save();
+            $file->move($dir, $name);
+        }
+
+        if($request->hasFile('photo1'))
+        {
+            $file = $request->file('photo1');
+            $dir  = 'img/photogalery';
+            $time = rand();
+            $name = $time.'.'.$file->getClientOriginalExtension();
+
+            $storage = \Storage::disk('public');
+            $storage->makeDirectory($dir);
+            // $storage->put($dir.'/'.$name, $file);
+
+            $post->photo1 = $dir.'/'.$name;
+            $post->save();
+            $file->move($dir, $name);
+        }
+
+        if($request->hasFile('photo2'))
+        {
+            $file = $request->file('photo2');
+            $dir  = 'img/photogalery';
+            $time = rand();
+            $name = $time.'.'.$file->getClientOriginalExtension();
+
+            $storage = \Storage::disk('public');
+            $storage->makeDirectory($dir);
+            // $storage->put($dir.'/'.$name, $file);
+
+            $post->photo2 = $dir.'/'.$name;
+            $post->save();
+            $file->move($dir, $name);
+        }
+
+        if($request->hasFile('photo3'))
+        {
+            $file = $request->file('photo3');
+            $dir  = 'img/photogalery';
+            $time = rand();
+            $name = $time.'.'.$file->getClientOriginalExtension();
+
+            $storage = \Storage::disk('public');
+            $storage->makeDirectory($dir);
+            // $storage->put($dir.'/'.$name, $file);
+
+            $post->photo3 = $dir.'/'.$name;
+            $post->save();
+            $file->move($dir, $name);
+        }
+
+        if($request->hasFile('photo4'))
+        {
+            $file = $request->file('photo4');
+            $dir  = 'img/photogalery';
+            $time = rand();
+            $name = $time.'.'.$file->getClientOriginalExtension();
+
+            $storage = \Storage::disk('public');
+            $storage->makeDirectory($dir);
+            // $storage->put($dir.'/'.$name, $file);
+
+            $post->photo4 = $dir.'/'.$name;
+            $post->save();
+            $file->move($dir, $name);
+        }
+
+        if($request->hasFile('photo5'))
+        {
+            $file = $request->file('photo5');
+            $dir  = 'img/photogalery';
+            $time = rand();
+            $name = $time.'.'.$file->getClientOriginalExtension();
+
+            $storage = \Storage::disk('public');
+            $storage->makeDirectory($dir);
+            // $storage->put($dir.'/'.$name, $file);
+
+            $post->photo5 = $dir.'/'.$name;
+            $post->save();
+            $file->move($dir, $name);
+        }
+
+        if($request->hasFile('photo6'))
+        {
+            $file = $request->file('photo6');
+            $dir  = 'img/photogalery';
+            $time = rand();
+            $name = $time.'.'.$file->getClientOriginalExtension();
+
+            $storage = \Storage::disk('public');
+            $storage->makeDirectory($dir);
+            // $storage->put($dir.'/'.$name, $file);
+
+            $post->photo6 = $dir.'/'.$name;
+            $post->save();
+            $file->move($dir, $name);
+        }
+
+        if($request->hasFile('photo7'))
+        {
+            $file = $request->file('photo7');
+            $dir  = 'img/photogalery';
+            $time = rand();
+            $name = $time.'.'.$file->getClientOriginalExtension();
+
+            $storage = \Storage::disk('public');
+            $storage->makeDirectory($dir);
+            // $storage->put($dir.'/'.$name, $file);
+
+            $post->photo7 = $dir.'/'.$name;
+            $post->save();
+            $file->move($dir, $name);
+        }
+
+        if($request->hasFile('photo8'))
+        {
+            $file = $request->file('photo8');
+            $dir  = 'img/photogalery';
+            $time = rand();
+            $name = $time.'.'.$file->getClientOriginalExtension();
+
+            $storage = \Storage::disk('public');
+            $storage->makeDirectory($dir);
+            // $storage->put($dir.'/'.$name, $file);
+
+            $post->photo8 = $dir.'/'.$name;
+            $post->save();
+            $file->move($dir, $name);
+        }
+
+        if($request->hasFile('photo9'))
+        {
+            $file = $request->file('photo9');
+            $dir  = 'img/photogalery';
+            $time = rand();
+            $name = $time.'.'.$file->getClientOriginalExtension();
+
+            $storage = \Storage::disk('public');
+            $storage->makeDirectory($dir);
+            // $storage->put($dir.'/'.$name, $file);
+
+            $post->photo9 = $dir.'/'.$name;
+            $post->save();
+            $file->move($dir, $name);
+        }
+
+        if($request->hasFile('photo10'))
+        {
+            $file = $request->file('photo10');
+            $dir  = 'img/photogalery';
+            $time = rand();
+            $name = $time.'.'.$file->getClientOriginalExtension();
+
+            $storage = \Storage::disk('public');
+            $storage->makeDirectory($dir);
+            // $storage->put($dir.'/'.$name, $file);
+
+            $post->photo10 = $dir.'/'.$name;
             $post->save();
             $file->move($dir, $name);
         }

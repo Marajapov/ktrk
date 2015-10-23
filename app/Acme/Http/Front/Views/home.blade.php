@@ -46,7 +46,7 @@
                         </div>
 
                         <a href="#" class="text-center ads">
-                            <img src="images/ads_1.jpg" alt=""/>
+                            <img src="@if(!empty($positionCenter->file)) {{ asset($positionCenter->file) }} @else images/ads_1.jpg @endif" alt=""/>
                         </a>
 
                         <div class="panel panel-default panel-carousel">
@@ -87,7 +87,7 @@
 
                                     </div>
 
-                                    <h4>Video title</h4>
+                                    <h4>Стратегия-2017</h4>
                                 </div>
 
                                 <div class="clearfix"></div>
@@ -97,11 +97,11 @@
                                 <div class="col-md-6 block main-video">
                                     <div class="embed-responsive embed-responsive-16by9">
 
-                                        <iframe class="embed-responsive-item" src="//www.youtube.com/embed/" allowfullscreen=""></iframe>
+                                        <iframe class="embed-responsive-item" src="//www.youtube.com/embed/KhJUlC4aJZM" allowfullscreen=""></iframe>
 
                                     </div>
 
-                                    <h4>Video title</h4>
+                                    <h4>Жеткиликтүү насыя</h4>
                                 </div>
 
                                 <div class="col-md-6 block main-video">
@@ -109,7 +109,7 @@
                                         <iframe class="embed-responsive-item" src="//www.youtube.com/embed/k2w8UII9cgI" allowfullscreen=""></iframe>
                                     </div>
 
-                                    <h4>Video title</h4>
+                                    <h4>Мандаттар</h4>
                                 </div>
 
                                 <footer>
@@ -172,17 +172,17 @@
                         <div class="panel-body">
                             <div id="slideshow">
                                 <div>
-                                    <a href="#">
+                                    <a href="{{ route('front.pages.director') }}">
                                         <img src="images/chief.jpg" alt="директор"/>
                                     </a>
                                 </div>
                                 <div>
-                                    <a href="#">
+                                    <a href="{{ route('front.pages.director') }}">
                                         <img src="images/chief_3.jpg">
                                     </a>
                                 </div>
                                 <div>
-                                    <a href="#">
+                                    <a href="{{ route('front.pages.director') }}">
                                         <img src="images/chief_2.jpg">
                                     </a>
                                 </div>
@@ -235,7 +235,7 @@
                     </div>
 
                     <a href="#" class="text-center ads">
-                        <img src="images/ads_1.jpg" alt=""/>
+                        <img src="@if(!empty($positionCenter->file)) {{ asset($positionCenter->file) }} @else images/ads_1.jpg @endif" alt=""/>
                     </a>
 
                     <div class="panel panel-default panel-carousel gallery">

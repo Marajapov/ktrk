@@ -48,5 +48,40 @@ class ChannelTableSeeder extends Seeder
             'display'   => 'Маданият',
             'published' => true,
         ]);
+
+        \Model\Channel\ModelName::create([
+            'id'        => 6,
+            'name'      => 'kyrgyzradio',
+            'display'   => 'Кыргыз Радио',
+            'published' => true,
+        ]);
+
+        \Model\Channel\ModelName::create([
+            'id'        => 7,
+            'name'      => 'birinchi',
+            'display'   => 'Биринчи Радио',
+            'published' => true,
+        ]);
+
+        \Model\Channel\ModelName::create([
+            'id'        => 8,
+            'name'      => 'dostuk',
+            'display'   => 'Достук',
+            'published' => true,
+        ]);
+
+        \Model\Channel\ModelName::create([
+            'id'        => 9,
+            'name'      => 'minkiyal',
+            'display'   => 'Мин Кыял',
+            'published' => true,
+        ]);
+
+        \Model\Channel\ModelName::create([
+            'id'        => 10,
+            'name'      => 'baldar',
+            'display'   => 'Балдар',
+            'published' => true,
+        ]);
     }
 }

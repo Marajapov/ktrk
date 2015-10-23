@@ -69,8 +69,71 @@
 
     <div class="col-xs-12">
         <div class="form-group">
-            <label class="control-label">Фотогалерея</label>
-            {!! Form::file('photo', null, ["class" => "form-control"]) !!}
+            <label class="control-label">Фото 1</label>
+            {!! Form::file('photo1', null, ["class" => "form-control"]) !!}
+        </div>
+    </div>
+
+    <div class="col-xs-12">
+        <div class="form-group">
+            <label class="control-label">Фото 2</label>
+            {!! Form::file('photo2', null, ["class" => "form-control"]) !!}
+        </div>
+    </div>
+
+    <div class="col-xs-12">
+        <div class="form-group">
+            <label class="control-label">Фото 3</label>
+            {!! Form::file('photo3', null, ["class" => "form-control"]) !!}
+        </div>
+    </div>
+
+    <div class="col-xs-12">
+        <div class="form-group">
+            <label class="control-label">Фото 4</label>
+            {!! Form::file('photo4', null, ["class" => "form-control"]) !!}
+        </div>
+    </div>
+
+    <div class="col-xs-12">
+        <div class="form-group">
+            <label class="control-label">Фото 5</label>
+            {!! Form::file('photo5', null, ["class" => "form-control"]) !!}
+        </div>
+    </div>
+
+    <div class="col-xs-12">
+        <div class="form-group">
+            <label class="control-label">Фото 6</label>
+            {!! Form::file('photo6', null, ["class" => "form-control"]) !!}
+        </div>
+    </div>
+
+    <div class="col-xs-12">
+        <div class="form-group">
+            <label class="control-label">Фото 7</label>
+            {!! Form::file('photo7', null, ["class" => "form-control"]) !!}
+        </div>
+    </div>
+
+    <div class="col-xs-12">
+        <div class="form-group">
+            <label class="control-label">Фото 8</label>
+            {!! Form::file('photo8', null, ["class" => "form-control"]) !!}
+        </div>
+    </div>
+
+    <div class="col-xs-12">
+        <div class="form-group">
+            <label class="control-label">Фото 9</label>
+            {!! Form::file('photo9', null, ["class" => "form-control"]) !!}
+        </div>
+    </div>
+
+    <div class="col-xs-12">
+        <div class="form-group">
+            <label class="control-label">Фото 10</label>
+            {!! Form::file('photo10', null, ["class" => "form-control"]) !!}
         </div>
     </div>
 

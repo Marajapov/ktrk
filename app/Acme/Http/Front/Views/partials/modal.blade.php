@@ -13,7 +13,7 @@
                                 <img src="images/channels/balastan.png" alt=""/>
                             </a>
                             <div class="options">
-                                <a class="link" href="#">Баластан</a>
+                                <a class="link" href="{{ route('balastan.home')}}">Баластан</a>
                                 <span class="divider"></span>
                                 <a class="live" href="{{ route('balastan.home')}}"><i class="fa fa-dot-circle-o"></i></a>
                             </div>
@@ -27,19 +27,19 @@
                            <div class="options">
                                <a class="link" href="{{ route('muzkanal.home')}}">Музыка</a>
                                <span class="divider"></span>
-                               <a class="live" href="#"><i class="fa fa-dot-circle-o"></i></a>
+                               <a class="live" href="{{ route('muzkanal.home')}}"><i class="fa fa-dot-circle-o"></i></a>
                            </div>
                        </div>
                     </div>
                     <div class="col-md-4 modal-block">
                         <div>
-                            <a href="#">
+                            <a href="{{ route('madaniyat.home')}}">
                                 <img src="images/channels/madaniyat.png" alt=""/>
                             </a>
                             <div class="options">
                                 <a class="link" href="{{ route('madaniyat.home')}}">Маданият</a>
                                 <span class="divider"></span>
-                                <a class="live" href="#"><i class="fa fa-dot-circle-o"></i></a>
+                                <a class="live" href="{{ route('madaniyat.home')}}"><i class="fa fa-dot-circle-o"></i></a>
                             </div>
                         </div>
                     </div>
@@ -58,27 +58,27 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="col-md-4 modal-block">
-                        <a href="#">
+                        <a href="{{ route('kyrgyzradio.home') }}">
                             <img src="images/channels/kg-radio.png" alt=""/>
                         </a>
                     </div>
                     <div class="col-md-4 modal-block">
-                        <a href="#">
+                        <a href="{{ route('birinchi.home') }}">
                             <img src="images/channels/1-radio.png" alt=""/>
                         </a>
                     </div>
                     <div class="col-md-4 modal-block">
-                        <a href="#">
+                        <a href="{{ route('dostuk.home') }}">
                             <img src="images/channels/dostuk.png" alt=""/>
                         </a>
                     </div>
                     <div class="col-md-4 modal-block">
-                        <a href="#">
+                        <a href="{{ route('minkiyal.home') }}">
                             <img src="images/channels/min-kiyal.png" alt=""/>
                         </a>
                     </div>
                     <div class="col-md-4 modal-block">
-                        <a href="#">
+                        <a href="{{ route('baldar.home') }}">
                             <img src="images/channels/baldar.png" alt=""/>
                         </a>
                     </div>

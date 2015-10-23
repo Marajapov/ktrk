@@ -3,7 +3,7 @@
 
 @section('content')
 
-{!! Form::model($post, ['route' => 'admin.post.store', 'enctype' => 'multipart/form-data']) !!}
+{!! Form::model($post, ['route' => 'admin.post.store', 'enctype' => 'multipart/form-data', 'multiple'=>true]) !!}
 @include('Admin::partials.forms.post', [$post, $tags])
 {!! Form::close() !!}
 

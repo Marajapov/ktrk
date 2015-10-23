@@ -18,35 +18,15 @@
                                         <a href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="100" data-close-others="false" role="button" aria-expanded="false">{{ $menu->getName() }}</a>
                                         <ul class="dropdown-menu" role="menu">
                                             @foreach($menu->submenus as $submenu)
-                                            <li><a href="#">{{ $submenu->getName() }}</a></li>
+                                            <li><a href="{{ $submenu->getUrl() }}">{{ $submenu->getName() }}</a></li>
                                             @endforeach
                                         </ul>
-                                    </li>
+                                    </li><li> / </li>
+                                    
                                     @else
-                                    <li><a href="{{ $menu->getUrl() }}">{{ $menu->getName() }}</a></li>
+                                    <li><a href="{{ $menu->getUrl() }}">{{ $menu->getName() }}</a></li> <li> / </li>
                                     @endif
-
-
                                 @endforeach
-                                    <li>
-                                        <a href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="100" data-close-others="false" role="button" aria-expanded="false">КТРК</a>
-                                        <ul class="dropdown-menu" role="menu">
-                                            <li><a href="#">Тарыхы</a></li>
-                                            <li><a href="#">Жетекчилер</a></li>
-                                            <li><a href="#">Стратегия</a></li>
-                                            <li><a href="#">Нормативдик база</a></li>
-                                            <li><a href="#">РРТЦ</a></li>
-                                            <li><a href="#">Отчет</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>/</li>
-                                    <li><a href="#">Видеопортал</a></li>
-                                    <li>/</li>
-                                    <li><a href="#">Телепрограмма</a></li>
-                                    <li>/</li>
-                                    <li><a href="#">Байкоочу кеңеш</a></li>
-                                    <li>/</li>
-                                    <li><a href="#">Редакциялык кеңешчи</a></li>
                             </ul>
                         </nav>
 

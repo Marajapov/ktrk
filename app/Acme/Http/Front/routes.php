@@ -22,6 +22,7 @@ Route::group(['domain' => 'muzkanal.ktrk.dev', 'prefix' => '/', 'namespace' => '
 
     Route::get('/', ['as' => 'muzkanal.home',   'uses' => 'HomeController@Muzkanal']);
     Route::get('/posts', ['as' => 'muzkanal.posts',   'uses' => 'MuzkanalController@posts']);
+    Route::get('/radio', ['as' => 'muzkanal.radio',   'uses' => 'MuzkanalController@radio']);
 
 });
 
@@ -46,6 +47,40 @@ Route::group(['domain' => 'ktrk.dev', 'prefix' => '/', 'namespace' => 'Front\Con
 
 });
 
+Route::group(['domain' => 'kyrgyzradio.ktrk.dev', 'prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
+
+    Route::get('/', ['as' => 'kyrgyzradio.home',   'uses' => 'KyrgyzradioController@Home']);
+    Route::get('/posts', ['as' => 'kyrgyzradio.posts',   'uses' => 'KyrgyzradioController@posts']);
+
+});
+
+Route::group(['domain' => 'birinchi.ktrk.dev', 'prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
+
+    Route::get('/', ['as' => 'birinchi.home',   'uses' => 'BirinchiController@Home']);
+    Route::get('/posts', ['as' => 'birinchi.posts',   'uses' => 'BirinchiController@posts']);
+
+});
+
+Route::group(['domain' => 'dostuk.ktrk.dev', 'prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
+
+    Route::get('/', ['as' => 'dostuk.home',   'uses' => 'DostukController@Home']);
+    Route::get('/posts', ['as' => 'dostuk.posts',   'uses' => 'DostukController@posts']);
+
+});
+
+Route::group(['domain' => 'minkiyal.ktrk.dev', 'prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
+
+    Route::get('/', ['as' => 'minkiyal.home',   'uses' => 'MinkiyalController@Home']);
+    Route::get('/posts', ['as' => 'minkiyal.posts',   'uses' => 'MinkiyalController@posts']);
+
+});
+
+Route::group(['domain' => 'baldar.ktrk.dev', 'prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
+
+    Route::get('/', ['as' => 'baldar.home',   'uses' => 'BaldarController@Home']);
+    Route::get('/posts', ['as' => 'baldar.posts',   'uses' => 'BaldarController@posts']);
+
+});
 
 
 Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
@@ -59,5 +94,9 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
     Route::get('search', ['as' => 'front.search', 'uses' => 'HomeController@searchResult']);
     Route::get('category/{category}', ['as' => 'front.category', 'uses' => 'HomeController@categoryPage']);
     Route::get('media/{media}', ['as' => 'front.media', 'uses' => 'HomeController@mediaPage']);
+
+    Route::get('history', ['as' => 'front.history', 'uses' => 'PageController@historyPage']);
+    Route::get('director', ['as' => 'front.pages.director', 'uses' => 'PageController@directorPage']);
+    
 
 });

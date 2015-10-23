@@ -84,4 +84,53 @@ class ModelName extends Model
     {
         return $this->thumbnail;
     }
+
+    public function getPhoto1()
+    {
+        return $this->photo1;
+    }
+
+    public function getPhoto2()
+    {
+        return $this->photo2;
+    }
+
+    public function getPhoto3()
+    {
+        return $this->photo3;
+    }
+
+    public function getPhoto4()
+    {
+        return $this->photo4;
+    }
+
+    public function getPhoto5()
+    {
+        return $this->photo5;
+    }
+
+    public function getPhoto6()
+    {
+        return $this->photo6;
+    }
+
+    public function getPhoto7()
+    {
+        return $this->photo7;
+    }
+
+    public function getPhoto8()
+    {
+        return $this->photo8;
+    }
+
+    public function getPhoto9()
+    {
+        return $this->photo9;
+    }
+    public function getPhoto10()
+    {
+        return $this->photo10;
+    }
 }

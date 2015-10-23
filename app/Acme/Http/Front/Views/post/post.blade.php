@@ -26,25 +26,46 @@
                                         </p>
 
                                         <div class="carousel-post">
-                                            <div class="col-md-4"><a href="#"><img src="{{ asset('images/gallery/001.jpg') }}" alt=""/></a></div>
-                                            <div class="col-md-4"><a href="#"><img src="{{ asset('images/gallery/002.jpg') }}" alt=""/></a></div>
-                                            <div class="col-md-4"><a href="#"><img src="{{ asset('images/gallery/003.jpg') }}" alt=""/></a></div>
-                                            <div class="col-md-4"><a href="#"><img src="{{ asset('images/gallery/004.jpg') }}" alt=""/></a></div>
-                                            <div class="col-md-4"><a href="#"><img src="{{ asset('images/gallery/005.jpg') }}" alt=""/></a></div>
-                                            <div class="col-md-4"><a href="#"><img src="{{ asset('images/gallery/006.jpg') }}" alt=""/></a></div>
-                                            <div class="col-md-4"><a href="#"><img src="{{ asset('images/gallery/007.jpg') }}" alt=""/></a></div>
-                                            <div class="col-md-4"><a href="#"><img src="{{ asset('images/gallery/008.jpg') }}" alt=""/></a></div>
-                                            <div class="col-md-4"><a href="#"><img src="{{ asset('images/gallery/009.jpg') }}" alt=""/></a></div>
-                                            <div class="col-md-4"><a href="#"><img src="{{ asset('images/gallery/010.jpg') }}" alt=""/></a></div>
-                                            <div class="col-md-4"><a href="#"><img src="{{ asset('images/gallery/011.jpg') }}" alt=""/></a></div>
-                                            <div class="col-md-4"><a href="#"><img src="{{ asset('images/gallery/012.jpg') }}" alt=""/></a></div>
-                                        </div>
+                                            @if(!empty($post->getPhoto1()))
+                                            <div class="col-md-4"><a href="#"><img src="{{ asset($post->getPhoto1()) }}" alt=""/></a></div>
+                                            @endif
 
-                                        @if(!empty($post->getFile()))
-                                        <div class="carousel-post">
-                                            <div class="col-md-4"><img src="{{ asset($post->getFile()) }}" alt=""/></div>
+                                            @if(!empty($post->getPhoto2()))
+                                            <div class="col-md-4"><a href="#"><img src="{{ asset($post->getPhoto2()) }}" alt=""/></a></div>
+                                            @endif
+
+                                            @if(!empty($post->getPhoto3()))
+                                            <div class="col-md-4"><a href="#"><img src="{{ asset($post->getPhoto3()) }}" alt=""/></a></div>
+                                            @endif
+
+                                            @if(!empty($post->getPhoto4()))
+                                            <div class="col-md-4"><a href="#"><img src="{{ asset($post->getPhoto4()) }}" alt=""/></a></div>
+                                            @endif
+
+                                            @if(!empty($post->getPhoto5()))
+                                            <div class="col-md-4"><a href="#"><img src="{{ asset($post->getPhoto5()) }}" alt=""/></a></div>
+                                            @endif
+
+                                            @if(!empty($post->getPhoto6()))
+                                            <div class="col-md-4"><a href="#"><img src="{{ asset($post->getPhoto6()) }}" alt=""/></a></div>
+                                            @endif
+
+                                            @if(!empty($post->getPhoto7()))
+                                            <div class="col-md-4"><a href="#"><img src="{{ asset($post->getPhoto7()) }}" alt=""/></a></div>
+                                            @endif
+
+                                            @if(!empty($post->getPhoto8()))
+                                            <div class="col-md-4"><a href="#"><img src="{{ asset($post->getPhoto8()) }}" alt=""/></a></div>
+                                            @endif
+
+                                            @if(!empty($post->getPhoto9()))
+                                            <div class="col-md-4"><a href="#"><img src="{{ asset($post->getPhoto9()) }}" alt=""/></a></div>
+                                            @endif
+
+                                            @if(!empty($post->getPhoto10()))
+                                            <div class="col-md-4"><a href="#"><img src="{{ asset($post->getPhoto10()) }}" alt=""/></a></div>
+                                            @endif
                                         </div>
-                                        @endif
                                     </div>
 
                                     <footer>                                        
