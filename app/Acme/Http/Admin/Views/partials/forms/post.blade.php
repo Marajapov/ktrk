@@ -38,6 +38,15 @@
         </div>
     </div>
 
+
+    <div class="col-sm-2">
+        <div class="form-group">
+            <label class="control-label">Анонс</label>
+            {!! Form::hidden('announcement', 0) !!}
+            {!! Form::checkbox('announcement', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
+        </div>
+    </div>
+
     <div class="col-sm-2">
         <div class="form-group">
             <label class="control-label">Главная</label>

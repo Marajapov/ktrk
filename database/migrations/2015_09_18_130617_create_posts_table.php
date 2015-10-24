@@ -34,6 +34,7 @@ class CreatePostsTable extends Migration
             $table->string('photo10');
             $table->enum('type', ['page', 'post'])->nullable()->default('post');
             $table->boolean('published')->nullable()->default(false);
+            $table->boolean('announcement')->nullable()->default(false);
             $table->boolean('general')->nullable()->default(false);
             $table->smallInteger('viewed')->default(0);
             $table->timestamps();

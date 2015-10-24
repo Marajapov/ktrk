@@ -26,6 +26,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'access:admin', 'namespace' =
 
     Route::resource('background', 'BackgroundController');
     Route::resource('mediaCategory', 'MediaCategoryController');
+    
+
 
 
     Route::resource('menu', 'MenuController');
