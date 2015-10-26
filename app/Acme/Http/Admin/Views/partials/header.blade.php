@@ -1,51 +1,29 @@
-<nav class="navbar navbar-default">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="{{ route('admin.home') }}"><span class="glyphicon glyphicon-home"></span></a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li class="btn btn-default" style="padding:0;"><a href="{{ route('admin.photoParent.index') }}" target="">Фотогалерея</a></li>
-                <li class="btn btn-default" style="padding:0;"><a href="{{ route('admin.photoChild.index') }}" target="">Загрузить фото</a></li>
 
-                <li class="btn btn-default" style="padding:0;"><a href="{{ route('admin.channel.index') }}" target="">Каналы</a></li>
-                <li class="btn btn-default" style="padding:0;"><a href="{{ route('admin.post.index') }}" target="">Новости</a></li>
-                <li class="btn btn-default" style="padding:0;"><a href="{{ route('admin.category.index') }}" target="">Категории новостей</a></li>
-                <li class="btn btn-default" style="padding:0;"><a href="{{ route('admin.media.index') }}" target="">Медия новости</a></li>
-                <li class="btn btn-default" style="padding:0;"><a href="{{ route('admin.mediaCategory.index') }}" target="">Категории медия</a></li>
-                <li class="btn btn-default" style="padding:0;"><a href="{{ route('admin.banner.index') }}" target="">Баннер</a></li>
-                <li class="btn btn-default" style="padding:0;"><a href="{{ route('admin.page.index') }}" target="">Стараницы</a></li>
-                <li class="btn btn-default" style="padding:0;"><a href="{{ route('admin.menu.index') }}" target="">Меню</a></li>
-                <li class="btn btn-default" style="padding:0;"><a href="{{ route('admin.user.index') }}" target="">Пользователи</a></li>
-                <li class="btn btn-default" style="padding:0;"><a href="{{ route('admin.background.index') }}" target="">Фон</a></li>
+<!-- sidebar menu -->
+<div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+   <div class="menu_section">
+  <div class="divider"></div>
+       <ul class="nav side-menu">
+           <li><a href="{{ route('admin.home') }}"><i class="fa fa-home"></i> Главная </a></li>
+           <li><a href="{{ route('admin.photoParent.index') }}"><i class="fa fa-image"></i> Фотогалерея </a></li>
+           <li><a href="{{ route('admin.photoChild.index') }}"><i class="fa fa-download"></i>Загрузить фото</a></li>
+           <li><a href="{{ route('admin.channel.index') }}"><i class="fa fa-television"></i>Каналы</a></li>
+           <li><a href="{{ route('admin.post.index') }}"><i class="fa fa-file-text"></i>Новости</a></li>
+           <li><a href="{{ route('admin.category.index') }}"><i class="fa fa-list-ul"></i>Категории новостей</a></li>
+           <li><a href="{{ route('admin.media.index') }}"><i class="fa fa-file"></i>Медия новости</a></li>
+           <li><a href="{{ route('admin.mediaCategory.index') }}"><i class="fa fa-bars"></i>Категории медия</a></li>
+           <li><a href="{{ route('admin.banner.index') }}"><i class="fa fa-caret-square-o-right"></i>Баннер</a></li>
+           <li><a href="{{ route('admin.page.index') }}"><i class="fa fa-columns"></i>Страницы</a></li>
+           <li><a href="{{ route('admin.menu.index') }}"><i class="fa fa-chevron-circle-down"></i>Меню</a></li>
+           <li><a href="{{ route('admin.user.index') }}"><i class="fa fa-user"></i>Пользователи</a></li>
+           <li><a href="{{ route('admin.background.index') }}"><i class="fa fa-backward"></i>Фон</a></li>
 
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown btn btn-default" style="padding:0;">
+  
+    </ul>
+</div>   
+</div>
 
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                        {{ auth()->user()->getName() }} <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="{{ route('front.home') }}" target="">Homepage</a></li>
-                        <li><a href="#">Настройки</a></li>
-                        <li class="divider"></li>
-                        <li><a href="javascript:document.getElementById('logout-form').submit()"><i class="fa fa-power-off"></i> &nbsp; Выход</a></li>
-                    </ul>
-                </li>
-
-            </ul>
-        </div>
-    </div>
-</nav>
-
+<script src="{{ asset('js/admin/bootstrap.min.js') }}"></script>
 
 {!! Form::open(['route' => 'front.logout', 'id' => 'logout-form']) !!}
 {!! Form::close() !!}
-
