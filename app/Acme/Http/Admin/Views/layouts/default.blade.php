@@ -75,16 +75,16 @@
                            <span class=" fa fa-arrow-down"></span>
                        </a>
                        <ul class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
-                        <li><a href="javascript:;"><i class="fa fa-user-secret"></i> &nbsp; Профиль</a>
+                        <li><a href="javascript:;"><i class="fa fa-user-secret"></i> &nbsp; Кабинет</a>
                         </li>
                         <li>
-                            <a href="javascript:;"><i class="fa fa-cog"></i> &nbsp; Настройки </a>
+                            <a href="javascript:;"><i class="fa fa-cog"></i> &nbsp; Оңдоолор </a>
                         </li>
                         <li>
                             <a href="javascript:;"><i class="fa fa-info"></i> &nbsp; Жардам</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="javascript:document.getElementById('logout-form').submit()"><i class="fa fa-power-off"></i> &nbsp; Выход</a></li>
+                        <li><a href="javascript:document.getElementById('logout-form').submit()"><i class="fa fa-power-off"></i> &nbsp; Чыгуу</a></li>
                     </ul>
                 </li>                    
 
