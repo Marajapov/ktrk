@@ -6,7 +6,6 @@
     <div class="container main-wrapper">
         <div class="row">
             <section class="content clearfix">
-Testestesr
                 <div class="clearfix">
                     <div class="top-left-block col-md-8">
                         <div class="panel panel-default panel-top-news">
