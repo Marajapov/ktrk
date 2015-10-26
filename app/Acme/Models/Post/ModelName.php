@@ -133,4 +133,9 @@ class ModelName extends Model
     {
         return $this->photo10;
     }
+
+    public function getParentId()
+    {
+        return $this->parentId;
+    }
 }

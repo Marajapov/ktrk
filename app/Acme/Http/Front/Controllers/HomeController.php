@@ -82,12 +82,51 @@ class HomeController extends Controller
     public function Post(\Model\Post\ModelName $post)
     {
         $post->incrementViewed();
+
         $categories = \Model\Category\ModelName::all();
         $positionTop = \Model\Banner\ModelName::where('published','=',true,'and','positionTop','=','1')->first();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
+
+        if($post->parentId != null)
+        {
+            $parentId = $post->parentId;
+            $parentId = \Model\PhotoParent\ModelName::where('id','=',$parentId)->first();
+            $photoChilds = \Model\PhotoChild\ModelName::where('parentId','=',$parentId->id)->get();
+            
+        }else{
+            $parentId = null;
+            $photoChilds = null;
+        }
+
+        if($post->related1 != null){
+            $related1Post = \Model\Post\ModelName::where('id','=',$post->related1)->first();
+        }else{
+            $related1Post = null;
+        }
+
+        if($post->related2 != null){
+            $related2Post = \Model\Post\ModelName::where('id','=',$post->related2)->first();
+        }else{
+            $related2Post = null;
+        }
+
+        if($post->related3 != null){
+            $related3Post = \Model\Post\ModelName::where('id','=',$post->related3)->first();
+        }else{
+            $related3Post = null;
+        }
+
         return view('Front::post.post',[
             'post' => $post,
+
+            'related1Post' => $related1Post,
+            'related2Post' => $related2Post,
+            'related3Post' => $related3Post,
+
+            'parentId'=> $parentId,
+            'photoChilds'=> $photoChilds,
+
             'categories'=>$categories,
             'positionTop'    => $positionTop,
             'backgroundMain' => $backgroundMain,
@@ -103,14 +142,18 @@ class HomeController extends Controller
     }
 
     public function Posts()
-    {
+    {        
+        $perPage = 10;
+        $postAll = \Model\Post\ModelName::orderBy('id', 'desc')->published()->paginate($perPage);
         $channel = \Model\Channel\ModelName::general();
-        
+
         $categories = \Model\Category\ModelName::all();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
         return view('Front::post.posts',[
-            'channel' => $channel, 
+            'perPage'=> $perPage,
+            'postAll' => $postAll,
+            'channel' => $channel,
             'categories'=>$categories,
             'backgroundMain' => $backgroundMain,
             ]);

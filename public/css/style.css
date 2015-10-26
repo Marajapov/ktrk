@@ -19,6 +19,18 @@
     font-style: normal;
 }
 @font-face {
+    font-family: 'Roboto Regular';
+    src: url('fonts/roboto/roboto-regular.eot');
+    src: url('fonts/roboto/roboto-regular.eot?#iefix') format('embedded-opentype'),
+         url('fonts/roboto/roboto-regular.woff2') format('woff2'),
+         url('fonts/roboto/roboto-regular.woff') format('woff'),
+         url('fonts/roboto/roboto-regular.ttf') format('truetype'),
+         url('fonts/roboto/roboto-regular.svg#robotoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
   font-family: 'FontAwesome';
   src: url('fonts/fontawesome-webfont.eot?v=4.4.0');
   src: url('fonts/fontawesome-webfont.eot?#iefix&v=4.4.0') format('embedded-opentype'), url('fonts/fontawesome-webfont.woff2?v=4.4.0') format('woff2'), url('fonts/fontawesome-webfont.woff?v=4.4.0') format('woff'), url('fonts/fontawesome-webfont.ttf?v=4.4.0') format('truetype'), url('fonts/fontawesome-webfont.svg?v=4.4.0#fontawesomeregular') format('svg');
@@ -40,7 +52,7 @@
 html{
 }
 body {
-    font-family: 'Open Sans', Times New Roman, 'Helvetica Neue', Helvetica, sans-serif;
+    font-family: 'Roboto Regular', 'Helvetica Neue', Helvetica, sans-serif;
     font-size: 14px;
     /*letter-spacing: 0.5px;*/
 
@@ -242,18 +254,6 @@ img{
 #liveModal .modal-content{
     border: 0;
 }
-a.rtmp {
-    display: block;
-    width: 640px;
-    height: 360px;
-    margin: 0 auto;
-    text-align: center;
-}
-a.rtmp img{
-    height: 70px;
-    margin-top: 145px;
-    width: auto;
-}
 
 
 /* Panels */
@@ -353,6 +353,13 @@ header{
 .top-ads{
     margin: 0 0 5px;
 }
+.top-right-block .ads{
+    margin: 40px 0 35px;
+}
+.bottom-right-block .ads{
+    margin: 40px 0;
+}
+
 .top-header{
     position: relative;
 }
@@ -1169,8 +1176,10 @@ header{
 }
 .gallery .slick-slide{
     background: none;
+    height: 170px;
 }
 .gallery .slick-slide img{
+    height: 170px;
     min-width: 227px;
 }
 .gallery .slick-slide span{
@@ -1832,4 +1841,81 @@ header{
     max-width: 93%;
 }
 
-/* Direktors page */
+/*Материалы по теме*/
+.panel-article aside{
+    display: inline;
+    float: left;
+    margin-right: 20px;
+    padding: 10px;
+    width: 320px;
+}
+.topics-box{
+    border-top: 3px solid #237dac;
+    border-left: 2px solid #F1F4F9;
+    border-right: 2px solid #F1F4F9;
+    border-bottom: 2px solid #F1F4F9;
+}
+.topics-box h2{
+    margin: 0;
+    padding-left: 10px;
+
+    background: #F1F4F9;
+
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 40px;
+    text-transform: uppercase;
+}
+.topics{
+    padding: 10px;
+
+    line-height: 20px;
+}
+.topic{
+    overflow: hidden;
+    border-bottom: 2px solid #F1F4F9;
+    padding-bottom: 14px;
+    padding-top: 15px;
+}
+.topic:first-child{
+    padding-top: 0;
+}
+.topic:last-child{
+    padding-bottom: 0;
+    border: 0;
+}
+.t-date{
+    margin-bottom: 5px;
+
+    font-size: 12px;
+}
+.t-date .time{
+    margin-right: 5px;
+
+    color: #237dac;
+
+    font-weight: bold;
+}
+.t-thumb{
+    float: left;
+    height: 64px;
+}
+.t-thumb img{
+    margin-right: 10px;
+    width: auto;
+}
+.t-info{
+    display: inline;
+    float: right;
+    width: 160px;
+}
+.t-info h4{
+    margin: 0 0 5px;
+
+    font-size: 16px;
+    line-height: 1;
+}
+.t-info .short{
+    font-size: 14px;
+    line-height: 18px;
+}

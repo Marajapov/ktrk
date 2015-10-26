@@ -1,42 +1,69 @@
 @extends('Front::layouts.default')
-@section('title', $mediaPost->getName())
+@section('title', 'Все видео')
 
 @section('content')
         <div class="container main-wrapper">
 
             <div class="row">
-
-            <section class="content clearfix">
+                <section class="content clearfix">
 
             <div class="clearfix">
-                <div class="top-left-block col-md-9">
-                    <div class="panel panel-default panel-video">
+                <div class="top-left-block col-md-12">
+                    <div class="panel panel-default panel-videos">
                         <div class="panel-heading">
                             <h3 class="panel-title">
-                                <a href="#">Видеопортал</a>
-                                <span class="divider"><i class="fa fa-circle"></i></span>
-                                <a href=""><span class="ctg">{{ $mediaPost->videoType}}</span></a>
+                                Видеопортал
                             </h3>
                         </div>
                         <div class="panel-body">
 
-                            <!-- Tab panes -->
-                            <div class="tab-content">
-                                <div role="tabpanel" class="clearfix" id="all-videos">
-                                    <div class="row">
-                                        <article class="col-md-12" data-cat="all-videos">
-                                            <h4 class="show-title">
-                                                <a href="#">Замана</a>
-                                                <i class="fa fa-circle"></i>
-                                                <span>{{ $mediaPost->getName()}}</span>
-                                            </h4>
-                                            <div class="embed-responsive embed-responsive-16by9 show-video">
-                                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ $mediaPost->getUrl()}}"></iframe>
-                                            </div>
-                                        </article>
+                                <ul class="nav nav-tabs videos-block">
+                                @foreach($MediaCategories as $key => $MediaCategory)
+                                    <li role="presentation" class="@if($key == 0) active @endif">
+                                        <a href="{{ route('front.media.rtype', $MediaCategory->getVideoType()) }}">{{ $MediaCategory->getName() }}</a>
+                                    </li>
+                                @endforeach
+                                </ul>
+
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="active clearfix" id="all-videos">
+                                        <div class="row">
+                                        @foreach($mediaAll as $media)
+                                            <article class="col-md-3" data-cat="all-videos">
+                                                <a href="#" class="img">
+                                                    <img src="http://img.youtube.com/vi/{{ $media->getUrl()}}/mqdefault.jpg" alt=""/>
+                                                    <h4><i class="fa fa-play-circle-o"></i>Замана</h4>
+                                                </a>
+                                                <a href="#" class="title">
+                                                    <h4>{{ $media->getName() }} </h4>
+                                                </a>
+                                            </article>
+                                        @endforeach
+                                        </div>
+                                        <button class="loadMore btn btn-default">Показать еще</button>
                                     </div>
                                 </div>
-                            </div>
+
+                                <nav class="clearfix hidden">
+                                    <ul class="pagination">
+                                        <li class="hidden">
+                                            <a href="#" aria-label="Previous">
+                                                <span aria-hidden="true">&laquo;</span>
+                                            </a>
+                                        </li>
+                                        <li class="active"><a href="#">1</a></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">3</a></li>
+                                        <li><a href="#">4</a></li>
+                                        <li><a href="#">5</a></li>
+                                        <li>
+                                            <a href="#" aria-label="Next">
+                                                <span aria-hidden="true">&raquo;</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
 
                         </div>
                     </div>
@@ -45,33 +72,9 @@
                         <img src="images/ads_1.jpg" alt=""/>
                     </a>
 
-                    <div class="panel panel-default panel-related-videos">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">
-                                Тектеш чыгаруулар
-                            </h3>
-                        </div>
-                        <div class="panel-body" id="relatedVideos">
-                            <div class="col-md-4 block">
-                                <a href="#" class="video-thumb">
-                                    <img src="http://img.youtube.com/vi/kPG5DRKB0cQ/mqdefault.jpg" alt=""/>
-                                    <i class="fa fa-play-circle-o"></i>
-                                </a>
-                                <a href="#" class="video-title">
-                                    <h4>Название новости Название новости Название новости Название новости Название новости Название новости </h4>
-                                </a>
-                            </div>
-
-
-                            <div class="col-md-12">
-                                <button class="loadMore btn btn-default">Показать еще</button>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
 
-                @include('Front::partials.leftCategories')
+    
 
             </div>
 
@@ -85,16 +88,16 @@
 @section('footerScript')
 <script>
     $(function(){
-        $("#relatedVideos .block").slice(0, 12).show(); // select the first ten
-        $("#relatedVideos .loadMore").click(function(e){ // click event for load more
+        $("#all-videos article").slice(0, 12).show(); // select the first ten
+        $("#all-videos .loadMore").click(function(e){ // click event for load more
             e.preventDefault();
-            $("#relatedVideos .block:hidden").slice(0, 12).show(); // select next 10 hidden divs and show them
-            if($("#relatedVideos .block:hidden").length == 0){ // check if any hidden divs still exist
-                $("#relatedVideos .loadMore").hide();
+            $("#all-videos article:hidden").slice(0, 8).show(); // select next 10 hidden divs and show them
+            if($("#all-videos article:hidden").length == 0){ // check if any hidden divs still exist
+                $("#all-videos .loadMore").hide();
             }
         });
-        if($("#relatedVideos .block:hidden").length == 0){ // check if any hidden divs still exist
-            $("#relatedVideos .loadMore").hide();
+        if($("#all-videos article:hidden").length == 0){ // check if any hidden divs still exist
+            $("#all-videos .loadMore").hide();
         }
     });
 </script>

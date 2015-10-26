@@ -21,6 +21,7 @@ class CreatePostsTable extends Migration
             $table->integer('category_id')->nullable()->unsigned()->default(null);
             $table->integer('owner_id')->nullable()->unsigned()->default(null);
             $table->text('description')->nullable();
+            $table->integer('parentId')->nullable();
             $table->string('thumbnail');
             $table->string('photo1');
             $table->string('photo2');
@@ -35,6 +36,9 @@ class CreatePostsTable extends Migration
             $table->enum('type', ['page', 'post'])->nullable()->default('post');
             $table->boolean('published')->nullable()->default(false);
             $table->boolean('announcement')->nullable()->default(false);
+            $table->integer('related1')->nullable()->unsigned()->default(null);
+            $table->integer('related2')->nullable()->unsigned()->default(null);
+            $table->integer('related3')->nullable()->unsigned()->default(null);
             $table->boolean('general')->nullable()->default(false);
             $table->smallInteger('viewed')->default(0);
             $table->timestamps();
