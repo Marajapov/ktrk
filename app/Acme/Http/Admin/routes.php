@@ -27,6 +27,13 @@ Route::group(['prefix' => 'admin', 'middleware' => 'access:admin', 'namespace' =
     Route::resource('background', 'BackgroundController');
     Route::resource('mediaCategory', 'MediaCategoryController');
 
+    Route::resource('photoParent','PhotoParentController');
+    Route::resource('photoChild','PhotoChildController');
+
+    Route::get('photoChild/create/{photoParent}', 'PhotoChildController@create');
+    
+
+
 
     Route::resource('menu', 'MenuController');
     Route::get ('menu/code/{code}', ['as' => 'admin.menu.code', 'uses' => 'MenuController@code']);

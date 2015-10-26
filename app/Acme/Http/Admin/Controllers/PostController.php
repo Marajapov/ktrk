@@ -34,7 +34,14 @@ class PostController extends Controller
     public function create()
     {
         $tags = \Model\Tag\Tag::lists('name', 'id');
-        return view('Admin::post.create', ['post' => new Post, 'tags' => $tags]);
+
+        $relatedPosts = \Model\Post\ModelName::lists('title', 'id')->toArray();
+        return view('Admin::post.create', [
+            'post' => new Post, 
+            'tags' => $tags,
+            'relatedPosts' => $relatedPosts,
+
+            ]);
     }
 
     /**

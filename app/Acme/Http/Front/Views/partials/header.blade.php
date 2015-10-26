@@ -35,8 +35,7 @@
                             <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                             <li><a href="#"><i class="fa fa-odnoklassniki"></i></a></li>
                             <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href="#"><i class="fa fa-vk"></i></a></li>
+                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
                         </ul>
 
                         <form class="form-search" action="{{ route('front.search') }}" method="get">

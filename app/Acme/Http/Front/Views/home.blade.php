@@ -26,7 +26,10 @@
                                         </div>                                    
                                         <p class="description clearfix">
                                            <a href="{{ route('front.category', $post->category) }}">{{ $post->category('category_id')->first()->title }}</a>
-                                           <span><i class="fa fa-play-circle-o"></i><i class="fa fa-picture-o"></i></span>
+                                            <span>
+                                                @if(empty($post->getPhoto2())) @else <i class="fa fa-play-circle-o"></i> @endif
+                                                @if(empty($post->getFile()) && empty($post->getPhoto1())) @else <i class="fa fa-picture-o"></i> @endif
+                                            </span>
                                         </p>
                                         <a class="news-title" href="{{ route('front.post', $post) }}">
                                             <h2>{!! $result = substr($post->getTitle(),0,75) !!}...</h2>                                            
@@ -146,7 +149,10 @@
                                     </div>
                                     <div class="news-adds clearfix">
                                         <a href="{{ route('front.category', $post->category) }}" class="">{{ $post->category('category_id')->first()->title }}</a>
-                                        <span class="news-file"><i class="fa fa-play-circle-o"></i></span>
+                                        <span class="news-file">
+                                            @if(empty($post->getPhoto2())) @else <i class="fa fa-play-circle-o"></i> @endif
+                                            @if(empty($post->getFile()) && empty($post->getPhoto1())) @else <i class="fa fa-picture-o"></i> @endif
+                                        </span>
 
                                         <span class="news-time pull-right">{{ $post->getViewed() }}, {{ $post->getCreated() }}</span>
                                     </div>
@@ -225,7 +231,7 @@
                             <div class="clearfix"></div>
 
                             <footer>
-                                <a href="#">
+                                <a href="{{ route('front.media.index') }}">
                                     <span>Архив <i class="fa fa-arrow-circle-right"></i></span>
                                 </a>
                             </footer>

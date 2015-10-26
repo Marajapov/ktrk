@@ -4,7 +4,7 @@
 @section('content')
 
 <div>
-    <a href="{{ route('admin.page.create') }}" class="btn btn-primary">create</a>
+    <a href="{{ route('admin.page.create') }}" class="btn btn-primary">Создать</a>
 </div>
 <hr>
 

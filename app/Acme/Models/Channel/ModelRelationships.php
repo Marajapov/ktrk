@@ -10,6 +10,7 @@ trait ModelRelationships
 
     public function posts()
     {
+        $perPage = 10;
         return $this->hasMany(\Model\Post\ModelName::class, 'channel_id')->orderBy('id', 'desc')->published();
     }
 

@@ -54,21 +54,27 @@
 
                                 <nav>
                                     <ul class="pagination">
-                                        <li class="hidden">
-                                            <a href="#" aria-label="Previous">
-                                                <span aria-hidden="true">&laquo;</span>
-                                            </a>
-                                        </li>
-                                        <li class="active"><a href="#">1</a></li>
-                                        <li><a href="#">2</a></li>
-                                        <li><a href="#">3</a></li>
-                                        <li><a href="#">4</a></li>
-                                        <li><a href="#">5</a></li>
-                                        <li>
-                                            <a href="#" aria-label="Next">
-                                                <span aria-hidden="true">&raquo;</span>
-                                            </a>
-                                        </li>
+                                        
+<li>
+    <a href="{{ route('front.general', ['page' => 1]) }}" class="btn btn-default @if($postAll->currentPage() == 1) disabled @endif">Начало</a>
+</li>
+<li>
+    <a href="{{ $postAll->previousPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span></a>
+</li>
+<li>
+    <a href="{{ $postAll->nextPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-right"></span></a>
+</li>
+
+@for($i = 0, $j = 1; $i < $postAll->total(); $i+=$perPage)
+<li>
+    <a href="{{ route('front.general', ['page' => $j]) }}" class="active btn btn-default @if($postAll->currentPage() == $j) disabled @endif">{{ $j++ }}</a>
+</li>
+@endfor
+
+<li>
+    <a href="{{ route('front.general', ['page' => ceil($postAll->total()/$perPage)]) }}" class="btn btn-default @if($postAll->currentPage() == ceil($postAll->total()/$perPage)) disabled @endif">Конец</a>
+</li>
+
                                     </ul>
                                 </nav>
 

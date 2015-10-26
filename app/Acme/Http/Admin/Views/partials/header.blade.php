@@ -11,6 +11,9 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
+                <li class="btn btn-default" style="padding:0;"><a href="{{ route('admin.photoParent.index') }}" target="">Фотогалерея</a></li>
+                <li class="btn btn-default" style="padding:0;"><a href="{{ route('admin.photoChild.index') }}" target="">Загрузить фото</a></li>
+
                 <li class="btn btn-default" style="padding:0;"><a href="{{ route('admin.channel.index') }}" target="">Каналы</a></li>
                 <li class="btn btn-default" style="padding:0;"><a href="{{ route('admin.post.index') }}" target="">Новости</a></li>
                 <li class="btn btn-default" style="padding:0;"><a href="{{ route('admin.category.index') }}" target="">Категории новостей</a></li>

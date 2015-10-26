@@ -21,52 +21,69 @@
                                             {{ $post->getTitle() }}
                                             <span><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
                                         </h4>
+
+                                            @if(!empty($post->related1))
+                                                <div class="related1">
+                                                    <a href="{{ route('front.post', $post->related1) }}">{{ $related1Post->getName() }}</a>        
+                                                </div>
+                                            @endif
+
+                                            @if(!empty($post->related1))
+                                                <div class="related2">
+                                                    <a href="{{ route('front.post', $post->related2) }}">{{ $related2Post->getName() }}</a>        
+                                                </div>
+                                            @endif
+
+                                            @if(!empty($post->related3))
+                                                <div class="related3">
+                                                    <a href="{{ route('front.post', $post->related3) }}">{{ $related3Post->getName() }}</a>        
+                                                </div>
+                                            @endif
                                         <p>
                                             {!! $post->getContent() !!}
+
                                         </p>
 
                                         <div class="carousel-post">
-                                            @if(!empty($post->getPhoto1()))
-                                            <div class="col-md-4"><a href="#"><img src="{{ asset($post->getPhoto1()) }}" alt=""/></a></div>
-                                            @endif
-
-                                            @if(!empty($post->getPhoto2()))
-                                            <div class="col-md-4"><a href="#"><img src="{{ asset($post->getPhoto2()) }}" alt=""/></a></div>
-                                            @endif
-
-                                            @if(!empty($post->getPhoto3()))
-                                            <div class="col-md-4"><a href="#"><img src="{{ asset($post->getPhoto3()) }}" alt=""/></a></div>
-                                            @endif
-
-                                            @if(!empty($post->getPhoto4()))
-                                            <div class="col-md-4"><a href="#"><img src="{{ asset($post->getPhoto4()) }}" alt=""/></a></div>
-                                            @endif
-
-                                            @if(!empty($post->getPhoto5()))
-                                            <div class="col-md-4"><a href="#"><img src="{{ asset($post->getPhoto5()) }}" alt=""/></a></div>
-                                            @endif
-
-                                            @if(!empty($post->getPhoto6()))
-                                            <div class="col-md-4"><a href="#"><img src="{{ asset($post->getPhoto6()) }}" alt=""/></a></div>
-                                            @endif
-
-                                            @if(!empty($post->getPhoto7()))
-                                            <div class="col-md-4"><a href="#"><img src="{{ asset($post->getPhoto7()) }}" alt=""/></a></div>
-                                            @endif
-
-                                            @if(!empty($post->getPhoto8()))
-                                            <div class="col-md-4"><a href="#"><img src="{{ asset($post->getPhoto8()) }}" alt=""/></a></div>
-                                            @endif
-
-                                            @if(!empty($post->getPhoto9()))
-                                            <div class="col-md-4"><a href="#"><img src="{{ asset($post->getPhoto9()) }}" alt=""/></a></div>
-                                            @endif
-
-                                            @if(!empty($post->getPhoto10()))
-                                            <div class="col-md-4"><a href="#"><img src="{{ asset($post->getPhoto10()) }}" alt=""/></a></div>
+                                            @if(!empty($parentId))
+                                                @foreach($photoChilds as $photoChild)
+                                                <div class="col-md-4">
+                                                    <a href="#">
+                                                        <img src="{{ asset($photoChild->getFile()) }}" alt=""/>
+                                                    </a>
+                                                </div>
+                                                @endforeach
                                             @endif
                                         </div>
                                     </div>
+
+                                     <aside>
+                                        <div class="topics-box">
+                                            <h2>Материалы по теме</h2>
+                                            <div class="topics">
+                                                <div class="topic clearfix">
+                                                    <div class="t-date"><span class="date"><span class="time">14:29</span> 22 июля 2015</span></div>
+                                                    <a class="t-thumb" href="http://lenta.ru/articles/2015/07/22/gaidar/">
+                                                        <img alt="Михаил Саакашвили" src="http://icdn.lenta.ru/images/2015/07/21/20/20150721204846199/tabloid_5a8978c051d2e41f475126dc569058da.jpg">
+                                                    </a>
+                                                    <div class="t-info">
+                                                        <h4><a class="js-dh" href="http://lenta.ru/articles/2015/07/22/gaidar/">Старожилам здесь не место</a></h4>
+                                                        <div class="short">Зачем Михаил Саакашвили назначил своим замом Марию Гайдар</div>
+                                                    </div>
+                                                </div>
+                                                <div class="topic clearfix">
+                                                    <div class="t-date"><span class="date"><span class="time">14:29</span> 22 июля 2015</span></div>
+                                                    <a class="t-thumb" href="http://lenta.ru/articles/2015/07/22/gaidar/">
+                                                        <img alt="Михаил Саакашвили" src="http://icdn.lenta.ru/images/2015/07/21/20/20150721204846199/tabloid_5a8978c051d2e41f475126dc569058da.jpg">
+                                                    </a>
+                                                    <div class="t-info">
+                                                        <h4><a class="js-dh" href="http://lenta.ru/articles/2015/07/22/gaidar/">Старожилам здесь не место</a></h4>
+                                                        <div class="short">Зачем Михаил Саакашвили назначил своим замом Марию Гайдар</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </aside>
 
                                     <footer>                                        
                                         <a href="#">

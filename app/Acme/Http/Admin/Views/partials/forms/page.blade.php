@@ -4,21 +4,21 @@
 <div class="row">
     <div class="col-sm-6">
         <div class="form-group">
-            <label class="control-label">channel</label>
+            <label class="control-label">Канал</label>
             {!! Form::select('channel_id', \Model\Channel\ModelName::lists('display', 'id')->toArray(), null, ["class" => "form-control", "required" => true, "title" => ""]) !!}
         </div>
     </div>
 
     <div class="col-sm-8">
         <div class="form-group">
-            <label class="control-label">название</label>
+            <label class="control-label">Название</label>
             {!! Form::text('name', null, ["class" => "form-control", "required" => true, "title" => ""]) !!}
         </div>
     </div>
 
     <div class="col-sm-2">
         <div class="form-group">
-            <label class="control-label">опубликовать</label>
+            <label class="control-label">Опубликовать</label>
             {!! Form::hidden('published', 0) !!}
             {!! Form::checkbox('published', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
         </div>
@@ -26,7 +26,7 @@
 
     <div class="col-sm-2">
         <div class="form-group">
-            <label class="control-label">general</label>
+            <label class="control-label">Главная страница</label>
             {!! Form::hidden('general', 0) !!}
             {!! Form::checkbox('general', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
         </div>
@@ -34,7 +34,7 @@
 
     <div class="col-xs-12">
         <div class="form-group">
-            <label class="control-label">текст</label>
+            <label class="control-label">Текст</label>
             {!! Form::textarea('content', null, ["class" => "form-control tinymce-container"]) !!}
         </div>
     </div>

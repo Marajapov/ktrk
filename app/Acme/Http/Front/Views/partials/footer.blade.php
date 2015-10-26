@@ -27,14 +27,14 @@
 <script src="{{ asset('js/bootstrap.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/bootstrap-hover-dropdown.js') }}"></script>
 
-<script src="{{ asset('js/masonry.pkgd.min.js') }}"></script>
+<!--<script src="{{ asset('js/masonry.pkgd.min.js') }}"></script>
 <script src="{{ asset('js/imagesloaded.js') }}"></script>
 <script src="{{ asset('js/classie.js') }}"></script>
 
 <script src="{{ asset('js/AnimOnScroll.js') }}"></script>
 <script>
     new AnimOnScroll( document.getElementById( 'grid' ), {} );
-</script>
+</script> -->
 
 <!--Menu concept-->
 <!--<script src="js/polyfills.js"></script>-->
@@ -114,30 +114,36 @@
     });
 </script>
 
-<script type="text/javascript" src="http://releases.flowplayer.org/js/flowplayer-3.2.13.min.js"></script>
-<script>
-    $f("a.rtmp", "http://releases.flowplayer.org/swf/flowplayer-3.2.18.swf", {
 
-        // configure both players to use rtmp plugin
-        clip: {
-            provider: 'rtmp'
+<script src="{{ asset('jwplayer/jwplayer.js') }}"></script>
+<script>jwplayer.key="tmEO2SU8NzqLBoHr2Vq6nV13XCyfo8xbdiCb/Q==";</script>
+
+<script type="text/javascript">
+
+    var playerInstance = jwplayer("player");
+
+//    $('#playerPlay').click(function(){
+//        playerInstance.play();
+//    });
+    $('#playerStop').click(function(){
+        playerInstance.stop();
+    });
+
+    playerInstance.setup({
+        playlist: [{
+            image: "{{ asset('images/live_bg.png') }}",
+            sources: [{
+                file: "rtmp://212.112.96.233:1936/live/ktrk.stream"
+            }]
+        }],
+        width: "640",
+        height: "360",
+        aspectratio: "16:9",
+        primary: "flash",
+        skin: {
+            name: "five"
         },
-
-        // here is our rtpm plugin configuration
-        plugins: {
-            rtmp: {
-
-                // use latest RTMP plugin release
-                url: "flowplayer.rtmp-3.2.13.swf",
-
-            //
-            //netConnectionUrl defines where the streams are found
-            //this is what we have in our HDDN account
-            //
-            netConnectionUrl: 'rtmp://s3b78u0kbtx79q.cloudfront.net/cfx/st'
-    }
-    }
-
+        stretching: "exactfit"
     });
 </script>
 

@@ -93,7 +93,12 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
     Route::get('media', ['as' => 'front.media',     'uses' => 'HomeController@getMedia']);
     Route::get('search', ['as' => 'front.search', 'uses' => 'HomeController@searchResult']);
     Route::get('category/{category}', ['as' => 'front.category', 'uses' => 'HomeController@categoryPage']);
-    Route::get('media/{media}', ['as' => 'front.media', 'uses' => 'HomeController@mediaPage']);
+    
+    Route::get('media', ['as' => 'front.media.index', 'uses' => 'MediaController@mediaIndex']); // List of videos
+    Route::get('media/{rtype}', ['as' => 'front.media.rtype', 'uses' => 'MediaController@mediaRtype']); // List of videos 2
+    Route::get('media/{media}', ['as' => 'front.media', 'uses' => 'MediaController@mediaShow']); // One video
+    
+
 
     Route::get('history', ['as' => 'front.history', 'uses' => 'PageController@historyPage']);
     Route::get('director', ['as' => 'front.pages.director', 'uses' => 'PageController@directorPage']);

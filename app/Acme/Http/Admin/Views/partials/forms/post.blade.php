@@ -16,13 +16,6 @@
         </div>
     </div>
 
-    {{-- <div class="col-sm-8">
-        <div class="form-group">
-            <label class="control-label">название</label>
-            {!! Form::text('name', null, ["class" => "form-control", "required" => true, "title" => ""]) !!}
-        </div>
-    </div> --}}
-
     <div class="col-sm-8">
         <div class="form-group">
             <label class="control-label">Теги</label>
@@ -35,6 +28,15 @@
             <label class="control-label">Опубликовать</label>
             {!! Form::hidden('published', 0) !!}
             {!! Form::checkbox('published', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
+        </div>
+    </div>
+
+
+    <div class="col-sm-2">
+        <div class="form-group">
+            <label class="control-label">Анонс</label>
+            {!! Form::hidden('announcement', 0) !!}
+            {!! Form::checkbox('announcement', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
         </div>
     </div>
 
@@ -67,73 +69,32 @@
         </div>
     </div>
 
-    <div class="col-xs-12">
+    <div class="col-sm-10">
         <div class="form-group">
-            <label class="control-label">Фото 1</label>
-            {!! Form::file('photo1', null, ["class" => "form-control"]) !!}
+            <label class="control-label">Выберите фотогалерею</label>
+            {!! Form::select('parentId', \Model\PhotoParent\ModelName::lists('name', 'id')->toArray(), null, ["class" => "form-control", "title" => ""]) !!}
         </div>
     </div>
 
-    <div class="col-xs-12">
+     <div class="col-sm-6">
         <div class="form-group">
-            <label class="control-label">Фото 2</label>
-            {!! Form::file('photo2', null, ["class" => "form-control"]) !!}
+            <label class="control-label">Материалы к теме 1</label>
+            
+            {!! Form::select('related1', array('default'=>'--Выберите--') + $relatedPosts,null, ["class" => "form-control", "title" => ""]) !!}
         </div>
     </div>
 
-    <div class="col-xs-12">
+    <div class="col-sm-6">
         <div class="form-group">
-            <label class="control-label">Фото 3</label>
-            {!! Form::file('photo3', null, ["class" => "form-control"]) !!}
+            <label class="control-label">Материалы к теме 2</label>
+            {!! Form::select('related2', array('default'=>'--Выберите--') + $relatedPosts,null, ["class" => "form-control", "title" => ""]) !!}
         </div>
     </div>
 
-    <div class="col-xs-12">
+    <div class="col-sm-6">
         <div class="form-group">
-            <label class="control-label">Фото 4</label>
-            {!! Form::file('photo4', null, ["class" => "form-control"]) !!}
-        </div>
-    </div>
-
-    <div class="col-xs-12">
-        <div class="form-group">
-            <label class="control-label">Фото 5</label>
-            {!! Form::file('photo5', null, ["class" => "form-control"]) !!}
-        </div>
-    </div>
-
-    <div class="col-xs-12">
-        <div class="form-group">
-            <label class="control-label">Фото 6</label>
-            {!! Form::file('photo6', null, ["class" => "form-control"]) !!}
-        </div>
-    </div>
-
-    <div class="col-xs-12">
-        <div class="form-group">
-            <label class="control-label">Фото 7</label>
-            {!! Form::file('photo7', null, ["class" => "form-control"]) !!}
-        </div>
-    </div>
-
-    <div class="col-xs-12">
-        <div class="form-group">
-            <label class="control-label">Фото 8</label>
-            {!! Form::file('photo8', null, ["class" => "form-control"]) !!}
-        </div>
-    </div>
-
-    <div class="col-xs-12">
-        <div class="form-group">
-            <label class="control-label">Фото 9</label>
-            {!! Form::file('photo9', null, ["class" => "form-control"]) !!}
-        </div>
-    </div>
-
-    <div class="col-xs-12">
-        <div class="form-group">
-            <label class="control-label">Фото 10</label>
-            {!! Form::file('photo10', null, ["class" => "form-control"]) !!}
+            <label class="control-label">Материалы к теме 3</label>
+            {!! Form::select('related3', array('default'=>'--Выберите--') + $relatedPosts, null, ["class" => "form-control", "title" => ""]) !!}
         </div>
     </div>
 
