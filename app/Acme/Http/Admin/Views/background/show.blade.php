@@ -4,7 +4,7 @@
 @section('content')
 
 <div>
-    {!! Form::open(['route' => ['admin.background.destroy', $background], 'method' => 'DELETE', 'onsubmit' => 'return confirm("Вы уверены?")']) !!}
+    {!! Form::open(['route' => ['admin.background.destroy', $background], 'method' => 'DELETE', 'onsubmit' => 'return confirm("Өчүрүүгө макулсузбу?")']) !!}
     <a href="{{ route('admin.background.edit', $background) }}" class="btn btn-primary">edit</a>
     <button class="btn btn-danger" type="submit">delete</button>
     {!! Form::close() !!}

@@ -4,7 +4,7 @@
         <div class="col-sm-6">
             <div class="form-group">
                 <label class="control-label">Канал</label>
-                {!! Form::select('channel_id', \Model\Channel\ModelName::lists('display', 'id')->toArray(), null, ["class" => "form-control", "required" => true, "title" => ""]) !!}
+                {!! Form::select('channel_id', \Model\Channel\ModelName::lists('display', 'id')->toArray(), null, ["class" => "select2_group form-control", "required" => true, "title" => ""]) !!}
             </div>
         </div>
 
@@ -31,18 +31,44 @@
             <div class="form-group">
                 <label class="control-label">Жайгаштыруу</label>
                 {!! Form::hidden('published', 0) !!}
-                {!! Form::checkbox('published', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
+                {!! Form::checkbox('published', 1, null, ["class" => "checkbox-danger form-control", "style" => "width: 34px; margin: 0"]) !!}
             </div>
         </div>
 
-        <div class="col-xs-12">
+<!--         <div class="col-xs-12">
             <div class="form-group">
                 <label class="control-label">Файл</label>
                 {!! Form::file('file', null, ["class" => "form-control", "required" => true]) !!}
             </div>
+        </div> -->
+
+        <div class="col-xs-12">
+            <div class="fileinput fileinput-new" data-provides="fileinput">
+                 <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
+                <div>
+                    <span class="btn btn-default btn-file"><span class="fileinput-new">Сүрөт тандаңыз</span><span class="fileinput-exists">Өзгөртүү</span>
+                    {!! Form::file('file', null, ["class" => "form-control", "required" => true]) !!}              
+                </div>
+            </div>
         </div>
+</div>
 
-    </div>
+<button type="submit" class="btn btn-primary">сактоо</button>
+<a href="{{ route('admin.background.index') }}" class="btn btn-default">артка</a>
 
-    <button type="submit" class="btn btn-primary">сактоо</button>
-    <a href="{{ route('admin.background.index') }}" class="btn btn-default">артка</a>
+ <!-- select2 -->
+        <script>
+            $(document).ready(function () {
+                $(".select2_single").select2({
+                    placeholder: "Select a state",
+                    allowClear: true
+                });
+                $(".select2_group").select2({});
+                $(".select2_multiple").select2({
+                    maximumSelectionLength: 4,
+                    placeholder: "With Max Selection limit 4",
+                    allowClear: true
+                });
+            });
+        </script>
+        <!-- /select2 -->

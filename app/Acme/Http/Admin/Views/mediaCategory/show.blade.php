@@ -14,9 +14,9 @@
         <div class="panel-body">
             <div class="col-md-5"><h3>{{ $mediaCategory->getName() }}</h3> ({{ $mediaCategory->getVideoType() }})</div>
             <div class="col-md-5">
-                {!! Form::open(['route' => ['admin.mediaCategory.destroy', $mediaCategory], 'method' => 'DELETE', 'onsubmit' => 'return confirm("Өчүргөнгө макулсузбу")']) !!}
-                <a href="{{ route('admin.mediaCategory.edit', $mediaCategory) }}" class="btn btn-primary">Өзгөртүү</a>
-                <button class="btn btn-danger" type="submit">Өчүрүү</button>
+                {!! Form::open(['route' => ['admin.mediaCategory.destroy', $mediaCategory], 'method' => 'DELETE', 'onsubmit' => 'return confirm("Өчүрүүгө макулсузбу")']) !!}
+                <a href="{{ route('admin.mediaCategory.edit', $mediaCategory) }}" class="btn btn-labeled btn-success"><span class="btn-label"><i class="glyphicon glyphicon-cog"></i></span>Өзгөртүү</a>
+                <button class="btn btn-labeled btn-danger" type="submit"><span class="btn-label"><i class="glyphicon glyphicon-remove"></i></span>Өчүрүү</button>
                 {!! Form::close() !!}
             </div>
         </div>

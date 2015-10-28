@@ -11,8 +11,8 @@
         <div class="clearfix"></div>
     </div>      
     <div class="panel-body">
-    <div class="col-md-6">        
-        
+        <div class="col-md-6">        
+
             <h3>{{ $media->getName() }}</h3>
             <span class="pull-left"><span class="glyphicon glyphicon-eye-open"></span> &nbsp;&nbsp;{{ $media->getViewed() }}</span>
             <hr>
@@ -21,17 +21,16 @@
             @else
             <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ $media->getUrl() }}?rel=0" frameborder="0" allowfullscreen></iframe>
             @endif
-       
-        {!! Form::open(['route' => ['admin.media.destroy', $media], 'method' => 'DELETE', 'onsubmit' => 'return confirm("Өчүрүүгө макулсузбу?")']) !!}
-        <a href="{{ route('admin.media.edit', $media) }}" class="btn btn-primary">өзгөртүү</a>
-        <button class="btn btn-danger" type="submit">өчүрүү</button>
-        {!! Form::close() !!}
+
+            {!! Form::open(['route' => ['admin.media.destroy', $media], 'method' => 'DELETE', 'onsubmit' => 'return confirm("Өчүрүүгө макулсузбу?")']) !!}
+            <a href="{{ route('admin.media.edit', $media) }}" class="btn btn-labeled btn-success"><span class="btn-label"><i class="glyphicon glyphicon-cog"></i></span>Өзгөртүү</a>
+            <button class="btn btn-labeled btn-danger" type="submit"><span class="btn-label"><i class="glyphicon glyphicon-remove"></i></span>Өчүрүү</button>
+
+            {!! Form::close() !!}
+        </div>
     </div>
-</div>
 </div>
 </div>
 </div>
 
 @stop
-
-

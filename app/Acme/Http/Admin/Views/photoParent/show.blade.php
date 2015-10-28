@@ -8,14 +8,14 @@
     <h3 class="panel-title">Информация</h3>
 
     <div class="col-md-12">
-        <h2><span class="label label-default"></span>{{ $photoParent->getName() }}</h2>
+      <h2><span class="label label-default"></span>{{ $photoParent->getName() }}</h2>
     </div>
 
     <div class="col-md-4">
-        {!! Form::open(['route' => ['admin.photoParent.destroy', $photoParent], 'method' => 'DELETE', 'onsubmit' => 'return confirm("Вы уверены?")']) !!}
-        <a href="{{ route('admin.photoParent.edit', $photoParent) }}" class="btn btn-primary">Изменить</a>
-        <button class="btn btn-danger" type="submit">Удалить</button>
-        {!! Form::close() !!}
+      {!! Form::open(['route' => ['admin.photoParent.destroy', $photoParent], 'method' => 'DELETE', 'onsubmit' => 'return confirm("Өчүрүүгө макулсузбу?")']) !!}
+      <a href="{{ route('admin.photoParent.edit', $photoParent) }}" class="btn btn-labeled btn-success"><span class="btn-label"><i class="glyphicon glyphicon-cog"></i></span>Өзгөртүү</a>
+      <button class="btn btn-labeled btn-danger" type="submit"><span class="btn-label"><i class="glyphicon glyphicon-remove"></i></span>Өчүрүү</button>
+      {!! Form::close() !!}
     </div>
   </div>
   <div class="col-md-12"><hr></div>

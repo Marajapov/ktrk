@@ -6,7 +6,7 @@
     <div class="col-sm-6">
         <div class="form-group">
             <label class="control-label">Канал</label>
-            {!! Form::select('channel_id', \Model\Channel\ModelName::lists('display', 'id')->toArray(), null, ["class" => "form-control", "required" => true, "title" => ""]) !!}
+            {!! Form::select('channel_id', \Model\Channel\ModelName::lists('display', 'id')->toArray(), null, ["class" => "select2_group form-control", "required" => true, "title" => ""]) !!}
         </div>
     </div>
 
@@ -70,3 +70,21 @@
         image_advtab: true ,
     });
 </script>
+
+
+ <!-- select2 -->
+        <script>
+            $(document).ready(function () {
+                $(".select2_single").select2({
+                    placeholder: "Select a state",
+                    allowClear: true
+                });
+                $(".select2_group").select2({});
+                $(".select2_multiple").select2({
+                    maximumSelectionLength: 4,
+                    placeholder: "With Max Selection limit 4",
+                    allowClear: true
+                });
+            });
+        </script>
+        <!-- /select2 -->

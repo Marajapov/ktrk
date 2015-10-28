@@ -20,3 +20,34 @@
 </div>
 @stop
 
+@section('styles')
+<link rel="stylesheet" href="{{ asset('css/admin/select/select2.min.css') }}"/>
+@stop
+
+@section('scripts')
+ <script src="{{ asset('js/admin/select/select2.full.js') }}"></script>
+ <script type="text/javascript">
+    $('#tag_list').select2({
+        ajax: {
+            url: "/api/tags",
+            dataType: 'json',
+            delay: 250,
+            data: function (params) {
+                return {
+                    tag: params.term
+                };
+            },
+            processResults: function (data) {
+                return {
+                    results: data
+                };
+            },
+            cache: true
+        },
+        placeholder: 'Выберите тег',
+        tags: true,
+        tokenSeparators: [',', ' '],
+        minimumInputLength: 1,
+    });
+</script>
+@stop

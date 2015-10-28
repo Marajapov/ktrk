@@ -20,9 +20,9 @@
             </p>
         </div>
         <div class="col-md-6 col-sm-6 col-xs-12">
-            {!! Form::open(['route' => ['admin.user.destroy', $user], 'method' => 'DELETE', 'onsubmit' => 'return confirm("Чын элеби?")']) !!}
-            <a href="{{ route('admin.user.edit', $user) }}" class="btn btn-primary">Өзгөртүү</a>
-            <button class="btn btn-danger" type="submit">Өчүрүү</button>
+            {!! Form::open(['route' => ['admin.user.destroy', $user], 'method' => 'DELETE', 'onsubmit' => 'return confirm("Өчүрүүгө макулсузбу?")']) !!}
+            <a href="{{ route('admin.user.edit', $user) }}" class="btn btn-labeled btn-success"><span class="btn-label"><i class="glyphicon glyphicon-cog"></i></span>Өзгөртүү</a>
+            <button class="btn btn-labeled btn-danger" type="submit"><span class="btn-label"><i class="glyphicon glyphicon-remove"></i></span>Өчүрүү</button>
             {!! Form::close() !!}
         </div>
     </div>
@@ -35,4 +35,4 @@
 
 
 
-
+      

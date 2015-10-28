@@ -3,9 +3,21 @@
 
 @section('content')
 
-{!! Form::model($photoParent, ['route' => ['admin.photoParent.update', $photoParent], 'method' => 'PUT', 'enctype' => 'multipart/form-data']) !!}
-@include('Admin::partials.forms.photoParent', $photoParent)
-{!! Form::close() !!}
+<div class="row modals">
+	<div class="col-md-12 col-sm-12 col-xs-12">
+		<div class="x_panel">
+			<div class="x_title">
+				<h2>Сүрөт галересяын өзгөртүү</h2>
+				<div class="clearfix"></div>
+			</div>
+			<div class="x_content">
+				{!! Form::model($photoParent, ['route' => ['admin.photoParent.update', $photoParent], 'method' => 'PUT', 'enctype' => 'multipart/form-data']) !!}
+				@include('Admin::partials.forms.photoParent', $photoParent)
+				{!! Form::close() !!}
+			</div>
+		</div>
+	</div>
+</div>
 
 @stop
 
