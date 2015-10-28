@@ -3,10 +3,22 @@
 
 @section('content')
 
-{!! Form::model($post, ['route' => 'admin.post.store', 'enctype' => 'multipart/form-data', 'multiple'=>true]) !!}
-@include('Admin::partials.forms.post', [$post, $tags])
-{!! Form::close() !!}
+<div class="row modals">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+            <h2>Жаңы макала жазуу</h2>
 
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                {!! Form::model($post, ['route' => 'admin.post.store', 'enctype' => 'multipart/form-data', 'multiple'=>true]) !!}
+                @include('Admin::partials.forms.post', [$post, $tags])
+                {!! Form::close() !!}
+            </div>
+        </div>
+    </div>
+</div>
 @stop
 
 @section('styles')

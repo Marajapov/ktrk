@@ -2,50 +2,74 @@
 @section('title', "Admin panel")
 
 @section('content')
-<h1 style="text-align:center">Улуу урматтуу депутат!</h1>
-<h3 style="text-align:center; color:rgb(152, 65, 65);">Бүгүнкү күн боюнча отчет менен таанышсаңыз болот:</h3>
-<div class="row top_tiles">
-	<div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
-		<div class="tile-stats">
-			<div class="icon"><i class="fa fa-caret-square-o-right"></i>
-			</div>
-			<div class="count">258 жолу</div>
+<div class="row modals">
+	<div class="col-md-12 col-sm-12 col-xs-12">
+		<div class="x_panel">
+			<div class="x_title">
+                <h3 style="text-align:center; color:rgb(152, 65, 65);">Бүгүнкү күндүн отчету менен таанышсаңыз болот:</h3>
 
-			<h3>Видеолоруңузду көрүштү</h3>
-			<p>Акыркы 24 саатта.</p>
-		</div>
-	</div>
-	<div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
-		<div class="tile-stats">
-			<div class="icon"><i class="fa fa-comments-o"></i>
-			</div>
-			<div class="count">410 жолу</div>
+                <div class="clearfix"></div>
+            </div>
 
-			<h3>Нааразычылыгын билдиришти</h3>
-			<p>Акыркы 24 саатта.</p>
-		</div>
-	</div>
-	<div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
-		<div class="tile-stats">
-			<div class="icon"><i class="fa fa-sort-amount-desc"></i>
-			</div>
-			<div class="count">12</div>
+            <!-- top tiles -->
+            <div class="row">
+                <div class="col-md-2 col-sm-4 col-xs-4 tile_stats_count">
+                    <div class="left"></div>
+                    <div class="right">
+                        <span class="count_top"><i class="fa fa-user"></i> Колдонуучулар</span>
+                        <div class="count">2500</div>
+                        <span class="count_bottom"><i class="green"></i> Акыркы 24 сатта</span>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-4 col-xs-4 tile_stats_count">
+                    <div class="left"></div>
+                    <div class="right">
+                        <span class="count_top"><i class="fa fa-clock-o"></i> Сайтка киришти</span>
+                        <div class="count">4258</div>
+                        <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i></i> Акыркы 24 сатта</span>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-4 col-xs-4 tile_stats_count">
+                    <div class="left"></div>
+                    <div class="right">
+                        <span class="count_top"><i class="fa fa-user"></i> Видео көрүлдү</span>
+                        <div class="count green">1230</div>
+                        <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i></i> Акыркы 24 сатта</span>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-4 col-xs-4 tile_stats_count">
+                    <div class="left"></div>
+                    <div class="right">
+                        <span class="count_top"><i class="fa fa-user"></i> Макала окулду</span>
+                        <div class="count">4,567</div>
+                        <span class="count_bottom"><i class="red"><i class="fa fa-sort-desc"></i></i> Акыркы 24 сатта</span>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-4 col-xs-4 tile_stats_count">
+                    <div class="left"></div>
+                    <div class="right">
+                        <span class="count_top"><i class="fa fa-user"></i> Пикир калтырышты</span>
+                        <div class="count">31</div>
+                        <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i> </i> Акыркы 24 сатта</span>
+                    </div>
+                </div>
+                <div class=" col-md-2 col-sm-4 col-xs-4 tile_stats_count">
+                    <div class="left"></div>
+                    <div class="right">
+                        <span class="count_top"><i class="fa fa-user"></i> Жаңы макалалар</span>
+                        <div class="count">25</div>
+                        <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i> </i> Акыркы 24 сатта</span>
+                    </div>
+                </div>
 
-			<h3>Жаңы тарапташтарыңыз</h3>
-			<p>Акыркы 24 саатта.</p>
-		</div>
-	</div>
-	<div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
-		<div class="tile-stats">
-			<div class="icon"><i class="fa fa-check-square-o"></i>
-			</div>
-			<div class="count">31 доо</div>
+            </div>
+            <!-- /top tiles -->
 
-			<h3>Арыз жөнөтүштү.</h3>
-			<p>Акыркы 24 саатта.</p>
-		</div>
-	</div>
+        </div>
+    </div>
 </div>
+
+
 <div class="row col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 
 

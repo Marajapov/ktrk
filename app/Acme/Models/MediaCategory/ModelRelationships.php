@@ -5,6 +5,6 @@ trait ModelRelationships
 {
     public function medias()
     {
-        return $this->hasMany(\Model\Media\ModelName::class, 'resource_type');
+    	return $this->hasMany(\Model\Media\ModelName::class, 'videoType');
     }
 }

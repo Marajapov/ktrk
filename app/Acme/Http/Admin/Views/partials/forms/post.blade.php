@@ -18,14 +18,14 @@
 
     <div class="col-sm-8">
         <div class="form-group">
-            <label class="control-label">Теги</label>
+            <label class="control-label">Тегдер</label>
             {!! Form::select('tag_list[]', $tags, null, ["class" => "form-control", "id" => "tag_list", "multiple"]) !!}
         </div>
     </div>
 
     <div class="col-sm-2">
         <div class="form-group">
-            <label class="control-label">Опубликовать</label>
+            <label class="control-label">Жайгаштыруу</label>
             {!! Form::hidden('published', 0) !!}
             {!! Form::checkbox('published', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
         </div>
@@ -42,7 +42,7 @@
 
     <div class="col-sm-2">
         <div class="form-group">
-            <label class="control-label">Главная</label>
+            <label class="control-label">Башкы</label>
             {!! Form::hidden('general', 0) !!}
             {!! Form::checkbox('general', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
         </div>
@@ -71,14 +71,14 @@
 
     <div class="col-sm-10">
         <div class="form-group">
-            <label class="control-label">Выберите фотогалерею</label>
+            <label class="control-label">Сүрөт галереясын тандаңыз</label>
             {!! Form::select('parentId', \Model\PhotoParent\ModelName::lists('name', 'id')->toArray(), null, ["class" => "form-control", "title" => ""]) !!}
         </div>
     </div>
 
      <div class="col-sm-6">
         <div class="form-group">
-            <label class="control-label">Материалы к теме 1</label>
+            <label class="control-label">1 темага материалдар</label>
             
             {!! Form::select('related1', array('default'=>'--Выберите--') + $relatedPosts,null, ["class" => "form-control", "title" => ""]) !!}
         </div>
@@ -86,14 +86,14 @@
 
     <div class="col-sm-6">
         <div class="form-group">
-            <label class="control-label">Материалы к теме 2</label>
+            <label class="control-label">2 темага материалдар</label>
             {!! Form::select('related2', array('default'=>'--Выберите--') + $relatedPosts,null, ["class" => "form-control", "title" => ""]) !!}
         </div>
     </div>
 
     <div class="col-sm-6">
         <div class="form-group">
-            <label class="control-label">Материалы к теме 3</label>
+            <label class="control-label">3 темага материалдар</label>
             {!! Form::select('related3', array('default'=>'--Выберите--') + $relatedPosts, null, ["class" => "form-control", "title" => ""]) !!}
         </div>
     </div>
@@ -103,8 +103,8 @@
 
 </div>
 
-<button type="submit" class="btn btn-primary">сохранить</button>
-<a href="{{ route('admin.post.index') }}" class="btn btn-default">назад</a>
+<button type="submit" class="btn btn-primary">сактоо</button>
+<a href="{{ route('admin.post.index') }}" class="btn btn-default">артка</a>
 
 <div><br></div>
 <div><br></div>

@@ -1,4 +1,5 @@
 @include('Front::messages.flash')
+
 <script type="text/javascript" src="/vendor/tinymce/js/tinymce/tinymce.min.js"></script>
 
 <div class="row">
@@ -11,14 +12,14 @@
 
     <div class="col-sm-8">
         <div class="form-group">
-            <label class="control-label">Название</label>
+            <label class="control-label">Аталышы</label>
             {!! Form::text('name', null, ["class" => "form-control", "required" => true, "title" => ""]) !!}
         </div>
     </div>
 
     <div class="col-sm-2">
         <div class="form-group">
-            <label class="control-label">Опубликовать</label>
+            <label class="control-label">Жайгаштыруу</label>
             {!! Form::hidden('published', 0) !!}
             {!! Form::checkbox('published', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
         </div>
@@ -26,7 +27,7 @@
 
     <div class="col-sm-2">
         <div class="form-group">
-            <label class="control-label">Главная страница</label>
+            <label class="control-label">Башкы бет</label>
             {!! Form::hidden('general', 0) !!}
             {!! Form::checkbox('general', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
         </div>
@@ -40,9 +41,10 @@
     </div>
 
 </div>
-
-<button type="submit" class="btn btn-primary">сохранить</button>
-<a href="{{ route('admin.page.index') }}" class="btn btn-default">назад</a>
+<div class=pull-right>
+<button type="submit" class="btn btn-primary">сактоо</button>
+<a href="{{ route('admin.page.index') }}" class="btn btn-default">артка</a>
+</div>
 
 <script type="text/javascript">
     tinymce.init({

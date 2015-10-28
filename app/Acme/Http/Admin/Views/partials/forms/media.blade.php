@@ -3,42 +3,42 @@
 <div class="row">
     <div class="col-sm-10">
         <div class="form-group">
-            <label class="control-label">Название</label>
+            <label class="control-label">Аталышы</label>
             {!! Form::text('name', null, ["class" => "form-control", "required" => true, "title" => ""]) !!}
         </div>
     </div>
 
     <div class="col-sm-10">
         <div class="form-group">
-            <label class="control-label">Выберите тип медии</label>
+            <label class="control-label">Медиянын тибин тандаңыз</label>
             {!! Form::select('videoType', \Model\MediaCategory\ModelName::lists('name', 'videoType')->toArray(), null, ["class" => "form-control", "required" => true, "title" => ""]) !!}
         </div>
     </div>
 
     <div class="col-sm-10">
         <div class="form-group">
-            <label class="control-label">Описание</label>
+            <label class="control-label">Мазмуну</label>
             {!! Form::textarea('description', null, ["class" => "form-control", "title" => ""]) !!}
         </div>
     </div>
 
     <div class="col-sm-10">
         <div class="form-group">
-            <label class="control-label">URL of the image : If video then youtube video id</label>
+            <label class="control-label">Сүрөттн URL дареги : Видео болсо YouTube video id</label>
             {!! Form::text('url', null, ["class" => "form-control", "title" => ""]) !!}
         </div>
     </div>
 
     <div class="col-sm-10">
         <div class="form-group">
-            <label class="control-label">Type : image or video</label>
+            <label class="control-label">Тип : сүрөт же видео</label>
             {!! Form::select('type', ['image'=>'Картинка','video'=>'Видео'], null, ["class" => "form-control", "required" => true, "title" => ""]) !!}
         </div>
     </div>
 
     <div class="col-sm-2">
         <div class="form-group">
-            <label class="control-label">Опубликовать</label>
+            <label class="control-label">Жайгаштыруу</label>
             {!! Form::hidden('published', 0) !!}
             {!! Form::checkbox('published', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
         </div>
@@ -46,6 +46,6 @@
 
 </div>
 
-<button type="submit" class="btn btn-primary">сохранить</button>
+<button type="submit" class="btn btn-primary">сактоо</button>
 
-<a href="{{ route('admin.media.index') }}" class="btn btn-default">назад</a>
+<a href="{{ route('admin.media.index') }}" class="btn btn-default">артка</a>
