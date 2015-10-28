@@ -27,8 +27,8 @@
                                         <p class="description clearfix">
                                            <a href="{{ route('front.category', $post->category) }}">{{ $post->category('category_id')->first()->title }}</a>
                                             <span>
-                                                @if(empty($post->getPhoto2())) @else <i class="fa fa-play-circle-o"></i> @endif
-                                                @if(empty($post->getFile()) && empty($post->getPhoto1())) @else <i class="fa fa-picture-o"></i> @endif
+                                                @if(empty($post->getFile())) @else <i class="fa fa-play-circle-o"></i> @endif
+                                                @if(empty($post->getFile()) && empty($post->getFile())) @else <i class="fa fa-picture-o"></i> @endif
                                             </span>
                                         </p>
                                         <a class="news-title" href="{{ route('front.post', $post) }}">
@@ -150,8 +150,8 @@
                                     <div class="news-adds clearfix">
                                         <a href="{{ route('front.category', $post->category) }}" class="">{{ $post->category('category_id')->first()->title }}</a>
                                         <span class="news-file">
-                                            @if(empty($post->getPhoto2())) @else <i class="fa fa-play-circle-o"></i> @endif
-                                            @if(empty($post->getFile()) && empty($post->getPhoto1())) @else <i class="fa fa-picture-o"></i> @endif
+                                            @if(empty($post->getFile())) @else <i class="fa fa-play-circle-o"></i> @endif
+                                            @if(empty($post->getFile()) && empty($post->getFile())) @else <i class="fa fa-picture-o"></i> @endif
                                         </span>
 
                                         <span class="news-time pull-right">{{ $post->getViewed() }}, {{ $post->getCreated() }}</span>

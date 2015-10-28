@@ -79,7 +79,6 @@
      <div class="col-sm-6">
         <div class="form-group">
             <label class="control-label">Материалы к теме 1</label>
-            
             {!! Form::select('related1', array('default'=>'--Выберите--') + $relatedPosts,null, ["class" => "form-control", "title" => ""]) !!}
         </div>
     </div>

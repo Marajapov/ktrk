@@ -28,7 +28,7 @@
                                                 </div>
                                             @endif
 
-                                            @if(!empty($post->related1))
+                                            @if(!empty($post->related2))
                                                 <div class="related2">
                                                     <a href="{{ route('front.post', $post->related2) }}">{{ $related2Post->getName() }}</a>        
                                                 </div>
@@ -61,26 +61,34 @@
                                         <div class="topics-box">
                                             <h2>Материалы по теме</h2>
                                             <div class="topics">
+                                                @if(!empty($post->related1))
+
                                                 <div class="topic clearfix">
-                                                    <div class="t-date"><span class="date"><span class="time">14:29</span> 22 июля 2015</span></div>
-                                                    <a class="t-thumb" href="http://lenta.ru/articles/2015/07/22/gaidar/">
-                                                        <img alt="Михаил Саакашвили" src="http://icdn.lenta.ru/images/2015/07/21/20/20150721204846199/tabloid_5a8978c051d2e41f475126dc569058da.jpg">
+                                                    <div class="t-date"><span class="date"><span class="time">{{ $related1Post->getTime()}}</span> {{ $related1Post->getDate()}}</span></div>
+                                                    <a class="t-thumb" href="{{ route('front.post', $post->related1) }}">
+                                                        <img alt="" src="{{ asset($related1Post->getFile()) }}">
                                                     </a>
                                                     <div class="t-info">
-                                                        <h4><a class="js-dh" href="http://lenta.ru/articles/2015/07/22/gaidar/">Старожилам здесь не место</a></h4>
-                                                        <div class="short">Зачем Михаил Саакашвили назначил своим замом Марию Гайдар</div>
+                                                        <h4><a class="js-dh" href="{{ route('front.post', $post->related1) }}">{{ $related1Post->getName() }}</a></h4>
+                                                        <div class="short">{!! substr($related1Post->getContent(), 0, 85) !!}</div>
                                                     </div>
                                                 </div>
+                                                @endif
+
+                                                @if(!empty($post->related2))
+
                                                 <div class="topic clearfix">
-                                                    <div class="t-date"><span class="date"><span class="time">14:29</span> 22 июля 2015</span></div>
-                                                    <a class="t-thumb" href="http://lenta.ru/articles/2015/07/22/gaidar/">
-                                                        <img alt="Михаил Саакашвили" src="http://icdn.lenta.ru/images/2015/07/21/20/20150721204846199/tabloid_5a8978c051d2e41f475126dc569058da.jpg">
+                                                    <div class="t-date"><span class="date"><span class="time">{{ $related2Post->getTime()}}</span> {{ $related2Post->getDate()}}</span></div>
+                                                    <a class="t-thumb" href="{{ route('front.post', $post->related1) }}">
+                                                        <img alt="" src="{{ asset($related2Post->getFile()) }}">
                                                     </a>
                                                     <div class="t-info">
-                                                        <h4><a class="js-dh" href="http://lenta.ru/articles/2015/07/22/gaidar/">Старожилам здесь не место</a></h4>
-                                                        <div class="short">Зачем Михаил Саакашвили назначил своим замом Марию Гайдар</div>
+                                                        <h4><a class="js-dh" href="{{ route('front.post', $post->related1) }}">{{ $related2Post->getName() }}</a></h4>
+                                                        <div class="short">{!! substr($related2Post->getContent(), 0, 85) !!}</div>
                                                     </div>
                                                 </div>
+                                                @endif
+
                                             </div>
                                         </div>
                                     </aside>

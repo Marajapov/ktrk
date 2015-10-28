@@ -116,6 +116,7 @@ class HomeController extends Controller
         }else{
             $related3Post = null;
         }
+        $relatedPosts = \Model\Post\ModelName::lists('title', 'id')->toArray();
 
         return view('Front::post.post',[
             'post' => $post,
@@ -123,6 +124,8 @@ class HomeController extends Controller
             'related1Post' => $related1Post,
             'related2Post' => $related2Post,
             'related3Post' => $related3Post,
+
+            'relatedPosts' => $relatedPosts,
 
             'parentId'=> $parentId,
             'photoChilds'=> $photoChilds,
