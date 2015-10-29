@@ -25,6 +25,13 @@ class UserTableSeeder extends Seeder
             'role'       => 'admin',
             'channel_id' => 2,
         ]);
+          \Model\User\ModelName::create([
+            'name'       => 'Edos',
+            'email'      => 'eldos@gmail.com',
+            'password'   => bcrypt('123123'),
+            'role'       => 'admin',
+            'channel_id' => 3,
+        ]);
         factory(\Model\User\ModelName::class, 50)->create();
     }
 }

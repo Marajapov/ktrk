@@ -3,9 +3,22 @@
 
 @section('content')
 
-{!! Form::model($channel, ['route' => 'admin.channel.store', 'enctype' => 'multipart/form-data']) !!}
-@include('Admin::partials.forms.channel', $channel)
-{!! Form::close() !!}
+<div class="row modals">
+	<div class="col-md-12 col-sm-12 col-xs-12">
+		<div class="x_panel">
+			<div class="x_title">
+				<h2>Жаңы канал ачуу</h2>
+
+				<div class="clearfix"></div>
+			</div>
+			<div class="x_content">
+				{!! Form::model($channel, ['route' => 'admin.channel.store', 'enctype' => 'multipart/form-data']) !!}
+				@include('Admin::partials.forms.channel', $channel)
+				{!! Form::close() !!}
+			</div>
+		</div>
+	</div>
+</div>
 
 @stop
 

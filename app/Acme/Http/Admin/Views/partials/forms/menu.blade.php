@@ -4,7 +4,7 @@
 
     <div class="col-sm-10">
         <div class="form-group">
-            <label class="control-label">code</label>
+            <label class="control-label">Код менен жазуу</label>
             {!! Form::text('code', null, ["class" => "form-control", "required" => true, "title" => "", "list" => "codes"]) !!}
         </div>
     </div>
@@ -17,7 +17,7 @@
 
     <div class="col-sm-2">
         <div class="form-group">
-            <label class="control-label">new window</label>
+            <label class="control-label">Жаңы терезе(window)</label>
             {!! Form::hidden('newtab', 0) !!}
             {!! Form::checkbox('newtab', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
         </div>
@@ -25,7 +25,7 @@
 
     <div class="col-sm-12">
         <div class="form-group">
-            <label class="control-label">название</label>
+            <label class="control-label">Аталышы</label>
             {!! Form::text('name', null, ["class" => "form-control", "required" => true, "title" => ""]) !!}
         </div>
     </div>
@@ -41,6 +41,6 @@
 
 </div>
 
-<button type="submit" class="btn btn-primary">сохранить</button>
-<a href="{{ route('admin.menu.index') }}" class="btn btn-default">назад</a>
+<button type="submit" class="btn btn-primary">сактоо</button>
+<a href="{{ route('admin.menu.index') }}" class="btn btn-default">артка</a>
 

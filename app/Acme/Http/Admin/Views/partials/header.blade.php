@@ -1,51 +1,52 @@
-<nav class="navbar navbar-default">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="{{ route('admin.home') }}"><span class="glyphicon glyphicon-home"></span></a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li class="btn btn-default" style="padding:0;"><a href="{{ route('admin.photoParent.index') }}" target="">Фотогалерея</a></li>
-                <li class="btn btn-default" style="padding:0;"><a href="{{ route('admin.photoChild.index') }}" target="">Загрузить фото</a></li>
+<!-- sidebar menu -->
+<div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+    <div class="menu_section">
+        <div class="divider"></div>
+        <ul class="nav side-menu">
+            <li><a href="{{ route('admin.home') }}"><i class="fa fa-home"></i>Башкы </a></li>
+            <li><a href="{{ route('admin.photoParent.index') }}"><i class="fa fa-image"></i>Фотогалерея </a></li>
+            <li><a href="{{ route('admin.photoChild.index') }}"><i class="fa fa-download"></i>Сүрөт жүктөө</a></li>
+            <li><a href="{{ route('admin.channel.index') }}"><i class="fa fa-television"></i>Каналдар</a></li>
+            <li><a><i class="fa fa-newspaper-o"></i>Макалалар <span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu" style="display: none">
+                    <li><a href="{{ route('admin.post.index') }}">Макалалар</a></li>
+                    <li><a href="{{ route('admin.category.index') }}">Макалалар категориясы</a></li>                                       
+                </ul>
+            </li>
+            <li><a><i class="fa fa-file-video-o"></i>Медиа макалалар <span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu" style="display: none">
+                    <li><a href="{{ route('admin.media.index') }}">Медия макалалар</a></li>
+                    <li><a href="{{ route('admin.mediaCategory.index') }}">Медия категориялары</a></li>                                
+                </ul>
+            </li>         
+            <li><a href="{{ route('admin.banner.index') }}"><i class="fa fa-caret-square-o-right"></i>Баннер</a></li>
+            <li><a href="{{ route('admin.page.index') }}"><i class="fa fa-columns"></i>Барактар</a></li>
+            <li><a href="{{ route('admin.menu.index') }}"><i class="fa fa-chevron-circle-down"></i>Меню</a></li>
+            <li><a href="{{ route('admin.user.index') }}"><i class="fa fa-user"></i>Колдонуучулар</a></li>
+            <li><a href="{{ route('admin.background.index') }}"><i class="fa fa-backward"></i>Фон сүрөтү</a></li>
+        </ul>
+    </div>   
+</div>
 
-                <li class="btn btn-default" style="padding:0;"><a href="{{ route('admin.channel.index') }}" target="">Каналы</a></li>
-                <li class="btn btn-default" style="padding:0;"><a href="{{ route('admin.post.index') }}" target="">Новости</a></li>
-                <li class="btn btn-default" style="padding:0;"><a href="{{ route('admin.category.index') }}" target="">Категории новостей</a></li>
-                <li class="btn btn-default" style="padding:0;"><a href="{{ route('admin.media.index') }}" target="">Медия новости</a></li>
-                <li class="btn btn-default" style="padding:0;"><a href="{{ route('admin.mediaCategory.index') }}" target="">Категории медия</a></li>
-                <li class="btn btn-default" style="padding:0;"><a href="{{ route('admin.banner.index') }}" target="">Баннер</a></li>
-                <li class="btn btn-default" style="padding:0;"><a href="{{ route('admin.page.index') }}" target="">Стараницы</a></li>
-                <li class="btn btn-default" style="padding:0;"><a href="{{ route('admin.menu.index') }}" target="">Меню</a></li>
-                <li class="btn btn-default" style="padding:0;"><a href="{{ route('admin.user.index') }}" target="">Пользователи</a></li>
-                <li class="btn btn-default" style="padding:0;"><a href="{{ route('admin.background.index') }}" target="">Фон</a></li>
+     <!-- /menu footer buttons -->
+                    <div class="sidebar-footer hidden-small">                        
+                        <a data-toggle="tooltip" data-placement="top" title="Профиль">
+                            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                        </a>
+                        <a data-toggle="tooltip" data-placement="top" title="Оңдоолор">
+                            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                        </a>
+                        <a data-toggle="tooltip" data-placement="top" title="Жардам">
+                            <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                        </a>
+                        <a href="javascript:document.getElementById('logout-form').submit()" data-toggle="tooltip" data-placement="top" title="Чыгуу">
+                            <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                        </a>
+                    </div>
+                    <!-- /menu footer buttons -->
 
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown btn btn-default" style="padding:0;">
 
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                        {{ auth()->user()->getName() }} <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="{{ route('front.home') }}" target="">Homepage</a></li>
-                        <li><a href="#">Настройки</a></li>
-                        <li class="divider"></li>
-                        <li><a href="javascript:document.getElementById('logout-form').submit()"><i class="fa fa-power-off"></i> &nbsp; Выход</a></li>
-                    </ul>
-                </li>
-
-            </ul>
-        </div>
-    </div>
-</nav>
-
+<script src="{{ asset('js/admin/bootstrap.min.js') }}"></script>
 
 {!! Form::open(['route' => 'front.logout', 'id' => 'logout-form']) !!}
 {!! Form::close() !!}
-

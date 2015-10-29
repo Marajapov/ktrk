@@ -3,7 +3,7 @@
 <div class="row">
     <div class="col-sm-6">
         <div class="form-group">
-            <label class="control-label">Имя</label>
+            <label class="control-label">Аты жөнү</label>
             {!! Form::text('name', null, ["class" => "form-control", "required" => true, "title" => ""]) !!}
         </div>
     </div>
@@ -32,5 +32,5 @@
 
 </div>
 
-<button type="submit" class="btn btn-primary">сохранить</button>
-<a href="{{ route('admin.user.index') }}" class="btn btn-default">назад</a>
+<button type="submit" class="btn btn-primary">Сактоо</button>
+<a href="{{ route('admin.user.index') }}" class="btn btn-default">Артка</a>

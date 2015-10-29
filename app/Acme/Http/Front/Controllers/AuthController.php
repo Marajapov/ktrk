@@ -18,6 +18,7 @@ class AuthController extends Controller
 
     public function postLogin(Request $request)
     {
+
         if(auth()->attempt(['email' => $request->input('email'), 'password' => $request->input('password')]))
         {
             if(auth()->user()->isAdmin()){
@@ -28,7 +29,7 @@ class AuthController extends Controller
 
         }
 
-        return redirect()->route('front.login')->with('danger-message', 'Неправильный почта или пароль');
+        return redirect()->route('front.login')->with('danger-message', 'Email же сырсөз туура эмес');
     }
 
     public function postLogout()
