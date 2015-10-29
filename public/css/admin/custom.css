@@ -6385,15 +6385,56 @@ ul.notifications {
     padding: 0px;
 }
 .topbanner {
-    background: url(../../images/13.png);
-    width: 50px;
-    height: 50px;
+    background: url(../../images/admin/top.png);
+    width: 60px;
+    height: 60px;
     float: left;
     display: inline-block;
 }
-
+.centerbanner {
+    background: url(../../images/admin/center.png);
+    width: 60px;
+    height: 60px;
+    float: left;
+    display: inline-block;
+}
+.rightbanner {
+    background: url(../../images/admin/right.png);
+    width: 60px;
+    height: 60px;
+    float: left;
+    display: inline-block;
+}
+.leftbanner {
+    background: url(../../images/admin/left.png);
+    width: 60px;
+    height: 60px;
+    float: left;
+    display: inline-block;
+}
+.bottombanner {
+    background: url(../../images/admin/bottom.png);
+    width: 60px;
+    height: 60px;
+    float: left;
+    display: inline-block;
+}
 .raspoloj {
     width: 8%;
     height: 20%;
     display: table;
+}
+input[type="checkbox"].styled:checked + label:after,
+input[type="radio"].styled:checked + label:after,
+.checkbox input[type=checkbox]:checked + label:after {
+    font-family: 'Glyphicons Halflings';
+    content: "\e013";
+}
+
+input[type="checkbox"].styled:checked label:after,
+input[type="radio"].styled:checked label:after,
+.checkbox label:after {
+    padding-left: 4px;
+    padding-top: 2px;
+    font-size: 9px;
 }

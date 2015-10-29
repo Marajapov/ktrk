@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="{{ asset('css/admin/font-awesome.min.css') }}"/>
         <link rel="stylesheet" href="{{ asset('css/admin/custom.css') }}"/>
         <link rel="stylesheet" href="{{ asset('css/admin/style.css') }}"/>
+        <link rel="stylesheet" href="{{ asset('css/admin/awesome-checkbox/build.css') }}"/>
 
 
         <!-- Jasny Bootstrap -->
