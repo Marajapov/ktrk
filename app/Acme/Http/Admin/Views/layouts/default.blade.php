@@ -1,22 +1,32 @@
 <!DOCTYPE html>
 <html lang="ру">
     <head>
+          <link rel="stylesheet" href="{{ asset('css/admin/awesome-bootstrap-checkbox.min.css') }}"/>
+  
 
         <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" />
         <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-datetimepicker.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-select.css') }}">
-         
-
-
+        
         <!-- Admin page styles -->
         <link rel="stylesheet" href="{{ asset('css/admin/bootstrap.min.css') }}"/>    
         <link rel="stylesheet" href="{{ asset('css/admin/font-awesome.min.css') }}"/>
         <link rel="stylesheet" href="{{ asset('css/admin/custom.css') }}"/>
         <link rel="stylesheet" href="{{ asset('css/admin/style.css') }}"/>
+        <link rel="stylesheet" href="{{ asset('css/admin/awesome-checkbox/build.css') }}"/>
+
+
+        <!-- Jasny Bootstrap -->
+        <link rel="stylesheet" href="{{ asset('css/admin/jasny/jasny-bootstrap.min.css') }}"/>
+        <link rel="stylesheet" href="{{ asset('css/admin/select/select2.min.css') }}"/>
         
         <!-- JS scripts forom admin page -->
+        <script src="{{ asset('js/admin/select/select2.full.js') }}"></script>
         <script src="{{ asset('js/admin/jquery.min.js') }}"></script>
         <script src="{{ asset('js/admin/nprogress.js') }}"></script>
+
+         <!-- Jasny JS -->
+         <script src="{{ asset('js/admin/jasny/jasny-bootstrap.min.js') }}"></script>
 
         <!-- Simple Loader js-->
         <script>
