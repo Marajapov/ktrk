@@ -5,10 +5,7 @@
 <div class="row modals">
 	<div class="col-md-12 col-sm-12 col-xs-12">
 		<div class="x_panel">
-			<div class="x_title">
-                <h3 style="text-align:center; color:rgb(152, 65, 65);">Бүгүнкү күндүн отчету менен таанышсаңыз болот:</h3>
-
-                <div class="clearfix"></div>
+			<div class="x_title">          
             </div>
 
             <!-- top tiles -->
@@ -63,7 +60,47 @@
                 </div>
 
             </div>
+
             <!-- /top tiles -->
+        </div>
+       
+    </div>    
+
+    <!-- left infobar -->
+    <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="x_panel">
+            <h2>Таск бар</h2>
+            <div class="row">     
+            </div>
+
+        </div>
+    </div>
+    <!-- left infobar -->
+    <!-- right infobar -->
+    <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="x_panel">
+            <h2>Оң инфобар</h2>               
+            <div class="row">
+            </div>
+
+        </div>
+    </div>
+    <!-- right infobar -->
+
+    <div class="col-md-8 col-sm-8 col-xs-12">
+        <div class="x_panel">
+            <h2>Жумалык рейтинг</h2>               
+            <div class="row">
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col-md-4 col-sm-4 col-xs-12">
+        <div class="x_panel">
+            <h2>Колдонуучулар рейтинги</h2>               
+            <div class="row">
+            </div>
 
         </div>
     </div>

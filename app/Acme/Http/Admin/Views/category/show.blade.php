@@ -27,13 +27,8 @@
 <h2><span class="label label-default">Бул категорияга тиешелүү баардык жаңылыктар (макалалар)</span></h2>
 <div class="list-group">
   @foreach($category->posts as $post)
-
   <a href="{{ route('admin.post.show', $post) }}" class="list-group-item">{{ $post->getTitle() }} ({!! $post->getDescription() !!})</a>
-
   @endforeach
-
 </div>
-
-
 @stop
 

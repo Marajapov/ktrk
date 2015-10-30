@@ -18,8 +18,8 @@
     <div class="col-xs-12">
         <div class="form-group">
             <label class="control-label">Файл</label>
-            {!! Form::file('file', array('multiple'=>true), ["class" => "form-control", "required" => true]) !!}
-<!--             {!! Form::file('file', null, ["class" => "form-control", "required" => true]) !!} -->
+      <!--       {!! Form::file('file', array('multiple'=>true), ["class" => "form-control", "required" => true]) !!} -->
+            {!! Form::file('file', null, ["class" => "form-control", "required" => true]) !!}
         </div>
     </div>
 

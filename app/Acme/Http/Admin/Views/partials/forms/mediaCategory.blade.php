@@ -23,12 +23,13 @@
     </div>
 
     <div class="col-sm-2">
-        <div class="form-group">
-            <label class="control-label">Жайгаштыруу</label>
-            {!! Form::hidden('published', 0) !!}
-            {!! Form::checkbox('published', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
-        </div>
-    </div>
+        <div class="form-group ">
+               <label class="control-label">Жайгаштыруу</label>
+               {!! Form::hidden('published', 0) !!}
+               {!! Form::checkbox('published', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
+           </div>
+       </div>
+   </div>
 
 
 </div>

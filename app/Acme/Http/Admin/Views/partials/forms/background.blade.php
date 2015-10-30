@@ -30,11 +30,9 @@
          <!-- Биринчи эолу алмаштырса болот, экинчинде алмашбайт, бирок биринчи өзгөртүп алмаштырса болот -->
          <div class="col-sm-2">
             <div class="form-group">
-               <div class="checkbox checkbox-info">
-                 <input id="checkbox2" type="checkbox">
-                 <label class="control-label">Жайгаштыруу</label>
-                 {!! Form::hidden('published', 1) !!}
-                 {!! Form::checkbox('published', 1, null, ["class" => "checkbox2 form-control", "style" => "width: 34px; margin: 0"]) !!}
+                  <label class="control-label">Жайгаштыруу</label>
+                 {!! Form::hidden('published', 0) !!}
+                 {!! Form::checkbox('published', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
              </div>
          </div>
      </div>
@@ -65,8 +63,7 @@
             </div>
         </div>
     </div>
-</div>
-
+    
 <button type="submit" class="btn btn-primary">сактоо</button>
 <a href="{{ route('admin.background.index') }}" class="btn btn-default">артка</a>
 

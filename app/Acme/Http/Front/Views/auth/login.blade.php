@@ -14,6 +14,7 @@
 
     <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12 buttonscry">
+        <h4 style="text-align:center;color:#ECECEC;">Башкаруу панелине кирүү</h4>
 
             {!! Form::open(['route' => 'front.login', 'role' => 'form', 'method' => 'POST']) !!}
 

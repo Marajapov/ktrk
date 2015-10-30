@@ -2,11 +2,13 @@
 @section('title', "Menus")
 
 @section('content')
-
-<div>
-    <a href="{{ route('admin.menu.create') }}" class="btn btn-primary">create</a>
-</div>
-<hr>
+<div class="row modals">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+    <a href="{{ route('admin.menu.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i>Жаңы меню</a>
+    <div class="clearfix"></div>
+            </div>
 
 <div id="nestable-menu">
     <i data-action="expand-all" class="fa fa-2x fa-plus-square" data-toggle="tooltip" title="@lang('site.Expand all')"></i>
@@ -26,14 +28,14 @@
 <div>
     {!! Form::open(['route' => ['admin.menu.save', $code]]) !!}
     <input type="hidden" name="json" id="nestable-output">
-    <button type="save" class="btn btn-primary">save</button>
+    <button type="save" class="btn btn-primary">сактоо</button>
     {!! Form::close() !!}
 </div>
-<br>
-<br>
-<br>
 
 
+    </div>
+    </div>
+</div>
 
 @stop
 

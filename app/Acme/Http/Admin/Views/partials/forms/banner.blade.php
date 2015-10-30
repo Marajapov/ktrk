@@ -37,32 +37,16 @@
       </div>
   </div>
   
-  <!-- Биринчи эолу алмаштырса болот, экинчинде алмашбайт, бирок биринчи өзгөртүп алмаштырса болот -->
-     <!--     <div class="col-sm-2">
-            <div class="form-group">
-               <div class="checkbox checkbox-info">
-                 <input id="checkbox2" type="checkbox">
-                 <label class="control-label">Жайгаштыруу</label>
-                 {!! Form::hidden('published', 1) !!}
-                 {!! Form::checkbox('published', 1, null, ["class" => "checkbox2 form-control", "style" => "width: 34px; margin: 0"]) !!}
-             </div>
-         </div>
-     </div>
- -->
-
- <div class="clearfix"></div>
- <div class="col-sm-2">
+  <div class="clearfix"></div>
+  <div class="col-sm-1">
     <div class="form-group">
-     <div class="checkbox checkbox-info">
-       <input id="checkbox2" type="checkbox">
-       <label class="control-label">Жайгаштыруу</label>
-       {!! Form::hidden('published', 0) !!}
-       {!! Form::checkbox('published', 1, null, ["class" => "checkbox2 form-control", "style" => "width: 34px; margin: 0"]) !!}
-   </div>
-</div>
+        <label class="control-label">Жайгаштыруу</label>
+        {!! Form::hidden('published', 0) !!}
+        {!! Form::checkbox('published', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
+    </div>
 </div>
 
-<div class=" col-md-12 raspoloj">
+<!-- <div class=" col-md-12 raspoloj">
     <div class="form-group">
         <div class="checkbox checkbox-info">
            <input id="checkbox2" type="checkbox">
@@ -72,75 +56,71 @@
            <div class="topbanner"></div>
        </div>
    </div>
-</div>
+</div> -->
 
-<div class="col-md-12 raspoloj">
+<div class=" col-sm-1 ">
     <div class="form-group">
-     <div class="checkbox checkbox-info">
-       <input id="checkbox2" type="checkbox">
-       <label class="control-label">Ортодо жайгашуу (center)</label>
-       {!! Form::hidden('positionCenter', 0) !!}
-       {!! Form::checkbox('positionCenter', 1, null, ["class" => "checkbox2 form-control", "style" => "width: 34px; margin: 0"]) !!}
-       <div class="centerbanner"></div>
-   </div>
-</div>
+        <label class="control-label">Үстү жагында (top)</label>
+        {!! Form::hidden('positionTop', 0) !!}         
+        {!! Form::checkbox('positionTop', 1, null, ["class" => " form-control", "style" => "width: 34px; margin: 0"]) !!}
+        <div class="topbanner"></div>
+    </div>
 </div>
 
-<div class="col-md-12 raspoloj">
+<div class="col-sm-1 ">
     <div class="form-group">
-     <div class="checkbox checkbox-info">
-       <input id="checkbox2" type="checkbox">
-       <label class="control-label">Оң жагында (right)</label>
-       {!! Form::hidden('positionRight', 0) !!}
-       {!! Form::checkbox('positionRight', 1, null, ["class" => "checkbox2 form-control", "style" => "width: 34px; margin: 0"]) !!}
-       <div class="rightbanner"></div>
-   </div>
-</div>
+        <label class="control-label">Ортодо жайгашуу (center)</label>
+        {!! Form::hidden('positionCenter', 0) !!}
+        {!! Form::checkbox('positionCenter', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
+        <div class="centerbanner"></div>
+    </div>
 </div>
 
-<div class="col-md-12 raspoloj">
+<div class="col-sm-1 ">
     <div class="form-group">
-     <div class="checkbox checkbox-info">
-       <input id="checkbox2" type="checkbox">
-       <label class="control-label">Сол жагында (left)</label>
-       {!! Form::hidden('positionLeft', 0) !!}
-       {!! Form::checkbox('positionLeft', 1, null, ["class" => "checkbox2 form-control", "style" => "width: 34px; margin: 0"]) !!}
-       <div class="leftbanner"></div>
-   </div>
-</div>
+        <label class="control-label">Оң жагында (right)</label>
+        {!! Form::hidden('positionRight', 0) !!}
+        {!! Form::checkbox('positionRight', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
+        <div class="rightbanner"></div>
+    </div>
 </div>
 
-<div class="col-md-12 raspoloj">
+<div class="col-sm-1 ">
     <div class="form-group">
-     <div class="checkbox checkbox-info">
-       <input id="checkbox2" type="checkbox">
-       <label class="control-label">Ылдый жагында (footer)</label>
-       {!! Form::hidden('positionBottom', 0) !!}
-       {!! Form::checkbox('positionBottom', 1, null, ["class" => "checkbox2 form-control", "style" => "width: 34px; margin: 0"]) !!}
-       <div class="bottombanner"></div>
-   </div>
-</div>
-</div>
+        <label class="control-label">Сол жагында (left)</label>
+        {!! Form::hidden('positionLeft', 0) !!}
+        {!! Form::checkbox('positionLeft', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
+        <div class="leftbanner"></div>
+    </div>
 </div>
 
-<br>
+
+<div class="col-sm-1 ">
+    <div class="form-group">
+        <label class="control-label">Ылдый жагында (footer)</label>
+        {!! Form::hidden('positionBottom', 0) !!}
+        {!! Form::checkbox('positionBottom', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
+        <div class="bottombanner"></div>
+    </div>
+</div>
+</div>
 
 <button type="submit" class="btn btn-primary">сактоо</button>
 <a href="{{ route('admin.banner.index') }}" class="btn btn-default">артка</a>
 
 <!-- select2 -->
-<script>
-    $(document).ready(function () {
-        $(".select2_single").select2({
-            placeholder: "Select a state",
-            allowClear: true
-        });
-        $(".select2_group").select2({});
-        $(".select2_multiple").select2({
-            maximumSelectionLength: 4,
-            placeholder: "With Max Selection limit 4",
-            allowClear: true
-        });
-    });
-</script>
+        <script>
+            $(document).ready(function () {
+                $(".select2_single").select2({
+                    placeholder: "Select a state",
+                    allowClear: true
+                });
+                $(".select2_group").select2({});
+                $(".select2_multiple").select2({
+                    maximumSelectionLength: 4,
+                    placeholder: "With Max Selection limit 4",
+                    allowClear: true
+                });
+            });
+        </script>
         <!-- /select2 -->

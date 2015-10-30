@@ -35,14 +35,14 @@
             {!! Form::select('type', ['image'=>'Картинка','video'=>'Видео'], null, ["class" => "select2_group form-control", "required" => true, "title" => ""]) !!}
         </div>
     </div>
-
-    <div class="col-sm-2">
+    <div class="col-sm-12">
         <div class="form-group">
-            <label class="control-label">Жайгаштыруу</label>
-            {!! Form::hidden('published', 0) !!}
-            {!! Form::checkbox('published', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
-        </div>
-    </div>
+               <label class="control-label">Жайгаштыруу</label>
+               {!! Form::hidden('published', 0) !!}
+               {!! Form::checkbox('published', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
+           </div>
+       </div>
+   </div>
 
 </div>
 
@@ -50,19 +50,19 @@
 
 <a href="{{ route('admin.media.index') }}" class="btn btn-default">артка</a>
 
- <!-- select2 -->
-        <script>
-            $(document).ready(function () {
-                $(".select2_single").select2({
-                    placeholder: "Select a state",
-                    allowClear: true
-                });
-                $(".select2_group").select2({});
-                $(".select2_multiple").select2({
-                    maximumSelectionLength: 4,
-                    placeholder: "With Max Selection limit 4",
-                    allowClear: true
-                });
-            });
-        </script>
+<!-- select2 -->
+<script>
+    $(document).ready(function () {
+        $(".select2_single").select2({
+            placeholder: "Select a state",
+            allowClear: true
+        });
+        $(".select2_group").select2({});
+        $(".select2_multiple").select2({
+            maximumSelectionLength: 4,
+            placeholder: "With Max Selection limit 4",
+            allowClear: true
+        });
+    });
+</script>
         <!-- /select2 -->
