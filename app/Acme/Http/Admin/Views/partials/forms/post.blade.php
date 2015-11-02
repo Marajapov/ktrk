@@ -2,21 +2,21 @@
 <script type="text/javascript" src="/vendor/tinymce/js/tinymce/tinymce.min.js"></script>
 
 <div class="row">
-    <div class="col-sm-6 col-xs-12 ">
+    <div class="col-sm-6">
         <div class="form-group">
             <label class="control-label">Канал</label>
-            {!! Form::select('channel_id', \Model\Channel\ModelName::lists('display', 'id')->toArray(), null, ["class" => "select2_group form-control", "required" => true, "title" => ""]) !!}
+            {!! Form::select('channel_id', \Model\Channel\ModelName::lists('display', 'id')->toArray(), null, ["class" => "select2_group  form-control", "required" => true, "title" => ""]) !!}
         </div>
     </div>
 
-    <div class="col-sm-6 col-xs-12">
+    <div class="col-sm-6">
         <div class="form-group">
             <label class="control-label">Категория</label>
-            {!! Form::select('category_id', \Model\Category\ModelName::lists('title', 'id')->toArray(), null, ["class" => "select2_group form-control", "required" => true, "title" => ""]) !!}
+            {!! Form::select('category_id', \Model\Category\ModelName::lists('title', 'id')->toArray(), null, ["class" => "select2_group  form-control", "required" => true, "title" => ""]) !!}
         </div>
     </div>
 
-    <div class="col-sm-8 col-xs-12">
+    <div class="col-sm-6">
         <div class="form-group">
             <label class="control-label">Тегдер</label>
             {!! Form::select('tag_list[]', $tags, null, ["class" => "form-control", "id" => "tag_list", "multiple"]) !!}
@@ -62,38 +62,49 @@
         </div>
     </div>
 
-    <div class="col-xs-12">
+<!--     <div class="col-xs-12">
         <div class="form-group">
             <label class="control-label">Миниатюра</label>
             {!! Form::file('thumbnail', null, ["class" => "form-control"]) !!}
+        </div>
+    </div> -->
+
+     <div class="col-xs-12">
+            <div class="fileinput fileinput-new" data-provides="fileinput">
+               <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
+               <div>
+                <span class="btn btn-default btn-file"><span class="fileinput-new">Сүрөт тандаңыз</span><span class="fileinput-exists">Өзгөртүү</span>
+                 {!! Form::file('thumbnail', null, ["class" => "form-control"]) !!}             
+            </div>
         </div>
     </div>
 
     <div class="col-sm-10">
         <div class="form-group">
             <label class="control-label">Сүрөт галереясын тандаңыз</label>
-            {!! Form::select('parentId', \Model\PhotoParent\ModelName::lists('name', 'id')->toArray(), null, ["class" => "select2_group form-control", "title" => ""]) !!}
+            {!! Form::select('parentId', \Model\PhotoParent\ModelName::lists('name', 'id')->toArray(), null, ["class" => "select2_group  form-control", "title" => ""]) !!}
         </div>
     </div>
 
      <div class="col-sm-6">
         <div class="form-group">
             <label class="control-label">1 темага материалдар</label>
-            {!! Form::select('related1', array('default'=>'--Тандаңыз--') + $relatedPosts,null, ["class" => "select2_group form-control", "title" => ""]) !!}
+            
+            {!! Form::select('related1', array('default'=>'--Тандаңыз--') + $relatedPosts,null, ["class" => "select2_group  form-control", "title" => ""]) !!}
         </div>
     </div>
 
     <div class="col-sm-6">
         <div class="form-group">
             <label class="control-label">2 темага материалдар</label>
-            {!! Form::select('related2', array('default'=>'--Тандаңыз--') + $relatedPosts,null, ["class" => "select2_group form-control", "title" => ""]) !!}
+            {!! Form::select('related2', array('default'=>'--Тандаңыз--') + $relatedPosts,null, ["class" => "select2_group  form-control", "title" => ""]) !!}
         </div>
     </div>
 
     <div class="col-sm-6">
         <div class="form-group">
             <label class="control-label">3 темага материалдар</label>
-            {!! Form::select('related3', array('default'=>'--Тандаңыз--') + $relatedPosts, null, ["class" => "select2_group form-control", "title" => ""]) !!}
+            {!! Form::select('related3', array('default'=>'--Тандаңыз--') + $relatedPosts, null, ["class" => "select2_group  form-control", "title" => ""]) !!}
         </div>
     </div>
 
@@ -109,7 +120,7 @@
 <div><br></div>
 <div><br></div>
 
-   <!-- select2 -->
+ <!-- select2 -->
         <script>
             $(document).ready(function () {
                 $(".select2_single").select2({
@@ -145,7 +156,6 @@
         "Courier New=courier new,courier;"+
         "Comic Sans MS=comic sans ms,sans-serif;"+
         "Impact=impact,chicago;",
-
         relative_urls: false,
         image_advtab: true ,
     });

@@ -86,19 +86,19 @@
                                 <li class="">
                                     <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-user"></i>
                                         {{ auth()->user()->getName() }} 
-                                        <span class=" fa fa-arrow-down"></span>
+                                        <span class=" fa fa-caret-down"></span>
                                     </a>
                                     <ul class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
-                                        <li><a href="javascript:;"><i class="fa fa-user-secret"></i> &nbsp; Кабинет</a>
+                                        <li><a href="javascript:;"><i class="fa fa-user-secret"></i>&nbsp;Профиль</a>
                                         </li>
                                         <li>
-                                            <a href="javascript:;"><i class="fa fa-cog"></i> &nbsp; Оңдоолор </a>
+                                            <a href="javascript:;"><i class="fa fa-cog"></i>&nbsp;Оңдоолор </a>
                                         </li>
                                         <li>
-                                            <a href="javascript:;"><i class="fa fa-info"></i> &nbsp; Жардам</a>
+                                            <a href="javascript:;"><i class="fa fa-info"></i>&nbsp;Жардам</a>
                                         </li>
                                         <li class="divider"></li>
-                                        <li><a href="javascript:document.getElementById('logout-form').submit()"><i class="fa fa-power-off"></i> &nbsp; Чыгуу</a></li>
+                                        <li><a href="javascript:document.getElementById('logout-form').submit()"><i class="fa fa-power-off"></i>&nbsp;Чыгуу</a></li>
                                     </ul>
                                 </li>                    
 

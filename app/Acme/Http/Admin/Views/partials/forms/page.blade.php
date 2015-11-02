@@ -18,32 +18,35 @@
     </div>
 
     <div class="col-sm-2">
-        <div class="form-group">
-            <label class="control-label">Жайгаштыруу</label>
-            {!! Form::hidden('published', 0) !!}
-            {!! Form::checkbox('published', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
-        </div>
-    </div>
+        <div class="form-group ">
+           <label class="control-label">Жайгаштыруу</label>
+           {!! Form::hidden('published', 0) !!}
+           {!! Form::checkbox('published', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
+       </div>
+   </div>
+</div>
 
-    <div class="col-sm-2">
-        <div class="form-group">
-            <label class="control-label">Башкы бет</label>
-            {!! Form::hidden('general', 0) !!}
-            {!! Form::checkbox('general', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
-        </div>
-    </div>
+<div class="col-sm-2">
+    <div class="form-group ">
+       <label class="control-label">Башкы бет</label>
+       {!! Form::hidden('general', 0) !!}
+       {!! Form::checkbox('general', 1, null, ["class" => " form-control", "style" => "width: 34px; margin: 0"]) !!}
+   </div>
+</div>
+</div>
 
-    <div class="col-xs-12">
-        <div class="form-group">
-            <label class="control-label">Текст</label>
-            {!! Form::textarea('content', null, ["class" => "form-control tinymce-container"]) !!}
-        </div>
+<div class="col-xs-12">
+    <div class="form-group">
+        <label class="control-label">Текст</label>
+        {!! Form::textarea('content', null, ["class" => "form-control tinymce-container"]) !!}
     </div>
+</div>
+</div>
 
 </div>
 <div class=pull-right>
-<button type="submit" class="btn btn-primary">сактоо</button>
-<a href="{{ route('admin.page.index') }}" class="btn btn-default">артка</a>
+    <button type="submit" class="btn btn-primary">сактоо</button>
+    <a href="{{ route('admin.page.index') }}" class="btn btn-default">артка</a>
 </div>
 
 <script type="text/javascript">
@@ -72,19 +75,19 @@
 </script>
 
 
- <!-- select2 -->
-        <script>
-            $(document).ready(function () {
-                $(".select2_single").select2({
-                    placeholder: "Select a state",
-                    allowClear: true
-                });
-                $(".select2_group").select2({});
-                $(".select2_multiple").select2({
-                    maximumSelectionLength: 4,
-                    placeholder: "With Max Selection limit 4",
-                    allowClear: true
-                });
-            });
-        </script>
+<!-- select2 -->
+<script>
+    $(document).ready(function () {
+        $(".select2_single").select2({
+            placeholder: "Select a state",
+            allowClear: true
+        });
+        $(".select2_group").select2({});
+        $(".select2_multiple").select2({
+            maximumSelectionLength: 4,
+            placeholder: "With Max Selection limit 4",
+            allowClear: true
+        });
+    });
+</script>
         <!-- /select2 -->

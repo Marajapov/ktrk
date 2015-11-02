@@ -337,6 +337,10 @@ login_content form input[type="submit"],#content form .submit{float: left; margi
 	background-size: 100% auto;
 }
 
-.forbox {
-	
+.fromtop {
+	margin-top: 30px;
+}
+
+.top_nav .fa {
+	color: #444;
 }

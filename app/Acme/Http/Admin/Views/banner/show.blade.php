@@ -23,7 +23,6 @@
       
     </div>
   </div>
-  <div class="col-md-12"><hr></div>
   <div class="panel-body">
     @if($banner->isImage())
     <img src="{{ asset($banner->getFile()) }}">

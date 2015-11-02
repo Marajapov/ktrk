@@ -15,7 +15,7 @@
 
             <h3>{{ $media->getName() }}</h3>
             <span class="pull-left"><span class="glyphicon glyphicon-eye-open"></span> &nbsp;&nbsp;{{ $media->getViewed() }}</span>
-            <hr>
+         
             @if($media->isImage())
             <img src="{{ $media->getUrl() }}" class="img-responsive">
             @else

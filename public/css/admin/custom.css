@@ -1997,6 +1997,7 @@ span.right {
     font-size: 40px;
     line-height: 47px;
     font-weight: 600;
+    text-align: center;
 }
 
 .tile_stats_count .count small {
@@ -6390,6 +6391,7 @@ ul.notifications {
     height: 60px;
     float: left;
     display: inline-block;
+    margin: 7px 0px 7px 0px;
 }
 .centerbanner {
     background: url(../../images/admin/center.png);
@@ -6397,6 +6399,7 @@ ul.notifications {
     height: 60px;
     float: left;
     display: inline-block;
+    margin: 7px 0px 7px 0px;
 }
 .rightbanner {
     background: url(../../images/admin/right.png);
@@ -6404,6 +6407,7 @@ ul.notifications {
     height: 60px;
     float: left;
     display: inline-block;
+    margin: 7px 0px 7px 0px;
 }
 .leftbanner {
     background: url(../../images/admin/left.png);
@@ -6411,6 +6415,7 @@ ul.notifications {
     height: 60px;
     float: left;
     display: inline-block;
+    margin: 7px 0px 7px 0px;
 }
 .bottombanner {
     background: url(../../images/admin/bottom.png);
@@ -6418,12 +6423,9 @@ ul.notifications {
     height: 60px;
     float: left;
     display: inline-block;
+    margin: 7px 0px 7px 0px;
 }
-.raspoloj {
-    width: 8%;
-    height: 20%;
-    display: table;
-}
+
 input[type="checkbox"].styled:checked + label:after,
 input[type="radio"].styled:checked + label:after,
 .checkbox input[type=checkbox]:checked + label:after {

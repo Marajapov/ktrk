@@ -26,6 +26,23 @@
             <li><a href="{{ route('admin.background.index') }}"><i class="fa fa-backward"></i>Фон сүрөтү</a></li>
             <li><a href="{{ route('admin.peopleReporter.index') }}"><i class="fa fa-backward"></i>Элдик репортер</a></li>
         </ul>
+         <div class="menu_section">
+                            <h3 style="margin:17px 0px">Кошумча барактар</h3>
+                            <ul class="nav side-menu">
+                                                         
+                                <li><a><i class="fa fa-laptop"></i>Админге жардам<span class="label label-success pull-right">SOS</span></a>
+                                <ul class="nav child_menu" style="display: none">
+                                        <li><a href="#">Таск бар</a>
+                                        </li>
+                                        <li><a href="#">Проекттер</a>
+                                        </li>
+                                        <li><a href="#">Контакттар</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
     </div>   
 </div>
 
