@@ -23,16 +23,6 @@ class CreatePostsTable extends Migration
             $table->text('description')->nullable();
             $table->integer('parentId')->nullable();
             $table->string('thumbnail');
-            $table->string('photo1');
-            $table->string('photo2');
-            $table->string('photo3');
-            $table->string('photo4');
-            $table->string('photo5');
-            $table->string('photo6');
-            $table->string('photo7');
-            $table->string('photo8');
-            $table->string('photo9');
-            $table->string('photo10');
             $table->enum('type', ['page', 'post'])->nullable()->default('post');
             $table->boolean('published')->nullable()->default(false);
             $table->boolean('announcement')->nullable()->default(false);

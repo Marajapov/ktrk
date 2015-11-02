@@ -7,7 +7,7 @@
                 <div class="col-md-12 logo-block">
                     <div class="row">
                         <a class="logo" href="http://ktrk.dev">
-                            <img src="{{ asset('images/logo_kg.png') }}" alt=""/>
+                            <img src="{{ asset('images/ktrk_new.png') }}" alt=""/>
                         </a>
 
                         <nav class="top-nav clearfix">
@@ -53,43 +53,7 @@
                             түз эфир
                         </button>
 
-                        <div class="tv-radio">
-                            <a id="tv" href="#" title="Телеканалдар" data-toggle="modal" data-target="#tvModal"><img src="{{ asset('images/tv.svg') }}" alt=""/></a>
-                            <div class="divider"></div>
-                            <a href="#" title="Радиостанциялар" data-toggle="modal" data-target="#radioModal"><img src="{{ asset('images/radio.svg') }}" alt=""/></a>
-                        </div>
-
-                        <div class="tv-radio hidden">
-                            <div class="component component-tv">
-                                <!-- Start Nav Structure -->
-                                <button class="cn-button" id="cn-button-tv"><img src="{{ asset('images/tv.svg') }}" alt=""/></button>
-                                <div class="cn-wrapper" id="cn-wrapper-tv">
-                                    <ul>
-                                        <li><a href="balastan.ktrk.kg"><img src="{{ asset('images/channels/balastan.svg') }}" alt="Баластан"/></a></li>
-                                        <li><a href="muzkanal.ktrk.kg"><img src="{{ asset('images/channels/muztv.png') }}" alt="Муз ТВ"/></a></li>
-                                        <li><a href="madaniayt.ktrk.kg"><img src="{{ asset('images/channels/madaniyat.png') }}" alt="Маданият"/></a></li>
-                                    </ul>
-                                </div>
-                                <div id="cn-overlay-tv" class="cn-overlay"></div>
-                                <!-- End Nav Structure -->
-                            </div>
-                            <div class="divider"></div>
-                            <div class="component component-radio">
-                                <!-- Start Nav Structure -->
-                                <button class="cn-button" id="cn-button-radio"><img src="{{ asset('images/radio.svg') }}" alt=""/></button>
-                                <div class="cn-wrapper" id="cn-wrapper-radio">
-                                    <ul>
-                                        <li><a href="#"><img src="{{ asset('images/channels/kg-radio.png') }}" alt="Кыргыз радиосу"/></a></li>
-                                        <li><a href="#"><img src="{{ asset('images/channels/1-radio.png') }}" alt="Биринчи Радио"/></a></li>
-                                        <li><a href="#"><img src="{{ asset('images/channels/dostuk.png') }}" alt="Достук"/></a></li>
-                                        <li><a href="#"><img src="{{ asset('images/channels/min-kiyal.png') }}" alt="Мин Кыял"/></a></li>
-                                        <li><a href="#"><img src="{{ asset('images/channels/baldar.png') }}" alt="Балдар ФМ"/></a></li>
-                                    </ul>
-                                </div>
-                                <div id="cn-overlay-radio" class="cn-overlay"></div>
-                                <!-- End Nav Structure -->
-                            </div>
-                        </div>
+                        @include ("Front::partials.mainNav")                                              
 
                     </div>
                 </div>

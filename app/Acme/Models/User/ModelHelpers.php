@@ -7,4 +7,10 @@ trait ModelHelpers
     {
     	return $this->role == 'admin';
     }
+
+    public function isManager()
+    {
+    	return $this->role == 'manager';
+    }
 }
+

@@ -48,21 +48,31 @@
 
 <!--Carousel-->
 <script>
-    $('.carousel').slick({
-        infinite: true,
-        slidesToShow: 3,
-        slidesToScroll: 1
-    });
     $('.carousel-post').slick({
         infinite: true,
         speed: 500,
         fade: true,
         cssEase: 'linear'
     });
-    $('.carousel-slick').slick({
+    $('.carousel-reporter').slick({
         infinite: true,
         slidesToShow: 3,
         slidesToScroll: 1
+    });
+    $('.carousel-slick').slick({
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2500
+    });
+    $('.carousel-director').slick({
+        arrows: false,
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3000
     });
 </script>
 
@@ -145,6 +155,14 @@
         },
         stretching: "exactfit"
     });
+</script>
+
+<script>
+    var toggleSlide = function(){
+        $(".main-nav ul.active").removeClass('active')
+                .next().add(".main-nav ul:first").last().addClass("active");
+    }
+    setInterval(toggleSlide, 5000);
 </script>
 
 @yield('footerScript')
