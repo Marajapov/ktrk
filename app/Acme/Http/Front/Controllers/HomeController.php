@@ -5,8 +5,14 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+    protected $positionTop, $positionRight, $positionCenter, $positionBottom;
+    
     public function __construct()
     {
+        $this->positionTop = \Model\Banner\ModelName::where('positionTop','=','1')->first();
+        $this->positionRight = \Model\Banner\ModelName::where('positionRight','=','1')->first();
+        $this->positionCenter = \Model\Banner\ModelName::where('positionCenter','=','1')->first();
+        $this->positionBottom = \Model\Banner\ModelName::where('positionBottom','=','1')->first();
     }
     /**
      * Show the application dashboard to the user.
@@ -22,13 +28,16 @@ class HomeController extends Controller
         $mediaLast = \Model\Media\ModelName::take(9)->get();
         $dayVideos = \Model\Media\ModelName::take(1)->orderBy('viewed','asc')->get();
 
-        $positionTop = \Model\Banner\ModelName::where('positionTop','=','1')->first();
-        $positionRight = \Model\Banner\ModelName::where('positionRight','=','1')->first();
-        $positionCenter = \Model\Banner\ModelName::where('positionCenter','=','1')->first();
-        $positionBottom = \Model\Banner\ModelName::where('positionBottom','=','1')->first();
+        
         
 
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+        $peopleReporters = \Model\PeopleReporter\ModelName::where('published','=',true)->get();
+
+        //$parentId = \Model\PhotoParent\ModelName::where()->first();
+        //$photoChilds = \Model\PhotoChild\ModelName::where('parentId','=',$parentId->id)->get();
+
         
 
         $MediaCategories = \Model\MediaCategory\ModelName::get();
@@ -40,11 +49,12 @@ class HomeController extends Controller
             'generalPosts'   => $generalPosts,
             'dayVideos'      => $dayVideos,
             
-            'positionTop'    => $positionTop,
-            'positionRight'  => $positionRight,
-            'positionCenter' => $positionCenter,
-            'positionBottom' => $positionBottom,
-            
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
+            'peopleReporters' => $peopleReporters,
+            //'parentId' => $parentId,
             
             'backgroundMain' => $backgroundMain,
             'mediaLast'      => $mediaLast,
@@ -84,15 +94,15 @@ class HomeController extends Controller
         $post->incrementViewed();
 
         $categories = \Model\Category\ModelName::all();
-        $positionTop = \Model\Banner\ModelName::where('published','=',true,'and','positionTop','=','1')->first();
+        $positionTop = \Model\Banner\ModelName::top()->first();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
 
         if($post->parentId != null)
         {
             $parentId = $post->parentId;
-            $parentId = \Model\PhotoParent\ModelName::where('id','=',$parentId)->first();
-            $photoChilds = \Model\PhotoChild\ModelName::where('parentId','=',$parentId->id)->get();
+            //$parentId = \Model\PhotoParent\ModelName::where('id','=',$parentId)->first();
+            //$photoChilds = \Model\PhotoChild\ModelName::where('parentId','=',$parentId->id)->get();
             
         }else{
             $parentId = null;
@@ -127,8 +137,8 @@ class HomeController extends Controller
 
             'relatedPosts' => $relatedPosts,
 
-            'parentId'=> $parentId,
-            'photoChilds'=> $photoChilds,
+            //'parentId'=> $parentId,
+            // 'photoChilds'=> $photoChilds,
 
             'categories'=>$categories,
             'positionTop'    => $positionTop,
@@ -147,7 +157,7 @@ class HomeController extends Controller
     public function Posts()
     {        
         $perPage = 10;
-        $postAll = \Model\Post\ModelName::orderBy('id', 'desc')->published()->paginate($perPage);
+        // $postAll = \Model\Post\ModelName::orderBy('id', 'desc')->published()->paginate($perPage);
         $channel = \Model\Channel\ModelName::general();
 
         $categories = \Model\Category\ModelName::all();
@@ -155,8 +165,8 @@ class HomeController extends Controller
 
         return view('Front::post.posts',[
             'perPage'=> $perPage,
-            'postAll' => $postAll,
             'channel' => $channel,
+            'postAll' => $channel->posts()->paginate($perPage),
             'categories'=>$categories,
             'backgroundMain' => $backgroundMain,
             ]);

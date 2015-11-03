@@ -59,13 +59,17 @@
                                     </div>
                                 </div>
                                 <div class="col-md-9">
-                                    <div class="carousel">
+                                    <div class="carousel carousel-reporter">
+                                    @if(!empty($peopleReporters))
+                                    @foreach($peopleReporters as $peopleReporter)
+                                        <div class="col-md-4">
+                                        <a href=""><img src="{{ $peopleReporter->thumbnail }}" alt=""/></a>
+                                            
+                                        </div>
+                                    @endforeach
+                                    @else
                                         <div class="col-md-4"><img src="images/image.jpeg" alt=""/></div>
-                                        <div class="col-md-4"><img src="images/image.jpeg" alt=""/></div>
-                                        <div class="col-md-4"><img src="images/image.jpeg" alt=""/></div>
-                                        <div class="col-md-4"><img src="images/image.jpeg" alt=""/></div>
-                                        <div class="col-md-4"><img src="images/image.jpeg" alt=""/></div>
-                                        <div class="col-md-4"><img src="images/image.jpeg" alt=""/></div>
+                                    @endif
                                     </div>
                                 </div>
 
@@ -154,7 +158,7 @@
                                             @if(empty($post->getFile()) && empty($post->getFile())) @else <i class="fa fa-picture-o"></i> @endif
                                         </span>
 
-                                        <span class="news-time pull-right">{{ $post->getViewed() }}, {{ $post->getCreated() }}</span>
+                                        <span class="news-time pull-right">{{ $post->getViewed() }}, {{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getYear()}}</span>
                                     </div>
                                     <div class="clearfix"></div>
                                 </li>
@@ -172,24 +176,34 @@
 
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><span>Башкы директордун баракчасы</span></h3>
+                            <h3 class="panel-title director-title"><a href="#">Башкы директордун баракчасы</a></h3>
                         </div>
                         <div class="panel-body">
-                            <div id="slideshow">
+                            <div class="col-md-12" id="slideshow">
                                 <div>
-                                    <a href="{{ route('front.pages.director') }}">
+                                    <a href="#">
                                         <img src="images/chief.jpg" alt="директор"/>
                                     </a>
                                 </div>
                                 <div>
-                                    <a href="{{ route('front.pages.director') }}">
+                                    <a href="#">
                                         <img src="images/chief_3.jpg">
                                     </a>
                                 </div>
                                 <div>
-                                    <a href="{{ route('front.pages.director') }}">
+                                    <a href="#">
                                         <img src="images/chief_2.jpg">
                                     </a>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="carousel carousel-director">
+                                    <div>
+                                        Мы разворачиваем масштабную работу по реализации проекта «Ухта — Торжок-2». Задачи поставлены, сроки определены. До конца 2019 года газопровод будет построен и готов к эксплуатации.
+                                    </div>
+                                    <div>
+                                        Мы разворачиваем масштабную работу по реализации проекта «Ухта — Торжок-2». Задачи поставлены, сроки определены. До конца 2019 года газопровод будет построен и готов к эксплуатации.
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -250,7 +264,13 @@
                         <div class="panel-body">
                             <div class="col-md-12">
                                 <div class="carousel-slick">
-                                    <div class="col-md-4"><a href="#"><img src="images/gallery/001.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
+                                    <div class="col-md-4">
+                                        <a href="#">
+                                            <img src="images/gallery/001.jpg" alt=""/>
+                                            <span>Название</span>
+                                            <div class="overlay"></div>
+                                        </a>
+                                    </div>
                                     <div class="col-md-4"><a href="#"><img src="images/gallery/002.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
                                     <div class="col-md-4"><a href="#"><img src="images/gallery/003.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
                                     <div class="col-md-4"><a href="#"><img src="images/gallery/004.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
@@ -267,6 +287,17 @@
 
                         </div>
                     </div>
+                                        
+                                      
+                                <!-- @if(!empty($parentId))
+                                @foreach($photoChilds as $photoChild)
+                                    <div class="col-md-4">
+                                        <a href="#"><img src="{{ asset($photoChild->getFile()) }}" alt=""/><span>Название</span>
+                                            <div class="overlay"></div>
+                                        </a>
+                                    </div>
+                                @endforeach
+                                @endif  -->
 
                 </div>
 

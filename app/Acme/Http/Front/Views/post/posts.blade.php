@@ -20,7 +20,7 @@
 
                                 <div class="row">
                                     <ul class="grid" id="grid">
-                                    @foreach($channel->posts as $post)
+                                    @foreach($postAll as $post)
                                         <li>
                                             <div class="pin">
                                                 <div class="pin-body">

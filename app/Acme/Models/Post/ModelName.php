@@ -89,6 +89,39 @@ class ModelName extends Model
         return $time;
     }
 
+    public function getYear()
+    {
+        $fullDate = $this->created_at;
+        $year = date('Y', strtotime($fullDate));
+        return $year;
+    }
+
+    public function getMonthKg()
+    {
+        $fullDate = $this->created_at;
+        $MonthKg = date('m', strtotime($fullDate));
+        $January = 'үчтун айы';
+        $February = 'Бирдин айы';
+        $October = 'Тогуздун айы';
+        if($MonthKg == 10){
+            $MonthKg = $October;
+        }
+        return $MonthKg;
+    }  
+
+    public function getMonthRu()
+    {
+        $fullDate = $this->created_at;
+        $MonthKg = date('m', strtotime($fullDate));
+        $January = 'үчтун айы';
+        $February = 'Бирдин айы';
+        $October = 'Окт';
+        if($MonthKg == 10){
+            $MonthKg = $October;
+        }
+        return $MonthKg;
+    }   
+
     public function getDate()
     {
         $fullDate = $this->created_at;
