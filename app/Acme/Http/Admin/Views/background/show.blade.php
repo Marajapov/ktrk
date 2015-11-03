@@ -3,13 +3,24 @@
 
 @section('content')
 
-<div>
-    {!! Form::open(['route' => ['admin.background.destroy', $background], 'method' => 'DELETE', 'onsubmit' => 'return confirm("Өчүрүүгө макулсузбу?")']) !!}
-    <a href="{{ route('admin.background.edit', $background) }}" class="btn btn-primary">edit</a>
-    <button class="btn btn-danger" type="submit">delete</button>
-    {!! Form::close() !!}
+<div class="row modals">
+  <div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+      <div class="x_title">
+        <h2>Маалымат</h2>
+        <div class="clearfix"></div>
+    </div> 
+    <div class="panel-body">
+        <div class="col-md-5">
+            {!! Form::open(['route' => ['admin.background.destroy', $background], 'method' => 'DELETE', 'onsubmit' => 'return confirm("Өчүрүүгө макулсузбу?")']) !!}
+            <a href="{{ route('admin.background.edit', $background) }}" class="btn btn-primary">edit</a>
+            <button class="btn btn-danger" type="submit">delete</button>
+            {!! Form::close() !!}
+        </div>
+    </div>
 </div>
-
+</div>
+</div>
 
 <div>
     <h3>{{ $background->getName() }}</h3>

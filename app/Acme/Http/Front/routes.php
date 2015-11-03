@@ -18,7 +18,7 @@ Route::group(['domain' => 'balastan.ktrk.dev', 'prefix' => '/', 'namespace' => '
 
 });
 
-Route::group(['domain' => 'muzkanal.ktrk.dev', 'prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
+Route::group(['domain' => 'ktrk.dev', 'prefix' => '/muzkanal', 'namespace' => 'Front\Controllers'], function() {
 
     Route::get('/', ['as' => 'muzkanal.home',   'uses' => 'HomeController@Muzkanal']);
     Route::get('/posts', ['as' => 'muzkanal.posts',   'uses' => 'MuzkanalController@posts']);

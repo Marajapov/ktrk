@@ -2,11 +2,13 @@
 @section('title', $photoChild->getName())
 
 @section('content')
-
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title">Информация</h3>
-
+<div class="row modals">
+  <div class="col-md-12 col-sm-12 col-xs-12">
+<div class="x_panel">
+      <div class="x_title">
+        <h2>Маалымат</h2>
+        <div class="clearfix"></div>
+      </div>  
     <div class="col-md-12">
       <h2><span class="label label-default"></span>{{ $photoChild->getName() }}</h2>
     </div>
@@ -28,6 +30,8 @@
     @endif
 
   </div>
+</div>
+</div>
 </div>
 @stop
 

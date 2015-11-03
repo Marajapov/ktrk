@@ -45,7 +45,7 @@
             },
             cache: true
         },
-        placeholder: 'Выберите тег',
+        placeholder: 'Тег тандаңыз',
         tags: true,
         tokenSeparators: [',', ' '],
         minimumInputLength: 1,
