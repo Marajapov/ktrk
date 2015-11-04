@@ -58,7 +58,7 @@ background-position: center center;
 /* Grid style */
 .grid-wrap {
 	/*max-width: 69em !important;*/
-	padding: 0 0.5em 1.875em !important;
+	padding: 0px 25px 10px 10px;
 }
 
 .grid {
@@ -180,6 +180,7 @@ background-position: center center;
 .slideshow figcaption h3 {
 	font-weight: 300 !important;
 	font-size: 200% !important;
+	color: #444;
 }
 
 /* Navigation */

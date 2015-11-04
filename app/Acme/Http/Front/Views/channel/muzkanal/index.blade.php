@@ -11,8 +11,32 @@
     <script src="js/gallery/modernizr.custom.js"></script>
     <link rel="stylesheet" href="css/style.css"/>
 
-    <!--     <link rel="stylesheet" href="css/audio/reset.css" /> -->
-    <!--     <link rel="stylesheet" href="css/audio/main.css" /> -->
+        <!-- <link rel="stylesheet" href="css/audio/reset.css" />
+       <link rel="stylesheet" href="css/audio/main.css" /> -->
+       <link rel="stylesheet"  href="css/lightslider.css"/>
+
+       <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+       <script src="js/lightslider.js"></script>
+       <script>
+       	 $(document).ready(function() {
+   			$("#content-slider").lightSlider({
+                   loop:true,
+                   keyPress:true
+               });
+               $('#image-gallery').lightSlider({
+                   gallery:true,
+                   item:1,
+                   thumbItem:9,
+                   slideMargin: 0,
+                   speed:500,
+                   auto:true,
+                   loop:true,
+                   onSliderLoad: function() {
+                       $('#image-gallery').removeClass('cS-hidden');
+                   }
+               });
+   		});
+       </script>
 
 </head>
 <body class="music">
@@ -409,7 +433,7 @@
         <h3 class="panel-title"><span> - Жаңылыктар - </span></h3>
     </div>
     <div class="panel-body">
-        <div class="col-md-12 block">
+        <div class="col-md-12 clearfix">
             <h2>Кыргызская келин Оливия!</h2>
 
             <div class="muzimg">
@@ -423,11 +447,17 @@
                 </p>
             </div>
 
+
+
             <article>
                 <p>
                     Межнациональные браки в мире – тема давняя и уже привычная. Однако некоторые союзы разных этносов и культур все же еще способны удивить. Как например, история жительницы Пенсильвании Оливия Стивенс, которая вышла замуж за кыргызстанца Каната и стала настоящей кыргызской келинкой. Предлагаем вам узнать, как необычная влюбленная пара живет вместе.</p>
 
                     <p>Канат несколько лет работает гидом, именно во время одного из туристических походов он встретился со своей будущей супругой Оливией.</p>
+
+                    <p>
+                    Межнациональные браки в мире – тема давняя и уже привычная. Однако некоторые союзы разных этносов и культур все же еще способны удивить. Как например, история жительницы Пенсильвании Оливия Стивенс, которая вышла замуж за кыргызстанца Каната и стала настоящей кыргызской келинкой. Предлагаем вам узнать, как необычная влюбленная пара живет вместе.</p>
+
                     <blockquote> «Канат предложил не только руку, но и целый комплект» </blockquote>
 
                     <p>История Каната и Оливии начиналась просто - сначала общие встречи с друзьями и проводы домой, потом романтические отношения. Канат признается, что не делал предложение руки и сердца на закате солнца как в американских фильмах, он просто объяснил Оливии, что у него нет времени на пустые отношения и ему пора создавать семью.</p>
@@ -437,6 +467,61 @@
                 </article>
             </div>
 
+            <div class="demo">
+                  <div class="item">
+                      <div class="clearfix" style="max-width:100%;">
+                          <ul id="image-gallery" class="gallery list-unstyled cS-hidden">
+                              <li data-thumb="images/logo_notext.png">
+                                  <img src="images/logo_notext.png" />
+                                   </li>
+                              <li data-thumb="img/cS-3.jpg">
+                                  <img src="img/cS-3.jpg" />
+                                  </li>
+                              <li data-thumb="img/thumb/cS-3.jpg">
+                                  <img src="img/cS-3.jpg" />
+                                   </li>
+                              <li data-thumb="img/thumb/cS-4.jpg">
+                                  <img src="img/cS-4.jpg" />
+                                   </li>
+                              <li data-thumb="img/thumb/cS-5.jpg">
+                                  <img src="img/cS-5.jpg" />
+                                   </li>
+                              <li data-thumb="img/thumb/cS-6.jpg">
+                                  <img src="img/cS-6.jpg" />
+                                   </li>
+                              <li data-thumb="images/main_bg.jpg">
+                                  <img src="images/main_bg.jpg" />
+                                   </li>
+                              <li data-thumb="img/thumb/cS-8.jpg">
+                                  <img src="img/cS-8.jpg" />
+                                   </li>
+                              <li data-thumb="img/thumb/cS-9.jpg">
+                                  <img src="img/cS-9.jpg" />
+                                   </li>
+                              <li data-thumb="img/thumb/cS-10.jpg">
+                                  <img src="img/cS-10.jpg" />
+                                   </li>
+                              <li data-thumb="img/thumb/cS-11.jpg">
+                                  <img src="img/cS-11.jpg" />
+                                   </li>
+                              <li data-thumb="img/thumb/cS-12.jpg">
+                                  <img src="img/cS-12.jpg" />
+                                   </li>
+                              <li data-thumb="img/thumb/cS-13.jpg">
+                                  <img src="img/cS-13.jpg" />
+                                   </li>
+                              <li data-thumb="img/thumb/cS-14.jpg">
+                                  <img src="img/cS-14.jpg" />
+                                   </li>
+                              <li data-thumb="img/thumb/cS-15.jpg">
+                                  <img src="img/cS-15.jpg" />
+                                   </li>
+                          </ul>
+                      </div>
+                  </div>
+
+
+              </div>
 
             <footer>
                 <a href="#">
@@ -565,7 +650,7 @@
                                         <div class="music-body clearfix">
                                             <a href="#">
 
-                                                <p class="music-title">Бек Бобиева жакында жаңы хит ырды эл алдына тартуулайм дейт</p>
+                                                <p class="music-title">Бек Борбиев жакында жаңы хит ырды эл алдына тартуулайм дейт</p>
                                                 <span class="ctg"><img src="images/1.jpg" alt=""/></span>
                                             </a>
                                         </div>
@@ -637,17 +722,17 @@
 
                     </div>
 
-                    <div class="col-md-12" style="padding: 10px;">
+                    <div class="col-md-12 hit-parad" style="padding: 10px;">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><span>Фотогалерея</span></h3>
+                                <h3 class="panel-title"><span> - Фотогалерея - </span></h3>
                             </div>
                             <div id="grid-gallery" class="grid-gallery">
                                 <section class="grid-wrap">
                                     <ul class="grid">
                                         <li>
                                             <figure>
-                                                <img src="images/5.jpg" alt="img01"/>
+                                                <img src="images/logo_notext.png" alt="img01"/>
 
                                             </figure>
                                         </li>
@@ -701,17 +786,17 @@
                                         <li>
                                             <figure>
                                                 <figcaption>
-                                                    <h3>Letterpress asymmetrical</h3>
-                                                    <p>Kale chips lomo biodiesel stumptown Godard Tumblr, mustache sriracha tattooed cray aute slow-carb placeat delectus. Letterpress asymmetrical fanny pack art party est pour-over skateboard anim quis, ullamco craft beer.</p>
+                                                    <h3>Таң калыштуу</h3>
+                                                    <p>Дүйнөдө эмне деген ган укмуштар болуп жатат.</p>
                                                 </figcaption>
-                                                <img src="images/5.jpg" alt="img01"/>
+                                                <img src="images/logo_notext.png" alt="img01"/>
                                             </figure>
                                         </li>
                                         <li>
                                             <figure>
                                                 <figcaption>
-                                                    <h3>Vice velit chia</h3>
-                                                    <p>Chillwave Echo Park Etsy organic Cosby sweater seitan authentic pour-over. Occupy wolf selvage bespoke tattooed, cred sustainable Odd Future hashtag butcher.</p>
+                                                    <h3>Күн кайрадан тийүүдө</h3>
+                                                    <p>Бүгүн аяабай жакшы күн анткени күн бар, демек күн аябагандай жакшы болот</p>
                                                 </figcaption>
                                                 <img src="images/4.jpg" alt="img02"/>
                                             </figure>
@@ -719,8 +804,8 @@
                                         <li>
                                             <figure>
                                                 <figcaption>
-                                                    <h3>Brunch semiotics</h3>
-                                                    <p>IPhone PBR polaroid before they sold out meh you probably haven't heard of them leggings tattooed tote bag, butcher paleo next level single-origin coffee photo booth.</p>
+                                                    <h3>Булуттар бар, демек маанай да бар</h3>
+                                                    <p>Булуттар табияттын укмуш белеги, жөн эле карап аларадын учупу атканы керемет.</p>
                                                 </figcaption>
                                                 <img src="images/3.jpg" alt="img03"/>
                                             </figure>
@@ -824,7 +909,6 @@
 
 
 
-                <script src="js/jquery-1.11.2.min.js"></script>
                 <script src="js/bootstrap.min.js"></script>
 
                 <script src="js/gallery/imagesloaded.pkgd.min.js"></script>
@@ -836,6 +920,13 @@
                     new CBPGridGallery(document.getElementById('grid-gallery'));
                 </script>
 
+                <script src="js/audio/audioplayer.js"></script>
+                <script>
+                    $(function ()
+                    {
+                        $('audio').audioPlayer();
+                    });
+                </script>
 
 
                 <script type="text/javascript" src="filter/js/jquery.easing.min.js"></script>
@@ -844,19 +935,6 @@
                 <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
                 <script type="text/javascript" src="slick/slick.min.js"></script>
                 <script type="text/javascript" src="js/jquery.roundabout.js"></script>
-
-
-
-
-
-
-                <script src="js/audio/audioplayer.js"></script>
-                <script>
-                    $(function ()
-                    {
-                        $('audio').audioPlayer();
-                    });
-                </script>
 
                 <script>
                     $('.carousel-slick').slick({
