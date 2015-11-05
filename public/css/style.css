@@ -2888,8 +2888,109 @@ display: table-cell;
   padding-left: 8px;
 }
 .audioinfo a {
-  padding-top:  5px; 
+  padding-top:  5px;
 }
 
 
 /*Muzakanal styles*/
+
+/* People Reporter block styles*/
+.peoplereporter .panel-heading{
+  text-align: left !important;
+  background: #FF5722;
+  margin-bottom: 10px;
+}
+
+
+.peoplereporter .panel-heading h3 {
+  color: #fff;
+}
+.peoplereporter .panel-title i {
+  font-size: 200%;
+  float: right;
+}
+
+.peoplereporter .panel-heading2 {
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    background: #03A9F4;
+    margin-bottom: 10px;
+}
+.peoplereporter .panel-heading2:hover {
+    background: #FF5722;
+    cursor: pointer;
+}
+
+.peoplereporter .panel-heading2 h3{
+  border-bottom: 3px solid #F1F4F9;
+  padding: 5px 0 5px 2px;
+  color: #fff;
+  font-family: 'Roboto Condensed', serif;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.peoplereporter .slick-slide img {
+  /*top: 30% !important;
+  height: 100px !important;*/
+  width: 100%;
+}
+
+.peoplereporter .slick-slide {
+  background: none;
+}
+
+
+.peoplereporter .datetime {
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    font-size: 12px;
+    position: absolute;
+    right: 0px;
+    padding: 1px;
+    padding-right: 2px;
+}
+
+.peoplereporter .views {
+  left: 0px;
+  float: left;
+  position: absolute;
+  color: #fff;
+  padding-left: 2px;
+  font-size: 12px;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.peoplereporter .views:hover {
+ color: #000;
+}
+.peoplereporter .carousel-reporter p {
+  position: absolute;
+  bottom: 0px;
+  font-size: 14px;
+  line-height: 14px;
+  margin: 0px !important;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 5px;
+}
+
+.peoplereporter .modal .modal-title {
+  color: #444 !important;
+}
+
+.peoplereporter .modal .textforma .form-control  {
+  height: 250px !important;
+}
+
+.news-timer {
+  position: absolute;
+right: 10px;
+top: 10px;
+color: #807E7E;
+font-size: 12px;
+}
+/* People Reporter block styles*/
