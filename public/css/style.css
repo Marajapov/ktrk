@@ -2856,5 +2856,40 @@ Author: Eldos;
             }
         }
 
-  
+.hit-parad .media-object {
+  width: 64px;
+  height: 64px;
+  /*border-radius: 50% !important;*/
+}
+
+.hit-parad .news-time {
+  margin-top: -22px;
+  z-index: 99;
+  position: absolute;
+  color: #FFF;
+  background: #444;
+  padding: 0px 2px;
+}
+
+.audioinfo {
+  background: #e2e2e2;
+  padding:5px;
+
+}
+
+.audioinfo h4 {
+display: table-cell;
+  font-size: unset;
+  font-weight: bold;
+}
+.audioinfo h5 {
+display: table-cell;
+  font-size: unset;
+  padding-left: 8px;
+}
+.audioinfo a {
+  padding-top:  5px; 
+}
+
+
 /*Muzakanal styles*/

@@ -437,7 +437,7 @@
             <h2>Кыргызская келин Оливия!</h2>
 
             <div class="muzimg">
-                <img src="images/2.jpg" alt="">
+                <img src="images/2.jpg" alt="" data-toggle="tooltip" data-placement="top" title="Бул жөн гана сүрөт эмес">
                 <p>
                     <audio preload="auto" controls>
                         <source src="css/audio/audio.mp3" />
@@ -445,6 +445,12 @@
                         <source src="css/audio/audio.wav" />
                     </audio>
                 </p>
+                <div class="audioinfo">
+                    <p><h4>Тема:</h4><h5>Кыргыз келини Оливия</h5></p>
+                    <p><h4>Алып баруучу:</h4><h5>Кыргыз кызы Кыргызгүл</h5></p>
+                    <p><h4>Маектешкен:</h4><h5>Оливия Браун</h5></p>
+                    <p><h4>Аудиону көчүрүп алуу:</h4><a style="text-decoration:underline" title="Маустун оң жагын басып көчүрүп алсаңыз болот" href="css/audio/audio.mp3" >Бактылуу Оливия <i class="fa fa-download"></i></a></p>
+                </div>
             </div>
 
 
@@ -455,9 +461,7 @@
 
                     <p>Канат несколько лет работает гидом, именно во время одного из туристических походов он встретился со своей будущей супругой Оливией.</p>
 
-                    <p>
-                    Межнациональные браки в мире – тема давняя и уже привычная. Однако некоторые союзы разных этносов и культур все же еще способны удивить. Как например, история жительницы Пенсильвании Оливия Стивенс, которая вышла замуж за кыргызстанца Каната и стала настоящей кыргызской келинкой. Предлагаем вам узнать, как необычная влюбленная пара живет вместе.</p>
-
+                
                     <blockquote> «Канат предложил не только руку, но и целый комплект» </blockquote>
 
                     <p>История Каната и Оливии начиналась просто - сначала общие встречи с друзьями и проводы домой, потом романтические отношения. Канат признается, что не делал предложение руки и сердца на закате солнца как в американских фильмах, он просто объяснил Оливии, что у него нет времени на пустые отношения и ему пора создавать семью.</p>
@@ -465,63 +469,78 @@
                     <p>По словам Оливии, разговор с Канатом был открытый, он откровенно сказал, что хочет жениться:</p>
                     <blockquote>- Он единственный сын и живет с мамой. И это означало, что если я выхожу замуж за Каната, мы будем жить в Кыргызстане. Он предложил мне не только руку, но и целый комплект (смеется). Откровенность дала мне возможность оценить и выбрать. Я ведь даже не думала, что выйду за муж за кыргызстанца. Канат покорил меня своими личными качествами, он откровенный человек и с ним не бывает скучно. Он отличный муж, относится ко мне как к человеку, это очень редко можно встретить. Вся семья такая, они золотые. Это был для меня важный фактор.</blockquote>
                 </article>
-            </div>
 
-            <div class="demo">
-                  <div class="item">
-                      <div class="clearfix" style="max-width:100%;">
-                          <ul id="image-gallery" class="gallery list-unstyled cS-hidden">
-                              <li data-thumb="images/logo_notext.png">
-                                  <img src="images/logo_notext.png" />
-                                   </li>
-                              <li data-thumb="img/cS-3.jpg">
-                                  <img src="img/cS-3.jpg" />
-                                  </li>
-                              <li data-thumb="img/thumb/cS-3.jpg">
-                                  <img src="img/cS-3.jpg" />
-                                   </li>
-                              <li data-thumb="img/thumb/cS-4.jpg">
-                                  <img src="img/cS-4.jpg" />
-                                   </li>
-                              <li data-thumb="img/thumb/cS-5.jpg">
-                                  <img src="img/cS-5.jpg" />
-                                   </li>
-                              <li data-thumb="img/thumb/cS-6.jpg">
-                                  <img src="img/cS-6.jpg" />
-                                   </li>
-                              <li data-thumb="images/main_bg.jpg">
-                                  <img src="images/main_bg.jpg" />
-                                   </li>
-                              <li data-thumb="img/thumb/cS-8.jpg">
-                                  <img src="img/cS-8.jpg" />
-                                   </li>
-                              <li data-thumb="img/thumb/cS-9.jpg">
-                                  <img src="img/cS-9.jpg" />
-                                   </li>
-                              <li data-thumb="img/thumb/cS-10.jpg">
-                                  <img src="img/cS-10.jpg" />
-                                   </li>
-                              <li data-thumb="img/thumb/cS-11.jpg">
-                                  <img src="img/cS-11.jpg" />
-                                   </li>
-                              <li data-thumb="img/thumb/cS-12.jpg">
-                                  <img src="img/cS-12.jpg" />
-                                   </li>
-                              <li data-thumb="img/thumb/cS-13.jpg">
-                                  <img src="img/cS-13.jpg" />
-                                   </li>
-                              <li data-thumb="img/thumb/cS-14.jpg">
-                                  <img src="img/cS-14.jpg" />
-                                   </li>
-                              <li data-thumb="img/thumb/cS-15.jpg">
-                                  <img src="img/cS-15.jpg" />
-                                   </li>
-                          </ul>
+                <div class="photoslider">
+                      <div class="item">
+                          <div class="clearfix" style="max-width:100%;">
+                              <ul id="image-gallery" class="gallery list-unstyled cS-hidden img-list">
+                                  <li data-thumb="images/logo_notext.png">
+                                      <img src="images/logo_notext.png" />
+                                      <span class="text-content"><span>Кереметүү биздин дүйнө</span></span>
+                                       </li>
+                                  <li data-thumb="img/cS-3.jpg">
+                                      <img src="img/cS-3.jpg" />
+                                      <span class="text-content"><span>Кереметүү биздин дүйнө</span></span>
+                                      </li>
+                                  <li data-thumb="img/thumb/cS-3.jpg">
+                                      <img src="img/cS-3.jpg" />
+                                      <span class="text-content"><span>Кереметүү биздин дүйнө</span></span>
+                                       </li>
+                                  <li data-thumb="img/thumb/cS-4.jpg">
+                                      <img src="img/cS-4.jpg" />
+                                      <span class="text-content"><span>Кереметүү биздин дүйнө</span></span>
+                                       </li>
+                                  <li data-thumb="img/thumb/cS-5.jpg">
+                                      <img src="img/cS-5.jpg" />
+                                      <span class="text-content"><span>Кереметүү биздин дүйнө</span></span>
+                                       </li>
+                                  <li data-thumb="img/thumb/cS-6.jpg">
+                                      <img src="img/cS-6.jpg" />
+                                      <span class="text-content"><span>Кереметүү биздин дүйнө</span></span>
+                                       </li>
+                                  <li data-thumb="images/main_bg.jpg">
+                                      <img src="images/main_bg.jpg" />
+                                      <span class="text-content"><span>Кереметүү биздин дүйнө</span></span>
+                                       </li>
+                                  <li data-thumb="img/thumb/cS-8.jpg">
+                                      <img src="img/cS-8.jpg" />
+                                      <span class="text-content"><span>Кереметүү биздин дүйнө</span></span>
+                                       </li>
+                                  <li data-thumb="img/thumb/cS-9.jpg">
+                                      <img src="img/cS-9.jpg" />
+                                      <span class="text-content"><span>Кереметүү биздин дүйнө</span></span>
+                                       </li>
+                                  <li data-thumb="img/thumb/cS-10.jpg">
+                                      <img src="img/cS-10.jpg" />
+                                      <span class="text-content"><span>Кереметүү биздин дүйнө</span></span>
+                                       </li>
+                                  <li data-thumb="img/thumb/cS-11.jpg">
+                                      <img src="img/cS-11.jpg" />
+                                      <span class="text-content"><span>Кереметүү биздин дүйнө</span></span>
+                                       </li>
+                                  <li data-thumb="img/thumb/cS-12.jpg">
+                                      <img src="img/cS-12.jpg" />
+                                      <span class="text-content"><span>Кереметүү биздин дүйнө</span></span>
+                                       </li>
+                                  <li data-thumb="img/thumb/cS-13.jpg">
+                                      <img src="img/cS-13.jpg" />
+                                      <span class="text-content"><span>Кереметүү биздин дүйнө</span></span>
+                                       </li>
+                                  <li data-thumb="img/thumb/cS-14.jpg">
+                                      <img src="img/cS-14.jpg" />
+                                      <span class="text-content"><span>Кереметүү биздин дүйнө</span></span>
+                                       </li>
+                                  <li data-thumb="img/thumb/cS-15.jpg">
+                                      <img src="img/cS-15.jpg" />
+                                      <span class="text-content"><span>Кереметүү биздин дүйнө</span></span>
+                                       </li>
+                              </ul>
+                          </div>
                       </div>
                   </div>
+            </div>
 
 
-              </div>
 
             <footer>
                 <a href="#">
@@ -531,6 +550,7 @@
 
         </div>
     </div>
+
 </div>
 
 <div class="bottom-left-block col-md-4">
@@ -624,102 +644,102 @@
                     </div>
 
                     <div class="bottom-left-block col-md-4">
-                        <div class="panel panel-default music-news hit-parad">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><span> - Музыкалдык жаңылыктар - </span></h3>
-                            </div>
-                            <div class="panel-body">
-                                <ul class="list-group">
-                                    <li class="list-group-item news-item">
-                                        <div class="music-body clearfix">
-                                            <a href="#">
-
-                                                <p class="music-title">Айтылуу Нурлан Насип жакында Кайрат Нуртас менен биргеликте концерт берет"</p>
-                                                <span class="ctg"><img src="images/2.jpg" alt=""/></span>
-                                            </a>
-                                        </div>
-                                        <div class="news-adds clearfix">
-                                            <a href="#">Политика</a>
-                                            <span class="news-file"><i class="fa fa-image"></i></span>
-
-                                            <span class="news-time pull-right">10:10</span>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </li>
-                                    <li class="list-group-item news-item">
-                                        <div class="music-body clearfix">
-                                            <a href="#">
-
-                                                <p class="music-title">Бек Борбиев жакында жаңы хит ырды эл алдына тартуулайм дейт</p>
-                                                <span class="ctg"><img src="images/1.jpg" alt=""/></span>
-                                            </a>
-                                        </div>
-                                        <div class="news-adds clearfix">
-                                            <a href="#">Политика</a>
-                                            <span class="news-file"><i class="fa fa-image"></i></span>
-
-                                            <span class="news-time pull-right">10:10</span>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </li>
-                                    <li class="list-group-item news-item">
-                                        <div class="music-body clearfix">
-                                            <a href="#">
-
-                                                <p class="music-title">Гүлжигит Калыков жаңы клип тартуу учурунда күтүүсүз жакшы сюрпризге кабыл болду</p>
-                                                <span class="ctg"><img src="images/3.jpg" alt=""/></span>
-                                            </a>
-                                        </div>
-                                        <div class="news-adds clearfix">
-                                            <a href="#">Политика</a>
-                                            <span class="news-file"><i class="fa fa-image"></i></span>
-
-                                            <span class="news-time pull-right">10:10</span>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </li>
-                                    <li class="list-group-item news-item">
-                                        <div class="music-body clearfix">
-                                            <a href="#">
-
-                                                <p class="music-title">Жоролор тобу Евразия жылдызы долбооруна конок катары чакырылышты</p>
-                                                <span class="ctg"><img src="images/4.jpg" alt=""/></span>
-                                            </a>
-                                        </div>
-                                        <div class="news-adds clearfix">
-                                            <a href="#">Политика</a>
-                                            <span class="news-file"><i class="fa fa-image"></i></span>
-
-                                            <span class="news-time pull-right">10:10</span>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </li>
-                                    <li class="list-group-item news-item">
-                                        <div class="music-body clearfix">
-                                            <a href="#">
-
-                                                <p class="music-title">Ырчылар жана ырлар: Бүгүн жана кечөө, а эртең кандай болот?</p>
-                                                <span class="ctg"><img src="images/5.jpg" alt=""/></span>
-                                            </a>
-                                        </div>
-                                        <div class="news-adds clearfix">
-                                            <a href="#">Политика</a>
-                                            <span class="news-file"><i class="fa fa-image"></i></span>
-
-                                            <span class="news-time pull-right">10:10</span>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </li>
-                                </ul>
-
-                                <footer>
-                                    <a href="#">
-                                        <span>Бардык жаңылыктар <i class="fa fa-arrow-circle-right"></i></span>
-                                    </a>
-                                </footer>
-                            </div>
+                      <div class="panel panel-default hit-parad">
+                        <div class="panel-heading">
+                          <h3 class="panel-title"><span> - Музыкалдык жаңылыктар - </span></h3>
                         </div>
-
+                        <div class="panel-body">
+                          <div class="media">
+                            <div class="media-left media-middle">
+                              <a href="#">
+                                <img class="media-object" src="images/1.jpg" alt="">
+                              </a>
+                            </div>
+                            <div class="media-body">
+                              <h4 class="media-heading"><a href="#">Нуртас жана Насип тартуулайт  </a></h4>
+                              Айтылуу Нурлан Насип жакында Кайрат Нуртас менен биргеликте концерт берет
+                            </div>
+                            <div class="news-adds clearfix">
+                                <span class="news-time pull-left">10:10</span>
+                            </div>
+                          </div>
+                          <div class="media">
+                            <div class="media-left media-middle">
+                              <a href="#">
+                                <img class="media-object" src="images/2.jpg" alt="">
+                              </a>
+                            </div>
+                            <div class="media-body">
+                              <h4 class="media-heading"><a href="#">Профессионалдык концерт  </a></h4>
+                              Кечөө Филармонияда легендарлуу Инсан тобунун концерти болуп өттү.
+                            </div>
+                            <div class="news-adds clearfix">
+                                <span class="news-time pull-left">10:10</span>
+                            </div>
+                          </div>
+                          <div class="media">
+                            <div class="media-left media-middle">
+                              <a href="#">
+                                <img class="media-object" src="images/3.jpg" alt="">
+                              </a>
+                            </div>
+                            <div class="media-body">
+                              <h4 class="media-heading"><a href="#">М. Иманбеков кайда жүрөт?  </a></h4>
+                              Кызыктуу суроо, бирок эч кандай кызыктуу деле эмес.
+                            </div>
+                            <div class="news-adds clearfix">
+                                <span class="news-time pull-left">10:10</span>
+                            </div>
+                          </div>
+                          <div class="media">
+                            <div class="media-left media-middle">
+                              <a href="#">
+                                <img class="media-object" src="images/4.jpg" alt="">
+                              </a>
+                            </div>
+                            <div class="media-body">
+                              <h4 class="media-heading"><a href="#">С. Султандын жаңы клиби  </a></h4>
+                              Аркы жумада С.Садыралиевдин жаңы чыгармасын угабыз
+                            </div>
+                            <div class="news-adds clearfix">
+                                <span class="news-time pull-left">10:10</span>
+                            </div>
+                          </div>
+                          <div class="media">
+                            <div class="media-left media-middle">
+                              <a href="#">
+                                <img class="media-object" src="images/5.jpg" alt="">
+                              </a>
+                            </div>
+                            <div class="media-body">
+                              <h4 class="media-heading"><a href="#">Күз келди, а жок концерт келди  </a></h4>
+                              Күз күрөш дечү мурда, азыр болсо күз күрөйт дейт.
+                            </div>
+                            <div class="news-adds clearfix">
+                                <span class="news-time pull-left">10:10</span>
+                            </div>
+                          </div>
+                          <div class="media">
+                            <div class="media-left media-middle">
+                              <a href="#">
+                                <img class="media-object" src="images/6.jpg" alt="">
+                              </a>
+                            </div>
+                            <div class="media-body">
+                              <h4 class="media-heading"><a href="#"> Ырчылардын гонорарлары</a></h4>
+                             Ким көп сурайт, ким аз сурайт, ким той ээсине жараша алат.
+                            </div>
+                            <div class="news-adds clearfix">
+                                <span class="news-time pull-left">10:10</span>
+                            </div>
+                          </div>
+                          <footer>
+                              <a href="#">
+                                  <span>Бардык жаңылыктар <i class="fa fa-arrow-circle-right"></i></span>
+                              </a>
+                          </footer>
+                        </div>
+                      </div>
                     </div>
 
                     <div class="col-md-12 hit-parad" style="padding: 10px;">
