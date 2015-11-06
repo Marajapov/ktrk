@@ -18,6 +18,38 @@
                         <div class="panel-body">
                             <div class="col-md-12 block news-block">
 
+                                <div class="date-filter clearfix">
+                                    <div class="">
+                                        <div class="form-group col-md-2">
+                                            <div class="input-group date" id="datetimepicker1">
+                                                <input type="text" class="form-control" />
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-calendar"></i>
+                                                    </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="pull-left form-divider">
+                                            -
+                                        </div>
+
+                                        <div class="form-group col-md-2">
+                                            <div class="input-group date" id="datetimepicker2">
+                                                <input type="text" class="form-control" />
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-calendar"></i>
+                                                    </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group col-md-2">
+                                            <button type="submit" class="btn btn-default btn-filter">
+                                                фильтр
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
                                 <div class="row">
                                     <ul class="grid" id="grid">
                                     @foreach($postAll as $post)
@@ -95,5 +127,38 @@
         </section>
     </div>
 </div>
+
+@stop
+
+@section('footerScript')
+    <script type="text/javascript" src="{{ asset('js/moment.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/ru.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/transition.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/collapse.js') }}"></script>
+
+    <script src="{{ asset('js/bootstrap-datetimepicker.js') }}"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#datetimepicker1').datetimepicker({
+                locale: 'ru',
+                format: 'L'
+            });
+            $('#datetimepicker2').datetimepicker({
+                locale: 'ru',
+                format: 'L'
+            });
+        });
+    </script>
+
+    <script src="{{ asset('js/masonry.pkgd.min.js') }}"></script>
+    <script src="{{ asset('js/imagesloaded.js') }}"></script>
+    <script src="{{ asset('js/classie.js') }}"></script>
+
+    <script src="{{ asset('js/AnimOnScroll.js') }}"></script>
+    <script>
+        new AnimOnScroll( document.getElementById( 'grid' ), {} );
+    </script> 
+
 
 @stop
