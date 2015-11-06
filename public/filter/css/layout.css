@@ -2,7 +2,7 @@
 #info {
 	-webkit-border-radius:5px;
 	-moz-border-radius:5px;
-	border-radius:5px;				
+	border-radius:5px;
 	background:#fcf8e3;
 	border:1px solid  #fbeed5;
 	width:95%;
@@ -22,12 +22,12 @@
 	-o-box-sizing: border-box;
 
 	}
-	
+
 	#info a {
 		color:#c09853;
 		text-decoration:none;
 	}
-	
+
 	#info p {
 		margin:5px 0 0 0;
 	}
@@ -48,7 +48,7 @@
 		float:left;
         padding: 2px;
 	}
-	
+
 	#filters li span {
 		display: block;
 		padding:5px 10px;
@@ -62,12 +62,12 @@
 
         transition: all 0.5s ease;
 	}
-	
+
 	#filters li span.active {
 		background: #29a2f8;
 		color:#fff;
 	}
- 
+
 
 #portfoliolist{
     margin-top: 40px;
@@ -84,6 +84,29 @@
 	float:left;
 	overflow:hidden;
 }
+/*Connexxification*/
+@media screen and (max-width: 35em) {
+#portfoliolist .portfolio {
+	width: 50% !important;
+	margin: 5px auto;
+	padding-left: 5px;
+	}
+}
+
+@media screen and (max-width: 30em) {
+#portfoliolist .portfolio {
+		width: 100% !important;
+	}
+}
+/*Connexxification*/
+#portfoliolist .portfolios {
+width:31.333333%;
+	margin:1%;
+    margin-bottom: 20px;
+	display:none;
+	float:left;
+	overflow:hidden;
+}
 
 	.portfolio-wrapper {
 		overflow:hidden;
@@ -92,11 +115,11 @@
 		cursor:pointer;
 	}
 
-	.portfolio img {
+	.portfolio, .portfolios img {
 		max-width:100%;
 		position: relative;
 	}
-	
+
 	.portfolio .label {
 		position: absolute;
 		bottom:0px;
@@ -128,7 +151,7 @@
 			top:0;
 			left:0;
 		}
-	
+
 		.portfolio .label-text {
 			color:#fff;
 			position: relative;
@@ -143,7 +166,7 @@
             line-height: 1.5;
             text-transform: uppercase;
         }
-			
+
 			.portfolio .text-category {
 				display:block;
 				font-size:12px;
@@ -151,9 +174,12 @@
                 color: #858F97;
                 text-transform: uppercase;
 			}
-	
-	
-	
+
+
+
+
+
+
 
 
 
@@ -163,4 +189,3 @@
 
 
 /* #Clearing */
-

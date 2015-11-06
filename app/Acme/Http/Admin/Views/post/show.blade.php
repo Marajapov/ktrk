@@ -2,7 +2,7 @@
 @section('title', $post->getTitle())
 
 @section('content')
-
+<div class="row modals">
 <div>
     {!! Form::open(['route' => ['admin.post.destroy', $post], 'method' => 'DELETE', 'onsubmit' => 'return confirm("Өчүрүүгө макулсузбу?")']) !!}
     <a href="{{ route('admin.post.edit', $post) }}" class="btn btn-labeled btn-success"><span class="btn-label"><i class="glyphicon glyphicon-cog"></i></span>Өзгөртүү</a>
@@ -33,6 +33,7 @@
     @foreach($post->tags as $tag)
     <span>{{ $tag->getName() }}</span>
     @endforeach
+</div>
 </div>
 @endif
 @stop
