@@ -3,9 +3,13 @@
 
 @section('content')
 
+<!-- <div class="pogoda">
+<script>var yaWDefCity=27612;</script><script type="text/javascript" src="http://ru.commontools.net/geoip/ya.w.v2.ini.js" target="_blank" style="background:red"></script>
+<script type="text/javascript">document.write('<'+'script type="text/javascript" src="http://ru.commontools.net/geoip/ya.w.v2.js?def_country=159&def_city=27612&user_city='+yaWCityIndex+'"target="_blank"><'+'/script>');</script>
+<script type="text/javascript">document.write('<a href="http://clck.yandex.ru/redir/dtype=stred/pid=7/cid=1228/*http://pogoda.yandex.ru/'+yaWCityCode+'"target="_blank"><img src="http://info.weather.yandex.net/'+yaWCityCode+'/3_white.ru.png"target="_blank" border="0" /></a>');</script>
+</div> -->
 <div class="container main-wrapper">
   <div class="row">
-
     <section class="content clearfix">
       <div class="clearfix">
         <div class="top-left-block col-md-8">
@@ -17,9 +21,10 @@
               @foreach($generalPosts as $post)
               <div class="col-md-4 block">
                 <figure class="effect-zoe">
+                  <span class="post-timer pull-right">  <i class="fa fa-eye"></i>&nbsp;{{ $post->getViewed() }}</span></a>
                   <a href="{{ route('front.post', $post) }}" class="main-img">
                     <img src="@if(empty($post->getFile()))images/2.jpg @else {{ asset($post->getFile()) }} @endif" alt="img26">
-                    <i class="fa fa-play-circle-o"></i></a>
+                    <i class="fa fa-play-circle-o"></i>
                     <div class="news-channel">
                       <a href="channel.html">
                         <img src="{{ $post->isChannelIcon($post->channel_id)}}" alt=""/>
@@ -55,57 +60,59 @@
             <div class="panel panel-default panel-carousel peoplereporter">
               <div class="panel-body">
                 <div class="col-md-3 heading">
+                <img src="images/locationcameramini2.png">
                   <div class="panel-heading">
                     <h3 class="panel-title">
-                      <span>Элдик репортер</span>
+                      <span>Элдик репортер</span>                      
                     </h3>
+                    <p>Народный репортер</p>
+
                   </div>
                   <div class="panel-heading2">
                     <h3 class="panel-title">
-                      <i class="fa fa-plus"></i>
-
-                      <a type="button" data-toggle="modal" data-target="#exampleModal"><span>Жаңылык кошуу</span></a></h3>
+                      <a  type="button" data-toggle="modal" data-target="#exampleModal"><span>Жаңылык кошуу</span><span class="prrus">Добавить новость</span><i class="fa fa-file-text-o"></i></a></h3>
+<!--                       <div class="praddicon"><i class="fa fa-file-text-o"></i></div> -->
 
                       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
                         <div class="modal-dialog modal-lg" role="document">
                           <div class="modal-content">
                             <div class="modal-header">
                               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                              <h3 class="modal-title" id="exampleModalLabel">Жаңылык жөнөтүү</h3>
+                              <h3 class="modal-title" id="exampleModalLabel">Жаңылык жөнөтүү / Отправить новость</h3>
                             </div>
                             <div class="modal-body">
                               <form>
                                 <div class="form-group">
                                   <div class="row">
                                     <div class="col-md-6">
-                                      <label for="recipient-name" class="control-label">Аты жөнүңүз</label>
-                                      <input type="text" class="form-control" placeholder="Сизди ким деп тааныштырабыз" id="recipient-name"></div>
+                                      <label for="recipient-name" class="control-label">Аты жөнүңүз / Ваше имя </label>
+                                      <input type="text" class="form-control" placeholder="Сизди ким деп тааныштырабыз / Как вас познакомить" id="recipient-name"></div>
                                       <div class="col-md-6">
-                                        <label for="recipient-name" class="control-label">Телефонуңуз же Email</label>
-                                        <input type="text" class="form-control" placeholder="Байланыш телефонуңуз же Email" id="recipient-name"></div>
+                                        <label for="recipient-name" class="control-label">Телефонуңуз же Email / Телефон или Email</label>
+                                        <input type="text" class="form-control" placeholder="Байланыш телефонуңуз же Email / Ваш контактный телефон или Email" id="recipient-name"></div>
                                       </div>
 
                                     </div>
                                     <div class="form-group">
                                       <div class="row">
                                         <div class="col-md-12 textforma">
-                                      <label for="message-text" class="control-label">Жаңылыктын мазмуну:</label>
-                                      <textarea class="form-control" placeholder="Жаңылыктын мазумуну, сүрөт жана видеолор боюнча маалымат" id="message-text"></textarea>
+                                          <label for="message-text" class="control-label">Жаңылыктын мазмуну / Описание содержания:</label>
+                                          <textarea class="form-control" placeholder="Жаңылыктын мазмуну, сүрөт жана видеолор боюнча маалымат / Содержание, информация по снимкам или видео" id="message-text"></textarea>
+                                        </div>
                                       </div>
-                                    </div>
                                     </div>
                                     <div class="form-group">
                                       <form enctype="multipart/form-data">
-                                          <div class="form-group">
-                                              <input id="file-5" class="file" type="file" multiple data-preview-file-type="any" data-upload-url="#">
-                                          </div>
+                                        <div class="form-group">
+                                          <input id="file-5" class="file" type="file" multiple data-preview-file-type="any" data-upload-url="#">
+                                        </div>
                                       </form>
                                     </div>
                                   </form>
                                 </div>
                                 <div class="modal-footer">
-                                  <button type="button" class="btn btn-default" data-dismiss="modal">Жабуу</button>
-                                  <button type="button" class="btn btn-primary">Кабарды жөнөтүү</button>
+                                  <button type="button" class="btn btn-default" data-dismiss="modal">Жабуу / Закрыть</button>
+                                  <button type="button" class="btn btn-primary">Кабарды жөнөтүү / Отправить новость</button>
                                 </div>
                               </div>
                             </div>
@@ -202,168 +209,175 @@
 
                     </div>
                   </div>
-                  <a href="#" class="text-center ads ads-300x250">
-                    <img src="@if(!empty($positionRight->file)) {{ asset($positionRight->file) }} @else images/ads_300x250.gif @endif" alt="phot1"/>
-                  </a>
+                  <div class="panel panel-default">
 
-                </div>
+                    <div class="panel-body">
+                      <div class="col-md-12 adblock_right">
 
-              </div>
+                        <a href="#" class="text-center ads ads-300x250">
+                        <img src="@if(!empty($positionRight->file)) {{ asset($positionRight->file) }} @else images/ads_300x250.gif @endif" alt="phot1"/>
+                        </a>                      
 
-
-
-              <div class="bottom-left-block col-md-4">
-                <div class="panel panel-default latest-news">
-                  <div class="panel-heading">
-                    <h3 class="panel-title"><span>Акыркы жаңылыктар</span></h3>
-                  </div>
-                  <div class="panel-body">
-                    <ul class="list-group">
-                      @foreach($generalPosts as $post)
-                      <li class="list-group-item news-item">
-                        <div class="news-body clearfix">
-                          <a href="{{ route('front.post', $post) }}">
-                            <p class="news-title">{{ $post->getTitle() }}</p>
-                            <span class="ctg"><img src="{{ $post->isChannelIcon($post->channel_id)}}" alt=""/></span>
-                          </a>
-                        </div>
-                        <div class="news-adds clearfix">
-                          <a href="{{ route('front.category', $post->category) }}" class="">{{ $post->category('category_id')->first()->title }}</a>
-                          <span class="news-timer pull-right">  <i class="fa fa-eye"></i>&nbsp;{{ $post->getViewed() }}</span>
-                          <span class="news-file">
-                            @if(empty($post->getFile())) @else <i class="fa fa-play-circle-o"></i> @endif
-                            @if(empty($post->getFile()) && empty($post->getFile())) @else <i class="fa fa-picture-o"></i> @endif
-                          </span>
-
-                          <span class="news-time pull-right"> {{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getYear()}}</span>
-                        </div>
-                        <div class="clearfix"></div>
-                      </li>
-                      @endforeach
-
-                    </ul>
-
-                    <footer>
-                      <a href="#">
-                        <span>Бардык жаңылыктар <i class="fa fa-arrow-circle-right"></i></span>
-                      </a>
-                    </footer>
-                  </div>
-                </div>
-
-                <div class="panel panel-default">
-                  <div class="panel-heading">
-                    <h3 class="panel-title director-title"><a href="#">Башкы директордун баракчасы</a></h3>
-                  </div>
-                  <div class="panel-body">
-                    <div class="col-md-12" id="slideshow">
-                      <div>
-                        <a href="#">
-                          <img src="images/chief.jpg" alt="директор"/>
-                        </a>
-                      </div>
-                      <div>
-                        <a href="#">
-                          <img src="images/chief_3.jpg">
-                        </a>
-                      </div>
-                      <div>
-                        <a href="#">
-                          <img src="images/chief_2.jpg">
-                        </a>
                       </div>
                     </div>
-                    <div class="col-md-12">
-                      <div class="carousel carousel-director">
-                        <div>
-                          Мы разворачиваем масштабную работу по реализации проекта «Ухта — Торжок-2». Задачи поставлены, сроки определены. До конца 2019 года газопровод будет построен и готов к эксплуатации.
-                        </div>
-                        <div>
-                          Мы разворачиваем масштабную работу по реализации проекта «Ухта — Торжок-2». Задачи поставлены, сроки определены. До конца 2019 года газопровод будет построен и готов к эксплуатации.
-                        </div>
-                      </div>
-                    </div>
+
+
                   </div>
+
                 </div>
 
-              </div>
+                <div class="bottom-left-block col-md-4">
+                  <div class="panel panel-default latest-news">
+                    <div class="panel-heading">
+                      <h3 class="panel-title"><span>Акыркы жаңылыктар</span></h3>
+                    </div>
+                    <div class="panel-body">
+                      <ul class="list-group">
+                        @foreach($generalPosts as $post)
+                        <li class="list-group-item news-item">
+                          <div class="news-body clearfix">
+                            <a href="{{ route('front.post', $post) }}">
+                              <p class="news-title">{{ $post->getTitle() }}</p>
+                              <span class="ctg"><img src="{{ $post->isChannelIcon($post->channel_id)}}" alt=""/></span>
+                            </a>
+                          </div>
+                          <div class="news-adds clearfix">
+                            <a href="{{ route('front.category', $post->category) }}" class="">{{ $post->category('category_id')->first()->title }}</a>
+                            <span class="news-timer pull-right"><i class="fa fa-eye"></i>&nbsp;{{ $post->getViewed() }}</span>
+                            <span class="news-file">
+                              @if(empty($post->getFile())) @else <i class="fa fa-play-circle-o"></i> @endif
+                              @if(empty($post->getFile()) && empty($post->getFile())) @else <i class="fa fa-picture-o"></i> @endif
+                            </span>
 
-              <div class="bottom-right-block col-md-8">
-                <div class="panel panel-default videoportal">
-                  <div class="panel-heading">
-                    <h3 class="panel-title"><span>Видеопортал</span></h3>
+                            <span class="news-time pull-right"> {{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getYear()}}</span>
+                          </div>
+                          <div class="clearfix"></div>
+                        </li>
+                        @endforeach
+
+                      </ul>
+
+                      <footer>
+                        <a href="#">
+                          <span>Бардык жаңылыктар <i class="fa fa-arrow-circle-right"></i></span>
+                        </a>
+                      </footer>
+                    </div>
                   </div>
-                  <div class="panel-body">
 
-                    <ul id="filters" class="clearfix">
-                      @foreach($MediaCategories as $key => $MediaCategory)
-                      <li><span class="filter @if($key == 0) active @endif" data-filter="{{ $MediaCategory->getVideoType() }}">{{ $MediaCategory->getName() }}</span></li>
-                      @endforeach
-                    </ul>
-
-                    <div id="portfoliolist">
-                      @foreach($mediaPosts as $media)
-                      <div class="portfolio {{ $media->getVideoType() }}" data-cat="{{ $media->getVideoType() }}">
-                        <div class="portfolio-wrapper">
-                          <a href="{{ route('front.media', $media) }}">
-                            <img src="http://img.youtube.com/vi/{{ $media->getUrl()}}/mqdefault.jpg" alt="" />
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h3 class="panel-title director-title"><a href="#">Башкы директордун баракчасы</a></h3>
+                    </div>
+                    <div class="panel-body">
+                      <div class="col-md-12" id="slideshow">
+                        <div>
+                          <a href="#">
+                            <img src="images/chief.jpg" alt="директор"/>
                           </a>
-                          <div class="label">
-                            <div class="label-text">
-                              <a class="text-title">{{ $media->getName() }}</a>
-                            </div>
-                            <div class="label-bg"></div>
+                        </div>
+                        <div>
+                          <a href="#">
+                            <img src="images/chief_3.jpg">
+                          </a>
+                        </div>
+                        <div>
+                          <a href="#">
+                            <img src="images/chief_2.jpg">
+                          </a>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="carousel carousel-director">
+                          <div>
+                            Мы разворачиваем масштабную работу по реализации проекта «Ухта — Торжок-2». Задачи поставлены, сроки определены. До конца 2019 года газопровод будет построен и готов к эксплуатации.
+                          </div>
+                          <div>
+                            Мы разворачиваем масштабную работу по реализации проекта «Ухта — Торжок-2». Задачи поставлены, сроки определены. До конца 2019 года газопровод будет построен и готов к эксплуатации.
                           </div>
                         </div>
                       </div>
-                      @endforeach
                     </div>
-
-                    <div class="clearfix"></div>
-
-                    <footer>
-                      <a href="{{ route('front.media.index') }}">
-                        <span>Архив <i class="fa fa-arrow-circle-right"></i></span>
-                      </a>
-                    </footer>
-
                   </div>
+
                 </div>
 
-                <a href="#" class="text-center ads">
-                  <img src="@if(!empty($positionCenter->file)) {{ asset($positionCenter->file) }} @else images/ads_1.jpg @endif" alt=""/>
-                </a>
+                <div class="bottom-right-block col-md-8">
+                  <div class="panel panel-default videoportal">
+                    <div class="panel-heading">
+                      <h3 class="panel-title"><span>Видеопортал</span></h3>
+                    </div>
+                    <div class="panel-body">
 
-                <div class="panel panel-default panel-carousel gallery">
-                  <div class="panel-heading">
-                    <h3 class="panel-title"><span>Фотогалерея</span></h3>
-                  </div>
-                  <div class="panel-body">
-                    <div class="col-md-12">
-                      <div class="carousel-slick">
-                        <div class="col-md-4">
-                          <a href="#">
-                            <img src="images/gallery/001.jpg" alt=""/>
-                            <span>Название</span>
-                            <div class="overlay"></div>
-                          </a>
+                      <ul id="filters" class="clearfix">
+                        @foreach($MediaCategories as $key => $MediaCategory)
+                        <li><span class="filter @if($key == 0) active @endif" data-filter="{{ $MediaCategory->getVideoType() }}">{{ $MediaCategory->getName() }}</span></li>
+                        @endforeach
+                      </ul>
+
+                      <div id="portfoliolist">
+                        @foreach($mediaPosts as $media)
+                        <div class="portfolio {{ $media->getVideoType() }}" data-cat="{{ $media->getVideoType() }}">
+                          <div class="portfolio-wrapper">
+                            <a href="{{ route('front.media', $media) }}">
+                              <img src="http://img.youtube.com/vi/{{ $media->getUrl()}}/mqdefault.jpg" alt="" />
+                            </a>
+                            <div class="label">
+                              <div class="label-text">
+                                <a class="text-title">{{ $media->getName() }}</a>
+                              </div>
+                              <div class="label-bg"></div>
+                            </div>
+                          </div>
                         </div>
-                        <div class="col-md-4"><a href="#"><img src="images/gallery/002.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
-                        <div class="col-md-4"><a href="#"><img src="images/gallery/003.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
-                        <div class="col-md-4"><a href="#"><img src="images/gallery/004.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
-                        <div class="col-md-4"><a href="#"><img src="images/gallery/005.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
-                        <div class="col-md-4"><a href="#"><img src="images/gallery/006.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
-                        <div class="col-md-4"><a href="#"><img src="images/gallery/007.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
-                        <div class="col-md-4"><a href="#"><img src="images/gallery/008.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
-                        <div class="col-md-4"><a href="#"><img src="images/gallery/009.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
-                        <div class="col-md-4"><a href="#"><img src="images/gallery/010.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
-                        <div class="col-md-4"><a href="#"><img src="images/gallery/011.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
-                        <div class="col-md-4"><a href="#"><img src="images/gallery/012.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
+                        @endforeach
                       </div>
-                    </div>
 
+                      <div class="clearfix"></div>
+
+                      <footer>
+                        <a href="{{ route('front.media.index') }}">
+                          <span>Архив <i class="fa fa-arrow-circle-right"></i></span>
+                        </a>
+                      </footer>
+
+                    </div>
                   </div>
-                </div>
+
+                  <a href="#" class="text-center ads">
+                    <img src="@if(!empty($positionCenter->file)) {{ asset($positionCenter->file) }} @else images/ads_1.jpg @endif" alt=""/>
+                  </a>
+
+                  <div class="panel panel-default panel-carousel gallery">
+                    <div class="panel-heading">
+                      <h3 class="panel-title"><span>Фотогалерея</span></h3>
+                    </div>
+                    <div class="panel-body">
+                      <div class="col-md-12">
+                        <div class="carousel-slick">
+                          <div class="col-md-4">
+                            <a href="#">
+                              <img src="images/gallery/001.jpg" alt=""/>
+                              <span>Название</span>
+                              <div class="overlay"></div>
+                            </a>
+                          </div>
+                          <div class="col-md-4"><a href="#"><img src="images/gallery/002.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
+                          <div class="col-md-4"><a href="#"><img src="images/gallery/003.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
+                          <div class="col-md-4"><a href="#"><img src="images/gallery/004.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
+                          <div class="col-md-4"><a href="#"><img src="images/gallery/005.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
+                          <div class="col-md-4"><a href="#"><img src="images/gallery/006.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
+                          <div class="col-md-4"><a href="#"><img src="images/gallery/007.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
+                          <div class="col-md-4"><a href="#"><img src="images/gallery/008.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
+                          <div class="col-md-4"><a href="#"><img src="images/gallery/009.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
+                          <div class="col-md-4"><a href="#"><img src="images/gallery/010.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
+                          <div class="col-md-4"><a href="#"><img src="images/gallery/011.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
+                          <div class="col-md-4"><a href="#"><img src="images/gallery/012.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
 
 
                 <!-- @if(!empty($parentId))
