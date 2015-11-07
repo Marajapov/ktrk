@@ -27,14 +27,7 @@
 <script src="{{ asset('js/bootstrap.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/bootstrap-hover-dropdown.js') }}"></script>
 
-<!--<script src="{{ asset('js/masonry.pkgd.min.js') }}"></script>
-<script src="{{ asset('js/imagesloaded.js') }}"></script>
-<script src="{{ asset('js/classie.js') }}"></script>
 
-<script src="{{ asset('js/AnimOnScroll.js') }}"></script>
-<script>
-    new AnimOnScroll( document.getElementById( 'grid' ), {} );
-</script> -->
 
 <!--Menu concept-->
 <!--<script src="js/polyfills.js"></script>-->

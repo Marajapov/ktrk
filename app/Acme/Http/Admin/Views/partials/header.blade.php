@@ -24,7 +24,7 @@
             <li><a href="{{ route('admin.menu.index') }}"><i class="fa fa-chevron-circle-down"></i>Меню</a></li>
             <li><a href="{{ route('admin.user.index') }}"><i class="fa fa-user"></i>Колдонуучулар</a></li>
             <li><a href="{{ route('admin.background.index') }}"><i class="fa fa-backward"></i>Фон сүрөтү</a></li>
-            <li><a href="{{ route('admin.peopleReporter.index') }}"><i class="fa fa-backward"></i>Элдик репортер</a></li>
+            <!--<li><a href="{{ route('admin.peopleReporter.index') }}"><i class="fa fa-backward"></i>Элдик репортер</a></li>-->
         </ul>
          <div class="menu_section">
                             <h3 style="margin:17px 0px">Кошумча барактар</h3>
