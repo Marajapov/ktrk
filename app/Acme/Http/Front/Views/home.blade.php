@@ -24,7 +24,7 @@
                   <span class="post-timer pull-right">  <i class="fa fa-eye"></i>&nbsp;{{ $post->getViewed() }}</span></a>
                   <a href="{{ route('front.post', $post) }}" class="main-img">
                     <img src="@if(empty($post->getFile()))images/2.jpg @else {{ asset($post->getFile()) }} @endif" alt="img26">
-                    <i class="fa fa-play-circle-o"></i>
+                    <i class="fa fa-play-circle-o"></i></a>
                     <div class="news-channel">
                       <a href="channel.html">
                         <img src="{{ $post->isChannelIcon($post->channel_id)}}" alt=""/>
@@ -243,13 +243,14 @@
                           </div>
                           <div class="news-adds clearfix">
                             <a href="{{ route('front.category', $post->category) }}" class="">{{ $post->category('category_id')->first()->title }}</a>
-                            <span class="news-timer pull-right"><i class="fa fa-eye"></i>&nbsp;{{ $post->getViewed() }}</span>
+                           
                             <span class="news-file">
                               @if(empty($post->getFile())) @else <i class="fa fa-play-circle-o"></i> @endif
                               @if(empty($post->getFile()) && empty($post->getFile())) @else <i class="fa fa-picture-o"></i> @endif
                             </span>
-
                             <span class="news-time pull-right"> {{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getYear()}}</span>
+                            <span class="news-timer pull-right"><i class="fa fa-eye"></i>&nbsp;{{ $post->getViewed() }}</span>
+                            
                           </div>
                           <div class="clearfix"></div>
                         </li>
