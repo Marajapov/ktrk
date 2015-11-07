@@ -859,9 +859,13 @@ header{
 .top-left-block .news-title span i{
     margin-right: 5px;
 }
+
+/*Connexxification*/
 .top-left-block .news-block img{
     margin: 0 auto;
+    width: auto; /* Выравнивание картин*/
 }
+/*Connexxification*/
 .top-left-block .news-block p{
     font-size: 14px;
     line-height: 1.5;
@@ -3053,18 +3057,16 @@ bottom: 10px;
 
 /* View counters position*/
 .news-timer {
-  position: absolute;
-  right: 10px;
-  top: 10px;
-      color: #9DA8B0;
-    font-size: 11px;
+  color: #9DA8B0;
+font-size: 11px;
+padding-right: 8px;
 }
 
 .post-timer {
   position: absolute;
   left: 5px;
   top: 5px;
-  color: #898787;
+  color: #426F82;
   font-size: 12px;
   z-index: 1;
 }
