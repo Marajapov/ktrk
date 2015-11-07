@@ -67,7 +67,6 @@ class PostController extends Controller
         }
 
         $post->tags()->attach($tags);
-
         if($request->hasFile('thumbnail'))
         {
             $file = $request->file('thumbnail');
