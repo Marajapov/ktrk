@@ -30,6 +30,7 @@ class CreatePostsTable extends Migration
             $table->integer('related2')->nullable()->unsigned()->default(null);
             $table->integer('related3')->nullable()->unsigned()->default(null);
             $table->boolean('general')->nullable()->default(false);
+            $table->string('language');
             $table->smallInteger('viewed')->default(0);
             $table->timestamps();
 

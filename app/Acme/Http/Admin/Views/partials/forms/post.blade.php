@@ -48,6 +48,13 @@
         </div>
     </div>
 
+    <div class="col-sm-10">
+        <div class="form-group">
+            <label class="control-label">Тил тандаңыз</label>
+            {!! Form::select('language', ['default'=>'--Тандаңыз--','languageKg'=>'Кыргызча','languageRu'=>'Орусча','neutrally'=>'Нейтрально'], null, ["class" => "select2_group  form-control", "required"=> true, "title" => ""]) !!}
+        </div>
+    </div>
+
     <div class="col-xs-12">
         <div class="form-group">
             <label class="control-label">Тема</label>

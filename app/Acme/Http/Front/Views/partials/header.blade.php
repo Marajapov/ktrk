@@ -31,8 +31,8 @@
                         </nav>
 
                         <ul class="soc">
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="/locale/kg"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="/locale/ru"><i class="fa fa-facebook"></i></a></li>
                             <li><a href="#"><i class="fa fa-odnoklassniki"></i></a></li>
                             <li><a href="#"><i class="fa fa-youtube"></i></a></li>
                             <li><a href="#"><i class="fa fa-instagram"></i></a></li>

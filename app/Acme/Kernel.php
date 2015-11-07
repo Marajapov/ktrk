@@ -14,7 +14,7 @@ class Kernel extends HttpKernel
         \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
         \Illuminate\Session\Middleware\StartSession::class,
         \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-        //\Acme\Middlewares\SetLocale::class, /* changes locale */
+        \Acme\Middlewares\SetLocale::class, /* changes locale */
         \App\Http\Middleware\VerifyCsrfToken::class,
     ];
     /**

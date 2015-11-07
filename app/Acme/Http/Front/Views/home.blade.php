@@ -11,7 +11,7 @@
         <div class="top-left-block col-md-8">
           <div class="panel panel-default panel-top-news">
             <div class="panel-heading">
-              <h3 class="panel-title"><span>Топ жаңылыктар</span></h3>
+              <h3 class="panel-title"><span>{{ trans('site.Top news') }}</span></h3>
             </div>
             <div class="panel-body">
               @foreach($generalPosts as $post)
@@ -42,7 +42,7 @@
 
                 <footer>
                   <a href="{{ route('front.general') }}">
-                    <span>Бардык жаңылыктар <i class="fa fa-arrow-circle-right"></i></span>
+                    <span>{{ trans('site.All news') }} <i class="fa fa-arrow-circle-right"></i></span>
                   </a>
                 </footer>
               </div>

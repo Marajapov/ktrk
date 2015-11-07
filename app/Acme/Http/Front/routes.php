@@ -104,4 +104,8 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
     Route::get('director', ['as' => 'front.pages.director', 'uses' => 'PageController@directorPage']);
     
 
+Route::get('locale/{locale?}',   ['as' => 'locale',   'uses' => 'CommonController@setLocale']);
+    
 });
+
+

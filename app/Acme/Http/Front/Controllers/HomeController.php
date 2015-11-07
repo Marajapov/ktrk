@@ -21,6 +21,8 @@ class HomeController extends Controller
      */
     public function Home()
     {
+        // dd(app()->getlocale());
+
         $channel = \Model\Channel\ModelName::general();
 
         $generalPosts = \Model\Post\ModelName::general($channel)->published()->take(6)->skip(0)->orderBy('id', 'desc')->get();

@@ -57,6 +57,12 @@ class ModelName extends Model
 
     public function getContent()
     {
+        // $lc = app()->getlocale();
+        // if($lc == 'kg' || ($this->neutral && trim($this->content_kg) != ""))
+        //     return $this->content_kg;
+
+        // return $this->content_ru;
+
         return $this->content;
     }
 
