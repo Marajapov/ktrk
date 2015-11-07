@@ -99,6 +99,7 @@
 	}
 }
 /*Connexxification*/
+
 #portfoliolist .portfolios {
 width:31.333333%;
 	margin:1%;
@@ -144,7 +145,7 @@ width:31.333333%;
 	}
 
 		.portfolio .label-bg {
-			background: rgba(0,0,0,0.8);
+			background: rgba(0,0,0,0.6);
 			width: 100%;
 			height:100%;
 			position: absolute;

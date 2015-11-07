@@ -18,7 +18,6 @@
     
     <link rel="stylesheet" href="{{ asset('css/admin/jasny/jasny-bootstrap.min.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/fileinput.css') }}"/>
-
     <script src="{{ asset('js/jquery-1.11.2.min.js') }}"></script>
     <script src="{{ asset('js/admin/jasny/jasny-bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/fileinput.js') }}"></script>

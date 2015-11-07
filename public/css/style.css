@@ -364,9 +364,14 @@ header{
 .top-ads{
     margin: 0 0 5px;
 }
+
+/*Connexxification*/
 .top-right-block .ads{
-    margin: 40px 0 35px;
+    /*margin: 40px 0 35px;*/
+  margin:40px 0px 35px;
 }
+
+/*Connexxification*/
 .bottom-right-block .ads{
     margin: 40px 0;
 }
@@ -1343,9 +1348,12 @@ header{
 }
 /* Bottom Left Block */
 
+/*Connexxification*/
 .bottom-left-block .latest-news{
-    background: #f1f4f9;
+    /*background: #f1f4f9;*/
 }
+
+/*Connexxification*/
 .channel .latest-news .panel-body{
     height: 700px;
 }
@@ -1353,9 +1361,13 @@ header{
     height: 630px;
     overflow: hidden;
 }
+
+/*Connexxification*/
 .latest-news .panel-heading h3{
-    border-bottom: 3px solid #ffffff;
+    /*border-bottom: 3px solid #ffffff;*/
 }
+
+/*Connexxification*/
 .latest-news .list-group{
     margin-bottom: 10px;
 }
@@ -2896,28 +2908,31 @@ display: table-cell;
 
 /* People Reporter block styles*/
 .peoplereporter .panel-heading{
-  text-align: left !important;
-  background: #FF5722;
-  margin-bottom: 10px;
+ text-align: right !important;
+margin-right: -10px;
+margin-left: 15px;
 }
 
 
 .peoplereporter .panel-heading h3 {
-  color: #fff;
+  color: #03A9F4;
+/*      font-weight: bold;*/
 }
 .peoplereporter .panel-title i {
   font-size: 200%;
   float: right;
+      margin-top: -15px;
 }
 
 .peoplereporter .panel-heading2 {
-    padding: 10px 15px;
+    padding: 8px 0px 25px 5px;
     border-bottom: 1px solid transparent;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
     background: #03A9F4;
-    margin-bottom: 10px;
+    margin: -10px 0px 10px 0px;
 }
+
 .peoplereporter .panel-heading2:hover {
     background: #FF5722;
     cursor: pointer;
@@ -2925,11 +2940,12 @@ display: table-cell;
 
 .peoplereporter .panel-heading2 h3{
   border-bottom: 3px solid #F1F4F9;
-  padding: 5px 0 5px 2px;
+      padding: 0px 0px 3px 0px;
   color: #fff;
   font-family: 'Roboto Condensed', serif;
-  font-size: 16px;
+  font-size: 14px;
   text-transform: uppercase;
+  width: 80%;
 }
 
 .peoplereporter .slick-slide img {
@@ -2947,7 +2963,7 @@ display: table-cell;
     color: #fff;
     background: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
-    font-size: 12px;
+    font-size: 11px;
     position: absolute;
     right: 0px;
     padding: 1px;
@@ -2960,7 +2976,7 @@ display: table-cell;
   position: absolute;
   color: #fff;
   padding-left: 2px;
-  font-size: 12px;
+  font-size: 11px;
   background: rgba(0, 0, 0, 0.5);
 }
 
@@ -2970,8 +2986,8 @@ display: table-cell;
 .peoplereporter .carousel-reporter p {
   position: absolute;
   bottom: 0px;
-  font-size: 14px;
-  line-height: 14px;
+  font-size: 13px;
+  line-height: 12px;
   margin: 0px !important;
   background: rgba(0, 0, 0, 0.5);
   color: #fff;
@@ -2986,11 +3002,95 @@ display: table-cell;
   height: 250px !important;
 }
 
+.peoplereporter .panel-heading p{
+ padding: 0px;
+color: #03A9F4;
+font-family: "Roboto Condensed",serif;
+font-size: 0.90em;
+text-transform: uppercase;
+margin-left: 5px;
+    width: 100%;
+
+}
+
+.peoplereporter .heading img {
+    position: absolute;
+    left: 10px;
+    width: auto;
+
+}
+
+.peoplereporter .panel-heading h3 {
+    border-bottom: 3px solid #CECECE;
+  /*  padding:0px 0px 2px 0px;*/
+        padding-left: 0px;
+    margin-left:5px; 
+        width: 100%;
+}
+
+.prrus {
+    position: absolute;
+    display: table-cell;
+    padding-top: 8px;
+}
+.praddicon {
+    position: absolute;
+    right: 5px;
+    font-size: 30px;
+bottom: 10px;
+}
+
+.fa-file-text-o {
+    position: absolute;
+    right: 18px;
+    vertical-align: middle;
+    bottom: 25px;
+    z-index: 99;
+}
+
+
+/* People Reporter block styles*/
+
+/* View counters position*/
 .news-timer {
   position: absolute;
-right: 10px;
-top: 10px;
-color: #807E7E;
-font-size: 12px;
+  right: 10px;
+  top: 10px;
+      color: #9DA8B0;
+    font-size: 11px;
 }
-/* People Reporter block styles*/
+
+.post-timer {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  color: #898787;
+  font-size: 12px;
+  z-index: 1;
+}
+
+.post-timer:hover {
+  color: #444;
+}
+
+/* View counters position*/
+
+/*Yandex Weather block styles*/
+.pogoda {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+/*Yandex Weather block styles*/
+
+/* ADblock Home page right bar*/
+.adblock_right {
+    
+    width: 100%;
+    padding:0px !important;
+    margin:0px !important;
+    position: relative; 
+    top: 0px !important;
+}
+/* ADblock Home page right bar*/
