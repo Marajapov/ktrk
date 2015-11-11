@@ -155,22 +155,7 @@
                                 </span>
                             </div>
                         </div>
-                    </div>
-                    <div class="row dkp-slide slide-left">
-                        <div class="col-sm-12 dkp-anonce dkp-anonce-big" style="background-image: url(images/channels/muzkanal/top10.jpg);">
-                            <div class="dkp-anonce-time">
-                                <span>22:00</span>
-                            </div>
-                            <div class="dkp-anonce-title">
-                                Угалы чыгыш ырларын
-                            </div>
-                            <div class="dkp-anonce-when">
-                                <span>
-                                    <span> Эртең</span>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
+                    </div>                 
                     <div class="row dkp-slide slide-left">
                         <div class="col-sm-12 dkp-anonce dkp-anonce-big" style="background-image: url(images/channels/muzkanal/6.jpg);">
                             <div class="dkp-anonce-time">
@@ -183,15 +168,15 @@
 
             <div class="row dkp-big-3now ">
                 <div class="col-xs-4 rowfix">
-                    <a type="button" data-toggle="modal" data-target="#myModal" class="dkp-anonce dkp-anonce-small now dkp-border" style="background-image: url(images/channels/muzkanal/1.jpg);" data-id="12056" data-target="#myModal">
+                    <a type="button" data-toggle="modal" data-target="#myModal" class="dkp-anonce dkp-anonce-small now dkp-border" style="background-image: url(images/channels/muzkanal/6.jpg);" data-id="12056" data-target="#myModal">
                         <div class="dkp-3now-item-wrapper">
                             <div class="dkp-3now-item-time">
                                 <span>
-                                    <span>азыр</span>
+                                    <span>Эклюзив</span>
                                 </span>
                             </div>
                             <div class="dkp-3now-item-title">
-                                <span>Фильм</span> Инкассаторы. Все&nbsp;серии
+                                <span>Мирбек Атабеков</span> Булбулум
                             </div>
                         </div>
                     </a>

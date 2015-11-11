@@ -38,8 +38,8 @@
                             <li class="ok"><a href="#"><i class="fa fa-odnoklassniki"></i></a></li>
                             <li class="yt"><a href="#"><i class="fa fa-youtube"></i></a></li>
                             <li class="in"><a href="#"><i class="fa fa-instagram"></i></a></li>
-                            <li class="lang ru"><a href="/locale/kg"><i class="ru"></i></a></li>
-                            <li class="lang kg"><a href="/locale/ru"><i class="kg"></i></a></li>
+                            <li class="lang ru"><a href="/locale/ru"><i class="ru"></i></a></li>
+                            <li class="lang kg"><a href="/locale/kg"><i class="kg"></i></a></li>
                         </ul>
 
                         <a class="search-toggle"><i class="fa fa-search"></i></a>

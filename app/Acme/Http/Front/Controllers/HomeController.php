@@ -22,7 +22,7 @@ class HomeController extends Controller
     public function Home()
     {
         // dd(app()->getlocale());
-
+        
         $channel = \Model\Channel\ModelName::general();
 
         $generalPosts = \Model\Post\ModelName::general($channel)->published()->take(6)->skip(0)->orderBy('id', 'desc')->get();
@@ -30,11 +30,7 @@ class HomeController extends Controller
         $mediaLast = \Model\Media\ModelName::take(9)->get();
         $dayVideos = \Model\Media\ModelName::take(1)->orderBy('viewed','asc')->get();
 
-        
-        
-
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
-
         $peopleReporters = \Model\PeopleReporter\ModelName::where('published','=',true)->get();
 
         //$parentId = \Model\PhotoParent\ModelName::where()->first();
