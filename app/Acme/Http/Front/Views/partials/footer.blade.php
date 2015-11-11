@@ -23,11 +23,22 @@
     </div>
 </footer>
 
-<script src="{{ asset('js/jquery-1.11.2.min.js') }}"></script>
+{{-- <script src="{{ asset('js/jquery-1.11.2.min.js') }}"></script> --}}
 <script src="{{ asset('js/bootstrap.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/bootstrap-hover-dropdown.js') }}"></script>
 
-
+<script>
+    $(document).ready(function(){
+        $(".search-toggle").click(function(){
+            $(".logo-block").addClass("search-show");
+            $(".form-search").addClass("visible");
+        });
+        $(".close-search").click(function(){
+            $(".logo-block").removeClass("search-show");
+            $(".form-search").removeClass("visible");
+        });
+    });
+</script>
 
 <!--Menu concept-->
 <!--<script src="js/polyfills.js"></script>-->
