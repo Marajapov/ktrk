@@ -6,7 +6,7 @@
             <div class="top-header clearfix">
                 <div class="col-md-12 logo-block">
                     <div class="row">
-                        <a class="logo" href="http://ktrk.dev">
+                        <a class="logo" href="{{ route('front.home') }}">
                             <img src="{{ asset('images/ktrk_new.png') }}" alt=""/>
                         </a>
 
@@ -31,8 +31,10 @@
                         </nav>
 
                         <ul class="soc">
-                            <li><a href="/locale/kg"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="/locale/ru"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="/locale/kg">KG</a></li>
+                            <li><a href="/locale/ru">RU</a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                             <li><a href="#"><i class="fa fa-odnoklassniki"></i></a></li>
                             <li><a href="#"><i class="fa fa-youtube"></i></a></li>
                             <li><a href="#"><i class="fa fa-instagram"></i></a></li>

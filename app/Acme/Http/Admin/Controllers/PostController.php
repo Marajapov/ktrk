@@ -52,21 +52,25 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        $post = Post::create($request->except('tag_list','thumbnail'));
 
+        $post = Post::create($request->except('tag_list','thumbnail','q','related1','related2','related3'));
+        
         $tags = $request->input('tag_list');
-        foreach ($tags as $key => $name)
-        {
-            if(!is_numeric($name))
+        if(!empty($tags)){
+            foreach ($tags as $key => $name)
             {
-                $tag = \Model\Tag\Tag::firstOrNew(['name' => $name]);
-                $tag->name = $name;
-                $tag->save();
-                $tags[$key] = $tag->id();
-            }
-        }
+                if(!is_numeric($name))
+                {
+                    $tag = \Model\Tag\Tag::firstOrNew(['name' => $name]);
+                    $tag->name = $name;
+                    $tag->save();
+                    $tags[$key] = $tag->id();
+                }
+            }// end foreach
 
         $post->tags()->attach($tags);
+        }// end if
+
 
         if($request->hasFile('thumbnail'))
         {
@@ -81,6 +85,29 @@ class PostController extends Controller
             $post->thumbnail = $dir.'/'.$name;
             $post->save();
             $file->move($dir, $name);
+        }
+
+        $related1 = $request->input('related1');
+        if($related1 != 'default'){
+            $space = ' ';
+
+            $content1 = $request->input('content');
+            
+            $mystring = $content1;
+            $findme   = 'admin/post/1';
+            $pos = strpos($mystring, $findme);
+            
+
+            $newstr = substr_replace($content1, 'http://1000.ktrk.kg/post/'.$related1, $pos, 12);
+
+
+            //dd($pos,$space,$findme,$space,$mystring,$space,$newstr);
+            $post->content = $newstr;
+            $post->save();
+
+            
+
+
         }
 
         return redirect()->route('admin.post.index');
