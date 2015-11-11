@@ -1,3 +1,5 @@
+<div class="bottom-bg"></div>
+
 <div class="container-fluid main-header">
     <div class="container">
 
@@ -7,7 +9,7 @@
                 <div class="col-md-12 logo-block">
                     <div class="row">
                         <a class="logo" href="{{ route('front.home') }}">
-                            <img src="{{ asset('images/ktrk_new.png') }}" alt=""/>
+                            <img src="{{ asset('images/ktrk_last.svg') }}" alt=""/>
                         </a>
 
                         <nav class="top-nav clearfix">
@@ -31,21 +33,27 @@
                         </nav>
 
                         <ul class="soc">
-                            <li><a href="/locale/kg">KG</a></li>
-                            <li><a href="/locale/ru">RU</a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-odnoklassniki"></i></a></li>
-                            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                            <li class="tw"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li class="fb"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li class="ok"><a href="#"><i class="fa fa-odnoklassniki"></i></a></li>
+                            <li class="yt"><a href="#"><i class="fa fa-youtube"></i></a></li>
+                            <li class="in"><a href="#"><i class="fa fa-instagram"></i></a></li>
+                            <li class="lang ru"><a href="/locale/kg"><i class="ru"></i></a></li>
+                            <li class="lang kg"><a href="/locale/ru"><i class="kg"></i></a></li>
                         </ul>
+
+                        <a class="search-toggle"><i class="fa fa-search"></i></a>
 
                         <form class="form-search" action="{{ route('front.search') }}" method="get">
                             <div class="form-group pull-right">
-                                <input type="search" name="search" class="form-control" placeholder="Издөө"/>
+                                <input type="text" name="search" class="form-control" placeholder="Издөө"/>
                             </div>
 
-                            <button class="btn" type="submit">
+                            <a class="btn close-search">
+                                <i class="fa fa-close"></i>
+                            </a>
+
+                            <button class="btn submit-search" type="submit">
                                 <i class="fa fa-search"></i>
                             </button>
                         </form>

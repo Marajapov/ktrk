@@ -209,20 +209,10 @@
 
                     </div>
                   </div>
-                  <div class="panel panel-default">
 
-                    <div class="panel-body">
-                      <div class="col-md-12 adblock_right">
-
-                        <a href="#" class="text-center ads ads-300x250">
-                        <img src="@if(!empty($positionRight->file)) {{ asset($positionRight->file) }} @else images/ads_300x250.gif @endif" alt="phot1"/>
-                        </a>                      
-
-                      </div>
-                    </div>
-
-
-                  </div>
+                  <a href="#" class="text-center ads ads-300x250">
+                    <img src="@if(!empty($positionRight->file)) {{ asset($positionRight->file) }} @else images/ads_300x250.gif @endif" alt="phot1"/>
+                  </a>     
 
                 </div>
 

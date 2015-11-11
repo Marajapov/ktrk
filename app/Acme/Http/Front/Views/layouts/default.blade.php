@@ -18,6 +18,9 @@
     
     <link rel="stylesheet" href="{{ asset('css/admin/jasny/jasny-bootstrap.min.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/fileinput.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/style2.css') }}"/>
+
+
     <script src="{{ asset('js/jquery-1.11.2.min.js') }}"></script>
     <script src="{{ asset('js/admin/jasny/jasny-bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/fileinput.js') }}"></script>
@@ -35,6 +38,25 @@
             @endif
         }
     </style>
+
+    <script src="{{ asset('js/classie.js') }}"></script>
+    <script>
+        function init() {
+            window.addEventListener('scroll', function(e){
+                var distanceY = window.pageYOffset || document.documentElement.scrollTop,
+                        shrinkOn = 50,
+                        header = document.querySelector(".main-header");
+                if (distanceY > shrinkOn) {
+                    classie.add(header,"smaller");
+                } else {
+                    if (classie.has(header,"smaller")) {
+                        classie.remove(header,"smaller");
+                    }
+                }
+            });
+        }
+        window.onload = init();
+    </script>
 
 </head>
 <body>
