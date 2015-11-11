@@ -14,28 +14,50 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick-theme.css') }}"/>
         <link rel="stylesheet"  href="css/lightslider.css"/>
 
-
-        <script src="js/gallery/modernizr.custom.js"></script>
-
-        
+        <script src="js/gallery/modernizr.custom.js"></script>        
 
     </head>
     <body class="music">  
-        <div class="container-fluid switch">
-            <ul class="channel_switch">
-                <li class="sitemenu" id="site-channel1"><a href="#"><img src="{{ asset('images/channels/swicth/ktrk_color.png')}}"><span>КТРК</span></a></li>
-                <li class="sitemenu" id="site-channel1"><a href="#"><img src="{{ asset('images/channels/swicth/balastan.png')}}"><span>КТРК</span></a></li>
-                <li class="sitemenu" id="site-channel1"><a class="active" href="#"><img src="{{ asset('images/channels/swicth/music.png')}}" ><span>КТРК</span></a></li>
-                <li class="sitemenu" id="site-channel1"><a href="#"><img src="{{ asset('images/channels/swicth/madaniat.png')}}"><span>КТРК</span></a></li>
-                <li class="sitemenu" id="site-channel1"><a href="#"><img src="{{ asset('images/channels/swicth/birirnchi.png')}}"><span>КТРК</span></a></li>
-                <li class="sitemenu" id="site-channel1"><a href="#"><img src="{{ asset('images/channels/swicth/baldar.png')}}"><span>КТРК</span></a></li>
-                <li class="sitemenu" id="site-channel1"><a href="#"><img src="{{ asset('images/channels/swicth/min-kiyal.png')}}"><span>КТРК</span></a></li>
-                <li class="sitemenu" id="site-channel1"><a href="#"><img src="{{ asset('images/channels/swicth/kg-radio.png')}}"><span>КТРК</span></a></li>
-            </ul>
-        </div>    
+        <div class="switch">
+          <nav class="navbar">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false">
+                <span class="sr-only">Меню</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><img src="{{ asset('images/channels/swicth/music.png')}}"></a>
+            </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="nav navbar-nav channel_switch">
+             <li class="sitemenu" id="site-channel1">
+                <a href="#"><img src="{{ asset('images/channels/swicth/ktrk_color.png')}}"><span>КТРК</span></a></li>
+             <li class="sitemenu" id="site-channel1">
+                <a href="#"><img src="{{ asset('images/channels/swicth/balastan.png')}}"><span>Баластан</span></a></li>
+             <li class="sitemenu" id="site-channel1">
+                <a class="active" href="#"><img src="{{ asset('images/channels/swicth/music.png')}}" ><span>Музыка</span></a></li>
+             <li class="sitemenu" id="site-channel1">
+                <a href="#"><img src="{{ asset('images/channels/swicth/madaniat.png')}}"><span>Маданият</span></a></li>
+             <li class="sitemenu" id="site-channel1">
+                <a href="#"><img src="{{ asset('images/channels/swicth/birirnchi.png')}}"><span>Биринчи Радио</span></a></li>
+             <li class="sitemenu" id="site-channel1">
+                <a href="#"><img src="{{ asset('images/channels/swicth/baldar.png')}}"><span>Балдар ФМ</span></a></li>
+             <li class="sitemenu" id="site-channel1">
+                <a href="#"><img src="{{ asset('images/channels/swicth/min-kiyal.png')}}"><span>Миң Кыял ФМ</span></a></li>
+             <li class="sitemenu" id="site-channel1">
+                <a href="#"><img src="{{ asset('images/channels/swicth/kg-radio.png')}}"><span>Кыргыз Радиосу</span></a></li> 
+            </ul>  
+          </div><!-- /.navbar-collapse -->
+         </nav>
+        </div>  
+
+
         <div class="container main-header">
             <div class="row">
-                <div class="col-md-12">            
+                <div class="col-md-12">         
 
                     <div class="row fixedheader">
                         <nav class="navbar">
@@ -101,7 +123,7 @@
                     <div id="dkp-slideshow-right"></div>
                     <div id="dkp-slideshow-left"></div>
                     <div class="row dkp-slide">
-                        <div class="col-sm-12 dkp-anonce dkp-anonce-big" style="background-image: url(images/channels/muzkanal/Music.jpg);">
+                        <div class="col-sm-12 dkp-anonce dkp-anonce-big" style="background-image: url(images/channels/muzkanal/7.jpeg);">
                             <div class="dkp-anonce-time">
                                 <span>21:00</span>
                             </div>
@@ -118,41 +140,41 @@
                         </div>
                     </div>
                     <div class="row dkp-slide slide-left">
-                        <div class="col-sm-12 dkp-anonce dkp-anonce-big" style="background-image: url(images/channels/muzkanal/2.jpg);">
+                        <div class="col-sm-12 dkp-anonce dkp-anonce-big" style="background-image: url(images/channels/muzkanal/Music.jpg);">
                             <div class="dkp-anonce-time">
                                 <span>21:30</span>
                             </div>
                             <div class="dkp-anonce-title">
-                                Крёстный. Все&nbsp;серии
+                                ЭКЛЮЗИВ. Жаңы клиптер. 
                             </div>
                             <div class="dkp-anonce-when">
                                 <span>
                                     <span>
-                                        Сегодня
+                                        Бүгүн
                                     </span>
                                 </span>
                             </div>
                         </div>
                     </div>
                     <div class="row dkp-slide slide-left">
-                        <div class="col-sm-12 dkp-anonce dkp-anonce-big" style="background-image: url(images/channels/muzkanal/3.jpg);">
+                        <div class="col-sm-12 dkp-anonce dkp-anonce-big" style="background-image: url(images/channels/muzkanal/top10.jpg);">
                             <div class="dkp-anonce-time">
                                 <span>22:00</span>
                             </div>
                             <div class="dkp-anonce-title">
-                                Привычка расставаться
+                                Угалы чыгыш ырларын
                             </div>
                             <div class="dkp-anonce-when">
                                 <span>
-                                    <span> Завтра</span>
+                                    <span> Эртең</span>
                                 </span>
                             </div>
                         </div>
                     </div>
                     <div class="row dkp-slide slide-left">
-                        <div class="col-sm-12 dkp-anonce dkp-anonce-big" style="background-image: url(images/channels/muzkanal/4.jpg);">
+                        <div class="col-sm-12 dkp-anonce dkp-anonce-big" style="background-image: url(images/channels/muzkanal/6.jpg);">
                             <div class="dkp-anonce-time">
-                                <span class="dkp-soon">Скоро</span>
+                                <span class="dkp-soon">Жакында</span>
                             </div>
                         </div>
                     </div>

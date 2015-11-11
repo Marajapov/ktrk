@@ -2425,6 +2425,9 @@ margin-right: -10px;
   color: #fff;
 
   transition: all 0.2s linear;
+      font-family: 'Roboto Condensed', serif;
+    font-size: 16px;
+    text-transform: uppercase;
 
 }
 
@@ -2455,6 +2458,13 @@ margin-right: -10px;
     padding-right: 0px;
 }
 
+.fixedheader>.navbar .navbar-collapse.in {
+    overflow-y:visible; 
+}
+
+.fixedheader>.navbar .navbar-form {
+    padding: 0px;
+}
 
 .fixed {
   position: fixed;
@@ -2465,7 +2475,6 @@ margin-right: -10px;
   left: 0px;
     right: 0px;
     margin: 0px auto;
-    padding-right: 5px;
 }
 
 .socmuz {
@@ -2749,16 +2758,58 @@ line-height: 15px;
 .newvideos .gallery .slick-slide {
     height: 130px;
 }
+
 .switch {
     background: rgba(0, 0,0, 0.24);
+    width: 100%;
 }
 
-.channel_switch {
-    margin-top: 10px;
+.switch>.navbar .icon-bar{
+    background: #fff;
+  
+}
+
+.switch .navbar {
+    margin: 0px auto;
+    max-width: 1450px;
+}
+
+.switch>.navbar .navbar-brand {
+    padding: 0px;
+}
+
+.switch>.navbar .navbar-toggle {
+    margin-right: 0px;
+}
+.switch>.navbar .nav>li>a:hover {
+    background: none;
+}
+
+@media screen and (min-width: 770px) {
+   .switch>.navbar .navbar-brand  {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1410px) {
+   .channel_switch .sitemenu img  {
+        height: 45px;
+    }
+}
+
+@media screen and (max-width: 1250px) {
+   .channel_switch .sitemenu img  {
+        height: 30px;
+    }
+}
+
+
+.switch {    
+    margin: 0 auto;
+    position: relative;
 }
 
 .channel_switch ul {
-    width: 1280px;
     margin: 0px auto;
     height: 70px;
 }
@@ -2768,9 +2819,7 @@ line-height: 15px;
 }
 
 .channel_switch li {
-    box-sizing: border-box;
-    height: 70px;
-    float: left;
+padding-bottom: 10px;
 }
 
 .channel_switch .sitemenu a {
@@ -2782,7 +2831,7 @@ line-height: 15px;
     opacity: 1;
 }
 
-.sitemenu span {
+.channel_switch ul li a span {
     display: none;
 }
 .sitemenu a {
@@ -2794,11 +2843,37 @@ line-height: 15px;
 #site-channel1 a {
   /*  width: 90px;*/
  padding: 5px;
+     display: table-header-group;
+}
+
+.channel_switch .sitemenu img {
+    width: auto;
+    padding-right:10px;
 }
 
 .channel_switch a {
     position: relative;
 }
+.sitemenu span {
+    float: left;
+    font-size: 18px;
+    color:#fff;
+    padding: 0px 15px;
+}
+
+@media (min-width: 768px){
+    .sitemenu span {    
+    display: none;
+    }
+}
+
+@media (max-width: 768px){
+.sitemenu img {
+    display: none;
+}
+}
+
+
 /*Muzakanal styles*/
 
 /* People Reporter block styles*/

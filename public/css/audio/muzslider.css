@@ -242,6 +242,7 @@
     text-transform: uppercase;
     text-shadow: 1px 1px 10px #000
 }
+
 .dkp-anonce-big .dkp-anonce-when {
     position: absolute;
     top: -100%;
@@ -1385,7 +1386,7 @@ font-weight: bold;
         line-height: 110px
     }
     .dkp-anonce-big .dkp-anonce-time>span.dkp-soon {
-        font-size: 90px;
+        font-size: 60px;
         line-height: 90px
     }
     .dkp-anonce-big .dkp-anonce-title {
