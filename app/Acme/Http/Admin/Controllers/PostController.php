@@ -69,6 +69,7 @@ class PostController extends Controller
             }// end foreach
 
         $post->tags()->attach($tags);
+
         }// end if
 
 
