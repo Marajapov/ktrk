@@ -242,6 +242,7 @@
     text-transform: uppercase;
     text-shadow: 1px 1px 10px #000
 }
+
 .dkp-anonce-big .dkp-anonce-when {
     position: absolute;
     top: -100%;
@@ -373,7 +374,7 @@
     color: rgba(255, 255, 255, 0.8)
 }
 .dkp-big-3now .now .dkp-3now-item-wrapper .dkp-3now-item-time {
-    font-size: 22px;
+    font-size: 16px;
     width: 76px;
     text-transform: uppercase
 }
@@ -1370,7 +1371,7 @@ font-weight: bold;
         line-height: 24px
     }
     .dkp-big-3now .now .dkp-3now-item-wrapper .dkp-3now-item-time {
-        font-size: 34px;
+        font-size: 24px;
         width: 112.5px;
         text-transform: uppercase
     }
@@ -1385,7 +1386,7 @@ font-weight: bold;
         line-height: 110px
     }
     .dkp-anonce-big .dkp-anonce-time>span.dkp-soon {
-        font-size: 90px;
+        font-size: 60px;
         line-height: 90px
     }
     .dkp-anonce-big .dkp-anonce-title {

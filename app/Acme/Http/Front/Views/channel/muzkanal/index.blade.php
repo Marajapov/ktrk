@@ -14,28 +14,50 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick-theme.css') }}"/>
         <link rel="stylesheet"  href="css/lightslider.css"/>
 
-
-        <script src="js/gallery/modernizr.custom.js"></script>
-
-        
+        <script src="js/gallery/modernizr.custom.js"></script>        
 
     </head>
     <body class="music">  
-        <div class="container-fluid switch">
-            <ul class="channel_switch">
-                <li class="sitemenu" id="site-channel1"><a href="#"><img src="{{ asset('images/channels/swicth/ktrk_color.png')}}"><span>КТРК</span></a></li>
-                <li class="sitemenu" id="site-channel1"><a href="#"><img src="{{ asset('images/channels/swicth/balastan.png')}}"><span>КТРК</span></a></li>
-                <li class="sitemenu" id="site-channel1"><a class="active" href="#"><img src="{{ asset('images/channels/swicth/music.png')}}" ><span>КТРК</span></a></li>
-                <li class="sitemenu" id="site-channel1"><a href="#"><img src="{{ asset('images/channels/swicth/madaniat.png')}}"><span>КТРК</span></a></li>
-                <li class="sitemenu" id="site-channel1"><a href="#"><img src="{{ asset('images/channels/swicth/birirnchi.png')}}"><span>КТРК</span></a></li>
-                <li class="sitemenu" id="site-channel1"><a href="#"><img src="{{ asset('images/channels/swicth/baldar.png')}}"><span>КТРК</span></a></li>
-                <li class="sitemenu" id="site-channel1"><a href="#"><img src="{{ asset('images/channels/swicth/min-kiyal.png')}}"><span>КТРК</span></a></li>
-                <li class="sitemenu" id="site-channel1"><a href="#"><img src="{{ asset('images/channels/swicth/kg-radio.png')}}"><span>КТРК</span></a></li>
-            </ul>
-        </div>    
+        <div class="switch">
+            <nav class="navbar">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false">
+                        <span class="sr-only">Меню</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"><img src="{{ asset('images/channels/swicth/music.png')}}"></a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="nav navbar-nav channel_switch">
+                        <li class="sitemenu" id="site-channel1">
+                            <a href="#"><img src="{{ asset('images/channels/switch/ktrk.png')}}" ><span>КТРК</span></a></li>
+                        <li class="sitemenu" id="site-channel1">
+                            <a href="#"><img src="{{ asset('images/channels/switch/balastan.png')}}"><span>Баластан</span></a></li>
+                        <li class="sitemenu" id="site-channel1">
+                            <a class="active" href="#"><img src="{{ asset('images/channels/switch/music.png')}}" ><span>Музыка</span></a></li>
+                        <li class="sitemenu" id="site-channel1">
+                            <a href="#"><img src="{{ asset('images/channels/switch/madaniat.png')}}"><span>Маданият</span></a></li>
+                        <li class="sitemenu" id="site-channel1">
+                            <a href="#"><img src="{{ asset('images/channels/switch/birirnchi.png')}}"><span>Биринчи Радио</span></a></li>
+                        <li class="sitemenu" id="site-channel1">
+                            <a href="#"><img src="{{ asset('images/channels/switch/baldar.png')}}"><span>Балдар ФМ</span></a></li>
+                        <li class="sitemenu" id="site-channel1">
+                            <a href="#"><img src="{{ asset('images/channels/switch/1000.png')}}"><span>Миң Кыял ФМ</span></a></li>
+                        <li class="sitemenu" id="site-channel1">
+                            <a href="#"><img src="{{ asset('images/channels/switch/kgradio.png')}}"><span>Кыргыз Радиосу</span></a></li> 
+                    </ul>  
+                </div><!-- /.navbar-collapse -->
+            </nav>
+        </div>  
+
+
         <div class="container main-header">
             <div class="row">
-                <div class="col-md-12">            
+                <div class="col-md-12">         
 
                     <div class="row fixedheader">
                         <nav class="navbar">
@@ -101,7 +123,7 @@
                     <div id="dkp-slideshow-right"></div>
                     <div id="dkp-slideshow-left"></div>
                     <div class="row dkp-slide">
-                        <div class="col-sm-12 dkp-anonce dkp-anonce-big" style="background-image: url(images/channels/muzkanal/Music.jpg);">
+                        <div class="col-sm-12 dkp-anonce dkp-anonce-big" style="background-image: url(images/channels/muzkanal/6.jpg);">
                             <div class="dkp-anonce-time">
                                 <span>21:00</span>
                             </div>
@@ -118,41 +140,36 @@
                         </div>
                     </div>
                     <div class="row dkp-slide slide-left">
-                        <div class="col-sm-12 dkp-anonce dkp-anonce-big" style="background-image: url(images/channels/muzkanal/2.jpg);">
+                        <div class="col-sm-12 dkp-anonce dkp-anonce-big" style="background-image: url(images/channels/muzkanal/Music.jpg);">
                             <div class="dkp-anonce-time">
                                 <span>21:30</span>
                             </div>
                             <div class="dkp-anonce-title">
-                                Крёстный. Все&nbsp;серии
+                                Жаңы клиптер. 
                             </div>
                             <div class="dkp-anonce-when">
                                 <span>
                                     <span>
-                                        Сегодня
+                                        Ишемби
                                     </span>
                                 </span>
                             </div>
                         </div>
-                    </div>
+                    </div>                 
                     <div class="row dkp-slide slide-left">
-                        <div class="col-sm-12 dkp-anonce dkp-anonce-big" style="background-image: url(images/channels/muzkanal/3.jpg);">
+                        <div class="col-sm-12 dkp-anonce dkp-anonce-big" style="background-image: url(images/channels/muzkanal/soon.jpg);">
                             <div class="dkp-anonce-time">
-                                <span>22:00</span>
+                                <span class="dkp-soon">Жакында</span>
                             </div>
                             <div class="dkp-anonce-title">
-                                Привычка расставаться
+                                Жаңы программа. 
                             </div>
                             <div class="dkp-anonce-when">
                                 <span>
-                                    <span> Завтра</span>
+                                    <span>
+                                        Күн сайын 
+                                    </span>
                                 </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row dkp-slide slide-left">
-                        <div class="col-sm-12 dkp-anonce dkp-anonce-big" style="background-image: url(images/channels/muzkanal/4.jpg);">
-                            <div class="dkp-anonce-time">
-                                <span class="dkp-soon">Скоро</span>
                             </div>
                         </div>
                     </div>
@@ -161,15 +178,15 @@
 
             <div class="row dkp-big-3now ">
                 <div class="col-xs-4 rowfix">
-                    <a type="button" data-toggle="modal" data-target="#myModal" class="dkp-anonce dkp-anonce-small now dkp-border" style="background-image: url(images/channels/muzkanal/1.jpg);" data-id="12056" data-target="#myModal">
+                    <a type="button" data-toggle="modal" data-target="#myModal" class="dkp-anonce dkp-anonce-small now dkp-border" style="background-image: url(images/channels/muzkanal/mirbek.jpg);" data-id="12056" data-target="#myModal">
                         <div class="dkp-3now-item-wrapper">
                             <div class="dkp-3now-item-time">
                                 <span>
-                                    <span>азыр</span>
+                                    <span>Эклюзив</span>
                                 </span>
                             </div>
                             <div class="dkp-3now-item-title">
-                                <span>Фильм</span> Инкассаторы. Все&nbsp;серии
+                                <span>Мирбек Атабеков</span> Булбулум
                             </div>
                         </div>
                     </a>
@@ -180,10 +197,11 @@
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                    <h4 class="modal-title" id="myModalLabel">Анонс</h4>
+                                    <h4 class="modal-title" id="myModalLabel">Мирбек Атабеков - Булбулум</h4>
                                 </div>
                                 <div class="modal-body">
-                                    Телеберүү же дагы бир нерсе боюнча маалымат
+                                    Мирбек Атабеков Булбулум аттуу жаңы клибин эл алдына тартуулады. Клиптин презентациясы Алтын Ордо студиясынада болду, көтптөгөн белгилүү ырчылар жана жылдыздар келип Мирбектин жаңы клибин көрүшүп, жакшы сөздөрүн айтышып, учурашып, саламдашып, өткөн кеткенди срушып анан кетишти
+                                    <iframe width="100%" height="450px" src="https://www.youtube.com/embed/ZYm3JvXPpKU" frameborder="0" allowfullscreen></iframe>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-default" data-dismiss="modal">Жабуу</button> 
@@ -193,15 +211,15 @@
                     </div>
                 </div>
                 <div class="col-xs-4 rowfix" >
-                    <a href="#" data-toggle="modal" data-target="#myModal" class="dkp-anonce dkp-anonce-small  dkp-border" style="background-image: url(images/channels/muzkanal/2.jpg);" data-id="12269">
+                    <a href="#" data-toggle="modal" data-target="#myModal" class="dkp-anonce dkp-anonce-small  dkp-border" style="background-image: url(images/channels/muzkanal/kalykov.jpg);" data-id="12269">
                         <div class="dkp-3now-item-wrapper">
                             <div class="dkp-3now-item-time">
                                 <span>
-                                    <span>19:55</span>
+                                    <span>20:00</span>
                                 </span>
                             </div>
                             <div class="dkp-3now-item-title">
-                                <span>Телеберүү</span> Хит парад
+                                <span>Гүлжигит Калыковдон</span> супер интервью
                             </div>
                         </div>
                     </a>
@@ -224,7 +242,7 @@
                     </div>
                 </div>
                 <div class="col-xs-4 rowfix">
-                    <a href="#" data-toggle="modal" data-target="#myModal" class="dkp-anonce dkp-anonce-small  dkp-border" style="background-image: url(images/channels/muzkanal/3.jpg);" data-id="14540">
+                    <a href="#" data-toggle="modal" data-target="#myModal" class="dkp-anonce dkp-anonce-small  dkp-border" style="background-image: url(images/channels/muzkanal/minura.jpg);" data-id="14540">
                         <div class="dkp-3now-item-wrapper">
                             <div class="dkp-3now-item-time">
                                 <span>
@@ -232,7 +250,7 @@
                                 </span>
                             </div>
                             <div class="dkp-3now-item-title">
-                                <span>Сериал</span> Крёстный
+                                <span>Минюра Рахимжанова</span> Мен кат жаздым
                             </div>
                         </div>
                     </a>
@@ -877,7 +895,7 @@
                                         </div>
 
                                     </div>
-                                      <footer>
+                                    <footer>
                                         <a href="#">
                                             <span>Все видео <i class="fa fa-arrow-circle-right"></i></span>
                                         </a>
@@ -892,156 +910,99 @@
             <div class="row">  
                 <div class="col-md-12 ">
                     <div class="row imgmuz">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title"><span> - Фотогалерея - </span></h3>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><span> - Фотогалерея - </span></h3>
+                            </div>
+                            <div class="ia-container">
+
+                                <figure>
+                                    <img src="images/channels/muzkanal/mirbek.jpg" alt="image01" />
+                                    <input type="radio" name="radio-set" checked="checked"/>
+                                    <figcaption><span>Мирбек Атабеков</span></figcaption>
+
+                                    <figure>
+                                        <img src="images/channels/muzkanal/mirbek.jpg" alt="image02" />
+                                        <input type="radio" name="radio-set" />
+                                        <figcaption><span>Honest Light</span></figcaption>
+
+                                        <figure>
+                                            <img src="images/channels/muzkanal/mirbek.jpg" alt="image03" />
+                                            <input type="radio" name="radio-set" />
+                                            <figcaption><span>Silent Serenity</span></figcaption>
+
+                                            <figure>
+                                                <img src="images/channels/muzkanal/mirbek.jpg" alt="image04" />
+                                                <input type="radio" name="radio-set" />
+                                                <figcaption><span>Warm Welcome</span></figcaption>
+
+                                                <figure>
+                                                    <img src="images/channels/muzkanal/mirbek.jpg" alt="image05" />
+                                                    <input type="radio" name="radio-set" />
+                                                    <figcaption><span>Sensible Magic</span></figcaption>
+
+                                                    <figure>
+                                                        <img src="images/channels/muzkanal/mirbek.jpg" alt="image06" />
+                                                        <input type="radio" name="radio-set" />
+                                                        <figcaption><span>Lovely Midnight</span></figcaption>
+
+                                                        <figure>
+                                                            <img src="images/channels/muzkanal/mirbek.jpg" alt="image07" />
+                                                            <input type="radio" name="radio-set" />
+                                                            <figcaption><span>Illuminated Darkness</span></figcaption>                                          
+
+                                                            <figure>
+                                                                <img src="images/channels/muzkanal/mirbek.jpg" alt="image08" />
+                                                                <input id="ia-selector-last" type="radio" name="radio-set" />
+                                                                <figcaption><span>Happy Child</span></figcaption>
+
+                                                                <figure>
+                                                                    <img src="images/channels/muzkanal/mirbek.jpg" alt="image08" />
+                                                                    <input id="ia-selector-last" type="radio" name="radio-set" />
+                                                                    <figcaption><span>Happy Child</span></figcaption>
+
+                                                                    <figure>
+                                                                        <img src="images/channels/muzkanal/mirbek.jpg" alt="image08" />
+                                                                        <input id="ia-selector-last" type="radio" name="radio-set" />
+                                                                        <figcaption><span>Happy Child</span></figcaption>
+
+                                                                    </figure>
+
+                                                                    <figure>
+                                                                        <img src="images/channels/muzkanal/mirbek.jpg" alt="image08" />
+                                                                        <input id="ia-selector-last" type="radio" name="radio-set" />
+                                                                        <figcaption><span>Happy Child</span></figcaption>
+
+                                                                    </figure>
+
+                                                                    <figure>
+                                                                        <img src="images/channels/muzkanal/mirbek.jpg" alt="image08" />
+                                                                        <input id="ia-selector-last" type="radio" name="radio-set" />
+                                                                        <figcaption><span>Happy Child</span></figcaption>
+
+                                                                    </figure>
+
+                                                                </figure>
+
+                                                            </figure>
+
+                                                        </figure>
+
+                                                    </figure>   
+
+                                                </figure>   
+
+                                            </figure>
+
+                                        </figure>
+
+                                    </figure>
+
+                                </figure>
+
+                            </div><!-- ia-container -->
                         </div>
-                        <div id="grid-gallery" class="grid-gallery">
-                            <section class="grid-wrap">
-                                <ul class="grid">
-                                    <li>
-                                        <figure>
-                                            <img src="images/logo_notext.png" alt="img01"/>
-
-                                        </figure>
-                                    </li>
-                                    <li>
-                                        <figure>
-                                            <img src="images/4.jpg" alt="img02"/>
-
-                                        </figure>
-                                    </li>
-                                    <li>
-                                        <figure>
-                                            <img src="images/3.jpg" alt="img03"/>
-
-                                        </figure>
-                                    </li>
-                                    <li>
-                                        <figure>
-                                            <img src="images/3.jpg" alt="img04"/>
-
-                                        </figure>
-                                    </li>
-                                    <li>
-                                        <figure>
-                                            <img src="images/6.jpg" alt="img04"/>
-
-                                        </figure>
-                                    </li>
-                                    <li>
-                                        <figure>
-                                            <img src="images/7.jpg" alt="img04"/>
-
-                                        </figure>
-                                    </li>
-                                    <li>
-                                        <figure>
-                                            <img src="images/6.jpg" alt="img04"/>
-
-                                        </figure>
-                                    </li>
-                                    <li>
-                                        <figure>
-                                            <img src="images/7.jpg" alt="img04"/>
-
-                                        </figure>
-                                    </li>
-
-                                </ul>
-                            </section><!-- // grid-wrap -->
-                            <section class="slideshow tofront">
-                                <ul>
-                                    <li>
-                                        <figure>
-                                            <figcaption>
-                                                <h3>Таң калыштуу</h3>
-                                                <p>Дүйнөдө эмне деген ган укмуштар болуп жатат.</p>
-                                            </figcaption>
-                                            <img src="images/logo_notext.png" alt="img01"/>
-                                        </figure>
-                                    </li>
-                                    <li>
-                                        <figure>
-                                            <figcaption>
-                                                <h3>Күн кайрадан тийүүдө</h3>
-                                                <p>Бүгүн аяабай жакшы күн анткени күн бар, демек күн аябагандай жакшы болот</p>
-                                            </figcaption>
-                                            <img src="images/4.jpg" alt="img02"/>
-                                        </figure>
-                                    </li>
-                                    <li>
-                                        <figure>
-                                            <figcaption>
-                                                <h3>Булуттар бар, демек маанай да бар</h3>
-                                                <p>Булуттар табияттын укмуш белеги, жөн эле карап аларадын учупу атканы керемет.</p>
-                                            </figcaption>
-                                            <img src="images/3.jpg" alt="img03"/>
-                                        </figure>
-                                    </li>
-                                    <li>
-                                        <figure>
-                                            <figcaption>
-                                                <h3>Chillwave nihil occupy</h3>
-                                                <p>Vice cliche locavore mumblecore vegan wayfarers asymmetrical letterpress hoodie mustache. Shabby chic lomo polaroid, scenester 8-bit Portland Pitchfork VHS tote bag.</p>
-                                            </figcaption>
-                                            <img src="images/3.jpg" alt="img04"/>
-                                        </figure>
-                                    </li>
-                                    <li>
-                                        <figure>
-                                            <figcaption>
-                                                <h3>Chillwave nihil occupy</h3>
-                                                <p>Vice cliche locavore mumblecore vegan wayfarers asymmetrical letterpress hoodie mustache. Shabby chic lomo polaroid, scenester 8-bit Portland Pitchfork VHS tote bag.</p>
-                                            </figcaption>
-                                            <img src="images/6.jpg" alt="img04"/>
-                                        </figure>
-                                    </li>
-                                    <li>
-                                        <figure>
-                                            <figcaption>
-                                                <h3>Chillwave nihil occupy</h3>
-                                                <p>Vice cliche locavore mumblecore vegan wayfarers asymmetrical letterpress hoodie mustache. Shabby chic lomo polaroid, scenester 8-bit Portland Pitchfork VHS tote bag.</p>
-                                            </figcaption>
-                                            <img src="images/7.jpg" alt="img04"/>
-                                        </figure>
-                                    </li>
-                                    <li>
-                                        <figure>
-                                            <figcaption>
-                                                <h3>Chillwave nihil occupy</h3>
-                                                <p>Vice cliche locavore mumblecore vegan wayfarers asymmetrical letterpress hoodie mustache. Shabby chic lomo polaroid, scenester 8-bit Portland Pitchfork VHS tote bag.</p>
-                                            </figcaption>
-                                            <img src="images/4.jpg" alt="img04"/>
-                                        </figure>
-                                    </li>
-                                    <li>
-                                        <figure>
-                                            <figcaption>
-                                                <h3>Chillwave nihil occupy</h3>
-                                                <p>Vice cliche locavore mumblecore vegan wayfarers asymmetrical letterpress hoodie mustache. Shabby chic lomo polaroid, scenester 8-bit Portland Pitchfork VHS tote bag.</p>
-                                            </figcaption>
-                                            <img src="images/7.jpg" alt="img04"/>
-                                        </figure>
-                                    </li>
-
-
-                                </ul>
-                                <nav>
-                                    <span class="icon nav-prev"><i class="fa fa-arrow-left"></i>
-                                    </span>
-                                    <span class="icon nav-next"><i class="fa fa-arrow-right"></i>
-                                    </span>
-                                    <span class="icon nav-close"><i class="fa fa-times"></i>
-
-                                    </span>
-                                </nav>
-                                <div class="info-keys"><i class="fa fa-info"></i>
-                                    Клавитауранын белгилери менен башкарсаңыз болот</div>
-                            </section><!-- // slideshow -->
-                        </div><!-- // grid-gallery -->
                     </div>
-                </div>
                 </div>
             </div>
         </div>
@@ -1079,7 +1040,7 @@
         <script src="js/gallery/cbpGridGallery.js"></script>
 
         <script>
-            new CBPGridGallery(document.getElementById('grid-gallery'));
+new CBPGridGallery(document.getElementById('grid-gallery'));
         </script>
 
         <script>
@@ -1108,7 +1069,7 @@
                 });
             });
         </script>
-      
+
         <script src="js/audio/dkp.min.js"></script>
 
         <script type="text/javascript" src="filter/js/jquery.easing.min.js"></script>
@@ -1126,23 +1087,23 @@
         <script src="js/audio/jquery.newsTicker.js"></script>
         <script>
 
-var nt_title = $('#nt-title').newsTicker({
-    row_height: 30,
-    max_rows: 1,
-    duration: 3000,
-    pauseOnHover: 0
-});
-var nt_example1 = $('#nt-example1').newsTicker({
-    row_height: 30,
-    max_rows: 3,
-    duration: 4000,
-    prevButton: $('#nt-example1-prev'),
-    nextButton: $('#nt-example1-next')
-});
+            var nt_title = $('#nt-title').newsTicker({
+                row_height: 30,
+                max_rows: 1,
+                duration: 3000,
+                pauseOnHover: 0
+            });
+            var nt_example1 = $('#nt-example1').newsTicker({
+                row_height: 30,
+                max_rows: 3,
+                duration: 4000,
+                prevButton: $('#nt-example1-prev'),
+                nextButton: $('#nt-example1-next')
+            });
 
-var state = 'stopped';
-var speed;
-var add;
+            var state = 'stopped';
+            var speed;
+            var add;
 
         </script>
         <!-- Ptogramm title Anima -->
@@ -1219,7 +1180,7 @@ var add;
 
         <!--Carousel-->
         <script>
-            if($(window).width() > 768){
+            if ($(window).width() > 768) {
                 $('.carousel-slick').slick({
                     infinite: true,
                     slidesToShow: 4,
@@ -1236,7 +1197,7 @@ var add;
                 });
             }
 
-            if($(window).width() < 768){
+            if ($(window).width() < 768) {
                 $('.carousel-slick1').slick({
                     infinite: true,
                     slidesToShow: 2,
@@ -1246,7 +1207,7 @@ var add;
                 });
             }
 
-               if($(window).width() < 768){
+            if ($(window).width() < 768) {
                 $('.carousel-slick').slick({
                     infinite: true,
                     slidesToShow: 2,
@@ -1255,7 +1216,7 @@ var add;
                     autoplaySpeed: 4500
                 });
             }
-            
+
         </script>
 
 

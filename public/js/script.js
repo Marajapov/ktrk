@@ -5,7 +5,7 @@ $(function() {
 	// cache and configuration
 
 	// Menu
-	var menu = $('.navbar');
+	var menu = $('.fixedheader');
 	// Menu offset
 	var menuOffset = menu.offset().top;
 
