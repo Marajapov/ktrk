@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'Top news' => 'Top janiliktar',
-    'All news' => 'Baardik janiliktar',
+    'Top news' => 'Жаңылыктар',
+    'All news' => 'Бардык',
 
 ];

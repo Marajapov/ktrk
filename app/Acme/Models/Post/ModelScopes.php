@@ -8,6 +8,18 @@ trait ModelScopes {
         return $query->where('published', '=', true);
     }
 
+    public function scopeLanguagekg($query)
+    {
+		$kg = 'languageKg';
+        return $query->having('language', '=', $kg);
+    }
+
+    public function scopeLanguageru($query)
+    {
+        $ru = 'languageRu';
+        return $query->having('language', '=', $ru);
+    }
+
     public function scopeType($query, $type = "post")
     {
         $type = in_array($type, ['post', 'post'])? $type : "post";

@@ -8,6 +8,12 @@ trait ModelScopes {
         return $query->where('published', '=', true);
     }
 
+    public function scopeLanguagekg($query)
+    {
+        dd("123");
+        return $query->where('language','=','languagekg');
+    }
+
     public function scopeGeneral($query)
     {
         return $query->where('name', '=', 'general')->first();

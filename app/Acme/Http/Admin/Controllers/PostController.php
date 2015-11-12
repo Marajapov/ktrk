@@ -88,28 +88,41 @@ class PostController extends Controller
             $file->move($dir, $name);
         }
 
+        // Start Related posts on create
         $related1 = $request->input('related1');
         if($related1 != 'default'){
             $space = ' ';
-
             $content1 = $request->input('content');
-            
             $mystring = $content1;
             $findme   = 'admin/post/1';
             $pos = strpos($mystring, $findme);
-            
-
             $newstr = substr_replace($content1, 'http://1000.ktrk.kg/post/'.$related1, $pos, 12);
-
-
-            //dd($pos,$space,$findme,$space,$mystring,$space,$newstr);
             $post->content = $newstr;
             $post->save();
-
-            
-
-
-        }
+        } // end if
+        $related2 = $request->input('related2');
+        if($related2 != 'default'){
+            $space = ' ';
+            $content2 = $request->input('content');
+            $mystring = $content2;
+            $findme   = 'admin/post/2';
+            $pos = strpos($mystring, $findme);
+            $newstr = substr_replace($content2, 'http://1000.ktrk.kg/post/'.$related1, $pos, 12);
+            $post->content = $newstr;
+            $post->save();
+        } // end if 2
+        $related3 = $request->input('related3');
+        if($related3 != 'default'){
+            $space = ' ';
+            $content3 = $request->input('content');
+            $mystring = $content3;
+            $findme   = 'admin/post/3';
+            $pos = strpos($mystring, $findme);
+            $newstr = substr_replace($content3, 'http://1000.ktrk.kg/post/'.$related1, $pos, 12);
+            $post->content = $newstr;
+            $post->save();
+        } // end if 3
+        // end related posts on create
 
         return redirect()->route('admin.post.index');
     }
@@ -157,9 +170,10 @@ class PostController extends Controller
     public function update(Request $request, Post $post)
     {
         
-        $post->update($request->except('tag_list','thumbnail'));
+        $post->update($request->except('tag_list','thumbnail','q','related1','related2','related3'));
 
         $tags = $request->input('tag_list');
+        if(!empty($tags)){
         foreach ($tags as $key => $name)
         {
             if(!is_numeric($name))
@@ -171,6 +185,44 @@ class PostController extends Controller
             }
         }
         $post->tags()->sync($tags);
+        }// end if
+
+
+        // Related posts
+        $related1 = $request->input('related1');
+        if($related1 != 'default'){
+            $space = ' ';
+            $content1 = $request->input('content');
+            $mystring = $content1;
+            $findme   = 'admin/post/1';
+            $pos = strpos($mystring, $findme);
+            $newstr = substr_replace($content1, 'http://1000.ktrk.kg/post/'.$related1, $pos, 12);
+            $post->content = $newstr;
+            $post->save();
+        } // end if
+        $related2 = $request->input('related2');
+        if($related2 != 'default'){
+            $space = ' ';
+            $content2 = $request->input('content');
+            $mystring = $content2;
+            $findme   = 'admin/post/2';
+            $pos = strpos($mystring, $findme);
+            $newstr = substr_replace($content2, 'http://1000.ktrk.kg/post/'.$related1, $pos, 12);
+            $post->content = $newstr;
+            $post->save();
+        } // end if 2
+        $related3 = $request->input('related3');
+        if($related3 != 'default'){
+            $space = ' ';
+            $content3 = $request->input('content');
+            $mystring = $content3;
+            $findme   = 'admin/post/3';
+            $pos = strpos($mystring, $findme);
+            $newstr = substr_replace($content3, 'http://1000.ktrk.kg/post/'.$related1, $pos, 12);
+            $post->content = $newstr;
+            $post->save();
+        } // end if 3
+        // end related posts
 
         if($request->hasFile('thumbnail'))
         {

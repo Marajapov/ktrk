@@ -49,7 +49,7 @@ class MenuController extends Controller
      */
     public function store(Request $request)
     {
-        $menu = Menu::create($request->all());
+        $menu = Menu::create($request->except('q'));
 
         return redirect()->route('admin.menu.code', $menu->getCode());
     }
@@ -92,7 +92,7 @@ class MenuController extends Controller
      */
     public function update(Request $request, Menu $menu)
     {
-        $menu->update($request->all());
+        $menu->update($request->except('q'));
 
         return redirect()->route('admin.menu.code', $menu->getCode());
     }

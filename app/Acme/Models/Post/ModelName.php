@@ -52,7 +52,16 @@ class ModelName extends Model
 
     public function getTitle()
     {
-        return $this->title;
+        $lc = app()->getlocale();
+        if($lc == 'kg' && ($this->language == 'languageKg')){
+            return $this->title;
+        }elseif ($lc = 'ru' && ($this->language == 'languageRu')) {
+            return $this->title;
+        }elseif($lc = ''){
+            return 'default kg';
+        }else{
+            return 'nothing';
+        }
     }
 
     public function getContent()

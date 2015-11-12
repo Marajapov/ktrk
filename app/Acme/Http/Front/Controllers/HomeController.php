@@ -21,11 +21,17 @@ class HomeController extends Controller
      */
     public function Home()
     {
-        // dd(app()->getlocale());
-        
+        $lc = app()->getlocale();
         $channel = \Model\Channel\ModelName::general();
-
-        $generalPosts = \Model\Post\ModelName::general($channel)->published()->take(6)->skip(0)->orderBy('id', 'desc')->get();
+	if($lc == 'kg'){
+		$generalPosts = \Model\Post\ModelName::general($channel)->published()->languagekg()->take(6)->skip(0)->orderBy('id', 'desc')->get();    
+		//dd($generalPosts);
+	}elseif($lc == 'ru'){
+		$generalPosts = \Model\Post\ModelName::general($channel)->published()->languageru()->get();
+		//dd($generalPosts);
+	}else{
+		$generalPosts = \Model\Post\ModelName::general($channel)->published()->take(2)->skip(0)->orderBy('id', 'desc')->get();
+	}
 
         $mediaLast = \Model\Media\ModelName::take(9)->get();
         $dayVideos = \Model\Media\ModelName::take(1)->orderBy('viewed','asc')->get();
