@@ -224,7 +224,7 @@
             <div class="row">
                 <section class="content clearfix">
                     <div class="top-left-block col-md-8">
-                        <div class="panel panel-default panel-top-news">
+                        <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h3 class="panel-title"><span>Генеральный директор КТРК: Карыпбеков Илим Майрамбекович</span></h3>
                             </div>
@@ -249,9 +249,18 @@
                                                     <tr>
                                                         <th scope="row">Туулган датасы:</th>
                                                         <td>1979-жылы 13 - август</td>                                               
+                                                    </tr>                                                
+                                                    <tr>
+                                                        <th scope="row">Facebook баракчасы:</th>
+                                                        <td><i class="fa fa-facebook-official"></i><a href="https://www.facebook.com/ilim.karypbekov">facebook.com/ilim.karypbekov</a></td>                                               
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">Twitter баракчасы:</th>
+                                                        <td><i class="fa fa-twitter"></i><a href="https://twitter.com/ilimkm">twitter.com/ilimkm</a></td>                                               
                                                     </tr>
                                                 </tbody>                                                 
                                             </table>
+
                                         </div>
                                     </div>  
                                     <br/>

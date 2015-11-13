@@ -28,27 +28,29 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#"><img src="{{ asset('images/channels/swicth/music.png')}}"></a>
+                    <a class="navbar-brand" href="#"><img src="{{ asset('images/channels/muz_white_notext.png')}}"><h4>Музыка</h4></a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="menu">
                     <ul class="nav navbar-nav channel_switch">
                         <li class="sitemenu" id="site-channel1">
-                            <a href="#"><img src="{{ asset('images/channels/switch/ktrk.png')}}" ><span>КТРК</span></a></li>
+                            <a href="#"><img src="{{ asset('images/ktrk_last.svg')}}"><span>КТРК</span></a></li>
                         <li class="sitemenu" id="site-channel1">
-                            <a href="#"><img src="{{ asset('images/channels/switch/balastan.png')}}"><span>Баластан</span></a></li>
+                            <a href="#"><img src="{{ asset('images/channels/balastan_white_notext.png')}}"><span>Баластан</span><h4>Баластан</h4></a></li>
                         <li class="sitemenu" id="site-channel1">
-                            <a class="active" href="#"><img src="{{ asset('images/channels/switch/music.png')}}" ><span>Музыка</span></a></li>
+                            <a class="active" href="#"><img src="{{ asset('images/channels/muz_white_notext.png')}}" ><span>Музыка</span><h4>Музыка</h4></a></li>
                         <li class="sitemenu" id="site-channel1">
-                            <a href="#"><img src="{{ asset('images/channels/switch/madaniat.png')}}"><span>Маданият</span></a></li>
+                            <a href="#"><img src="{{ asset('images/channels/madaniyat_white_notext.png')}}"><span>Маданият</span><h4>Маданият</h4></a></li>
                         <li class="sitemenu" id="site-channel1">
-                            <a href="#"><img src="{{ asset('images/channels/switch/birirnchi.png')}}"><span>Биринчи Радио</span></a></li>
+                            <a href="#"><img src="{{ asset('images/channels/1-radio.png')}}"><span>Биринчи Радио</span><h4>Биринчи Радио</h4></a></li>
+                       <!--  <li class="sitemenu" id="site-channel1">
+                            <a href="#"><img src="{{ asset('images/channels/baldar.png')}}"><span>Балдар ФМ</span></a></li> -->
                         <li class="sitemenu" id="site-channel1">
-                            <a href="#"><img src="{{ asset('images/channels/switch/baldar.png')}}"><span>Балдар ФМ</span></a></li>
+                            <a href="#"><img src="{{ asset('images/channels/min-kiyal.png')}}"><span>Миң Кыял ФМ</span></a></li>
                         <li class="sitemenu" id="site-channel1">
-                            <a href="#"><img src="{{ asset('images/channels/switch/1000.png')}}"><span>Миң Кыял ФМ</span></a></li>
-                        <li class="sitemenu" id="site-channel1">
-                            <a href="#"><img src="{{ asset('images/channels/switch/kgradio.png')}}"><span>Кыргыз Радиосу</span></a></li> 
+                            <a href="#"><img src="{{ asset('images/channels/kg-radio.png')}}"><span>Кыргыз Радиосу</span></a></li> 
+                             <li class="sitemenu" id="site-channel1">
+                            <a href="#"><img src="{{ asset('images/channels/dostuk.png')}}"><span>Достук Радиосу</span></a></li> 
                     </ul>  
                 </div><!-- /.navbar-collapse -->
             </nav>
@@ -70,16 +72,35 @@
                                         <span class="icon-bar"></span>
                                         <span class="icon-bar"></span>
                                     </button>
+                                    <div class="logo-block search-block">
+                                        <a class="search-toggle"><i class="fa fa-search"></i></a>
+
+                                         <form class="form-search" action="{{ route('front.search') }}" method="get">
+                                            <div class="form-group pull-right">
+                                                <input type="text" name="search" class="form-control" placeholder="Издөө"/>
+                                            </div>
+
+                                            <a class="btn close-search">
+                                                <i class="fa fa-close"></i>
+                                            </a>
+
+                                            <button class="btn submit-search" type="submit">
+                                                <i class="fa fa-search"></i>
+                                            </button>
+                                        </form>
+                                    </div>
                                     <a class="navbar-brand" href="#"> <i class="fa fa-home"></i>Башкы</a>
                                 </div>
+
+                                
 
                                 <!-- Collect the nav links, forms, and other content for toggling -->
                                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                     <ul class="nav navbar-nav">     
-                                        <li><a href="#"><i class="fa fa-info"></i>О канале</a></li>
+                                        <li><a href="#"><i class="fa fa-info-circle"></i>О канале</a></li>
                                         <li class="dropdown">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-television"></i>Телепередачи <span class="caret"></span></a>
-                                            <ul class="dropdown-menu">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-microphone"></i>Хит-Парад <!-- <span class="caret"></span> --></a>
+                                     <!--        <ul class="dropdown-menu">
                                                 <li><a href="#">Хит парад</a></li>
                                                 <li><a href="#">Хит парад 2</a></li>
                                                 <li><a href="#">Хит парад 3</a></li>
@@ -87,22 +108,32 @@
                                                 <li><a href="#">Топ парад</a></li>
                                                 <li role="separator" class="divider"></li>
                                                 <li><a href="#">Парад планет</a></li>
-                                            </ul>
+                                            </ul> -->
                                         </li>
                                         <li><a href="#"><i class="fa fa-picture-o"></i>Фото</a></li>
                                         <li><a href="#"><i class="fa fa-youtube-play"></i>Клипы</a></li>
                                     </ul>
 
-                                    <ul class="nav navbar-nav navbar-right">
-                                        <li><button class="btn btn-danger btn-live onairtv" style="margin-top:6px; ">
-                                                <i class="fa fa-dot-circle-o"></i>
-                                                түз эфир
-                                            </button> </li>
-                                        <form class="navbar-form navbar-left" role="search">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Издөө">
-                                            </div>       
-                                        </form>
+                                    <ul class="nav navbar-nav navbar-right logo-block">
+                                     <a class="search-toggle"><i class="fa fa-search"></i></a>
+
+                                     <form class="form-search" action="{{ route('front.search') }}" method="get">
+                                        <div class="form-group pull-right">
+                                            <input type="text" name="search" class="form-control" placeholder="Издөө"/>
+                                        </div>
+
+                                        <a class="btn close-search">
+                                            <i class="fa fa-close"></i>
+                                        </a>
+
+                                        <button class="btn submit-search" type="submit">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                    </form>
+                                    <button class="btn btn-danger btn-live" data-toggle="modal" data-target="#liveModal">
+                                        <i class="fa fa-dot-circle-o"></i>
+                                        түз эфир
+                                    </button>
                                     </ul>
                                 </div><!-- /.navbar-collapse -->
                             </div><!-- /.container-fluid -->
@@ -121,11 +152,32 @@
             <div class="row">                
                 <div class="col-sm-12 dkp-slideshow dkp-moving-right">
                     <div id="dkp-slideshow-right"></div>
-                    <div id="dkp-slideshow-left"></div>
-                    <div class="row dkp-slide">
-                        <div class="col-sm-12 dkp-anonce dkp-anonce-big" style="background-image: url(images/channels/muzkanal/6.jpg);">
+                    <div id="dkp-slideshow-left"></div>                  
+                     <div class="row dkp-slide">
+                      <a href="#">
+                      <div class="col-sm-12 dkp-anonce dkp-anonce-big" style="background-image: url(images/channels/muzkanal/12.png);">
                             <div class="dkp-anonce-time">
                                 <span>21:00</span>
+                            </div>
+                            <div class="dkp-anonce-title">
+                                Анжелика - Кызыма
+                            </div>
+                            <div class="dkp-anonce-when">
+                                <span>
+                                    <span>
+                                        ЭКЛЮЗИВ
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                        </a>
+                    </div>
+
+                    <div class="row dkp-slide slide-left">
+                     <a href="#">
+                        <div class="col-sm-12 dkp-anonce dkp-anonce-big" style="background-image: url(images/channels/muzkanal/14.jpg);">
+                            <div class="dkp-anonce-time">
+                                <span>21:30</span>
                             </div>
                             <div class="dkp-anonce-title">
                                 Хит-Парад ТОП-10
@@ -133,30 +185,15 @@
                             <div class="dkp-anonce-when">
                                 <span>
                                     <span>
-                                        ар ЖЕКШЕМБИ
+                                        Ар Ишемби
                                     </span>
                                 </span>
                             </div>
                         </div>
-                    </div>
-                    <div class="row dkp-slide slide-left">
-                        <div class="col-sm-12 dkp-anonce dkp-anonce-big" style="background-image: url(images/channels/muzkanal/Music.jpg);">
-                            <div class="dkp-anonce-time">
-                                <span>21:30</span>
-                            </div>
-                            <div class="dkp-anonce-title">
-                                Жаңы клиптер. 
-                            </div>
-                            <div class="dkp-anonce-when">
-                                <span>
-                                    <span>
-                                        Ишемби
-                                    </span>
-                                </span>
-                            </div>
-                        </div>
+                         </a>
                     </div>                 
                     <div class="row dkp-slide slide-left">
+                      <a href="#">
                         <div class="col-sm-12 dkp-anonce dkp-anonce-big" style="background-image: url(images/channels/muzkanal/soon.jpg);">
                             <div class="dkp-anonce-time">
                                 <span class="dkp-soon">Жакында</span>
@@ -172,6 +209,7 @@
                                 </span>
                             </div>
                         </div>
+                         </a>
                     </div>
                 </div>                         
             </div>
@@ -201,6 +239,7 @@
                                 </div>
                                 <div class="modal-body">
                                     Мирбек Атабеков Булбулум аттуу жаңы клибин эл алдына тартуулады. Клиптин презентациясы Алтын Ордо студиясынада болду, көтптөгөн белгилүү ырчылар жана жылдыздар келип Мирбектин жаңы клибин көрүшүп, жакшы сөздөрүн айтышып, учурашып, саламдашып, өткөн кеткенди срушып анан кетишти
+
                                     <iframe width="100%" height="450px" src="https://www.youtube.com/embed/ZYm3JvXPpKU" frameborder="0" allowfullscreen></iframe>
                                 </div>
                                 <div class="modal-footer">
@@ -279,14 +318,20 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 onairmuz">
+                 <div class="panel">
+                 <div class="panel-heading">
+                            <h3 class="panel-title"><span> - Түз эфир - </span></h3>
+                        </div>
                     <div id="player"></div>
+                </div>
                 </div>
                 <div class="col-md-4 promo">
                     <div class="panel panel-default promorolik">
+                       
                         <div class="panel-heading">
                             <h3 class="panel-title"><span> - Промо - </span></h3>
                         </div>
-                        <iframe width="100%" height="85%" src="https://www.youtube.com/embed/nA2tGgAzQ9E" frameborder="0" allowfullscreen></iframe>
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/nA2tGgAzQ9E" frameborder="0" allowfullscreen></iframe>
                     </div>                    
                     <div class="panel panel-default programtitle">
                         <div class="panel-heading">
@@ -622,79 +667,73 @@
                                     <a href="#" class="pull-left"> <img src="{{ asset('images/1.jpg') }}" class="hitimg"> </a>
                                     <a class="clear" href="#"> <span>Атабеков Мирбек</span><p> <small>Мөлмөлүм</small></p></a>
                                     <span class="numeric">1</span>
-                                    <span class="starRating">
-                                        <input id="rating5" type="radio" name="rating" value="5">
-                                        <label for="rating5">5</label>
-                                        <input id="rating4" type="radio" name="rating" value="4">
-                                        <label for="rating4">4</label>
-                                        <input id="rating3" type="radio" name="rating" value="3" checked>
-                                        <label for="rating3">3</label>
-                                        <input id="rating2" type="radio" name="rating" value="2">
-                                        <label for="rating2">2</label>
-                                        <input id="rating1" type="radio" name="rating" value="1">
-                                        <label for="rating1">1</label>
-                                    </span>
+                                    <div class="vote">
+                                        <div class="like" data-likes="10"><i class="fa fa-thumbs-up"></i></div>
+                                    </div>                                  
                                 </li>
                                 <li class="list-group-item clearfix"><a href="#" class="pull-right"> <i class="glyphicon glyphicon-play"></i> </a>
                                     <a href="#" class="pull-left"> <img src="{{ asset('images/2.jpg') }}" class="hitimg"> </a>
                                     <a class="clear" href="#"> <span>Борбиев Бек</span><p> <small>Шамал</small></p></a> <span class="numeric">2</span>
-                                    <span class="starRating">
-                                        <input id="rating5" type="radio" name="rating" value="5">
-                                        <label for="rating5">5</label>
-                                        <input id="rating4" type="radio" name="rating" value="4">
-                                        <label for="rating4">4</label>
-                                        <input id="rating3" type="radio" name="rating" value="3" checked>
-                                        <label for="rating3">3</label>
-                                        <input id="rating2" type="radio" name="rating" value="2">
-                                        <label for="rating2">2</label>
-                                        <input id="rating1" type="radio" name="rating" value="1">
-                                        <label for="rating1">1</label>
-                                    </span></li>
+                                    <div class="vote">
+                                        <div class="like" data-likes="10"><i class="fa fa-thumbs-up"></i></div>
+                                    </div>  
+                                </li>
                                 <li class="list-group-item clearfix"> <a href="#" class="pull-right"> <i class="glyphicon glyphicon-play"></i> </a>
                                     <a href="#" class="pull-left"> <img src="{{ asset('images/3.jpg') }}" class="hitimg"> </a>
                                     <a class="clear" href="#"> <span>Бегиш жана Баястан </span><p> <small>Айтчы</small></p></a> <span class="numeric">3</span>
-                                    <span class="starRating">
-                                        <input id="rating5" type="radio" name="rating" value="5">
-                                        <label for="rating5">5</label>
-                                        <input id="rating4" type="radio" name="rating" value="4">
-                                        <label for="rating4">4</label>
-                                        <input id="rating3" type="radio" name="rating" value="3" checked>
-                                        <label for="rating3">3</label>
-                                        <input id="rating2" type="radio" name="rating" value="2">
-                                        <label for="rating2">2</label>
-                                        <input id="rating1" type="radio" name="rating" value="1">
-                                        <label for="rating1">1</label>
-                                    </span></li>
+                                    <div class="vote">
+                                        <div class="like" data-likes="10"><i class="fa fa-thumbs-up"></i></div>
+                                    </div>  
+                                </li>
                                 <li class="list-group-item clearfix"><a href="#" class="pull-right"> <i class="glyphicon glyphicon-play"></i> </a>
                                     <a href="#" class="pull-left"> <img src="{{ asset('images/4.jpg') }}" class="hitimg"> </a>
                                     <a class="clear" href="#"> <span>Примбердиев Кайрат</span><p> <small>Поезддеги Махабат</small></p></a> <span class="numeric">4</span>
-                                    <span class="starRating">
-                                        <input id="rating5" type="radio" name="rating" value="5">
-                                        <label for="rating5">5</label>
-                                        <input id="rating4" type="radio" name="rating" value="4">
-                                        <label for="rating4">4</label>
-                                        <input id="rating3" type="radio" name="rating" value="3" checked>
-                                        <label for="rating3">3</label>
-                                        <input id="rating2" type="radio" name="rating" value="2">
-                                        <label for="rating2">2</label>
-                                        <input id="rating1" type="radio" name="rating" value="1">
-                                        <label for="rating1">1</label>
-                                    </span></li>
+                                    <div class="vote">
+                                        <div class="like" data-likes="10"><i class="fa fa-thumbs-up"></i></div>
+                                    </div>  
+                                </li>
                                 <li class="list-group-item clearfix"><a href="#" class="pull-right"> <i class="glyphicon glyphicon-play"></i> </a>
                                     <a href="#" class="pull-left"> <img src="{{ asset('images/5.jpg') }}" class="hitimg"> </a>
                                     <a class="clear" href="#"> <span>Акулова Динара</span><p> <small>Ай кызым</small></p></a> <span class="numeric">5</span>
-                                    <span class="starRating">
-                                        <input id="rating5" type="radio" name="rating" value="5">
-                                        <label for="rating5">5</label>
-                                        <input id="rating4" type="radio" name="rating" value="4">
-                                        <label for="rating4">4</label>
-                                        <input id="rating3" type="radio" name="rating" value="3" checked>
-                                        <label for="rating3">3</label>
-                                        <input id="rating2" type="radio" name="rating" value="2">
-                                        <label for="rating2">2</label>
-                                        <input id="rating1" type="radio" name="rating" value="1">
-                                        <label for="rating1">1</label>
-                                    </span></li>
+                                    <div class="vote">
+                                        <div class="like" data-likes="10"><i class="fa fa-thumbs-up"></i></div>
+                                    </div>  
+                                </li>
+                                <li class="list-group-item clearfix"><a href="#" class="pull-right"> <i class="glyphicon glyphicon-play"></i> </a>
+                                    <a href="#" class="pull-left"> <img src="{{ asset('images/5.jpg') }}" class="hitimg"> </a>
+                                    <a class="clear" href="#"> <span>Акулова Динара</span><p> <small>Ай кызым</small></p></a> <span class="numeric">6</span>
+                                    <div class="vote">
+                                        <div class="like" data-likes="10"><i class="fa fa-thumbs-up"></i></div>
+                                    </div>  
+                                </li>
+                                <li class="list-group-item clearfix"><a href="#" class="pull-right"> <i class="glyphicon glyphicon-play"></i> </a>
+                                    <a href="#" class="pull-left"> <img src="{{ asset('images/5.jpg') }}" class="hitimg"> </a>
+                                    <a class="clear" href="#"> <span>Акулова Динара</span><p> <small>Ай кызым</small></p></a> <span class="numeric">7</span>
+                                    <div class="vote">
+                                        <div class="like" data-likes="10"><i class="fa fa-thumbs-up"></i></div>
+                                    </div>  
+                                </li>
+                                <li class="list-group-item clearfix"><a href="#" class="pull-right"> <i class="glyphicon glyphicon-play"></i> </a>
+                                    <a href="#" class="pull-left"> <img src="{{ asset('images/5.jpg') }}" class="hitimg"> </a>
+                                    <a class="clear" href="#"> <span>Акулова Динара</span><p> <small>Ай кызым</small></p></a> <span class="numeric">8</span>
+                                    <div class="vote">
+                                        <div class="like" data-likes="10"><i class="fa fa-thumbs-up"></i></div>
+                                    </div>  
+                                </li>
+                                <li class="list-group-item clearfix"><a href="#" class="pull-right"> <i class="glyphicon glyphicon-play"></i> </a>
+                                    <a href="#" class="pull-left"> <img src="{{ asset('images/5.jpg') }}" class="hitimg"> </a>
+                                    <a class="clear" href="#"> <span>Акулова Динара</span><p> <small>Ай кызым</small></p></a> <span class="numeric">9</span>
+                                    <div class="vote">
+                                        <div class="like" data-likes="10"><i class="fa fa-thumbs-up"></i></div>
+                                    </div>  
+                                </li>
+                                <li class="list-group-item clearfix"><a href="#" class="pull-right"> <i class="glyphicon glyphicon-play"></i> </a>
+                                    <a href="#" class="pull-left"> <img src="{{ asset('images/5.jpg') }}" class="hitimg"> </a>
+                                    <a class="clear" href="#"> <span>Акулова Динара</span><p> <small>Ай кызым</small></p></a> <span class="numeric">10</span>
+                                    <div class="vote">
+                                        <div class="like" data-likes="10"><i class="fa fa-thumbs-up"></i></div>
+                                    </div>  
+                                </li>
 
                         </div>
                     </div>                    
@@ -919,75 +958,32 @@
                                 <figure>
                                     <img src="images/channels/muzkanal/mirbek.jpg" alt="image01" />
                                     <input type="radio" name="radio-set" checked="checked"/>
-                                    <figcaption><span>Мирбек Атабеков</span></figcaption>
+                                    <figcaption><a href=""><span>Мирбек Атабеков</span></a></figcaption>
 
                                     <figure>
-                                        <img src="images/channels/muzkanal/mirbek.jpg" alt="image02" />
+                                        <img src="images/channels/muzkanal/kalykov.jpg" alt="image02" />
                                         <input type="radio" name="radio-set" />
-                                        <figcaption><span>Honest Light</span></figcaption>
+                                        <figcaption><a href=""><span>Гүлжигит Калыков</span></a></figcaption>
 
                                         <figure>
-                                            <img src="images/channels/muzkanal/mirbek.jpg" alt="image03" />
+                                            <img src="images/channels/muzkanal/minura.jpg" alt="image03" />
                                             <input type="radio" name="radio-set" />
-                                            <figcaption><span>Silent Serenity</span></figcaption>
+                                            <figcaption><a href=""><span>Минюра Рахимжанова</span></a></figcaption>
 
                                             <figure>
-                                                <img src="images/channels/muzkanal/mirbek.jpg" alt="image04" />
+                                                <img src="images/channels/muzkanal/top10.jpg" alt="image04" />
                                                 <input type="radio" name="radio-set" />
-                                                <figcaption><span>Warm Welcome</span></figcaption>
+                                                <figcaption><a href=""><span>Хит-Парад</span></a></figcaption>
 
                                                 <figure>
-                                                    <img src="images/channels/muzkanal/mirbek.jpg" alt="image05" />
+                                                    <img src="images/channels/muzkanal/14.jpg" alt="image05" />
                                                     <input type="radio" name="radio-set" />
-                                                    <figcaption><span>Sensible Magic</span></figcaption>
+                                                    <figcaption><a href=""><span>Хит-Парад</span></a></figcaption>
 
                                                     <figure>
-                                                        <img src="images/channels/muzkanal/mirbek.jpg" alt="image06" />
+                                                        <img src="images/channels/muzkanal/soon.jpg" alt="image06" />
                                                         <input type="radio" name="radio-set" />
-                                                        <figcaption><span>Lovely Midnight</span></figcaption>
-
-                                                        <figure>
-                                                            <img src="images/channels/muzkanal/mirbek.jpg" alt="image07" />
-                                                            <input type="radio" name="radio-set" />
-                                                            <figcaption><span>Illuminated Darkness</span></figcaption>                                          
-
-                                                            <figure>
-                                                                <img src="images/channels/muzkanal/mirbek.jpg" alt="image08" />
-                                                                <input id="ia-selector-last" type="radio" name="radio-set" />
-                                                                <figcaption><span>Happy Child</span></figcaption>
-
-                                                                <figure>
-                                                                    <img src="images/channels/muzkanal/mirbek.jpg" alt="image08" />
-                                                                    <input id="ia-selector-last" type="radio" name="radio-set" />
-                                                                    <figcaption><span>Happy Child</span></figcaption>
-
-                                                                    <figure>
-                                                                        <img src="images/channels/muzkanal/mirbek.jpg" alt="image08" />
-                                                                        <input id="ia-selector-last" type="radio" name="radio-set" />
-                                                                        <figcaption><span>Happy Child</span></figcaption>
-
-                                                                    </figure>
-
-                                                                    <figure>
-                                                                        <img src="images/channels/muzkanal/mirbek.jpg" alt="image08" />
-                                                                        <input id="ia-selector-last" type="radio" name="radio-set" />
-                                                                        <figcaption><span>Happy Child</span></figcaption>
-
-                                                                    </figure>
-
-                                                                    <figure>
-                                                                        <img src="images/channels/muzkanal/mirbek.jpg" alt="image08" />
-                                                                        <input id="ia-selector-last" type="radio" name="radio-set" />
-                                                                        <figcaption><span>Happy Child</span></figcaption>
-
-                                                                    </figure>
-
-                                                                </figure>
-
-                                                            </figure>
-
-                                                        </figure>
-
+                                                        <figcaption><a href=""><span>Жакында</span></a></figcaption>                                                  
                                                     </figure>   
 
                                                 </figure>   
@@ -1032,7 +1028,20 @@
         </footer>
 
         <script src="js/jquery-1.11.2.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>    
+        <script src="js/bootstrap.min.js"></script> 
+
+        <script>
+            $(document).ready(function(){
+                $(".search-toggle").click(function(){
+                    $(".logo-block").addClass("search-show");
+                    $(".form-search").addClass("visible");
+                });
+                $(".close-search").click(function(){
+                    $(".logo-block").removeClass("search-show");
+                    $(".form-search").removeClass("visible");
+                });
+            });
+        </script>   
 
         <script src="js/gallery/imagesloaded.pkgd.min.js"></script>
         <script src="js/gallery/masonry.pkgd.min.js"></script>
@@ -1167,7 +1176,7 @@ new CBPGridGallery(document.getElementById('grid-gallery'));
                             }]
                     }],
                 width: "100%",
-                height: "450",
+                height: "100%",
                 aspectratio: "16:9",
                 primary: "flash",
                 skin: {
@@ -1217,6 +1226,38 @@ new CBPGridGallery(document.getElementById('grid-gallery'));
                 });
             }
 
+        </script>
+
+        <script>
+            $(document).ready(function () {
+                var likes = 12;
+                var dislikes = 6;
+                $('.like').attr('data-likes', likes);
+                $('.dislike').attr('data-dislikes', dislikes);
+                $('.text').click(function () {
+                    $('.like').toggleClass('like_active');
+                    $('.dislike').toggleClass('dislike_active');
+                    if ($('.text').text() == 'Vote') {
+                        $('.text').text('Cancel');
+                    } else {
+                        $('.text').text('Vote');
+                    }
+                })
+                $('.like').click(function () {
+                    likes++;
+                    $('.like').attr('data-likes', likes);
+                    $('.like').removeClass('like_active');
+                    $('.dislike').removeClass('dislike_active');
+                    $('.text').text('Vote');
+                })
+                $('.dislike').click(function () {
+                    dislikes++;
+                    $('.dislike').attr('data-dislikes', dislikes);
+                    $('.like').removeClass('like_active');
+                    $('.dislike').removeClass('dislike_active');
+                    $('.text').text('Vote');
+                })
+            })
         </script>
 
 

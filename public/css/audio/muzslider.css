@@ -1489,3 +1489,8 @@ font-weight: bold;
     border:none;
     color: #fff; 
 }
+
+.dkp-big-3now button.close {
+    background: none;
+    color: #fff;
+}
