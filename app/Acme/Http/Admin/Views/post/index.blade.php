@@ -6,13 +6,13 @@
 	<div class="col-md-12 col-sm-12 col-xs-12">
 		<div class="x_panel">
 			<div class="x_title">
-				<a href="{{ route('admin.post.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i>Жаңы макала</a>
+				<a href="{{ route('admin.post.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i>{{ trans('site.NewArticle') }}</a>
 				<div class="clearfix"></div>
 			</div>
 			<div class="x_content">
 				<div class="page-title">
 					<div class="title_left">
-						<h3>Макалалар</h3>
+						<h3>{{ trans('site.Articles') }}</h3>
 					</div>
 					<div class="title_right">
 						<div class="col-md-4 col-sm-4 col-xs-12 form-group pull-right top_search">
@@ -36,7 +36,7 @@
 
 				</div>
 
-				<a href="{{ route('admin.post.index', ['page' => 1]) }}" class="btn btn-default @if($posts->currentPage() == 1) disabled @endif">Башы</a>
+				<a href="{{ route('admin.post.index', ['page' => 1]) }}" class="btn btn-default @if($posts->currentPage() == 1) disabled @endif">{{ trans('site.Start') }}</a>
 				<a href="{{ $posts->previousPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span></a>
 				<a href="{{ $posts->nextPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-right"></span></a>
 
@@ -44,7 +44,7 @@
 				<a href="{{ route('admin.post.index', ['page' => $j]) }}" class="btn btn-default @if($posts->currentPage() == $j) disabled @endif">{{ $j++ }}</a>
 				@endfor
 
-				<a href="{{ route('admin.post.index', ['page' => ceil($posts->total()/$perPage)]) }}" class="btn btn-default @if($posts->currentPage() == ceil($posts->total()/$perPage)) disabled @endif">Аягы</a>
+				<a href="{{ route('admin.post.index', ['page' => ceil($posts->total()/$perPage)]) }}" class="btn btn-default @if($posts->currentPage() == ceil($posts->total()/$perPage)) disabled @endif">{{ trans('site.End') }}</a>
 
 
 			</div>

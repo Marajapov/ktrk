@@ -12,14 +12,14 @@
 
     <div class="col-sm-8">
         <div class="form-group">
-            <label class="control-label">Аталышы</label>
+            <label class="control-label">{{ trans('site.Title') }}</label>
             {!! Form::text('name', null, ["class" => "form-control", "required" => true, "title" => ""]) !!}
         </div>
     </div>
 
     <div class="col-sm-2">
         <div class="form-group ">
-           <label class="control-label">Жайгаштыруу</label>
+           <label class="control-label">{{ trans('site.Publish') }}</label>
            {!! Form::hidden('published', 0) !!}
            {!! Form::checkbox('published', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
        </div>
@@ -28,7 +28,7 @@
 
 <div class="col-sm-2">
     <div class="form-group ">
-       <label class="control-label">Башкы бет</label>
+       <label class="control-label">{{ trans('site.Home') }}</label>
        {!! Form::hidden('general', 0) !!}
        {!! Form::checkbox('general', 1, null, ["class" => " form-control", "style" => "width: 34px; margin: 0"]) !!}
    </div>
@@ -45,8 +45,8 @@
 
 </div>
 <div class=pull-right>
-    <button type="submit" class="btn btn-primary">сактоо</button>
-    <a href="{{ route('admin.page.index') }}" class="btn btn-default">артка</a>
+    <button type="submit" class="btn btn-primary">{{ trans('site.Save') }}</button>
+    <a href="{{ route('admin.page.index') }}" class="btn btn-default">{{ trans('site.Back') }}</a>
 </div>
 
 <script type="text/javascript">

@@ -6,13 +6,13 @@
 	<div class="col-md-12 col-sm-12 col-xs-12">
 		<div class="x_panel">
 			<div class="x_title">
-				<a href="{{ route('admin.peopleReporter.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i>Жаңы макала</a>
+				<a href="{{ route('admin.peopleReporter.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i>{{ trans('site.NewArticle') }}</a>
 				<div class="clearfix"></div>
 			</div>
 			<div class="x_content">
 				<div class="page-title">
                         <div class="title_left">
-                            <h3>Макалалар</h3>
+                            <h3>{{ trans('site.Articles') }}</h3>
                         </div>
                         <div class="title_right">
                             <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">

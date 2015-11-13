@@ -31,7 +31,7 @@
                         <img src="{{ $post->isChannelIcon($post->channel_id)}}" alt=""/>
                       </a> 
                     </div>-->
-                    
+
                     <p class="description clearfix">
                       <a href="{{ route('front.category', $post->category) }}">
                          {{ $post->category('category_id')->first()->getTitle() }}
@@ -59,7 +59,7 @@
               </div>
             </div>
 
-            <a href="#" class="text-center ads">
+            <a href="#" class="text-center ads middle-ad">
               <img src="@if(!empty($positionCenter->file)) {{ asset($positionCenter->file) }} @else images/ads_1.jpg @endif" alt=""/>
             </a>
 
@@ -168,7 +168,7 @@
                 </div>
 
                 <div class="top-right-block col-md-4">
-                  <div class="panel panel-default">
+                  <div class="panel panel-default panel-promo">
                     <div class="panel-heading">
                       <h3 class="panel-title"><span>Күндүн видеосу</span></h3>
                     </div>
@@ -196,7 +196,7 @@
 
                         </div>
 
-                        <h4>Жеткиликтүү насыя</h4>
+                        {{-- <h4>Жеткиликтүү насыя</h4> --}}
                       </div>
 
                       <div class="col-md-6 block main-video">
@@ -204,7 +204,23 @@
                           <iframe class="embed-responsive-item" src="//www.youtube.com/embed/k2w8UII9cgI" allowfullscreen=""></iframe>
                         </div>
 
-                        <h4>Мандаттар</h4>
+                        {{-- <h4>Мандаттар</h4> --}}
+                      </div>
+
+                      <div class="col-md-6 block main-video">
+                        <div class="embed-responsive embed-responsive-16by9">
+                          <iframe class="embed-responsive-item" src="//www.youtube.com/embed/k2w8UII9cgI" allowfullscreen=""></iframe>
+                        </div>
+
+                        {{-- <h4>Мандаттар</h4> --}}
+                      </div>
+
+                      <div class="col-md-6 block main-video">
+                        <div class="embed-responsive embed-responsive-16by9">
+                          <iframe class="embed-responsive-item" src="//www.youtube.com/embed/k2w8UII9cgI" allowfullscreen=""></iframe>
+                        </div>
+
+                        {{-- <h4>Мандаттар</h4> --}}
                       </div>
 
                       <footer>
@@ -216,7 +232,7 @@
                     </div>
                   </div>
 
-                  <a href="#" class="text-center ads ads-300x250">
+                  <a href="#" class="text-center ads ads-300x250 middle-ad">
                     <img src="@if(!empty($positionRight->file)) {{ asset($positionRight->file) }} @else img/banner/2.jpg @endif" alt="phot1"/>
                   </a>     
 
