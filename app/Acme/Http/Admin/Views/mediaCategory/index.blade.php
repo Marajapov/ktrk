@@ -6,11 +6,11 @@
 	<div class="col-md-12 col-sm-12 col-xs-12">
 		<div class="x_panel">
 			<div class="x_title">
-				<a href="{{ route('admin.mediaCategory.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i>Жаңы категория</a>
+				<a href="{{ route('admin.mediaCategory.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i>{{ trans('site.AdminMediaCategoryNewC') }}</a>
 				<div class="clearfix"></div>
 			</div>
 			<div class="x_content">
-			<h2>Медиа категориялар</h2>
+			<h2>{{ trans('site.AdminMediaCategoryMedias') }}</h2>
 
 				<div class="clearfix"></div>
 				<div class="list-group">

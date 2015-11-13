@@ -3,7 +3,7 @@
 <div class="row">
     <div class="col-md-6 col-sm-6">
         <div class="form-group">
-            <label class="control-label">Аты жөнү</label>
+            <label class="control-label">{{ trans('site.AdminUserName') }}</label>
             {!! Form::text('name', null, ["class" => "form-control", "required" => true, "title" => ""]) !!}
         </div>
     </div>
@@ -31,8 +31,8 @@
 
 </div>
 
-<button type="submit" class="btn btn-primary">Сактоо</button>
-<a href="{{ route('admin.user.index') }}" class="btn btn-default">Артка</a>
+<button type="submit" class="btn btn-primary">{{ trans('site.Save') }}</button>
+<a href="{{ route('admin.user.index') }}" class="btn btn-default">{{ trans('site.Back') }}</a>
 
 <!-- select2 -->
 <script>

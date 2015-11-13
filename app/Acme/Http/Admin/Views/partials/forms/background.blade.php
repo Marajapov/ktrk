@@ -10,7 +10,7 @@
 
         <div class="col-sm-10">
             <div class="form-group">
-                <label class="control-label">Аталышы</label>
+                <label class="control-label">{{ trans('site.Title') }}</label>
                 {!! Form::text('name', null, ["class" => "form-control", "required" => true, "title" => ""]) !!}
             </div>
         </div>
@@ -30,7 +30,7 @@
          <!-- Биринчи эолу алмаштырса болот, экинчинде алмашбайт, бирок биринчи өзгөртүп алмаштырса болот -->
          <div class="col-sm-2">
             <div class="form-group">
-                  <label class="control-label">Жайгаштыруу</label>
+                  <label class="control-label">{{ trans('site.Publish') }}</label>
                  {!! Form::hidden('published', 0) !!}
                  {!! Form::checkbox('published', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
              </div>
@@ -58,14 +58,14 @@
             <div class="fileinput fileinput-new" data-provides="fileinput">
                <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
                <div>
-                <span class="btn btn-default btn-file"><span class="fileinput-new">Сүрөт тандаңыз</span><span class="fileinput-exists">Өзгөртүү</span>
+                <span class="btn btn-default btn-file"><span class="fileinput-new">{{ trans('site.AdminBackgroundSelect') }}</span><span class="fileinput-exists">{{ trans('site.Change') }}</span>
                 {!! Form::file('file', null, ["class" => "form-control", "required" => true]) !!}              
             </div>
         </div>
     </div>
     
-<button type="submit" class="btn btn-primary">сактоо</button>
-<a href="{{ route('admin.background.index') }}" class="btn btn-default">артка</a>
+<button type="submit" class="btn btn-primary">{{ trans('site.Save') }}</button>
+<a href="{{ route('admin.background.index') }}" class="btn btn-default">{{ trans('site.Back') }}</a>
 
 <!-- select2 -->
 <script>

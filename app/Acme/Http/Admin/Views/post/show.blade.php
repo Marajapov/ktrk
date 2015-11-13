@@ -4,9 +4,9 @@
 @section('content')
 <div class="row modals">
 <div>
-    {!! Form::open(['route' => ['admin.post.destroy', $post], 'method' => 'DELETE', 'onsubmit' => 'return confirm("Өчүрүүгө макулсузбу?")']) !!}
-    <a href="{{ route('admin.post.edit', $post) }}" class="btn btn-labeled btn-success"><span class="btn-label"><i class="glyphicon glyphicon-cog"></i></span>Өзгөртүү</a>
-    <button class="btn btn-labeled btn-danger" type="submit"><span class="btn-label"><i class="glyphicon glyphicon-remove"></i></span>Өчүрүү</button>
+    {!! Form::open(['route' => ['admin.post.destroy', $post], 'method' => 'DELETE', 'onsubmit' => 'return confirm("{{ trans('site.AreYouAgree') }}")']) !!}
+    <a href="{{ route('admin.post.edit', $post) }}" class="btn btn-labeled btn-success"><span class="btn-label"><i class="glyphicon glyphicon-cog"></i></span>{{ trans('site.Change') }}</a>
+    <button class="btn btn-labeled btn-danger" type="submit"><span class="btn-label"><i class="glyphicon glyphicon-remove"></i></span>{{ trans('site.Delete') }}</button>
     
     {!! Form::close() !!}
 </div>
@@ -29,7 +29,7 @@
 @if(count($post->tags)>0)
 <hr>
 <div>
-    <h4>Теги:</h4>
+    <h4>{{ trans('site.Tags') }}:</h4>
     @foreach($post->tags as $tag)
     <span>{{ $tag->getName() }}</span>
     @endforeach

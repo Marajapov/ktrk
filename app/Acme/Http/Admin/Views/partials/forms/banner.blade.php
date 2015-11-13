@@ -17,7 +17,7 @@
 
     <div class="col-sm-8">
         <div class="form-group">
-            <label class="control-label">Аталышы</label>
+            <label class="control-label">{{ trans('site.Title') }}</label>
             {!! Form::text('name', null, ["class" => "form-control", "required" => true, "title" => ""]) !!}
         </div>
     </div>
@@ -32,7 +32,7 @@
     <div class="col-xs-8">
         <div class="fileinput fileinput-new input-group" data-provides="fileinput">
           <div class="form-control" data-trigger="fileinput"><i class="glyphicon glyphicon-file fileinput-exists"></i> <span class="fileinput-filename"></span></div>
-          <span class="input-group-addon btn btn-default btn-file"><span class="fileinput-new">Сүрөттү тандоо</span><span class="fileinput-exists">Өзгөртүү</span>
+          <span class="input-group-addon btn btn-default btn-file"><span class="fileinput-new">{{ trans('site.AdminBannerSelectImg') }}</span><span class="fileinput-exists">{{ trans('site.Change') }}</span>
           {!! Form::file('file', null, ["class" => "form-control", "required" => true]) !!}
       </div>
   </div>
@@ -40,7 +40,7 @@
   <div class="clearfix"></div>
   <div class="col-sm-1">
     <div class="form-group">
-        <label class="control-label">Жайгаштыруу</label>
+        <label class="control-label">{{ trans('site.Publish') }}</label>
         {!! Form::hidden('published', 0) !!}
         {!! Form::checkbox('published', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
     </div>
@@ -60,7 +60,7 @@
 
 <div class=" col-sm-1 ">
     <div class="form-group">
-        <label class="control-label">Үстү жагында (top)</label>
+        <label class="control-label">{{ trans('site.Top') }}</label>
         {!! Form::hidden('positionTop', 0) !!}         
         {!! Form::checkbox('positionTop', 1, null, ["class" => " form-control", "style" => "width: 34px; margin: 0"]) !!}
         <div class="topbanner"></div>
@@ -69,7 +69,7 @@
 
 <div class="col-sm-1 ">
     <div class="form-group">
-        <label class="control-label">Ортодо жайгашуу (center)</label>
+        <label class="control-label">{{ trans('site.Center') }}</label>
         {!! Form::hidden('positionCenter', 0) !!}
         {!! Form::checkbox('positionCenter', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
         <div class="centerbanner"></div>
@@ -78,7 +78,7 @@
 
 <div class="col-sm-1 ">
     <div class="form-group">
-        <label class="control-label">Оң жагында (right)</label>
+        <label class="control-label">{{ trans('site.Right') }}</label>
         {!! Form::hidden('positionRight', 0) !!}
         {!! Form::checkbox('positionRight', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
         <div class="rightbanner"></div>
@@ -87,7 +87,7 @@
 
 <div class="col-sm-1 ">
     <div class="form-group">
-        <label class="control-label">Сол жагында (left)</label>
+        <label class="control-label">{{ trans('site.Left') }}</label>
         {!! Form::hidden('positionLeft', 0) !!}
         {!! Form::checkbox('positionLeft', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
         <div class="leftbanner"></div>
@@ -97,7 +97,7 @@
 
 <div class="col-sm-1 ">
     <div class="form-group">
-        <label class="control-label">Ылдый жагында (footer)</label>
+        <label class="control-label">{{ trans('site.Bottom') }}</label>
         {!! Form::hidden('positionBottom', 0) !!}
         {!! Form::checkbox('positionBottom', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
         <div class="bottombanner"></div>
@@ -105,8 +105,8 @@
 </div>
 </div>
 
-<button type="submit" class="btn btn-primary">сактоо</button>
-<a href="{{ route('admin.banner.index') }}" class="btn btn-default">артка</a>
+<button type="submit" class="btn btn-primary">{{ trans('site.Save') }}</button>
+<a href="{{ route('admin.banner.index') }}" class="btn btn-default">{{ trans('site.Back') }}</a>
 
 <!-- select2 -->
         <script>

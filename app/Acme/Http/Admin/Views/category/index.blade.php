@@ -8,14 +8,15 @@
 		<div class="x_panel">
 			<div class="x_title">
 				<div>
-					<a href="{{ route('admin.category.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i>Жаңы категория кошуу</a>
+					<a href="{{ route('admin.category.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i>{{ trans('site.AdminCategoryAddNew') }}
+</a>
 				</div>
 			
 				<div class="clearfix"></div>
 			</div>
 			<div class="x_content">
 				<div class="list-group">
-				<p class="list-group-item active">Категориялар</p>
+				<p class="list-group-item active">{{ trans('site.AdminCategories') }}</p>
 					@foreach($categories as $category)
 					<a href="{{ route('admin.category.show', $category) }}" class="list-group-item">{{ $category->getTitle() }}</a>
 					@endforeach

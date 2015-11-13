@@ -25,14 +25,14 @@
             <li><a href="{{ route('admin.page.index') }}"><i class="fa fa-columns"></i>{{ trans('AdminPagesTitle') }}</a></li>
             <li><a href="{{ route('admin.menu.index') }}"><i class="fa fa-chevron-circle-down"></i>Меню</a></li>
             <li><a href="{{ route('admin.user.index') }}"><i class="fa fa-user"></i>{{ trans('AdminUsersTitle') }}</a></li>
-            <li><a href="{{ route('admin.background.index') }}"><i class="fa fa-backward"></i>Фон сүрөтү</a></li>
+            <li><a href="{{ route('admin.background.index') }}"><i class="fa fa-backward"></i>{{ trans('site.AdminBackgroundTitle') }}</a></li>
             <!--<li><a href="{{ route('admin.peopleReporter.index') }}"><i class="fa fa-backward"></i>Элдик репортер</a></li>-->
         </ul>
                         <div class="menu_section">
-                            <h3 style="margin:17px 0px">Кошумча барактар</h3>
+                            <h3 style="margin:17px 0px">{{ trans('site.AdminaAditionalPages') }}</h3>
                             <ul class="nav side-menu">
                                                          
-                                <li><a><i class="fa fa-laptop"></i>Админге жардам<span class="label label-success pull-right">SOS</span></a>
+                                <li><a><i class="fa fa-laptop"></i>{{ trans('site.AdminHelpSos') }}<span class="label label-success pull-right">SOS</span></a>
                                 <ul class="nav child_menu" style="display: none">
                                         <li><a href="#">Таск бар</a>
                                         </li>

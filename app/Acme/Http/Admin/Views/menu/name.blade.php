@@ -6,7 +6,9 @@
     <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
             <div class="x_title">
-    <a href="{{ route('admin.menu.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i>Жаңы меню</a>
+    <a href="{{ route('admin.menu.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i>{{ trans('site.AdminMenuNew') }}
+
+</a>
     <div class="clearfix"></div>
             </div>
 
@@ -28,7 +30,8 @@
 <div>
     {!! Form::open(['route' => ['admin.menu.save', $code]]) !!}
     <input type="hidden" name="json" id="nestable-output">
-    <button type="save" class="btn btn-primary">сактоо</button>
+    <button type="save" class="btn btn-primary">{{ trans('site.Save') }}
+</button>
     {!! Form::close() !!}
 </div>
 
