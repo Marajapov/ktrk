@@ -180,7 +180,6 @@ header.top-menu,.logo-block{
 }
 .main-header.smaller .logo img{
     height: 60px;
-    margin: 0;
     background: none;
 }
 
@@ -325,6 +324,9 @@ header.top-menu,.logo-block{
     display: block;
     margin-top: 20px;
 }
+.main-header.smaller .form-search.visible{
+    margin-top: 10px;
+}
 .form-search .form-group input{
     border: none;
     border-bottom: 1px solid #045191;
@@ -407,6 +409,49 @@ header.top-menu,.logo-block{
 .top-ad{
     padding-top: 140px;
 }
+.top-left-block .middle-ad,.top-right-block .middle-ad{
+    margin: 10px 0;
+}
 .top-left-block, .top-right-block, .bottom-left-block, .bottom-right-block{
-    padding: 5px 10px;
+    padding: 0;
+}
+
+/*PANELS*/
+.panel{
+    position: relative;
+    margin: 0;
+}
+/*.panel{*/
+    /*box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.20);*/
+    /*-moz-box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.20);*/
+    /*-webkit-box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.20);*/
+/*}*/
+.panel-top-news,.panel-promo{
+    border-right: 3px solid #F1F4F9;
+    height: 600px;
+    overflow: hidden;
+}
+.panel-top-news .panel-body footer,.panel-promo .panel-body footer{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+.panel.latest-news{
+    background: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+/*PANEL-CAROUSEL*/
+.panel-carousel{
+    border-right: 3px solid #F1F4F9;
+    border-bottom: 3px solid #F1F4F9;
+    height: 160px;
+}
+
+/*VIDEOPORTAL*/
+.videoportal{
+    border-left: 3px solid #F1F4F9;
+    border-bottom: 3px solid #F1F4F9;
 }

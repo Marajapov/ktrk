@@ -60,6 +60,7 @@
 
 </head>
 <body>
+
     @include('Front::partials.modal')
     @include('Front::partials.header')
 

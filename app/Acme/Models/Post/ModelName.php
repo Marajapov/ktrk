@@ -59,6 +59,16 @@ class ModelName extends Model
             return $this->titleRu;
         }
     }
+
+    public function getTitleRuOrKg()
+    {
+        if(empty($this->title)){
+            return $this->titleRu;
+        }else{
+            return $this->title;
+        }
+    
+    }
     // end title
 
     public function getContent()

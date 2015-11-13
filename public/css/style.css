@@ -699,7 +699,7 @@ header{
     height: 150px;
     width: auto;
 
-    opacity: 0.8;
+    opacity: 1;
 
     -webkit-transform: translateY(-50%) translateX(-50%);
     -moz-transform: translateY(-50%) translateX(-50%);
@@ -740,9 +740,9 @@ header{
 
     color: #3c4a50;
 }
-.panel-top-news  h2{
+.panel-top-news h2{
     display: inline-block;
-    width: 80%;
+    width: 100%;
     margin: 0;
     padding: 5px 5px 5px 10px;
     vertical-align: middle;
@@ -1118,7 +1118,7 @@ header{
     font-weight: bold;
 }
 .ctg-panel.affix{
-    top: 10px;
+    top: 90px;
 
     width: 283px;
 }

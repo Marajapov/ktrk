@@ -1,6 +1,12 @@
 @extends('Front::layouts.default')
 @section('title', $category->getTitle())
 
+@section('styles')
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/articles.css') }}">
+
+@endsection
+
 @section('content')
         <div class="container main-wrapper">
 
@@ -20,35 +26,67 @@
                         <div class="panel-body">
                             <div class="col-md-12 block news-block">
 
-                                <div class="row">
-                                    <ul class="grid" id="grid">
+                                <div class="date-filter clearfix">
+                                    <div class="row">
+                                        <div class="form-group col-md-2">
+                                            <div class="input-group date" id="datetimepicker1">
+                                                <input type="text" class="form-control" />
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-calendar"></i>
+                                                    </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="pull-left form-divider">
+                                            -
+                                        </div>
+
+                                        <div class="form-group col-md-2">
+                                            <div class="input-group date" id="datetimepicker2">
+                                                <input type="text" class="form-control" />
+                                                    <span class="input-group-addon">
+                                                        <i class="fa fa-calendar"></i>
+                                                    </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group col-md-2">
+                                            <button type="submit" class="btn btn-default btn-filter">
+                                                фильтр
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="">
 
                                     @foreach($posts as $post)
-                                        <li>
-                                            <div class="pin">
-                                                <div class="pin-body">
-                                                    <a class="news-title" href="{{ route('front.post', $post) }}"><h4>{{ $post->getTitle() }}</h4></a>
-                                                    @if($post->isImage())
-                                                    <div class="news-img">
-                                                        <a class="main-img" href="{{ route('front.post', $post) }}"><img src="{{ asset($post->getFile()) }}" /></a>
-                                                    </div>
-                                                    @else
-                                                    
-                                                    <p>
-                                                        {!! $post->getContent()!!}
-                                                        
-                                                    </p>
-                                                    @endif
-                                                    <a href="{{ route('front.post', $post) }}" class="read-more">толугу менен</a>
-                                                </div>
-                                                <div class="pin-footer clearfix">
-                                                    <h4 class="news-datetime pull-right">30.09.2015 16:05</h4>
-                                                </div>
+
+                                        <div class="media">
+
+                                            <div class="media-left">
+                                                <a href="{{ route('front.post', $post) }}">
+                                                    <img class="media-object thumb" src="@if(empty($post->getFile()))images/2.jpg @else {{ asset($post->getFile()) }} @endif" alt="image">
+                                                </a>
                                             </div>
-                                        </li>
+
+                                            <div class="media-body">
+                                                 <div class="extra">
+                                                    <span class="e-datetime">{{ $post->getDay() }} {{ $post->getMonthRu() }} , {{ $post->getTime() }}</span>
+                                                    <a class="e-cat text-uppercase" href="{{ route('front.category', $post->category) }}"><span>{{ $post->category('category_id')->first()->title }}</span></a>
+                                                    <span class="e-views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
+                                                </div>
+
+                                                <a class="media-heading" href="{{ route('front.post', $post) }}">{{ $post->getTitle() }}</a>
+                                                <h5 class="media-desc">
+                                                    {!! $result = substr($post->getContent(),0,300) !!}
+                                                </h5>
+                                            </div>
+
+                                        </div>
+
                                     @endforeach
-                                        
-                                    </ul>
+
                                 </div>
 
                                 <nav>
