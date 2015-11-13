@@ -78,8 +78,7 @@
                                          <form class="form-search" action="{{ route('front.search') }}" method="get">
                                             <div class="form-group pull-right">
                                                 <input type="text" name="search" class="form-control" placeholder="Издөө"/>
-                                            </div>
-
+                                            </div> 
                                             <a class="btn close-search">
                                                 <i class="fa fa-close"></i>
                                             </a>
@@ -115,6 +114,14 @@
                                     </ul>
 
                                     <ul class="nav navbar-nav navbar-right logo-block">
+                                        <ul class="soc">
+                                            <li class="tw"><a href="#" title="Twitter"><i class="fa fa-twitter"></i> </a>  </li>
+                                            <li class="fb"><a href="#" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                                            <li class="ok"><a href="#" title="Odnoklassniki"><i class="fa fa-odnoklassniki"></i></a></li>
+                                            <li class="yt"><a href="#" title="YouTube"><i class="fa fa-youtube"></i></a></li>
+                                            <li class="in"><a href="#" title="Instagram"><i class="fa fa-instagram"></i></a></li>
+                                            
+                                        </ul>
                                      <a class="search-toggle"><i class="fa fa-search"></i></a>
 
                                      <form class="form-search" action="{{ route('front.search') }}" method="get">
