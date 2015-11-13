@@ -38,8 +38,19 @@
                             <li class="ok"><a href="#"><i class="fa fa-odnoklassniki"></i></a></li>
                             <li class="yt"><a href="#"><i class="fa fa-youtube"></i></a></li>
                             <li class="in"><a href="#"><i class="fa fa-instagram"></i></a></li>
-                            <li class="lang ru"><a href="/locale/ru"><i class="ru"></i></a></li>
-                            <li class="lang kg"><a href="/locale/kg"><i class="kg"></i></a></li>
+                            <!--<li class="lang-title"><a>Язык:</a></li>-->
+                            <!--<li class="dropdown lang">-->
+                                <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">-->
+                                    <!--<span class="lang-type">KG</span>-->
+                                    <!--<i class="fa fa-chevron-right"></i>-->
+                                <!--</a>-->
+                                <!--<ul class="dropdown-menu">-->
+                                    <!--<li><a href="#">KG</a></li>-->
+                                    <!--<li><a href="#">RU</a></li>-->
+                                <!--</ul>-->
+                            <!--</li>-->
+                            <!--<li class="lang ru"><a href="#"><i class="ru"></i></a></li>-->
+                            <!--<li class="lang kg"><a href="#"><i class="kg"></i></a></li>-->
                         </ul>
 
                         <a class="search-toggle"><i class="fa fa-search"></i></a>
@@ -63,7 +74,14 @@
                             түз эфир
                         </button>
 
-                        @include ("Front::partials.mainNav")                                              
+                        @include ("Front::partials.mainNav")         
+
+                        <div class="lang">
+                            <ul>
+                                <li @if(app()->getlocale() == 'kg') class="active" @endif><a href="/locale/kg">кырг <span></span></a></li>
+                                <li @if(app()->getlocale() == 'ru') class="active" @endif><a href="/locale/ru">рус <span></span></a></li>
+                            </ul>
+                        </div>                                     
 
                     </div>
                 </div>

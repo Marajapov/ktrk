@@ -10,14 +10,12 @@ trait ModelScopes {
 
     public function scopeLanguagekg($query)
     {
-		$kg = 'languageKg';
-        return $query->having('language', '=', $kg);
+        return $query->having('title', '>', '0');
     }
 
     public function scopeLanguageru($query)
     {
-        $ru = 'languageRu';
-        return $query->having('language', '=', $ru);
+        return $query->having('titleRu', '>', '0');
     }
 
     public function scopeType($query, $type = "post")

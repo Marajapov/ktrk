@@ -53,31 +53,24 @@ class ModelName extends Model
     public function getTitle()
     {
         $lc = app()->getlocale();
-        if($lc == 'kg' && ($this->language == 'languageKg')){
+        if($lc == 'kg'){
             return $this->title;
-        }elseif ($lc = 'ru' && ($this->language == 'languageRu')) {
-            return $this->title;
-        }elseif($lc = ''){
-            return 'default kg';
         }else{
-            return 'nothing';
+            return $this->titleRu;
         }
     }
+    // end title
 
     public function getContent()
     {
-        // $lc = app()->getlocale();
-        // if($lc == 'kg' || ($this->neutral && trim($this->content_kg) != ""))
-        //     return $this->content_kg;
-
-        // return $this->content_ru;
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            return $this->content;
+        }else{
+            return $this->contentRu;
+        }
 
         return $this->content;
-    }
-
-    public function getDescription()
-    {
-        return $this->description;
     }
 
     public function getViewed()
@@ -100,7 +93,7 @@ class ModelName extends Model
     public function getTime()
     {
         $fullDate = $this->created_at;
-        $time = date('H-i', strtotime($fullDate));
+        $time = date('H:i', strtotime($fullDate));
         return $time;
     }
 
@@ -127,14 +120,49 @@ class ModelName extends Model
     public function getMonthRu()
     {
         $fullDate = $this->created_at;
-        $MonthKg = date('m', strtotime($fullDate));
+        $MonthRu = date('m', strtotime($fullDate));
         $January = 'үчтун айы';
         $February = 'Бирдин айы';
-        $October = 'Окт';
-        if($MonthKg == 10){
-            $MonthKg = $October;
+        
+        $JanuaryRu = 'Янв';
+        $FebruaryRu = 'Фев';
+        $MarchRu = 'Март';
+        $AprilRu = 'Апр';
+        $MayRU = 'Май';
+        $JuneRU = 'Июнь';
+        $JulyRu = 'Июль';
+        $AugustRU = 'Авг';
+        $SeptemberRU = 'Сент';
+        $OctoberRu = 'Окт';
+        $NovemberRu = 'Нояб';
+        $DecemberRu = 'Дек';
+
+        if($MonthRu == 1){
+            $MonthRu = $JanuaryRu;
+        }elseif($MonthRu == 2){
+            $MonthRu = $FebruaryRu;
+        }elseif($MonthRu == 3){
+            $MonthRu = $MarchRu;
+        }elseif($MonthRu == 4){
+            $MonthRu = $AprilRu;
+        }elseif($MonthRu == 5){
+            $MonthRu = $MayRU;
+        }elseif($MonthRu == 6){
+            $MonthRu = $JuneRU;
+        }elseif($MonthRu == 7){
+            $MonthRu = $JulyRu;
+        }elseif($MonthRu == 8){
+            $MonthRu = $AugustRU;
+        }elseif($MonthRu == 9){
+            $MonthRu = $SeptemberRU;
+        }elseif($MonthRu == 10){
+            $MonthRu = $OctoberRu;
+        }elseif($MonthRu == 11){
+            $MonthRu = $NovemberRu;
+        }elseif($MonthRu == 12){
+            $MonthRu = $DecemberRu;
         }
-        return $MonthKg;
+        return $MonthRu;
     }   
 
     public function getDate()

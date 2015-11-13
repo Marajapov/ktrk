@@ -34,11 +34,16 @@ class PostController extends Controller
     public function create()
     {
         $tags = \Model\Tag\Tag::lists('name', 'id');
+        $tags2 = \Model\Tag\Tag::lists('name', 'id');
+
+        $PhotoParentList = \Model\PhotoParent\ModelName::lists('name', 'id')->toArray();
 
         $relatedPosts = \Model\Post\ModelName::lists('title', 'id')->toArray();
         return view('Admin::post.create', [
             'post' => new Post, 
             'tags' => $tags,
+            'tags2' => $tags2,
+            'PhotoParentList' => $PhotoParentList,
             'relatedPosts' => $relatedPosts,
 
             ]);
@@ -53,9 +58,10 @@ class PostController extends Controller
     public function store(Request $request)
     {
 
-        $post = Post::create($request->except('tag_list','thumbnail','q','related1','related2','related3'));
+        $post = Post::create($request->except('tag_list','tag_list2','thumbnail','q'));
         
         $tags = $request->input('tag_list');
+        $tags2 = $request->input('tag_list2');
         if(!empty($tags)){
             foreach ($tags as $key => $name)
             {
@@ -72,57 +78,39 @@ class PostController extends Controller
 
         }// end if
 
+        if(!empty($tags2)){
+            foreach ($tags2 as $key => $name)
+            {
+                if(!is_numeric($name))
+                {
+                    $tag = \Model\Tag\Tag::firstOrNew(['name' => $name]);
+                    $tag->name = $name;
+                    $tag->save();
+                    $tags2[$key] = $tag->id();
+                }
+            }// end foreach
+
+        $post->tags()->attach($tags2);
+
+        }// end if
 
         if($request->hasFile('thumbnail'))
         {
             $file = $request->file('thumbnail');
             $dir  = 'img/thumbnail';
-            $name = $post->id().'.'.$file->getClientOriginalExtension();
+            $btw = rand(0,100);
+
+            $name = $post->id().$btw.'.'.$file->getClientOriginalExtension();
+            
 
             $storage = \Storage::disk('public');
             $storage->makeDirectory($dir);
-            // $storage->put($dir.'/'.$name, $file);
 
             $post->thumbnail = $dir.'/'.$name;
             $post->save();
             $file->move($dir, $name);
         }
 
-        // Start Related posts on create
-        $related1 = $request->input('related1');
-        if($related1 != 'default'){
-            $space = ' ';
-            $content1 = $request->input('content');
-            $mystring = $content1;
-            $findme   = 'admin/post/1';
-            $pos = strpos($mystring, $findme);
-            $newstr = substr_replace($content1, 'http://1000.ktrk.kg/post/'.$related1, $pos, 12);
-            $post->content = $newstr;
-            $post->save();
-        } // end if
-        $related2 = $request->input('related2');
-        if($related2 != 'default'){
-            $space = ' ';
-            $content2 = $request->input('content');
-            $mystring = $content2;
-            $findme   = 'admin/post/2';
-            $pos = strpos($mystring, $findme);
-            $newstr = substr_replace($content2, 'http://1000.ktrk.kg/post/'.$related1, $pos, 12);
-            $post->content = $newstr;
-            $post->save();
-        } // end if 2
-        $related3 = $request->input('related3');
-        if($related3 != 'default'){
-            $space = ' ';
-            $content3 = $request->input('content');
-            $mystring = $content3;
-            $findme   = 'admin/post/3';
-            $pos = strpos($mystring, $findme);
-            $newstr = substr_replace($content3, 'http://1000.ktrk.kg/post/'.$related1, $pos, 12);
-            $post->content = $newstr;
-            $post->save();
-        } // end if 3
-        // end related posts on create
 
         return redirect()->route('admin.post.index');
     }
@@ -150,13 +138,18 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
+
+        $PhotoParentList = \Model\PhotoParent\ModelName::lists('name', 'id')->toArray();
         $relatedPosts = \Model\Post\ModelName::lists('title', 'id')->toArray();
         $tags = \Model\Tag\Tag::lists('name', 'id');
+        $tags2 = \Model\Tag\Tag::lists('name', 'id');
 
         return view('Admin::post.edit', [
             'post' => $post, 
             'tags' => $tags,
+            'tags2' => $tags2,
             'relatedPosts' => $relatedPosts,
+            'PhotoParentList' => $PhotoParentList,
             ]);
     }
 
@@ -170,9 +163,11 @@ class PostController extends Controller
     public function update(Request $request, Post $post)
     {
         
-        $post->update($request->except('tag_list','thumbnail','q','related1','related2','related3'));
+        $post->update($request->except('tag_list','tag_list2','thumbnail','q'));
 
         $tags = $request->input('tag_list');
+        $tags2 = $request->input('tag_list2');
+
         if(!empty($tags)){
         foreach ($tags as $key => $name)
         {
@@ -187,49 +182,27 @@ class PostController extends Controller
         $post->tags()->sync($tags);
         }// end if
 
-
-        // Related posts
-        $related1 = $request->input('related1');
-        if($related1 != 'default'){
-            $space = ' ';
-            $content1 = $request->input('content');
-            $mystring = $content1;
-            $findme   = 'admin/post/1';
-            $pos = strpos($mystring, $findme);
-            $newstr = substr_replace($content1, 'http://1000.ktrk.kg/post/'.$related1, $pos, 12);
-            $post->content = $newstr;
-            $post->save();
-        } // end if
-        $related2 = $request->input('related2');
-        if($related2 != 'default'){
-            $space = ' ';
-            $content2 = $request->input('content');
-            $mystring = $content2;
-            $findme   = 'admin/post/2';
-            $pos = strpos($mystring, $findme);
-            $newstr = substr_replace($content2, 'http://1000.ktrk.kg/post/'.$related1, $pos, 12);
-            $post->content = $newstr;
-            $post->save();
-        } // end if 2
-        $related3 = $request->input('related3');
-        if($related3 != 'default'){
-            $space = ' ';
-            $content3 = $request->input('content');
-            $mystring = $content3;
-            $findme   = 'admin/post/3';
-            $pos = strpos($mystring, $findme);
-            $newstr = substr_replace($content3, 'http://1000.ktrk.kg/post/'.$related1, $pos, 12);
-            $post->content = $newstr;
-            $post->save();
-        } // end if 3
-        // end related posts
+        if(!empty($tags2)){
+        foreach ($tags2 as $key => $name)
+        {
+            if(!is_numeric($name))
+            {
+                $tag = \Model\Tag\Tag::firstOrNew(['name' => $name]);
+                $tag->name = $name;
+                $tag->save();
+                $tags2[$key] = $tag->id();
+            }
+        }
+        $post->tags()->sync($tags2);
+        }// end if
 
         if($request->hasFile('thumbnail'))
         {
             $file = $request->file('thumbnail');
             $dir  = 'img/thumbnail';
+            $btw = rand(0,100);
 
-            $name = $post->id().'.'.$file->getClientOriginalExtension();
+            $name = $post->id().$btw.'.'.$file->getClientOriginalExtension();
             
 
             $storage = \Storage::disk('public');

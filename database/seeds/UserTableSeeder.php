@@ -25,6 +25,7 @@ class UserTableSeeder extends Seeder
             'role'       => 'admin',
             'channel_id' => 2,
         ]);
+
           \Model\User\ModelName::create([
             'name'       => 'Edos',
             'email'      => 'eldos@gmail.com',
@@ -32,6 +33,54 @@ class UserTableSeeder extends Seeder
             'role'       => 'admin',
             'channel_id' => 3,
         ]);
-        factory(\Model\User\ModelName::class, 50)->create();
+
+          \Model\User\ModelName::create([
+            'name'       => 'Aibek',
+            'email'      => 'aibek@gmail.com',
+            'password'   => bcrypt('123123'),
+            'role'       => 'admin',
+            'channel_id' => 4,
+        ]);
+
+          \Model\User\ModelName::create([
+            'name'       => 'Nurzat',
+            'email'      => 'nurzhatnew@gmail.com',
+            'password'   => bcrypt('123123'),
+            'role'       => 'admin',
+            'channel_id' => 5,
+        ]);
+
+          \Model\User\ModelName::create([
+            'name'       => 'Ainura',
+            'email'      => 'ainura.niazova@gmail.com',
+            'password'   => bcrypt('123123'),
+            'role'       => 'admin',
+            'channel_id' => 6,
+        ]);
+
+          \Model\User\ModelName::create([
+            'name'       => 'Gulshat',
+            'email'      => 'gulshatimanahunova@gmail.com',
+            'password'   => bcrypt('123123'),
+            'role'       => 'admin',
+            'channel_id' => 7,
+        ]);
+
+          \Model\User\ModelName::create([
+            'name'       => 'Dinara',
+            'email'      => 'public.relations.ktrk@gmail.com',
+            'password'   => bcrypt('123123'),
+            'role'       => 'admin',
+            'channel_id' => 8,
+        ]);
+
+          \Model\User\ModelName::create([
+            'name'       => 'Mira',
+            'email'      => 'alimova-mira@mail.ru',
+            'password'   => bcrypt('123123'),
+            'role'       => 'admin',
+            'channel_id' => 10,
+        ]);
+        //factory(\Model\User\ModelName::class, 50)->create();
     }
 }

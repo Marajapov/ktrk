@@ -16,4 +16,17 @@ return [
     'Top news' => 'Жаңылыктар',
     'All news' => 'Бардык',
 
+    // Admin panel translate
+    'AdminHomeTitle' => 'Башкы',
+    'AdminPhotoUploadTitle' => 'Сүрөт жүктөө',
+    'AdminChannelTitle' => 'Каналдар',
+    'AdminPostTitle' => 'Макалалар',
+    'AdminPostsTitle' => 'Макалалар',
+    'AdminPostsCatTitle' => 'Макалалар категориясы',
+    'AdminMediaTitle' => 'Медиа макалалар',
+    'AdminMediaPostTitle' => 'Медиа макалалар',
+    'AdminMediaPostCatTitle' => 'Медия категориялары',
+    'AdminPagesTitle' => 'Барактар',
+    'AdminUsersTitle' => 'Колдонуучулар',
+
 ];

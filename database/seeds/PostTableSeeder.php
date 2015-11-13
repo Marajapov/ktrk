@@ -13,6 +13,6 @@ class PostTableSeeder extends Seeder
     {
         \Model\Post\ModelName::truncate();
 
-        factory(\Model\Post\ModelName::class, 50)->create();
+        //factory(\Model\Post\ModelName::class, 10)->create();
     }
 }

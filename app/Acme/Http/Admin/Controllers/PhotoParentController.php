@@ -40,7 +40,7 @@ class PhotoParentController extends Controller
      */
     public function store(Request $request)
     {
-        $photoParent = PhotoParent::create($request->except('file'));
+        $photoParent = PhotoParent::create($request->except('file','q'));
 
         if($request->hasFile('file'))
         {

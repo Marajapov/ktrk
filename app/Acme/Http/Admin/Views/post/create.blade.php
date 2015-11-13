@@ -50,5 +50,28 @@
         tokenSeparators: [',', ' '],
         minimumInputLength: 1,
     });
+
+    $('#tag_list2').select2({
+        ajax: {
+            url: "/api/tags",
+            dataType: 'json',
+            delay: 250,
+            data: function (params) {
+                return {
+                    tag: params.term
+                };
+            },
+            processResults: function (data) {
+                return {
+                    results: data
+                };
+            },
+            cache: true
+        },
+        placeholder: 'Тег тандаңыз',
+        tags: true,
+        tokenSeparators: [',', ' '],
+        minimumInputLength: 1,
+    });
 </script>
 @stop

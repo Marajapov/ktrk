@@ -32,7 +32,13 @@
                       </a> 
                     </div>
                     <p class="description clearfix">
-                      <a href="{{ route('front.category', $post->category) }}">{{ $post->category('category_id')->first()->title }}</a>
+                      <a href="{{ route('front.category', $post->category) }}">
+                          @if(app()->getlocale() == 'kg')
+                            {{ $post->category('category_id')->first()->title }}
+                          @else
+                            {{ $post->category('category_id')->first()->titleRu }}
+                          @endif
+                      </a>
                       <span>
                         <!-- @if(empty($post->getFile())) @else <i class="fa fa-play-circle-o"></i> @endif -->
                         @if(empty($post->getFile()) && empty($post->getFile())) @else <i class="fa fa-picture-o"></i> @endif

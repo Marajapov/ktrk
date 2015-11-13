@@ -16,4 +16,18 @@ return [
     'Top news' => 'НОВОСТи',
     'All news' => 'Все новости',
 
+    // Admin panel translate
+    'AdminHomeTitle' => 'Главная',
+    'AdminPhotoUploadTitle' => 'Загрузить фото',
+    'AdminChannelTitle' => 'Каналы',
+    'AdminPostTitle' => 'Новости',
+    'AdminPostsTitle' => 'Новости',
+    'AdminPostsCatTitle' => 'Категории новостей',
+    'AdminMediaTitle' => 'Медиа новости',
+    'AdminMediaPostTitle' => 'Медиа новости',
+    'AdminMediaPostCatTitle' => 'Категории медиа новостей',
+    'AdminPagesTitle' => 'Страницы',
+    'AdminUsersTitle' => 'Пользователи',
+
+
 ];
