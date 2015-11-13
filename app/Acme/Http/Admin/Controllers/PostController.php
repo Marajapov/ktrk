@@ -38,13 +38,15 @@ class PostController extends Controller
 
         $PhotoParentList = \Model\PhotoParent\ModelName::lists('name', 'id')->toArray();
 
-        $relatedPosts = \Model\Post\ModelName::lists('title', 'id')->toArray();
+        $relatedPosts = \Model\Post\ModelName::where('title','<>','')->lists('title', 'id')->toArray();
+        $relatedPosts2 = \Model\Post\ModelName::where('titleRu','<>','')->lists('titleRu', 'id')->toArray();
         return view('Admin::post.create', [
             'post' => new Post, 
             'tags' => $tags,
             'tags2' => $tags2,
             'PhotoParentList' => $PhotoParentList,
             'relatedPosts' => $relatedPosts,
+            'relatedPosts2' => $relatedPosts2,
 
             ]);
     }

@@ -1,5 +1,5 @@
 @extends('Admin::layouts.default')
-@section('title', $category->getName())
+@section('title', $category->getTitle())
 
 @section('content')
 <div class="row modals">

@@ -9,7 +9,7 @@
 			<div class="x_title">
 				<div>
 					<a href="{{ route('admin.category.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i>{{ trans('site.AdminCategoryAddNew') }}
-</a>
+					</a>
 				</div>
 			
 				<div class="clearfix"></div>

@@ -8,6 +8,11 @@ trait ModelRelationships
         return $this->belongsTo(\Model\Category\ModelName::class, 'category_id');
     }
 
+    public function owner()
+    {
+        return $this->belongsTo(\Model\User\ModelName::class, 'owner_id');
+    }
+
     public function channel()
     {
         return $this->belongsTo(\Model\Channel\ModelName::class, 'channel_id');

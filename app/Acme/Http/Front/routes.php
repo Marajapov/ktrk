@@ -107,6 +107,14 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
 
     Route::get('history', ['as' => 'front.history', 'uses' => 'PageController@historyPage']);
     Route::get('director', ['as' => 'front.pages.director', 'uses' => 'PageController@directorPage']);
+    Route::get('leaders', ['as' => 'front.pages.leaders', 'uses' => 'PageController@leadersPage']);
+    Route::get('strategy', ['as' => 'front.pages.strategy', 'uses' => 'PageController@strategyPage']);
+    Route::get('normalbase', ['as' => 'front.pages.normalbase', 'uses' => 'PageController@normalbasePage']);
+    Route::get('rrts', ['as' => 'front.pages.rrts', 'uses' => 'PageController@rrtsPage']);
+    Route::get('report', ['as' => 'front.pages.report', 'uses' => 'PageController@reportPage']);
+    Route::get('teleprogram', ['as' => 'front.pages.teleprogram', 'uses' => 'PageController@teleprogramPage']);
+    Route::get('kenesh', ['as' => 'front.pages.kenesh', 'uses' => 'PageController@keneshPage']);
+    Route::get('editionkenesh', ['as' => 'front.pages.editionkenesh', 'uses' => 'PageController@editionkeneshPage']);
     
 
 Route::get('locale/{locale?}',   ['as' => 'locale',   'uses' => 'CommonController@setLocale']);

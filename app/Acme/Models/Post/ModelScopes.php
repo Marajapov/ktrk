@@ -18,6 +18,16 @@ trait ModelScopes {
         return $query->having('titleRu', '<>', '');
     }
 
+    public function scopeLanguageKgOrRu($query)
+    {
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            return $query->having('title', '<>', '');
+        }else{
+            return $query->having('titleRu', '<>', '');    
+        }        
+    }
+
     public function scopeType($query, $type = "post")
     {
         $type = in_array($type, ['post', 'post'])? $type : "post";
