@@ -27,5 +27,30 @@ class MuzkanalController extends Controller
         return view('Front::channel.muzkanal.radio');
     }
 
+    public function about()
+    {
+        return view('Front::channel.muzkanal.about');
+    }
+
+      public function video()
+    {
+        return view('Front::channel.muzkanal.video');
+    }
+
+  public function videos()
+    {
+        return view('Front::channel.muzkanal.videos');
+    }
+
+  public function hitparad()
+    {
+        return view('Front::channel.muzkanal.hitparad');
+    }
+
+  public function photos()
+    {
+        return view('Front::channel.muzkanal.photos');
+    }
+
 
 }
