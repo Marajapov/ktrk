@@ -581,9 +581,15 @@ header{
 /*Social*/
 .soc{
     position: absolute;
-    top: -29px;
+/*    top: -29px;
     right: 0;
-}
+
+*/
+
+    top: 10px;
+    right: 250px;
+
+    }
 .soc li{
     display: inline-block;
     width: 30px;
@@ -1189,7 +1195,7 @@ header{
     overflow: hidden;
 
     height: 130px;
-    margin: 0 5px;
+    margin: 0 10px;
     padding: 0;
 
     background: #42b078;
@@ -2178,6 +2184,30 @@ header{
     max-width: 93%;
 }
 
+/*History page*/
+.historypage {
+    padding: 0px 5px 0px 0px;
+    font-family: 'Roboto Condensed';
+}
+
+.histext p{
+    font-size: 18px;
+    text-align: justify;
+    padding: 0px 5px;
+}
+.blockquote {
+    background: #EFEDED;
+}
+
+.histext .btn {
+    margin: 0px auto;
+    position: relative;
+    display: list-item;
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+
 /*Материалы по теме*/
 .panel-article aside{
     display: inline;
@@ -2407,11 +2437,6 @@ height: 45px;
     border:none; 
     color: #fff;
 }
-
-.promo .programtitle {
-
-}
-
 .promo .programtitle .centered {
     text-align: center;
 }
@@ -3600,3 +3625,254 @@ padding-right: 8px;
     box-shadow: 0 0 15px -4px #333;
 }
 
+
+/*About Page of Muz kanal*/
+
+/*SOCIAL ICONS*/
+.main-header.smaller .soc{
+    display: none;
+}
+.soc li:hover a{
+    -webkit-transition: background 0.2s ease;
+    -moz-transition: background 0.2s ease;
+    -ms-transition: background 0.2s ease;
+    -o-transition: background 0.2s ease;
+    transition: background 0.2s ease;
+}
+.soc li a,.soc li a:hover{
+    background: none;
+}
+.soc li, .soc li i{
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+.soc li:hover a i{
+    color: #ffffff;
+}
+.soc li.tw:hover{
+    background: #00aced;
+}
+.soc li.fb:hover{
+    background: #3b5998;
+}
+.soc li.ok:hover{
+    background: #f2720c;
+}
+.soc li.yt:hover{
+    background: #bb0000;
+}
+
+.soc li.in:hover{
+    background: #125688;
+}
+
+@media screen and (max-width: 1000px) {
+   .soc  {
+        display: none;
+    }
+}
+
+
+/*Muz kanal video page*/
+
+.videopage {
+  
+    padding: 0px 5px 0px 0px;
+    margin-top: 10px;
+}
+
+.videopage .panel-heading {
+    z-index: 999;
+
+    overflow: visible;
+    padding: 5px; 
+
+    background-image: url(../images/back.jpg) ;
+}
+
+.videopage .panel-heading h3 {
+    border:none; 
+    color: #fff;
+}
+
+.videopage .show-title {
+    margin: 5px 15px;
+}
+
+.videopage .show-title a{
+    font-size: 16px;
+
+    color: #fff;    
+}
+.videopage .show-title i{
+    padding-left: 5px;
+    color: #fff; 
+    font-size: 16px; 
+}
+.videopage .show-title span{
+    color: #fff;
+}
+
+.videopage .panel-video .panel-body {
+    padding: 10px 15px 0px;
+}
+
+.videopage #nt-example1{
+    height: 540px !important;
+}
+
+.videopage #nt-example1-container i{
+    margin-top: -35px;
+    margin-right: 5px;
+}
+
+.videostyle .panel-carousel .slick-prev {
+    display: none !important;
+    left: 0px; 
+}
+
+.videostyle .panel-carousel .slick-next {
+    display: none !important;
+    right: 0px; 
+}
+
+.videofix {
+    padding: 0px;
+}
+
+.topchart {
+  
+    padding: 0px 5px 0px 0px;
+    margin-top: 10px;
+    font-family: 'Roboto Condensed';
+}
+
+.topchart .panel-heading {
+    z-index: 999;
+
+    overflow: visible;
+    padding: 5px; 
+
+    background-image: url(../images/back.jpg) ;
+}
+
+.topchart .panel-heading h3 {
+    border:none; 
+    color: #fff;
+}
+
+.topchart .show-title {
+    margin: 5px 15px;
+}
+
+.topchart .show-title a{
+    font-size: 16px;
+
+    color: #fff;    
+}
+.topchart .show-title i{
+    padding-left: 5px;
+    color: #fff; 
+    font-size: 16px; 
+}
+.topchart .show-title span{
+    color: #fff;
+}
+
+.topnumber h2{
+    display: inherit;
+    width: 40px;
+    margin-top: 6px;
+
+    font-size: 30px;
+    font-weight: bold;
+
+    text-align: center;
+    color: #F44336
+    
+ 
+}
+.toppozition {
+    border-left: 2px solid #fff;
+}
+
+.toppozition h2{
+    margin-top: 12px;
+
+    display: flex;
+    font-size: 24px;
+    font-weight: bold;
+    padding-left: 5px;
+    color: #009688;
+
+}
+
+.toppozition i {
+    float: left;
+    font-size: 14px;
+    margin-top: 18px;
+    color: #009688;
+} 
+.topimg{
+    padding: 0px; 
+    border-left: 2px solid #fff;
+}
+
+.topimg img{
+    height: 50px;
+    background-position: center center;
+}
+.topartist {
+    border-left: 2px solid #fff;
+}
+
+.topartist h3{
+    float: left;
+    margin-top: 10px;
+    color: #3F51B5;
+    font-size: 22px;
+
+}
+
+.topborder{
+    border:2px solid #fff;
+    margin: 0px;
+    background: #ECECEC;
+}
+
+.topmainimg {
+    
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.topclip {
+    padding-top: 3px;
+    
+    font-size: 32px;
+
+    border-left: 2px solid #fff;
+}
+
+ @media (max-width: 650px) {
+    .topnumber h2 {
+    font-size: 25px;
+    margin-left: -10px; 
+    }
+    .toppozition i {
+        margin-left: -10px;
+    }
+    .topclip {
+        font-size: 25px;
+        margin-left: -10px;
+    }
+}
+
+ @media (max-width: 750px) {
+    .topartist h3 {
+    font-size: 18px;
+    margin-top: 5px;
+    }
+}
