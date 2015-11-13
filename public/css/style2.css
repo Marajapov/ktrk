@@ -180,7 +180,6 @@ header.top-menu,.logo-block{
 }
 .main-header.smaller .logo img{
     height: 60px;
-    margin: 0;
     background: none;
 }
 
@@ -324,6 +323,9 @@ header.top-menu,.logo-block{
 .form-search.visible{
     display: block;
     margin-top: 20px;
+}
+.main-header.smaller .form-search.visible{
+    margin-top: 10px;
 }
 .form-search .form-group input{
     border: none;

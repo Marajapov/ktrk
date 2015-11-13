@@ -10,12 +10,12 @@ trait ModelScopes {
 
     public function scopeLanguagekg($query)
     {
-        return $query->having('title', '>', '0');
+        return $query->having('title', '<>', '');
     }
 
     public function scopeLanguageru($query)
     {
-        return $query->having('titleRu', '>', '0');
+        return $query->having('titleRu', '<>', '');
     }
 
     public function scopeType($query, $type = "post")

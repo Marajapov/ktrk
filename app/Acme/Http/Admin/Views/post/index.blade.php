@@ -29,7 +29,7 @@
 					<div class="list-group">
 						@foreach($posts as $post)
 						<div class="@if(!$post->isPublished()) alert alert-danger list-group-item @endif list-group-item">
-							<i>{{ $post->id() }}. </i><a href="{{ route('admin.post.show', $post) }}">{{ $post->getTitle() }}</a> ({{ $post->category->getTitle()  }})
+							<i>{{ $post->id() }}. </i><a href="{{ route('admin.post.show', $post) }}">{{ $post->getTitleRuOrKg() }}</a> ({{ $post->category->getTitle()  }})
 						</div>
 						@endforeach
 					</div>

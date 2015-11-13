@@ -58,7 +58,7 @@
     <div class="col-xs-12">
         <div class="form-group">
             <label class="control-label">Тема на кыргызском</label>
-            {!! Form::text('title', null, ["class" => "form-control", "required" => true]) !!}
+            {!! Form::text('title', null, ["class" => "form-control"]) !!}
         </div>
     </div>
 

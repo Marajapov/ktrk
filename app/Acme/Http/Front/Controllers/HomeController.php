@@ -25,7 +25,8 @@ class HomeController extends Controller
         $channel = \Model\Channel\ModelName::general();
        
         if($lc == 'kg'){
-            $generalPosts = \Model\Post\ModelName::general($channel)->published()->languageru()->take(6)->skip(0)->orderBy('id', 'desc')->get();    
+            $generalPosts = \Model\Post\ModelName::general($channel)->published()->languagekg()->take(6)->skip(0)->orderBy('id', 'desc')->get();    
+            //dd($generalPosts);
         }elseif($lc == 'ru'){
             $generalPosts = \Model\Post\ModelName::general($channel)->published()->languageru()->take(6)->skip(0)->orderBy('id', 'desc')->get();    
         }
@@ -160,7 +161,7 @@ class HomeController extends Controller
     public function Posts()
     {        
         $perPage = 10;
-        // $postAll = \Model\Post\ModelName::orderBy('id', 'desc')->published()->paginate($perPage);
+        
         $channel = \Model\Channel\ModelName::general();
 
         $categories = \Model\Category\ModelName::all();

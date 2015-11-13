@@ -26,18 +26,16 @@
                   <a href="{{ route('front.post', $post) }}" class="main-img">
                     <img src="@if(empty($post->getFile()))images/2.jpg @else {{ asset($post->getFile()) }} @endif" alt="img26">
                     <i class="fa fa-play-circle-o"></i></a>
-                    <div class="news-channel">
+                    <!--<div class="news-channel">
                        <a href="#">
                         <img src="{{ $post->isChannelIcon($post->channel_id)}}" alt=""/>
                       </a> 
-                    </div>
+                    </div>-->
+                    
                     <p class="description clearfix">
                       <a href="{{ route('front.category', $post->category) }}">
-                          @if(app()->getlocale() == 'kg')
-                            {{ $post->category('category_id')->first()->title }}
-                          @else
-                            {{ $post->category('category_id')->first()->titleRu }}
-                          @endif
+                         {{ $post->category('category_id')->first()->getTitle() }}
+                         
                       </a>
                       <span>
                         <!-- @if(empty($post->getFile())) @else <i class="fa fa-play-circle-o"></i> @endif -->
@@ -46,7 +44,7 @@
                     </p>
                     <a class="news-title" href="{{ route('front.post', $post) }}">
                       <!-- <h2>{!! $result = substr($post->getTitle(),0,75) !!}...</h2>-->
-                      <h2 style="font-size:12px;">{{ $post->getTitle() }}</h2>
+                      <h2>{{ $post->getTitle() }}</h2>
                     </a>
                   </figure>
                 </div>
