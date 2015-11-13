@@ -3,30 +3,32 @@
     <div class="menu_section">
         <div class="divider"></div>
         <ul class="nav side-menu">
-            <li><a href="{{ route('admin.home') }}"><i class="fa fa-home"></i>Башкы </a></li>
+            <li><a href="{{ route('admin.home') }}"><i class="fa fa-home"></i>{{ trans('site.AdminHomeTitle') }} </a></li>
             <li><a href="{{ route('admin.photoParent.index') }}"><i class="fa fa-image"></i>Фотогалерея </a></li>
-            <li><a href="{{ route('admin.photoChild.index') }}"><i class="fa fa-download"></i>Сүрөт жүктөө</a></li>
-            <li><a href="{{ route('admin.channel.index') }}"><i class="fa fa-television"></i>Каналдар</a></li>
-            <li><a><i class="fa fa-newspaper-o"></i>Макалалар <span class="fa fa-chevron-down"></span></a>
+            <li><a href="{{ route('admin.photoChild.index') }}"><i class="fa fa-download"></i>{{ trans('site.AdminPhotoUploadTitle') }}</a></li>
+            
+            <li><a href="{{ route('admin.channel.index') }}"><i class="fa fa-television"></i>{{ trans('site.AdminChannelTitle') }}</a></li>
+            
+            <li><a><i class="fa fa-newspaper-o"></i>{{ trans('site.AdminPostTitle') }} <span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu" style="display: none">
-                    <li><a href="{{ route('admin.post.index') }}">Макалалар</a></li>
-                    <li><a href="{{ route('admin.category.index') }}">Макалалар категориясы</a></li>                                       
+                    <li><a href="{{ route('admin.post.index') }}">{{ trans('site.AdminPostsTitle') }}</a></li>
+                    <li><a href="{{ route('admin.category.index') }}">{{ trans('site.AdminPostsCatTitle') }}</a></li>                                       
                 </ul>
             </li>
-            <li><a><i class="fa fa-file-video-o"></i>Медиа макалалар <span class="fa fa-chevron-down"></span></a>
+            <li><a><i class="fa fa-file-video-o"></i>{{ trans('site.AdminMediaTitle') }} <span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu" style="display: none">
-                    <li><a href="{{ route('admin.media.index') }}">Медия макалалар</a></li>
-                    <li><a href="{{ route('admin.mediaCategory.index') }}">Медия категориялары</a></li>                                
+                    <li><a href="{{ route('admin.media.index') }}">{{ trans('site.AdminMediaPostTitle') }}</a></li>
+                    <li><a href="{{ route('admin.mediaCategory.index') }}">{{ trans('site.AdminMediaPostCatTitle') }}</a></li>                                
                 </ul>
             </li>         
             <li><a href="{{ route('admin.banner.index') }}"><i class="fa fa-caret-square-o-right"></i>Баннер</a></li>
-            <li><a href="{{ route('admin.page.index') }}"><i class="fa fa-columns"></i>Барактар</a></li>
+            <li><a href="{{ route('admin.page.index') }}"><i class="fa fa-columns"></i>{{ trans('AdminPagesTitle') }}</a></li>
             <li><a href="{{ route('admin.menu.index') }}"><i class="fa fa-chevron-circle-down"></i>Меню</a></li>
-            <li><a href="{{ route('admin.user.index') }}"><i class="fa fa-user"></i>Колдонуучулар</a></li>
+            <li><a href="{{ route('admin.user.index') }}"><i class="fa fa-user"></i>{{ trans('AdminUsersTitle') }}</a></li>
             <li><a href="{{ route('admin.background.index') }}"><i class="fa fa-backward"></i>Фон сүрөтү</a></li>
             <!--<li><a href="{{ route('admin.peopleReporter.index') }}"><i class="fa fa-backward"></i>Элдик репортер</a></li>-->
         </ul>
-         <div class="menu_section">
+                        <div class="menu_section">
                             <h3 style="margin:17px 0px">Кошумча барактар</h3>
                             <ul class="nav side-menu">
                                                          

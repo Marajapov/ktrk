@@ -18,8 +18,15 @@
 
     <div class="col-sm-6">
         <div class="form-group">
-            <label class="control-label">Тегдер</label>
+            <label class="control-label">Тегдер на кыргызском</label>
             {!! Form::select('tag_list[]', $tags, null, ["class" => "form-control", "id" => "tag_list", "multiple"]) !!}
+        </div>
+    </div>
+
+    <div class="col-sm-6">
+        <div class="form-group">
+            <label class="control-label">Теги на русском</label>
+            {!! Form::select('tag_list2[]', $tags2, null, ["class" => "form-control", "id" => "tag_list2", "multiple"]) !!}
         </div>
     </div>
 
@@ -48,33 +55,37 @@
         </div>
     </div>
 
-    <div class="col-sm-10">
-        <div class="form-group">
-            <label class="control-label">Тил тандаңыз</label>
-            {!! Form::select('language', ['default'=>'--Тандаңыз--','languageKg'=>'Кыргызча','languageRu'=>'Орусча','neutrally'=>'Нейтрально'], null, ["class" => "select2_group  form-control", "required"=> true, "title" => ""]) !!}
-        </div>
-    </div>
-
     <div class="col-xs-12">
         <div class="form-group">
-            <label class="control-label">Тема</label>
+            <label class="control-label">Тема на кыргызском</label>
             {!! Form::text('title', null, ["class" => "form-control", "required" => true]) !!}
         </div>
     </div>
 
     <div class="col-xs-12">
         <div class="form-group">
-            <label class="control-label">Текст</label>
+            <label class="control-label">Текст на кыргызском</label>
             {!! Form::textarea('content', null, ["class" => "form-control tinymce-container"]) !!}
         </div>
     </div>
 
-<!--     <div class="col-xs-12">
+    <!-- RU section -->
+    <div class="col-xs-12"><hr><hr></div>
+
+    <div class="col-xs-12">
         <div class="form-group">
-            <label class="control-label">Миниатюра</label>
-            {!! Form::file('thumbnail', null, ["class" => "form-control"]) !!}
+            <label class="control-label">Тема на русском</label>
+            {!! Form::text('titleRu', null, ["class" => "form-control"]) !!}
         </div>
-    </div> -->
+    </div>
+
+    <div class="col-xs-12">
+        <div class="form-group">
+            <label class="control-label">Текст на русском</label>
+            {!! Form::textarea('contentRu', null, ["class" => "form-control tinymce-container"]) !!}
+        </div>
+    </div>
+
 
      <div class="col-xs-12">
             <div class="fileinput fileinput-new" data-provides="fileinput">
@@ -89,7 +100,7 @@
     <div class="col-sm-10">
         <div class="form-group">
             <label class="control-label">Сүрөт галереясын тандаңыз</label>
-            {!! Form::select('parentId', \Model\PhotoParent\ModelName::lists('name', 'id')->toArray(), null, ["class" => "select2_group  form-control", "title" => ""]) !!}
+            {!! Form::select('parentId', array('0'=>'--Тандаңыз--')+ $PhotoParentList, null, ["class" => "select2_group  form-control", "title" => ""]) !!}
         </div>
     </div>
 

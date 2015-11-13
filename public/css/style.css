@@ -2236,10 +2236,11 @@ header{
 .t-thumb{
     float: left;
     height: 64px;
+    width: 110px;
 }
 .t-thumb img{
     margin-right: 10px;
-    width: auto;
+    width: 100%;
 }
 .t-info{
     display: inline;
@@ -2256,6 +2257,8 @@ header{
     font-size: 14px;
     line-height: 18px;
 }
+
+
 /*Muzakanal styles
 Author: Eldos;
 */

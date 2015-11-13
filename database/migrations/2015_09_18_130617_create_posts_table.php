@@ -14,13 +14,13 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
             $table->string('title');
+            $table->string('titleRu');
             $table->text('content');
+            $table->text('contentRu');
             $table->integer('channel_id')->nullable()->unsigned()->default(null);
             $table->integer('category_id')->nullable()->unsigned()->default(null);
             $table->integer('owner_id')->nullable()->unsigned()->default(null);
-            $table->text('description')->nullable();
             $table->integer('parentId')->nullable();
             $table->string('thumbnail');
             $table->enum('type', ['page', 'post'])->nullable()->default('post');
@@ -30,7 +30,6 @@ class CreatePostsTable extends Migration
             $table->integer('related2')->nullable()->unsigned()->default(null);
             $table->integer('related3')->nullable()->unsigned()->default(null);
             $table->boolean('general')->nullable()->default(false);
-            $table->string('language');
             $table->smallInteger('viewed')->default(0);
             $table->timestamps();
 

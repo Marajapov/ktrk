@@ -3,15 +3,15 @@
 <div class="row">
     <div class="col-sm-10">
         <div class="form-group">
-            <label class="control-label">Аталышы</label>
-            {!! Form::text('name', null, ["class" => "form-control", "required" => true, "title" => ""]) !!}
+            <label class="control-label">Тема на кыргызском</label>
+            {!! Form::text('title', null, ["class" => "form-control", "required" => true, "title" => ""]) !!}
         </div>
     </div>
 
     <div class="col-sm-10">
         <div class="form-group">
-            <label class="control-label">Тема</label>
-            {!! Form::text('title', null, ["class" => "form-control", "required" => true]) !!}
+            <label class="control-label">Тема на русском</label>
+            {!! Form::text('titleRu', null, ["class" => "form-control", "required" => true]) !!}
         </div>
     </div>
 

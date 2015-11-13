@@ -21,24 +21,32 @@
               @foreach($generalPosts as $post)
               <div class="col-md-4 block">
                 <figure class="effect-zoe">
-                  <span class="post-timer pull-right">  <i class="fa fa-eye"></i>&nbsp;{{ $post->getViewed() }}</span></a>
+                  <!--<span class="post-timer pull-right">  <i class="fa fa-eye"></i>&nbsp;{{ $post->getViewed() }}</span> -->
+
                   <a href="{{ route('front.post', $post) }}" class="main-img">
                     <img src="@if(empty($post->getFile()))images/2.jpg @else {{ asset($post->getFile()) }} @endif" alt="img26">
                     <i class="fa fa-play-circle-o"></i></a>
                     <div class="news-channel">
-                      <a href="channel.html">
+                       <a href="#">
                         <img src="{{ $post->isChannelIcon($post->channel_id)}}" alt=""/>
-                      </a>
+                      </a> 
                     </div>
                     <p class="description clearfix">
-                      <a href="{{ route('front.category', $post->category) }}">{{ $post->category('category_id')->first()->title }}</a>
+                      <a href="{{ route('front.category', $post->category) }}">
+                          @if(app()->getlocale() == 'kg')
+                            {{ $post->category('category_id')->first()->title }}
+                          @else
+                            {{ $post->category('category_id')->first()->titleRu }}
+                          @endif
+                      </a>
                       <span>
-                        @if(empty($post->getFile())) @else <i class="fa fa-play-circle-o"></i> @endif
+                        <!-- @if(empty($post->getFile())) @else <i class="fa fa-play-circle-o"></i> @endif -->
                         @if(empty($post->getFile()) && empty($post->getFile())) @else <i class="fa fa-picture-o"></i> @endif
                       </span>
                     </p>
                     <a class="news-title" href="{{ route('front.post', $post) }}">
-                      <h2>{!! $result = substr($post->getTitle(),0,75) !!}...</h2>
+                      <!-- <h2>{!! $result = substr($post->getTitle(),0,75) !!}...</h2>-->
+                      <h2 style="font-size:12px;">{{ $post->getTitle() }}</h2>
                     </a>
                   </figure>
                 </div>
@@ -211,7 +219,7 @@
                   </div>
 
                   <a href="#" class="text-center ads ads-300x250">
-                    <img src="@if(!empty($positionRight->file)) {{ asset($positionRight->file) }} @else images/ads_300x250.gif @endif" alt="phot1"/>
+                    <img src="@if(!empty($positionRight->file)) {{ asset($positionRight->file) }} @else img/banner/2.jpg @endif" alt="phot1"/>
                   </a>     
 
                 </div>

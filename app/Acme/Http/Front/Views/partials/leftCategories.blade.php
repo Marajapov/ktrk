@@ -22,7 +22,7 @@
 
     <a href="#" class="text-center ads ads-300x250 hidden">
 
-        <img src="{{ asset('images/ads_240x400.jpg') }}" alt=""/>
+        <img src="{{ asset('img/banner/2.jpg') }}" alt=""/>
     </a>
 
 </div><!-- end of left categories -->

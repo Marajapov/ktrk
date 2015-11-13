@@ -41,7 +41,7 @@ class PhotoChildController extends Controller
      */
     public function store(Request $request)
     {
-        $photoChild = PhotoChild::create($request->except('file'));
+        $photoChild = PhotoChild::create($request->except('file','q'));
 
         if($request->hasFile('file'))
         {
@@ -94,7 +94,7 @@ class PhotoChildController extends Controller
      */
     public function update(Request $request, PhotoChild $photoChild)
     {
-        $photoChild->update($request->except('file'));
+        $photoChild->update($request->except('file','q'));
 
         if($request->hasFile('file'))
         {

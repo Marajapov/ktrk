@@ -13,7 +13,14 @@
                                 <div class="panel-heading">
                                     <h3 class="panel-title">
                                         Жаңылыктар <span class="divider"><i class="fa fa-circle"></i></span>
-                                        <a href=""><span class="ctg">{{ $post->category('category_id')->first()->title }}</span></a></h3>
+                                        <a href=""><span class="ctg">
+                                        @if(app()->getlocale() == 'kg')
+                                            {{ $post->category('category_id')->first()->title }}
+                                        @else
+                                            {{ $post->category('category_id')->first()->titleRu }}
+                                        @endif
+                                        </span></a>
+                                    </h3>
                                 </div>
                                 <div class="panel-body">
                                     <div class="col-md-12 block news-block">
@@ -21,12 +28,6 @@
                                             {{ $post->getTitle() }}
                                             <span><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
                                         </h4>
-
-                                            @if(!empty($post->related1))
-                                                <div class="related1">
-                                                    <a href="{{ route('front.post', $post->related1) }}">{{ $related1Post->getName() }}</a>        
-                                                </div>
-                                            @endif
 
                                             @if(!empty($post->related2))
                                                 <div class="related2">
@@ -45,7 +46,7 @@
                                         </p>
 
                                         <div class="carousel-post">
-                                            @if(!empty($parentId))
+                                            @if($parentId != '0')
                                                 @foreach($photoChilds as $photoChild)
                                                 <div class="col-md-4">
                                                     <a href="#">
@@ -56,38 +57,40 @@
                                             @endif
                                         </div>
                                     </div>
-
+    
+                                    @if(!empty($post->related1))
                                     <aside>
                                         <div class="topics-box">
                                             <h2>Материалы по теме</h2>
                                             <div class="topics">
+                                                
                                                 <div class="topic clearfix">
-                                                    <div class="t-date"><span class="date"><span class="time">14:29</span> 22 июля 2015</span></div>
-                                                    
-                                                    <div class="t-info">
-                                                        <a class="t-thumb" href="http://lenta.ru/articles/2015/07/22/gaidar/">
-                                                            <img alt="Михаил Саакашвили" src="http://icdn.lenta.ru/images/2015/07/21/20/20150721204846199/tabloid_5a8978c051d2e41f475126dc569058da.jpg">
-                                                        </a>
-                                                        <h4><a class="js-dh" href="http://lenta.ru/articles/2015/07/22/gaidar/">Старожилам здесь не место</a></h4>
-                                                        <div class="short">Зачем Михаил Саакашвили назначил своим замом Марию Гайдар</div>
+                                                    <div class="t-date">
+                                                        <span class="date">
+                                                            <span class="time">{{ $related1Post->getTime() }}</span>
+                                                            {{ $related1Post->getDay() }} {{ $related1Post->getMonthRu() }} {{ $related1Post->getYear() }}
+                                                        </span>
                                                     </div>
-                                                </div>
-                                                <div class="topic clearfix">
-                                                    <div class="t-date"><span class="date"><span class="time">14:29</span> 22 июля 2015</span></div>
-                                                    <a class="t-thumb" href="http://lenta.ru/articles/2015/07/22/gaidar/">
-                                                        <img alt="Михаил Саакашвили" src="http://icdn.lenta.ru/images/2015/07/21/20/20150721204846199/tabloid_5a8978c051d2e41f475126dc569058da.jpg">
+
+                                                    <a class="t-thumb" href="{{ route('front.post', $post->related1) }}">
+                                                        <img alt="alt photo text" src="{{ asset($related1Post->getFile()) }}">
                                                     </a>
-                                                    <div class="t-info">
-                                                        <h4><a class="js-dh" href="http://lenta.ru/articles/2015/07/22/gaidar/">Старожилам здесь не место</a></h4>
-                                                        <div class="short">Зачем Михаил Саакашвили назначил своим замом Марию Гайдар</div>
+                                                    
+                                                    <div class="t-info">                                                        
+                                                        <h4>
+                                                            <a class="js-dh" href="{{ route('front.post', $post->related1)}}">{{ $related1Post->getTitle() }}</a>
+                                                        </h4>                                             
                                                     </div>
                                                 </div>
+
                                             </div>
                                         </div>
                                     </aside>
+                                    @endif
+                             
 
                                     <footer>                                        
-                                        <a href="#">
+                                        <a href="{{ route('front.general') }}">
                                             <span>Бардык жаңылыктар <i class="fa fa-arrow-circle-right"></i></span>
                                         </a>
                                     </footer>

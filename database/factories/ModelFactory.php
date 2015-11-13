@@ -36,7 +36,6 @@ $factory->define(\Model\Post\ModelName::class, function (Faker\Generator $faker)
     return [
         'category_id' => $category->id(),
         'channel_id' => $channel->id(),
-        'name' => $faker->unique()->sentence(),
         'title' => $faker->unique()->sentence(),
         'content' => $faker->unique()->paragraph(),
         'description'  => $faker->unique()->sentence(),

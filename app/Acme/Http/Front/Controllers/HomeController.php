@@ -21,11 +21,16 @@ class HomeController extends Controller
      */
     public function Home()
     {
-        // dd(app()->getlocale());
-        
+        $lc = app()->getlocale();
         $channel = \Model\Channel\ModelName::general();
+       
+        if($lc == 'kg'){
+            $generalPosts = \Model\Post\ModelName::general($channel)->published()->languageru()->take(6)->skip(0)->orderBy('id', 'desc')->get();    
+        }elseif($lc == 'ru'){
+            $generalPosts = \Model\Post\ModelName::general($channel)->published()->languageru()->take(6)->skip(0)->orderBy('id', 'desc')->get();    
+        }
 
-        $generalPosts = \Model\Post\ModelName::general($channel)->published()->take(6)->skip(0)->orderBy('id', 'desc')->get();
+	
 
         $mediaLast = \Model\Media\ModelName::take(9)->get();
         $dayVideos = \Model\Media\ModelName::take(1)->orderBy('viewed','asc')->get();
@@ -96,15 +101,15 @@ class HomeController extends Controller
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
 
-        if($post->parentId != null)
+        if(($post->parentId != '0') && ($post->parentId != null))
         {
             $parentId = $post->parentId;
-            //$parentId = \Model\PhotoParent\ModelName::where('id','=',$parentId)->first();
-            //$photoChilds = \Model\PhotoChild\ModelName::where('parentId','=',$parentId->id)->get();
+            $parentId = \Model\PhotoParent\ModelName::where('id','=',$parentId)->first();
+            $photoChilds = \Model\PhotoChild\ModelName::where('parentId','=',$parentId->id)->get();
             
         }else{
-            $parentId = null;
-            $photoChilds = null;
+            $parentId = '0';
+            $photoChilds = '0';
         }
 
         if($post->related1 != null){
@@ -135,8 +140,8 @@ class HomeController extends Controller
 
             'relatedPosts' => $relatedPosts,
 
-            //'parentId'=> $parentId,
-            // 'photoChilds'=> $photoChilds,
+            'parentId'=> $parentId,
+            'photoChilds'=> $photoChilds,
 
             'categories'=>$categories,
             'positionTop'    => $positionTop,
