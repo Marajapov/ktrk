@@ -110,47 +110,7 @@
                                         </h3>
                                     </div>
                                     <div class="panel-body">
-                                        <div class="col-md-4 block">
-                                            <a href="#" class="news-thumb">
-                                                <img src="{{ asset('images/image.jpeg') }}" alt=""/>
-                                            </a>
-                                            <a href="#">
-                                                <h4>Название новости Название новости Название новости</h4>
-                                            </a>
-                                        </div>
-                                        <div class="col-md-4 block">
-                                            <a href="#" class="news-thumb">
-                                                <img src="{{ asset('images/image.jpeg') }}" alt=""/>
-                                            </a>
-                                            <a href="#">
-                                                <h4>Название новости Название новости Название новости</h4>
-                                            </a>
-                                        </div>
-                                        <div class="col-md-4 block">
-                                            <a href="#" class="news-thumb">
-                                                <img src="{{ asset('images/image.jpeg') }}" alt=""/>
-                                            </a>
-                                            <a href="#">
-                                                <h4>Название новости Название новости Название новости</h4>
-                                            </a>
-                                        </div>
-
-                                        <div class="col-md-4 block">
-                                            <a href="#" class="news-thumb">
-                                                <img src="{{ asset('images/image.jpeg') }}" alt=""/>
-                                            </a>
-                                            <a href="#">
-                                                <h4>Название новости Название новости Название новости</h4>
-                                            </a>
-                                        </div>
-                                        <div class="col-md-4 block">
-                                            <a href="#" class="news-thumb">
-                                                <img src="{{ asset('images/image.jpeg') }}" alt=""/>
-                                            </a>
-                                            <a href="#">
-                                                <h4>Название новости Название новости Название новости</h4>
-                                            </a>
-                                        </div>
+                                        
                                         <div class="col-md-4 block">
                                             <a href="#" class="news-thumb">
                                                 <img src="{{ asset('images/image.jpeg') }}" alt=""/>
