@@ -101,7 +101,7 @@ class HomeController extends Controller
         $positionTop = \Model\Banner\ModelName::top()->first();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
-
+        
         if(($post->parentId != '0') && ($post->parentId != null))
         {
             $parentId = $post->parentId;
