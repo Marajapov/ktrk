@@ -3651,25 +3651,25 @@ padding-right: 8px;
     -o-transition: all 0.2s ease;
     transition: all 0.2s ease;
 }
-.soc li:hover a i{
-    color: #ffffff;
-}
-.soc li.tw:hover{
-    background: #00aced;
-}
-.soc li.fb:hover{
-    background: #3b5998;
-}
-.soc li.ok:hover{
-    background: #f2720c;
-}
-.soc li.yt:hover{
-    background: #bb0000;
-}
+/*.soc li:hover a i{*/
+     /*color: #ffffff;*/
+ /*}*/
+/*.soc li.tw:hover{*/
+    /*background: #00aced;*/
+/*}*/
+/*.soc li.fb:hover{*/
+    /*background: #3b5998;*/
+/*}*/
+/*.soc li.ok:hover{*/
+    /*background: #f2720c;*/
+/*}*/
+/*.soc li.yt:hover{*/
+    /*background: #bb0000;*/
+/*}*/
 
-.soc li.in:hover{
-    background: #125688;
-}
+/*.soc li.in:hover{*/
+    /*background: #125688;*/
+/*}*/
 
 @media screen and (max-width: 1000px) {
    .soc  {
