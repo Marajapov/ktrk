@@ -233,7 +233,7 @@
                   </div>
 
                   <a href="#" class="text-center ads ads-300x250 middle-ad">
-                    <img src="@if(!empty($positionRight->file)) {{ asset($positionRight->file) }} @else img/banner/2.jpg @endif" alt="phot1"/>
+                    <img src="@if(!empty($positionRight->file)) {{ asset($positionRight->file) }} @else images/ads_300x250.gif @endif" alt="phot1"/>
                   </a>     
 
                 </div>
