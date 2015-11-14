@@ -54,7 +54,7 @@ body::after{
     /*overflow: hidden;*/
 
     /*background: #ffffff;*/
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(0, 0, 0, 0.65);
 
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
     -moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
