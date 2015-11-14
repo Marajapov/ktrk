@@ -12,7 +12,7 @@
                             <div class="panel panel-default panel-article">
                                 <div class="panel-heading">
                                     <h3 class="panel-title">
-                                        Жаңылыктар <span class="divider"><i class="fa fa-circle"></i></span>
+                                        {{ trans('site.Top news') }} <span class="divider"><i class="fa fa-circle"></i></span>
                                         <a href=""><span class="ctg">
                                         @if(app()->getlocale() == 'kg')
                                             {{ $post->category('category_id')->first()->title }}
@@ -61,7 +61,7 @@
                                     @if(!empty($post->related1))
                                     <aside>
                                         <div class="topics-box">
-                                            <h2>Материалы по теме</h2>
+                                            <h2>{{ trans('site.MatpoTeme') }}</h2>
                                             <div class="topics">
                                                 
                                                 <div class="topic clearfix">
@@ -91,7 +91,7 @@
 
                                     <footer>                                        
                                         <a href="{{ route('front.general') }}">
-                                            <span>Бардык жаңылыктар <i class="fa fa-arrow-circle-right"></i></span>
+                                            <span>{{ trans('site.PostAllNews') }}<i class="fa fa-arrow-circle-right"></i></span>
                                         </a>
                                     </footer>
                                 </div>
@@ -105,7 +105,8 @@
                                 <div class="panel-body">
                                     <div class="panel-heading">
                                         <h3 class="panel-title">
-                                            Тектеш жаңылыктар
+                                            {{ trans('site.TekteshNews') }}
+
                                         </h3>
                                     </div>
                                     <div class="panel-body">

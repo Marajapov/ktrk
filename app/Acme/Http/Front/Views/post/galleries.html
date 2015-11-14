@@ -25,7 +25,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="tvModalLabel">Телеканалдар</h4>
+                <h4 class="modal-title" id="tvModalLabel">{{ trans('site.Telechannels') }}</h4>
             </div>
             <div class="modal-body">
                 <div class="row">
@@ -54,7 +54,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="radioModalLabel">Радиостанциялар</h4>
+                <h4 class="modal-title" id="radioModalLabel">{{ trans('site.RadioStations') }}</h4>
             </div>
             <div class="modal-body">
                 <div class="row">
@@ -107,9 +107,9 @@
                                 <li>/</li>
                                 <li><a href="#">Телепрограмма</a></li>
                                 <li>/</li>
-                                <li><a href="#">Байкоочу кеңеш</a></li>
+                                <li><a href="#">{{ trans('site.BaikoochuKenesh') }}</a></li>
                                 <li>/</li>
-                                <li><a href="#">Редакциялык кеңешчи</a></li>
+                                <li><a href="#">{{ trans('site.RedKenesh') }}</a></li>
                             </ul>
                         </nav>
 
@@ -134,7 +134,7 @@
 
                         <button class="btn btn-danger btn-live">
                             <i class="fa fa-dot-circle-o"></i>
-                            түз эфир
+                           {{ trans('site.Live') }}
                         </button>
 
                         <div class="tv-radio">
@@ -257,7 +257,7 @@
                 <div class="top-right-block col-md-3 hidden">
                     <div class="panel panel-default ctg-panel">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><span>Категориялар</span></h3>
+                            <h3 class="panel-title"><span>{{ trans('site.AdminCategories') }}</span></h3>
                         </div>
                         <div class="panel-body">
                             <div class="col-md-12">

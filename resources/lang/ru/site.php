@@ -15,6 +15,26 @@ return [
 
     'Top news' => 'Новости',
     'All news' => 'Все новости',
+
+    //Header Footer titles
+    'Homepage' => 'Главная страница',
+    'BaikoochuKenesh' => 'Наблюдательный совет',
+    'RedKenesh' => 'Редакционный советник',
+    'TradeMark' => 'Общественная Телерадиовещательная корпорация Кыргызской Республики',
+    'Live' => 'прямой эфир',
+    'Telechannels' => 'Телеканалы',
+    'RadioStations' => 'Радиостанции',
+
+    //Post page
+    'MatpoTeme' => 'Материалы по теме',
+    'PostAllNews' => 'Все новости',
+    'TekteshNews' => 'Похожие новости',
+    '' => '',
+    '' => '',
+    '' => '',
+    '' => '',    
+
+    //One title words
     'Info' => 'Информация',
     'Change' => 'Изменить',
     'Delete' => 'Удалить',
@@ -164,4 +184,19 @@ return [
     'AdminUserName' => 'Имя',
     '' => '',
 
+    //FRONT language
+
+    //Home page
+    'FrontPostAll' => 'Все новости',    
+    'FrontPostLastNews' => 'Последние новости',
+    'FrontPostDaysVideo' => 'Видео дня',    
+    'FrontPostLastDays' => 'Прошедшие дни',
+    'FrontDirectorPage' => 'Страница генерального директора',    
+    '' => '',
+    '' => '',    
+    '' => '',
+    '' => '',    
+    '' => '',
+    '' => '',    
+    '' => '',
 ];

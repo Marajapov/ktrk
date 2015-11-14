@@ -19,7 +19,7 @@
                     <div class="panel panel-default panel-articles">
                         <div class="panel-heading">
                             <h3 class="panel-title">
-                                Жаңылыктар
+                                {{ trans('site.Top news') }}
                             </h3>
                         </div>
                         <div class="panel-body">
@@ -92,7 +92,7 @@
                                     <ul class="pagination">
                                         
                                         <li>
-                                            <a href="{{ route('front.general', ['page' => 1]) }}" class="btn btn-default @if($postAll->currentPage() == 1) disabled @endif">Начало</a>
+                                            <a href="{{ route('front.general', ['page' => 1]) }}" class="btn btn-default @if($postAll->currentPage() == 1) disabled @endif">{{ trans('site.Start') }}</a>
                                         </li>
                                         <li>
                                             <a href="{{ $postAll->previousPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span></a>
@@ -108,7 +108,7 @@
                                         @endfor
 
                                         <li>
-                                            <a href="{{ route('front.general', ['page' => ceil($postAll->total()/$perPage)]) }}" class="btn btn-default @if($postAll->currentPage() == ceil($postAll->total()/$perPage)) disabled @endif">Конец</a>
+                                            <a href="{{ route('front.general', ['page' => ceil($postAll->total()/$perPage)]) }}" class="btn btn-default @if($postAll->currentPage() == ceil($postAll->total()/$perPage)) disabled @endif">{{ trans('site.End') }}</a>
                                         </li>
 
                                     </ul>

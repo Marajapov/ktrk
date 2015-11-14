@@ -1,7 +1,7 @@
 @extends('Front::layouts.default')
 @section('title', 'Жетекчилер')
-@sectin('styles')
-	<link rel="stylesheet" type="text/css" href="{{ asset('/static/css/styles.css') }}">
+@section('styles')
+	<link rel="stylesheet" type="text/css" href="{{ asset('static/css/styles.css') }}">
 @stop
 @section('content')
 	 <div class="container main-wrapper">
@@ -14,7 +14,7 @@
 		                            <div class="row">
 		                                <div class="top-left-block col-xs-12 col-sm-6 col-md-6 directors">
 		                                    <div class="dir-box">
-		                                        <img src="{{ asset('static/images/persons/ilim.jpg') }}"  class="img-thumbnail">
+		                                        <img src="{{ asset('static/images/persons/ilim.jpg') }}" >
 		                                        <div class="dir-button"><a class="btn btn-primary" href="#" role="button">Толук маалымат</a></div>
 
 		                                        <div class="caption">
@@ -25,7 +25,7 @@
 		                                </div>
 		                                <div class="top-left-block col-xs-12 col-sm-6 col-md-6 directors">
 		                                    <div class="dir-box">
-		                                        <img src="{{ asset('static/images/persons/img_2.jpg') }}"  class="img-thumbnail">   
+		                                        <img src="{{ asset('static/images/persons/img_2.jpg') }}">   
 		                                        <div class="dir-button"><a class="btn btn-primary" href="#" role="button">Толук маалымат</a></div>
 		                                        <div class="caption">
 		                                            <h4>Асылбашев Калыйбек Шаршеналиевич</h4>
@@ -37,7 +37,7 @@
 		                            <div class="row">
 		                                <div class="top-left-block col-xs-12 col-sm-6 col-md-6 directors">
 		                                    <div class="dir-box">
-		                                        <img src="{{ asset('static/images/persons/img3.jpg') }}"  class="img-thumbnail">
+		                                        <img src="{{ asset('static/images/persons/img3.jpg') }}">
 		                                        <div class="dir-button"><a class="btn btn-primary" href="#" role="button">Толук маалымат</a></div>
 
 		                                        <div class="caption">
@@ -48,7 +48,7 @@
 		                                </div>
 		                                <div class="top-left-block col-xs-12 col-sm-6 col-md-6 directors">
 		                                    <div class="dir-box">
-		                                        <img src="{{ asset('static/images/persons/img4.jpg') }}"  class="img-thumbnail"> 
+		                                        <img src="{{ asset('static/images/persons/img4.jpg') }}" > 
 		                                        <div class="dir-button"><a class="btn btn-primary" href="#" role="button">Толук маалымат</a></div>
 		                                        <div class="caption">
 		                                            <h4>Алиев Бактияр Жеңишбекович</h4>

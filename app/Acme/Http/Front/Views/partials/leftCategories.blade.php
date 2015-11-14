@@ -2,7 +2,7 @@
 
     <div class="panel panel-default ctg-panel" data-spy="affix" data-offset-top="220">
         <div class="panel-heading">
-            <h3 class="panel-title"><span>Категориялар</span></h3>
+            <h3 class="panel-title"><span>{{ trans('site.AdminCategories') }}</span></h3>
         </div>
         <div class="panel-body">
             <div class="col-md-12">

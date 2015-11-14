@@ -579,16 +579,16 @@ header{
 }
 
 /*Social*/
+.socmuz {
+    position: absolute !important;
+    top: 10px !important;
+    right: 250px !important;    
+}
+
 .soc{
     position: absolute;
-/*    top: -29px;
+    top: -29px;
     right: 0;
-
-*/
-
-    top: 10px;
-    right: 250px;
-
     }
 .soc li{
     display: inline-block;
@@ -2570,6 +2570,8 @@ border: none;
 
 .fixedheader>.navbar .container-fluid .navbar-brand {
     color: #fff;
+    font-family: 'Roboto Condensed';
+    text-transform: uppercase;
 }
 
 

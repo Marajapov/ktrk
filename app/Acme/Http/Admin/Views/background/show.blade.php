@@ -12,7 +12,7 @@
     </div> 
     <div class="panel-body">
         <div class="col-md-5">
-            {!! Form::open(['route' => ['admin.background.destroy', $background], 'method' => 'DELETE', 'onsubmit' => 'return confirm("Өчүрүүгө макулсузбу?")']) !!}
+            {!! Form::open(['route' => ['admin.background.destroy', $background], 'method' => 'DELETE', 'onsubmit' => "return confirm('Вы уверены ?')"]) !!}
             <a href="{{ route('admin.background.edit', $background) }}" class="btn btn-primary">edit</a>
             <button class="btn btn-danger" type="submit">delete</button>
             {!! Form::close() !!}

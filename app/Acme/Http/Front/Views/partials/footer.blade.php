@@ -6,17 +6,17 @@
                     <div class="col-md-12">
                         <div class="row">
                             <ul>
-                                <li><a href="#">Башкы бет</a></li>
+                                <li><a href="#">{{ trans('site.Homepage') }}</a></li>
                                 <li><a href="#">КТРК</a></li>
                                 <li><a href="#">Видеопортал</a></li>
                                 <li><a href="#">Телепрограмма</a></li>
-                                <li><a href="#">Байкоочу кеңеш</a></li>
-                                <li><a href="#">Редакциялык кеңешчи</a></li>
+                                <li><a href="#">{{ trans('site.BaikoochuKenesh') }}</a></li>
+                                <li><a href="#">{{ trans('site.RedKenesh') }}</a></li>
                             </ul>
                         </div>
                     </div>
 
-                    <div class="col-md-12 copy"><i class="fa fa-copyright"></i> 2015 Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясы</div>
+                    <div class="col-md-12 copy"><i class="fa fa-copyright"></i>2015 {{ trans('site.TradeMark') }}</div>
                 </div>
             </div>
         </div>

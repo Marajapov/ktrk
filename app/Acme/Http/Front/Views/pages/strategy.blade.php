@@ -1,16 +1,10 @@
 @extends('Front::layouts.default')
 @section('title', '2013 - 2015 - жылга карай КТРКнын Өнүгүү стратегиясынын долбоору | КТРК')
-@sectin('styles')
-	<link rel="stylesheet" type="text/css" href="{{ asset('/static/css/styles.css') }}">
+@section('styles')
+	<link rel="stylesheet" type="text/css" href="{{ asset('static/css/styles.css') }}">
 @stop
 @section('content')
-	<style>
-	.rsarticles blockquote a:focus, a:hover {
-    color: #23527c !important;
-    text-decoration: underline !important;
-    cursor: pointer;
-} 
-	</style>
+
 	 <div class="container main-wrapper">
             <div class="row">
                 <section class="content clearfix">
@@ -21,7 +15,7 @@
 		                            <h3 class="panel-title"><span>2013 - 2015 - жылга карай КТРКнын Өнүгүү стратегиясынын долбоору</span></h3>
 		                        </div>
 		                        <div class="rsarticles">                     
-		                            <blockquote>2012-жылдын 6-декабрында КТРКнын Байкоочу кеңеши тарабынан колдоого алынып, <a data-toggle="modal" data-target=".strategy" class="titlelink">2013-2015-жылга карай Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясынын Өнүгүү стратегиясы</a> каналдын менеджменти тарабынан иштелип чыкты.</blockquote> 
+		                            <blockquote>2012-жылдын 6-декабрында КТРКнын Байкоочу кеңеши тарабынан колдоого алынып, <a data-toggle="modal" data-target=".strategy" class="titlelink">2013-2015-жылга карай Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясынын Өнүгүү стратегиясы <i class="fa fa-file-text"></i></a> каналдын менеджменти тарабынан иштелип чыкты.</blockquote> 
 		                            <div class="modal fade strategy" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
 		                                <div class="modal-dialog modal-lg">
 		                                    <div class="modal-content">

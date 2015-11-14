@@ -34,23 +34,14 @@
                 <div class="collapse navbar-collapse" id="menu">
                     <ul class="nav navbar-nav channel_switch">
                         <li class="sitemenu" id="site-channel1">
-                            <a href="#"><img src="{{ asset('images/ktrk_last.svg')}}"><span>КТРК</span></a></li>
+                            <a href="#"><img src="{{ asset('images/ktrk_last.svg')}}" style="height:40px;"><span>КТРК</span><h4>КТРК</h4></a></li>
                         <li class="sitemenu" id="site-channel1">
                             <a href="#"><img src="{{ asset('images/channels/balastan_white_notext.png')}}"><span>Баластан</span><h4>Баластан</h4></a></li>
                         <li class="sitemenu" id="site-channel1">
                             <a class="active" href="#"><img src="{{ asset('images/channels/muz_white_notext.png')}}" ><span>Музыка</span><h4>Музыка</h4></a></li>
                         <li class="sitemenu" id="site-channel1">
                             <a href="#"><img src="{{ asset('images/channels/madaniyat_white_notext.png')}}"><span>Маданият</span><h4>Маданият</h4></a></li>
-                        <li class="sitemenu" id="site-channel1">
-                            <a href="#"><img src="{{ asset('images/channels/1-radio.png')}}"><span>Биринчи Радио</span><h4>Биринчи Радио</h4></a></li>
-                       <!--  <li class="sitemenu" id="site-channel1">
-                            <a href="#"><img src="{{ asset('images/channels/baldar.png')}}"><span>Балдар ФМ</span></a></li> -->
-                        <li class="sitemenu" id="site-channel1">
-                            <a href="#"><img src="{{ asset('images/channels/min-kiyal.png')}}"><span>Миң Кыял ФМ</span></a></li>
-                        <li class="sitemenu" id="site-channel1">
-                            <a href="#"><img src="{{ asset('images/channels/kg-radio.png')}}"><span>Кыргыз Радиосу</span></a></li> 
-                             <li class="sitemenu" id="site-channel1">
-                            <a href="#"><img src="{{ asset('images/channels/dostuk.png')}}"><span>Достук Радиосу</span></a></li> 
+                   
                     </ul>  
                 </div><!-- /.navbar-collapse -->
             </nav>
@@ -114,7 +105,7 @@
                                     </ul>
 
                                     <ul class="nav navbar-nav navbar-right logo-block">
-                                        <ul class="soc">
+                                        <ul class="soc socmuz">
                                             <li class="tw"><a href="#" title="Twitter"><i class="fa fa-twitter"></i> </a>  </li>
                                             <li class="fb"><a href="#" title="Facebook"><i class="fa fa-facebook"></i></a></li>
                                             <li class="ok"><a href="#" title="Odnoklassniki"><i class="fa fa-odnoklassniki"></i></a></li>
@@ -203,7 +194,7 @@
                       <a href="#">
                         <div class="col-sm-12 dkp-anonce dkp-anonce-big" style="background-image: url(images/channels/muzkanal/soon.jpg);">
                             <div class="dkp-anonce-time">
-                                <span class="dkp-soon">Жакында</span>
+                                <span>18:30</span>
                             </div>
                             <div class="dkp-anonce-title">
                                 Жаңы программа. 
@@ -222,32 +213,29 @@
             </div>
 
             <div class="row dkp-big-3now ">
-                <div class="col-xs-4 rowfix">
-                    <a type="button" data-toggle="modal" data-target="#myModal" class="dkp-anonce dkp-anonce-small now dkp-border" style="background-image: url(images/channels/muzkanal/mirbek.jpg);" data-id="12056" data-target="#myModal">
+                    <div class="col-xs-4 rowfix" >
+                    <a href="#" data-toggle="modal" data-target="#myModal" class="dkp-anonce dkp-anonce-small  dkp-border" style="background-image: url(images/channels/muzkanal/mirbek.jpg);" data-id="12269">
                         <div class="dkp-3now-item-wrapper">
                             <div class="dkp-3now-item-time">
                                 <span>
-                                    <span>Эклюзив</span>
+                                    <span>18:00</span>
                                 </span>
                             </div>
                             <div class="dkp-3now-item-title">
-                                <span>Мирбек Атабеков</span> Булбулум
+                                <span>Булбулум</span> Мирбек Атабеков
                             </div>
                         </div>
                     </a>
-
                     <!-- Анонс Модал-->
                     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                    <h4 class="modal-title" id="myModalLabel">Мирбек Атабеков - Булбулум</h4>
+                                    <h4 class="modal-title" id="myModalLabel">Анонс</h4>
                                 </div>
                                 <div class="modal-body">
-                                    Мирбек Атабеков Булбулум аттуу жаңы клибин эл алдына тартуулады. Клиптин презентациясы Алтын Ордо студиясынада болду, көтптөгөн белгилүү ырчылар жана жылдыздар келип Мирбектин жаңы клибин көрүшүп, жакшы сөздөрүн айтышып, учурашып, саламдашып, өткөн кеткенди срушып анан кетишти
-
-                                    <iframe width="100%" height="450px" src="https://www.youtube.com/embed/ZYm3JvXPpKU" frameborder="0" allowfullscreen></iframe>
+                                    Телеберүү же дагы бир нерсе боюнча маалымат
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-default" data-dismiss="modal">Жабуу</button> 
@@ -265,7 +253,7 @@
                                 </span>
                             </div>
                             <div class="dkp-3now-item-title">
-                                <span>Гүлжигит Калыковдон</span> супер интервью
+                                <span>Интервью</span> Гүлжигит Калыков
                             </div>
                         </div>
                     </a>
@@ -296,7 +284,7 @@
                                 </span>
                             </div>
                             <div class="dkp-3now-item-title">
-                                <span>Минюра Рахимжанова</span> Мен кат жаздым
+                                <span>Мен кат жаздым</span>Минюра Рахимжанова
                             </div>
                         </div>
                     </a>
@@ -1059,9 +1047,10 @@
 new CBPGridGallery(document.getElementById('grid-gallery'));
         </script>
 
-        <script>
+       <script>
             var serverTZoffset = 360;
         </script>
+
 
         <script src="js/lightslider.js"></script>
 

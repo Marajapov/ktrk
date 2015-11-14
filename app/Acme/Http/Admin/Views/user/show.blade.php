@@ -20,7 +20,7 @@
             </p>
         </div>
         <div class="col-md-4 col-sm-3 col-xs-12">
-            {!! Form::open(['route' => ['admin.user.destroy', $user], 'method' => 'DELETE', 'onsubmit' => 'return confirm("{{ trans('site.AreYouAgree') }}")']) !!}
+            {!! Form::open(['route' => ['admin.user.destroy', $user], 'method' => 'DELETE', 'onsubmit' => "return confirm('Вы уверены ?')"]) !!}
             <a href="{{ route('admin.user.edit', $user) }}" class="btn btn-labeled btn-success"><span class="btn-label"><i class="glyphicon glyphicon-cog"></i></span>{{ trans('site.Change') }}</a>
             <button class="btn btn-labeled btn-danger" type="submit"><span class="btn-label"><i class="glyphicon glyphicon-remove"></i></span>{{ trans('site.Delete') }}</button>
             {!! Form::close() !!}

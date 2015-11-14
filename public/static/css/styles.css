@@ -9,7 +9,6 @@ and open the template in the editor.
 */
 
 /* Persons page*/
-
 .ptitle {
     position: relative;
     z-index: 0;
@@ -150,6 +149,7 @@ and open the template in the editor.
     position:relative;
     padding: 0px 20px 0px 20px;   
 }
+
 
 .directors p {
     line-height: 1.3em;
@@ -372,7 +372,9 @@ and open the template in the editor.
 .rsarticles {
     padding: 15px;
     text-align: justify;
+    font-size:18px;
 }
+
 .rsarticles a {
     text-decoration: underline;
 }

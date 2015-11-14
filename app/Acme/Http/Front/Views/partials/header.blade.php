@@ -71,7 +71,7 @@
 
                         <button class="btn btn-danger btn-live" data-toggle="modal" data-target="#liveModal">
                             <i class="fa fa-dot-circle-o"></i>
-                            түз эфир
+                            {{ trans('site.Live') }}
                         </button>
 
                         @include ("Front::partials.mainNav")         

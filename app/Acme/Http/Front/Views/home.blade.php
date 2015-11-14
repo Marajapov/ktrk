@@ -157,7 +157,7 @@
                             </a>
                             <div class="datetime">12:11:2015</div>
                             <div class="views"><i class="fa fa-eye"></i>&nbsp;2351</div>
-                            <p>Маршруткалар маселесин эртерээк чечпесес жакында транспорттук коллапс башталат </p>
+                            <p>Маршруткалар маселесин эртерээк чечпесе жакында транспорттук коллапс башталат </p>
                           </div>
                         </div>
                       </div>
@@ -170,7 +170,7 @@
                 <div class="top-right-block col-md-4">
                   <div class="panel panel-default panel-promo">
                     <div class="panel-heading">
-                      <h3 class="panel-title"><span>Күндүн видеосу</span></h3>
+                      <h3 class="panel-title"><span>{{ trans('site.FrontPostDaysVideo') }}</span></h3>
                     </div>
                     <div class="panel-body">
                       <div class="col-md-12 block main-video">
@@ -187,7 +187,7 @@
 
                       <div class="clearfix"></div>
 
-                      <h4 class="old-videos text-center">Өткөн күндөр</h4>
+                      <h4 class="old-videos text-center">{{ trans('site.FrontPostLastDays') }}</h4>
 
                       <div class="col-md-6 block main-video">
                         <div class="embed-responsive embed-responsive-16by9">
@@ -241,7 +241,7 @@
                 <div class="bottom-left-block col-md-4">
                   <div class="panel panel-default latest-news">
                     <div class="panel-heading">
-                      <h3 class="panel-title"><span>Акыркы жаңылыктар</span></h3>
+                      <h3 class="panel-title"><span>{{ trans('site.FrontPostLastNews') }}</span></h3>
                     </div>
                     <div class="panel-body">
                       <ul class="list-group">
@@ -272,7 +272,7 @@
 
                       <footer>
                         <a href="#">
-                          <span>Бардык жаңылыктар <i class="fa fa-arrow-circle-right"></i></span>
+                          <span>{{ trans('site.FrontPostAll') }} <i class="fa fa-arrow-circle-right"></i></span>
                         </a>
                       </footer>
                     </div>
@@ -280,7 +280,7 @@
 
                   <div class="panel panel-default">
                     <div class="panel-heading">
-                      <h3 class="panel-title director-title"><a href="#">Башкы директордун баракчасы</a></h3>
+                      <h3 class="panel-title director-title"><a href="#">{{ trans('site.FrontDirectorPage') }}</a></h3>
                     </div>
                     <div class="panel-body">
                       <div class="col-md-12" id="slideshow">

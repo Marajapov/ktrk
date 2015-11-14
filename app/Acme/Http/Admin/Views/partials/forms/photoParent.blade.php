@@ -3,7 +3,7 @@
 <div class="row">
     <div class="col-sm-10">
         <div class="form-group">
-            <label class="control-label">{{ trans('site.Title') }}</label>
+            <label class="control-label">{{ trans('site.TitleKG') }}</label>
             {!! Form::text('name', null, ["class" => "form-control", "required" => true, "title" => ""]) !!}
         </div>
     </div>

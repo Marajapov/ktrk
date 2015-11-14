@@ -16,6 +16,27 @@ return [
     'Top news' => 'Жаңылыктар',
     'All news' => 'Бардык',
     'Info' => 'Маалымат',
+
+
+    //Header Footer titles
+    'Homepage' => 'Башкы бет',
+    'BaikoochuKenesh' => 'Байкоочу кеңеш',
+    'RedKenesh' => 'Редакциялык кеңешчи',
+    'TradeMark' => 'Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясы',
+    'Live' => 'түз эфир',
+    'Telechannels' => 'Телеканалдар',
+    'RadioStations' => 'Радиостанциялар',
+
+    //Post page
+    'MatpoTeme' => 'Тектеш материалдар',
+    'PostAllNews' => 'Баардык жаңылыктар',
+    'TekteshNews' => 'Тектеш жаңылыктар',
+    '' => '',
+    '' => '',
+    '' => '',
+    '' => '',
+
+    //One title words
     'Change' => 'Өзгөртүү',
     'Delete' => 'Өчүрүү',
     'AreYouAgree' => 'Өчүрүүгө макулсузбу?',
@@ -166,5 +187,21 @@ return [
     'AdminUserAlls' => 'Баардык колдонуучулар',
     'AdminUserInfo' => 'Колдонуучу жөнүндө маалымат',
     'AdminUserName' => 'Аты жөнү',
+    '' => '',
+
+    //FRONT languages
+
+    //Home page
+    'FrontPostAll' => 'Баардык жаңылыктар',    
+    'FrontPostLastNews' => 'Акыркы жаңылыктар',
+    'FrontPostDaysVideo' => 'Күндүн видеосу',    
+    'FrontPostLastDays' => 'Өткөн күндөр',
+    'FrontDirectorPage' => 'Башкы директордун баракчасы',    
+    '' => '',
+    '' => '',    
+    '' => '',
+    '' => '',    
+    '' => '',
+    '' => '',    
     '' => '',
 ];
