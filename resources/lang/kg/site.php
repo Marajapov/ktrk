@@ -29,7 +29,7 @@ return [
 
     //Post page
     'MatpoTeme' => 'Тектеш материалдар',
-    'PostAllNews' => 'Баардык жаңылыктар',
+    'PostAllNews' => 'Бардык жаңылыктар',
     'TekteshNews' => 'Тектеш жаңылыктар',
     '' => '',
     '' => '',
@@ -192,13 +192,13 @@ return [
     //FRONT languages
 
     //Home page
-    'FrontPostAll' => 'Баардык жаңылыктар',    
+    'FrontPostAll' => 'Бардык жаңылыктар',
     'FrontPostLastNews' => 'Акыркы жаңылыктар',
     'FrontPostDaysVideo' => 'Күндүн видеосу',    
     'FrontPostLastDays' => 'Өткөн күндөр',
     'FrontDirectorPage' => 'Башкы директордун баракчасы',    
-    '' => '',
-    '' => '',    
+    'FrontVideoAll' => 'Бардык видеолор',
+    'FrontGalleryAll' => 'Бардык галереялар',
     '' => '',
     '' => '',    
     '' => '',

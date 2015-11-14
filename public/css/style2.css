@@ -457,7 +457,9 @@ header.top-menu,.logo-block{
 
 /*LATEST NEWS*/
 .panel.latest-news{
+    border-bottom: 2px solid #F1F4F9;
     border-top: 2px solid #F1F4F9;
+    border-right: 2px solid #F1F4F9;
 
     background: none;
     -webkit-box-shadow: none;
@@ -465,18 +467,24 @@ header.top-menu,.logo-block{
     box-shadow: none;
 }
 
+/*PANEL DIRECTOR*/
+.panel-director{
+    border-top: 2px solid #F1F4F9;
+    border-right: 2px solid #F1F4F9;
+}
+
 /*PANEL-CAROUSEL*/
 .panel-carousel{
-    border-right: 3px solid #F1F4F9;
-    border-bottom: 3px solid #F1F4F9;
+    border-right: 2px solid #F1F4F9;
+    border-bottom: 2px solid #F1F4F9;
     height: 160px;
 }
 
 /*VIDEOPORTAL*/
 .videoportal{
-    border-left: 3px solid #F1F4F9;
-    border-bottom: 3px solid #F1F4F9;
-    border-top: 3px solid #F1F4F9;
+    border-left: 2px solid #F1F4F9;
+    border-bottom: 2px solid #F1F4F9;
+    border-top: 2px solid #F1F4F9;
 }
 
 /*PANEL ARTICLE*/
@@ -487,7 +495,7 @@ header.top-menu,.logo-block{
     position: relative;
     right: auto;
     top: auto;
-    
+
     display: inline-block;
     vertical-align: middle;
 
@@ -496,4 +504,30 @@ header.top-menu,.logo-block{
 }
 .panel-article .news-title .extra i{
      margin-right: 5px;
- }
+}
+
+/*PANEL GALLERY*/
+.gallery{
+    border-left: 2px solid #F1F4F9;
+    border-top: 2px solid #F1F4F9;
+    height: auto;
+
+    background: #ffffff;
+}
+.gallery .panel-heading h3{
+    color: #8493A3;
+}
+.gallery .panel-heading a.all{
+    float: right;
+
+    color: #237dac;
+    font-family: "Roboto", Helvetica , Arial, sans-serif;
+    font-size: 12px;
+    text-transform: none;
+}
+.gallery .panel-heading a.all:hover{
+    color: #2D3E4A;
+}
+.gallery .panel-heading i{
+    padding-left: 5px;
+}

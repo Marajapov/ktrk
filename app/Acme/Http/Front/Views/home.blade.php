@@ -53,7 +53,7 @@
 
                 <footer>
                   <a href="{{ route('front.general') }}">
-                    <span>{{ trans('site.All news') }} <i class="fa fa-arrow-circle-right"></i></span>
+                    <span>{{ trans('site.FrontPostAll') }} <i class="fa fa-arrow-circle-right"></i></span>
                   </a>
                 </footer>
               </div>
@@ -225,7 +225,7 @@
 
                       <footer>
                         <a href="#">
-                          <span>Архив <i class="fa fa-arrow-circle-right"></i></span>
+                          <span>{{ trans('site.FrontVideoAll') }} <i class="fa fa-arrow-circle-right"></i></span>
                         </a>
                       </footer>
 
@@ -278,7 +278,7 @@
                     </div>
                   </div>
 
-                  <div class="panel panel-default">
+                  <div class="panel panel-default panel-director">
                     <div class="panel-heading">
                       <h3 class="panel-title director-title"><a href="#">{{ trans('site.FrontDirectorPage') }}</a></h3>
                     </div>
@@ -318,7 +318,7 @@
                 <div class="bottom-right-block col-md-8">
                   <div class="panel panel-default videoportal">
                     <div class="panel-heading">
-                      <h3 class="panel-title"><span>Видеопортал</span></h3>
+                      <h3 class="panel-title"><a href="#"><span>Видеопортал</span></a></h3>
                     </div>
                     <div class="panel-body">
 
@@ -350,7 +350,7 @@
 
                       <footer>
                         <a href="{{ route('front.media.index') }}">
-                          <span>Архив <i class="fa fa-arrow-circle-right"></i></span>
+                          <span>{{ trans('site.FrontVideoAll') }} <i class="fa fa-arrow-circle-right"></i></span>
                         </a>
                       </footer>
 
@@ -363,7 +363,10 @@
 
                   <div class="panel panel-default panel-carousel gallery">
                     <div class="panel-heading">
-                      <h3 class="panel-title"><span>Фотогалерея</span></h3>
+                      <h3 class="panel-title">
+                          <a href="#"><span>Фотогалерея</span></a>
+                          <a class="all" href="#">{{ trans('site.FrontGalleryAll') }} <i class="fa fa-arrow-circle-right"></i></a>
+                      </h3>
                     </div>
                     <div class="panel-body">
                       <div class="col-md-12">
