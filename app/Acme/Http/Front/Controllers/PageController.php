@@ -97,7 +97,7 @@ class PageController extends Controller
             ]);
     }
 
-    public function editionkeneshbasePage()
+    public function editionkeneshPage()
     {
         $categories = \Model\Category\ModelName::all();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
