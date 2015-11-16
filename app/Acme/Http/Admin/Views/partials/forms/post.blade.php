@@ -1,6 +1,25 @@
 @include('Front::messages.flash')
 <script type="text/javascript" src="/vendor/tinymce/js/tinymce/tinymce.min.js"></script>
 
+@section('styles')
+    <!-- Include Editor style. -->
+    <link href="{{ asset('froala/css/froala_editor.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('froala/css/froala_style.min.css') }}" rel="stylesheet" type="text/css" />
+
+    <!-- Include Editor Plugins style. -->
+    <link rel="stylesheet" href="{{ asset('froala/css/plugins/char_counter.css')}}">
+    <link rel="stylesheet" href="{{ asset('froala/css/plugins/code_view.css')}}">
+    <link rel="stylesheet" href="{{ asset('froala/css/plugins/colors.css')}}">
+    <link rel="stylesheet" href="{{ asset('froala/css/plugins/emoticons.css')}}">
+    <link rel="stylesheet" href="{{ asset('froala/css/plugins/file.css')}}">
+    <link rel="stylesheet" href="{{ asset('froala/css/plugins/fullscreen.css')}}">
+    <link rel="stylesheet" href="{{ asset('froala/css/plugins/image.css')}}">
+    <link rel="stylesheet" href="{{ asset('froala/css/plugins/image_manager.css')}}">
+    <link rel="stylesheet" href="{{ asset('froala/css/plugins/line_breaker.css')}}">
+    <link rel="stylesheet" href="{{ asset('froala/css/plugins/table.css')}}">
+    <link rel="stylesheet" href="{{ asset('froala/css/plugins/video.css')}}">
+@endsection
+
 <div class="row">
     
     <div class="panel panel-success">
@@ -100,7 +119,7 @@
             <div class="col-xs-12">
                 <div class="form-group">
                     <label class="control-label">{{ trans('site.TextKG') }}</label>
-                    {!! Form::textarea('content', null, ["class" => "form-control tinymce-container"]) !!}
+                    {!! Form::textarea('content', null, ["class" => "form-control", "id" => "editKg"]) !!}
                 </div>
             </div>
 
@@ -152,7 +171,7 @@
             <div class="col-xs-12">
                 <div class="form-group">
                     <label class="control-label">{{ trans('site.TextRU') }}</label>
-                    {!! Form::textarea('contentRu', null, ["class" => "form-control tinymce-container"]) !!}
+                    {!! Form::textarea('contentRu', null, ["class" => "form-control", "id" => "editRu"]) !!}
                 </div>
             </div>
 
@@ -200,42 +219,19 @@
 <div><br></div>
 
  <!-- select2 -->
-        <script>
-            $(document).ready(function () {
-                $(".select2_single").select2({
-                    placeholder: "Select a state",
-                    allowClear: true
-                });
-                $(".select2_group").select2({});
-                $(".select2_multiple").select2({
-                    maximumSelectionLength: 4,
-                    placeholder: "With Max Selection limit 4",
-                    allowClear: true
-                });
-            });
-        </script>
-        <!-- /select2 -->
-
-<script type="text/javascript">
-    tinymce.init({
-        selector: "textarea.tinymce-container",
-        language: "ru",
-        plugins: [
-        "advlist autolink lists link image charmap print preview anchor",
-        "searchreplace visualblocks code fullscreen",
-        "insertdatetime media table contextmenu paste textcolor",
-        ],
-        toolbar: "fontselect fontsizeselect forecolor | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media | undo redo",
-        font_formats: "Calibri=calibri,helvetica,sans-serif;"+
-        "Helvetica=helvetica;"+
-        "Times New Roman=times new roman,times;"+
-        "Verdana=verdana,geneva;"+
-        "Arial=arial,helvetica,sans-serif;"+
-        "Arial Black=arial black,avant garde;"+
-        "Courier New=courier new,courier;"+
-        "Comic Sans MS=comic sans ms,sans-serif;"+
-        "Impact=impact,chicago;",
-        relative_urls: false,
-        image_advtab: true ,
+<script>
+    $(document).ready(function () {
+        $(".select2_single").select2({
+            placeholder: "Select a state",
+            allowClear: true
+        });
+        $(".select2_group").select2({});
+        $(".select2_multiple").select2({
+            maximumSelectionLength: 4,
+            placeholder: "With Max Selection limit 4",
+            allowClear: true
+        });
     });
 </script>
+<!-- /select2 -->
+
