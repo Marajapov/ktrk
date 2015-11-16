@@ -103,6 +103,7 @@ return [
     'AdminCategoryChanged' => 'Изменить категорию',
     'AdminCategoryAddNew' => 'Добавить новую категорию',
     'AdminCategories' => 'Категории',
+    'AdminMediaCategories' => 'Список телепередач',
     'AdminCategoryTekteshArticles' => 'Все новости (статьи) относяшиеся этой категории',
     'AdminCategoryTitlekg' => 'Тема на кыргызском',
     'AdminCategoryTitleru' => 'Тема на русском',

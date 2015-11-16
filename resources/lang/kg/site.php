@@ -108,6 +108,7 @@ return [
     'AdminCategoryChanged' => 'Категорияны өзгөртүү',
     'AdminCategoryAddNew' => 'Жаңы категорияны кошуу',
     'AdminCategories' => 'Категориялар',
+    'AdminMediaCategories' => 'Телеберүүлөрдүн тизмеги',
     'AdminCategoryTekteshArticles' => 'Бул категорияга тиешелүү баардык жаңылыктар (макалалар)',
     'AdminCategoryTitlekg' => 'Тема Кыргызча',
     'AdminCategoryTitleru' => 'Тема Орусча',
