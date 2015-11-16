@@ -110,6 +110,7 @@
 <script>
     $(function() {
         $('#editKg').froalaEditor({
+
             language: 'ru',
 
             imageUploadURL: "1000.ktrk.kg/froala/upload_image.php"
