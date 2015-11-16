@@ -24,11 +24,11 @@ if ((($mime == "image/gif")
     $name = sha1(microtime()) . "." . $extension;
 
     // Save file in the uploads folder.
-    move_uploaded_file($_FILES["file"]["tmp_name"], getcwd() . "../img/gallery" . $name);
+    move_uploaded_file($_FILES["file"]["tmp_name"], getcwd() . "/uploads/" . $name);
 
     // Generate response.
     $response = new StdClass;
-    $response->link = "http://ktrk.dev/img/gallery" . $name;
+    $response->link = "http://www.ktrk.dev/froala/uploads/" . $name;
     $response->file_name = $name;
     echo stripslashes(json_encode($response));
 } else{

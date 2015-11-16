@@ -33,11 +33,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'access:admin', 'namespace' =
 
     Route::get('photoChild/create/{photoParent}', 'PhotoChildController@create');
 
-    Route::get('post/create/{froala_upload}', 'PostController@froala_upload');
-
-
-
-
     Route::resource('menu', 'MenuController');
     Route::get ('menu/code/{code}', ['as' => 'admin.menu.code', 'uses' => 'MenuController@code']);
     Route::post('menu/save/{code}', ['as' => 'admin.menu.save', 'uses' => 'MenuController@save']);

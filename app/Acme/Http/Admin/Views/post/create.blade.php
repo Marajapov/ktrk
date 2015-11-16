@@ -114,7 +114,9 @@
             language: 'ru',
 
             imageUploadParam: 'file',
-            imageUploadURL: "http://www.1000.ktrk.kg/froala/upload_image.php"
+            imageUploadURL: "{{ asset('froala/upload_image.php') }}",
+
+            imageManagerLoadURL: "{{ asset('froala/load_images.php') }}"
 
         }).on('froalaEditor.image.error', function (e, editor, error, response) {
             // Bad link.
