@@ -58,6 +58,12 @@
         window.onload = init();
     </script>
 
+  <!-- 1. skin -->
+  <link rel="stylesheet" href="{{ asset('flowplayer/skin/functional.css') }}">
+
+  <!-- 3. flowplayer -->
+  <script src="{{ asset('flowplayer/flowplayer.min.js') }}"></script>
+
 </head>
 <body>
 

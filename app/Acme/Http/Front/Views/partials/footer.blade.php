@@ -129,7 +129,7 @@
 </script>
 
 
-<script src="{{ asset('jwplayer/jwplayer.js') }}"></script>
+<!--<script src="{{-- asset('jwplayer/jwplayer.js') --}}"></script>
 <script>jwplayer.key="tmEO2SU8NzqLBoHr2Vq6nV13XCyfo8xbdiCb/Q==";</script>
 
 <script type="text/javascript">
@@ -145,7 +145,7 @@
 
     playerInstance.setup({
         playlist: [{
-            image: "{{ asset('images/live_bg.png') }}",
+            image: "{{-- asset('images/live_bg.png') --}}",
             sources: [{
                 file: "rtmp://212.112.96.233:1936/live/ktrk.stream"
             }]
@@ -159,7 +159,7 @@
         },
         stretching: "exactfit"
     });
-</script>
+</script> -->
 
 <script>
     var toggleSlide = function(){

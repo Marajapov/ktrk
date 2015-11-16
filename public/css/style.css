@@ -260,7 +260,7 @@ img{
     transform: translateY(-50%) translateX(-50%);
 }
 #liveModal .modal-dialog{
-    width: 660px;
+    /*width: 660px;*/
 }
 #liveModal .modal-content{
     border: 0;
