@@ -109,7 +109,7 @@
 <!-- Initialize the editor. -->
 <script>
     $(function() {
-        $('#editKg').froalaEditor({
+        $('#editKg, #editRu').froalaEditor({
             language: 'ru',
 
             imageUploadParam: 'file',
@@ -118,19 +118,6 @@
             imageManagerLoadURL: "{{ asset('froala/load_images.php') }}"
 
         });
-    });
-</script>
-
-<script>
-    $(function() {
-        $('#editRu').froalaEditor({
-            language: 'ru',
-
-            imageUploadParam: 'file',
-            imageUploadURL: "{{ asset('froala/upload_image.php') }}",
-
-            imageManagerLoadURL: "{{ asset('froala/load_images.php') }}"
-        })
     });
 </script>
 

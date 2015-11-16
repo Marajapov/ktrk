@@ -158,7 +158,8 @@ return [
     'AdminPhotochildAddNewImg' => 'Добавить новую картину',
     'AdminPhotochildAllImg' => 'Все картинки',
     'AdminPhotoChildSelectGaller' => 'Выберите фото галерею',
-    '' => '',
+    'DescriptionKg' => 'Описание на кыргызском',
+    'DescriptionRu' => 'Описание на русском',
 
     //PhotoParent menu
     'AdminPhotoParentAddNew' => 'Создать новую фото галерею',

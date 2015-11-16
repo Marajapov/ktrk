@@ -52,8 +52,9 @@ class PhotoChildController extends Controller
         if($request->hasFile('file'))
         {
             $file = $request->file('file');
-            $dir  = 'img/photoChild';
-            $name = $photoChild->id().'.'.$file->getClientOriginalExtension();
+            $time = time();
+            $dir  = 'froala/uploads';
+            $name = $photoChild->id().$time.'.'.$file->getClientOriginalExtension();
 
             $storage = \Storage::disk('public');
             $storage->makeDirectory($dir);
@@ -75,7 +76,9 @@ class PhotoChildController extends Controller
      */
     public function show(PhotoChild $photoChild)
     {
+        $PhotoParentList = \Model\PhotoParent\ModelName::lists('name', 'id')->toArray();
         return view('Admin::photoChild.show', [
+            'PhotoParentList' => $PhotoParentList,
             'photoChild' => $photoChild,
         ]);
     }
@@ -88,7 +91,11 @@ class PhotoChildController extends Controller
      */
     public function edit(PhotoChild $photoChild)
     {
-        return view('Admin::photoChild.edit', ['photoChild' => $photoChild]);
+        $PhotoParentList = \Model\PhotoParent\ModelName::lists('name', 'id')->toArray();
+        return view(
+            'Admin::photoChild.edit', ['photoChild' => $photoChild,
+            'PhotoParentList' => $PhotoParentList,
+            ]);
     }
 
     /**
@@ -105,8 +112,9 @@ class PhotoChildController extends Controller
         if($request->hasFile('file'))
         {
             $file = $request->file('file');
-            $dir  = 'img/photoChild';
-            $name = $photoChild->id().'.'.$file->getClientOriginalExtension();
+            $time = time();
+            $dir  = 'froala/uploads';
+            $name = $photoChild->id().$time.'.'.$file->getClientOriginalExtension();
 
             $storage = \Storage::disk('public');
             $storage->makeDirectory($dir);

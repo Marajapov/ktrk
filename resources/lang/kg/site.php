@@ -163,7 +163,8 @@ return [
     'AdminPhotochildAddNewImg' => 'Жаңы сүрөт кошуу',
     'AdminPhotochildAllImg' => 'Баардык сүрөттөр',
     'AdminPhotoChildSelectGaller' => 'Сүрөт галереясын тандаңыз',
-    '' => '',
+    'DescriptionKg' => 'Баяндоо кыргызча',
+    'DescriptionRu' => 'Баяндоо орусча',
 
     //PhotoParent menu
     'AdminPhotoParentAddNew' => 'Жаңы сүрөт галереясын түзүү',

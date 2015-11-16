@@ -39,7 +39,7 @@ class MediaCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        MediaCategory::create($request->all());
+        MediaCategory::create($request->except('q'));
 
         return redirect()->route('admin.mediaCategory.index');
     }
@@ -75,7 +75,7 @@ class MediaCategoryController extends Controller
      */
     public function update(Request $request, MediaCategory $mediaCategory)
     {
-        $mediaCategory->update($request->all());
+        $mediaCategory->update($request->except('q'));
 
         return redirect()->route('admin.mediaCategory.show', $mediaCategory);
     }

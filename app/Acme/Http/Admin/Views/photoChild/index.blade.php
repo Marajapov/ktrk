@@ -29,7 +29,10 @@
 				<div class="clearfix"></div>
 				<div class="list-group">
 					@foreach($photoChilds as $photoChild)
-					<a href="{{ route('admin.photoChild.show', $photoChild) }}" class="list-group-item">{{ $photoChild->getName() }}</a>
+					<a href="{{ route('admin.photoChild.show', $photoChild) }}" class="list-group-item col-md-1">
+						{{ $photoChild->getName() }}
+						<img src="{{ asset($photoChild->getFile()) }}" alt="" width="100" height="80">
+					</a>
 					@endforeach
 				</div>
 			</div>

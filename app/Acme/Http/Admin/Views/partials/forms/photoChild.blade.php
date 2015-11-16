@@ -14,25 +14,23 @@
             {!! Form::text('nameRu', null, ["class" => "form-control", "required" => true, "title" => ""]) !!}
         </div>
     </div>
-
     <div class="col-sm-8">
         <div class="form-group">
             <label class="control-label">{{ trans('site.AdminPhotoChildSelectGaller') }}</label>
-            
-            {!! Form::select('parentId', array('0'=>'--Выберите--')+ $PhotoParentList, null, ["class" => "select2_group form-control", "title" => ""]) !!}
+{!! Form::select('parentId', array('0'=>'--Выберите--')+ $PhotoParentList, null, ["class" => "select2_group form-control", "title" => ""]) !!}
         </div>
     </div>
 
     <div class="col-sm-8">
         <div class="form-group">
-            <label class="control-label">{{ trans('site.Description') }}</label>
+            <label class="control-label">{{ trans('site.DescriptionKg') }}</label>
             {!! Form::text('description', null, ["class" => "form-control", "required" => true, "title" => ""]) !!}
         </div>
     </div>
 
     <div class="col-sm-8">
         <div class="form-group">
-            <label class="control-label">{{ trans('site.Description') }}</label>
+            <label class="control-label">{{ trans('site.DescriptionRu') }}</label>
             {!! Form::text('descriptionRu', null, ["class" => "form-control", "required" => true, "title" => ""]) !!}
         </div>
     </div>
@@ -58,7 +56,7 @@
 
 <button type="submit" class="btn btn-primary">{{ trans('site.Save') }}</button>
 
-<a href="{{ route('admin.photoParent.index') }}" class="btn btn-default">{{ trans('site.Back') }}</a>
+<a href="{{ route('admin.photoChild.index') }}" class="btn btn-default">{{ trans('site.Back') }}</a>
 
 <!-- select2 -->
 <script>
