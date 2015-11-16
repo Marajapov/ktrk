@@ -34,24 +34,14 @@
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="nav navbar-nav channel_switch">
                     <li class="sitemenu" id="site-channel1">
-                        <a href="#"><img src="{{ asset('images/ktrk_last.svg')}}"><span>КТРК</span></a></li>
+                        <a href="#"><img src="{{ asset('images/ktrk_last.svg')}}" style="height:40px;"><span>КТРК</span></a></li>
                         <li class="sitemenu" id="site-channel1">
                             <a href="#"><img src="{{ asset('images/channels/balastan_white_notext.png')}}"><span>Баластан</span><h4>Баластан</h4></a></li>
                             <li class="sitemenu" id="site-channel1">
                                 <a class="active" href="#"><img src="{{ asset('images/channels/muz_white_notext.png')}}" ><span>Музыка</span><h4>Музыка</h4></a></li>
                                 <li class="sitemenu" id="site-channel1">
                                     <a href="#"><img src="{{ asset('images/channels/madaniyat_white_notext.png')}}"><span>Маданият</span><h4>Маданият</h4></a></li>
-                                    <li class="sitemenu" id="site-channel1">
-                                        <a href="#"><img src="{{ asset('images/channels/1-radio.png')}}"><span>Биринчи Радио</span><h4>Биринчи Радио</h4></a></li>
-                       <!--  <li class="sitemenu" id="site-channel1">
-                       <a href="#"><img src="{{ asset('images/channels/baldar.png')}}"><span>Балдар ФМ</span></a></li> -->
-                       <li class="sitemenu" id="site-channel1">
-                        <a href="#"><img src="{{ asset('images/channels/min-kiyal.png')}}"><span>Миң Кыял ФМ</span></a></li>
-                        <li class="sitemenu" id="site-channel1">
-                            <a href="#"><img src="{{ asset('images/channels/kg-radio.png')}}"><span>Кыргыз Радиосу</span></a></li> 
-                            <li class="sitemenu" id="site-channel1">
-                                <a href="#"><img src="{{ asset('images/channels/dostuk.png')}}"><span>Достук Радиосу</span></a></li> 
-                            </ul>  
+              
                         </div><!-- /.navbar-collapse -->
                     </nav>
                 </div>  
@@ -61,61 +51,52 @@
                     <div class="row">
                         <div class="col-md-12">         
 
-                            <div class="row fixedheader">
-                                <nav class="navbar">
-                                    <div class="container-fluid">
-                                        <!-- Brand and toggle get grouped for better mobile display -->
-                                        <div class="navbar-header">
-                                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                                                <span class="sr-only">Меню</span>
-                                                <span class="icon-bar"></span>
-                                                <span class="icon-bar"></span>
-                                                <span class="icon-bar"></span>
+                         <div class="row fixedheader">
+                        <nav class="navbar">
+                            <div class="container-fluid">
+                                <!-- Brand and toggle get grouped for better mobile display -->
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                        <span class="sr-only">Меню</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                    <div class="logo-block search-block">
+                                        <a class="search-toggle"><i class="fa fa-search"></i></a>
+
+                                         <form class="form-search" action="{{ route('front.search') }}" method="get">
+                                            <div class="form-group pull-right">
+                                                <input type="text" name="search" class="form-control" placeholder="Издөө"/>
+                                            </div> 
+                                            <a class="btn close-search">
+                                                <i class="fa fa-close"></i>
+                                            </a>
+
+                                            <button class="btn submit-search" type="submit">
+                                                <i class="fa fa-search"></i>
                                             </button>
-                                            <div class="logo-block search-block">
-                                                <a class="search-toggle"><i class="fa fa-search"></i></a>
+                                        </form>
+                                    </div>
+                                    <a class="navbar-brand" href="{{ route('muzkanal.home') }}"> <i class="fa fa-home"></i>Башкы</a>
+                                </div>
 
-                                                <form class="form-search" action="{{ route('front.search') }}" method="get">
-                                                    <div class="form-group pull-right">
-                                                        <input type="text" name="search" class="form-control" placeholder="Издөө"/>
-                                                    </div>
+                                
 
-                                                    <a class="btn close-search">
-                                                        <i class="fa fa-close"></i>
-                                                    </a>
-
-                                                    <button class="btn submit-search" type="submit">
-                                                        <i class="fa fa-search"></i>
-                                                    </button>
-                                                </form>
-                                            </div>
-                                            <a class="navbar-brand" href="#"> <i class="fa fa-home"></i>Башкы</a>
-                                        </div>
-
-
-
-                                        <!-- Collect the nav links, forms, and other content for toggling -->
-                                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                                            <ul class="nav navbar-nav">     
-                                                <li><a href="#"><i class="fa fa-info-circle"></i>О канале</a></li>
-                                                <li class="dropdown">
-                                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-microphone"></i>Хит-Парад <!-- <span class="caret"></span> --></a>
-                                     <!--        <ul class="dropdown-menu">
-                                                <li><a href="#">Хит парад</a></li>
-                                                <li><a href="#">Хит парад 2</a></li>
-                                                <li><a href="#">Хит парад 3</a></li>
-                                                <li role="separator" class="divider"></li>
-                                                <li><a href="#">Топ парад</a></li>
-                                                <li role="separator" class="divider"></li>
-                                                <li><a href="#">Парад планет</a></li>
-                                            </ul> -->
+                                <!-- Collect the nav links, forms, and other content for toggling -->
+                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                    <ul class="nav navbar-nav">     
+                                        <li><a href="{{ route('muzkanal.about') }}"><i class="fa fa-info-circle"></i>О канале</a></li>
+                                        <li>
+                                            <a href="{{ route('muzkanal.hitparad') }}"><i class="fa fa-microphone"></i>Хит-Парад <!-- <span class="caret"></span> --></a>
+                                 
                                         </li>
-                                        <li><a href="#"><i class="fa fa-picture-o"></i>Фото</a></li>
-                                        <li><a href="#"><i class="fa fa-youtube-play"></i>Клипы</a></li>
+                                        <li><a href="{{ route('muzkanal.photos') }}"><i class="fa fa-picture-o"></i>Фото</a></li>
+                                        <li><a href="{{ route('muzkanal.videos') }}"><i class="fa fa-youtube-play"></i>Клипы</a></li>
                                     </ul>
 
                                     <ul class="nav navbar-nav navbar-right logo-block">
-                                         <ul class="soc">
+                                        <ul class="soc socmuz">
                                             <li class="tw"><a href="#" title="Twitter"><i class="fa fa-twitter"></i> </a>  </li>
                                             <li class="fb"><a href="#" title="Facebook"><i class="fa fa-facebook"></i></a></li>
                                             <li class="ok"><a href="#" title="Odnoklassniki"><i class="fa fa-odnoklassniki"></i></a></li>
@@ -123,9 +104,9 @@
                                             <li class="in"><a href="#" title="Instagram"><i class="fa fa-instagram"></i></a></li>
                                             
                                         </ul>
-                                       <a class="search-toggle"><i class="fa fa-search"></i></a>
+                                     <a class="search-toggle"><i class="fa fa-search"></i></a>
 
-                                       <form class="form-search" action="{{ route('front.search') }}" method="get">
+                                     <form class="form-search" action="{{ route('front.search') }}" method="get">
                                         <div class="form-group pull-right">
                                             <input type="text" name="search" class="form-control" placeholder="Издөө"/>
                                         </div>
@@ -142,8 +123,14 @@
                                         <i class="fa fa-dot-circle-o"></i>
                                         түз эфир
                                     </button>
-                                </ul>
-                            </div><!-- /.navbar-collapse -->
+                                    </ul>
+                                </div><!-- /.navbar-collapse -->
+                            </div><!-- /.container-fluid -->
+                        </nav>
+                    </div>
+
+
+                            <!-- /.navbar-collapse -->
                         </div><!-- /.container-fluid -->
                     </nav>
                 </div>
@@ -169,24 +156,19 @@
                                 <div class="panel-body">
                                     <div class="media">                                
                                       <div class="media-body">
-                                        <h4 class="media-heading"> <p><span>«Русский роман»</span> - настоящий подарок для всех любителей отечественных мелодрам. В жизни миллионов телезрителей кинороманы занимают особое место и ни одно другое телевизионное зрелище не в состоянии заменить их.</p> </h4>
+                                        <h4 class="media-heading"> <p>Самара Токтакунова встретилась с начинающими музыкантами.</p> 
+                                        <p>Учащиеся музыкальной школы имени Мукаша Абдраева встретились с народной артисткой Советского Союза Самарой Токтакуновой. Встреча прошла в актовом зале училища, где каждый мог задать великой комузистке интересующие вопросы.</p></h4>
                                         <div class="media-left">
-                                           <img class="media-object" src="{{ asset('images/channels/muzkanal/1.jpg')}}" alt="..."> 
-                                           <h4 class="media-body"> <p><span>«Русский роман»</span> - настоящий подарок для всех любителей отечественных мелодрам. В жизни миллионов телезрителей кинороманы занимают особое место и ни одно другое телевизионное зрелище не в состоянии заменить их.</p> </h4>
-                                           <img class="media-object" src="{{ asset('images/channels/muzkanal/3.jpg')}}" alt="...">                                          
+                                           <img class="media-object" src="{{ asset('images/channels/muzkanal/6.jpg')}}" alt="..."> 
+                                           <h4 class="media-body"> <p>Самара Токтакунова встретилась с начинающими музыкантами.</p> </h4>
+                                           <img class="media-object" src="{{ asset('images/channels/muzkanal/14.jpg')}}" alt="...">                                          
                                        </div> 
 
-                                       <div class="media-right">
-                                           <img class="media-object" src="{{ asset('images/channels/muzkanal/2.jpg')}}" alt="...">                                                                                    
-                                       </div>
-                                         <h4 class="media-body"> <p><span>«Русский роман»</span> - настоящий подарок для всех любителей отечественных мелодрам. В жизни миллионов телезрителей кинороманы занимают особое место и ни одно другое телевизионное зрелище не в состоянии заменить их.</p></h4>
-                                         <h4><p>Фильмы канала – это лирические, человечные, глубоко волнующие жизненные истории.
-                                            Мы верим, что канал станет по-настоящему успешным и популярным среди телезрительниц: мы изучили мотивы просмотра мелодрам и тщательно отобрали пакет фильмов, которые соответствуют ожиданиям женщин. В них есть все, чтобы зрительницы не отрывались от экрана: любимые актеры, жизненные сюжеты, острые интриги.
-                                            Главное свойство контента «Русского романа», то, ради чего его будут смотреть – это яркие эмоции!</p></h4>
-                                            <hr>
+                                
+                                         <h4 class="media-body"> <p>Учащиеся музыкальной школы имени Мукаша Абдраева встретились с народной артисткой Советского Союза Самарой Токтакуновой. Встреча прошла в актовом зале училища, где каждый мог задать великой комузистке интересующие вопросы.</p></h4>
+                                         <h4><p>Учащиеся музыкальной школы имени Мукаша Абдраева встретились с народной артисткой Советского Союза Самарой Токтакуновой. Встреча прошла в актовом зале училища, где каждый мог задать великой комузистке интересующие вопросы.</p><hr>
                                             <p><h3>Как смотреть</h3><h4>
-                                                Телеканал «Русский роман» ежедневно доступен для зрителей, подключенных к кабельным сетям. Информацию о подключении к телеканалу уточняйте у кабельного оператора, обслуживающего Вашу сеть.
-                                                По вопросам подключения и трансляции телеканала "Русский роман" обращайтесь в службу дистрибуции по адресу: contact@signalmedia.ru</h4></p>
+                                               Учащиеся музыкальной школы имени Мукаша Абдраева встретились с народной артисткой Советского Союза Самарой Токтакуновой. Встреча прошла в актовом зале училища, где каждый мог задать великой комузистке интересующие вопросы.</h4></p>
                                    </div>
                                </div>
 
@@ -195,9 +177,9 @@
                          </div>
                          <div class="col-md-4">
                              <div class="aboutposter">
-                                 <img src="{{ asset('images/channels/muzkanal/1.jpg')}}" alt="...">
-                                 <img src="{{ asset('images/channels/muzkanal/2.jpg')}}" alt="...">
-                                 <img src="{{ asset('images/channels/muzkanal/3.jpg')}}" alt="...">    
+                                 <img src="{{ asset('images/channels/muzkanal/6.jpg')}}" alt="...">
+                                 <img src="{{ asset('images/channels/muzkanal/14.jpg')}}" alt="...">
+                                 <img src="{{ asset('images/channels/muzkanal/12.png')}}" alt="...">   
                              </div>
                          </div>
                      </div>
