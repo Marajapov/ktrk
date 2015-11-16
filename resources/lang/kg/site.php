@@ -73,7 +73,7 @@ return [
 
     // Admin panel translate
     'AdminHomeTitle' => 'Башкы',
-    'AdminPhotoUploadTitle' => 'Сүрөт жүктөө',
+    'AdminPhotoUploadTitle' => 'Сүрөт базасы',
     'AdminChannelTitle' => 'Каналдар',
     'AdminPostTitle' => 'Макалалар',
     'AdminPostsTitle' => 'Макалалар',

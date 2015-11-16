@@ -68,7 +68,7 @@ return [
 
     // Admin panel translate
     'AdminHomeTitle' => 'Главная',
-    'AdminPhotoUploadTitle' => 'Загрузить фото',
+    'AdminPhotoUploadTitle' => 'База картинок',
     'AdminChannelTitle' => 'Каналы',
     'AdminPostTitle' => 'Новости',
     'AdminPostsTitle' => 'Новости',

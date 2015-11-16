@@ -141,7 +141,9 @@ class PostController extends Controller
     {
 
         $PhotoParentList = \Model\PhotoParent\ModelName::lists('name', 'id')->toArray();
-        $relatedPosts = \Model\Post\ModelName::lists('title', 'id')->toArray();
+        $relatedPosts = \Model\Post\ModelName::where('title','<>','')->lists('title', 'id')->toArray();
+        $relatedPosts2 = \Model\Post\ModelName::where('titleRu','<>','')->lists('titleRu', 'id')->toArray();
+
         $tags = \Model\Tag\Tag::lists('name', 'id');
         $tags2 = \Model\Tag\Tag::lists('name', 'id');
 
@@ -150,6 +152,7 @@ class PostController extends Controller
             'tags' => $tags,
             'tags2' => $tags2,
             'relatedPosts' => $relatedPosts,
+            'relatedPosts2' => $relatedPosts2,
             'PhotoParentList' => $PhotoParentList,
             ]);
     }
