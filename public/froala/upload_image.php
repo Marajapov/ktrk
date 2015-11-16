@@ -31,11 +31,6 @@ if ((($mime == "image/gif")
     $response->link = "http://www.ktrk.dev/froala/uploads/" . $name;
     $response->file_name = $name;
     echo stripslashes(json_encode($response));
-} else{
-    $name = sha1(microtime()) . "." . $extension;
-
-    $response = new StdClass;
-    $response->file_name = $name;
 }
 
 
