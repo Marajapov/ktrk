@@ -3878,3 +3878,70 @@ padding-right: 8px;
     margin-top: 5px;
     }
 }
+
+/*Image Gallery*/
+
+.imagegrid .imagepad {
+    padding: 0px 10px;
+}
+
+.imagegrid .slick-prev{
+    left: -20px !important;
+}
+.imagegrid .slick-next{
+    right: -20px !important;
+}
+.imagegrid .slick-prev:before, .slick-next:before{
+    color: #202d3a !important;
+}
+
+.imagegrid .slick-slider {
+    margin-bottom: 10px ; 
+}
+
+.imagegrid .imagegridtext {
+    text-align: center;
+}
+.imagegrid .imagegridtext p {
+    z-index: 111;
+}
+
+
+.imagegrid .imagegridtext span {
+    border-top:1px solid #969595;
+    z-index: 111;
+}
+
+.imagegrid .imagebig {
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    max-height: 525px !important;
+    width: auto;
+}
+.imagegrid .imagebig img {
+    height: 475px;
+}
+
+.imagegrid .imagesmall img {
+    height: 100px;
+    width: 100%;
+    padding: 0px 1px;
+}
+
+/*CUSTOM MODAL*/
+.modal-demo{
+    display: none;
+    background: #444;
+    color: #fff;
+    padding: 10px;
+}
+
+.loopmode {
+    position: absolute;
+    bottom: 50px;
+    right: 0px
+}
+
+/*Image Gallery*/
