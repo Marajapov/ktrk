@@ -110,7 +110,6 @@
 <script>
     $(function() {
         $('#editKg').froalaEditor({
-
             language: 'ru',
 
             imageUploadParam: 'file',
