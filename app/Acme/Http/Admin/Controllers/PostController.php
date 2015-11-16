@@ -59,8 +59,8 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-
-        $post = Post::create($request->except('tag_list','tag_list2','thumbnail','q'));
+       $post = Post::create($request->except('tag_list','tag_list2','thumbnail','q'));
+        dd($request->input('content'));
         
         $tags = $request->input('tag_list');
         $tags2 = $request->input('tag_list2');

@@ -110,7 +110,8 @@
 <script>
     $(function() {
         $('#editKg').froalaEditor({
-            language: 'ru'
+            language: 'ru',
+            imageUploadURL: '{{ asset('img/gallery/') }}'
         })
     });
 </script>
@@ -118,7 +119,8 @@
 <script>
     $(function() {
         $('#editRu').froalaEditor({
-            language: 'ru'
+            language: 'ru',
+            imageUploadURL: '{{ asset('img/gallery/') }}'
         })
     });
 </script>
