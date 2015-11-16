@@ -79,7 +79,7 @@
                                             </button>
                                         </form>
                                     </div>
-                                    <a class="navbar-brand" href="#"> <i class="fa fa-home"></i>Башкы</a>
+                                    <a class="navbar-brand" href="{{ route('muzkanal.home') }}"> <i class="fa fa-home"></i>Башкы</a>
                                 </div>
 
                                 
@@ -87,21 +87,13 @@
                                 <!-- Collect the nav links, forms, and other content for toggling -->
                                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                     <ul class="nav navbar-nav">     
-                                        <li><a href="#"><i class="fa fa-info-circle"></i>О канале</a></li>
-                                        <li class="dropdown">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-microphone"></i>Хит-Парад <!-- <span class="caret"></span> --></a>
-                                     <!--        <ul class="dropdown-menu">
-                                                <li><a href="#">Хит парад</a></li>
-                                                <li><a href="#">Хит парад 2</a></li>
-                                                <li><a href="#">Хит парад 3</a></li>
-                                                <li role="separator" class="divider"></li>
-                                                <li><a href="#">Топ парад</a></li>
-                                                <li role="separator" class="divider"></li>
-                                                <li><a href="#">Парад планет</a></li>
-                                            </ul> -->
+                                        <li><a href="{{ route('muzkanal.about') }}"><i class="fa fa-info-circle"></i>О канале</a></li>
+                                        <li>
+                                            <a href="{{ route('muzkanal.hitparad') }}"><i class="fa fa-microphone"></i>Хит-Парад <!-- <span class="caret"></span> --></a>
+                                 
                                         </li>
-                                        <li><a href="#"><i class="fa fa-picture-o"></i>Фото</a></li>
-                                        <li><a href="#"><i class="fa fa-youtube-play"></i>Клипы</a></li>
+                                        <li><a href="{{ route('muzkanal.photos') }}"><i class="fa fa-picture-o"></i>Фото</a></li>
+                                        <li><a href="{{ route('muzkanal.videos') }}"><i class="fa fa-youtube-play"></i>Клипы</a></li>
                                     </ul>
 
                                     <ul class="nav navbar-nav navbar-right logo-block">

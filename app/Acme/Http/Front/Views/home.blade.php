@@ -24,29 +24,36 @@
                   <!--<span class="post-timer pull-right">  <i class="fa fa-eye"></i>&nbsp;{{ $post->getViewed() }}</span> -->
 
                   <a href="{{ route('front.post', $post) }}" class="main-img">
+
                     <img src="@if(empty($post->getFile()))images/2.jpg @else {{ asset($post->getFile()) }} @endif" alt="img26">
-                    <i class="fa fa-play-circle-o"></i></a>
                     <!--<div class="news-channel">
                        <a href="#">
-                        <img src="{{ $post->isChannelIcon($post->channel_id)}}" alt=""/>
+                        <img src="{{-- $post->isChannelIcon($post->channel_id) --}}" alt=""/>
                       </a> 
                     </div>-->
 
                     <p class="description clearfix">
+
                       <a href="{{ route('front.category', $post->category) }}">
                          {{ $post->category('category_id')->first()->getTitle() }}
-                         
                       </a>
+
                       <span>
                         <!-- @if(empty($post->getFile())) @else <i class="fa fa-play-circle-o"></i> @endif -->
                         @if(empty($post->getFile()) && empty($post->getFile())) @else <i class="fa fa-picture-o"></i> @endif
                       </span>
+
                     </p>
+
                     <a class="news-title" href="{{ route('front.post', $post) }}">
                       <!-- <h2>{!! $result = substr($post->getTitle(),0,75) !!}...</h2>-->
                       <h2>{{ $post->getTitle() }}</h2>
                     </a>
+
+                  </a>
+
                   </figure>
+
                 </div>
                 @endforeach
 
@@ -62,6 +69,8 @@
             <a href="#" class="text-center ads middle-ad">
               <img src="@if(!empty($positionCenter->file)) {{ asset($positionCenter->file) }} @else images/ads_1.jpg @endif" alt=""/>
             </a>
+
+
 
             <div class="panel panel-default panel-carousel peoplereporter">
               <div class="panel-body">

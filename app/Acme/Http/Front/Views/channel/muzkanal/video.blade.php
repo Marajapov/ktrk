@@ -34,23 +34,14 @@
                 <div class="collapse navbar-collapse" id="menu">
                     <ul class="nav navbar-nav channel_switch">
                         <li class="sitemenu" id="site-channel1">
-                            <a href="#"><img src="{{ asset('images/ktrk_last.svg')}}"><span>КТРК</span></a></li>
+                            <a href="#"><img src="{{ asset('images/ktrk_last.svg')}}" style="height:40px;"><span>КТРК</span></a></li>
                         <li class="sitemenu" id="site-channel1">
                             <a href="#"><img src="{{ asset('images/channels/balastan_white_notext.png')}}"><span>Баластан</span><h4>Баластан</h4></a></li>
                         <li class="sitemenu" id="site-channel1">
                             <a class="active" href="#"><img src="{{ asset('images/channels/muz_white_notext.png')}}" ><span>Музыка</span><h4>Музыка</h4></a></li>
                         <li class="sitemenu" id="site-channel1">
                             <a href="#"><img src="{{ asset('images/channels/madaniyat_white_notext.png')}}"><span>Маданият</span><h4>Маданият</h4></a></li>
-                        <li class="sitemenu" id="site-channel1">
-                            <a href="#"><img src="{{ asset('images/channels/1-radio.png')}}"><span>Биринчи Радио</span><h4>Биринчи Радио</h4></a></li>
-                        <!--  <li class="sitemenu" id="site-channel1">
-                        <a href="#"><img src="{{ asset('images/channels/baldar.png')}}"><span>Балдар ФМ</span></a></li> -->
-                        <li class="sitemenu" id="site-channel1">
-                            <a href="#"><img src="{{ asset('images/channels/min-kiyal.png')}}"><span>Миң Кыял ФМ</span></a></li>
-                        <li class="sitemenu" id="site-channel1">
-                            <a href="#"><img src="{{ asset('images/channels/kg-radio.png')}}"><span>Кыргыз Радиосу</span></a></li> 
-                        <li class="sitemenu" id="site-channel1">
-                            <a href="#"><img src="{{ asset('images/channels/dostuk.png')}}"><span>Достук Радиосу</span></a></li> 
+                
                     </ul>  
                 </div><!-- /.navbar-collapse -->
             </nav>
@@ -60,8 +51,7 @@
         <div class="container main-header">
             <div class="row">
                 <div class="col-md-12">         
-
-                    <div class="row fixedheader">
+    <div class="row fixedheader">
                         <nav class="navbar">
                             <div class="container-fluid">
                                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -75,11 +65,10 @@
                                     <div class="logo-block search-block">
                                         <a class="search-toggle"><i class="fa fa-search"></i></a>
 
-                                        <form class="form-search" action="{{ route('front.search') }}" method="get">
+                                         <form class="form-search" action="{{ route('front.search') }}" method="get">
                                             <div class="form-group pull-right">
                                                 <input type="text" name="search" class="form-control" placeholder="Издөө"/>
-                                            </div>
-
+                                            </div> 
                                             <a class="btn close-search">
                                                 <i class="fa fa-close"></i>
                                             </a>
@@ -89,65 +78,57 @@
                                             </button>
                                         </form>
                                     </div>
-                                    <a class="navbar-brand" href="#"> <i class="fa fa-home"></i>Башкы</a>
+                                    <a class="navbar-brand" href="{{ route('muzkanal.home') }}"> <i class="fa fa-home"></i>Башкы</a>
                                 </div>
 
-
+                                
 
                                 <!-- Collect the nav links, forms, and other content for toggling -->
                                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                     <ul class="nav navbar-nav">     
-                                        <li><a href="#"><i class="fa fa-info-circle"></i>О канале</a></li>
-                                        <li class="dropdown">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-microphone"></i>Хит-Парад <!-- <span class="caret"></span> --></a>
-                                            <!--        <ul class="dropdown-menu">
-                                                       <li><a href="#">Хит парад</a></li>
-                                                       <li><a href="#">Хит парад 2</a></li>
-                                                       <li><a href="#">Хит парад 3</a></li>
-                                                       <li role="separator" class="divider"></li>
-                                                       <li><a href="#">Топ парад</a></li>
-                                                       <li role="separator" class="divider"></li>
-                                                       <li><a href="#">Парад планет</a></li>
-                                                   </ul> -->
+                                        <li><a href="{{ route('muzkanal.about') }}"><i class="fa fa-info-circle"></i>О канале</a></li>
+                                        <li>
+                                            <a href="{{ route('muzkanal.hitparad') }}"><i class="fa fa-microphone"></i>Хит-Парад <!-- <span class="caret"></span> --></a>
+                                 
                                         </li>
-                                        <li><a href="#"><i class="fa fa-picture-o"></i>Фото</a></li>
-                                        <li><a href="#"><i class="fa fa-youtube-play"></i>Клипы</a></li>
+                                        <li><a href="{{ route('muzkanal.photos') }}"><i class="fa fa-picture-o"></i>Фото</a></li>
+                                        <li><a href="{{ route('muzkanal.videos') }}"><i class="fa fa-youtube-play"></i>Клипы</a></li>
                                     </ul>
 
                                     <ul class="nav navbar-nav navbar-right logo-block">
-                                        <ul class="soc">
+                                        <ul class="soc socmuz">
                                             <li class="tw"><a href="#" title="Twitter"><i class="fa fa-twitter"></i> </a>  </li>
                                             <li class="fb"><a href="#" title="Facebook"><i class="fa fa-facebook"></i></a></li>
                                             <li class="ok"><a href="#" title="Odnoklassniki"><i class="fa fa-odnoklassniki"></i></a></li>
                                             <li class="yt"><a href="#" title="YouTube"><i class="fa fa-youtube"></i></a></li>
                                             <li class="in"><a href="#" title="Instagram"><i class="fa fa-instagram"></i></a></li>
                                             
-                                        </ul>                                        
-                                        <a class="search-toggle"><i class="fa fa-search"></i></a>
+                                        </ul>
+                                     <a class="search-toggle"><i class="fa fa-search"></i></a>
 
-                  
-                                        <form class="form-search" action="{{ route('front.search') }}" method="get">
-                                            <div class="form-group pull-right">
-                                                <input type="text" name="search" class="form-control" placeholder="Издөө"/>
-                                            </div>
+                                     <form class="form-search" action="{{ route('front.search') }}" method="get">
+                                        <div class="form-group pull-right">
+                                            <input type="text" name="search" class="form-control" placeholder="Издөө"/>
+                                        </div>
 
-                                            <a class="btn close-search">
-                                                <i class="fa fa-close"></i>
-                                            </a>
+                                        <a class="btn close-search">
+                                            <i class="fa fa-close"></i>
+                                        </a>
 
-                                            <button class="btn submit-search" type="submit">
-                                                <i class="fa fa-search"></i>
-                                            </button>
-                                        </form>
-                                        <button class="btn btn-danger btn-live" data-toggle="modal" data-target="#liveModal">
-                                            <i class="fa fa-dot-circle-o"></i>
-                                            түз эфир
+                                        <button class="btn submit-search" type="submit">
+                                            <i class="fa fa-search"></i>
                                         </button>
+                                    </form>
+                                    <button class="btn btn-danger btn-live" data-toggle="modal" data-target="#liveModal">
+                                        <i class="fa fa-dot-circle-o"></i>
+                                        түз эфир
+                                    </button>
                                     </ul>
                                 </div><!-- /.navbar-collapse -->
                             </div><!-- /.container-fluid -->
                         </nav>
                     </div>
+
 
                 </div>
             </div>
