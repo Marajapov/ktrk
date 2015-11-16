@@ -271,7 +271,7 @@
                       </ul>
 
                       <footer>
-                        <a href="#">
+                        <a href="{{ route('front.general') }}">
                           <span>{{ trans('site.FrontPostAll') }} <i class="fa fa-arrow-circle-right"></i></span>
                         </a>
                       </footer>
@@ -280,36 +280,45 @@
 
                   <div class="panel panel-default panel-director">
                     <div class="panel-heading">
-                      <h3 class="panel-title director-title"><a href="#">{{ trans('site.FrontDirectorPage') }}</a></h3>
+                      <h3 class="panel-title director-title">
+                          <a class="director-img" href="#">
+                              <img src="images/chief.jpg" alt="директор"/>
+                          </a>
+                          <a class="director-text" href="#">{{ trans('site.FrontDirectorPage') }}</a>
+                      </h3>
                     </div>
                     <div class="panel-body">
-                      <div class="col-md-12" id="slideshow">
-                        <div>
-                          <a href="#">
-                            <img src="images/chief.jpg" alt="директор"/>
-                          </a>
-                        </div>
-                        <div>
-                          <a href="#">
-                            <img src="images/chief_3.jpg">
-                          </a>
-                        </div>
-                        <div>
-                          <a href="#">
-                            <img src="images/chief_2.jpg">
-                          </a>
-                        </div>
-                      </div>
+
                       <div class="col-md-12">
                         <div class="carousel carousel-director">
                           <div>
+                            <a href="#">
+                              <img src="images/chief_2.jpg" alt=""/>
+                            </a>
+                            <a href="#">
+                              Мы разворачиваем масштабную работу по реализации проекта «Ухта — Торжок-2». Задачи поставлены, сроки определены. До конца 2019 года газопровод будет построен и готов к эксплуатации.
+                            </a>
+                          </div>
+                          <div>
+                            <a href="#">
+                              <img src="images/chief_3.jpg" alt=""/>
+                            </a>
                             Мы разворачиваем масштабную работу по реализации проекта «Ухта — Торжок-2». Задачи поставлены, сроки определены. До конца 2019 года газопровод будет построен и готов к эксплуатации.
                           </div>
                           <div>
+                            <a href="#">
+                              <img src="images/chief.jpg" alt=""/>
+                            </a>
                             Мы разворачиваем масштабную работу по реализации проекта «Ухта — Торжок-2». Задачи поставлены, сроки определены. До конца 2019 года газопровод будет построен и готов к эксплуатации.
                           </div>
                         </div>
                       </div>
+
+                      <footer>
+                          <a href="#">
+                              <span>{{ trans('site.FrontToDirectorPage') }} <i class="fa fa-arrow-circle-right"></i></span>
+                          </a>
+                      </footer>
                     </div>
                   </div>
 
@@ -418,12 +427,12 @@
         <div class="row">
           <div class="col-md-3 col-md-offset-3">
             <a href="#" class="android">
-              <img src="images/android.png" alt=""/>
+              <img src="{{ asset('images/android.png') }}" alt=""/>
             </a>
           </div>
           <div class="col-md-3">
             <a href="#" class="ios">
-              <img src="images/ios.png" alt=""/>
+              <img src="{{ asset('images/ios.png') }}" alt=""/>
             </a>
           </div>
         </div>

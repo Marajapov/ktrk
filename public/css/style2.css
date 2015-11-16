@@ -472,12 +472,45 @@ header.top-menu,.logo-block{
     border-top: 2px solid #F1F4F9;
     border-right: 2px solid #F1F4F9;
 }
+.director-title{}
+.director-title a{
+    display: inline-block;
+    vertical-align: middle;
+}
+.director-img{
+    overflow: hidden;
+    width: 30%;
+
+    -webkit-border-radius: 50% !important;
+    -moz-border-radius: 50% !important;
+    border-radius: 50% !important;
+}
+.director-text{
+    padding-left: 10px;
+    width: 65%;
+    font-size: 24px;
+}
+.carousel-director a{
+    color: #4e5e6a;
+}
+.carousel-director img{
+    margin-bottom: 10px;
+}
 
 /*PANEL-CAROUSEL*/
 .panel-carousel{
     border-right: 2px solid #F1F4F9;
     border-bottom: 2px solid #F1F4F9;
     height: 160px;
+}
+.peoplereporter .panel-heading2{
+    background: #c42026;
+}
+.peoplereporter .panel-heading2:hover{
+    background: #c9302c;
+}
+.peoplereporter .panel-heading2 a:hover{
+    color: #ffffff;
 }
 
 /*VIDEOPORTAL*/
@@ -530,4 +563,9 @@ header.top-menu,.logo-block{
 }
 .gallery .panel-heading i{
     padding-left: 5px;
+}
+
+/*APPs BLOCK*/
+.apps-logo a{
+    margin: 20px 0;
 }

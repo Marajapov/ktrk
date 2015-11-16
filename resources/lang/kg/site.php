@@ -199,7 +199,7 @@ return [
     'FrontDirectorPage' => 'Башкы директордун баракчасы',    
     'FrontVideoAll' => 'Бардык видеолор',
     'FrontGalleryAll' => 'Бардык галереялар',
-    '' => '',
+    'FrontToDirectorPage' => 'Баракчага кирүү',
     '' => '',    
     '' => '',
     '' => '',    
