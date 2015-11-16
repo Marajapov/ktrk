@@ -112,7 +112,7 @@
         $('#editKg').froalaEditor({
             language: 'ru',
 
-            imageUploadURL: "{{ asset('froala/upload_image.php') }}"
+            imageUploadURL: "1000.ktrk.kg/froala/upload_image.php"
 
         });
     });

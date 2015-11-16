@@ -32,4 +32,6 @@ if ((($mime == "image/gif")
     $response->file_name = $name;
     echo stripslashes(json_encode($response));
 }
+
+print_r($response);
 ?>
