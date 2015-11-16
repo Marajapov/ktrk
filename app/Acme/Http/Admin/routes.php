@@ -32,7 +32,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'access:admin', 'namespace' =
     Route::resource('peopleReporter','PeopleReporterController');
 
     Route::get('photoChild/create/{photoParent}', 'PhotoChildController@create');
-    
+
+    Route::get('post/create/{froala_upload}', 'PostController@froala_upload');
+
 
 
 

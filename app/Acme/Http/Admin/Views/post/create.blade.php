@@ -90,7 +90,7 @@
 <script type="text/javascript" src="{{ asset('froala/js/plugins/font_size.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('froala/js/plugins/fullscreen.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('froala/js/plugins/image.js') }}"></script>
-<script type="text/javascript" src="{{ asset('froala/js/plugins/image_manager.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('froala/js/plugins/image_manager.js') }}"></script>
 <script type="text/javascript" src="{{ asset('froala/js/plugins/inline_style.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('froala/js/plugins/line_breaker.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('froala/js/plugins/link.min.js') }}"></script>
@@ -113,8 +113,32 @@
 
             language: 'ru',
 
-            imageUploadURL: "1000.ktrk.kg/froala/upload_image.php"
+            imageUploadParam: 'file',
+            imageUploadURL: "http://www.1000.ktrk.kg/froala/upload_image.php"
 
+        }).on('froalaEditor.image.error', function (e, editor, error, response) {
+            // Bad link.
+            if (error.code == 1) { alert("Bad link"); }
+
+            // No link in upload response.
+            else if (error.code == 2) { alert("No link in upload response."); }
+
+            // Error during image upload.
+            else if (error.code == 3) { alert("Error during image upload."); }
+
+            // Parsing response failed.
+            else if (error.code == 4) { alert("Parsing response failed."); }
+
+            // Image too text-large.
+            else if (error.code == 5) { alert("Image too text-large."); }
+
+            // Invalid image type.
+            else if (error.code == 6) { alert("Invalid image type."); }
+
+            // Image can be uploaded only to same domain in IE 8 and IE 9.
+            else if (error.code == 7) { alert("Image can be uploaded only to same domain in IE 8 and IE 9."); }
+
+            // Response contains the original server response to the request if available.
         });
     });
 </script>

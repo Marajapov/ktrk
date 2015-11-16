@@ -24,15 +24,18 @@ if ((($mime == "image/gif")
     $name = sha1(microtime()) . "." . $extension;
 
     // Save file in the uploads folder.
-    move_uploaded_file($_FILES["file"]["tmp_name"], getcwd() . "../img/gallery/" . $name);
+    move_uploaded_file($_FILES["file"]["tmp_name"], getcwd() . "../img/gallery" . $name);
 
     // Generate response.
     $response = new StdClass;
-    $response->link = "http://www.1000.ktrk.kg/img/gallery" . $name;
+    $response->link = "http://ktrk.dev/img/gallery" . $name;
     $response->file_name = $name;
     echo stripslashes(json_encode($response));
-}
+} else{
+    $name = sha1(microtime()) . "." . $extension;
 
-print_r($response);
+    $response = new StdClass;
+    $response->file_name = $name;
+}
 
 ?>
