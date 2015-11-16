@@ -1,5 +1,4 @@
 @include('Front::messages.flash')
-<script type="text/javascript" src="/vendor/tinymce/js/tinymce/tinymce.min.js"></script>
 
 @section('styles')
     <!-- Include Editor style. -->

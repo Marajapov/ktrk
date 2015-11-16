@@ -12,7 +12,7 @@
                 <div class="clearfix"></div>
             </div>
             <div class="x_content">
-                {!! Form::model($post, ['route' => 'admin.post.store', 'enctype' => 'multipart/form-data', 'multiple'=>true]) !!}
+                {!! Form::model($post, ['route' => 'admin.post.store', 'enctype' => 'multipart/form-data', 'multiple'=>true, 'id'=>'addNews']) !!}
                 @include('Admin::partials.forms.post', [$post, $tags])
                 {!! Form::close() !!}
             </div>
@@ -111,16 +111,59 @@
     $(function() {
         $('#editKg').froalaEditor({
             language: 'ru',
-            imageUploadURL: "{{ asset('img/gallery/') }}"
-        })
+
+            // Set the image upload parameter.
+            imageUploadParam: 'image_param',
+
+            // Set the image upload URL.
+            imageUploadURL: "{{ asset('img/gallery/') }}",
+
+            // Additional upload params.
+            imageUploadParams: {id: 'my_editor'},
+
+            // Set request type.
+            imageUploadMethod: 'POST',
+
+            // Set max image size to 5MB.
+            imageMaxSize: 5 * 1024 * 1024,
+
+            // Allow to upload PNG and JPG.
+            imageAllowedTypes: ['jpeg', 'jpg', 'png']
+
+        }).on('froalaEditor.image.error', function (e, editor, error, response) {
+
+            console.log(response);
+
+            // Bad link.
+            if (error.code == 1) { alert("bad link"); }
+
+            // No link in upload response.
+            else if (error.code == 2) { alert("no link"); }
+
+            // Error during image upload.
+            else if (error.code == 3) { alert("during upload"); }
+
+            // Parsing response failed.
+            else if (error.code == 4) { alert("parsing reponse"); }
+
+            // Image too text-large.
+            else if (error.code == 5) { alert("too large"); }
+
+            // Invalid image type.
+            else if (error.code == 6) { alert("image type"); }
+
+            // Image can be uploaded only to same domain in IE 8 and IE 9.
+            else if (error.code == 7) { alert("other"); }
+
+            // Response contains the original server response to the request if available.
+        });
     });
 </script>
 
 <script>
     $(function() {
         $('#editRu').froalaEditor({
-            language: 'ru',
-            imageUploadURL: "{{ asset('img/gallery/') }}"
+            language: 'ru'
         })
     });
 </script>
