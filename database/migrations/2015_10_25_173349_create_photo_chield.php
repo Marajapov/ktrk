@@ -18,6 +18,10 @@ class CreatePhotoChield extends Migration
             $table->string('name');
             $table->string('nameRu');
             $table->string('file');
+            $table->string('photoTag');
+            $table->string('photoTagRu');
+            $table->string('description');
+            $table->string('descriptionRu');
             $table->timestamps();
         });
     }

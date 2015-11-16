@@ -18,16 +18,33 @@
     <div class="col-sm-8">
         <div class="form-group">
             <label class="control-label">{{ trans('site.AdminPhotoChildSelectGaller') }}</label>
-            {!! Form::select('parentId', \Model\PhotoParent\ModelName::lists('name', 'id')->toArray(), null, ["class" => "select2_group form-control", "required" => true, "title" => ""]) !!}
+            
+            {!! Form::select('parentId', array('0'=>'--Выберите--')+ $PhotoParentList, null, ["class" => "select2_group form-control", "title" => ""]) !!}
         </div>
     </div>
 
-<!--     <div class="col-xs-12">
+    <div class="col-sm-8">
+        <div class="form-group">
+            <label class="control-label">{{ trans('site.Description') }}</label>
+            {!! Form::text('description', null, ["class" => "form-control", "required" => true, "title" => ""]) !!}
+        </div>
+    </div>
+
+    <div class="col-sm-8">
+        <div class="form-group">
+            <label class="control-label">{{ trans('site.Description') }}</label>
+            {!! Form::text('descriptionRu', null, ["class" => "form-control", "required" => true, "title" => ""]) !!}
+        </div>
+    </div>
+
+<!--<div class="col-xs-12">
         <div class="form-group">
             <label class="control-label">Файл</label>
             {!! Form::file('file', null, ["class" => "form-control", "required" => true]) !!}
         </div>
     </div> -->
+
+
 
     <div class="col-sm-8">
         <div class="fileinput fileinput-new input-group" data-provides="fileinput">

@@ -30,7 +30,13 @@ class PhotoChildController extends Controller
      */
     public function create()
     {
-        return view('Admin::photoChild.create', ['photoChild' => new PhotoChild]);
+        
+        $PhotoParentList = \Model\PhotoParent\ModelName::lists('name', 'id')->toArray();
+
+        return view('Admin::photoChild.create', [
+            'PhotoParentList' => $PhotoParentList,
+            'photoChild' => new PhotoChild
+            ]);
     }
 
     /**
