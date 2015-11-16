@@ -28,7 +28,8 @@ if ((($mime == "image/gif")
 
     // Generate response.
     $response = new StdClass;
-    $response->link = "../img/gallery/" . $name;
+    $response->link = "http://www.1000.ktrk.kg/img/gallery" . $name;
+    $response->file_name = $name;
     echo stripslashes(json_encode($response));
 }
 ?>
