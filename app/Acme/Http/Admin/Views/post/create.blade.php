@@ -48,7 +48,7 @@
         placeholder: 'Тег тандаңыз',
         tags: true,
         tokenSeparators: [',', ' '],
-        minimumInputLength: 1,
+        minimumInputLength: 1
     });
 
     $('#tag_list2').select2({
@@ -71,7 +71,7 @@
         placeholder: 'Тег тандаңыз',
         tags: true,
         tokenSeparators: [',', ' '],
-        minimumInputLength: 1,
+        minimumInputLength: 1
     });
 </script>
 
