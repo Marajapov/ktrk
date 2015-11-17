@@ -150,39 +150,40 @@
                 <div class="col-md-12 aboutmuz">
                     <div class="panel panel-default ">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><span>О телеканале</span></h3>
+                            <h3 class="panel-title"><span>О телеканале «МУЗЫКА»</span></h3>
                         </div> 
                         <div class="row">
                             <img class="backmuz" src="{{ asset('images/channels/muzkanal/notes.png')}}">   
                             <div class="col-md-8">                            
-                                <div class="panel-body">
-                                    <div class="media">                                
-                                        <div class="media-body">
-                                            <h4 class="media-heading"> <p>Самара Токтакунова встретилась с начинающими музыкантами.</p> 
-                                                <p>Учащиеся музыкальной школы имени Мукаша Абдраева встретились с народной артисткой Советского Союза Самарой Токтакуновой. Встреча прошла в актовом зале училища, где каждый мог задать великой комузистке интересующие вопросы.</p></h4>
-                                            <div class="media-left">
-                                                <img class="media-object" src="{{ asset('images/channels/muzkanal/6.jpg')}}" alt="..."> 
-                                                <h4 class="media-body"> <p>Самара Токтакунова встретилась с начинающими музыкантами.</p> </h4>
-                                                <img class="media-object" src="{{ asset('images/channels/muzkanal/14.jpg')}}" alt="...">                                          
-                                            </div> 
-
-
-                                            <h4 class="media-body"> <p>Учащиеся музыкальной школы имени Мукаша Абдраева встретились с народной артисткой Советского Союза Самарой Токтакуновой. Встреча прошла в актовом зале училища, где каждый мог задать великой комузистке интересующие вопросы.</p></h4>
-                                            <h4><p>Учащиеся музыкальной школы имени Мукаша Абдраева встретились с народной артисткой Советского Союза Самарой Токтакуновой. Встреча прошла в актовом зале училища, где каждый мог задать великой комузистке интересующие вопросы.</p><hr>
-                                                <p><h3>Как смотреть</h3><h4>
-                                                    Учащиеся музыкальной школы имени Мукаша Абдраева встретились с народной артисткой Советского Союза Самарой Токтакуновой. Встреча прошла в актовом зале училища, где каждый мог задать великой комузистке интересующие вопросы.</h4></p>
+                                <div class="panel-body abouttextmuz">
+                                    <p class="onemuztext"><span>МУЗЫКА</span> — главный музыкальный телеканал в Кыргызстане, который начал свое вещание с 1 октября 2012 года, и в этот период в его эфире можно увидеть самые модные клипы кыргызских и зарубежных исполнителей, хит-парад и много интересных программ. </p>
+                                        <div class="aboutvipromo">
+                                            <iframe src="http://www.youtube.com/embed/t8r7ifqRViY?hd=1&rel=0&autohide=1&showinfo=0" frameborder="0" width="100%" height="450"></iframe>
                                         </div>
-                                    </div>
-
-                                    <iframe width="100%" height="450px" src="https://www.youtube.com/embed/ZYm3JvXPpKU" frameborder="0" allowfullscreen></iframe>
+                                    <p class="twomuztext"><img src="{{ asset('images/channels/muztv_color.png')}}" alt=""><span>МУЗЫКА</span> — единственный музыкальный канал, вошедший в пакет цифрового телевидения, который будет доступен каждому жителю Кыргызстана, охват канала составит 98% аудитории Кыргызстана. Так же телеканал МУЗЫКА вещает через спутник и в кабельных сетях Кыргызстана. </p> 
+                                    <p class="threemuztext">Сегодня МУЗЫКА– это только хиты, клипы и концерты лучших кыргызских артистов, музыкальный Хит-Парад, актуальные программы для зрителей. </p>
+                                    <h3>Телеканал «МУЗЫКА»- только качественная музыка 24 часа в сутки.</h3>
+                                    <p class="twomuztext">МУЗЫКА – молодежный музыкальный канал, а это самая требовательная аудитория, которую только можно представить. Молодежь сложно удивлять и постоянно следовать современным тенденциям, МУЗЫКЕ удается не только показывать в эфире модную музыку, но и воспитывать настоящий, правильный музыкальный вкус молодежи.</p>
+                                    </hr>
+                                    <h4>ПРЕМИЯ телеканала «МУЗЫКА»</h4>
+                                    <p class="twomuztext">Премия телеканала МУЗЫКА — одно из самых значимых, масштабных и престижных событий шоу-бизнеса, проводимое каналом «МУЗЫКА» с 2015 года. Это народный выбор, где победители определяются путем зрительского голосования. Стать обладателем желанной награды стремятся как начинающие музыканты, так и уже состоявшиеся звезды. Вручение «Премии МУЗЫКА» сопровождается появлением специальных гостей самых известных личностей страны. </p>
+                                 <div class="aboutvipromotwo">
+                                        <iframe src="http://www.youtube.com/embed/_qu2p_PTU0w?hd=1&rel=0&autohide=1&showinfo=0" frameborder="0" width="100%" height="200"></iframe>
+                                        <iframe src="http://www.youtube.com/embed/uLP1tEJlaDY?hd=1&rel=0&autohide=1&showinfo=0" frameborder="0" width="100%" height="200"></iframe>
+                                
+                                </div>
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <div class="aboutposter">
-                                    <img src="{{ asset('images/channels/muzkanal/6.jpg')}}" alt="...">
-                                    <img src="{{ asset('images/channels/muzkanal/14.jpg')}}" alt="...">
-                                    <img src="{{ asset('images/channels/muzkanal/12.png')}}" alt="...">   
-                                </div>
+                                <div class="aboutposter"> 
+                                    <iframe src="http://www.youtube.com/embed/4YcI-Aya8YM?hd=1&rel=0&autohide=1&showinfo=0" frameborder="0" width="100%" height="200"></iframe>
+                                   <iframe src="http://www.youtube.com/embed/-wvYxvbALTI?hd=1&rel=0&autohide=1&showinfo=0" frameborder="0" width="100%" height="200"></iframe>
+                                    <iframe src="http://www.youtube.com/embed/WM1-Ofjhci4?hd=1&rel=0&autohide=1&showinfo=0" frameborder="0" width="100%" height="200"></iframe>
+                                    <iframe src="http://www.youtube.com/embed/nVE-p6Sse8k?hd=1&rel=0&autohide=1&showinfo=0" frameborder="0" width="100%" height="200"></iframe>
+                                    <iframe src="http://www.youtube.com/embed/I7YHajcdjvA?hd=1&rel=0&autohide=1&showinfo=0" frameborder="0" width="100%" height="200"></iframe>
+                                    <iframe src="http://www.youtube.com/embed/d1Lagbbn4TM?hd=1&rel=0&autohide=1&showinfo=0" frameborder="0" width="100%" height="200"></iframe>
+
+                                   </div>
                             </div>
                         </div>
 

@@ -152,8 +152,8 @@
         <!-- Main slider -->
 
         <div class="container">
-            <div class="row">
-                <div class="col-md-12 topchart">
+            <div class="row photosmuz">
+                <div class="col-md-9 topchart">
                     <div class="panel">
                         <div class="panel-heading">
                             <div class="panel-title">
@@ -165,7 +165,7 @@
                         </div>
                         <div class="panel-body imagegrid">
                             <div class="row">
-                                <div class="col-md-9">
+                                <div class="col-md-12">
                                     <div class="imagepad">       
                                         <div class="slider slider-for">
                                             <div class="imagebig"><img src="{{ asset('images/channels/muzkanal/12.png') }}" alt="..."> 
@@ -255,8 +255,25 @@
                                         </div>
                                     </div>
                                 </div>                                
-                                <div class="col-md-3">
-                                    <h4>Другие галереи</h4>
+                             
+                            </div>                                         
+                        </div>                        
+                    </div>                     
+                </div>
+                   <div class="col-md-3 topchart">
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <div class="panel-title">
+                                <h4 class="show-title">
+                                    <a href="#">Другие галереи</a> 
+
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="panel-body imagegrid">
+                            <div class="row">
+                                <div class="col-md-12 otherphotos">
+
                                     <div class="grid_gallery">
                                         <div class="grid_item">
                                             <a href="#" class="img-wrap">
@@ -282,7 +299,8 @@
 
 
                                     </div>
-                                </div>
+                                </div>                               
+                             
                             </div>                                         
                         </div>                        
                     </div>                     
