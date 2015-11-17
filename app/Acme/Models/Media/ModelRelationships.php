@@ -12,4 +12,9 @@ trait ModelRelationships
     {
         return $this->hasMany(\Model\Channel\ModelName::class, 'channel_id');
     }
+
+    public function videoType()
+    {
+        return $this->hasOne(\Model\MediaCategory\ModelName::class, 'videoType');
+    }
 }

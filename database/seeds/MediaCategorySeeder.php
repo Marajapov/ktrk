@@ -30,33 +30,33 @@ class MediaCategorySeeder extends Seeder
 
         \Model\MediaCategory\ModelName::create([
             'id'        => 3,
-            'name'      => 'Сериалдар',
-            'nameRu'     => 'Сериалы',
-            'videoType'     => 'serials',
+            'name'      => 'Жаңылыктар',
+            'nameRu'     => 'Новости',
+            'videoType'     => 'news',
             'published' => true,
         ]);
 
         \Model\MediaCategory\ModelName::create([
             'id'        => 4,
-            'name'      => 'Көркөм тасма',
-            'nameRu'     => 'Художественный фильм',
-            'videoType'     => 'tasma',
-            'published' => true,
-        ]);
-
-        \Model\MediaCategory\ModelName::create([
-            'id'        => 5,
             'name'      => 'Маанайшат',
-            'nameRu'     => 'Развлекательное',
+            'nameRu'     => 'Развлекательные',
             'videoType'     => 'maanai',
             'published' => true,
         ]);
 
         \Model\MediaCategory\ModelName::create([
-            'id'        => 6,
+            'id'        => 5,
             'name'      => 'Спорт',
             'nameRu'     => 'Спорт',
             'videoType'     => 'sport',
+            'published' => true,
+        ]);
+
+        \Model\MediaCategory\ModelName::create([
+            'id'        => 6,
+            'name'      => 'Элдик репортер',
+            'nameRu'     => 'Народный репортер',
+            'videoType'     => 'reporter',
             'published' => true,
         ]);
     }

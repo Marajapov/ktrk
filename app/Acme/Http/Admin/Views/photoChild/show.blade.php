@@ -24,9 +24,9 @@
   <div class="col-md-12"><hr></div>
   <div class="panel-body">
     @if($photoChild->isImage())
-    <img src="{{ asset($photoChild->getFile()) }}">
+    <img src="{{ asset($photoChild->getFile()) }}" width="200" height="120">
     @else
-    <object width="400" height="200" type="application/x-shockwave-flash" data="{{ asset($photoChild->getFile()) }}"></object>
+    <object width="200" height="120" type="application/x-shockwave-flash" data="{{ asset($photoChild->getFile()) }}"></object>
     @endif
 
   </div>

@@ -108,6 +108,7 @@ return [
     'AdminCategoryChanged' => 'Категорияны өзгөртүү',
     'AdminCategoryAddNew' => 'Жаңы категорияны кошуу',
     'AdminCategories' => 'Категориялар',
+    'AdminMediaCategories' => 'Телеберүүлөрдүн тизмеги',
     'AdminCategoryTekteshArticles' => 'Бул категорияга тиешелүү баардык жаңылыктар (макалалар)',
     'AdminCategoryTitlekg' => 'Тема Кыргызча',
     'AdminCategoryTitleru' => 'Тема Орусча',
@@ -163,7 +164,8 @@ return [
     'AdminPhotochildAddNewImg' => 'Жаңы сүрөт кошуу',
     'AdminPhotochildAllImg' => 'Баардык сүрөттөр',
     'AdminPhotoChildSelectGaller' => 'Сүрөт галереясын тандаңыз',
-    '' => '',
+    'DescriptionKg' => 'Баяндоо кыргызча',
+    'DescriptionRu' => 'Баяндоо орусча',
 
     //PhotoParent menu
     'AdminPhotoParentAddNew' => 'Жаңы сүрөт галереясын түзүү',

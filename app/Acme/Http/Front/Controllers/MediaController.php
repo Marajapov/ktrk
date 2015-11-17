@@ -14,19 +14,17 @@ class MediaController extends Controller
      * @return Response
      */
 
-    public function mediaIndex() // list of videos
+    public function mediaIndex(Request $request) // list of videos
     {
-        $mediaAll = \Model\Media\ModelName::get();
-
         $MediaCategories = \Model\MediaCategory\ModelName::get();
+        $mediaAll = \Model\Media\ModelName::get();
 
         $mainBanner = \Model\Background\ModelName::where('name','=','main')->first();
         $categories = \Model\Category\ModelName::all();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
         return view('Front::media.index',[
-            'mediaAll' => $mediaAll,  
-
+            'mediaAll' => $mediaAll,
             'MediaCategories'       => $MediaCategories,
 
             'mainBanner'   => $mainBanner,
@@ -57,7 +55,6 @@ class MediaController extends Controller
             'backgroundMain' => $backgroundMain,
             ]);
     }
-
 
     public function mediaShow(\Model\Media\ModelName $media) // One video
     {
