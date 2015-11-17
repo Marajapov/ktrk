@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ChannelTableSeeder::class);
         $this->call(UserTableSeeder::class);
         $this->call(CategoryTableSeeder::class);
-        //$this->call(PostTableSeeder::class);
+        $this->call(PostTableSeeder::class);
         $this->call(TagTableSeeder::class);
         $this->call(MediaCategorySeeder::class);
         $this->call(MenuTableSeeder::class);
