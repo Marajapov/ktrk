@@ -2571,8 +2571,30 @@ border: none;
     color: #fff;
     font-family: 'Roboto Condensed';
     text-transform: uppercase;
+    font-size: 16px;
 }
 
+.fixedheader>.navbar .container-fluid .navbar-brand:hover {
+    color:#3F51B5;
+}
+
+
+.fixedheader>.navbar .caret {
+    color:#fff;
+    margin-top: -3px;
+}
+
+.fixedheader .dropdown-menu>li>a:hover {
+    color: #CF3529 !important;
+}
+
+.fixedheader .dropdown-menu>li>a {
+    padding: 3px 0px 0px 12px;
+}
+
+.fixedheader .nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
+    background: none;
+}
 
 .switch .navbar-brand {
     padding: 5px 0px;

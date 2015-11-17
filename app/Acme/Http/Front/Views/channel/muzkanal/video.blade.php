@@ -18,7 +18,7 @@
 
     </head>
     <body class="music">  
-        <div class="switch">
+         <div class="switch">
             <nav class="navbar">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
@@ -34,24 +34,25 @@
                 <div class="collapse navbar-collapse" id="menu">
                     <ul class="nav navbar-nav channel_switch">
                         <li class="sitemenu" id="site-channel1">
-                            <a href="#"><img src="{{ asset('images/ktrk_last.svg')}}" style="height:40px;"><span>КТРК</span></a></li>
-                        <li class="sitemenu" id="site-channel1">
-                            <a href="#"><img src="{{ asset('images/channels/balastan_white_notext.png')}}"><span>Баластан</span><h4>Баластан</h4></a></li>
+                            <a href="#"><img src="{{ asset('images/ktrk_last.svg')}}" style="height:40px;"><span>КТРК</span><h4>КТРК</h4></a></li>
                         <li class="sitemenu" id="site-channel1">
                             <a class="active" href="#"><img src="{{ asset('images/channels/muz_white_notext.png')}}" ><span>Музыка</span><h4>Музыка</h4></a></li>
                         <li class="sitemenu" id="site-channel1">
+                            <a href="#"><img src="{{ asset('images/channels/balastan_white_notext.png')}}"><span>Баластан</span><h4>Баластан</h4></a></li>
+
+                        <li class="sitemenu" id="site-channel1">
                             <a href="#"><img src="{{ asset('images/channels/madaniyat_white_notext.png')}}"><span>Маданият</span><h4>Маданият</h4></a></li>
-                
+
                     </ul>  
                 </div><!-- /.navbar-collapse -->
             </nav>
         </div>  
 
-
         <div class="container main-header">
             <div class="row">
                 <div class="col-md-12">         
-    <div class="row fixedheader">
+
+                    <div class="row fixedheader">
                         <nav class="navbar">
                             <div class="container-fluid">
                                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -65,7 +66,7 @@
                                     <div class="logo-block search-block">
                                         <a class="search-toggle"><i class="fa fa-search"></i></a>
 
-                                         <form class="form-search" action="{{ route('front.search') }}" method="get">
+                                        <form class="form-search" action="{{ route('front.search') }}" method="get">
                                             <div class="form-group pull-right">
                                                 <input type="text" name="search" class="form-control" placeholder="Издөө"/>
                                             </div> 
@@ -81,15 +82,21 @@
                                     <a class="navbar-brand" href="{{ route('muzkanal.home') }}"> <i class="fa fa-home"></i>Башкы</a>
                                 </div>
 
-                                
+
 
                                 <!-- Collect the nav links, forms, and other content for toggling -->
-                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                                    <ul class="nav navbar-nav">     
-                                        <li><a href="{{ route('muzkanal.about') }}"><i class="fa fa-info-circle"></i>О канале</a></li>
+                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">                                           
+                                    <ul class="nav navbar-nav">
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-info-circle"></i>О канале <span class="caret"></span></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="{{ route('muzkanal.about') }}"><i class="fa fa-television"></i>О телеканале</a></li>
+                                                <li><a href="{{ route('muzkanal.contacts') }}"><i class="fa fa-envelope-o"></i>Контакты</a></li>                                                
+                                            </ul>
+                                        </li>  
                                         <li>
                                             <a href="{{ route('muzkanal.hitparad') }}"><i class="fa fa-microphone"></i>Хит-Парад <!-- <span class="caret"></span> --></a>
-                                 
+
                                         </li>
                                         <li><a href="{{ route('muzkanal.photos') }}"><i class="fa fa-picture-o"></i>Фото</a></li>
                                         <li><a href="{{ route('muzkanal.videos') }}"><i class="fa fa-youtube-play"></i>Клипы</a></li>
@@ -102,38 +109,36 @@
                                             <li class="ok"><a href="#" title="Odnoklassniki"><i class="fa fa-odnoklassniki"></i></a></li>
                                             <li class="yt"><a href="#" title="YouTube"><i class="fa fa-youtube"></i></a></li>
                                             <li class="in"><a href="#" title="Instagram"><i class="fa fa-instagram"></i></a></li>
-                                            
+
                                         </ul>
-                                     <a class="search-toggle"><i class="fa fa-search"></i></a>
+                                        <a class="search-toggle"><i class="fa fa-search"></i></a>
 
-                                     <form class="form-search" action="{{ route('front.search') }}" method="get">
-                                        <div class="form-group pull-right">
-                                            <input type="text" name="search" class="form-control" placeholder="Издөө"/>
-                                        </div>
+                                        <form class="form-search" action="{{ route('front.search') }}" method="get">
+                                            <div class="form-group pull-right">
+                                                <input type="text" name="search" class="form-control" placeholder="Издөө"/>
+                                            </div>
 
-                                        <a class="btn close-search">
-                                            <i class="fa fa-close"></i>
-                                        </a>
+                                            <a class="btn close-search">
+                                                <i class="fa fa-close"></i>
+                                            </a>
 
-                                        <button class="btn submit-search" type="submit">
-                                            <i class="fa fa-search"></i>
+                                            <button class="btn submit-search" type="submit">
+                                                <i class="fa fa-search"></i>
+                                            </button>
+                                        </form>
+                                        <button class="btn btn-danger btn-live" data-toggle="modal" data-target="#liveModal">
+                                            <i class="fa fa-dot-circle-o"></i>
+                                            түз эфир
                                         </button>
-                                    </form>
-                                    <button class="btn btn-danger btn-live" data-toggle="modal" data-target="#liveModal">
-                                        <i class="fa fa-dot-circle-o"></i>
-                                        түз эфир
-                                    </button>
                                     </ul>
                                 </div><!-- /.navbar-collapse -->
                             </div><!-- /.container-fluid -->
                         </nav>
                     </div>
 
-
                 </div>
             </div>
         </div>
-
         <!--     <a href="#" class="col-md-12 hidden-xs text-center ads">
                 <img src="images/ads_1.jpg" alt=""/>
             </a> -->
@@ -636,7 +641,7 @@
                     </div>
                 </div>
             </div>
-       
+
         </div>
         <footer class="footer">
             <div class="panel panel-default">
@@ -667,55 +672,19 @@
         <script src="{{ asset('js/bootstrap.min.js') }}"></script> 
 
         <script>
-$(document).ready(function () {
-    $(".search-toggle").click(function () {
-        $(".logo-block").addClass("search-show");
-        $(".form-search").addClass("visible");
-    });
-    $(".close-search").click(function () {
-        $(".logo-block").removeClass("search-show");
-        $(".form-search").removeClass("visible");
-    });
-});
-        </script>   
-
-        <script src="{{ asset('js/gallery/imagesloaded.pkgd.min.js') }}"></script>
-        <script src="{{ asset('js/gallery/masonry.pkgd.min.js') }}"></script>
-        <script src="{{ asset('js/gallery/classie.js') }}"></script>
-        <script src="{{ asset('js/gallery/cbpGridGallery.js') }}"></script>
-
-        <script>
-new CBPGridGallery(document.getElementById('grid-gallery'));
-        </script>
-
-        <script>
-            var serverTZoffset = 360;
-        </script>
-
-        <script src="{{ asset('js/lightslider.js') }}"></script>
-
-        <script>
             $(document).ready(function () {
-                $("#content-slider").lightSlider({
-                    loop: true,
-                    keyPress: true
+                $(".search-toggle").click(function () {
+                    $(".logo-block").addClass("search-show");
+                    $(".form-search").addClass("visible");
                 });
-                $('#image-gallery').lightSlider({
-                    gallery: true,
-                    item: 1,
-                    thumbItem: 9,
-                    slideMargin: 0,
-                    speed: 500,
-                    auto: true,
-                    loop: true,
-                    onSliderLoad: function () {
-                        $('#image-gallery').removeClass('cS-hidden');
-                    }
+                $(".close-search").click(function () {
+                    $(".logo-block").removeClass("search-show");
+                    $(".form-search").removeClass("visible");
                 });
             });
-        </script>
+        </script>   
 
-        <script src="{{ asset('js/audio/dkp.min.js') }}"></script>
+    
 
         <script type="text/javascript" src="{{ asset('filter/js/jquery.easing.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('filter/js/jquery.mixitup.min.js') }}"></script>
