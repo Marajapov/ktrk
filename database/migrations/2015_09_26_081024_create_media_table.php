@@ -23,6 +23,13 @@ class CreateMediaTable extends Migration
             $table->integer('owner_id')->nullable()->unsigned()->default(null);
             $table->boolean('published')->nullable()->default(false);
             $table->smallInteger('viewed')->default(0);
+            $table->boolean('dayVideo')->nullable()->default(false);
+            $table->string('video1',500);
+            $table->string('video2',500);
+            $table->string('video3',500);
+            $table->string('video4',500);
+            $table->string('status',500);
+            $table->string('program');
             $table->timestamps();
 
             $table->foreign('owner_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('set null');

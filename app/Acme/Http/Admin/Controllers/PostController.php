@@ -59,7 +59,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-       $post = Post::create($request->except('tag_list','tag_list2','thumbnail','q'));
+        $post = Post::create($request->except('tag_list','tag_list2','thumbnail','q'));
         
         $tags = $request->input('tag_list');
         $tags2 = $request->input('tag_list2');
@@ -99,7 +99,7 @@ class PostController extends Controller
         {
             $file = $request->file('thumbnail');
             $dir  = 'img/thumbnail';
-            $btw = rand(0,100);
+            $btw = time();
 
             $name = $post->id().$btw.'.'.$file->getClientOriginalExtension();
             
@@ -111,7 +111,6 @@ class PostController extends Controller
             $post->save();
             $file->move($dir, $name);
         }
-
 
         return redirect()->route('admin.post.index');
     }
@@ -204,7 +203,7 @@ class PostController extends Controller
         {
             $file = $request->file('thumbnail');
             $dir  = 'img/thumbnail';
-            $btw = rand(0,100);
+            $btw = time();
 
             $name = $post->id().$btw.'.'.$file->getClientOriginalExtension();
             

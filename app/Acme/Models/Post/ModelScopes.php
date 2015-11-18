@@ -5,7 +5,7 @@ trait ModelScopes {
 
     public function scopePublished($query)
     {
-        return $query->where('published', '=', true);
+        return $query->having('published', '=', true);
     }
 
     public function scopeLanguagekg($query)

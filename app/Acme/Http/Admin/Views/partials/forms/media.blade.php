@@ -29,12 +29,16 @@
         </div>
     </div>
 
-    <div class="col-sm-10">
+    <div class="col-sm-12">
         <div class="form-group">
-            <label class="control-label">Тип :{{ trans('site.AdminMediaIMGorVideo') }}</label>
-            {!! Form::select('type', ['image'=>'Картинка','video'=>'Видео'], null, ["class" => "select2_group form-control", "required" => true, "title" => ""]) !!}
-        </div>
-    </div>
+               <label class="control-label">Видео дня</label>
+               {!! Form::hidden('dayVideo', 0) !!}
+               {!! Form::checkbox('dayVideo', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
+           </div>
+   </div>
+   
+
+
     <div class="col-sm-12">
         <div class="form-group">
                <label class="control-label">{{ trans('site.Publish') }}</label>

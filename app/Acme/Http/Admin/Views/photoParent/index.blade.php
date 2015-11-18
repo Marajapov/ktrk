@@ -15,7 +15,11 @@
 				<div class="clearfix"></div>
 				<div class="list-group">
 					@foreach($photoParents as $photoParent)
-					<a href="{{ route('admin.photoParent.show', $photoParent) }}" class="list-group-item">{{ $photoParent->getName() }}</a>
+					<a href="{{ route('admin.photoParent.show', $photoParent) }}" class="list-group-item col-md-1">
+						{{ $photoParent->getName() }}
+						<img src="{{ asset($photoParent->getFile()) }}" alt="" width="100" height="80">
+					</a>
+					
 					@endforeach
 				</div>
 			</div>

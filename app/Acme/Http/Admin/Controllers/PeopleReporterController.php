@@ -40,22 +40,33 @@ class PeopleReporterController extends Controller
     {
 
         
-        $peopleReporter = PeopleReporter::create($request->except('thumbnail'));
+        $name = $_FILES['video']['name'];
+        $temp = $_FILES['video']['tmp_name'];
+        $type = $_FILES['video']['type'];
+        $size = $_FILES['video']['size'];
 
-        if($request->hasFile('thumbnail'))
+        $ff=$_FILES['video']['name'];
+
+        $peopleReporter = PeopleReporter::create($request->except('photo','video','q'));
+
+        if($request->hasFile('photo'))
         {
-            $file = $request->file('thumbnail');
-            $dir  = 'img/director/thumbnail';
-            $name = $peopleReporter->id().'.'.$file->getClientOriginalExtension();
+            $file = $request->file('photo');
+            $dir  = 'img/peopleReporter/photo';
+            $time = time();
+            $name = $peopleReporter->id().$time.'.'.$file->getClientOriginalExtension();
 
             $storage = \Storage::disk('public');
             $storage->makeDirectory($dir);
             // $storage->put($dir.'/'.$name, $file);
 
-            $peopleReporter->thumbnail = $dir.'/'.$name;
+            $peopleReporter->photo = $dir.'/'.$name;
             $peopleReporter->save();
             $file->move($dir, $name);
         }
+        //if((strtolower(end(explode(".",$ff))) =="3gp") || (strtolower(end(explode(".",$ff))) =="flv") || (strtolower(end(explode(".",$ff))) =="x-flv") || (strtolower(end(explode(".",$ff))) =="mp4"))
+
+
         return redirect()->route('admin.peopleReporter.index');
     }
 

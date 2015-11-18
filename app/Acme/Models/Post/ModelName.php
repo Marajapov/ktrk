@@ -83,6 +83,28 @@ class ModelName extends Model
         return $this->content;
     }
 
+    public function getIsPhoto() // at least one photo
+    {
+        $image = $this->content;
+        
+        if (stripos($image, "<img") !== false) {
+            return "yes";
+        }else{
+            return "no";
+        }
+    }
+
+    public function getIsVideo() // at least one photo
+    {
+        $image = $this->content;
+        
+        if (stripos($image, "www.youtube.com") !== false) {
+            return "yes";
+        }else{
+            return "no";
+        }
+    }
+
     public function getViewed()
     {
         return $this->viewed;

@@ -23,15 +23,15 @@
 
     <div class="col-sm-8">
         <div class="form-group">
-            <label class="control-label">{{ trans('site.DescriptionKg') }}</label>
-            {!! Form::text('description', null, ["class" => "form-control", "required" => true, "title" => ""]) !!}
+            <label class="control-label">Источник на кыргызском</label>
+            {!! Form::text('description', null, ["class" => "form-control", "title" => ""]) !!}
         </div>
     </div>
 
     <div class="col-sm-8">
         <div class="form-group">
-            <label class="control-label">{{ trans('site.DescriptionRu') }}</label>
-            {!! Form::text('descriptionRu', null, ["class" => "form-control", "required" => true, "title" => ""]) !!}
+            <label class="control-label">Источник на русском</label>
+            {!! Form::text('descriptionRu', null, ["class" => "form-control", "title" => ""]) !!}
         </div>
     </div>
 

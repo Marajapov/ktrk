@@ -24,8 +24,8 @@
                   <!--<span class="post-timer pull-right">  <i class="fa fa-eye"></i>&nbsp;{{ $post->getViewed() }}</span> -->
 
                   <a href="{{ route('front.post', $post) }}" class="main-img">
-
                     <img src="@if(empty($post->getFile()))images/2.jpg @else {{ asset($post->getFile()) }} @endif" alt="img26">
+                  </a>
                     <!--<div class="news-channel">
                        <a href="#">
                         <img src="{{-- $post->isChannelIcon($post->channel_id) --}}" alt=""/>
@@ -33,30 +33,21 @@
                     </div>-->
 
                     <p class="description clearfix">
-
                       <a href="{{ route('front.category', $post->category) }}">
                          {{ $post->category('category_id')->first()->getTitle() }}
                       </a>
-
                       <span>
-                        <!-- @if(empty($post->getFile())) @else <i class="fa fa-play-circle-o"></i> @endif -->
-                        @if(empty($post->getFile()) && empty($post->getFile())) @else <i class="fa fa-picture-o"></i> @endif
+                        @if($post->getIsVideo() == 'yes')<i class="fa fa-play-circle-o"></i> @endif
+                        @if($post->getIsPhoto() == 'yes') <i class="fa fa-picture-o"></i> @endif
                       </span>
-
                     </p>
-
                     <a class="news-title" href="{{ route('front.post', $post) }}">
-                      <!-- <h2>{!! $result = substr($post->getTitle(),0,75) !!}...</h2>-->
+                      <!--<h2>{!! $result = substr($post->getTitle(),0,75) !!}...</h2> -->
                       <h2>{{ $post->getTitle() }}</h2>
                     </a>
-
-                  </a>
-
                   </figure>
-
                 </div>
                 @endforeach
-
 
                 <footer>
                   <a href="{{ route('front.general') }}">
@@ -96,15 +87,15 @@
                               <h3 class="modal-title" id="exampleModalLabel">Жаңылык жөнөтүү / Отправить новость</h3>
                             </div>
                             <div class="modal-body">
-                              <form>
+                              {!! Form::open(array('route' => 'admin.peopleReporter.store', 'enctype' => 'multipart/form-data', 'multiple'=>true, 'id'=>'addNews')) !!}
                                 <div class="form-group">
                                   <div class="row">
                                     <div class="col-md-6">
                                       <label for="recipient-name" class="control-label">Аты жөнүңүз / Ваше имя </label>
-                                      <input type="text" class="form-control" placeholder="Сизди ким деп тааныштырабыз / Как вас познакомить" id="recipient-name"></div>
+                                      <input name="name" type="text" class="form-control" placeholder="Сизди ким деп тааныштырабыз / Как вас познакомить" id="recipient-name"></div>
                                       <div class="col-md-6">
                                         <label for="recipient-name" class="control-label">Телефонуңуз же Email / Телефон или Email</label>
-                                        <input type="text" class="form-control" placeholder="Байланыш телефонуңуз же Email / Ваш контактный телефон или Email" id="recipient-name"></div>
+                                        <input name="info" type="text" class="form-control" placeholder="Байланыш телефонуңуз же Email / Ваш контактный телефон или Email" id="recipient-name"></div>
                                       </div>
 
                                     </div>
@@ -112,23 +103,32 @@
                                       <div class="row">
                                         <div class="col-md-12 textforma">
                                           <label for="message-text" class="control-label">Жаңылыктын мазмуну / Описание содержания:</label>
-                                          <textarea class="form-control" placeholder="Жаңылыктын мазмуну, сүрөт жана видеолор боюнча маалымат / Содержание, информация по снимкам или видео" id="message-text"></textarea>
+                                          <textarea name="question" class="form-control" placeholder="Жаңылыктын мазмуну, сүрөт жана видеолор боюнча маалымат / Содержание, информация по снимкам или видео" id="message-text"></textarea>
                                         </div>
                                       </div>
                                     </div>
+
                                     <div class="form-group">
-                                      <form enctype="multipart/form-data">
+                                        <label for="file" class="control-label">Фото</label>
                                         <div class="form-group">
-                                          <input id="file-5" class="file" type="file" multiple data-preview-file-type="any" data-upload-url="#">
-                                        </div>
-                                      </form>
+                                          <input name="photo" class="file" type="file">
+                                        </div>                                      
                                     </div>
-                                  </form>
+
+                                    <div class="form-group">
+                                        <label for="video" class="control-label">Видео</label>
+                                        <div class="form-group">
+                                          <input name="video" class="file" type="file">
+                                        </div>                                      
+                                    </div>
+
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-default" data-dismiss="modal">Жабуу / Закрыть</button>
+                                      <input type="submit" name="submit" class="btn btn-primary" value="Кабарды жөнөтүү / Отправить новость">
+                                    </div>
+                                  {!! Form::close() !!}
                                 </div>
-                                <div class="modal-footer">
-                                  <button type="button" class="btn btn-default" data-dismiss="modal">Жабуу / Закрыть</button>
-                                  <button type="button" class="btn btn-primary">Кабарды жөнөтүү / Отправить новость</button>
-                                </div>
+                                
                               </div>
                             </div>
                           </div>
@@ -266,8 +266,8 @@
                             <a href="{{ route('front.category', $post->category) }}" class="">{{ $post->category('category_id')->first()->title }}</a>
                            
                             <span class="news-file">
-                              @if(empty($post->getFile())) @else <i class="fa fa-play-circle-o"></i> @endif
-                              @if(empty($post->getFile()) && empty($post->getFile())) @else <i class="fa fa-picture-o"></i> @endif
+                              @if($post->getIsVideo() == 'yes')<i class="fa fa-play-circle-o"></i> @endif
+                              @if($post->getIsPhoto() == 'yes')<i class="fa fa-picture-o"></i> @endif
                             </span>
                             <span class="news-time pull-right"> {{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getYear()}}</span>
                             <span class="news-timer pull-right"><i class="fa fa-eye"></i>&nbsp;{{ $post->getViewed() }}</span>
