@@ -1,0 +1,18 @@
+.panel-video,.panel-show{
+    border-right: 2px solid #F1F4F9;
+    border-bottom: 2px solid #F1F4F9;
+}
+.top-right-block .media-ctg-panel{
+    border-left: 2px solid #F1F4F9;
+    border-bottom: 2px solid #F1F4F9;
+}
+.panel-related-videos{
+    border-right: 2px solid #F1F4F9;
+    border-top: 2px solid #F1F4F9;
+}
+.show-title{
+    margin-bottom: 20px;
+}
+.video-desc{
+    margin-top: 20px;
+}

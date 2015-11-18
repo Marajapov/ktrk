@@ -1,3 +1,7 @@
+.panel-articles{
+    border-right: 2px solid #F1F4F9;
+    border-bottom: 1px solid #F1F4F9;
+}
 .panel-articles .block{
     padding: 0 5px;
 }
@@ -79,4 +83,9 @@
 }
 .e-views i{
     margin-right: 5px;
+}
+
+.ctg-panel{
+    border-left: 1px solid #F1F4F9;
+    border-bottom: 1px solid #F1F4F9;
 }

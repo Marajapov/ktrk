@@ -29,7 +29,9 @@
 					<div class="list-group">
 						@foreach($posts as $post)
 						<div class="@if(!$post->isPublished()) alert alert-danger list-group-item @endif list-group-item">
-							<i>{{ $post->id() }}. </i><a href="{{ route('admin.post.show', $post) }}">{{ $post->getTitleRuOrKg() }}</a> ({{ $post->category->getTitle()  }}) <span class="pull-right">Кто добавил: {{ $post->owner()->first()->name }}, Дата: {{ $post->getDate() }}</span>
+							<i>
+							{{ $post->id() }}. </i><a href="{{ route('admin.post.show', $post) }}">{{ $post->getTitleRuOrKg() }}</a>
+							 ({{ $post->category->getTitle()  }}) <span class="pull-right">Кто добавил: {{ $post->owner()->first()->name }}, Дата: {{ $post->getDate() }}</span>
 						</div>
 						@endforeach
 					</div>
