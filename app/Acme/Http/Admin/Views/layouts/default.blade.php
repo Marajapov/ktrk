@@ -1,136 +1,118 @@
 <!DOCTYPE html>
 <html lang="ру">
-    <head>
+<head>
 
-        <title>
-            @yield('title')
-        </title>
+  <title>
+    @yield('title')
+  </title>
 
-        <link rel="stylesheet" href="{{ asset('css/admin/awesome-bootstrap-checkbox.min.css') }}"/>
+  <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}"/>
+  <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}"/>
+  <link rel="stylesheet" href="{{ asset('css/admin/jasny/jasny-bootstrap.min.css') }}"/>
 
-        <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" />
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-datetimepicker.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-select.css') }}">
-        
-        <!-- Admin page styles -->
-        <link rel="stylesheet" href="{{ asset('css/admin/bootstrap.min.css') }}"/>    
-        <link rel="stylesheet" href="{{ asset('css/admin/font-awesome.min.css') }}"/>
-        <link rel="stylesheet" href="{{ asset('css/admin/custom.css') }}"/>
-        <link rel="stylesheet" href="{{ asset('css/admin/style.css') }}"/>
-        <link rel="stylesheet" href="{{ asset('css/admin/awesome-checkbox/build.css') }}"/>
+  {{--<link rel="stylesheet" href="{{ asset('css/admin/awesome-bootstrap-checkbox.min.css') }}"/>--}}
+  <link rel="stylesheet" href="{{ asset('css/bootstrap-datetimepicker.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/bootstrap-select.css') }}">
 
+  <!-- Admin page styles -->
+  <link rel="stylesheet" href="{{ asset('css/admin/custom.css') }}"/>
+  <link rel="stylesheet" href="{{ asset('css/admin/style.css') }}"/>
 
-        <!-- Jasny Bootstrap -->
-        <link rel="stylesheet" href="{{ asset('css/admin/jasny/jasny-bootstrap.min.css') }}"/>
-        <link rel="stylesheet" href="{{ asset('css/admin/select/select2.min.css') }}"/>
-        
-        <!-- JS scripts forom admin page -->
-        <script src="{{ asset('js/jquery-1.11.2.min.js') }}"></script>
-        <script src="{{ asset('js/admin/nprogress.js') }}"></script>
+  <link rel="stylesheet" href="{{ asset('css/admin/select/select2.min.css') }}"/>
 
-         <!-- Jasny JS -->
-         <script src="{{ asset('js/admin/jasny/jasny-bootstrap.min.js') }}"></script>
+  <!-- JS scripts forom admin page -->
+  <script src="{{ asset('js/jquery-1.11.2.min.js') }}"></script>
+  <script src="{{ asset('js/bootstrap.js') }}"></script>
+  <script src="{{ asset('js/admin/jasny/jasny-bootstrap.min.js') }}"></script>
 
-        <!-- Simple Loader js-->
-        <script>
-            NProgress.start();
-        </script>
+  <script src="{{ asset('js/admin/nprogress.js') }}"></script>
+  <!-- Simple Loader js-->
+  <script>
+    NProgress.start();
+  </script>
 
-        <!--[if lt IE 9]>
-        <script src="../assets/js/ie8-responsive-file-warning.js"></script>
-        <![endif]-->
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
 
-        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
-        <!-- FontAwesome Styles-->
-        <link href="{{ asset('css/font-awesome.css') }}" rel="stylesheet" />
+  @yield('styles')
 
+</head>
+<body class="nav-md">
+<div class="container body">
+  <div class="main_container">
+    <div class="col-md-3 left_col">
+      <div class="left_col scroll-view">
 
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+        <div class="navbar nav_title" style="border: 0;">
+          <a href="{{ route('front.home') }}" class="site_title">
+          </a>
+        </div>
+        <div class="clearfix"></div>
 
-        @yield('styles')
+        @include('Admin::partials.header')
+        @yield('header')
+      </div>
+    </div>
 
-    </head>
-    <body class="nav-md">
-        <div class="container body">
-            <div class="main_container">
-                <div class="col-md-3 left_col">
-                    <div class="left_col scroll-view">
+    <!-- top navigation -->
+    <div class="top_nav">
 
-                        <div class="navbar nav_title" style="border: 0;">
-                            <a href="{{ route('front.home') }}" class="site_title">
-                            </a>
-                        </div>
-                        <div class="clearfix"></div>
+      <div class="nav_menu">
+        <nav class="" role="navigation">
+          <div class="nav toggle ">
+            <a data-toggle="tooltip" data-placement="bottom" title="Меню" id="menu_toggle"><i class="fa fa-dedent"></i></a>
+          </div>
+          <div>
+          </div>
 
-                        @include('Admin::partials.header')
-                        @yield('header')
-                    </div>
-                </div>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/locale/kg">KG</a></li>
+            <li><a href="/locale/ru">Ru</a></li>
+            <li class="">
+              <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-user"></i>
+                {{ auth()->user()->getName() }}
+                <span class=" fa fa-caret-down"></span>
+              </a>
+              <ul class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
+                <li><a href="javascript:;"><i class="fa fa-user-secret"></i>&nbsp;Профиль</a>
+                </li>
+                <li>
+                  <a href="javascript:;"><i class="fa fa-cog"></i>&nbsp;Оңдоолор </a>
+                </li>
+                <li>
+                  <a href="javascript:;"><i class="fa fa-info"></i>&nbsp;Жардам</a>
+                </li>
+                <li class="divider"></li>
+                <li><a href="javascript:document.getElementById('logout-form').submit()"><i class="fa fa-power-off"></i>&nbsp;Чыгуу</a></li>
+              </ul>
+            </li>
 
-                <!-- top navigation -->
-                <div class="top_nav">
+          </ul>
 
-                    <div class="nav_menu">
-                        <nav class="" role="navigation">
-                            <div class="nav toggle ">
-                                <a data-toggle="tooltip" data-placement="bottom" title="Меню" id="menu_toggle"><i class="fa fa-dedent"></i></a>
-                            </div>
-                            <div>
-                            </div>
+        </nav>
+      </div>
 
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a href="/locale/kg">KG</a></li>
-                                <li><a href="/locale/ru">Ru</a></li>
-                                <li class="">
-                                    <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-user"></i>
-                                        {{ auth()->user()->getName() }} 
-                                        <span class=" fa fa-caret-down"></span>
-                                    </a>
-                                    <ul class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
-                                        <li><a href="javascript:;"><i class="fa fa-user-secret"></i>&nbsp;Профиль</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;"><i class="fa fa-cog"></i>&nbsp;Оңдоолор </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;"><i class="fa fa-info"></i>&nbsp;Жардам</a>
-                                        </li>
-                                        <li class="divider"></li>
-                                        <li><a href="javascript:document.getElementById('logout-form').submit()"><i class="fa fa-power-off"></i>&nbsp;Чыгуу</a></li>
-                                    </ul>
-                                </li>                    
+    </div>
+    <!-- /top navigation -->
 
-                            </ul>
+    <!-- Content -->
+    <div class="right_col" role="main">
+      @yield('content')
 
-                        </nav>
-                    </div>
+    </div>
+    <!-- Content -->
 
-                </div>
-                <!-- /top navigation -->
-
-                <!-- Content -->
-                <div class="right_col" role="main">
-                    @yield('content')
-
-                </div>
-                <!-- Content -->
-
-            </div><!--end page-container-->
-        </div><!--end container body-->
-        @yield('scripts')       
-   
-        <!-- bootstrap progress js -->
-        <script src="{{ asset('js/admin/bootstrap.min.js') }}"></script>
-        <script src="{{ asset('js/admin/progressbar/bootstrap-progressbar.min.js') }}"></script>
-        <script src="{{ asset('js/admin/nicescroll/jquery.nicescroll.min.js') }}"></script>
-        <script src="{{ asset('js/admin/custom.js') }}"></script>
-        <script>
-            NProgress.done();
-        </script>
-    </body>
+  </div><!--end page-container-->
+</div><!--end container body-->
+@yield('scripts')
+<script src="{{ asset('js/admin/progressbar/bootstrap-progressbar.min.js') }}"></script>
+<script src="{{ asset('js/admin/nicescroll/jquery.nicescroll.min.js') }}"></script>
+<script src="{{ asset('js/admin/custom.js') }}"></script>
+<script>
+  NProgress.done();
+</script>
+</body>
 </html>

@@ -51,6 +51,11 @@ class MuzkanalController extends Controller
     {
         return view('Front::channel.muzkanal.photos');
     }
+    
+  public function contacts()
+    {
+        return view('Front::channel.muzkanal.contacts');
+    }
 
 
 }

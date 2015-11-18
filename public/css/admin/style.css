@@ -13,9 +13,10 @@
     margin: 12px 0px 0px 0px;
     font-size: 16px;
 }
-#reportrange_right span{
+#reportrange_right span {
     top: 2px;
     position: relative;
+}
 /*Time*/
 
 /********* login ****************/
@@ -209,7 +210,6 @@ form:after {
     border: 1px solid #A878AF;
     outline: none;
 }
-}
 #username { background-position: 10px 10px !important }
 #password { background-position: 10px -53px !important }
 .login_content form div a {
@@ -242,7 +242,7 @@ form:after {
     border-top: 1px solid #CFD5D9;
     padding: 15px 0;
 }
-login_content form input[type="submit"],#content form .submit{float: left; margin-left: 38px;}
+.login_content form input[type="submit"],#content form .submit{float: left; margin-left: 38px;}
 .button a {
     background: url(http://cssdeck.com/uploads/media/items/8/8bcLQqF.png) 0 -112px no-repeat;
     color: #7E7E7E;
@@ -302,7 +302,7 @@ login_content form input[type="submit"],#content form .submit{float: left; margi
     font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.25) 0 2px 4px 1px, rgba(0, 0, 0, 0.25) 0 2px 55px 3px;
-    background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgi…pZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA=='); */
+    background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgi…pZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
     background: -moz-radial-gradient(#8dddff, #0566a9);
     /* background: -webkit-radial-gradient(#8dddff, #0566a9); */
     background: radial-gradient(#8dddff, #0566a9);

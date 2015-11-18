@@ -225,14 +225,20 @@
     padding-top: 0;
     color: #fff;
     text-transform: uppercase;
-    text-shadow: 1px 1px 10px #000
+       text-shadow:
+            1px 1px 0 #CCC,
+            2px 2px 0 #CCC, 
+            3px 3px 0 #444,
+            4px 4px 0 #444,
+            5px 5px 0 #444,
+            6px 6px 0 #444; /* end of 4 level deep dark shadow */
 }
 
 .dkp-anonce-big .dkp-anonce-when {
     position: absolute;
-    top: -126%;
+       bottom: -50%;
     right: -0%;
-    left: 25%;
+    left: 0%;
     height: 300%;
     font-size: 12px;
     text-align: left;
@@ -250,12 +256,15 @@
 
 }
 .dkp-anonce-big .dkp-anonce-when>span>span {
-    display: block;
-    margin: 0px 15px;
-    padding-left: 1em;
-    padding-right: 1em;
-    background: #F44336;
-    color: #fff;
+        display: block;
+    margin: 0px 0px 0px 30px;
+    padding-left: 0.4em;
+    padding-right: 0.4em;
+    color: #F44336;
+    font-size: 44px;
+    text-shadow: 1px 1px 0 #FFFFFF, 2px 2px 0 #FFFEFE, 3px 3px 0 #7D7D7D, 4px 4px 0 #444, 5px 5px 0 #B59E9E, 6px 6px 0 #444;
+    border-bottom: 2px dashed #fff;
+    font-weight: bold;
 }
 .dkp-big-3now {
     /*display: none;*/
@@ -1228,7 +1237,7 @@ font-weight: bold;
         transform-origin: 100% 55%
     }
     .dkp-anonce-big .dkp-anonce-time>span {
-        top: 55%
+        top: 54%
     }
     .dkp-anonce-big .dkp-anonce-time>span.dkp-soon {
         font-size: 70px;
@@ -1351,7 +1360,14 @@ font-weight: bold;
     }
     .dkp-anonce-big .dkp-anonce-time {
         font-size: 110px;
-        line-height: 110px
+        line-height: 110px;
+        text-shadow:
+            1px 1px 0 #CCC,
+            2px 2px 0 #CCC, 
+            3px 3px 0 #444,
+            4px 4px 0 #444,
+            5px 5px 0 #444,
+            6px 6px 0 #444; /* end of 4 level deep dark shadow */
     }
     .dkp-anonce-big .dkp-anonce-time>span.dkp-soon {
         font-size: 60px;

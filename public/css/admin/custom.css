@@ -256,17 +256,14 @@ body.nav-md .container.body .right_col {
 }
 /**  ------------------------------------------  **/
 
-blue,
 .blue {
     color: #3498DB;
 }
 
-purple,
 .purple {
     color: #9B59B6;
 }
 
-green,
 .green {
     color: #1ABB9C;
 }
@@ -275,12 +272,10 @@ green,
     color: #9CC2CB;
 }
 
-red,
 .red {
     color: #E74C3C;
 }
 
-dark,
 .dark {
     color: #34495E;
 }
@@ -1510,30 +1505,6 @@ table.jambo_table tbody tr.selected td {
     margin-left: 10px;
 }
 
-.paginate_disabled_previous {
-    background: url('../images/back_disabled.png') no-repeat top left;
-}
-
-.paginate_enabled_previous {
-    background: url('../images/back_enabled.png') no-repeat top left;
-}
-
-.paginate_enabled_previous:hover {
-    background: url('../images/back_enabled_hover.png') no-repeat top left;
-}
-
-.paginate_disabled_next {
-    background: url('../images/forward_disabled.png') no-repeat top right;
-}
-
-.paginate_enabled_next {
-    background: url('../images/forward_enabled.png') no-repeat top right;
-}
-
-.paginate_enabled_next:hover {
-    background: url('../images/forward_enabled_hover.png') no-repeat top right;
-}
-
 table.display {
     margin: 0 auto;
     clear: both;
@@ -1564,26 +1535,6 @@ table.display td {
 
 table.display td.center {
     text-align: center;
-}
-
-.sorting_asc {
-    background: url('../images/sort_asc.png') no-repeat center right;
-}
-
-.sorting_desc {
-    background: url('../images/sort_desc.png') no-repeat center right;
-}
-
-.sorting {
-    background: url('../images/sort_both.png') no-repeat center right;
-}
-
-.sorting_asc_disabled {
-    background: url('../images/sort_asc_disabled.png') no-repeat center right;
-}
-
-.sorting_desc_disabled {
-    background: url('../images/sort_desc_disabled.png') no-repeat center right;
 }
 
 table.display thead th:active,
@@ -2300,15 +2251,6 @@ a.star {
     font-size: 18px;
     font-style: normal;
     width: 33px;
-}
-
-.list-btn-mail > cn {
-    background: none repeat scroll 0 0 #39B3D7;
-    border-radius: 12px;
-    color: #FFFFFF;
-    float: right;
-    font-style: normal;
-    padding: 0 5px;
 }
 
 .button-mail {
@@ -3246,7 +3188,6 @@ select.parsley-error {
     width: auto;
 }
 
-//----
 .daterangepicker .daterangepicker_start_input label,
 .daterangepicker .daterangepicker_end_input label {
     color: #333;
@@ -3323,7 +3264,6 @@ select.parsley-error {
     border: none;
 }
 
-//----
 .daterangepicker.single .ranges,
 .daterangepicker.single .calendar {
     float: none;
@@ -3380,7 +3320,6 @@ textarea:focus {
     filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
     border-color: #e6e6e6 #e6e6e6 #bfbfbf;
     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-    filter: progid: DXImageTransform.Microsoft.gradient(enabled false);
     border: 1px solid #cccccc;
     border-bottom-color: #b3b3b3;
     -webkit-border-radius: 4px;
@@ -4135,7 +4074,7 @@ html > body > .ui-pnotify {
 /* *********  profile/social  **************************** */
 
 .social-sidebar,
-social-body {
+.social-body {
     float: right;
 }
 
@@ -5320,18 +5259,6 @@ ul.project_files li a i {
     margin-right: 5px;
 }
 
-.loading {
-    display: none;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: #fff url("../img/loading.gif") no-repeat center center;
-    opacity: .75;
-    filter: alpha(opacity=75);
-    z-index: 20140628;
-}
 /* *********  /image cropping  **************************** */
 /* *********  moris  **************************** */
 
@@ -5871,7 +5798,6 @@ form:after {
     border: 1px solid #A878AF;
     outline: none;
 }
-}
 #username { background-position: 10px 10px !important }
 #password { background-position: 10px -53px !important }
 .login_content form div a {
@@ -5904,7 +5830,7 @@ form:after {
     border-top: 1px solid #CFD5D9;
     padding: 15px 0;
 }
-login_content form input[type="submit"],#content form .submit{float: left; margin-left: 38px;}
+.login_content form input[type="submit"],#content form .submit{float: left; margin-left: 38px;}
 .button a {
     background: url(http://cssdeck.com/uploads/media/items/8/8bcLQqF.png) 0 -112px no-repeat;
     color: #7E7E7E;
@@ -6013,7 +5939,6 @@ header{width:100%;}
   display: inline-block;
   width: 20px;
   height: 20px;
-  background-image: url("../../assets/img/icons.png");
   vertical-align: middle;
 }
 
