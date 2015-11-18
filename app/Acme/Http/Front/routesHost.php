@@ -28,6 +28,7 @@ Route::group(['domain' => '1000.ktrk.kg', 'prefix' => '/muzkanal', 'namespace' =
     Route::get('/videos', ['as' => 'muzkanal.videos',   'uses' => 'MuzkanalController@videos']);
     Route::get('/hitparad', ['as' => 'muzkanal.hitparad',   'uses' => 'MuzkanalController@hitparad']);
     Route::get('/photos', ['as' => 'muzkanal.photos',   'uses' => 'MuzkanalController@photos']);
+    Route::get('/contacts', ['as' => 'muzkanal.contacts',   'uses' => 'MuzkanalController@contacts']);
 
 });
 
@@ -100,8 +101,8 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
     Route::get('category/{category}', ['as' => 'front.category', 'uses' => 'HomeController@categoryPage']);
     
     Route::get('media', ['as' => 'front.media.index', 'uses' => 'MediaController@mediaIndex']); // List of videos
-    Route::get('media/{rtype}', ['as' => 'front.media.rtype', 'uses' => 'MediaController@mediaRtype']); // List of videos 2
-    Route::get('media/{media}', ['as' => 'front.media', 'uses' => 'MediaController@mediaShow']); // One video
+    Route::get('media/project/{project}', ['as' => 'front.media.project', 'uses' => 'MediaController@project']); // Show Page
+    Route::get('media/project/{project}/video/{video}', ['as' => 'front.media.video', 'uses' => 'MediaController@video']); // Show Video
     
 
 
