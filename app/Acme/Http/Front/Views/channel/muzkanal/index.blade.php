@@ -152,6 +152,7 @@
                     <div class="row dkp-slide">
                         <a href="#">
                             <div class="col-sm-12 dkp-anonce dkp-anonce-big" style="background-image: url(images/channels/muzkanal/12.png);">
+                               <img class="muznote" src="{{ asset('images/channels/muzkanal/notesbig2.png') }}" alt=""> 
                                 <div class="dkp-anonce-time">
                                     <span>21:00</span>
                                 </div>
@@ -1024,16 +1025,16 @@
         <script src="js/bootstrap.min.js"></script> 
 
         <script>
-$(document).ready(function () {
-    $(".search-toggle").click(function () {
-        $(".logo-block").addClass("search-show");
-        $(".form-search").addClass("visible");
-    });
-    $(".close-search").click(function () {
-        $(".logo-block").removeClass("search-show");
-        $(".form-search").removeClass("visible");
-    });
-});
+            $(document).ready(function () {
+                $(".search-toggle").click(function () {
+                    $(".logo-block").addClass("search-show");
+                    $(".form-search").addClass("visible");
+                });
+                $(".close-search").click(function () {
+                    $(".logo-block").removeClass("search-show");
+                    $(".form-search").removeClass("visible");
+                });
+            });
         </script>   
 
         <script src="js/gallery/imagesloaded.pkgd.min.js"></script>
@@ -1042,13 +1043,13 @@ $(document).ready(function () {
         <script src="js/gallery/cbpGridGallery.js"></script>
 
         <script>
-new CBPGridGallery(document.getElementById('grid-gallery'));
+            new CBPGridGallery(document.getElementById('grid-gallery'));
         </script>
-
-        <script>
+<!--<script>
             var serverTZoffset = 360;
         </script>
-
+  -->
+        
         <script src="js/lightslider.js"></script>
 
         <script>

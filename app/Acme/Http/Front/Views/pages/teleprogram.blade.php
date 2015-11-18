@@ -27,7 +27,7 @@
                             <div class="row">
                                 <div class="col-xs-12 programmshow" style="margin-top:10px;">
                                     <table class="table table-striped">
-                                    <h4>Коомдук каналдын 17-ноябрь шейшемби күндөгү көрсөтүүлөр программасы</h4>
+                                        <h4>Коомдук каналдын 17-ноябрь шейшемби күндөгү көрсөтүүлөр программасы</h4>
                                         <thead >
                                             <tr class="teletitle">
                                                 <th class="col-xs-1">Время</th>
@@ -36,50 +36,50 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <th scope="row">6:57</th>
+                                            <tr class="teleunlive">
+                                                <th scope="row" class="teletimer">6:57</th>
                                                 <td>Кыргыз Республикасынын гимни</td> 
                                                 <td class="telelink"></td>                                     
                                             </tr>
-                                            <tr>
+                                            <tr class="teleunlive">
                                                 <th scope="row">7:00</th>
                                                 <td>Күндарек</td>
                                                 <td class="telelink"></td>                                       
                                             </tr>
-                                            <tr>
+                                            <tr class="teleunlive">
                                                 <th scope="row">7:10</th>
                                                 <td>Замана</td>
                                                 <td class="telelink"></td>                                        
                                             </tr>
-                                            <tr>
+                                            <tr class="teleunlive">
                                                 <th scope="row">9:00</th>
                                                 <td>Күндарек</td>
                                                 <td class="telelink"><i class="fa fa-language"></i>На русском</td>                                        
                                             </tr> 
-                                            <tr>
+                                            <tr class="teleunlive">
                                                 <th scope="row">9:10</th>
                                                 <td>Замана</td>
                                                 <td class="telelink"></td>                                        
                                             </tr> 
-                                            <tr>
+                                            <tr class="teleunlive">
                                                 <th scope="row">10:00</th>
                                                 <td>"Март аттуу падыша". Мультфильм</td>
                                                 <td class="telelink"></td>                                        
                                             </tr> 
-                                            <tr>
+                                            <tr class="teleunlive">
                                                 <th scope="row">10:15</th>
                                                 <td>"Улыбка на камне". Художественный фильм (реж. У.Ибрагимов, "Кыргызфильм")</td>                                      
-                                                <td class="telelink"></td>  
+                                                <td class="telelink"><i class="fa fa-play-circle-o"></i>Худ.фильм</td>  
                                             </tr> 
-                                            <tr>
+                                            <tr class="telelive">
                                                 <th scope="row">11:00</th>
                                                 <td>Новости</td>
-                                                <td class="telelink"></td>                                        
+                                                <td class="telelink"><i class="fa fa-play"></i><span>Азыр эфирде</span></td>                                        
                                             </tr> 
                                             <tr>
                                                 <th scope="row">11:15</th>
                                                 <td>"Улыбка на камне" (продолжение)</td>
-                                                <td class="telelink"></td>                                        
+                                                <td class="telelink"><i class="fa fa-play-circle-o"></i>Худ.фильм</td>                                        
                                             </tr> 
                                             <tr>
                                                 <th scope="row">11:50</th>
@@ -114,12 +114,12 @@
                                             <tr>
                                                 <th scope="row">14:25</th>
                                                 <td>Узоры Ала-Тоо. (Кыргызтелефильм)</td>
-                                                <td class="telelink"></td>                                        
+                                                <td class="telelink"><i class="fa fa-play-circle-o"></i>Худ.фильм</td>                                        
                                             </tr> 
                                             <tr>
                                                 <th scope="row">14:35</th>
                                                 <td>Ак илбирстин тукуму. (Уландысы)</td>
-                                                <td class="telelink"></td>                                        
+                                                <td class="telelink"><i class="fa fa-play-circle-o"></i>Худ.фильм</td>                                        
                                             </tr> 
                                             <tr>
                                                 <th scope="row">15:00</th>
@@ -129,7 +129,7 @@
                                             <tr>
                                                 <th scope="row">15:20</th>
                                                 <td>Ак илбирстин тукуму (уландысы)</td>
-                                                <td class="telelink"></td>                                        
+                                                <td class="telelink"><i class="fa fa-play-circle-o"></i>Худ.фильм</td>                                        
                                             </tr> 
                                             <tr>
                                                 <th scope="row">17:00</th>
@@ -147,7 +147,7 @@
                                                 <td class="telelink"><i class="fa fa-video-camera"></i>Док.фильм</td>                                        
                                             </tr>
                                             <tr>
-                                                <th scope="row">17:45</th>
+                                                <th scope="row" class="teletimer">17:45</th>
                                                 <td>"Биринчи кадр". Көркөм фильм (реж. Садык Шер-Нияз, М.Жанталиев, "Айтыш фильм")</td>                                      
                                                 <td class="telelink"></td>  
                                             </tr>
@@ -164,22 +164,22 @@
                                             <tr>
                                                 <th scope="row">20:10</th>
                                                 <td>Стратегия 2017</td>               
-                                                <td class="telelink"></td>                         
+                                                <td class="telelink"><i class="fa fa-caret-square-o-right"></i>Түз эфир</td>                         
                                             </tr>
                                             <tr>
                                                 <th scope="row">20:40</th>
                                                 <td>Мар Байжиевдин  мезгил барактары</td>   
                                                 <td class="telelink"><i class="fa fa-bullhorn"></i>Премьера</td>                                     
                                             </tr>
-                                            <tr class="telelive">
+                                            <tr>
                                                 <th scope="row">21:30</th>
                                                 <td>Ала-Тоо маалымат программасы</td>  
-                                                <td class="telelink"><i class="fa fa-play"></i><span>Азыр эфирде</span></td>                                      
+                                                <td class="telelink"></td>                                      
                                             </tr>
                                             <tr>
                                                 <th scope="row">22:00</th>
                                                 <td>"Би-Би-Сиден" дүйнөлүк жаңылыктар</td>   
-                                                <td class="telelink"></td>                                     
+                                                <td class="telelink"><i class="fa fa-globe"></i></td>                                     
                                             </tr> 
                                             <tr>
                                                 <th scope="row">22:17</th>
@@ -204,7 +204,7 @@
                                             <tr>
                                                 <th scope="row">23:50</th>
                                                 <td>Аба-ырайы</td>    
-                                                <td class="telelink"></td>                                    
+                                                <td class="telelink"><i class="fa fa-cloud"></i></td>                                    
                                             </tr>
                                             <tr>
                                                 <th scope="row">23:55</th>
@@ -223,7 +223,7 @@
                             <div class="row">
                                 <div class="col-xs-12 programmshow" style="margin-top:10px;">
                                     <table class="table table-striped">
-                                    <h4>Коомдук каналдын 18-ноябрь шейшемби күндөгү көрсөтүүлөр программасы</h4>
+                                        <h4>Коомдук каналдын 18-ноябрь шейшемби күндөгү көрсөтүүлөр программасы</h4>
                                         <thead >
                                             <tr class="teletitle">
                                                 <th class="col-xs-1">Время</th>
@@ -413,7 +413,7 @@
 
                                 </div>
                             </div>                          
-                                   
+
                         </div>
                         <div class="tab-pane" id="wednesday">
                             <h1>Среда</h1>

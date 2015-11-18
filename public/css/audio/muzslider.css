@@ -192,8 +192,8 @@
 }
 .dkp-anonce-big .dkp-anonce-time {
     position: absolute;
-    top: -101%;
-    right: 71%;
+    top: -103%;
+    right: 74%;
     width: 50%;
     height: 300%;
     font-size: 26px;
@@ -216,7 +216,7 @@
 .dkp-anonce-big .dkp-anonce-title {
     display: block;
     position: absolute;
-    left: 2%;
+    left: 13%;
     right: 2%;
     top: 59%;
     font-size: 15px;
@@ -1246,7 +1246,7 @@ font-weight: bold;
     .dkp-anonce-big .dkp-anonce-title {
         font-size: 36px;
         padding-top: 7px;
-        top: 80%
+        top: 79%
     }
     .dkp-anonce-big .dkp-anonce-when {
         font-size: 20px;
@@ -1359,7 +1359,7 @@ font-weight: bold;
         left: 155px
     }
     .dkp-anonce-big .dkp-anonce-time {
-        font-size: 110px;
+        font-size: 80px;
         line-height: 110px;
         text-shadow:
             1px 1px 0 #CCC,
@@ -1477,4 +1477,12 @@ font-weight: bold;
 .dkp-big-3now button.close {
     background: none;
     color: #fff;
+}
+
+.muznote {
+   position: absolute;
+    top: 65%;
+    height: 170px;
+    width: auto;
+    left: 0px;
 }
