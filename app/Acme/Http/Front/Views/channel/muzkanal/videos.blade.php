@@ -151,7 +151,7 @@
                     <div class="row topvideos videostyle">
                         <div class="panel panel-default panel-carousel gallery">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><span>Топ просматриваемых</span></h3>
+                                <h3 class="panel-title"><span>Популярные</span></h3>
                             </div>
                             <div class="panel-body">
                                 <div class="col-md-12 videofix">
