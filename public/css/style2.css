@@ -438,6 +438,8 @@ header.top-menu,.logo-block{
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
 }
+
+/*TOP NEWS*/
 .panel-top-news,.panel-promo{
     border-bottom: 2px solid #F1F4F9;
     height: 600px;
@@ -751,21 +753,21 @@ header.top-menu,.logo-block{
 .media-ctg,.media-videos{
     padding: 0 10px;
 }
-.media-ctg-panel .panel-heading{
+.media-ctg .media-ctg-panel .panel-heading{
     padding: 10px 0 0;
 }
-.media-ctg-panel .panel-heading h3{
+.media-ctg .media-ctg-panel .panel-heading h3{
     border-bottom: 1px solid #F1F4F9;
     color: #4e5e6a;
     font-size: 14px;
 }
-.media-ctg-panel .panel-body{
+.media-ctg .media-ctg-panel .panel-body{
     padding: 10px 0;
 }
-.media-ctg-panel .list-group{
+.media-ctg .media-ctg-panel .list-group{
     padding: 0;
 }
-.media-ctg-panel .list-group-item{
+.media-ctg .media-ctg-panel .list-group-item{
     border: none;
 }
 

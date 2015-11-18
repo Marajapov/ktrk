@@ -78,14 +78,6 @@
               </div>
               <div class="panel-body">
 
-                <ul class="nav nav-tabs videos-block">
-                  @foreach($MediaCategories as $key => $MediaCategory)
-                    <li role="presentation" class="@if($MediaCategory->getVideoType() == $rtype) active @endif">
-                      <a href="{{ route('front.media.rtype', $MediaCategory->getVideoType()) }}">{{ $MediaCategory->getName() }}</a>
-                    </li>
-                  @endforeach
-                </ul>
-
                 <ul id="myTab" class="nav nav-tabs">
                   @foreach($MediaCategories as $key=>$MediaCategory)
                     <li class="@if($MediaCategory->getVideoType() == $rtype) active @endif">
@@ -183,21 +175,6 @@
       infinite: true,
       slidesToShow: 1,
       speed: 600
-    });
-  </script>
-
-  <script>
-    $(function() {
-      $("#MainTabs").tab();
-      $("#MainTabs").bind("show", function(e) {
-        var contentID  = $(e.target).attr("data-target");
-        var contentURL = $(e.target).attr("href");
-        if (typeof(contentURL) != 'undefined')
-          $(contentID).load(contentURL, function(){ $("#MainTabs").tab(); });
-        else
-          $(contentID).tab('show');
-      });
-      $('#MainTabs a:first').tab("show");
     });
   </script>
 

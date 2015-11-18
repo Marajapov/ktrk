@@ -73,6 +73,45 @@ class MediaController extends Controller
             );
     }
 
+    public function video()
+    {
+        $MediaCategories = \Model\MediaCategory\ModelName::get();
+        $mediaAll = \Model\Media\ModelName::get();
+
+        $mainBanner = \Model\Background\ModelName::where('name','=','main')->first();
+        $categories = \Model\Category\ModelName::all();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+        return view('Front::media.video',[
+            'mediaAll' => $mediaAll,
+            'MediaCategories'       => $MediaCategories,
+
+            'mainBanner'   => $mainBanner,
+            'categories'=>$categories,
+            'backgroundMain' => $backgroundMain,
+        ]);
+    }
+
+    public function project(\Model\Media\ModelName $project)
+    {
+        $MediaCategories = \Model\MediaCategory\ModelName::get();
+        $mediaAll = \Model\Media\ModelName::get();
+
+        $mainBanner = \Model\Background\ModelName::where('name','=','main')->first();
+        $categories = \Model\Category\ModelName::all();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+        return view('Front::media.project',[
+                'mediaPost' => $project,
+                'MediaCategories'       => $MediaCategories,
+
+                'mainBanner'   => $mainBanner,
+                'categories'=>$categories,
+                'backgroundMain' => $backgroundMain,
+
+            ]
+        );
+    }
 
 }
 
