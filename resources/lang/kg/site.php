@@ -128,7 +128,7 @@ return [
     'AdminMediaNew' => 'Жаңы медиа макала ',
     'AdminMediaArticles' => 'Медиа макалалар',
     'AdminMediaTypeSelect' => 'Медиянын тибин тандаңыз',
-    'AdminMediaURL' => 'Видеонун URL дареги (пример:https://www.youtube.com/watch?v=jh2kL40iY2o)',
+    'AdminMediaURL' => 'Youtube ID (мисалы: jh2kL40iY2o)',
     '' => '',
  
     //Media Category menu

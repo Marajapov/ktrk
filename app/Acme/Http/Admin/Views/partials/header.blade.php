@@ -18,7 +18,8 @@
             <li><a><i class="fa fa-file-video-o"></i>{{ trans('site.AdminMediaTitle') }} <span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu" style="display: none">
                     <li><a href="{{ route('admin.media.index') }}">{{ trans('site.AdminMediaPostTitle') }}</a></li>
-                    <li><a href="{{ route('admin.mediaCategory.index') }}">{{ trans('site.AdminMediaPostCatTitle') }}</a></li>                                
+                    <li><a href="{{ route('admin.mediaCategory.index') }}">{{ trans('site.AdminMediaPostCatTitle') }}</a></li>
+                    <li><a href="{{ route('admin.project.index') }}">Телепередачи</a></li>                                
                 </ul>
             </li>         
             <li><a href="{{ route('admin.banner.index') }}"><i class="fa fa-caret-square-o-right"></i>Баннер</a></li>

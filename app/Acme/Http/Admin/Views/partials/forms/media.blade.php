@@ -15,6 +15,13 @@
         </div>
     </div>
 
+    <div class="col-sm-12">
+      <div class="form-group">
+        <label class="control-label">Передачи</label>
+        {!! Form::select('project', array('0'=>'--Выберите--')+ $project, null, ["class" => "select2_group  form-control", "title" => ""]) !!}
+      </div>
+    </div>
+
     <div class="col-sm-10">
         <div class="form-group">
             <label class="control-label">{{ trans('site.Content') }}</label>
@@ -34,9 +41,8 @@
                <label class="control-label">Видео дня</label>
                {!! Form::hidden('dayVideo', 0) !!}
                {!! Form::checkbox('dayVideo', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
-           </div>
-   </div>
-   
+       </div>
+   </div>   
 
 
     <div class="col-sm-12">

@@ -367,7 +367,7 @@
                   @foreach($mediaPosts as $media)
                     <div class="portfolio {{ $media->getVideoType() }}" data-cat="{{ $media->getVideoType() }}">
                       <div class="portfolio-wrapper">
-                        <a href="{{ route('front.media', $media) }}">
+                        <a href="{{ route('front.media.video', $media) }}">
                           <img src="http://img.youtube.com/vi/{{ $media->getUrl()}}/mqdefault.jpg" alt="" />
                         </a>
                         <div class="label">

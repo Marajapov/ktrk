@@ -30,6 +30,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'access:admin', 'namespace' =
     Route::resource('photoParent','PhotoParentController');
     Route::resource('photoChild','PhotoChildController');
     Route::resource('peopleReporter','PeopleReporterController');
+    Route::resource('project','ProjectController');
 
     Route::get('photoChild/create/{photoParent}', 'PhotoChildController@create');
 

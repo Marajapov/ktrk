@@ -112,7 +112,7 @@
       <div class="col-xs-12">
         <div class="form-group">
           <label class="control-label">{{ trans('site.TitleKG') }}</label>
-          {!! Form::text('title', null, ["class" => "form-control", "required" => true]) !!}
+          {!! Form::text('title', null, ["class" => "form-control"]) !!}
         </div>
       </div>
 

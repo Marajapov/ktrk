@@ -124,7 +124,7 @@ return [
     'AdminMediaNew' => 'Новая медиа статья',
     'AdminMediaArticles' => 'Медиа статьи',
     'AdminMediaTypeSelect' => 'Выберите тип медии',
-    'AdminMediaURL' => 'URL дарес с YouTube.com (пример:https://www.youtube.com/watch?v=jh2kL40iY2o)',
+    'AdminMediaURL' => 'Youtube ID (пример:jh2kL40iY2o)',
     '' => '',
 
     //Media Category menu

@@ -4,9 +4,9 @@ namespace Admin\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 
-use Model\Media\ModelName as Media;
+use Model\Project\ModelName as Project;
 
-class MediaController extends Controller
+class ProjectController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,9 @@ class MediaController extends Controller
      */
     public function index()
     {
-        $medias = Media::get();
+        $projects = Project::all();
 
-        return view('Admin::media.index', ['medias' => $medias]);
+        return view('Admin::project.index', ['projects' => $projects]);
     }
 
     /**
@@ -27,11 +27,7 @@ class MediaController extends Controller
      */
     public function create()
     {
-        $project = 
-        return view('Admin::media.create', [
-            'media' => new Media()
-            'project' => 'project',
-            ]);
+        return view('Admin::project.create', ['project' => new Project]);
     }
 
     /**
@@ -42,10 +38,9 @@ class MediaController extends Controller
      */
     public function store(Request $request)
     {
+        Project::create($request->except('q'));
 
-        Media::create($request->except('q'));
-
-        return redirect()->route('admin.media.index');
+        return redirect()->route('admin.project.index');
     }
 
     /**
@@ -54,10 +49,9 @@ class MediaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Media $media)
+    public function show(Project $project)
     {
-
-        return view('Admin::media.show', ['media' => $media]);
+        return view('Admin::project.show', ['project' => $project]);
     }
 
     /**
@@ -66,9 +60,9 @@ class MediaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Media $media)
+    public function edit(Project $project)
     {
-        return view('Admin::media.edit', ['media' => $media]);
+        return view('Admin::project.edit', ['project' => $project]);
     }
 
     /**
@@ -78,11 +72,11 @@ class MediaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Media $media)
+    public function update(Request $request, Project $project)
     {
-        $media->update($request->except('q'));
+        $project->update($request->except('q'));
 
-        return redirect()->route('admin.media.show', $media);
+        return redirect()->route('admin.project.show', $project);
     }
 
     /**
@@ -91,10 +85,10 @@ class MediaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Media $media)
+    public function destroy(Project $project)
     {
-        $media->delete();
+        $project->delete();
 
-        return redirect()->route('admin.media.index');
+        return redirect()->route('admin.project.index');
     }
 }
