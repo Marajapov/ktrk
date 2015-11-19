@@ -3,14 +3,15 @@
         <meta charset="UTF-8">
         <title>Генеральный директор КТРК: Карыпбеков Илим Майрамбекович </title>
 
-        <link rel="stylesheet" href="css/bootstrap.min.css"/>
-        <script src="js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}"/>
+        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
         <link rel="stylesheet" href="css/font-awesome.css"/>
         <link rel="stylesheet" href="filter/css/layout.css">
         <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
         <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
         <!--<link rel="stylesheet" type="text/css" href="css/custombox.css"/>-->
         <link rel="stylesheet" href="css/style.css"/>
+        <link rel="stylesheet" href="css/articles.css"/>
 
         <script src="js/modernizr-2.6.2.min.js"></script>
 
@@ -219,12 +220,12 @@
             </a>
         </div>
 
-        <div class="container main-wrapper">
+        <div class="container main-wrapper directorpages">
 
             <div class="row">
                 <section class="content clearfix">
                     <div class="top-left-block col-md-8">
-                        <div class="panel panel-default">
+                        <div class="panel panel-default directorposts panel-articles">
                             <div class="panel-heading">
                                 <h3 class="panel-title"><span>Генеральный директор КТРК: Карыпбеков Илим Майрамбекович</span></h3>
                             </div>
@@ -252,11 +253,11 @@
                                                     </tr>                                                
                                                     <tr>
                                                         <th scope="row">Facebook баракчасы:</th>
-                                                        <td><i class="fa fa-facebook-official"></i><a href="https://www.facebook.com/ilim.karypbekov">facebook.com/ilim.karypbekov</a></td>                                               
+                                                        <td class="textunder"><i class="fa fa-facebook-official"></i><a href="https://www.facebook.com/ilim.karypbekov">facebook.com/ilim.karypbekov</a></td>                                               
                                                     </tr>
                                                     <tr>
                                                         <th scope="row">Twitter баракчасы:</th>
-                                                        <td><i class="fa fa-twitter"></i><a href="https://twitter.com/ilimkm">twitter.com/ilimkm</a></td>                                               
+                                                        <td class="textunder"><i class="fa fa-twitter"></i><a href="https://twitter.com/ilimkm">twitter.com/ilimkm</a></td>                                               
                                                     </tr>
                                                 </tbody>                                                 
                                             </table>
@@ -264,125 +265,102 @@
                                         </div>
                                     </div>  
                                     <br/>
-                                    <div class="row years">                                        
-
-                                        <div class="col-md-12">
-                                            <div class="panel-heading">
-                                                <h3 class="panel-title"><span>Билими</span></h3>
+                                    <div class="row">                                       
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title"><span>Жаңылыктар</span></h3>
+                                        </div>
+                                        <div class="panel-body">
+                                            <div class="media">
+                                                <div class="media-left">
+                                                    <a href="#">
+                                                        <img class="media-object thumb" src="http://sputnik.kg/images/102017/14/1020171449.jpg" alt="image">
+                                                    </a>
+                                                </div>
+                                                <div class="media-body">
+                                                    <div class="extra">
+                                                        <span class="e-datetime">18 Нояб , 12:22</span>                                               
+                                                        <span class="e-views"><i class="fa fa-eye"></i>17</span>
+                                                    </div>
+                                                     <a class="media-heading" href="http://1000.ktrk.kg/post/1">КТРК: из-за работы я стал изгоем для родственников</a>
+                                                                                                
+                                                    <h5 class="media-desc">
+                                                        <p>Кабинет, как у бизнесмена средней руки. Нет ни мебели красного дерева, как в вотчинах других чиновников высокого ранга, ни канцелярского набора из бирюзы. Из роскоши — 6 плазменных телевизоров на стене. Под столом склад жестянок с безалкогольным энергетиком.
+                                                        </p></h5>
+                                                </div>
                                             </div>
-                                            <table class="table table-hover borderless">                               
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">2001</th>
-                                                        <td>Кыргыз мамлекеттик улуттук университетинин укук факультетин артыкчылык менен бүтүргөн</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">2007</th>
-                                                        <td>Варшавадагы (Польша) адам укуктары боюнча жогорку эл аралык мектепти аяктаган</td>                                               
-                                                    </tr>                                                  
-                                                </tbody>
-                                            </table>
-                                            <div class="panel-heading">
-                                                <h3 class="panel-title"><span>Эмгек жолу</span></h3>
+                                            <div class="media">
+                                                <div class="media-left">
+                                                    <a href="#">
+                                                        <img class="media-object thumb" src="http://ktrk.kg/sites/default/files/styles/juicebox_medium/public/gallery/album/fotos/_mg_9802.jpg?itok=YROMXAeD" alt="image">
+                                                    </a>
+                                                </div>
+                                                <div class="media-body">
+                                                    <div class="extra">
+                                                        <span class="e-datetime">18 Нояб , 12:22</span>                                               
+                                                        <span class="e-views"><i class="fa fa-eye"></i>17</span>
+                                                    </div>
+                                                     <a class="media-heading" href="http://1000.ktrk.kg/post/1">КТРКнын жаңыланган заманбап кеңсеси</a>
+                                                                                                  
+                                                    <h5 class="media-desc">
+                                                        <p>Бүгүн, 6-ноябрда Коомдук телерадиоберүү корпорациясында жаңыланган заманбап үлгүдөгү иш кабинеттеринин ачылышы болду.
+                                                        </p></h5>
+                                                </div>
                                             </div>
-                                            <table class="table table-condensed secondtd table-hover borderless ">                               
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row"><h5>март</h5> 2015</th>
-                                                <td>КТРК башкы директору</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row"><h5>Февраль</h5>2015</th>
-                                                <td>КТРКнын башкы директордун милдетин аткаруучу</td>                                               
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row"><h5>Апрель</h5> 2013<h5>Февраль</h5>2015</th>
-                                                <td>«Эл аралык  «Манас» аэропорту» ААК, президенттин кеңешчиси</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row"><h5>Октябрь</h5>2009<h5>Апрель</h5>2010</th>
-                                                <td>КыргызРеспубликасынын президентинин катчылыгы, көмөк көрсөтүү кызматынын жетекчиси</td>                                               
-                                                </tr>
-
-                                                <tr>
-                                                    <th scope="row"><h5>Октябрь</h5> 2011<h5>учурда</h5></th>
-                                                <td>Кыргыз мамлекеттик юридикалык академиясы, ага окутуучу  (Экономикалык сот, Инвестициялык укук)</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row"><h5>июль</h5> 2011<h5>февраль</h5>2012</th>
-                                                <td>Кыргыз Республикасынын мамлекеттик мүлк министрлиги, «Альфа Телеком» ЖАК сырттан башкаруучу</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row"><h5>Апрель</h5> 2010 2013</th>
-                                                <td>Америка Борбор Азия университети, окутуучу (адвокатура,  укук клиникасы, ишкерлер укугу)</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row"><h5>Апрель</h5> 2010<h5>учурда</h5></th>
-                                                <td>«Кеңеш берүү жана укук институту» Коомдук фондунун директору</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row"><h5>февраль</h5>2011 <h5>июль</h5>2011</th>
-                                                <td>«Альфа Телеком» (соода маркасы «MegaCom») Жабык акционердик коому, «Альфа Телеком» Жабык акционердик коомунун укук маселелери боюнча башкы директорунун орун басары</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row"><h5>октябрь</h5>2009<h5>апрель</h5> 2010</th>
-                                                <td>КыргызРеспубликасынын президентинин катчылыгы, көмөк көрсөтүү кызматынын жетекчиси</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row"><h5>февраль</h5> 2009<h5>январь</h5>2009</th>
-                                                <td>Кыргыз Республикасынын президентинин катчылыгынын референти</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row"><h5>июнь</h5> 2008<h5>февраль</h5>2009</th>
-                                                <td>КР акыйкатчысынын медиа-өкүлү</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row"><h5>июнь</h5> 2006<h5>февраль</h5>2009</th>
-                                                <td>«Медиа-өкүл институту» коомдук фондунун директору</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row"><h5>июнь</h5> 2006<h5>учурда</h5></th>
-                                                <td>КР президентине караштуу башкаруу академиясы, окутуучу. (Жарандык жана эмгек укугу, бейөкмөт уюмдардын укуктук негиздери)</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row"><h5>июнь</h5> 2004<h5>июнь</h5>2006</th>
-                                                <td>Медиаөкүл институту/ Интерньюс-Кыргызстан, ага юрист.</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row"><h5>январь</h5> 2004<h5>июнь</h5>2004</th>
-                                                <td>«ЛАРК» АК филиалынын директору, Түп району</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row"><h5>июль</h5> 2003<h5></h5></th>
-                                                <td>Адвокат болуп иштөөгө укук берүү  лицензиясы № 1051, Бишкек шаары</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row"><h5>январь</h5> 2003<h5></h5>2004</th>
-                                                <td>«LARC» укуктук долбоорунун юристи, Кара-Балта</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row"><h5>февраль</h5> 2002<h5>январь</h5>2003</th>
-                                                <td>«Сорос-Кыргызстан» фонду, Бишкек. «Коомдук башкаруу»,«Этникалык азчылык», «Коомдук саясатты иштеп чыгуу» программаларынын кызматкери.</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row"><h5>июнь</h5> 2001<h5>октябрь</h5>2001</th>
-                                                <td>БУУнун өнүктүрүү программасы,Кочкор району. БУУнун улуттук ыктыярчысы</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row"><h5>июнь</h5> 2000<h5>июнь</h5>2001</th>
-                                                <td>Сорос-Кыргызстан фондунун укуктук программалары боюнча кызматкери.</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row"><h5>январь</h5> 1999<h5>июнь</h5>2000</th>
-                                                <td>«BNS - Securities» ЖЧКнун юристи, Бишкек</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row"><h5></h5> 1997 1999<h5></h5></th>
-                                                <td>«Ренессанс» студенттик илимий коомунун президенти, Бишкек</td>
-                                                </tr>                                     
-                                                </tbody>
-                                            </table>                                            
-                                        </div> 
+                                            <div class="media">
+                                                <div class="media-left">
+                                                    <a href="#">
+                                                        <img class="media-object thumb" src="http://1000.ktrk.kg/img/thumbnail/11447849392.png" alt="image">
+                                                    </a>
+                                                </div>
+                                                <div class="media-body">
+                                                   <div class="extra">
+                                                        <span class="e-datetime">18 Нояб , 12:22</span>                                               
+                                                        <span class="e-views"><i class="fa fa-eye"></i>17</span>
+                                                    </div>
+                                                     <a class="media-heading" href="http://1000.ktrk.kg/post/1">КМЮА: ректор шайланды</a>
+                                                                                                   
+                                                    <h5 class="media-desc">
+                                                        <p>Кыргызстандын жогорку окуу жайларында ректорду шайлоо өтүп жатат. Бүгүн кыргыз мамлекеттик юридикалык академиясы өзүнүн жетекчисин шайлады. Ага беш талапкер катышып, ар бири өзүнүн иш пландары менен тааныштырды.
+                                                        </p></h5>
+                                                </div>
+                                            </div>
+                                             <div class="media">
+                                                <div class="media-left">
+                                                    <a href="#">
+                                                        <img class="media-object thumb" src="http://sputnik.kg/images/102017/14/1020171449.jpg" alt="image">
+                                                    </a>
+                                                </div>
+                                                <div class="media-body">
+                                                    <div class="extra">
+                                                        <span class="e-datetime">18 Нояб , 12:22</span>                                               
+                                                        <span class="e-views"><i class="fa fa-eye"></i>17</span>
+                                                    </div> 
+                                                     <a class="media-heading" href="http://1000.ktrk.kg/post/1">КТРК: из-за работы я стал изгоем для родственников</a>
+                                                                                                 
+                                                    <h5 class="media-desc">
+                                                        <p>Кабинет, как у бизнесмена средней руки. Нет ни мебели красного дерева, как в вотчинах других чиновников высокого ранга, ни канцелярского набора из бирюзы. Из роскоши — 6 плазменных телевизоров на стене. Под столом склад жестянок с безалкогольным энергетиком.
+                                                        </p></h5>
+                                                </div>
+                                            </div>
+                                            <div class="media">
+                                                <div class="media-left">
+                                                    <a href="#">
+                                                        <img class="media-object thumb" src="http://ktrk.kg/sites/default/files/styles/juicebox_medium/public/gallery/album/fotos/_mg_9802.jpg?itok=YROMXAeD" alt="image">
+                                                    </a>
+                                                </div>
+                                                <div class="media-body">
+                                                    <div class="extra">
+                                                        <span class="e-datetime">18 Нояб , 12:22</span>                                               
+                                                        <span class="e-views"><i class="fa fa-eye"></i>17</span>
+                                                    </div>
+                                                    <a class="media-heading" href="http://1000.ktrk.kg/post/1">КТРКнын жаңыланган заманбап кеңсеси</a>
+                                                                                                   
+                                                    <h5 class="media-desc">
+                                                        <p>Бүгүн, 6-ноябрда Коомдук телерадиоберүү корпорациясында жаңыланган заманбап үлгүдөгү иш кабинеттеринин ачылышы болду.
+                                                        </p></h5>
+                                                </div>
+                                            </div>
+                                        </div>
 
                                     </div>
                                 </div>
@@ -392,91 +370,74 @@
                     <div class="top-right-block col-md-4 ">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><span>Кошумча маалымат</span></h3>
+                                <h3 class="panel-title"><span>Твиттер</span></h3>
                             </div>
-                            <table class="table rightblock">                               
-                                <tbody>
-                                    <tr>
-                                        <td>«K-News», www.knews.kg маалымат агенттигинин негиздөөчүсү</td>
-                                    </tr>
-                                    <tr>
-                                        <td> «Svoboda», www.svoboda.kg укук коргоо сайтынын негиздөөчүсү</td>                                               
-                                    </tr>
-                                    <tr>
-                                        <td>  «Институт Медиа Полиси» коомдук фондунун уюштуруучусу</td>                                               
-                                    </tr> 
-                                    <tr>
-                                        <td>  «Институт Консалтинга и Права» коомдук фондунун уюштуруучусу</td>                                               
-                                    </tr> 
-                                    <tr>
-                                        <td> «Де-Факто»  гезитинин уюштуруучусу</td>                                               
-                                    </tr> 
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><span>Коомдук иштери</span></h3>
+                            <div class="panel-body">
+                                <a class="twitter-timeline" href="https://twitter.com/beles_media" data-widget-id="667225139168337920">Твиты от @beles_media</a>
+                                <script>!function (d, s, id) {
+                                        var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+                                        if (!d.getElementById(id)) {
+                                            js = d.createElement(s);
+                                            js.id = id;
+                                            js.src = p + "://platform.twitter.com/widgets.js";
+                                            fjs.parentNode.insertBefore(js, fjs);
+                                        }
+                                    }(document, "script", "twitter-wjs");
+                                </script>
                             </div>
-                            <table class="table rightblock">                               
-                                <tbody>
-                                    <tr>
-                                        <td>Бишкек шаары жана Чүй облусунун адвокаттар  коллегиясынын мүчөсү</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Бишкек пресс-клубунун мүчөсү</td>                                               
-                                    </tr>
-                                    <tr>
-                                        <td>Маалымдоо каражаттарына келген арыздарды кароочу комиссия мүчөсү</td>                                               
-                                    </tr> 
-                                    <tr>
-                                        <td>Сорос-Кыргызстан фондунун башкармалыгынын мүчөсү</td>                                               
-                                    </tr> 
-                                    <tr>
-                                        <td>КТРК көркөм кеңешинин мүчөсү</td>                                               
-                                    </tr>
-                                    <tr>
-                                        <td>КР маданият жана маалымат министрлигинин алдындагы “Телекорсөтүү жана радиоуктуруулар жөнүндө” мыйзамдаргаөзгөртүүлөр жана оңдоолорду иштеп чыгуу боюнча жумушчу топтун мүчөсү</td>                                               
-                                    </tr> 
-                                    <tr>
-                                        <td>КТРКны реформалоо боюнча жумушчу топтун төрагасы</td>                                               
-                                    </tr> 
-                                    <tr>
-                                        <td>Адам укуктары жана эл аралык укуктар боюнча эксперт</td>                                               
-                                    </tr> 
-                                    <tr>
-                                        <td>КР президент  институтун реформалоо боюнча жумушчу топтун мүчөсү</td>                                               
-                                    </tr> 
-                                    <tr>
-                                        <td>Санариптик берүүгө өтүү боюнча мамлекеттик программаны иштеп чыгуу жумушчу тобунун төрагасы</td>                                               
-                                    </tr> 
-                                    <tr>
-                                        <td>КР өкмөтүн реформалоо боюнча жумушчу топтун мүчөсү</td>                                               
-                                    </tr>  
-                                    <tr>
-                                        <td>КР жаштар саясатын өнүктүрүү стратегиясын иштеп чыгуу боюнча жумушчу топтун төрагасы</td>                                               
-                                    </tr> 
-                                    <tr>
-                                        <td>КР Коомдук телерадиоберүү корпорациясынын Байкоочу кеңешинин төрагасы</td>                                               
-                                    </tr> 
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><span>Видео маалымат</span></h3>
-                            </div>
-                            <div class="embed-responsive embed-responsive-16by9">
-                                    <iframe class="embed-responsive-item" src="//www.youtube.com/embed/k2w8UII9cgI" allowfullscreen=""></iframe>
-                                </div>
-                        </div>
 
-                        <a href="#" class="text-center ads ads-300x250">
-                            <img src="images/ads_300x250.gif" alt=""/>
-                        </a>
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><span>Facebook</span></h3>
+                            </div>
+                            <div class="panel-body">
+                             <div class="fb-post" data-href="https://www.facebook.com/ilim.karypbekov/posts/10153204500493016?pnref=story" data-width="300">
+
+                                 </div>
+
+                             </div>
+                        </div>                   
+
 
                     </div>
             </div>
         </div>
+
+        <footer class="footer">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <ul>
+                                        <li><a href="{{ route('front.home') }}">Башкы бет</a></li>
+                                        <li><a href="#">КТРК</a></li>
+                                        <li><a href="#">Видеопортал</a></li>
+                                        <li><a href="#">Телепрограмма</a></li>
+                                        <li><a href="#">Байкоочу кеңеш</a></li>
+                                        <li><a href="#">Редакциялык кеңешчи</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 copy"><i class="fa fa-copyright"></i> 2015 Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясы</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.5&appId=977320525631518";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+        <script src="{{ asset('js/jquery-1.11.2.min.js') }}"></script>
+        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+
+
     </body>
 </html>
