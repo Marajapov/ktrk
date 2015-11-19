@@ -2190,9 +2190,10 @@ header{
 }
 
 .histext p{
-    font-size: 18px;
+    font-size: 16px;
     text-align: justify;
     padding: 0px 5px;
+    margin-top: 10px;
 }
 .blockquote {
     background: #EFEDED;
