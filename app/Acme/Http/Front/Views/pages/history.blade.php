@@ -1,5 +1,6 @@
 @extends('Front::layouts.default')
-@section('title', "КТРК тарыхы")
+@section('title', trans('site.History')." | КТРК")
+@endsection
 
 @section('content')
 

@@ -23,8 +23,7 @@
     </div>
 </footer>
 
-{{-- <script src="{{ asset('js/jquery-1.11.2.min.js') }}"></script> --}}
-<script src="{{ asset('js/bootstrap.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/bootstrap.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/bootstrap-hover-dropdown.js') }}"></script>
 
 <script>
@@ -39,10 +38,6 @@
         });
     });
 </script>
-
-<!--Menu concept-->
-<!--<script src="js/polyfills.js"></script>-->
-<!--<script src="js/demo1.js"></script>-->
 
 <script type="text/javascript" src="{{ asset('filter/js/jquery.easing.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('filter/js/jquery.mixitup.min.js') }}"></script>
@@ -79,55 +74,6 @@
         autoplaySpeed: 3000
     });
 </script>
-
-<script type="text/javascript">
-    $('#myTabs a').click(function (e) {
-        e.preventDefault()
-        $(this).tab('show')
-    })
-
-</script>
-
-<!--Photo slider-->
-<script>
-    $("#slideshow > div:gt(0)").hide();
-
-    setInterval(function() {
-        $('#slideshow > div:first')
-                .fadeOut(1000)
-                .next()
-                .fadeIn(1000)
-                .end()
-                .appendTo('#slideshow');
-    },  3000);
-</script>
-
-<script type="text/javascript">
-    $(function () {
-
-        var filterList = {
-
-            init: function () {
-
-                // MixItUp plugin
-                // http://mixitup.io
-                $('#portfoliolist').mixitup({
-                    showOnLoad: 'all',
-                    targetSelector: '.portfolio',
-                    filterSelector: '.filter',
-                    effects: ['fade'],
-                    easing: 'snap',
-                    // call the hover effect
-                });
-
-            }
-
-        };
-        // Run the show!
-        filterList.init();
-    });
-</script>
-
 
 <!--<script src="{{-- asset('jwplayer/jwplayer.js') --}}"></script>
 <script>jwplayer.key="tmEO2SU8NzqLBoHr2Vq6nV13XCyfo8xbdiCb/Q==";</script>

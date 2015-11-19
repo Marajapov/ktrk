@@ -1,4 +1,9 @@
-.panel-page{
+.panel-page-withsidebar{
     border-right: 2px solid #F1F4F9;
-    border-bottom: 2px solid #F1F4F9;
+}
+.panel-page-withsidebar .panel-body{
+    padding: 15px;
+}
+.panel-page-sidebar{
+    border-left: 2px solid #F1F4F9;
 }

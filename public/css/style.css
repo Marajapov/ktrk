@@ -2177,7 +2177,7 @@ img{
     }
 
 .histext p{
-    font-size: 16px;
+    font-size: 14px;
     text-align: justify;
     padding: 0px 5px;
     margin-top: 10px;
@@ -2185,11 +2185,6 @@ img{
 .blockquote {
     background: #EFEDED;
 }
-    .histext p{
-        font-size: 18px;
-        text-align: justify;
-        padding: 0px 5px;
-    }
     .blockquote {
         background: #EFEDED;
     }

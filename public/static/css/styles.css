@@ -59,7 +59,12 @@ and open the template in the editor.
     border-top: 1px solid #EAEAEA;
     font-size: 14px;
 }
-
+.borderless tbody tr td:hover, .borderless tbody tr th:hover, .borderless thead tr th:hover{
+    background: none;
+}
+.borderless tbody tr:hover, .borderless tbody tr:hover, .borderless thead tr:hover{
+    background: none;
+}
 .years {
 
 }
