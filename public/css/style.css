@@ -1973,6 +1973,7 @@ img{
     margin: 50px auto;
     height: 300px;
     width: 80%;
+    z-index: 1;
 }
 
 .roundabout-moveable-item {

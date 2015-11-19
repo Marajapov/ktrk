@@ -23,27 +23,23 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#"><img src="{{ asset('images/channels/muz_white_notext.png')}}"><h4>Музыка</h4></a>
+                    <a class="navbar-brand" href="#"><img src="{{ asset('images/channels/madaniyat_white_notext.png')}}"><h4>Маданият</h4></a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="menu">
                     <ul class="nav navbar-nav channel_switch">
                         <li class="sitemenu" id="site-channel1">
-                            <a href="#"><img src="{{ asset('images/ktrk_last.svg')}}" style="height:40px;"><span>КТРК</span><h4>КТРК</h4></a></li>
+                            <a href="{{ route('front.home') }}"><img src="{{ asset('images/ktrk_last.svg')}}" style="height:40px;"><span>КТРК</span><h4>КТРК</h4></a></li>
                         <li class="sitemenu" id="site-channel1">
-                            <a href="#"><img src="{{ asset('images/channels/muz_white_notext.png')}}" ><span>Музыка</span><h4>Музыка</h4></a></li>
+                            <a href="{{ route('muzkanal.home') }}"><img src="{{ asset('images/channels/muz_white_notext.png')}}" ><span>Музыка</span><h4>Музыка</h4></a></li>
                         <li class="sitemenu" id="site-channel1">
-                            <a href="#"><img src="{{ asset('images/channels/balastan_white_notext.png')}}"><span>Баластан</span><h4>Баластан</h4></a></li>
-
+                            <a class="active"  href="{{ route('madaniyat.home') }}"><img src="{{ asset('images/channels/madaniyat_white_notext.png')}}"><span>Маданият</span><h4>Маданият</h4></a></li>
                         <li class="sitemenu" id="site-channel1">
-                            <a class="active"  href="#"><img src="{{ asset('images/channels/madaniyat_white_notext.png')}}"><span>Маданият</span><h4>Маданият</h4></a></li>
-
+                            <a href="{{ route('balastan.home') }}"><img src="{{ asset('images/channels/balastan_white_notext.png')}}"><span>Баластан</span><h4>Баластан</h4></a></li>
                     </ul>  
                 </div><!-- /.navbar-collapse -->
             </nav>
         </div>
-
-
 
 
         <div class="container ">
@@ -75,7 +71,7 @@
                                     </button>
                                 </form>
                             </div>
-                            <a class="navbar-brand" href="#"> <i class="fa fa-home"></i>Башкы</a>
+                            <a class="navbar-brand" href="{{ route('madaniyat.home') }}"> <i class="fa fa-home"></i>Башкы</a>
                         </div>
 
 
@@ -92,7 +88,7 @@
                                 </li>
 
                                 <li class="dropdown">
-                                    <a href="{{ route('madaniyat.broadcasts') }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-info-circle"></i>Передачи <span class="caret"></span></a>
+                                    <a href="{{ route('madaniyat.broadcasts') }}" class="dropdown-toggle" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-television"></i>Передачи <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="#"><i class="fa fa-television"></i>О телеканале</a></li>
                                         <li><a href="#"><i class="fa fa-envelope-o"></i>Контакты</a></li>                                                
@@ -292,6 +288,8 @@
 
         <script src="js/jquery-1.11.2.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
+        <script src="js/bootstrap-hover-dropdown.js"></script>
+       
 
         <script>
 			$(document).ready(function () {
@@ -314,20 +312,40 @@
         <script type="text/javascript" src="slick/slick.min.js"></script>
         <script type="text/javascript" src="js/jquery.roundabout.js"></script>
 
-        <script>
-			$('.carousel-slick').slick({
-			    infinite: true,
-			    slidesToShow: 6,
-			    slidesToScroll: 1
-			});
-        </script>
 
-        <script>
-            $('.carousel-slick_peredachi').slick({
-                infinite: true,
-                slidesToShow: 4,
-                slidesToScroll: 1
-            });
+         <script>
+            if ($(window).width() > 768) {
+                $('.carousel-slick_peredachi').slick({
+                    infinite: true,
+                    slidesToShow: 4,
+                    slidesToScroll: 1,        
+                });
+                $('.carousel-slick').slick({
+                    infinite: true,
+                    slidesToShow: 6,
+                    slidesToScroll: 1,
+
+                });
+            }
+
+            if ($(window).width() < 768) {
+                $('.carousel-slick').slick({
+                    infinite: true,
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+    
+                });
+            }
+
+            if ($(window).width() < 768) {
+                $('.carousel-slick_peredachi').slick({
+                    infinite: true,
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+        
+                });
+            }
+
         </script>
 
         <script type="text/javascript">
