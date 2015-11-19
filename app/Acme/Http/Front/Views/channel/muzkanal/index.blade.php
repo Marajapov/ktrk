@@ -152,8 +152,7 @@
                     <div class="row dkp-slide">
                         <a href="#">
                             <div class="col-sm-12 dkp-anonce dkp-anonce-big" style="background-image: url(images/channels/muzkanal/12.png);">
-                               <img class="muznote" src="{{ asset('images/channels/muzkanal/notesbig2.png') }}" alt=""> 
-                                <div class="dkp-anonce-time">
+                               <div class="dkp-anonce-time">
                                     <span>21:00</span>
                                 </div>
                                 <div class="dkp-anonce-title">
@@ -1004,7 +1003,7 @@
                             <div class="col-md-12">
                                 <div class="row">
                                     <ul>
-                                        <li><a href="#">Башкы бет</a></li>
+                                        <li><a href="{{ route('front.home') }}">Башкы бет</a></li>
                                         <li><a href="#">КТРК</a></li>
                                         <li><a href="#">Видеопортал</a></li>
                                         <li><a href="#">Телепрограмма</a></li>
@@ -1045,10 +1044,10 @@
         <script>
             new CBPGridGallery(document.getElementById('grid-gallery'));
         </script>
-<!--<script>
+        <script>
             var serverTZoffset = 360;
         </script>
-  -->
+
         
         <script src="js/lightslider.js"></script>
 

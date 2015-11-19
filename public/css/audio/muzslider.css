@@ -192,8 +192,8 @@
 }
 .dkp-anonce-big .dkp-anonce-time {
     position: absolute;
-    top: -103%;
-    right: 74%;
+    top: -101%;
+    right: 71%;
     width: 50%;
     height: 300%;
     font-size: 26px;
@@ -216,7 +216,7 @@
 .dkp-anonce-big .dkp-anonce-title {
     display: block;
     position: absolute;
-    left: 13%;
+    left: 2%;
     right: 2%;
     top: 59%;
     font-size: 15px;
@@ -225,20 +225,14 @@
     padding-top: 0;
     color: #fff;
     text-transform: uppercase;
-       text-shadow:
-            1px 1px 0 #CCC,
-            2px 2px 0 #CCC, 
-            3px 3px 0 #444,
-            4px 4px 0 #444,
-            5px 5px 0 #444,
-            6px 6px 0 #444; /* end of 4 level deep dark shadow */
+    text-shadow: 1px 1px 10px #000
 }
 
 .dkp-anonce-big .dkp-anonce-when {
     position: absolute;
-       bottom: -50%;
+    top: -126%;
     right: -0%;
-    left: 0%;
+    left: 25%;
     height: 300%;
     font-size: 12px;
     text-align: left;
@@ -256,15 +250,12 @@
 
 }
 .dkp-anonce-big .dkp-anonce-when>span>span {
-        display: block;
-    margin: 0px 0px 0px 30px;
-    padding-left: 0.4em;
-    padding-right: 0.4em;
-    color: #F44336;
-    font-size: 44px;
-    text-shadow: 1px 1px 0 #FFFFFF, 2px 2px 0 #FFFEFE, 3px 3px 0 #7D7D7D, 4px 4px 0 #444, 5px 5px 0 #B59E9E, 6px 6px 0 #444;
-    border-bottom: 2px dashed #fff;
-    font-weight: bold;
+    display: block;
+    margin: 0px 15px;
+    padding-left: 1em;
+    padding-right: 1em;
+    background: #F44336;
+    color: #fff;
 }
 .dkp-big-3now {
     /*display: none;*/
@@ -272,7 +263,7 @@
 }
 
 .rowfix {
-	padding: 0;
+    padding: 0;
 }
 .dkp-big-3now .dkp-border {
 /*    border-right: 1px solid #0f0f0f*/
@@ -1237,7 +1228,7 @@ font-weight: bold;
         transform-origin: 100% 55%
     }
     .dkp-anonce-big .dkp-anonce-time>span {
-        top: 54%
+        top: 55%
     }
     .dkp-anonce-big .dkp-anonce-time>span.dkp-soon {
         font-size: 70px;
@@ -1246,7 +1237,7 @@ font-weight: bold;
     .dkp-anonce-big .dkp-anonce-title {
         font-size: 36px;
         padding-top: 7px;
-        top: 79%
+        top: 80%
     }
     .dkp-anonce-big .dkp-anonce-when {
         font-size: 20px;
@@ -1359,15 +1350,8 @@ font-weight: bold;
         left: 155px
     }
     .dkp-anonce-big .dkp-anonce-time {
-        font-size: 80px;
-        line-height: 110px;
-        text-shadow:
-            1px 1px 0 #CCC,
-            2px 2px 0 #CCC, 
-            3px 3px 0 #444,
-            4px 4px 0 #444,
-            5px 5px 0 #444,
-            6px 6px 0 #444; /* end of 4 level deep dark shadow */
+        font-size: 110px;
+        line-height: 110px
     }
     .dkp-anonce-big .dkp-anonce-time>span.dkp-soon {
         font-size: 60px;
@@ -1477,12 +1461,4 @@ font-weight: bold;
 .dkp-big-3now button.close {
     background: none;
     color: #fff;
-}
-
-.muznote {
-   position: absolute;
-    top: 65%;
-    height: 170px;
-    width: auto;
-    left: 0px;
 }
