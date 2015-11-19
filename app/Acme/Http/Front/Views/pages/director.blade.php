@@ -21,198 +21,101 @@
     <body>
 
         <!-- Modals -->
-        <div class="modal fade" id="tvModal" tabindex="-1" role="dialog" aria-labelledby="tvModalLabel">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="tvModalLabel">Телеканалдар</h4>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-md-4 modal-block">
-                                <a href="#">
-                                    <img src="images/channels/balastan.jpg" alt=""/>
-                                </a>
+       <div class="bottom-bg"></div>
+
+<div class="container-fluid main-header">
+    <div class="container">
+
+    <div class="row">
+        <header class="top-menu">
+            <div class="top-header clearfix">
+                <div class="col-md-12 logo-block">
+                    <div class="row">
+                        <a class="logo" href="{{ route('front.home') }}">
+                            <img src="{{ asset('images/ktrk_last.svg') }}" alt=""/>
+                        </a>
+
+                        <nav class="top-nav clearfix">
+                            <ul class="clearfix">
+                                @foreach(\Model\Menu\ModelName::code('main')->parent()->get() as $menu)
+                                    @if(count($menu->submenus) > 0)
+                                    <li>
+                                        <a href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="100" data-close-others="false" role="button" aria-expanded="false">{{ $menu->getName() }}</a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            @foreach($menu->submenus as $submenu)
+                                            <li><a href="{{ $submenu->getUrl() }}">{{ $submenu->getName() }}</a></li>
+                                            @endforeach
+                                        </ul>
+                                    </li><li> / </li>
+                                    
+                                    @else
+                                    <li><a href="{{ $menu->getUrl() }}">{{ $menu->getName() }}</a></li> <li> / </li>
+                                    @endif
+                                @endforeach
+                            </ul>
+                        </nav>
+
+                        <ul class="soc">
+                            <li class="tw"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li class="fb"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li class="ok"><a href="#"><i class="fa fa-odnoklassniki"></i></a></li>
+                            <li class="yt"><a href="#"><i class="fa fa-youtube"></i></a></li>
+                            <li class="in"><a href="#"><i class="fa fa-instagram"></i></a></li>
+                            <!--<li class="lang-title"><a>Язык:</a></li>-->
+                            <!--<li class="dropdown lang">-->
+                                <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">-->
+                                    <!--<span class="lang-type">KG</span>-->
+                                    <!--<i class="fa fa-chevron-right"></i>-->
+                                <!--</a>-->
+                                <!--<ul class="dropdown-menu">-->
+                                    <!--<li><a href="#">KG</a></li>-->
+                                    <!--<li><a href="#">RU</a></li>-->
+                                <!--</ul>-->
+                            <!--</li>-->
+                            <!--<li class="lang ru"><a href="#"><i class="ru"></i></a></li>-->
+                            <!--<li class="lang kg"><a href="#"><i class="kg"></i></a></li>-->
+                        </ul>
+
+                        <a class="search-toggle"><i class="fa fa-search"></i></a>
+
+                        <form class="form-search" action="{{ route('front.search') }}" method="get">
+                            <div class="form-group pull-right">
+                                <input type="text" name="search" class="form-control" placeholder="Издөө"/>
                             </div>
-                            <div class="col-md-4 modal-block">
-                                <a href="#">
-                                    <img src="images/channels/muztv.jpg" alt=""/>
-                                </a>
-                            </div>
-                            <div class="col-md-4 modal-block">
-                                <a href="#">
-                                    <img src="images/channels/madaniyat.jpg" alt=""/>
-                                </a>
-                            </div>
-                        </div>
+
+                            <a class="btn close-search">
+                                <i class="fa fa-close"></i>
+                            </a>
+
+                            <button class="btn submit-search" type="submit">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </form>
+
+                        <button class="btn btn-danger btn-live" data-toggle="modal" data-target="#liveModal">
+                            <i class="fa fa-dot-circle-o"></i>
+                            {{ trans('site.Live') }}
+                        </button>
+
+                        @include ("Front::partials.mainNav")         
+
+                        <div class="lang">
+                            <ul>
+                                <li @if(app()->getlocale() == 'kg') class="active" @endif><a href="/locale/kg">кырг <span></span></a></li>
+                                <li @if(app()->getlocale() == 'ru') class="active" @endif><a href="/locale/ru">рус <span></span></a></li>
+                            </ul>
+                        </div>                                     
+
                     </div>
                 </div>
             </div>
-        </div>
+        </header>
+    </div>
+</div>
 
-        <div class="modal fade" id="radioModal" tabindex="-1" role="dialog" aria-labelledby="radioModalLabel">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="radioModalLabel">Радиостанциялар</h4>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-md-4 modal-block">
-                                <a href="#">
-                                    <img src="images/channels/kg-radio.png" alt=""/>
-                                </a>
-                            </div>
-                            <div class="col-md-4 modal-block">
-                                <a href="#">
-                                    <img src="images/channels/1-radio.png" alt=""/>
-                                </a>
-                            </div>
-                            <div class="col-md-4 modal-block">
-                                <a href="#">
-                                    <img src="images/channels/dostuk.png" alt=""/>
-                                </a>
-                            </div>
-                            <div class="col-md-4 modal-block">
-                                <a href="#">
-                                    <img src="images/channels/min-kiyal.png" alt=""/>
-                                </a>
-                            </div>
-                            <div class="col-md-4 modal-block">
-                                <a href="#">
-                                    <img src="images/channels/baldar.png" alt=""/>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+</div>
 
-        <div class="modal fade" id="liveModal" tabindex="-1" role="dialog" aria-labelledby="liveModalLabel">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="liveModalLabel">Түз эфир</h4>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-md-4 modal-block">
-                                <div id="player"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <div class="container">
-            <div class="row">
-                <header class="top-menu">
-                    <div class="top-header clearfix">
-                        <div class="col-md-12 logo-block">
-                            <div class="row">
-                                <a class="logo" href="http://ktrk.dev">
-                                    <img src="images/logo_kg.png" alt=""/>
-                                </a>
-
-                                <nav class="top-nav clearfix">
-                                    <ul class="clearfix">
-                                        <li><a href="#">Башкы бет</a></li>
-                                        <li>/</li>
-                                        <li>
-                                            <a href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="100" data-close-others="false" role="button" aria-expanded="false">КТРК</a>
-                                            <ul class="dropdown-menu" role="menu">
-                                                <li><a href="#">Тарыхы</a></li>
-                                                <li><a href="#">Жетекчилер</a></li>
-                                                <li><a href="#">Стратегия</a></li>
-                                                <li><a href="#">Нормативдик база</a></li>
-                                                <li><a href="#">РРТЦ</a></li>
-                                                <li><a href="#">Отчет</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>/</li>
-                                        <li><a href="#">Видеопортал</a></li>
-                                        <li>/</li>
-                                        <li><a href="#">Телепрограмма</a></li>
-                                        <li>/</li>
-                                        <li><a href="#">Байкоочу кеңеш</a></li>
-                                        <li>/</li>
-                                        <li><a href="#">Редакциялык кеңешчи</a></li>
-                                    </ul>
-                                </nav>
-
-                                <ul class="soc">
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-odnoklassniki"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-vk"></i></a></li>
-                                </ul>
-
-                                <form class="form-search" action="" method="post">
-                                    <div class="form-group pull-right">
-                                        <input type="text" class="form-control" placeholder="Издөө"/>
-                                    </div>
-
-                                    <button class="btn" type="submit">
-                                        <i class="fa fa-search"></i>
-                                    </button>
-                                </form>
-
-                                <button class="btn btn-danger btn-live" data-toggle="modal" data-target="#liveModal">
-                                    <i class="fa fa-dot-circle-o"></i>
-                                    түз эфир
-                                </button>
-
-                                <div class="tv-radio">
-                                    <a id="tv" href="#" title="Телеканалдар" data-toggle="modal" data-target="#tvModal"><img src="images/tv.svg" alt=""/></a>
-                                    <div class="divider"></div>
-                                    <a href="#" title="Радиостанциялар" data-toggle="modal" data-target="#radioModal"><img src="images/radio.svg" alt=""/></a>
-                                </div>
-
-                                <div class="tv-radio hidden">
-                                    <div class="component component-tv">
-                                        <!-- Start Nav Structure -->
-                                        <button class="cn-button" id="cn-button-tv"><img src="images/tv.svg" alt=""/></button>
-                                        <div class="cn-wrapper" id="cn-wrapper-tv">
-                                            <ul>
-                                                <li><a href="#"><img src="images/channels/balastan.svg" alt="Баластан"/></a></li>
-                                                <li><a href="#"><img src="images/channels/muztv.png" alt="Муз ТВ"/></a></li>
-                                                <li><a href="#"><img src="images/channels/madaniyat.png" alt="Маданият"/></a></li>
-                                            </ul>
-                                        </div>
-                                        <div id="cn-overlay-tv" class="cn-overlay"></div>
-                                        <!-- End Nav Structure -->
-                                    </div>
-                                    <div class="divider"></div>
-                                    <div class="component component-radio">
-                                        <!-- Start Nav Structure -->
-                                        <button class="cn-button" id="cn-button-radio"><img src="images/radio.svg" alt=""/></button>
-                                        <div class="cn-wrapper" id="cn-wrapper-radio">
-                                            <ul>
-                                                <li><a href="#"><img src="images/channels/kg-radio.png" alt="Кыргыз радиосу"/></a></li>
-                                                <li><a href="#"><img src="images/channels/1-radio.png" alt="Биринчи Радио"/></a></li>
-                                                <li><a href="#"><img src="images/channels/dostuk.png" alt="Достук"/></a></li>
-                                                <li><a href="#"><img src="images/channels/min-kiyal.png" alt="Мин Кыял"/></a></li>
-                                                <li><a href="#"><img src="images/channels/baldar.png" alt="Балдар ФМ"/></a></li>
-                                            </ul>
-                                        </div>
-                                        <div id="cn-overlay-radio" class="cn-overlay"></div>
-                                        <!-- End Nav Structure -->
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </header>
-            </div>
-        </div>
 
         <div class="clearfix">
             <a href="#" class="col-md-12 text-center ads">

@@ -310,7 +310,7 @@
                   <a class="director-img" href="#">
                     <img src="images/chief.jpg" alt="директор"/>
                   </a>
-                  <a class="director-text" href="#">{{ trans('site.FrontDirectorPage') }}</a>
+                  <a class="director-text" href="{{ route('front.pages.director') }}">{{ trans('site.FrontDirectorPage') }}</a>
                 </h3>
               </div>
               <div class="panel-body">

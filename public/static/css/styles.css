@@ -669,7 +669,7 @@ and open the template in the editor.
     border-left-color: #29A2F8 ;             
 }
 
-.trademark p2 {
+.trademark .p2 {
     line-height: 1.3em;
     display: flex;
 }
