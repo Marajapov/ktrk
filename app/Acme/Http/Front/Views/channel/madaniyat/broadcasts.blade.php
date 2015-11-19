@@ -133,20 +133,67 @@
         <div class="container">
 
             <div class="row">
-                <section class="content clearfix">
-                    <div class="col-md-12" style="padding:10px 0px;">
-                        <div class="panel panel-default">
+                  <div class="col-md-12" style="padding:10px 0px 0px 0px;">
+                        <div class="panel panel-default panel-carousel">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><span>Передачи</span></h3>
+                                <h3 class="panel-title"><span>Новые передачи</span></h3>
                             </div>
                             <div class="panel-body">
                                 <div class="col-md-12">
-
+                                    <div class="carousel-slick_peredachi">
+                                        <div class="col-md-4 peredacha">
+                                            <div class="first">
+                                                <div class="img">
+                                                    <a href="#"><img src="{{ asset('images/gallery/001.jpg')}}" alt="" title=""></a>
+                                                    <div class="views"><i class="fa fa-eye"></i> 10 099 </div>
+                                                    <div class="time">4:52</div>
+                                                    <a class="play" href=""></a>
+                                                </div>
+                                                <div class="txt">
+                                                    <div class="date">11.11.15</div>
+                                                    <a href="#">Адыгейский сор из избы. Самые драматичные моменты</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 peredacha"><a href="#"><img src="{{ asset('images/gallery/002.jpg')}}" alt=""/></a></div>
+                                        <div class="col-md-4 peredacha"><a href="#"><img src="{{ asset('images/gallery/003.jpg')}}" alt=""/></a></div>
+                                        <div class="col-md-4 peredacha"><a href="#"><img src="{{ asset('images/gallery/004.jpg')}}" alt=""/></a></div>
+                                        <div class="col-md-4 peredacha"><a href="#"><img src="{{ asset('images/gallery/005.jpg')}}" alt=""/></a></div>
+                                        <div class="col-md-4 peredacha"><a href="#"><img src="{{ asset('images/gallery/006.jpg')}}" alt=""/></a></div>
+                                        <div class="col-md-4 peredacha"><a href="#"><img src="{{ asset('images/gallery/007.jpg')}}" alt=""/></a></div>
+                                        <div class="col-md-4 peredacha"><a href="#"><img src="{{ asset('images/gallery/008.jpg')}}" alt=""/></a></div>
+                                        <div class="col-md-4 peredacha"><a href="#"><img src="{{ asset('images/gallery/009.jpg')}}" alt=""/></a></div>
+                                        <div class="col-md-4 peredacha"><a href="#"><img src="{{ asset('images/gallery/010.jpg')}}" alt=""/></a></div>
+                                        <div class="col-md-4 peredacha"><a href="#"><img src="{{ asset('images/gallery/011.jpg')}}" alt=""/></a></div>
+                                        <div class="col-md-4 peredacha"><a href="#"><img src="{{ asset('images/gallery/012.jpg')}}" alt=""/></a></div>
+                                    </div>
                                 </div>
+
+                            </div>
+
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><span>Популярные передачи</span></h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="col-md-12">
+                                    <div class="carousel-slick_peredachi ">
+                                        <div class="col-md-4 peredacha"><a href="#"><img src="{{ asset('images/gallery/002.jpg')}}" alt=""/></a></div>
+                                        <div class="col-md-4 peredacha"><a href="#"><img src="{{ asset('images/gallery/003.jpg')}}" alt=""/></a></div>
+                                        <div class="col-md-4 peredacha"><a href="#"><img src="{{ asset('images/gallery/004.jpg')}}" alt=""/></a></div>
+                                        <div class="col-md-4 peredacha"><a href="#"><img src="{{ asset('images/gallery/005.jpg')}}" alt=""/></a></div>
+                                        <div class="col-md-4 peredacha"><a href="#"><img src="{{ asset('images/gallery/006.jpg')}}" alt=""/></a></div>
+                                        <div class="col-md-4 peredacha"><a href="#"><img src="{{ asset('images/gallery/007.jpg')}}" alt=""/></a></div>
+                                        <div class="col-md-4 peredacha"><a href="#"><img src="{{ asset('images/gallery/008.jpg')}}" alt=""/></a></div>
+                                        <div class="col-md-4 peredacha"><a href="#"><img src="{{ asset('images/gallery/009.jpg')}}" alt=""/></a></div>
+                                        <div class="col-md-4 peredacha"><a href="#"><img src="{{ asset('images/gallery/010.jpg')}}" alt=""/></a></div>
+                                        <div class="col-md-4 peredacha"><a href="#"><img src="{{ asset('images/gallery/011.jpg')}}" alt=""/></a></div>
+                                        <div class="col-md-4 peredacha"><a href="#"><img src="{{ asset('images/gallery/012.jpg')}}" alt=""/></a></div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
-                </section>
             </div>
         </div>
 
@@ -178,6 +225,126 @@
         <script src="{{ asset('js/jquery-1.11.2.min.js') }}"></script>
         <script src="{{ asset('js/bootstrap.min.js') }}"></script>
         <script src="{{ asset('js/bootstrap-hover-dropdown.js') }}"></script>
+
+        <script type="text/javascript" src="{{ asset('filter/js/jquery.easing.min.js') }}"></script>
+        <script type="text/javascript" src="filter/js/jquery.mixitup.min.js') }}"></script>
+
+        <script type="text/javascript" src="{{ asset('js/jquery-migrate-1.2.1.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('slick/slick.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/jquery.roundabout.js') }}"></script>
+
+
+        <script>
+            if ($(window).width() > 768) {
+                $('.carousel-slick_peredachi').slick({
+                    infinite: true,
+                    slidesToShow: 4,
+                    slidesToScroll: 1,        
+                });
+                $('.carousel-slick').slick({
+                    infinite: true,
+                    slidesToShow: 6,
+                    slidesToScroll: 1,
+
+                });
+            }
+
+            if ($(window).width() < 768) {
+                $('.carousel-slick').slick({
+                    infinite: true,
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+    
+                });
+            }
+
+            if ($(window).width() < 768) {
+                $('.carousel-slick_peredachi').slick({
+                    infinite: true,
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+        
+                });
+            }
+
+        </script>
+
+        <script type="text/javascript">
+            (function ($) {
+
+                var $descriptions = $('#carousel-descriptions').children('li'),
+                        $controls = $('#carousel-controls').find('span'),
+                        $carousel = $('#carousel')
+                        .roundabout({childSelector: "a", minOpacity: 1, autoplay: false})
+                        .on('focus', 'img', function () {
+                            var slideNum = $carousel.roundabout("getChildInFocus");
+
+                            $descriptions.add($controls).removeClass('current');
+                            $($descriptions.get(slideNum)).addClass('current');
+                            $($controls.get(slideNum)).addClass('current');
+                        });
+
+                $controls.on('click dblclick', function () {
+                    var slideNum = -1,
+                            i = 0, len = $controls.length;
+
+                    for (; i < len; i++) {
+                        if (this === $controls.get(i)) {
+                            slideNum = i;
+                            break;
+                        }
+                    }
+
+                    if (slideNum >= 0) {
+                        $controls.removeClass('current');
+                        $(this).addClass('current');
+                        $carousel.roundabout('animateToChild', slideNum);
+                    }
+                });
+            }(jQuery));
+        </script>
+
+
+        <script type="text/javascript">
+            $(function () {
+
+                var filterList = {
+                    init: function () {
+
+                        // MixItUp plugin
+                        // http://mixitup.io
+                        $('#portfoliolist').mixitup({
+                            showOnLoad: 'all-videos',
+                            targetSelector: '.portfolio',
+                            filterSelector: '.filter',
+                            effects: ['fade'],
+                            easing: 'snap',
+                            // call the hover effect
+                            onMixEnd: filterList.hoverEffect()
+                        });
+
+                    },
+                    hoverEffect: function () {
+
+                        // Simple parallax effect
+                        $('#portfoliolist .portfolio').hover(
+                                function () {
+                                    $(this).find('.label').stop().animate({bottom: 0}, 200, 'easeOutQuad');
+                                    $(this).find('img').stop().animate({top: -40}, 250, 'easeOutQuad');
+                                },
+                                function () {
+                                    $(this).find('.label').stop().animate({bottom: -40}, 200, 'easeInQuad');
+                                    $(this).find('img').stop().animate({top: 0}, 300, 'easeOutQuad');
+                                }
+                        );
+
+                    }
+
+                };
+                // Run the show!
+                filterList.init();
+            });
+        </script>
 
         <script>
             $(document).ready(function () {

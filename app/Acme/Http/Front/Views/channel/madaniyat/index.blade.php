@@ -228,25 +228,25 @@
 
 
                     <div class="col-md-12" style="padding: 10px 0px 0px 0px;">
-                        <div class="panel panel-default panel-carousel">
+                        <div class="panel panel-default panel-carousel ">
                             <div class="panel-heading">
                                 <h3 class="panel-title"><span>Фотогалерея</span></h3>
                             </div>
                             <div class="panel-body">
-                                <div class="col-md-12">
+                                <div class="col-md-12 broadimages">
                                     <div class="carousel-slick">
-                                        <div class="col-md-4"><a href="#"><img src="images/gallery/001.jpg" alt=""/></a></div>
-                                        <div class="col-md-4"><a href="#"><img src="images/gallery/002.jpg" alt=""/></a></div>
-                                        <div class="col-md-4"><a href="#"><img src="images/gallery/003.jpg" alt=""/></a></div>
-                                        <div class="col-md-4"><a href="#"><img src="images/gallery/004.jpg" alt=""/></a></div>
-                                        <div class="col-md-4"><a href="#"><img src="images/gallery/005.jpg" alt=""/></a></div>
-                                        <div class="col-md-4"><a href="#"><img src="images/gallery/006.jpg" alt=""/></a></div>
-                                        <div class="col-md-4"><a href="#"><img src="images/gallery/007.jpg" alt=""/></a></div>
-                                        <div class="col-md-4"><a href="#"><img src="images/gallery/008.jpg" alt=""/></a></div>
-                                        <div class="col-md-4"><a href="#"><img src="images/gallery/009.jpg" alt=""/></a></div>
-                                        <div class="col-md-4"><a href="#"><img src="images/gallery/010.jpg" alt=""/></a></div>
-                                        <div class="col-md-4"><a href="#"><img src="images/gallery/011.jpg" alt=""/></a></div>
-                                        <div class="col-md-4"><a href="#"><img src="images/gallery/012.jpg" alt=""/></a></div>
+                                        <div class="col-md-4"><a href="#"><img src="images/gallery/001.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
+                                        <div class="col-md-4"><a href="#"><img src="images/gallery/002.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
+                                        <div class="col-md-4"><a href="#"><img src="images/gallery/003.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
+                                        <div class="col-md-4"><a href="#"><img src="images/gallery/004.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
+                                        <div class="col-md-4"><a href="#"><img src="images/gallery/005.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
+                                        <div class="col-md-4"><a href="#"><img src="images/gallery/006.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
+                                        <div class="col-md-4"><a href="#"><img src="images/gallery/007.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
+                                        <div class="col-md-4"><a href="#"><img src="images/gallery/008.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
+                                        <div class="col-md-4"><a href="#"><img src="images/gallery/009.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
+                                        <div class="col-md-4"><a href="#"><img src="images/gallery/010.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
+                                        <div class="col-md-4"><a href="#"><img src="images/gallery/011.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
+                                        <div class="col-md-4"><a href="#"><img src="images/gallery/012.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
                                     </div>
                                 </div>
 

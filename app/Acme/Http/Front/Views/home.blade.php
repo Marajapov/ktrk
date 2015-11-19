@@ -406,12 +406,7 @@
               <div class="panel-body">
                 <div class="col-md-12">
                   <div class="carousel-slick">
-                    <div class="col-md-4">
-                      <a href="#">
-                        <img src="images/gallery/001.jpg" alt=""/>
-                        <span>Название</span>
-                        <div class="overlay"></div>
-                      </a>
+                    <div class="col-md-4"><a href="#"><img src="images/gallery/001.jpg" alt=""/><span>Название</span><div class="overlay"></div></a>
                     </div>
                     <div class="col-md-4"><a href="#"><img src="images/gallery/002.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
                     <div class="col-md-4"><a href="#"><img src="images/gallery/003.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>

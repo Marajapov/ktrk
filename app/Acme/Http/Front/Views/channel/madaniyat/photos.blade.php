@@ -10,6 +10,10 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick.css') }}"/>
         <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick-theme.css') }}"/>
         <link rel="stylesheet" href="{{ asset('css/style.css') }}"/>
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/custombox.css') }}"/>
+        <link rel="stylesheet"  href="{{ asset('css/lightslider.css') }}"/>
+        <link rel="stylesheet" href="{{ asset('css/gallery.css') }}"/>
+        <script src="{{ asset('js/gallery/modernizr.custom.js') }}"></script>   
 
     </head>
     <body class="madaniyat">
@@ -132,21 +136,154 @@
 
         <div class="container">
 
-            <div class="row">
-                <section class="content clearfix">
+            <div class="row">            
                     <div class="col-md-12" style="padding:10px 0px;">
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h3 class="panel-title"><span>Фотогалерея</span></h3>
                             </div>
-                            <div class="panel-body">
-                                <div class="col-md-12">
+                         <div class="panel-body imagegrid">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <div class="imagepad">       
+                                        <div class="slider slider-for">
+                                            <div class="imagebig"><img src="{{ asset('images/channels/muzkanal/12.png') }}" alt="..."> 
+                                                <a class="btn btn-primary loopmode" href="#modal1" id="myModal1">
+                                                    <i class="fa fa-search-plus"></i> Увеличить</a>
+                                                <div class="imagegridtext">
+                                                    <p>Описание картинки</p><span>Ресурс: КТРК</span>
+                                                </div>                             
+                                            </div>
+                                            <div class="imagebig"><img src="{{ asset('images/channels/muzkanal/Music.jpg') }}" alt="..."> 
+                                                <a class="btn btn-primary loopmode" href="#modal2" id="myModal2">
+                                                    <i class="fa fa-search-plus"></i> Увеличить</a>
+                                                <div class="imagegridtext">
+                                                    <p>Описание картинки</p><span>Ресурс: КТРК</span>
+                                                </div>                             
+                                            </div>
+                                            <div class="imagebig"><img src="{{ asset('images/channels/muzkanal/mirbek.jpg') }}" alt="..."> 
+                                                <a class="btn btn-primary loopmode" href="#modal3" id="myModal3">
+                                                    <i class="fa fa-search-plus"></i> Увеличить</a>
+                                                <div class="imagegridtext">
+                                                    <p>Описание картинки</p><span>Ресурс: КТРК</span>
+                                                </div>                             
+                                            </div>
+                                            <div class="imagebig"><img src="{{ asset('images/channels/muzkanal/kalykov.jpg') }}" alt="..."> 
+                                                <a class="btn btn-primary loopmode" href="#modal4" id="myModal4">
+                                                    <i class="fa fa-search-plus"></i> Увеличить</a>
+                                                <div class="imagegridtext">
+                                                    <p>Описание картинки</p><span>Ресурс: КТРК</span>
+                                                </div>                             
+                                            </div>
+                                            <div class="imagebig"><img src="{{ asset('images/channels/muzkanal/12.png') }}" alt="..."> 
+                                                <a class="btn btn-primary loopmode" href="#modal5" id="myModal5">
+                                                    <i class="fa fa-search-plus"></i> Увеличить</a>
+                                                <div class="imagegridtext">
+                                                    <p>Описание картинки</p><span>Ресурс: КТРК</span>
+                                                </div>                             
+                                            </div>
+                                        </div>
+                                        <div class="slider slider-nav imagesmall">
+                                            <div><img src="{{ asset('images/channels/muzkanal/12.png') }}" alt="..."></div>
+                                            <div><img src="{{ asset('images/channels/muzkanal/Music.jpg') }}" alt="..."></div>
+                                            <div><img src="{{ asset('images/channels/muzkanal/mirbek.jpg') }}" alt="..."></div>
+                                            <div><img src="{{ asset('images/channels/muzkanal/kalykov.jpg') }}" alt="..."></div>
+                                            <div><img src="{{ asset('images/channels/muzkanal/12.png') }}" alt="..."></div>
+                                        </div> 
 
-                                </div>
+                                        <!-- Button trigger modal -->
+
+                                        <div id="modal1" class="modal-demo modal-lg">                             
+                                            <button type="button" class="close" onclick="Custombox.close();">
+                                                <span>×</span><span class="sr-only">Жабуу</span>
+                                            </button>
+                                            <h4 class="title">Маданият каналы</h4>
+                                            <img src="{{ asset('images/channels/muzkanal/12.png') }}" alt="...">                       
+                                        </div>
+
+                                        <div id="modal2" class="modal-demo modal-lg">                             
+                                            <button type="button" class="close" onclick="Custombox.close();">
+                                                <span>×</span><span class="sr-only">Жабуу</span>
+                                            </button>
+                                            <h4 class="title">Маданият каналы</h4>
+                                            <img src="{{ asset('images/channels/muzkanal/Music.jpg') }}" alt="...">                       
+                                        </div>
+
+                                        <div id="modal3" class="modal-demo modal-lg">                             
+                                            <button type="button" class="close" onclick="Custombox.close();">
+                                                <span>×</span><span class="sr-only">Жабуу</span>
+                                            </button>
+                                            <h4 class="title">Маданият каналы</h4>
+                                            <img src="{{ asset('images/channels/muzkanal/mirbek.jpg') }}" alt="...">                       
+                                        </div>
+
+                                        <div id="modal4" class="modal-demo modal-lg">                             
+                                            <button type="button" class="close" onclick="Custombox.close();">
+                                                <span>×</span><span class="sr-only">Жабуу</span>
+                                            </button>
+                                            <h4 class="title">Маданият каналы</h4>
+                                            <img src="{{ asset('images/channels/muzkanal/kalykov.jpg') }}" alt="...">                       
+                                        </div>
+
+                                        <div id="modal5" class="modal-demo modal-lg">                             
+                                            <button type="button" class="close" onclick="Custombox.close();">
+                                                <span>×</span><span class="sr-only">Жабуу</span>
+                                            </button>
+                                            <h4 class="title">Маданият каналы</h4>
+                                            <img src="{{ asset('images/channels/muzkanal/12.png') }}" alt="...">                       
+                                        </div>
+                                    </div>
+                                </div>                                
+                               <div class="col-md-3">
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <div class="panel-title">
+                                <h4 class="show-title">
+                                    <a href="#">Другие галереи</a> 
+
+                                </h4>
                             </div>
                         </div>
+                        <div class="panel-body imagegrid">
+                            <div class="row">
+                                <div class="col-md-12 otherphotos">
+
+                                    <div class="grid_gallery">
+                                        <div class="grid_item">
+                                            <a href="#" class="img-wrap">
+                                                <img src="{{ asset('images/channels/muzkanal/12.png') }}" alt=""/>
+                                                <span>Открыть галерею</span>
+                                                <div class="overlay"></div>
+                                            </a>
+                                        </div>
+                                        <div class=" grid_item">
+                                            <a href="#" class="img-wrap">
+                                                <img src="{{ asset('images/channels/muzkanal/mirbek.jpg') }}" alt=""/>
+                                                <span>Открыть галерею</span>
+                                                <div class="overlay"></div>
+                                            </a>
+                                        </div>
+                                        <div class=" grid_item">
+                                            <a href="#" class="img-wrap">
+                                                <img src="{{ asset('images/channels/muzkanal/kalykov.jpg') }}" alt=""/>
+                                                <span>Открыть галерею</span>
+                                                <div class="overlay"></div>
+                                            </a>
+                                        </div>
+
+
+                                    </div>
+                                </div>                               
+                             
+                            </div>                                         
+                        </div>                        
+                    </div>                     
+                </div>
+                            </div>                                         
+                        </div> 
+                        </div>
                     </div>
-                </section>
+             
             </div>
         </div>
 
@@ -178,6 +315,72 @@
         <script src="{{ asset('js/jquery-1.11.2.min.js') }}"></script>
         <script src="{{ asset('js/bootstrap.min.js') }}"></script>
         <script src="{{ asset('js/bootstrap-hover-dropdown.js') }}"></script>
+
+        <script type="text/javascript" src="{{ asset('js/jquery-migrate-1.2.1.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('slick/slick.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/jquery.roundabout.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/custombox.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/legacy.js') }}"></script>
+ 
+        <script>
+            $(document).ready(function () {
+                $(".img-wrap img").each(function () {
+                    var width = $(this).width();
+                    var height = $(this).height();
+
+                    if ((width > height)) {
+                        $(this).css({
+                            width: "auto",
+                            height: "170px"
+                        });
+                    }
+                    else {
+                        $(this).css({
+                            width: "100%",
+                            height: "auto"
+                        });
+                    }
+                });
+            });
+        </script>
+
+        <script>
+            $(function () {
+                function galleryModal(button, target) {
+                    $(button).on('click', function (e) {
+                        Custombox.open({
+                            target: target,
+                            effect: 'fadein'
+                        });
+                        e.preventDefault();
+                    });
+                }
+
+                galleryModal($('#myModal1'), '#modal1');
+                galleryModal($('#myModal2'), '#modal2');
+                galleryModal($('#myModal3'), '#modal3');
+                galleryModal($('#myModal4'), '#modal4');
+                galleryModal($('#myModal5'), '#modal5');
+            });
+        </script>
+
+        <script>
+            $('.slider-for').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: false,
+                fade: true,
+                asNavFor: '.slider-nav'
+            });
+            $('.slider-nav').slick({
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                asNavFor: '.slider-for',
+                dots: false,
+                centerMode: true,
+                focusOnSelect: true
+            });
+        </script>
 
         <script>
             $(document).ready(function () {

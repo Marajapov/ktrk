@@ -1249,7 +1249,7 @@ img{
     min-width: 227px;
     opacity: 1;
 }
-.gallery .slick-slide span{
+.gallery .slick-slide span, .broadimages .slick-slide span{
     position: absolute;
     top: 50%;
     z-index: 3;
@@ -1278,7 +1278,7 @@ img{
     -o-transition: opacity 0.3s ease, transform 0.3s ease;
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
-.gallery .slick-slide:hover span{
+.gallery .slick-slide:hover span, .broadimages .slick-slide:hover span{
     opacity: 1;
     -moz-transform: scale(1);
     -ms-transform: scale(1); /* IE 9 */

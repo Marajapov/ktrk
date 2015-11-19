@@ -142,7 +142,7 @@
 
                 </div>
             </div>
-        </div>>
+        </div>
 
         <!--     <a href="#" class="col-md-12 hidden-xs text-center ads">
                 <img src="images/ads_1.jpg" alt=""/>
@@ -335,16 +335,16 @@
         <script src="{{ asset('js/bootstrap.min.js') }}"></script> 
 
         <script>
-                                                $(document).ready(function () {
-                                                    $(".search-toggle").click(function () {
-                                                        $(".logo-block").addClass("search-show");
-                                                        $(".form-search").addClass("visible");
-                                                    });
-                                                    $(".close-search").click(function () {
-                                                        $(".logo-block").removeClass("search-show");
-                                                        $(".form-search").removeClass("visible");
-                                                    });
-                                                });
+            $(document).ready(function () {
+                $(".search-toggle").click(function () {
+                    $(".logo-block").addClass("search-show");
+                    $(".form-search").addClass("visible");
+                });
+                $(".close-search").click(function () {
+                    $(".logo-block").removeClass("search-show");
+                    $(".form-search").removeClass("visible");
+                });
+            });
         </script>               
 
         <script type="text/javascript" src="{{ asset('js/jquery-migrate-1.2.1.min.js') }}"></script>
@@ -358,25 +358,25 @@
 
 
         <script>
-                                                $(document).ready(function () {
-                                                    $(".img-wrap img").each(function () {
-                                                        var width = $(this).width();
-                                                        var height = $(this).height();
+            $(document).ready(function () {
+                $(".img-wrap img").each(function () {
+                    var width = $(this).width();
+                    var height = $(this).height();
 
-                                                        if ((width > height)) {
-                                                            $(this).css({
-                                                                width: "auto",
-                                                                height: "170px"
-                                                            });
-                                                        }
-                                                        else {
-                                                            $(this).css({
-                                                                width: "100%",
-                                                                height: "auto"
-                                                            });
-                                                        }
-                                                    });
-                                                });
+                    if ((width > height)) {
+                        $(this).css({
+                            width: "auto",
+                            height: "170px"
+                        });
+                    }
+                    else {
+                        $(this).css({
+                            width: "100%",
+                            height: "auto"
+                        });
+                    }
+                });
+            });
         </script>
 
         <script>
