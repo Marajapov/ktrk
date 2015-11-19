@@ -19,6 +19,7 @@ class CreateProjectsTable extends Migration
             $table->boolean('published')->nullable()->default(false);
             $table->string('parentId');
             $table->string('status');
+            $table->string('program');
             $table->timestamps();
         });
     }

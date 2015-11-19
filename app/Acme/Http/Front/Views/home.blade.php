@@ -365,14 +365,15 @@
 
                 <div id="portfoliolist">
                   @foreach($mediaPosts as $media)
+                  
                     <div class="portfolio {{ $media->getVideoType() }}" data-cat="{{ $media->getVideoType() }}">
                       <div class="portfolio-wrapper">
-                        <a href="{{ route('front.media.video', $media) }}">
+                        <a href="{{ route('front.media.video', $media) }}" >
                           <img src="http://img.youtube.com/vi/{{ $media->getUrl()}}/mqdefault.jpg" alt="" />
                         </a>
                         <div class="label">
                           <div class="label-text">
-                            <a class="text-title">{{ $media->getName() }}</a>
+                            <a title="{{ $media->getProgramName() }}" class="text-title">{{ $media->getName() }}</a>
                           </div>
                           <div class="label-bg"></div>
                         </div>
@@ -387,6 +388,7 @@
                   <a href="{{ route('front.media.index') }}">
                     <span>{{ trans('site.FrontVideoAll') }} <i class="fa fa-arrow-circle-right"></i></span>
                   </a>
+                  
                 </footer>
 
               </div>

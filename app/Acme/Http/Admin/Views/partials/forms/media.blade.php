@@ -3,8 +3,15 @@
 <div class="row">
     <div class="col-sm-10">
         <div class="form-group">
-            <label class="control-label">{{ trans('site.Title') }}</label>
+            <label class="control-label">Название на кыргызском</label>
             {!! Form::text('name', null, ["class" => "form-control", "required" => true, "title" => ""]) !!}
+        </div>
+    </div>
+
+    <div class="col-sm-10">
+        <div class="form-group">
+            <label class="control-label">Название на русском</label>
+            {!! Form::text('nameRu', null, ["class" => "form-control", "required" => true, "title" => ""]) !!}
         </div>
     </div>
 
@@ -15,10 +22,10 @@
         </div>
     </div>
 
-    <div class="col-sm-12">
+    <div class="col-sm-10">
       <div class="form-group">
         <label class="control-label">Передачи</label>
-        {!! Form::select('project', array('0'=>'--Выберите--')+ $project, null, ["class" => "select2_group  form-control", "title" => ""]) !!}
+        {!! Form::select('program', array('0'=>'--Выберите--')+ $projectList, null, ["class" => "select2_group  form-control", "title" => ""]) !!}
       </div>
     </div>
 

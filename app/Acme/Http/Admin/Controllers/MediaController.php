@@ -27,10 +27,11 @@ class MediaController extends Controller
      */
     public function create()
     {
-        $project = 
+        $projectList = \Model\Project\ModelName::lists('name', 'id')->toArray();
+
         return view('Admin::media.create', [
-            'media' => new Media()
-            'project' => 'project',
+            'media' => new Media,
+            'projectList' => $projectList,
             ]);
     }
 

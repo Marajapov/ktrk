@@ -19,6 +19,7 @@ class CreateMediaTable extends Migration
             $table->string('name');
             $table->string('description',500);
             $table->string('url');
+            $table->string('nameRu');
             $table->enum('type', ['image', 'video'])->nullable()->default('image');
             $table->integer('owner_id')->nullable()->unsigned()->default(null);
             $table->boolean('published')->nullable()->default(false);

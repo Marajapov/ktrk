@@ -37,6 +37,11 @@ class ModelName extends Model
         return $this->name;
     }
 
+    public function getNameRu()
+    {
+        return $this->nameRu;
+    }
+
     public function getType()
     {
         return $this->type;
@@ -52,6 +57,11 @@ class ModelName extends Model
         return $this->viewed;
     }
 
+    public function getContent()
+    {
+        return $this->description;
+    }
+
     public function getUrl()
     {
         return $this->url;
@@ -63,4 +73,23 @@ class ModelName extends Model
         return $this->videoType;
     }
 
+    public function getProgram()
+    {
+        return $this->program;
+    }
+
+    public function getProgramName()
+    {
+        $lc = app()->getlocale();
+        $programId = $this->program;
+        $programName = \Model\Project\ModelName::where('id','=',$programId)->first();
+        $name = $programName->name;
+        $nameRu = $programName->nameRu;
+        if($lc == 'kg'){
+            return $name;
+        }else{
+            return $nameRu;
+        }
+        
+    }
 }

@@ -17,4 +17,9 @@ trait ModelRelationships
     {
         return $this->hasOne(\Model\MediaCategory\ModelName::class, 'videoType');
     }
+
+    public function hasProject()
+    {
+        return $this->hasOne(\Model\Project\ModelName::class, 'program');
+    }
 }

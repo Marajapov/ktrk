@@ -33,7 +33,7 @@ class ModelName extends Model
 
     public function getNameRu()
     {
-        return $this->name_ru;
+        return $this->nameRu;
     }
 
     public function getTitle()
@@ -43,12 +43,11 @@ class ModelName extends Model
 
     public function getTitleRu()
     {
-        return $this->title_ru;
+        return $this->titleRu;
     }
 
     public function getVideoType()
     {
         return $this->videoType;
     }
-
 }

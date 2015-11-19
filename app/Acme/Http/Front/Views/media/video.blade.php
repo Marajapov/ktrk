@@ -19,23 +19,23 @@
                 <h3 class="panel-title">
                   <a href="#">Видеопортал</a>
                   <span class="divider"><i class="fa fa-circle"></i></span>
-                  <a href="#"><span class="ctg">Телепередачи</span></a>
+                  <a href="#"><span class="ctg">{{ $getVideoTypeName}}</span></a>
                 </h3>
               </div>
               <div class="panel-body">
 
                 <article data-cat="all-videos">
                   <h4 class="show-title">
-                    <a href="#">Замана</a>
+                    <a href="#">{{ $videoProject}}</a>
                     <i class="fa fa-circle"></i>
-                    <span>Название</span>
+                    <span>{{ $video->getName()}}</span>
                   </h4>
                   <div class="embed-responsive embed-responsive-16by9 show-video">
-                    {{--<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ $mediaPost->getUrl()}}"></iframe>--}}
-                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/v7GbxUnwRY8"></iframe>
+                    
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ $video->getUrl()}}"></iframe>
                   </div>
                   <p class="video-desc">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam architecto autem deleniti, dolor dolore ducimus eligendi illo in iusto nisi, nulla numquam omnis, porro quaerat quibusdam rerum suscipit vitae voluptatem?
+                    {{ $video->getContent()}}
                   </p>
                 </article>
 
@@ -53,15 +53,17 @@
                 </h3>
               </div>
               <div class="panel-body" id="relatedVideos">
+                @foreach($relatedVideos as $relatedVideo)
                 <div class="col-md-4 block">
                   <a href="#" class="video-thumb">
-                    <img src="http://img.youtube.com/vi/kPG5DRKB0cQ/mqdefault.jpg" alt=""/>
+                    <img src="http://img.youtube.com/vi/{{ $relatedVideo->getUrl() }}/mqdefault.jpg" alt=""/>
                     <i class="fa fa-play-circle-o"></i>
                   </a>
                   <a href="#" class="video-title">
-                    <h4>Название новости Название новости Название новости Название новости Название новости Название новости </h4>
+                    <h4>{{ $relatedVideo->getName() }}</h4>
                   </a>
                 </div>
+                @endforeach
 
 
                 <div class="col-md-12">
