@@ -165,7 +165,7 @@
 
                     <div class="col-md-12" style="padding:0px;">
                         <div class="panel panel-default panel-carousel">
-                            <div class="panel-heading">
+                            <div class="panel-heading madaniyatcolor">
                                 <h3 class="panel-title"><span>Новые передачи</span></h3>
                             </div>
                             <div class="panel-body">
@@ -198,10 +198,14 @@
                                         <div class="col-md-4 peredacha"><a href="#"><img src="images/gallery/012.jpg" alt=""/></a></div>
                                     </div>
                                 </div>
-
+  									<footer>
+                                        <a href="#">
+                                            <span>Все видео <i class="fa fa-arrow-circle-right"></i></span>
+                                        </a>
+                                    </footer>
                             </div>
 
-                            <div class="panel-heading">
+                            <div class="panel-heading madaniyatcolor madaniyatfix">
                                 <h3 class="panel-title"><span>Популярные передачи</span></h3>
                             </div>
                             <div class="panel-body">
@@ -221,7 +225,11 @@
                                         <div class="col-md-4 peredacha"><a href="#"><img src="images/gallery/012.jpg" alt=""/></a></div>
                                     </div>
                                 </div>
-
+							  		<footer>
+                                        <a href="#">
+                                            <span>Все видео <i class="fa fa-arrow-circle-right"></i></span>
+                                        </a>
+                                    </footer>
                             </div>
                         </div>
                     </div>
@@ -229,7 +237,7 @@
 
                     <div class="col-md-12" style="padding: 10px 0px 0px 0px;">
                         <div class="panel panel-default panel-carousel ">
-                            <div class="panel-heading">
+                            <div class="panel-heading madaniyatcolor">
                                 <h3 class="panel-title"><span>Фотогалерея</span></h3>
                             </div>
                             <div class="panel-body">

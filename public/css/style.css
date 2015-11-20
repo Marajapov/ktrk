@@ -4468,4 +4468,13 @@ ul.social-share li a:hover {
 .madaniyat .switch {
     background: none !important;
 }
+
+.madaniyatfix {
+    margin-top: -45px;
+}
+
+.madaniyatcolor h3 {
+    color: #6D0120;
+    font-weight: bold;
+}
 /*Madaniayt page style*/
