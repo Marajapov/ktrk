@@ -6,12 +6,9 @@
     <div class="col-md-12">
       <div class="row">
         <ul class="list-group">
-          @foreach($categories as $category)
+          @foreach($projectList as $project)
             <li class="list-group-item">
-              <a href="{{ route('front.category', $category) }}">{{ $category->getTitle() }}</a>
-            </li>
-            <li class="list-group-item">
-              <a href="{{ route('front.category', $category) }}">{{ $category->getTitle() }}</a>
+              <a href="{{ route('front.media.project', $project) }}">{{ $project->getNameOne() }}</a>
             </li>
           @endforeach
         </ul>

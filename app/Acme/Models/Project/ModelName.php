@@ -40,5 +40,14 @@ class ModelName extends Model
     {
         return $this->parentId;
     }
-
+    
+    public function getNameOne()
+    {
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            return $this->name;
+        }else{
+            return $this->nameRu;
+        }
+    }
 }

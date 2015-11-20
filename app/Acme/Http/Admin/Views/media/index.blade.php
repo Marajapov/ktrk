@@ -19,7 +19,7 @@
                     <div class="col-md-3 col-sm-3 col-xs-12">
                         <a href="{{ route('admin.media.show', $media) }}">
                             @if($media->isImage())
-                            <img src="{{ $media->getUrl() }}" class="img-responsive">
+                            <img src="http://img.youtube.com/vi/{{ $media->getUrl() }}/sddefault.jpg" class="img-responsive">
                             @else
                             <img src="http://img.youtube.com/vi/{{ $media->getUrl() }}/sddefault.jpg" class="img-responsive">
                             @endif

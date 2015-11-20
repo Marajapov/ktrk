@@ -22,78 +22,78 @@ class MediaController extends Controller
         $mainBanner = \Model\Background\ModelName::where('name','=','main')->first();
         $categories = \Model\Category\ModelName::all();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        $projectList = \Model\Project\ModelName::get();
 
         return view('Front::media.index',[
             'mediaAll' => $mediaAll,
-            'MediaCategories'       => $MediaCategories,
 
             'mainBanner'   => $mainBanner,
+            'projectList' => $projectList,
             'categories'=>$categories,
             'backgroundMain' => $backgroundMain,
             ]);
     }
 
-    public function mediaRtype($rtype) // list of videos rtype
+    public function video($media)
     {
-        $mediaAll = \Model\Media\ModelName::where('videoType','=',$rtype)->get();
+        $lc = app()->getlocale();
+        $video = \Model\Media\ModelName::where('id','=',$media)->first();
+        
+        
 
         $MediaCategories = \Model\MediaCategory\ModelName::get();
         
-        $mainBanner = \Model\Background\ModelName::where('name','=','main')->first();
-        $categories = \Model\Category\ModelName::all();
-        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        $projectId = $video->program;
 
-        
-        return view('Front::media.rtype',[
-            'mediaAll' => $mediaAll,  
-            'rtype' => $rtype,
+        $videoType = $video->videoType;
 
-            'MediaCategories'       => $MediaCategories,
+        if($lc == 'kg'){
+            $result = \Model\Project\ModelName::where('id','=',$projectId)->first();
+            $videoProject = $result->getName();
+            $result = \Model\MediaCategory\ModelName::where('videoType','=',$videoType)->first();    
+            $getVideoTypeName = $result->getName();
 
-            'mainBanner'   => $mainBanner,
-            'categories'=>$categories,
-            'backgroundMain' => $backgroundMain,
-            ]);
-    }
+            $relatedVideos = \Model\Media\ModelName::where('name','<>','')->where('program','=',$projectId)->get();
 
-    public function mediaShow(\Model\Media\ModelName $media) // One video
-    {
-        $mainBanner = \Model\Background\ModelName::where('name','=','main')->first();
-        $categories = \Model\Category\ModelName::all();
-        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        }else{
+            $result = \Model\Project\ModelName::where('id','=',$projectId)->first();
+            $videoProject = $result->getNameRu(); 
+            $result = \Model\MediaCategory\ModelName::where('videoType','=',$videoType)->first();
+            $getVideoTypeName = $result->getNameRu();
 
-        return view('Front::media.show',[
-            'mediaPost' => $media,
-            
-            'mainBanner'   => $mainBanner,
-            'categories'=>$categories,
-            'backgroundMain' => $backgroundMain,
+            $relatedVideos = \Model\Media\ModelName::where('nameRu','<>','')->where('program','=',$projectId)->get();
 
-            ]
-            );
-    }
+        }
 
-    public function video()
-    {
-        $MediaCategories = \Model\MediaCategory\ModelName::get();
+        $projectList = \Model\Project\ModelName::get();
+
         $mediaAll = \Model\Media\ModelName::get();
 
         $mainBanner = \Model\Background\ModelName::where('name','=','main')->first();
+        
         $categories = \Model\Category\ModelName::all();
+
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
         return view('Front::media.video',[
+            'video' => $video,
+            'videoProject' => $videoProject,
+            'getVideoTypeName'=> $getVideoTypeName,
+            'relatedVideos' => $relatedVideos,
+
             'mediaAll' => $mediaAll,
             'MediaCategories'       => $MediaCategories,
 
             'mainBanner'   => $mainBanner,
+            'projectList' => $projectList,
             'categories'=>$categories,
             'backgroundMain' => $backgroundMain,
         ]);
     }
 
-    public function project(\Model\Media\ModelName $project)
+    public function project(\Model\Project\ModelName $project)
     {
+        dd($project);
         $MediaCategories = \Model\MediaCategory\ModelName::get();
         $mediaAll = \Model\Media\ModelName::get();
 

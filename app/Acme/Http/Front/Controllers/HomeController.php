@@ -26,11 +26,11 @@ class HomeController extends Controller
        
         if($lc == 'kg'){
             $generalPosts = \Model\Post\ModelName::general($channel)->published()->languagekg()->take(6)->skip(0)->orderBy('id', 'desc')->get();    
-            //dd($generalPosts);
+            $projects = \Model\Project\ModelName::having('name','<>','')->get();
         }elseif($lc == 'ru'){
             $generalPosts = \Model\Post\ModelName::general($channel)->published()->languageru()->take(6)->skip(0)->orderBy('id', 'desc')->get();    
-        }
-
+            $projects = \Model\Project\ModelName::having('nameRu','<>','')->get();
+        }        
 	
 
         $mediaLast = \Model\Media\ModelName::take(9)->get();
@@ -64,6 +64,7 @@ class HomeController extends Controller
             'mediaLast'      => $mediaLast,
             'MediaCategories'       => $MediaCategories,
             'mediaPosts'       => $mediaPosts,
+            'projects' => $projects,
             ]);
     }
 
