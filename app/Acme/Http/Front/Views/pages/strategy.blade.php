@@ -1,7 +1,7 @@
 @extends('Front::layouts.default')
 @section('title', '2013 - 2015 - жылга карай КТРКнын Өнүгүү стратегиясынын долбоору | КТРК')
 @section('styles')
-  <link rel="stylesheet" type="text/css" href="{{ asset('static/css/styles.css') }}">
+  {{--<link rel="stylesheet" type="text/css" href="{{ asset('static/css/styles.css') }}">--}}
   <link rel="stylesheet" type="text/css" href="{{ asset('css/pages.css') }}">
 @stop
 @section('content')
