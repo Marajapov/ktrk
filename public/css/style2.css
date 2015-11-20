@@ -682,6 +682,10 @@ header.top-menu,.logo-block{
 
 
 /*PANEL VIDEOS*/
+.panel-videos .panel-heading h3{
+    border: none;
+    text-align: center;
+}
 .panel-videos .tab-content{
     padding: 0;
 }
@@ -689,8 +693,13 @@ header.top-menu,.logo-block{
     padding: 25px 5px;
 }
 .panel-videos .nav-tabs{
+    border-bottom: 2px solid #237dac;
     display: block;
     text-align: center;
+    margin-left: -15px;
+    margin-right: -15px;
+
+    background: #237dac;
 }
 .panel-videos .nav-tabs li{
     display: inline-block;
@@ -698,21 +707,35 @@ header.top-menu,.logo-block{
     margin: 0;
     vertical-align: middle;
 }
-.panel-videos .nav-tabs a{
+.panel-videos .nav-tabs li a{
     border: none;
 
     margin: 0;
     padding: 15px 30px;
 
+    color: #ffffff;
+
     font-size: 14px;
     line-height: 20px;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
+
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
 }
 .panel-videos .nav-tabs li.active a{
     border: none;
+
+    color: #ffffff;
+    background: none;
+
+    /*font-size: 18px;*/
+    text-transform: uppercase;
 }
 .panel-videos .nav-tabs li a:hover, .panel-videos .nav-tabs li a:focus{
-    background: #ffffff;
+    background: none;
 }
 .panel-videos .nav-tabs li.active a:before,.panel-videos .nav-tabs li.active a:after{
     position: absolute;
@@ -720,19 +743,19 @@ header.top-menu,.logo-block{
     left: 50%;
     width: 0;
     height: 0;
-    border: solid rgba(0, 0, 0, 0);
+    border: 1px solid rgba(0, 0, 0, 0);
     content: '';
     pointer-events: none;
 }
 .panel-videos .nav-tabs li.active a:before{
-    margin-left: -11px;
-    border-width: 11px;
-    border-top-color: rgba(0,0,0,0.2);
+    margin-left: -12px;
+    border-width: 12px;
+    border-top-color: #237dac;
 }
 .panel-videos .nav-tabs li.active a:after{
-    margin-left: -10px;
-    border-width: 10px;
-    border-top-color: #ffffff;
+    margin-left: -9px;
+    border-width: 9px;
+    border-top-color: #237dac;
 }
 
 .panel-videos .tab-content article{

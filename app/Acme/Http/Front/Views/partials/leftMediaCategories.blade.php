@@ -8,7 +8,7 @@
         <ul class="list-group">
           @foreach($projectList as $project)
             <li class="list-group-item">
-              <a href="{{ route('front.category', $project) }}">{{ $project->getNameOne() }}</a>
+              <a href="{{ route('front.media.project', $project) }}">{{ $project->getNameOne() }}</a>
             </li>
           @endforeach
         </ul>

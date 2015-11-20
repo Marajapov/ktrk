@@ -24,7 +24,11 @@ class PageController extends Controller
 
     public function directorPage()
     {
-        return view('Front::pages.director');
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+        return view('Front::pages.director', [
+            'backgroundMain' => $backgroundMain,
+        ]);
     }
 
     public function leadersPage()

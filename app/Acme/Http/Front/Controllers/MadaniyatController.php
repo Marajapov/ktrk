@@ -27,5 +27,21 @@ class MadaniyatController extends Controller
         return view('Front::channel.madaniyat.posts', ['channel' => $channel]);
     }
 
+    public function about()
+    {
+        return view('Front::channel.madaniyat.about');
+    }
+    public function contacts()
+    {
+        return view('Front::channel.madaniyat.contacts');
+    }
+    public function photos()
+    {
+        return view('Front::channel.madaniyat.photos');
+    }
+    public function broadcasts()
+    {
+        return view('Front::channel.madaniyat.broadcasts');
+    }
 
 }

@@ -70,7 +70,6 @@
     @include('Front::partials.modal')
     @include('Front::partials.header')
 
-
     @include('Front::partials.banner')
 
     @yield('content')

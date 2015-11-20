@@ -2,14 +2,14 @@
 <html>
     <head lang="en">
         <meta charset="UTF-8">
-        <title>Маданият</title>
+        <title>Передачи</title>
 
-        <link rel="stylesheet" href="css/bootstrap.min.css"/>
-        <link rel="stylesheet" href="css/font-awesome.css"/>
-        <link rel="stylesheet" href="filter/css/layout.css">
-        <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
-        <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
-        <link rel="stylesheet" href="css/style.css"/>
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}"/>
+        <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}"/>
+        <link rel="stylesheet" href="{{ asset('filter/css/layout.css') }}">        
+        <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick.css') }}"/>
+        <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick-theme.css') }}"/>
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}"/>
 
     </head>
     <body class="madaniyat">
@@ -27,7 +27,7 @@
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="menu">
-                    <ul class="nav navbar-nav channel_switch">
+                     <ul class="nav navbar-nav channel_switch">
                         <li class="sitemenu" id="site-channel1">
                             <a href="{{ route('front.home') }}"><img src="{{ asset('images/ktrk_last.svg')}}" style="height:40px;"><span>КТРК</span><h4>КТРК</h4></a></li>
                         <li class="sitemenu" id="site-channel1">
@@ -36,11 +36,10 @@
                             <a class="active"  href="{{ route('madaniyat.home') }}"><img src="{{ asset('images/channels/madaniyat_white_notext.png')}}"><span>Маданият</span><h4>Маданият</h4></a></li>
                         <li class="sitemenu" id="site-channel1">
                             <a href="{{ route('balastan.home') }}"><img src="{{ asset('images/channels/balastan_white_notext.png')}}"><span>Баластан</span><h4>Баластан</h4></a></li>
-                    </ul>  
+                    </ul>   
                 </div><!-- /.navbar-collapse -->
             </nav>
         </div>
-
 
         <div class="container ">
             <div class="row fixedheader">
@@ -73,8 +72,6 @@
                             </div>
                             <a class="navbar-brand" href="{{ route('madaniyat.home') }}"> <i class="fa fa-home"></i>Башкы</a>
                         </div>
-
-
 
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">                                           
@@ -133,37 +130,10 @@
             </div>
         </div>
 
-
-
         <div class="container">
 
             <div class="row">
-                <section class="content clearfix">
-
-                    <div class="col-md-12">
-                        <div class="panel panel-default" style="background-color: transparent">
-                            <div class="panel-heading">
-
-                            </div>
-                            <div class="panel-body">
-                                <div class="col-md-12 block">
-                                    <div id="carousel">
-                                        <a href="#">
-                                            <img src="images/anons/1.jpg" alt="" class="slide" />
-                                        </a>
-                                        <a href="#">
-                                            <img src="images/anons/2.jpg" alt="" class="slide" />
-                                        </a>
-                                        <a href="#">
-                                            <img src="images/anons/3.jpg" alt="" class="slide" />
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-12" style="padding:0px;">
+                  <div class="col-md-12" style="padding:10px 0px 0px 0px;">
                         <div class="panel panel-default panel-carousel">
                             <div class="panel-heading">
                                 <h3 class="panel-title"><span>Новые передачи</span></h3>
@@ -174,7 +144,7 @@
                                         <div class="col-md-4 peredacha">
                                             <div class="first">
                                                 <div class="img">
-                                                    <a href="#"><img src="images/10.png" alt="" title=""></a>
+                                                    <a href="#"><img src="{{ asset('images/gallery/001.jpg')}}" alt="" title=""></a>
                                                     <div class="views"><i class="fa fa-eye"></i> 10 099 </div>
                                                     <div class="time">4:52</div>
                                                     <a class="play" href=""></a>
@@ -185,17 +155,17 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-4 peredacha"><a href="#"><img src="images/gallery/002.jpg" alt=""/></a></div>
-                                        <div class="col-md-4 peredacha"><a href="#"><img src="images/gallery/003.jpg" alt=""/></a></div>
-                                        <div class="col-md-4 peredacha"><a href="#"><img src="images/gallery/004.jpg" alt=""/></a></div>
-                                        <div class="col-md-4 peredacha"><a href="#"><img src="images/gallery/005.jpg" alt=""/></a></div>
-                                        <div class="col-md-4 peredacha"><a href="#"><img src="images/gallery/006.jpg" alt=""/></a></div>
-                                        <div class="col-md-4 peredacha"><a href="#"><img src="images/gallery/007.jpg" alt=""/></a></div>
-                                        <div class="col-md-4 peredacha"><a href="#"><img src="images/gallery/008.jpg" alt=""/></a></div>
-                                        <div class="col-md-4 peredacha"><a href="#"><img src="images/gallery/009.jpg" alt=""/></a></div>
-                                        <div class="col-md-4 peredacha"><a href="#"><img src="images/gallery/010.jpg" alt=""/></a></div>
-                                        <div class="col-md-4 peredacha"><a href="#"><img src="images/gallery/011.jpg" alt=""/></a></div>
-                                        <div class="col-md-4 peredacha"><a href="#"><img src="images/gallery/012.jpg" alt=""/></a></div>
+                                        <div class="col-md-4 peredacha"><a href="#"><img src="{{ asset('images/gallery/002.jpg')}}" alt=""/></a></div>
+                                        <div class="col-md-4 peredacha"><a href="#"><img src="{{ asset('images/gallery/003.jpg')}}" alt=""/></a></div>
+                                        <div class="col-md-4 peredacha"><a href="#"><img src="{{ asset('images/gallery/004.jpg')}}" alt=""/></a></div>
+                                        <div class="col-md-4 peredacha"><a href="#"><img src="{{ asset('images/gallery/005.jpg')}}" alt=""/></a></div>
+                                        <div class="col-md-4 peredacha"><a href="#"><img src="{{ asset('images/gallery/006.jpg')}}" alt=""/></a></div>
+                                        <div class="col-md-4 peredacha"><a href="#"><img src="{{ asset('images/gallery/007.jpg')}}" alt=""/></a></div>
+                                        <div class="col-md-4 peredacha"><a href="#"><img src="{{ asset('images/gallery/008.jpg')}}" alt=""/></a></div>
+                                        <div class="col-md-4 peredacha"><a href="#"><img src="{{ asset('images/gallery/009.jpg')}}" alt=""/></a></div>
+                                        <div class="col-md-4 peredacha"><a href="#"><img src="{{ asset('images/gallery/010.jpg')}}" alt=""/></a></div>
+                                        <div class="col-md-4 peredacha"><a href="#"><img src="{{ asset('images/gallery/011.jpg')}}" alt=""/></a></div>
+                                        <div class="col-md-4 peredacha"><a href="#"><img src="{{ asset('images/gallery/012.jpg')}}" alt=""/></a></div>
                                     </div>
                                 </div>
 
@@ -206,60 +176,26 @@
                             </div>
                             <div class="panel-body">
                                 <div class="col-md-12">
-                                    <div class="carousel-slick_peredachi">
-                                        <div class="col-md-4 peredacha"><a href="#"><img src="images/gallery/001.jpg" alt=""/></a></div>
-                                        <div class="col-md-4 peredacha"><a href="#"><img src="images/gallery/002.jpg" alt=""/></a></div>
-                                        <div class="col-md-4 peredacha"><a href="#"><img src="images/gallery/003.jpg" alt=""/></a></div>
-                                        <div class="col-md-4 peredacha"><a href="#"><img src="images/gallery/004.jpg" alt=""/></a></div>
-                                        <div class="col-md-4 peredacha"><a href="#"><img src="images/gallery/005.jpg" alt=""/></a></div>
-                                        <div class="col-md-4 peredacha"><a href="#"><img src="images/gallery/006.jpg" alt=""/></a></div>
-                                        <div class="col-md-4 peredacha"><a href="#"><img src="images/gallery/007.jpg" alt=""/></a></div>
-                                        <div class="col-md-4 peredacha"><a href="#"><img src="images/gallery/008.jpg" alt=""/></a></div>
-                                        <div class="col-md-4 peredacha"><a href="#"><img src="images/gallery/009.jpg" alt=""/></a></div>
-                                        <div class="col-md-4 peredacha"><a href="#"><img src="images/gallery/010.jpg" alt=""/></a></div>
-                                        <div class="col-md-4 peredacha"><a href="#"><img src="images/gallery/011.jpg" alt=""/></a></div>
-                                        <div class="col-md-4 peredacha"><a href="#"><img src="images/gallery/012.jpg" alt=""/></a></div>
+                                    <div class="carousel-slick_peredachi ">
+                                        <div class="col-md-4 peredacha"><a href="#"><img src="{{ asset('images/gallery/002.jpg')}}" alt=""/></a></div>
+                                        <div class="col-md-4 peredacha"><a href="#"><img src="{{ asset('images/gallery/003.jpg')}}" alt=""/></a></div>
+                                        <div class="col-md-4 peredacha"><a href="#"><img src="{{ asset('images/gallery/004.jpg')}}" alt=""/></a></div>
+                                        <div class="col-md-4 peredacha"><a href="#"><img src="{{ asset('images/gallery/005.jpg')}}" alt=""/></a></div>
+                                        <div class="col-md-4 peredacha"><a href="#"><img src="{{ asset('images/gallery/006.jpg')}}" alt=""/></a></div>
+                                        <div class="col-md-4 peredacha"><a href="#"><img src="{{ asset('images/gallery/007.jpg')}}" alt=""/></a></div>
+                                        <div class="col-md-4 peredacha"><a href="#"><img src="{{ asset('images/gallery/008.jpg')}}" alt=""/></a></div>
+                                        <div class="col-md-4 peredacha"><a href="#"><img src="{{ asset('images/gallery/009.jpg')}}" alt=""/></a></div>
+                                        <div class="col-md-4 peredacha"><a href="#"><img src="{{ asset('images/gallery/010.jpg')}}" alt=""/></a></div>
+                                        <div class="col-md-4 peredacha"><a href="#"><img src="{{ asset('images/gallery/011.jpg')}}" alt=""/></a></div>
+                                        <div class="col-md-4 peredacha"><a href="#"><img src="{{ asset('images/gallery/012.jpg')}}" alt=""/></a></div>
                                     </div>
                                 </div>
 
                             </div>
                         </div>
                     </div>
-
-
-                    <div class="col-md-12" style="padding: 10px 0px 0px 0px;">
-                        <div class="panel panel-default panel-carousel ">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><span>Фотогалерея</span></h3>
-                            </div>
-                            <div class="panel-body">
-                                <div class="col-md-12 broadimages">
-                                    <div class="carousel-slick">
-                                        <div class="col-md-4"><a href="#"><img src="images/gallery/001.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
-                                        <div class="col-md-4"><a href="#"><img src="images/gallery/002.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
-                                        <div class="col-md-4"><a href="#"><img src="images/gallery/003.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
-                                        <div class="col-md-4"><a href="#"><img src="images/gallery/004.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
-                                        <div class="col-md-4"><a href="#"><img src="images/gallery/005.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
-                                        <div class="col-md-4"><a href="#"><img src="images/gallery/006.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
-                                        <div class="col-md-4"><a href="#"><img src="images/gallery/007.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
-                                        <div class="col-md-4"><a href="#"><img src="images/gallery/008.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
-                                        <div class="col-md-4"><a href="#"><img src="images/gallery/009.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
-                                        <div class="col-md-4"><a href="#"><img src="images/gallery/010.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
-                                        <div class="col-md-4"><a href="#"><img src="images/gallery/011.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
-                                        <div class="col-md-4"><a href="#"><img src="images/gallery/012.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                </section>
             </div>
-
         </div>
-
-
 
         <footer class="footer">
             <div class="panel panel-default">
@@ -286,34 +222,19 @@
             </div>
         </footer>
 
-        <script src="js/jquery-1.11.2.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/bootstrap-hover-dropdown.js"></script>
-       
+        <script src="{{ asset('js/jquery-1.11.2.min.js') }}"></script>
+        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('js/bootstrap-hover-dropdown.js') }}"></script>
+
+        <script type="text/javascript" src="{{ asset('filter/js/jquery.easing.min.js') }}"></script>
+        <script type="text/javascript" src="filter/js/jquery.mixitup.min.js') }}"></script>
+
+        <script type="text/javascript" src="{{ asset('js/jquery-migrate-1.2.1.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('slick/slick.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/jquery.roundabout.js') }}"></script>
+
 
         <script>
-			$(document).ready(function () {
-			    $(".search-toggle").click(function () {
-			        $(".logo-block").addClass("search-show");
-			        $(".form-search").addClass("visible");
-			    });
-			    $(".close-search").click(function () {
-			        $(".logo-block").removeClass("search-show");
-			        $(".form-search").removeClass("visible");
-			    });
-			});
-        </script> 
-
-
-        <script type="text/javascript" src="filter/js/jquery.easing.min.js"></script>
-        <script type="text/javascript" src="filter/js/jquery.mixitup.min.js"></script>
-
-        <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
-        <script type="text/javascript" src="slick/slick.min.js"></script>
-        <script type="text/javascript" src="js/jquery.roundabout.js"></script>
-
-
-         <script>
             if ($(window).width() > 768) {
                 $('.carousel-slick_peredachi').slick({
                     infinite: true,
@@ -424,5 +345,19 @@
                 filterList.init();
             });
         </script>
+
+        <script>
+            $(document).ready(function () {
+                $(".search-toggle").click(function () {
+                    $(".logo-block").addClass("search-show");
+                    $(".form-search").addClass("visible");
+                });
+                $(".close-search").click(function () {
+                    $(".logo-block").removeClass("search-show");
+                    $(".form-search").removeClass("visible");
+                });
+            });
+        </script> 
+
     </body>
 </html>

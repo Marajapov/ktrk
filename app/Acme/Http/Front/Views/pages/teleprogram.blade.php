@@ -92,9 +92,9 @@
                                                 <td class="telelink"></td>                                       
                                             </tr> 
                                             <tr>
-                                                <th scope="row">12:25:</th>
+                                                <th scope="row">12:25</th>
                                                 <td>"Снова слышу голос твой". Телефильм-концерт</td> 
-                                                <td class="telelink"></td>                                       
+                                                <td class="telelink"><i class="fa fa-music"></i>Концерт</td>                                       
                                             </tr> 
                                             <tr>
                                                 <th scope="row">13:00</th>

@@ -310,7 +310,7 @@
                   <a class="director-img" href="#">
                     <img src="images/chief.jpg" alt="директор"/>
                   </a>
-                  <a class="director-text" href="#">{{ trans('site.FrontDirectorPage') }}</a>
+                  <a class="director-text" href="{{ route('front.pages.director') }}">{{ trans('site.FrontDirectorPage') }}</a>
                 </h3>
               </div>
               <div class="panel-body">
@@ -408,12 +408,7 @@
               <div class="panel-body">
                 <div class="col-md-12">
                   <div class="carousel-slick">
-                    <div class="col-md-4">
-                      <a href="#">
-                        <img src="images/gallery/001.jpg" alt=""/>
-                        <span>Название</span>
-                        <div class="overlay"></div>
-                      </a>
+                    <div class="col-md-4"><a href="#"><img src="images/gallery/001.jpg" alt=""/><span>Название</span><div class="overlay"></div></a>
                     </div>
                     <div class="col-md-4"><a href="#"><img src="images/gallery/002.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
                     <div class="col-md-4"><a href="#"><img src="images/gallery/003.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
@@ -454,3 +449,31 @@
 
   </div>
 @stop
+
+@section('footerScript')
+  <script type="text/javascript">
+    $(function () {
+
+      var filterList = {
+
+        init: function () {
+
+          // MixItUp plugin
+          // http://mixitup.io
+          $('#portfoliolist').mixitup({
+            showOnLoad: 'all',
+            targetSelector: '.portfolio',
+            filterSelector: '.filter',
+            effects: ['fade'],
+            easing: 'snap',
+            // call the hover effect
+          });
+
+        }
+
+      };
+      // Run the show!
+      filterList.init();
+    });
+  </script>
+@endsection

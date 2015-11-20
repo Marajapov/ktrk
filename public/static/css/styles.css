@@ -59,7 +59,12 @@ and open the template in the editor.
     border-top: 1px solid #EAEAEA;
     font-size: 14px;
 }
-
+.borderless tbody tr td:hover, .borderless tbody tr th:hover, .borderless thead tr th:hover{
+    background: none;
+}
+.borderless tbody tr:hover, .borderless tbody tr:hover, .borderless thead tr:hover{
+    background: none;
+}
 .years {
 
 }
@@ -372,13 +377,33 @@ and open the template in the editor.
 .rsarticles {
     padding: 15px;
     text-align: justify;
-    font-size:18px;
+    font-size:14px;
 }
 
 .rsarticles a {
     text-decoration: underline;
 }
+.rsarticles .titlelink{
+    display: inline;
+    float: right;
+    padding: 10px 20px 10px 50px;
+    width: 300px;
 
+    font-size: 14px;
+    line-height: 1;
+    text-align: center;
+}
+.rsarticles .titlelink i{
+    font-size: 120px;
+}
+.rsarticles .titlelink span{
+    display: block;
+    margin-top: 10px;
+
+    width: 100%;
+
+    line-height: 1.5;
+}
 .rsarticles ul>li, p {
     line-height: 2em;
 }
@@ -395,7 +420,6 @@ and open the template in the editor.
     padding: 0px 0px 0px 10px;
 }
 .rscounts p{
-    line-height: 1.2em;
     margin: 0px 0px 0px 15px;
     color: #6E6A6A;
 }
@@ -650,7 +674,7 @@ and open the template in the editor.
     border-left-color: #29A2F8 ;             
 }
 
-.trademark p2 {
+.trademark .p2 {
     line-height: 1.3em;
     display: flex;
 }
