@@ -25,7 +25,7 @@
     <div class="col-sm-10">
       <div class="form-group">
         <label class="control-label">Передачи</label>
-        {!! Form::select('program', array('0'=>'--Выберите--')+ $projectList, null, ["class" => "select2_group  form-control", "title" => "", "required" => true]) !!}
+        {!! Form::select('program', array('0'=>'--Выберите--')+ $projectList, null, ["class" => "select2_group  form-control", "title" => ""]) !!}
       </div>
     </div>
 
