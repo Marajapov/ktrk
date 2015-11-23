@@ -29,10 +29,10 @@ class HomeController extends Controller
             $projects = \Model\Project\ModelName::having('name','<>','')->get();
         }elseif($lc == 'ru'){
             $generalPosts = \Model\Post\ModelName::general($channel)->published()->languageru()->take(6)->skip(0)->orderBy('id', 'desc')->get();    
-            $projects = \Model\Project\ModelName::having('nameRu','<>','')->get();
-        }        
-	
+            $projects = \Model\Project\ModelName::where('nameRu','<>','')->get();
 
+        }
+        
         $mediaLast = \Model\Media\ModelName::take(9)->get();
         $dayVideos = \Model\Media\ModelName::take(1)->orderBy('viewed','asc')->get();
 

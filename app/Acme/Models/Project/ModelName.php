@@ -41,6 +41,11 @@ class ModelName extends Model
         return $this->parentId;
     }
     
+    public function getTitle()
+    {
+        return "abakan";
+    }
+    
     public function getNameOne()
     {
         $lc = app()->getlocale();
