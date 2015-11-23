@@ -254,10 +254,9 @@
     visibility: hidden;
 }
 .custombox-modal-open .custombox-modal-fadein {
-    transform: scale(1);
+    transform: scale(1.23);
     opacity: 1;
-    visibility: visible;
-}
+    visibility: visible;}
 
 /*
  ----------------------------

@@ -130,6 +130,7 @@ body {
     background-image: -webkit-linear-gradient(bottom, #FF0088 0%, #FF803C  100%);
     background-image: -ms-linear-gradient(bottom, #FF0088 0%, #FF803C  100%);
     background-image: linear-gradient(to bottom, #FF0088 0%, #FF803C  100%);
+    cursor: url(../images/channels/balastan/Doodle.cur), progress !important;
 }
 
 ul{
@@ -4018,7 +4019,11 @@ font:italic 0.5cm; list-style-type:decimal;
     width: auto;
 }
 .imagegrid .imagebig img {
-    height: 475px;
+    height: auto;
+    width: 100%;
+    left: 50%;
+    top: 50%;
+    /*height: 475px*/
 }
 
 .imagegrid .imagesmall img {
@@ -4477,4 +4482,221 @@ ul.social-share li a:hover {
     color: #6D0120;
     font-weight: bold;
 }
+
+.photosborder {
+    border-left: 3px solid #F1F4F9;
+}
+
+.photosborder h3{
+    margin-top: -55px;
+    border: none !important; 
+}
+.photosborder h3 a{
+    color:#6D0120;
+}
 /*Madaniayt page style*/
+
+/* Balastan page style*/
+
+.logocenter {
+    text-align: center;
+    height: 100px;
+    margin: -10px 0px 10px 0px;
+}
+
+.menustan {
+    padding-top:40px;
+}
+.menustan li>a{
+    font-weight: bold;
+    font-size: 2em;
+    color: #F44336;
+    text-transform: lowercase;
+    border-bottom: 2px dashed #03A9F4;
+}
+
+.menua{
+    margin-left: 30px;
+}
+.logo-block .pull-right{
+    margin-right: 40px;
+}
+
+.iconleft {
+    height: 300px;
+    width: auto;
+    float: left;
+    left: 0;
+    margin-top: 300px;
+}
+
+.iconright {
+    height: 300px;
+    width: auto;
+    float: right;
+    right: 0;
+    margin-top: 300px;
+}
+
+.iconcenter {
+
+
+}
+
+.tvthree {
+    width: 550px;
+}
+
+.iconcenter iframe{
+    text-align: center;
+    margin-top: -407px;
+    margin-left: -244px;
+    position: absolute;
+
+}
+
+.cloudstan {
+    position: absolute;
+    height: 100px;
+    width: auto;
+    z-index: -1;
+    margin-top: -20px;
+}
+/*.balastan {
+    background: url(../images/channels/balastan/1.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}*/
+.cloudstanleft {
+    height: 110px;
+    width: auto;
+    z-index: -1;
+    margin-top: 120px;
+    margin-right: 150px;
+}
+
+.cloudstanright {
+    height: 110px;
+    width: auto;
+    z-index: -1;
+    margin-top: 120px;
+    margin-left: 130px;
+}
+
+.logocenter li {
+    list-style: none;
+}
+
+
+
+.tvtop, .tvleft, .tvright, .tvbottom{
+    height: auto;
+    width: auto;
+    z-index: 1111;
+    position: absolute;
+}
+
+.tvtop {
+    margin-top: -427px;
+    margin-left: -232px;
+}
+
+.tvbottom {
+    margin-top: -72px;
+    margin-left: -232px;
+}
+
+.tvleft{
+    margin-top: -425px;
+    margin-left: -260px;
+}
+
+.tvright {
+    margin-top: -420px;
+    margin-left: 219px
+}
+
+.van {
+    margin-top: 20px;
+}
+
+
+#axis:hover .move-right{
+    transform: translate(50px,0);
+    -webkit-transform: translate(50px,0); /** Chrome & Safari **/
+    -o-transform: translate(50px,0); /** Opera **/
+    -moz-transform: translate(50px,0); /** Firefox **/
+}
+
+.object {
+    position: absolute;
+    height: 100px;
+    width:auto;
+    transition: all 2s ease-in-out;
+    -webkit-transition: all 2s ease-in-out; /** Chrome & Safari **/
+    -moz-transition: all 2s ease-in-out; /** Firefox **/
+    -o-transition: all 2s ease-in-out; /** Opera **/
+    z-index: -1;
+}
+
+.menuaanim{
+    font-weight: bold;
+    font-size: 2em;
+    color: #F44336;
+    text-transform: lowercase;
+    border-bottom: 2px dotted #03A9F4;
+    z-index: 1;
+    transition: all 2s ease-in-out;
+    -webkit-transition: all 2s ease-in-out; /** Chrome & Safari **/
+    -moz-transition: all 2s ease-in-out; /** Firefox **/
+    -o-transition: all 2s ease-in-out; /** Opera **/
+    z-index: 1;
+
+    border: 0 solid rgba(0,0,0,1);
+    -webkit-border-radius: 0;
+    font: "Fredoka One", Helvetica, sans-serif;
+
+    text-shadow: 1px 1px 0 #444 ; 
+}
+.menuaanim2{
+    font-weight: bold;
+    font-size: 1.7em;
+    color: #F44336;
+    text-transform: lowercase;
+    border-bottom: 2px dotted #03A9F4;
+    z-index: 1;
+    transition: all 2s ease-in-out;
+    -webkit-transition: all 2s ease-in-out; /** Chrome & Safari **/
+    -moz-transition: all 2s ease-in-out; /** Firefox **/
+    -o-transition: all 2s ease-in-out; /** Opera **/
+    z-index: 1;
+
+    border: 0 solid rgba(0,0,0,1);
+    -webkit-border-radius: 0;
+    font: "Fredoka One", Helvetica, sans-serif;
+
+    text-shadow: 1px 1px 0 #444 ; 
+
+}
+.menuaanim:hover{
+    color: #444;
+}
+.menuposition {
+    margin-left: 30px;
+    margin-top: 40px !important;
+    position: absolute
+}
+
+.menuposition2 {
+    margin-left: 25px;
+    margin-top: 45px !important;
+    position: absolute
+}
+.firstcloud {
+    margin-left: 60px;
+}
+
+
+/* Balastan page style*/
