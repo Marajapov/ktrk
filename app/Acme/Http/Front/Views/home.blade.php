@@ -24,7 +24,7 @@
                       <!--<span class="post-timer pull-right">  <i class="fa fa-eye"></i>&nbsp;{{ $post->getViewed() }}</span> -->
 
                   <a href="{{ route('front.post', $post) }}" class="main-img">
-                    <img src="@if(empty($post->getFile()))images/2.jpg @else {{ asset($post->getFile()) }} @endif" alt="img26">
+                    <img src="@if(isEmpty($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif" alt="img26">
                   </a>
                     <!--<div class="news-channel">
 
@@ -73,7 +73,7 @@
 
                 <div class="col-md-3 heading">
 
-                  <img src="images/locationcameramini2.png">
+                  <img src="{{ asset('images/locationcameramini2.png') }}">
 
                   <div class="panel-heading">
                     <h3 class="panel-title">
@@ -155,7 +155,7 @@
                   <div class="carousel carousel-reporter">
                     <div class="col-md-4">
                       <a href="">
-                        <img src="images/1.jpg" alt=""/>
+                        <img src="{{ asset('images/1.jpg') }}" alt=""/>
                       </a>
                       <div class="datetime">12:11:2015</div>
                       <div class="views"><i class="fa fa-eye"></i>&nbsp;2351</div>
@@ -163,7 +163,7 @@
                     </div>
                     <div class="col-md-4">
                       <a href="">
-                        <img src="images/2.jpg" alt=""/>
+                        <img src="{{ asset('images/2.jpg') }}" alt=""/>
                       </a>
                       <div class="datetime">12:11:2015</div>
                       <div class="views"><i class="fa fa-eye"></i>&nbsp;2351</div>
@@ -171,7 +171,7 @@
                     </div>
                     <div class="col-md-4">
                       <a href="">
-                        <img src="images/gallery/002.jpg" alt=""/>
+                        <img src="{{ asset('images/gallery/002.jpg') }}" alt=""/>
                       </a>
                       <div class="datetime">12:11:2015</div>
                       <div class="views"><i class="fa fa-eye"></i>&nbsp;2351</div>
@@ -179,7 +179,7 @@
                     </div>
                     <div class="col-md-4">
                       <a href="">
-                        <img src="images/gallery/002.jpg" alt=""/>
+                        <img src="{{ asset('images/gallery/002.jpg') }}" alt=""/>
                       </a>
                       <div class="datetime">12:11:2015</div>
                       <div class="views"><i class="fa fa-eye"></i>&nbsp;2351</div>
@@ -308,7 +308,7 @@
               <div class="panel-heading">
                 <h3 class="panel-title director-title">
                   <a class="director-img" href="#">
-                    <img src="images/chief.jpg" alt="директор"/>
+                    <img src="{{ asset('images/chief.jpg') }}" alt="директор"/>
                   </a>
                   <a class="director-text" href="{{ route('front.pages.director') }}">{{ trans('site.FrontDirectorPage') }}</a>
                 </h3>
@@ -319,7 +319,7 @@
                   <div class="carousel carousel-director">
                     <div>
                       <a href="#">
-                        <img src="images/chief_2.jpg" alt=""/>
+                        <img src="{{ asset('images/chief_2.jpg') }}" alt=""/>
                       </a>
                       <a href="#">
                         Мы разворачиваем масштабную работу по реализации проекта «Ухта — Торжок-2». Задачи поставлены, сроки определены. До конца 2019 года газопровод будет построен и готов к эксплуатации.
@@ -327,13 +327,13 @@
                     </div>
                     <div>
                       <a href="#">
-                        <img src="images/chief_3.jpg" alt=""/>
+                        <img src="{{ asset('images/chief_3.jpg') }}" alt=""/>
                       </a>
                       Мы разворачиваем масштабную работу по реализации проекта «Ухта — Торжок-2». Задачи поставлены, сроки определены. До конца 2019 года газопровод будет построен и готов к эксплуатации.
                     </div>
                     <div>
                       <a href="#">
-                        <img src="images/chief.jpg" alt=""/>
+                        <img src="{{ asset('images/chief.jpg') }}" alt=""/>
                       </a>
                       Мы разворачиваем масштабную работу по реализации проекта «Ухта — Торжок-2». Задачи поставлены, сроки определены. До конца 2019 года газопровод будет построен и готов к эксплуатации.
                     </div>
@@ -408,19 +408,18 @@
               <div class="panel-body">
                 <div class="col-md-12">
                   <div class="carousel-slick">
-                    <div class="col-md-4"><a href="#"><img src="images/gallery/001.jpg" alt=""/><span>Название</span><div class="overlay"></div></a>
-                    </div>
-                    <div class="col-md-4"><a href="#"><img src="images/gallery/002.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
-                    <div class="col-md-4"><a href="#"><img src="images/gallery/003.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
-                    <div class="col-md-4"><a href="#"><img src="images/gallery/004.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
-                    <div class="col-md-4"><a href="#"><img src="images/gallery/005.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
-                    <div class="col-md-4"><a href="#"><img src="images/gallery/006.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
-                    <div class="col-md-4"><a href="#"><img src="images/gallery/007.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
-                    <div class="col-md-4"><a href="#"><img src="images/gallery/008.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
-                    <div class="col-md-4"><a href="#"><img src="images/gallery/009.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
-                    <div class="col-md-4"><a href="#"><img src="images/gallery/010.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
-                    <div class="col-md-4"><a href="#"><img src="images/gallery/011.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
-                    <div class="col-md-4"><a href="#"><img src="images/gallery/012.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
+                    <div class="col-md-4"><a href="#"><img src="{{ asset('images/gallery/001.jpg') }}" alt=""/><span>Название</span><div class="overlay"></div></a></div>
+                    <div class="col-md-4"><a href="#"><img src="{{ asset('images/gallery/001.jpg') }}" alt=""/><span>Название</span><div class="overlay"></div></a></div>
+                    <div class="col-md-4"><a href="#"><img src="{{ asset('images/gallery/001.jpg') }}" alt=""/><span>Название</span><div class="overlay"></div></a></div>
+                    <div class="col-md-4"><a href="#"><img src="{{ asset('images/gallery/001.jpg') }}" alt=""/><span>Название</span><div class="overlay"></div></a></div>
+                    <div class="col-md-4"><a href="#"><img src="{{ asset('images/gallery/001.jpg') }}" alt=""/><span>Название</span><div class="overlay"></div></a></div>
+                    <div class="col-md-4"><a href="#"><img src="{{ asset('images/gallery/001.jpg') }}" alt=""/><span>Название</span><div class="overlay"></div></a></div>
+                    <div class="col-md-4"><a href="#"><img src="{{ asset('images/gallery/001.jpg') }}" alt=""/><span>Название</span><div class="overlay"></div></a></div>
+                    <div class="col-md-4"><a href="#"><img src="{{ asset('images/gallery/001.jpg') }}" alt=""/><span>Название</span><div class="overlay"></div></a></div>
+                    <div class="col-md-4"><a href="#"><img src="{{ asset('images/gallery/001.jpg') }}" alt=""/><span>Название</span><div class="overlay"></div></a></div>
+                    <div class="col-md-4"><a href="#"><img src="{{ asset('images/gallery/001.jpg') }}" alt=""/><span>Название</span><div class="overlay"></div></a></div>
+                    <div class="col-md-4"><a href="#"><img src="{{ asset('images/gallery/001.jpg') }}" alt=""/><span>Название</span><div class="overlay"></div></a></div>
+                    <div class="col-md-4"><a href="#"><img src="{{ asset('images/gallery/001.jpg') }}" alt=""/><span>Название</span><div class="overlay"></div></a></div>
                   </div>
                 </div>
 
@@ -447,7 +446,6 @@
 
   </div>
 
-  </div>
 @stop
 
 @section('footerScript')
@@ -465,7 +463,7 @@
             targetSelector: '.portfolio',
             filterSelector: '.filter',
             effects: ['fade'],
-            easing: 'snap',
+            easing: 'snap'
             // call the hover effect
           });
 

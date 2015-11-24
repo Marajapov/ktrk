@@ -139,7 +139,7 @@
             <div class="row">            
                     <div class="col-md-12" style="padding:10px 0px;">
                         <div class="panel panel-default">
-                            <div class="panel-heading">
+                            <div class="panel-heading madaniyatcolor">
                                 <h3 class="panel-title"><span>Фотогалерея</span></h3>
                             </div>
                          <div class="panel-body imagegrid">
@@ -234,16 +234,16 @@
                                         </div>
                                     </div>
                                 </div>                                
-                               <div class="col-md-3">
-                    <div class="panel">
-                        <div class="panel-heading">
-                            <div class="panel-title">
-                                <h4 class="show-title">
-                                    <a href="#">Другие галереи</a> 
+                       <div class="col-md-3 photosborder">
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <div class="panel-title">
+                                    <h3 class="show-title">
+                                        <a href="#">Другие галереи</a> 
 
-                                </h4>
+                                    </h3>
+                                </div>
                             </div>
-                        </div>
                         <div class="panel-body imagegrid">
                             <div class="row">
                                 <div class="col-md-12 otherphotos">

@@ -1,1177 +1,147 @@
 <!DOCTYPE html>
 <html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>Главная страница</title>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>Баластан</title>
 
-    <link rel="stylesheet" href="css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="css/font-awesome.css"/>
-    <link rel="stylesheet" href="filter/css/layout.css">
-    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
-    <link rel="stylesheet" href="css/style.css"/>
+        <link rel="stylesheet" href="css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="css/font-awesome.css"/>
+        <link rel="stylesheet" href="filter/css/layout.css">
+        <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+        <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+        <link rel="stylesheet" href="css/style.css"/>
 
-</head>
-<body class="balastan">
+    </head>
+    <body class="balastan">
+        <div class="switch">
+            <nav class="navbar">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false">
+                        <span class="sr-only">Меню</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"><img src="{{ asset('images/channels/balastan_white_notext.png')}}"><h4>Баластан</h4></a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="nav navbar-nav channel_switch">
+                        <li class="sitemenu" id="site-channel1">
+                            <a href="{{ route('front.home') }}"><img src="{{ asset('images/ktrk_last.svg')}}" style="height:40px;"><span>КТРК</span><h4>КТРК</h4></a></li>
+                        <li class="sitemenu" id="site-channel1">
+                            <a href="{{ route('muzkanal.home') }}"><img src="{{ asset('images/channels/muz_white_notext.png')}}" ><span>Музыка</span><h4>Музыка</h4></a></li>
+                        <li class="sitemenu" id="site-channel1">
+                            <a href="{{ route('madaniyat.home') }}"><img src="{{ asset('images/channels/madaniyat_white_notext.png')}}"><span>Маданият</span><h4>Маданият</h4></a></li>
+                        <li class="sitemenu" id="site-channel1">
+                            <a class="active" href="{{ route('balastan.home') }}"><img src="{{ asset('images/channels/balastan_white_notext.png')}}"><span>Баластан</span><h4>Баластан</h4></a></li>
+                    </ul>  
+                </div><!-- /.navbar-collapse -->
+            </nav>
+        </div>
 
 
-<div class="container-fluid main-header">
-    <div class="container">
-        <div class="row">
-            <header class="top-menu">
-                <div class="top-header clearfix">
-                    <div class="col-md-12 logo-block">
-                        <div class="row">
-                            <a class="logo" href="#">
+
+        <div class="container">
+            <div class="row">      
+                <div class="col-md-12 logo-block logocenter">
+                    <div class="row">
+
+                        <div class="col-xs-5">
+                            <div id="axis" class="one firstcloud">
+                               
+                                <img class="object van move-right " src="{{ asset('images/channels/balastan/cloud.png')}}" alt="" />
+                                 <a class="menuaanim move-right menuposition" href="#">О канале</a>                               
+                            </div>
+                            <div id="axis" class="one cloudstanleft">
+                               
+                                <img class="object van move-right " src="{{ asset('images/channels/balastan/cloudleft.png')}}" alt="" />
+                                 <a class="menuaanim move-right menuposition" href="#">Видео</a>                               
+                            </div>
+                        </div>
+                        <div class="col-xs-2">
+                            <a class="logo" href="#" style="position:relative;">
                                 <img src="images/channels/balastan_white.png" alt=""/>
                             </a>
-
-                            <nav class="top-nav clearfix">
-                                <ul class="clearfix">
-                                    <li><a href="#">Башкы бет</a></li>
-                                    <li>/</li>
-                                    <li>
-                                        <a href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="100" data-close-others="false" role="button" aria-expanded="false">КТРК</a>
-                                        <ul class="dropdown-menu" role="menu">
-                                            <li><a href="#">Тарыхы</a></li>
-                                            <li><a href="#">Жетекчилер</a></li>
-                                            <li><a href="#">Стратегия</a></li>
-                                            <li><a href="#">Нормативдик база</a></li>
-                                            <li><a href="#">РРТЦ</a></li>
-                                            <li><a href="#">Отчет</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>/</li>
-                                    <li><a href="#">Видеопортал</a></li>
-                                    <li>/</li>
-                                    <li><a href="#">Телепрограмма</a></li>
-                                    <li>/</li>
-                                    <li><a href="#">Байкоочу кеңеш</a></li>
-                                    <li>/</li>
-                                    <li><a href="#">Редакциялык кеңешчи</a></li>
-                                </ul>
-                            </nav>
-
-                            <ul class="soc">
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-odnoklassniki"></i></a></li>
-                                <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                <li><a href="#"><i class="fa fa-vk"></i></a></li>
-                            </ul>
-
-                            <form class="form-search" action="" method="post">
-                                <div class="form-group pull-right">
-                                    <input type="text" class="form-control" placeholder="Издөө"/>
-                                </div>
-
-                                <button class="btn" type="submit">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </form>
-
-                            <button class="btn btn-danger btn-live">
-                                <i class="fa fa-dot-circle-o"></i>
-                                түз эфир
-                            </button>
-
-                            @include ("Front::partials.mainNav")
-
                         </div>
+                        <div class="col-xs-5">
+                            <div id="axis" class="one pull-left">
+                               
+                                <img class="object van move-right" src="{{ asset('images/channels/balastan/cloudleft.png')}}" alt="" />
+                                 <a class="menuaanim move-right menuposition" href="#">Передачи</a>                               
+                            </div>
+                            <div id="axis" class="one pull-left cloudstanright">
+                               
+                                <img class="object van move-right" src="{{ asset('images/channels/balastan/cloud.png')}}" alt="" />
+                                 <a class="menuaanim2 move-right menuposition2" href="#">Программы</a>                               
+                            </div>
+                        </div>      
                     </div>
-                </div>
-            </header>
+                </div>   
+            </div>
         </div>
-    </div>
-</div>
 
-<a href="#" class="col-md-12 text-center ads">
-    <img src="images/ads_1.jpg" alt=""/>
-</a>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="row ">
+                        <div class="col-md-2"> 
+                            <img class="iconleft" src="{{ asset('images/channels/balastan/akylay.png')}}" alt="">
+                        </div>
+                        <div class="col-md-8" style="text-align:center;">
+                            <img class="tvthree" src="{{ asset('images/channels/balastan/tv3.png')}}" alt="">
+                            <div class="iconcenter">                            
+                            <iframe width="495" height="360" src="https://www.youtube.com/embed/2tV6RFYqCZg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>
+                            </div>
+                            <img class="tvtop" src="{{ asset('images/channels/balastan/tvtop.png')}}" alt="">
+                            <img class="tvbottom" src="{{ asset('images/channels/balastan/tvbottom.png')}}" alt="">
+                            <img class="tvleft" src="{{ asset('images/channels/balastan/tvleft.png')}}" alt="">
+                            <img class="tvright" src="{{ asset('images/channels/balastan/tvright.png')}}" alt="">
+                            
 
-<div class="container">
+                       </div>
+                        <div class="col-md-2">
+                            <img class="iconright" src="{{ asset('images/channels/balastan/aktan.png')}}" alt="">
+                        </div>
+                    </div>      
+                </div>
+            </div>
+        </div>
 
-    <div class="row">
 
-        <div class="col-md-12 anons clearfix">
+        <footer class="footer">
             <div class="panel panel-default">
-                <div class="panel-heading">
-
-                </div>
                 <div class="panel-body">
-                    <div class="col-md-12 block">
-                        <div id="carousel">
-                            <a href="http://google.com">
-                                <img src="images/anons/1.jpg" alt="" class="slide" />
-                            </a>
-                            <a href="http://google.com">
-                                <img src="images/anons/2.jpg" alt="" class="slide" />
-                            </a>
-                            <a href="http://google.com">
-                                <img src="images/anons/3.jpg" alt="" class="slide" />
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <section class="content clearfix">
-            
-            <div class="main-content clearfix">
-                <div class="bottom-right-block col-md-8">
-                    <div class="panel panel-default videoportal">
-                        <div class="panel-heading">
-                            <h3 class="panel-title"><span>Видеопортал</span></h3>
-                        </div>
-                        <div class="panel-body">
-                            <ul id="filters" class="clearfix">
-                                <li><span class="filter" data-filter="all-videos">Жалпы</span></li>
-                                <li><span class="filter" data-filter="app">Телеберүүлөр</span></li>
-                                <li><span class="filter" data-filter="card">Сериалдар</span></li>
-                                <li><span class="filter" data-filter="icon">Көркөм тасма</span></li>
-                                <li><span class="filter" data-filter="tele">Маанайшат</span></li>
-                                <li><span class="filter" data-filter="web">Спорт</span></li>
-                            </ul>
-
-                            <div id="portfoliolist">
-
-                                <div class="portfolio all-videos" data-cat="all-videos">
-                                    <div class="portfolio-wrapper">
-                                        <img src="filter/img/portfolios/logo/1.jpg" alt="" />
-                                        <div class="label">
-                                            <div class="label-text">
-                                                <a class="text-title">Эфир 14.08.2015</a>
-                                                <span class="text-category">Телеберүүлөр</span>
-                                            </div>
-                                            <div class="label-bg"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="portfolio all-videos" data-cat="all-videos">
-                                    <div class="portfolio-wrapper">
-                                        <img src="filter/img/portfolios/logo/1.jpg" alt="" />
-                                        <div class="label">
-                                            <div class="label-text">
-                                                <a class="text-title">Эфир 14.08.2015</a>
-                                                <span class="text-category">Телеберүүлөр</span>
-                                            </div>
-                                            <div class="label-bg"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="portfolio all-videos" data-cat="all-videos">
-                                    <div class="portfolio-wrapper">
-                                        <img src="filter/img/portfolios/logo/1.jpg" alt="" />
-                                        <div class="label">
-                                            <div class="label-text">
-                                                <a class="text-title">Эфир 14.08.2015</a>
-                                                <span class="text-category">Телеберүүлөр</span>
-                                            </div>
-                                            <div class="label-bg"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="portfolio all-videos" data-cat="all-videos">
-                                    <div class="portfolio-wrapper">
-                                        <img src="filter/img/portfolios/logo/1.jpg" alt="" />
-                                        <div class="label">
-                                            <div class="label-text">
-                                                <a class="text-title">Эфир 14.08.2015</a>
-                                                <span class="text-category">Телеберүүлөр</span>
-                                            </div>
-                                            <div class="label-bg"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="portfolio all-videos" data-cat="all-videos">
-                                    <div class="portfolio-wrapper">
-                                        <img src="filter/img/portfolios/logo/1.jpg" alt="" />
-                                        <div class="label">
-                                            <div class="label-text">
-                                                <a class="text-title">Эфир 14.08.2015</a>
-                                                <span class="text-category">Телеберүүлөр</span>
-                                            </div>
-                                            <div class="label-bg"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="portfolio all-videos" data-cat="all-videos">
-                                    <div class="portfolio-wrapper">
-                                        <img src="filter/img/portfolios/logo/1.jpg" alt="" />
-                                        <div class="label">
-                                            <div class="label-text">
-                                                <a class="text-title">Эфир 14.08.2015</a>
-                                                <span class="text-category">Телеберүүлөр</span>
-                                            </div>
-                                            <div class="label-bg"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="portfolio all-videos" data-cat="all-videos">
-                                    <div class="portfolio-wrapper">
-                                        <img src="filter/img/portfolios/logo/1.jpg" alt="" />
-                                        <div class="label">
-                                            <div class="label-text">
-                                                <a class="text-title">Эфир 14.08.2015</a>
-                                                <span class="text-category">Телеберүүлөр</span>
-                                            </div>
-                                            <div class="label-bg"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="portfolio all-videos" data-cat="all-videos">
-                                    <div class="portfolio-wrapper">
-                                        <img src="filter/img/portfolios/logo/1.jpg" alt="" />
-                                        <div class="label">
-                                            <div class="label-text">
-                                                <a class="text-title">Эфир 14.08.2015</a>
-                                                <span class="text-category">Телеберүүлөр</span>
-                                            </div>
-                                            <div class="label-bg"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="portfolio all-videos" data-cat="all-videos">
-                                    <div class="portfolio-wrapper">
-                                        <img src="filter/img/portfolios/logo/1.jpg" alt="" />
-                                        <div class="label">
-                                            <div class="label-text">
-                                                <a class="text-title">Эфир 14.08.2015</a>
-                                                <span class="text-category">Телеберүүлөр</span>
-                                            </div>
-                                            <div class="label-bg"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div class="portfolio tele" data-cat="tele">
-                                    <div class="portfolio-wrapper">
-                                        <img src="filter/img/portfolios/logo/5.jpg" alt="" />
-                                        <div class="label">
-                                            <div class="label-text">
-                                                <a class="text-title">Эфир 14.08.2015</a>
-                                                <span class="text-category">Телеберүүлөр</span>
-                                            </div>
-                                            <div class="label-bg"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="portfolio tele" data-cat="tele">
-                                    <div class="portfolio-wrapper">
-                                        <img src="filter/img/portfolios/logo/5.jpg" alt="" />
-                                        <div class="label">
-                                            <div class="label-text">
-                                                <a class="text-title">Эфир 14.08.2015</a>
-                                                <span class="text-category">Телеберүүлөр</span>
-                                            </div>
-                                            <div class="label-bg"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="portfolio tele" data-cat="tele">
-                                    <div class="portfolio-wrapper">
-                                        <img src="filter/img/portfolios/logo/5.jpg" alt="" />
-                                        <div class="label">
-                                            <div class="label-text">
-                                                <a class="text-title">Эфир 14.08.2015</a>
-                                                <span class="text-category">Телеберүүлөр</span>
-                                            </div>
-                                            <div class="label-bg"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="portfolio tele" data-cat="tele">
-                                    <div class="portfolio-wrapper">
-                                        <img src="filter/img/portfolios/logo/5.jpg" alt="" />
-                                        <div class="label">
-                                            <div class="label-text">
-                                                <a class="text-title">Эфир 14.08.2015</a>
-                                                <span class="text-category">Телеберүүлөр</span>
-                                            </div>
-                                            <div class="label-bg"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="portfolio tele" data-cat="tele">
-                                    <div class="portfolio-wrapper">
-                                        <img src="filter/img/portfolios/logo/5.jpg" alt="" />
-                                        <div class="label">
-                                            <div class="label-text">
-                                                <a class="text-title">Эфир 14.08.2015</a>
-                                                <span class="text-category">Телеберүүлөр</span>
-                                            </div>
-                                            <div class="label-bg"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="portfolio tele" data-cat="tele">
-                                    <div class="portfolio-wrapper">
-                                        <img src="filter/img/portfolios/logo/5.jpg" alt="" />
-                                        <div class="label">
-                                            <div class="label-text">
-                                                <a class="text-title">Эфир 14.08.2015</a>
-                                                <span class="text-category">Телеберүүлөр</span>
-                                            </div>
-                                            <div class="label-bg"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="portfolio tele" data-cat="tele">
-                                    <div class="portfolio-wrapper">
-                                        <img src="filter/img/portfolios/logo/5.jpg" alt="" />
-                                        <div class="label">
-                                            <div class="label-text">
-                                                <a class="text-title">Эфир 14.08.2015</a>
-                                                <span class="text-category">Телеберүүлөр</span>
-                                            </div>
-                                            <div class="label-bg"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="portfolio tele" data-cat="tele">
-                                    <div class="portfolio-wrapper">
-                                        <img src="filter/img/portfolios/logo/5.jpg" alt="" />
-                                        <div class="label">
-                                            <div class="label-text">
-                                                <a class="text-title">Эфир 14.08.2015</a>
-                                                <span class="text-category">Телеберүүлөр</span>
-                                            </div>
-                                            <div class="label-bg"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="portfolio tele" data-cat="tele">
-                                    <div class="portfolio-wrapper">
-                                        <img src="filter/img/portfolios/logo/5.jpg" alt="" />
-                                        <div class="label">
-                                            <div class="label-text">
-                                                <a class="text-title">Эфир 14.08.2015</a>
-                                                <span class="text-category">Телеберүүлөр</span>
-                                            </div>
-                                            <div class="label-bg"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="portfolio app" data-cat="app">
-                                    <div class="portfolio-wrapper">
-                                        <img src="filter/img/portfolios/app/1.jpg" alt="" />
-                                        <div class="label">
-                                            <div class="label-text">
-                                                <a class="text-title">Visual Infography</a>
-                                                <span class="text-category">APP</span>
-                                            </div>
-                                            <div class="label-bg"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="portfolio app" data-cat="app">
-                                    <div class="portfolio-wrapper">
-                                        <img src="filter/img/portfolios/app/1.jpg" alt="" />
-                                        <div class="label">
-                                            <div class="label-text">
-                                                <a class="text-title">Visual Infography</a>
-                                                <span class="text-category">APP</span>
-                                            </div>
-                                            <div class="label-bg"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="portfolio app" data-cat="app">
-                                    <div class="portfolio-wrapper">
-                                        <img src="filter/img/portfolios/app/1.jpg" alt="" />
-                                        <div class="label">
-                                            <div class="label-text">
-                                                <a class="text-title">Visual Infography</a>
-                                                <span class="text-category">APP</span>
-                                            </div>
-                                            <div class="label-bg"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="portfolio app" data-cat="app">
-                                    <div class="portfolio-wrapper">
-                                        <img src="filter/img/portfolios/app/1.jpg" alt="" />
-                                        <div class="label">
-                                            <div class="label-text">
-                                                <a class="text-title">Visual Infography</a>
-                                                <span class="text-category">APP</span>
-                                            </div>
-                                            <div class="label-bg"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="portfolio app" data-cat="app">
-                                    <div class="portfolio-wrapper">
-                                        <img src="filter/img/portfolios/app/1.jpg" alt="" />
-                                        <div class="label">
-                                            <div class="label-text">
-                                                <a class="text-title">Visual Infography</a>
-                                                <span class="text-category">APP</span>
-                                            </div>
-                                            <div class="label-bg"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="portfolio app" data-cat="app">
-                                    <div class="portfolio-wrapper">
-                                        <img src="filter/img/portfolios/app/1.jpg" alt="" />
-                                        <div class="label">
-                                            <div class="label-text">
-                                                <a class="text-title">Visual Infography</a>
-                                                <span class="text-category">APP</span>
-                                            </div>
-                                            <div class="label-bg"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="portfolio app" data-cat="app">
-                                    <div class="portfolio-wrapper">
-                                        <img src="filter/img/portfolios/app/1.jpg" alt="" />
-                                        <div class="label">
-                                            <div class="label-text">
-                                                <a class="text-title">Visual Infography</a>
-                                                <span class="text-category">APP</span>
-                                            </div>
-                                            <div class="label-bg"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="portfolio app" data-cat="app">
-                                    <div class="portfolio-wrapper">
-                                        <img src="filter/img/portfolios/app/1.jpg" alt="" />
-                                        <div class="label">
-                                            <div class="label-text">
-                                                <a class="text-title">Visual Infography</a>
-                                                <span class="text-category">APP</span>
-                                            </div>
-                                            <div class="label-bg"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="portfolio app" data-cat="app">
-                                    <div class="portfolio-wrapper">
-                                        <img src="filter/img/portfolios/app/1.jpg" alt="" />
-                                        <div class="label">
-                                            <div class="label-text">
-                                                <a class="text-title">Visual Infography</a>
-                                                <span class="text-category">APP</span>
-                                            </div>
-                                            <div class="label-bg"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="portfolio web" data-cat="web">
-                                    <div class="portfolio-wrapper">
-                                        <img src="filter/img/portfolios/web/4.jpg" alt="" />
-                                        <div class="label">
-                                            <div class="label-text">
-                                                <a class="text-title">Sonor's Design</a>
-                                                <span class="text-category">Web design</span>
-                                            </div>
-                                            <div class="label-bg"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="portfolio web" data-cat="web">
-                                    <div class="portfolio-wrapper">
-                                        <img src="filter/img/portfolios/web/4.jpg" alt="" />
-                                        <div class="label">
-                                            <div class="label-text">
-                                                <a class="text-title">Sonor's Design</a>
-                                                <span class="text-category">Web design</span>
-                                            </div>
-                                            <div class="label-bg"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="portfolio web" data-cat="web">
-                                    <div class="portfolio-wrapper">
-                                        <img src="filter/img/portfolios/web/4.jpg" alt="" />
-                                        <div class="label">
-                                            <div class="label-text">
-                                                <a class="text-title">Sonor's Design</a>
-                                                <span class="text-category">Web design</span>
-                                            </div>
-                                            <div class="label-bg"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="portfolio web" data-cat="web">
-                                    <div class="portfolio-wrapper">
-                                        <img src="filter/img/portfolios/web/4.jpg" alt="" />
-                                        <div class="label">
-                                            <div class="label-text">
-                                                <a class="text-title">Sonor's Design</a>
-                                                <span class="text-category">Web design</span>
-                                            </div>
-                                            <div class="label-bg"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="portfolio web" data-cat="web">
-                                    <div class="portfolio-wrapper">
-                                        <img src="filter/img/portfolios/web/4.jpg" alt="" />
-                                        <div class="label">
-                                            <div class="label-text">
-                                                <a class="text-title">Sonor's Design</a>
-                                                <span class="text-category">Web design</span>
-                                            </div>
-                                            <div class="label-bg"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="portfolio web" data-cat="web">
-                                    <div class="portfolio-wrapper">
-                                        <img src="filter/img/portfolios/web/4.jpg" alt="" />
-                                        <div class="label">
-                                            <div class="label-text">
-                                                <a class="text-title">Sonor's Design</a>
-                                                <span class="text-category">Web design</span>
-                                            </div>
-                                            <div class="label-bg"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="portfolio web" data-cat="web">
-                                    <div class="portfolio-wrapper">
-                                        <img src="filter/img/portfolios/web/4.jpg" alt="" />
-                                        <div class="label">
-                                            <div class="label-text">
-                                                <a class="text-title">Sonor's Design</a>
-                                                <span class="text-category">Web design</span>
-                                            </div>
-                                            <div class="label-bg"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="portfolio web" data-cat="web">
-                                    <div class="portfolio-wrapper">
-                                        <img src="filter/img/portfolios/web/4.jpg" alt="" />
-                                        <div class="label">
-                                            <div class="label-text">
-                                                <a class="text-title">Sonor's Design</a>
-                                                <span class="text-category">Web design</span>
-                                            </div>
-                                            <div class="label-bg"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="portfolio web" data-cat="web">
-                                    <div class="portfolio-wrapper">
-                                        <img src="filter/img/portfolios/web/4.jpg" alt="" />
-                                        <div class="label">
-                                            <div class="label-text">
-                                                <a class="text-title">Sonor's Design</a>
-                                                <span class="text-category">Web design</span>
-                                            </div>
-                                            <div class="label-bg"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="portfolio card" data-cat="card">
-                                    <div class="portfolio-wrapper">
-                                        <img src="filter/img/portfolios/card/1.jpg" alt="" />
-                                        <div class="label">
-                                            <div class="label-text">
-                                                <a class="text-title">Typography Company</a>
-                                                <span class="text-category">Business card</span>
-                                            </div>
-                                            <div class="label-bg"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="portfolio card" data-cat="card">
-                                    <div class="portfolio-wrapper">
-                                        <img src="filter/img/portfolios/card/1.jpg" alt="" />
-                                        <div class="label">
-                                            <div class="label-text">
-                                                <a class="text-title">Typography Company</a>
-                                                <span class="text-category">Business card</span>
-                                            </div>
-                                            <div class="label-bg"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="portfolio card" data-cat="card">
-                                    <div class="portfolio-wrapper">
-                                        <img src="filter/img/portfolios/card/1.jpg" alt="" />
-                                        <div class="label">
-                                            <div class="label-text">
-                                                <a class="text-title">Typography Company</a>
-                                                <span class="text-category">Business card</span>
-                                            </div>
-                                            <div class="label-bg"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="portfolio card" data-cat="card">
-                                    <div class="portfolio-wrapper">
-                                        <img src="filter/img/portfolios/card/1.jpg" alt="" />
-                                        <div class="label">
-                                            <div class="label-text">
-                                                <a class="text-title">Typography Company</a>
-                                                <span class="text-category">Business card</span>
-                                            </div>
-                                            <div class="label-bg"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="portfolio card" data-cat="card">
-                                    <div class="portfolio-wrapper">
-                                        <img src="filter/img/portfolios/card/1.jpg" alt="" />
-                                        <div class="label">
-                                            <div class="label-text">
-                                                <a class="text-title">Typography Company</a>
-                                                <span class="text-category">Business card</span>
-                                            </div>
-                                            <div class="label-bg"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="portfolio card" data-cat="card">
-                                    <div class="portfolio-wrapper">
-                                        <img src="filter/img/portfolios/card/1.jpg" alt="" />
-                                        <div class="label">
-                                            <div class="label-text">
-                                                <a class="text-title">Typography Company</a>
-                                                <span class="text-category">Business card</span>
-                                            </div>
-                                            <div class="label-bg"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="portfolio card" data-cat="card">
-                                    <div class="portfolio-wrapper">
-                                        <img src="filter/img/portfolios/card/1.jpg" alt="" />
-                                        <div class="label">
-                                            <div class="label-text">
-                                                <a class="text-title">Typography Company</a>
-                                                <span class="text-category">Business card</span>
-                                            </div>
-                                            <div class="label-bg"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="portfolio card" data-cat="card">
-                                    <div class="portfolio-wrapper">
-                                        <img src="filter/img/portfolios/card/1.jpg" alt="" />
-                                        <div class="label">
-                                            <div class="label-text">
-                                                <a class="text-title">Typography Company</a>
-                                                <span class="text-category">Business card</span>
-                                            </div>
-                                            <div class="label-bg"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="portfolio card" data-cat="card">
-                                    <div class="portfolio-wrapper">
-                                        <img src="filter/img/portfolios/card/1.jpg" alt="" />
-                                        <div class="label">
-                                            <div class="label-text">
-                                                <a class="text-title">Typography Company</a>
-                                                <span class="text-category">Business card</span>
-                                            </div>
-                                            <div class="label-bg"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="portfolio icon" data-cat="icon">
-                                    <div class="portfolio-wrapper">
-                                        <img src="filter/img/portfolios/icon/4.jpg" alt="" />
-                                        <div class="label">
-                                            <div class="label-text">
-                                                <a class="text-title">Domino's Pizza</a>
-                                                <span class="text-category">Icon</span>
-                                            </div>
-                                            <div class="label-bg"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="portfolio icon" data-cat="icon">
-                                    <div class="portfolio-wrapper">
-                                        <img src="filter/img/portfolios/icon/4.jpg" alt="" />
-                                        <div class="label">
-                                            <div class="label-text">
-                                                <a class="text-title">Domino's Pizza</a>
-                                                <span class="text-category">Icon</span>
-                                            </div>
-                                            <div class="label-bg"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="portfolio icon" data-cat="icon">
-                                    <div class="portfolio-wrapper">
-                                        <img src="filter/img/portfolios/icon/4.jpg" alt="" />
-                                        <div class="label">
-                                            <div class="label-text">
-                                                <a class="text-title">Domino's Pizza</a>
-                                                <span class="text-category">Icon</span>
-                                            </div>
-                                            <div class="label-bg"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="portfolio icon" data-cat="icon">
-                                    <div class="portfolio-wrapper">
-                                        <img src="filter/img/portfolios/icon/4.jpg" alt="" />
-                                        <div class="label">
-                                            <div class="label-text">
-                                                <a class="text-title">Domino's Pizza</a>
-                                                <span class="text-category">Icon</span>
-                                            </div>
-                                            <div class="label-bg"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="portfolio icon" data-cat="icon">
-                                    <div class="portfolio-wrapper">
-                                        <img src="filter/img/portfolios/icon/4.jpg" alt="" />
-                                        <div class="label">
-                                            <div class="label-text">
-                                                <a class="text-title">Domino's Pizza</a>
-                                                <span class="text-category">Icon</span>
-                                            </div>
-                                            <div class="label-bg"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="portfolio icon" data-cat="icon">
-                                    <div class="portfolio-wrapper">
-                                        <img src="filter/img/portfolios/icon/4.jpg" alt="" />
-                                        <div class="label">
-                                            <div class="label-text">
-                                                <a class="text-title">Domino's Pizza</a>
-                                                <span class="text-category">Icon</span>
-                                            </div>
-                                            <div class="label-bg"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="portfolio icon" data-cat="icon">
-                                    <div class="portfolio-wrapper">
-                                        <img src="filter/img/portfolios/icon/4.jpg" alt="" />
-                                        <div class="label">
-                                            <div class="label-text">
-                                                <a class="text-title">Domino's Pizza</a>
-                                                <span class="text-category">Icon</span>
-                                            </div>
-                                            <div class="label-bg"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="portfolio icon" data-cat="icon">
-                                    <div class="portfolio-wrapper">
-                                        <img src="filter/img/portfolios/icon/4.jpg" alt="" />
-                                        <div class="label">
-                                            <div class="label-text">
-                                                <a class="text-title">Domino's Pizza</a>
-                                                <span class="text-category">Icon</span>
-                                            </div>
-                                            <div class="label-bg"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="portfolio icon" data-cat="icon">
-                                    <div class="portfolio-wrapper">
-                                        <img src="filter/img/portfolios/icon/4.jpg" alt="" />
-                                        <div class="label">
-                                            <div class="label-text">
-                                                <a class="text-title">Domino's Pizza</a>
-                                                <span class="text-category">Icon</span>
-                                            </div>
-                                            <div class="label-bg"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <footer>
-                                <a href="#">
-                                    <span>Архив <i class="fa fa-arrow-circle-right"></i></span>
-                                </a>
-                            </footer>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bottom-left-block col-md-4">
-                    <div class="panel panel-default latest-news">
-                        <div class="panel-heading">
-                            <h3 class="panel-title"><span>Акыркы жаңылыктар</span></h3>
-                        </div>
-                        <div class="panel-body">
-                            <ul class="list-group">
-                                <li class="list-group-item news-item">
-                                    <div class="news-body clearfix">
-                                        <a href="#">
-                                            <p class="news-title">В Бишкеке проходит внеочередной съезд партии "Республика Ата-Журт"</p>
-                                            <span class="ctg"><img src="images/logo_notext.png" alt=""/></span>
-                                        </a>
-                                    </div>
-                                    <div class="news-adds clearfix">
-                                        <a href="#" class="">Политика</a>
-                                        <span class="news-file"><i class="fa fa-play-circle-o"></i></span>
-
-                                        <span class="news-time pull-right">10:10</span>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </li>
-                                <li class="list-group-item news-item">
-                                    <div class="news-body clearfix">
-                                        <a href="#">
-                                            <p class="news-title">В Бишкеке проходит внеочередной съезд партии "Республика Ата-Журт"</p>
-                                            <span class="ctg"><img src="images/logo_notext.png" alt=""/></span>
-                                        </a>
-                                    </div>
-                                    <div class="news-adds clearfix">
-                                        <a href="#">Политика</a>
-                                        <span class="news-file"><i class="fa fa-image"></i></span>
-
-                                        <span class="news-time pull-right">10:10</span>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </li>
-                                <li class="list-group-item news-item">
-                                    <div class="news-body clearfix">
-                                        <a href="#">
-                                            <p class="news-title">В Бишкеке проходит внеочередной съезд партии "Республика Ата-Журт"</p>
-                                            <span class="ctg"><img src="images/logo_notext.png" alt=""/></span>
-                                        </a>
-                                    </div>
-                                    <div class="news-adds clearfix">
-                                        <a href="#" class="">Политика</a>
-                                        <span class="news-file"><i class="fa fa-play-circle-o"></i></span>
-
-                                        <span class="news-time pull-right">10:10</span>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </li>
-                                <li class="list-group-item news-item">
-                                    <div class="news-body clearfix">
-                                        <a href="#">
-                                            <p class="news-title">В Бишкеке проходит внеочередной съезд партии "Республика Ата-Журт"</p>
-                                            <span class="ctg"><img src="images/logo_notext.png" alt=""/></span>
-                                        </a>
-                                    </div>
-                                    <div class="news-adds clearfix">
-                                        <a href="#" class="">Политика</a>
-                                        <span class="news-file"><i class="fa fa-play-circle-o"></i></span>
-
-                                        <span class="news-time pull-right">10:10</span>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </li>
-                                <li class="list-group-item news-item">
-                                    <div class="news-body clearfix">
-                                        <a href="#">
-                                            <p class="news-title">В Бишкеке проходит внеочередной съезд партии "Республика Ата-Журт"</p>
-                                            <span class="ctg"><img src="images/logo_notext.png" alt=""/></span>
-                                        </a>
-                                    </div>
-                                    <div class="news-adds clearfix">
-                                        <a href="#" class="">Политика</a>
-                                        <span class="news-file"><i class="fa fa-play-circle-o"></i></span>
-
-                                        <span class="news-time pull-right">10:10</span>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </li>
-                                <li class="list-group-item news-item">
-                                    <div class="news-body clearfix">
-                                        <a href="#">
-                                            <p class="news-title">В Бишкеке проходит внеочередной съезд партии "Республика Ата-Журт"</p>
-                                            <span class="ctg"><img src="images/logo_notext.png" alt=""/></span>
-                                        </a>
-                                    </div>
-                                    <div class="news-adds clearfix">
-                                        <a href="#" class="">Политика</a>
-                                        <span class="news-file"><i class="fa fa-play-circle-o"></i></span>
-
-                                        <span class="news-time pull-right">10:10</span>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </li>
-                            </ul>
-
-                            <footer>
-                                <a href="#">
-                                    <span>Бардык жаңылыктар <i class="fa fa-arrow-circle-right"></i></span>
-                                </a>
-                            </footer>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="bottom-block col-md-12">
-                    <div class="panel panel-default panel-carousel">
-                        <div class="panel-heading">
-                            <h3 class="panel-title"><span>Фотогалерея</span></h3>
-                        </div>
-                        <div class="panel-body">
-                            <div class="col-md-12">
-                                <div class="carousel-slick carousel-channel">
-
-                                    <div class="col-md-4">
-                                        <a href="#">
-                                            <img src="images/gallery/001.jpg" alt=""/>
-                                            <span>Открыть галерею</span>
-                                            <div class="overlay"></div>
-                                        </a>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <a href="#">
-                                            <img src="images/gallery/002.jpg" alt=""/>
-                                            <span>Открыть галерею Открыть галерею Открыть галерею</span>
-                                            <div class="overlay"></div>
-                                        </a>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <a href="#">
-                                            <img src="images/gallery/003.jpg" alt=""/>
-                                            <span>Открыть галерею</span>
-                                            <div class="overlay"></div>
-                                        </a>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <a href="#">
-                                            <img src="images/gallery/004.jpg" alt=""/>
-                                            <span>Открыть галерею</span>
-                                            <div class="overlay"></div>
-                                        </a>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <a href="#">
-                                            <img src="images/gallery/005.jpg" alt=""/>
-                                            <span>Открыть галерею</span>
-                                            <div class="overlay"></div>
-                                        </a>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <a href="#">
-                                            <img src="images/gallery/006.jpg" alt=""/>
-                                            <span>Открыть галерею</span>
-                                            <div class="overlay"></div>
-                                        </a>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <a href="#">
-                                            <img src="images/gallery/007.jpg" alt=""/>
-                                            <span>Открыть галерею</span>
-                                            <div class="overlay"></div>
-                                        </a>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <a href="#">
-                                            <img src="images/gallery/008.jpg" alt=""/>
-                                            <span>Открыть галерею</span>
-                                            <div class="overlay"></div>
-                                        </a>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <a href="#">
-                                            <img src="images/gallery/009.jpg" alt=""/>
-                                            <span>Открыть галерею</span>
-                                            <div class="overlay"></div>
-                                        </a>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </section>
-    </div>
-
-</div>
-
-
-
-<footer class="footer">
-    <div class="panel panel-default">
-        <div class="panel-body">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
+                    <div class="container">
                         <div class="row">
-                            <ul>
-                                <li><a href="#">Башкы бет</a></li>
-                                <li><a href="#">КТРК</a></li>
-                                <li><a href="#">Видеопортал</a></li>
-                                <li><a href="#">Телепрограмма</a></li>
-                                <li><a href="#">Байкоочу кеңеш</a></li>
-                                <li><a href="#">Редакциялык кеңешчи</a></li>
-                            </ul>
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <ul>
+                                        <li><a href="#">Башкы бет</a></li>
+                                        <li><a href="#">КТРК</a></li>
+                                        <li><a href="#">Видеопортал</a></li>
+                                        <li><a href="#">Телепрограмма</a></li>
+                                        <li><a href="#">Байкоочу кеңеш</a></li>
+                                        <li><a href="#">Редакциялык кеңешчи</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 copy"><i class="fa fa-copyright"></i> 2015 Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясы</div>
                         </div>
                     </div>
-
-                    <div class="col-md-12 copy"><i class="fa fa-copyright"></i> 2015 Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясы</div>
                 </div>
             </div>
+        </footer>
+         <div class="container-fluid footerimg">
+            <img src="{{ asset('images/channels/balastan/footer.png')}}" alt="">
         </div>
-    </div>
-</footer>
 
-<script src="js/jquery-1.11.2.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery-1.11.2.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
 
 
-<script type="text/javascript" src="filter/js/jquery.easing.min.js"></script>
-<script type="text/javascript" src="filter/js/jquery.mixitup.min.js"></script>
 
-<script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
-<script type="text/javascript" src="slick/slick.min.js"></script>
-<script type="text/javascript" src="js/jquery.roundabout.js"></script>
-
-<script>
-    $('.carousel-slick').slick({
-        infinite: true,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 2000
-    });
-</script>
-
-<script type="text/javascript">
-    (function($) {
-
-        var $descriptions = $('#carousel-descriptions').children('li'),
-                $controls = $('#carousel-controls').find('span'),
-                $carousel = $('#carousel')
-                        .roundabout({childSelector:"a", minOpacity:1, autoplay:false})
-                        .on('focus', 'img', function() {
-                            var slideNum = $carousel.roundabout("getChildInFocus");
-
-                            $descriptions.add($controls).removeClass('current');
-                            $($descriptions.get(slideNum)).addClass('current');
-                            $($controls.get(slideNum)).addClass('current');
-                        });
-
-        $controls.on('click dblclick', function() {
-            var slideNum = -1,
-                    i = 0, len = $controls.length;
-
-            for (; i<len; i++) {
-                if (this === $controls.get(i)) {
-                    slideNum = i;
-                    break;
-                }
-            }
-
-            if (slideNum >= 0) {
-                $controls.removeClass('current');
-                $(this).addClass('current');
-                $carousel.roundabout('animateToChild', slideNum);
-            }
-        });
-    }(jQuery));
-</script>
-
-
-<script type="text/javascript">
-    $(function () {
-
-        var filterList = {
-
-            init: function () {
-
-                // MixItUp plugin
-                // http://mixitup.io
-                $('#portfoliolist').mixitup({
-                    showOnLoad: 'all-videos',
-                    targetSelector: '.portfolio',
-                    filterSelector: '.filter',
-                    effects: ['fade'],
-                    easing: 'snap',
-                    // call the hover effect
-                    onMixEnd: filterList.hoverEffect()
-                });
-
-            },
-
-            hoverEffect: function () {
-
-                // Simple parallax effect
-                $('#portfoliolist .portfolio').hover(
-                        function () {
-                            $(this).find('.label').stop().animate({bottom: 0}, 200, 'easeOutQuad');
-                            $(this).find('img').stop().animate({top: -40}, 250, 'easeOutQuad');
-                        },
-                        function () {
-                            $(this).find('.label').stop().animate({bottom: -40}, 200, 'easeInQuad');
-                            $(this).find('img').stop().animate({top: 0}, 300, 'easeOutQuad');
-                        }
-                );
-
-            }
-
-        };
-        // Run the show!
-        filterList.init();
-    });
-</script>
-</body>
+    </body>
 </html>

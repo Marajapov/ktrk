@@ -32,15 +32,8 @@
                       <tr>
                         <th scope="row">Аты жөнү:</th>
                         <td>Карыпбеков Илим Майрамбекович</td>
-                      </tr>
-                      <tr >
-                        <th scope="row">Иш орду:</th>
-                        <td>Башкы директор</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Туулган датасы:</th>
-                        <td>1979-жылы 13 - август</td>
-                      </tr>
+                      </tr>                   
+                   
                       <tr>
                         <th scope="row">Facebook баракчасы:</th>
                         <td class="textunder"><i class="fa fa-facebook-official"></i><a href="https://www.facebook.com/ilim.karypbekov">facebook.com/ilim.karypbekov</a></td>

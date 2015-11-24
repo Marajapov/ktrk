@@ -69,7 +69,12 @@ class MediaController extends Controller
      */
     public function edit(Media $media)
     {
-        return view('Admin::media.edit', ['media' => $media]);
+        $projectList = \Model\Project\ModelName::lists('name', 'id')->toArray();
+
+        return view('Admin::media.edit', [
+            'media' => $media,
+            'projectList' => $projectList,
+            ]);
     }
 
     /**

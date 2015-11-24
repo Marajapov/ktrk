@@ -83,11 +83,13 @@ class ModelName extends Model
         $lc = app()->getlocale();
         $programId = $this->program;
         $programName = \Model\Project\ModelName::where('id','=',$programId)->first();
+
         $name = $programName->name;
         $nameRu = $programName->nameRu;
-        if($lc == 'kg'){
+        
+        if(($lc == 'kg') && ($name != '') ){
             return $name;
-        }else{
+        }elseif(($lc == 'ru') && ($nameRu != '')){
             return $nameRu;
         }
         
