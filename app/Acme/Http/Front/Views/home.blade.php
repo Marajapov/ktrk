@@ -373,7 +373,7 @@
                         </a>
                         <div class="label">
                           <div class="label-text">
-                            <a title="{{ $media->getProgramName() }}" class="text-title">{{ $media->getName() }}</a>
+                            <a title="@if(!empty($media->getProgramName())) {{ $media->getProgramName() }} @endif" class="text-title">{{ $media->getName() }}</a>
                           </div>
                           <div class="label-bg"></div>
                         </div>
