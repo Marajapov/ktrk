@@ -28,7 +28,7 @@
                   <h4 class="show-title">
                     <a href="#">{{ $videoProject}}</a>
                     <i class="fa fa-circle"></i>
-                    <span>{{ $video->getName()}}</span>
+                    <span>{{ $videoName }}</span>
                   </h4>
                   <div class="embed-responsive embed-responsive-16by9 show-video">
                     

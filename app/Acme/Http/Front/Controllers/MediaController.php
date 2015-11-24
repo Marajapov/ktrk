@@ -29,7 +29,7 @@ class MediaController extends Controller
 
             'mainBanner'   => $mainBanner,
             'projectList' => $projectList,
-            'categories'=>$categories,
+            'mediaCategories'=>$MediaCategories,
             'backgroundMain' => $backgroundMain,
             ]);
     }
@@ -38,8 +38,7 @@ class MediaController extends Controller
     {
         $lc = app()->getlocale();
         $video = \Model\Media\ModelName::where('id','=',$media)->first();
-        
-        
+        $videoId = $video->id;
 
         $MediaCategories = \Model\MediaCategory\ModelName::get();
         
@@ -48,6 +47,7 @@ class MediaController extends Controller
         $videoType = $video->videoType;
 
         if($lc == 'kg'){
+            $videoName = $video->getName();
             $result = \Model\Project\ModelName::where('id','=',$projectId)->first();
             $videoProject = $result->getName();
             $result = \Model\MediaCategory\ModelName::where('videoType','=',$videoType)->first();    
@@ -56,8 +56,10 @@ class MediaController extends Controller
             $relatedVideos = \Model\Media\ModelName::where('name','<>','')->where('program','=',$projectId)->get();
 
         }else{
+            $videoName = $video->getNameRu();
             $result = \Model\Project\ModelName::where('id','=',$projectId)->first();
-            $videoProject = $result->getNameRu(); 
+            $videoProject = $result->getNameRu();
+
             $result = \Model\MediaCategory\ModelName::where('videoType','=',$videoType)->first();
             $getVideoTypeName = $result->getNameRu();
 
@@ -77,6 +79,7 @@ class MediaController extends Controller
 
         return view('Front::media.video',[
             'video' => $video,
+            'videoName' => $videoName,
             'videoProject' => $videoProject,
             'getVideoTypeName'=> $getVideoTypeName,
             'relatedVideos' => $relatedVideos,

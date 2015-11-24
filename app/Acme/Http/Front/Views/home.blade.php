@@ -373,7 +373,7 @@
                         </a>
                         <div class="label">
                           <div class="label-text">
-                            <a title="{{ $media->getProgramName() }}" class="text-title">{{ $media->getName() }}</a>
+                            <a href="{{ route('front.media.video', $media) }}" title="{{ $media->getProgramName() }}" class="text-title">{{ $media->getName() }}</a>
                           </div>
                           <div class="label-bg"></div>
                         </div>
