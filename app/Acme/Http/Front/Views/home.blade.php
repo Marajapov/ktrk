@@ -154,7 +154,7 @@
                 <div class="col-md-9">
                   <div class="carousel carousel-reporter">
                     <div class="col-md-4">
-                      <a href="">
+                      <a href="#">
                         <img src="{{ asset('images/1.jpg') }}" alt=""/>
                       </a>
                       <div class="datetime">12:11:2015</div>
@@ -162,7 +162,7 @@
                       <p>Бүгүн Дордойдо курткалар аябагандай көп сатылды</p>
                     </div>
                     <div class="col-md-4">
-                      <a href="">
+                      <a href="#">
                         <img src="{{ asset('images/2.jpg') }}" alt=""/>
                       </a>
                       <div class="datetime">12:11:2015</div>
@@ -170,7 +170,7 @@
                       <p>Суук түшкөндөн бери, эшикте аябай суук болууда</p>
                     </div>
                     <div class="col-md-4">
-                      <a href="">
+                      <a href="#">
                         <img src="{{ asset('images/gallery/002.jpg') }}" alt=""/>
                       </a>
                       <div class="datetime">12:11:2015</div>
@@ -178,7 +178,7 @@
                       <p>Маршруткалар маселесин эртерээк чечпесес жакында транспорттук коллапс башталат </p>
                     </div>
                     <div class="col-md-4">
-                      <a href="">
+                      <a href="#">
                         <img src="{{ asset('images/gallery/002.jpg') }}" alt=""/>
                       </a>
                       <div class="datetime">12:11:2015</div>
@@ -250,7 +250,7 @@
                 </div>
 
                 <footer>
-                  <a href="#">
+                  <a href="{{ route('front.media.index') }}">
                     <span>{{ trans('site.FrontVideoAll') }} <i class="fa fa-arrow-circle-right"></i></span>
                   </a>
                 </footer>
@@ -307,7 +307,7 @@
             <div class="panel panel-default panel-director">
               <div class="panel-heading">
                 <h3 class="panel-title director-title">
-                  <a class="director-img" href="#">
+                  <a class="director-img" href="{{ route('front.pages.director') }}">
                     <img src="{{ asset('images/chief.jpg') }}" alt="директор"/>
                   </a>
                   <a class="director-text" href="{{ route('front.pages.director') }}">{{ trans('site.FrontDirectorPage') }}</a>
@@ -341,7 +341,7 @@
                 </div>
 
                 <footer>
-                  <a href="#">
+                  <a href="{{ route('front.pages.director') }}">
                     <span>{{ trans('site.FrontToDirectorPage') }} <i class="fa fa-arrow-circle-right"></i></span>
                   </a>
                 </footer>
