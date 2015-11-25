@@ -13,10 +13,10 @@
                     <nav>
                         <ul>
                             <li class="sitemenu" id="site-channel1">
-                                <a href="#">
-                                    <span>Биринчи радио</span>
-                                    <h4>Биринчи радио</h4></a>
+                                <a href="#">                                   
                                 <img class="onelogos" src="{{ asset('images/channels/1-radio-notext.png')}}">
+                                 <span>Биринчи радио</span>
+                                    <h4>Биринчи радио</h4></a>
                             </li>
                         </ul>
                     </nav>
@@ -24,18 +24,18 @@
 
                 <div class="col-md-7">
                     <ul class="nav navbar-nav oneline">
-                        <li><a href="#"><time>11:15</time></a></li>
-                        <li><a href=""><button class="btn btn-danger btn-one">Прямой эфир</button></a></li>
+                        <li><a class="time" href="#"><time>11:15</time></a></li>
+                        <li class="onetime"><a href=""><button class="btn btn-danger btn-one"><i class="fa fa-microphone"></i>Прямой эфир</button></a></li>
                     </ul>
-                    <ul class="nav navbar-nav navbar-right oneline onesoc">                       
-                        <li><a href="">Facebook</a></li>
-                        <li><a href="">Twitter</a></li>
+                    <ul class="nav navbar-nav navbar-right onesoc">                       
+                        <li class="onepost"><a href=""><i class="fa fa-facebook"></i>facebook</a></li>
+                        <li class="onetwit"><a href=""><i class="fa fa-twitter"></i>twitter</a></li>
                     </ul>
                 </div>
 
             </div>
             <div class="row">
-                <nav class="navbar navbar-default">
+                <nav class="navbar">
                     <div class="container-fluid">
                         <!-- Brand and toggle get grouped for better mobile display -->
                         <div class="navbar-header">
@@ -81,20 +81,52 @@
     </div>
 
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12 ">
             <div class="row">
                 <div class="col-md-9">
-                    <div class="panel onemainnew">
-                    <div class="panel-body">
-                        <div class="oneslider">
-                        <img src="{{ asset('images/channels/culture/1.jpg')}}" alt="">
-                        <article>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro labore ab voluptatem. Ut obcaecati quasi ullam eaque deserunt itaque soluta, alias in voluptates adipisci nihil nostrum! Optio sapiente incidunt numquam.</article>
-                        <article>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro labore ab voluptatem. Ut obcaecati quasi ullam eaque deserunt itaque soluta, alias in voluptates adipisci nihil nostrum! Optio sapiente incidunt numquam.</article>
-                        <article>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro labore ab voluptatem. Ut obcaecati quasi ullam eaque deserunt itaque soluta, alias in voluptates adipisci nihil nostrum! Optio sapiente incidunt numquam.</article>
+                        <div class="bhoechie-tab-container">
+                            <div class="col-lg-5 col-md-4 col-sm-5 col-xs-5 bhoechie-tab-menu">
+                              <div class="list-group">
+                                <a href="#" class="list-group-item active text-center">                              
+                                <span><p>Lorem ipsum</p></span>
+                                <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt praesentium tempora sit quaerat nostrum quod animi atque, officiis reiciendis sunt aperiam alias possimus.</span>
+                              </a>
+                              <a href="#" class="list-group-item text-center">
+                                  <span><p>Lorem ipsum</p></span>
+                                  <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad magni sed repellat, atque, officiis ullam quis praesentium. Consequuntur, molestias, maiores enim.</span>
+                              </a>
+                              <a href="#" class="list-group-item text-center">
+                                   <span><p>Lorem ipsum</p></span>
+                                  <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam voluptatibus facilis doloremque nisi, inventore nihil quasi. Nisi alias voluptatibus vel maiores.</span>
+                              </a>
+
+                          </div>
+                      </div>
+                    <div class="bhoechie-tab">
+                        <!-- flight section -->
+                        <div class="bhoechie-tab-content active">
+                            <center>
+                                <img src="{{ asset('images/channels/culture/1.jpg')}}" alt="">
+                    
+                            </center>
                         </div>
+                        <!-- train section -->
+                        <div class="bhoechie-tab-content">
+                            <center>
+                              <img src="{{ asset('images/channels/balastan.png')}}" alt="">
+                            </center>
+                        </div>
+            
+                        <!-- hotel search -->
+                        <div class="bhoechie-tab-content">
+                            <center>
+                              <img src="{{ asset('images/channels/madaniyat.png')}}" alt="">
+                            </center>
+                        </div>
+                
+                     
                     </div>
-                        
-                    </div>
+                </div>  
                 </div>
                 <div class="col-md-3 onefix">
                     <div class="panel panel-default onelist">
@@ -292,6 +324,19 @@
             slidesToScroll: 1,
         });
     }
+</script>
+
+<script>
+    $(document).ready(function() {
+    $("div.bhoechie-tab-menu>div.list-group>a").click(function(e) {
+        e.preventDefault();
+        $(this).siblings('a.active').removeClass("active");
+        $(this).addClass("active");
+        var index = $(this).index();
+        $("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
+        $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
+    });
+});
 </script>
 
 @stop

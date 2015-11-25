@@ -4698,20 +4698,35 @@ ul.social-share li a:hover {
 /* Birinchi Radio page styles*/
 .birinchiradio {
     background: #fff;
+    font-family: 'Roboto Condensed';
 }
 .topheader {
    
 }
 
 .birinchiradio time {
-
-    color: red;
+    color: #673AB7;
     font-weight: bold;
     font-size: 20px;
 }
 
 .birinchiradio .navbar {
-    margin:0px 12px 10px 12px; 
+    margin:5px 12px 10px 12px; 
+    background: #673AB7;
+}
+.birinchiradio .navbar .dropdown-menu, .birinchiradio .navbar .dropdown-menu li>a {
+    background: #eee;
+    color: #000;
+}
+.birinchiradio .navbar-brand, .birinchiradio .navbar li>a{
+    color: #fff;
+    font-size: 18px;
+}
+
+.birinchiradio .navbar li>a:hover{
+    font-size: 18px;
+    color: #fff;
+    background: #9C27B0;
 }
 
 .birinchiradio #site-channel1 a{
@@ -4728,6 +4743,7 @@ ul.social-share li a:hover {
     color: #9C27B0;
     font-size: 36px;
     float: left;
+    margin-top: 4px
 }
 
 .birinchiradio .navbar i{
@@ -4738,67 +4754,107 @@ ul.social-share li a:hover {
     padding: 0px;
 }
 .onelogos {
-    height: 90px;
+    height: 70px;
     width: auto;
-    padding: 10px 10px;
-    margin-top: -20px;
-}
-.onesoc li {
+    margin-top: -18px;
     float: left;
-    padding: 0px 10px;
+}
+.onesoc {
+    margin-top: 10px;
+    margin-right: 0px;
+}
+
+.onesoc .fa-facebook{
+    color: #3b5998; 
+}
+
+.onesoc .fa-twitter{
+    color: #4099FF;
+}
+
+.onesoc .onetwit{
+    background: #eee;
+}
+
+.onesoc .onetwit a:hover{
+    background: #D8D2D2;
+}
+
+.onesoc .onetwit a{
+    color: #4099FF;
+}
+
+.onesoc .onepost a{
+    color: #3b5998;
+}
+
+.onesoc li {
+    float: right;
     color: red;
     font-size: 20px;
     font-weight: bold;
+    background: #D8D2D2;
+}
+.onesoc i{
+    padding-right: 10px;
+}
+.onesoc li>a{
+    padding: 10px;
 }
 .oneline {
-    padding: 15px 20px 0px 0px;
+    padding: 10px 0px 0px 0px;
     display: inline-block;
+}
+
+.oneline .time {
+    background:#eee !important;
+    margin-top: 0px;
+    padding: 10px 10px
+}
+.onetime a {
+    padding:0px !important; 
+}
+
+.onetime i{
+    padding-right: 10px;
 }
 
 .btn-one{
-    margin: -10px 0px -10px 0px;
     padding: 10px;
 }
-.onemainnew {
-    background: #ccc;
-}
-.onemainnew .panel-body {
-    padding: 0px;
-}
-.oneslider img{
-    display: inline-block;
-    width: 400px;
-    height: auto;
-    float: left;
-}
-.oneslider article {
-    display: table;
-    padding: 5px 15px 15px 15px;
+
+.btn-one:focus{
+   background: none;
 }
 
-.oneslider article:hover {
+.bacbone {
     background: #444;
     color: #fff;
 }
-
 .onelist   {
-    background: #f8f8f8;
+    background: #D8D2D2;
+    margin-right: 10px !important;
+
 }
 
 .onelist .panel-heading {
-    padding: 10px 15px 0px 15px;
+    padding: 10px;
+    background: #AC13FF;
 }
 .onelist .panel-heading h3{
     padding:0px;
     margin-top: 0px;
-    color: #3E3E3E; 
+    color: #fff; 
     font-weight: bold;
+    border:none !important; 
 }
 
 
 .onelist nav>ul>li {
     padding-left: 5px;
     padding-bottom: 4px;
+    border-bottom: 1px solid #BFBABA;
+}
 }
 .onelist nav>ul>li:hover {
     background: #ccc;
@@ -4806,10 +4862,16 @@ ul.social-share li a:hover {
 
 .onelist nav>ul>li>a{
     font-size: 16px;
+    color: #192429;
+}
+.onelist nav>ul>li:hover{
+    background: #9E9E9E;
+}
+.onelist nav>ul>li:last-child{
+    border:none; 
 }
 
 .oneserep {
-    background: #ccc;
     padding-top:10px; 
     padding-bottom:10px;
     margin-top: 10px;
@@ -4824,6 +4886,9 @@ ul.social-share li a:hover {
 .onenews article>img{
     height: auto;
     width: 150px;  
+}
+.onenews article{
+    text-align: justify; 
 }
 
 .panel-articles .media-left a {
@@ -4853,4 +4918,94 @@ ul.social-share li a:hover {
 
 .panel-articles .media-desc{
     text-align: justify;
+}
+
+
+/*  bhoechie tab */
+div.bhoechie-tab-container{
+  z-index: 10;
+  background-color: #ffffff;
+  padding: 0 !important;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  border:1px solid #ddd;
+  -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+  box-shadow: 0 6px 12px rgba(0,0,0,.175);
+  -moz-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+  background-clip: padding-box;
+  filter: alpha(opacity=97);
+}
+div.bhoechie-tab-menu{
+  float:right;    
+  padding-right: 0;
+  padding-left: 0;
+  padding-bottom: 0;
+}
+div.bhoechie-tab-menu div.list-group{
+  margin-bottom: 0;
+}
+
+div.bhoechie-tab-menu .list-group-item{
+    padding:10px 10px;
+    text-align: justify;
+    font-size: 15px;
+    height: 112px;
+    line-height: normal;
+}
+
+div.bhoechie-tab-menu .list-group-item p {
+    font-weight: bold;
+    margin:0px;
+    padding: 0px;  
+}
+div.bhoechie-tab-menu .list-group-item h4:active {
+    color: #fff;
+}
+div.bhoechie-tab-menu div.list-group>a{
+  margin-bottom: 0;
+}
+div.bhoechie-tab-menu div.list-group>a .glyphicon,
+div.bhoechie-tab-menu div.list-group>a .fa {
+  color: #16a085;
+}
+div.bhoechie-tab-menu div.list-group>a:first-child{
+  border-top-right-radius: 0;
+  -moz-border-top-right-radius: 0;
+}
+div.bhoechie-tab-menu div.list-group>a:last-child{
+  border-bottom-right-radius: 0;
+  -moz-border-bottom-right-radius: 0;
+}
+div.bhoechie-tab-menu div.list-group>a.active,
+div.bhoechie-tab-menu div.list-group>a.active .glyphicon,
+div.bhoechie-tab-menu div.list-group>a.active .fa{
+  background: #607D8B;
+  color: #ffffff;
+font-size: 15px;
+}
+div.bhoechie-tab-menu div.list-group>a.active:before{
+  content: '';
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  margin-top: -13px;
+  border-left: 0;
+  border-bottom: 13px solid transparent;
+  border-top: 13px solid transparent;
+  border-right: 10px solid #16a085;
+}
+
+div.bhoechie-tab-content{
+  background-color: #ffffff;
+  /* border: 1px solid #eeeeee; */
+}
+
+div.bhoechie-tab div.bhoechie-tab-content:not(.active){
+  display: none;
+}
+
+.bhoechie-tab-content img{
+    width: 493px;
+    height: 336px;
+    float: left;
 }
