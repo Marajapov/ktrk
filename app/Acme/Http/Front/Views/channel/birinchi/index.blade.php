@@ -2,6 +2,10 @@
 @section('title', "Биринчи Радио")
 @stop
 
+@section('styles')
+<link rel="stylesheet" href="{{ asset('css/radios.css')}}">
+@endsection
+
 
 @section('content')
 <div class="container birinchiradio">

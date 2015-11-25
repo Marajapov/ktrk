@@ -147,6 +147,8 @@ return [
 
         Collective\Html\HtmlServiceProvider::class, /* Form and Html */
 
+//        Spatie\MediaLibrary\MediaLibraryServiceProvider::class,
+
     ],
 
     /*
