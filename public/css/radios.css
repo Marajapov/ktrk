@@ -7,6 +7,16 @@
    
 }
 
+.topheader .top-nav {
+  position: relative;
+  top: 0;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #E6E4E4;
+}
+
+.topheader .top-nav li a{
+  color: #333;
+}
 .birinchiradio time {
     color: #673AB7;
     font-weight: bold;
@@ -15,7 +25,9 @@
 
 .birinchiradio .navbar {
     margin:5px 12px 10px 12px; 
-    background: #673AB7;
+    background: #AC13FF;
+    min-height: 42px !important;
+    height: 42px !important;
 }
 .birinchiradio .navbar .dropdown-menu, .birinchiradio .navbar .dropdown-menu li>a {
     background: #eee;
@@ -24,6 +36,7 @@
 .birinchiradio .navbar-brand, .birinchiradio .navbar li>a{
     color: #fff;
     font-size: 18px;
+    padding: 10px;
 }
 
 .birinchiradio .navbar li>a:hover{
@@ -43,7 +56,7 @@
    color: inherit;
 }
 .birinchiradio .sitemenu a h4{
-    color: #9C27B0;
+    color: #AC13FF;
     font-size: 36px;
     float: left;
     margin-top: 4px
@@ -135,40 +148,54 @@
     color: #fff;
 }
 .onelist   {
-    background: #D8D2D2;
+    background: #eee;
     margin-right: 10px !important;
 
 }
 
 .onelist .panel-heading {
     padding: 10px;
-    background: #AC13FF;
+    background: #D9534F;
 }
-.onelist .panel-heading h3{
+.onenews .panel-heading{
+    padding:10px;
+    background: #AC13FF; 
+}
+
+.onenews .panel-body {
+  padding:10px 0px; 
+}
+
+.onelist .panel-heading h3, .onenews .panel-heading h3{
     padding:0px;
     margin-top: 0px;
     color: #fff; 
     font-weight: bold;
     border:none !important; 
 }
+.onelist .panel-body{
+  padding: 0px;
+}
 
 
 .onelist nav>ul>li {
     padding-left: 5px;
-    padding-bottom: 4px;
+    padding-bottom: 3px;
+    padding-top: 3px;
     border-bottom: 1px solid #BFBABA;
 }
-}
+
 .onelist nav>ul>li:hover {
     background: #ccc;
 }
 
 .onelist nav>ul>li>a{
     font-size: 16px;
-    color: #192429;
+    color: #323A3E;
+    padding: 6px;
 }
 .onelist nav>ul>li:hover{
-    background: #9E9E9E;
+    background: #BDBDBD;
 }
 .onelist nav>ul>li:last-child{
     border:none; 
@@ -177,15 +204,33 @@
 .oneserep {
     padding-top:10px; 
     padding-bottom:10px;
-    margin-top: 10px;
+    margin-top: 5px;
 }
-.oneserep nav>ul>li>a{
-    font-size: 16px;
+.oneserep nav>ul>li{
+    padding: 9px;
+    background: #2196F3;
+    margin-top: 10px;
+    color: #fff; 
+    font-weight: bold;
+    border:none !important;
+    margin-right: 10px; 
+}
+.oneserep nav>ul>li a{
+  color: #fff;
 }
 .oneserep nav>ul>li:first-child{
-    padding-bottom: 10px;
+    padding: 9px;
+    background: #2196F3;
+    margin-top: 0px;
+    color: #fff; 
+    font-weight: bold;
+    border:none !important;
+    margin-right: 10px; 
 }
 
+.onenews {
+  margin-top: 15px;
+}
 .onenews article>img{
     height: auto;
     width: 150px;  
@@ -194,7 +239,7 @@
     text-align: justify; 
 }
 
-.panel-articles .media-left a {
+.onenews .panel-articles .media-left a {
     position: relative;
     display: block;
     width: 128px;
@@ -202,7 +247,7 @@
     overflow: hidden;
 }
 
-.panel-articles .media .thumb {
+.onenews .panel-articles .media .thumb {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -219,7 +264,7 @@
     transform: translateY(-50%) translateX(-50%);
 }
 
-.panel-articles .media-desc{
+.onenews .panel-articles .media-desc{
     text-align: justify;
 }
 
@@ -251,8 +296,13 @@ div.bhoechie-tab-menu .list-group-item{
     padding:10px 10px;
     text-align: justify;
     font-size: 15px;
-    height: 112px;
+    height: 108px;
     line-height: normal;
+    background: #EEEEEE;
+    border-bottom: 3px solid #fff;
+}
+div.bhoechie-tab-menu .list-group-item:last-child{
+  border:none; 
 }
 
 div.bhoechie-tab-menu .list-group-item p {
@@ -281,9 +331,10 @@ div.bhoechie-tab-menu div.list-group>a:last-child{
 div.bhoechie-tab-menu div.list-group>a.active,
 div.bhoechie-tab-menu div.list-group>a.active .glyphicon,
 div.bhoechie-tab-menu div.list-group>a.active .fa{
-  background: #607D8B;
+  background: #D9534F;
   color: #ffffff;
-font-size: 15px;
+  font-size: 15px;
+  border: none;
 }
 div.bhoechie-tab-menu div.list-group>a.active:before{
   content: '';
@@ -294,7 +345,7 @@ div.bhoechie-tab-menu div.list-group>a.active:before{
   border-left: 0;
   border-bottom: 13px solid transparent;
   border-top: 13px solid transparent;
-  border-right: 10px solid #16a085;
+  border-right: 10px solid #D9534F;
 }
 
 div.bhoechie-tab-content{
@@ -308,7 +359,7 @@ div.bhoechie-tab div.bhoechie-tab-content:not(.active){
 
 .bhoechie-tab-content img{
     width: 493px;
-    height: 336px;
+    height: 324px;
     float: left;
 }
 
