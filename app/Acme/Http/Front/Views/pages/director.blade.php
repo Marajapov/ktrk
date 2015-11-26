@@ -13,7 +13,7 @@
     <div class="row">
       <section class="content clearfix">
 
-        <div class="top-left-block col-md-8">
+        <div id="main-content" class="top-left-block col-md-8">
 
           <div class="panel panel-default panel-page-withsidebar panel-articles">
             <div class="panel-heading">
@@ -32,8 +32,8 @@
                       <tr>
                         <th scope="row">Аты жөнү:</th>
                         <td>Карыпбеков Илим Майрамбекович</td>
-                      </tr>                   
-                   
+                      </tr>
+
                       <tr>
                         <th scope="row">Facebook баракчасы:</th>
                         <td class="textunder"><i class="fa fa-facebook-official"></i><a href="https://www.facebook.com/ilim.karypbekov">facebook.com/ilim.karypbekov</a></td>
@@ -151,7 +151,7 @@
           </div>
         </div>
 
-        <div class="top-right-block col-md-4 ">
+        <div id="right-sidebar" class="top-right-block col-md-4">
 
           <div class="panel panel-default panel-page-sidebar">
 
@@ -181,7 +181,6 @@
               <div class="fb-post" data-href="https://www.facebook.com/ilim.karypbekov/posts/10153204500493016?pnref=story" data-width="300">
 
               </div>
-
             </div>
 
           </div>
@@ -194,14 +193,26 @@
 
 @section('footerScript')
 
-    <div id="fb-root"></div>
-    <script>(function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.5&appId=977320525631518";
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));</script>
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.5&appId=977320525631518";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+  <script>
+
+    var finished_rendering = function() {
+      var height = $('#right-sidebar').height()+37;
+      $('#main-content .panel-articles').css('min-height',height);
+    }
+
+    $(window).load(function() {
+      FB.Event.subscribe('xfbml.render', finished_rendering);
+    });
+  </script>
 
 @endsection
 
