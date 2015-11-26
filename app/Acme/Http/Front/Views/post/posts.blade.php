@@ -28,8 +28,7 @@
                                 <div class="date-filter clearfix">
                                     <div class="row">
 
-                                    <form action="{{ route('front.filter') }}" method="get">
-                                        
+                                    <form action="{{ route('front.filterResult') }}" method="get">
                                         <div class="form-group col-md-2">
                                             <div class="input-group date" id="datetimepicker1">
                                                 <input type="text" class="form-control" name="dateFrom" />
@@ -57,15 +56,14 @@
                                                 фильтр
                                             </button>
                                         </div>
-                                        </form>
-
+                                    </form>
                                     </div><!-- end row -->
                                 </div>
 
                                 <div class="">
 
                                     @foreach($postAll as $post)
-
+                                    
                                         <div class="media">
 
                                             <div class="media-left">

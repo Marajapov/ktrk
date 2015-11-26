@@ -40,6 +40,29 @@ trait ModelScopes {
         return $query->where('general', '=', true)->orWhere('channel_id', '=', $channel->id());
     }
 
-    
+
+    // Filter posts functions
+    public function scopeDatefromkg($query,$df) // for filter in /posts/general
+    {
+        $dateFrom = date('Y-m-d',strtotime($df));
+        //dd($query->toSql());
+        $return = $query->where('titleRu','<>',''); //->where('created_at', '>',$dateFrom);
+        //dd($return->toSql());
+    }
+
+    public function scopeDateto($query,$dateTo)
+    {
+        return $query->where('created_at', '<=',$dateTo);
+    }   
+
+    public function scopeFilterlanguagekg($query)
+    {
+        return $query->where('title', '<>', '');
+    } 
+
+    public function scopeFilterlanguageru($query)
+    {
+        return $query->where('title', '<>', '');
+    } 
 
 }

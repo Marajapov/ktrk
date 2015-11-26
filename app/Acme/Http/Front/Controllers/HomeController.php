@@ -256,7 +256,37 @@ class HomeController extends Controller
 
     public function filterResult(Request $request)
     {
-        return view('Front::media.index',[
+        $lc = app()->getlocale();
+        $df = $request->dateFrom;
+        $dt = $request->dateTo;
+
+        $dateFrom = date('Y-m-d',strtotime($df));
+        $dateTo = date('Y-m-d',strtotime($dt));
+
+        $perPage = 10;
+        $channel = \Model\Channel\ModelName::general();
+        
+        $categories = \Model\Category\ModelName::all();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        
+        if($lc == 'kg' AND $df != '' AND $dt != ''){
+            dd('1');
+            $postAllFromTo = \Model\Post\ModelName::general($channel)->published()->datefrom($dateFrom)->filterlanguagekg()->dateto($dateTo)->orderBy('id', 'desc')->paginate($perPage);
+        }elseif($lc == 'kg' AND $df != ''){
+            $postAllFromTo = \Model\Post\ModelName::general($channel)->published()->datefromkg($df)->orderBy('id', 'desc')->paginate($perPage);
+            
+        }elseif(($dateFrom != '') && ($dateTo != '') && ($lc == 'ru')){
+            dd('3');
+            $postAllFromTo = \Model\Post\ModelName::general($channel)->published()->datefrom($dateFrom)->filterlanguageru()->dateto($dateTo)->orderBy('id', 'desc')->paginate($perPage);
+          
+        }
+        
+        return view('Front::post.posts',[
+            'perPage'=> $perPage,
+            'channel' => $channel,
+            'postAll' => $postAllFromTo,
+            'categories'=>$categories,
+            'backgroundMain' => $backgroundMain,
             ]);
     }
 

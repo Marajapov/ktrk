@@ -54,6 +54,7 @@ Route::group(['domain' => '1000.ktrk.kg', 'prefix' => '/', 'namespace' => 'Front
 
     Route::get('/', ['as' => 'front.home',   'uses' => 'HomeController@Home']);
     Route::get('/posts/general', ['as' => 'front.general',   'uses' => 'HomeController@Posts']);
+    Route::get('posts/general/filterResult', ['as' => 'front.filterResult', 'uses' => 'HomeController@filterResult']);
 
 });
 
@@ -101,7 +102,6 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
     Route::post('logout', ['as' => 'front.logout',   'uses' => 'AuthController@postLogout']);
     Route::get('media', ['as' => 'front.media',     'uses' => 'HomeController@getMedia']);
     Route::get('search', ['as' => 'front.search', 'uses' => 'HomeController@searchResult']);
-    Route::get('filter', ['as' => 'front.filter', 'uses' => 'HomeController@filterResult']);
     Route::get('category/{category}', ['as' => 'front.category', 'uses' => 'HomeController@categoryPage']);
     
     Route::get('media', ['as' => 'front.media.index', 'uses' => 'MediaController@mediaIndex']); // List of videos
