@@ -21,6 +21,7 @@ class HomeController extends Controller
      */
     public function Home()
     {
+
         $lc = app()->getlocale();
         $channel = \Model\Channel\ModelName::general();
        
@@ -32,7 +33,7 @@ class HomeController extends Controller
             $projects = \Model\Project\ModelName::where('nameRu','<>','')->get();
 
         }
-        
+
         $mediaLast = \Model\Media\ModelName::take(9)->get();
         
         $rDayVideo = \Model\Media\ModelName::having('dayVideo','=','1')->take(1)->skip(0)->orderBy('created_at','desc')->first();
