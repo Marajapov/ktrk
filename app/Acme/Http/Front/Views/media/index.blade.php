@@ -79,7 +79,7 @@
               <div class="panel-body">
 
                 <ul id="myTabs" class="nav nav-tabs">
-                  @foreach($MediaCategories as $key=>$MediaCategory)
+                  @foreach($mediaCategories as $key=>$MediaCategory)
                     <li class="@if($MediaCategory->getVideoType() == 'all') active @endif">
                       <a href="#{{ $MediaCategory->getVideoType() }}" data-toggle="tab">{{ $MediaCategory->getName() }}</a>
                     </li>
@@ -88,7 +88,7 @@
 
                 <!-- Tab panes -->
                 <div class="tab-content">
-                  @foreach($MediaCategories as $key=>$MediaCategory)
+                  @foreach($mediaCategories as $key=>$MediaCategory)
                     <div role="tabpanel" class="tab-pane @if($MediaCategory->getVideoType() == 'all') active @endif clearfix" id="{{ $MediaCategory->getVideoType() }}">
                       <div class="row">
                         {{-- @foreach($mediaAll as $media) --}}
@@ -97,99 +97,29 @@
                           </div>
                         <div class="col-md-9 panel panel-default media-videos">
                           <div class="row">
+
                             <div class="panel-heading">
                               <h3>Акыркы видеолор</h3>
                             </div>
+
                             <div class="panel-body">
-                              <article class="col-md-4" data-cat="all-videos">
-                                <a href="#" class="img">
-                                  <img src="http://img.youtube.com/vi/cwLRQn61oUY/mqdefault.jpg" alt=""/>
-                                  <h4><i class="fa fa-play-circle-o"></i>Замана</h4>
-                                </a>
-                                <a href="#" class="title">
-                                  <h4>{{-- $media->videoType()->getName() --}} {{ $MediaCategory->getName() }}</h4>
-                                </a>
-                              </article>
-                              <article class="col-md-4" data-cat="all-videos">
-                                <a href="#" class="img">
-                                  <img src="http://img.youtube.com/vi/cwLRQn61oUY/mqdefault.jpg" alt=""/>
-                                  <h4><i class="fa fa-play-circle-o"></i>Замана</h4>
-                                </a>
-                                <a href="#" class="title">
-                                  <h4>{{-- $media->videoType()->getName() --}} {{ $MediaCategory->getName() }}</h4>
-                                </a>
-                              </article>
-                              <article class="col-md-4" data-cat="all-videos">
-                                <a href="#" class="img">
-                                  <img src="http://img.youtube.com/vi/cwLRQn61oUY/mqdefault.jpg" alt=""/>
-                                  <h4><i class="fa fa-play-circle-o"></i>Замана</h4>
-                                </a>
-                                <a href="#" class="title">
-                                  <h4>{{-- $media->videoType()->getName() --}} {{ $MediaCategory->getName() }} {{ $MediaCategory->getName() }} {{ $MediaCategory->getName() }} {{ $MediaCategory->getName() }} {{ $MediaCategory->getName() }} {{ $MediaCategory->getName() }}</h4>
-                                </a>
-                              </article>
-                              <article class="col-md-4" data-cat="all-videos">
-                                <a href="#" class="img">
-                                  <img src="http://img.youtube.com/vi/cwLRQn61oUY/mqdefault.jpg" alt=""/>
-                                  <h4><i class="fa fa-play-circle-o"></i>Замана</h4>
-                                </a>
-                                <a href="#" class="title">
-                                  <h4>{{-- $media->videoType()->getName() --}} {{ $MediaCategory->getName() }}</h4>
-                                </a>
-                              </article>
-                              <article class="col-md-4" data-cat="all-videos">
-                                <a href="#" class="img">
-                                  <img src="http://img.youtube.com/vi/cwLRQn61oUY/mqdefault.jpg" alt=""/>
-                                  <h4><i class="fa fa-play-circle-o"></i>Замана</h4>
-                                </a>
-                                <a href="#" class="title">
-                                  <h4>{{-- $media->videoType()->getName() --}} {{ $MediaCategory->getName() }}</h4>
-                                </a>
-                              </article>
-                              <article class="col-md-4" data-cat="all-videos">
-                                <a href="#" class="img">
-                                  <img src="http://img.youtube.com/vi/cwLRQn61oUY/mqdefault.jpg" alt=""/>
-                                  <h4><i class="fa fa-play-circle-o"></i>Замана</h4>
-                                </a>
-                                <a href="#" class="title">
-                                  <h4>{{-- $media->videoType()->getName() --}} {{ $MediaCategory->getName() }} {{ $MediaCategory->getName() }} {{ $MediaCategory->getName() }} {{ $MediaCategory->getName() }} {{ $MediaCategory->getName() }} {{ $MediaCategory->getName() }}</h4>
-                                </a>
-                              </article>
-                              <article class="col-md-4" data-cat="all-videos">
-                                <a href="#" class="img">
-                                  <img src="http://img.youtube.com/vi/cwLRQn61oUY/mqdefault.jpg" alt=""/>
-                                  <h4><i class="fa fa-play-circle-o"></i>Замана</h4>
-                                </a>
-                                <a href="#" class="title">
-                                  <h4>{{-- $media->videoType()->getName() --}} {{ $MediaCategory->getName() }}</h4>
-                                </a>
-                              </article>
-                              <article class="col-md-4" data-cat="all-videos">
-                                <a href="#" class="img">
-                                  <img src="http://img.youtube.com/vi/cwLRQn61oUY/mqdefault.jpg" alt=""/>
-                                  <h4><i class="fa fa-play-circle-o"></i>Замана</h4>
-                                </a>
-                                <a href="#" class="title">
-                                  <h4>{{-- $media->videoType()->getName() --}} {{ $MediaCategory->getName() }}</h4>
-                                </a>
-                              </article>
-                              <article class="col-md-4" data-cat="all-videos">
-                                <a href="#" class="img">
-                                  <img src="http://img.youtube.com/vi/cwLRQn61oUY/mqdefault.jpg" alt=""/>
-                                  <h4><i class="fa fa-play-circle-o"></i>Замана</h4>
-                                </a>
-                                <a href="#" class="title">
-                                  <h4>{{-- $media->videoType()->getName() --}} {{ $MediaCategory->getName() }} {{ $MediaCategory->getName() }} {{ $MediaCategory->getName() }} {{ $MediaCategory->getName() }} {{ $MediaCategory->getName() }} {{ $MediaCategory->getName() }}</h4>
-                                </a>
-                              </article>
+                              @foreach($mediaAll as $key=>$media)
+                                <article class="col-md-4" data-cat="all-videos">
+                                  <a href="#" class="img">
+                                    <img src="http://img.youtube.com/vi/cwLRQn61oUY/mqdefault.jpg" alt=""/>
+                                    <h4><i class="fa fa-play-circle-o"></i>Замана</h4>
+                                  </a>
+                                  <a href="#" class="title">
+                                    <h4>{{-- $media->videoType()->getName() --}} {{ $MediaCategory->getName() }}</h4>
+                                  </a>
+                                </article>
+                              @endforeach
                             </div>
-                          </div>
-                        </div>
-                        <div class="col-md-9 panel panel-default media-videos">
-                          <div class="row">
+
                             <div class="panel-heading">
                               <h3>Топ видеолор</h3>
                             </div>
+
                             <div class="panel-body">
                               <article class="col-md-4" data-cat="all-videos">
                                 <a href="#" class="img">
@@ -203,6 +133,7 @@
                               
                               
                             </div>
+
                           </div>
                         </div>
 

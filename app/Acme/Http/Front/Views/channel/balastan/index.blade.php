@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="css/style.css"/>
 
     </head>
+    
     <body class="balastan">
         <div class="switch">
             <nav class="navbar">
@@ -42,7 +43,6 @@
         </div>
 
 
-
         <div class="container">
             <div class="row">      
                 <div class="col-md-12 logo-block logocenter">
@@ -50,14 +50,14 @@
 
                         <div class="col-xs-5">
                             <div id="axis" class="one firstcloud">
-                               
+
                                 <img class="object van move-right " src="{{ asset('images/channels/balastan/cloud.png')}}" alt="" />
-                                 <a class="menuaanim move-right menuposition" href="#">О канале</a>                               
+                                <a class="menuaanim move-right menuposition" href="#">О канале</a>                               
                             </div>
                             <div id="axis" class="one cloudstanleft">
-                               
+
                                 <img class="object van move-right " src="{{ asset('images/channels/balastan/cloudleft.png')}}" alt="" />
-                                 <a class="menuaanim move-right menuposition" href="#">Видео</a>                               
+                                <a class="menuaanim move-right menuposition" href="#">Видео</a>                               
                             </div>
                         </div>
                         <div class="col-xs-2">
@@ -67,14 +67,14 @@
                         </div>
                         <div class="col-xs-5">
                             <div id="axis" class="one pull-left">
-                               
+
                                 <img class="object van move-right" src="{{ asset('images/channels/balastan/cloudleft.png')}}" alt="" />
-                                 <a class="menuaanim move-right menuposition" href="#">Передачи</a>                               
+                                <a class="menuaanim move-right menuposition" href="#">Передачи</a>                               
                             </div>
                             <div id="axis" class="one pull-left cloudstanright">
-                               
+
                                 <img class="object van move-right" src="{{ asset('images/channels/balastan/cloud.png')}}" alt="" />
-                                 <a class="menuaanim2 move-right menuposition2" href="#">Программы</a>                               
+                                <a class="menuaanim2 move-right menuposition2" href="#">Программы</a>                               
                             </div>
                         </div>      
                     </div>
@@ -92,15 +92,15 @@
                         <div class="col-md-8" style="text-align:center;">
                             <img class="tvthree" src="{{ asset('images/channels/balastan/tv3.png')}}" alt="">
                             <div class="iconcenter">                            
-                            <iframe width="495" height="360" src="https://www.youtube.com/embed/2tV6RFYqCZg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>
+                                <iframe width="495" height="360" src="https://www.youtube.com/embed/2tV6RFYqCZg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>
                             </div>
                             <img class="tvtop" src="{{ asset('images/channels/balastan/tvtop.png')}}" alt="">
                             <img class="tvbottom" src="{{ asset('images/channels/balastan/tvbottom.png')}}" alt="">
                             <img class="tvleft" src="{{ asset('images/channels/balastan/tvleft.png')}}" alt="">
                             <img class="tvright" src="{{ asset('images/channels/balastan/tvright.png')}}" alt="">
-                            
 
-                       </div>
+
+                        </div>
                         <div class="col-md-2">
                             <img class="iconright" src="{{ asset('images/channels/balastan/aktan.png')}}" alt="">
                         </div>
@@ -108,7 +108,6 @@
                 </div>
             </div>
         </div>
-
 
         <footer class="footer">
             <div class="panel panel-default">
@@ -134,14 +133,13 @@
                 </div>
             </div>
         </footer>
-         <div class="container-fluid footerimg">
+
+        <div class="container-fluid footerimg">
             <img src="{{ asset('images/channels/balastan/footer.png')}}" alt="">
         </div>
 
         <script src="js/jquery-1.11.2.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
-
-
 
     </body>
 </html>

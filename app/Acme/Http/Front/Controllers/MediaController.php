@@ -29,7 +29,7 @@ class MediaController extends Controller
             'MediaCategories' => $MediaCategories,
             'mainBanner'   => $mainBanner,
             'projectList' => $projectList,
-            'categories'=>$categories,
+            'mediaCategories'=>$MediaCategories,
             'backgroundMain' => $backgroundMain,
             ]);
     }
@@ -37,13 +37,21 @@ class MediaController extends Controller
     public function video($media)
     {
         $lc = app()->getlocale();
+<<<<<<< HEAD
         $video = \Model\Media\ModelName::where('id','=',$media)->first(); // full video array
+=======
+        $video = \Model\Media\ModelName::where('id','=',$media)->first();
+        $videoId = $video->id;
+
+        $MediaCategories = \Model\MediaCategory\ModelName::get();
+>>>>>>> 766fed06bb595d38486465b49fab94f878a059dd
         
         $projectId = $video->program; // 0
 
         $videoType = $video->videoType; // serials
 
         if($lc == 'kg'){
+<<<<<<< HEAD
             if($projectId != 0)
             {
                 $result = \Model\Project\ModelName::where('id','=',$projectId)->first();
@@ -79,6 +87,23 @@ class MediaController extends Controller
                 $getVideoTypeName = $result->getName();
             }
             
+=======
+            $videoName = $video->getName();
+            $result = \Model\Project\ModelName::where('id','=',$projectId)->first();
+            $videoProject = $result->getName();
+            $result = \Model\MediaCategory\ModelName::where('videoType','=',$videoType)->first();    
+            $getVideoTypeName = $result->getName();
+
+            $relatedVideos = \Model\Media\ModelName::where('name','<>','')->where('program','=',$projectId)->get();
+
+        }else{
+            $videoName = $video->getNameRu();
+            $result = \Model\Project\ModelName::where('id','=',$projectId)->first();
+            $videoProject = $result->getNameRu();
+
+            $result = \Model\MediaCategory\ModelName::where('videoType','=',$videoType)->first();
+            $getVideoTypeName = $result->getNameRu();
+>>>>>>> 766fed06bb595d38486465b49fab94f878a059dd
 
             $relatedVideos = \Model\Media\ModelName::where('nameRu','<>','')->where('program','=',$projectId)->get();
 
@@ -98,6 +123,7 @@ class MediaController extends Controller
 
         return view('Front::media.video',[
             'video' => $video,
+            'videoName' => $videoName,
             'videoProject' => $videoProject,
             'getVideoTypeName'=> $getVideoTypeName,
             'relatedVideos' => $relatedVideos,

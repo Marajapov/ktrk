@@ -2647,7 +2647,7 @@
     $.fn.fileinputLocales.en = {
         fileSingle: 'файл',
         filePlural: 'файл',
-        browseLabel: 'Файлды жүктөө (Сүрөттөр & Видео)&hellip;',
+        browseLabel: 'Файлды жүктөө/Завгрузить файл',
         removeLabel: 'Өчүрүү',
         removeTitle: 'Тандалган файлдарды өчүрүү',
         cancelLabel: 'Айнуу',

@@ -1,12 +1,11 @@
 <?php
 namespace Front\Controllers;
 //use Illuminate\Http\Request;
-class MadaniyatController extends Controller
+class BirinchiController extends Controller
 {
     public function __construct()
     {
     }
-
 
     public function Home()
     {

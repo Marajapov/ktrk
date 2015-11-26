@@ -1,69 +1,88 @@
 @extends('Front::layouts.default')
-@section('title', 'Жетекчилер')
+@section('title', trans('site.Managers')." | КТРК")
 @section('styles')
-	<link rel="stylesheet" type="text/css" href="{{ asset('static/css/styles.css') }}">
-@stop
+  <link rel="stylesheet" href="{{ asset('css/pages.css') }}"/>
+  <link rel="stylesheet" href="{{ asset('css/custombox.css') }}"/>
+@endsection
+
 @section('content')
-	 <div class="container main-wrapper">
-            <div class="row">
-                <section class="content clearfix">
-	                <div class="clearfix">
-                        <div class="top-left-block col-md-9">
-                            <div class="panel panel-default panel-related">
-                                <div class="panel-body">                         
-		                            <div class="row">
-		                                <div class="top-left-block col-xs-12 col-sm-6 col-md-6 directors">
-		                                    <div class="dir-box">
-		                                        <img src="{{ asset('static/images/persons/ilim.jpg') }}" >
-		                                        <div class="dir-button"><a class="btn btn-primary" href="#" role="button">Толук маалымат</a></div>
+  <div class="container main-wrapper">
+    <div class="row">
+      <section class="content clearfix">
+        <div class="clearfix">
+          <div class="top-left-block col-md-12">
+            <div class="panel panel-default panel-managers">
+              <div class="panel-heading">
+                <h3 class="panel-title">{{ trans('site.Managers') }}</h3>
+              </div>
+              <div class="panel-body">
 
-		                                        <div class="caption">
-		                                            <h4>Карыпбеков Илим Майрамбекович</h4>
-		                                            <p>КТРК башкы директору</p>
-		                                        </div>
-		                                    </div>
-		                                </div>
-		                                <div class="top-left-block col-xs-12 col-sm-6 col-md-6 directors">
-		                                    <div class="dir-box">
-		                                        <img src="{{ asset('static/images/persons/img_2.jpg') }}">   
-		                                        <div class="dir-button"><a class="btn btn-primary" href="#" role="button">Толук маалымат</a></div>
-		                                        <div class="caption">
-		                                            <h4>Асылбашев Калыйбек Шаршеналиевич</h4>
-		                                            <p>КТРК башкы директорунун телеберүүлөр боюнча орун басары</p>
-		                                        </div>
-		                                    </div>
-		                                </div>
-		                            </div>
-		                            <div class="row">
-		                                <div class="top-left-block col-xs-12 col-sm-6 col-md-6 directors">
-		                                    <div class="dir-box">
-		                                        <img src="{{ asset('static/images/persons/img3.jpg') }}">
-		                                        <div class="dir-button"><a class="btn btn-primary" href="#" role="button">Толук маалымат</a></div>
+                <div class="col-md-12 directors">
+                  <div class="col-md-6">
+                    <div class="row">
+                      <img src="{{ asset('images/managers/1.png') }}" >
+                    </div>
+                  </div>
+                  <div class="col-md-6 director-info">
+                    <div class="row">
+                      <h4>Карыпбеков Илим Майрамбекович</h4>
+                      <h5>КТРКнын башкы директору</h5>
+                      <a href="#" class="btn btn-default">Толук маалымат</a>
+                    </div>
+                  </div>
+                </div>
 
-		                                        <div class="caption">
-		                                            <h4>Иманалиев Кайрат Олжобаевич</h4>
-		                                            <p>КТРК башкы директорунун радио уктуруулар боюнча орун басары</p>
-		                                        </div>
-		                                    </div>
-		                                </div>
-		                                <div class="top-left-block col-xs-12 col-sm-6 col-md-6 directors">
-		                                    <div class="dir-box">
-		                                        <img src="{{ asset('static/images/persons/img4.jpg') }}" > 
-		                                        <div class="dir-button"><a class="btn btn-primary" href="#" role="button">Толук маалымат</a></div>
-		                                        <div class="caption">
-		                                            <h4>Алиев Бактияр Жеңишбекович</h4>
-		                                            <p>КТРКнын Республикалык радио телеборборунун директору</p>
-		                                        </div>
-		                                    </div>
-		                                </div>
-		                            </div>
-		                        </div><!-- end panel body-->
-                            </div>
+                <div class="col-md-6 directors directors-small">
+                  <div class="col-md-6">
+                    <div class="row">
+                      <img src="{{ asset('images/managers/2.jpg') }}">
+                    </div>
+                  </div>
+                  <div class="col-md-6 director-info">
+                    <div class="row">
+                      <h4>Асылбашев Калыйбек Шаршеналиевич</h4>
+                      <h5>КТРКнын башкы директорунун телеберүүлөр боюнча орун басары</h5>
+                      <a href="#" class="btn btn-default">Толук маалымат</a>
+                    </div>
+                  </div>
+                </div>
 
-                        </div>
-	                @include('Front::partials.leftCategories')
-	                </div>
-                </section>
+                <div class="col-md-6 directors directors-small">
+                  <div class="col-md-6">
+                    <div class="row">
+                      <img src="{{ asset('images/managers/3.jpg') }}">
+                    </div>
+                  </div>
+                  <div class="col-md-6 director-info">
+                    <div class="row">
+                      <h4>Иманалиев Кайрат Олжобаевич</h4>
+                      <h5>КТРКнын башкы директорунун радио уктуруулар боюнча орун басары</h5>
+                      <a href="#" class="btn btn-default">Толук маалымат</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 col-md-offset-3 directors directors-small">
+                  <div class="col-md-6">
+                    <div class="row">
+                      <img src="{{ asset('images/managers/4.jpg') }}">
+                    </div>
+                  </div>
+                  <div class="col-md-6 director-info">
+                    <div class="row">
+                      <h4>Алиев Бактияр Жеңишбекович</h4>
+                      <h5>КТРКнын Республикалык радио телеборборунун директору</h5>
+                      <a href="#" class="btn btn-default">Толук маалымат</a>
+                    </div>
+                  </div>
+                </div>
+
+              </div><!-- end panel body-->
             </div>
+
+          </div>
         </div>
+      </section>
+    </div>
+  </div>
 @stop

@@ -49,3 +49,122 @@
 .rsarticles a {
     cursor: pointer;
 }
+
+/*History*/
+.historypage .panel-body{
+    padding: 15px;
+}
+.historypage .media{
+    border-bottom: 1px solid #F1F4F9;
+    padding: 15px 0;
+    margin: 0;
+}
+.historypage .media:last-child{
+    border: none;
+}
+.historypage .media-left,.historypage .media-right{
+    position: relative;
+}
+.historypage .media-left{
+    padding-right: 30px;
+}
+.historypage .media-right{
+    padding-left: 30px;
+}
+.historypage .hist-year{
+    position: absolute;
+    top: 0;
+
+    padding: 0 10px;
+
+    background: rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+
+    font-size: 48px;
+}
+.historypage .media-left .hist-year{
+    left: 0;
+}
+.historypage .media-right .hist-year{
+    right: 0;
+}
+.historypage p{
+    margin-top: 0;
+
+    line-height: 1.5;
+}
+.historypage .media img{
+    height: 200px;
+    width: auto;
+}
+
+.modal-demo.history-modal{
+    border: none;
+    display: none;
+    padding: 15px 20px;
+    width: 600px;
+
+    background-color: #FFF;
+    color: #333;
+
+
+    box-shadow: 0 8px 6px -6px #000;
+
+    font-size: 12px;
+    text-align: left;
+}
+
+.history-modal button.close{
+    top: 0;
+    right: 0;
+
+    font-size: 20px;
+}
+.modal-demo.history-modal p{
+    line-height: 1.5;
+}
+
+/*MANAGERS*/
+.panel-managers .panel-body{
+    padding: 15px;
+}
+.directors{
+    padding: 0;
+}
+.directors > div{
+    height: 350px;
+    overflow: hidden;
+    width: 50%;
+}
+.directors-small > div{
+    height: 270px;
+}
+.director-info{
+    border: 1px solid #F1F4F9;
+    border-left: none;
+    display: table-cell;
+    float: none;
+    vertical-align: middle;
+
+    text-align: center;
+}
+.directors-small .director-info{
+    border-top: none;
+}
+.director-info h4{
+    margin: 15px 0;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+
+}
+.directors-small .director-info h4{
+    padding: 0 10px;
+    font-size: 16px;
+}
+.director-info h5{
+    margin: 15px 0;
+}
+.directors-small .director-info h5{
+    padding: 0 15px;
+}
