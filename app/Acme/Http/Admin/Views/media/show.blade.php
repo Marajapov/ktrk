@@ -15,9 +15,10 @@
 
             <h3>{{ $media->getName() }}</h3>
             <span class="pull-left"><span class="glyphicon glyphicon-eye-open"></span> &nbsp;&nbsp;{{ $media->getViewed() }}</span>
+            <br /> <hr>
          
             @if($media->isImage())
-            <img src="{{ $media->getUrl() }}" class="img-responsive">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ $media->getUrl() }}?rel=0" frameborder="0" allowfullscreen></iframe>
             @else
             <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ $media->getUrl() }}?rel=0" frameborder="0" allowfullscreen></iframe>
             @endif

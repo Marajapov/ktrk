@@ -34,8 +34,15 @@ class HomeController extends Controller
         }
         
         $mediaLast = \Model\Media\ModelName::take(9)->get();
-        $dayVideos = \Model\Media\ModelName::take(1)->orderBy('viewed','asc')->get();
+        
+        $rDayVideo = \Model\Media\ModelName::having('dayVideo','=','1')->take(1)->skip(0)->orderBy('created_at','desc')->first();
 
+        if($rDayVideo != null){
+            $dayVideo = $rDayVideo;
+        }else{
+            $dayVideo = \Model\Media\ModelName::take(1)->skip(0)->orderBy('id', 'desc')->first();
+        }
+        
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
         $peopleReporters = \Model\PeopleReporter\ModelName::where('published','=',true)->get();
 
@@ -51,7 +58,7 @@ class HomeController extends Controller
         
         return view('Front::home', [
             'generalPosts'   => $generalPosts,
-            'dayVideos'      => $dayVideos,
+            'dayVideo'      => $dayVideo,
             
             'positionTop'    => $this->positionTop,
             'positionRight'  => $this->positionRight,

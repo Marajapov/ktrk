@@ -19,7 +19,7 @@
                 <h3 class="panel-title">
                   <a href="#">Видеопортал</a>
                   <span class="divider"><i class="fa fa-circle"></i></span>
-                  <a href="#"><span class="ctg">{{ $getVideoTypeName}}</span></a>
+                  <a href="#"><span class="ctg">@if(!empty($getVideoTypeName)) {{ $getVideoTypeName }}@endif</span></a>
                 </h3>
               </div>
               <div class="panel-body">
