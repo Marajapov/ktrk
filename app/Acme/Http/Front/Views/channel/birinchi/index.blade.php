@@ -107,12 +107,12 @@
     <div class="row">
         <div class="col-md-12 ">
             <div class="row">
-                <div class="col-md-9">
-                    <div class="bhoechie-tab-container">
-                        <div class="col-lg-5 col-md-4 col-sm-5 col-xs-5 bhoechie-tab-menu">
+                <div class="col-md-9 onenewsslider">
+                  <div class="bhoechie-tab-container">
+                        <div class="col-xs-5 bhoechie-tab-menu">
                             <div class="list-group">
                                 <a href="#" class="list-group-item active text-center">                              
-                                    <span><p>Lorem ipsum</p></span>
+                                    <span><p>Lorem ipsum </p></span>
                                     <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt praesentium tempora sit quaerat nostrum quod animi atque, officiis reiciendis sunt aperiam alias possimus.</span>
                                 </a>
                                 <a href="#" class="list-group-item text-center">
@@ -123,10 +123,9 @@
                                     <span><p>Lorem ipsum</p></span>
                                     <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam voluptatibus facilis doloremque nisi, inventore nihil quasi. Nisi alias voluptatibus vel maiores.</span>
                                 </a>
-
                             </div>
                         </div>
-                        <div class="bhoechie-tab">
+                        <div class="col-xs-7 bhoechie-tab">
                             <!-- flight section -->
                             <div class="bhoechie-tab-content active">
                                 <center>
@@ -140,15 +139,12 @@
                                     <img src="{{ asset('images/channels/balastan.png')}}" alt="">
                                 </center>
                             </div>
-
                             <!-- hotel search -->
                             <div class="bhoechie-tab-content">
                                 <center>
                                     <img src="{{ asset('images/channels/madaniyat.png')}}" alt="">
                                 </center>
-                            </div>
-
-
+                        </div>
                         </div>
                     </div>  
                 </div>
