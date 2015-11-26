@@ -24,7 +24,7 @@
                       <!--<span class="post-timer pull-right">  <i class="fa fa-eye"></i>&nbsp;{{ $post->getViewed() }}</span> -->
 
                   <a href="{{ route('front.post', $post) }}" class="main-img">
-                    <img src="@if(isEmpty($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif" alt="img26">
+                    <img src="@if(($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif" alt="img26">
                   </a>
                     <!--<div class="news-channel">
 

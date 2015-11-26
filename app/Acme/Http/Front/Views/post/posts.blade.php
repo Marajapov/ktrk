@@ -27,9 +27,12 @@
 
                                 <div class="date-filter clearfix">
                                     <div class="row">
+
+                                    <form action="{{ route('front.filter') }}" method="get">
+                                        
                                         <div class="form-group col-md-2">
                                             <div class="input-group date" id="datetimepicker1">
-                                                <input type="text" class="form-control" />
+                                                <input type="text" class="form-control" name="dateFrom" />
                                                     <span class="input-group-addon">
                                                         <i class="fa fa-calendar"></i>
                                                     </span>
@@ -42,7 +45,7 @@
 
                                         <div class="form-group col-md-2">
                                             <div class="input-group date" id="datetimepicker2">
-                                                <input type="text" class="form-control" />
+                                                <input type="text" class="form-control" name="dateTo" />
                                                     <span class="input-group-addon">
                                                         <i class="fa fa-calendar"></i>
                                                     </span>
@@ -54,7 +57,9 @@
                                                 фильтр
                                             </button>
                                         </div>
-                                    </div>
+                                        </form>
+
+                                    </div><!-- end row -->
                                 </div>
 
                                 <div class="">
@@ -77,9 +82,7 @@
                                                 </div>
 
                                                 <a class="media-heading" href="{{ route('front.post', $post) }}">{{ $post->getTitle() }}</a>
-                                                <h5 class="media-desc">
-                                                    {!! $result = substr($post->getContent(),0,300) !!}
-                                                </h5>
+
                                             </div>
 
                                         </div>

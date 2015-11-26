@@ -138,7 +138,7 @@ class HomeController extends Controller
         }else{
             $related3Post = null;
         }
-        $relatedPosts = \Model\Post\ModelName::lists('title', 'id')->toArray();
+        $relatedPosts = \Model\Post\ModelName::where('category_id','=',$post->category_id)->get();
 
         return view('Front::post.post',[
             'post' => $post,
@@ -252,6 +252,12 @@ class HomeController extends Controller
 
             ]
             );
+    }
+
+    public function filterResult(Request $request)
+    {
+        return view('Front::media.index',[
+            ]);
     }
 
 }
