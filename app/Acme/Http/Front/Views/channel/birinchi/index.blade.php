@@ -10,7 +10,6 @@
 @section('content')
 <div class="container birinchiradio">
 
-
     <div class="row">
         <div class="col-md-12 topheader">
             <div class="row">
@@ -46,14 +45,14 @@
                     </nav>
                 </div>
 
-                <div class="col-md-7">
+                <div class="col-md-7 oneheader">
                     <ul class="nav navbar-nav oneline">
                         <li><a class="time" href="#"><time>11:15</time></a></li>
-                        <li class="onetime"><a href=""><button class="btn btn-danger btn-one"><i class="fa fa-microphone"></i>Прямой эфир</button></a></li>
+                        <li class="onetime"><a href=""><button class="btn btn-danger btn-one"><i class="fa fa-microphone"></i><span>Прямой эфир</span></button></a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right onesoc">                       
-                        <li class="onepost"><a href=""><i class="fa fa-facebook"></i>facebook</a></li>
-                        <li class="onetwit"><a href=""><i class="fa fa-twitter"></i>twitter</a></li>
+                        <li class="onepost"><a href=""><i class="fa fa-facebook"></i><span>facebook</span></a></li>
+                        <li class="onetwit"><a href=""><i class="fa fa-twitter"></i><span>twitter</span></a></li>
                     </ul>
                 </div>
 
@@ -69,34 +68,69 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="#"><i class="fa fa-home"></i></a>
+                            <div class="logo-block search-block">
+                                <a class="search-toggle"><i class="fa fa-search"></i></a>
+
+                                <form class="form-search" action="{{ route('front.search') }}" method="get">
+                                    <div class="form-group pull-right">
+                                        <input type="text" name="search" class="form-control" placeholder="Издөө"/>
+                                    </div> 
+                                    <a class="btn close-search">
+                                        <i class="fa fa-close"></i>
+                                    </a>
+
+                                    <button class="btn submit-search" type="submit">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </form>
+                            </div>
+                            <a class="navbar-brand" href="{{ route('birinchi.home') }}"> <i class="fa fa-home"></i>Башкы</a>
                         </div>
 
                         <!-- Collect the nav links, forms, and other content for toggling -->
-                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">                                           
                             <ul class="nav navbar-nav">
-                                <li class="active"><a href="#"><i class="fa fa-home"></i>О радио <span class="sr-only">(current)</span></a></li>  
                                 <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-home"></i>Передачи <span class="caret"></span></a>
+                                    <a href="{{ route('birinchi.about') }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-info-circle"></i>О радио <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="#">Action</a></li>
-                                        <li><a href="#">Another action</a></li>
-                                        <li><a href="#">Something else here</a></li>
-                                        <li role="separator" class="divider"></li>
-                                        <li><a href="#">Separated link</a></li>
-                                        <li role="separator" class="divider"></li>
-                                        <li><a href="#">One more separated link</a></li>
+                                        <li><a href="#"><i class="fa fa-television"></i>О телеканале</a></li>
+                                        <li><a href="#"><i class="fa fa-envelope-o"></i>Контакты</a></li>                                                
                                     </ul>
                                 </li>
-                                <li><a href="#"><i class="fa fa-home"></i>Программа передач</a></li>
-                                <li><a href="#"><i class="fa fa-home"></i>Фотогалерея</a></li>
+                                <li class="dropdown">
+                                    <a href="{{ route('birinchi.broadcasts') }}" class="dropdown-toggle" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-info-circle"></i>Передачи <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#"><i class="fa fa-television"></i>О телеканале</a></li>
+                                        <li><a href="#"><i class="fa fa-envelope-o"></i>Контакты</a></li>                                                
+                                    </ul>
+                                </li>   
+                                <li>
+                                    <a href="{{ route('birinchi.broadcastsprogramm') }}"><i class="fa fa-microphone"></i>Программа передач <!-- <span class="caret"></span> --></a>
+
+                                </li>
+                                <li><a href="{{ route('birinchi.photos') }}"><i class="fa fa-picture-o"></i>Фотогалерея</a></li>
                             </ul>
-                            <!--              <ul class="nav navbar-nav navbar-right">
-                                             <li><a href="#"><time>11:15</time></a></li>
-                                             <li><a href=""><button>Прямой эфир</button></a></li>
-                                             <li><a href="">Facebook</a></li>
-                                             <li><a href="">Twitter</a></li>
-                                         </ul> -->
+
+                            <ul class="nav navbar-nav navbar-right logo-block onesearch">
+
+                                <a class="search-toggle"><i class="fa fa-search"></i></a>
+
+                                <form class="form-search" action="{{ route('front.search') }}" method="get">
+                                    <div class="form-group pull-right">
+                                        <input type="text" name="search" class="form-control" placeholder="Издөө"/>
+                                    </div>
+
+                                    <a class="btn close-search">
+                                        <i class="fa fa-close"></i>
+                                    </a>
+
+                                    <button class="btn submit-search" type="submit">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </form>
+
+
+                            </ul>
                         </div><!-- /.navbar-collapse -->
                     </div><!-- /.container-fluid -->
                 </nav>
@@ -108,20 +142,20 @@
         <div class="col-md-12 ">
             <div class="row">
                 <div class="col-md-9 onenewsslider">
-                  <div class="bhoechie-tab-container">
+                    <div class="bhoechie-tab-container">
                         <div class="col-xs-5 bhoechie-tab-menu">
                             <div class="list-group">
                                 <a href="#" class="list-group-item active text-center">                              
-                                    <span><p>Lorem ipsum </p></span>
-                                    <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt praesentium tempora sit quaerat nostrum quod animi atque, officiis reiciendis sunt aperiam alias possimus.</span>
+                                    <span><p>6 миллионунчу жаран Ош шаарында төрөлдү</p></span>
+                                    <span>Биз 6 миллионго жеттик. "Элдин санынын өсүшү жарандардын өлкө келечегине терең ишенээрин билдирет". Бул туурасында президент премьер-министр Темир Сариевди кабыл алганда билдирди. Өкмөт жетекчинин маалыматы боюнча, көптөн күтүлгөн 6 миллионунчу жаран кыз бала.</span>
                                 </a>
                                 <a href="#" class="list-group-item text-center">
-                                    <span><p>Lorem ipsum</p></span>
-                                    <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad magni sed repellat, atque, officiis ullam quis praesentium. Consequuntur, molestias, maiores enim.</span>
+                                    <span><p>Кыргызстандын "мыкты футболчу" тандоосу жүрүп жатат</p></span>
+                                    <span>Кыргызстанда мыкты футболчу наамына улуттук команданын беш оюнчусу ат салышууда. Ага ылайык Футбол федерациясы жыл жыйынтыгы менен Sport Awards сыйылыгынын талапкер оюнчулардын аты аталганын кабарлайт.</span>
                                 </a>
                                 <a href="#" class="list-group-item text-center">
-                                    <span><p>Lorem ipsum</p></span>
-                                    <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam voluptatibus facilis doloremque nisi, inventore nihil quasi. Nisi alias voluptatibus vel maiores.</span>
+                                    <span><p>Жаш ишкерлер: шартка жараша иштеп көнөлү</p></span>
+                                    <span>Акча капчыкта сакталып тура бербей, тез-тезден иштетилип турушу керек. Мындай пикирин 2-декабрда өткөрүлө турган Бишкек инвестициялык форумунун уюштуруучулары билдиргени жатышат.</span>
                                 </a>
                             </div>
                         </div>
@@ -144,7 +178,7 @@
                                 <center>
                                     <img src="{{ asset('images/channels/madaniyat.png')}}" alt="">
                                 </center>
-                        </div>
+                            </div>
                         </div>
                     </div>  
                 </div>
@@ -291,6 +325,7 @@
         </div>
     </div>
 
+
     <div class="row">
         <div class="col-md-12" style="padding: 10px 0px 0px 0px;">
             <div class="panel panel-default panel-carousel ">
@@ -318,9 +353,6 @@
                 </div>
             </div>
         </div>
-
-
-
     </div>    
 </div>
 

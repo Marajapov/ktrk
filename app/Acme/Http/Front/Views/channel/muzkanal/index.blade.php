@@ -143,7 +143,7 @@
             </a> -->
         <!-- Main slider -->
         <div class="container">
-            <div class="row">                
+            <div class="row">                            
                 <div class="col-sm-12 dkp-slideshow dkp-moving-right">
                     <div id="dkp-slideshow-right"></div>
                     <div id="dkp-slideshow-left"></div>                  
