@@ -13,7 +13,7 @@
                                 <div class="panel-heading">
                                     <h3 class="panel-title">
                                         {{ trans('site.Top news') }} <span class="divider"><i class="fa fa-circle"></i></span>
-                                        <a href=""><span class="ctg">
+                                        <a href="{{ route('front.category', $post->category) }}"><span class="ctg">
                                         @if(app()->getlocale() == 'kg')
                                             {{ $post->category('category_id')->first()->title }}
                                         @else
@@ -31,6 +31,10 @@
                                                 <span class="art-view"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
                                             </div>
                                         </h4>
+
+                                        <a href="{{ route('front.post', $post) }}" style="float:left; margin: 2px 10px;">
+                                            <img width="240" height="180" class="left" src="@if(empty($post->getFile()))images/2.jpg @else {{  asset($post->getFile()) }} @endif" alt="image">
+                                        </a>
 
                                             @if(!empty($post->related2))
                                                 <div class="related2">
@@ -100,9 +104,8 @@
                                 </div>
                             </div>
 
-                            <a href="#" class="text-center ads">
-                                <img src="{{ asset('images/ads_1.jpg') }}" alt=""/>
-                            </a>
+                            @include('Front::partials.postBanner')
+                           
 
                             <div class="panel panel-default panel-related">
                                 <div class="panel-body">
@@ -113,15 +116,19 @@
                                         </h3>
                                     </div>
                                     <div class="panel-body">
-                                        
+                                        @foreach($relatedPosts as $relatedPost)
+                                        @if($relatedPost->id == $post->id)
+                                        @else
                                         <div class="col-md-4 block">
-                                            <a href="#" class="news-thumb">
-                                                <img src="{{ asset('images/image.jpeg') }}" alt=""/>
+                                            <a href="{{ route('front.post', $relatedPost) }}" class="news-thumb">
+                                                <img src="@if(empty($relatedPost->getFile()))images/live_bg.png @else {{ asset($relatedPost->getFile()) }} @endif" alt=""/>
                                             </a>
-                                            <a href="#">
-                                                <h4>Название новости Название новости Название новости</h4>
+                                            <a href="{{ route('front.post', $relatedPost) }}">
+                                                <h4>{{ $relatedPost->getTitle() }}</h4>
                                             </a>
                                         </div>
+                                        @endif
+                                        @endforeach
 
                                     </div>
                                 </div>

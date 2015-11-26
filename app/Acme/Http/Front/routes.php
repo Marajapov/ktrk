@@ -67,7 +67,6 @@ Route::group(['domain' => 'ktrk.dev', 'prefix' => '/kyrgyzradio', 'namespace' =>
 Route::group(['domain' => 'ktrk.dev', 'prefix' => '/birinchi', 'namespace' => 'Front\Controllers'], function() {
 
     Route::get('/', ['as' => 'birinchi.home',   'uses' => 'BirinchiController@Home']);
-    Route::get('/posts', ['as' => 'birinchi.posts',   'uses' => 'BirinchiController@posts']);
 
 });
 
@@ -102,6 +101,7 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
     Route::post('logout', ['as' => 'front.logout',   'uses' => 'AuthController@postLogout']);
     Route::get('media', ['as' => 'front.media',     'uses' => 'HomeController@getMedia']);
     Route::get('search', ['as' => 'front.search', 'uses' => 'HomeController@searchResult']);
+    Route::get('filter', ['as' => 'front.filter', 'uses' => 'HomeController@filterResult']);
     Route::get('category/{category}', ['as' => 'front.category', 'uses' => 'HomeController@categoryPage']);
     
     Route::get('media', ['as' => 'front.media.index', 'uses' => 'MediaController@mediaIndex']); // List of videos

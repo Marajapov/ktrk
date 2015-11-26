@@ -19,12 +19,7 @@ class BirinchiController extends Controller
             ]);
     }
 
-    public function Posts()
-    {
-        $channel = \Model\Channel\ModelName::name('birinchi')->first();
-
-        return view('Front::channel.birinchi.posts', ['channel' => $channel]);
-    }
+    
 
 
 }

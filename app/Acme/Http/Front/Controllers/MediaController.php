@@ -37,57 +37,13 @@ class MediaController extends Controller
     public function video($media)
     {
         $lc = app()->getlocale();
-<<<<<<< HEAD
-        $video = \Model\Media\ModelName::where('id','=',$media)->first(); // full video array
-=======
-        $video = \Model\Media\ModelName::where('id','=',$media)->first();
-        $videoId = $video->id;
 
-        $MediaCategories = \Model\MediaCategory\ModelName::get();
->>>>>>> 766fed06bb595d38486465b49fab94f878a059dd
-        
+        $video = \Model\Media\ModelName::where('id','=',$media)->first(); // full video array
         $projectId = $video->program; // 0
 
         $videoType = $video->videoType; // serials
 
         if($lc == 'kg'){
-<<<<<<< HEAD
-            if($projectId != 0)
-            {
-                $result = \Model\Project\ModelName::where('id','=',$projectId)->first();
-                $videoProject = $result->getName();
-                
-                $result = \Model\MediaCategory\ModelName::where('videoType','=',$videoType)->first();
-                $getVideoTypeName = $result->getName();
-
-            }else
-            {
-                //$result = \Model\Project\ModelName::where('id','=',$projectId)->first();
-                $videoProject = 'abakan';
-                $result = \Model\MediaCategory\ModelName::where('videoType','=',$videoType)->first();
-                $getVideoTypeName = $result->getName();
-            }            
-            
-            $relatedVideos = \Model\Media\ModelName::where('name','<>','')->where('program','=',$projectId)->get();
-
-        }elseif($lc == 'ru'){
-            if($projectId != 0){
-                $result = \Model\Project\ModelName::where('id','=',$projectId)->first();
-                $videoProject = $result->getName();
-            
-                $result = \Model\MediaCategory\ModelName::where('videoType','=',$videoType)->first();
-                $getVideoTypeName = $result->getNameRu();
-
-                if($getVideoTypeName == null){
-                    $getVideoTypeName = '';
-                }
-            }else{
-                $videoProject = 'abakan';
-                $result = \Model\MediaCategory\ModelName::where('videoType','=',$videoType)->first();
-                $getVideoTypeName = $result->getName();
-            }
-            
-=======
             $videoName = $video->getName();
             $result = \Model\Project\ModelName::where('id','=',$projectId)->first();
             $videoProject = $result->getName();
@@ -103,7 +59,7 @@ class MediaController extends Controller
 
             $result = \Model\MediaCategory\ModelName::where('videoType','=',$videoType)->first();
             $getVideoTypeName = $result->getNameRu();
->>>>>>> 766fed06bb595d38486465b49fab94f878a059dd
+
 
             $relatedVideos = \Model\Media\ModelName::where('nameRu','<>','')->where('program','=',$projectId)->get();
 
