@@ -200,78 +200,8 @@
                                   <h4>{{-- $media->videoType()->getName() --}} {{ $MediaCategory->getName() }}</h4>
                                 </a>
                               </article>
-                              <article class="col-md-4" data-cat="all-videos">
-                                <a href="#" class="img">
-                                  <img src="http://img.youtube.com/vi/cwLRQn61oUY/mqdefault.jpg" alt=""/>
-                                  <h4><i class="fa fa-play-circle-o"></i>Замана</h4>
-                                </a>
-                                <a href="#" class="title">
-                                  <h4>{{-- $media->videoType()->getName() --}} {{ $MediaCategory->getName() }}</h4>
-                                </a>
-                              </article>
-                              <article class="col-md-4" data-cat="all-videos">
-                                <a href="#" class="img">
-                                  <img src="http://img.youtube.com/vi/cwLRQn61oUY/mqdefault.jpg" alt=""/>
-                                  <h4><i class="fa fa-play-circle-o"></i>Замана</h4>
-                                </a>
-                                <a href="#" class="title">
-                                  <h4>{{-- $media->videoType()->getName() --}} {{ $MediaCategory->getName() }} {{ $MediaCategory->getName() }} {{ $MediaCategory->getName() }} {{ $MediaCategory->getName() }} {{ $MediaCategory->getName() }} {{ $MediaCategory->getName() }}</h4>
-                                </a>
-                              </article>
-                              <article class="col-md-4" data-cat="all-videos">
-                                <a href="#" class="img">
-                                  <img src="http://img.youtube.com/vi/cwLRQn61oUY/mqdefault.jpg" alt=""/>
-                                  <h4><i class="fa fa-play-circle-o"></i>Замана</h4>
-                                </a>
-                                <a href="#" class="title">
-                                  <h4>{{-- $media->videoType()->getName() --}} {{ $MediaCategory->getName() }}</h4>
-                                </a>
-                              </article>
-                              <article class="col-md-4" data-cat="all-videos">
-                                <a href="#" class="img">
-                                  <img src="http://img.youtube.com/vi/cwLRQn61oUY/mqdefault.jpg" alt=""/>
-                                  <h4><i class="fa fa-play-circle-o"></i>Замана</h4>
-                                </a>
-                                <a href="#" class="title">
-                                  <h4>{{-- $media->videoType()->getName() --}} {{ $MediaCategory->getName() }}</h4>
-                                </a>
-                              </article>
-                              <article class="col-md-4" data-cat="all-videos">
-                                <a href="#" class="img">
-                                  <img src="http://img.youtube.com/vi/cwLRQn61oUY/mqdefault.jpg" alt=""/>
-                                  <h4><i class="fa fa-play-circle-o"></i>Замана</h4>
-                                </a>
-                                <a href="#" class="title">
-                                  <h4>{{-- $media->videoType()->getName() --}} {{ $MediaCategory->getName() }} {{ $MediaCategory->getName() }} {{ $MediaCategory->getName() }} {{ $MediaCategory->getName() }} {{ $MediaCategory->getName() }} {{ $MediaCategory->getName() }}</h4>
-                                </a>
-                              </article>
-                              <article class="col-md-4" data-cat="all-videos">
-                                <a href="#" class="img">
-                                  <img src="http://img.youtube.com/vi/cwLRQn61oUY/mqdefault.jpg" alt=""/>
-                                  <h4><i class="fa fa-play-circle-o"></i>Замана</h4>
-                                </a>
-                                <a href="#" class="title">
-                                  <h4>{{-- $media->videoType()->getName() --}} {{ $MediaCategory->getName() }}</h4>
-                                </a>
-                              </article>
-                              <article class="col-md-4" data-cat="all-videos">
-                                <a href="#" class="img">
-                                  <img src="http://img.youtube.com/vi/cwLRQn61oUY/mqdefault.jpg" alt=""/>
-                                  <h4><i class="fa fa-play-circle-o"></i>Замана</h4>
-                                </a>
-                                <a href="#" class="title">
-                                  <h4>{{-- $media->videoType()->getName() --}} {{ $MediaCategory->getName() }}</h4>
-                                </a>
-                              </article>
-                              <article class="col-md-4" data-cat="all-videos">
-                                <a href="#" class="img">
-                                  <img src="http://img.youtube.com/vi/cwLRQn61oUY/mqdefault.jpg" alt=""/>
-                                  <h4><i class="fa fa-play-circle-o"></i>Замана</h4>
-                                </a>
-                                <a href="#" class="title">
-                                  <h4>{{-- $media->videoType()->getName() --}} {{ $MediaCategory->getName() }} {{ $MediaCategory->getName() }} {{ $MediaCategory->getName() }} {{ $MediaCategory->getName() }} {{ $MediaCategory->getName() }} {{ $MediaCategory->getName() }}</h4>
-                                </a>
-                              </article>
+                              
+                              
                             </div>
                           </div>
                         </div>

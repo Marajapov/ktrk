@@ -201,11 +201,7 @@
               <div class="panel-body">
                 <div class="col-md-12 block main-video">
                   <div class="embed-responsive embed-responsive-16by9">
-
-                    @foreach($dayVideos as $dayVideo)
-                      <iframe class="embed-responsive-item" src="//www.youtube.com/embed/{{ $dayVideo->getUrl()}}" allowfullscreen=""></iframe>
-                    @endforeach
-
+                    <iframe class="embed-responsive-item" src="//www.youtube.com/embed/{{ $dayVideo->getUrl()}}" allowfullscreen=""></iframe>
                   </div>
 
                   <h4>Стратегия-2017</h4>

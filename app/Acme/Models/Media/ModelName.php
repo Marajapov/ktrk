@@ -84,14 +84,16 @@ class ModelName extends Model
         $programId = $this->program;
         $programName = \Model\Project\ModelName::where('id','=',$programId)->first();
 
-        $name = $programName->name;
-        $nameRu = $programName->nameRu;
-        
-        if(($lc == 'kg') && ($name != '') ){
-            return $name;
-        }elseif(($lc == 'ru') && ($nameRu != '')){
-            return $nameRu;
-        }
+        if($programName != null){
+            $name = $programName->name;
+            $nameRu = $programName->nameRu;
+            
+            if(($lc == 'kg') && ($name != '') ){
+                return $name;
+            }else{
+                return $nameRu;
+            }
+        } 
         
     }
 }

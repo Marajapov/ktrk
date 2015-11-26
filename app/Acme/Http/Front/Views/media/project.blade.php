@@ -6,6 +6,7 @@
 @endsection
 
 @section('content')
+
   <div class="container main-wrapper">
 
     <div class="row">
@@ -35,7 +36,7 @@
                         </a>
                       </div>
                       <div class="media-body">
-                        <h4 class="show-title media-heading">Project Title</h4>
+                        <h4 class="show-title media-heading">{{ $project->getNameOne() }}</h4>
                         <p class="show-desc">
                           Борбор шаардагы Эркиндик бульварында 1-октябрь улгайган адамдардын эл аралык күнүнө карата жарманке болуп өттү. Жарманкеге Ысык-Көл, Чүй, облустарынан жана Бишкек шаарынан келген улгайган
                         </p>
@@ -76,7 +77,9 @@
           </div>
 
           <div class="top-right-block col-md-3">
+
             @include('Front::partials.leftMediaCategories')
+
           </div>
 
         </div>
