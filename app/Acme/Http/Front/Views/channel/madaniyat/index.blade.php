@@ -82,24 +82,24 @@
                                 <li class="dropdown">
                                     <a href="{{ route('madaniyat.about') }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-info-circle"></i>О канале <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="{{ route('madaniyat.about') }}"><i class="fa fa-television"></i>О телеканале</a></li>
-                                        <li><a href="{{ route('madaniyat.contacts') }}"><i class="fa fa-envelope-o"></i>Контакты</a></li>                                                
+                                        <li><a href="{{ route('madaniyat.about') }}"><i class="fa fa-minus"></i>О телеканале</a></li>
+                                        <li><a href="{{ route('madaniyat.contacts') }}"><i class="fa fa-minus"></i>Контакты</a></li>                                                
                                     </ul>
                                 </li>
 
                                 <li class="dropdown">
                                     <a href="{{ route('madaniyat.broadcasts') }}" class="dropdown-toggle" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-television"></i>Передачи <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="#"><i class="fa fa-television"></i>Тоолуктардын ток-шоусу</a></li>
-                                        <li><a href="#"><i class="fa fa-envelope-o"></i>Улутман</a></li>
-                                        <li><a href="#"><i class="fa fa-envelope-o"></i>Кыз-жигит. Сармерден</a></li>
-                                        <li><a href="#"><i class="fa fa-envelope-o"></i>Өмүр сызыгы - Линия жизни</a></li>
-                                        <li><a href="#"><i class="fa fa-envelope-o"></i>Улуу мурас</a></li>
-                                        <li><a href="#"><i class="fa fa-envelope-o"></i>Сүрөттөр сүйлөйт</a></li>
-                                        <li><a href="#"><i class="fa fa-envelope-o"></i>Доор инсаны: Алай ханышасы <br>Доор инсаны: Алымбек датка </a></li>
-                                        <li><a href="#"><i class="fa fa-envelope-o"></i>Салт-санат</a></li>
-                                        <li><a href="#"><i class="fa fa-envelope-o"></i>Өкүт</a></li>
-                                        <li><a href="#"><i class="fa fa-envelope-o"></i>ТВнын  казынасынан</a></li>                                                    
+                                        <li><a href="#"><i class="fa fa-minus"></i>Тоолуктардын ток-шоусу</a></li>
+                                        <li><a href="#"><i class="fa fa-minus"></i>Улутман</a></li>
+                                        <li><a href="#"><i class="fa fa-minus"></i>Кыз-жигит. Сармерден</a></li>
+                                        <li><a href="#"><i class="fa fa-minus"></i>Өмүр сызыгы - Линия жизни</a></li>
+                                        <li><a href="#"><i class="fa fa-minus"></i>Улуу мурас</a></li>
+                                        <li><a href="#"><i class="fa fa-minus"></i>Сүрөттөр сүйлөйт</a></li>
+                                        <li><a href="#"><i class="fa fa-minus"></i>Доор инсаны: Алай ханышасы <br>Доор инсаны: Алымбек датка </a></li>
+                                        <li><a href="#"><i class="fa fa-minus"></i>Салт-санат</a></li>
+                                        <li><a href="#"><i class="fa fa-minus"></i>Өкүт</a></li>
+                                        <li><a href="#"><i class="fa fa-minus"></i>ТВнын  казынасынан</a></li>                                                    
                                     </ul>
                                 </li>
 

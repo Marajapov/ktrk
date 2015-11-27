@@ -1,5 +1,5 @@
 @extends('Front::channel.birinchi.default')
-@section('title', "Передачи | Биринчи Радио")
+@section('title', "Биринчи Радио")
 @stop
 
 @section('styles')
@@ -8,11 +8,13 @@
 
 
 @section('content')
-<div class="container birinchiradio">
+<div class="birinchiradio">
 
-    <div class="row">
+    <div class="container-fluid row">
+
         <div class="col-md-12 topheader">
-            <div class="row">
+
+            <div class="container">
                 <nav class="top-nav clearfix">
                     <ul class="clearfix">
                         @foreach(\Model\Menu\ModelName::code('main')->parent()->get() as $menu)
@@ -36,7 +38,7 @@
                     <nav>
                         <ul>
                             <li class="sitemenu" id="site-channel1">
-                                <a href="#">                                   
+                                <a href="{{ route('birinchi.home') }}">                                   
                                     <img class="onelogos" src="{{ asset('images/channels/1-radio-notext.png')}}">
                                     <span>Биринчи радио</span>
                                     <h4>Биринчи радио</h4></a>
@@ -59,7 +61,7 @@
             </div>
             <div class="row">
                 <nav class="navbar">
-                    <div class="container-fluid">
+                    <div class="container">
                         <!-- Brand and toggle get grouped for better mobile display -->
                         <div class="navbar-header">
                             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -89,19 +91,19 @@
 
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">                                           
-                            <ul class="nav navbar-nav">
+                            <ul class="nav navbar-nav onenavbar">
                                 <li class="dropdown">
-                                    <a href="{{ route('birinchi.about') }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-info-circle"></i>О радио <span class="caret"></span></a>
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-info-circle"></i>О радио <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="#"><i class="fa fa-television"></i>О телеканале</a></li>
-                                        <li><a href="#"><i class="fa fa-envelope-o"></i>Контакты</a></li>                                                
+                                        <li><a href="{{ route('birinchi.about') }}"><i class="fa fa-minus"></i>О телеканале</a></li>
+                                        <li><a href="#"><i class="fa fa-minus"></i>Контакты</a></li>                                                
                                     </ul>
                                 </li>
                                 <li class="dropdown">
                                     <a href="{{ route('birinchi.broadcasts') }}" class="dropdown-toggle" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-info-circle"></i>Передачи <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="#"><i class="fa fa-television"></i>О телеканале</a></li>
-                                        <li><a href="#"><i class="fa fa-envelope-o"></i>Контакты</a></li>                                                
+                                        <li><a href="#"><i class="fa fa-minus"></i>О телеканале</a></li>
+                                        <li><a href="#"><i class="fa fa-minus"></i>Контакты</a></li>                                                
                                     </ul>
                                 </li>   
                                 <li>
@@ -137,9 +139,8 @@
             </div>
         </div>
     </div>
-
-
-    <div class="row">
+<div class="container">
+       <div class="row">
         <div class="col-md-12" style="padding: 10px 0px 0px 0px;">
             <div class="panel panel-carousel ">
                 <div class="panel-heading">
@@ -148,13 +149,13 @@
                 <div class="panel-body">
                     <div class="col-md-12 oneperedacha">
                         <div class="carousel-slick-peredacha">
-                        	<div class="col-md-4">
-                        		<a href="#">
-                        			<img src="<!-- {{ asset('images/channels/culture/1.jpg')}} -->" alt=""/>
-                        			<span>Күндүн темасы</span>                        			
-                        		</a>
-                        		<a href="#" class="overlay">Lorem ipsum dolor sit amet, sit amet</a>
-                        	</div>
+                            <div class="col-md-4">
+                                <a href="#">
+                                    <img src="<!-- {{ asset('images/channels/culture/1.jpg')}} -->" alt=""/>
+                                    <span>Күндүн темасы</span>                                  
+                                </a>
+                                <a href="#" class="overlay">Lorem ipsum dolor sit amet, sit amet</a>
+                            </div>
                             <div class="col-md-4"><a href="#"><img src="images/gallery/002.jpg" alt=""/><span>Название</span><a href="#" class="overlay">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></a></div>
                             <div class="col-md-4"><a href="#"><img src="images/gallery/003.jpg" alt=""/><span>Название</span><a href="#" class="overlay">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></a></div>
                             <div class="col-md-4"><a href="#"><img src="images/gallery/004.jpg" alt=""/><span>Название</span><a href="#" class="overlay">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></a></div>
@@ -173,8 +174,8 @@
             </div>
         </div>
 
-    </div>
-
+    </div>   
+</div>
 </div>
 
 @stop

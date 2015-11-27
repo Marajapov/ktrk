@@ -1,9 +1,10 @@
 /* Birinchi Radio page styles*/
 .birinchiradio {
     background: #fff;
-    font-family: 'Roboto Condensed';
+    font-family: 'Roboto Regular';
 }
 .topheader {
+  padding:0px; 
 }
 .
 .topheader .navbar-toggle {
@@ -29,20 +30,33 @@
     font-size: 20px;
 }
 
+
 .birinchiradio .search-toggle, .birinchiradio .form-search.visible {
     margin: 0px;
 }
-
+.birinchiradio .logo-block{
+  position: relative;
+  margin-right: -30px;
+  margin-top: 5px;
+}
 .birinchiradio .navbar {
-    margin: 5px 10px 10px 10px;
     background: #AC13FF;
     min-height: 40px;
     border-right: 2px solid #fff;
     border: none
 }
+.onenavbar {
+  margin: 0px;
+}
 .birinchiradio .navbar .dropdown-menu, .birinchiradio .navbar .dropdown-menu li>a {
     background: #eee;
-    color: #000;
+    color: #333 ;
+    border-bottom: 1px solid #BBBBBB;
+}
+
+.birinchiradio .navbar .dropdown-menu li>a {
+    padding: 3px 10px !important;
+
 }
 .birinchiradio .navbar-brand {
     height: auto;
@@ -50,16 +64,17 @@
 .birinchiradio .navbar-brand, .birinchiradio .navbar li>a{
     color: #fff;
     font-size: 18px;
-    padding: 10px;
     font-weight: normal;
-    border-right: 2px solid #fff;
+/*    border-right: 2px solid #fff;*/
 }
 
-.birinchiradio .navbar li>a:hover{
-    font-size: 18px;
+.birinchiradio .navbar li>a:hover, .birinchiradio .navbar li>a:active, .birinchiradio .navbar li>a:focus{
     color: #fff;
     background: #9C27B0;
-    border-right: 2px solid #fff;
+}
+
+.birinchiradio .nav .open>a, .nav .open>a:focus, .nav .open>a:hover{
+    background: #9C27B0;
 }
 
 .birinchiradio #site-channel1 a{
@@ -92,10 +107,11 @@
     width: auto;
     margin-top: -18px;
     float: left;
+    margin-left: -15px;
 }
 .onesoc {
-    margin-top: 10px;
-    margin-right: 0px;
+    margin-top: 10px !important;
+    margin-right: -20px;
 }
 
 .onesoc .fa-facebook{
@@ -392,13 +408,13 @@
         height: 60px;
     }
     .oneline {
-        margin-top: -15px;
+        margin-top: -15px !important;
         margin-left: 5px;
         float: left;
         display: inline-flex;
     }
     .onesoc {
-        margin-top: -5px;
+        margin-top: -5px !important;
     }
 }
 
@@ -413,6 +429,8 @@
 
     .birinchiradio .logo-block{
         display: inline;
+        margin-top: 7px;
+        margin-right: 0px;
     }
     .birinchiradio .onesearch {
         display: none;
@@ -430,6 +448,10 @@
     }
     .onesoc span{
         display: none;
+    }
+
+    .birinchiradio .navbar-brand{
+      margin-left:15px;
     }
 }
 
@@ -464,6 +486,15 @@
         font-size: 18px;
     }
 
+}
+
+.birinchiradio .e-views{
+  float: right;
+}
+.birinchiradio .extra{
+      margin-bottom: 5px;
+    color: #9DA8B0;
+    font-size: 12px;  
 }
 
 /*Broadcasts page*/
