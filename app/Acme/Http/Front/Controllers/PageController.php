@@ -41,14 +41,14 @@ class PageController extends Controller
             ]);
     }
 
-    public function leaderPage($leader)
-    {
-        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
-        return view('Front::pages.leader', [
-            'leader' => $leader,
-            'backgroundMain' => $backgroundMain,
-        ]);
-    }
+//    public function leaderPage($leader)
+//    {
+//        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+//        return view('Front::pages.leader', [
+//            'leader' => $leader,
+//            'backgroundMain' => $backgroundMain,
+//        ]);
+//    }
 
     public function strategyPage()
     {

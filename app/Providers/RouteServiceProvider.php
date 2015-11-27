@@ -41,6 +41,7 @@ class RouteServiceProvider extends ServiceProvider
         $router->model('project', \Model\Project\ModelName::class);
         
         $router->model('photoParent', \Model\PhotoParent\ModelName::class);
+        $router->model('test', \Model\Test\ModelName::class);
         $router->model('photoChild', \Model\PhotoChild\ModelName::class);
         
         $router->model('background', \Model\Background\ModelName::class);

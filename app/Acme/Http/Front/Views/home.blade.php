@@ -3,11 +3,6 @@
 
 @section('content')
 
-  <!-- <div class="pogoda">
-  <script>var yaWDefCity=27612;</script><script type="text/javascript" src="http://ru.commontools.net/geoip/ya.w.v2.ini.js" target="_blank" style="background:red"></script>
-  <script type="text/javascript">document.write('<'+'script type="text/javascript" src="http://ru.commontools.net/geoip/ya.w.v2.js?def_country=159&def_city=27612&user_city='+yaWCityIndex+'"target="_blank"><'+'/script>');</script>
-  <script type="text/javascript">document.write('<a href="http://clck.yandex.ru/redir/dtype=stred/pid=7/cid=1228/*http://pogoda.yandex.ru/'+yaWCityCode+'"target="_blank"><img src="http://info.weather.yandex.net/'+yaWCityCode+'/3_white.ru.png"target="_blank" border="0" /></a>');</script>
-  </div> -->
   <div class="container main-wrapper">
     <div class="row">
       <section class="content clearfix">
@@ -32,7 +27,7 @@
                         <img src="{{-- $post->isChannelIcon($post->channel_id) --}}" alt=""/>
                       </a>
                     </div>-->
-
+          
 
                     <p class="description clearfix">
                       <a href="{{ route('front.category', $post->category) }}">

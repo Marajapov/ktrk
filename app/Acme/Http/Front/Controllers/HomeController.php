@@ -21,6 +21,7 @@ class HomeController extends Controller
      */
     public function Home()
     {
+
         $lc = app()->getlocale();
         $channel = \Model\Channel\ModelName::general();
        
@@ -32,7 +33,7 @@ class HomeController extends Controller
             $projects = \Model\Project\ModelName::where('nameRu','<>','')->get();
 
         }
-        
+
         $mediaLast = \Model\Media\ModelName::take(9)->get();
         
         $rDayVideo = \Model\Media\ModelName::having('dayVideo','=','1')->take(1)->skip(0)->orderBy('created_at','desc')->first();
@@ -207,29 +208,27 @@ class HomeController extends Controller
     // Category Page
     public function categoryPage(\Model\Category\ModelName $category)
     {
+        $channel = \Model\Channel\ModelName::general();
+
+        $perPage = 10;
         $category_id = $category->id;
+
         $posts = \Model\Post\ModelName::where('category_id','=',$category_id)->get();
 
-        $positionTop = \Model\Banner\ModelName::where('positionTop','=','1')->first();
-        $positionRight = \Model\Banner\ModelName::where('positionRight','=','1')->first();
-        $positionCenter = \Model\Banner\ModelName::where('positionCenter','=','1')->first();
-        $positionBottom = \Model\Banner\ModelName::where('positionBottom','=','1')->first();
-        
         $categories = \Model\Category\ModelName::all();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
         return view('Front::category.index',[
-            'posts' => $posts,
+            'perPage'=> $perPage,
+            'posts' => $channel->posts()->paginate($perPage),
             'category' => $category,
-
-            'positionTop'    => $positionTop,
-            'positionRight'  => $positionRight,
-            'positionCenter' => $positionCenter,
-            'positionBottom' => $positionBottom,
 
             'categories'=>$categories,
             'backgroundMain' => $backgroundMain,
-            ]);
+        ]);
+
+
+        
     }
 
     public function mediaPage(\Model\Media\ModelName $media)
@@ -264,27 +263,70 @@ class HomeController extends Controller
         $dateTo = date('Y-m-d',strtotime($dt));
 
         $perPage = 10;
-        $channel = \Model\Channel\ModelName::general();
+
+        $categories = \Model\Category\ModelName::all();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        
+        if($lc == 'kg' AND $df != '' AND $dt != ''){
+            $postAllFromTo = \Model\Post\ModelName::published()->datefromkg($df)->datetokg($dt)->orderBy('id', 'desc')->paginate($perPage);
+        }elseif($lc == 'kg' AND $df != ''){
+            $postAllFromTo = \Model\Post\ModelName::published()->datefromkg($df)->orderBy('id', 'desc')->paginate($perPage);
+        }elseif($lc == 'kg' AND $dt != ''){
+            $postAllFromTo = \Model\Post\ModelName::published()->datetokg($dt)->orderBy('id', 'desc')->paginate($perPage);
+        }elseif($lc == 'ru' AND $df != '' AND $dt != ''){
+            $postAllFromTo = \Model\Post\ModelName::published()->datefromru($df)->datetoru($dt)->orderBy('id', 'desc')->paginate($perPage);
+        }elseif($lc == 'ru' AND $df != ''){
+            $postAllFromTo = \Model\Post\ModelName::published()->datefromru($df)->orderBy('id', 'desc')->paginate($perPage);
+        }elseif($lc == 'ru' AND $dt != ''){
+            $postAllFromTo = \Model\Post\ModelName::published()->datetoru($dt)->orderBy('id', 'desc')->paginate($perPage);
+        }else{
+            $postAllFromTo = \Model\Post\ModelName::published()->orderBy('id', 'desc')->paginate($perPage);
+        }
+        
+        return view('Front::post.posts',[
+            'perPage'=> $perPage,
+            'postAll' => $postAllFromTo,
+            'categories'=>$categories,
+            'backgroundMain' => $backgroundMain,
+            ]);
+    }
+
+    public function filterResultCategory(Request $request)
+    {
+        $category_id = $request->category;
+        $category = \Model\Category\ModelName::where('id','=',$category_id)->first();
+        $lc = app()->getlocale();
+        $df = $request->dateFrom;
+        $dt = $request->dateTo;
+
+        $dateFrom = date('Y-m-d',strtotime($df));
+        $dateTo = date('Y-m-d',strtotime($dt));
+
+        $perPage = 10;
         
         $categories = \Model\Category\ModelName::all();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
         
         if($lc == 'kg' AND $df != '' AND $dt != ''){
-            dd('1');
-            $postAllFromTo = \Model\Post\ModelName::general($channel)->published()->datefrom($dateFrom)->filterlanguagekg()->dateto($dateTo)->orderBy('id', 'desc')->paginate($perPage);
+            $postAllFromTo = \Model\Post\ModelName::published()->where('category_id','=',$category_id)->datefromkg($df)->datetokg($dt)->orderBy('id', 'desc')->paginate($perPage);
         }elseif($lc == 'kg' AND $df != ''){
-            $postAllFromTo = \Model\Post\ModelName::general($channel)->published()->datefromkg($df)->orderBy('id', 'desc')->paginate($perPage);
-            
-        }elseif(($dateFrom != '') && ($dateTo != '') && ($lc == 'ru')){
-            dd('3');
-            $postAllFromTo = \Model\Post\ModelName::general($channel)->published()->datefrom($dateFrom)->filterlanguageru()->dateto($dateTo)->orderBy('id', 'desc')->paginate($perPage);
-          
+            $postAllFromTo = \Model\Post\ModelName::published()->where('category_id','=',$category_id)->datefromkg($df)->orderBy('id', 'desc')->paginate($perPage);
+        }elseif($lc == 'kg' AND $dt != ''){
+            $postAllFromTo = \Model\Post\ModelName::published()->where('category_id','=',$category_id)->datetokg($dt)->orderBy('id', 'desc')->paginate($perPage);
+        }elseif($lc == 'ru' AND $df != '' AND $dt != ''){
+            $postAllFromTo = \Model\Post\ModelName::published()->where('category_id','=',$category_id)->datefromru($df)->datetoru($dt)->orderBy('id', 'desc')->paginate($perPage);
+        }elseif($lc == 'ru' AND $df != ''){
+            $postAllFromTo = \Model\Post\ModelName::published()->where('category_id','=',$category_id)->datefromru($df)->orderBy('id', 'desc')->paginate($perPage);
+        }elseif($lc == 'ru' AND $dt != ''){
+            $postAllFromTo = \Model\Post\ModelName::published()->where('category_id','=',$category_id)->datetoru($dt)->orderBy('id', 'desc')->paginate($perPage);
+        }else{
+            $postAllFromTo = \Model\Post\ModelName::published()->where('category_id','=',$category_id)->orderBy('id', 'desc')->paginate($perPage);
         }
-        
-        return view('Front::post.posts',[
+
+        return view('Front::category.index',[
             'perPage'=> $perPage,
-            'channel' => $channel,
-            'postAll' => $postAllFromTo,
+            'category'=> $category,
+            'posts' => $postAllFromTo,
             'categories'=>$categories,
             'backgroundMain' => $backgroundMain,
             ]);

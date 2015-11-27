@@ -2,6 +2,7 @@
 @section('title', "Генеральный директор КТРК")
 
 @section('styles')
+  <link rel="stylesheet" href="{{ asset('css/custombox.css') }}"/>
   <link rel="stylesheet" type="text/css" href="{{ asset('static/css/styles.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('css/articles.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('css/pages.css') }}">
@@ -17,38 +18,224 @@
 
           <div class="panel panel-default panel-page-withsidebar panel-articles">
             <div class="panel-heading">
-              <h3 class="panel-title"><span>Генеральный директор КТРК: Карыпбеков Илим Майрамбекович</span></h3>
+              <h3 class="panel-title"><span>{{ trans('site.DirectorPage') }}: Карыпбеков Илим Майрамбекович</span></h3>
             </div>
             <div class="panel-body">
               <div class="persons">
                 <div class="row">
-                  <div class="col-md-4">
-                    <img src="{{ asset('images/chief.jpg') }}" class="img-circle">
-                  </div>
-                  <div class="col-md-8 borders">
-                    <table class="table table-hover borderless">
-                      <br/><br/>
-                      <tbody>
-                      <tr>
-                        <th scope="row">Аты жөнү:</th>
-                        <td>Карыпбеков Илим Майрамбекович</td>
-                      </tr>
+                  <div class="media media-director">
+                    <div class="media-left media-middle text-center">
+                      <img src="{{ asset('images/chief.jpg') }}" class="img-circle">
 
-                      <tr>
-                        <th scope="row">Facebook баракчасы:</th>
-                        <td class="textunder"><i class="fa fa-facebook-official"></i><a href="https://www.facebook.com/ilim.karypbekov">facebook.com/ilim.karypbekov</a></td>
-                      </tr>
-                      <tr>
-                        <th scope="row">Twitter баракчасы:</th>
-                        <td class="textunder"><i class="fa fa-twitter"></i><a href="https://twitter.com/ilimkm">twitter.com/ilimkm</a></td>
-                      </tr>
-                      </tbody>
-                    </table>
-
+                      <button class="btn btn-default" id="button" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Толук маалымат</button>
+                    </div>
+                    <div class="media-body media-middle">
+                      <ul class="list-group">
+                        <li class="list-group-item">
+                          Карыпбеков Илим Майрамбекович
+                        </li>
+                        <li class="list-group-item">
+                          <span class="list-extra">Facebook</span>
+                          <span class="list-info"><a href="https://www.facebook.com/ilim.karypbekov">facebook.com/ilim.karypbekov</a></span>
+                        </li>
+                        <li class="list-group-item">
+                          <span class="list-extra">Twitter</span>
+                          <span class="list-info"><a href="https://twitter.com/ilimkm">twitter.com/ilimkm</a></span>
+                        </li>
+                        <li class="list-group-item">
+                        </li>
+                      </ul>
+                    </div>
                   </div>
-                </div>
-                <br/>
-                <div class="row">
+
+                  <div class="collapse" id="collapseExample">
+
+                    <ul class="list-group first-level">
+                      <li class="list-group-item">
+                        Жеке Маалымат
+                        <ul class="list-group second-level">
+                          <li class="list-group-item">
+                            1979-жылы 13-августта туулган.
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="list-group-item">
+                        Билими
+                        <ul class="list-group second-level">
+                          <li class="list-group-item">
+                            <span class="list-extra">2001- ж.</span>
+                            <span class="list-info">Кыргыз мамлекеттик улуттук университетинин укук факультетин артыкчылык менен бүтүргөн</span>
+                          </li>
+                          <li class="list-group-item">
+                            <span class="list-extra">2007 -ж.</span>
+                            <span class="list-info">Варшавадагы (Польша) адам укуктары боюнча жогорку эл аралык мектепти аяктаган</span>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="list-group-item">
+                        Эмгек жолу
+                        <ul class="list-group second-level">
+                          <li class="list-group-item">
+                            <span class="list-extra">1997-1999ж.</span>
+                            <span class="list-info">«Ренессанс» студенттик илимий коомунун президенти, Бишкек</span>
+                          </li>
+                          <li class="list-group-item">
+                            <span class="list-extra">Январь 1999-ж. - июнь 2000-ж. </span>
+                            <span class="list-info">«BNS - Securities» ЖЧКнун юристи, Бишкек</span>
+                          </li>
+                          <li class="list-group-item">
+                            <span class="list-extra">Июнь 2000-ж. - июнь 2001-ж.</span>
+                            <span class="list-info">Сорос-Кыргызстан фондунун укуктук программалары боюнча кызматкери.</span>
+                          </li>
+                          <li class="list-group-item">
+                            <span class="list-extra">Июнь 2001-ж. - октябрь 2001-ж. </span>
+                            <span class="list-info">БУУнун өнүктүрүү программасы,Кочкор району. БУУнун улуттук ыктыярчысы</span>
+                          </li>
+                          <li class="list-group-item">
+                            <span class="list-extra">Февраль 2002-ж. - январь 2003-ж.  </span>
+                            <span class="list-info">«Сорос-Кыргызстан» фонду, Бишкек. «Коомдук башкаруу»,«Этникалык азчылык», «Коомдук саясатты иштеп чыгуу» программаларынын кызматкери.</span>
+                          </li>
+                          <li class="list-group-item">
+                            <span class="list-extra">Январь 2003-ж. - 2004-ж.</span>
+                            <span class="list-info">«LARC» укуктук долбоорунун юристи, Кара-Балта</span>
+                          </li>
+                          <li class="list-group-item">
+                            <span class="list-extra">Июль 2003-ж.</span>
+                            <span class="list-info">Адвокат болуп иштөөгө укук берүү  лицензиясы № 1051, Бишкек шаары</span>
+                          </li>
+                          <li class="list-group-item">
+                            <span class="list-extra">Январь 2004-ж. - июнь 2004-ж.</span>
+                            <span class="list-info">«ЛАРК» АК филиалынын директору, Түп району</span>
+                          </li>
+                          <li class="list-group-item">
+                            <span class="list-extra">Июнь 2004–ж. - июнь 2006–ж.</span>
+                            <span class="list-info">Медиаөкүл институту/ Интерньюс-Кыргызстан, ага юрист.</span>
+                          </li>
+                          <li class="list-group-item">
+                            <span class="list-extra">Июнь 2006-ж. - учурда </span>
+                            <span class="list-info">КР президентине караштуу башкаруу академиясы, окутуучу. (Жарандык жана эмгек укугу, бейөкмөт уюмдардын укуктук негиздери)</span>
+                          </li>
+                          <li class="list-group-item">
+                            <span class="list-extra">Июнь 2006-ж. - февраль 2009-ж.</span>
+                            <span class="list-info">«Медиа-өкүл институту» коомдук фондунун директору</span>
+                          </li>
+                          <li class="list-group-item">
+                            <span class="list-extra">Июнь 2008-ж. - февраль 2009-ж.</span>
+                            <span class="list-info">КР акыйкатчысынын медиа-өкүлү</span>
+                          </li>
+                          <li class="list-group-item">
+                            <span class="list-extra">Февраль 2009-ж. - октябрь 2009-ж.  </span>
+                            <span class="list-info">Кыргыз Республикасынын президентинин катчылыгынын референти</span>
+                          </li>
+                          <li class="list-group-item">
+                            <span class="list-extra">Октябрь 2009-ж -апрель 2010-ж. </span>
+                            <span class="list-info">КыргызРеспубликасынын президентинин катчылыгы, көмөк көрсөтүү кызматынын жетекчиси</span>
+                          </li>
+                          <li class="list-group-item">
+                            <span class="list-extra">Февраль 2011-ж.-июль 2011-ж. </span>
+                            <span class="list-info">«Альфа Телеком» (соода маркасы «MegaCom») Жабык акционердик коому, «Альфа Телеком» Жабык акционердик коомунун укук маселелери боюнча башкы директорунун орун басары</span>
+                          </li>
+                          <li class="list-group-item">
+                            <span class="list-extra">Апрель 2010-ж. - учурда    </span>
+                            <span class="list-info">«Кеңеш берүү жана укук институту» Коомдук фондунун директору</span>
+                          </li>
+                          <li class="list-group-item">
+                            <span class="list-extra">Апрель 2010-ж. - учурда</span>
+                            <span class="list-info">«Ин.Консалт»Кеңеш берүү компаниясынын директору</span>
+                          </li>
+                          <li class="list-group-item">
+                            <span class="list-extra">Апрель 2010-2013-ж.</span>
+                            <span class="list-info">Америка Борбор Азия университети, окутуучу (адвокатура,  укук клиникасы, ишкерлер укугу)</span>
+                          </li>
+                          <li class="list-group-item">
+                            <span class="list-extra">Июль 2011-ж. - февраль 2012-ж.</span>
+                            <span class="list-info">Кыргыз Республикасынын мамлекеттик мүлк министрлиги, «Альфа Телеком» ЖАК сырттан башкаруучу</span>
+                          </li>
+                          <li class="list-group-item">
+                            <span class="list-extra">Октябрь 2011-ж. -учурда</span>
+                            <span class="list-info">Кыргыз мамлекеттик юридикалык академиясы, ага окутуучу  (Экономикалык сот, Инвестициялык укук)</span>
+                          </li>
+                          <li class="list-group-item">
+                            <span class="list-extra">Апрель 2013-ж. - февраль 2015-ж.</span>
+                            <span class="list-info">КТРКнын башкы директордун милдетин аткаруучу</span>
+                          </li>
+                          <li class="list-group-item">
+                            <span class="list-extra">Февраль 2015-ж.</span>
+                            <span class="list-info">КТРКнын башкы директордун милдетин аткаруучу</span>
+                          </li>
+                          <li class="list-group-item">
+                            <span class="list-extra">Март 2015-ж. - учурда</span>
+                            <span class="list-info">КТРК башкы директору</span>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="list-group-item">
+                        Кошумча маалымат
+                        <ul class="list-group second-level">
+                          <li class="list-group-item">
+                            «K-News», www.knews.kg маалымат агенттигинин негиздөөчүсү
+                          </li>
+                          <li class="list-group-item">
+                            «Svoboda», www.svoboda.kg укук коргоо сайтынын негиздөөчүсү
+                          </li>
+                          <li class="list-group-item">
+                            «Институт Медиа Полиси» коомдук фондунун уюштуруучусу
+                          </li>
+                          <li class="list-group-item">
+                            «Институт Консалтинга и Права» коомдук фондунун уюштуруучусу
+                          </li>
+                          <li class="list-group-item">
+                            «Де-Факто»  гезитинин уюштуруучусу
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="list-group-item">
+                        Коомдук иштери
+                        <ul class="list-group second-level">
+                          <li class="list-group-item">
+                            Бишкек шаары жана Чүй облусунун адвокаттар  коллегиясынын мүчөсү
+                          </li>
+                          <li class="list-group-item">
+                            Бишкек пресс-клубунун мүчөсү
+                          </li>
+                          <li class="list-group-item">
+                            Маалымдоо каражаттарына келген арыздарды кароочу комиссия мүчөсү
+                          </li>
+                          <li class="list-group-item">
+                            Сорос-Кыргызстан фондунун башкармалыгынын мүчөсү
+                          </li>
+                          <li class="list-group-item">
+                            КТРК көркөм кеңешинин мүчөсү
+                          </li>
+                          <li class="list-group-item">
+                            КР маданият жана маалымат министрлигинин алдындагы “Телекорсөтүү жана радиоуктуруулар жөнүндө” мыйзамдаргаөзгөртүүлөр жана оңдоолорду иштеп чыгуу боюнча жумушчу топтун мүчөсү
+                          </li>
+                          <li class="list-group-item">
+                            КТРКны реформалоо боюнча жумушчу топтун төрагасы
+                          </li>
+                          <li class="list-group-item">
+                            Адам укуктары жана эл аралык укуктар боюнча эксперт
+                          </li>
+                          <li class="list-group-item">
+                            КР президент  институтун реформалоо боюнча жумушчу топтун мүчөсү
+                          </li>
+                          <li class="list-group-item">
+                            Санариптик берүүгө өтүү боюнча мамлекеттик программаны иштеп чыгуу жумушчу тобунун төрагасы
+                          </li>
+                          <li class="list-group-item">
+                            КР өкмөтүн реформалоо боюнча жумушчу топтун мүчөсү
+                          </li>
+                          <li class="list-group-item">
+                            КР жаштар саясатын өнүктүрүү стратегиясын иштеп чыгуу боюнча жумушчу топтун төрагасы
+                          </li>
+                          <li class="list-group-item">
+                            КР Коомдук телерадиоберүү корпорациясынын Байкоочу кеңешинин төрагасы
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+
                   <div class="panel-heading">
                     <h3 class="panel-title"><span>Жаңылыктар</span></h3>
                   </div>
@@ -144,7 +331,6 @@
                       </div>
                     </div>
                   </div>
-
                 </div>
               </div>
             </div>
@@ -202,6 +388,7 @@
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
 
+  <script src="{{ asset('js/custombox.js') }}"></script>
   <script>
 
     var finished_rendering = function() {

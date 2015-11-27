@@ -28,34 +28,38 @@
 
                                 <div class="date-filter clearfix">
                                     <div class="row">
+                                        <form action="{{ route('front.filterResultCategory',$category) }}" method="get">
                                         <div class="form-group col-md-2">
+                                            <input type="hidden" name="category" value="{{ $category->id}}">
                                             <div class="input-group date" id="datetimepicker1">
-                                                <input type="text" class="form-control" />
+                                                <input type="text" class="form-control" name="dateFrom" />
+
                                                     <span class="input-group-addon">
                                                         <i class="fa fa-calendar"></i>
                                                     </span>
+                                              </div>
                                             </div>
-                                        </div>
 
-                                        <div class="pull-left form-divider">
-                                            -
-                                        </div>
+                                            <div class="pull-left form-divider">
+                                              -
+                                            </div>
 
                                         <div class="form-group col-md-2">
-                                            <div class="input-group date" id="datetimepicker2">
-                                                <input type="text" class="form-control" />
+                                          <div class="input-group date" id="datetimepicker2">
+                                            <input type="text" class="form-control" name="dateTo" />
                                                     <span class="input-group-addon">
                                                         <i class="fa fa-calendar"></i>
                                                     </span>
-                                            </div>
+                                          </div>
                                         </div>
 
                                         <div class="form-group col-md-2">
-                                            <button type="submit" class="btn btn-default btn-filter">
-                                                фильтр
-                                            </button>
+                                          <button type="submit" class="btn btn-default btn-filter">
+                                            фильтр
+                                          </button>
                                         </div>
-                                    </div>
+                                      </form>
+                                    </div><!-- end row -->
                                 </div>
 
                                 <div class="">
@@ -73,7 +77,6 @@
                                             <div class="media-body">
                                                  <div class="extra">
                                                     <span class="e-datetime">{{ $post->getDay() }} {{ $post->getMonthRu() }} , {{ $post->getTime() }}</span>
-                                                    <a class="e-cat text-uppercase" href="{{ route('front.category', $post->category) }}"><span>{{ $post->category('category_id')->first()->title }}</span></a>
                                                     <span class="e-views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
                                                 </div>
 
@@ -91,23 +94,29 @@
 
                                 <nav>
                                     <ul class="pagination">
-                                        <li class="hidden">
-                                            <a href="#" aria-label="Previous">
-                                                <span aria-hidden="true">&laquo;</span>
-                                            </a>
-                                        </li>
-                                        <li class="active"><a href="#">1</a></li>
-                                        <li><a href="#">2</a></li>
-                                        <li><a href="#">3</a></li>
-                                        <li><a href="#">4</a></li>
-                                        <li><a href="#">5</a></li>
+
+                                      <li>
+                                        <a href="{{ route('front.category', ['category' => $category, 'page' => 1]) }}" class="btn btn-default @if($posts->currentPage() == 1) disabled @endif">{{ trans('site.Start') }}</a>
+                                      </li>
+                                      <li>
+                                        <a href="{{ $posts->previousPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                                      </li>
+                                      <li>
+                                        <a href="{{ $posts->nextPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                                      </li>
+
+                                      @for($i = 0, $j = 1; $i < $posts->total(); $i+=$perPage)
                                         <li>
-                                            <a href="#" aria-label="Next">
-                                                <span aria-hidden="true">&raquo;</span>
-                                            </a>
+                                          <a href="{{ route('front.category', ['category' => $category, 'page' => $j]) }}" class="btn btn-default @if($posts->currentPage() == $j) active @endif">{{ $j++ }}</a>
                                         </li>
+                                      @endfor
+
+                                      <li>
+                                        <a href="{{ route('front.category', ['category' => $category, 'page' => ceil($posts->total()/$perPage)]) }}" class="btn btn-default @if($posts->currentPage() == ceil($posts->total()/$perPage)) disabled @endif">{{ trans('site.End') }}</a>
+                                      </li>
+
                                     </ul>
-                                </nav>
+                                  </nav>
 
                             </div>
                         </div>
@@ -125,5 +134,27 @@
             </div>
 
         </div>
+
+@stop
+@section('footerScript')
+  <script type="text/javascript" src="{{ asset('js/moment.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/ru.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/transition.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/collapse.js') }}"></script>
+
+  <script src="{{ asset('js/bootstrap-datetimepicker.js') }}"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('#datetimepicker1').datetimepicker({
+        locale: 'ru',
+        format: 'L'
+      });
+      $('#datetimepicker2').datetimepicker({
+        locale: 'ru',
+        format: 'L'
+      });
+    });
+  </script>
 
 @stop

@@ -4,18 +4,24 @@
     font-family: 'Roboto Condensed';
 }
 .topheader {
-   
+}
+.
+.topheader .navbar-toggle {
+    margin-top: 3px;
+}
+.topheader .navbar-toggle .icon-bar{
+    background: #fff;
 }
 
 .topheader .top-nav {
-  position: relative;
-  top: 0;
-  margin-bottom: 15px;
-  border-bottom: 1px solid #E6E4E4;
+    position: relative;
+    top: 0;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #E6E4E4;
 }
 
 .topheader .top-nav li a{
-  color: #333;
+    color: #333;
 }
 .birinchiradio time {
     color: #673AB7;
@@ -23,26 +29,37 @@
     font-size: 20px;
 }
 
+.birinchiradio .search-toggle, .birinchiradio .form-search.visible {
+    margin: 0px;
+}
+
 .birinchiradio .navbar {
-    margin:5px 12px 10px 12px; 
+    margin: 5px 10px 10px 10px;
     background: #AC13FF;
-    min-height: 42px !important;
-    height: 42px !important;
+    min-height: 40px;
+    border-right: 2px solid #fff;
+    border: none
 }
 .birinchiradio .navbar .dropdown-menu, .birinchiradio .navbar .dropdown-menu li>a {
     background: #eee;
     color: #000;
 }
+.birinchiradio .navbar-brand {
+    height: auto;
+}
 .birinchiradio .navbar-brand, .birinchiradio .navbar li>a{
     color: #fff;
     font-size: 18px;
     padding: 10px;
+    font-weight: normal;
+    border-right: 2px solid #fff;
 }
 
 .birinchiradio .navbar li>a:hover{
     font-size: 18px;
     color: #fff;
     background: #9C27B0;
+    border-right: 2px solid #fff;
 }
 
 .birinchiradio #site-channel1 a{
@@ -53,7 +70,7 @@
     margin-left: -12px
 }
 .birinchiradio .sitemenu span{
-   color: inherit;
+    color: inherit;
 }
 .birinchiradio .sitemenu a h4{
     color: #AC13FF;
@@ -67,7 +84,8 @@
 }
 
 .onefix{
-    padding: 0px;
+    padding: 0px 0px 0px 10px;
+
 }
 .onelogos {
     height: 70px;
@@ -120,6 +138,7 @@
 .oneline {
     padding: 10px 0px 0px 0px;
     display: inline-block;
+    float: left;
 }
 
 .oneline .time {
@@ -140,7 +159,7 @@
 }
 
 .btn-one:focus{
-   background: none;
+    background: none;
 }
 
 .bacbone {
@@ -155,26 +174,26 @@
 
 .onelist .panel-heading {
     padding: 10px;
-    background: #D9534F;
+    background: #D8D2D2;
 }
 .onenews .panel-heading{
     padding:10px;
-    background: #AC13FF; 
+    background: #D8D2D2; 
 }
 
 .onenews .panel-body {
-  padding:10px 0px; 
+    padding:10px 0px; 
 }
 
 .onelist .panel-heading h3, .onenews .panel-heading h3{
     padding:0px;
     margin-top: 0px;
-    color: #fff; 
+    color: #555; 
     font-weight: bold;
     border:none !important; 
 }
 .onelist .panel-body{
-  padding: 0px;
+    padding: 0px;
 }
 
 
@@ -207,29 +226,32 @@
     margin-top: 5px;
 }
 .oneserep nav>ul>li{
-    padding: 9px;
+    padding: 5px;
     background: #2196F3;
     margin-top: 10px;
     color: #fff; 
     font-weight: bold;
     border:none !important;
-    margin-right: 10px; 
+    margin-right: 10px;
+    font-size: 18px; 
 }
 .oneserep nav>ul>li a{
-  color: #fff;
+    color: #fff;
 }
 .oneserep nav>ul>li:first-child{
-    padding: 9px;
-    background: #2196F3;
+    padding: 5px;
+    background: #D9534F;
     margin-top: 0px;
-    color: #fff; 
+    color: #fff;
     font-weight: bold;
-    border:none !important;
-    margin-right: 10px; 
+    border: none !important;
+    margin-right: 10px;
+    font-size: 18px;
 }
 
 .onenews {
-  margin-top: 15px;
+    margin-top: 15px;
+    padding: 0px 10px 0px 10px;
 }
 .onenews article>img{
     height: auto;
@@ -269,97 +291,216 @@
 }
 
 /*  bhoechie tab */
-div.bhoechie-tab-container{
-  z-index: 10;
-  background-color: #ffffff;
-  padding: 0 !important;
-  border-radius: 4px;
-  -moz-border-radius: 4px;
-  border:1px solid #ddd;
-  -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
-  box-shadow: 0 6px 12px rgba(0,0,0,.175);
-  -moz-box-shadow: 0 6px 12px rgba(0,0,0,.175);
-  background-clip: padding-box;
-  filter: alpha(opacity=97);
+.bhoechie-tab-container{
 }
-div.bhoechie-tab-menu{
-  float:right;    
-  padding-right: 0;
-  padding-left: 0;
-  padding-bottom: 0;
+.bhoechie-tab-menu{
+    float:right;    
+    padding-right: 0;
+    padding-left: 0;
+    padding-bottom: 0;
+    z-index: 1;
 }
-div.bhoechie-tab-menu div.list-group{
-  margin-bottom: 0;
+.bhoechie-tab-menu .list-group{
+    margin-bottom: 0;
 }
 
-div.bhoechie-tab-menu .list-group-item{
-    padding:10px 10px;
+.bhoechie-tab-menu .list-group-item{
+    padding:3px 10px;
     text-align: justify;
     font-size: 15px;
     height: 108px;
     line-height: normal;
     background: #EEEEEE;
-    border-bottom: 3px solid #fff;
-}
-div.bhoechie-tab-menu .list-group-item:last-child{
-  border:none; 
+    text-overflow: ellipsis;
+    overflow: hidden;  
 }
 
-div.bhoechie-tab-menu .list-group-item p {
+.bhoechie-tab-menu .list-group-item p {
     font-weight: bold;
     margin:0px;
     padding: 0px;  
 }
-div.bhoechie-tab-menu .list-group-item h4:active {
+.bhoechie-tab-menu .list-group-item h4:active {
     color: #fff;
 }
-div.bhoechie-tab-menu div.list-group>a{
-  margin-bottom: 0;
+.bhoechie-tab-menu .list-group>a{
+    margin-bottom: 0;
 }
-div.bhoechie-tab-menu div.list-group>a .glyphicon,
-div.bhoechie-tab-menu div.list-group>a .fa {
-  color: #16a085;
+.bhoechie-tab-menu .list-group>a .glyphicon,
+.bhoechie-tab-menu .list-group>a .fa {
+    color: #16a085;
 }
-div.bhoechie-tab-menu div.list-group>a:first-child{
-  border-top-right-radius: 0;
-  -moz-border-top-right-radius: 0;
+.bhoechie-tab-menu .list-group>a:first-child{
+    border-top-right-radius: 0;
+    -moz-border-top-right-radius: 0;
 }
-div.bhoechie-tab-menu div.list-group>a:last-child{
-  border-bottom-right-radius: 0;
-  -moz-border-bottom-right-radius: 0;
+.bhoechie-tab-menu .list-group>a:last-child{
+    border-bottom-right-radius: 0;
+    -moz-border-bottom-right-radius: 0;
 }
-div.bhoechie-tab-menu div.list-group>a.active,
-div.bhoechie-tab-menu div.list-group>a.active .glyphicon,
-div.bhoechie-tab-menu div.list-group>a.active .fa{
-  background: #D9534F;
-  color: #ffffff;
-  font-size: 15px;
-  border: none;
+.bhoechie-tab-menu .list-group>a.active,
+.bhoechie-tab-menu .list-group>a.active .glyphicon,
+.bhoechie-tab-menu .list-group>a.active .fa{
+    background: #D8D2D2;
+    color: #2D2C2C;
+    font-size: 15px;
+    border-left: 4px solid #A2A0A0;
 }
-div.bhoechie-tab-menu div.list-group>a.active:before{
-  content: '';
-  position: absolute;
-  right: 100%;
-  top: 50%;
-  margin-top: -13px;
-  border-left: 0;
-  border-bottom: 13px solid transparent;
-  border-top: 13px solid transparent;
-  border-right: 10px solid #D9534F;
+.bhoechie-tab-menu .list-group>a.active:before{
+    content: '';
+    position: absolute;
+    right: 100%;
+    top: 50%;
+    margin-top: -13px;
+    border-left: 0;
+    border-bottom: 13px solid transparent;
+    border-top: 13px solid transparent;
+    border-right: 10px solid #D9534F;
+
 }
 
-div.bhoechie-tab-content{
-  background-color: #ffffff;
-  /* border: 1px solid #eeeeee; */
+.bhoechie-tab-content{
+    background-color: #ffffff;
+    /* border: 1px solid #eeeeee; */
 }
 
-div.bhoechie-tab div.bhoechie-tab-content:not(.active){
-  display: none;
+.bhoechie-tab .bhoechie-tab-content:not(.active){
+    display: none;
 }
 
+.bhoechie-tab {
+    padding: 0px;
+}
 .bhoechie-tab-content img{
-    width: 493px;
     height: 324px;
     float: left;
 }
 
+.onenewsslider{
+    display: inline-block;
+    padding: 0px 10px;
+}
+
+@media (max-width: 1170px) {
+    .birinchiradio .logo-block{
+        display: none;
+    }
+}
+
+@media (max-width: 992px) {
+    .onelogos {
+        height: 60px;
+    }
+    .oneline {
+        margin-top: -15px;
+        margin-left: 5px;
+        float: left;
+        display: inline-flex;
+    }
+    .onesoc {
+        margin-top: -5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .onelogos {
+        height: 50px;
+    }
+
+    .birinchiradio .search-block {
+        margin-top: 3px;
+    }
+
+    .birinchiradio .logo-block{
+        display: inline;
+    }
+    .birinchiradio .onesearch {
+        display: none;
+    }
+    .birinchiradio .navbar-brand, .birinchiradio .navbar li>a{
+        border: none; 
+    }
+    .birinchiradio .sitemenu img{
+        display: inline;
+    }
+    .birinchiradio .sitemenu span{
+        font-weight: bold;
+        font-size: 20px;
+        padding: 0px 5px;
+    }
+    .onesoc span{
+        display: none;
+    }
+}
+
+@media (max-width: 550px) {
+
+    .bhoechie-tab-menu {
+        width: 100%;
+    }
+    .bhoechie-tab-content img{
+        display: none;
+
+    } 
+    .birinchiradio .form-search .form-group input{
+        width:   180px; 
+    }
+    .oneheader{
+        display: inline-flex;
+        float: right;
+        margin-top: -10px;
+    } 
+    .oneline {
+        margin-right: 20px;
+    }
+    .onetime span{
+        display: none;
+    } 
+    .oneline .time, .oneline .btn-one{
+        padding:9px;       
+    }
+    .onetime i{
+        padding: 0px;
+        font-size: 18px;
+    }
+
+}
+
+/*Broadcasts page*/
+.oneperedacha  span{
+    position: absolute;
+    top: 50%;
+    z-index: 3;
+    color: #ffffff;
+    display: block;
+    margin: 0 10%;
+    width: 80%;
+    font-size: 12px;
+    line-height: 20px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.oneperedacha .overlay{
+    position: absolute;
+    bottom: -39px;
+    display: block;
+    font-size: 18px;
+    text-align: center;
+    overflow: visible;
+    line-height: 18px;
+
+}
+
+.oneperedacha .slick-track{
+    height: 200px;
+}
+.oneperedacha .slick-slide{
+    overflow: visible !important;
+    height: 160px;
+    margin: 0 1px;
+}
+
+.oneperedacha .slick-slide img {
+    height: 160px;
+}

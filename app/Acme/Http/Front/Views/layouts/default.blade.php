@@ -93,3 +93,4 @@
 
     @include('Front::partials.footer')
     @yield('footerscript2')
+    

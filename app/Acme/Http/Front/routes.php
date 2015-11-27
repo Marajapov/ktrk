@@ -68,6 +68,10 @@ Route::group(['domain' => 'ktrk.dev', 'prefix' => '/kyrgyzradio', 'namespace' =>
 Route::group(['domain' => 'ktrk.dev', 'prefix' => '/birinchi', 'namespace' => 'Front\Controllers'], function() {
 
     Route::get('/', ['as' => 'birinchi.home',   'uses' => 'BirinchiController@Home']);
+    Route::get('/broadcasts', ['as' => 'birinchi.broadcasts',   'uses' => 'BirinchiController@broadcasts']);
+    Route::get('/about', ['as' => 'birinchi.about',   'uses' => 'BirinchiController@about']);
+    Route::get('/photos', ['as' => 'birinchi.photos',   'uses' => 'BirinchiController@photos']);
+    Route::get('/broadcastsprogramm', ['as' => 'birinchi.broadcastsprogramm',   'uses' => 'BirinchiController@broadcastsprogramm']);
 
 });
 
@@ -104,6 +108,7 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
     Route::get('search', ['as' => 'front.search', 'uses' => 'HomeController@searchResult']);
     
     Route::get('category/{category}', ['as' => 'front.category', 'uses' => 'HomeController@categoryPage']);
+    Route::get('category/{category}/filterResult', ['as' => 'front.filterResultCategory', 'uses' => 'HomeController@filterResultCategory']);
     
     Route::get('media', ['as' => 'front.media.index', 'uses' => 'MediaController@mediaIndex']); // List of videos
     Route::get('media/project/{project}', ['as' => 'front.media.project', 'uses' => 'MediaController@project']); // Show Page
@@ -114,7 +119,7 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
     Route::get('history', ['as' => 'front.history', 'uses' => 'PageController@historyPage']);
     Route::get('director', ['as' => 'front.pages.director', 'uses' => 'PageController@directorPage']);
     Route::get('leaders', ['as' => 'front.pages.leaders', 'uses' => 'PageController@leadersPage']);
-    Route::get('leader/{leader}', ['as' => 'front.pages.leader', 'uses' => 'PageController@leaderPage']);
+//    Route::get('leader/{leader}', ['as' => 'front.pages.leader', 'uses' => 'PageController@leaderPage']);
     Route::get('strategy', ['as' => 'front.pages.strategy', 'uses' => 'PageController@strategyPage']);
     Route::get('normalbase', ['as' => 'front.pages.normalbase', 'uses' => 'PageController@normalbasePage']);
     Route::get('rrts', ['as' => 'front.pages.rrts', 'uses' => 'PageController@rrtsPage']);

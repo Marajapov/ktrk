@@ -38,4 +38,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'access:admin', 'namespace' =
     Route::get ('menu/code/{code}', ['as' => 'admin.menu.code', 'uses' => 'MenuController@code']);
     Route::post('menu/save/{code}', ['as' => 'admin.menu.save', 'uses' => 'MenuController@save']);
 
+
+    Route::get('test', ['as' => 'admin.test', 'uses' => 'TestController@index']);
+    Route::post('test/store', ['as' => 'admin.test.store', 'uses' => 'TestController@store']);
+    Route::get('test/show', ['as' => 'admin.show', 'uses' => 'TestController@show']);
 });

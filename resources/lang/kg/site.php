@@ -30,6 +30,7 @@ return [
     'RadioStations' => 'Радиостанциялар',
     'RadioStations' => 'Радиостанциялар',
     'Managers' => 'Жетекчилер',
+    'DirectorPage' => 'КТРК - башкы директору ',
 
     //Post page
     'MatpoTeme' => 'Тектеш материалдар',

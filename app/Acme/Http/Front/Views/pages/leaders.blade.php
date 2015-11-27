@@ -2,7 +2,6 @@
 @section('title', trans('site.Managers')." | КТРК")
 @section('styles')
   <link rel="stylesheet" href="{{ asset('css/pages.css') }}"/>
-  <link rel="stylesheet" href="{{ asset('css/custombox.css') }}"/>
 @endsection
 
 @section('content')
@@ -27,35 +26,8 @@
                     <div class="row">
                       <h4>Карыпбеков Илим Майрамбекович</h4>
                       <h5>КТРКнын башкы директору</h5>
-                      <a href="{{ route('front.pages.leader', 1) }}" class="btn btn-default">Толук маалымат</a>
+                      <a href="{{ route('front.pages.director') }}" class="btn btn-default">Толук маалымат</a>
                     </div>
-                    {{--<div id="modal1" class="modal-demo director-modal">--}}
-                      {{--<button type="button" class="close" onclick="Custombox.close();">--}}
-                        {{--<span>×</span><span class="sr-only">Close</span>--}}
-                      {{--</button>--}}
-                      {{--<h4 class="title">Карыпбеков Илим Майрамбекович</h4>--}}
-                      {{--<div class="text">--}}
-                        {{--<ul class="list-group first-level">--}}
-                          {{--<li class="list-group-item">--}}
-                            {{--Жеке Маалымат--}}
-                            {{--<ul class="list-group second-level">--}}
-                              {{--<li class="list-group-item">--}}
-                                {{--1979-жылы 13- августта туулган.--}}
-                              {{--</li>--}}
-                            {{--</ul>--}}
-                          {{--</li>--}}
-                          {{--<li class="list-group-item">--}}
-                            {{--Билими--}}
-                            {{--<ul class="list-group second-level">--}}
-                              {{--<li class="list-group-item">--}}
-                                {{--<span class="list-extra">2001- ж.</span>--}}
-                                {{--<span class="list-info">Кыргыз мамлекеттик улуттук университетинин укук факультетин артыкчылык менен бүтүргөн</span>--}}
-                              {{--</li>--}}
-                            {{--</ul>--}}
-                          {{--</li>--}}
-                        {{--</ul>--}}
-                      {{--</div>--}}
-                    {{--</div>--}}
                   </div>
                 </div>
 
@@ -69,7 +41,6 @@
                     <div class="row">
                       <h4>Асылбашев Калыйбек Шаршеналиевич</h4>
                       <h5>КТРКнын башкы директорунун телеберүүлөр боюнча орун басары</h5>
-                      <a href="{{ route('front.pages.leader', 2) }}" class="btn btn-default">Толук маалымат</a>
                     </div>
                   </div>
                 </div>
@@ -84,7 +55,6 @@
                     <div class="row">
                       <h4>Иманалиев Кайрат Олжобаевич</h4>
                       <h5>КТРКнын башкы директорунун радио уктуруулар боюнча орун басары</h5>
-                      <a href="{{ route('front.pages.leader', 3) }}" class="btn btn-default">Толук маалымат</a>
                     </div>
                   </div>
                 </div>
@@ -99,7 +69,6 @@
                     <div class="row">
                       <h4>Алиев Бактияр Жеңишбекович</h4>
                       <h5>КТРКнын Республикалык радио телеборборунун директору</h5>
-                      <a href="{{ route('front.pages.leader', 4) }}" class="btn btn-default">Толук маалымат</a>
                     </div>
                   </div>
                 </div>

@@ -2,7 +2,6 @@
 @section('title', trans('site.Managers')." | КТРК")
 @section('styles')
   <link rel="stylesheet" href="{{ asset('css/pages.css') }}"/>
-  <link rel="stylesheet" href="{{ asset('css/custombox.css') }}"/>
 @endsection
 
 @section('content')

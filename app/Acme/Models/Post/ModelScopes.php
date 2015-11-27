@@ -41,28 +41,34 @@ trait ModelScopes {
     }
 
 
-    // Filter posts functions
+    // Filter posts functions KG
     public function scopeDatefromkg($query,$df) // for filter in /posts/general
     {
         $dateFrom = date('Y-m-d',strtotime($df));
-        //dd($query->toSql());
-        $return = $query->where('titleRu','<>',''); //->where('created_at', '>',$dateFrom);
-        //dd($return->toSql());
+        return $query->where('title','<>','')
+                        ->where('created_at', '>=', $dateFrom);
+    }
+    
+    public function scopeDatetokg($query,$dt) 
+    {
+        $dateTo = date('Y-m-d',strtotime($dt.'+ 1 days'));
+        return $query->where('title','<>','')
+                        ->where('created_at', '<=', $dateTo);
     }
 
-    public function scopeDateto($query,$dateTo)
+    // Filter posts functions RU
+    public function scopeDatefromru($query,$df) // for filter in /posts/general
     {
-        return $query->where('created_at', '<=',$dateTo);
-    }   
-
-    public function scopeFilterlanguagekg($query)
+        $dateFrom = date('Y-m-d',strtotime($df));
+        return $query->where('titleRu','<>','')
+                        ->where('created_at', '>=', $dateFrom);
+    }
+    
+    public function scopeDatetoru($query,$dt) 
     {
-        return $query->where('title', '<>', '');
-    } 
-
-    public function scopeFilterlanguageru($query)
-    {
-        return $query->where('title', '<>', '');
-    } 
+        $dateTo = date('Y-m-d',strtotime($dt.'+ 1 days'));
+        return $query->where('titleRu','<>','')
+                        ->where('created_at', '<=', $dateTo);
+    }
 
 }
