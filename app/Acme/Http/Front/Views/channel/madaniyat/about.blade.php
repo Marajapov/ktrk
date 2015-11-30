@@ -2,7 +2,7 @@
 <html>
     <head lang="en">
         <meta charset="UTF-8">
-        <title>Маданият</title>
+        <title>Маданият телеканалы</title>
 
         <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}"/>
         <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}"/>
@@ -75,25 +75,33 @@
 
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">                                           
-                            <ul class="nav navbar-nav">
+                               <ul class="nav navbar-nav">
                                 <li class="dropdown">
                                     <a href="{{ route('madaniyat.about') }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-info-circle"></i>О канале <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="{{ route('madaniyat.about') }}"><i class="fa fa-television"></i>О телеканале</a></li>
-                                        <li><a href="{{ route('madaniyat.contacts') }}"><i class="fa fa-envelope-o"></i>Контакты</a></li>                                                
+                                        <li><a href="{{ route('madaniyat.about') }}"><i class="fa fa-minus"></i>О телеканале</a></li>
+                                        <li><a href="{{ route('madaniyat.contacts') }}"><i class="fa fa-minus"></i>Контакты</a></li>                                                
                                     </ul>
                                 </li>
 
                                 <li class="dropdown">
                                     <a href="{{ route('madaniyat.broadcasts') }}" class="dropdown-toggle" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-television"></i>Передачи <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="#"><i class="fa fa-television"></i>О телеканале</a></li>
-                                        <li><a href="#"><i class="fa fa-envelope-o"></i>Контакты</a></li>                                                
+                                        <li><a href="#"><i class="fa fa-minus"></i>Тоолуктардын ток-шоусу</a></li>
+                                        <li><a href="#"><i class="fa fa-minus"></i>Улутман</a></li>
+                                        <li><a href="#"><i class="fa fa-minus"></i>Кыз-жигит. Сармерден</a></li>
+                                        <li><a href="#"><i class="fa fa-minus"></i>Өмүр сызыгы - Линия жизни</a></li>
+                                        <li><a href="#"><i class="fa fa-minus"></i>Улуу мурас</a></li>
+                                        <li><a href="#"><i class="fa fa-minus"></i>Сүрөттөр сүйлөйт</a></li>
+                                        <li><a href="#"><i class="fa fa-minus"></i>Доор инсаны: Алай ханышасы <br>Доор инсаны: Алымбек датка </a></li>
+                                        <li><a href="#"><i class="fa fa-minus"></i>Салт-санат</a></li>
+                                        <li><a href="#"><i class="fa fa-minus"></i>Өкүт</a></li>
+                                        <li><a href="#"><i class="fa fa-minus"></i>ТВнын  казынасынан</a></li>                                                    
                                     </ul>
                                 </li>
 
                                 <li><a href="{{ route('madaniyat.photos') }}"><i class="fa fa-picture-o"></i>Фотогалерея</a></li>
-                            </ul>
+                            </ul
 
                             <ul class="nav navbar-nav navbar-right logo-block">
                                 <ul class="soc socmuz">
@@ -137,11 +145,53 @@
                     <div class="col-md-12" style="padding:10px 0px;">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><span>О телеканале</span></h3>
+                                <h3 class="panel-title"><span>Маданият телеканалы</span></h3>
                             </div>
                             <div class="panel-body">
-                                <div class="col-md-12">
+                                <div class="col-md-12 mabout">
+                                    <div class="row">
+                                        <div class="col-md-5 mimage">
+                                            <div class="mlogo">
+                                                <img src="{{ asset('images/channels/madaniyat.png')}}" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7 mculture">
+                                             <p>МАДАНИЯТ – абалкы менен азыркынын, эзелки менен эмикинин байланышы.</p>
+                                             <p>МАДАНИЯТ – кыргыздын көрөӊгөсүн, улуттун жөрөлгөсүн камтыган канал.</p>
+                                             <p>МАДАНИЯТ – көөнөргүс классика менен тарыхий тасмаларды, обологон опера жана балкыткан балетти, сезим козгогон спектакльдер менен  кайрыктуу концертти тартуулайт.</p>
 
+                                         </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-5 m1">
+                                             <p>Маданият телеканалы Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясынын курамындагы маданият, тил жана тарых багытындагы телекөрсөтүүлөрдү даярдаган жана  көрсөткөн канал болуп эсептелинет. </p>
+                                        <p>Бүгүнкү күндө маданияттын  маанилүүлүгүн эске алуу менен МТ каналы Коомдук телерадиоберүү корпорациясы тарабынан Кыргызстандын калкы үчүн түзүлгөн.  </p>
+                                           <p> -   Телекөрсөтүү торчосунун  негизги бөлүгү өздүк көрсөтүүлөрдөн  жана  дүйнөлүк  маданий мурастардан, окуялардан, жаңылыктардан түзүлмөкчү.</p> 
+                                           <p>-   Маданияттын ар кыл  тармактарынын ишмердүүлүгү  чагылдырылмакчы. </p>                                          
+                                        </div>
+                                        <div class="col-md-7 m4">
+                                            <iframe width="100%" height="450" src="https://www.youtube.com/embed/9WsRuMRxycE?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+                                        </div>
+                                    </div>
+                                    <div class="row mdown">
+                                        <div class="col-md-5 m2">
+                                            <p>Каналдын негизги  иштөө принциптери:</p>
+                                        </div>
+                                        <div class="col-md-7 m3">
+                                            <p>Кыргызстан жана  эл аралык  ММКарына   тийиштуу  стандарттын негизинде  иш алып баруу. Көрүүчүгө  таңуулабастан тандоо укугун берүү</p>
+                                        </div>
+                                    </div>
+                                     <div class="row">
+                                        <div class="col-md-5 m22">
+                                            <p>Каналдын негизги максаты:</p>
+                                        </div>
+                                        <div class="col-md-7 m3">
+                                            <p>Көрүүчүлөрдүн купулуна  толгон  мыкты берүүлөрдү даярдоо. Маданияттын ар тармагын аракеттуу  чагылдыруу.
+                                         Тарбия багыты, тарыхты тактоо, баамдоо, таанып билүү, тил маселелери – МТ каналынын  көңүл чордонунда. Көрүүчунүн көңүлүн буруу менен аны бийик  нерсеге  шыктандыруу.</p>
+                                        </div>
+                                    </div>     
+                                      
+                              
                                 </div>
                             </div>
                         </div>
