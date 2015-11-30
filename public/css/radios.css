@@ -108,6 +108,7 @@
     margin-top: -18px;
     float: left;
     margin-left: -15px;
+    margin-bottom: 5px;
 }
 .onesoc {
     margin-top: 10px !important;
@@ -540,4 +541,5 @@
 
 .oneperedacha .slick-slide img {
     height: 160px;
+    width: 280px
 }

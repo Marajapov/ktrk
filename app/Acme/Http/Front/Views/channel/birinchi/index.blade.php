@@ -100,7 +100,7 @@
                                         <li><a href="#"><i class="fa fa-minus"></i>Контакты</a></li>                                                
                                     </ul>
                                 </li>
-                           
+
                                 <li class="dropdown">
                                     <a href="{{ route('birinchi.broadcasts') }}" class="dropdown-toggle" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-info-circle"></i>Передачи <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
@@ -363,6 +363,7 @@
         </div>
 
     </div> 
+
 
     <div class="row">
         <div class="col-md-12" style="padding: 10px 0px 0px 0px;">
