@@ -54,7 +54,11 @@ class HomeController extends Controller
 
         // FotoParent - photo gallery
         $photoParent = \Model\PhotoParent\ModelName::where('published','=',true)->first();
-        $images = json_decode($photoParent->images); // array of images
+        if($photoParent != null){
+            $images = json_decode($photoParent->images); // array of images
+        }else{
+            $images = 1;
+        }
         
         $MediaCategories = \Model\MediaCategory\ModelName::get();
         $mediaPosts = \Model\Media\ModelName::get();
