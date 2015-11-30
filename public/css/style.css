@@ -4538,21 +4538,25 @@ ul.social-share li a:hover {
     font-weight: normal;
 }
 .m2{
-
     min-height: 80px;
     margin-top: -5px;
+    background: #eee;
 }
 .m22{
     min-height: 80px;
+    background: #eee;
 }
 .m22 p{
     font-size: 24px;
     text-align: right;
+    padding: 10px;
 }
 
 .m2 p{
     font-size: 24px;
     text-align: right;
+    padding: 10px;
+
 }
 .m3 {
 }
@@ -4560,6 +4564,7 @@ ul.social-share li a:hover {
 .m3 p{
     font-weight: bold;
     text-align: justify;
+    padding: 0px 10px 0px 10px;
 }
 .mculture p{
     text-align: justify;

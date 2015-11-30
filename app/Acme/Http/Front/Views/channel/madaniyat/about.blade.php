@@ -44,7 +44,7 @@
         <div class="container ">
             <div class="row fixedheader">
 
-                <nav class="navbar">
+                               <nav class="navbar">
                     <div class="container-fluid">
                         <!-- Brand and toggle get grouped for better mobile display -->
                         <div class="navbar-header">
@@ -73,9 +73,11 @@
                             <a class="navbar-brand" href="{{ route('madaniyat.home') }}"> <i class="fa fa-home"></i>Башкы</a>
                         </div>
 
+
+
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">                                           
-                               <ul class="nav navbar-nav">
+                            <ul class="nav navbar-nav">
                                 <li class="dropdown">
                                     <a href="{{ route('madaniyat.about') }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-info-circle"></i>О канале <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
@@ -101,7 +103,7 @@
                                 </li>
 
                                 <li><a href="{{ route('madaniyat.photos') }}"><i class="fa fa-picture-o"></i>Фотогалерея</a></li>
-                            </ul
+                            </ul>
 
                             <ul class="nav navbar-nav navbar-right logo-block">
                                 <ul class="soc socmuz">
@@ -173,7 +175,7 @@
                                             <iframe width="100%" height="450" src="https://www.youtube.com/embed/9WsRuMRxycE?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
                                         </div>
                                     </div>
-                                    <div class="row mdown">
+                                    <div class="row">
                                         <div class="col-md-5 m2">
                                             <p>Каналдын негизги  иштөө принциптери:</p>
                                         </div>

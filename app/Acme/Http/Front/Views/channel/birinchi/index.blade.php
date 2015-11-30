@@ -64,7 +64,7 @@
                 <nav class="navbar">
                     <div class="container">
                         <!-- Brand and toggle get grouped for better mobile display -->
-                        <div class="navbar-header">
+                        <div class="navbar-header oneheaderone">
                             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                                 <span class="sr-only">Меню</span>
                                 <span class="icon-bar"></span>
@@ -100,6 +100,7 @@
                                         <li><a href="#"><i class="fa fa-minus"></i>Контакты</a></li>                                                
                                     </ul>
                                 </li>
+                           
                                 <li class="dropdown">
                                     <a href="{{ route('birinchi.broadcasts') }}" class="dropdown-toggle" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-info-circle"></i>Передачи <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
