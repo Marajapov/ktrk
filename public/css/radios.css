@@ -1,545 +1,872 @@
 /* Birinchi Radio page styles*/
 .birinchiradio {
-    background: #fff;
-    font-family: 'Roboto Regular';
+  font-family: 'Roboto Regular';
 }
 .topheader {
-  padding:0px; 
+  padding: 0px;
 }
 .
 .topheader .navbar-toggle {
-    margin-top: 3px;
+  margin-top: 3px;
 }
-.topheader .navbar-toggle .icon-bar{
-    background: #fff;
+.topheader .navbar-toggle .icon-bar {
+  background: #fff;
 }
-
 .topheader .top-nav {
-    position: relative;
-    top: 0;
-    margin-bottom: 15px;
-    border-bottom: 1px solid #E6E4E4;
+  position: relative;
+  top: 0;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #E6E4E4;
 }
-
-.topheader .top-nav li a{
-    color: #333;
+.topheader .top-nav li a {
+  color: #333;
 }
 .birinchiradio time {
-    color: #673AB7;
-    font-weight: bold;
-    font-size: 20px;
+  color: #673AB7;
+  font-weight: bold;
+  font-size: 20px;
 }
-
-
 .birinchiradio .search-toggle, .birinchiradio .form-search.visible {
-    margin: 0px;
+  margin: 0px;
 }
-.birinchiradio .logo-block{
+.birinchiradio .logo-block {
   position: relative;
   margin-right: -30px;
   margin-top: 5px;
 }
 .birinchiradio .navbar {
-    background: #AC13FF;
-    min-height: 40px;
-    border-right: 2px solid #fff;
-    border: none
+  background: #AC13FF;
+  min-height: 40px;
+  border-right: 2px solid #fff;
+  border: none
 }
 .onenavbar {
   margin: 0px;
 }
 .birinchiradio .navbar .dropdown-menu, .birinchiradio .navbar .dropdown-menu li>a {
-    background: #eee;
-    color: #333 ;
-    border-bottom: 1px solid #BBBBBB;
+  background: #eee;
+  color: #333;
+  border-bottom: 1px solid #BBBBBB;
 }
-
 .birinchiradio .navbar .dropdown-menu li>a {
-    padding: 3px 10px !important;
-
+  padding: 3px 10px !important;
 }
 .birinchiradio .navbar-brand {
-    height: auto;
+  height: auto;
 }
-.birinchiradio .navbar-brand, .birinchiradio .navbar li>a{
-    color: #fff;
-    font-size: 18px;
-    font-weight: normal;
-/*    border-right: 2px solid #fff;*/
+.birinchiradio .navbar-brand, .birinchiradio .navbar li>a {
+  color: #fff;
+  font-size: 18px;
+  font-weight: normal;/*    border-right: 2px solid #fff;*/
 }
-
-.birinchiradio .navbar li>a:hover, .birinchiradio .navbar li>a:active, .birinchiradio .navbar li>a:focus{
-    color: #fff;
-    background: #9C27B0;
+.birinchiradio .navbar li>a:hover, .birinchiradio .navbar li>a:active, .birinchiradio .navbar li>a:focus {
+  color: #fff;
+  background: #9C27B0;
 }
-
-.birinchiradio .nav .open>a, .nav .open>a:focus, .nav .open>a:hover{
-    background: #9C27B0;
+.birinchiradio .nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
+  background: #9C27B0;
 }
-
-.birinchiradio #site-channel1 a{
-    display: block;
+.birinchiradio #site-channel1 a {
+  display: block;
 }
-.birinchiradio .sitemenu a{
-    margin-top: 5px;
-    margin-left: -12px
+.birinchiradio .sitemenu a {
+  margin-top: 5px;
+  margin-left: -12px
 }
-.birinchiradio .sitemenu span{
-    color: inherit;
+.birinchiradio .sitemenu span {
+  color: inherit;
 }
-.birinchiradio .sitemenu a h4{
-    color: #AC13FF;
-    font-size: 36px;
-    float: left;
-    margin-top: 4px
+.birinchiradio .sitemenu a h4 {
+  color: #AC13FF;
+  font-size: 36px;
+  float: left;
+  margin-top: 4px
 }
-
-.birinchiradio .navbar i{
-    padding-right: 10px; 
+.birinchiradio .navbar i {
+  padding-right: 10px;
 }
-
-.onefix{
-    padding: 0px 0px 0px 10px;
-
+.onefix {
+  padding: 0px 0px 0px 10px;
 }
 .onelogos {
-    height: 70px;
-    width: auto;
-    margin-top: -18px;
-    float: left;
-    margin-left: -15px;
-    margin-bottom: 5px;
+  height: 70px;
+  width: auto;
+  margin-top: -18px;
+  float: left;
+  margin-left: -15px;
+  margin-bottom: 5px;
 }
 .onesoc {
-    margin-top: 10px !important;
-    margin-right: -20px;
+  margin-top: 10px !important;
+  margin-right: -20px;
 }
-
-.onesoc .fa-facebook{
-    color: #3b5998; 
+.onesoc .fa-facebook {
+  color: #3b5998;
 }
-
-.onesoc .fa-twitter{
-    color: #4099FF;
+.onesoc .fa-twitter {
+  color: #4099FF;
 }
-
-.onesoc .onetwit{
-    background: #eee;
+.onesoc .onetwit {
+  background: #D8D2D2;
 }
-
-.onesoc .onetwit a:hover{
-    background: #D8D2D2;
+.onesoc .onetwit a:hover {
+  background: #D8D2D2;
 }
-
-.onesoc .onetwit a{
-    color: #4099FF;
+.onesoc .onetwit a {
+  color: #4099FF;
 }
-
-.onesoc .onepost a{
-    color: #3b5998;
+.onesoc .onepost a {
+  color: #3b5998;
 }
-
 .onesoc li {
-    float: right;
-    color: red;
-    font-size: 20px;
-    font-weight: bold;
-    background: #D8D2D2;
+  float: right;
+  color: red;
+  font-size: 20px;
+  font-weight: bold;
+  background: #BFBFBF;
 }
-.onesoc i{
-    padding-right: 10px;
+.onesoc i {
+  padding-right: 10px;
 }
-.onesoc li>a{
-    padding: 10px;
+.onesoc li>a {
+  padding: 10px;
 }
 .oneline {
-    padding: 10px 0px 0px 0px;
-    display: inline-block;
-    float: left;
+  padding: 10px 0px 0px 0px;
+  display: inline-block;
+  float: left;
 }
-
 .oneline .time {
-    background:#eee !important;
-    margin-top: 0px;
-    padding: 10px 10px
+  background: #D8D2D2  !important;
+  margin-top: 0px;
+  padding: 10px 10px
 }
 .onetime a {
-    padding:0px !important; 
+  padding: 0px !important;
 }
-
-.onetime i{
-    padding-right: 10px;
+.onetime i {
+  padding-right: 10px;
 }
-
-.btn-one{
-    padding: 10px;
+.btn-one {
+  padding: 10px;
 }
-
-.btn-one:focus{
-    background: none;
+.btn-one:focus {
+  background: none;
 }
-
 .bacbone {
-    background: #444;
-    color: #fff;
+  background: #444;
+  color: #fff;
 }
-.onelist   {
-    background: #eee;
-    margin-right: 10px !important;
-
+.onelist {
+  background: #fff;
+  margin-right: 10px !important;
 }
-
 .onelist .panel-heading {
-    padding: 10px;
-    background: #D8D2D2;
+  padding: 10px;
+  background: #D8D2D2;
 }
-.onenews .panel-heading{
-    padding:10px;
-    background: #D8D2D2; 
+.onenews .panel-heading {
+  padding: 10px;
+  background: #D8D2D2;
 }
-
 .onenews .panel-body {
-    padding:10px 0px; 
-}
 
-.onelist .panel-heading h3, .onenews .panel-heading h3{
-    padding:0px;
-    margin-top: 0px;
-    color: #555; 
-    font-weight: bold;
-    border:none !important; 
 }
-.onelist .panel-body{
-    padding: 0px;
+.onelist .panel-heading h3, .onenews .panel-heading h3 {
+  padding: 0px;
+  margin-top: 0px;
+  color: #555;
+  font-weight: bold;
+  border: none !important;
 }
-
-
+.onelist .panel-body {
+  padding: 0px;
+}
 .onelist nav>ul>li {
-    padding-left: 5px;
-    padding-bottom: 3px;
-    padding-top: 3px;
-    border-bottom: 1px solid #BFBABA;
+  padding-left: 5px;
+  padding-bottom: 3px;
+  padding-top: 3px;
+  border-bottom: 1px solid #E0DFDF;
 }
-
 .onelist nav>ul>li:hover {
-    background: #ccc;
+  background: #ccc;
 }
-
-.onelist nav>ul>li>a{
-    font-size: 16px;
-    color: #323A3E;
-    padding: 6px;
+.onelist nav>ul>li>a {
+  font-size: 16px;
+  color: #323A3E;
+  padding: 6px;
 }
-.onelist nav>ul>li:hover{
-    background: #BDBDBD;
+.onelist nav>ul>li:hover {
+  background: #BDBDBD;
 }
-.onelist nav>ul>li:last-child{
-    border:none; 
+.onelist nav>ul>li:last-child {
+  border: none;
 }
-
 .oneserep {
-    padding-top:10px; 
-    padding-bottom:10px;
-    margin-top: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 5px;
 }
-.oneserep nav>ul>li{
-    padding: 5px;
-    background: #2196F3;
-    margin-top: 10px;
-    color: #fff; 
-    font-weight: bold;
-    border:none !important;
-    margin-right: 10px;
-    font-size: 18px; 
+.oneserep nav>ul>li {
+  padding: 5px;
+  background: #2196F3;
+  margin-top: 10px;
+  color: #fff;
+  font-weight: bold;
+  border: none !important;
+  margin-right: 10px;
+  font-size: 18px;
 }
-.oneserep nav>ul>li a{
-    color: #fff;
+.oneserep nav>ul>li a {
+  color: #fff;
 }
-.oneserep nav>ul>li:first-child{
-    padding: 5px;
-    background: #D9534F;
-    margin-top: 0px;
-    color: #fff;
-    font-weight: bold;
-    border: none !important;
-    margin-right: 10px;
-    font-size: 18px;
+.oneserep nav>ul>li:first-child {
+  padding: 5px;
+  background: #D9534F;
+  margin-top: 0px;
+  color: #fff;
+  font-weight: bold;
+  border: none !important;
+  margin-right: 10px;
+  font-size: 18px;
 }
-
 .onenews {
-    margin-top: 15px;
-    padding: 0px 10px 0px 10px;
+  margin-top: 15px;
+  padding: 0px;
 }
-.onenews article>img{
-    height: auto;
-    width: 150px;  
+.onenews article>img {
+  height: auto;
+  width: 150px;
 }
-.onenews article{
-    text-align: justify; 
+.onenews article {
+  text-align: justify;
 }
-
 .onenews .panel-articles .media-left a {
-    position: relative;
-    display: block;
-    width: 128px;
-    height: 96px;
-    overflow: hidden;
+  position: relative;
+  display: block;
+  width: 128px;
+  height: 96px;
+  overflow: hidden;
 }
-
 .onenews .panel-articles .media .thumb {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    height: 96px;
-    width: auto;
-    -webkit-transition: opacity 0.2s ease;
-    -moz-transition: opacity 0.2s ease;
-    -ms-transition: opacity 0.2s ease;
-    -o-transition: opacity 0.2s ease;
-    transition: opacity 0.2s ease;
-    -webkit-transform: translateY(-50%) translateX(-50%);
-    -moz-transform: translateY(-50%) translateX(-50%);
-    -ms-transform: translateY(-50%) translateX(-50%);
-    transform: translateY(-50%) translateX(-50%);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 96px;
+  width: auto;
+  -webkit-transition: opacity 0.2s ease;
+  -moz-transition: opacity 0.2s ease;
+  -ms-transition: opacity 0.2s ease;
+  -o-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  -moz-transform: translateY(-50%) translateX(-50%);
+  -ms-transform: translateY(-50%) translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);
 }
-
-.onenews .panel-articles .media-desc{
-    text-align: justify;
+.onenews .panel-articles .media-desc {
+  text-align: justify;
 }
 
 /*  bhoechie tab */
-.bhoechie-tab-container{
+.bhoechie-tab-container {
 }
-.bhoechie-tab-menu{
-    float:right;    
-    padding-right: 0;
-    padding-left: 0;
-    padding-bottom: 0;
-    z-index: 1;
+.bhoechie-tab-menu {
+  float: right;
+  padding-right: 0;
+  padding-left: 0;
+  padding-bottom: 0;
+  z-index: 1;
 }
-.bhoechie-tab-menu .list-group{
-    margin-bottom: 0;
+.bhoechie-tab-menu .list-group {
+  margin-bottom: 0;
 }
-
-.bhoechie-tab-menu .list-group-item{
-    padding:3px 10px;
-    text-align: justify;
-    font-size: 15px;
-    height: 108px;
-    line-height: normal;
-    background: #EEEEEE;
-    text-overflow: ellipsis;
-    overflow: hidden;  
+.bhoechie-tab-menu .list-group-item {
+  padding: 3px 10px;
+  text-align: justify;
+  font-size: 15px;
+  height: 108px;
+  line-height: normal;
+  background: #EEEEEE;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
-
 .bhoechie-tab-menu .list-group-item p {
-    font-weight: bold;
-    margin:0px;
-    padding: 0px;  
+  font-weight: bold;
+  margin: 0px;
+  padding: 0px;
 }
 .bhoechie-tab-menu .list-group-item h4:active {
-    color: #fff;
+  color: #fff;
 }
-.bhoechie-tab-menu .list-group>a{
-    margin-bottom: 0;
+.bhoechie-tab-menu .list-group>a {
+  margin-bottom: 0;
 }
-.bhoechie-tab-menu .list-group>a .glyphicon,
-.bhoechie-tab-menu .list-group>a .fa {
-    color: #16a085;
+.bhoechie-tab-menu .list-group>a .glyphicon, .bhoechie-tab-menu .list-group>a .fa {
+  color: #16a085;
 }
-.bhoechie-tab-menu .list-group>a:first-child{
-    border-top-right-radius: 0;
-    -moz-border-top-right-radius: 0;
+.bhoechie-tab-menu .list-group>a:first-child {
+  border-top-right-radius: 0;
+  -moz-border-top-right-radius: 0;
 }
-.bhoechie-tab-menu .list-group>a:last-child{
-    border-bottom-right-radius: 0;
-    -moz-border-bottom-right-radius: 0;
+.bhoechie-tab-menu .list-group>a:last-child {
+  border-bottom-right-radius: 0;
+  -moz-border-bottom-right-radius: 0;
 }
-.bhoechie-tab-menu .list-group>a.active,
-.bhoechie-tab-menu .list-group>a.active .glyphicon,
-.bhoechie-tab-menu .list-group>a.active .fa{
-    background: #D8D2D2;
-    color: #2D2C2C;
-    font-size: 15px;
-    border-left: 4px solid #A2A0A0;
+.bhoechie-tab-menu .list-group>a.active, .bhoechie-tab-menu .list-group>a.active .glyphicon, .bhoechie-tab-menu .list-group>a.active .fa {
+  background: #D8D2D2;
+  color: #2D2C2C;
+  font-size: 15px;
+  border-left: 4px solid #A2A0A0;
 }
-.bhoechie-tab-menu .list-group>a.active:before{
-    content: '';
-    position: absolute;
-    right: 100%;
-    top: 50%;
-    margin-top: -13px;
-    border-left: 0;
-    border-bottom: 13px solid transparent;
-    border-top: 13px solid transparent;
-    border-right: 10px solid #D9534F;
-
+.bhoechie-tab-menu .list-group>a.active:before {
+  content: '';
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  margin-top: -13px;
+  border-left: 0;
+  border-bottom: 13px solid transparent;
+  border-top: 13px solid transparent;
+  border-right: 10px solid #D9534F;
 }
-
-.bhoechie-tab-content{
-    background-color: #ffffff;
-    /* border: 1px solid #eeeeee; */
+.bhoechie-tab-content {
+  background-color: #ffffff;    /* border: 1px solid #eeeeee; */
 }
-
-.bhoechie-tab .bhoechie-tab-content:not(.active){
-    display: none;
+.bhoechie-tab .bhoechie-tab-content:not(.active) {
+  display: none;
 }
-
 .bhoechie-tab {
-    padding: 0px;
+  padding: 0px;
 }
-.bhoechie-tab-content img{
-    height: 324px;
+.bhoechie-tab-content img {
+  height: 324px;
+  float: left;
+}
+.onenewsslider {
+  display: inline-block;
+  padding: 0px;
+}
+@media (max-width:1170px) {
+  .birinchiradio .logo-block {
+    display: none;
+  }
+}
+@media (max-width:992px) {
+  .onelogos {
+    height: 60px;
+  }
+  .oneline {
+    margin-top: -15px !important;
+    margin-left: 5px;
     float: left;
-}
-
-.onenewsslider{
-    display: inline-block;
-    padding: 0px 10px;
-}
-
-@media (max-width: 1170px) {
-    .birinchiradio .logo-block{
-        display: none;
-    }
-}
-
-@media (max-width: 992px) {
-    .onelogos {
-        height: 60px;
-    }
-    .oneline {
-        margin-top: -15px !important;
-        margin-left: 5px;
-        float: left;
-        display: inline-flex;
-    }
-    .onesoc {
-        margin-top: -5px !important;
-    }
-    .birinchiradio .sitemenu a h4{
+    display: inline-flex;
+  }
+  .onesoc {
+    margin-top: -5px !important;
+  }
+  .birinchiradio .sitemenu a h4 {
     font-size: 30px;
   }
-  .birinchiradio .navbar li>a{
-        font-size: 15px;
+  .birinchiradio .navbar li>a {
+    font-size: 15px;
   }
 }
-
-@media (max-width: 768px) {
-    .onelogos {
-        height: 50px;
-    }
-
-    .birinchiradio .search-block {
-        margin-top: 3px;
-    }
-
-    .birinchiradio .logo-block{
-        display: inline;
-        margin-top: 7px;
-        margin-right: 0px;
-    }
-    .birinchiradio .onesearch {
-        display: none;
-    }
-    .birinchiradio .navbar-brand, .birinchiradio .navbar li>a{
-        border: none; 
-    }
-    .birinchiradio .sitemenu img{
-        display: inline;
-    }
-    .birinchiradio .sitemenu span{
-        font-weight: bold;
-        font-size: 20px;
-        padding: 0px 5px;
-    }
-    .onesoc span{
-        display: none;
-    }
-
-    .birinchiradio .navbar-brand{
-      margin-left:15px;
-    }
+@media (max-width:768px) {
+  .onelogos {
+    height: 50px;
+  }
+  .birinchiradio .search-block {
+    margin-top: 3px;
+  }
+  .birinchiradio .logo-block {
+    display: inline;
+    margin-top: 7px;
+    margin-right: 0px;
+  }
+  .birinchiradio .onesearch {
+    display: none;
+  }
+  .birinchiradio .navbar-brand, .birinchiradio .navbar li>a {
+    border: none;
+  }
+  .birinchiradio .sitemenu img {
+    display: inline;
+  }
+  .birinchiradio .sitemenu span {
+    font-weight: bold;
+    font-size: 20px;
+    padding: 0px 5px;
+  }
+  .onesoc span {
+    display: none;
+  }
+  .birinchiradio .navbar-brand {
+    margin-left: 15px;
+  }
 }
-
-@media (max-width: 550px) {
-
-    .bhoechie-tab-menu {
-        width: 100%;
-    }
-    .bhoechie-tab-content img{
-        display: none;
-
-    } 
-    .birinchiradio .form-search .form-group input{
-        width:   180px; 
-    }
-    .oneheader{
-        display: inline-flex;
-        float: right;
-        margin-top: -10px;
-    } 
-    .oneline {
-        margin-right: 20px;
-    }
-    .onetime span{
-        display: none;
-    } 
-    .oneline .time, .oneline .btn-one{
-        padding:9px;       
-    }
-    .onetime i{
-        padding: 0px;
-        font-size: 18px;
-    }
-
+@media (max-width:550px) {
+  .bhoechie-tab-menu {
+    width: 100%;
+  }
+  .bhoechie-tab-content img {
+    display: none;
+  }
+  .birinchiradio .form-search .form-group input {
+    width: 180px;
+  }
+  .oneheader {
+    display: inline-flex;
+    float: right;
+    margin-top: -10px;
+  }
+  .oneline {
+    margin-right: 20px;
+  }
+  .onetime span {
+    display: none;
+  }
+  .oneline .time, .oneline .btn-one {
+    padding: 9px;
+  }
+  .onetime i {
+    padding: 0px;
+    font-size: 18px;
+  }
 }
-
-.birinchiradio .e-views{
+.birinchiradio .e-views {
   float: right;
 }
-.birinchiradio .extra{
-      margin-bottom: 5px;
-    color: #9DA8B0;
-    font-size: 12px;  
+.birinchiradio .extra {
+  margin-bottom: 5px;
+  color: #9DA8B0;
+  font-size: 12px;
 }
 
 /*Broadcasts page*/
-.oneperedacha  span{
-    position: absolute;
-    top: 50%;
-    z-index: 3;
-    color: #ffffff;
-    display: block;
-    margin: 0 10%;
-    width: 80%;
-    font-size: 12px;
-    line-height: 20px;
-    text-transform: uppercase;
-    text-align: center;
+.oneperedacha  span {
+  position: absolute;
+  top: 50%;
+  z-index: 3;
+  color: #ffffff;
+  display: block;
+  margin: 0 10%;
+  width: 80%;
+  font-size: 12px;
+  line-height: 20px;
+  text-transform: uppercase;
+  text-align: center;
 }
-
-.oneperedacha .overlay{
-    position: absolute;
-    bottom: -39px;
-    display: block;
-    font-size: 18px;
-    text-align: center;
-    overflow: visible;
-    line-height: 18px;
-
+.oneperedacha .overlay {
+  position: absolute;
+  bottom: -39px;
+  display: block;
+  font-size: 18px;
+  text-align: center;
+  overflow: visible;
+  line-height: 18px;
 }
-
-.oneperedacha .slick-track{
-    height: 200px;
+.oneperedacha .slick-track {
+  height: 200px;
 }
-.oneperedacha .slick-slide{
-    overflow: visible !important;
-    height: 160px;
-    margin: 0 1px;
+.oneperedacha .slick-slide {
+  overflow: visible !important;
+  height: 160px;
+  margin: 0 1px;
 }
-
 .oneperedacha .slick-slide img {
-    height: 160px;
-    width: 280px
+  height: 160px;
+  width: 280px
 }
+
+/* Birinchi audio articles*/
+.audioplayer {
+  height: 2.5em; /* 40 */
+  color: #fff;
+  text-shadow: 1px 1px 0 #000;
+  position: relative;
+  z-index: 1;
+  background: #333;
+}
+
+/* mini mode (fallback) */
+.audioplayer-mini {
+  width: 2.5em; /* 40 */
+  margin: 0 auto;
+}
+
+/* player elements: play/pause and volume buttons, played/duration timers, progress bar of loaded/played */
+.audioplayer > div {
+  position: absolute;
+}
+
+/* play/pause button */
+.audioplayer-playpause {
+  width: 2.5em; /* 40 */
+  height: 100%;
+  text-align: left;
+  text-indent: -9999px;
+  cursor: pointer;
+  z-index: 2;
+  top: 0;
+  left: 0;
+}
+.audioplayer:not(.audioplayer-mini) .audioplayer-playpause {
+  border-right: 1px solid #555;
+  border-right-color: rgba(255, 255, 255, .1);
+}
+.audioplayer-mini .audioplayer-playpause {
+  width: 100%;
+}
+.audioplayer-playpause:hover, .audioplayer-playpause:focus {
+  background-color: #222;
+}
+.audioplayer-playpause a {
+  display: block;
+}
+.audioplayer-stopped .audioplayer-playpause a {
+  width: 0;
+  height: 0;
+  border: 0.5em solid transparent; /* 8 */
+  border-right: none;
+  border-left-color: #fff;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -0.5em 0 0 -0.25em; /* 8 4 */
+}
+.audioplayer-playing .audioplayer-playpause a {
+  width: 0.75em; /* 12 */
+  height: 0.75em; /* 12 */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -0.375em 0 0 -0.375em; /* 6 */
+}
+.audioplayer-playing .audioplayer-playpause a:before, .audioplayer-playing .audioplayer-playpause a:after {
+  width: 40%;
+  height: 100%;
+  background-color: #fff;
+  content: '';
+  position: absolute;
+  top: 0;
+}
+.audioplayer-playing .audioplayer-playpause a:before {
+  left: 0;
+}
+.audioplayer-playing .audioplayer-playpause a:after {
+  right: 0;
+}
+
+/* timers */
+.audioplayer-time {
+  width: 4.375em; /* 70 */
+  height: 100%;
+  line-height: 2.375em; /* 38 */
+  text-align: center;
+  z-index: 2;
+  top: 0;
+}
+.audioplayer-time-current {
+  border-left: 1px solid #111;
+  border-left-color: rgba(0, 0, 0, .25);
+  left: 2.5em; /* 40 */
+}
+.audioplayer-time-duration {
+  border-right: 1px solid #555;
+  border-right-color: rgba(255, 255, 255, .1);
+  right: 2.5em; /* 40 */
+}
+.audioplayer-novolume .audioplayer-time-duration {
+  border-right: 0;
+  right: 0;
+}
+
+/* progress bar of loaded/played */
+.audioplayer-bar {
+  height: 0.875em; /* 14 */
+  background-color: #222;
+  cursor: pointer;
+  z-index: 1;
+  top: 50%;
+  right: 6.875em; /* 110 */
+  left: 6.875em; /* 110 */
+  margin-top: -0.438em; /* 7 */
+}
+.audioplayer-novolume .audioplayer-bar {
+  right: 4.375em; /* 70 */
+}
+.audioplayer-bar div {
+  width: 0;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.audioplayer-bar-loaded {
+  background-color: #333;
+  z-index: 1;
+}
+.audioplayer-bar-played {
+  background: #007fd1;
+  z-index: 2;
+}
+
+/* volume button */
+.audioplayer-volume {
+  width: 2.5em; /* 40 */
+  height: 100%;
+  border-left: 1px solid #111;
+  border-left-color: rgba(0, 0, 0, .25);
+  text-align: left;
+  text-indent: -9999px;
+  cursor: pointer;
+  z-index: 2;
+  top: 0;
+  right: 0;
+}
+.audioplayer-volume:hover, .audioplayer-volume:focus {
+  background-color: #222;
+}
+.audioplayer-volume-button {
+  width: 100%;
+  height: 100%;
+}
+.audioplayer-volume-button a {
+  width: 0.313em; /* 5 */
+  height: 0.375em; /* 6 */
+  background-color: #fff;
+  display: block;
+  position: relative;
+  z-index: 1;
+  top: 40%;
+  left: 35%;
+}
+.audioplayer-volume-button a:before, .audioplayer-volume-button a:after {
+  content: '';
+  position: absolute;
+}
+.audioplayer-volume-button a:before {
+  width: 0;
+  height: 0;
+  border: 0.5em solid transparent; /* 8 */
+  border-left: none;
+  border-right-color: #fff;
+  z-index: 2;
+  top: 50%;
+  right: -0.25em;
+  margin-top: -0.5em; /* 8 */
+}
+.audioplayer:not(.audioplayer-muted) .audioplayer-volume-button a:after {
+
+  /* "volume" icon by Nicolas Gallagher, http://nicolasgallagher.com/pure-css-gui-icons */
+  width: 0.613em; /* 5 */
+  height: 0.613em; /* 5 */
+  border: 0.25em double #fff; /* 4 */
+  border-width: 0.25em 0.25em 0 0; /* 4 */
+  left: 0.563em; /* 9 */
+  top: -0.063em; /* 1 */
+  -webkit-border-radius: 0 0.938em 0 0; /* 15 */
+  -moz-border-radius: 0 0.938em 0 0; /* 15 */
+  border-radius: 0 0.938em 0 0; /* 15 */
+  -webkit-transform: rotate(40deg);
+  -moz-transform: rotate(40deg);
+  -ms-transform: rotate(40deg);
+  -o-transform: rotate(40deg);
+  transform: rotate(40deg);
+}
+
+/* volume dropdown */
+.audioplayer-volume-adjust {
+  height: 6.25em; /* 100 */
+  cursor: default;
+  position: absolute;
+  left: 0;
+  right: -1px;
+  top: -9999px;
+  background: #333;
+}
+.audioplayer-volume:not(:hover) .audioplayer-volume-adjust {
+  opacity: 0;
+}
+.audioplayer-volume:hover .audioplayer-volume-adjust {
+  top: auto;
+  bottom: 100%;
+}
+.audioplayer-volume-adjust > div {
+  width: 40%;
+  height: 80%;
+  background-color: #222;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  margin: 30% auto 0;
+}
+.audioplayer-volume-adjust div div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #007fd1;
+}
+.audioplayer-novolume .audioplayer-volume {
+  display: none;
+}
+
+/* CSS3 decorations */
+.audioplayer {
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 0 1.25em rgba(0, 0, 0, .5); /* 20 */
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 0 1.25em rgba(0, 0, 0, .5); /* 20 */
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 0 1.25em rgba(0, 0, 0, .5); /* 20 */
+}
+.audioplayer-volume-adjust {
+  -webkit-box-shadow: -2px -2px 2px rgba(0, 0, 0, .15), 2px -2px 2px rgba(0, 0, 0, .15);
+  -moz-box-shadow: -2px -2px 2px rgba(0, 0, 0, .15), 2px -2px 2px rgba(0, 0, 0, .15);
+  box-shadow: -2px -2px 2px rgba(0, 0, 0, .15), 2px -2px 2px rgba(0, 0, 0, .15);
+}
+.audioplayer-bar, .audioplayer-volume-adjust > div {
+  -webkit-box-shadow: -1px -1px 0 rgba(0, 0, 0, .5), 1px 1px 0 rgba(255, 255, 255, .1);
+  -moz-box-shadow: -1px -1px 0 rgba(0, 0, 0, .5), 1px 1px 0 rgba(255, 255, 255, .1);
+  box-shadow: -1px -1px 0 rgba(0, 0, 0, .5), 1px 1px 0 rgba(255, 255, 255, .1);
+}
+.audioplayer-volume-adjust div div, .audioplayer-bar-played {
+  -webkit-box-shadow: inset 0 0 5px rgba(255, 255, 255, .5);
+  -moz-box-shadow: inset 0 0 5px rgba(255, 255, 255, .5);
+  box-shadow: inset 0 0 5px rgba(255, 255, 255, .5);
+}
+.audioplayer, .audioplayer-volume-adjust {
+  background: -webkit-gradient(linear, left top, left bottom, from(#444), to(#222));
+  background: -webkit-linear-gradient(top, #444, #222);
+  background: -moz-linear-gradient(top, #444, #222);
+  background: -ms-radial-gradient(top, #444, #222);
+  background: -o-linear-gradient(top, #444, #222);
+  background: linear-gradient(to bottom, #9C27B0, #AC13FF);
+}
+.audioplayer-bar-played {
+  background: -webkit-gradient(linear, left top, right top, from(#007fd1), to(#c600ff));
+  background: -webkit-linear-gradient(left, #007fd1, #c600ff);
+  background: -moz-linear-gradient(left, #007fd1, #c600ff);
+  background: -ms-radial-gradient(left, #007fd1, #c600ff);
+  background: -o-linear-gradient(left, #007fd1, #c600ff);
+  background: linear-gradient(to right, #007fd1, #c600ff);
+}
+.audioplayer-volume-adjust div div {
+  background: -webkit-gradient(linear, left bottom, left top, from(#007fd1), to(#c600ff));
+  background: -webkit-linear-gradient(bottom, #007fd1, #c600ff);
+  background: -moz-linear-gradient(bottom, #007fd1, #c600ff);
+  background: -ms-radial-gradient(bottom, #007fd1, #c600ff);
+  background: -o-linear-gradient(bottom, #007fd1, #c600ff);
+  background: linear-gradient(to top, #007fd1, #c600ff);
+}
+.audioplayer-bar, .audioplayer-bar div, .audioplayer-volume-adjust div {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.audioplayer {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+.audioplayer-volume-adjust {
+  -webkit-border-top-left-radius: 2px;
+  -webkit-border-top-right-radius: 2px;
+  -moz-border-radius-topleft: 2px;
+  -moz-border-radius-topright: 2px;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+.audioplayer *, .audioplayer *:before, .audioplayer *:after {
+  -webkit-transition: color .25s ease, background-color .25s ease, opacity .5s ease;
+  -moz-transition: color .25s ease, background-color .25s ease, opacity .5s ease;
+  -ms-transition: color .25s ease, background-color .25s ease, opacity .5s ease;
+  -o-transition: color .25s ease, background-color .25s ease, opacity .5s ease;
+  transition: color .25s ease, background-color .25s ease, opacity .5s ease;
+}
+.audioinfo {
+  background: #e2e2e2;
+  padding: 5px;
+  margin-top: -10px;
+}
+.audioinfo h4 {
+  display: table-cell;
+  font-size: unset;
+  font-weight: bold;
+}
+.audioinfo h5 {
+  display: table-cell;
+  font-size: unset;
+  padding-left: 8px;
+}
+
+.audioinfo h6 {
+  display: table-cell;
+  font-weight: bold;
+  float:left; 
+  margin:0px;
+  font-size: 14px; 
+}
+.audioinfo a {
+  padding-top: 5px;
+
+}
+
+.audiosrc{
+  text-decoration: underline;
+  padding-left: 5px;
+}
+.muzimg {
+  width: 310px;
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 0px;
+}
+.muzimg img {
+  max-width: 320px;
+  overflow: hidden;
+  height: auto;
+  width: auto;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  padding-right: 10px;
+  position: relative;
+}
+@media screen and (max-width:35em) {
+  .muzimg {
+    width: 100% !important;
+  }
+}
+@media screen and (max-width:24em) {
+  .muzimg {
+    width: 80% !important;
+  }
+}
+.muzimg audio {
+  margin: 0;
+  padding: 0;    /* height: 55px; */
+  position: absolute;
+  display: inline-block;
+  z-index: 999;
+  left: 15px;
+  vertical-align: bottom;
+}
+.onearticle article {
+  text-align: justify;
+}
+.onearticle h2{
+  margin: 5px 0px;
+}
+.onenewspage {
+  padding: 0px;
+}
+
+.onearticle blockquote{
+  background: #CECECE;
+  display: inline-block;
+  border-left: 3px solid #444;
+}
+
+/* Birinchi audio articles*/

@@ -320,7 +320,7 @@
                 <div class="col-md-3 oneserep onefix">
                     <nav>
                         <ul>
-                            <li><a href="">Выпуск новостей</a></li>
+                            <li><a href="{{ route('birinchi.news') }}">Выпуск новостей</a></li>
                             <li><a href="">Сереп</a></li>
                         </ul>
                     </nav>
