@@ -40,24 +40,29 @@ class HomeController extends Controller
 
         if($rDayVideo != null){
             $dayVideo = $rDayVideo;
-        }else{
-            $dayVideo = \Model\Media\ModelName::take(1)->skip(0)->orderBy('id', 'desc')->first();
+        }elseif($rDayVideo == null){
+            $dayVideoResult = \Model\Media\ModelName::take(1)->skip(0)->orderBy('id', 'desc')->first();
+            if($dayVideoResult != null){
+                $dayVideo = $dayVideoResult;
+            }else{
+                $dayVideo = 'KhJUlC4aJZM';
+            }
         }
         
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
         $peopleReporters = \Model\PeopleReporter\ModelName::where('published','=',true)->get();
 
-        //$parentId = \Model\PhotoParent\ModelName::where()->first();
-        //$photoChilds = \Model\PhotoChild\ModelName::where('parentId','=',$parentId->id)->get();
-
+        // FotoParent - photo gallery
+        $photoParent = \Model\PhotoParent\ModelName::where('published','=',true)->first();
+        $images = json_decode($photoParent->images); // array of images
         
-
         $MediaCategories = \Model\MediaCategory\ModelName::get();
         $mediaPosts = \Model\Media\ModelName::get();
 
         $videoAll = \Model\Media\ModelName::get();
         
         return view('Front::home', [
+            'images' => $images,
             'generalPosts'   => $generalPosts,
             'dayVideo'      => $dayVideo,
             

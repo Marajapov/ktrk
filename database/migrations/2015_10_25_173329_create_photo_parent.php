@@ -16,7 +16,13 @@ class CreatePhotoParent extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('nameRu');
-            $table->string('file');
+            $table->string('description');
+            $table->string('descriptionRu');
+            $table->string('author');
+            $table->string('authorRu');
+            $table->binary('images');
+            $table->boolean('published')->nullable()->default(false);;
+            $table->string('status');
             $table->timestamps();
         });
     }
