@@ -29,20 +29,6 @@ class TestController extends Controller
         $files = Input::file('images');
         $result = array();
 
-        // $file_ary = array();
-        // $file_count1 = count($files);
-        // $file_keys = array_keys($files);
-
-        // for ($i=0; $i<$file_count1; $i++) {
-        //     foreach ($file_keys as $key) {
-        //         if($i==$key)               
-        //         $file_ary[$i][$key] = array_get($files, $key, $i);
-        //     }
-        // }
-
-        // dd($file_ary);
-        
-        // Making counting of uploaded images
         $file_count = count($files);
 
         // start count how many uploaded

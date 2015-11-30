@@ -19,7 +19,6 @@
 						{{ $photoParent->getName() }}
 						<img src="{{ asset($photoParent->getFile()) }}" alt="" width="100" height="80">
 					</a>
-					
 					@endforeach
 				</div>
 			</div>
