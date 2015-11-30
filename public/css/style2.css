@@ -605,7 +605,7 @@ header.top-menu,.logo-block{
     width: 100%;
     height: 100%;
 
-    background: rgba(255, 255, 255, 0.75);
+    background: rgba(255, 255, 255, 0.5);
 
     -webkit-transition: all 0.2s ease;
     -moz-transition: all 0.2s ease;
@@ -634,12 +634,15 @@ header.top-menu,.logo-block{
     bottom: 0;
     right: 0;
     z-index: 101;
-    padding: 25px 50px;
+
+    height: 100px;
+    width: 100%;
 
     color: #ffffff;
     font-size: 40px;
+    line-height: 80px;
 
-    text-shadow: 3px 3px 5px #000000;
+    text-shadow: 1px 1px 5px #000000;
 
     opacity: 0;
     -webkit-transition: all 0.2s ease;
@@ -648,15 +651,40 @@ header.top-menu,.logo-block{
     -o-transition: all 0.2s ease;
     transition: all 0.2s ease;
 }
+.show-info h4{
+    position: absolute;
+    left: 30px;
+
+    margin: 0;
+
+    font-size: 40px;
+    line-height: 100px;
+    text-transform: uppercase;
+}
+.show-info span{
+    position: absolute;
+    right: 30px;
+    text-transform: lowercase;
+}
+.show-time{
+    top: 10px;
+    font-size: 40px;
+    line-height: 50px;
+}
+.show-day{
+    bottom: 10px;
+    font-size: 24px;
+    line-height: 40px;
+}
 .shows-carousel .slick-slide.slick-current .show-info{
     opacity: 1;
 }
 .shows-carousel .slick-prev, .shows-carousel .slick-next{
     z-index: 101;
-    width: 100px;
+    width: 80px;
     height: 80px;
 
-    background: rgba(255, 255, 255, 0.75);
+    background: rgba(255, 255, 255, 0.35);
 
     text-align: center;
 
@@ -667,7 +695,7 @@ header.top-menu,.logo-block{
     transform: translateY(-25px);
 }
 .shows-carousel .slick-prev::before, .shows-carousel .slick-next::before{
-    color: #000000;
+    color: #333 !important;
     font-size: 40px;
 }
 .shows-carousel .slick-prev{
@@ -677,7 +705,7 @@ header.top-menu,.logo-block{
     right: 0px;
 }
 .shows-carousel .slick-prev:hover, .shows-carousel .slick-prev:focus, .shows-carousel .slick-next:hover, .shows-carousel .slick-next:focus{
-    background: rgba(255, 255, 255, 0.75);
+    background: rgba(255, 255, 255, 0.5);
 }
 
 

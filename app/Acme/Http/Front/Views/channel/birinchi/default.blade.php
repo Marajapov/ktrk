@@ -14,11 +14,18 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick-theme.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}"/>
 
+            <link rel="stylesheet" type="text/css" href="{{ asset('css/custombox.css') }}"/>
+        <link rel="stylesheet"  href="{{ asset('css/lightslider.css') }}"/>
+        <link rel="stylesheet" href="{{ asset('css/gallery.css') }}"/>
+        <script src="{{ asset('js/gallery/modernizr.custom.js') }}"></script> 
+
     <link rel="stylesheet" href="{{ asset('css/date-filter.css') }}"/>
     
     <link rel="stylesheet" href="{{ asset('css/admin/jasny/jasny-bootstrap.min.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/fileinput.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/style2.css') }}"/>
+
+
 
 
     <script src="{{ asset('js/jquery-1.11.2.min.js') }}"></script>

@@ -9,28 +9,34 @@
       <div>
         <div class="overlay"></div>
         <a href="#">
-          <img src="images/anons/1.jpg" alt=""/>
+          <img src="{{ asset('images/projects/ala-too.jpg') }}" alt=""/>
         </a>
         <div class="show-info">
-          жекшемби 21:00
+          <h4>Ала-Тоо</h4>
+          <span class="show-day">{{ trans('site.Monday') }} - {{ trans('site.Friday') }}</span>
+          <span class="show-time">19:30 / 21:30</span>
         </div>
       </div>
       <div>
         <div class="overlay"></div>
         <a href="#">
-          <img src="images/anons/2.jpg" alt=""/>
+          <img src="{{ asset('images/projects/jumakairyk.jpg') }}" alt=""/>
         </a>
         <div class="show-info">
-          жекшемби 21:00
+          <h4>Жумакайрык</h4>
+          <span class="show-day">{{ trans('site.Sunday') }}</span>
+          <span class="show-time">21:00</span>
         </div>
       </div>
       <div>
         <div class="overlay"></div>
         <a href="#">
-          <img src="images/anons/3.jpg" alt=""/>
+          <img src="{{ asset('images/projects/zamana.jpg') }}" alt=""/>
         </a>
         <div class="show-info">
-          жекшемби 21:00
+          <h4>Замана</h4>
+          <span class="show-day">{{ trans('site.Monday') }} - {{ trans('site.Friday') }}</span>
+          <span class="show-time">07:00</span>
         </div>
       </div>
       <div>
