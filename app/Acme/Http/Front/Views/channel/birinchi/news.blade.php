@@ -144,7 +144,7 @@
             <div class="col-md-12">
                 <div class="row">
                     <div class="col-md-9 onenewspage">
-                        <div class="panel panel-default onearticle onelist">
+                        <div class="panel panel-default onearticle">
                             <div class="panel-heading">
                                 <h3 class="panel-title"><span> Новости </span></h3>
                             </div>

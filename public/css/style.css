@@ -4578,6 +4578,49 @@ ul.social-share li a:hover {
     margin-top: 20px;
 }
 
+.no-padding{
+    padding: 0px;
+}
+.telecasts{
+    padding: 10px;
+}
+.telecast_pic a img{
+    max-width: 160px;
+    height: 140px;
+    float: left;
+    margin-right: 10px;
+}
+.telecast_data a{
+    color: #4d4d4f;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Roboto Condensed', serif;
+    font-size: 15px;
+}
+.schedule span.day{
+    display: inline-block;
+    text-align: center;
+    padding: 0 1px;
+    background-color: #928F8F;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 10px;
+    line-height: 13px;
+}
+.schedule span.day_active{
+    background: #B10036;
+}
+
+.aboutperedachi{
+    display: block;
+    margin-top: 5px;
+    color: rgba(77, 77, 79, 1.8);
+    font-size: 18px;
+    line-height: 19px;
+    text-transform: none;
+    font-weight: normal;
+}
+
 /*Madaniayt page style*/
 
 /* Balastan page style*/
@@ -4781,3 +4824,4 @@ ul.social-share li a:hover {
 .firstcloud {
     margin-left: 60px;
 }
+

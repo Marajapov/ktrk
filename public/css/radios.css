@@ -5,10 +5,7 @@
 .topheader {
   padding: 0px;
 }
-.
-.topheader .navbar-toggle {
-  margin-top: 3px;
-}
+
 .topheader .navbar-toggle .icon-bar {
   background: #fff;
 }
@@ -44,10 +41,13 @@
   margin: 0px;
 }
 .birinchiradio .navbar .dropdown-menu, .birinchiradio .navbar .dropdown-menu li>a {
-  background: #eee;
-  color: #333;
-  border-bottom: 1px solid #BBBBBB;
+  background: #9C27B0;
+  color: #fff;
 }
+.birinchiradio .navbar .dropdown-menu:hover, .birinchiradio .navbar .dropdown-menu li>a:hover {
+  color: #191818;
+}
+
 .birinchiradio .navbar .dropdown-menu li>a {
   padding: 3px 10px !important;
 }
@@ -137,7 +137,7 @@
   float: left;
 }
 .oneline .time {
-  background: #D8D2D2  !important;
+  background: #D8D2D2 !important;
   margin-top: 0px;
   padding: 10px 10px
 }
@@ -162,15 +162,15 @@
   margin-right: 10px !important;
 }
 .onelist .panel-heading {
-  padding: 10px;
+  padding: 10px 0px 10px 15px;
   background: #D8D2D2;
 }
 .onenews .panel-heading {
-  padding: 10px;
+  padding: 10px 0px 10px 15px;
   background: #D8D2D2;
 }
 .onenews .panel-body {
-
+  padding: 10px 10px 10px 7px;
 }
 .onelist .panel-heading h3, .onenews .panel-heading h3 {
   padding: 0px;
@@ -183,7 +183,7 @@
   padding: 0px;
 }
 .onelist nav>ul>li {
-  padding-left: 5px;
+  padding-left: 10px;
   padding-bottom: 3px;
   padding-top: 3px;
   border-bottom: 1px solid #E0DFDF;
@@ -476,7 +476,10 @@
 }
 .oneperedacha .slick-slide img {
   height: 160px;
-  width: 280px
+  width: 275px
+}
+.oneperedacha .slick-slide {
+  background: none !important;
 }
 
 /* Birinchi audio articles*/
@@ -800,20 +803,17 @@
   font-size: unset;
   padding-left: 8px;
 }
-
 .audioinfo h6 {
   display: table-cell;
   font-weight: bold;
-  float:left; 
-  margin:0px;
-  font-size: 14px; 
+  float: left;
+  margin: 0px;
+  font-size: 14px;
 }
 .audioinfo a {
   padding-top: 5px;
-
 }
-
-.audiosrc{
+.audiosrc {
   text-decoration: underline;
   padding-left: 5px;
 }
@@ -824,14 +824,13 @@
   margin-bottom: 0px;
 }
 .muzimg img {
-  max-width: 320px;
+  max-width: 100%;
   overflow: hidden;
   height: auto;
   width: auto;
   display: inline-block;
   text-align: center;
   vertical-align: middle;
-  padding-right: 10px;
   position: relative;
 }
 @media screen and (max-width:35em) {
@@ -856,17 +855,30 @@
 .onearticle article {
   text-align: justify;
 }
-.onearticle h2{
+.onearticle h2 {
   margin: 5px 0px;
 }
 .onenewspage {
   padding: 0px;
 }
-
-.onearticle blockquote{
-  background: #CECECE;
-  display: inline-block;
-  border-left: 3px solid #444;
+.onearticle blockquote {
+  background: #EFEBEB;
+  display: table;
+  border-left: 3px solid #A71AE5;
+}
+.onearticle .panel-heading h3 {
+  padding: 0px;
+  margin-top: 0px;
+  color: #555;
+  font-weight: bold;
+  border: none !important;
+}
+.onearticle .panel-heading {
+  padding: 10px 0px 10px 15px;
+  background: #D8D2D2;
+}
+.onearticle .panel-body{
+  padding: 0px;
 }
 
 /* Birinchi audio articles*/
