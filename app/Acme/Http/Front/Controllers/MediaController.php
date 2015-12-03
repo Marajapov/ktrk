@@ -55,7 +55,13 @@ class MediaController extends Controller
         }else{
             $videoName = $video->getNameRu();
             $result = \Model\Project\ModelName::where('id','=',$projectId)->first();
-            $videoProject = $result->getNameRu();
+            if($result != null){
+                $videoProject = $result->getNameRu();    
+            }else{
+                $videoProject = '';
+            }
+            
+
 
             $result = \Model\MediaCategory\ModelName::where('videoType','=',$videoType)->first();
             $getVideoTypeName = $result->getNameRu();

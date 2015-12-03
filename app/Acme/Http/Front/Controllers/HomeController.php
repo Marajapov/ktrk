@@ -85,34 +85,12 @@ class HomeController extends Controller
             ]);
     }
 
-    public function Balastan()
-    {
-        $channel = \Model\Channel\ModelName::name('balastan')->first();
-        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
-
-        return view('Front::channel.balastan.index', [
-            'channel' => $channel,
-            'backgroundMain' => $backgroundMain,
-
-            ]);
-    }
-
-    public function Muzkanal()
-    {
-        $channel = \Model\Channel\ModelName::name('muzkanal')->first();
-
-        return view('Front::channel.muzkanal.index', ['channel' => $channel]);
-    }
-
-    public function Ktr()
-    {
-        $channel = \Model\Channel\ModelName::name('ktr')->first();
-
-        return view('Front::channel.ktr.index', ['channel' => $channel]);
-    }
+    
 
     public function Post(\Model\Post\ModelName $post)
     {
+        $lc = app()->getlocale();
+
         $post->incrementViewed();
 
         $categories = \Model\Category\ModelName::all();
@@ -148,7 +126,12 @@ class HomeController extends Controller
         }else{
             $related3Post = null;
         }
-        $relatedPosts = \Model\Post\ModelName::where('category_id','=',$post->category_id)->get();
+        if($lc == 'kg'){
+            $relatedPosts = \Model\Post\ModelName::where('category_id','=',$post->category_id)->languagekg()->take(6)->skip(0)->orderBy('id', 'desc')->get();
+        }elseif($lc == 'ru'){
+            $relatedPosts = \Model\Post\ModelName::where('category_id','=',$post->category_id)->languageru()->take(6)->skip(0)->orderBy('id', 'desc')->get();
+        }
+        
 
         return view('Front::post.post',[
             'post' => $post,
@@ -169,30 +152,60 @@ class HomeController extends Controller
 
     }
 
-    public function Page(\Model\Page\ModelName $page)
-    {
-        $page->incrementViewed();
-
-        return view('Front::page',['page' => $page]);
-    }
-
-    public function Posts()
+     public function Posts()
     {        
+        $lc = app()->getlocale();
         $perPage = 10;
+        if($lc == 'kg'){
+            $postAll = \Model\Post\ModelName::where('title','<>','')->orderBy('id','desc')->paginate($perPage);    
+        }elseif($lc == 'ru'){
+            $postAll = \Model\Post\ModelName::where('titleRu','<>','')->orderBy('id','desc')->paginate($perPage);
+        }
         
-        $channel = \Model\Channel\ModelName::general();
 
         $categories = \Model\Category\ModelName::all();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
         return view('Front::post.posts',[
             'perPage'=> $perPage,
-            'channel' => $channel,
-            'postAll' => $channel->posts()->paginate($perPage),
+            'postAll' => $postAll,
             'categories'=>$categories,
             'backgroundMain' => $backgroundMain,
             ]);
 
+    }
+
+
+    public function Balastan()
+    {
+        $channel = \Model\Channel\ModelName::name('balastan')->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+        return view('Front::channel.balastan.index', [
+            'channel' => $channel,
+            'backgroundMain' => $backgroundMain,
+
+            ]);
+    }
+
+    public function Muzkanal()
+    {
+        $channel = \Model\Channel\ModelName::name('muzkanal')->first();
+
+        return view('Front::channel.muzkanal.index', ['channel' => $channel]);
+    }
+
+    public function Ktr()
+    {
+        $channel = \Model\Channel\ModelName::name('ktr')->first();
+
+        return view('Front::channel.ktr.index', ['channel' => $channel]);
+    }
+    public function Page(\Model\Page\ModelName $page)
+    {
+        $page->incrementViewed();
+
+        return view('Front::page',['page' => $page]);
     }
 
     public function searchResult(Request $request)
