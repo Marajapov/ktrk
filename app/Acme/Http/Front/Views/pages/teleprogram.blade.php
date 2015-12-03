@@ -62,7 +62,7 @@
                     <tr class="tele-row tele-live">
                       <th class="tele-time">7:00</th>
                       <td class="tele-show">
-                        <span><i class="fa fa-circle"></i>сейчас в эфире</span>
+                        <span id="bcLive"><i class="fa fa-circle"></i>сейчас в эфире</span>
                         <h4>Новости <span></span></h4>
                       </td>
                     </tr>
@@ -164,6 +164,26 @@
   <script type="text/javascript">
     jQuery(document).ready(function ($) {
       $('#tabs').tab();
+
+      blink($('#bcLive'), -1, 500);
+
+      function blink(elem, times, speed) {
+        if (times > 0 || times < 0) {
+          if ($(elem).hasClass("blink"))
+            $(elem).removeClass("blink");
+          else
+            $(elem).addClass("blink");
+        }
+        clearTimeout(function () {
+          blink(elem, times, speed);
+        });
+        if (times > 0 || times < 0) {
+          setTimeout(function () {
+            blink(elem, times, speed);
+          }, speed);
+          times -= .5;
+        }
+      }
     });
   </script>
 

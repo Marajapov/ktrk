@@ -481,3 +481,6 @@
     padding-right: 5px;
     color: #c42026;
 }
+.teleprogramm .table .tele-live span.blink i{
+    opacity: 0;
+}
