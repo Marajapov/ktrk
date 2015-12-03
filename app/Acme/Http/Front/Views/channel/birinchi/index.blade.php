@@ -6,11 +6,10 @@
 @endsection
 @section('content')
 <div class="birinchiradio">
-   <div class="container-fluid row">
-      <div class="col-md-12 topheader">
-         <div class="container onepadding">
-            <nav class="top-nav clearfix">
-               <ul class="clearfix">
+<div class="container-fluid metatop">
+    <div class="container onepadding">
+         <nav class="top-nav">
+               <ul>
                   @foreach(\Model\Menu\ModelName::code('main')->parent()->get() as $menu)
                   @if(count($menu->submenus) > 0)
                   <li>
@@ -20,15 +19,25 @@
                         <li><a href="{{ $submenu->getUrl() }}">{{ $submenu->getName() }}</a></li>
                         @endforeach
                      </ul>
-                  </li>
-                  <li> / </li>
+                  </li>          
                   @else
-                  <li><a href="{{ $menu->getUrl() }}">{{ $menu->getName() }}</a></li>
-                  <li> / </li>
+                  <li><a href="{{ $menu->getUrl() }}">{{ $menu->getName() }}</a></li>    
                   @endif
-                  @endforeach
+                  @endforeach 
                </ul>
+                <ul class="topradio pull-right">
+                    <li><a href="#">Кыргыз Радиосу</a></li>
+                    <li><a href="#">Миң Кыял</a></li>
+                    <li></li>
+               </ul>
+             
+             
             </nav>
+    </div>
+</div>
+   <div class="container-fluid cffix">
+      <div class="col-md-12 topheader">
+         <div class="container onepadding">           
             <div class="col-md-5">
                <nav>
                   <ul>
@@ -42,10 +51,10 @@
                   </ul>
                </nav>
             </div>
-            <div class="col-md-7 oneheader">
+            <div class="col-md-7 oneheader onepadding">
                <ul class="nav navbar-nav oneline">
                   <li><a class="time" href="#"><time>11:15</time></a></li>
-                  <li class="onetime"><a href=""><button class="btn btn-danger btn-one"><i class="fa fa-microphone"></i><span>Прямой эфир</span></button></a></li>
+                  <li class="onetime"><a href=""><button class="btn"><i class="fa fa-microphone"></i><span>Прямой эфир</span></button></a></li>
                </ul>
                <ul class="nav navbar-nav navbar-right onesoc">
                   <li class="onepost"><a href=""><i class="fa fa-facebook"></i><span>facebook</span></a></li>
@@ -58,7 +67,7 @@
                <div class="container">
                   <!-- Brand and toggle get grouped for better mobile display -->
                   <div class="navbar-header oneheaderone">
-                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="true">
                      <span class="sr-only">Меню</span>
                      <span class="icon-bar"></span>
                      <span class="icon-bar"></span>
@@ -127,7 +136,7 @@
       </div>
    </div>
    <div class="container">
-      <div class="row">
+      <div class="row" style="margin-top:10px;">
          <div class="col-md-12">
             <div class="row onepadding">
                <div class="col-md-9 onepadding">
@@ -137,9 +146,9 @@
                            <div class="item next left">
                               <article class="carousel-entry">
                                  <a href="#"><img width="710" height="400" src="{{asset('images/gallery/001.jpg')}}" alt=""></a>
-                                 <span class="cat-links hidden-xs"><a href="#" rel="category tag">Спорт</a></span>                     
+                                 <span class="cat-links "><a href="#" rel="category tag">Спорт</a></span>                     
                                  <div class="carousel-caption">
-                                    <div class="entry-meta hidden-xs">
+                                    <div class="entry-meta ">
                                        <span class="entry-date"><i class="fa fa-clock-o"></i>2 Декабрь, 2015</span>
                                     </div>
                                     <h1 class="entry-title"><a href="#">Кыргыз бильярдчылар Орусияда күч сынашууда</a></h1>
@@ -149,9 +158,9 @@
                            <div class="item">
                               <article class="carousel-entry">
                                  <a href="#"><img width="710" height="400" src="{{asset('images/gallery/002.jpg')}}" alt=""></a>
-                                 <span class="cat-links hidden-xs"><a href="#" rel="category tag">Эконоимка</a>, <a href="#" rel="category tag">Орусия</a></span>                     
+                                 <span class="cat-links "><a href="#" rel="category tag">Эконоимка</a>, <a href="#" rel="category tag">Орусия</a></span>                     
                                  <div class="carousel-caption">
-                                    <div class="entry-meta hidden-xs">
+                                    <div class="entry-meta ">
                                        <span class="entry-date"><i class="fa fa-clock-o"></i>2 Декабрь, 2015</span>
                                     </div>
                                     <h1 class="entry-title"><a href="#">Орусия тыюу салган түрк товарлардын тизмеси жарыяланды</a></h1>
@@ -161,9 +170,9 @@
                            <div class="item">
                               <article class="carousel-entry">
                                  <a href="#"><img width="710" height="400" src="{{asset('images/gallery/003.jpg')}}" alt=""></a>
-                                 <span class="cat-links hidden-xs"><a href="#" rel="category tag">Кырсык</a></span>                     
+                                 <span class="cat-links "><a href="#" rel="category tag">Кырсык</a></span>                     
                                  <div class="carousel-caption">
-                                    <div class="entry-meta hidden-xs">
+                                    <div class="entry-meta ">
                                        <span class="entry-date"><i class="fa fa-clock-o"></i>2 Декабрь, 2015</span>
                                     </div>
                                     <h1 class="entry-title"><a href="#">Кечээ болгон жер титирөөдөн бир катар социалдык объекттер жабыркады</a></h1>
@@ -173,9 +182,9 @@
                            <div class="item">
                               <article class="carousel-entry">
                                  <a href="#"><img width="710" height="400" src="{{asset('images/gallery/004.jpg')}}" alt=""></a>
-                                 <span class="cat-links hidden-xs"><a href="#" rel="category tag">Дүйнө жаңылыктары</a></span>                        
+                                 <span class="cat-links "><a href="#" rel="category tag">Дүйнө жаңылыктары</a></span>                        
                                  <div class="carousel-caption">
-                                    <div class="entry-meta hidden-xs">
+                                    <div class="entry-meta">
                                        <span class="entry-date"><i class="fa fa-clock-o"></i>2 Декабрь, 2015</span>                                             
                                     </div>
                                     <h1 class="entry-title"><a href="#">Стамбулдагы жарылуудан беш киши жаракат алды</a></h1>
@@ -185,9 +194,9 @@
                            <div class="item active left">
                               <article class="carousel-entry">
                                  <a href="#"><img width="710" height="400" src="{{asset('images/gallery/005.jpg')}}" alt=""></a>
-                                 <span class="cat-links hidden-xs"><a href="#" rel="category tag">Экономика</a></span>                        
+                                 <span class="cat-links"><a href="#" rel="category tag">Экономика</a></span>                        
                                  <div class="carousel-caption">
-                                    <div class="entry-meta hidden-xs">
+                                    <div class="entry-meta">
                                        <span class="entry-date"><i class="fa fa-clock-o"></i>2 Декабрь, 2015</span>                                                
                                     </div>
                                     <h1 class="entry-title"><a href="#">Доллардан баш тартууга мүмкүнбү?</a></h1>
@@ -355,6 +364,8 @@
                         <li><a href="">Сереп</a></li>
                      </ul>
                   </nav>
+                  <br>
+                  <iframe width="100%" height="280" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/171625446&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
                </div>
             </div>
          </div>
@@ -618,132 +629,12 @@
       </div>
           </div>
          </div>
-      <div class="row">
-         <div class="col-md-12" style="padding: 10px 0px 0px 0px;">
-            <div class="panel panel-carousel ">
-               <div class="panel-heading">
-                  <h3 class="panel-title"><span>Передачи</span></h3>
-               </div>
-               <div class="panel-body">
-                  <div class="col-md-12 oneperedacha">
-                     <div class="carousel-slick-peredacha">
-                        <div class="col-md-4">
-                           <a href="#">
-                           <img src="{{ asset('images/gallery/001.jpg')}}" alt=""/>
-                           <span>Күндүн темасы</span>                                  
-                           </a>
-                           <a href="#" class="overlay">Депутат иш сапары менен кайда кетти?</a>
-                        </div>
-                        <div class="col-md-4"><a href="#"><img src="images/gallery/002.jpg" alt=""/><span>Күндүн темасы</span><a href="#" class="overlay">А.Атамбаев иш сапары менен Францияга барды.</a></a></div>
-                        <div class="col-md-4"><a href="#"><img src="images/gallery/003.jpg" alt=""/><span>Күндүн темасы</span><a href="#" class="overlay">Студент иш сапары менен уйкуга барды.</a></a></div>
-                        <div class="col-md-4"><a href="#"><img src="images/gallery/003.jpg" alt=""/><span>Күндүн темасы</span><a href="#" class="overlay">Кышка бир күн калды.</a></a></div>
-                        <div class="col-md-4"><a href="#"><img src="images/gallery/004.jpg" alt=""/><span>Күндүн темасы</span><a href="#" class="overlay">Депутат иш сапары менен кайда кетти?.</a></a></div>
-                        <div class="col-md-4"><a href="#"><img src="images/gallery/005.jpg" alt=""/><span>Күндүн темасы</span><a href="#" class="overlay">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></a></div>
-                        <div class="col-md-4"><a href="#"><img src="images/gallery/006.jpg" alt=""/><span>Күндүн темасы</span><a href="#" class="overlay">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></a></div>
-                        <div class="col-md-4"><a href="#"><img src="images/gallery/007.jpg" alt=""/><span>Күндүн темасы</span><a href="#" class="overlay">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></a></div>
-                        <div class="col-md-4"><a href="#"><img src="images/gallery/008.jpg" alt=""/><span>Күндүн темасы</span><a href="#" class="overlay">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></a></div>
-                        <div class="col-md-4"><a href="#"><img src="images/gallery/009.jpg" alt=""/><span>Күндүн темасы</span><a href="#" class="overlay">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></a></div>
-                        <div class="col-md-4"><a href="#"><img src="images/gallery/010.jpg" alt=""/><span>Күндүн темасы</span><a href="#" class="overlay">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></a></div>
-                        <div class="col-md-4"><a href="#"><img src="images/gallery/011.jpg" alt=""/><span>Күндүн темасы</span><a href="#" class="overlay">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></a></div>
-                        <div class="col-md-4"><a href="#"><img src="images/gallery/012.jpg" alt=""/><span>Күндүн темасы</span><a href="#" class="overlay">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></a></div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <div class="row">
-         <div class="col-md-12" style="padding: 10px 0px 0px 0px;">
-            <div class="panel panel-default panel-carousel ">
-               <div class="panel-heading">
-                  <h3 class="panel-title"><span>Фотогалерея</span></h3>
-               </div>
-               <div class="panel-body">
-                  <div class="col-md-12 broadimages">
-                     <div class="carousel-slick-birinchi">
-                        <div class="col-md-4">
-                           <a href="#">
-                              <img src="images/gallery/001.jpg" alt=""/><span>Название</span>
-                              <div class="overlay"></div>
-                           </a>
-                        </div>
-                        <div class="col-md-4">
-                           <a href="#">
-                              <img src="images/gallery/002.jpg" alt=""/><span>Название</span>
-                              <div class="overlay"></div>
-                           </a>
-                        </div>
-                        <div class="col-md-4">
-                           <a href="#">
-                              <img src="images/gallery/003.jpg" alt=""/><span>Название</span>
-                              <div class="overlay"></div>
-                           </a>
-                        </div>
-                        <div class="col-md-4">
-                           <a href="#">
-                              <img src="images/gallery/004.jpg" alt=""/><span>Название</span>
-                              <div class="overlay"></div>
-                           </a>
-                        </div>
-                        <div class="col-md-4">
-                           <a href="#">
-                              <img src="images/gallery/005.jpg" alt=""/><span>Название</span>
-                              <div class="overlay"></div>
-                           </a>
-                        </div>
-                        <div class="col-md-4">
-                           <a href="#">
-                              <img src="images/gallery/006.jpg" alt=""/><span>Название</span>
-                              <div class="overlay"></div>
-                           </a>
-                        </div>
-                        <div class="col-md-4">
-                           <a href="#">
-                              <img src="images/gallery/007.jpg" alt=""/><span>Название</span>
-                              <div class="overlay"></div>
-                           </a>
-                        </div>
-                        <div class="col-md-4">
-                           <a href="#">
-                              <img src="images/gallery/008.jpg" alt=""/><span>Название</span>
-                              <div class="overlay"></div>
-                           </a>
-                        </div>
-                        <div class="col-md-4">
-                           <a href="#">
-                              <img src="images/gallery/009.jpg" alt=""/><span>Название</span>
-                              <div class="overlay"></div>
-                           </a>
-                        </div>
-                        <div class="col-md-4">
-                           <a href="#">
-                              <img src="images/gallery/010.jpg" alt=""/><span>Название</span>
-                              <div class="overlay"></div>
-                           </a>
-                        </div>
-                        <div class="col-md-4">
-                           <a href="#">
-                              <img src="images/gallery/011.jpg" alt=""/><span>Название</span>
-                              <div class="overlay"></div>
-                           </a>
-                        </div>
-                        <div class="col-md-4">
-                           <a href="#">
-                              <img src="images/gallery/012.jpg" alt=""/><span>Название</span>
-                              <div class="overlay"></div>
-                           </a>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
+
    </div>
 </div>
 @stop
 @section('footerscript2')
-<script src="{{ asset('js/newsslider.js') }}"></script>
+<!-- <script src="{{ asset('js/newsslider.js') }}"></script> -->
 <script>
    if ($(window).width() > 768) {
        $('.carousel-slick-birinchi').slick({

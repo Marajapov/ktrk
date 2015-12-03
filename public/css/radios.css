@@ -2,8 +2,14 @@
 .birinchiradio {
   font-family: 'Roboto Regular';
 }
+.cffix {
+    margin: 0px;
+    padding: 0px;
+}
 .topheader {
   padding: 0px;
+
+  background: #333333;
 }
 .onepadding{
   padding: 0px;
@@ -15,19 +21,49 @@
 .oneheader{
   margin-top: 11px;
 }
+
+.metatop{
+  background: #252424;
+}
 .topheader .navbar-toggle .icon-bar {
   background: #fff;
 }
-.topheader .top-nav {
+.birinchiradio .top-nav {
   position: relative;
   top: 0;
-  border-bottom: 1px solid #E6E4E4;
 }
-.topheader .top-nav li a {
-  color: #333;
+.birinchiradio .top-nav .dropdown-menu {
+  background: #444;
+
 }
+.birinchiradio .top-nav .dropdown-menu li {
+  padding: 0px 10px;
+  margin: 0px;
+  border-left: none !important;
+}
+.birinchiradio .top-nav .dropdown-menu li a{
+  border-left: none !important;
+}
+.birinchiradio .top-nav li a {
+  color: #fff;
+  border-left: 1px solid #333333;
+
+}
+.birinchiradio .top-nav li a:hover {
+  color: #03A9F4;
+}
+.birinchiradio .top-nav .dropdown-menu li a:hover {
+  color: #444;
+  background: #eee;
+}
+.birinchiradio .topradio li a {
+  color: #fff;
+  border-left: 1px solid #333333;
+  margin-right: -7px;
+}
+
 .birinchiradio time {
-  color: #673AB7;
+  color: #EDE3FF;
   font-weight: bold;
   font-size: 20px;
 }
@@ -40,18 +76,19 @@
   margin-top: 5px;
 }
 .birinchiradio .navbar {
-  background: #fcfcfc;
+  background: #666666;
   min-height: 40px;
   border-right: 2px solid #fff;
   border: none;
   box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+  margin-bottom: 0px;
 }
 .onenavbar {
   margin: 0px;
 }
 .birinchiradio .navbar .dropdown-menu, .birinchiradio .navbar .dropdown-menu li>a {
   background: #eee;
-  color: #cf4d35;
+  color: #444;
 
 }
 .birinchiradio .navbar .dropdown-menu:hover, .birinchiradio .navbar .dropdown-menu li>a:hover {
@@ -64,21 +101,22 @@
 }
 .birinchiradio .navbar-brand {
   height: auto;
+  background: none repeat scroll 0% 0% #999999;
 }
 .birinchiradio .navbar-brand, .birinchiradio .navbar li>a {
-  color: #4a4a4a;
+  color: #fff;
   font-size: 17px;
-  font-weight: bold;
   box-shadow: -1px 0 0 0 rgba(0, 0, 0, 0.05);
+  padding: 10px;
   /*    border-right: 2px solid #fff;*/
 }
 .birinchiradio .navbar li>a:hover, .birinchiradio .navbar li>a:active, .birinchiradio .navbar li>a:focus {
-  color: #cf4d35;
+  color: #fff;
+  background: none repeat scroll 0% 0% #999999;
 
 }
 .birinchiradio .nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
-  color: #cf4d35;
-  background: #eee;
+  background: none repeat scroll 0% 0% #999999;
 }
 .birinchiradio #site-channel1 a {
   display: block;
@@ -93,20 +131,20 @@
   color: inherit;
 }
 .birinchiradio .sitemenu a h4 {
-  color: #AC13FF;
-  font-size: 36px;
+  color: #FFFFFF;
+  font-size: 31px;
   float: left;
   margin: 15px 0px 0px 0px;
 }
 .birinchiradio .navbar i {
   padding-right: 10px;
-  color: #4a4a4a;
+  color: #fff;
 }
 
 .birinchiradio .form-search .form-group input{
   border-bottom: 1px solid #4a4a4a;
   color: #4a4a4a;
-  background: #DADAD0;
+  background: none repeat scroll 0% 0% #999999;
 }
 
 .onefix {
@@ -126,10 +164,10 @@
   color: #4099FF;
 }
 .onesoc .onetwit {
-  background: #D8D2D2;
+
 }
-.onesoc .onetwit a:hover {
-  background: #D8D2D2;
+.onesoc .onetwit a:hover, .onesoc .onepost a:hover   {
+  background: none;
 }
 .onesoc .onetwit a {
   color: #4099FF;
@@ -142,25 +180,37 @@
   color: red;
   font-size: 20px;
   font-weight: bold;
-  background: #BFBFBF;
 }
 .onesoc i {
   padding-right: 10px;
 }
 .onesoc li>a {
-  padding: 11px;
+  padding: 10px 5px 0px 10px;
 }
 .oneline {
   display: inline-block;
   float: left;
 }
 .oneline .time {
-  background: #D8D2D2 !important;
   margin-top: 0px;
   padding: 10px 10px
 }
+.oneline .time:hover{
+  background: none;
+}
 .onetime a {
   padding: 0px !important;
+}
+.onetime .btn{
+  color: #EE3224;
+  background: none;
+  font-weight: bold;
+  font-size: 18px;
+  border: none;
+}
+.onetime a:hover{
+  background: none !important;
+  color: blue !important; 
 }
 .onetime i {
   padding-right: 10px;
@@ -1029,6 +1079,10 @@
 .birinchiradio .blocks .description p{
     margin-bottom: 0;
 } 
+
+.compactSound__artwork, .sc-media-left{
+  display: none !important;
+}
 
 
 /* News slider*/
