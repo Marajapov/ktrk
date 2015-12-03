@@ -1,9 +1,9 @@
 @extends('Front::layouts.default')
-@section('title', "Генеральный директор КТРК")
+@section('title', trans('site.DirectorPage')." | КТРК")
 
 @section('styles')
   <link rel="stylesheet" href="{{ asset('css/custombox.css') }}"/>
-  <link rel="stylesheet" type="text/css" href="{{ asset('static/css/styles.css') }}">
+  {{--<link rel="stylesheet" type="text/css" href="{{ asset('static/css/styles.css') }}">--}}
   <link rel="stylesheet" type="text/css" href="{{ asset('css/articles.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('css/pages.css') }}">
 @stop
