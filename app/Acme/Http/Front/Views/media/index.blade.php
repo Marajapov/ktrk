@@ -42,10 +42,12 @@
       <div>
         <div class="overlay"></div>
         <a href="#">
-          <img src="images/anons/1.jpg" alt=""/>
+          <img src="{{ asset('images/projects/hit-parad2.jpg') }}" alt=""/>
         </a>
         <div class="show-info">
-          жекшемби 21:00
+          <h4>Хит-Парад</h4>
+          <span class="show-day">{{ trans('site.Sunday') }}</span>
+          <span class="show-time">22:00</span>
         </div>
       </div>
       <div>

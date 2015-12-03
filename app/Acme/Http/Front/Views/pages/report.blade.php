@@ -1,147 +1,244 @@
 @extends('Front::layouts.default')
-@section('title', 'Отчет | Коомдук телерадиоберүү корпорациясынын Байкоочу кеңешинин курамы')
-@sectin('styles')
-	<link rel="stylesheet" type="text/css" href="{{ asset('/static/css/styles.css') }}">
+@section('title', trans('site.ReportFull').' | КТРК')
+@section('styles')
+  {{--<link rel="stylesheet" type="text/css" href="{{ asset('/static/css/styles.css') }}">--}}
+  <link rel="stylesheet" href="{{ asset('css/pages.css') }}"/>
 @stop
 @section('content')
-	<style>
-	.rsarticles blockquote a:focus, a:hover {
-    color: #23527c !important;
-    text-decoration: underline !important;
-    cursor: pointer;
-} 
-	</style>
-	 <div class="container main-wrapper">
-            <div class="row">
-                <section class="content clearfix">
-	                <div class="clearfix">
-                        <div class="top-left-block col-md-9">
-                            <div class="panel panel-default">
-		                        <div class="panel-body">
-                                    <div class="panel-heading">
-                                        <h3 class="panel-title"><span>Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясынын 2013-2012-2011-2010-жылдарга карай жылдык ишинин отчеттору.</span></h3>
-                                    </div>
-                                    <div class="rsarticles">                            
-                                        <blockquote>Кыргыз Республикасынын телерадиоберрүү корпорациясынын 2014-жылдык ишинин отчету.</blockquote> 
-                                        <p>Отчетто Корпорациянын жетекчилиги жана каржылануусу тууралуу маалыматта, КТРКнын өнүгүү стратегиясын иш жүзүнө ашыруунун 2013-2015-жж каралган планына ылайык максаттарга жана милдеттерге жетишүү боюнча ишмердигин сыпаттоо, «КТРК жөнүндө» мыйзамда корпорациянын алдына коюлган милдеттер жана алардын аткарылуу даражасы, санариптик берүүлөргө өтүүгө карата даярдоо жана техникалык модернизациялоо боюнча милдеттер камтылган.</p>                          
-                                        <p>Шилтеме аркылуу отчеттун толук түрүнө өтүү <a data-toggle="modal" data-target=".otchet">Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясынын 2014-жылдык ишинин отчету</a></p>  
-                                        <div class="modal fade otchet" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                                            <div class="modal-dialog modal-lg">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                        <h4 class="modal-title" id="myModalLabel">Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясынын 2014-жылдык ишинин отчету</h4>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <iframe src="{{ asset('static/files/godovoy_otchet_za_2014_god_kyrg.pdf') }}" style="width:100%; height:700px;" frameborder="0"></iframe>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Жабуу</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <blockquote>Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясынын 2013- жылдык ишинин отчету</blockquote>
-                                        <p>Отчетто Корпорациянын жетекчилиги, курамы жана ага караштуу түзүлүштөрү жөнүндө маалыматтар, милдети жана аткарган иштери, 2013-2015-жылдарга белгиленген өнүгүү стратегиясынын ишке ашыруу жаатындагы ишмердиги, ошондой эле киреше менен чыгашалар боюнча жалпы маалыматтары, корпорациянын каржылык-чарбалык иштеринин жыйынтыктары камтылган, КТРК каналдарынын көрүүчүлөрү, 2014-2015-жылдарга карата максаттары менен милдеттери чагылдырылган.</p>
-                                        <p>Шилтеме аркылуу отчеттун толук түрүнө өтүү <a data-toggle="modal" data-target=".otchetru">Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясынын 2013-жылдык ишинин отчету</a></p>
-                                        <div class="modal fade otchetru" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                                            <div class="modal-dialog modal-lg">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                        <h4 class="modal-title" id="myModalLabel">Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясынын 2013-жылдык ишинин отчету</h4>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <iframe src="{{ asset('static/files/otchet_ru_2013.pdf') }}" style="width:100%; height:700px;" frameborder="0"></iframe>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Жабуу</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <blockquote>Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясынын 2012- жылдык ишинин отчету</blockquote>
-                                        <p>Бул документтин негизги максаты - КРнын Коомдук телерадио берүү корпорациясынын 2012-жылдагы ишмердүүлүгү тууралуу маалымат берүү. Мисалы, отчеттук мөөнөттөгү КТРКда жүргүзүлгөн реформанын  жыйынтыгындагы  жетишкендиктер, жана келечектеги өнүгүү жолундагы жаралган маселелерди бирдиктүү чечүү. Төмөнкү отчетту даярдоо максатында маалымат топтоодо 2012-жылга карай КТРКнын бөлүмдөрүнүн, структуралык курамдарынын аткарган иштери тууралуу документтер жана маалыматтар колдонулган. Андан тышкаары, уюштуруучулук мүнөздөгү эфирден сырткаркы маанилүү иш-чаралар жөнүндө маалыматтар камтылган.</p>
-                                        <p>Шилтеме аркылуу отчеттун толук түрүнө өтүү <a data-toggle="modal" data-target=".otchet2012">Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясынын 2012-жылга карай жылдык ишинин отчету.</a></p>
-                                        <div class="modal fade otchet2012" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                                            <div class="modal-dialog modal-lg">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                        <h4 class="modal-title" id="myModalLabel">Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясынын 2012-жылга карай жылдык ишинин отчету</h4>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <iframe src="{{ asset('static/files/otchet2012kg.pdf') }}" style="width:100%; height:700px;" frameborder="0"></iframe>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Жабуу</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <blockquote>Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясынын 2011- жылдык ишинин отчету</blockquote>
-                                        <p>Отчетто КТРКнын 2011-жыл ичинде аткарган иштери тууралуу толук маалымат камтылган. Мисалы, көрсөтүлгөн аз убакыттын ичинде эң негизги документтер, өлкөнүн медиа-ресурсун өнүктүрүү жана реформалоо боюнча программалар изилденип, иштелип чыкты. Бул  көрүнүштү  Борбордук Азия аймагы боюнча  көзкарандысыз коомдук телеберүүнүн өнүгүү этабындагы биринчи кадамы катары бааласа болот.</p>
-                                        <p>Шилтеме аркылуу отчеттун толук түрүнө өтүү <a data-toggle="modal" data-target=".otchet2011">Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясынын 2011-жылга карай жылдык ишинин отчету</a></p>
-                                        <div class="modal fade otchet2011" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                                            <div class="modal-dialog modal-lg">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                        <h4 class="modal-title" id="myModalLabel">Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясынын 2011-жылга карай жылдык ишинин отчету</h4>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <iframe src="{{ asset('static/files/otchet2011.pdf') }}" style="width:100%; height:700px;" frameborder="0"></iframe>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Жабуу</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <blockquote>Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясынын Байкоочу кеңешинин 2010- жылдык иш отчету</blockquote>
-                                        <p>Төмөнкү документти даярдоодо өлкөдөгү башкы маалымат булагы болгон КТРКны  коомдук берүүгө айланткан маанилүү  эки датага өзгөчө көңүл бурулган.Бул 2010-жылдын 10-апрелиндеги Убактылуу өкмөт тарабынан кабыл алынган "Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясын  түзүү тууралуу" Декрети жана 2010-жылдын 25-августундагы  КР КТРКнын Байкоочу кеңешинин мүчөлөрүнүн  Кыргыз Республикасынын Президентинин Буйругу менен бекитилиши. Жылдык отчетто да так ошол мезгилге,  өзгөрүүлөргө басым жасалат. Жылдык отчеттун структурасы Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясы тууралуу жободогу көрсөтүлгөн маалымдамаларды камтыйт.</p>
-                                        <p>Шилтеме аркылуу отчеттун толук түрүнө өтүү  <a data-toggle="modal" data-target=".otchet2010">Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясынын Байкоочу кеңешинин 2010-жылга карай жылдык иш отчету</a></p>
-                                        <div class="modal fade otchet2010" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                                            <div class="modal-dialog modal-lg">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                        <h4 class="modal-title" id="myModalLabel">Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясынын 2010-жылга карай жылдык ишинин отчету</h4>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <iframe src="{{ asset('static/files/otchet2011.pdf') }}" style="width:100%; height:700px;" frameborder="0"></iframe>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Жабуу</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <blockquote>Республикалык радиотелеборбордун 2012-жылдагы тендердин жеңүүчүлөрү тууралуу маалымдама</blockquote>
-                                        <p>Шилтеме аркылуу отчеттун толук түрүнө өтүү  <a data-toggle="modal" data-target=".tender">Республикалык радиотелеборбордун 2012-жылдагы тендердин жеңүүчүлөрү тууралуу маалымдама</a></p>
-                                        <div class="modal fade tender" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                                            <div class="modal-dialog modal-lg">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                        <h4 class="modal-title" id="myModalLabel">Республикалык радиотелеборбордун 2012-жылдагы тендердин жеңүүчүлөрү тууралуу маалымдама</h4>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <iframe src="{{ asset('static/files/tender.pdf') }}" style="width:100%; height:700px;" frameborder="0"></iframe>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Жабуу</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>      
-                                </div>
-                    		</div><!-- end panel default -->
-                        </div>
-	                @include('Front::partials.leftCategories')
-	                </div>
-                </section>
-            </div>
+  <div class="container main-wrapper">
+    <div class="row">
+      <section class="content clearfix">
+        <div class="clearfix">
+          <div class="top-left-block col-md-12">
+            <div class="panel panel-default panel-report">
+              <div class="panel-heading">
+                <h3 class="panel-title"><span>{{ trans('site.ReportFull') }}</span></h3>
+              </div>
+              <div class="panel-body">
+
+                <ul class="list-group first-level">
+
+                  @if($lc == 'kg')
+
+                    <li class="list-group-item">
+                      Кыргыз Республикасынын Коомдук телерадиоберрүү корпорациясынын 2014-жылдык ишинин отчету
+                      <ul class="list-group second-level">
+                        <li class="list-group-item">
+                          <div class="media">
+
+                            <div class="media-body">
+                              <p>Отчетто Корпорациянын жетекчилиги жана каржылануусу тууралуу маалыматта, КТРКнын өнүгүү стратегиясын иш жүзүнө ашыруунун 2013-2015-жж каралган планына ылайык максаттарга жана милдеттерге жетишүү боюнча ишмердигин сыпаттоо, «КТРК жөнүндө» мыйзамда корпорациянын алдына коюлган милдеттер жана алардын аткарылуу даражасы, санариптик берүүлөргө өтүүгө карата даярдоо жана техникалык модернизациялоо боюнча милдеттер камтылган.</p>
+                            </div>
+                            <div class="media-right">
+                              <a target="_blank" href="{{ asset('static/files/report/2014_kg.pdf') }}" class="btn btn-default"><i class="fa fa-file-pdf-o"></i></a>
+                              {{--<a target="_blank" class="otchet" href="{{ asset('static/files/report/2014_kg.pdf') }}">Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясынын 2014-жылдык ишинин отчету</a>--}}
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <li class="list-group-item">
+                      Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясынын 2013-жылдык ишинин отчету
+                      <ul class="list-group second-level">
+                        <li class="list-group-item">
+                          <div class="media">
+
+                            <div class="media-body">
+                              <p>Отчетто Корпорациянын жетекчилиги, курамы жана ага караштуу түзүлүштөрү жөнүндө маалыматтар, милдети жана аткарган иштери, 2013-2015-жылдарга белгиленген өнүгүү стратегиясынын ишке ашыруу жаатындагы ишмердиги, ошондой эле киреше менен чыгашалар боюнча жалпы маалыматтары, корпорациянын каржылык-чарбалык иштеринин жыйынтыктары камтылган, КТРК каналдарынын көрүүчүлөрү, 2014-2015-жылдарга карата максаттары менен милдеттери чагылдырылган.</p>
+                            </div>
+                            <div class="media-right">
+                              <a target="_blank" href="{{ asset('static/files/report/2013_ru.pdf') }}" class="btn btn-default"><i class="fa fa-file-pdf-o"></i></a>
+                              {{--<a target="_blank" class="otchet" href="{{ asset('static/files/report/2013_ru.pdf') }}">Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясынын 2013-жылдык ишинин отчету</a>--}}
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <li class="list-group-item">
+                      Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясынын 2012-жылдык ишинин отчету
+                      <ul class="list-group second-level">
+                        <li class="list-group-item">
+                          <div class="media">
+
+                            <div class="media-body">
+                              <p>Бул документтин негизги максаты - КРнын Коомдук телерадио берүү корпорациясынын 2012-жылдагы ишмердүүлүгү тууралуу маалымат берүү. Мисалы, отчеттук мөөнөттөгү КТРКда жүргүзүлгөн реформанын  жыйынтыгындагы  жетишкендиктер, жана келечектеги өнүгүү жолундагы жаралган маселелерди бирдиктүү чечүү. Төмөнкү отчетту даярдоо максатында маалымат топтоодо 2012-жылга карай КТРКнын бөлүмдөрүнүн, структуралык курамдарынын аткарган иштери тууралуу документтер жана маалыматтар колдонулган. Андан тышкаары, уюштуруучулук мүнөздөгү эфирден сырткаркы маанилүү иш-чаралар жөнүндө маалыматтар камтылган.</p>
+                            </div>
+                            <div class="media-right">
+                              <a target="_blank" href="{{ asset('static/files/report/2012_kg.pdf') }}" class="btn btn-default"><i class="fa fa-file-pdf-o"></i></a>
+                              {{--<a target="_blank" class="otchet" href="{{ asset('static/files/report/2012_kg.pdf') }}">Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясынын 2012-жылдык ишинин отчету</a>--}}
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <li class="list-group-item">
+                      Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясынын 2011-жылдык ишинин отчету
+                      <ul class="list-group second-level">
+                        <li class="list-group-item">
+                          <div class="media">
+
+                            <div class="media-body">
+                              <p>Отчетто КТРКнын 2011-жыл ичинде аткарган иштери тууралуу толук маалымат камтылган. Мисалы, көрсөтүлгөн аз убакыттын ичинде эң негизги документтер, өлкөнүн медиа-ресурсун өнүктүрүү жана реформалоо боюнча программалар изилденип, иштелип чыкты. Бул  көрүнүштү  Борбордук Азия аймагы боюнча  көзкарандысыз коомдук телеберүүнүн өнүгүү этабындагы биринчи кадамы катары бааласа болот.</p>
+                            </div>
+                            <div class="media-right">
+                              <a target="_blank" href="{{ asset('static/files/report/2011_ru.pdf') }}" class="btn btn-default"><i class="fa fa-file-pdf-o"></i></a>
+                              {{--<a target="_blank" class="otchet" href="{{ asset('static/files/report/2011_ru.pdf') }}">Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясынын 2011-жылдык ишинин отчету</a>--}}
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <li class="list-group-item">
+                      Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясынын 2010-жылдык ишинин отчету
+                      <ul class="list-group second-level">
+                        <li class="list-group-item">
+                          <div class="media">
+
+                            <div class="media-body">
+                              <p>Төмөнкү документти даярдоодо өлкөдөгү башкы маалымат булагы болгон КТРКны  коомдук берүүгө айланткан маанилүү  эки датага өзгөчө көңүл бурулган.Бул 2010-жылдын 10-апрелиндеги Убактылуу өкмөт тарабынан кабыл алынган "Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясын  түзүү тууралуу" Декрети жана 2010-жылдын 25-августундагы  КР КТРКнын Байкоочу кеңешинин мүчөлөрүнүн  Кыргыз Республикасынын Президентинин Буйругу менен бекитилиши. Жылдык отчетто да так ошол мезгилге,  өзгөрүүлөргө басым жасалат. Жылдык отчеттун структурасы Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясы тууралуу жободогу көрсөтүлгөн маалымдамаларды камтыйт.</p>
+                            </div>
+                            <div class="media-right">
+                              <a target="_blank" href="{{ asset('static/files/report/2010_ru.pdf') }}" class="btn btn-default"><i class="fa fa-file-pdf-o"></i></a>
+                              {{--<a target="_blank" class="otchet" href="{{ asset('static/files/report/2010_ru.pdf') }}">Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясынын 2010-жылдык ишинин отчету</a>--}}
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <li class="list-group-item">
+                      Республикалык радиотелеборбордун 2012-жылдагы тендердин жеңүүчүлөрү тууралуу маалымдама
+                      <ul class="list-group second-level">
+                        <li class="list-group-item">
+                          <div class="media">
+                            <div class="media-body">
+                              <a target="_blank" href="{{ asset('static/files/report/tender.pdf') }}" class="btn btn-default"><i class="fa fa-file-pdf-o"></i></a>
+                              {{--<a target="_blank" class="otchet" href="{{ asset('static/files/report/tender.pdf') }}"> Республикалык радиотелеборбордун 2012-жылдагы тендердин жеңүүчүлөрү тууралуу маалымдама</a>--}}
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </li>
+
+                  @elseif($lc == 'ru')
+
+                    <li class="list-group-item">
+                      Годовой отчет о деятельности  Общественной телерадиовещательной корпорации Кыргызской Республики за 2014 год
+                      <ul class="list-group second-level">
+                        <li class="list-group-item">
+                          <div class="media">
+
+                            <div class="media-body">
+                              <p>Документ включает в себя информацию о руководстве и финансировании корпорации, описание о деятельности КТРК в отчетный период по достижению целей и задач согласно плану реализации стратегии развития на 2013-2015 гг., задачи, поставленные перед корпорацией в Законе «об ОТРК» и степень их выполнения,задачи по технической модернизации и подготовке к переходу на цифровое вещание, степень их выполнения, результаты финансово-хозяйственной деятельности КТРК с общими данными по доходам и расходам за 2014 год и др.</p>
+                            </div>
+                            <div class="media-right">
+                              <a target="_blank" href="{{ asset('static/files/report/2014_ru.pdf') }}" class="btn btn-default"><i class="fa fa-file-pdf-o"></i></a>
+                              {{--<a target="_blank" class="otchet" href="{{ asset('static/files/report/2014_ru.pdf') }}">Годовой отчет о деятельности  Общественной телерадиовещательной корпорации Кыргызской Республики за 2014 год</a>--}}
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <li class="list-group-item">
+                      Предварительный ГОДОВОЙ ОТЧЕТ о деятельности  Общественной телерадиовещательной корпорации Кыргызской Республики за 2013 год
+                      <ul class="list-group second-level">
+                        <li class="list-group-item">
+                          <div class="media">
+
+                            <div class="media-body">
+                              <p>Документ включает в себя информацию о руководстве, о структуре и структурных подразделениях; о деятельности КТРК В 2013 г. по достижению целей и задач согласно плану реализации стратегии КТРК на 2014-2015гг; о миссии и целях корпорации; о результатах финансово-хозяйственной деятельности КТРК с общими данными по доходам и расходам за 2013 год, описание аудитории каналов КТРК, о целях и задачах на 2014-2015 гг.</p>
+                            </div>
+                            <div class="media-right">
+                              <a target="_blank" href="{{ asset('static/files/report/2013_ru.pdf') }}" class="btn btn-default"><i class="fa fa-file-pdf-o"></i></a>
+                              {{--<a target="_blank" class="otchet" href="{{ asset('static/files/report/2013_ru.pdf') }}">Предварительный годовой отчет о деятельности  Общественной телерадиовещательной корпорации Кыргызской Республики за 2013 год</a>--}}
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <li class="list-group-item">
+                      Годовой отчет о деятельности Общественной телерадиовещательной корпорации Кыргызской Республики за 2012 год
+                      <ul class="list-group second-level">
+                        <li class="list-group-item">
+                          <div class="media">
+
+                            <div class="media-body">
+                              <p>Основная цель данного документа - представить информацию о деятельности Общественной телерадиокорпорации КР за 2012 год, показать достигнутые результаты по реформированию КТРК за отчетный период, а также обратить внимание на проблемы, возникающие перед КТРК для дальнейшего изыскания путей их совместного решения. Для консолидации информации в целях подготовки настоящего отчета были использованы документы и сведения о проделанной работе отделами и подструктурами КТРК в 2012 году, а также сведения по важным внеэфирным мероприятиям организационного характера.</p>
+                            </div>
+                            <div class="media-right">
+                              <a target="_blank" href="{{ asset('static/files/report/2012_kg.pdf') }}" class="btn btn-default"><i class="fa fa-file-pdf-o"></i></a>
+                              {{--<a target="_blank" class="otchet" href="{{ asset('static/files/report/2012_kg.pdf') }}">Годовой отчет о деятельности Общественной телерадиовещательной корпорации Кыргызской Республики за 2012 год</a>--}}
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <li class="list-group-item">
+                      Годовой отчет о деятельности Общественной телерадиовещательной корпорации Кыргызской Республики за 2011 год
+                      <ul class="list-group second-level">
+                        <li class="list-group-item">
+                          <div class="media">
+
+                            <div class="media-body">
+                              <p>В настоящем отчете представлена полная информация о деятельности КТРК за 2011 год. За весь период отчетности следует отметить приверженность и готовность к сотрудничеству, всестороннюю поддержку в осуществлении идей общественного вещания, начиная с первых лиц государства, других представителей государственной власти, самого коллектива КТРК, гражданского общества и представителей международных организаций в стране. Только благодаря этому, за довольно короткий срок были разработаны и внедрены ключевые документы и программы по реформированию и развитию основного медиа-ресурса страны. В свою очередь, это позволяет говорить об уверенном прохождении самых первых этапов становления независимого общественного вещания во всем Центрально-Азиатском пространстве.</p>
+                            </div>
+                            <div class="media-right">
+                              <a target="_blank" href="{{ asset('static/files/report/2011_ru.pdf') }}" class="btn btn-default"><i class="fa fa-file-pdf-o"></i></a>
+                              {{--<a target="_blank" class="otchet" href="{{ asset('static/files/report/2011_ru.pdf') }}">Годовой отчет о деятельности Общественной телерадиовещательной корпорации Кыргызской Республики за 2011 год</a>--}}
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <li class="list-group-item">
+                      Годовой отчет Наблюдательного Совета о деятельности Общественной телерадиовещательной корпорации Кыргызской Республики за 2010 год
+                      <ul class="list-group second-level">
+                        <li class="list-group-item">
+                          <div class="media">
+
+                            <div class="media-body">
+                              <p>При составлении настоящего отчета во внимание принимались две основные даты, которые и позволили начать преобразования главного информационного монополиста страны в общественного вещателя. Это принятие 30 апреля 2010 года Декрета Временного Правительства Кыргызской Республики «О создании Общественного телерадиовещания в Кыргызской Республике» и утверждение 25 августа 2010 года членов Наблюдательного совета КТРК КР Указом Президента Кыргызской Республики. Именно поэтому данный отчет делает акцент На тех преобразованиях, которые последовали За этим и датами. Структура Годового отчета составлена с учетом удобства его восприятия и содержит все сведения, предусмотренные Положением об Общественной телерадиовещательной корпорации Кыргызской Республики.</p>
+                            </div>
+                            <div class="media-right">
+                              <a target="_blank" href="{{ asset('static/files/report/2010_ru.pdf') }}" class="btn btn-default"><i class="fa fa-file-pdf-o"></i></a>
+                              {{--<a target="_blank" class="otchet" href="{{ asset('static/files/report/2010_ru.pdf') }}">Годовой отчет Наблюдательного Совета о деятельности Общественной телерадиовещательной корпорации Кыргызской Республики за 2010 год</a>--}}
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <li class="list-group-item">
+                      Сведения по победителям тендеров Республиканского радиотелецентра за 2012 год
+                      <ul class="list-group second-level">
+                        <li class="list-group-item">
+                          <div class="media">
+                            <div class="media-body">
+                              <a target="_blank" href="{{ asset('static/files/report/tender.pdf') }}" class="btn btn-default"><i class="fa fa-file-pdf-o"></i></a>
+                              {{--<a target="_blank" class="otchet" href="{{ asset('static/files/report/tender.pdf') }}">Сведения по победителям тендеров Республиканского радиотелецентра за 2012 год</a>--}}
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </li>
+
+                  @endif
+
+                </ul>
+
+              </div>
+            </div><!-- end panel default -->
+          </div>
         </div>
+      </section>
+    </div>
+  </div>
 @stop

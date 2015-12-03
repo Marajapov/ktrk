@@ -2,6 +2,7 @@
 namespace Front\Controllers;
 //use Illuminate\Http\Request;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class PageController extends Controller
 {
@@ -14,10 +15,12 @@ class PageController extends Controller
      * @return Response
      */
     public function historyPage()
-    {   
+    {
+        $lc = app()->getlocale();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
         
         return view('Front::pages.history', [
+            'lc' => $lc,
             'backgroundMain' => $backgroundMain,
             ]);
     }
@@ -52,9 +55,11 @@ class PageController extends Controller
 
     public function strategyPage()
     {
+        $lc = app()->getlocale();
         $categories = \Model\Category\ModelName::all();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
         return view('Front::pages.strategy', [
+            'lc' => $lc,
             'backgroundMain' => $backgroundMain,
             'categories' => $categories,
             ]);
@@ -62,9 +67,11 @@ class PageController extends Controller
 
     public function normalbasePage()
     {
+        $lc = app()->getlocale();
         $categories = \Model\Category\ModelName::all();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
         return view('Front::pages.normalbase', [
+            'lc' => $lc,
             'backgroundMain' => $backgroundMain,
             'categories' => $categories,
             ]);
@@ -72,9 +79,11 @@ class PageController extends Controller
 
     public function rrtsPage()
     {
+        $lc = app()->getlocale();
         $categories = \Model\Category\ModelName::all();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
         return view('Front::pages.rrts', [
+            'lc' => $lc,
             'backgroundMain' => $backgroundMain,
             'categories' => $categories,
             ]);
@@ -82,9 +91,11 @@ class PageController extends Controller
 
     public function reportPage()
     {
+        $lc = app()->getlocale();
         $categories = \Model\Category\ModelName::all();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
         return view('Front::pages.report', [
+            'lc' => $lc,
             'backgroundMain' => $backgroundMain,
             'categories' => $categories,
             ]);
@@ -92,9 +103,21 @@ class PageController extends Controller
 
     public function teleprogramPage()
     {
+//        $mytime = Carbon\Carbon::now();
+//        echo $mytime->toDateTimeString();
+//
+//        dd($mytime);
+
+        $now = Carbon::now('Asia/Bishkek');
+
+        $currentDate = $now->format('d-m-Y');
+        $currentTime = $now->format('H:i');
+
         $categories = \Model\Category\ModelName::all();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
         return view('Front::pages.teleprogram', [
+            'currentDate' => $currentDate,
+            'currentTime' => $currentTime,
             'backgroundMain' => $backgroundMain,
             'categories' => $categories,
             ]);

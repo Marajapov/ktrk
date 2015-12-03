@@ -73,21 +73,21 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
 
-    background-image: -o-linear-gradient(bottom, #29A2F8 0%, #015CAC 100%);
-    background-image: -moz-linear-gradient(bottom, #29A2F8 0%, #015CAC 100%);
-    background-image: -webkit-linear-gradient(bottom, #29A2F8 0%, #015CAC 100%);
-    background-image: -ms-linear-gradient(bottom, #29A2F8 0%, #015CAC 100%);
-    background-image: linear-gradient(to bottom, #29A2F8 0%, #015CAC 100%);
+    /*background-image: -o-linear-gradient(bottom, #29A2F8 0%, #015CAC 100%);*/
+    /*background-image: -moz-linear-gradient(bottom, #29A2F8 0%, #015CAC 100%);*/
+    /*background-image: -webkit-linear-gradient(bottom, #29A2F8 0%, #015CAC 100%);*/
+    /*background-image: -ms-linear-gradient(bottom, #29A2F8 0%, #015CAC 100%);*/
+    /*background-image: linear-gradient(to bottom, #29A2F8 0%, #015CAC 100%);*/
 
-    background: #096bbb;
-    background: -moz-radial-gradient(center, ellipse cover, #2195ea 0%, #096bbb 100%);
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#2195ea), color-stop(100%,#096bbb));
-    background: -webkit-radial-gradient(center, ellipse cover, #2195ea 0%,#096bbb 100%);
-    background: -o-radial-gradient(center, ellipse cover, #2195ea 0%,#096bbb 100%);
-    background: -ms-radial-gradient(center, ellipse cover, #2195ea 0%,#096bbb 100%);
-    background: radial-gradient(ellipse at center, #2195ea 0%,#096bbb 100%);
+    /*background: #096bbb;*/
+    /*background: -moz-radial-gradient(center, ellipse cover, #2195ea 0%, #096bbb 100%);*/
+    /*background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#2195ea), color-stop(100%,#096bbb));*/
+    /*background: -webkit-radial-gradient(center, ellipse cover, #2195ea 0%,#096bbb 100%);*/
+    /*background: -o-radial-gradient(center, ellipse cover, #2195ea 0%,#096bbb 100%);*/
+    /*background: -ms-radial-gradient(center, ellipse cover, #2195ea 0%,#096bbb 100%);*/
+    /*background: radial-gradient(ellipse at center, #2195ea 0%,#096bbb 100%);*/
 
-    background: #29A2F8 url('../images/bg_mask.png') repeat ;
+    /*background: #29A2F8 url('../images/bg_mask.png') repeat ;*/
 
     background: url('../images/main_bg.jpg') no-repeat;
     background-repeat: no-repeat;
@@ -429,11 +429,7 @@ header{
     border: 0;
     padding: 10px 0;
 
-    background: #f1f4f9;
-
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
+    background: #ffffff;
 }
 .dropdown-menu li{
     margin-bottom: 2px;
@@ -2168,13 +2164,6 @@ header{
 
 }
 
-.table>tbody>tr>td {
-    vertical-align: middle;
-    font-size: 14px;
-}
-
-
-
 .rightblock {
     max-width: 93%;
 }
@@ -2317,7 +2306,9 @@ Author: Eldos;
 
 .hit-parad .list-group  ul {
     color:#000070;
-    font:italic 0.5cm; list-style-type:decimal;
+    font-size: 0.5em;
+    font-style: italic;
+    list-style-type:decimal;
     list-style-image:none;
 }
 
@@ -4057,121 +4048,7 @@ Author: Eldos;
 }
 /*Image Gallery*/
 
-/*Teleprogramm style*/
-.teleprogramm {
-    padding: 0px;
-    margin: 0px 0px 10px 0px;
-}
 
-.teleblock {
-    padding: 0px;
-    margin: 0px;
-}
-
-.telelive {
-    background: #F44336;
-    color: #fff;
-
-    font-size: 20px;
-}
-
-.teleunlive {
-    opacity: 0.6;
-}
-.teletabs {
-
-}
-.teleprogramm .nav-tabs>li>a {
-    border-right: 1px solid #ccc;
-    color: #fff
-
-}
-
-.teleprogramm .nav-tabs>li.active>a {
-    background: #2196F3 !important;
-    color: #fff !important;
-    font-weight: bold;
-}
-.teleprogramm .nav-tabs {
-    margin-left: 10px !important;
-    margin-right: 10px !important;
-    border-bottom: 2px solid #ddd;
-}
-
-.programmshow .table > tbody {
-    border-bottom: 1px solid #CCC9C9;
-}
-.programmshow span {
-    color: #fff;
-}
-.programmshow h4{
-    margin: 10px;
-    color: #F44336;
-    font-weight: bold;
-}
-
-.programmshow .table {
-    max-width: 840px;
-}
-.programmshow .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
-    padding: 6px;
-}
-
-.programmshow .table>tbody>tr>th {
-    border-right: 1px solid #CCC9C9;
-    border-left: 1px solid #CCC9C9;
-
-}
-
-.teletitle {
-    background: #2196F3;
-    color: #fff;
-}
-
-.teletitle .telemiddle {
-    border-right: 2px solid #fff;
-    border-left: 2px solid #fff;
-}
-.telelink i{
-    padding-right: 5px;
-
-}
-
-.telelink {
-    border-left: 1px solid #CCC9C9;
-    border-right: 1px solid #CCC9C9;
-}
-
-.telelink a {
-    margin-left: 5px;
-    font-weight: bold;
-    color: #E91E63;
-}
-
-.telelink a:hover, .teletimer a:hover {
-    color: blue;
-}
-
-.teletimer a{
-
-    font-weight: bold;
-    color: #E91E63;
-    font-size: 16px;
-    float: right;
-}
-
-.teleprogramm .nav-tabs>li {
-    background: #FF5722;
-}
-
-.teleprogramm .nav-tabs>li a:hover {
-    background: #2196F3 ;
-    border-bottom: 2px solid #2196F3;
-    border-right: none !important;
-    border-left: none !important;
-    border-top: none !important;
-}
-/*Teleprogramm style*/
 
 
 /* Director blog page*/
@@ -4783,7 +4660,7 @@ ul.social-share li a:hover {
 
     border: 0 solid rgba(0,0,0,1);
     -webkit-border-radius: 0;
-    font: "Fredoka One", Helvetica, sans-serif;
+    font-family: "Fredoka One", Helvetica, sans-serif;
 
     text-shadow: 1px 1px 0 #444 ;
 }
@@ -4802,7 +4679,7 @@ ul.social-share li a:hover {
 
     border: 0 solid rgba(0,0,0,1);
     -webkit-border-radius: 0;
-    font: "Fredoka One", Helvetica, sans-serif;
+    font-family: "Fredoka One", Helvetica, sans-serif;
 
     text-shadow: 1px 1px 0 #444 ;
 
