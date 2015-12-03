@@ -68,6 +68,11 @@ Route::group(['domain' => '1000.ktrk.kg', 'prefix' => '/kyrgyzradio', 'namespace
 Route::group(['domain' => '1000.ktrk.kg', 'prefix' => '/birinchi', 'namespace' => 'Front\Controllers'], function() {
 
     Route::get('/', ['as' => 'birinchi.home',   'uses' => 'BirinchiController@Home']);
+    Route::get('/news', ['as' => 'birinchi.news',   'uses' => 'BirinchiController@news']);
+    Route::get('/broadcasts', ['as' => 'birinchi.broadcasts',   'uses' => 'BirinchiController@broadcasts']);
+    Route::get('/about', ['as' => 'birinchi.about',   'uses' => 'BirinchiController@about']);
+    Route::get('/photos', ['as' => 'birinchi.photos',   'uses' => 'BirinchiController@photos']);
+    Route::get('/broadcastsprogramm', ['as' => 'birinchi.broadcastsprogramm',   'uses' => 'BirinchiController@broadcastsprogramm']);
 
 });
 

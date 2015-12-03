@@ -17,9 +17,8 @@
                   <div class="col-md-4 block">
                     <figure class="effect-zoe">
                       <!--<span class="post-timer pull-right">  <i class="fa fa-eye"></i>&nbsp;{{ $post->getViewed() }}</span> -->
-
                   <a href="{{ route('front.post', $post) }}" class="main-img">
-                    <img src="@if(($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif" alt="img26">
+                    <img src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif" alt="img26">
                   </a>
                     <!--<div class="news-channel">
 
@@ -196,7 +195,7 @@
               <div class="panel-body">
                 <div class="col-md-12 block main-video">
                   <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="//www.youtube.com/embed/{{ $dayVideo->getUrl()}}" allowfullscreen=""></iframe>
+                    <iframe class="embed-responsive-item" src="//www.youtube.com/embed/KhJUlC4aJZM" allowfullscreen=""></iframe>
                   </div>
 
                   <h4>Стратегия-2017</h4>
@@ -399,18 +398,11 @@
               <div class="panel-body">
                 <div class="col-md-12">
                   <div class="carousel-slick">
-                    <div class="col-md-4"><a href="#"><img src="{{ asset('images/gallery/001.jpg') }}" alt=""/><span>Название</span><div class="overlay"></div></a></div>
-                    <div class="col-md-4"><a href="#"><img src="{{ asset('images/gallery/001.jpg') }}" alt=""/><span>Название</span><div class="overlay"></div></a></div>
-                    <div class="col-md-4"><a href="#"><img src="{{ asset('images/gallery/001.jpg') }}" alt=""/><span>Название</span><div class="overlay"></div></a></div>
-                    <div class="col-md-4"><a href="#"><img src="{{ asset('images/gallery/001.jpg') }}" alt=""/><span>Название</span><div class="overlay"></div></a></div>
-                    <div class="col-md-4"><a href="#"><img src="{{ asset('images/gallery/001.jpg') }}" alt=""/><span>Название</span><div class="overlay"></div></a></div>
-                    <div class="col-md-4"><a href="#"><img src="{{ asset('images/gallery/001.jpg') }}" alt=""/><span>Название</span><div class="overlay"></div></a></div>
-                    <div class="col-md-4"><a href="#"><img src="{{ asset('images/gallery/001.jpg') }}" alt=""/><span>Название</span><div class="overlay"></div></a></div>
-                    <div class="col-md-4"><a href="#"><img src="{{ asset('images/gallery/001.jpg') }}" alt=""/><span>Название</span><div class="overlay"></div></a></div>
-                    <div class="col-md-4"><a href="#"><img src="{{ asset('images/gallery/001.jpg') }}" alt=""/><span>Название</span><div class="overlay"></div></a></div>
-                    <div class="col-md-4"><a href="#"><img src="{{ asset('images/gallery/001.jpg') }}" alt=""/><span>Название</span><div class="overlay"></div></a></div>
-                    <div class="col-md-4"><a href="#"><img src="{{ asset('images/gallery/001.jpg') }}" alt=""/><span>Название</span><div class="overlay"></div></a></div>
-                    <div class="col-md-4"><a href="#"><img src="{{ asset('images/gallery/001.jpg') }}" alt=""/><span>Название</span><div class="overlay"></div></a></div>
+                  @if($images != 1)
+                    @foreach($images as $image)
+                    <div class="col-md-4"><a href="#"><img src="{{ asset('froala/uploads/'.$image->name) }}" alt=""/><span>Название</span><div class="overlay"></div></a></div>
+                    @endforeach
+                    @endif
                   </div>
                 </div>
 

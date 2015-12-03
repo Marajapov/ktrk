@@ -14,7 +14,7 @@
 
         <div class="col-md-12 topheader">
 
-            <div class="container">
+            <div class="container onepadding">
                 <nav class="top-nav clearfix">
                     <ul class="clearfix">
                         @foreach(\Model\Menu\ModelName::code('main')->parent()->get() as $menu)
@@ -64,7 +64,7 @@
                 <nav class="navbar">
                     <div class="container">
                         <!-- Brand and toggle get grouped for better mobile display -->
-                        <div class="navbar-header">
+                        <div class="navbar-header oneheaderone">
                             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                                 <span class="sr-only">Меню</span>
                                 <span class="icon-bar"></span>
@@ -100,6 +100,7 @@
                                         <li><a href="#"><i class="fa fa-minus"></i>Контакты</a></li>                                                
                                     </ul>
                                 </li>
+
                                 <li class="dropdown">
                                     <a href="{{ route('birinchi.broadcasts') }}" class="dropdown-toggle" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-info-circle"></i>Передачи <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
@@ -215,7 +216,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="row">
-                <div class="col-md-9 onenews">
+                <div class="col-md-9 onenews ">
                     <div class="panel panel-articles">
                         <div class="panel-heading">
                             <h3 class="panel-title">Лента новостей</h3>
@@ -312,6 +313,9 @@
                                             </p></h5>
                                     </div>
                                 </div>
+                                <footer>
+                                    <a href="#">Еще статьи</a>
+                                </footer>
                             </div>
                         </div>
                     </div>
@@ -319,7 +323,7 @@
                 <div class="col-md-3 oneserep onefix">
                     <nav>
                         <ul>
-                            <li><a href="">Выпуск новостей</a></li>
+                            <li><a href="{{ route('birinchi.news') }}">Выпуск новостей</a></li>
                             <li><a href="">Сереп</a></li>
                         </ul>
                     </nav>
@@ -338,22 +342,23 @@
                         <div class="carousel-slick-peredacha">
                             <div class="col-md-4">
                                 <a href="#">
-                                    <img src="<!-- {{ asset('images/channels/culture/1.jpg')}} -->" alt=""/>
+                                    <img src="{{ asset('images/gallery/001.jpg')}}" alt=""/>
                                     <span>Күндүн темасы</span>                                  
                                 </a>
-                                <a href="#" class="overlay">Lorem ipsum dolor sit amet, sit amet</a>
+                                <a href="#" class="overlay">Депутат иш сапары менен кайда кетти?</a>
                             </div>
-                            <div class="col-md-4"><a href="#"><img src="images/gallery/002.jpg" alt=""/><span>Название</span><a href="#" class="overlay">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></a></div>
-                            <div class="col-md-4"><a href="#"><img src="images/gallery/003.jpg" alt=""/><span>Название</span><a href="#" class="overlay">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></a></div>
-                            <div class="col-md-4"><a href="#"><img src="images/gallery/004.jpg" alt=""/><span>Название</span><a href="#" class="overlay">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></a></div>
-                            <div class="col-md-4"><a href="#"><img src="images/gallery/005.jpg" alt=""/><span>Название</span><a href="#" class="overlay">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></a></div>
-                            <div class="col-md-4"><a href="#"><img src="images/gallery/006.jpg" alt=""/><span>Название</span><a href="#" class="overlay">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></a></div>
-                            <div class="col-md-4"><a href="#"><img src="images/gallery/007.jpg" alt=""/><span>Название</span><a href="#" class="overlay">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></a></div>
-                            <div class="col-md-4"><a href="#"><img src="images/gallery/008.jpg" alt=""/><span>Название</span><a href="#" class="overlay">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></a></div>
-                            <div class="col-md-4"><a href="#"><img src="images/gallery/009.jpg" alt=""/><span>Название</span><a href="#" class="overlay">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></a></div>
-                            <div class="col-md-4"><a href="#"><img src="images/gallery/010.jpg" alt=""/><span>Название</span><a href="#" class="overlay">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></a></div>
-                            <div class="col-md-4"><a href="#"><img src="images/gallery/011.jpg" alt=""/><span>Название</span><a href="#" class="overlay">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></a></div>
-                            <div class="col-md-4"><a href="#"><img src="images/gallery/012.jpg" alt=""/><span>Название</span><a href="#" class="overlay">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></a></div>
+                            <div class="col-md-4"><a href="#"><img src="images/gallery/002.jpg" alt=""/><span>Күндүн темасы</span><a href="#" class="overlay">А.Атамбаев иш сапары менен Францияга барды.</a></a></div>
+                            <div class="col-md-4"><a href="#"><img src="images/gallery/003.jpg" alt=""/><span>Күндүн темасы</span><a href="#" class="overlay">Студент иш сапары менен уйкуга барды.</a></a></div>
+                            <div class="col-md-4"><a href="#"><img src="images/gallery/003.jpg" alt=""/><span>Күндүн темасы</span><a href="#" class="overlay">Кышка бир күн калды.</a></a></div>
+                            <div class="col-md-4"><a href="#"><img src="images/gallery/004.jpg" alt=""/><span>Күндүн темасы</span><a href="#" class="overlay">Депутат иш сапары менен кайда кетти?.</a></a></div>
+                            <div class="col-md-4"><a href="#"><img src="images/gallery/005.jpg" alt=""/><span>Күндүн темасы</span><a href="#" class="overlay">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></a></div>
+                            <div class="col-md-4"><a href="#"><img src="images/gallery/006.jpg" alt=""/><span>Күндүн темасы</span><a href="#" class="overlay">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></a></div>
+                            <div class="col-md-4"><a href="#"><img src="images/gallery/007.jpg" alt=""/><span>Күндүн темасы</span><a href="#" class="overlay">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></a></div>
+                            <div class="col-md-4"><a href="#"><img src="images/gallery/008.jpg" alt=""/><span>Күндүн темасы</span><a href="#" class="overlay">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></a></div>
+                            <div class="col-md-4"><a href="#"><img src="images/gallery/009.jpg" alt=""/><span>Күндүн темасы</span><a href="#" class="overlay">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></a></div>
+                            <div class="col-md-4"><a href="#"><img src="images/gallery/010.jpg" alt=""/><span>Күндүн темасы</span><a href="#" class="overlay">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></a></div>
+                            <div class="col-md-4"><a href="#"><img src="images/gallery/011.jpg" alt=""/><span>Күндүн темасы</span><a href="#" class="overlay">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></a></div>
+                            <div class="col-md-4"><a href="#"><img src="images/gallery/012.jpg" alt=""/><span>Күндүн темасы</span><a href="#" class="overlay">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></a></div>
                         </div>
                     </div>
 
@@ -362,6 +367,7 @@
         </div>
 
     </div> 
+
 
     <div class="row">
         <div class="col-md-12" style="padding: 10px 0px 0px 0px;">
@@ -400,13 +406,16 @@
 @section('footerscript2')
 
 <script>
+
     if ($(window).width() > 768) {
         $('.carousel-slick-birinchi').slick({
             infinite: true,
-            slidesToShow: 6,
+            slidesToShow: 4,
             slidesToScroll: 1,
         });
     }
+
+
     if ($(window).width() < 768) {
         $('.carousel-slick-birinchi').slick({
             infinite: true,

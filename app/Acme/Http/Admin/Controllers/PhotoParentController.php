@@ -3,6 +3,7 @@ namespace Admin\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
+use Input;
 
 use Model\PhotoParent\ModelName as PhotoParent;
 
@@ -40,21 +41,49 @@ class PhotoParentController extends Controller
      */
     public function store(Request $request)
     {
-        $photoParent = PhotoParent::create($request->except('file','q'));
+        $photoParent = PhotoParent::create($request->except('images','q'));
+        
+        // getting all of the post data
 
-        if($request->hasFile('file'))
-        {
-            $file = $request->file('file');
-            $dir  = 'img/photoParent';
-            $name = $photoParent->id().'.'.$file->getClientOriginalExtension();
+        $files = Input::file('images');
 
+        $result = array();
+
+        $file_count = count($files);
+
+
+        // start count how many uploaded
+        $uploadcount = 0;
+
+        foreach($files as $key=>$file) {
+
+          // $rules = array('file' => 'required'); //'required|mimes:png,gif,jpeg,txt,pdf,doc'
+          // $validator = Validator::make(array('file'=> $file), $rules);
+          // if($validator->passes()){
             $storage = \Storage::disk('public');
-            $storage->makeDirectory($dir);
-            // $storage->put($dir.'/'.$name, $file);
+            $destinationPath = 'froala/uploads';
+            $storage->makeDirectory($destinationPath);
+            $filename = time().$key.'.'.$file->getClientOriginalExtension();
 
-            $photoParent->file = $dir.'/'.$name;
+            $upload_success = $file->move($destinationPath, $filename);
+
+            $file_array = array();
+            $file_array = array_collapse([$file_array, [
+                    'id' => $key+1,
+                    'name' => $filename
+                ]]);
+
+            $result = array_add($result, $key , $file_array);
+            
+            $jsonresult = json_encode($result);
+            //$files_ser = serialize($result);
+            
+            $photoParent->images = $jsonresult;
             $photoParent->save();
-            $file->move($dir, $name);
+
+            $uploadcount ++;
+
+          // } // endif
         }
 
         return redirect()->route('admin.photoParent.index');
@@ -68,8 +97,10 @@ class PhotoParentController extends Controller
      */
     public function show(PhotoParent $photoParent)
     {
+        $images = json_decode($photoParent->images);
         return view('Admin::photoParent.show', [
             'photoParent' => $photoParent,
+            'images' => $images,
         ]);
     }
 
@@ -93,21 +124,7 @@ class PhotoParentController extends Controller
      */
     public function update(Request $request, PhotoParent $photoParent)
     {
-        $photoParent->update($request->except('file'));
-
-        if($request->hasFile('file'))
-        {
-            $file = $request->file('file');
-            $dir  = 'img/photoParent';
-            $name = $photoParent->id().'.'.$file->getClientOriginalExtension();
-
-            $storage = \Storage::disk('public');
-            $storage->makeDirectory($dir);
-
-            $photoParent->file = $dir.'/'.$name;
-            $photoParent->save();
-            $file->move($dir, $name);
-        }
+        $photoParent->update($request->except('images','q'));
 
         return redirect()->route('admin.photoParent.show', $photoParent);
     }
@@ -124,4 +141,37 @@ class PhotoParentController extends Controller
 
         return redirect()->route('admin.photoParent.index');
     }
+
+    public function photodelete(Request $request)
+    {
+        $delete = $request->photoDeleteId;
+
+
+        $photoParentId = $request->photoParentId;
+        $photoParent = \Model\PhotoParent\ModelName::where('id','=',$photoParentId)->first();
+
+        $files = json_decode($photoParent->images);
+
+        $file = array_only($files, $delete-1);
+        $name = last(last($file));
+        
+        
+        $key = array_has($files, $delete);
+
+        if($key !== false) {
+            unset($files[$delete-1]);
+            $storage = \Storage::delete('/froala/uploads/'.$name);
+        }
+        unset($files[$delete-1]);
+
+        $jsonFiles = json_encode($files);
+        //dd($photoParent->images,$files,$jsonFiles);
+
+        $photoParent->images = $jsonFiles;
+
+        $photoParent->save();
+
+        return redirect()->route('admin.photoParent.index');
+    }        
+    
 }

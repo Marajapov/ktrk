@@ -44,7 +44,7 @@
         <div class="container ">
             <div class="row fixedheader">
 
-                <nav class="navbar">
+                              <nav class="navbar">
                     <div class="container-fluid">
                         <!-- Brand and toggle get grouped for better mobile display -->
                         <div class="navbar-header">
@@ -73,9 +73,11 @@
                             <a class="navbar-brand" href="{{ route('madaniyat.home') }}"> <i class="fa fa-home"></i>Башкы</a>
                         </div>
 
+
+
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">                                           
-                           <ul class="nav navbar-nav">
+                            <ul class="nav navbar-nav">
                                 <li class="dropdown">
                                     <a href="{{ route('madaniyat.about') }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-info-circle"></i>О канале <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
@@ -101,7 +103,7 @@
                                 </li>
 
                                 <li><a href="{{ route('madaniyat.photos') }}"><i class="fa fa-picture-o"></i>Фотогалерея</a></li>
-                            </ul
+                            </ul>
 
                             <ul class="nav navbar-nav navbar-right logo-block">
                                 <ul class="soc socmuz">
@@ -139,10 +141,133 @@
         </div>
 
         <div class="container">
+        <div class="row">
+             <div class="col-md-12" style="padding:0px;">
+                <div class="panel panel-default panel-carousel">
+                    <div class="panel-heading madaniyatcolor">
+                        <h3 class="panel-title"><span>Передачи</span></h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-md-12">
+                            <div class="col-md-6 telecasts no-padding">
+                                <div class="telecast col-md-12 no-padding">
+                                    <div class="telecast_pic col-md-4 no-padding">
+                                        <a href="#">
+                                            <img src="{{asset('images/channels/culture/1.jpg')}}" alt="" />
+                                        </a>
+                                    </div>
+                                    <div class="telecast_data col-md-8 no-padding">
+                                        <a class="title" href="#">Тоолуктардын ток шоусу</a>
+                                        <div class="schedule">
+                                            <span class="day day_active">Пн</span>
+                                            <span class="day day_active">Вт</span>
+                                            <span class="day day_active">Ср</span>
+                                            <span class="day day_active">Чт</span>
+                                            <span class="day day_active">Пт</span>
+                                            <span class="day">Сб</span>
+                                            <span class="day">Вс</span>
+                                        </div>
+                                        <a href="#">
+                                            <span class="aboutperedachi">
+                                                 Иш күндөрү чыга турган Тоолуктардын ток шоусу программасы. Бул кыргыздардын слат санатын, өткөн кез, учур кез жана келечектек кандай болот деген сөздөр аркылуу көз жана сөз чаптырган теле долбоор.
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 telecasts no-padding">
+                                <div class="telecast col-md-12 no-padding">
+                                    <div class="telecast_pic col-md-4 no-padding">
+                                        <a href="#">
+                                            <img src="{{asset('images/channels/culture/1.jpg')}}" alt="" />
+                                        </a>
+                                    </div>
+                                    <div class="telecast_data col-md-8 no-padding">
+                                        <a class="title" href="#">Улутман</a>
+                                        <div class="schedule">
+                                            <span class="day day_active">Пн</span>
+                                            <span class="day">Вт</span>
+                                            <span class="day day_active">Ср</span>
+                                            <span class="day">Чт</span>
+                                            <span class="day day_active">Пт</span>
+                                            <span class="day">Сб</span>
+                                            <span class="day">Вс</span>
+                                        </div>
+                                        <a href="#">
+                                            <span class="aboutperedachi">
+                                                 Иш күндөрү чыга турган Тоолуктардын ток шоусу программасы. Бул кыргыздардын слат санатын, өткөн кез, учур кез жана келечектек кандай болот деген сөздөр аркылуу көз жана сөз чаптырган теле долбоор.
+                                           </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 telecasts no-padding">
+                                <div class="telecast col-md-12 no-padding">
+                                    <div class="telecast_pic col-md-4 no-padding">
+                                        <a href="#">
+                                            <img src="{{asset('images/channels/culture/1.jpg')}}" alt="" />
+                                        </a>
+                                    </div>
+                                    <div class="telecast_data col-md-8 no-padding">
+                                        <a class="title" href="#">Кыз жигит: Сармерден</a>
+                                        <div class="schedule">
+                                            <span class="day">Пн</span>
+                                            <span class="day">Вт</span>
+                                            <span class="day">Ср</span>
+                                            <span class="day">Чт</span>
+                                            <span class="day">Пт</span>
+                                            <span class="day day_active">Сб</span>
+                                            <span class="day day_active">Вс</span>
+                                        </div>
+                                        <a href="#">
+                                            <span class="aboutperedachi">
+                                                Иш күндөрү чыга турган Тоолуктардын ток шоусу программасы. Бул кыргыздардын слат санатын, өткөн кез, учур кез жана келечектек кандай болот деген сөздөр аркылуу көз жана сөз чаптырган теле долбоор.
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 telecasts no-padding">
+                                <div class="telecast col-md-12 no-padding">
+                                    <div class="telecast_pic col-md-4 no-padding">
+                                        <a href="#">
+                                            <img src="{{asset('images/channels/culture/1.jpg')}}" alt="" />
+                                        </a>
+                                    </div>
+                                    <div class="telecast_data col-md-8 no-padding">
+                                        <a class="title" href="#">Улуу мурас</a>
+                                        <div class="schedule">
+                                            <span class="day">Пн</span>
+                                            <span class="day">Вт</span>
+                                            <span class="day">Ср</span>
+                                            <span class="day">Чт</span>
+                                            <span class="day">Пт</span>
+                                            <span class="day day_active">Сб</span>
+                                            <span class="day day_active">Вс</span>
+                                        </div>
+                                        <a href="#">
+                                            <span class="aboutperedachi">
+                                                Иш күндөрү чыга турган Тоолуктардын ток шоусу программасы. Бул кыргыздардын слат санатын, өткөн кез, учур кез жана келечектек кандай болот деген сөздөр аркылуу көз жана сөз чаптырган теле долбоор.
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
 
             <div class="row">
                   <div class="col-md-12" style="padding:10px 0px 0px 0px;">
-                        <div class="panel panel-default panel-carousel">
+                        <div class="panel panel-default panel-carousel madaniyatcolor">
                             <div class="panel-heading">
                                 <h3 class="panel-title"><span>Новые передачи</span></h3>
                             </div>

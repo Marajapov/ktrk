@@ -28,6 +28,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'access:admin', 'namespace' =
     Route::resource('mediaCategory', 'MediaCategoryController');
 
     Route::resource('photoParent','PhotoParentController');
+    Route::get('photoParent.photodelete', ['as' => 'admin.photoParent.photodelete', 'uses' => 'PhotoParentController@photodelete']);
     Route::resource('photoChild','PhotoChildController');
     Route::resource('peopleReporter','PeopleReporterController');
     Route::resource('project','ProjectController');

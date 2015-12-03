@@ -25,9 +25,6 @@
     <link rel="stylesheet" href="{{ asset('css/fileinput.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/style2.css') }}"/>
 
-
-
-
     <script src="{{ asset('js/jquery-1.11.2.min.js') }}"></script>
     <script src="{{ asset('js/admin/jasny/jasny-bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/fileinput.js') }}"></script>
