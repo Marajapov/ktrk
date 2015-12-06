@@ -12,14 +12,7 @@ class MediaCategorySeeder extends Seeder
     public function run()
     {
     	\Model\MediaCategory\ModelName::truncate();
-        \Model\MediaCategory\ModelName::create([
-            'id'        => 1,
-            'name'      => 'Жалпы',
-            'nameRu'     => 'Все',
-            'videoType'     => 'all',
-            'published' => true,
-        ]);
-
+        
         \Model\MediaCategory\ModelName::create([
             'id'        => 2,
             'name'      => 'Телеберүүлөр',
