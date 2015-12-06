@@ -107,7 +107,9 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
     Route::post('logout', ['as' => 'front.logout',   'uses' => 'AuthController@postLogout']);
     Route::get('media', ['as' => 'front.media',     'uses' => 'HomeController@getMedia']);
     Route::get('search', ['as' => 'front.search', 'uses' => 'HomeController@searchResult']);
+    
     Route::get('category/{category}', ['as' => 'front.category', 'uses' => 'HomeController@categoryPage']);
+    Route::get('category/{category}/filterResult', ['as' => 'front.filterResultCategory', 'uses' => 'HomeController@filterResultCategory']);
     
     Route::get('media', ['as' => 'front.media.index', 'uses' => 'MediaController@mediaIndex']); // List of videos
     Route::get('media/project/{project}', ['as' => 'front.media.project', 'uses' => 'MediaController@project']); // Show Page
