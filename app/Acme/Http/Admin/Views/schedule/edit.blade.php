@@ -26,6 +26,15 @@
                 </td>
               </tr>
             @endfor
+              <tr>
+                <th class="tele-time">
+                  {!! Form::text('time[]', null, ["class" => "form-control", "title" => ""]) !!}
+                </th>
+                <td class="tele-show">
+                  {{--<h4>{{ $program[$i]->name }}</h4>--}}
+                  {!! Form::text('name[]', null, ["class" => "form-control", "title" => ""]) !!}
+                </td>
+              </tr>
             </tbody>
           </table>
 

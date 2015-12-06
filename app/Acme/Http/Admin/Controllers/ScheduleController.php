@@ -145,10 +145,16 @@ class ScheduleController extends Controller
         $count= count($request->time);
 
         for($i=0; $i<$count; $i++){
-            $program = array_add($program, $i, ['time' => $request->time[$i], 'name' => $request->name[$i]]);
+            if (($request->time[$i]) && ($request->name[$i])) {
+                $program = array_add($program, $i, ['time' => $request->time[$i], 'name' => $request->name[$i]]);
+            }
         }
 
-        $jsonProgram = json_encode($program);
+        $programSort = array_values(array_sort($program, function ($value) {
+            return $value['time'];
+        }));
+
+        $jsonProgram = json_encode($programSort);
 
         $schedule->date = $request->date;
         $schedule->program = $jsonProgram;
