@@ -98,6 +98,7 @@ class PhotoParentController extends Controller
     public function show(PhotoParent $photoParent)
     {
         $images = json_decode($photoParent->images);
+
         return view('Admin::photoParent.show', [
             'photoParent' => $photoParent,
             'images' => $images,

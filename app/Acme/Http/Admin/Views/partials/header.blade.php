@@ -23,6 +23,7 @@
                 </ul>
             </li>         
             <li><a href="{{ route('admin.banner.index') }}"><i class="fa fa-caret-square-o-right"></i>Баннер</a></li>
+            <li><a href="{{ route('admin.schedule.index') }}"><i class="fa fa-caret-square-o-right"></i>Телепрограмма</a></li>
             <li><a href="{{ route('admin.page.index') }}"><i class="fa fa-columns"></i>{{ trans('site.AdminPagesTitle') }}</a></li>
             <li><a href="{{ route('admin.menu.index') }}"><i class="fa fa-chevron-circle-down"></i>Меню</a></li>
             <li><a href="{{ route('admin.user.index') }}"><i class="fa fa-user"></i>{{ trans('site.AdminUsersTitle') }}</a></li>

@@ -344,3 +344,83 @@ form:after {
 .top_nav .fa {
 	color: #444;
 }
+
+/*TELEPROGRAMM*/
+.x_title h2{
+    float: none;
+}
+.table.program{
+    border-top: 0;
+}
+.table.program > tbody > tr:first-child > th, .table.program > tbody > tr:first-child > td{
+    border-top: 1px solid #cccccc;
+}
+.table.program > tbody > tr > th,.table.program > tbody > tr > td{
+    border: none;
+    border-bottom: 1px solid #cccccc;
+    padding: 5px;
+    vertical-align: middle;
+
+    font-size: 14px;
+    font-weight: normal;
+}
+.table.program > tbody > tr > td h4{
+    font-weight: normal;
+    font-size: 14px;
+}
+.table.program > tbody > tr > th{
+    padding-right: 20px;
+    width: 100px;
+    text-align: right;
+}
+
+.teletabs li a{
+    font-weight: bold;
+}
+
+
+.program-block{
+    border: 1px solid #cccccc;
+    border-left: 0;
+    padding: 0;
+}
+.program-block.first{
+    border-left: 1px solid #cccccc;
+}
+.program-date{
+    color: #333333;
+    text-align: center;
+}
+.program-date h4{
+    color: #333333;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+.program-date h5{
+    font-size: 12px;
+}
+.actions{
+    list-style-type: none;
+    text-align: center;
+    margin:10px 0;
+    padding: 0;
+}
+.actions li{
+    display: inline-block;
+}
+.actions li a{
+    margin: 0;
+    padding: 5px 8px;
+
+    font-size: 18px;
+}
+.action-edit{
+    color: #649bea;
+}
+.action-delete{
+    color: #ff4346;
+}
+
+.program-show form{
+    margin: 0;
+}

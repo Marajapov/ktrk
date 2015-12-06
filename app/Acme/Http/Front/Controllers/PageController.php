@@ -103,23 +103,62 @@ class PageController extends Controller
 
     public function teleprogramPage()
     {
-//        $mytime = Carbon\Carbon::now();
-//        echo $mytime->toDateTimeString();
-//
-//        dd($mytime);
+        $lc = app()->getlocale();
 
-        $now = Carbon::now('Asia/Bishkek');
+        date_default_timezone_set('Asia/Bishkek');
 
-        $currentDate = $now->format('d-m-Y');
-        $currentTime = $now->format('H:i');
+        $now = date("d-m-Y H:i");
 
-        $categories = \Model\Category\ModelName::all();
+        $currentDate = date('d-m-Y');
+        $currentTime = date('H:i');
+        $weekDay = date('N', strtotime($now));
+
+        $schedules = \Model\Schedule\ModelName::orderBy('created_at', 'desc')->get();
+
+        for($i=1; $i<=7; $i++){
+            if($i < $weekDay){
+                $weekDayNew = date('d-m-Y', strtotime('-'.($weekDay - $i).' day'));
+                $week[] = $weekDayNew;
+            } elseif ($i > $weekDay) {
+                $weekDayNew = date('d-m-Y', strtotime('+'.($i - $weekDay).' day'));
+                $week[] = $weekDayNew;
+            } else {
+                $weekDayNew = date('d-m-Y', strtotime($now));
+                $week[] = $weekDayNew;
+            }
+        }
+
+        if(!empty($schedules)){
+            $programs = array();
+
+            foreach($schedules as $schedule){
+                $scheduleWeek = date('N',strtotime($schedule->date));
+
+                for($j=0; $j<count($week);$j++){;
+                    if(strtotime($week[$j]) == strtotime($schedule->date)){
+                        $program = json_decode($schedule->program);
+                        $programNew = array_add($program, 'date', $schedule->date);
+                        $programs[] =$programNew;
+                    }
+                }
+            }
+            $programs = array_reverse($programs);
+        }
+
+//        dd($programs);
+
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
         return view('Front::pages.teleprogram', [
+            'lc' => $lc,
             'currentDate' => $currentDate,
             'currentTime' => $currentTime,
             'backgroundMain' => $backgroundMain,
-            'categories' => $categories,
+
+            'schedules' => $schedules,
+            'programs' => $programs,
+
+            'week' => $week
             ]);
     }
 

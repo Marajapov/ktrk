@@ -365,6 +365,7 @@
 }
 .teletabs{
     text-align: center;
+    border-bottom: 0;
 }
 .teletabs li{
     float: none;

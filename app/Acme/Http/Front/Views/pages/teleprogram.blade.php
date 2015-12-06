@@ -16,142 +16,114 @@
           <div class="panel-body">
 
             <ul id="tabs" class="nav nav-tabs teletabs" data-tabs="tabs">
-              <li class="active"><a href="#monday" data-toggle="tab">Понедельник</a></li>
-              <li><a href="#tuesday" data-toggle="tab">Вторник</a></li>
-              <li><a href="#wednesday" data-toggle="tab">Среда</a></li>
-              <li><a href="#thursday" data-toggle="tab">Четверг</a></li>
-              <li><a href="#friday" data-toggle="tab">Пятница</a></li>
-              <li><a href="#saturday" data-toggle="tab">Суббота</a></li>
-              <li><a href="#sunday" data-toggle="tab">Вокресенье</a></li>
+
+              @foreach($programs as $key => $program)
+                {{--{{ dd($program['date']) }}--}}
+                @foreach($schedules as $schedule)
+                  @if($program['date'] == $schedule->date)
+                    <li class="@if($currentDate == $program['date']) active @endif">
+                      <a href="#{{ $program['date'] }}" data-toggle="tab">
+                        @if($lc == 'kg')
+                          {{ $schedule->getDay().' '.$schedule->getMonth().' - '.$schedule->getWeekKg() }}
+                        @elseif($lc == 'ru')
+                          {{ $schedule->getDay().' '.$schedule->getMonth().' - '.$schedule->getWeekRu() }}
+                        @endif
+                      </a>
+                    </li>
+                  @endif
+                @endforeach
+              @endforeach
+
             </ul>
 
             <div id="my-tab-content" class="tab-content">
-              <div class="tab-pane active" id="monday">
 
-                <table class="table">
-                  <h4 class="tele-title">Коомдук каналдын 17-ноябрь шейшемби күндөгү көрсөтүүлөр программасы</h4>
-                  <tbody>
-                    <tr class="tele-row tele-passed">
-                      <th class="tele-time">6:57</th>
-                      <td class="tele-show">
-                        <h4>Кыргыз Республикасынын гимни</h4>
-                        {{--<h5 class="tele-extra"><i class="fa fa-play-circle-o"></i>Сериал</h5>--}}
-                      </td>
-                    </tr>
-                    <tr class="tele-row tele-passed">
-                      <th class="tele-time">6:57</th>
-                      <td class="tele-show">
-                        <h4>Кыргыз Республикасынын гимни</h4>
-                        {{--<h5 class="tele-extra"><i class="fa fa-play-circle-o"></i>Сериал</h5>--}}
-                      </td>
-                    </tr>
-                    <tr class="tele-row tele-passed">
-                      <th class="tele-time">6:57</th>
-                      <td class="tele-show">
-                        <h4>Кыргыз Республикасынын гимни</h4>
-                        {{--<h5 class="tele-extra"><i class="fa fa-play-circle-o"></i>Сериал</h5>--}}
-                      </td>
-                    </tr>
-                    <tr class="tele-row tele-passed">
-                      <th class="tele-time">6:57</th>
-                      <td class="tele-show">
-                        <h4>Кыргыз Республикасынын гимни</h4>
-                        {{--<h5 class="tele-extra"><i class="fa fa-play-circle-o"></i>Сериал</h5>--}}
-                      </td>
-                    </tr>
-                    <tr class="tele-row tele-live">
-                      <th class="tele-time">7:00</th>
-                      <td class="tele-show">
-                        <span id="bcLive"><i class="fa fa-circle"></i>сейчас в эфире</span>
-                        <h4>Новости <span></span></h4>
-                      </td>
-                    </tr>
-                    <tr class="tele-row">
-                      <th class="tele-time">7:10</th>
-                      <td class="tele-show">
-                        <h4>“Замана”</h4>
-                      </td>
-                    </tr>
-                    <tr class="tele-row">
-                      <th class="tele-time">7:10</th>
-                      <td class="tele-show">
-                        <h4>“Замана”</h4>
-                      </td>
-                    </tr>
-                    <tr class="tele-row">
-                      <th class="tele-time">7:10</th>
-                      <td class="tele-show">
-                        <h4>“Замана”</h4>
-                      </td>
-                    </tr>
-                    <tr class="tele-row">
-                      <th class="tele-time">7:10</th>
-                      <td class="tele-show">
-                        <h4>“Замана”</h4>
-                      </td>
-                    </tr>
-                    <tr class="tele-row">
-                      <th class="tele-time">7:10</th>
-                      <td class="tele-show">
-                        <h4>“Замана”</h4>
-                      </td>
-                    </tr>
-                    <tr class="tele-row">
-                      <th class="tele-time">7:10</th>
-                      <td class="tele-show">
-                        <h4>“Замана”</h4>
-                      </td>
-                    </tr>
-                    <tr class="tele-row">
-                      <th class="tele-time">7:10</th>
-                      <td class="tele-show">
-                        <h4>“Замана”</h4>
-                      </td>
-                    </tr>
-                    <tr class="tele-row">
-                      <th class="tele-time">7:10</th>
-                      <td class="tele-show">
-                        <h4>“Замана”</h4>
-                      </td>
-                    </tr>
-                    <tr class="tele-row">
-                      <th class="tele-time">7:10</th>
-                      <td class="tele-show">
-                        <h4>“Замана”</h4>
-                      </td>
-                    </tr>
+              @foreach($programs as $key => $program)
 
-                  </tbody>
-                </table>
+                @foreach($schedules as $schedule)
 
-              </div>
-              <div class="tab-pane" id="tuesday">
-                <h1>Вторник</h1>
-                <p>Вторник</p>
-              </div>
-              <div class="tab-pane" id="wednesday">
-                <h1>Среда</h1>
-                <p>Среда</p>
-              </div>
-              <div class="tab-pane" id="thursday">
-                <h1>Четверг</h1>
-                <p>Четверг</p>
-              </div>
-              <div class="tab-pane" id="friday">
-                <h1>Пятница</h1>
-                <p>Пятница</p>
-              </div>
-              <div class="tab-pane" id="saturday">
-                <h1>Суббота</h1>
-                <p>Суббота</p>
-              </div>
-              <div class="tab-pane" id="sunday">
-                <h1>Воскресенье</h1>
-                <p>Суббота</p>
-              </div>
+                  @if($program['date'] == $schedule->date)
+
+                    <div class="tab-pane @if($schedule->date == $currentDate) active @endif" id="{{ $schedule->date }}">
+
+                      <table class="table program">
+                        <tbody>
+                        @for($i=0; $i<count($program)-1; $i++)
+
+                          @if((strtotime($schedule->date) < strtotime($currentDate)))
+                            <tr class="tele-row tele-passed">
+
+                          @elseif(($schedule->date == $currentDate) && ($i < count($program)-2))
+
+                            @if((strtotime($program[$i]->time) <= strtotime($currentTime)) && (strtotime($currentTime) < strtotime($program[$i+1]->time)))
+                              <tr class="tele-row tele-live">
+                            @elseif((strtotime($program[$i]->time) < strtotime($currentTime)) && ($program[$i]->time != '00:00'))
+                              <tr class="tele-row tele-passed">
+                            @endif
+
+                          @elseif(($schedule->date == $currentDate) && ($i == count($program)-1))
+
+                            @if((strtotime($program[$i]->time) <= strtotime($currentTime)))
+                              <tr class="tele-row tele-live">
+                            @elseif((strtotime($program[$i]->time) < strtotime($currentTime)) && ($program[$i]->time != '00:00'))
+                              <tr class="tele-row tele-passed">
+                            @endif
+
+                          @else
+                            <tr class="tele-row ">
+                          @endif
+                            <th class="tele-time">
+                              {{ $program[$i]->time }}
+                              {{ strtotime($program[$i]->time) }}
+                            </th>
+                            <td class="tele-show">
+
+                              @if(($schedule->date == $currentDate) && ($i < count($program)-2))
+
+                                @if((strtotime($program[$i]->time) <= strtotime($currentTime)) && (strtotime($currentTime) < strtotime($program[$i+1]->time)))
+
+                                  @if($lc == 'kg')
+                                    <span id="bcLive"><i class="fa fa-circle"></i>азыр эфирде</span>
+                                  @elseif($lc == 'ru')
+                                    <span id="bcLive"><i class="fa fa-circle"></i>сейчас в эфире</span>
+                                  @endif
+
+                                @endif
+
+                              @elseif(($schedule->date == $currentDate) && ($i == count($program)-1))
+
+                                @if((strtotime($program[$i]->time) <= strtotime($currentTime)))
+
+                                  @if($lc == 'kg')
+                                    <span id="bcLive"><i class="fa fa-circle"></i>азыр эфирде</span>
+                                  @elseif($lc == 'ru')
+                                    <span id="bcLive"><i class="fa fa-circle"></i>сейчас в эфире</span>
+                                  @endif
+
+                                @endif
+
+                              @endif
+
+                              <h4>{{ $program[$i]->name }}</h4>
+                              {{--<h5 class="tele-extra"><i class="fa fa-play-circle-o"></i>Сериал</h5>--}}
+                            </td>
+                          </tr>
+                        @endfor
+                        </tbody>
+                      </table>
+
+                    </div>
+
+                  @endif
+
+                @endforeach
+
+              @endforeach
+
             </div>
 
           </div>
+
         </div>
       </div>
     </div>
