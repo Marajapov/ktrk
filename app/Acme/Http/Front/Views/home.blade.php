@@ -348,28 +348,75 @@
               <div class="panel-body">
 
                 <ul id="filters" class="clearfix">
+                  <li><span class="filter active" data-filter="total">{{ trans('site.AllVideos') }}</span></li>
                   @foreach($MediaCategories as $key => $MediaCategory)
-                    <li><span class="filter @if($key == 0) active @endif" data-filter="{{ $MediaCategory->getVideoType() }}">{{ $MediaCategory->getName() }}</span></li>
+                    <li><span class="filter" data-filter="{{ $MediaCategory->getVideoType() }}">{{ $MediaCategory->getName() }}</span></li>
                   @endforeach
                 </ul>
 
                 <div id="portfoliolist">
-                  @foreach($mediaPosts as $media)
-                  
-                    <div class="portfolio {{ $media->getVideoType() }}" data-cat="{{ $media->getVideoType() }}">
+                  @foreach($mediaLastVideos as $key=>$media)
+                    <div class="portfolio total" data-cat="total">
                       <div class="portfolio-wrapper">
-                        <a href="{{ route('front.media.video', $media) }}" >
-                          <img src="http://img.youtube.com/vi/{{ $media->getUrl()}}/mqdefault.jpg" alt="" />
-                        </a>
-                        <div class="label">
-                          <div class="label-text">
-                            <a href="{{ route('front.media.video', $media) }}" title="{{ $media->getProgramName() }}" class="text-title">{{ $media->getName() }}</a>
-                          </div>
-                          <div class="label-bg"></div>
+                        <div class="media-image">
+                          <a href="{{ route('front.media.video', $media) }}">
+                            <img src="http://img.youtube.com/vi/{{ $media->getUrl()}}/mqdefault.jpg" alt="" />
+                            <i class="fa fa-youtube-play"></i>
+                          </a>
+                          @if(($media->getProgramName()))
+                            <div class="label">
+                              <div class="label-text">
+                                <a href="{{ route('front.media.video', $media) }}" title="{{ $media->getProgramName() }}" class="text-title">{{ $media->getProgramName() }}</a>
+                              </div>
+                              <div class="label-bg"></div>
+                            </div>
+                          @endif
                         </div>
+                        <a class="media-title" href="{{ route('front.media.video', $media) }}">
+                          <h4>{{ $media->getName() }}</h4>
+                        </a>
+
                       </div>
                     </div>
                   @endforeach
+
+                  @foreach($MediaCategories as $key=>$MediaCategory)
+
+                      @foreach($categoriesVideos as $key => $media)
+
+                        @foreach($media as $row)
+
+                          @if($row->videoType == $MediaCategory->videoType)
+                            <div class="portfolio {{ $row->getVideoType() }}" data-cat="{{ $row->getVideoType() }}">
+                              <div class="portfolio-wrapper">
+                                <div class="media-image">
+                                  <a href="{{ route('front.media.video', $row) }}">
+                                    <img src="http://img.youtube.com/vi/{{ $row->getUrl()}}/mqdefault.jpg" alt="" />
+                                    <i class="fa fa-youtube-play"></i>
+                                  </a>
+                                  @if(($row->getProgramName()))
+                                    <div class="label">
+                                      <div class="label-text">
+                                        <a href="{{ route('front.media.video', $row) }}" title="{{ $row->getProgramName() }}" class="text-title">{{ $row->getProgramName() }}</a>
+                                      </div>
+                                      <div class="label-bg"></div>
+                                    </div>
+                                  @endif
+                                </div>
+                                <a class="media-title" href="{{ route('front.media.video', $media) }}">
+                                  <h4>{{ $row->getName() }}</h4>
+                                </a>
+
+                              </div>
+                            </div>
+                          @endif
+
+                        @endforeach
+
+                      @endforeach
+
+                  @endforeach
+
                 </div>
 
                 <div class="clearfix"></div>
@@ -432,6 +479,7 @@
 @stop
 
 @section('footerScript')
+
   <script type="text/javascript">
     $(function () {
 
@@ -442,7 +490,7 @@
           // MixItUp plugin
           // http://mixitup.io
           $('#portfoliolist').mixitup({
-            showOnLoad: 'all',
+            showOnLoad: 'total',
             targetSelector: '.portfolio',
             filterSelector: '.filter',
             effects: ['fade'],

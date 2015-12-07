@@ -19,6 +19,18 @@ class MediaController extends Controller
         $MediaCategories = \Model\MediaCategory\ModelName::get();
         $mediaAll = \Model\Media\ModelName::get();
 
+        $categoriesVideos = array();
+
+        foreach($MediaCategories as $MediaCategory){
+
+            $CategoryVideos = \Model\Media\ModelName::where('videoType','=',$MediaCategory->videoType)->orderBy('id','desc')->take(9)->get();
+
+            $categoriesVideos = array_add($categoriesVideos, $MediaCategory->videoType, $CategoryVideos);
+        }
+//        dd($categoriesVideos['tele']);
+
+        $mediaLastVideos = \Model\Media\ModelName::orderBy('id','desc')->take(9)->get();
+
         $mainBanner = \Model\Background\ModelName::where('name','=','main')->first();
         $categories = \Model\Category\ModelName::all();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
@@ -26,11 +38,13 @@ class MediaController extends Controller
 
         return view('Front::media.index',[
             'mediaAll' => $mediaAll,
+            'mediaLastVideos' => $mediaLastVideos,
             'MediaCategories' => $MediaCategories,
             'mainBanner'   => $mainBanner,
             'projectList' => $projectList,
             'mediaCategories'=>$MediaCategories,
             'backgroundMain' => $backgroundMain,
+            'categoriesVideos' => $categoriesVideos
             ]);
     }
 
@@ -39,6 +53,9 @@ class MediaController extends Controller
         $lc = app()->getlocale();
 
         $video = \Model\Media\ModelName::where('id','=',$media)->first(); // full video array
+
+        $video->incrementViewed();
+
         $projectId = $video->program; // 0
 
         $videoType = $video->videoType; // serials
@@ -60,8 +77,6 @@ class MediaController extends Controller
             }else{
                 $videoProject = '';
             }
-            
-
 
             $result = \Model\MediaCategory\ModelName::where('videoType','=',$videoType)->first();
             $getVideoTypeName = $result->getNameRu();

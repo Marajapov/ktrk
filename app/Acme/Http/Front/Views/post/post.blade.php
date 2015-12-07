@@ -1,6 +1,10 @@
 @extends('Front::layouts.default')
 @section('title', $post->getTitle())
 
+@section('styles')
+  <link rel="stylesheet" href="{{ asset('css/articles.css') }}"/>
+@endsection()
+
 @section('content')
         <div class="container main-wrapper">
 
@@ -32,8 +36,8 @@
                                             </div>
                                         </h4>
 
-                                        <a href="{{ route('front.post', $post) }}" style="float:left; margin: 2px 10px;">
-                                            <img width="240" height="180" class="left" src="@if(empty($post->getFile()))images/2.jpg @else {{  asset($post->getFile()) }} @endif" alt="image">
+                                        <a href="{{ route('front.post', $post) }}" style="float:left; margin: 5px 5px 5px  0">
+                                            <img height="150" class="left" src="@if(empty($post->getFile()))images/2.jpg @else {{  asset($post->getFile()) }} @endif" alt="image">
                                         </a>
 
                                             @if(!empty($post->related2))

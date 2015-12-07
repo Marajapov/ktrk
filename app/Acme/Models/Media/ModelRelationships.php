@@ -20,6 +20,11 @@ trait ModelRelationships
 
     public function hasProject()
     {
-        return $this->hasOne(\Model\Project\ModelName::class, 'program');
+        return $this->belongsTo(\Model\Project\ModelName::class, 'program');
+    }
+
+    public function mediaHasCategory()
+    {
+        return $this->hasMany(\Model\MediaCategory\ModelName::class, 'videoType');
     }
 }

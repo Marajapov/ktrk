@@ -89,3 +89,22 @@
     border-left: 1px solid #F1F4F9;
     border-bottom: 1px solid #F1F4F9;
 }
+
+.panel-article{
+    border-right: 2px solid #F1F4F9;
+    border-bottom: 1px solid #F1F4F9;
+}
+
+.panel-article .block{
+    padding: 5px;
+}
+.panel-article .news-title{
+    margin-bottom: 0;
+    padding: 0 130px 10px 5px;
+    font-size: 20px;
+}
+.panel-article .news-title .extra{
+    position: absolute;
+    top: 0;
+    right: 5px;
+}

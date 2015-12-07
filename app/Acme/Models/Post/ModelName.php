@@ -113,7 +113,7 @@ class ModelName extends Model
     public function getDay()
     {
         $fullDate = $this->created_at;
-        $day = date('d', strtotime($fullDate));
+        $day = date('j', strtotime($fullDate));
         return $day;
     }
 

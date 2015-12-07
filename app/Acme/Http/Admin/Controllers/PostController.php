@@ -5,6 +5,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 
 use Model\Post\ModelName as Post;
+use Intervention\Image\ImageManagerStatic as Image;
+
 // use Model\Channel\ModelName as Channel;
 // use Model\Category\ModelName as Category;
 
@@ -102,14 +104,16 @@ class PostController extends Controller
             $btw = time();
 
             $name = $post->id().$btw.'.'.$file->getClientOriginalExtension();
-            
+
+//            $manager = new ImageManager(array('driver' => 'imagick'));
 
             $storage = \Storage::disk('public');
             $storage->makeDirectory($dir);
 
+            Image::make($_FILES['thumbnail']['tmp_name'])->resize(250, 150)->save($dir.'/'.$name);
+
             $post->thumbnail = $dir.'/'.$name;
             $post->save();
-            $file->move($dir, $name);
         }
 
         return redirect()->route('admin.post.index');
@@ -165,7 +169,6 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        
         $post->update($request->except('tag_list','tag_list2','thumbnail','q'));
 
         $tags = $request->input('tag_list');
@@ -206,14 +209,14 @@ class PostController extends Controller
             $btw = time();
 
             $name = $post->id().$btw.'.'.$file->getClientOriginalExtension();
-            
+
+            Image::make($_FILES['thumbnail']['tmp_name'])->resize(250, 150)->save($dir.'/'.$name);
 
             $storage = \Storage::disk('public');
             $storage->makeDirectory($dir);
 
             $post->thumbnail = $dir.'/'.$name;
             $post->save();
-            $file->move($dir, $name);
         }
 
 

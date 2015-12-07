@@ -16,4 +16,29 @@
 .video-desc{
     margin-top: 20px;
 }
-show-info
+.media-view, .media-date{
+    position: absolute;
+    top: 5px;
+
+    padding: 2px 5px;
+
+    background: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+    font-size: 11px;
+    text-transform: lowercase;
+}
+.media-view{
+    left: 10px;
+}
+.media-view i{
+    padding-right: 5px;
+}
+.media-date{
+    right: 10px;
+}
+.media-project,.media-project:hover{
+    color: #ffffff;
+}
+.media-title{
+    display: table-cell;
+}

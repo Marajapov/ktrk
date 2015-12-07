@@ -226,4 +226,8 @@ return [
     'Friday' => 'Жума',
     'Saturday' => 'Ишемби',
     'Sunday' => 'Жекшемби',
+
+    'AllVideos' => 'Жалпы',
+    'LastVideos' => 'Акыркы видеолор',
+    'TopVideos' => 'Топ видеолор',
 ];

@@ -31,10 +31,7 @@ class HomeController extends Controller
         }elseif($lc == 'ru'){
             $generalPosts = \Model\Post\ModelName::general($channel)->published()->languageru()->take(6)->skip(0)->orderBy('id', 'desc')->get();    
             $projects = \Model\Project\ModelName::where('nameRu','<>','')->get();
-
         }
-
-        $mediaLast = \Model\Media\ModelName::take(9)->get();
         
         $rDayVideo = \Model\Media\ModelName::having('dayVideo','=','1')->take(1)->skip(0)->orderBy('created_at','desc')->first();
 
@@ -61,9 +58,18 @@ class HomeController extends Controller
         }
         
         $MediaCategories = \Model\MediaCategory\ModelName::get();
-        $mediaPosts = \Model\Media\ModelName::get();
+        $mediaPosts = \Model\Media\ModelName::orderBy('id','desc')->get();
 
-        $videoAll = \Model\Media\ModelName::get();
+        $categoriesVideos = array();
+
+        foreach($MediaCategories as $MediaCategory){
+
+            $CategoryVideos = \Model\Media\ModelName::where('videoType','=',$MediaCategory->videoType)->orderBy('id','desc')->take(9)->get();
+
+            $categoriesVideos = array_add($categoriesVideos, $MediaCategory->videoType, $CategoryVideos);
+        }
+
+        $mediaLastVideos = \Model\Media\ModelName::orderBy('id','desc')->take(9)->get();
         
         return view('Front::home', [
             'images' => $images,
@@ -78,9 +84,9 @@ class HomeController extends Controller
             //'parentId' => $parentId,
             
             'backgroundMain' => $backgroundMain,
-            'mediaLast'      => $mediaLast,
-            'MediaCategories'       => $MediaCategories,
-            'mediaPosts'       => $mediaPosts,
+            'MediaCategories' => $MediaCategories,
+            'categoriesVideos' => $categoriesVideos,
+            'mediaLastVideos' => $mediaLastVideos,
             'projects' => $projects,
             ]);
     }
