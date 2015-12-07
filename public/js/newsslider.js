@@ -74,7 +74,7 @@
 
   var dismiss = '[data-dismiss="alert"]'
   var Alert   = function (el) {
-    $(el).on('hover', dismiss, this.close)
+    $(el).on('click', dismiss, this.close)
   }
 
   Alert.VERSION = '3.3.2'
@@ -148,7 +148,7 @@
   // ALERT DATA-API
   // ==============
 
-  $(document).on('hover.bs.alert.data-api', dismiss, Alert.prototype.close)
+  $(document).on('click.bs.alert.data-api', dismiss, Alert.prototype.close)
 
 }(jQuery);
 ;/* ========================================================================
@@ -256,7 +256,7 @@
   // ===============
 
   $(document)
-    .on('hover.bs.button.data-api', '[data-toggle^="button"]', function (e) {
+    .on('click.bs.button.data-api', '[data-toggle^="button"]', function (e) {
       var $btn = $(e.target)
       if (!$btn.hasClass('btn')) $btn = $btn.closest('.btn')
       Plugin.call($btn, 'toggle')
@@ -474,7 +474,7 @@
   // CAROUSEL DATA-API
   // =================
 
-  var hoverHandler = function (e) {
+  var clickHandler = function (e) {
     var href
     var $this   = $(this)
     var $target = $($this.attr('data-target') || (href = $this.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '')) // strip for ie7
@@ -493,8 +493,8 @@
   }
 
   $(document)
-    .on('hover.bs.carousel.data-api', '[data-slide]', hoverHandler)
-    .on('hover.bs.carousel.data-api', '[data-slide-to]', hoverHandler)
+    .on('click.bs.carousel.data-api', '[data-slide]', clickHandler)
+    .on('click.bs.carousel.data-api', '[data-slide-to]', clickHandler)
 
   $(window).on('load', function () {
     $('[data-ride="carousel"]').each(function () {
@@ -702,7 +702,7 @@
   // COLLAPSE DATA-API
   // =================
 
-  $(document).on('hover.bs.collapse.data-api', '[data-toggle="collapse"]', function (e) {
+  $(document).on('click.bs.collapse.data-api', '[data-toggle="collapse"]', function (e) {
     var $this   = $(this)
 
     if (!$this.attr('data-target')) e.preventDefault()
@@ -733,7 +733,7 @@
   var backdrop = '.dropdown-backdrop'
   var toggle   = '[data-toggle="dropdown"]'
   var Dropdown = function (element) {
-    $(element).on('hover.bs.dropdown', this.toggle)
+    $(element).on('click.bs.dropdown', this.toggle)
   }
 
   Dropdown.VERSION = '3.3.2'
@@ -750,8 +750,8 @@
 
     if (!isActive) {
       if ('ontouchstart' in document.documentElement && !$parent.closest('.navbar-nav').length) {
-        // if mobile we use a backdrop because hover events don't delegate
-        $('<div class="dropdown-backdrop"/>').insertAfter($(this)).on('hover', clearMenus)
+        // if mobile we use a backdrop because click events don't delegate
+        $('<div class="dropdown-backdrop"/>').insertAfter($(this)).on('click', clearMenus)
       }
 
       var relatedTarget = { relatedTarget: this }
@@ -786,7 +786,7 @@
 
     if ((!isActive && e.which != 27) || (isActive && e.which == 27)) {
       if (e.which == 27) $parent.find(toggle).trigger('focus')
-      return $this.trigger('hover')
+      return $this.trigger('click')
     }
 
     var desc = ' li:not(.divider):visible a'
@@ -868,9 +868,9 @@
   // ===================================
 
   $(document)
-    .on('hover.bs.dropdown.data-api', clearMenus)
-    .on('hover.bs.dropdown.data-api', '.dropdown form', function (e) { e.stopPropagation() })
-    .on('hover.bs.dropdown.data-api', toggle, Dropdown.prototype.toggle)
+    .on('click.bs.dropdown.data-api', clearMenus)
+    .on('click.bs.dropdown.data-api', '.dropdown form', function (e) { e.stopPropagation() })
+    .on('click.bs.dropdown.data-api', toggle, Dropdown.prototype.toggle)
     .on('keydown.bs.dropdown.data-api', toggle, Dropdown.prototype.keydown)
     .on('keydown.bs.dropdown.data-api', '[role="menu"]', Dropdown.prototype.keydown)
     .on('keydown.bs.dropdown.data-api', '[role="listbox"]', Dropdown.prototype.keydown)
@@ -940,7 +940,7 @@
     this.escape()
     this.resize()
 
-    this.$element.on('hover.dismiss.bs.modal', '[data-dismiss="modal"]', $.proxy(this.hide, this))
+    this.$element.on('click.dismiss.bs.modal', '[data-dismiss="modal"]', $.proxy(this.hide, this))
 
     this.backdrop(function () {
       var transition = $.support.transition && that.$element.hasClass('fade')
@@ -997,7 +997,7 @@
     this.$element
       .removeClass('in')
       .attr('aria-hidden', true)
-      .off('hover.dismiss.bs.modal')
+      .off('click.dismiss.bs.modal')
 
     $.support.transition && this.$element.hasClass('fade') ?
       this.$element
@@ -1059,7 +1059,7 @@
 
       this.$backdrop = $('<div class="modal-backdrop ' + animate + '" />')
         .prependTo(this.$element)
-        .on('hover.dismiss.bs.modal', $.proxy(function (e) {
+        .on('click.dismiss.bs.modal', $.proxy(function (e) {
           if (e.target !== e.currentTarget) return
           this.options.backdrop == 'static'
             ? this.$element[0].focus.call(this.$element[0])
@@ -1182,7 +1182,7 @@
   // MODAL DATA-API
   // ==============
 
-  $(document).on('hover.bs.modal.data-api', '[data-toggle="modal"]', function (e) {
+  $(document).on('click.bs.modal.data-api', '[data-toggle="modal"]', function (e) {
     var $this   = $(this)
     var href    = $this.attr('href')
     var $target = $($this.attr('data-target') || (href && href.replace(/.*(?=#[^\s]+$)/, ''))) // strip for ie7
@@ -1259,8 +1259,8 @@
     for (var i = triggers.length; i--;) {
       var trigger = triggers[i]
 
-      if (trigger == 'hover') {
-        this.$element.on('hover.' + this.type, this.options.selector, $.proxy(this.toggle, this))
+      if (trigger == 'click') {
+        this.$element.on('click.' + this.type, this.options.selector, $.proxy(this.toggle, this))
       } else if (trigger != 'manual') {
         var eventIn  = trigger == 'hover' ? 'mouseenter' : 'focusin'
         var eventOut = trigger == 'hover' ? 'mouseleave' : 'focusout'
@@ -1697,7 +1697,7 @@
 
   Popover.DEFAULTS = $.extend({}, $.fn.tooltip.Constructor.DEFAULTS, {
     placement: 'right',
-    trigger: 'hover',
+    trigger: 'click',
     content: '',
     template: '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'
   })
@@ -2103,14 +2103,14 @@
   // TAB DATA-API
   // ============
 
-  var hoverHandler = function (e) {
+  var clickHandler = function (e) {
     e.preventDefault()
     Plugin.call($(this), 'show')
   }
 
   $(document)
-    .on('hover.bs.tab.data-api', '[data-toggle="tab"]', hoverHandler)
-    .on('hover.bs.tab.data-api', '[data-toggle="pill"]', hoverHandler)
+    .on('click.bs.tab.data-api', '[data-toggle="tab"]', clickHandler)
+    .on('click.bs.tab.data-api', '[data-toggle="pill"]', clickHandler)
 
 }(jQuery);
 ;/* ========================================================================
@@ -2133,7 +2133,7 @@
 
     this.$target = $(this.options.target)
       .on('scroll.bs.affix.data-api', $.proxy(this.checkPosition, this))
-      .on('hover.bs.affix.data-api',  $.proxy(this.checkPositionWithEventLoop, this))
+      .on('click.bs.affix.data-api',  $.proxy(this.checkPositionWithEventLoop, this))
 
     this.$element     = $(element)
     this.affixed      =
@@ -2313,7 +2313,7 @@
     enableTracking: false, //tracking with google analitycs
     hover: function(){}, //personalize hover event with this callback function
     hide: function(){}, //personalize hide event with this callback function
-    hover: function(){}, //personalize hover event with this callback function
+    click: function(){}, //personalize click event with this callback function
     render: function(){}, //personalize render event with this callback function
     buttons: {  //settings for buttons
       googlePlus : {  //http://www.google.com/webmasters/+1/button/
@@ -2377,8 +2377,8 @@
   urlJson = {
     googlePlus: "",
 
-	//new FQL method by Sire
-	facebook: "https://graph.facebook.com/fql?q=SELECT%20url,%20normalized_url,%20share_count,%20like_count,%20comment_count,%20total_count,commentsbox_count,%20comments_fbid,%20hover_count%20FROM%20link_stat%20WHERE%20url=%27{url}%27&callback=?",
+  //new FQL method by Sire
+  facebook: "https://graph.facebook.com/fql?q=SELECT%20url,%20normalized_url,%20share_count,%20like_count,%20comment_count,%20total_count,commentsbox_count,%20comments_fbid,%20click_count%20FROM%20link_stat%20WHERE%20url=%27{url}%27&callback=?",
     //old method facebook: "http://graph.facebook.com/?id={url}&callback=?",
     //facebook : "http://api.ak.facebook.com/restserver.php?v=1.0&method=links.getStats&urls={url}&format=json"
     
@@ -2486,7 +2486,7 @@
       '<div style="'+cssShare+'display:block;padding:0;text-align:center;text-decoration:none;width:50px;background-color:#7EACEE;border:1px solid #40679C;border-radius:3px;color:#fff;">'+
       '<img src="http://www.delicious.com/static/img/delicious.small.gif" height="10" width="10" alt="Delicious" /> Add</div></div></div>');
       
-      $(self.element).find('.delicious').on('hover', function(){
+      $(self.element).find('.delicious').on('click', function(){
         self.openPopup('delicious');
       });
     },
@@ -2577,7 +2577,7 @@
     },
     digg: function(){
       //if somenone find a solution, mail me !
-      /*$(this.element).find('.digg').on('hover', function(){
+      /*$(this.element).find('.digg').on('click', function(){
         _gaq.push(['_trackSocial', 'digg', 'add']);
       });*/
     },
@@ -2693,9 +2693,9 @@
       self.options.hide(self, self.options);
     });
     
-    //hover event
-    $(this.element).hover(function(){
-      self.options.hover(self, self.options);
+    //click event
+    $(this.element).click(function(){
+      self.options.click(self, self.options);
       return false;
     });
   };
@@ -2732,7 +2732,7 @@
           temp = temp.replace('\u00c2\u00a0', '');  //remove google plus special chars
           count += parseInt(temp, 10);
         }
-		//get the FB total count (shares, likes and more)
+    //get the FB total count (shares, likes and more)
         else if(json.data && json.data.length > 0 && typeof json.data[0].total_count !== "undefined"){ //Facebook total count
           count += parseInt(json.data[0].total_count, 10);
         }
@@ -2861,166 +2861,166 @@
   };
 })(jQuery, window, document);
 ;(function($) {
-	"use strict";
-	$('.slide').on('slid.bs.carousel', function () {
-		$(this).find('.carousel-title-indicators').find('.active').removeClass('active');
-		var index = $(this).find('.carousel-indicators').find('.active').data('slide-to');
-		$(this).find('.carousel-title-indicators li[data-slide-to=' + index + ']').addClass('active');
-	});
+  "use strict";
+  $('.slide').on('slid.bs.carousel', function () {
+    $(this).find('.carousel-title-indicators').find('.active').removeClass('active');
+    var index = $(this).find('.carousel-indicators').find('.active').data('slide-to');
+    $(this).find('.carousel-title-indicators li[data-slide-to=' + index + ']').addClass('active');
+  });
 
-	$(".carousel").swiperight(function() {
-		$(this).carousel('prev');
-	});
-	$(".carousel").swipeleft(function() {
-		$(this).carousel('next');
-	});
+  $(".carousel").swiperight(function() {
+    $(this).carousel('prev');
+  });
+  $(".carousel").swipeleft(function() {
+    $(this).carousel('next');
+  });
 
-	$('.single .entry-sharing #twitter').sharrre({
-		share: {
-			twitter: true
-		},
-		enableHover: false,
-		enableTracking: true,
-		buttons: { twitter: {}},
-		hover: function(api, options){
-			api.simulateClick();
-			api.openPopup('twitter');
-		}
-	});
-	$('.single .entry-sharing #facebook').sharrre({
-		share: {
-			facebook: true
-		},
-		enableHover: false,
-		enableTracking: true,
-		hover: function(api, options){
-			api.simulateClick();
-			api.openPopup('facebook');
-		}
-	});
-	$('.single .entry-sharing #google-plus').sharrre({
-		share: {
-			googlePlus: true
-		},
-		urlCurl: sharrre.sharrre_url,
-		enableHover: false,
-		enableTracking: true,
-		hover: function(api, options){
-			api.simulateClick();
-			api.openPopup('googlePlus');
-		}
-	});
-	$('.single .entry-sharing #linkedin').sharrre({
-		share: {
-			linkedin: true
-		},
-		enableHover: false,
-		enableTracking: true,
-		hover: function(api, options){
-			api.simulateClick();
-			api.openPopup('linkedin');
-		}
-	});
+  $('.single .entry-sharing #twitter').sharrre({
+    share: {
+      twitter: true
+    },
+    enableHover: false,
+    enableTracking: true,
+    buttons: { twitter: {}},
+    click: function(api, options){
+      api.simulateClick();
+      api.openPopup('twitter');
+    }
+  });
+  $('.single .entry-sharing #facebook').sharrre({
+    share: {
+      facebook: true
+    },
+    enableHover: false,
+    enableTracking: true,
+    click: function(api, options){
+      api.simulateClick();
+      api.openPopup('facebook');
+    }
+  });
+  $('.single .entry-sharing #google-plus').sharrre({
+    share: {
+      googlePlus: true
+    },
+    urlCurl: sharrre.sharrre_url,
+    enableHover: false,
+    enableTracking: true,
+    click: function(api, options){
+      api.simulateClick();
+      api.openPopup('googlePlus');
+    }
+  });
+  $('.single .entry-sharing #linkedin').sharrre({
+    share: {
+      linkedin: true
+    },
+    enableHover: false,
+    enableTracking: true,
+    click: function(api, options){
+      api.simulateClick();
+      api.openPopup('linkedin');
+    }
+  });
 
-	$('.lastest').one('hover', function(event) {
-		var max = $(this).find('.toggle-featured-articles').data('max');
-		$.ajax({
-			url: dw_focus.ajax_url,
-			type: 'POST',
-			dataType: 'html',
-			data: {
-				'action': 'dw_focus_must_read_articles',
-				'max': max,
-			},
-			success: function( data ){
-				$('.articles-list-inner').append(data);
-				$('.fa-spinner').toggle();
-				$('.load').css('display', 'block');
-			}
-		});
-	});
+  $('.lastest').one('click', function(event) {
+    var max = $(this).find('.toggle-featured-articles').data('max');
+    $.ajax({
+      url: dw_focus.ajax_url,
+      type: 'POST',
+      dataType: 'html',
+      data: {
+        'action': 'dw_focus_must_read_articles',
+        'max': max,
+      },
+      success: function( data ){
+        $('.articles-list-inner').append(data);
+        $('.fa-spinner').toggle();
+        $('.load').css('display', 'block');
+      }
+    });
+  });
 
-	// Set cookie
-	function setCookie(c_name,value,exdays) {
-		var exdate=new Date();
-		exdate.setDate(exdate.getDate() + exdays);
-		var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());
-		document.cookie=c_name + "=" + c_value;
-	}
+  // Set cookie
+  function setCookie(c_name,value,exdays) {
+    var exdate=new Date();
+    exdate.setDate(exdate.getDate() + exdays);
+    var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());
+    document.cookie=c_name + "=" + c_value;
+  }
 
-	// Get cookie
-	function getCookie(c_name) {
-		var i,x,y,ARRcookies=document.cookie.split(";");
-		for (i=0;i<ARRcookies.length;i++) {
-			x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
-			y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
-			x=x.replace(/^\s+|\s+$/g,"");
-			if (x === c_name) {
-				return unescape(y);
-			}
-		}
-	}
+  // Get cookie
+  function getCookie(c_name) {
+    var i,x,y,ARRcookies=document.cookie.split(";");
+    for (i=0;i<ARRcookies.length;i++) {
+      x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
+      y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
+      x=x.replace(/^\s+|\s+$/g,"");
+      if (x === c_name) {
+        return unescape(y);
+      }
+    }
+  }
 
-	$('.layout-select a').hover(function(e){
-		e.preventDefault();
-		if($(this).hasClass('active')) { return; }
-		var layout = $(this).attr('class');
-		setCookie("cat_listing",$.trim(layout.split('-')[1]),365);
-			$('.posts-inner').fadeOut(function(){
-				$('.posts-inner').attr('class','posts-inner').addClass(layout.replace('active','')).fadeIn();
-				if( $('.posts-inner').find('.col-md-4').length !== 0 ) {
-							$('.posts-inner .col-md-4').removeClass('col-md-4').addClass('col-md-12');
-						}else if( $('.posts-inner').find('.col-md-12').length !== 0 ) {
-							$('.posts-inner .col-md-12').removeClass('col-md-12').addClass('col-md-4');
-						}
-			});
+  $('.layout-select a').click(function(e){
+    e.preventDefault();
+    if($(this).hasClass('active')) { return; }
+    var layout = $(this).attr('class');
+    setCookie("cat_listing",$.trim(layout.split('-')[1]),365);
+      $('.posts-inner').fadeOut(function(){
+        $('.posts-inner').attr('class','posts-inner').addClass(layout.replace('active','')).fadeIn();
+        if( $('.posts-inner').find('.col-md-4').length !== 0 ) {
+              $('.posts-inner .col-md-4').removeClass('col-md-4').addClass('col-md-12');
+            }else if( $('.posts-inner').find('.col-md-12').length !== 0 ) {
+              $('.posts-inner .col-md-12').removeClass('col-md-12').addClass('col-md-4');
+            }
+      });
 
-		$('.layout-select a').removeClass('active');
-		$(this).addClass('active');
-	});
+    $('.layout-select a').removeClass('active');
+    $(this).addClass('active');
+  });
 
-	$('.panel').on('show.bs.collapse', function () {
-   	$(this).addClass('panel-collabse-in');
-	});
+  $('.panel').on('show.bs.collapse', function () {
+    $(this).addClass('panel-collabse-in');
+  });
 
-	$('.panel').on('hide.bs.collapse', function () {
-   	$(this).removeClass('panel-collabse-in');
-	});
+  $('.panel').on('hide.bs.collapse', function () {
+    $(this).removeClass('panel-collabse-in');
+  });
 
 
-	function headline_rotate() {
-		current_headline--;
+  function headline_rotate() {
+    current_headline--;
 
-		if( current_headline === 0 ){
-			$(".headlines li:first").animate({marginTop:"0px"},"slow");
-			current_headline = headline_count;
-			return false;
-		}
+    if( current_headline === 0 ){
+      $(".headlines li:first").animate({marginTop:"0px"},"slow");
+      current_headline = headline_count;
+      return false;
+    }
 
-	   $(".headlines li:first").animate({marginTop:((current_headline-headline_count)*34)+"px"},"slow");
+     $(".headlines li:first").animate({marginTop:((current_headline-headline_count)*34)+"px"},"slow");
 
-	 }
+   }
 
-	// Headlines flash
-	var headline_count;
-	var headline_interval;
-	var old_headline = 0;
-	var current_headline = 0;
+  // Headlines flash
+  var headline_count;
+  var headline_interval;
+  var old_headline = 0;
+  var current_headline = 0;
 
-	headline_count = $(".headlines li").size();
+  headline_count = $(".headlines li").size();
 
-	current_headline = headline_count;
-	var timmer = $('.headlines').data('interval');
+  current_headline = headline_count;
+  var timmer = $('.headlines').data('interval');
 
-	if(timmer){
-		  headline_interval = setInterval(headline_rotate,timmer); //time in milliseconds
-		  $('.headlines').hover(function() {
-			clearInterval(headline_interval);
-		  }, function() {
-			headline_interval = setInterval(headline_rotate,timmer); //time in milliseconds
-			headline_rotate();
-		  });
-	}
+  if(timmer){
+      headline_interval = setInterval(headline_rotate,timmer); //time in milliseconds
+      $('.headlines').hover(function() {
+      clearInterval(headline_interval);
+      }, function() {
+      headline_interval = setInterval(headline_rotate,timmer); //time in milliseconds
+      headline_rotate();
+      });
+  }
 
 
 })(jQuery);
