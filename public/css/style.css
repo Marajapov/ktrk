@@ -1836,10 +1836,13 @@ header{
     margin: 0;
     padding: 0;
     vertical-align: middle;
-    width: inherit;
 }
 .panel-related-videos .block h4{
+    display: inline-block;
+    width: 100%;
     margin: 0;
+    vertical-align: middle;
+    line-height: 1;
 
     color: #2D3E4A;
 
@@ -1904,11 +1907,11 @@ header{
 
 /*Panel show*/
 .panel-show .media-left a{
-    height: 200px;
+    height: 150px;
     width: 300px;
 }
 .panel-show .media-left a img{
-    height: 200px;
+    height: 150px;
 }
 
 /* Applications panel */

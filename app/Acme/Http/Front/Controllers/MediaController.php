@@ -125,6 +125,9 @@ class MediaController extends Controller
         $categories = \Model\Category\ModelName::all();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
+        $relatedVideos = \Model\Media\ModelName::where('program','=',$project->id)->get();
+
+
         return view('Front::media.project',[
                 
                 'project' => $project,
@@ -134,6 +137,7 @@ class MediaController extends Controller
                 'categories'=>$categories,
                 'projectList' => $projectList,
                 'backgroundMain' => $backgroundMain,
+                'relatedVideos' => $relatedVideos,
 
             ]
         );

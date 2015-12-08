@@ -49,8 +49,6 @@ class ProjectController extends Controller
 
             $name = $project->id().$btw.'.'.$file->getClientOriginalExtension();
 
-//            $manager = new ImageManager(array('driver' => 'imagick'));
-
             $storage = \Storage::disk('public');
             $storage->makeDirectory($dir);
 

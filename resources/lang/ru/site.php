@@ -245,4 +245,5 @@ return [
     'AllVideos' => 'Все',
     'LastVideos' => 'Последние видео',
     'TopVideos' => 'Топ видео',
+    'Episodes' => 'Выпуски',
 ];

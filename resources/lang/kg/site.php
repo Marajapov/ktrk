@@ -242,4 +242,5 @@ return [
     'AllVideos' => 'Жалпы',
     'LastVideos' => 'Акыркы видеолор',
     'TopVideos' => 'Топ видеолор',
+    'Episodes' => 'Чыгаруулар',
 ];
