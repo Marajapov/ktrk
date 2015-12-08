@@ -32,20 +32,11 @@ class HomeController extends Controller
             $generalPosts = \Model\Post\ModelName::general($channel)->published()->languageru()->take(6)->skip(0)->orderBy('id', 'desc')->get();    
             $projects = \Model\Project\ModelName::where('nameRu','<>','')->get();
         }
-        
-        $rDayVideo = \Model\Media\ModelName::having('dayVideo','=','1')->take(1)->skip(0)->orderBy('created_at','desc')->first();
 
-        if($rDayVideo != null){
-            $dayVideo = $rDayVideo;
-        }elseif($rDayVideo == null){
-            $dayVideoResult = \Model\Media\ModelName::take(1)->skip(0)->orderBy('id', 'desc')->first();
-            if($dayVideoResult != null){
-                $dayVideo = $dayVideoResult;
-            }else{
-                $dayVideo = 'KhJUlC4aJZM';
-            }
-        }
-        
+        $dayVideo = \Model\Media\ModelName::where('dayVideo','=','1')->first();
+
+        $lastDayVideos = \Model\Media\ModelName::orderBy('id','desc')->where('status','=',1)->where('id','<>',$dayVideo->id)->take(4)->get();
+
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
         $peopleReporters = \Model\PeopleReporter\ModelName::where('published','=',true)->get();
 
@@ -75,7 +66,8 @@ class HomeController extends Controller
             'images' => $images,
             'generalPosts'   => $generalPosts,
             'dayVideo'      => $dayVideo,
-            
+            'lastDayVideos'      => $lastDayVideos,
+
             'positionTop'    => $this->positionTop,
             'positionRight'  => $this->positionRight,
             'positionCenter' => $this->positionCenter,

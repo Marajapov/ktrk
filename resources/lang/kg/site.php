@@ -21,6 +21,17 @@ return [
     //Header Footer titles
     'Homepage' => 'Башкы бет',
     'BaikoochuKenesh' => 'Байкоочу кеңеш',
+    'BaikoochuKeneshFull' => 'Коомдук телерадиоберүү корпорациясынын Байкоочу кеңеши',
+    'BaikoochuKeneshMain' => 'Негизги бет',
+    'BaikoochuKeneshTeam' => 'Курамы',
+    'BaikoochuKeneshNews' => 'Жаңылыктар',
+    'BaikoochuKeneshBase' => 'Нормативдик база',
+    'BaikoochuKeneshReglament' => 'Регламент',
+    'BaikoochuKeneshReports' => 'Отчеттор',
+    'BaikoochuKeneshGallery' => 'Сүрөт көргөзмө',
+    'BaikoochuKeneshContacts' => 'Байланыш',
+    'BaikoochuKeneshAsk' => 'Сурамжылоо',
+
     'RedKenesh' => 'Редакциялык кеңешчи',
 
     'HistoryFull' => 'Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясынын тарыхы',
@@ -41,6 +52,7 @@ return [
     'RadioStations' => 'Радиостанциялар',
     'Managers' => 'Жетекчилер',
     'DirectorPage' => 'КТРК - башкы директору',
+    'More' => 'Толук маалымат',
 
     //Post page
     'MatpoTeme' => 'Тектеш материалдар',

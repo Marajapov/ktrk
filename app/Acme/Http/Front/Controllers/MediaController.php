@@ -118,7 +118,7 @@ class MediaController extends Controller
     public function project(\Model\Project\ModelName $project)
     {
         $projectList = \Model\Project\ModelName::get();
-        $MediaCategories = \Model\MediaCategory\ModelName::get();
+//        $MediaCategory = \Model\MediaCategory\ModelName::get();
         $mediaAll = \Model\Media\ModelName::get();
 
         $mainBanner = \Model\Background\ModelName::where('name','=','main')->first();
@@ -128,7 +128,7 @@ class MediaController extends Controller
         return view('Front::media.project',[
                 
                 'project' => $project,
-                'MediaCategories'       => $MediaCategories,
+//                'MediaCategories'       => $MediaCategories,
 
                 'mainBanner'   => $mainBanner,
                 'categories'=>$categories,

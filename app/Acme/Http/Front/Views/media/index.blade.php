@@ -127,7 +127,7 @@
                                   </a>
                                   @if($mediaLastVideo->program)
                                     <h4>
-                                      <a class="media-project" href="{{ route('front.media.project', $mediaLastVideo->program) }}"><i class="fa fa-play-circle-o"></i>{{ $mediaLastVideo->getProgramName() }}</a>
+                                        <a class="media-project" href="{{ route('front.media.project', $mediaLastVideo->program) }}"><i class="fa fa-play-circle-o"></i>{{ $mediaLastVideo->getProgramName() }}</a>
                                     </h4>
                                   @endif
                                 </div>

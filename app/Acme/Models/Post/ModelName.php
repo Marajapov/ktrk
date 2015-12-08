@@ -120,7 +120,7 @@ class ModelName extends Model
     public function getTime()
     {
         $fullDate = $this->created_at;
-        $time = date('H:i', strtotime($fullDate));
+        $time = date('G:i', strtotime($fullDate));
         return $time;
     }
 

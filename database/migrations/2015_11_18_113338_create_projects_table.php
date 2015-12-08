@@ -18,8 +18,10 @@ class CreateProjectsTable extends Migration
             $table->string('nameRu');
             $table->boolean('published')->nullable()->default(false);
             $table->string('parentId');
+            $table->text('description');
+            $table->text('descriptionRu');
+            $table->string('thumbnail');
             $table->string('status');
-            $table->string('program');
             $table->timestamps();
         });
     }

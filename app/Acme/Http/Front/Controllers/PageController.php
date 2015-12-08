@@ -27,10 +27,12 @@ class PageController extends Controller
 
     public function directorPage()
     {
+        $lc = app()->getlocale();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
         return view('Front::pages.director', [
             'backgroundMain' => $backgroundMain,
+            'lc' => $lc,
         ]);
     }
 

@@ -193,51 +193,36 @@
                 <h3 class="panel-title"><span>{{ trans('site.FrontPostDaysVideo') }}</span></h3>
               </div>
               <div class="panel-body">
+
                 <div class="col-md-12 block main-video">
                   <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="//www.youtube.com/embed/KhJUlC4aJZM" allowfullscreen=""></iframe>
+                    <iframe class="embed-responsive-item" src="//www.youtube.com/embed/{{ $dayVideo->url }}" allowfullscreen=""></iframe>
                   </div>
 
-                  <h4>Стратегия-2017</h4>
+                  <a href="{{ route('front.media.video', $dayVideo) }}">
+                    <h4>{{ $dayVideo->getName() }}</h4>
+                  </a>
                 </div>
 
                 <div class="clearfix"></div>
 
                 <h4 class="old-videos text-center">{{ trans('site.FrontPostLastDays') }}</h4>
 
-                <div class="col-md-6 block main-video">
-                  <div class="embed-responsive embed-responsive-16by9">
+                @foreach($lastDayVideos as $lastDayVideo)
 
-                    <iframe class="embed-responsive-item" src="//www.youtube.com/embed/KhJUlC4aJZM" allowfullscreen=""></iframe>
+                  <div class="col-md-6 block main-video">
+                    <div class="embed-responsive embed-responsive-16by9">
 
+                      <a href="{{ route('front.media.video', $lastDayVideo) }}">
+                        <img src="http://img.youtube.com/vi/{{ $lastDayVideo->getUrl()}}/mqdefault.jpg" alt="" />
+                      </a>
+
+                    </div>
+
+                    {{-- <h4>Жеткиликтүү насыя</h4> --}}
                   </div>
 
-                  {{-- <h4>Жеткиликтүү насыя</h4> --}}
-                </div>
-
-                <div class="col-md-6 block main-video">
-                  <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="//www.youtube.com/embed/k2w8UII9cgI" allowfullscreen=""></iframe>
-                  </div>
-
-                  {{-- <h4>Мандаттар</h4> --}}
-                </div>
-
-                <div class="col-md-6 block main-video">
-                  <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="//www.youtube.com/embed/k2w8UII9cgI" allowfullscreen=""></iframe>
-                  </div>
-
-                  {{-- <h4>Мандаттар</h4> --}}
-                </div>
-
-                <div class="col-md-6 block main-video">
-                  <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="//www.youtube.com/embed/k2w8UII9cgI" allowfullscreen=""></iframe>
-                  </div>
-
-                  {{-- <h4>Мандаттар</h4> --}}
-                </div>
+                @endforeach
 
                 <footer>
                   <a href="{{ route('front.media.index') }}">
@@ -276,7 +261,7 @@
                               @if($post->getIsVideo() == 'yes')<i class="fa fa-play-circle-o"></i> @endif
                               @if($post->getIsPhoto() == 'yes')<i class="fa fa-picture-o"></i> @endif
                             </span>
-                        <span class="news-time pull-right"> {{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getYear()}}</span>
+                        <span class="news-time pull-right"> {{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
                         <span class="news-timer pull-right"><i class="fa fa-eye"></i>&nbsp;{{ $post->getViewed() }}</span>
 
                       </div>
@@ -291,6 +276,7 @@
                     <span>{{ trans('site.FrontPostAll') }} <i class="fa fa-arrow-circle-right"></i></span>
                   </a>
                 </footer>
+
               </div>
             </div>
 
@@ -366,7 +352,7 @@
                           @if(($media->getProgramName()))
                             <div class="label">
                               <div class="label-text">
-                                <a href="{{ route('front.media.video', $media) }}" title="{{ $media->getProgramName() }}" class="text-title">{{ $media->getProgramName() }}</a>
+                                <a href="{{ route('front.media.project', $media->program) }}" title="{{ $media->getProgramName() }}" class="text-title">{{ $media->getProgramName() }}</a>
                               </div>
                               <div class="label-bg"></div>
                             </div>

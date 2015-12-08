@@ -18,9 +18,9 @@
             <div class="panel panel-default panel-show">
               <div class="panel-heading">
                 <h3 class="panel-title">
-                  <a href="#">Видеопортал</a>
+                  <a href="{{ route('front.media.index') }}">Видеопортал</a>
                   <span class="divider"><i class="fa fa-circle"></i></span>
-                  <a href="#"><span class="ctg">Телепередачи</span></a>
+                  <span class="ctg">{{ $project->getNameOne() }}</span>
                 </h3>
               </div>
 

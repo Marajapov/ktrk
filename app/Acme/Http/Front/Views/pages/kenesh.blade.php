@@ -1,147 +1,234 @@
 @extends('Front::layouts.default')
-@section('title', '2013 - 2015 - жылга карай КТРКнын Өнүгүү стратегиясынын долбоору | КТРК')
+@section('title', trans('site.BaikoochuKeneshFull').' | КТРК')
 @section('styles')
-	<link rel="stylesheet" type="text/css" href="{{ asset('/static/css/styles.css') }}">
+  {{--<link rel="stylesheet" type="text/css" href="{{ asset('/static/css/styles.css') }}">--}}
+  <link rel="stylesheet" href="{{ asset('css/articles.css') }}"/>
+  <link rel="stylesheet" href="{{ asset('css/pages.css') }}"/>
+  <link rel="stylesheet" href="{{ asset('css/build.css') }}"/>
 @stop
 @section('content')
 
-<div class="container main-wrapper">
-     <div class="row">
-        <div class="top-left-block col-md-12 panel-top-news">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title"><span>Байкоочу кеңеш</span></h3>
-                </div>                                         
-                <div class="ns">
-                    <figure class="effect-zoe">
-                        <a href="article.html" class="main-img"><img src="{{ asset('static/images/ns/1.png') }}" alt="img26"></a>
-                        <div class="news-channel">
-                            <a href="channel.html"><img src="{{ asset('static/images/logo_notext.png') }}" alt=""/></a>
+  <div class="container main-wrapper">
+    <div class="row">
+      <section class="content clearfix">
+        <div class="clearfix">
+          <div class="top-left-block col-xs-12 col-sm-12 col-md-12">
+            <div class="panel panel-default panel-kenesh">
+              <div class="panel-heading">
+                <h3 class="panel-title"><span>{{ trans('site.BaikoochuKeneshFull') }}</span></h3>
+              </div>
+              <div class="panel-body">
+
+                <div class="col-md-2">
+                  <div class="row">
+                    <nav class="navbar navbar-custom">
+                      <div class="">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Меню</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                          </button>
                         </div>
-                        <figcaption>
-                            <h2><a href="article.html">КТРКнын Редакциялык Кеңешчисинин (Омбудсмен) институтунун иш-аракети</a></h2>
-                            <p class="calendar"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> 07.10.2015</p>
-                            <p class="views"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> 555</p>
-                            <p class="comments"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> 14</p>
 
-                        </figcaption>
-                    </figure>
-                </div><!-- end class ns-->
-            </div>
-        </div>                
-    </div><!-- end row -->
-</div>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                          <ul class="nav navbar-nav">
+                            <li><a href="#">{{ trans('site.BaikoochuKeneshMain') }}</a></li>
+                            <li><a href="#">{{ trans('site.BaikoochuKeneshTeam') }} </a></li>
+                            <li><a href="#">{{ trans('site.BaikoochuKeneshNews') }}</a></li>
+                            <li>
+                              <a data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample" class="collapsed">
+                                {{ trans('site.BaikoochuKeneshBase') }}
+                                <i class="fa fa-chevron-right"></i>
+                              </a>
+                              <div class="collapse" id="collapseExample">
+                                <ul>
+                                  <li><a href="#">{{ trans('site.BaikoochuKeneshReglament') }}</a></li>
+                                  {{--<li><a href="#">Положение о порядке проведения открытого конкурса на замещение должности Генерального Директора КТРК КР</a></li>--}}
+                                </ul>
+                              </div>
+                            </li>
+                            <li><a href="#">{{ trans('site.BaikoochuKeneshReports') }}</a></li>
+                            <li><a href="#">{{ trans('site.BaikoochuKeneshGallery') }}</a></li>
+                            <li><a href="#">{{ trans('site.BaikoochuKeneshContacts') }}</a></li>
+                            {{--<li><a href="#">Сурамжылоо</a></li>--}}
+                          </ul>
 
+                        </div><!-- /.navbar-collapse -->
+                      </div><!-- /.container-fluid -->
+                    </nav>
 
-<div class="container main-wrapper">
-            <div class="row">
-                <section class="content clearfix">
-                    <div class="clearfix">
-                        <div class="top-left-block col-xs-12 col-sm-12 col-md-12 nsmenu">
-                            <nav class="navbar navbar-custom">
-                                <div class="container-fluid">
-                                    <!-- Brand and toggle get grouped for better mobile display -->
-                                    <div class="navbar-header">
-                                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                                            <span class="sr-only">Меню</span>
-                                            <span class="icon-bar"></span>
-                                            <span class="icon-bar"></span>
-                                            <span class="icon-bar"></span>
-                                        </button>
-                                        <a class="navbar-brand" href="#">Негизги бет</a>
-                                    </div>
-
-                                    <!-- Collect the nav links, forms, and other content for toggling -->
-                                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                                        <ul class="nav navbar-nav">
-                                            <li><a href="#">Курамы </a></li>
-                                            <li><a href="#">Жаңылыктар</a></li>
-                                            <li class="dropdown">
-                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Нормативдик база <span class="caret"></span></a>
-                                                <ul class="dropdown-menu">
-                                                    <li><a href="#">Регламент</a></li>
-                                                    <li role="separator" class="divider"></li>
-                                                    <li><a href="#">ПОЛОЖЕНИЕ О ПОРЯДКЕ ПРОВЕДЕНИЯ ОТКРЫТОГО КОНКУРСА НА ЗАМЕЩЕНИЕ ДОЛЖНОСТИ ГЕНЕРАЛЬНОГО ДИРЕКТОРА КТРК КР</a></li>                                                   
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">Отчеттор</a></li>
-                                            <li><a href="#">Сүрөт көргөзмө</a></li>
-                                            <li><a href="#">Байланыш</a></li>
-                                            <li><a href="#">Сурамжылоо</a></li>
-                                        </ul>
-
-                                    </div><!-- /.navbar-collapse -->
-                                </div><!-- /.container-fluid -->
-                            </nav>
-                        </div>
+                    <div class="panel-heading sidebar-panel-heading">
+                      <h3 class="panel-title"><span>{{ trans('site.BaikoochuKeneshAsk') }}</span></h3>
                     </div>
-                </section>
+                    <div class="panel-body sidebar-panel-body">
+                      <h4>Как Вы оцениваете работу НС КТРК?</h4>
+
+                      <div id="poll" class="poll">
+                        <form >
+                        <div class="radio">
+                          <input type="radio" name="vote" id="radio1" value="0" onclick="getVote(this.value)">
+                          <label for="radio1">
+                            Отлично
+                          </label>
+                        </div>
+                        <div class="radio">
+                          <input type="radio" name="vote" id="radio2" value="1" onclick="getVote(this.value)">
+                          <label for="radio2">
+                            Хорошо
+                          </label>
+                        </div>
+                        <div class="radio">
+                          <input type="radio" name="vote" id="radio2" value="2" onclick="getVote(this.value)">
+                          <label for="radio2">
+                            Удовлетворительно
+                          </label>
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </div>
+                </div>
+
+                <div class="col-md-10">
+                  <div class="row">
+                    <div class="panel-heading second-panel-heading">
+                      <h3 class="panel-title"><span>{{ trans('site.Top news') }}</span></h3>
+                    </div>
+                    <div class="panel-body second-panel-body">
+                      <div class="media">
+                        <div class="media-left">
+                          <a href="#">
+                            <img class="media-object thumb" src="http://sputnik.kg/images/102017/14/1020171449.jpg" alt="image">
+                          </a>
+                        </div>
+                        <div class="media-body">
+                          <div class="extra">
+                            <span class="e-datetime">18 Нояб , 12:22</span>
+                            <span class="e-views"><i class="fa fa-eye"></i>17</span>
+                          </div>
+                          <a class="media-heading" href="http://1000.ktrk.kg/post/1">КТРК: из-за работы я стал изгоем для родственников</a>
+
+                          <h5 class="media-desc">
+                            <p>Кабинет, как у бизнесмена средней руки. Нет ни мебели красного дерева, как в вотчинах других чиновников высокого ранга, ни канцелярского набора из бирюзы. Из роскоши — 6 плазменных телевизоров на стене. Под столом склад жестянок с безалкогольным энергетиком.
+                            </p></h5>
+                        </div>
+                      </div>
+                      <div class="media">
+                        <div class="media-left">
+                          <a href="#">
+                            <img class="media-object thumb" src="http://ktrk.kg/sites/default/files/styles/juicebox_medium/public/gallery/album/fotos/_mg_9802.jpg?itok=YROMXAeD" alt="image">
+                          </a>
+                        </div>
+                        <div class="media-body">
+                          <div class="extra">
+                            <span class="e-datetime">18 Нояб , 12:22</span>
+                            <span class="e-views"><i class="fa fa-eye"></i>17</span>
+                          </div>
+                          <a class="media-heading" href="http://1000.ktrk.kg/post/1">КТРКнын жаңыланган заманбап кеңсеси</a>
+
+                          <h5 class="media-desc">
+                            <p>Бүгүн, 6-ноябрда Коомдук телерадиоберүү корпорациясында жаңыланган заманбап үлгүдөгү иш кабинеттеринин ачылышы болду.
+                            </p></h5>
+                        </div>
+                      </div>
+                      <div class="media">
+                        <div class="media-left">
+                          <a href="#">
+                            <img class="media-object thumb" src="http://1000.ktrk.kg/img/thumbnail/11447849392.png" alt="image">
+                          </a>
+                        </div>
+                        <div class="media-body">
+                          <div class="extra">
+                            <span class="e-datetime">18 Нояб , 12:22</span>
+                            <span class="e-views"><i class="fa fa-eye"></i>17</span>
+                          </div>
+                          <a class="media-heading" href="http://1000.ktrk.kg/post/1">КМЮА: ректор шайланды</a>
+
+                          <h5 class="media-desc">
+                            <p>Кыргызстандын жогорку окуу жайларында ректорду шайлоо өтүп жатат. Бүгүн кыргыз мамлекеттик юридикалык академиясы өзүнүн жетекчисин шайлады. Ага беш талапкер катышып, ар бири өзүнүн иш пландары менен тааныштырды.
+                            </p></h5>
+                        </div>
+                      </div>
+                      <div class="media">
+                        <div class="media-left">
+                          <a href="#">
+                            <img class="media-object thumb" src="http://sputnik.kg/images/102017/14/1020171449.jpg" alt="image">
+                          </a>
+                        </div>
+                        <div class="media-body">
+                          <div class="extra">
+                            <span class="e-datetime">18 Нояб , 12:22</span>
+                            <span class="e-views"><i class="fa fa-eye"></i>17</span>
+                          </div>
+                          <a class="media-heading" href="http://1000.ktrk.kg/post/1">КТРК: из-за работы я стал изгоем для родственников</a>
+
+                          <h5 class="media-desc">
+                            <p>Кабинет, как у бизнесмена средней руки. Нет ни мебели красного дерева, как в вотчинах других чиновников высокого ранга, ни канцелярского набора из бирюзы. Из роскоши — 6 плазменных телевизоров на стене. Под столом склад жестянок с безалкогольным энергетиком.
+                            </p></h5>
+                        </div>
+                      </div>
+                      <div class="media">
+                        <div class="media-left">
+                          <a href="#">
+                            <img class="media-object thumb" src="http://ktrk.kg/sites/default/files/styles/juicebox_medium/public/gallery/album/fotos/_mg_9802.jpg?itok=YROMXAeD" alt="image">
+                          </a>
+                        </div>
+                        <div class="media-body">
+                          <div class="extra">
+                            <span class="e-datetime">18 Нояб , 12:22</span>
+                            <span class="e-views"><i class="fa fa-eye"></i>17</span>
+                          </div>
+                          <a class="media-heading" href="http://1000.ktrk.kg/post/1">КТРКнын жаңыланган заманбап кеңсеси</a>
+
+                          <h5 class="media-desc">
+                            <p>Бүгүн, 6-ноябрда Коомдук телерадиоберүү корпорациясында жаңыланган заманбап үлгүдөгү иш кабинеттеринин ачылышы болду.
+                            </p></h5>
+                        </div>
+                      </div>
+                    </div>
+
+                    <footer>
+                      <a href="{{ route('front.general') }}">
+                        <span>{{ trans('site.FrontPostAll') }} <i class="fa fa-arrow-circle-right"></i></span>
+                      </a>
+                    </footer>
+                  </div>
+                </div>
+
+              </div>
             </div>
 
-            <div class="row ">
-                <div class="top-left-block col-md-9 panel-top-news nsarticles">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title"><span>Жанылыктар</span></h3>
-                        </div>
-                        <div class="row "> 
-                            <div class="rsnews">
-                                <div class="col-xs-12 col-sm-4 col-md-4 rsimg">
-                                    <figure class="effect-zoe">
-                                        <a href="article.html" class="main-img"><img src="images/image.jpeg" alt="img26"><i class="fa fa-image"></i></a>
-                                    </figure>
-                                </div>
-                                <div class="col-xs-12 col-sm-8 col-md-8 rsanons">
-                                    <h2><a href="article.html">Теледебаты КТРК помогли кыргызстанцам с выбором</a></h2>
-                                    <h3> Прошедшие в эфире Общественного телерадиоканала теледебаты кандидатов в депутаты ЖК показали не только мастерство журналистов, режиссеров, телеоператоров КТРК, но и помогли телезрителям лучше узнать героев дебатных сражений? </h3>
-                                    <div class="rscounters">
-                                        <p class="calendar"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> 07.10.2015</p>
-                                        <p class="views"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> 555</p>
-                                        <p class="comments"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> 14</p> 
-                                    </div>
-                                </div>                        
-                            </div>
-                            <div class="rsnews">                              
-                                <div class="col-xs-12 col-sm-4 col-md-4 rsimg">
-                                    <figure class="effect-zoe">
-                                        <a href="article.html" class="main-img"><img src="images/logo_notext.png" alt="img26"><i class="fa fa-play-circle-o"></i></a>
-                                    </figure>
-                                </div>
-                                <div class="col-xs-12 col-sm-8 col-md-8 rsanons">
-                                    <h2><a href="article.html">Вместо казахского радио, зазвучало кыргызское</a></h2>
-                                    <h3> С жалобой на то, что в Манасском районе Таласской области, в течении недели вместо привычных программ “Биринчи радио ” и “Кыргыз радио ” звучит казахская радиостанция, в институт Редакционного Советника КТРК обратилась жительница села Арал Карачач Кочорбаева.</h3>
-                                    <div class="rscounters">
-                                        <p class="calendar"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> 07.10.2015</p>
-                                        <p class="views"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> 555</p>
-                                        <p class="comments"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> 14</p> 
-                                    </div>
-                                </div>                       
-                            </div>
-                            <div class="rsnews">                              
-                                <div class="col-xs-12 col-sm-4 col-md-4 rsimg">
-                                    <figure class="effect-zoe">
-                                        <a href="article.html" class="main-img"><img src="images/channels/1-radio.png" alt="img26"><i class="fa fa-link"></i></a>
-                                    </figure>
-                                </div>
-                                <div class="col-xs-12 col-sm-8 col-md-8 rsanons">
-                                    <h2><a href="article.html">Кыргызские новости на китайском радио, в русском выпуске новостей</a></h2>
-                                    <h3> Согласно жалобе жителя села Гульча Алайского района Абдысатара Абдылдаева, с которой он 17 августа этого года, обратился в институт Редакционного советника КТРК , в течении августа месяца в их селе не было сигнала "Биринчи радио" Общественного телерадиоканала..</h3>
-                                    <div class="rscounters">
-                                        <p class="calendar"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> 07.10.2015</p>
-                                        <p class="views"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> 555</p>
-                                        <p class="comments"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> 14</p> 
-                                    </div>
-                                </div>                       
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="top-right-block col-md-3 nsarticles">
-                     @include('Front::partials.leftCategories')                          
-                </div>
-            </div>
+          </div>
         </div>
-  
-           
+      </section>
+    </div>
+  </div>
 
 @stop
+
+@section('footerScript')
+
+  <script>
+    function getVote(int) {
+      if (window.XMLHttpRequest) {
+        // code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp=new XMLHttpRequest();
+      } else {  // code for IE6, IE5
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+      }
+      xmlhttp.onreadystatechange=function() {
+        if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+          document.getElementById("poll").innerHTML=xmlhttp.responseText;
+        }
+      }
+      xmlhttp.open("GET","{{ asset('poll_vote.php') }}?vote="+int,true);
+      xmlhttp.send();
+    }
+  </script>
+
+@endsection

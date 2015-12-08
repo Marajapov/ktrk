@@ -20,7 +20,9 @@
                     <div class="panel panel-default panel-articles">
                         <div class="panel-heading">
                             <h3 class="panel-title">
-                                {{ $category->getTitle()}}
+                              <a class="ctg" href="{{ route('front.general') }}">{{ trans('site.Top news') }}</a>
+                               <span class="divider"><i class="fa fa-circle"></i></span>
+                              {{ $category->getTitle()}}
                             </h3>
                         </div>
                         <div class="panel-body">
@@ -81,9 +83,6 @@
                                                 </div>
 
                                                 <a class="media-heading" href="{{ route('front.post', $post) }}">{{ $post->getTitle() }}</a>
-                                                <h5 class="media-desc">
-                                                    {!! $result = substr($post->getContent(),0,300) !!}
-                                                </h5>
                                             </div>
 
                                         </div>
@@ -120,11 +119,10 @@
 
                             </div>
                         </div>
-                    </div>                    
+                    </div>
 
-                     <a href="#" class="text-center ads">
-                        <img src="{{ asset('images/ads_1.jpg') }}" alt=""/>
-                    </a>
+                  @include('Front::partials.postBanner')
+
                 </div>
                 @include('Front::partials.leftCategories')
             </div>
