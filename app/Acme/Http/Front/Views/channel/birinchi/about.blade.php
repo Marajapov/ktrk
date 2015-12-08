@@ -144,7 +144,7 @@
     <div class="container">
         <div class="row">
          <div class="top-left-block col-md-12">
-            <div class="panel panel-default">
+            <div class="panel panel-default onenews">
                      
 
               <div class="panel-heading">

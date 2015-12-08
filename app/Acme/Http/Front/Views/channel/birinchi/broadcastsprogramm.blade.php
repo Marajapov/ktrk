@@ -141,9 +141,9 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12" style="padding: 10px 0px 0px 0px;">
-                <div class="panel panel-carousel ">
+                <div class="panel onenews ">
                     <div class="panel-heading">
-                        <h3 class="panel-title"><span>О радио</span></h3>
+                        <h3 class="panel-title"><span>Телепередачи</span></h3>
                     </div>
 
                 </div>
