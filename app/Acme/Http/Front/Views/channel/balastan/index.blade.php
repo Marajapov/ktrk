@@ -50,16 +50,16 @@
                 
                     <div class="col-md-12 clouds">
                        <div class="sun">
-                    <img src="images/channels/balastan/sun.png" alt=""/>
+                    <img src="images/channels/balastan/sun-icon.png" alt=""/>
            <!--          <img class="balastanlogo" src="images/channels/balastan_white.png" alt=""/> -->
 
                     </div>
                              <img src="images/channels/balastan/clouds.png" alt=""/> 
                              <nav class="cloudlinks"> 
                                <ul>
-                                   <li><a href="">О нас</a></li>
-                                   <li><a href="">В мире Баластана</a></li>
-                                   <li><a href="">Фотогалерея</a></li>
+                                   <li><a href="#">О нас</a></li>
+                                   <li><a href="#">В мире Баластана</a></li>
+                                   <li><a href="#">Фотогалерея</a></li>
                                </ul>
                            </nav>                        
                         </div>
@@ -89,9 +89,74 @@
                     <img class="iconright" src="{{ asset('images/channels/balastan/aktan.png')}}" alt="">
                 </div>
             </div>
+
+            <div class="row">               
+                <div class="col-md-12 kidsvblock">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><span>Видео</span></h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row ">
+                               
+                                    <div class="col-md-4">
+                                        <div class="kidsvideo kidsboard">
+                                            <iframe width="100%" height="180px" src="https://www.youtube.com/embed/2tV6RFYqCZg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                   
+                                        </div>           
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="kidsvideo kidsboard">
+                                            <iframe width="100%" height="180px" src="https://www.youtube.com/embed/2tV6RFYqCZg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                            
+                                        </div>  
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="kidsvideo kidsboard">
+                                            <iframe width="100%" height="180px" src="https://www.youtube.com/embed/2tV6RFYqCZg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                                   
+                                        </div>  
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="kidsvideo kidsboard">
+                                            <iframe width="100%" height="180px" src="https://www.youtube.com/embed/2tV6RFYqCZg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                   
+                                        </div>  
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="kidsvideo kidsboard">
+                                          <iframe width="100%" height="180px" src="https://www.youtube.com/embed/2tV6RFYqCZg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                   
+                                        </div>           
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="kidsvideo kidsboard">
+                                            <iframe width="100%" height="180px" src="https://www.youtube.com/embed/2tV6RFYqCZg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                   
+                                        </div>  
+                                    </div>                                 
+                              
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">               
+                <div class="col-md-12 kidsvblock">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><span>Фотогалерея</span></h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row ">
+                               
+                                                            
+                              
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div> 
+
         </div>
 
-                          
+                   
 
 
         <footer class="footer">
