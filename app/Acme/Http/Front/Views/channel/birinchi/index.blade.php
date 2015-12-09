@@ -1,6 +1,6 @@
 @extends('Front::channel.birinchi.default')
 @section('title', "Биринчи Радио")
-@stop
+
 @section('styles')
 <link rel="stylesheet" href="{{ asset('css/radios.css')}}">
 @endsection
