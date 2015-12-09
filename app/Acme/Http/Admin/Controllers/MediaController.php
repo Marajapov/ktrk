@@ -97,6 +97,25 @@ class MediaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    public function dayVideo(Request $request)
+    {
+        $mediaStars = \Model\Media\ModelName::where('dayVideo','=','1')->get();
+        foreach($mediaStars as $mediaStar)
+        {
+            $mediaStar->dayVideo = 0;
+            $mediaStar->status = 1;
+            $mediaStar->save();
+        }
+
+        $media = \Model\Media\ModelName::where('id','=',$request->media)->first();
+        $media->dayVideo = 1;
+
+        $media->save();
+
+        return redirect()->route('admin.media.index');
+    }
+
     public function destroy(Media $media)
     {
         $media->delete();

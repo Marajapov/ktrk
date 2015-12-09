@@ -17,7 +17,7 @@
             <div class="panel panel-default panel-video">
               <div class="panel-heading">
                 <h3 class="panel-title">
-                  <a href="#">Видеопортал</a>
+                  <a href="{{ route('front.media.index') }}">Видеопортал</a>
                   <span class="divider"><i class="fa fa-circle"></i></span>
                   <a href="#"><span class="ctg">@if(!empty($getVideoTypeName)) {{ $getVideoTypeName }}@endif</span></a>
                 </h3>

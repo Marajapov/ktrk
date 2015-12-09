@@ -17,33 +17,32 @@
                   <div class="col-md-4 block">
                     <figure class="effect-zoe">
                       <!--<span class="post-timer pull-right">  <i class="fa fa-eye"></i>&nbsp;{{ $post->getViewed() }}</span> -->
-                  <a href="{{ route('front.post', $post) }}" class="main-img">
-                    <img src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif" alt="img26">
-                  </a>
-                    <!--<div class="news-channel">
+                      <a href="{{ route('front.post', $post) }}" class="main-img">
+                        <img src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif" alt="img26">
+                      </a>
+                      <!--<div class="news-channel">
 
                        <a href="#">
                         <img src="{{-- $post->isChannelIcon($post->channel_id) --}}" alt=""/>
                       </a>
                     </div>-->
-          
 
-                    <p class="description clearfix">
-                      <a href="{{ route('front.category', $post->category) }}">
-                         {{ $post->category('category_id')->first()->getTitle() }}
-                      </a>
+                      <p class="description clearfix">
+                        <a href="{{ route('front.category', $post->category) }}">
+                          {{ $post->category('category_id')->first()->getTitle() }}
+                        </a>
 
                       <span>
                         @if($post->getIsVideo() == 'yes')<i class="fa fa-play-circle-o"></i> @endif
                         @if($post->getIsPhoto() == 'yes') <i class="fa fa-picture-o"></i> @endif
                       </span>
-                    </p>
-                    <a class="news-title" href="{{ route('front.post', $post) }}">
-                      <!--<h2>{!! $result = substr($post->getTitle(),0,75) !!}...</h2> -->
-                      <h2>{{ $post->getTitle() }}</h2>
-                    </a>
-                  </figure>
-                </div>
+                      </p>
+                      <a class="news-title" href="{{ route('front.post', $post) }}">
+                        <!--<h2>{!! $result = substr($post->getTitle(),0,75) !!}...</h2> -->
+                        <h2>{{ $post->getTitle() }}</h2>
+                      </a>
+                    </figure>
+                  </div>
 
                 @endforeach
 
@@ -58,8 +57,6 @@
             <a href="#" class="text-center ads middle-ad">
               <img src="@if(!empty($positionCenter->file)) {{ asset($positionCenter->file) }} @else images/ads_1.jpg @endif" alt=""/>
             </a>
-
-
 
             <div class="panel panel-default panel-carousel peoplereporter">
 
@@ -95,46 +92,46 @@
                           <div class="modal-body">
                             {!! Form::open(array('route' => 'admin.peopleReporter.store', 'enctype' => 'multipart/form-data', 'multiple'=>true, 'id'=>'addNews')) !!}
 
-                              <div class="form-group">
-                                <div class="row">
-                                  <div class="col-md-6">
-                                    <label for="recipient-name" class="control-label">Аты жөнүңүз / Ваше имя </label>
-                                    <input name="name" type="text" class="form-control" placeholder="Сизди ким деп тааныштырабыз / Как вас познакомить" id="recipient-name">
-                                  </div>
-                                  <div class="col-md-6">
-                                    <label for="recipient-name" class="control-label">Телефонуңуз же Email / Телефон или Email</label>
-                                    <input name="info" type="text" class="form-control" placeholder="Байланыш телефонуңуз же Email / Ваш контактный телефон или Email" id="recipient-name">
-                                  </div>
+                            <div class="form-group">
+                              <div class="row">
+                                <div class="col-md-6">
+                                  <label for="recipient-name" class="control-label">Аты жөнүңүз / Ваше имя </label>
+                                  <input name="name" type="text" class="form-control" placeholder="Сизди ким деп тааныштырабыз / Как вас познакомить" id="recipient-name">
+                                </div>
+                                <div class="col-md-6">
+                                  <label for="recipient-name" class="control-label">Телефонуңуз же Email / Телефон или Email</label>
+                                  <input name="info" type="text" class="form-control" placeholder="Байланыш телефонуңуз же Email / Ваш контактный телефон или Email" id="recipient-name">
                                 </div>
                               </div>
+                            </div>
 
-                              <div class="form-group">
-                                <div class="row">
-                                  <div class="col-md-12 textforma">
-                                    <label for="message-text" class="control-label">Жаңылыктын мазмуну / Описание содержания:</label>
-                                    <textarea name="question" class="form-control" placeholder="Жаңылыктын мазмуну, сүрөт жана видеолор боюнча маалымат / Содержание, информация по снимкам или видео" id="message-text"></textarea>
-                                  </div>
+                            <div class="form-group">
+                              <div class="row">
+                                <div class="col-md-12 textforma">
+                                  <label for="message-text" class="control-label">Жаңылыктын мазмуну / Описание содержания:</label>
+                                  <textarea name="question" class="form-control" placeholder="Жаңылыктын мазмуну, сүрөт жана видеолор боюнча маалымат / Содержание, информация по снимкам или видео" id="message-text"></textarea>
                                 </div>
                               </div>
+                            </div>
 
+                            <div class="form-group">
+                              <label for="file" class="control-label">Фото</label>
                               <div class="form-group">
-                                  <label for="file" class="control-label">Фото</label>
-                                  <div class="form-group">
-                                    <input name="photo" class="file" type="file">
-                                  </div>                                      
+                                <input name="photo" class="file" type="file">
                               </div>
+                            </div>
 
+                            <div class="form-group">
+                              <label for="video" class="control-label">Видео</label>
                               <div class="form-group">
-                                  <label for="video" class="control-label">Видео</label>
-                                  <div class="form-group">
-                                    <input name="video" class="file" type="file">
-                                  </div>                                      
+                                <input name="video" class="file" type="file">
                               </div>
+                            </div>
 
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Жабуу / Закрыть</button>
-                                <input type="submit" name="submit" class="btn btn-primary" value="Кабарды жөнөтүү / Отправить новость">
-                              </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Жабуу / Закрыть</button>
+                              <input type="submit" name="submit" class="btn btn-primary" value="Кабарды жөнөтүү / Отправить новость">
+                            </div>
                             {!! Form::close() !!}
                           </div>
                         </div>
@@ -193,51 +190,38 @@
                 <h3 class="panel-title"><span>{{ trans('site.FrontPostDaysVideo') }}</span></h3>
               </div>
               <div class="panel-body">
-                <div class="col-md-12 block main-video">
-                  <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="//www.youtube.com/embed/KhJUlC4aJZM" allowfullscreen=""></iframe>
+
+                @if($dayVideo)
+                  <div class="col-md-12 block main-video">
+                    <div class="embed-responsive embed-responsive-16by9">
+                      <iframe class="embed-responsive-item" src="//www.youtube.com/embed/{{ $dayVideo->url }}" allowfullscreen=""></iframe>
+                    </div>
+
+                    <a href="{{ route('front.media.video', $dayVideo) }}">
+                      <h4>{{ $dayVideo->getName() }}</h4>
+                    </a>
                   </div>
+                @endif
 
-                  <h4>Стратегия-2017</h4>
-                </div>
+                @if($lastDayVideos)
 
-                <div class="clearfix"></div>
+                  <h4 class="old-videos text-center">{{ trans('site.FrontPostLastDays') }}</h4>
 
-                <h4 class="old-videos text-center">{{ trans('site.FrontPostLastDays') }}</h4>
+                  @foreach($lastDayVideos as $lastDayVideo)
 
-                <div class="col-md-6 block main-video">
-                  <div class="embed-responsive embed-responsive-16by9">
+                    <div class="col-md-6 block main-video">
+                      <div class="embed-responsive embed-responsive-16by9">
 
-                    <iframe class="embed-responsive-item" src="//www.youtube.com/embed/KhJUlC4aJZM" allowfullscreen=""></iframe>
+                        <a href="{{ route('front.media.video', $lastDayVideo) }}">
+                          <img src="http://img.youtube.com/vi/{{ $lastDayVideo->getUrl()}}/mqdefault.jpg" alt="" />
+                        </a>
 
-                  </div>
+                      </div>
+                    </div>
 
-                  {{-- <h4>Жеткиликтүү насыя</h4> --}}
-                </div>
+                  @endforeach
 
-                <div class="col-md-6 block main-video">
-                  <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="//www.youtube.com/embed/k2w8UII9cgI" allowfullscreen=""></iframe>
-                  </div>
-
-                  {{-- <h4>Мандаттар</h4> --}}
-                </div>
-
-                <div class="col-md-6 block main-video">
-                  <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="//www.youtube.com/embed/k2w8UII9cgI" allowfullscreen=""></iframe>
-                  </div>
-
-                  {{-- <h4>Мандаттар</h4> --}}
-                </div>
-
-                <div class="col-md-6 block main-video">
-                  <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="//www.youtube.com/embed/k2w8UII9cgI" allowfullscreen=""></iframe>
-                  </div>
-
-                  {{-- <h4>Мандаттар</h4> --}}
-                </div>
+                @endif
 
                 <footer>
                   <a href="{{ route('front.media.index') }}">
@@ -276,7 +260,7 @@
                               @if($post->getIsVideo() == 'yes')<i class="fa fa-play-circle-o"></i> @endif
                               @if($post->getIsPhoto() == 'yes')<i class="fa fa-picture-o"></i> @endif
                             </span>
-                        <span class="news-time pull-right"> {{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getYear()}}</span>
+                        <span class="news-time pull-right"> {{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
                         <span class="news-timer pull-right"><i class="fa fa-eye"></i>&nbsp;{{ $post->getViewed() }}</span>
 
                       </div>
@@ -291,6 +275,7 @@
                     <span>{{ trans('site.FrontPostAll') }} <i class="fa fa-arrow-circle-right"></i></span>
                   </a>
                 </footer>
+
               </div>
             </div>
 
@@ -343,7 +328,7 @@
           <div class="bottom-right-block col-md-8">
             <div class="panel panel-default videoportal">
               <div class="panel-heading">
-                <h3 class="panel-title"><a href="#"><span>Видеопортал</span></a></h3>
+                <h3 class="panel-title"><a href="{{ route('front.media.index') }}"><span>Видеопортал</span></a></h3>
               </div>
               <div class="panel-body">
 
@@ -366,7 +351,7 @@
                           @if(($media->getProgramName()))
                             <div class="label">
                               <div class="label-text">
-                                <a href="{{ route('front.media.video', $media) }}" title="{{ $media->getProgramName() }}" class="text-title">{{ $media->getProgramName() }}</a>
+                                <a href="{{ route('front.media.project', $media->program) }}" title="{{ $media->getProgramName() }}" class="text-title">{{ $media->getProgramName() }}</a>
                               </div>
                               <div class="label-bg"></div>
                             </div>
@@ -382,38 +367,38 @@
 
                   @foreach($MediaCategories as $key=>$MediaCategory)
 
-                      @foreach($categoriesVideos as $key => $media)
+                    @foreach($categoriesVideos as $key => $media)
 
-                        @foreach($media as $row)
+                      @foreach($media as $row)
 
-                          @if($row->videoType == $MediaCategory->videoType)
-                            <div class="portfolio {{ $row->getVideoType() }}" data-cat="{{ $row->getVideoType() }}">
-                              <div class="portfolio-wrapper">
-                                <div class="media-image">
-                                  <a href="{{ route('front.media.video', $row) }}">
-                                    <img src="http://img.youtube.com/vi/{{ $row->getUrl()}}/mqdefault.jpg" alt="" />
-                                    <i class="fa fa-youtube-play"></i>
-                                  </a>
-                                  @if(($row->getProgramName()))
-                                    <div class="label">
-                                      <div class="label-text">
-                                        <a href="{{ route('front.media.video', $row) }}" title="{{ $row->getProgramName() }}" class="text-title">{{ $row->getProgramName() }}</a>
-                                      </div>
-                                      <div class="label-bg"></div>
-                                    </div>
-                                  @endif
-                                </div>
-                                <a class="media-title" href="{{ route('front.media.video', $media) }}">
-                                  <h4>{{ $row->getName() }}</h4>
+                        @if($row->videoType == $MediaCategory->videoType)
+                          <div class="portfolio {{ $row->getVideoType() }}" data-cat="{{ $row->getVideoType() }}">
+                            <div class="portfolio-wrapper">
+                              <div class="media-image">
+                                <a href="{{ route('front.media.video', $row) }}">
+                                  <img src="http://img.youtube.com/vi/{{ $row->getUrl()}}/mqdefault.jpg" alt="" />
+                                  <i class="fa fa-youtube-play"></i>
                                 </a>
-
+                                @if(($row->getProgramName()))
+                                  <div class="label">
+                                    <div class="label-text">
+                                      <a href="{{ route('front.media.video', $row) }}" title="{{ $row->getProgramName() }}" class="text-title">{{ $row->getProgramName() }}</a>
+                                    </div>
+                                    <div class="label-bg"></div>
+                                  </div>
+                                @endif
                               </div>
-                            </div>
-                          @endif
+                              <a class="media-title" href="{{ route('front.media.video', $media) }}">
+                                <h4>{{ $row->getName() }}</h4>
+                              </a>
 
-                        @endforeach
+                            </div>
+                          </div>
+                        @endif
 
                       @endforeach
+
+                    @endforeach
 
                   @endforeach
 
@@ -425,7 +410,7 @@
                   <a href="{{ route('front.media.index') }}">
                     <span>{{ trans('site.FrontVideoAll') }} <i class="fa fa-arrow-circle-right"></i></span>
                   </a>
-                  
+
                 </footer>
 
               </div>
@@ -445,17 +430,16 @@
               <div class="panel-body">
                 <div class="col-md-12">
                   <div class="carousel-slick">
-                  @if($images != 1)
-                    @foreach($images as $image)
-                    <div class="col-md-4"><a href="#"><img src="{{ asset('froala/uploads/'.$image->name) }}" alt=""/><span>Название</span><div class="overlay"></div></a></div>
-                    @endforeach
+                    @if($images != 1)
+                      @foreach($images as $image)
+                        <div class="col-md-4"><a href="#"><img src="{{ asset('froala/uploads/'.$image->name) }}" alt=""/><span>Название</span><div class="overlay"></div></a></div>
+                      @endforeach
                     @endif
                   </div>
                 </div>
 
               </div>
             </div>
-
 
             <!-- @if(!empty($parentId))
                 @foreach($photoChilds as $photoChild)

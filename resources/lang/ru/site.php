@@ -19,6 +19,19 @@ return [
     //Header Footer titles
     'Homepage' => 'Главная страница',
     'BaikoochuKenesh' => 'Наблюдательный совет',
+    'BaikoochuKeneshFull' => 'Наблюдательный совет Общественной Телерадиовещательной корпорации',
+
+    'BaikoochuKeneshMain' => 'Главная',
+    'BaikoochuKeneshTeam' => 'Состав',
+    'BaikoochuKeneshNews' => 'Новости',
+    'BaikoochuKeneshBase' => 'Нормативная база',
+    'BaikoochuKeneshReglament' => 'Регламент',
+    'BaikoochuKeneshReports' => 'Отчеты',
+    'BaikoochuKeneshGallery' => 'Фотогалерея',
+    'BaikoochuKeneshContacts' => 'Контакты',
+    'BaikoochuKeneshAsk' => 'Опрос',
+
+
     'RedKenesh' => 'Редакционный советник',
 
     'HistoryFull' => 'История Общественной Телерадиовещательной корпорации Кыргызской Республики',
@@ -40,6 +53,8 @@ return [
     'RadioStations' => 'Радиостанции',
     'Managers' => 'Руководство',
     'DirectorPage' => 'КТРК - Генеральный директор',
+    'More' => 'Подробнее',
+
 
     //Post page
     'MatpoTeme' => 'Материалы по теме',
@@ -230,4 +245,5 @@ return [
     'AllVideos' => 'Все',
     'LastVideos' => 'Последние видео',
     'TopVideos' => 'Топ видео',
+    'Episodes' => 'Выпуски',
 ];

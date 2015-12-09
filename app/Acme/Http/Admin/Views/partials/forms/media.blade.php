@@ -1,5 +1,9 @@
 @include('Front::messages.flash')
 
+@section('styles')
+  <link rel="stylesheet" href="{{ asset('css/build.css') }}"/>
+@endsection
+
 <div class="row">
     <div class="col-sm-10">
         <div class="form-group">
@@ -44,20 +48,17 @@
     </div>
 
     <div class="col-sm-12">
-        <div class="form-group">
-               <label class="control-label">Главное видео дня</label>
-               {!! Form::hidden('dayVideo', 0) !!}
-               {!! Form::checkbox('dayVideo', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
-       </div>
-   </div>   
 
-    <div class="col-sm-12">
         <div class="form-group">
-               <label class="control-label">{{ trans('site.Publish') }}</label>
-               {!! Form::hidden('published', 0) !!}
-               {!! Form::checkbox('published', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
-           </div>
+          <div class="checkbox checkbox-primary ">
+            {!! Form::hidden('published', 0) !!}
+            {!! Form::checkbox('published', 1, null, ["id" => "checkbox1", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
+            <label for="checkbox1">
+              {{ trans('site.Publish') }}
+            </label>
+          </div>
        </div>
+
    </div>
 
 </div>

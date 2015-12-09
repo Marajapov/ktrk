@@ -32,20 +32,15 @@ class HomeController extends Controller
             $generalPosts = \Model\Post\ModelName::general($channel)->published()->languageru()->take(6)->skip(0)->orderBy('id', 'desc')->get();    
             $projects = \Model\Project\ModelName::where('nameRu','<>','')->get();
         }
-        
-        $rDayVideo = \Model\Media\ModelName::having('dayVideo','=','1')->take(1)->skip(0)->orderBy('created_at','desc')->first();
 
-        if($rDayVideo != null){
-            $dayVideo = $rDayVideo;
-        }elseif($rDayVideo == null){
-            $dayVideoResult = \Model\Media\ModelName::take(1)->skip(0)->orderBy('id', 'desc')->first();
-            if($dayVideoResult != null){
-                $dayVideo = $dayVideoResult;
-            }else{
-                $dayVideo = 'KhJUlC4aJZM';
-            }
+        $dayVideo = \Model\Media\ModelName::where('dayVideo','=','1')->first();
+
+        if($dayVideo){
+            $lastDayVideos = \Model\Media\ModelName::orderBy('id','desc')->where('status','=',1)->where('id','<>',$dayVideo->id)->take(4)->get();
+        } else {
+            $lastDayVideos = "";
         }
-        
+
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
         $peopleReporters = \Model\PeopleReporter\ModelName::where('published','=',true)->get();
 
@@ -57,8 +52,10 @@ class HomeController extends Controller
             $images = 1;
         }
         
+
         $MediaCategories = \Model\MediaCategory\ModelName::orderBy('id','asc')->get();
         $mediaPosts = \Model\Media\ModelName::orderBy('id','desc')->get();
+
 
         $categoriesVideos = array();
 
@@ -75,7 +72,8 @@ class HomeController extends Controller
             'images' => $images,
             'generalPosts'   => $generalPosts,
             'dayVideo'      => $dayVideo,
-            
+            'lastDayVideos'      => $lastDayVideos,
+
             'positionTop'    => $this->positionTop,
             'positionRight'  => $this->positionRight,
             'positionCenter' => $this->positionCenter,
@@ -236,19 +234,23 @@ class HomeController extends Controller
     // Category Page
     public function categoryPage(\Model\Category\ModelName $category)
     {
-        $channel = \Model\Channel\ModelName::general();
-
+        $lc = app()->getlocale();
         $perPage = 10;
         $category_id = $category->id;
 
-        $posts = \Model\Post\ModelName::where('category_id','=',$category_id)->get();
+        if($lc == 'kg'){
+            $posts = \Model\Post\ModelName::where('category_id','=',$category_id)->where('title','<>','')->orderBy('id','desc')->paginate($perPage);
+        }else{
+            $posts = \Model\Post\ModelName::where('category_id','=',$category_id)->where('titleRu','<>','')->orderBy('id','desc')->paginate($perPage);
+        }
+
 
         $categories = \Model\Category\ModelName::all();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
         return view('Front::category.index',[
             'perPage'=> $perPage,
-            'posts' => $channel->posts()->paginate($perPage),
+            'posts' => $posts,
             'category' => $category,
 
             'categories'=>$categories,

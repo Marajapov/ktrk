@@ -55,4 +55,19 @@ class ModelName extends Model
             return $this->nameRu;
         }
     }
+
+    public function getDescription()
+    {
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            return $this->description;
+        }else{
+            return $this->descriptionRu;
+        }
+    }
+
+    public function getFile()
+    {
+        return $this->thumbnail;
+    }
 }

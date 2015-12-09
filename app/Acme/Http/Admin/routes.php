@@ -21,6 +21,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'access:admin', 'namespace' =
     Route::resource('channel', 'ChannelController');
 
     Route::resource('media', 'MediaController');
+    Route::get('media.dayVideo',['as' => 'admin.media.dayVideo', 'uses' => 'MediaController@dayVideo']);
     Route::resource('banner', 'BannerController');
     Route::resource('schedule', 'ScheduleController');
     Route::resource('page', 'PageController');

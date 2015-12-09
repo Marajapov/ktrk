@@ -18,9 +18,9 @@
             <div class="panel panel-default panel-show">
               <div class="panel-heading">
                 <h3 class="panel-title">
-                  <a href="#">Видеопортал</a>
+                  <a href="{{ route('front.media.index') }}">Видеопортал</a>
                   <span class="divider"><i class="fa fa-circle"></i></span>
-                  <a href="#"><span class="ctg">Телепередачи</span></a>
+                  <span>{{ $project->getNameOne() }}</span>
                 </h3>
               </div>
 
@@ -32,13 +32,13 @@
                     <div class="media">
                       <div class="media-left media-top">
                         <a>
-                          <img class="media-object" src="{{ asset('images/image.jpeg') }}" alt="Show image">
+                          <img class="media-object" src="@if(!($project->getFile())) {{ asset('images/project_default.png') }} @else {{ asset($project->getFile()) }} @endif" alt="{{ $project->getNameOne() }}">
                         </a>
                       </div>
                       <div class="media-body">
                         <h4 class="show-title media-heading">{{ $project->getNameOne() }}</h4>
                         <p class="show-desc">
-                          Борбор шаардагы Эркиндик бульварында 1-октябрь улгайган адамдардын эл аралык күнүнө карата жарманке болуп өттү. Жарманкеге Ысык-Көл, Чүй, облустарынан жана Бишкек шаарынан келген улгайган
+                          {{ $project->getDescription() }}
                         </p>
                       </div>
                     </div>
@@ -53,24 +53,29 @@
             <div class="panel panel-default panel-related-videos">
               <div class="panel-heading">
                 <h3 class="panel-title">
-                  Чыгаруулар
+                  {{ trans('site.Episodes') }}
                 </h3>
               </div>
               <div class="panel-body" id="relatedVideos">
-                <div class="col-md-4 block">
-                  <a href="#" class="video-thumb">
-                    <img src="http://img.youtube.com/vi/kPG5DRKB0cQ/mqdefault.jpg" alt=""/>
-                    <i class="fa fa-play-circle-o"></i>
-                  </a>
-                  <a href="#" class="video-title">
-                    <h4>Название новости Название новости Название новости Название новости Название новости Название новости </h4>
-                  </a>
-                </div>
 
+                @if($relatedVideos)
+                  @foreach($relatedVideos as $relatedVideo)
+                    <div class="col-md-4 block">
+                      <a href="{{ route('front.media.video',$relatedVideo) }}" class="video-thumb">
+                        <img src="http://img.youtube.com/vi/{{$relatedVideo->url}}/mqdefault.jpg" alt=""/>
+                        <i class="fa fa-play-circle-o"></i>
+                      </a>
+                      <a href="#" class="video-title">
+                        <h4>{{$relatedVideo->getName()}}</h4>
+                      </a>
+                    </div>
+                  @endforeach
+                @endif
 
                 <div class="col-md-12">
                   <button class="loadMore btn btn-default">Показать еще</button>
                 </div>
+
               </div>
             </div>
 
