@@ -924,39 +924,6 @@ header{
 }
 
 /*Video promo*/
-.main-video{
-    padding: 0px !important;
-}
-/*.oldmain-video .overlay{
-    width: 300px;
-    height: 73px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 100000000500;
-}
-.oldmain-video .text{
-    position: absolute;
-    margin-left: 100px;
-    vertical-align: top;
-    width: 182px;
-    height: 55px;
-    padding: 9px;
-    background-color: #fff;
-}
-
-.oldmain-video span:hover {
-    word-spacing: 0
-} 
-
-.oldmain-video span:hover .text {
-    width:220px; 
-    background:#444; 
-    display:block; 
-    color: #fff;
-
-}*/
-
 
 
 /*Video promo

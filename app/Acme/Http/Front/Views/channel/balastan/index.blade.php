@@ -10,6 +10,8 @@
         <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
         <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
         <link rel="stylesheet" href="css/style.css"/>
+        <link href="css/allinone_carousel.css" rel="stylesheet" type="text/css">
+
 
     </head>
     
@@ -72,6 +74,8 @@
            <div class="row tvblock">
                 <div class="col-md-2"> 
                     <img class="iconleft" src="{{ asset('images/channels/balastan/akylay.png')}}" alt="">
+                    <img src="{{ asset('images/channels/balastan/taalim.png')}}" alt="" class="leftcloud">
+
                 </div>
                 <div class="col-md-8" style="text-align:center;">
                     <img class="tvthree" src="{{ asset('images/channels/balastan/tv3.png')}}" alt="">
@@ -143,9 +147,24 @@
                             <h3 class="panel-title"><span>Фотогалерея</span></h3>
                         </div>
                         <div class="panel-body">
-                            <div class="row ">
-                               
-                                                            
+                            <div class="row ">                                                    
+                                <div class="allinone_carousel charming ui-draggable">
+                                   <div id="allinone_carousel_charming">
+                                      <div class="myloader" style="display: none;"></div>
+                                      <!-- CONTENT -->
+                                      <ul class="allinone_carousel_list">
+                                    
+                                         <li><img src="{{asset('images/gallery/001.jpg')}}" alt=""></li>
+                                         <li><img src="{{asset('images/gallery/002.jpg')}}" alt=""></li>
+                                         <li><img src="{{asset('images/gallery/003.jpg')}}" alt=""></li>
+                                         <li><img src="{{asset('images/gallery/004.jpg')}}" alt=""></li>
+                                         <li><img src="{{asset('images/gallery/005.jpg')}}" alt=""></li>
+                                         <li><img src="{{asset('images/gallery/006.jpg')}}" alt=""></li>
+                                         <li><img src="{{asset('images/gallery/007.jpg')}}" alt=""></li>
+                                      </ul>
+                                   </div>                         
+
+                                </div>                          
                               
                             </div>
 
@@ -153,12 +172,8 @@
                     </div>
                 </div>
             </div> 
-
         </div>
-
-                   
-
-
+                 
         <footer class="footer">
             <div class="panel panel-default">
                 <div class="panel-body">
@@ -190,6 +205,32 @@
 
         <script src="js/jquery-1.11.2.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
+        <script src="js/balastan/jquery.min.js" type="text/javascript"></script>
+        <script src="js/balastan/jquery-ui.min.js"></script>
+        <script src="js/balastan/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+        <script src="js/balastan/allinone_carousel.js" type="text/javascript"></script>
+            <script>
+         jQuery(function() {
+         
+           jQuery('#allinone_carousel_charming').allinone_carousel({
+             skin: 'charming',
+             width: 990,
+             height: 410,
+             autoPlay: 3,
+             resizeImages:true,
+             autoHideBottomNav:false,
+             showElementTitle:false,
+             verticalAdjustment:50,
+             showPreviewThumbs:false,
+             //easing:'easeOutBounce',
+             numberOfVisibleItems:5,
+             nextPrevMarginTop:0,
+             playMovieMarginTop:0,
+             bottomNavMarginBottom:-10
+           });                 
+           
+         });
+      </script>
 
     </body>
 </html>
