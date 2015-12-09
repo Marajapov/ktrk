@@ -225,7 +225,7 @@ return [
     'FrontPostDaysVideo' => 'Видео дня',    
     'FrontPostLastDays' => 'Прошедшие дни',
     'FrontDirectorPage' => 'Страница генерального директора',    
-    'FrontVideoAll' => 'Все видео',
+    'FrontVideoAll' => 'Перейти на видеопортал',
     'FrontGalleryAll' => 'Все галереи',
     'FrontToDirectorPage' => 'Перейти на страницу',
     '' => '',
