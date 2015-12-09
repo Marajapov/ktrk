@@ -22,14 +22,14 @@
   <div class="col-sm-6">
     <div class="form-group">
       <label class="control-label">{{ trans('site.TextKG') }}</label>
-      {!! Form::textarea('description', null, ["class" => "form-control", "required" => true, "title" => ""]) !!}
+      {!! Form::textarea('description', null, ["class" => "form-control", "title" => ""]) !!}
     </div>
   </div>
 
   <div class="col-sm-6">
     <div class="form-group">
       <label class="control-label">{{ trans('site.TextRU') }}</label>
-      {!! Form::textarea('descriptionRu', null, ["class" => "form-control", "required" => true, "title" => ""]) !!}
+      {!! Form::textarea('descriptionRu', null, ["class" => "form-control", "title" => ""]) !!}
     </div>
   </div>
 
