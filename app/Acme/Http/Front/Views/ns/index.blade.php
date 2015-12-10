@@ -192,67 +192,118 @@
                             </p></h5>
                         </div>
                       </div>
-                      <div class="media">
-                        <div class="media-left">
-                          <a href="#">
-                            <img class="media-object thumb" src="http://ktrk.kg/sites/default/files/styles/juicebox_medium/public/gallery/album/fotos/_mg_9802.jpg?itok=YROMXAeD" alt="image">
-                          </a>
-                        </div>
-                        <div class="media-body">
-                          <div class="extra">
-                            <span class="e-datetime">18 Нояб , 12:22</span>
-                            <span class="e-views"><i class="fa fa-eye"></i>17</span>
-                          </div>
-                          <a class="media-heading" href="http://1000.ktrk.kg/post/1">КТРКнын жаңыланган заманбап кеңсеси</a>
 
-                          <h5 class="media-desc">
-                            <p>Бүгүн, 6-ноябрда Коомдук телерадиоберүү корпорациясында жаңыланган заманбап үлгүдөгү иш кабинеттеринин ачылышы болду.
-                            </p></h5>
-                        </div>
-                      </div>
-                      <div class="media">
-                        <div class="media-left">
-                          <a href="#">
-                            <img class="media-object thumb" src="http://ktrk.kg/sites/default/files/styles/juicebox_medium/public/gallery/album/fotos/_mg_9802.jpg?itok=YROMXAeD" alt="image">
-                          </a>
-                        </div>
-                        <div class="media-body">
-                          <div class="extra">
-                            <span class="e-datetime">18 Нояб , 12:22</span>
-                            <span class="e-views"><i class="fa fa-eye"></i>17</span>
-                          </div>
-                          <a class="media-heading" href="http://1000.ktrk.kg/post/1">КТРКнын жаңыланган заманбап кеңсеси</a>
+                      <footer>
+                        <a href="{{ route('front.general') }}">
+                          <span>{{ trans('site.FrontPostAll') }} <i class="fa fa-arrow-circle-right"></i></span>
+                        </a>
+                      </footer>
 
-                          <h5 class="media-desc">
-                            <p>Бүгүн, 6-ноябрда Коомдук телерадиоберүү корпорациясында жаңыланган заманбап үлгүдөгү иш кабинеттеринин ачылышы болду.
-                            </p></h5>
-                        </div>
-                      </div>
-                      <div class="media">
-                        <div class="media-left">
-                          <a href="#">
-                            <img class="media-object thumb" src="http://ktrk.kg/sites/default/files/styles/juicebox_medium/public/gallery/album/fotos/_mg_9802.jpg?itok=YROMXAeD" alt="image">
-                          </a>
-                        </div>
-                        <div class="media-body">
-                          <div class="extra">
-                            <span class="e-datetime">18 Нояб , 12:22</span>
-                            <span class="e-views"><i class="fa fa-eye"></i>17</span>
-                          </div>
-                          <a class="media-heading" href="http://1000.ktrk.kg/post/1">КТРКнын жаңыланган заманбап кеңсеси</a>
-
-                          <h5 class="media-desc">
-                            <p>Бүгүн, 6-ноябрда Коомдук телерадиоберүү корпорациясында жаңыланган заманбап үлгүдөгү иш кабинеттеринин ачылышы болду.
-                            </p></h5>
-                        </div>
-                      </div>
                     </div>
 
-                    <footer>
-                      <a href="{{ route('front.general') }}">
-                        <span>{{ trans('site.FrontPostAll') }} <i class="fa fa-arrow-circle-right"></i></span>
-                      </a>
-                    </footer>
+                    <div class="panel-heading second-panel-heading">
+                      <h3 class="panel-title"><span>{{ trans('site.Top news') }}</span></h3>
+                    </div>
+                    <div class="panel-body second-panel-body">
+                      <div class="media">
+                        <div class="media-left">
+                          <a href="#">
+                            <img class="media-object thumb" src="http://sputnik.kg/images/102017/14/1020171449.jpg" alt="image">
+                          </a>
+                        </div>
+                        <div class="media-body">
+                          <div class="extra">
+                            <span class="e-datetime">18 Нояб , 12:22</span>
+                            <span class="e-views"><i class="fa fa-eye"></i>17</span>
+                          </div>
+                          <a class="media-heading" href="http://1000.ktrk.kg/post/1">КТРК: из-за работы я стал изгоем для родственников</a>
+
+                          <h5 class="media-desc">
+                            <p>Кабинет, как у бизнесмена средней руки. Нет ни мебели красного дерева, как в вотчинах других чиновников высокого ранга, ни канцелярского набора из бирюзы. Из роскоши — 6 плазменных телевизоров на стене. Под столом склад жестянок с безалкогольным энергетиком.
+                            </p></h5>
+                        </div>
+                      </div>
+                      <div class="media">
+                        <div class="media-left">
+                          <a href="#">
+                            <img class="media-object thumb" src="http://ktrk.kg/sites/default/files/styles/juicebox_medium/public/gallery/album/fotos/_mg_9802.jpg?itok=YROMXAeD" alt="image">
+                          </a>
+                        </div>
+                        <div class="media-body">
+                          <div class="extra">
+                            <span class="e-datetime">18 Нояб , 12:22</span>
+                            <span class="e-views"><i class="fa fa-eye"></i>17</span>
+                          </div>
+                          <a class="media-heading" href="http://1000.ktrk.kg/post/1">КТРКнын жаңыланган заманбап кеңсеси</a>
+
+                          <h5 class="media-desc">
+                            <p>Бүгүн, 6-ноябрда Коомдук телерадиоберүү корпорациясында жаңыланган заманбап үлгүдөгү иш кабинеттеринин ачылышы болду.
+                            </p></h5>
+                        </div>
+                      </div>
+                      <div class="media">
+                        <div class="media-left">
+                          <a href="#">
+                            <img class="media-object thumb" src="http://1000.ktrk.kg/img/thumbnail/11447849392.png" alt="image">
+                          </a>
+                        </div>
+                        <div class="media-body">
+                          <div class="extra">
+                            <span class="e-datetime">18 Нояб , 12:22</span>
+                            <span class="e-views"><i class="fa fa-eye"></i>17</span>
+                          </div>
+                          <a class="media-heading" href="http://1000.ktrk.kg/post/1">КМЮА: ректор шайланды</a>
+
+                          <h5 class="media-desc">
+                            <p>Кыргызстандын жогорку окуу жайларында ректорду шайлоо өтүп жатат. Бүгүн кыргыз мамлекеттик юридикалык академиясы өзүнүн жетекчисин шайлады. Ага беш талапкер катышып, ар бири өзүнүн иш пландары менен тааныштырды.
+                            </p></h5>
+                        </div>
+                      </div>
+                      <div class="media">
+                        <div class="media-left">
+                          <a href="#">
+                            <img class="media-object thumb" src="http://sputnik.kg/images/102017/14/1020171449.jpg" alt="image">
+                          </a>
+                        </div>
+                        <div class="media-body">
+                          <div class="extra">
+                            <span class="e-datetime">18 Нояб , 12:22</span>
+                            <span class="e-views"><i class="fa fa-eye"></i>17</span>
+                          </div>
+                          <a class="media-heading" href="http://1000.ktrk.kg/post/1">КТРК: из-за работы я стал изгоем для родственников</a>
+
+                          <h5 class="media-desc">
+                            <p>Кабинет, как у бизнесмена средней руки. Нет ни мебели красного дерева, как в вотчинах других чиновников высокого ранга, ни канцелярского набора из бирюзы. Из роскоши — 6 плазменных телевизоров на стене. Под столом склад жестянок с безалкогольным энергетиком.
+                            </p></h5>
+                        </div>
+                      </div>
+
+                      <div class="media">
+                        <div class="media-left">
+                          <a href="#">
+                            <img class="media-object thumb" src="http://ktrk.kg/sites/default/files/styles/juicebox_medium/public/gallery/album/fotos/_mg_9802.jpg?itok=YROMXAeD" alt="image">
+                          </a>
+                        </div>
+                        <div class="media-body">
+                          <div class="extra">
+                            <span class="e-datetime">18 Нояб , 12:22</span>
+                            <span class="e-views"><i class="fa fa-eye"></i>17</span>
+                          </div>
+                          <a class="media-heading" href="http://1000.ktrk.kg/post/1">КТРКнын жаңыланган заманбап кеңсеси</a>
+
+                          <h5 class="media-desc">
+                            <p>Бүгүн, 6-ноябрда Коомдук телерадиоберүү корпорациясында жаңыланган заманбап үлгүдөгү иш кабинеттеринин ачылышы болду.
+                            </p></h5>
+                        </div>
+                      </div>
+
+                      <footer>
+                        <a href="{{ route('front.general') }}">
+                          <span>{{ trans('site.FrontPostAll') }} <i class="fa fa-arrow-circle-right"></i></span>
+                        </a>
+                      </footer>
+
+                    </div>
                   </div>
                 </div>
 
