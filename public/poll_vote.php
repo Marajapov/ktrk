@@ -50,7 +50,7 @@ fclose($fp);
         </div>
     </li>
     <li class="list-group-item">
-        <span>Windows PC</span><span class="pull-right"><?php echo(100*round($notbad/($perfect+$good+$notbad),3)); ?>%</span>
+        <span>Удовлетворительно</span><span class="pull-right"><?php echo(100*round($notbad/($perfect+$good+$notbad),3)); ?>%</span>
         <div class="progress">
             <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo(100*round($notbad/($perfect+$good+$notbad),3)); ?>%;">
                 <span class="sr-only"><?php echo(100*round($notbad/($perfect+$good+$notbad),3)); ?>% Complete</span>
@@ -58,25 +58,3 @@ fclose($fp);
         </div>
     </li>
 </ul>
-
-<!--<h2>Result:</h2>-->
-<!--<table>-->
-<!--    <tr>-->
-<!--        <td>Yes:</td>-->
-<!--        <td>-->
-<!--            <img src="poll.gif"-->
-<!--                 width='--><?php //echo(100*round($perfect/($perfect+$good+$notbad),3)); ?><!--'-->
-<!--                 height='20'>-->
-<!--            --><?php //echo(100*round($yes/($no+$yes),2)); ?><!--%-->
-<!--        </td>-->
-<!--    </tr>-->
-<!--    <tr>-->
-<!--        <td>No:</td>-->
-<!--        <td>-->
-<!--            <img src="poll.gif"-->
-<!--                 width='--><?php //echo(100*round($no/($no+$yes),2)); ?><!--'-->
-<!--                 height='20'>-->
-<!--            --><?php //echo(100*round($no/($no+$yes),2)); ?><!--%-->
-<!--        </td>-->
-<!--    </tr>-->
-<!--</table>-->

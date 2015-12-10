@@ -250,9 +250,6 @@
 
 @section('footerScript')
 
-  <script type="text/javascript" src="{{ asset('js/jquery-migrate-1.2.1.min.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('slick/slick.min.js') }}"></script>
-
   <!--Carousel-->
   <script>
     $('.slider-for').slick({
