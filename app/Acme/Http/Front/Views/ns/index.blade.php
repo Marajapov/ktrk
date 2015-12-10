@@ -59,6 +59,7 @@
                     </div>
 
                     <div class="panel-heading second-panel-heading">
+
                       <h3 class="panel-title"><span>{{ trans('site.BaikoochuKeneshGallery') }}</span></h3>
                     </div>
                     <div class="panel-body second-panel-body gallery">

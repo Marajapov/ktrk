@@ -731,6 +731,8 @@
 }
 .panel-kenesh .slick-slider{
     margin: 0;
+<<<<<<< HEAD
+=======
 }
 
 /*NS REPORTS*/
@@ -899,4 +901,5 @@
     vertical-align: middle;
     color: #9DA8B0;
     font-size: 12px;
+>>>>>>> 7a6bb786a97babc51fb93a0df9b2a98af772e652
 }
