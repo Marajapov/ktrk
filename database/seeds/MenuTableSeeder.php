@@ -107,7 +107,7 @@ class MenuTableSeeder extends Seeder
             'parent_id' => null,
             'code'		=> 'main',
             'name'      => 'РЕДАКЦИЯЛЫК КЕҢЕШЧИ',
-            'url'		=> 'http://ktrk.dev/editionkenesh',
+            'url'		=> 'http://ktrk.dev/rs',
             'order' 	=> 11,
         ]);
     }
