@@ -226,7 +226,7 @@
                     <div>
                    
                       <div class="embed-responsive embed-responsive-16by9 slider-text">
-                      <iframe class="embed-responsive-item" src="//www.youtube.com/embed/yCG-yNC-aqk" allowfullscreen=""></iframe>      
+                      <iframe id="player1" class="embed-responsive-item" src="//www.youtube.com/embed/yCG-yNC-aqk" allowfullscreen=""></iframe>      
                       </div>
                             <div class="slick-text">
                              <a href="{{ route('front.media.video', $dayVideo) }}">
@@ -236,21 +236,21 @@
 
                       </div> 
                       <div class="embed-responsive embed-responsive-16by9">
-                      <iframe class="embed-responsive-item" src="//www.youtube.com/embed/66ehf69z_PI" allowfullscreen=""></iframe>
+                      <iframe class="embed-responsive-item" src="//www.youtube.com/embed/66ehf69z_PI?enablejsapi=1" allowfullscreen=""></iframe>
                       </div> 
                       <div class="embed-responsive embed-responsive-16by9">
-                      <iframe class="embed-responsive-item" src="//www.youtube.com/embed/khhdag87Poc" allowfullscreen=""></iframe>
+                      <iframe class="embed-responsive-item" src="//www.youtube.com/embed/khhdag87Poc?enablejsapi=1?enablejsapi=1" allowfullscreen=""></iframe>
                       </div> 
                       <div class="embed-responsive embed-responsive-16by9">
-                      <iframe class="embed-responsive-item" src="//www.youtube.com/embed/Zgfwy2dR_vA" allowfullscreen=""></iframe>
+                      <iframe class="embed-responsive-item" src="//www.youtube.com/embed/Zgfwy2dR_vA?enablejsapi=1" allowfullscreen=""></iframe>
                       </div> 
                       <div class="embed-responsive embed-responsive-16by9">
-                      <iframe class="embed-responsive-item" src="//www.youtube.com/embed/pnrUhMN8H4Y" allowfullscreen=""></iframe>
+                      <iframe class="embed-responsive-item" src="//www.youtube.com/embed/pnrUhMN8H4Y?enablejsapi=1" allowfullscreen=""></iframe>
                       </div>
                  
                   </div>
                   <div class="slider slider-nav">
-                      <div><img src="http://img.youtube.com/vi/yCG-yNC-aqk/mqdefault.jpg" alt="" /></div>
+                      <div id="forPlayer1"><img src="http://img.youtube.com/vi/yCG-yNC-aqk/mqdefault.jpg" alt="" /></div>
                       <div><img src="http://img.youtube.com/vi/66ehf69z_PI/mqdefault.jpg" alt="" /></div>
                       <div><img src="http://img.youtube.com/vi/khhdag87Poc/mqdefault.jpg" alt="" /></div>
                       <div><img src="http://img.youtube.com/vi/Zgfwy2dR_vA/mqdefault.jpg" alt="" /></div>
@@ -523,17 +523,18 @@
       filterList.init();
     });
   </script>
-          <script>
-            $('.slider-for').slick({
-                slidesToShow: 1,
-                fade: true,
-                arrows: false,
-                autoplay:false
-            });
-            $('.slider-nav').slick({
-                slidesToShow: 5,
-                asNavFor: '.slider-for',
-                focusOnSelect: true
-            });
-        </script>
+  <script>
+    $('.slider-for').slick({
+        slidesToShow: 1,
+        fade: true,
+        arrows: false,
+        autoplay:false
+    });
+    $('.slider-nav').slick({
+        slidesToShow: 5,
+        asNavFor: '.slider-for',
+        focusOnSelect: true
+    });
+  </script>
+
 @endsection

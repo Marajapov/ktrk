@@ -45,7 +45,8 @@
         </div>
 
         <div class="container">
-            <div class="row">      
+            <div class="row"> 
+
                 <div class="col-md-12 logo-block logocenter">
                     <div class="row">
                 
@@ -202,6 +203,47 @@
         <div class="container-fluid">
      <!--        <img src="{{ asset('images/channels/balastan/footer.png')}}" alt=""> -->
         </div>
+        <div class="container row pull-right">
+      
+          <div class="top-right-block col-md-4">
+            <div class="panel panel-default panel-promo">
+              <div class="panel-heading">
+                <h3 class="panel-title"><span>Day video</span></h3>
+              </div>
+              <div class="panel-body main-video">
+
+                <div id="amazingslider-12">
+                     <ul class="amazingslider-slides">
+            
+                        <li><div class="embed-responsive embed-responsive-16by9 slider-text">
+                                 <img src="http://img.youtube.com/vi/yCG-yNC-aqk/mqdefault.jpg" alt="">
+                                 <video preload="none" src="http://www.youtube.com/embed/yCG-yNC-aqk"></video>
+                           </div>
+                            <div class="slick-text">
+                             <a href="#">
+                              <h2>Name</h2>
+                            </a>
+                          </div>
+                        </li>   
+                        <li><img src="http://img.youtube.com/vi/66ehf69z_PI/mqdefault.jpg" alt="Sintel" data-description="1"><video preload="none" src="http://www.youtube.com/embed/66ehf69z_PI"></video></li>   
+                        <li><img src="http://img.youtube.com/vi/khhdag87Poc/mqdefault.jpg" alt="Sintel" data-description="1"><video preload="none" src="http://www.youtube.com/embed/khhdag87Poc"></video></li>   
+                        <li><img src="http://img.youtube.com/vi/Zgfwy2dR_vA/mqdefault.jpg" alt="Sintel" data-description="1"><video preload="none" src="http://www.youtube.com/embed/Zgfwy2dR_vA"></video></li>   
+                        <li><img src="http://img.youtube.com/vi/pnrUhMN8H4Y/mqdefault.jpg" alt="Sintel" data-description="1"><video preload="none" src="http://www.youtube.com/embed/pnrUhMN8H4Y"></video></li>   
+                    </ul>
+                     <ul class="amazingslider-thumbnails" style="display:none;">
+                        <li><img src="http://img.youtube.com/vi/yCG-yNC-aqk/mqdefault.jpg" alt="" /></li>
+                        <li><img src="http://img.youtube.com/vi/66ehf69z_PI/mqdefault.jpg" alt="" /></li>
+                        <li><img src="http://img.youtube.com/vi/khhdag87Poc/mqdefault.jpg" alt="" /></li>
+                        <li><img src="http://img.youtube.com/vi/Zgfwy2dR_vA/mqdefault.jpg" alt="" /></li>
+                        <li><img src="http://img.youtube.com/vi/pnrUhMN8H4Y/mqdefault.jpg" alt="" /></li>
+
+                     </ul>
+                </div>
+        
+              </div>
+            </div>
+          </div>
+        </div>
 
         <script src="js/jquery-1.11.2.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
@@ -209,6 +251,9 @@
         <script src="js/balastan/jquery-ui.min.js"></script>
         <script src="js/balastan/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
         <script src="js/balastan/allinone_carousel.js" type="text/javascript"></script>
+        <script src="js/lightgallery/amazingslider.js" type="text/javascript"></script>
+        <script src="js/lightgallery/initslider.js" type="text/javascript"></script>
+  
             <script>
          jQuery(function() {
          

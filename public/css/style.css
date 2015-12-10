@@ -956,6 +956,9 @@ header{
 .main-video  .slider-nav .slick-current{
     display: none !important;
 }
+.main-video  .slider-for .slick-slide{
+
+}
 .main-video .slider-for .slider-text{
     height: 207px;
 }
@@ -972,6 +975,7 @@ header{
     text-align: center;
     text-transform: uppercase;
 }
+
 /*Video promo
 
 /* Panel Articles */
