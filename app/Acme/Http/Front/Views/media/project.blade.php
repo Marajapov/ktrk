@@ -37,7 +37,7 @@
                       </div>
                       <div class="media-body">
                         <h4 class="show-title media-heading">{{ $project->getNameOne() }}</h4>
-                        <p class="show-desc" style="font-size:15px;">
+                        <p class="show-desc">
                           {{ $project->getDescription() }}
                         </p>
                       </div>
@@ -65,7 +65,7 @@
                         <img src="http://img.youtube.com/vi/{{$relatedVideo->url}}/mqdefault.jpg" alt=""/>
                         <i class="fa fa-play-circle-o"></i>
                       </a>
-                      <a href="#" class="video-title">
+                      <a href="{{ route('front.media.video',$relatedVideo) }}" class="video-title">
                         <h4>{{$relatedVideo->getName()}}</h4>
                       </a>
                     </div>
