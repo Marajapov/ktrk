@@ -15,6 +15,9 @@ Route::group(['domain' => 'ktrk.dev', 'prefix' => '/balastan', 'namespace' => 'F
 
     Route::get('/', ['as' => 'balastan.home',   'uses' => 'BalastanController@Home']);
     Route::get('/posts', ['as' => 'balastan.posts',   'uses' => 'BalastanController@posts']);
+    Route::get('/photos', ['as' => 'balastan.photos',   'uses' => 'BalastanController@photos']);
+    Route::get('/world', ['as' => 'balastan.world',   'uses' => 'BalastanController@world']);
+    Route::get('/about', ['as' => 'balastan.about',   'uses' => 'BalastanController@about']);
 
 });
 
