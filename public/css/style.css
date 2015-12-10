@@ -1300,13 +1300,15 @@ header{
 .gallery .slick-slide span, .broadimages .slick-slide span{
     position: absolute;
     top: 50%;
+    left: 0;
+    right: 0;
     z-index: 3;
 
     color: #ffffff;
 
     display: block;
-    margin: 0 10%;
-    width: 80%;
+    margin: 0 auto;
+    width: 100%;
 
     font-size: 12px;
     line-height: 20px;

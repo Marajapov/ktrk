@@ -34,7 +34,7 @@
                             <div class="rsnews">
                                 <div class="col-xs-12 col-sm-4 col-md-4 rsimg">
                                     <figure class="effect-zoe">
-                                        <a href="article.html" class="main-img"><img src="{{ asset('static/images/image.jpeg') }}" alt="img26"><i class="fa fa-image"></i></a>
+                                        <a href="article.html" class="main-img"><img src="{{ asset('image.jpg') }}" alt="img26"><i class="fa fa-image"></i></a>
                                     </figure>
                                 </div>
                                 <div class="col-xs-12 col-sm-8 col-md-8 rsanons">
