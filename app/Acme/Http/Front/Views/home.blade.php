@@ -466,7 +466,12 @@
                   <div class="carousel-slick">
                     @if($images != 1)
                       @foreach($images as $image)
-                        <div class="col-md-4"><a href="#"><img src="{{ asset('froala/uploads/'.$image->name) }}" alt=""/><span>Название</span><div class="overlay"></div></a></div>
+                        <div class="col-md-4">
+                          <a href="#">
+                            <img src="{{ asset('froala/uploads/'.$image->name) }}" alt=""/><span>Название</span>
+                            <div class="overlay"></div>
+                          </a>
+                        </div>
                       @endforeach
                     @endif
                   </div>
