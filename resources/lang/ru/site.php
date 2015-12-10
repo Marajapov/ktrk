@@ -30,6 +30,7 @@ return [
     'BaikoochuKeneshGallery' => 'Фотогалерея',
     'BaikoochuKeneshContacts' => 'Контакты',
     'BaikoochuKeneshAsk' => 'Опрос',
+    'BaikoochuKeneshTeamTitle' => 'Состав Наблюдательного совета Общественной телерадиовещательной корпорации',
 
 
     'RedKenesh' => 'Редакционный советник',

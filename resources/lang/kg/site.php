@@ -31,6 +31,7 @@ return [
     'BaikoochuKeneshGallery' => 'Сүрөт көргөзмө',
     'BaikoochuKeneshContacts' => 'Байланыш',
     'BaikoochuKeneshAsk' => 'Сурамжылоо',
+    'BaikoochuKeneshTeamTitle' => 'Коомдук телерадиоберүү корпорациясынын Байкоочу кеңешинин курамы',
 
     'RedKenesh' => 'Редакциялык кеңешчи',
 
