@@ -490,6 +490,7 @@
 }
 
 /*PANEL KENESH*/
+
 .panel-kenesh .panel-body{
     padding: 0 15px 15px;
 }
@@ -588,7 +589,13 @@
     padding-left: 30px;
 }
 .sidebar-panel-body .poll{
-    padding: 5px 10px;
+    /*padding: 5px 10px;*/
+}
+.poll .list-group,.poll .list-group-item{
+    padding: 0;
+}
+.poll .progress{
+    margin-bottom: 5px;
 }
 
 .panel-kenesh .second-panel-heading h3{
@@ -644,4 +651,26 @@
 .panel-kenesh .media-desc{
     margin: 5px 0;
     font-size: 12px;
+}
+
+/*NS TEAM*/
+.ns-team{
+    padding: 15px 20px;
+}
+.ns-photo{
+    padding: 0 50px;
+}
+.ns-info span{
+    display: block;
+    padding: 20px 0;
+    font-size: 14px;
+    text-align: center;
+}
+.ns-name strong{
+    text-transform: uppercase;
+}
+.ns-info p{
+    text-align: center;
+}
+.ns-desc{
 }

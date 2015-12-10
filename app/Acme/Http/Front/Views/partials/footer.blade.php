@@ -75,7 +75,7 @@
     });
 </script>
 
-<!--<script src="{{-- asset('jwplayer/jwplayer.js') --}}"></script>
+<script src="{{ asset('jwplayer/jwplayer.js') }}"></script>
 <script>jwplayer.key="tmEO2SU8NzqLBoHr2Vq6nV13XCyfo8xbdiCb/Q==";</script>
 
 <script type="text/javascript">
@@ -98,14 +98,14 @@
         }],
         width: "640",
         height: "360",
-        aspectratio: "16:9",
+        aspectratio: "",
         primary: "flash",
         skin: {
             name: "five"
         },
         stretching: "exactfit"
     });
-</script> -->
+</script>
 
 <script>
     var toggleSlide = function(){
