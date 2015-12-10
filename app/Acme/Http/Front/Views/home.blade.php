@@ -231,7 +231,7 @@
                     </div>
                     <div class="slick-text">
                       <a href="{{ route('front.media.video', $dayVideo) }}">
-                        <h2>{{ $dayVideo->getName() }}</h2>
+                        <h2>@if($dayVideo){{ $dayVideo->getName() }} @endif</h2>
                       </a>
                     </div>
 
@@ -321,14 +321,14 @@
               <div class="panel-heading">
                 <h3 class="panel-title director-title">
                   <a class="director-img" href="{{ route('front.pages.director') }}">
-                    <img src="{{ asset('images/chief.jpg') }}" alt="директор"/>
+                    <img src="{{ asset('images/chief.png') }}" alt="директор"/>
                   </a>
                   <a class="director-text" href="{{ route('front.pages.director') }}">{{ trans('site.FrontDirectorPage') }}</a>
                 </h3>
               </div>
               <div class="panel-body">
 
-                <div class="col-md-12">
+                <div class="">
                   <div class="carousel carousel-director">
                     <div>
                       <a href="#">
@@ -470,7 +470,12 @@
                   <div class="carousel-slick">
                     @if($images != 1)
                       @foreach($images as $image)
-                        <div class="col-md-4"><a href="#"><img src="{{ asset('froala/uploads/'.$image->name) }}" alt=""/><span>Название</span><div class="overlay"></div></a></div>
+                        <div class="col-md-4">
+                          <a href="#">
+                            <img src="{{ asset('froala/uploads/'.$image->name) }}" alt=""/><span>Название</span>
+                            <div class="overlay"></div>
+                          </a>
+                        </div>
                       @endforeach
                     @endif
                   </div>

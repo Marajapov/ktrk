@@ -474,7 +474,12 @@ header.top-menu,.logo-block{
     border-top: 2px solid #F1F4F9;
     border-right: 2px solid #F1F4F9;
 }
-.director-title{}
+.panel-director .panel-body{
+    padding: 15px;
+}
+.panel-director .director-title{
+    padding: 0;
+}
 .director-title a{
     display: inline-block;
     vertical-align: middle;
@@ -482,15 +487,14 @@ header.top-menu,.logo-block{
 .director-img{
     overflow: hidden;
     width: 30%;
-
-    -webkit-border-radius: 50% !important;
-    -moz-border-radius: 50% !important;
-    border-radius: 50% !important;
 }
 .director-text{
     padding-left: 10px;
     width: 65%;
     font-size: 24px;
+}
+.carousel-director{
+    margin: 0;
 }
 .carousel-director a{
     color: #4e5e6a;

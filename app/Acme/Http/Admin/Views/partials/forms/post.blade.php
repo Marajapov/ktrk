@@ -34,7 +34,7 @@
           <div class="col-sm-12">
             <div class="form-group">
               <label class="control-label">Канал</label>
-              {!! Form::select('channel_id', \Model\Channel\ModelName::lists('display', 'id')->toArray(), null, ["class" => "select2_group  form-control", "required" => true, "title" => ""]) !!}
+              {!! Form::select('channel_id', $channelList, null, ["class" => "select2_group  form-control", "required" => true, "title" => ""]) !!}
             </div>
           </div>
 
