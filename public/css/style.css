@@ -924,8 +924,54 @@ header{
 }
 
 /*Video promo*/
+.main-video .embed-responsive-16by9{
+    padding-bottom: 11.25%;
 
+}
+.main-video .slick-slide img {
+    float: left;
+    height: 100px;
+    width: auto;
+    margin: 3px 3px;
+}
+@media (max-width:1170px) {
+    .main-video .slick-slide img{
+    height: 80px;
+    width: auto;
+  }
+}
+@media (max-width:970px) {
+    .main-video .slick-slide img{
+        margin: 0px;
+        height: 100px;
+        width: auto;
+}
+    .main-video .slider-for .slider-text {
+    height: 407px !important;
+}
+}
+.main-video .slick-initialized .slick-slide{
+    display: inline-table;
+}
+.main-video  .slider-nav .slick-current{
+    display: none !important;
+}
+.main-video .slider-for .slider-text{
+    height: 207px;
+}
+.main-video .slick-slider {
+    margin-bottom: auto;
+}
 
+.slick-text h2{
+    margin: 10px 0px;
+    color: #4e5e6a;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 20px;
+    text-align: center;
+    text-transform: uppercase;
+}
 /*Video promo
 
 /* Panel Articles */
@@ -4508,6 +4554,26 @@ ul.social-share li a:hover {
 /*Madaniayt page style*/
 
 /* Balastan page style*/
+.rightcloud {
+    position: absolute;
+    -webkit-transform: rotate(15deg);
+    -ms-transform: rotate(15deg);
+    -o-transform: rotate(15deg);
+    transform: rotate(15deg);
+    height: 250px;
+    width: auto;
+    margin-left: -70px;
+}
+.leftcloud {
+    position: absolute;
+    -webkit-transform: rotate(-15deg);
+    -ms-transform: rotate(-15deg);
+    -o-transform: rotate(-15deg);
+    transform: rotate(-15deg);
+    height: 250px;
+    width: auto;
+    margin-left: -70px;
+}
 .clouds {
     position: absolute;
 }

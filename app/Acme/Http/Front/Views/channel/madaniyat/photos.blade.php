@@ -295,7 +295,9 @@
                     </div>
              
             </div>
+  
         </div>
+
 
         <footer class="footer">
             <div class="panel panel-default">

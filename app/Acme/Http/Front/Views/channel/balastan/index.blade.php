@@ -44,7 +44,6 @@
             </nav>
         </div>
 
-
         <div class="container">
             <div class="row">      
                 <div class="col-md-12 logo-block logocenter">
@@ -73,8 +72,8 @@
 
            <div class="row tvblock">
                 <div class="col-md-2"> 
-                    <img class="iconleft" src="{{ asset('images/channels/balastan/akylay.png')}}" alt="">
-                    <img src="{{ asset('images/channels/balastan/taalim.png')}}" alt="" class="leftcloud">
+                  <img src="{{ asset('images/channels/balastan/taalim2.png')}}" alt="" class="leftcloud">
+                  <img class="iconleft" src="{{ asset('images/channels/balastan/akylay.png')}}" alt="">                    
 
                 </div>
                 <div class="col-md-8" style="text-align:center;">
@@ -90,6 +89,7 @@
 
                 </div>
                 <div class="col-md-2">
+                <img src="{{ asset('images/channels/balastan/taalim.png')}}" alt="" class="rightcloud">
                     <img class="iconright" src="{{ asset('images/channels/balastan/aktan.png')}}" alt="">
                 </div>
             </div>
