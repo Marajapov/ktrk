@@ -34,7 +34,7 @@
                         <div class="row">
 
                             <a href="#" class="thumb">
-                              <img src="{{ asset('img/thumbnail/11449585369.jpg') }}" alt=""/>
+                              <img src="{{ asset('images/11449585369.jpg') }}" alt=""/>
                             </a>
                             <h2>
                               <div class="extra">

@@ -38,7 +38,7 @@
                         </h4>
 
                         <p class="post-thumb" href="#">
-                          <img height="150" class="left" src="{{ asset('img/thumbnail/11449585369.jpg') }}" alt="image">
+                          <img height="150" class="left" src="{{ asset('images/11449585369.jpg') }}" alt="image">
                         </p>
 
                         <p>
