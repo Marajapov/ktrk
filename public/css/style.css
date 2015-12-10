@@ -4719,7 +4719,24 @@ ul.social-share li a:hover {
     margin:0px 10px;
     text-align: right; 
 }
+.worldtext p{
+    text-align: justify;
+}
+.worldtext h2 {
+    margin: 0px 0px 5px 0px; 
+}
+.worldtext .col-md-4{
+    padding: 0px;
+    text-align: center;
+    margin: 0px auto;
+}
+.worldtext img{
+    margin-top: 5px;
+    width: 100%;
+    height: auto;
+    text-align: center;
 
+}
 .logocenter {
     text-align: center;
     height: 100px;
