@@ -230,7 +230,7 @@
                     </div>
                     <div class="slick-text">
                       <a href="{{ route('front.media.video', $dayVideo) }}">
-                        <h2>{{ $dayVideo->getName() }}</h2>
+                        <h2>@if($dayVideo){{ $dayVideo->getName() }} @endif</h2>
                       </a>
                     </div>
 
