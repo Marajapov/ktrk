@@ -223,7 +223,7 @@ return [
     'FrontPostDaysVideo' => 'Күндүн видеосу',    
     'FrontPostLastDays' => 'Өткөн күндөр',
     'FrontDirectorPage' => 'Башкы директордун баракчасы',    
-    'FrontVideoAll' => 'Бардык видеолор',
+    'FrontVideoAll' => 'Видеопорталга өтүү',
     'FrontGalleryAll' => 'Бардык галереялар',
     'FrontToDirectorPage' => 'Баракчага кирүү',
     '' => '',    

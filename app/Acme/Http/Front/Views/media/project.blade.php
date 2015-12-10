@@ -37,7 +37,7 @@
                       </div>
                       <div class="media-body">
                         <h4 class="show-title media-heading">{{ $project->getNameOne() }}</h4>
-                        <p class="show-desc">
+                        <p class="show-desc" style="font-size:15px;">
                           {{ $project->getDescription() }}
                         </p>
                       </div>

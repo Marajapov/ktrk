@@ -189,9 +189,9 @@
               <div class="panel-heading">
                 <h3 class="panel-title"><span>{{ trans('site.FrontPostDaysVideo') }}</span></h3>
               </div>
-              <div class="panel-body">
+              <div class="panel-body main-video">
 
-                @if($dayVideo)
+         <!--        @if($dayVideo)
                   <div class="col-md-12 block main-video">
                     <div class="embed-responsive embed-responsive-16by9">
                       <iframe class="embed-responsive-item" src="//www.youtube.com/embed/{{ $dayVideo->url }}" allowfullscreen=""></iframe>
@@ -221,7 +221,41 @@
 
                   @endforeach
 
-                @endif
+                @endif -->
+                  <div class="slider slider-for">
+                    <div>
+                   
+                      <div class="embed-responsive embed-responsive-16by9 slider-text">
+                      <iframe class="embed-responsive-item" src="//www.youtube.com/embed/yCG-yNC-aqk" allowfullscreen=""></iframe>      
+                      </div>
+                            <div class="slick-text">
+                             <a href="{{ route('front.media.video', $dayVideo) }}">
+                              <h2>{{ $dayVideo->getName() }}</h2>
+                            </a>
+                          </div>
+
+                      </div> 
+                      <div class="embed-responsive embed-responsive-16by9">
+                      <iframe class="embed-responsive-item" src="//www.youtube.com/embed/66ehf69z_PI" allowfullscreen=""></iframe>
+                      </div> 
+                      <div class="embed-responsive embed-responsive-16by9">
+                      <iframe class="embed-responsive-item" src="//www.youtube.com/embed/khhdag87Poc" allowfullscreen=""></iframe>
+                      </div> 
+                      <div class="embed-responsive embed-responsive-16by9">
+                      <iframe class="embed-responsive-item" src="//www.youtube.com/embed/Zgfwy2dR_vA" allowfullscreen=""></iframe>
+                      </div> 
+                      <div class="embed-responsive embed-responsive-16by9">
+                      <iframe class="embed-responsive-item" src="//www.youtube.com/embed/pnrUhMN8H4Y" allowfullscreen=""></iframe>
+                      </div>
+                 
+                  </div>
+                  <div class="slider slider-nav">
+                      <div><img src="http://img.youtube.com/vi/yCG-yNC-aqk/mqdefault.jpg" alt="" /></div>
+                      <div><img src="http://img.youtube.com/vi/66ehf69z_PI/mqdefault.jpg" alt="" /></div>
+                      <div><img src="http://img.youtube.com/vi/khhdag87Poc/mqdefault.jpg" alt="" /></div>
+                      <div><img src="http://img.youtube.com/vi/Zgfwy2dR_vA/mqdefault.jpg" alt="" /></div>
+                      <div><img src="http://img.youtube.com/vi/pnrUhMN8H4Y/mqdefault.jpg" alt="" /></div>
+                  </div> 
 
                 <footer>
                   <a href="{{ route('front.media.index') }}">
@@ -489,4 +523,17 @@
       filterList.init();
     });
   </script>
+          <script>
+            $('.slider-for').slick({
+                slidesToShow: 1,
+                fade: true,
+                arrows: false,
+                autoplay:false
+            });
+            $('.slider-nav').slick({
+                slidesToShow: 5,
+                asNavFor: '.slider-for',
+                focusOnSelect: true
+            });
+        </script>
 @endsection

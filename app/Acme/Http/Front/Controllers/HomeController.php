@@ -52,7 +52,10 @@ class HomeController extends Controller
             $images = 1;
         }
         
-        $MediaCategories = \Model\MediaCategory\ModelName::get();
+
+        $MediaCategories = \Model\MediaCategory\ModelName::orderBy('id','asc')->get();
+        $mediaPosts = \Model\Media\ModelName::orderBy('id','desc')->get();
+
 
         $categoriesVideos = array();
 

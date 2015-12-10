@@ -63,9 +63,15 @@ class MediaController extends Controller
         if($lc == 'kg'){
             $videoName = $video->getName();
             $result = \Model\Project\ModelName::where('id','=',$projectId)->first();
-            $videoProject = $result->getName();
-            $result = \Model\MediaCategory\ModelName::where('videoType','=',$videoType)->first();    
-            $getVideoTypeName = $result->getName();
+            if($result){
+                $videoProject = $result->getName();
+            }else{
+                $videoProject = '';
+            }
+            
+            
+            $result1 = \Model\MediaCategory\ModelName::where('videoType','=',$videoType)->first();    
+            $getVideoTypeName = $result1->getName();
 
             $relatedVideos = \Model\Media\ModelName::where('name','<>','')->where('program','=',$projectId)->get();
 
