@@ -17,8 +17,12 @@
 					@foreach($photoParents as $photoParent)
 					<a href="{{ route('admin.photoParent.show', $photoParent) }}" class="list-group-item col-md-1">
 						{{ $photoParent->getName() }}
-						<img src="{{ asset($photoParent->getFile()) }}" alt="" width="100" height="80">
 					</a>
+					@if($photoParent->published == 1)
+					<a href="#">123</a> <i class="fa fa-check-square-o"></i>
+					@else
+					<a href="#">123</a> <i class="fa fa-times-circle"></i>
+					@endif
 					@endforeach
 				</div>
 			</div>
