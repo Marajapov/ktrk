@@ -967,7 +967,7 @@ header{
 }
 
 .slick-text h2{
-    margin: 10px 0px;
+    margin: 15px 0px;
     color: #4e5e6a;
     font-size: 14px;
     font-weight: bold;
@@ -4667,6 +4667,15 @@ ul.social-share li a:hover {
     padding: 10px
 
 }
+.forabout {
+    height: 650px;
+    width: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0px auto;
+}
+
 
 .kidsboard{
     background: url(../images/channels/balastan/chalkboard.png) no-repeat;
@@ -4674,6 +4683,43 @@ ul.social-share li a:hover {
     width: 284px;;
 
 }
+
+.aboutkids{
+    z-index: -1;
+    margin-top: 14px;
+
+}
+.aboutkids .panel .panel-heading {
+    text-align:center; 
+    border-bottom: none !important;
+}
+.aboutkids .panel .panel-heading .panel-title span{
+    color: #fff;
+    font-size: 23px;
+    font-weight: bold;
+    text-align: center;
+}
+.aboutkids .panel {
+    background-image: -o-linear-gradient(bottom, #f15d58 0%, #C5231E 100%);
+    background-image: -moz-linear-gradient(bottom, #f15d58 0%, #C5231E 100%);
+    background-image: -ms-linear-gradient(bottom, #f15d58 0%, #C5231E 100%);
+    background-image: linear-gradient(to bottom, #f15d58 0%, #C5231E 100%);
+}
+.aboutkids .panel-body {
+    color: #fff;
+}
+.firstp{
+    font-weight: bold;
+    font-size: 18px;
+    margin:0px 10px; 
+}
+.secondp{
+    font-weight: bold;
+    font-size: 18px;
+    margin:0px 10px;
+    text-align: right; 
+}
+
 .logocenter {
     text-align: center;
     height: 100px;
