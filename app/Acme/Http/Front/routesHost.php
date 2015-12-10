@@ -128,11 +128,18 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
     Route::get('rrts', ['as' => 'front.pages.rrts', 'uses' => 'PageController@rrtsPage']);
     Route::get('report', ['as' => 'front.pages.report', 'uses' => 'PageController@reportPage']);
     Route::get('teleprogram', ['as' => 'front.pages.teleprogram', 'uses' => 'PageController@teleprogramPage']);
-    Route::get('ns', ['as' => 'front.pages.ns', 'uses' => 'PageController@keneshPage']);
+   // Route::get('ns', ['as' => 'front.pages.ns', 'uses' => 'PageController@keneshPage']);
     Route::get('editionkenesh', ['as' => 'front.pages.editionkenesh', 'uses' => 'PageController@editionkeneshPage']);
 
     //    BaikoochuKenesh
     Route::get('ns', ['as' => 'front.ns.index', 'uses' => 'NsController@index']);
+    Route::get('ns/team', ['as' => 'front.ns.team', 'uses' => 'NsController@team']);
+    Route::get('ns/posts', ['as' => 'front.ns.posts', 'uses' => 'NsController@posts']);
+    Route::get('ns/post/{post}', ['as' => 'front.ns.post', 'uses' => 'NsController@post']);
+    Route::get('ns/galleries', ['as' => 'front.ns.galleries', 'uses' => 'NsController@galleries']);
+    Route::get('ns/gallery/{gallery}', ['as' => 'front.ns.gallery', 'uses' => 'NsController@gallery']);
+    Route::get('ns/reports', ['as' => 'front.ns.reports', 'uses' => 'NsController@reports']);
+    Route::get('ns/contacts', ['as' => 'front.ns.contacts', 'uses' => 'NsController@contacts']);
     
 
 Route::get('locale/{locale?}',   ['as' => 'locale',   'uses' => 'CommonController@setLocale']);
