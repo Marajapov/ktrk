@@ -588,6 +588,13 @@
     padding-right: 0;
     padding-left: 30px;
 }
+.panel-kenesh .second-panel-heading{
+    padding-bottom: 0;
+}
+.panel-kenesh .second-panel-body{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
 .sidebar-panel-body .poll{
     /*padding: 5px 10px;*/
 }
@@ -673,4 +680,10 @@
     text-align: center;
 }
 .ns-desc{
+}
+.panel-kenesh .gallery{
+    border: none;
+}
+.panel-kenesh .slick-slider{
+    margin: 0;
 }
