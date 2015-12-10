@@ -109,8 +109,6 @@ class ProjectController extends Controller
 
             $project->thumbnail = $dir.'/'.$name;
             $project->save();
-        }else{
-            dd($request->thumbnail);
         }
 
         return redirect()->route('admin.project.show', $project);

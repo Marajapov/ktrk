@@ -24,7 +24,7 @@
             РАДИО
         </li>
         <li>
-            <a href="#">
+            <a href="{{ route('birinchi.home') }}">
                 <img src="{{ asset('images/channels/1-radio.png') }}" alt=""/>
             </a>
         </li>
