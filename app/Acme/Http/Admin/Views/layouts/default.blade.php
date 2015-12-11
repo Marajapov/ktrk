@@ -21,16 +21,12 @@
 
   <link rel="stylesheet" href="{{ asset('css/admin/select/select2.min.css') }}"/>
 
-  <!-- JS scripts forom admin page -->
-  <script src="{{ asset('js/jquery-1.11.2.min.js') }}"></script>
-  <script src="{{ asset('js/bootstrap.js') }}"></script>
-  <script src="{{ asset('js/admin/jasny/jasny-bootstrap.min.js') }}"></script>
 
-  <script src="{{ asset('js/admin/nprogress.js') }}"></script>
-  <!-- Simple Loader js-->
-  <script>
-    NProgress.start();
-  </script>
+
+  {{--<script src="{{ asset('js/admin/nprogress.js') }}"></script>--}}
+  {{--<script>--}}
+    {{--NProgress.start();--}}
+  {{--</script>--}}
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -53,7 +49,8 @@
         </div>
         <div class="clearfix"></div>
 
-        @include('Admin::partials.header')
+        @include('Admin::partials.header2')
+
         @yield('header')
       </div>
     </div>
@@ -108,12 +105,20 @@
 
   </div><!--end page-container-->
 </div><!--end container body-->
-@yield('scripts')
-<script src="{{ asset('js/admin/progressbar/bootstrap-progressbar.min.js') }}"></script>
-<script src="{{ asset('js/admin/nicescroll/jquery.nicescroll.min.js') }}"></script>
+
+<!-- JS scripts forom admin page -->
+<script src="{{ asset('js/jquery-1.11.2.min.js') }}"></script>
+<script src="{{ asset('js/bootstrap.js') }}"></script>
+<script src="{{ asset('js/admin/jasny/jasny-bootstrap.min.js') }}"></script>
+
+{{--<script src="{{ asset('js/admin/progressbar/bootstrap-progressbar.min.js') }}"></script>--}}
+{{--<script src="{{ asset('js/admin/nicescroll/jquery.nicescroll.min.js') }}"></script>--}}
 <script src="{{ asset('js/admin/custom.js') }}"></script>
-<script>
-  NProgress.done();
-</script>
+
+@yield('scripts')
+
+{{--<script>--}}
+  {{--NProgress.done();--}}
+{{--</script>--}}
 </body>
 </html>
