@@ -1,5 +1,5 @@
 @extends('Front::layouts.default')
-@section('title', trans('site.BaikoochuKeneshFull').' | КТРК')
+@section('title', 'Новости | Редакционный советник | КТРК')
 @section('styles')
   {{--<link rel="stylesheet" type="text/css" href="{{ asset('/static/css/styles.css') }}">--}}
   <link rel="stylesheet" href="{{ asset('css/articles.css') }}"/>
@@ -13,18 +13,18 @@
       <section class="content clearfix">
         <div class="clearfix">
           <div class="top-left-block col-xs-12 col-sm-12 col-md-12">
-            <div class="panel panel-default panel-kenesh">
+            <div class="panel panel-default panel-kenesh panel-rs">
               <div class="panel-heading">
-                <h3 class="panel-title"><span>{{ trans('site.BaikoochuKeneshFull') }}</span></h3>
+                <h3 class="panel-title"><span>Редакционный советник</span></h3>
               </div>
               <div class="panel-body">
 
-                @include('Front::ns.sidebar')
+                @include('Front::rs.sidebar')
 
-                <div class="col-md-10">
+                <div class="col-md-9">
                   <div class="row">
                     <div class="panel-heading second-panel-heading">
-                      <h3 class="panel-title"><span>{{ trans('site.Top news') }}</span></h3>
+                      <h3 class="panel-title"><span>Новости</span></h3>
                     </div>
                     <div class="panel-body second-panel-body">
                       <div class="media">

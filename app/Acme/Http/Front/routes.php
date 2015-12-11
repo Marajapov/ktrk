@@ -144,13 +144,13 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
 
 //    RedakciyaKenesh
     Route::get('rs', ['as' => 'front.rs.index', 'uses' => 'RsController@index']);
-    Route::get('rs/about', ['as' => 'front.rs.about', 'uses' => 'NsController@about']);
-    Route::get('rs/posts', ['as' => 'front.ns.posts', 'uses' => 'NsController@posts']);
-    Route::get('rs/post/{post}', ['as' => 'front.ns.post', 'uses' => 'NsController@post']);
-    Route::get('rs/galleries', ['as' => 'front.ns.galleries', 'uses' => 'NsController@galleries']);
-    Route::get('rs/gallery/{gallery}', ['as' => 'front.ns.gallery', 'uses' => 'NsController@gallery']);
-    Route::get('rs/reports', ['as' => 'front.ns.reports', 'uses' => 'NsController@reports']);
-    Route::get('rs/contacts', ['as' => 'front.ns.contacts', 'uses' => 'NsController@contacts']);
+    Route::get('rs/about', ['as' => 'front.rs.about', 'uses' => 'RsController@about']);
+    Route::get('rs/person/{person}', ['as' => 'front.rs.person', 'uses' => 'RsController@person']);
+    Route::get('rs/faq', ['as' => 'front.rs.faq', 'uses' => 'RsController@faq']);
+    Route::get('rs/posts', ['as' => 'front.rs.posts', 'uses' => 'RsController@posts']);
+    Route::get('rs/post/{post}', ['as' => 'front.rs.post', 'uses' => 'RsController@post']);
+    Route::get('rs/procedure', ['as' => 'front.rs.procedure', 'uses' => 'RsController@procedure']);
+    Route::get('rs/contacts', ['as' => 'front.rs.contacts', 'uses' => 'RsController@contacts']);
 
 Route::get('locale/{locale?}',   ['as' => 'locale',   'uses' => 'CommonController@setLocale']);
 
