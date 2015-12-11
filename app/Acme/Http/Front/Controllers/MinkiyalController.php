@@ -28,4 +28,5 @@ class MinkiyalController extends Controller
     }
 
 
+
 }
