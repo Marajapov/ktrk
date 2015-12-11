@@ -149,7 +149,10 @@ class PostController extends Controller
     public function edit(Post $post)
     {
 
+        $channelList = \Model\Channel\ModelName::lists('display', 'id')->toArray();    
+        $categoryList = \Model\Category\ModelName::lists('titleRu', 'id')->toArray();
         $PhotoParentList = \Model\PhotoParent\ModelName::lists('name', 'id')->toArray();
+
         $relatedPosts = \Model\Post\ModelName::where('title','<>','')->lists('title', 'id')->toArray();
         $relatedPosts2 = \Model\Post\ModelName::where('titleRu','<>','')->lists('titleRu', 'id')->toArray();
 
@@ -162,6 +165,8 @@ class PostController extends Controller
             'tags2' => $tags2,
             'relatedPosts' => $relatedPosts,
             'relatedPosts2' => $relatedPosts2,
+            'channelList' => $channelList,
+            'categoryList' => $categoryList,
             'PhotoParentList' => $PhotoParentList,
             ]);
     }

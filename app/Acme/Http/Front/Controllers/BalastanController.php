@@ -55,6 +55,16 @@ class BalastanController extends Controller
             'channel' => $channel,
             'backgroundMain' => $backgroundMain,
             ]);
+    }   
+    public function video()
+    {
+        $channel = \Model\Channel\ModelName::name('balastan')->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+        return view('Front::channel.balastan.video', [
+            'channel' => $channel,
+            'backgroundMain' => $backgroundMain,
+            ]);
     }
 
 }

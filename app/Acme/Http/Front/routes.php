@@ -18,6 +18,8 @@ Route::group(['domain' => 'ktrk.dev', 'prefix' => '/balastan', 'namespace' => 'F
     Route::get('/photos', ['as' => 'balastan.photos',   'uses' => 'BalastanController@photos']);
     Route::get('/world', ['as' => 'balastan.world',   'uses' => 'BalastanController@world']);
     Route::get('/about', ['as' => 'balastan.about',   'uses' => 'BalastanController@about']);
+    //New page video
+    Route::get('/video', ['as' => 'balastan.video',   'uses' => 'BalastanController@video']);   
 
 });
 
