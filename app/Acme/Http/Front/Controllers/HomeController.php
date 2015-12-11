@@ -55,6 +55,7 @@ class HomeController extends Controller
         // Photo Gallery
         $photoGallery = \Model\PhotoParent\ModelName::where('published','=',true)->take('10')->orderBy('id','desc')->get();
         
+        
 
         $MediaCategories = \Model\MediaCategory\ModelName::orderBy('id','asc')->get();
         $mediaPosts = \Model\Media\ModelName::orderBy('id','desc')->get();
