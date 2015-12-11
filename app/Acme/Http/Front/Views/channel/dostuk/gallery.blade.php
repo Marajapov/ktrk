@@ -46,31 +46,31 @@
 
 
 {{--<div class=" top-header">--}}
-    {{--<div class="container">--}}
-        {{--<div class="row">--}}
-            {{--<div class="main-section cf">--}}
-                {{--<div class="inner-section">--}}
-                    {{--<a href="#" class="tab-header dashboard_trigger" data-tab="stations">--}}
-                        {{--<span class="section-header">Фотогалерея</span>--}}
-                    {{--</a>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-            {{--<div class="main-section cf">--}}
-                {{--<div class="inner-section">--}}
-                    {{--<a href="#" class="tab-header dashboard_trigger" data-tab="stations">--}}
-                        {{--<span class="section-header">О радио</span>--}}
-                    {{--</a>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-            {{--<div class="main-section cf">--}}
-                {{--<div class="inner-section">--}}
-                    {{--<a href="#" class="tab-header dashboard_trigger" data-tab="stations">--}}
-                        {{--<span class="section-header">Онлайн радио</span>--}}
-                    {{--</a>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</div>--}}
+{{--<div class="container">--}}
+{{--<div class="row">--}}
+{{--<div class="main-section cf">--}}
+{{--<div class="inner-section">--}}
+{{--<a href="#" class="tab-header dashboard_trigger" data-tab="stations">--}}
+{{--<span class="section-header">Фотогалерея</span>--}}
+{{--</a>--}}
+{{--</div>--}}
+{{--</div>--}}
+{{--<div class="main-section cf">--}}
+{{--<div class="inner-section">--}}
+{{--<a href="#" class="tab-header dashboard_trigger" data-tab="stations">--}}
+{{--<span class="section-header">О радио</span>--}}
+{{--</a>--}}
+{{--</div>--}}
+{{--</div>--}}
+{{--<div class="main-section cf">--}}
+{{--<div class="inner-section">--}}
+{{--<a href="#" class="tab-header dashboard_trigger" data-tab="stations">--}}
+{{--<span class="section-header">Онлайн радио</span>--}}
+{{--</a>--}}
+{{--</div>--}}
+{{--</div>--}}
+{{--</div>--}}
+{{--</div>--}}
 {{--</div>--}}
 
 <div class="container top-header">

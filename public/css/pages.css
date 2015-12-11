@@ -731,8 +731,6 @@
 }
 .panel-kenesh .slick-slider{
     margin: 0;
-<<<<<<< HEAD
-=======
 }
 
 /*NS REPORTS*/
@@ -901,5 +899,50 @@
     vertical-align: middle;
     color: #9DA8B0;
     font-size: 12px;
->>>>>>> 7a6bb786a97babc51fb93a0df9b2a98af772e652
+}
+
+/*PANEL RS*/
+.panel-rs .first-item>div{
+    margin-bottom: 15px;
+}
+.panel-rs .thumbnail{
+    border: none;
+    padding: 0;
+}
+.panel-rs .caption{
+    text-align: center;
+}
+.panel-rs .thumbnail h3{
+    margin: 10px 0;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+.panel-rs .thumbnail p{
+    margin: 15px 0;
+    font-size: 12px;
+    text-transform: uppercase;
+    text-align: center;
+}
+.panel-rs .tasks{
+    margin-bottom: 10px;
+    padding-left: 20px;
+    list-style-type: disc;
+}
+.panel-rs .tasks li{
+    padding: 5px 0;
+}
+.panel-rs .procedure{
+    padding-left: 20px;
+    list-style-type: decimal;
+}
+.panel-rs .procedure li{
+    padding: 5px 0;
+}
+.panel-rs #googleMap{
+    margin-top: 20px;
+}
+.panel-person img{
+    width: 30%;
+    margin: 0 auto;
 }

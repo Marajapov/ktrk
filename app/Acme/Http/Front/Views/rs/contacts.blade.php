@@ -1,5 +1,5 @@
 @extends('Front::layouts.default')
-@section('title', trans('site.BaikoochuKeneshContactsFull').' | '.trans('site.BaikoochuKeneshFull').' | КТРК')
+@section('title', 'Как связаться с Редакционным Советником? | КТРК')
 @section('styles')
   {{--<link rel="stylesheet" type="text/css" href="{{ asset('/static/css/styles.css') }}">--}}
   <link rel="stylesheet" href="{{ asset('css/articles.css') }}"/>
@@ -40,25 +40,26 @@
       <section class="content clearfix">
         <div class="clearfix">
           <div class="top-left-block col-xs-12 col-sm-12 col-md-12">
-            <div class="panel panel-default panel-kenesh">
+            <div class="panel panel-default panel-kenesh panel-rs">
               <div class="panel-heading">
-                <h3 class="panel-title"><span>{{ trans('site.BaikoochuKeneshFull') }}</span></h3>
+                <h3 class="panel-title"><span>Редакционный советник</span></h3>
               </div>
               <div class="panel-body">
 
-                @include('Front::ns.sidebar')
+                @include('Front::rs.sidebar')
 
-                <div class="col-md-10">
+                <div class="col-md-9">
                   <div class="row">
                     <div class="panel-heading second-panel-heading">
-                      <h3 class="panel-title"><span>{{ trans('site.BaikoochuKeneshContactsFull') }}</span></h3>
+                      <h3 class="panel-title"><span>Как связаться с Редакционным Советником?</span></h3>
                     </div>
                     <div class="panel-body second-panel-body panel-ns-contacts">
 
-                      <div class="col-md-6">
+                      <div class="col-md-12">
+                        <h4><strong>Контактные данные Редакционного Советника КТРК КР:</strong></h4>
                         <p>
                           <span><i class="fa fa-map-marker"></i></span>
-                          {{ trans('site.BaikoochuKeneshContactsAdresText') }}
+                          720010, г.Бишкек, бульвар Молодой Гвардии 59.
                         </p>
 
                         <p>
@@ -68,15 +69,19 @@
 
                         <p>
                           <span><i class="fa fa-envelope"></i></span>
-                          sovetotv@gmail.com
+                          rkktrkkg@gmail.com, t.valieva@ktrk.kg
                         </p>
+
+                        <p>
+                          <span><i class="fa fa-user"></i></span>
+                          Омбудсмен/Редакционный Советник КТРК КР - <strong>Валиева Тамара Бектурсуновна</strong>
+                        </p>
+
                       </div>
 
-                      <div class="col-md-6">
+                      <div class="col-md-12">
                         <div id="googleMap"></div>
                       </div>
-
-
 
                     </div>
 
@@ -95,23 +100,4 @@
 @stop
 
 @section('footerScript')
-
-  <script>
-    function getVote(int) {
-      if (window.XMLHttpRequest) {
-        // code for IE7+, Firefox, Chrome, Opera, Safari
-        xmlhttp=new XMLHttpRequest();
-      } else {  // code for IE6, IE5
-        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-      }
-      xmlhttp.onreadystatechange=function() {
-        if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-          document.getElementById("poll").innerHTML=xmlhttp.responseText;
-        }
-      }
-      xmlhttp.open("GET","{{ asset('poll_vote.php') }}?vote="+int,true);
-      xmlhttp.send();
-    }
-  </script>
-
 @endsection

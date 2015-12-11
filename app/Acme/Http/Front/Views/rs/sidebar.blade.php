@@ -1,4 +1,4 @@
-<div class="col-md-2">
+<div class="col-md-3">
   <div class="row">
     <nav class="navbar navbar-custom">
       <div class="">
@@ -15,25 +15,12 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li><a href="{{ route('front.ns.index') }}">{{ trans('site.BaikoochuKeneshMain') }}</a></li>
-            <li><a href="{{ route('front.ns.team') }}">{{ trans('site.BaikoochuKeneshTeam') }} </a></li>
-            <li><a href="{{ route('front.ns.posts') }}">{{ trans('site.BaikoochuKeneshNews') }}</a></li>
-            <li>
-              <a data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample" class="collapsed">
-                {{ trans('site.BaikoochuKeneshBase') }}
-                <i class="fa fa-chevron-right"></i>
-              </a>
-              <div class="collapse" id="collapseExample">
-                <ul>
-                  <li><a href="#">{{ trans('site.BaikoochuKeneshReglament') }}</a></li>
-                  {{--<li><a href="#">Положение о порядке проведения открытого конкурса на замещение должности Генерального Директора КТРК КР</a></li>--}}
-                </ul>
-              </div>
-            </li>
-            <li><a href="{{ route('front.ns.reports') }}">{{ trans('site.BaikoochuKeneshReports') }}</a></li>
-            <li><a href="{{ route('front.ns.galleries') }}">{{ trans('site.BaikoochuKeneshGallery') }}</a></li>
-            <li><a href="{{ route('front.ns.contacts') }}">{{ trans('site.BaikoochuKeneshContacts') }}</a></li>
-            {{--<li><a href="#">Сурамжылоо</a></li>--}}
+            <li><a href="{{ route('front.rs.index') }}">Главная</a></li>
+            <li><a href="{{ route('front.rs.about') }}">Для чего нужен Редакционный Советник КТРК? </a></li>
+            <li><a href="{{ route('front.rs.faq') }}">Что делать, если Ваши права были нарушены?</a></li>
+            <li><a href="{{ route('front.rs.procedure') }}">Процедура рассмотрения заявлений и жалоб</a></li>
+            <li><a target="_blank" href="{{ asset('static/files/rs/ombudsmen_presentation.pdf') }}">Презентация Редакционного Советника</a></li>
+            <li><a href="{{ route('front.rs.contacts') }}">Как связаться с Редакционным Советником?</a></li>
           </ul>
 
         </div><!-- /.navbar-collapse -->
@@ -41,32 +28,30 @@
     </nav>
 
     <div class="panel-heading sidebar-panel-heading">
-      <h3 class="panel-title"><span>{{ trans('site.BaikoochuKeneshAsk') }}</span></h3>
+      <h3 class="panel-title"><span>Наши советники</span></h3>
     </div>
     <div class="panel-body sidebar-panel-body">
-      <h4><strong>Как Вы оцениваете работу НС КТРК?</strong></h4>
 
-      <div id="poll" class="poll">
-        <form >
-          <div class="radio">
-            <input type="radio" name="vote" id="radio1" value="1" onclick="getVote(this.value)">
-            <label for="radio1">
-              Отлично
-            </label>
-          </div>
-          <div class="radio">
-            <input type="radio" name="vote" id="radio2" value="2" onclick="getVote(this.value)">
-            <label for="radio2">
-              Хорошо
-            </label>
-          </div>
-          <div class="radio">
-            <input type="radio" name="vote" id="radio3" value="3" onclick="getVote(this.value)">
-            <label for="radio3">
-              Удовлетворительно
-            </label>
-          </div>
-        </form>
+      <div class="thumbnail">
+        <a href="{{ route('front.rs.person',1) }}">
+          <img src="{{ asset('static/images/rs/tamara1.jpg') }}" alt="...">
+        </a>
+        <div class="caption">
+          <h3>Валиева Тамара Бектурсуновна</h3>
+          <p>редакционный советник КТРК</p>
+          <a class="btn btn-default" href="{{ route('front.rs.person',1) }}">Подробнее</a>
+        </div>
+      </div>
+
+      <div class="thumbnail">
+        <a href="{{ route('front.rs.person',1) }}">
+          <img src="{{ asset('static/images/rs/gulnara.jpg') }}" alt="...">
+        </a>
+        <div class="caption">
+          <h3>Мамбеталиева Гульнара Мунуровна</h3>
+          <p>ассистент редакционного советника КТРК</p>
+          <a class="btn btn-default" href="{{ route('front.rs.person',2) }}">Подробнее</a>
+        </div>
       </div>
 
     </div>

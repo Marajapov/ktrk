@@ -264,9 +264,6 @@
                   </a>
                 </footer>
 
-                <a href="#" data-toggle="tooltip" title="Some tooltip text!">Hover over me</a>
-
-
               </div>
             </div>
 
