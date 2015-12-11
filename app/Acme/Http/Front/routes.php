@@ -90,6 +90,8 @@ Route::group(['domain' => 'ktrk.dev', 'prefix' => '/minkiyal', 'namespace' => 'F
 
     Route::get('/', ['as' => 'minkiyal.home',   'uses' => 'MinkiyalController@Home']);
     Route::get('/posts', ['as' => 'minkiyal.posts',   'uses' => 'MinkiyalController@posts']);
+    Route::get('/gallery', ['as' => 'minkiyal.gallery',   'uses' => 'MinkiyalController@gallery']);
+
 
 });
 

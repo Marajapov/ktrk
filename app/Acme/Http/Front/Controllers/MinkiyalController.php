@@ -26,6 +26,17 @@ class MinkiyalController extends Controller
 
         return view('Front::channel.minkiyal.posts', ['channel' => $channel]);
     }
+    public function gallery()
+    {
+        $channel = \Model\Channel\ModelName::name('minkiyal')->first();
+
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+        return view('Front::channel.minkiyal.gallery', [
+            'channel' => $channel,
+            'backgroundMain' => $backgroundMain,
+        ]);
+    }
 
 
 

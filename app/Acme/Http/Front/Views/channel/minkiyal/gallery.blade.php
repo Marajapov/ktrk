@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <title>Миң Кыял</title>
 
-    <link rel="stylesheet" href="css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="css/font-awesome.css"/>
-    <link rel="stylesheet" href="filter/css/layout.css">
-    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
-    <link rel="stylesheet" href="css/style.css"/>
-    <link rel="stylesheet" href="css/radios.css"/>
-
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('filter/css/layout.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('slick/slick.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('slick/slick-theme.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/radios.css') }}"/>
 
 </head>
 <body class="min-kiyal">
@@ -118,15 +117,15 @@
                             <div class="flexslider">
                                 <ul class="slides">
                                     <li>
-                                        <a href="#"><img src="images/slide1.jpg" /></a>
+                                        <a href="#"><img src="{{asset('images/slide1.jpg')}}" /></a>
                                     </li>
 
                                     <li>
-                                        <img src="images/slide2.jpg" />
+                                        <img src="{{asset('images/slide2.jpg')}}" />
                                     </li>
 
                                     <li>
-                                        <img src="images/slide3.jpg" />
+                                        <img src="{{asset('images/slide1.jpg')}}" />
                                         <p>Designing The Well-Tempered Web</p>
                                     </li>
                                 </ul>
@@ -168,17 +167,14 @@
     </div>
 </footer>
 
-<script src="js/jquery-1.11.2.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-
-
-<script type="text/javascript" src="filter/js/jquery.easing.min.js"></script>
-<script type="text/javascript" src="filter/js/jquery.mixitup.min.js"></script>
-
-<script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
-<script type="text/javascript" src="slick/slick.min.js"></script>
-<script type="text/javascript" src="js/jquery.roundabout.js"></script>
-<script type="text/javascript" src="js/jquery.flexslider-min.js"></script>
+<script src="{{ asset('js/jquery-1.11.2.min.js') }}"></script>
+<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+<script type="text/javascript" src="{{asset('filter/js/jquery.easing.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('filter/js/jquery.mixitup.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/jquery-migrate-1.2.1.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('slick/slick.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/jquery.roundabout.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/jquery.flexslider-min.js')}}"></script>
 
 <script>
     $('.carousel-slick').slick({
