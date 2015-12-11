@@ -81,7 +81,7 @@
                </div>
             </div>
          </div>
-         <div class="row">
+         <div class="row" style="margin-top: 50px;">
             <div class="col-md-12 worldmain">
                <div class="panel panel-default">
 <!--                   <div class="panel-heading">
@@ -102,7 +102,7 @@
                         </div>
                         <div class="col-md-12 worldall world2">
                            <div class="col-md-4">
-                              <img src="{{asset('images/channels/balastan/birge.png')}}" alt="">
+                              <img src="{{asset('images/channels/balastan/birge4.png')}}" alt="">
                            </div>
                            <div class="col-md-8">
                               <h2>«Бирге окуйбуз»</h2>
@@ -143,7 +143,7 @@
                         </div>
                         <div class="col-md-12 worldall world6">                           
                            <div class="col-md-4">
-                              <img src="{{asset('images/channels/balastan/baaryn.png')}}" alt="">
+                              <img src="{{asset('images/channels/balastan/birge3.png')}}" alt="">
                            </div>
                             <div class="col-md-8">
                               <h2>Баарын билгим келет</h2>

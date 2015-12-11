@@ -6,1262 +6,1085 @@
 
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" href="css/font-awesome.css"/>
-    <link rel="stylesheet" href="filter/css/layout.css">
-    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
     <link rel="stylesheet" href="css/style.css"/>
 
+    <link href="css/landing/animate.min.css" rel="stylesheet">
+    <link href="css/landing/owl.carousel.css" rel="stylesheet">
+    <link href="css/landing/owl.transitions.css" rel="stylesheet">
+    <link href="css/landing/prettyPhoto.css" rel="stylesheet">
+    <link href="css/landing/main.css" rel="stylesheet">
+    <link href="css/landing/responsive.css" rel="stylesheet">
+
 </head>
-<body class="music">
-
-<div class="modal fade" id="tvModal" tabindex="-1" role="dialog" aria-labelledby="tvModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="tvModalLabel">Телеканалдар</h4>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-4 modal-block">
-                        <div>
-                            <a href="{{ route('balastan.home')}}">
-                                <img src="images/channels/balastan.png" alt=""/>
-                            </a>
-                            <div class="options">
-                                <a class="link" href="{{ route('balastan.home')}}">Баластан</a>
-                                <span class="divider"></span>
-                                <a class="live" href="{{ route('balastan.home')}}"><i class="fa fa-dot-circle-o"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 modal-block">
-                       <div>
-                           <a href="{{ route('muzkanal.home')}}">
-                               <img src="images/channels/muztv.png" alt=""/>
-                           </a>
-                           <div class="options">
-                               <a class="link" href="{{ route('muzkanal.home')}}">Музыка</a>
-                               <span class="divider"></span>
-                               <a class="live" href="{{ route('muzkanal.home')}}"><i class="fa fa-dot-circle-o"></i></a>
-                           </div>
-                       </div>
-                    </div>
-                    <div class="col-md-4 modal-block">
-                        <div>
-                            <a href="{{ route('madaniyat.home')}}">
-                                <img src="images/channels/madaniyat.png" alt=""/>
-                            </a>
-                            <div class="options">
-                                <a class="link" href="{{ route('madaniyat.home')}}">Маданият</a>
-                                <span class="divider"></span>
-                                <a class="live" href="{{ route('madaniyat.home')}}"><i class="fa fa-dot-circle-o"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="radioModal" tabindex="-1" role="dialog" aria-labelledby="radioModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="radioModalLabel">Радиостанциялар</h4>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-4 modal-block">
-                        <a href="{{ route('kyrgyzradio.home') }}">
-                            <img src="images/channels/kg-radio.png" alt=""/>
-                        </a>
-                    </div>
-                    <div class="col-md-4 modal-block">
-                        <a href="{{ route('birinchi.home') }}">
-                            <img src="images/channels/1-radio.png" alt=""/>
-                        </a>
-                    </div>
-                    <div class="col-md-4 modal-block">
-                        <a href="{{ route('dostuk.home') }}">
-                            <img src="images/channels/dostuk.png" alt=""/>
-                        </a>
-                    </div>
-                    <div class="col-md-4 modal-block">
-                        <a href="{{ route('minkiyal.home') }}">
-                            <img src="images/channels/min-kiyal.png" alt=""/>
-                        </a>
-                    </div>
-                    <div class="col-md-4 modal-block">
-                        <a href="{{ route('baldar.home') }}">
-                            <img src="images/channels/baldar.png" alt=""/>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="liveModal" tabindex="-1" role="dialog" aria-labelledby="liveModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="liveModalLabel">Түз эфир - КТРК</h4>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-12 modal-block">
-                        <!-- the second player. uses the same video here but could be different -->
-                        <a class="rtmp" href="mp4:bbb-800"
-                           style="background-image:url(images/live_bg.png)">
-                            <img src="images/live_play.png" />
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<div class="container-fluid main-header">
-    <div class="container">
-        <div class="row">
-            <header class="top-menu">
-                <div class="top-header clearfix">
-                    <div class="col-md-12 logo-block">
-                        <div class="row">
-                            <a class="logo" href="http://ktrk.dev">
-                                <img src="images/channels/muztv.png" alt=""/>
-                            </a>
-
-                            <nav class="top-nav clearfix">
-                                <ul class="clearfix">
-                                    <li><a href="#">Башкы бет</a></li>
-                                    <li>/</li>
-                                    <li>
-                                        <a href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="100" data-close-others="false" role="button" aria-expanded="false">КТРК</a>
-                                        <ul class="dropdown-menu" role="menu">
-                                            <li><a href="#">Тарыхы</a></li>
-                                            <li><a href="#">Жетекчилер</a></li>
-                                            <li><a href="#">Стратегия</a></li>
-                                            <li><a href="#">Нормативдик база</a></li>
-                                            <li><a href="#">РРТЦ</a></li>
-                                            <li><a href="#">Отчет</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>/</li>
-                                    <li><a href="#">Видеопортал</a></li>
-                                    <li>/</li>
-                                    <li><a href="#">Телепрограмма</a></li>
-                                    <li>/</li>
-                                    <li><a href="#">Байкоочу кеңеш</a></li>
-                                    <li>/</li>
-                                    <li><a href="#">Редакциялык кеңешчи</a></li>
-                                </ul>
-                            </nav>
-
-                            <ul class="soc">
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-odnoklassniki"></i></a></li>
-                                <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                <li><a href="#"><i class="fa fa-vk"></i></a></li>
-                            </ul>
-
-                            <form class="form-search" action="" method="post">
-                                <div class="form-group pull-right">
-                                    <input type="text" class="form-control" placeholder="Издөө"/>
-                                </div>
-
-                                <button class="btn" type="submit">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </form>
-
-                            <button class="btn btn-danger btn-live">
-                                <i class="fa fa-dot-circle-o"></i>
-                                түз эфир
-                            </button>
-
-                            <div class="tv-radio">
-                                <a id="tv" href="#" title="Телеканалдар" data-toggle="modal" data-target="#tvModal"><img src="images/tv.svg" alt=""/></a>
-                                <div class="divider"></div>
-                                <a href="#" title="Радиостанциялар" data-toggle="modal" data-target="#radioModal"><img src="images/radio.svg" alt=""/></a>
-                            </div>
-
-                            <div class="tv-radio hidden">
-                                <div class="component component-tv">
-                                    <!-- Start Nav Structure -->
-                                    <button class="cn-button" id="cn-button-tv"><img src="images/tv.svg" alt=""/></button>
-                                    <div class="cn-wrapper" id="cn-wrapper-tv">
-                                        <ul>
-                                            <li><a href="#"><img src="images/channels/balastan.svg" alt="Баластан"/></a></li>
-                                            <li><a href="#"><img src="images/channels/muztv.png" alt="Муз ТВ"/></a></li>
-                                            <li><a href="#"><img src="images/channels/madaniyat.png" alt="Маданият"/></a></li>
-                                        </ul>
-                                    </div>
-                                    <div id="cn-overlay-tv" class="cn-overlay"></div>
-                                    <!-- End Nav Structure -->
-                                </div>
-                                <div class="divider"></div>
-                                <div class="component component-radio">
-                                    <!-- Start Nav Structure -->
-                                    <button class="cn-button" id="cn-button-radio"><img src="images/radio.svg" alt=""/></button>
-                                    <div class="cn-wrapper" id="cn-wrapper-radio">
-                                        <ul>
-                                            <li><a href="#"><img src="images/channels/kg-radio.png" alt="Кыргыз радиосу"/></a></li>
-                                            <li><a href="#"><img src="images/channels/1-radio.png" alt="Биринчи Радио"/></a></li>
-                                            <li><a href="#"><img src="images/channels/dostuk.png" alt="Достук"/></a></li>
-                                            <li><a href="#"><img src="images/channels/min-kiyal.png" alt="Мин Кыял"/></a></li>
-                                            <li><a href="#"><img src="images/channels/baldar.png" alt="Балдар ФМ"/></a></li>
-                                        </ul>
-                                    </div>
-                                    <div id="cn-overlay-radio" class="cn-overlay"></div>
-                                    <!-- End Nav Structure -->
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </header>
-        </div>
-    </div>
-</div>
-
-<a href="#" class="col-md-12 text-center ads">
-    <img src="images/ads_1.jpg" alt=""/>
-</a>
-
+<body id="home" class="homepage">
 <div class="container">
+      <div class="switch">
+            <nav class="navbar">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false">
+                        <span class="sr-only">Меню</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"><img src="{{ asset('images/channels/muz_white_notext.png')}}"><h4>Музыка</h4></a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="nav navbar-nav channel_switch">
+                        <li class="sitemenu" id="site-channel1">
+                            <a href="{{ route('front.home') }}"><img src="{{ asset('images/ktrk_last.svg')}}" style="height:40px;"><span>КТРК</span><h4>КТРК</h4></a></li>
+                        <li class="sitemenu" id="site-channel1">
+                            <a class="active" href="{{ route('muzkanal.home') }}"><img src="{{ asset('images/channels/muz_white_notext.png')}}" ><span>Музыка</span><h4>Музыка</h4></a></li>
+                        <li class="sitemenu" id="site-channel1">
+                            <a href="{{ route('madaniyat.home') }}"><img src="{{ asset('images/channels/madaniyat_white_notext.png')}}"><span>Маданият</span><h4>Маданият</h4></a></li>
+                        <li class="sitemenu" id="site-channel1">
+                            <a href="{{ route('balastan.home') }}"><img src="{{ asset('images/channels/balastan_white_notext.png')}}"><span>Баластан</span><h4>Баластан</h4></a></li>    
+                    </ul>   
+                </div><!-- /.navbar-collapse -->
+            </nav>
+        </div> 
+    <header id="header">
+        <nav id="main-menu" class="container-fluid navbar navbar-default fixedheader2 " role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Меню</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"><img src="{{asset('images/channels/kg-radio.png')}}" alt="logo">Кыргыз Радиосу</a>
+                </div>
+                
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li class="scroll active"><a href="#home">Главная</a></li>
+                        <li class="scroll"><a href="#about">О радио</a></li>
+                        <li class="scroll"><a href="#services">Передачи</a></li>
+                        <li class="scroll"><a href="#portfolio">Фотогалерея</a></li>
+                        <li class="scroll"><a href="#features">F</a></li>
+                        <li class="scroll"><a href="#meet-team">T</a></li>
+                        <li class="scroll"><a href="#pricing">P</a></li>
+                        <li class="scroll"><a href="#blog">B</a></li> 
+                        <li class="scroll"><a href="#get-in-touch">C</a></li>                        
+                    </ul>
+                </div>
+            </div><!--/.container-->
+        </nav><!--/nav-->
+    </header><!--/header-->
 
-    <div class="row">
-        <section class="content clearfix">
-
-            <div class="col-md-12">
-                <div class="panel panel-default" style="background-color: transparent">
-                    <div class="panel-heading">
-
-                    </div>
-                    <div class="panel-body">
-                        <div class="col-md-12 block">
-                            <div id="carousel">
-                                <a href="http://google.com">
-                                    <img src="images/anons/1.jpg" alt="" class="slide" />
-                                </a>
-                                <a href="http://google.com">
-                                    <img src="images/anons/2.jpg" alt="" class="slide" />
-                                </a>
-                                <a href="http://google.com">
-                                    <img src="images/anons/3.jpg" alt="" class="slide" />
-                                </a>
+    <section id="main-slider">
+        <div class="owl-carousel">
+            <div class="item">
+            <img src="images/slider/bg1.jpg" height="550" width="1600" alt="">
+                <div class="slider-inner">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="carousel-content">
+                                    <h2><span>Multi</span> is the best Onepage html template</h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et  dolore magna incididunt ut labore aliqua. </p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div><!--/.item-->
+             <div class="item">
+            <img src="images/slider/bg1.jpg" height="550" width="1600" alt="">
+                <div class="slider-inner">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="carousel-content">
+                                    <h2>Beautifully designed <span>free</span> one page template</h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et  dolore magna incididunt ut labore aliqua. </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--/.item-->
+        </div><!--/.owl-carousel-->
+    </section><!--/#main-slider-->
+
+    <section id="cta" class="wow fadeIn">
+        <div class="container">
+            <div class="row">
+            <div class="col-md-6">            
+                <div class="col-sm-9">
+                    <h2>Чынгыз Айтматов</h2>
+                    <p>Недаром говорят: чтобы скрыть свой позор, надо опозорить другого.
+                    </p>
+                </div>
+            <div class="col-sm-3">
+                <img src="images/slider/bg1.jpg" height="100" width="100" alt="">
+                    
+                </div>
+            </div>  
+            <div class="col-md-6">            
+                <div class="col-sm-9">
+                    <h2>Чынгыз Айтматов</h2>
+                    <p>Словно люди не понимают, сколько несчастий и убожества в их жизни поистекает и проистекало во все времена от лени.
+                    </p>
+                </div>
+                <div class="col-sm-3">
+                <img src="images/slider/bg1.jpg" height="100" width="100" alt="">
+                    
+                </div>
+            </div>
             </div>
 
+        </div>
+    </section><!--/#cta-->
 
-            <div class="bottom-right-block col-md-8">
-                <div class="panel panel-default videoportal">
-                    <div class="panel-heading">
-                        <h3 class="panel-title"><span>Видеопортал</span></h3>
+    <section id="about">
+        <div class="container">
+
+            <div class="section-header">
+                <h2 class="section-title text-center wow fadeInDown">О нас</h2>
+                <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6 wow fadeInLeft">
+                    <h3 class="column-title">Видео заставка</h3>
+                    <!-- 16:9 aspect ratio -->               
+                    <div class="embed-responsive embed-responsive-16by9">
+                      <iframe class="embed-responsive-item" src="//www.youtube.com/embed/jrLUHA5UsR4" allowfullscreen=""></iframe>
                     </div>
-                    <div class="panel-body">
-                        <ul id="filters" class="clearfix">
-                            <li><span class="filter" data-filter="all-videos">Жалпы</span></li>
-                            <li><span class="filter" data-filter="app">Телеберүүлөр</span></li>
-                            <li><span class="filter" data-filter="card">Сериалдар</span></li>
-                            <li><span class="filter" data-filter="icon">Көркөм тасма</span></li>
-                            <li><span class="filter" data-filter="tele">Маанайшат</span></li>
-                            <li><span class="filter" data-filter="web">Спорт</span></li>
+                </div>
+
+                <div class="col-sm-6 wow fadeInRight">
+                    <h3 class="column-title">Multi Capability</h3>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+
+                    <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <ul class="nostyle">
+                                <li><i class="fa fa-check-square"></i> Ipsum is simply dummy</li>
+                                <li><i class="fa fa-check-square"></i> When an unknown</li>
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <ul class="nostyle">
+                                <li><i class="fa fa-check-square"></i> The printing and typesetting</li>
+                                <li><i class="fa fa-check-square"></i> Lorem Ipsum has been</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <a class="btn btn-primary" href="#">Learn More</a>
+
+                </div>
+            </div>
+        </div>
+    </section><!--/#about-->
+
+    <section id="services" >
+        <div class="container">
+
+            <div class="section-header">
+                <h2 class="section-title text-center wow fadeInDown">Our Services</h2>
+                <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+            </div>
+
+            <div class="row">
+                <div class="features">
+                    <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="0ms">
+                        <div class="media service-box">
+                            <div class="pull-left">
+                                <i class="fa fa-line-chart"></i>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">UX design</h4>
+                                <p>Backed by some of the biggest names in the industry, Firefox OS is an open platform that fosters greater</p>
+                            </div>
+                        </div>
+                    </div><!--/.col-md-4-->
+
+                    <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="100ms">
+                        <div class="media service-box">
+                            <div class="pull-left">
+                                <i class="fa fa-cubes"></i>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">UI design</h4>
+                                <p>Backed by some of the biggest names in the industry, Firefox OS is an open platform that fosters greater</p>
+                            </div>
+                        </div>
+                    </div><!--/.col-md-4-->
+
+                    <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="200ms">
+                        <div class="media service-box">
+                            <div class="pull-left">
+                                <i class="fa fa-pie-chart"></i>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">SEO Services</h4>
+                                <p>Backed by some of the biggest names in the industry, Firefox OS is an open platform that fosters greater</p>
+                            </div>
+                        </div>
+                    </div><!--/.col-md-4-->
+                
+                    <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="300ms">
+                        <div class="media service-box">
+                            <div class="pull-left">
+                                <i class="fa fa-bar-chart"></i>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">iOS App</h4>
+                                <p>Backed by some of the biggest names in the industry, Firefox OS is an open platform that fosters greater</p>
+                            </div>
+                        </div>
+                    </div><!--/.col-md-4-->
+
+                    <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="400ms">
+                        <div class="media service-box">
+                            <div class="pull-left">
+                                <i class="fa fa-language"></i>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">Android App</h4>
+                                <p>Backed by some of the biggest names in the industry, Firefox OS is an open platform that fosters greater</p>
+                            </div>
+                        </div>
+                    </div><!--/.col-md-4-->
+
+                    <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="500ms">
+                        <div class="media service-box">
+                            <div class="pull-left">
+                                <i class="fa fa-bullseye"></i>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">Win App</h4>
+                                <p>Backed by some of the biggest names in the industry, Firefox OS is an open platform that fosters greater</p>
+                            </div>
+                        </div>
+                    </div><!--/.col-md-4-->
+                </div>
+            </div><!--/.row-->    
+        </div><!--/.container-->
+    </section><!--/#services-->
+
+
+    <section id="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title text-center wow fadeInDown">Our Works</h2>
+                <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+            </div>
+
+            <div class="text-center">
+                <ul class="portfolio-filter">
+                    <li><a class="active" href="#" data-filter="*">All Works</a></li>
+                    <li><a href="#" data-filter=".creative">Creative</a></li>
+                    <li><a href="#" data-filter=".corporate">Corporate</a></li>
+                    <li><a href="#" data-filter=".portfolio">Portfolio</a></li>
+                </ul><!--/#portfolio-filter-->
+            </div>
+
+            <div class="portfolio-items">
+                <div class="portfolio-item creative">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="images/portfolio/01.jpg" alt="">
+                        <div class="portfolio-info">
+                            <h3>Portfolio Item 1</h3>
+                            Lorem Ipsum Dolor Sit
+                            <a class="preview" href="images/portfolio/full.jpg" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div><!--/.portfolio-item-->
+
+                <div class="portfolio-item corporate portfolio">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="images/portfolio/02.jpg" alt="">
+                        <div class="portfolio-info">
+                            <h3>Portfolio Item 2</h3>
+                            Lorem Ipsum Dolor Sit
+                            <a class="preview" href="images/portfolio/full.jpg" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div><!--/.portfolio-item-->
+
+                <div class="portfolio-item creative">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="images/portfolio/03.jpg" alt="">
+                        <div class="portfolio-info">
+                            <h3>Portfolio Item 3</h3>
+                            Lorem Ipsum Dolor Sit
+                            <a class="preview" href="images/portfolio/full.jpg" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div><!--/.portfolio-item-->
+
+                <div class="portfolio-item corporate">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="images/portfolio/04.jpg" alt="">
+                        <div class="portfolio-info">
+                            <h3>Portfolio Item 4</h3>
+                            Lorem Ipsum Dolor Sit
+                            <a class="preview" href="images/portfolio/full.jpg" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div><!--/.portfolio-item-->
+
+                <div class="portfolio-item creative portfolio">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="images/portfolio/05.jpg" alt="">
+                        <div class="portfolio-info">
+                            <h3>Portfolio Item 5</h3>
+                            Lorem Ipsum Dolor Sit
+                            <a class="preview" href="images/portfolio/full.jpg" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div><!--/.portfolio-item-->
+
+                <div class="portfolio-item corporate">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="images/portfolio/06.jpg" alt="">
+                        <div class="portfolio-info">
+                            <h3>Portfolio Item 5</h3>
+                            Lorem Ipsum Dolor Sit
+                            <a class="preview" href="images/portfolio/full.jpg" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div><!--/.portfolio-item-->
+
+                <div class="portfolio-item creative portfolio">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="images/portfolio/07.jpg" alt="">
+                        <div class="portfolio-info">
+                            <h3>Portfolio Item 7</h3>
+                            Lorem Ipsum Dolor Sit
+                            <a class="preview" href="images/portfolio/full.jpg" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div><!--/.portfolio-item-->
+
+                <div class="portfolio-item corporate">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="images/portfolio/08.jpg" alt="">
+                        <div class="portfolio-info">
+                            <h3>Portfolio Item 8</h3>
+                            Lorem Ipsum Dolor Sit
+                            <a class="preview" href="images/portfolio/full.jpg" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div><!--/.portfolio-item-->
+            </div>
+        </div><!--/.container-->
+    </section><!--/#portfolio-->
+
+
+    <section id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title text-center wow fadeInDown">Awesome Features</h2>
+                <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 wow fadeInLeft">
+                    <img class="img-responsive" src="images/main-feature.png" alt="">
+                </div>
+                <div class="col-sm-6">
+                    <div class="media service-box wow fadeInRight">
+                        <div class="pull-left">
+                            <i class="fa fa-line-chart"></i>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">UX design</h4>
+                            <p>Backed by some of the biggest names in the industry, Firefox OS is an open platform that fosters greater</p>
+                        </div>
+                    </div>
+
+                    <div class="media service-box wow fadeInRight">
+                        <div class="pull-left">
+                            <i class="fa fa-cubes"></i>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">UI design</h4>
+                            <p>Backed by some of the biggest names in the industry, Firefox OS is an open platform that fosters greater</p>
+                        </div>
+                    </div>
+
+                    <div class="media service-box wow fadeInRight">
+                        <div class="pull-left">
+                            <i class="fa fa-pie-chart"></i>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">SEO Services</h4>
+                            <p>Backed by some of the biggest names in the industry, Firefox OS is an open platform that fosters greater</p>
+                        </div>
+                    </div>
+
+                    <div class="media service-box wow fadeInRight">
+                        <div class="pull-left">
+                            <i class="fa fa-pie-chart"></i>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">SEO Services</h4>
+                            <p>Backed by some of the biggest names in the industry, Firefox OS is an open platform that fosters greater</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cta2">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="0ms"><span>MULTI</span> IS A CREATIVE HTML TEMPLATE</h2>
+                <p class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="100ms">Mauris pretium auctor quam. Vestibulum et nunc id nisi fringilla <br />iaculis. Mauris pretium auctor quam.</p>
+                <p class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="200ms"><a class="btn btn-primary btn-lg" href="#">Free Download</a></p>
+                <img class="img-responsive wow fadeIn" src="images/cta2/cta2-img.png" alt="" data-wow-duration="300ms" data-wow-delay="300ms">
+            </div>
+        </div>
+    </section>
+
+
+    <section id="work-process">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title text-center wow fadeInDown">Our Process</h2>
+                <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+            </div>
+
+            <div class="row text-center">
+                <div class="col-md-2 col-md-4 col-xs-6">
+                    <div class="wow fadeInUp" data-wow-duration="400ms" data-wow-delay="0ms">
+                        <div class="icon-circle">
+                            <span>1</span>
+                            <i class="fa fa-coffee fa-2x"></i>
+                        </div>
+                        <h3>MEET</h3>
+                    </div>
+                </div>
+                <div class="col-md-2 col-md-4 col-xs-6">
+                    <div class="wow fadeInUp" data-wow-duration="400ms" data-wow-delay="100ms">
+                        <div class="icon-circle">
+                            <span>2</span>
+                            <i class="fa fa-bullhorn fa-2x"></i>
+                        </div>
+                        <h3>PLAN</h3>
+                    </div>
+                </div>
+                <div class="col-md-2 col-md-4 col-xs-6">
+                    <div class="wow fadeInUp" data-wow-duration="400ms" data-wow-delay="200ms">
+                        <div class="icon-circle">
+                            <span>3</span>
+                            <i class="fa fa-image fa-2x"></i>
+                        </div>
+                        <h3>DESIGN</h3>
+                    </div>
+                </div>
+                <div class="col-md-2 col-md-4 col-xs-6">
+                    <div class="wow fadeInUp" data-wow-duration="400ms" data-wow-delay="300ms">
+                        <div class="icon-circle">
+                            <span>4</span>
+                            <i class="fa fa-heart fa-2x"></i>
+                        </div>
+                        <h3>DEVELOP</h3>
+                    </div>
+                </div>
+                <div class="col-md-2 col-md-4 col-xs-6">
+                    <div class="wow fadeInUp" data-wow-duration="400ms" data-wow-delay="400ms">
+                        <div class="icon-circle">
+                            <span>5</span>
+                            <i class="fa fa-shopping-cart fa-2x"></i>
+                        </div>
+                        <h3>TESTING</h3>
+                    </div>
+                </div>
+                <div class="col-md-2 col-md-4 col-xs-6">
+                    <div class="wow fadeInUp" data-wow-duration="400ms" data-wow-delay="500ms">
+                        <div class="icon-circle">
+                            <span>6</span>
+                            <i class="fa fa-space-shuttle fa-2x"></i>
+                        </div>
+                        <h3>LAUNCH</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!--/#work-process-->
+
+    <section id="meet-team">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title text-center wow fadeInDown">Meet The Team</h2>
+                <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6 col-md-3">
+                    <div class="team-member wow fadeInUp" data-wow-duration="400ms" data-wow-delay="0ms">
+                        <div class="team-img">
+                            <img class="img-responsive" src="images/team/01.jpg" alt="">
+                        </div>
+                        <div class="team-info">
+                            <h3>Bin Burhan</h3>
+                            <span>Co-Founder</span>
+                        </div>
+                        <p>Backed by some of the biggest names in the industry, Firefox OS is an open platform that fosters greater</p>
+                        <ul class="social-icons">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
                         </ul>
-
-                        <div id="portfoliolist">
-
-                            <div class="portfolio all-videos" data-cat="all-videos">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/logo/1.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Эфир 14.08.2015</a>
-                                            <span class="text-category">Телеберүүлөр</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio all-videos" data-cat="all-videos">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/logo/1.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Эфир 14.08.2015</a>
-                                            <span class="text-category">Телеберүүлөр</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio all-videos" data-cat="all-videos">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/logo/1.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Эфир 14.08.2015</a>
-                                            <span class="text-category">Телеберүүлөр</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio all-videos" data-cat="all-videos">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/logo/1.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Эфир 14.08.2015</a>
-                                            <span class="text-category">Телеберүүлөр</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio all-videos" data-cat="all-videos">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/logo/1.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Эфир 14.08.2015</a>
-                                            <span class="text-category">Телеберүүлөр</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio all-videos" data-cat="all-videos">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/logo/1.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Эфир 14.08.2015</a>
-                                            <span class="text-category">Телеберүүлөр</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio all-videos" data-cat="all-videos">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/logo/1.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Эфир 14.08.2015</a>
-                                            <span class="text-category">Телеберүүлөр</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio all-videos" data-cat="all-videos">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/logo/1.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Эфир 14.08.2015</a>
-                                            <span class="text-category">Телеберүүлөр</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio all-videos" data-cat="all-videos">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/logo/1.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Эфир 14.08.2015</a>
-                                            <span class="text-category">Телеберүүлөр</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="portfolio tele" data-cat="tele">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/logo/5.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Эфир 14.08.2015</a>
-                                            <span class="text-category">Телеберүүлөр</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio tele" data-cat="tele">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/logo/5.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Эфир 14.08.2015</a>
-                                            <span class="text-category">Телеберүүлөр</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio tele" data-cat="tele">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/logo/5.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Эфир 14.08.2015</a>
-                                            <span class="text-category">Телеберүүлөр</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio tele" data-cat="tele">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/logo/5.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Эфир 14.08.2015</a>
-                                            <span class="text-category">Телеберүүлөр</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio tele" data-cat="tele">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/logo/5.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Эфир 14.08.2015</a>
-                                            <span class="text-category">Телеберүүлөр</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio tele" data-cat="tele">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/logo/5.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Эфир 14.08.2015</a>
-                                            <span class="text-category">Телеберүүлөр</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio tele" data-cat="tele">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/logo/5.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Эфир 14.08.2015</a>
-                                            <span class="text-category">Телеберүүлөр</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio tele" data-cat="tele">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/logo/5.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Эфир 14.08.2015</a>
-                                            <span class="text-category">Телеберүүлөр</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio tele" data-cat="tele">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/logo/5.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Эфир 14.08.2015</a>
-                                            <span class="text-category">Телеберүүлөр</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio app" data-cat="app">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/app/1.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Visual Infography</a>
-                                            <span class="text-category">APP</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio app" data-cat="app">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/app/1.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Visual Infography</a>
-                                            <span class="text-category">APP</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio app" data-cat="app">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/app/1.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Visual Infography</a>
-                                            <span class="text-category">APP</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio app" data-cat="app">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/app/1.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Visual Infography</a>
-                                            <span class="text-category">APP</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio app" data-cat="app">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/app/1.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Visual Infography</a>
-                                            <span class="text-category">APP</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio app" data-cat="app">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/app/1.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Visual Infography</a>
-                                            <span class="text-category">APP</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio app" data-cat="app">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/app/1.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Visual Infography</a>
-                                            <span class="text-category">APP</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio app" data-cat="app">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/app/1.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Visual Infography</a>
-                                            <span class="text-category">APP</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio app" data-cat="app">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/app/1.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Visual Infography</a>
-                                            <span class="text-category">APP</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio web" data-cat="web">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/web/4.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Sonor's Design</a>
-                                            <span class="text-category">Web design</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio web" data-cat="web">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/web/4.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Sonor's Design</a>
-                                            <span class="text-category">Web design</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio web" data-cat="web">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/web/4.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Sonor's Design</a>
-                                            <span class="text-category">Web design</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio web" data-cat="web">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/web/4.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Sonor's Design</a>
-                                            <span class="text-category">Web design</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio web" data-cat="web">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/web/4.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Sonor's Design</a>
-                                            <span class="text-category">Web design</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio web" data-cat="web">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/web/4.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Sonor's Design</a>
-                                            <span class="text-category">Web design</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio web" data-cat="web">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/web/4.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Sonor's Design</a>
-                                            <span class="text-category">Web design</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio web" data-cat="web">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/web/4.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Sonor's Design</a>
-                                            <span class="text-category">Web design</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio web" data-cat="web">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/web/4.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Sonor's Design</a>
-                                            <span class="text-category">Web design</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio card" data-cat="card">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/card/1.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Typography Company</a>
-                                            <span class="text-category">Business card</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio card" data-cat="card">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/card/1.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Typography Company</a>
-                                            <span class="text-category">Business card</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio card" data-cat="card">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/card/1.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Typography Company</a>
-                                            <span class="text-category">Business card</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio card" data-cat="card">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/card/1.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Typography Company</a>
-                                            <span class="text-category">Business card</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio card" data-cat="card">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/card/1.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Typography Company</a>
-                                            <span class="text-category">Business card</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio card" data-cat="card">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/card/1.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Typography Company</a>
-                                            <span class="text-category">Business card</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio card" data-cat="card">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/card/1.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Typography Company</a>
-                                            <span class="text-category">Business card</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio card" data-cat="card">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/card/1.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Typography Company</a>
-                                            <span class="text-category">Business card</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio card" data-cat="card">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/card/1.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Typography Company</a>
-                                            <span class="text-category">Business card</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio icon" data-cat="icon">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/icon/4.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Domino's Pizza</a>
-                                            <span class="text-category">Icon</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio icon" data-cat="icon">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/icon/4.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Domino's Pizza</a>
-                                            <span class="text-category">Icon</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio icon" data-cat="icon">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/icon/4.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Domino's Pizza</a>
-                                            <span class="text-category">Icon</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio icon" data-cat="icon">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/icon/4.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Domino's Pizza</a>
-                                            <span class="text-category">Icon</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio icon" data-cat="icon">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/icon/4.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Domino's Pizza</a>
-                                            <span class="text-category">Icon</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio icon" data-cat="icon">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/icon/4.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Domino's Pizza</a>
-                                            <span class="text-category">Icon</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio icon" data-cat="icon">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/icon/4.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Domino's Pizza</a>
-                                            <span class="text-category">Icon</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio icon" data-cat="icon">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/icon/4.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Domino's Pizza</a>
-                                            <span class="text-category">Icon</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio icon" data-cat="icon">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/icon/4.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Domino's Pizza</a>
-                                            <span class="text-category">Icon</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="team-member wow fadeInUp" data-wow-duration="400ms" data-wow-delay="100ms">
+                        <div class="team-img">
+                            <img class="img-responsive" src="images/team/02.jpg" alt="">
                         </div>
-
-                        <footer>
-                            <a href="#">
-                                <span>Архив <i class="fa fa-arrow-circle-right"></i></span>
-                            </a>
-                        </footer>
-
+                        <div class="team-info">
+                            <h3>Jane Man</h3>
+                            <span>Project Manager</span>
+                        </div>
+                        <p>Backed by some of the biggest names in the industry, Firefox OS is an open platform that fosters greater</p>
+                        <ul class="social-icons">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="team-member wow fadeInUp" data-wow-duration="400ms" data-wow-delay="200ms">
+                        <div class="team-img">
+                            <img class="img-responsive" src="images/team/03.jpg" alt="">
+                        </div>
+                        <div class="team-info">
+                            <h3>Pahlwan</h3>
+                            <span>Designer</span>
+                        </div>
+                        <p>Backed by some of the biggest names in the industry, Firefox OS is an open platform that fosters greater</p>
+                        <ul class="social-icons">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="team-member wow fadeInUp" data-wow-duration="400ms" data-wow-delay="300ms">
+                        <div class="team-img">
+                            <img class="img-responsive" src="images/team/04.jpg" alt="">
+                        </div>
+                        <div class="team-info">
+                            <h3>Nasir uddin</h3>
+                            <span>UI/UX</span>
+                        </div>
+                        <p>Backed by some of the biggest names in the industry, Firefox OS is an open platform that fosters greater</p>
+                        <ul class="social-icons">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
 
-            <div class="bottom-left-block col-md-4">
-                <div class="panel panel-default latest-news">
-                    <div class="panel-heading">
-                        <h3 class="panel-title"><span>Акыркы жаңылыктар</span></h3>
+            <div class="divider"></div>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <h3 class="column-title">Our Skills</h3>
+                    <strong>GRAPHIC DESIGN</strong>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-primary" role="progressbar" data-width="85">85%</div>
                     </div>
-                    <div class="panel-body">
-                        <ul class="list-group">
-                            <li class="list-group-item news-item">
-                                <div class="news-body clearfix">
-                                    <a href="#">
-                                        <p class="news-title">В Бишкеке проходит внеочередной съезд партии "Республика Ата-Журт"</p>
-                                        <span class="ctg"><img src="images/logo_notext.png" alt=""/></span>
-                                    </a>
-                                </div>
-                                <div class="news-adds clearfix">
-                                    <a href="#" class="">Политика</a>
-                                    <span class="news-file"><i class="fa fa-play-circle-o"></i></span>
+                    <strong>WEB DESIGN</strong>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-primary" role="progressbar" data-width="70">70%</div>
+                    </div>
+                    <strong>WORDPRESS DEVELOPMENT</strong>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-primary" role="progressbar" data-width="90">90%</div>
+                    </div>
+                    <strong>JOOMLA DEVELOPMENT</strong>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-primary" role="progressbar" data-width="65">65%</div>
+                    </div>
+                </div>
 
-                                    <span class="news-time pull-right">10:10</span>
-                                </div>
-                                <div class="clearfix"></div>
+                <div class="col-sm-4">
+                    <h3 class="column-title">Our History</h3>
+                    <div role="tabpanel">
+                        <ul class="nav main-tab nav-justified" role="tablist">
+                            <li role="presentation" class="active">
+                                <a href="#tab1" role="tab" data-toggle="tab" aria-controls="tab1" aria-expanded="true">2010</a>
                             </li>
-                            <li class="list-group-item news-item">
-                                <div class="news-body clearfix">
-                                    <a href="#">
-                                        <p class="news-title">В Бишкеке проходит внеочередной съезд партии "Республика Ата-Журт"</p>
-                                        <span class="ctg"><img src="images/logo_notext.png" alt=""/></span>
-                                    </a>
-                                </div>
-                                <div class="news-adds clearfix">
-                                    <a href="#">Политика</a>
-                                    <span class="news-file"><i class="fa fa-image"></i></span>
-
-                                    <span class="news-time pull-right">10:10</span>
-                                </div>
-                                <div class="clearfix"></div>
+                            <li role="presentation">
+                                <a href="#tab2" role="tab" data-toggle="tab" aria-controls="tab2" aria-expanded="false">2011</a>
                             </li>
-                            <li class="list-group-item news-item">
-                                <div class="news-body clearfix">
-                                    <a href="#">
-                                        <p class="news-title">В Бишкеке проходит внеочередной съезд партии "Республика Ата-Журт"</p>
-                                        <span class="ctg"><img src="images/logo_notext.png" alt=""/></span>
-                                    </a>
-                                </div>
-                                <div class="news-adds clearfix">
-                                    <a href="#" class="">Политика</a>
-                                    <span class="news-file"><i class="fa fa-play-circle-o"></i></span>
-
-                                    <span class="news-time pull-right">10:10</span>
-                                </div>
-                                <div class="clearfix"></div>
+                            <li role="presentation">
+                                <a href="#tab3" role="tab" data-toggle="tab" aria-controls="tab3" aria-expanded="false">2013</a>
                             </li>
-                            <li class="list-group-item news-item">
-                                <div class="news-body clearfix">
-                                    <a href="#">
-                                        <p class="news-title">В Бишкеке проходит внеочередной съезд партии "Республика Ата-Журт"</p>
-                                        <span class="ctg"><img src="images/logo_notext.png" alt=""/></span>
-                                    </a>
-                                </div>
-                                <div class="news-adds clearfix">
-                                    <a href="#" class="">Политика</a>
-                                    <span class="news-file"><i class="fa fa-play-circle-o"></i></span>
-
-                                    <span class="news-time pull-right">10:10</span>
-                                </div>
-                                <div class="clearfix"></div>
-                            </li>
-                            <li class="list-group-item news-item">
-                                <div class="news-body clearfix">
-                                    <a href="#">
-                                        <p class="news-title">В Бишкеке проходит внеочередной съезд партии "Республика Ата-Журт"</p>
-                                        <span class="ctg"><img src="images/logo_notext.png" alt=""/></span>
-                                    </a>
-                                </div>
-                                <div class="news-adds clearfix">
-                                    <a href="#" class="">Политика</a>
-                                    <span class="news-file"><i class="fa fa-play-circle-o"></i></span>
-
-                                    <span class="news-time pull-right">10:10</span>
-                                </div>
-                                <div class="clearfix"></div>
-                            </li>
-                            <li class="list-group-item news-item">
-                                <div class="news-body clearfix">
-                                    <a href="#">
-                                        <p class="news-title">В Бишкеке проходит внеочередной съезд партии "Республика Ата-Журт"</p>
-                                        <span class="ctg"><img src="images/logo_notext.png" alt=""/></span>
-                                    </a>
-                                </div>
-                                <div class="news-adds clearfix">
-                                    <a href="#" class="">Политика</a>
-                                    <span class="news-file"><i class="fa fa-play-circle-o"></i></span>
-
-                                    <span class="news-time pull-right">10:10</span>
-                                </div>
-                                <div class="clearfix"></div>
+                            <li role="presentation">
+                                <a href="#tab4" role="tab" data-toggle="tab" aria-controls="tab4" aria-expanded="false">2014</a>
                             </li>
                         </ul>
+                        <div id="tab-content" class="tab-content">
+                            <div role="tabpanel" class="tab-pane fade active in" id="tab1" aria-labelledby="tab1">
+                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                                <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters readable English.</p>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="tab2" aria-labelledby="tab2">
+                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                                <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters readable English.</p>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="tab3" aria-labelledby="tab3">
+                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                                <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters readable English.</p>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="tab4" aria-labelledby="tab3">
+                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                                <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters readable English.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                        <footer>
-                            <a href="#">
-                                <span>Бардык жаңылыктар <i class="fa fa-arrow-circle-right"></i></span>
-                            </a>
-                        </footer>
+                <div class="col-sm-4">
+                    <h3 class="column-title">Faqs</h3>
+                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingOne">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Enim eiusmod high life accusamus
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="panel-body">
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingTwo">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Nihil anim keffiyeh helvetica
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                <div class="panel-body">
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingThree">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Vegan excepteur butcher vice lomo
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                <div class="panel-body">
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum.
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
             </div>
+        </div>
+    </section><!--/#meet-team-->
 
-            <div class="col-md-12">
-                <div class="panel panel-default panel-carousel">
-                    <div class="panel-heading">
-                        <h3 class="panel-title"><span>Фотогалерея</span></h3>
+    <section id="animated-number">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title text-center wow fadeInDown">Fun Facts</h2>
+                <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+            </div>
+
+            <div class="row text-center">
+                <div class="col-sm-3 col-xs-6">
+                    <div class="wow fadeInUp" data-wow-duration="400ms" data-wow-delay="0ms">
+                        <div class="animated-number" data-digit="2305" data-duration="1000"></div>
+                        <strong>CUPS OF COFFEE CONSUMED</strong>
                     </div>
-                    <div class="panel-body">
-                        <div class="col-md-12">
-                            <div class="carousel-slick">
-                                <div class="col-md-4"><img src="images/gallery/001.jpg" alt=""/></div>
-                                <div class="col-md-4"><img src="images/gallery/002.jpg" alt=""/></div>
-                                <div class="col-md-4"><img src="images/gallery/003.jpg" alt=""/></div>
-                                <div class="col-md-4"><img src="images/gallery/004.jpg" alt=""/></div>
-                                <div class="col-md-4"><img src="images/gallery/005.jpg" alt=""/></div>
-                                <div class="col-md-4"><img src="images/gallery/006.jpg" alt=""/></div>
-                                <div class="col-md-4"><img src="images/gallery/007.jpg" alt=""/></div>
-                                <div class="col-md-4"><img src="images/gallery/008.jpg" alt=""/></div>
-                                <div class="col-md-4"><img src="images/gallery/009.jpg" alt=""/></div>
-                                <div class="col-md-4"><img src="images/gallery/010.jpg" alt=""/></div>
-                                <div class="col-md-4"><img src="images/gallery/011.jpg" alt=""/></div>
-                                <div class="col-md-4"><img src="images/gallery/012.jpg" alt=""/></div>
+                </div>
+                <div class="col-sm-3 col-xs-6">
+                    <div class="wow fadeInUp" data-wow-duration="400ms" data-wow-delay="100ms">
+                        <div class="animated-number" data-digit="1231" data-duration="1000"></div>
+                        <strong>CLIENT WORKED WITH</strong>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-xs-6">
+                    <div class="wow fadeInUp" data-wow-duration="400ms" data-wow-delay="200ms">
+                        <div class="animated-number" data-digit="3025" data-duration="1000"></div>
+                        <strong>PROJECT COMPLETED</strong>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-xs-6">
+                    <div class="wow fadeInUp" data-wow-duration="400ms" data-wow-delay="300ms">
+                        <div class="animated-number" data-digit="1199" data-duration="1000"></div>
+                        <strong>QUESTIONS ANSWERED</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!--/#animated-number-->
+
+    <section id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title text-center wow fadeInDown">Pricing Table</h2>
+                <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6 col-md-3">
+                    <div class="wow zoomIn" data-wow-duration="400ms" data-wow-delay="0ms">
+                        <ul class="pricing">
+                            <li class="plan-header">
+                                <div class="price-duration">
+                                    <span class="price">
+                                        $39
+                                    </span>
+                                    <span class="duration">
+                                        per month
+                                    </span>
+                                </div>
+
+                                <div class="plan-name">
+                                    Starter
+                                </div>
+                            </li>
+                            <li><strong>1</strong> DOMAIN</li>
+                            <li><strong>100GB</strong> DISK SPACE</li>
+                            <li><strong>UNLIMITED</strong> BANDWIDTH</li>
+                            <li>SHARED SSL CERTIFICATE</li>
+                            <li><strong>10</strong> EMAIL ADDRESS</li>
+                            <li><strong>24/7</strong> SUPPORT</li>
+                            <li class="plan-purchase"><a class="btn btn-primary" href="#">ORDER NOW</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="wow zoomIn" data-wow-duration="400ms" data-wow-delay="200ms">
+                        <ul class="pricing featured">
+                            <li class="plan-header">
+                                <div class="price-duration">
+                                    <span class="price">
+                                        $69
+                                    </span>
+                                    <span class="duration">
+                                        per month
+                                    </span>
+                                </div>
+
+                                <div class="plan-name">
+                                    Business
+                                </div>
+                            </li>
+                            <li><strong>3</strong> DOMAIN</li>
+                            <li><strong>300GB</strong> DISK SPACE</li>
+                            <li><strong>UNLIMITED</strong> BANDWIDTH</li>
+                            <li>SHARED SSL CERTIFICATE</li>
+                            <li><strong>30</strong> EMAIL ADDRESS</li>
+                            <li><strong>24/7</strong> SUPPORT</li>
+                            <li class="plan-purchase"><a class="btn btn-default" href="#">ORDER NOW</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="wow zoomIn" data-wow-duration="400ms" data-wow-delay="400ms">
+                        <ul class="pricing">
+                            <li class="plan-header">
+                                <div class="price-duration">
+                                    <span class="price">
+                                        $99
+                                    </span>
+                                    <span class="duration">
+                                        per month
+                                    </span>
+                                </div>
+
+                                <div class="plan-name">
+                                    Pro
+                                </div>
+                            </li>
+                            <li><strong>5</strong> DOMAIN</li>
+                            <li><strong>500GB</strong> DISK SPACE</li>
+                            <li><strong>UNLIMITED</strong> BANDWIDTH</li>
+                            <li>SHARED SSL CERTIFICATE</li>
+                            <li><strong>50</strong> EMAIL ADDRESS</li>
+                            <li><strong>24/7</strong> SUPPORT</li>
+                            <li class="plan-purchase"><a class="btn btn-primary" href="#">ORDER NOW</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="wow zoomIn" data-wow-duration="400ms" data-wow-delay="600ms">
+                        <ul class="pricing">
+                            <li class="plan-header">
+                                <div class="price-duration">
+                                    <span class="price">
+                                        $199
+                                    </span>
+                                    <span class="duration">
+                                        per month
+                                    </span>
+                                </div>
+
+                                <div class="plan-name">
+                                    Ultra
+                                </div>
+                            </li>
+                            <li><strong>10</strong> DOMAIN</li>
+                            <li><strong>1000GB</strong> DISK SPACE</li>
+                            <li><strong>UNLIMITED</strong> BANDWIDTH</li>
+                            <li>SHARED SSL CERTIFICATE</li>
+                            <li><strong>100</strong> EMAIL ADDRESS</li>
+                            <li><strong>24/7</strong> SUPPORT</li>
+                            <li class="plan-purchase"><a class="btn btn-primary" href="#">ORDER NOW</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!--/#pricing-->
+
+    <section id="testimonial">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2">
+
+                    <div id="carousel-testimonial" class="carousel slide text-center" data-ride="carousel">
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active">
+                                <p><img class="img-circle img-thumbnail" src="images/testimonial/01.jpg" alt=""></p>
+                                <h4>Louise S. Morgan</h4>
+                                <small>Treatment, storage, and disposal (TSD) worker</small>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut et dolore magna aliqua. Ut enim ad minim veniam</p>
+                            </div>
+                            <div class="item">
+                                <p><img class="img-circle img-thumbnail" src="images/testimonial/01.jpg" alt=""></p>
+                                <h4>Louise S. Morgan</h4>
+                                <small>Treatment, storage, and disposal (TSD) worker</small>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut et dolore magna aliqua. Ut enim ad minim veniam</p>
                             </div>
                         </div>
 
+                        <!-- Controls -->
+                        <div class="btns">
+                            <a class="btn btn-primary btn-sm" href="#carousel-testimonial" role="button" data-slide="prev">
+                                <span class="fa fa-angle-left" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="btn btn-primary btn-sm" href="#carousel-testimonial" role="button" data-slide="next">
+                                <span class="fa fa-angle-right" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!--/#testimonial-->
+
+    <section id="blog">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title text-center wow fadeInDown">Latest Blogs</h2>
+                <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="blog-post blog-large wow fadeInLeft" data-wow-duration="300ms" data-wow-delay="0ms">
+                        <article>
+                            <header class="entry-header">
+                                <div class="entry-thumbnail">
+                                    <img class="img-responsive" src="images/blog/01.jpg" alt="">
+                                    <span class="post-format post-format-video"><i class="fa fa-film"></i></span>
+                                </div>
+                                <div class="entry-date">25 November 2014</div>
+                                <h2 class="entry-title"><a href="#">While now the fated Pequod had been so long afloat this</a></h2>
+                            </header>
+
+                            <div class="entry-content">
+                                <P>With a blow from the top-maul Ahab knocked off the steel head of the lance, and then handing to the mate the long iron rod remaining, bade him hold it upright, without its touching off the steel head of the lance, and then handing to the mate the long iron rod remaining. without its touching off the steel without its touching off the steel</P>
+                                <a class="btn btn-primary" href="#">Read More</a>
+                            </div>
+
+                            <footer class="entry-meta">
+                                <span class="entry-author"><i class="fa fa-pencil"></i> <a href="#">Victor</a></span>
+                                <span class="entry-category"><i class="fa fa-folder-o"></i> <a href="#">Tutorial</a></span>
+                                <span class="entry-comments"><i class="fa fa-comments-o"></i> <a href="#">15</a></span>
+                            </footer>
+                        </article>
+                    </div>
+                </div><!--/.col-sm-6-->
+                <div class="col-sm-6">
+                    <div class="blog-post blog-media wow fadeInRight" data-wow-duration="300ms" data-wow-delay="100ms">
+                        <article class="media clearfix">
+                            <div class="entry-thumbnail pull-left">
+                                <img class="img-responsive" src="images/blog/02.jpg" alt="">
+                                <span class="post-format post-format-gallery"><i class="fa fa-image"></i></span>
+                            </div>
+                            <div class="media-body">
+                                <header class="entry-header">
+                                    <div class="entry-date">01 December 2014</div>
+                                    <h2 class="entry-title"><a href="#">BeReviews was a awesome envent in dhaka</a></h2>
+                                </header>
+
+                                <div class="entry-content">
+                                    <P>With a blow from the top-maul Ahab knocked off the steel head of the lance, and then handing to the steel</P>
+                                    <a class="btn btn-primary" href="#">Read More</a>
+                                </div>
+
+                                <footer class="entry-meta">
+                                    <span class="entry-author"><i class="fa fa-pencil"></i> <a href="#">Campbell</a></span>
+                                    <span class="entry-category"><i class="fa fa-folder-o"></i> <a href="#">Tutorial</a></span>
+                                    <span class="entry-comments"><i class="fa fa-comments-o"></i> <a href="#">15</a></span>
+                                </footer>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="blog-post blog-media wow fadeInRight" data-wow-duration="300ms" data-wow-delay="200ms">
+                        <article class="media clearfix">
+                            <div class="entry-thumbnail pull-left">
+                                <img class="img-responsive" src="images/blog/03.jpg" alt="">
+                                <span class="post-format post-format-audio"><i class="fa fa-music"></i></span>
+                            </div>
+                            <div class="media-body">
+                                <header class="entry-header">
+                                    <div class="entry-date">03 November 2014</div>
+                                    <h2 class="entry-title"><a href="#">Play list of old bangle  music and gajal</a></h2>
+                                </header>
+
+                                <div class="entry-content">
+                                    <P>With a blow from the top-maul Ahab knocked off the steel head of the lance, and then handing to the steel</P>
+                                    <a class="btn btn-primary" href="#">Read More</a>
+                                </div>
+
+                                <footer class="entry-meta">
+                                    <span class="entry-author"><i class="fa fa-pencil"></i> <a href="#">Ruth</a></span>
+                                    <span class="entry-category"><i class="fa fa-folder-o"></i> <a href="#">Tutorial</a></span>
+                                    <span class="entry-comments"><i class="fa fa-comments-o"></i> <a href="#">15</a></span>
+                                </footer>
+                            </div>
+                        </article>
                     </div>
                 </div>
             </div>
 
-        </section>
-    </div>
+        </div>
+    </section>
 
-</div>
+    <section id="get-in-touch">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title text-center wow fadeInDown">Get in Touch</h2>
+                <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+            </div>
+        </div>
+    </section><!--/#get-in-touch-->
 
 
-
-<footer class="footer">
-    <div class="panel panel-default">
-        <div class="panel-body">
+    <section id="contact">
+        <div id="google-map" style="height:650px" data-latitude="52.365629" data-longitude="4.871331"></div>
+        <div class="container-wrapper">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12">
-                        <div class="row">
-                            <ul>
-                                <li><a href="#">Башкы бет</a></li>
-                                <li><a href="#">КТРК</a></li>
-                                <li><a href="#">Видеопортал</a></li>
-                                <li><a href="#">Телепрограмма</a></li>
-                                <li><a href="#">Байкоочу кеңеш</a></li>
-                                <li><a href="#">Редакциялык кеңешчи</a></li>
-                            </ul>
+                    <div class="col-sm-4 col-sm-offset-8">
+                        <div class="contact-form">
+                            <h3>Contact Info</h3>
+
+                            <address>
+                              <strong>Twitter, Inc.</strong><br>
+                              795 Folsom Ave, Suite 600<br>
+                              San Francisco, CA 94107<br>
+                              <abbr title="Phone">P:</abbr> (123) 456-7890
+                            </address>
+
+                            <form id="main-contact-form" name="contact-form" method="post" action="#">
+                                <div class="form-group">
+                                    <input type="text" name="name" class="form-control" placeholder="Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" name="email" class="form-control" placeholder="Email" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="subject" class="form-control" placeholder="Subject" required>
+                                </div>
+                                <div class="form-group">
+                                    <textarea name="message" class="form-control" rows="8" placeholder="Message" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Send Message</button>
+                            </form>
                         </div>
                     </div>
-
-                    <div class="col-md-12 copy"><i class="fa fa-copyright"></i> 2015 Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясы</div>
                 </div>
             </div>
         </div>
-    </div>
-</footer>
+    </section><!--/#bottom-->
+
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    &copy; 2014 Your Company. Designed by <a target="_blank" href="http://shapebootstrap.net/" title="Free Twitter Bootstrap WordPress Themes and HTML templates">ShapeBootstrap</a>
+                </div>
+                <div class="col-sm-6">
+                    <ul class="social-icons">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                        <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                        <li><a href="#"><i class="fa fa-flickr"></i></a></li>
+                        <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-github"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer><!--/#footer-->
+</div>
+
+
 
 <script src="js/jquery-1.11.2.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 
-
-<script type="text/javascript" src="filter/js/jquery.easing.min.js"></script>
-<script type="text/javascript" src="filter/js/jquery.mixitup.min.js"></script>
-
-<script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
-<script type="text/javascript" src="slick/slick.min.js"></script>
-<script type="text/javascript" src="js/jquery.roundabout.js"></script>
-
-<script>
-    $('.carousel-slick').slick({
-        infinite: true,
-        slidesToShow: 6,
-        slidesToScroll: 1
-    });
-</script>
-
-<script type="text/javascript">
-    (function($) {
-
-        var $descriptions = $('#carousel-descriptions').children('li'),
-                $controls = $('#carousel-controls').find('span'),
-                $carousel = $('#carousel')
-                        .roundabout({childSelector:"a", minOpacity:1, autoplay:false})
-                        .on('focus', 'img', function() {
-                            var slideNum = $carousel.roundabout("getChildInFocus");
-
-                            $descriptions.add($controls).removeClass('current');
-                            $($descriptions.get(slideNum)).addClass('current');
-                            $($controls.get(slideNum)).addClass('current');
-                        });
-
-        $controls.on('click dblclick', function() {
-            var slideNum = -1,
-                    i = 0, len = $controls.length;
-
-            for (; i<len; i++) {
-                if (this === $controls.get(i)) {
-                    slideNum = i;
-                    break;
-                }
-            }
-
-            if (slideNum >= 0) {
-                $controls.removeClass('current');
-                $(this).addClass('current');
-                $carousel.roundabout('animateToChild', slideNum);
-            }
-        });
-    }(jQuery));
-</script>
+<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+<script src="js/landing/owl.carousel.min.js"></script>
+<script src="js/landing/mousescroll.js"></script>
+<script src="js/landing/smoothscroll.js"></script>
+<script src="js/landing/jquery.prettyPhoto.js"></script>
+<script src="js/landing/jquery.isotope.min.js"></script>
+<script src="js/landing/jquery.inview.min.js"></script>
+<script src="js/landing/wow.min.js"></script>
+<script src="js/landing/main.js"></script>
+<script src="js/landing/jquery.js"></script>
+<script src="js/landing/fixed.js"></script>
 
 
-<script type="text/javascript">
-    $(function () {
-
-        var filterList = {
-
-            init: function () {
-
-                // MixItUp plugin
-                // http://mixitup.io
-                $('#portfoliolist').mixitup({
-                    showOnLoad: 'all-videos',
-                    targetSelector: '.portfolio',
-                    filterSelector: '.filter',
-                    effects: ['fade'],
-                    easing: 'snap',
-                    // call the hover effect
-                    onMixEnd: filterList.hoverEffect()
-                });
-
-            },
-
-            hoverEffect: function () {
-
-                // Simple parallax effect
-                $('#portfoliolist .portfolio').hover(
-                        function () {
-                            $(this).find('.label').stop().animate({bottom: 0}, 200, 'easeOutQuad');
-                            $(this).find('img').stop().animate({top: -40}, 250, 'easeOutQuad');
-                        },
-                        function () {
-                            $(this).find('.label').stop().animate({bottom: -40}, 200, 'easeInQuad');
-                            $(this).find('img').stop().animate({top: 0}, 300, 'easeOutQuad');
-                        }
-                );
-
-            }
-
-        };
-        // Run the show!
-        filterList.init();
-    });
-</script>
 </body>
 </html>
