@@ -13,11 +13,7 @@
     <div class="row">
         <div class="col-md-4 col-sm-3 col-xs-12">
             <h3>{{ $user->getName() }}</h3>            
-            <p>Канал: 
-                <a href="{{ route('admin.channel.show', $user->channel) }}">
-                    {!! $user->channel->getDisplay() !!}
-                </a>
-            </p>
+            
         </div>
         <div class="col-md-4 col-sm-3 col-xs-12">
             {!! Form::open(['route' => ['admin.user.destroy', $user], 'method' => 'DELETE', 'onsubmit' => "return confirm('Вы уверены ?')"]) !!}

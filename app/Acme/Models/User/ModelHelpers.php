@@ -12,5 +12,10 @@ trait ModelHelpers
     {
     	return $this->role == 'manager';
     }
+
+    public function isNs()
+    {
+    	return $this->role == 'ns';
+    }
 }
 
