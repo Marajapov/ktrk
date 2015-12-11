@@ -6,6 +6,7 @@ use App\Http\Requests;
 use Input;
 
 use Model\PhotoParent\ModelName as PhotoParent;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class PhotoParentController extends Controller
 {
@@ -41,7 +42,7 @@ class PhotoParentController extends Controller
      */
     public function store(Request $request)
     {
-        $photoParent = PhotoParent::create($request->except('images','q'));
+        $photoParent = PhotoParent::create($request->except('images','q','status'));
         
         // getting all of the post data
 
@@ -50,6 +51,26 @@ class PhotoParentController extends Controller
         $result = array();
 
         $file_count = count($files);
+
+        
+        if($request->hasFile('status'))
+        {
+            $file = $request->file('status');
+            $dir  = 'img/thumbnail';
+            $btw = time();
+
+            $name = $photoParent->id().$btw.'.'.$file->getClientOriginalExtension();
+
+//            $manager = new ImageManager(array('driver' => 'imagick'));
+
+            $storage = \Storage::disk('public');
+            $storage->makeDirectory($dir);
+
+            Image::make($_FILES['status']['tmp_name'])->resize(250, 150)->save($dir.'/'.$name);
+
+            $photoParent->status = $dir.'/'.$name;
+            $photoParent->save();
+        }
 
 
         // start count how many uploaded

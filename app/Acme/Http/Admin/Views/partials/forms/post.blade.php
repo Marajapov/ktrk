@@ -85,14 +85,14 @@
           <div class="col-xs-12">
             <div class="form-group">
               <label class="control-label" style="display:block;">Миниатюра</label>
-              <div class="fileinput fileinput-new" data-provides="fileinput">
-                <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
-                <div>
-                                        <span class="btn btn-default btn-file"><span class="fileinput-new">{{ trans('site.AdminBackgroundSelect') }}</span>
-                                        <span class="fileinput-exists">{{ trans('site.Change') }}</span>
-                                     {!! Form::file('thumbnail', null, ["class" => "form-control"]) !!}
+                <div class="fileinput fileinput-new" data-provides="fileinput">
+                  <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
+                    <div>
+                      <span class="btn btn-default btn-file"><span class="fileinput-new">{{ trans('site.AdminBackgroundSelect') }}</span>
+                      <span class="fileinput-exists">{{ trans('site.Change') }}</span>
+                      {!! Form::file('thumbnail', null, ["class" => "form-control"]) !!}
+                    </div>
                 </div>
-              </div>
             </div>
           </div>
 
