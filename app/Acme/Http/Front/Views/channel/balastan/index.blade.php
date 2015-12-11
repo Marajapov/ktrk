@@ -58,9 +58,9 @@
                              <img src="images/channels/balastan/clouds.png" alt=""/> 
                              <nav class="cloudlinks"> 
                                <ul>
-                                   <li><a href="#">О нас</a></li>
-                                   <li><a href="#">В мире Баластана</a></li>
-                                   <li><a href="#">Фотогалерея</a></li>
+                                   <li><a href="{{ route('balastan.about') }}">О нас</a></li>
+                                   <li><a href="{{ route('balastan.world') }}">В мире Баластана</a></li>
+                                   <li><a href="{{ route('balastan.photos') }}">Фотогалерея</a></li>
                                </ul>
                            </nav>                        
                         </div>

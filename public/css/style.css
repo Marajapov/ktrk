@@ -956,6 +956,9 @@ header{
 .main-video  .slider-nav .slick-current{
     display: none !important;
 }
+.main-video  .slider-for .slick-slide{
+
+}
 .main-video .slider-for .slider-text{
     height: 207px;
 }
@@ -972,6 +975,7 @@ header{
     text-align: center;
     text-transform: uppercase;
 }
+
 /*Video promo
 
 /* Panel Articles */
@@ -4663,11 +4667,74 @@ ul.social-share li a:hover {
     padding: 10px
 
 }
+.forabout {
+    height: 650px;
+    width: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0px auto;
+}
+
 
 .kidsboard{
     background: url(../images/channels/balastan/chalkboard.png) no-repeat;
     background-size: contain;
     width: 284px;;
+
+}
+
+.aboutkids{
+    z-index: -1;
+    margin-top: 14px;
+
+}
+.aboutkids .panel .panel-heading {
+    text-align:center; 
+    border-bottom: none !important;
+}
+.aboutkids .panel .panel-heading .panel-title span{
+    color: #fff;
+    font-size: 23px;
+    font-weight: bold;
+    text-align: center;
+}
+.aboutkids .panel {
+    background-image: -o-linear-gradient(bottom, #f15d58 0%, #C5231E 100%);
+    background-image: -moz-linear-gradient(bottom, #f15d58 0%, #C5231E 100%);
+    background-image: -ms-linear-gradient(bottom, #f15d58 0%, #C5231E 100%);
+    background-image: linear-gradient(to bottom, #f15d58 0%, #C5231E 100%);
+}
+.aboutkids .panel-body {
+    color: #fff;
+}
+.firstp{
+    font-weight: bold;
+    font-size: 18px;
+    margin:0px 10px; 
+}
+.secondp{
+    font-weight: bold;
+    font-size: 18px;
+    margin:0px 10px;
+    text-align: right; 
+}
+.worldtext p{
+    text-align: justify;
+}
+.worldtext h2 {
+    margin: 0px 0px 5px 0px; 
+}
+.worldtext .col-md-4{
+    padding: 0px;
+    text-align: center;
+    margin: 0px auto;
+}
+.worldtext img{
+    margin-top: 5px;
+    width: 100%;
+    height: auto;
+    text-align: center;
 
 }
 .logocenter {
