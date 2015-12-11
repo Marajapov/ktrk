@@ -168,7 +168,7 @@ class PageController extends Controller
     {
         $categories = \Model\Category\ModelName::all();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
-        return view('Front::pages.kenesh', [
+        return view('Front::pages.ns', [
             'backgroundMain' => $backgroundMain,
             'categories' => $categories,
             ]);

@@ -65,28 +65,29 @@
                       <h3 class="panel-title"><span>{{ trans('site.BaikoochuKeneshAsk') }}</span></h3>
                     </div>
                     <div class="panel-body sidebar-panel-body">
-                      <h4>Как Вы оцениваете работу НС КТРК?</h4>
+                      <h4><strong>Как Вы оцениваете работу НС КТРК?</strong></h4>
 
                       <div id="poll" class="poll">
                         <form >
-                        <div class="radio">
-                          <input type="radio" name="vote" id="radio1" value="0" onclick="getVote(this.value)">
-                          <label for="radio1">
-                            Отлично
-                          </label>
-                        </div>
-                        <div class="radio">
-                          <input type="radio" name="vote" id="radio2" value="1" onclick="getVote(this.value)">
-                          <label for="radio2">
-                            Хорошо
-                          </label>
-                        </div>
-                        <div class="radio">
-                          <input type="radio" name="vote" id="radio2" value="2" onclick="getVote(this.value)">
-                          <label for="radio2">
-                            Удовлетворительно
-                          </label>
-                        </div>
+                          <div class="radio">
+                            <input type="radio" name="vote" id="radio1" value="1" onclick="getVote(this.value)">
+                            <label for="radio1">
+                              Отлично
+                            </label>
+                          </div>
+                          <div class="radio">
+                            <input type="radio" name="vote" id="radio2" value="2" onclick="getVote(this.value)">
+                            <label for="radio2">
+                              Хорошо
+                            </label>
+                          </div>
+                          <div class="radio">
+                            <input type="radio" name="vote" id="radio3" value="3" onclick="getVote(this.value)">
+                            <label for="radio3">
+                              Удовлетворительно
+                            </label>
+                          </div>
+                        </form>
                       </div>
 
                     </div>
@@ -169,6 +170,61 @@
 
                           <h5 class="media-desc">
                             <p>Кабинет, как у бизнесмена средней руки. Нет ни мебели красного дерева, как в вотчинах других чиновников высокого ранга, ни канцелярского набора из бирюзы. Из роскоши — 6 плазменных телевизоров на стене. Под столом склад жестянок с безалкогольным энергетиком.
+                            </p></h5>
+                        </div>
+                      </div>
+
+                      <div class="media">
+                        <div class="media-left">
+                          <a href="#">
+                            <img class="media-object thumb" src="http://ktrk.kg/sites/default/files/styles/juicebox_medium/public/gallery/album/fotos/_mg_9802.jpg?itok=YROMXAeD" alt="image">
+                          </a>
+                        </div>
+                        <div class="media-body">
+                          <div class="extra">
+                            <span class="e-datetime">18 Нояб , 12:22</span>
+                            <span class="e-views"><i class="fa fa-eye"></i>17</span>
+                          </div>
+                          <a class="media-heading" href="http://1000.ktrk.kg/post/1">КТРКнын жаңыланган заманбап кеңсеси</a>
+
+                          <h5 class="media-desc">
+                            <p>Бүгүн, 6-ноябрда Коомдук телерадиоберүү корпорациясында жаңыланган заманбап үлгүдөгү иш кабинеттеринин ачылышы болду.
+                            </p></h5>
+                        </div>
+                      </div>
+                      <div class="media">
+                        <div class="media-left">
+                          <a href="#">
+                            <img class="media-object thumb" src="http://ktrk.kg/sites/default/files/styles/juicebox_medium/public/gallery/album/fotos/_mg_9802.jpg?itok=YROMXAeD" alt="image">
+                          </a>
+                        </div>
+                        <div class="media-body">
+                          <div class="extra">
+                            <span class="e-datetime">18 Нояб , 12:22</span>
+                            <span class="e-views"><i class="fa fa-eye"></i>17</span>
+                          </div>
+                          <a class="media-heading" href="http://1000.ktrk.kg/post/1">КТРКнын жаңыланган заманбап кеңсеси</a>
+
+                          <h5 class="media-desc">
+                            <p>Бүгүн, 6-ноябрда Коомдук телерадиоберүү корпорациясында жаңыланган заманбап үлгүдөгү иш кабинеттеринин ачылышы болду.
+                            </p></h5>
+                        </div>
+                      </div>
+                      <div class="media">
+                        <div class="media-left">
+                          <a href="#">
+                            <img class="media-object thumb" src="http://ktrk.kg/sites/default/files/styles/juicebox_medium/public/gallery/album/fotos/_mg_9802.jpg?itok=YROMXAeD" alt="image">
+                          </a>
+                        </div>
+                        <div class="media-body">
+                          <div class="extra">
+                            <span class="e-datetime">18 Нояб , 12:22</span>
+                            <span class="e-views"><i class="fa fa-eye"></i>17</span>
+                          </div>
+                          <a class="media-heading" href="http://1000.ktrk.kg/post/1">КТРКнын жаңыланган заманбап кеңсеси</a>
+
+                          <h5 class="media-desc">
+                            <p>Бүгүн, 6-ноябрда Коомдук телерадиоберүү корпорациясында жаңыланган заманбап үлгүдөгү иш кабинеттеринин ачылышы болду.
                             </p></h5>
                         </div>
                       </div>

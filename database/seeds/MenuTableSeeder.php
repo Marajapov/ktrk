@@ -98,7 +98,7 @@ class MenuTableSeeder extends Seeder
             'parent_id' => null,
             'code'		=> 'main',
             'name'      => 'БАЙКООЧУ КЕҢЕШ',
-            'url'		=> 'http://ktrk.dev/kenesh',
+            'url'		=> 'http://ktrk.dev/ns',
             'order' 	=> 10,
         ]);
 
@@ -107,7 +107,7 @@ class MenuTableSeeder extends Seeder
             'parent_id' => null,
             'code'		=> 'main',
             'name'      => 'РЕДАКЦИЯЛЫК КЕҢЕШЧИ',
-            'url'		=> 'http://ktrk.dev/editionkenesh',
+            'url'		=> 'http://ktrk.dev/rs',
             'order' 	=> 11,
         ]);
     }

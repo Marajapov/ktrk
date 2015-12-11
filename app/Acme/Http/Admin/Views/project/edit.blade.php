@@ -11,7 +11,7 @@
 				<div class="clearfix"></div>
 			</div>
 			<div class="x_content">
-				{!! Form::model($project, ['route' => ['admin.project.update', $project], 'method' => 'PUT']) !!}
+				{!! Form::model($project, ['route' => ['admin.project.update', $project], 'method' => 'PUT', 'enctype' => 'multipart/form-data']) !!}
 				@include('Admin::partials.forms.project', $project)
 				{!! Form::close() !!}
 			</div>

@@ -43,7 +43,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        User::create($request->all());
+        User::create($request->except('q'));
 
         return redirect()->route('admin.user.index');
     }
@@ -79,7 +79,7 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        $user->update($request->all());
+        $user->update($request->except('q'));
 
         return redirect()->route('admin.user.show', $user);
     }

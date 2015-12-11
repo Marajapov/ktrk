@@ -34,21 +34,21 @@
           <div class="col-sm-12">
             <div class="form-group">
               <label class="control-label">Канал</label>
-              {!! Form::select('channel_id', \Model\Channel\ModelName::lists('display', 'id')->toArray(), null, ["class" => "select2_group  form-control", "required" => true, "title" => ""]) !!}
+              {!! Form::select('channel_id', array('0'=>'--Выберите--') + $channelList, null, ["class" => "select2_group  form-control", "required" => true, "title" => ""]) !!}
             </div>
           </div>
 
           <div class="col-sm-12">
             <div class="form-group">
               <label class="control-label">Категория</label>
-              {!! Form::select('category_id', \Model\Category\ModelName::lists('titleRu', 'id')->toArray(), null, ["class" => "select2_group  form-control", "required" => true, "title" => ""]) !!}
+              {!! Form::select('category_id', array('0'=>'--Выберите--') + $categoryList, null, ["class" => "select2_group  form-control", "required" => true, "title" => ""]) !!}
             </div>
           </div>
 
           <div class="col-sm-12">
             <div class="form-group">
               <label class="control-label">{{ trans('site.AdminPhotoChildSelectGaller') }}</label>
-              {!! Form::select('parentId', array('0'=>'--Выберите--')+ $PhotoParentList, null, ["class" => "select2_group  form-control", "title" => ""]) !!}
+              {!! Form::select('parentId', array('0'=>'--Выберите--') + $PhotoParentList, null, ["class" => "select2_group  form-control", "title" => ""]) !!}
             </div>
           </div>
 

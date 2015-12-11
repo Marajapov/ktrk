@@ -17,6 +17,8 @@ return [
     'All news' => 'Бардык',
     'Info' => 'Маалымат',
 
+    'Ktrk' => 'Коомдук телерадиоберүү корпорациясы',
+
 
     //Header Footer titles
     'Homepage' => 'Башкы бет',
@@ -30,9 +32,21 @@ return [
     'BaikoochuKeneshReports' => 'Отчеттор',
     'BaikoochuKeneshGallery' => 'Сүрөт көргөзмө',
     'BaikoochuKeneshContacts' => 'Байланыш',
+    'BaikoochuKeneshContactsFull' => 'Байланыш маалымат',
+    'BaikoochuKeneshContactsAdres' => 'Биздин дарек',
+    'BaikoochuKeneshContactsAdresText' => 'Бишкек ш., Жаш Гвардия бульвары, 59 ',
+    'BaikoochuKeneshContactsPhone' => 'Кабылдама',
     'BaikoochuKeneshAsk' => 'Сурамжылоо',
+    'BaikoochuKeneshTeamTitle' => 'Коомдук телерадиоберүү корпорациясынын Байкоочу кеңешинин курамы',
+    'BaikoochuKeneshReportsTitle' => 'КТРК Байкоочулар кеңешинин аткарган иштеринин жылдык отчеттору',
 
     'RedKenesh' => 'Редакциялык кеңешчи',
+    'RedKeneshNews' => 'Жаңылыктар',
+    '' => '',
+    '' => '',
+    '' => '',
+    '' => '',
+    '' => '',
 
     'HistoryFull' => 'Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясынын тарыхы',
     'History' => 'Тарыхы',

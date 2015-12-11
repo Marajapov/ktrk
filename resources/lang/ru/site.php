@@ -16,6 +16,8 @@ return [
     'Top news' => 'Новости',
     'All news' => 'Все новости',
 
+    'Ktrk' => 'Общественная телерадиовещательная корпорация',
+
     //Header Footer titles
     'Homepage' => 'Главная страница',
     'BaikoochuKenesh' => 'Наблюдательный совет',
@@ -29,10 +31,17 @@ return [
     'BaikoochuKeneshReports' => 'Отчеты',
     'BaikoochuKeneshGallery' => 'Фотогалерея',
     'BaikoochuKeneshContacts' => 'Контакты',
+    'BaikoochuKeneshContactsFull' => 'Контактная информация',
+    'BaikoochuKeneshContactsAdres' => 'Наш адрес',
+    'BaikoochuKeneshContactsAdresText' => 'г.Бишкек, бульвар Молодой Гвардии, 59',
+    'BaikoochuKeneshContactsPhone' => 'Телефон приемной',
     'BaikoochuKeneshAsk' => 'Опрос',
+    'BaikoochuKeneshTeamTitle' => 'Состав Наблюдательного совета Общественной телерадиовещательной корпорации',
+    'BaikoochuKeneshReportsTitle' => 'Годовые отчеты о деятельности Наблюдательного Совета ОТРК',
 
 
     'RedKenesh' => 'Редакционный советник',
+    'RedKeneshNews' => 'Новости',
 
     'HistoryFull' => 'История Общественной Телерадиовещательной корпорации Кыргызской Республики',
     'History' => 'История',

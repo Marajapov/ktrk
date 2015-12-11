@@ -260,7 +260,7 @@ img{
     transform: translateY(-50%) translateX(-50%);
 }
 #liveModal .modal-dialog{
-    /*width: 660px;*/
+    width: 660px;
 }
 #liveModal .modal-content{
     border: 0;
@@ -923,6 +923,61 @@ header{
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
+/*Video promo*/
+.main-video .embed-responsive-16by9{
+    padding-bottom: 11.25%;
+
+}
+.main-video .slick-slide img {
+    float: left;
+    height: 100px;
+    width: auto;
+    margin: 3px 3px;
+}
+@media (max-width:1170px) {
+    .main-video .slick-slide img{
+    height: 80px;
+    width: auto;
+  }
+}
+@media (max-width:970px) {
+    .main-video .slick-slide img{
+        margin: 0px;
+        height: 100px;
+        width: auto;
+}
+    .main-video .slider-for .slider-text {
+    height: 407px !important;
+}
+}
+.main-video .slick-initialized .slick-slide{
+    display: inline-table;
+}
+.main-video  .slider-nav .slick-current{
+    display: none !important;
+}
+.main-video  .slider-for .slick-slide{
+
+}
+.main-video .slider-for .slider-text{
+    height: 207px;
+}
+.main-video .slick-slider {
+    margin-bottom: auto;
+}
+
+.slick-text h2{
+    margin: 15px 0px;
+    color: #4e5e6a;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 20px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/*Video promo
+
 /* Panel Articles */
 
 .grid {
@@ -1249,13 +1304,15 @@ header{
 .gallery .slick-slide span, .broadimages .slick-slide span{
     position: absolute;
     top: 50%;
+    left: 0;
+    right: 0;
     z-index: 3;
 
     color: #ffffff;
 
     display: block;
-    margin: 0 10%;
-    width: 80%;
+    margin: 0 auto;
+    width: 100%;
 
     font-size: 12px;
     line-height: 20px;
@@ -1888,7 +1945,7 @@ header{
     font-size: 14px;
 }
 .show-block .show-desc{
-    font-size: 12px;
+    font-size: 14px;
 }
 .letters{
     margin: 10px 0;
@@ -1907,7 +1964,7 @@ header{
 /*Panel show*/
 .panel-show .media-left a{
     height: 150px;
-    width: 300px;
+    width: 200px;
 }
 .panel-show .media-left a img{
     height: 150px;
@@ -4503,6 +4560,26 @@ ul.social-share li a:hover {
 /*Madaniayt page style*/
 
 /* Balastan page style*/
+.rightcloud {
+    position: absolute;
+    -webkit-transform: rotate(15deg);
+    -ms-transform: rotate(15deg);
+    -o-transform: rotate(15deg);
+    transform: rotate(15deg);
+    height: 250px;
+    width: auto;
+    margin-left: -100px;
+}
+.leftcloud {
+    position: absolute;
+    -webkit-transform: rotate(-15deg);
+    -ms-transform: rotate(-15deg);
+    -o-transform: rotate(-15deg);
+    transform: rotate(-15deg);
+    height: 250px;
+    width: auto;
+    margin-left: -70px;
+}
 .clouds {
     position: absolute;
 }
@@ -4538,6 +4615,9 @@ ul.social-share li a:hover {
 .cloudlinks li>a{
     color: #B32D24;
 }
+.cloudlinks li>a:hover{
+    color: red;
+}
 .sun{
 
     margin-top: 10px;
@@ -4548,7 +4628,7 @@ ul.social-share li a:hover {
     height: 200px;
     width: auto;
     position: absolute;
-    top: -67px;
+    top: -39px;
     z-index: -1;
     margin-right: 308px;
     right: 0;
@@ -4563,16 +4643,99 @@ ul.social-share li a:hover {
     z-index: -1 !important;
     left: -25px;
 }
+.kidsvblock .panel{
+    background: none;
+}
+.kidsvblock .panel-body {
+    padding: 0px 100px;
+}
 
-.stanslider{
-    margin-top: 0px;
+.kidsvblock .panel .panel-heading {
+    text-align:center; 
+    border-bottom: none !important;
 }
-.stanslider .carousel-inner>.item>img, .carousel{
-   
-    border-radius: 20px !important;
+.kidsvblock .panel .panel-heading h3{
+    border-bottom: none !important;
 }
-.stanslider .carousel-control.left, .stanslider .carousel-control.right{
-    background: none !important;
+.kidsvblock .panel .panel-heading .panel-title span {
+    color: #fff;
+    font-size: 23px;
+    font-weight: bold;
+}
+.kidsvideo{
+    margin: 10px auto;;
+    padding: 10px
+
+}
+.forabout {
+    height: 650px;
+    width: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0px auto;
+}
+
+
+.kidsboard{
+    background: url(../images/channels/balastan/chalkboard.png) no-repeat;
+    background-size: contain;
+    width: 284px;;
+
+}
+
+.aboutkids{
+    z-index: -1;
+    margin-top: 14px;
+
+}
+.aboutkids .panel .panel-heading {
+    text-align:center; 
+    border-bottom: none !important;
+}
+.aboutkids .panel .panel-heading .panel-title span{
+    color: #fff;
+    font-size: 23px;
+    font-weight: bold;
+    text-align: center;
+}
+.aboutkids .panel {
+    background-image: -o-linear-gradient(bottom, #f15d58 0%, #C5231E 100%);
+    background-image: -moz-linear-gradient(bottom, #f15d58 0%, #C5231E 100%);
+    background-image: -ms-linear-gradient(bottom, #f15d58 0%, #C5231E 100%);
+    background-image: linear-gradient(to bottom, #f15d58 0%, #C5231E 100%);
+}
+.aboutkids .panel-body {
+    color: #fff;
+}
+.firstp{
+    font-weight: bold;
+    font-size: 18px;
+    margin:0px 10px; 
+}
+.secondp{
+    font-weight: bold;
+    font-size: 18px;
+    margin:0px 10px;
+    text-align: right; 
+}
+.worldtext p{
+    text-align: justify;
+}
+.worldtext h2 {
+    margin: 0px 0px 5px 0px; 
+}
+.worldtext .col-md-4{
+    padding: 0px;
+    text-align: center;
+    margin: 0px auto;
+}
+.worldtext img{
+    margin-top: 5px;
+    width: 100%;
+    height: auto;
+    text-align: center;
+
 }
 .logocenter {
     text-align: center;

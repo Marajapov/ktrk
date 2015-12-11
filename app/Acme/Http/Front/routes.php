@@ -15,6 +15,9 @@ Route::group(['domain' => 'ktrk.dev', 'prefix' => '/balastan', 'namespace' => 'F
 
     Route::get('/', ['as' => 'balastan.home',   'uses' => 'BalastanController@Home']);
     Route::get('/posts', ['as' => 'balastan.posts',   'uses' => 'BalastanController@posts']);
+    Route::get('/photos', ['as' => 'balastan.photos',   'uses' => 'BalastanController@photos']);
+    Route::get('/world', ['as' => 'balastan.world',   'uses' => 'BalastanController@world']);
+    Route::get('/about', ['as' => 'balastan.about',   'uses' => 'BalastanController@about']);
 
 });
 
@@ -126,9 +129,28 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
     Route::get('rrts', ['as' => 'front.pages.rrts', 'uses' => 'PageController@rrtsPage']);
     Route::get('report', ['as' => 'front.pages.report', 'uses' => 'PageController@reportPage']);
     Route::get('teleprogram', ['as' => 'front.pages.teleprogram', 'uses' => 'PageController@teleprogramPage']);
-    Route::get('kenesh', ['as' => 'front.pages.kenesh', 'uses' => 'PageController@keneshPage']);
+//    Route::get('ns', ['as' => 'front.pages.ns', 'uses' => 'PageController@keneshPage']);
     Route::get('editionkenesh', ['as' => 'front.pages.editionkenesh', 'uses' => 'PageController@editionkeneshPage']);
-    
+
+//    BaikoochuKenesh
+    Route::get('ns', ['as' => 'front.ns.index', 'uses' => 'NsController@index']);
+    Route::get('ns/team', ['as' => 'front.ns.team', 'uses' => 'NsController@team']);
+    Route::get('ns/posts', ['as' => 'front.ns.posts', 'uses' => 'NsController@posts']);
+    Route::get('ns/post/{post}', ['as' => 'front.ns.post', 'uses' => 'NsController@post']);
+    Route::get('ns/galleries', ['as' => 'front.ns.galleries', 'uses' => 'NsController@galleries']);
+    Route::get('ns/gallery/{gallery}', ['as' => 'front.ns.gallery', 'uses' => 'NsController@gallery']);
+    Route::get('ns/reports', ['as' => 'front.ns.reports', 'uses' => 'NsController@reports']);
+    Route::get('ns/contacts', ['as' => 'front.ns.contacts', 'uses' => 'NsController@contacts']);
+
+//    RedakciyaKenesh
+    Route::get('rs', ['as' => 'front.rs.index', 'uses' => 'RsController@index']);
+    Route::get('rs/about', ['as' => 'front.rs.about', 'uses' => 'RsController@about']);
+    Route::get('rs/person/{person}', ['as' => 'front.rs.person', 'uses' => 'RsController@person']);
+    Route::get('rs/faq', ['as' => 'front.rs.faq', 'uses' => 'RsController@faq']);
+    Route::get('rs/posts', ['as' => 'front.rs.posts', 'uses' => 'RsController@posts']);
+    Route::get('rs/post/{post}', ['as' => 'front.rs.post', 'uses' => 'RsController@post']);
+    Route::get('rs/procedure', ['as' => 'front.rs.procedure', 'uses' => 'RsController@procedure']);
+    Route::get('rs/contacts', ['as' => 'front.rs.contacts', 'uses' => 'RsController@contacts']);
 
 Route::get('locale/{locale?}',   ['as' => 'locale',   'uses' => 'CommonController@setLocale']);
 

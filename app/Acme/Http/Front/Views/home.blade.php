@@ -189,9 +189,9 @@
               <div class="panel-heading">
                 <h3 class="panel-title"><span>{{ trans('site.FrontPostDaysVideo') }}</span></h3>
               </div>
-              <div class="panel-body">
+              <div class="panel-body main-video">
 
-                @if($dayVideo)
+                <!--        @if($dayVideo)
                   <div class="col-md-12 block main-video">
                     <div class="embed-responsive embed-responsive-16by9">
                       <iframe class="embed-responsive-item" src="//www.youtube.com/embed/{{ $dayVideo->url }}" allowfullscreen=""></iframe>
@@ -221,7 +221,42 @@
 
                   @endforeach
 
-                @endif
+                @endif -->
+
+                <div class="slider slider-for">
+                  <div>
+
+                    <div class="embed-youtube embed-responsive embed-responsive-16by9 slider-text">
+                      <iframe class="embed-responsive-item" src="//www.youtube.com/embed/yCG-yNC-aqk?enablejsapi=1&version=3&playerapiid=ytplayer" allowfullscreen=""></iframe>
+                    </div>
+                    <div class="slick-text">
+                      <a href="{{ route('front.media.video', $dayVideo) }}">
+                        <h2>@if($dayVideo){{ $dayVideo->getName() }} @endif</h2>
+                      </a>
+                    </div>
+
+                  </div>
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="//www.youtube.com/embed/66ehf69z_PI?enablejsapi=1&version=3&playerapiid=ytplayer" allowfullscreen=""></iframe>
+                  </div>
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="//www.youtube.com/embed/khhdag87Poc?enablejsapi=1&version=3&playerapiid=ytplayer" allowfullscreen=""></iframe>
+                  </div>
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="//www.youtube.com/embed/Zgfwy2dR_vA?enablejsapi=1&version=3&playerapiid=ytplayer" allowfullscreen=""></iframe>
+                  </div>
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="//www.youtube.com/embed/pnrUhMN8H4Y?enablejsapi=1&version=3&playerapiid=ytplayer" allowfullscreen=""></iframe>
+                  </div>
+
+                </div>
+                <div class="slider slider-nav">
+                  <div data-toggle="tooltip" data-placement="top" title="Tooltip on top"><img src="http://img.youtube.com/vi/yCG-yNC-aqk/mqdefault.jpg" alt="" /></div>
+                  <div data-toggle="tooltip" data-placement="top" title="Tooltip on top"><img src="http://img.youtube.com/vi/66ehf69z_PI/mqdefault.jpg" alt="" /></div>
+                  <div data-toggle="tooltip" data-placement="top" title="Tooltip on top"><img src="http://img.youtube.com/vi/khhdag87Poc/mqdefault.jpg" alt="" /></div>
+                  <div data-toggle="tooltip" data-placement="top" title="Tooltip on top"><img src="http://img.youtube.com/vi/Zgfwy2dR_vA/mqdefault.jpg" alt="" /></div>
+                  <div data-toggle="tooltip" data-placement="top" title="Tooltip on top"><img src="http://img.youtube.com/vi/pnrUhMN8H4Y/mqdefault.jpg" alt="" /></div>
+                </div>
 
                 <footer>
                   <a href="{{ route('front.media.index') }}">
@@ -283,14 +318,14 @@
               <div class="panel-heading">
                 <h3 class="panel-title director-title">
                   <a class="director-img" href="{{ route('front.pages.director') }}">
-                    <img src="{{ asset('images/chief.jpg') }}" alt="директор"/>
+                    <img src="{{ asset('images/chief.png') }}" alt="директор"/>
                   </a>
                   <a class="director-text" href="{{ route('front.pages.director') }}">{{ trans('site.FrontDirectorPage') }}</a>
                 </h3>
               </div>
               <div class="panel-body">
 
-                <div class="col-md-12">
+                <div class="">
                   <div class="carousel carousel-director">
                     <div>
                       <a href="#">
@@ -432,7 +467,12 @@
                   <div class="carousel-slick">
                     @if($images != 1)
                       @foreach($images as $image)
-                        <div class="col-md-4"><a href="#"><img src="{{ asset('froala/uploads/'.$image->name) }}" alt=""/><span>Название</span><div class="overlay"></div></a></div>
+                        <div class="col-md-4">
+                          <a href="#">
+                            <img src="{{ asset('froala/uploads/'.$image->name) }}" alt=""/><span>Название</span>
+                            <div class="overlay"></div>
+                          </a>
+                        </div>
                       @endforeach
                     @endif
                   </div>
@@ -488,5 +528,31 @@
       // Run the show!
       filterList.init();
     });
+  </script>
+  <script>
+    $('.slider-for').slick({
+      slidesToShow: 1,
+      fade: true,
+      arrows: false,
+      autoplay:false
+    });
+    $('.slider-nav').slick({
+      slidesToShow: 5,
+      asNavFor: '.slider-for',
+      focusOnSelect: true
+    });
+
+    $('.slider-nav .slick-slide').each(function () {
+      $(this).click(function (i, el) {
+        $('.slider-for .embed-responsive-item').each(function () {
+          $(this)[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+        });
+
+      });
+    });
+
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    })
   </script>
 @endsection

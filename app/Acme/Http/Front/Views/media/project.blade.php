@@ -65,7 +65,7 @@
                         <img src="http://img.youtube.com/vi/{{$relatedVideo->url}}/mqdefault.jpg" alt=""/>
                         <i class="fa fa-play-circle-o"></i>
                       </a>
-                      <a href="#" class="video-title">
+                      <a href="{{ route('front.media.video',$relatedVideo) }}" class="video-title">
                         <h4>{{$relatedVideo->getName()}}</h4>
                       </a>
                     </div>

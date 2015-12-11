@@ -92,7 +92,24 @@ class ProjectController extends Controller
      */
     public function update(Request $request, Project $project)
     {
-        $project->update($request->except('q'));
+        $project->update($request->except('q','thumbnail'));
+        
+        if($request->hasFile('thumbnail'))
+        {
+            $file = $request->file('thumbnail');
+            $dir  = 'img/thumbnail/projects';
+            $btw = time();
+
+            $name = $project->id().$btw.'.'.$file->getClientOriginalExtension();
+            
+            $storage = \Storage::disk('public');
+            $storage->makeDirectory($dir);
+
+            Image::make($_FILES['thumbnail']['tmp_name'])->save($dir.'/'.$name);
+
+            $project->thumbnail = $dir.'/'.$name;
+            $project->save();
+        }
 
         return redirect()->route('admin.project.show', $project);
     }
