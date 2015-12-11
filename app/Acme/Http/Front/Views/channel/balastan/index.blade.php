@@ -11,6 +11,7 @@
         <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
         <link rel="stylesheet" href="css/style.css"/>
         <link href="css/allinone_carousel.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="css/iphone.css" media="only screen and (max-device-width: 480px)" />
 
 
     </head>
@@ -46,10 +47,10 @@
 
         <div class="container">
             <div class="row">      
-                <div class="col-md-12 logo-block logocenter">
+                <div class="col-md-12  logocenter">
                     <div class="row">
                 
-                    <div class="col-md-12 clouds">
+                    <div class="col-md-12 col-sm-12 col-xs-12 clouds">
                        <div class="sun">
                     <img src="images/channels/balastan/sun-icon.png" alt=""/>
            <!--          <img class="balastanlogo" src="images/channels/balastan_white.png" alt=""/> -->
@@ -58,8 +59,10 @@
                              <img src="images/channels/balastan/clouds.png" alt=""/> 
                              <nav class="cloudlinks"> 
                                <ul>
+                                   <li><a class="active" href="{{ route('balastan.home') }}">Главная</a></li>
                                    <li><a href="{{ route('balastan.about') }}">О нас</a></li>
                                    <li><a href="{{ route('balastan.world') }}">В мире Баластана</a></li>
+                                   <li><a href="{{ route('balastan.video') }}">Видео</a></li>
                                    <li><a href="{{ route('balastan.photos') }}">Фотогалерея</a></li>
                                </ul>
                            </nav>                        
@@ -103,32 +106,32 @@
                         <div class="panel-body">
                             <div class="row ">
                                
-                                    <div class="col-md-4">
+                                    <div class="col-md-4 col-sm-6">
                                         <div class="kidsvideo kidsboard">
                                             <iframe width="100%" height="180px" src="https://www.youtube.com/embed/2tV6RFYqCZg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                   
                                         </div>           
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-4 col-sm-6">
                                         <div class="kidsvideo kidsboard">
                                             <iframe width="100%" height="180px" src="https://www.youtube.com/embed/2tV6RFYqCZg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                            
                                         </div>  
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-4 col-sm-6">
                                         <div class="kidsvideo kidsboard">
                                             <iframe width="100%" height="180px" src="https://www.youtube.com/embed/2tV6RFYqCZg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                                   
                                         </div>  
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-4 col-sm-6">
                                         <div class="kidsvideo kidsboard">
                                             <iframe width="100%" height="180px" src="https://www.youtube.com/embed/2tV6RFYqCZg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                   
                                         </div>  
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-4 col-sm-6">
                                         <div class="kidsvideo kidsboard">
                                           <iframe width="100%" height="180px" src="https://www.youtube.com/embed/2tV6RFYqCZg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                   
                                         </div>           
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-4 col-sm-6">
                                         <div class="kidsvideo kidsboard">
                                             <iframe width="100%" height="180px" src="https://www.youtube.com/embed/2tV6RFYqCZg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                   
                                         </div>  
@@ -141,26 +144,26 @@
                 </div>
             </div>
             <div class="row">               
-                <div class="col-md-12 kidsvblock">
+                <div class="col-xs-12 kidsvblock">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h3 class="panel-title"><span>Фотогалерея</span></h3>
                         </div>
                         <div class="panel-body">
                             <div class="row ">                                                    
-                                <div class="allinone_carousel charming ui-draggable">
+                                <div class="colallinone_carousel charming ui-draggable">
                                    <div id="allinone_carousel_charming">
                                       <div class="myloader" style="display: none;"></div>
                                       <!-- CONTENT -->
                                       <ul class="allinone_carousel_list">
                                     
-                                         <li><img src="{{asset('images/gallery/001.jpg')}}" alt=""></li>
-                                         <li><img src="{{asset('images/gallery/002.jpg')}}" alt=""></li>
-                                         <li><img src="{{asset('images/gallery/003.jpg')}}" alt=""></li>
-                                         <li><img src="{{asset('images/gallery/004.jpg')}}" alt=""></li>
-                                         <li><img src="{{asset('images/gallery/005.jpg')}}" alt=""></li>
-                                         <li><img src="{{asset('images/gallery/006.jpg')}}" alt=""></li>
-                                         <li><img src="{{asset('images/gallery/007.jpg')}}" alt=""></li>
+                                         <li><img src="{{asset('images/channels/balastan/birge.png')}}" alt=""></li>
+                                         <li><img src="{{asset('images/channels/balastan/baaryn.png')}}" alt=""></li>
+                                         <li><img src="{{asset('images/channels/balastan/taalimtay.png')}}" alt=""></li> 
+                                         <li><img src="{{asset('images/channels/balastan/birge.png')}}" alt=""></li>
+                                         <li><img src="{{asset('images/channels/balastan/baaryn.png')}}" alt=""></li>
+                                         <li><img src="{{asset('images/channels/balastan/taalimtay.png')}}" alt=""></li>
+
                                       </ul>
                                    </div>                         
 
