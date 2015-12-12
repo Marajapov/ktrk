@@ -2693,7 +2693,7 @@ display: block;
     float: none;
 }
 .channel_switch .sitemenu a {
-    opacity: 0.1;
+    opacity: 0.3;
     transition: opacity 0.1s ease 0s;
 }
 .channel_switch .sitemenu a.active, .channel_switch .sitemenu a:hover {
