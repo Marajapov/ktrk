@@ -28,12 +28,23 @@ class ModelName extends Model
 
     public function getName()
     {
-        return $this->name;
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            return $this->name;    
+        }else{
+            return $this->nameRu;
+        }
+        
     }
 
-    public function getNameRu()
+    public function getDescription()
     {
-        return $this->name_ru;
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            return $this->description;    
+        }else{
+            return $this->descriptionRu;
+        }
     }
 
     public function getFile()
