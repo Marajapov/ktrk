@@ -48,7 +48,7 @@
       <div class="form-group">
         <label for="parentId" class="col-sm-2 control-label">Фотогалерея</label>
         <div class="col-sm-10">
-          {!! Form::select('parentId', $PhotoParentList, null, ["class" => "selectpicker", "data-live-search"=>"true", "required" => true, "title" => "-- Выберите --"]) !!}
+          {!! Form::select('parentId', $PhotoParentList, null, ["class" => "selectpicker", "data-live-search"=>"true", "title" => "-- Выберите --"]) !!}
         </div>
       </div>
 
@@ -129,99 +129,91 @@
         </div>
       </div>
 
-      <div class="col-xs-12">
-        <div class="form-group">
-          <label class="control-label">{{ trans('site.TitleKG') }}</label>
-          {!! Form::text('title', null, ["class" => "form-control"]) !!}
-        </div>
-      </div>
-
-      <div class="col-xs-12">
-        <div class="form-group">
-          <label class="control-label">{{ trans('site.TextKG') }}</label>
+      <div class="form-group">
+        <label for="channel_id" class="col-sm-2 control-label">{{ trans('site.TextKG') }}</label>
+        <div class="col-sm-10">
           {!! Form::textarea('content', null, ["class" => "form-control", "id" => "editKg"]) !!}
         </div>
       </div>
 
-      <div class="col-sm-12">
-        <div class="form-group">
-          <label class="control-label">{{ trans('site.TagsKG') }}</label>
+      <div class="form-group">
+        <label for="channel_id" class="col-sm-2 control-label">{{ trans('site.TagsKG') }}</label>
+        <div class="col-sm-10">
           {!! Form::text('tag_kg', null, ["class" => "form-control", "id" => "tag_kg"]) !!}
         </div>
       </div>
 
-      <div class="col-sm-4">
-        <div class="form-group">
-          <label class="control-label">{{ trans('site.AdminPostThemaone') }}</label>
-
-          {!! Form::select('related1', array('default'=>'--Выберите--') + $relatedPosts,null, ["class" => "select2_group  form-control", "title" => ""]) !!}
+      <div class="form-group">
+        <label for="channel_id" class="col-sm-2 control-label">{{ trans('site.AdminPostTheme') }}</label>
+        <div class="col-sm-10">
+          {!! Form::select('related1', $relatedPosts, null, ["class" => "selectpicker", "data-live-search"=>"true", "required" => true, "title" => "-- Выберите --"]) !!}
         </div>
       </div>
 
-      <div class="col-sm-4">
-        <div class="form-group">
-          <label class="control-label">{{ trans('site.AdminPostThematwo') }}</label>
-          {!! Form::select('related2', array('default'=>'--Выберите--') + $relatedPosts,null, ["class" => "select2_group  form-control", "title" => ""]) !!}
+      <div class="form-group">
+        <label for="channel_id" class="col-sm-2 control-label">{{ trans('site.AdminPostTheme') }}</label>
+        <div class="col-sm-10">
+          {!! Form::select('related2', $relatedPosts, null, ["class" => "selectpicker", "data-live-search"=>"true", "required" => true, "title" => "-- Выберите --"]) !!}
         </div>
       </div>
 
-      <div class="col-sm-4">
-        <div class="form-group">
-          <label class="control-label">{{ trans('site.AdminPostThemathree') }}</label>
-          {!! Form::select('related3', array('default'=>'--Выберите--') + $relatedPosts, null, ["class" => "select2_group  form-control", "title" => ""]) !!}
+      <div class="form-group">
+        <label for="channel_id" class="col-sm-2 control-label">{{ trans('site.AdminPostTheme') }}</label>
+        <div class="col-sm-10">
+          {!! Form::select('related3', $relatedPosts, null, ["class" => "selectpicker", "data-live-search"=>"true", "required" => true, "title" => "-- Выберите --"]) !!}
         </div>
       </div>
 
     </div>
   </div>
 
+  <div class="panel panel-default">
 
-  <div class="panel panel-warning">
     <div class="panel-heading">
       <h3 class="panel-title">Информация на русском</h3>
     </div>
+
     <div class="panel-body">
 
-      <div class="col-xs-12">
-        <div class="form-group">
-          <label class="control-label">{{ trans('site.TitleRU') }}</label>
+      <div class="form-group">
+        <label for="channel_id" class="col-sm-2 control-label">{{ trans('site.TitleRU') }}</label>
+        <div class="col-sm-10">
           {!! Form::text('titleRu', null, ["class" => "form-control"]) !!}
         </div>
       </div>
 
-      <div class="col-xs-12">
-        <div class="form-group">
-          <label class="control-label">{{ trans('site.TextRU') }}</label>
+      <div class="form-group">
+        <label for="channel_id" class="col-sm-2 control-label">{{ trans('site.TextRU') }}</label>
+        <div class="col-sm-10">
           {!! Form::textarea('contentRu', null, ["class" => "form-control", "id" => "editRu"]) !!}
         </div>
       </div>
 
-      <div class="col-sm-12">
-        <div class="form-group">
-          <label class="control-label">{{ trans('site.TagsRU') }}</label>
+      <div class="form-group">
+        <label for="channel_id" class="col-sm-2 control-label">{{ trans('site.TagsRU') }}</label>
+        <div class="col-sm-10">
           {!! Form::text('tag_ru', null, ["class" => "form-control", "id" => "tag_ru"]) !!}
         </div>
       </div>
 
-      <div class="col-sm-4">
-        <div class="form-group">
-          <label class="control-label">{{ trans('site.AdminPostThemaone') }}</label>
-
-          {!! Form::select('related1', array('default'=>'--Выберите--') + $relatedPosts2,null, ["class" => "select2_group  form-control", "title" => ""]) !!}
+      <div class="form-group">
+        <label for="channel_id" class="col-sm-2 control-label">{{ trans('site.AdminPostTheme') }}</label>
+        <div class="col-sm-10">
+          {!! Form::select('relatedRu1', $relatedPosts2, null, ["class" => "selectpicker", "data-live-search"=>"true", "required" => true, "title" => "-- Выберите --"]) !!}
         </div>
       </div>
 
-      <div class="col-sm-4">
-        <div class="form-group">
-          <label class="control-label">{{ trans('site.AdminPostThematwo') }}</label>
-          {!! Form::select('related2', array('default'=>'--Выберите--') + $relatedPosts2,null, ["class" => "select2_group  form-control", "title" => ""]) !!}
+      <div class="form-group">
+        <label for="channel_id" class="col-sm-2 control-label">{{ trans('site.AdminPostTheme') }}</label>
+        <div class="col-sm-10">
+          {!! Form::select('relatedRu2', $relatedPosts2, null, ["class" => "selectpicker", "data-live-search"=>"true", "required" => true, "title" => "-- Выберите --"]) !!}
         </div>
       </div>
 
-      <div class="col-sm-4">
-        <div class="form-group">
-          <label class="control-label">{{ trans('site.AdminPostThemathree') }}</label>
-          {!! Form::select('related3', array('default'=>'--Выберите--') + $relatedPosts2, null, ["class" => "select2_group  form-control", "title" => ""]) !!}
+      <div class="form-group">
+        <label for="channel_id" class="col-sm-2 control-label">{{ trans('site.AdminPostTheme') }}</label>
+        <div class="col-sm-10">
+          {!! Form::select('relatedRu3', $relatedPosts2, null, ["class" => "selectpicker", "data-live-search"=>"true", "required" => true, "title" => "-- Выберите --"]) !!}
         </div>
       </div>
 

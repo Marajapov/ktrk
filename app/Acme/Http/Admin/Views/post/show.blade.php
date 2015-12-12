@@ -1,5 +1,5 @@
 @extends('Admin::layouts.default')
-@section('title', $post->getTitle())
+@section('title', $post->getTitleRuOrKg())
 
 @section('content')
 <div class="row modals">
@@ -28,32 +28,48 @@
 
     <div class="x_content post-info clearfix">
 
-      <div class="extra">
-        <p class="post-cat">
-          <a href="{{ route('admin.category.show', $post->category) }}">
-            {{ $post->category->getTitle() }}
-          </a>
-        </p>
-        <p class="post-date">{{ $post->getTime().', '.$post->getDay().' '.$post->getMonthRu() }}</p>
-      </div>
-
-      <h4 class="post-title">
-        {{ $post->getTitleRuOrKg() }}
-      </h4>
-
-      @if($post->isImage())
-        <img src="{{ asset($post->getFile()) }}" alt="" class="img-thumbnail"/>
-      @endif
-
-      <h4 class="tags">
-
-        <span class="tags-title">{{ trans('site.Tags') }}:</span>
-        {{--{{ dd($post->getTagListAttribute()) }}--}}
-        @foreach($post->getTagListAttribute() as $tag)
-          <span class="label">{{ $tag }}</span>
-        @endforeach
-
-      </h4>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <p class="header">{{ trans('site.Title') }}</p>
+          <p class="body">
+            {{ $post->getTitleRuOrKg() }}
+          </p>
+        </li>
+        <li class="list-group-item">
+          <p class="header">Миниатюра</p>
+          <p class="body">
+            <img src="{{ asset($post->getFile()) }}" alt="" class="img-thumbnail"/>
+          </p>
+        </li>
+        <li class="list-group-item">
+          <p class="header">Категория</p>
+          <p class="body">
+            <a href="{{ route('admin.category.show', $post->category) }}">
+              {{ $post->category->getTitle() }}
+            </a>
+          </p>
+        </li>
+        <li class="list-group-item">
+          <p class="header">{{ trans('site.Tags') }}</p>
+          <p class="body tags">
+            @foreach($post->getTagListAttribute() as $tag)
+              <span class="label">{{ $tag }}</span>
+            @endforeach
+          </p>
+        </li>
+        <li class="list-group-item">
+          <p class="header">Автор</p>
+          <p class="body tags">
+            {{ $post->owner()->first()->name }}
+          </p>
+        </li>
+        <li class="list-group-item">
+          <p class="header">{{ trans('site.AdminPostCreatedDate') }}</p>
+          <p class="body tags">
+            {{ $post->getTime().', '.$post->getDateFormatted() }}
+          </p>
+        </li>
+      </ul>
 
     </div>
 

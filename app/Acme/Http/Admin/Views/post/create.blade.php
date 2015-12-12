@@ -10,7 +10,7 @@
           <h4>{{ trans('site.AdminPostAddNew') }}</h4>
         </div>
         <div class="x_content">
-          {!! Form::model($post, ['route' => 'admin.post.store', 'enctype' => 'multipart/form-data', 'class'=>'form-horizontal', 'multiple'=>true, 'id'=>'addNews']) !!}
+          {!! Form::model($post, ['route' => 'admin.post.store', 'enctype' => 'multipart/form-data', 'class'=>'form-horizontal', 'id'=>'addNews']) !!}
           @include('Admin::partials.forms.post', [$post, $tags])
           {!! Form::close() !!}
         </div>

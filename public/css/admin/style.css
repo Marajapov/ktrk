@@ -353,6 +353,7 @@ form:after {
 .table > tbody > tr > td,
 .table > tfoot > tr > td{
     vertical-align: middle;
+    color: #333333;
 }
 .x_title{
     padding: 0;
@@ -387,8 +388,21 @@ form:after {
 .top_search .btn{
     margin: 0;
 }
+.x_content .table thead th{
+    color: #9A9A9A;
+    font-weight: 400;
+    text-transform: uppercase;
+}
 .x_content .table img{
-    height: 50px;
+    height: 120px;
+}
+.x_content .table-img{
+    width: 250px;
+}
+.x_content .table-title{
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 .x_content .table form,.x_content .table .btn{
     float: left;
@@ -397,7 +411,26 @@ form:after {
     margin: 0;
 }
 .post-info .list-group-item{
-    border: none;
+    /*border: none;*/
+}
+.post-info .list-group-item p{
+    display: inline-block;
+    margin: 0;
+    vertical-align: middle;
+    font-size: 14px;
+    line-height: 20px;
+}
+.post-info .list-group-item .header{
+    padding-right: 20px;
+    width: 200px;
+    color: #9A9A9A;
+    font-size: 12px;
+    text-align: right;
+    text-transform: uppercase;
+}
+.post-info .list-group-item .body{
+    padding-left: 20px;
+    color: #333333;
 }
 .post-info .list-group-item span, .post-info .list-group-item p{
     margin: 0;

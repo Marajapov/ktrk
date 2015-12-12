@@ -31,34 +31,40 @@
         <table class="table table-striped">
           <thead>
             <tr>
-              <th>#</th>
               <th>Миниатюра</th>
               <th>Название</th>
               <th class="hidden-xs">Автор</th>
               <th class="hidden-xs">Дата добавления</th>
+              <th class="hidden-xs">Статус</th>
               <th>Действия</th>
             </tr>
           </thead>
           <tbody>
             @foreach($posts as $key => $post)
               <tr>
-                <th scope="row">{{ $key+1 }}</th>
-                <td>
+                <td class="table-img">
                   <img src="{{ asset($post->thumbnail) }}" alt=""/>
                 </td>
-                <td>
+                <td class="table-title">
                   <a href="{{ route('admin.post.show', $post) }}">
                     {{ $post->getTitleRuOrKg() }}
                   </a>
                 </td>
                 <td class="hidden-xs">{{ $post->owner()->first()->name }}</td>
-                <td class="hidden-xs">{{ $post->getTime().', '.$post->getDay().' '.$post->getMonthRu() }} </td>
+                <td class="hidden-xs">{{ $post->getTime().', '.$post->getDateFormatted() }} </td>
+                <td class="hidden-xs">
+                  @if($post->published == '1')
+                    опубликован
+                  @elseif($post->published == '0')
+                    не опубликован
+                  @endif
+                </td>
                 <td>
                   <a class="btn btn-default" href="{{ route('admin.post.show', $post) }}">
                     {{--<span class="glyphicon glyphicon-eye-open"></span>--}}
                     <i class="fa fa-eye"></i>
                   </a>
-                  <a class="btn btn-default" href="#">
+                  <a class="btn btn-default" href="{{ route('admin.post.edit', $post) }}">
                     {{--<span class="glyphicon glyphicon-pencil"></span>--}}
                     <i class="fa fa-pencil"></i>
                   </a>

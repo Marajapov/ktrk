@@ -212,11 +212,12 @@ return [
     //Post Menu
     'AdminPostAddNew' => 'Создать новую статью',
     'AdminPostChange' => 'Изменить статью',
-    'Макаланы өзгөртүү' => 'Изменить статью',
-    'AdminPostThemaone' => 'Материалы к 1 теме',
-    'AdminPostThematwo' => 'Материалы к 2 теме',
-    'AdminPostThemathree' => 'Материалы к 3 теме',
+    'AdminPostThemeAdminPostTheme' => 'Материал к теме',
+    'AdminPostThemaone' => 'Материал к теме 1',
+    'AdminPostThematwo' => 'Материал к теме 2',
+    'AdminPostThemathree' => 'Материал к теме 3',
     'AdminPostEnterText' => 'Введите текст...',
+    'AdminPostCreatedDate' => 'Дата создания',
     '' => '',
 
     //User menu
