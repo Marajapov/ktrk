@@ -1,10 +1,12 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,300,100,700,100italic,300italic,400italic,700italic);
+
 /*
 Template Name: Multi
 Version: 1.0
 Author: ShapeBootstrap
 Author URL: http://shapebootstrap.net
 */
+
 /*************************
 *******Typography******
 **************************/
@@ -16,12 +18,7 @@ body {
   color: #64686d;
   line-height: 26px;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   font-family: 'Roboto', sans-serif;
   color: #272727;
@@ -33,8 +30,7 @@ a {
   -o-transition: color 400ms, background-color 400ms;
   transition: color 400ms, background-color 400ms;
 }
-a:hover,
-a:focus {
+a:hover, a:focus {
   text-decoration: none;
   color: #2a95be;
 }
@@ -42,26 +38,29 @@ hr {
   border-top: 1px solid #e5e5e5;
   border-bottom: 1px solid #fff;
 }
-header{
+header {
   margin-top: 0px !important;
+  height: 50px;
 }
-
+.container>.navbar-collapse {
+  margin-right: -15px;
+  margin-left: -15px;
+}
 .fixed {
-    position: fixed;
-    top: 0 !important;
-    max-width: 100% !important;
-    z-index: 99;
-    background-color: #F44336;
-    left: 0px;
-    right: 0px;
-    margin: 0px auto;
+  position: fixed;
+  max-width: 100% !important;
+  z-index: 99;
+  background-color: #F44336;
+  left: 0px;
+  right: 0px;
+  margin: 0px auto;
 }
-.fixedheader2{
-    position: fixed;
-    max-width: 100%;
-    left: 0;
-    right: 0;
-}
+.fixedheader2 {
+  position: fixed;
+  max-width: 100%;
+  left: 0;
+  right: 0;
+  margin: 0px auto;
 }
 .gradiant {
   background-image: -moz-linear-gradient(90deg, #2caab3 0%, #2c8cb3 100%);
@@ -115,8 +114,7 @@ header{
   background: #45aed6;
   border-color: #2a95be;
 }
-.btn.btn-primary:hover,
-.btn.btn-primary:focus {
+.btn.btn-primary:hover, .btn.btn-primary:focus {
   background: #2a95be;
 }
 .column-title {
@@ -172,6 +170,7 @@ ul.nostyle i {
     transform: scale(1);
   }
 }
+
 /*************************
 *******Header******
 **************************/
@@ -181,32 +180,30 @@ ul.nostyle i {
   margin-bottom: 0;
 }
 .navbar.navbar-default .navbar-toggle {
-
 }
 .navbar.navbar-default .navbar-brand {
   height: auto;
   padding: 0px !important;
 }
-
 .navbar-brand>img {
-    display: block;
-    height: 50px;
-    width: auto;
-    float: left;
+  display: block;
+  height: 50px;
+  width: auto;
+  float: left;
 }
 .navbar-brand {
-    color: #005197 !important;
-    font-size: 30px;
-    font-weight: bold;
-    line-height: 2;
-    text-transform: uppercase;
-    text-transform: uppercase;
+  color: #005197 !important;
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 2;
+  text-transform: uppercase;
+  text-transform: uppercase;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width:768px) {
   #main-menu.navbar-default {
-    background: rgba(33, 150, 243, 0.68);
-    -webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.1);
-    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.1);
+    background: #fff;
+    -webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.6);
   }
   #main-menu.navbar-default .navbar-nav > li > a {
     padding-top: 20px;
@@ -215,9 +212,7 @@ ul.nostyle i {
     color: #005197;
     font-weight: bold;
   }
-  #main-menu.navbar-default .navbar-nav > li.active > a,
-  #main-menu.navbar-default .navbar-nav > li.open > a,
-  #main-menu.navbar-default .navbar-nav > li:hover > a {
+  #main-menu.navbar-default .navbar-nav > li.active > a, #main-menu.navbar-default .navbar-nav > li.open > a, #main-menu.navbar-default .navbar-nav > li:hover > a {
     background: #04549C;
     color: #fff;
   }
@@ -246,25 +241,23 @@ ul.nostyle i {
   #main-menu.navbar-default .dropdown-menu > li:first-child > a {
     border-top: 0;
   }
-  #main-menu.navbar-default .dropdown-menu > li.active,
-  #main-menu.navbar-default .dropdown-menu > li.open,
-  #main-menu.navbar-default .dropdown-menu > li:hover {
+  #main-menu.navbar-default .dropdown-menu > li.active, #main-menu.navbar-default .dropdown-menu > li.open, #main-menu.navbar-default .dropdown-menu > li:hover {
     border-left-color: #45aed6;
   }
-  #main-menu.navbar-default .dropdown-menu > li.active > a,
-  #main-menu.navbar-default .dropdown-menu > li.open > a,
-  #main-menu.navbar-default .dropdown-menu > li:hover > a {
+  #main-menu.navbar-default .dropdown-menu > li.active > a, #main-menu.navbar-default .dropdown-menu > li.open > a, #main-menu.navbar-default .dropdown-menu > li:hover > a {
     color: #45aed6;
     background-color: transparent;
   }
 }
 #main-slider {
   overflow: hidden;
+  margin-top: 50px; 
 }
 #main-slider .item {
-  height: 558px;
+  height: 358px;
+  width: auto;
   background-repeat: no-repeat;
-  background-position: 50% 0;
+  background-position: 100% 0;
   background-size: cover;
 }
 #main-slider .slider-inner {
@@ -276,20 +269,22 @@ ul.nostyle i {
   color: #fff;
 }
 #main-slider .slider-inner h2 {
-  margin-top: 400px;
+  margin-top: 250px;
   font-size: 36px;
   line-height: 1;
   text-transform: uppercase;
   color: #fff;
 }
+#main-slider .slider-inner p{
+  font-size: 24px;
+}
 #main-slider .slider-inner h2 > span {
-  color: #45aed6;
+  color: #04549C;
 }
 #main-slider .slider-inner .btn {
   margin-top: 10px;
 }
-#main-slider .owl-prev,
-#main-slider .owl-next {
+#main-slider .owl-prev, #main-slider .owl-next {
   position: absolute;
   top: 50%;
   background-color: rgba(0, 0, 0, 0.2);
@@ -301,14 +296,13 @@ ul.nostyle i {
   width: 70px;
   line-height: 70px;
   text-align: center;
-  border-radius: 100px;
+  border-radius: 100px !important;
   z-index: 5;
   -webkit-transition: background-color 400ms;
   transition: background-color 400ms;
 }
-#main-slider .owl-prev:hover,
-#main-slider .owl-next:hover {
-  background-color: #45aed6;
+#main-slider .owl-prev:hover, #main-slider .owl-next:hover {
+  background-color: #04549C;
 }
 #main-slider .owl-prev {
   left: -35px;
@@ -334,6 +328,16 @@ ul.nostyle i {
 #cta {
   padding: 5px 0;
   background-color: #eeeeee;
+  margin-top: 70px;
+}
+
+#cta img{
+  height: 131px;
+  width: auto;
+
+}
+#cta p{
+  font-size: 16px;
 }
 #cta h2 {
   margin-top: 0;
@@ -345,7 +349,9 @@ ul.nostyle i {
   background: #242a33 url(../images/cta2/cta2-bg.jpg) no-repeat 50% 50%;
   background-size: cover;
   color: #fff;
-  padding-top: 70px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 70px;
 }
 #cta2 .btn {
   margin-top: 10px;
@@ -427,8 +433,7 @@ ul.nostyle i {
   color: #64686d;
   position: relative;
 }
-#portfolio .portfolio-filter > li a:hover,
-#portfolio .portfolio-filter > li a.active {
+#portfolio .portfolio-filter > li a:hover, #portfolio .portfolio-filter > li a.active {
   background: #45aed6;
   color: #fff;
   box-shadow: 0 -3px 0 0 #318daf inset;
@@ -454,9 +459,9 @@ ul.nostyle i {
   margin: -15px;
 }
 #portfolio .portfolio-item {
-  width: 24.9%;
+  width: 24%;
   float: left;
-  padding: 15px;
+  padding: 10px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   -o-box-sizing: border-box;
@@ -503,7 +508,9 @@ ul.nostyle i {
 #portfolio .portfolio-item:hover .portfolio-info {
   opacity: 1;
 }
+
 /* Start: Recommended Isotope styles */
+
 /**** Isotope Filtering ****/
 .isotope-item {
   z-index: 2;
@@ -512,9 +519,9 @@ ul.nostyle i {
   pointer-events: none;
   z-index: 1;
 }
+
 /**** Isotope CSS3 transitions ****/
-.isotope,
-.isotope .isotope-item {
+.isotope, .isotope .isotope-item {
   -webkit-transition-duration: 0.8s;
   -moz-transition-duration: 0.8s;
   -ms-transition-duration: 0.8s;
@@ -535,17 +542,18 @@ ul.nostyle i {
   -o-transition-property: -o-transform, opacity;
   transition-property: transform, opacity;
 }
+
 /**** disabling Isotope CSS3 transitions ****/
-.isotope.no-transition,
-.isotope.no-transition .isotope-item,
-.isotope .isotope-item.no-transition {
+.isotope.no-transition, .isotope.no-transition .isotope-item, .isotope .isotope-item.no-transition {
   -webkit-transition-duration: 0s;
   -moz-transition-duration: 0s;
   -ms-transition-duration: 0s;
   -o-transition-duration: 0s;
   transition-duration: 0s;
 }
+
 /* End: Recommended Isotope styles */
+
 /* disable CSS transitions for containers with infinite scrolling*/
 .isotope.infinite-scrolling {
   -webkit-transition: none;
@@ -573,7 +581,7 @@ ul.nostyle i {
   margin-top: 10px;
 }
 #about {
-  padding: 100px 0;
+  padding: 100px 0 0px 0;
 }
 #work-process {
   padding: 100px 0 50px;
@@ -720,10 +728,7 @@ ul.nostyle i {
   background-size: cover;
   color: #fff;
 }
-#animated-number h1,
-#animated-number h2,
-#animated-number h3,
-#animated-number h4 {
+#animated-number h1, #animated-number h2, #animated-number h3, #animated-number h4 {
   color: #fff;
 }
 #animated-number strong {
@@ -817,8 +822,7 @@ ul.nostyle i {
   background-image: -ms-linear-gradient(90deg, #2caab3 0%, #2c8cb3 100%);
   color: #fff;
 }
-#get-in-touch h1,
-#get-in-touch h2 {
+#get-in-touch h1, #get-in-touch h2 {
   color: #fff;
 }
 #blog {
@@ -941,6 +945,7 @@ ul.nostyle i {
 #contact .contact-form h3 {
   margin-top: 0;
 }
+
 /***********************
 ********* Footer ******
 ************************/
@@ -965,7 +970,7 @@ ul.nostyle i {
   display: inline-block;
   margin: 0 7.5px;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width:768px) {
   #footer .social-icons {
     float: right;
   }
