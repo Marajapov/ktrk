@@ -465,14 +465,19 @@
               <div class="panel-body">
                 <div class="col-md-12">
                   <div class="carousel-slick">
-                    @if($images != 1)
-                      @foreach($images as $image)
+                    @if($photoGalleries)
+                      @foreach($photoGalleries as $photoGallery)
+
                         <div class="col-md-4">
-                          <a href="#">
-                            <img src="{{ asset('froala/uploads/'.$image->name) }}" alt=""/><span>Название</span>
+                          {!! Form::open(['route' => ['front.gallery', $photoGallery->id], 'method' => 'get', 'onclick' => "submit()"]) !!}
+                            <img src="{{ asset($photoGallery->status) }}" alt=""/><span>Название</span>
                             <div class="overlay"></div>
-                          </a>
+                            <input type="hidden" value="{{ $photoGallery->id }}" name="photoParentId">
+                          {!! Form::close() !!}
                         </div>
+              
+                    
+                  
                       @endforeach
                     @endif
                   </div>

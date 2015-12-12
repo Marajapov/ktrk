@@ -18,6 +18,7 @@ Route::group(['domain' => '1000.ktrk.kg', 'prefix' => '/balastan', 'namespace' =
     Route::get('/photos', ['as' => 'balastan.photos',   'uses' => 'BalastanController@photos']);
     Route::get('/world', ['as' => 'balastan.world',   'uses' => 'BalastanController@world']);
     Route::get('/about', ['as' => 'balastan.about',   'uses' => 'BalastanController@about']);
+    Route::get('/video', ['as' => 'balastan.video',   'uses' => 'BalastanController@video']);   
 
 });
 
@@ -150,6 +151,9 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
     Route::get('rs/post/{post}', ['as' => 'front.rs.post', 'uses' => 'RsController@post']);
     Route::get('rs/procedure', ['as' => 'front.rs.procedure', 'uses' => 'RsController@procedure']);
     Route::get('rs/contacts', ['as' => 'front.rs.contacts', 'uses' => 'RsController@contacts']);
+
+    // Gallery page
+    Route::get('post/gallery/{gallery}',['as' => 'front.post.gallery','uses'=> 'HomeController@gallery']);
     
 
 Route::get('locale/{locale?}',   ['as' => 'locale',   'uses' => 'CommonController@setLocale']);

@@ -45,16 +45,15 @@ class HomeController extends Controller
         $peopleReporters = \Model\PeopleReporter\ModelName::where('published','=',true)->get();
 
         // FotoParent - photo gallery
-        $photoParent = \Model\PhotoParent\ModelName::where('published','=',true)->first();
+        /*$photoParent = \Model\PhotoParent\ModelName::where('published','=',true)->first();
         if($photoParent != null){
             $images = json_decode($photoParent->images); // array of images
         }else{
             $images = 1;
-        }
+        }*/
 
         // Photo Gallery
-        $photoGallery = \Model\PhotoParent\ModelName::where('published','=',true)->take('10')->orderBy('id','desc')->get();
-        
+        $photoGalleries = \Model\PhotoParent\ModelName::where('published','=',true)->take('10')->orderBy('id','desc')->get();
         
 
         $MediaCategories = \Model\MediaCategory\ModelName::orderBy('id','asc')->get();
@@ -73,7 +72,7 @@ class HomeController extends Controller
         $mediaLastVideos = \Model\Media\ModelName::orderBy('id','desc')->take(9)->get();
         
         return view('Front::home', [
-            'images' => $images,
+            //'images' => $images,
             'generalPosts'   => $generalPosts,
             'dayVideo'      => $dayVideo,
             'lastDayVideos'      => $lastDayVideos,
@@ -83,7 +82,7 @@ class HomeController extends Controller
             'positionCenter' => $this->positionCenter,
             'positionBottom' => $this->positionBottom,
             'peopleReporters' => $peopleReporters,
-            //'parentId' => $parentId,
+            'photoGalleries' => $photoGalleries,
             
             'backgroundMain' => $backgroundMain,
             'MediaCategories' => $MediaCategories,
@@ -361,6 +360,24 @@ class HomeController extends Controller
             'perPage'=> $perPage,
             'category'=> $category,
             'posts' => $postAllFromTo,
+            'categories'=>$categories,
+            'backgroundMain' => $backgroundMain,
+            ]);
+    }
+
+    public function Gallery(Request $request)
+    {
+        $id =$request->photoParentId;
+        $row = \Model\PhotoParent\ModelName::where('id','=',$id)->first();
+
+        $images = json_decode($row->images); // array of images
+
+        $categories = \Model\Category\ModelName::all();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+        return view('Front::gallery.gallery',[
+            'row' => $row,
+            'images' => $images,
             'categories'=>$categories,
             'backgroundMain' => $backgroundMain,
             ]);
