@@ -67,10 +67,14 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        $post = Post::create($request->except('tag_list','tag_list2','thumbnail','q'));
-        
-        $tags = $request->input('tag_list');
+
+        $post = Post::create($request->except('tag_kg','tag_list2','thumbnail','q'));
+
+        $tag_kg_string = $request->input('tag_kg');
+        $tags = explode("; ",$tag_kg_string);
+
         $tags2 = $request->input('tag_list2');
+
         if(!empty($tags)){
             foreach ($tags as $key => $name)
             {

@@ -22,6 +22,10 @@
   <link rel="stylesheet" href="{{ asset('css/admin/select/select2.min.css') }}"/>
 
 
+  <!-- JS scripts forom admin page -->
+  <script src="{{ asset('js/jquery-1.11.2.min.js') }}"></script>
+  <script src="{{ asset('js/bootstrap.js') }}"></script>
+  <script src="{{ asset('js/admin/jasny/jasny-bootstrap.min.js') }}"></script>
 
   {{--<script src="{{ asset('js/admin/nprogress.js') }}"></script>--}}
   {{--<script>--}}
@@ -105,11 +109,6 @@
 
   </div><!--end page-container-->
 </div><!--end container body-->
-
-<!-- JS scripts forom admin page -->
-<script src="{{ asset('js/jquery-1.11.2.min.js') }}"></script>
-<script src="{{ asset('js/bootstrap.js') }}"></script>
-<script src="{{ asset('js/admin/jasny/jasny-bootstrap.min.js') }}"></script>
 
 {{--<script src="{{ asset('js/admin/progressbar/bootstrap-progressbar.min.js') }}"></script>--}}
 {{--<script src="{{ asset('js/admin/nicescroll/jquery.nicescroll.min.js') }}"></script>--}}

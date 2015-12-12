@@ -4,6 +4,10 @@
   <!-- Include Editor style. -->
   <link href="{{ asset('froala/css/froala_editor.min.css') }}" rel="stylesheet" type="text/css" />
   <link href="{{ asset('froala/css/froala_style.min.css') }}" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="{{ asset('css/bootstrap-select.css') }}"/>
+  <link rel="stylesheet" href="{{ asset('css/build.css') }}"/>
+  <link rel="stylesheet" href="{{ asset('css/admin/tokenfield-typeahead.css') }}"/>
+  <link rel="stylesheet" href="{{ asset('css/admin/bootstrap-tokenfield.css') }}"/>
 
   <!-- Include Editor Plugins style. -->
   <link rel="stylesheet" href="{{ asset('froala/css/plugins/char_counter.css')}}">
@@ -19,8 +23,6 @@
   <link rel="stylesheet" href="{{ asset('froala/css/plugins/video.css')}}">
 @endsection
 
-<div class="row">
-
   <div class="panel panel-success">
 
     <div class="panel-heading">
@@ -29,73 +31,82 @@
 
     <div class="panel-body">
 
-      <div class="col-sm-6">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="form-group">
-              <label class="control-label">Канал</label>
-              {!! Form::select('channel_id', array('0'=>'--Выберите--') + $channelList, null, ["class" => "select2_group  form-control", "required" => true, "title" => ""]) !!}
-            </div>
-          </div>
-
-          <div class="col-sm-12">
-            <div class="form-group">
-              <label class="control-label">Категория</label>
-              {!! Form::select('category_id', array('0'=>'--Выберите--') + $categoryList, null, ["class" => "select2_group  form-control", "required" => true, "title" => ""]) !!}
-            </div>
-          </div>
-
-          <div class="col-sm-12">
-            <div class="form-group">
-              <label class="control-label">{{ trans('site.AdminPhotoChildSelectGaller') }}</label>
-              {!! Form::select('parentId', array('0'=>'--Выберите--') + $PhotoParentList, null, ["class" => "select2_group  form-control", "title" => ""]) !!}
-            </div>
-          </div>
-
+      <div class="form-group">
+        <label for="channel_id" class="col-sm-2 control-label">Канал</label>
+        <div class="col-sm-10">
+          {!! Form::select('channel_id', $channelList, null, ["class" => "selectpicker", "data-live-search"=>"true", "required" => true, "title" => "-- Выберите --"]) !!}
         </div>
       </div>
 
-      <div class="col-sm-6">
+      <div class="form-group">
+        <label for="category_id" class="col-sm-2 control-label">Категория</label>
+        <div class="col-sm-10">
+          {!! Form::select('category_id', $categoryList, null, ["class" => "selectpicker", "data-live-search"=>"true", "required" => true, "title" => "-- Выберите --"]) !!}
+        </div>
+      </div>
 
-        <div class="row">
-          <div class="col-sm-4">
-            <div class="form-group">
-              <label class="control-label">{{ trans('site.Publish') }}</label>
-              {!! Form::hidden('published', 0) !!}
-              {!! Form::checkbox('published', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
+      <div class="form-group">
+        <label for="parentId" class="col-sm-2 control-label">Фотогалерея</label>
+        <div class="col-sm-10">
+          {!! Form::select('parentId', $PhotoParentList, null, ["class" => "selectpicker", "data-live-search"=>"true", "required" => true, "title" => "-- Выберите --"]) !!}
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="parentId" class="col-sm-2 control-label"></label>
+        <div class="col-sm-10">
+          <div class="checkbox checkbox-primary ">
+            {!! Form::hidden('published', 0) !!}
+            {!! Form::checkbox('published', 1, null, ["id" => "checkboxPublished", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
+            <label for="checkboxPublished">
+              {{ trans('site.Publish') }}
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="parentId" class="col-sm-2 control-label"></label>
+        <div class="col-sm-10">
+          <div class="checkbox checkbox-primary ">
+            {!! Form::hidden('announcement', 0) !!}
+            {!! Form::checkbox('announcement', 1, null, ["id" => "checkboxAnnouncement", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
+            <label for="checkboxAnnouncement">
+              Анонс
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="parentId" class="col-sm-2 control-label"></label>
+        <div class="col-sm-10">
+          <div class="checkbox checkbox-primary ">
+            {!! Form::hidden('general', 0) !!}
+            {!! Form::checkbox('general', 1, null, ["id" => "checkboxGeneral", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
+            <label for="checkboxGeneral">
+              {{ trans('site.AdminHomeTitle') }}
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="parentId" class="col-sm-2 control-label">Миниатюра</label>
+        <div class="col-sm-10">
+          <div class="fileinput fileinput-new" data-provides="fileinput">
+            <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
+            </div>
+            <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
+            <div>
+                <span class="btn btn-default btn-file">
+                  <span class="fileinput-new">{{ trans('site.AdminBackgroundSelect') }}</span>
+                  <span class="fileinput-exists">{{ trans('site.Change') }}</span>
+                  {!! Form::file('thumbnail', null, ["class" => "form-control"]) !!}
+                </span>
+              <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">{{ trans('site.Delete') }}</a>
             </div>
           </div>
-
-          <div class="col-sm-4">
-            <div class="form-group">
-              <label class="control-label">Анонс</label>
-              {!! Form::hidden('announcement', 0) !!}
-              {!! Form::checkbox('announcement', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
-            </div>
-          </div>
-
-          <div class="col-sm-4">
-            <div class="form-group">
-              <label class="control-label">{{ trans('site.AdminHomeTitle') }}</label>
-              {!! Form::hidden('general', 0) !!}
-              {!! Form::checkbox('general', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
-            </div>
-          </div>
-
-          <div class="col-xs-12">
-            <div class="form-group">
-              <label class="control-label" style="display:block;">Миниатюра</label>
-              <div class="fileinput fileinput-new" data-provides="fileinput">
-                <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
-                <div>
-                                        <span class="btn btn-default btn-file"><span class="fileinput-new">{{ trans('site.AdminBackgroundSelect') }}</span>
-                                        <span class="fileinput-exists">{{ trans('site.Change') }}</span>
-                                     {!! Form::file('thumbnail', null, ["class" => "form-control"]) !!}
-                </div>
-              </div>
-            </div>
-          </div>
-
         </div>
       </div>
 
@@ -104,10 +115,19 @@
   </div>
 
   <div class="panel panel-info">
+
     <div class="panel-heading">
       <h3 class="panel-title">Информация на кыргызском</h3>
     </div>
+
     <div class="panel-body">
+
+      <div class="form-group">
+        <label for="channel_id" class="col-sm-2 control-label">{{ trans('site.TitleKG') }}</label>
+        <div class="col-sm-10">
+          {!! Form::text('title', null, ["class" => "form-control"]) !!}
+        </div>
+      </div>
 
       <div class="col-xs-12">
         <div class="form-group">
@@ -126,7 +146,7 @@
       <div class="col-sm-12">
         <div class="form-group">
           <label class="control-label">{{ trans('site.TagsKG') }}</label>
-          {!! Form::select('tag_list[]', $tags, null, ["class" => "form-control", "id" => "tag_list", "multiple"]) !!}
+          {!! Form::text('tag_kg', null, ["class" => "form-control", "id" => "tag_kg"]) !!}
         </div>
       </div>
 
@@ -179,7 +199,7 @@
       <div class="col-sm-12">
         <div class="form-group">
           <label class="control-label">{{ trans('site.TagsRU') }}</label>
-          {!! Form::select('tag_list2[]', $tags2, null, ["class" => "form-control", "id" => "tag_list2", "multiple"]) !!}
+          {!! Form::text('tag_ru', null, ["class" => "form-control", "id" => "tag_ru"]) !!}
         </div>
       </div>
 
@@ -208,27 +228,6 @@
     </div>
   </div>
 
-  <div><br></div>
-
-</div>
-
 <button type="submit" class="btn btn-primary">{{ trans('site.Save') }}</button>
 <a href="{{ route('admin.post.index') }}" class="btn btn-default">{{ trans('site.Back') }}</a>
-
-<!-- select2 -->
-<script>
-  $(document).ready(function () {
-    $(".select2_single").select2({
-      placeholder: "Select a state",
-      allowClear: true
-    });
-    $(".select2_group").select2({});
-    $(".select2_multiple").select2({
-      maximumSelectionLength: 4,
-      placeholder: "With Max Selection limit 4",
-      allowClear: true
-    });
-  });
-</script>
-<!-- /select2 -->
 

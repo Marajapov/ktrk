@@ -54,24 +54,6 @@
           <span class="show-time">22:00</span>
         </div>
       </div>
-      <div>
-        <div class="overlay"></div>
-        <a href="#">
-          <img src="images/anons/2.jpg" alt=""/>
-        </a>
-        <div class="show-info">
-          жекшемби 21:00
-        </div>
-      </div>
-      <div>
-        <div class="overlay"></div>
-        <a href="#">
-          <img src="images/anons/3.jpg" alt=""/>
-        </a>
-        <div class="show-info">
-          жекшемби 21:00
-        </div>
-      </div>
     </div>
   </div>
 

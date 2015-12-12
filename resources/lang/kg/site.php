@@ -217,6 +217,7 @@ return [
     'AdminPostThemaone' => '1 темага материалдар',
     'AdminPostThematwo' => '2 темага материалдар',
     'AdminPostThemathree' => '3 темага материалдар',
+    'AdminPostEnterText' => 'Текст киргизиңиз...',
     '' => '',
 
     //User menu
