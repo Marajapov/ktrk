@@ -19,9 +19,19 @@
 						{{ $photoParent->getName() }}
 					</a>
 					@if($photoParent->published == 1)
-					<a href="#">123</a> <i class="fa fa-check-square-o"></i>
+					{!! Form::open(['route' => ['admin.photoParent.unpublish', $photoParent->id], 'method' => 'get', 'onsubmit' => "return confirm('Вы уверены ?')"]) !!}
+              			<input type="hidden" value="{{ $photoParent->id }}" name="photoParentId">
+              
+              			<button class="btn btn-labeled btn-danger" type="submit"><span class="btn-label"><i class="glyphicon glyphicon-checked"></i></span>Снять</button>
+              		{!! Form::close() !!}
 					@else
-					<a href="#">123</a> <i class="fa fa-times-circle"></i>
+					
+					{!! Form::open(['route' => ['admin.photoParent.publish', $photoParent->id], 'method' => 'get', 'onsubmit' => "return confirm('Вы уверены ?')"]) !!}
+              			<input type="hidden" value="{{ $photoParent->id }}" name="photoParentId">
+              
+              			<button class="btn btn-labeled btn-success" type="submit"><span class="btn-label"><i class="glyphicon glyphicon-remove"></i></span>Опубликовать</button>
+              		{!! Form::close() !!}
+
 					@endif
 					@endforeach
 				</div>

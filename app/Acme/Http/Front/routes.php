@@ -92,6 +92,8 @@ Route::group(['domain' => 'ktrk.dev', 'prefix' => '/minkiyal', 'namespace' => 'F
 
     Route::get('/', ['as' => 'minkiyal.home',   'uses' => 'MinkiyalController@Home']);
     Route::get('/posts', ['as' => 'minkiyal.posts',   'uses' => 'MinkiyalController@posts']);
+    Route::get('/gallery', ['as' => 'minkiyal.gallery',   'uses' => 'MinkiyalController@gallery']);
+
 
 });
 
@@ -153,6 +155,9 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
     Route::get('rs/post/{post}', ['as' => 'front.rs.post', 'uses' => 'RsController@post']);
     Route::get('rs/procedure', ['as' => 'front.rs.procedure', 'uses' => 'RsController@procedure']);
     Route::get('rs/contacts', ['as' => 'front.rs.contacts', 'uses' => 'RsController@contacts']);
+
+    // Gallery page
+    Route::get('/gallery/{gallery}',['as' => 'front.gallery','uses'=> 'HomeController@Gallery']);
 
 Route::get('locale/{locale?}',   ['as' => 'locale',   'uses' => 'CommonController@setLocale']);
 

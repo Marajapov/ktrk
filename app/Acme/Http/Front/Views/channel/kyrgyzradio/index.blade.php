@@ -6,1262 +6,930 @@
 
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" href="css/font-awesome.css"/>
-    <link rel="stylesheet" href="filter/css/layout.css">
-    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
     <link rel="stylesheet" href="css/style.css"/>
 
+    <link href="css/landing/animate.min.css" rel="stylesheet">
+    <link href="css/landing/owl.carousel.css" rel="stylesheet">
+    <link href="css/landing/owl.transitions.css" rel="stylesheet">
+    <link href="css/landing/prettyPhoto.css" rel="stylesheet">
+    <link href="css/landing/main.css" rel="stylesheet">
+    <link href="css/landing/responsive.css" rel="stylesheet">
+
 </head>
-<body class="music">
-
-<div class="modal fade" id="tvModal" tabindex="-1" role="dialog" aria-labelledby="tvModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="tvModalLabel">Телеканалдар</h4>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-4 modal-block">
-                        <div>
-                            <a href="{{ route('balastan.home')}}">
-                                <img src="images/channels/balastan.png" alt=""/>
-                            </a>
-                            <div class="options">
-                                <a class="link" href="{{ route('balastan.home')}}">Баластан</a>
-                                <span class="divider"></span>
-                                <a class="live" href="{{ route('balastan.home')}}"><i class="fa fa-dot-circle-o"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 modal-block">
-                       <div>
-                           <a href="{{ route('muzkanal.home')}}">
-                               <img src="images/channels/muztv.png" alt=""/>
-                           </a>
-                           <div class="options">
-                               <a class="link" href="{{ route('muzkanal.home')}}">Музыка</a>
-                               <span class="divider"></span>
-                               <a class="live" href="{{ route('muzkanal.home')}}"><i class="fa fa-dot-circle-o"></i></a>
-                           </div>
-                       </div>
-                    </div>
-                    <div class="col-md-4 modal-block">
-                        <div>
-                            <a href="{{ route('madaniyat.home')}}">
-                                <img src="images/channels/madaniyat.png" alt=""/>
-                            </a>
-                            <div class="options">
-                                <a class="link" href="{{ route('madaniyat.home')}}">Маданият</a>
-                                <span class="divider"></span>
-                                <a class="live" href="{{ route('madaniyat.home')}}"><i class="fa fa-dot-circle-o"></i></a>
-                            </div>
-                        </div>
-                    </div>
+<body id="home" class="homepage">
+    <div class="container-fluid switch">
+            <nav class="navbar">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false">
+                        <span class="sr-only">Меню</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"><img src="{{ asset('images/channels/kg-radio.png')}}"><h4>Кыргыз радиосу</h4></a>
                 </div>
-            </div>
-        </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="nav navbar-nav channel_switch">
+                        <li class="sitemenu" id="site-channel1">
+                            <a href="{{ route('front.home') }}"><img src="{{ asset('images/ktrk_last.svg')}}" style="height:40px;"><span>КТРК</span><h4>КТРК</h4></a></li>
+                        <li class="sitemenu" id="site-channel1">
+                            <a href="{{ route('birinchi.home') }}"><img src="{{ asset('images/channels/1-radio.png')}}" ><span>Биринчи радио</span><h4>Биринчи радио</h4></a></li>
+                        <li class="sitemenu" id="site-channel1">
+                            <a href="{{ route('minkiyal.home') }}"><img src="{{ asset('images/channels/min-kiyal.png')}}"><span>Миң кыял</span><h4>Миң кыял</h4></a></li>
+                        <li class="sitemenu" id="site-channel1">
+                            <a class="active" href="{{ route('kyrgyzradio.home') }}"><img src="{{ asset('images/channels/kg-radio.png')}}"><span>Кыргыз радиосу</span><h4>Кыргыз радиосу</h4></a></li>
+                        <li class="sitemenu" id="site-channel1">
+                            <a href="{{ route('dostuk.home') }}"><img src="{{ asset('images/channels/dostuk.png')}}"><span>Достук</span><h4>Достук</h4></a></li>    
+                    </ul>   
+                </div><!-- /.navbar-collapse -->
+            </nav>
     </div>
-</div>
-<div class="modal fade" id="radioModal" tabindex="-1" role="dialog" aria-labelledby="radioModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="radioModalLabel">Радиостанциялар</h4>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-4 modal-block">
-                        <a href="{{ route('kyrgyzradio.home') }}">
-                            <img src="images/channels/kg-radio.png" alt=""/>
-                        </a>
-                    </div>
-                    <div class="col-md-4 modal-block">
-                        <a href="{{ route('birinchi.home') }}">
-                            <img src="images/channels/1-radio.png" alt=""/>
-                        </a>
-                    </div>
-                    <div class="col-md-4 modal-block">
-                        <a href="{{ route('dostuk.home') }}">
-                            <img src="images/channels/dostuk.png" alt=""/>
-                        </a>
-                    </div>
-                    <div class="col-md-4 modal-block">
-                        <a href="{{ route('minkiyal.home') }}">
-                            <img src="images/channels/min-kiyal.png" alt=""/>
-                        </a>
-                    </div>
-                    <div class="col-md-4 modal-block">
-                        <a href="{{ route('baldar.home') }}">
-                            <img src="images/channels/baldar.png" alt=""/>
-                        </a>
-                    </div>
+<div class="container" style="background: #fff;">
+    <header id="header">
+        <nav id="main-menu" class="container-fluid navbar navbar-default fixedheader2 " role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Меню</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="{{ route('kyrgyzradio.home') }}"><img src="{{asset('images/channels/kg-radio.png')}}" alt="logo">Кыргыз Радиосу</a>
+                    <div class="onetime"><a href=""><button class="btn"><i class="fa fa-microphone"></i><span>Прямой эфир</span></button></a></div>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="liveModal" tabindex="-1" role="dialog" aria-labelledby="liveModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="liveModalLabel">Түз эфир - КТРК</h4>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-12 modal-block">
-                        <!-- the second player. uses the same video here but could be different -->
-                        <a class="rtmp" href="mp4:bbb-800"
-                           style="background-image:url(images/live_bg.png)">
-                            <img src="images/live_play.png" />
-                        </a>
-                    </div>
+               <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li class="scroll active"><a href="#home">Башкы</a></li>
+                        <li class="scroll"><a href="#services">Уктуруулар</a></li>
+                        <li class="scroll"><a href="#portfolio">Фотогалерея</a></li>  
+                        <li class="scroll"><a href="#about">Радио жөнүндө</a></li>                      
+                    </ul>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
+            </div><!--/.container-->
+        </nav><!--/nav-->
+    </header><!--/header-->
 
-
-<div class="container-fluid main-header">
-    <div class="container">
-        <div class="row">
-            <header class="top-menu">
-                <div class="top-header clearfix">
-                    <div class="col-md-12 logo-block">
+    <section id="main-slider">
+        <div class="owl-carousel">
+            <div class="item">
+            <img src="{{asset('images/channels/kyrgyzradio/2.jpg')}}" height="358" width="1600" alt="">
+                <div class="slider-inner">
+                    <div class="container">
                         <div class="row">
-                            <a class="logo" href="http://ktrk.dev">
-                                <img src="images/channels/muztv.png" alt=""/>
-                            </a>
+                            <div class="col-sm-6">
+                                <div class="carousel-content">
+                                    <h2><span>Залкар инсандар</span></h2>
+                                    <p>Биздин замандын баатырлары</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--/.item-->
+             <div class="item">
+            <img src="{{asset('images/channels/kyrgyzradio/1.jpg')}}" height="358" width="1600" alt="">
+                <div class="slider-inner">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="carousel-content">
+                                    <h2><span>Биз билген Айтматов</span> </h2>
+                                    <p>Манас жана Айтматов</p>   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--/.item-->
+            <div class="item">
+            <img src="{{asset('images/channels/kyrgyzradio/3.jpg')}}" height="358" width="1600" alt="">
+                <div class="slider-inner">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="carousel-content">
+                                    <h2><span>Улуу манасчылар</span></h2>
+                                    <p>Дүйнө аларга багынган</p>    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--/.item-->
+        </div><!--/.owl-carousel-->
+    </section><!--/#main-slider-->
 
-                            <nav class="top-nav clearfix">
-                                <ul class="clearfix">
+    <section id="cta2">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="0ms"><span>Кыргыз радиосу</span> - жан дүйнөнүн азыгы </h2>
+                <p class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="100ms">“Кыргыз радиосу көөнөрбөс мурастар казынасы</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" >
+        <div class="container">
+
+            <div class="section-header">
+                <h2 class="section-title text-center wow fadeInDown">Уктуруулар</h2>
+          </div>
+
+            <div class="row">
+                <div class="features">
+
+                    <div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="100ms">
+                        <div class="media service-box">
+                            <div class="pull-left">
+                                <i class="fa fa-bullhorn"></i>
+                            </div>
+                            <div class="media-body">
+                                <div role="tabpanel">
+                                    <ul class="nav main-tab nav-justified" role="tablist">
+                                        <li role="presentation" class="active">
+                                            <a href="#tab01" role="tab" data-toggle="tab" aria-controls="tab01" aria-expanded="true">“Өмүрлөш  элек...”  уктуруусу.</a>
+                                        </li>
+                                        <li role="presentation">
+                                            <a href="#tab02" role="tab" data-toggle="tab" aria-controls="tab02" aria-expanded="false">Уктуруу жөнүндө</a>
+                                        </li>
+                                    </ul>
+                                    <div id="tab-content" class="tab-content">
+                                        <div role="tabpanel" class="tab-pane fade active in" id="tab01" aria-labelledby="tab01">
+                                            <p>Sound Cloud</p>
+                                        </div>
+                                        <div role="tabpanel" class="tab-pane fade" id="tab02" aria-labelledby="tab02">
+                                           <p>Көзү  өтүп  кеткен  белгилүү  инсандардын  жубайлары  менен  маек. Баш  кошкон  мезгилинен  тартып, бирге  жашаган  турмушундагы  кубаныч, өкүнүчтөрү  менен  бирдикте, өмүрлүк  жарынын  кандай  адам  болгонун  кеңири  айтып  беришет.</p>
+                                       </div>
+                                   </div>
+                               </div>
+                            </div>
+                        </div>
+                    </div><!--/.col-md-4-->
+
+                    <div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="100ms">
+                        <div class="media service-box">
+                            <div class="pull-left">
+                                <i class="fa fa-bullhorn"></i>
+                            </div>
+                            <div class="media-body">
+                                <div role="tabpanel">
+                                    <ul class="nav main-tab nav-justified" role="tablist">
+                                        <li role="presentation" class="active">
+                                            <a href="#tab5" role="tab" data-toggle="tab" aria-controls="tab5" aria-expanded="true">“Тагдыр  тамчылары”</a>
+                                        </li>
+                                        <li role="presentation">
+                                            <a href="#tab6" role="tab" data-toggle="tab" aria-controls="tab6" aria-expanded="false">Уктуруу жөнүндө</a>
+                                        </li>
+                                    </ul>
+                                    <div id="tab-content" class="tab-content">
+                                        <div role="tabpanel" class="tab-pane fade active in" id="tab5" aria-labelledby="tab5">
+                                            <p>Sound Cloud</p>
+                                        </div>
+                                        <div role="tabpanel" class="tab-pane fade" id="tab6" aria-labelledby="tab6">
+                                           <p>Көзү  өтүп  кеткен  белгилүү  инсандардын  жубайлары  менен  маек. Баш  кошкон  мезгилинен  тартып, бирге  жашаган  турмушундагы  кубаныч, өкүнүчтөрү  менен  бирдикте, өмүрлүк  жарынын  кандай  адам  болгонун  кеңири  айтып  беришет.</p>
+                                       </div>
+                                   </div>
+                               </div>
+                            </div>
+                        </div>
+                    </div><!--/.col-md-4-->                    
+
+                    <div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="400ms">
+                        <div class="media service-box">
+                            <div class="pull-left">
+                                <i class="fa fa-bullhorn"></i>
+                            </div>
+                            <div class="media-body">
+                                <div role="tabpanel">
+                                    <ul class="nav main-tab nav-justified" role="tablist">
+                                        <li role="presentation" class="active">
+                                            <a href="#tab7" role="tab" data-toggle="tab" aria-controls="tab7" aria-expanded="true">“Бейпил  түн”  уктуруусу.</a>
+                                        </li>
+                                        <li role="presentation">
+                                            <a href="#tab8" role="tab" data-toggle="tab" aria-controls="tab8" aria-expanded="false">Уктуруу жөнүндө</a>
+                                        </li>
+                                    </ul>
+                                    <div id="tab-content" class="tab-content">
+                                        <div role="tabpanel" class="tab-pane fade active in" id="tab7" aria-labelledby="tab7">
+                                            <p>Sound Cloud</p>
+                                        </div>
+                                        <div role="tabpanel" class="tab-pane fade" id="tab8" aria-labelledby="tab8">
+                                            <p>Түнкү  адабий-музыкалуу  уктуруусу. Жашоо, турмуш, сүйүү, мамилелер  тууралуу  чакан  аңгеме, новелла  жанрындагы  көркөм  баяндар, ой-толгоолор  </p>
+                                        </div>
+                                   </div>
+                               </div>
+                            </div>
+                        </div>
+                    </div><!--/.col-md-4-->
+
+                    <div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="400ms">
+                        <div class="media service-box">
+                            <div class="pull-left">
+                                <i class="fa fa-bullhorn"></i>
+                            </div>
+                            <div class="media-body">
+                                <div role="tabpanel">
+                                    <ul class="nav main-tab nav-justified" role="tablist">
+                                        <li role="presentation" class="active">
+                                            <a href="#tab9" role="tab" data-toggle="tab" aria-controls="tab9" aria-expanded="true">Тилим башка, бирок дилим бир.</a>
+                                        </li>
+                                        <li role="presentation">
+                                            <a href="#tab10" role="tab" data-toggle="tab" aria-controls="tab10" aria-expanded="false">Уктуруу жөнүндө</a>
+                                        </li>
+                                    </ul>
+                                    <div id="tab-content" class="tab-content">
+                                        <div role="tabpanel" class="tab-pane fade active in" id="tab9" aria-labelledby="tab9">
+                                            <p>Sound Cloud</p>
+                                        </div>
+                                        <div role="tabpanel" class="tab-pane fade" id="tab10" aria-labelledby="tab10">
+                                            <p>Рубрикаларында кесиби башка болсо да кыргыздын ыргактарын созолонткон ыр жандуу башка улуттун  өкүлдөрүн жана  жаңы жазылган ырларды жарыка алып чыккан “Музыкалык аялдама” уктуруусу Кыргыз радиосунун толкунунда  </p>
+                                        </div>
+                                   </div>
+                               </div>
+                            </div>
+                        </div>
+                    </div><!--/.col-md-4--> 
+
+                    <div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="400ms">
+                        <div class="media service-box">
+                            <div class="pull-left">
+                                <i class="fa fa-bullhorn"></i>
+                            </div>
+                            <div class="media-body">
+                                <div role="tabpanel">
+                                    <ul class="nav main-tab nav-justified" role="tablist">
+                                        <li role="presentation" class="active">
+                                            <a href="#tab11" role="tab" data-toggle="tab" aria-controls="tab11" aria-expanded="true">Биз  экөөбүз...</a>
+                                        </li>
+                                        <li role="presentation">
+                                            <a href="#tab12" role="tab" data-toggle="tab" aria-controls="tab12" aria-expanded="false">Уктуруу жөнүндө</a>
+                                        </li>
+                                    </ul>
+                                    <div id="tab-content" class="tab-content">
+                                        <div role="tabpanel" class="tab-pane fade active in" id="tab11" aria-labelledby="tab11">
+                                            <p>Sound Cloud</p>
+                                        </div>
+                                        <div role="tabpanel" class="tab-pane fade" id="tab12" aria-labelledby="tab12">
+                                            <p>Элге  кеңири  белгилүү   болгон  маданий  жана  коомдук  инсандардын  жубайлары  менен  биргеликтеги  маектери. Алар  бирге  жашаган  турмушундагы  жубайлык  мамилелери, турмуштук  кырдаалдардагы  ийгилик-кемчилдиктери, бактылуу  үй-бүлөлүк  турмушу  тууралуу  бөлүшүшөт.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--/.col-md-4-->
+
+
+                    <div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="400ms">
+                        <div class="media service-box">
+                            <div class="pull-left">
+                                <i class="fa fa-bullhorn"></i>
+                            </div>
+                            <div class="media-body">
+                                <div role="tabpanel">
+                                    <ul class="nav main-tab nav-justified" role="tablist">
+                                        <li role="presentation" class="active">
+                                            <a href="#tab13" role="tab" data-toggle="tab" aria-controls="tab13" aria-expanded="true">Дин  таануу</a>
+                                        </li>
+                                        <li role="presentation">
+                                            <a href="#tab14" role="tab" data-toggle="tab" aria-controls="tab14" aria-expanded="false">Уктуруу жөнүндө</a>
+                                        </li>
+                                    </ul>
+                                    <div id="tab-content" class="tab-content">
+                                        <div role="tabpanel" class="tab-pane fade active in" id="tab13" aria-labelledby="tab13">
+                                            <p>Sound Cloud</p>
+                                        </div>
+                                        <div role="tabpanel" class="tab-pane fade" id="tab14" aria-labelledby="tab14">
+                                            <p>Азыр  диний  сабатсыздыктан  туура  эмес  секталарга  кирип, тыюу  салынган  агымдарды  тандап  алган  учурлар  көп  кездешүүдө. Мунун  негизинде  үй-бүлөдө  чыр-чатактар  орун  алып, ата-бала  ортосунда  пикир  келишпеген  көйгөйлөр  жаралууда. “Дин  таануу”  уктуруусу  дүйнөдөгу  бардык  диндердин  тарыхын, алардан  агылып  чыккан  агымдардын  максатын, багытын, ишмердигин  баяндап, ар  бир  динге  жана  анын  келип  чыгуу  тарыхына  кеңири  токтолууда.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--/.col-md-4-->
+
+                    <div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="400ms">
+                        <div class="media service-box">
+                            <div class="pull-left">
+                                <i class="fa fa-bullhorn"></i>
+                            </div>
+                            <div class="media-body">
+                                <div role="tabpanel">
+                                    <ul class="nav main-tab nav-justified" role="tablist">
+                                        <li role="presentation" class="active">
+                                            <a href="#tab15" role="tab" data-toggle="tab" aria-controls="tab15" aria-expanded="true">Биздин айыл</a>
+                                        </li>
+                                        <li role="presentation">
+                                            <a href="#tab16" role="tab" data-toggle="tab" aria-controls="tab16" aria-expanded="false">Уктуруу жөнүндө</a>
+                                        </li>
+                                    </ul>
+                                    <div id="tab-content" class="tab-content">
+                                        <div role="tabpanel" class="tab-pane fade active in" id="tab15" aria-labelledby="tab15">
+                                            <p>Sound Cloud</p>
+                                        </div>
+                                        <div role="tabpanel" class="tab-pane fade" id="tab16" aria-labelledby="tab16">
+                                            <p>Кыргызстандын кереметтүү жерлери ар бир айылдын жаратылышы, анда жашаган адамдардын пейили, жашоо шартын чагылдырган “Биздин айыл” уктуруусунда.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--/.col-md-4-->    
+
+                    <div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="400ms">
+                        <div class="media service-box">
+                            <div class="pull-left">
+                                <i class="fa fa-bullhorn"></i>
+                            </div>
+                            <div class="media-body">
+                                <div role="tabpanel">
+                                    <ul class="nav main-tab nav-justified" role="tablist">
+                                        <li role="presentation" class="active">
+                                            <a href="#tab17" role="tab" data-toggle="tab" aria-controls="tab17" aria-expanded="true">“Адеп</a>
+                                        </li>
+                                        <li role="presentation">
+                                            <a href="#tab18" role="tab" data-toggle="tab" aria-controls="tab18" aria-expanded="false">Уктуруу жөнүндө</a>
+                                        </li>
+                                    </ul>
+                                    <div id="tab-content" class="tab-content">
+                                        <div role="tabpanel" class="tab-pane fade active in" id="tab17" aria-labelledby="tab17">
+                                            <p>Sound Cloud</p>
+                                        </div>
+                                        <div role="tabpanel" class="tab-pane fade" id="tab18" aria-labelledby="tab18">
+                                            <p>Балдардын адептик түшүнүктөрүн байытуу, ата-энелердин, жалпы эле коомдун адептик маданиятын көтөрүү максатында  адистердин кенештери  “Адеп ” долбоорунда.   Адеп сабагы-мезгил талабы”!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--/.col-md-4-->
+
+                    <div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="400ms">
+                        <div class="media service-box">
+                            <div class="pull-left">
+                                <i class="fa fa-bullhorn"></i>
+                            </div>
+                            <div class="media-body">
+                                <div role="tabpanel">
+                                    <ul class="nav main-tab nav-justified" role="tablist">
+                                        <li role="presentation" class="active">
+                                            <a href="#tab19" role="tab" data-toggle="tab" aria-controls="tab19" aria-expanded="true">“Ата-эне мектеби” </a>
+                                        </li>
+                                        <li role="presentation">
+                                            <a href="#tab20" role="tab" data-toggle="tab" aria-controls="tab20" aria-expanded="false">Уктуруу жөнүндө</a>
+                                        </li>
+                                    </ul>
+                                    <div id="tab-content" class="tab-content">
+                                        <div role="tabpanel" class="tab-pane fade active in" id="tab19" aria-labelledby="tab19">
+                                            <p>Sound Cloud</p>
+                                        </div>
+                                        <div role="tabpanel" class="tab-pane fade" id="tab20" aria-labelledby="tab20">
+                                            <p>Бул программада ата-энелердин үй бүлөдөгү,коомдогу орду, бала тарбиялоогоморалдык,психологиялыкдаярдыгы, жоопкерчилиги, өзүнүнүстүнөништөөсүтууралуубелгилүү педагог, инсандык жеке сапаттарды өнүктүрүү адиси Асылбек Жоодонбеков кеңеш берет. Дүйшөмбү күндөрү  саат 16 05 16 25 те эфирге чыгат.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--/.col-md-4--> 
+
+                    <div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="400ms">
+                        <div class="media service-box">
+                            <div class="pull-left">
+                                <i class="fa fa-bullhorn"></i>
+                            </div>
+                            <div class="media-body">
+                                <div role="tabpanel">
+                                    <ul class="nav main-tab nav-justified" role="tablist">
+                                        <li role="presentation" class="active">
+                                            <a href="#tab21" role="tab" data-toggle="tab" aria-controls="tab21" aria-expanded="true">Тарыхый инсан</a>
+                                        </li>
+                                        <li role="presentation">
+                                            <a href="#tab22" role="tab" data-toggle="tab" aria-controls="tab22" aria-expanded="false">Уктуруу жөнүндө</a>
+                                        </li>
+                                    </ul>
+                                    <div id="tab-content" class="tab-content">
+                                        <div role="tabpanel" class="tab-pane fade active in" id="tab21" aria-labelledby="tab21">
+                                            <p>Sound Cloud</p>
+                                        </div>
+                                        <div role="tabpanel" class="tab-pane fade" id="tab22" aria-labelledby="tab22">
+                                            <p>Кыргыз элинин тарыхына,көөнөрбөс маданиятына   опол-тоодой иш жасап, мамлекеттүүлүктү сактоого , агартууга  салым кошкон  тарыхта аты алтын тамгалар менен жазылып, изи калган  баатырлар, акылмандар, илимпоздор, элчилер, мамлекеттик ишмерлер  тууралуу маалыматтар  Кыргыз радиосунун “Тарыхый инсан” уктуруусунда.
+                                    Ар бейшемби күнү 16 05 16 25 чейин  уксаңыздар болот.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--/.col-md-4-->       
+
+                    <div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="400ms">
+                        <div class="media service-box">
+                            <div class="pull-left">
+                                <i class="fa fa-bullhorn"></i>
+                            </div>
+                            <div class="media-body">
+                                <div role="tabpanel">
+                                    <ul class="nav main-tab nav-justified" role="tablist">
+                                        <li role="presentation" class="active">
+                                            <a href="#tab23" role="tab" data-toggle="tab" aria-controls="tab23" aria-expanded="true">Радио Бейтапкана</a>
+                                        </li>
+                                        <li role="presentation">
+                                            <a href="#tab24" role="tab" data-toggle="tab" aria-controls="tab24" aria-expanded="false">Уктуруу жөнүндө</a>
+                                        </li>
+                                    </ul>
+                                    <div id="tab-content" class="tab-content">
+                                        <div role="tabpanel" class="tab-pane fade active in" id="tab23" aria-labelledby="tab23">
+                                            <p>Sound Cloud</p>
+                                        </div>
+                                        <div role="tabpanel" class="tab-pane fade" id="tab24" aria-labelledby="tab24">
+                                            <p>Бул уктуруунун максаты жарандарыбыздын ден соолугуна кам коруп, ооруларды алдына алуу жана адистердин кеңешин сунуштоо  .
+                                     “Радио Бейтапкана” сиздин ден соолугуңузга кам көрөт!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--/.col-md-4-->            
+
+                    <div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="400ms">
+                        <div class="media service-box">
+                            <div class="pull-left">
+                                <i class="fa fa-bullhorn"></i>
+                            </div>
+                            <div class="media-body">
+                                <div role="tabpanel">
+                                    <ul class="nav main-tab nav-justified" role="tablist">
+                                        <li role="presentation" class="active">
+                                            <a href="#tab27" role="tab" data-toggle="tab" aria-controls="tab27" aria-expanded="true">Түз эфирден жолугушуу</a>
+                                        </li>
+                                        <li role="presentation">
+                                            <a href="#tab28" role="tab" data-toggle="tab" aria-controls="tab28" aria-expanded="false">Уктуруу жөнүндө</a>
+                                        </li>
+                                    </ul>
+                                    <div id="tab-content" class="tab-content">
+                                        <div role="tabpanel" class="tab-pane fade active in" id="tab27" aria-labelledby="tab27">
+                                            <p>Sound Cloud</p>
+                                        </div>
+                                        <div role="tabpanel" class="tab-pane fade" id="tab28" aria-labelledby="tab28">
+                                            <p>Кыргыз маданиятындагы талантту инсандардын бейнесин ачып берүү.Чыгармачылыгын жайылтуу.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--/.col-md-4-->      
+
+                    <div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="400ms">
+                        <div class="media service-box">
+                            <div class="pull-left">
+                                <i class="fa fa-bullhorn"></i>
+                            </div>
+                            <div class="media-body">
+                                <div role="tabpanel">
+                                    <ul class="nav main-tab nav-justified" role="tablist">
+                                        <li role="presentation" class="active">
+                                            <a href="#tab29" role="tab" data-toggle="tab" aria-controls="tab29" aria-expanded="true">Ой  талкуу </a>
+                                        </li>
+                                        <li role="presentation">
+                                            <a href="#tab30" role="tab" data-toggle="tab" aria-controls="tab30" aria-expanded="false">Уктуруу жөнүндө</a>
+                                        </li>
+                                    </ul>
+                                    <div id="tab-content" class="tab-content">
+                                        <div role="tabpanel" class="tab-pane fade active in" id="tab29" aria-labelledby="tab29">
+                                            <p>Sound Cloud</p>
+                                        </div>
+                                        <div role="tabpanel" class="tab-pane fade" id="tab30" aria-labelledby="tab30">
+                                            <p>Учурдагы маданияттагы ,адабияттагы жана жашоо турмуштагы орчундуу социалдык проблемаларды талкууга салуу. </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--/.col-md-4-->         
+
+
+                    <div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="400ms">
+                        <div class="media service-box">
+                            <div class="pull-left">
+                                <i class="fa fa-bullhorn"></i>
+                            </div>
+                            <div class="media-body">
+                                <div role="tabpanel">
+                                    <ul class="nav main-tab nav-justified" role="tablist">
+                                        <li role="presentation" class="active">
+                                            <a href="#tab30" role="tab" data-toggle="tab" aria-controls="tab30" aria-expanded="true">Таңшы комуз</a>
+                                        </li>
+                                        <li role="presentation">
+                                            <a href="#tab31" role="tab" data-toggle="tab" aria-controls="tab31" aria-expanded="false">Уктуруу жөнүндө</a>
+                                        </li>
+                                    </ul>
+                                    <div id="tab-content" class="tab-content">
+                                        <div role="tabpanel" class="tab-pane fade active in" id="tab30" aria-labelledby="tab30">
+                                            <p>Sound Cloud</p>
+                                        </div>
+                                        <div role="tabpanel" class="tab-pane fade" id="tab31" aria-labelledby="tab31">
+                                            <p>Улуу залкар комузчулардантартып бүгүнкү күндун комузчуларына чейин  өнөрүн элге таанытуу.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--/.col-md-4-->       
+
+                    <div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="400ms">
+                        <div class="media service-box">
+                            <div class="pull-left">
+                                <i class="fa fa-bullhorn"></i>
+                            </div>
+                            <div class="media-body">
+                                <div role="tabpanel">
+                                    <ul class="nav main-tab nav-justified" role="tablist">
+                                        <li role="presentation" class="active">
+                                            <a href="#tab32" role="tab" data-toggle="tab" aria-controls="tab32" aria-expanded="true">Музыкалык обо</a>
+                                        </li>
+                                        <li role="presentation">
+                                            <a href="#tab33" role="tab" data-toggle="tab" aria-controls="tab33" aria-expanded="false">Уктуруу жөнүндө</a>
+                                        </li>
+                                    </ul>
+                                    <div id="tab-content" class="tab-content">
+                                        <div role="tabpanel" class="tab-pane fade active in" id="tab32" aria-labelledby="tab32">
+                                            <p>Sound Cloud</p>
+                                        </div>
+                                        <div role="tabpanel" class="tab-pane fade" id="tab33" aria-labelledby="tab33">
+                                            <p>Кыргыз искусствосу менен маданиятындагы маданий жаңылыктарды оперативдүү түрдө элге жеткирүү Талкуу, баяндама, анкытама, маек түрүндө түз эфирде эфирге чыгат.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--/.col-md-4-->     
+
+                    <div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="400ms">
+                        <div class="media service-box">
+                            <div class="pull-left">
+                                <i class="fa fa-bullhorn"></i>
+                            </div>
+                            <div class="media-body">
+                                <div role="tabpanel">
+                                    <ul class="nav main-tab nav-justified" role="tablist">
+                                        <li role="presentation" class="active">
+                                            <a href="#tab34" role="tab" data-toggle="tab" aria-controls="tab34" aria-expanded="true">Эл ичи -өнөр кенчи</a>
+                                        </li>
+                                        <li role="presentation">
+                                            <a href="#tab35" role="tab" data-toggle="tab" aria-controls="tab35" aria-expanded="false">Уктуруу жөнүндө</a>
+                                        </li>
+                                    </ul>
+                                    <div id="tab-content" class="tab-content">
+                                        <div role="tabpanel" class="tab-pane fade active in" id="tab34" aria-labelledby="tab34">
+                                            <p>Sound Cloud</p>
+                                        </div>
+                                        <div role="tabpanel" class="tab-pane fade" id="tab35" aria-labelledby="tab35">
+                                            <p>Республиканын баардык аймактарындагы элдик таланттарды элге алып чыгуу.Айыл маданиятынын өсүшүнө көмөк кошуу.Маек, иликтөөнүн негизинде даярдалат.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--/.col-md-4-->       
+
+                    <div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="400ms">
+                        <div class="media service-box">
+                            <div class="pull-left">
+                                <i class="fa fa-bullhorn"></i>
+                            </div>
+                            <div class="media-body">
+                                <div role="tabpanel">
+                                    <ul class="nav main-tab nav-justified" role="tablist">
+                                        <li role="presentation" class="active">
+                                            <a href="#tab36" role="tab" data-toggle="tab" aria-controls="tab36" aria-expanded="true">Ансамблдер баяны</a>
+                                        </li>
+                                        <li role="presentation">
+                                            <a href="#tab37" role="tab" data-toggle="tab" aria-controls="tab37" aria-expanded="false">Уктуруу жөнүндө</a>
+                                        </li>
+                                    </ul>
+                                    <div id="tab-content" class="tab-content">
+                                        <div role="tabpanel" class="tab-pane fade active in" id="tab36" aria-labelledby="tab36">
+                                            <p>Sound Cloud</p>
+                                        </div>
+                                        <div role="tabpanel" class="tab-pane fade" id="tab37" aria-labelledby="tab37">
+                                            <p>Баардык жанрдагы ансамблдердин чыгармачылыгын жайылтуу. Эмгегин элге жеткирүү. Орду, аткарган ишин ачып берүү</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--/.col-md-4-->  
+
+                    <div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="400ms">
+                        <div class="media service-box">
+                            <div class="pull-left">
+                                <i class="fa fa-bullhorn"></i>
+                            </div>
+                            <div class="media-body">
+                                <div role="tabpanel">
+                                    <ul class="nav main-tab nav-justified" role="tablist">
+                                        <li role="presentation" class="active">
+                                            <a href="#tab38" role="tab" data-toggle="tab" aria-controls="tab38" aria-expanded="true">Сөз дүйнө</a>
+                                        </li>
+                                        <li role="presentation">
+                                            <a href="#tab39" role="tab" data-toggle="tab" aria-controls="tab39" aria-expanded="false">Уктуруу жөнүндө</a>
+                                        </li>
+                                    </ul>
+                                    <div id="tab-content" class="tab-content">
+                                        <div role="tabpanel" class="tab-pane fade active in" id="tab38" aria-labelledby="tab38">
+                                            <p>Sound Cloud</p>
+                                        </div>
+                                        <div role="tabpanel" class="tab-pane fade" id="tab39" aria-labelledby="tab39">
+                                            <p>Бул уктурууда, эне тилибиздин  лексикасына  маданияттын, илимдин, техниканын  өнүгүшү менен жаңыдан кирип жаткан  НЕОЛОГИЗМ сөздөрүнө саякат жасайбыз</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--/.col-md-4-->     
+
+                    <div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="400ms">
+                        <div class="media service-box">
+                            <div class="pull-left">
+                                <i class="fa fa-bullhorn"></i>
+                            </div>
+                            <div class="media-body">
+                                <div role="tabpanel">
+                                    <ul class="nav main-tab nav-justified" role="tablist">
+                                        <li role="presentation" class="active">
+                                            <a href="#tab40" role="tab" data-toggle="tab" aria-controls="tab40" aria-expanded="true">“Саякат”</a>
+                                        </li>
+                                        <li role="presentation">
+                                            <a href="#tab41" role="tab" data-toggle="tab" aria-controls="tab41" aria-expanded="false">Уктуруу жөнүндө</a>
+                                        </li>
+                                    </ul>
+                                    <div id="tab-content" class="tab-content">
+                                        <div role="tabpanel" class="tab-pane fade active in" id="tab40" aria-labelledby="tab40">
+                                            <p>Sound Cloud</p>
+                                        </div>
+                                        <div role="tabpanel" class="tab-pane fade" id="tab41" aria-labelledby="tab41">
+                                            <p>Бул уктурууда Кыргызстандын ажайып кооз, көздүн жоосун алган керемет, ошону менен бирге ары сырдуу жерлерине саякат жасап, угармандарга маалымат беребиз.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--/.col-md-4-->     
+
+                    <div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="400ms">
+                        <div class="media service-box">
+                            <div class="pull-left">
+                                <i class="fa fa-bullhorn"></i>
+                            </div>
+                            <div class="media-body">
+                                <div role="tabpanel">
+                                    <ul class="nav main-tab nav-justified" role="tablist">
+                                        <li role="presentation" class="active">
+                                            <a href="#tab42" role="tab" data-toggle="tab" aria-controls="tab42" aria-expanded="true">Табият сырлары</a>
+                                        </li>
+                                        <li role="presentation">
+                                            <a href="#tab43" role="tab" data-toggle="tab" aria-controls="tab43" aria-expanded="false">Уктуруу жөнүндө</a>
+                                        </li>
+                                    </ul>
+                                    <div id="tab-content" class="tab-content">
+                                        <div role="tabpanel" class="tab-pane fade active in" id="tab42" aria-labelledby="tab42">
+                                            <p>Sound Cloud</p>
+                                        </div>
+                                        <div role="tabpanel" class="tab-pane fade" id="tab43" aria-labelledby="tab43">
+                                            <p>Бул уктурууда, угармандар менен айлана-чөйрөгө, асман-жерге, жана андагы өсүмдүктөгө, жаратылыш кубулуштарына саресеп салып, байкоо жургузуу менен бирге аларды жатык тил менен кызыктуу баяндап бергенге</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--/.col-md-4-->                                
+
+                </div>
+            </div><!--/.row-->    
+        </div><!--/.container-->
+    </section><!--/#services-->
+
+    <section id="cta" class="wow fadeIn">
+        <div class="container">
+            <div class="row">
+            <div class="col-md-6">            
+                <div class="col-sm-9">
+                    <h2>Чынгыз Айтматов</h2>
+                    <p>Дос, кыйынчылыкта билинет дешет. Менимче, бактылуу кезиңде да билинет..
+                    </p>
+                </div>
+            <div class="col-sm-3">
+                <img src="{{asset('images/channels/kyrgyzradio/aitmatov.jpg')}}" height="100" width="100" alt="">
+                    
+                </div>
+            </div>  
+            <div class="col-md-6">            
+                <div class="col-sm-9">
+                    <h2>Чынгыз Айтматов</h2>
+                    <p>Словно люди не понимают, сколько несчастий и убожества в их жизни поистекает и проистекало во все времена от лени.
+                    </p>
+                </div>
+                <div class="col-sm-3">
+                <img src="{{asset('images/channels/kyrgyzradio/aitmatov.jpg')}}" height="100" width="100" alt="">
+                    
+                </div>
+            </div>
+            </div>
+
+        </div>
+    </section><!--/#cta-->
+
+    <section id="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title text-center wow fadeInDown">Сүрөт галереясы</h2>
+            </div>
+
+            <div class="portfolio-items">
+                <div class="portfolio-item creative">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="{{asset('images/channels/kyrgyzradio/ny.jpg')}}" alt="">
+                        <div class="portfolio-info">
+                            <h3>Галерея</h3>
+                            <a class="preview" href="{{asset('images/channels/kyrgyzradio/ny.jpg')}}" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div><!--/.portfolio-item-->
+
+                <div class="portfolio-item">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="{{asset('images/channels/kyrgyzradio/ny.jpg')}}" alt="">
+                        <div class="portfolio-info">
+                            <h3>Галерея</h3>
+                            <a class="preview" href="{{asset('images/channels/kyrgyzradio/ny.jpg')}}" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div><!--/.portfolio-item-->
+
+                <div class="portfolio-item">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="{{asset('images/channels/kyrgyzradio/ny.jpg')}}" alt="">
+                        <div class="portfolio-info">
+                            <h3>Галерея</h3>
+                            <a class="preview" href="{{asset('images/channels/kyrgyzradio/ny.jpg')}}" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div><!--/.portfolio-item-->
+
+                <div class="portfolio-item">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="{{asset('images/channels/kyrgyzradio/ny.jpg')}}" alt="">
+                        <div class="portfolio-info">
+                            <h3>Галерея</h3>
+                            <a class="preview" href="{{asset('images/channels/kyrgyzradio/ny.jpg')}}" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div><!--/.portfolio-item-->
+
+                <div class="portfolio-item">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="{{asset('images/channels/kyrgyzradio/ny.jpg')}}" alt="">
+                        <div class="portfolio-info">
+                            <h3>Галерея</h3>
+                            <a class="preview" href="{{asset('images/channels/kyrgyzradio/ny.jpg')}}" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div><!--/.portfolio-item-->
+
+                <div class="portfolio-item">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="{{asset('images/channels/kyrgyzradio/ny.jpg')}}" alt="">
+                        <div class="portfolio-info">
+                            <h3>Галерея</h3>
+                            <a class="preview" href="{{asset('images/channels/kyrgyzradio/ny.jpg')}}" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div><!--/.portfolio-item-->
+
+                <div class="portfolio-item">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="{{asset('images/channels/kyrgyzradio/ny.jpg')}}" alt="">
+                        <div class="portfolio-info">
+                            <h3>Галерея</h3>
+                            <a class="preview" href="{{asset('images/channels/kyrgyzradio/ny.jpg')}}" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div><!--/.portfolio-item-->
+
+                <div class="portfolio-item">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="{{asset('images/channels/kyrgyzradio/ny.jpg')}}" alt="">
+                        <div class="portfolio-info">
+                            <h3>Галерея</h3>
+                            <a class="preview" href="{{asset('images/channels/kyrgyzradio/ny.jpg')}}" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div><!--/.portfolio-item-->
+            </div>
+        </div><!--/.container-->
+    </section><!--/#portfolio-->
+
+    <section id="cta" class="wow fadeIn">
+        <div class="container">
+            <div class="row">
+            <div class="col-md-6">            
+                <div class="col-sm-9">
+                    <h2>Чынгыз Айтматов</h2>
+                    <p>Дос, кыйынчылыкта билинет дешет. Менимче, бактылуу кезиңде да билинет..
+                    </p>
+                </div>
+            <div class="col-sm-3">
+                <img src="{{asset('images/channels/kyrgyzradio/aitmatov.jpg')}}" height="100" width="100" alt="">
+                    
+                </div>
+            </div>  
+            <div class="col-md-6">            
+                <div class="col-sm-9">
+                    <h2>Чынгыз Айтматов</h2>
+                    <p>Словно люди не понимают, сколько несчастий и убожества в их жизни поистекает и проистекало во все времена от лени.
+                    </p>
+                </div>
+                <div class="col-sm-3">
+                <img src="{{asset('images/channels/kyrgyzradio/aitmatov.jpg')}}" height="100" width="100" alt="">
+                    
+                </div>
+            </div>
+            </div>
+
+        </div>
+    </section><!--/#cta-->
+
+    <section id="about">
+        <div class="container">
+
+            <div class="section-header">
+                <h2 class="section-title text-center wow fadeInDown">Кыргыз Радиосу жөнүндө</h2>
+                <p class="text-center wow fadeInDown">Радионун негизги урааны “Кыргыз радиосу - жан дүйнөнүн азыгы”. <br> “Кыргыз радиосу көөнөрбөс мурастар казынасы!”</p>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-3 wow fadeInLeft">
+                    <h3 class="column-title">Логотип</h3>
+                    <!-- 16:9 aspect ratio -->               
+                    <div class="img-responsive">
+                      <img src="{{asset('images/channels/kg-radio.png')}}" alt="">
+                    </div>
+                </div>
+
+                <div class="col-sm-9 wow fadeInRight">
+                    <h3 class="column-title">Тарыхы</h3>
+                        <p>Кыргыз радиосу мурдагы Улуттук мамлекеттик радионун курамынан 2009-жылы июнь айында өзүнчө адабий-музыкалык канал катары бөлүнүп чыккан. Кыргыз радиосу улуттук идеологияны жүргүзгөн, калкка рухий азык тараткан, элибиздин көркөм дөөлөттөрүн жайылткан, адабий-музыкалык багытта жан дүйнөнү тазарткан, адеп-ахлак, каада-салттын мектеби болгон уникалдуу радио. Кыргыз радиосунун концепциясы  - көркөм өнөрдүн таасири аркылуу жалпы угармандардын жан дүйнөсүн байытуу, тарбиялоо. </p> 
+                        <p>Ырасында эле “Адабият –элдин сезими, элдин рухий турмушунун жемиши” (В.Белинский) же болбосо музыканын тили көтөрүлбөй турган тил. Ал жандын тили (А.Ауэрбах) - деп таамай айтылгандай, адабият менен музыка бүтүндөй элди тазалыкка, адамгерчиликке тарбиялай турган курал. Кыргыз радиосу ушул улуу максатты аркалайт. </p>
+                        <p>Күн сайын 12(он эки) саттык уктуруулар эфирге чыгат. Уктуруулар жалаң кыргыз тилинде даярдалат. Уктуруулардын сапатын жакшыртып, угармандардын катарын көбөйтүү максатында редакция жамааты ар убакта талкууларды, талдоолорду өткөрүп, өз кызматын өтөп бүткөн уктурууларды жаап, жаңы долбоорлордун үстүндө изденип, эфирге даярдап келишет. Ошол эле учурда Радионун жүзүн чагылдырып турган роликтер маал-маалы менен жаңыланып турат. Бүгүнкүдөй саясатташкан , күнүмдүк көйгөйлөр адамдын адамдын акыл-эсин чарчатып турган кымгуут заманда угармандардын жан дүйнөсүнө азык берип, эс алууга багыттап, жакшылыкка үндөп келаткан Кыргыз Радиосунун келечеги алдыда</p>
+                </div>                
+            </div>
+             <div class="section-header">             
+                <p class="text-justify wow fadeInDown">.</p>
+            </div>
+        </div>
+    </section><!--/#about-->
+  
+    <footer class="footer">
+        <div class="panel panel-default">
+            <div class="panel-body">
+           
+                        <div class="col-md-12">
+                            <div class="row">
+                                <ul>
                                     <li><a href="#">Башкы бет</a></li>
-                                    <li>/</li>
-                                    <li>
-                                        <a href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="100" data-close-others="false" role="button" aria-expanded="false">КТРК</a>
-                                        <ul class="dropdown-menu" role="menu">
-                                            <li><a href="#">Тарыхы</a></li>
-                                            <li><a href="#">Жетекчилер</a></li>
-                                            <li><a href="#">Стратегия</a></li>
-                                            <li><a href="#">Нормативдик база</a></li>
-                                            <li><a href="#">РРТЦ</a></li>
-                                            <li><a href="#">Отчет</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>/</li>
+                                    <li><a href="#">КТРК</a></li>
                                     <li><a href="#">Видеопортал</a></li>
-                                    <li>/</li>
                                     <li><a href="#">Телепрограмма</a></li>
-                                    <li>/</li>
                                     <li><a href="#">Байкоочу кеңеш</a></li>
-                                    <li>/</li>
                                     <li><a href="#">Редакциялык кеңешчи</a></li>
                                 </ul>
-                            </nav>
-
-                            <ul class="soc">
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-odnoklassniki"></i></a></li>
-                                <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                <li><a href="#"><i class="fa fa-vk"></i></a></li>
-                            </ul>
-
-                            <form class="form-search" action="" method="post">
-                                <div class="form-group pull-right">
-                                    <input type="text" class="form-control" placeholder="Издөө"/>
-                                </div>
-
-                                <button class="btn" type="submit">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </form>
-
-                            <button class="btn btn-danger btn-live">
-                                <i class="fa fa-dot-circle-o"></i>
-                                түз эфир
-                            </button>
-
-                            <div class="tv-radio">
-                                <a id="tv" href="#" title="Телеканалдар" data-toggle="modal" data-target="#tvModal"><img src="images/tv.svg" alt=""/></a>
-                                <div class="divider"></div>
-                                <a href="#" title="Радиостанциялар" data-toggle="modal" data-target="#radioModal"><img src="images/radio.svg" alt=""/></a>
-                            </div>
-
-                            <div class="tv-radio hidden">
-                                <div class="component component-tv">
-                                    <!-- Start Nav Structure -->
-                                    <button class="cn-button" id="cn-button-tv"><img src="images/tv.svg" alt=""/></button>
-                                    <div class="cn-wrapper" id="cn-wrapper-tv">
-                                        <ul>
-                                            <li><a href="#"><img src="images/channels/balastan.svg" alt="Баластан"/></a></li>
-                                            <li><a href="#"><img src="images/channels/muztv.png" alt="Муз ТВ"/></a></li>
-                                            <li><a href="#"><img src="images/channels/madaniyat.png" alt="Маданият"/></a></li>
-                                        </ul>
-                                    </div>
-                                    <div id="cn-overlay-tv" class="cn-overlay"></div>
-                                    <!-- End Nav Structure -->
-                                </div>
-                                <div class="divider"></div>
-                                <div class="component component-radio">
-                                    <!-- Start Nav Structure -->
-                                    <button class="cn-button" id="cn-button-radio"><img src="images/radio.svg" alt=""/></button>
-                                    <div class="cn-wrapper" id="cn-wrapper-radio">
-                                        <ul>
-                                            <li><a href="#"><img src="images/channels/kg-radio.png" alt="Кыргыз радиосу"/></a></li>
-                                            <li><a href="#"><img src="images/channels/1-radio.png" alt="Биринчи Радио"/></a></li>
-                                            <li><a href="#"><img src="images/channels/dostuk.png" alt="Достук"/></a></li>
-                                            <li><a href="#"><img src="images/channels/min-kiyal.png" alt="Мин Кыял"/></a></li>
-                                            <li><a href="#"><img src="images/channels/baldar.png" alt="Балдар ФМ"/></a></li>
-                                        </ul>
-                                    </div>
-                                    <div id="cn-overlay-radio" class="cn-overlay"></div>
-                                    <!-- End Nav Structure -->
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </header>
-        </div>
-    </div>
-</div>
-
-<a href="#" class="col-md-12 text-center ads">
-    <img src="images/ads_1.jpg" alt=""/>
-</a>
-
-<div class="container">
-
-    <div class="row">
-        <section class="content clearfix">
-
-            <div class="col-md-12">
-                <div class="panel panel-default" style="background-color: transparent">
-                    <div class="panel-heading">
-
-                    </div>
-                    <div class="panel-body">
-                        <div class="col-md-12 block">
-                            <div id="carousel">
-                                <a href="http://google.com">
-                                    <img src="images/anons/1.jpg" alt="" class="slide" />
-                                </a>
-                                <a href="http://google.com">
-                                    <img src="images/anons/2.jpg" alt="" class="slide" />
-                                </a>
-                                <a href="http://google.com">
-                                    <img src="images/anons/3.jpg" alt="" class="slide" />
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="bottom-right-block col-md-8">
-                <div class="panel panel-default videoportal">
-                    <div class="panel-heading">
-                        <h3 class="panel-title"><span>Видеопортал</span></h3>
-                    </div>
-                    <div class="panel-body">
-                        <ul id="filters" class="clearfix">
-                            <li><span class="filter" data-filter="all-videos">Жалпы</span></li>
-                            <li><span class="filter" data-filter="app">Телеберүүлөр</span></li>
-                            <li><span class="filter" data-filter="card">Сериалдар</span></li>
-                            <li><span class="filter" data-filter="icon">Көркөм тасма</span></li>
-                            <li><span class="filter" data-filter="tele">Маанайшат</span></li>
-                            <li><span class="filter" data-filter="web">Спорт</span></li>
-                        </ul>
-
-                        <div id="portfoliolist">
-
-                            <div class="portfolio all-videos" data-cat="all-videos">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/logo/1.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Эфир 14.08.2015</a>
-                                            <span class="text-category">Телеберүүлөр</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio all-videos" data-cat="all-videos">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/logo/1.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Эфир 14.08.2015</a>
-                                            <span class="text-category">Телеберүүлөр</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio all-videos" data-cat="all-videos">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/logo/1.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Эфир 14.08.2015</a>
-                                            <span class="text-category">Телеберүүлөр</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio all-videos" data-cat="all-videos">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/logo/1.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Эфир 14.08.2015</a>
-                                            <span class="text-category">Телеберүүлөр</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio all-videos" data-cat="all-videos">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/logo/1.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Эфир 14.08.2015</a>
-                                            <span class="text-category">Телеберүүлөр</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio all-videos" data-cat="all-videos">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/logo/1.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Эфир 14.08.2015</a>
-                                            <span class="text-category">Телеберүүлөр</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio all-videos" data-cat="all-videos">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/logo/1.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Эфир 14.08.2015</a>
-                                            <span class="text-category">Телеберүүлөр</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio all-videos" data-cat="all-videos">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/logo/1.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Эфир 14.08.2015</a>
-                                            <span class="text-category">Телеберүүлөр</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio all-videos" data-cat="all-videos">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/logo/1.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Эфир 14.08.2015</a>
-                                            <span class="text-category">Телеберүүлөр</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="portfolio tele" data-cat="tele">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/logo/5.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Эфир 14.08.2015</a>
-                                            <span class="text-category">Телеберүүлөр</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio tele" data-cat="tele">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/logo/5.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Эфир 14.08.2015</a>
-                                            <span class="text-category">Телеберүүлөр</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio tele" data-cat="tele">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/logo/5.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Эфир 14.08.2015</a>
-                                            <span class="text-category">Телеберүүлөр</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio tele" data-cat="tele">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/logo/5.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Эфир 14.08.2015</a>
-                                            <span class="text-category">Телеберүүлөр</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio tele" data-cat="tele">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/logo/5.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Эфир 14.08.2015</a>
-                                            <span class="text-category">Телеберүүлөр</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio tele" data-cat="tele">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/logo/5.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Эфир 14.08.2015</a>
-                                            <span class="text-category">Телеберүүлөр</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio tele" data-cat="tele">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/logo/5.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Эфир 14.08.2015</a>
-                                            <span class="text-category">Телеберүүлөр</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio tele" data-cat="tele">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/logo/5.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Эфир 14.08.2015</a>
-                                            <span class="text-category">Телеберүүлөр</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio tele" data-cat="tele">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/logo/5.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Эфир 14.08.2015</a>
-                                            <span class="text-category">Телеберүүлөр</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio app" data-cat="app">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/app/1.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Visual Infography</a>
-                                            <span class="text-category">APP</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio app" data-cat="app">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/app/1.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Visual Infography</a>
-                                            <span class="text-category">APP</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio app" data-cat="app">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/app/1.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Visual Infography</a>
-                                            <span class="text-category">APP</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio app" data-cat="app">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/app/1.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Visual Infography</a>
-                                            <span class="text-category">APP</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio app" data-cat="app">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/app/1.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Visual Infography</a>
-                                            <span class="text-category">APP</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio app" data-cat="app">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/app/1.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Visual Infography</a>
-                                            <span class="text-category">APP</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio app" data-cat="app">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/app/1.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Visual Infography</a>
-                                            <span class="text-category">APP</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio app" data-cat="app">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/app/1.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Visual Infography</a>
-                                            <span class="text-category">APP</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio app" data-cat="app">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/app/1.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Visual Infography</a>
-                                            <span class="text-category">APP</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio web" data-cat="web">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/web/4.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Sonor's Design</a>
-                                            <span class="text-category">Web design</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio web" data-cat="web">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/web/4.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Sonor's Design</a>
-                                            <span class="text-category">Web design</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio web" data-cat="web">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/web/4.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Sonor's Design</a>
-                                            <span class="text-category">Web design</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio web" data-cat="web">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/web/4.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Sonor's Design</a>
-                                            <span class="text-category">Web design</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio web" data-cat="web">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/web/4.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Sonor's Design</a>
-                                            <span class="text-category">Web design</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio web" data-cat="web">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/web/4.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Sonor's Design</a>
-                                            <span class="text-category">Web design</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio web" data-cat="web">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/web/4.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Sonor's Design</a>
-                                            <span class="text-category">Web design</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio web" data-cat="web">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/web/4.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Sonor's Design</a>
-                                            <span class="text-category">Web design</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio web" data-cat="web">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/web/4.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Sonor's Design</a>
-                                            <span class="text-category">Web design</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio card" data-cat="card">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/card/1.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Typography Company</a>
-                                            <span class="text-category">Business card</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio card" data-cat="card">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/card/1.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Typography Company</a>
-                                            <span class="text-category">Business card</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio card" data-cat="card">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/card/1.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Typography Company</a>
-                                            <span class="text-category">Business card</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio card" data-cat="card">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/card/1.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Typography Company</a>
-                                            <span class="text-category">Business card</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio card" data-cat="card">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/card/1.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Typography Company</a>
-                                            <span class="text-category">Business card</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio card" data-cat="card">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/card/1.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Typography Company</a>
-                                            <span class="text-category">Business card</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio card" data-cat="card">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/card/1.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Typography Company</a>
-                                            <span class="text-category">Business card</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio card" data-cat="card">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/card/1.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Typography Company</a>
-                                            <span class="text-category">Business card</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio card" data-cat="card">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/card/1.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Typography Company</a>
-                                            <span class="text-category">Business card</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio icon" data-cat="icon">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/icon/4.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Domino's Pizza</a>
-                                            <span class="text-category">Icon</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio icon" data-cat="icon">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/icon/4.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Domino's Pizza</a>
-                                            <span class="text-category">Icon</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio icon" data-cat="icon">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/icon/4.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Domino's Pizza</a>
-                                            <span class="text-category">Icon</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio icon" data-cat="icon">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/icon/4.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Domino's Pizza</a>
-                                            <span class="text-category">Icon</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio icon" data-cat="icon">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/icon/4.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Domino's Pizza</a>
-                                            <span class="text-category">Icon</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio icon" data-cat="icon">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/icon/4.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Domino's Pizza</a>
-                                            <span class="text-category">Icon</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio icon" data-cat="icon">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/icon/4.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Domino's Pizza</a>
-                                            <span class="text-category">Icon</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio icon" data-cat="icon">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/icon/4.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Domino's Pizza</a>
-                                            <span class="text-category">Icon</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="portfolio icon" data-cat="icon">
-                                <div class="portfolio-wrapper">
-                                    <img src="filter/img/portfolios/icon/4.jpg" alt="" />
-                                    <div class="label">
-                                        <div class="label-text">
-                                            <a class="text-title">Domino's Pizza</a>
-                                            <span class="text-category">Icon</span>
-                                        </div>
-                                        <div class="label-bg"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <footer>
-                            <a href="#">
-                                <span>Архив <i class="fa fa-arrow-circle-right"></i></span>
-                            </a>
-                        </footer>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="bottom-left-block col-md-4">
-                <div class="panel panel-default latest-news">
-                    <div class="panel-heading">
-                        <h3 class="panel-title"><span>Акыркы жаңылыктар</span></h3>
-                    </div>
-                    <div class="panel-body">
-                        <ul class="list-group">
-                            <li class="list-group-item news-item">
-                                <div class="news-body clearfix">
-                                    <a href="#">
-                                        <p class="news-title">В Бишкеке проходит внеочередной съезд партии "Республика Ата-Журт"</p>
-                                        <span class="ctg"><img src="images/logo_notext.png" alt=""/></span>
-                                    </a>
-                                </div>
-                                <div class="news-adds clearfix">
-                                    <a href="#" class="">Политика</a>
-                                    <span class="news-file"><i class="fa fa-play-circle-o"></i></span>
-
-                                    <span class="news-time pull-right">10:10</span>
-                                </div>
-                                <div class="clearfix"></div>
-                            </li>
-                            <li class="list-group-item news-item">
-                                <div class="news-body clearfix">
-                                    <a href="#">
-                                        <p class="news-title">В Бишкеке проходит внеочередной съезд партии "Республика Ата-Журт"</p>
-                                        <span class="ctg"><img src="images/logo_notext.png" alt=""/></span>
-                                    </a>
-                                </div>
-                                <div class="news-adds clearfix">
-                                    <a href="#">Политика</a>
-                                    <span class="news-file"><i class="fa fa-image"></i></span>
-
-                                    <span class="news-time pull-right">10:10</span>
-                                </div>
-                                <div class="clearfix"></div>
-                            </li>
-                            <li class="list-group-item news-item">
-                                <div class="news-body clearfix">
-                                    <a href="#">
-                                        <p class="news-title">В Бишкеке проходит внеочередной съезд партии "Республика Ата-Журт"</p>
-                                        <span class="ctg"><img src="images/logo_notext.png" alt=""/></span>
-                                    </a>
-                                </div>
-                                <div class="news-adds clearfix">
-                                    <a href="#" class="">Политика</a>
-                                    <span class="news-file"><i class="fa fa-play-circle-o"></i></span>
-
-                                    <span class="news-time pull-right">10:10</span>
-                                </div>
-                                <div class="clearfix"></div>
-                            </li>
-                            <li class="list-group-item news-item">
-                                <div class="news-body clearfix">
-                                    <a href="#">
-                                        <p class="news-title">В Бишкеке проходит внеочередной съезд партии "Республика Ата-Журт"</p>
-                                        <span class="ctg"><img src="images/logo_notext.png" alt=""/></span>
-                                    </a>
-                                </div>
-                                <div class="news-adds clearfix">
-                                    <a href="#" class="">Политика</a>
-                                    <span class="news-file"><i class="fa fa-play-circle-o"></i></span>
-
-                                    <span class="news-time pull-right">10:10</span>
-                                </div>
-                                <div class="clearfix"></div>
-                            </li>
-                            <li class="list-group-item news-item">
-                                <div class="news-body clearfix">
-                                    <a href="#">
-                                        <p class="news-title">В Бишкеке проходит внеочередной съезд партии "Республика Ата-Журт"</p>
-                                        <span class="ctg"><img src="images/logo_notext.png" alt=""/></span>
-                                    </a>
-                                </div>
-                                <div class="news-adds clearfix">
-                                    <a href="#" class="">Политика</a>
-                                    <span class="news-file"><i class="fa fa-play-circle-o"></i></span>
-
-                                    <span class="news-time pull-right">10:10</span>
-                                </div>
-                                <div class="clearfix"></div>
-                            </li>
-                            <li class="list-group-item news-item">
-                                <div class="news-body clearfix">
-                                    <a href="#">
-                                        <p class="news-title">В Бишкеке проходит внеочередной съезд партии "Республика Ата-Журт"</p>
-                                        <span class="ctg"><img src="images/logo_notext.png" alt=""/></span>
-                                    </a>
-                                </div>
-                                <div class="news-adds clearfix">
-                                    <a href="#" class="">Политика</a>
-                                    <span class="news-file"><i class="fa fa-play-circle-o"></i></span>
-
-                                    <span class="news-time pull-right">10:10</span>
-                                </div>
-                                <div class="clearfix"></div>
-                            </li>
-                        </ul>
-
-                        <footer>
-                            <a href="#">
-                                <span>Бардык жаңылыктар <i class="fa fa-arrow-circle-right"></i></span>
-                            </a>
-                        </footer>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="col-md-12">
-                <div class="panel panel-default panel-carousel">
-                    <div class="panel-heading">
-                        <h3 class="panel-title"><span>Фотогалерея</span></h3>
-                    </div>
-                    <div class="panel-body">
-                        <div class="col-md-12">
-                            <div class="carousel-slick">
-                                <div class="col-md-4"><img src="images/gallery/001.jpg" alt=""/></div>
-                                <div class="col-md-4"><img src="images/gallery/002.jpg" alt=""/></div>
-                                <div class="col-md-4"><img src="images/gallery/003.jpg" alt=""/></div>
-                                <div class="col-md-4"><img src="images/gallery/004.jpg" alt=""/></div>
-                                <div class="col-md-4"><img src="images/gallery/005.jpg" alt=""/></div>
-                                <div class="col-md-4"><img src="images/gallery/006.jpg" alt=""/></div>
-                                <div class="col-md-4"><img src="images/gallery/007.jpg" alt=""/></div>
-                                <div class="col-md-4"><img src="images/gallery/008.jpg" alt=""/></div>
-                                <div class="col-md-4"><img src="images/gallery/009.jpg" alt=""/></div>
-                                <div class="col-md-4"><img src="images/gallery/010.jpg" alt=""/></div>
-                                <div class="col-md-4"><img src="images/gallery/011.jpg" alt=""/></div>
-                                <div class="col-md-4"><img src="images/gallery/012.jpg" alt=""/></div>
                             </div>
                         </div>
 
-                    </div>
-                </div>
-            </div>
-
-        </section>
-    </div>
-
-</div>
-
-
-
-<footer class="footer">
-    <div class="panel panel-default">
-        <div class="panel-body">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="row">
-                            <ul>
-                                <li><a href="#">Башкы бет</a></li>
-                                <li><a href="#">КТРК</a></li>
-                                <li><a href="#">Видеопортал</a></li>
-                                <li><a href="#">Телепрограмма</a></li>
-                                <li><a href="#">Байкоочу кеңеш</a></li>
-                                <li><a href="#">Редакциялык кеңешчи</a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-md-12 copy"><i class="fa fa-copyright"></i> 2015 Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясы</div>
-                </div>
+                        <div class="col-md-12 copy"><i class="fa fa-copyright"></i> 2015 Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясы</div>
+         
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
+
+</div>
 
 <script src="js/jquery-1.11.2.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 
-
-<script type="text/javascript" src="filter/js/jquery.easing.min.js"></script>
-<script type="text/javascript" src="filter/js/jquery.mixitup.min.js"></script>
-
-<script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
-<script type="text/javascript" src="slick/slick.min.js"></script>
-<script type="text/javascript" src="js/jquery.roundabout.js"></script>
-
-<script>
-    $('.carousel-slick').slick({
-        infinite: true,
-        slidesToShow: 6,
-        slidesToScroll: 1
-    });
-</script>
-
-<script type="text/javascript">
-    (function($) {
-
-        var $descriptions = $('#carousel-descriptions').children('li'),
-                $controls = $('#carousel-controls').find('span'),
-                $carousel = $('#carousel')
-                        .roundabout({childSelector:"a", minOpacity:1, autoplay:false})
-                        .on('focus', 'img', function() {
-                            var slideNum = $carousel.roundabout("getChildInFocus");
-
-                            $descriptions.add($controls).removeClass('current');
-                            $($descriptions.get(slideNum)).addClass('current');
-                            $($controls.get(slideNum)).addClass('current');
-                        });
-
-        $controls.on('click dblclick', function() {
-            var slideNum = -1,
-                    i = 0, len = $controls.length;
-
-            for (; i<len; i++) {
-                if (this === $controls.get(i)) {
-                    slideNum = i;
-                    break;
-                }
-            }
-
-            if (slideNum >= 0) {
-                $controls.removeClass('current');
-                $(this).addClass('current');
-                $carousel.roundabout('animateToChild', slideNum);
-            }
-        });
-    }(jQuery));
-</script>
+<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+<script src="js/landing/owl.carousel.min.js"></script>
+<script src="js/landing/mousescroll.js"></script>
+<script src="js/landing/smoothscroll.js"></script>
+<script src="js/landing/jquery.prettyPhoto.js"></script>
+<script src="js/landing/jquery.isotope.min.js"></script>
+<script src="js/landing/jquery.inview.min.js"></script>
+<script src="js/landing/wow.min.js"></script>
+<script src="js/landing/main.js"></script>
+<script src="js/landing/jquery.js"></script>
+<script src="js/landing/fixed.js"></script>
 
 
-<script type="text/javascript">
-    $(function () {
-
-        var filterList = {
-
-            init: function () {
-
-                // MixItUp plugin
-                // http://mixitup.io
-                $('#portfoliolist').mixitup({
-                    showOnLoad: 'all-videos',
-                    targetSelector: '.portfolio',
-                    filterSelector: '.filter',
-                    effects: ['fade'],
-                    easing: 'snap',
-                    // call the hover effect
-                    onMixEnd: filterList.hoverEffect()
-                });
-
-            },
-
-            hoverEffect: function () {
-
-                // Simple parallax effect
-                $('#portfoliolist .portfolio').hover(
-                        function () {
-                            $(this).find('.label').stop().animate({bottom: 0}, 200, 'easeOutQuad');
-                            $(this).find('img').stop().animate({top: -40}, 250, 'easeOutQuad');
-                        },
-                        function () {
-                            $(this).find('.label').stop().animate({bottom: -40}, 200, 'easeInQuad');
-                            $(this).find('img').stop().animate({top: 0}, 300, 'easeOutQuad');
-                        }
-                );
-
-            }
-
-        };
-        // Run the show!
-        filterList.init();
-    });
-</script>
 </body>
 </html>

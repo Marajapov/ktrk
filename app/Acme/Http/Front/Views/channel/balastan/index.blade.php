@@ -109,32 +109,38 @@
                                     <div class="col-md-4 col-sm-6">
                                         <div class="kidsvideo kidsboard">
                                             <iframe width="100%" height="180px" src="https://www.youtube.com/embed/2tV6RFYqCZg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                   
-                                        </div>           
+                                        </div>
+                                        <h3>Мультфильм</h3>           
                                     </div>
                                     <div class="col-md-4 col-sm-6">
                                         <div class="kidsvideo kidsboard">
                                             <iframe width="100%" height="180px" src="https://www.youtube.com/embed/2tV6RFYqCZg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                            
-                                        </div>  
+                                        </div>
+                                        <h3>Мультфильм</h3>  
                                     </div>
                                     <div class="col-md-4 col-sm-6">
                                         <div class="kidsvideo kidsboard">
                                             <iframe width="100%" height="180px" src="https://www.youtube.com/embed/2tV6RFYqCZg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                                   
-                                        </div>  
+                                        </div>
+                                        <h3>Мультфильм</h3>  
                                     </div>
                                     <div class="col-md-4 col-sm-6">
                                         <div class="kidsvideo kidsboard">
                                             <iframe width="100%" height="180px" src="https://www.youtube.com/embed/2tV6RFYqCZg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                   
-                                        </div>  
+                                        </div>
+                                        <h3>Мультфильм</h3>  
                                     </div>
                                     <div class="col-md-4 col-sm-6">
                                         <div class="kidsvideo kidsboard">
                                           <iframe width="100%" height="180px" src="https://www.youtube.com/embed/2tV6RFYqCZg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                   
-                                        </div>           
+                                        </div>
+                                        <h3>Мультфильм</h3>           
                                     </div>
                                     <div class="col-md-4 col-sm-6">
                                         <div class="kidsvideo kidsboard">
                                             <iframe width="100%" height="180px" src="https://www.youtube.com/embed/2tV6RFYqCZg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                   
-                                        </div>  
+                                        </div>
+                                        <h3>Мультфильм</h3>  
                                     </div>                                 
                               
                             </div>

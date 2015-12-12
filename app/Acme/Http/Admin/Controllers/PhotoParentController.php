@@ -6,6 +6,7 @@ use App\Http\Requests;
 use Input;
 
 use Model\PhotoParent\ModelName as PhotoParent;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class PhotoParentController extends Controller
 {
@@ -41,7 +42,7 @@ class PhotoParentController extends Controller
      */
     public function store(Request $request)
     {
-        $photoParent = PhotoParent::create($request->except('images','q'));
+        $photoParent = PhotoParent::create($request->except('images','q','status'));
         
         // getting all of the post data
 
@@ -50,6 +51,26 @@ class PhotoParentController extends Controller
         $result = array();
 
         $file_count = count($files);
+
+        
+        if($request->hasFile('status'))
+        {
+            $file = $request->file('status');
+            $dir  = 'img/thumbnail';
+            $btw = time();
+
+            $name = $photoParent->id().$btw.'.'.$file->getClientOriginalExtension();
+
+//            $manager = new ImageManager(array('driver' => 'imagick'));
+
+            $storage = \Storage::disk('public');
+            $storage->makeDirectory($dir);
+
+            Image::make($_FILES['status']['tmp_name'])->resize(250, 150)->save($dir.'/'.$name);
+
+            $photoParent->status = $dir.'/'.$name;
+            $photoParent->save();
+        }
 
 
         // start count how many uploaded
@@ -125,7 +146,68 @@ class PhotoParentController extends Controller
      */
     public function update(Request $request, PhotoParent $photoParent)
     {
-        $photoParent->update($request->except('images','q'));
+        $photoParent->update($request->except('images','q','status'));
+        
+        $files = Input::file('images');
+
+        $result = array();
+
+        $file_count = count($files);
+
+        
+        if($request->hasFile('status'))
+        {
+            $file = $request->file('status');
+            $dir  = 'img/thumbnail';
+            $btw = time();
+
+            $name = $photoParent->id().$btw.'.'.$file->getClientOriginalExtension();
+
+//            $manager = new ImageManager(array('driver' => 'imagick'));
+
+            $storage = \Storage::disk('public');
+            $storage->makeDirectory($dir);
+
+            Image::make($_FILES['status']['tmp_name'])->resize(250, 150)->save($dir.'/'.$name);
+
+            $photoParent->status = $dir.'/'.$name;
+            $photoParent->save();
+        }
+
+
+        // start count how many uploaded
+        $uploadcount = 0;
+
+        foreach($files as $key=>$file) {
+
+          // $rules = array('file' => 'required'); //'required|mimes:png,gif,jpeg,txt,pdf,doc'
+          // $validator = Validator::make(array('file'=> $file), $rules);
+          // if($validator->passes()){
+            $storage = \Storage::disk('public');
+            $destinationPath = 'froala/uploads';
+            $storage->makeDirectory($destinationPath);
+            $filename = time().$key.'.'.$file->getClientOriginalExtension();
+
+            $upload_success = $file->move($destinationPath, $filename);
+
+            $file_array = array();
+            $file_array = array_collapse([$file_array, [
+                    'id' => $key+1,
+                    'name' => $filename
+                ]]);
+
+            $result = array_add($result, $key , $file_array);
+            
+            $jsonresult = json_encode($result);
+            //$files_ser = serialize($result);
+            
+            $photoParent->images = $jsonresult;
+            $photoParent->save();
+
+            $uploadcount ++;
+
+          // } // endif
+        }
 
         return redirect()->route('admin.photoParent.show', $photoParent);
     }
@@ -173,6 +255,25 @@ class PhotoParentController extends Controller
         $photoParent->save();
 
         return redirect()->route('admin.photoParent.index');
-    }        
+    } 
+
+    // Day video first
+    public function publish(Request $request)
+    {
+        $id =$request->photoParentId;
+        $photoParent = \Model\PhotoParent\ModelName::where('id','=', $id)->first();
+        $photoParent->published = 1;
+        $photoParent->save();
+        return redirect()->route('admin.photoParent.index');
+    }     
+
+    public function unpublish(Request $request)
+    {
+        $id =$request->photoParentId;
+        $photoParent = \Model\PhotoParent\ModelName::where('id','=', $id)->first();
+        $photoParent->published = 0;
+        $photoParent->save();
+        return redirect()->route('admin.photoParent.index');
+    }      
     
 }

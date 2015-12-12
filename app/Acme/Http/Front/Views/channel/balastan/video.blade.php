@@ -81,7 +81,7 @@
                     </div>
                 </div>
             </div>
-				            <div class="row">               
+				            <div class="row" style="margin-top: 50px;">               
 				                <div class="col-md-12 kidsvideoblock">
 				                    <div class="panel panel-default">
 <!-- 				                        <div class="panel-heading">
@@ -90,61 +90,66 @@
 				                        <div class="panel-body" style="padding:0px;">
 			                               <div class="row">
 			                               	<div class="row ">
+			                               	<div class="col-md-3">
+			                               		   
+			                               	</div>
 				                            	<div class="col-md-6">
 				                            		<div class="kidsvideo kidsmainv">
 			                                            <iframe width="100%" height="400px" src="https://www.youtube.com/embed/2tV6RFYqCZg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                     
 			                                        </div>
-			                                        <h3>Названиее</h3>
+			                                        <h3>Мультфильм</h3>
 				                            	</div>
-				                            	<div class="col-md-4"></div>	
+				                             <div class="col-md-3">
+			                               		   
+			                               	</div>				                         
 			                               </div>
 			                                    <div class="col-md-3 col-sm-6">
 			                                        <div class="kidsvideo kidsboard">
 			                                            <iframe width="100%" height="180px" src="https://www.youtube.com/embed/2tV6RFYqCZg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                        	
 			                                        </div>
-			                                         <h4>Название</h4>           
+			                                         <h4>Мультфильм</h4>           
 			                                    </div>
 			                                    <div class="col-md-3 col-sm-6">
 			                                        <div class="kidsvideo kidsboard">
 			                                            <iframe width="100%" height="180px" src="https://www.youtube.com/embed/2tV6RFYqCZg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                            
 			                                        </div> 
-			                                        <h4>Название</h4>           
+			                                        <h4>Мультфильм</h4>           
 			                                    </div>
 			                                    <div class="col-md-3 col-sm-6">
 			                                        <div class="kidsvideo kidsboard">
 			                                            <iframe width="100%" height="180px" src="https://www.youtube.com/embed/2tV6RFYqCZg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                                   
 			                                        </div>
-			                                        <h4>Название</h4>    
+			                                        <h4>Мультфильм</h4>    
 			                                    </div>
 			                                    <div class="col-md-3 col-sm-6">
 			                                        <div class="kidsvideo kidsboard">
 			                                            <iframe width="100%" height="180px" src="https://www.youtube.com/embed/2tV6RFYqCZg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                   
 			                                        </div>
-			                                        <h4>Название</h4>    
+			                                        <h4>Мультфильм</h4>    
 			                                    </div>
 			                                    <div class="col-md-3 col-sm-6">
 			                                        <div class="kidsvideo kidsboard">
 			                                          <iframe width="100%" height="180px" src="https://www.youtube.com/embed/2tV6RFYqCZg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                   
 			                                        </div>
-			                                        <h4>Название</h4>             
+			                                        <h4>Мультфильм</h4>             
 			                                    </div>
 			                                    <div class="col-md-3 col-sm-6">
 			                                        <div class="kidsvideo kidsboard">
 			                                            <iframe width="100%" height="180px" src="https://www.youtube.com/embed/2tV6RFYqCZg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                   
 			                                        </div>
-			                                        <h4>Название</h4>    
+			                                        <h4>Мультфильм</h4>    
 			                                    </div> 			                                    
 			                                    <div class="col-md-3 col-sm-6">
 			                                        <div class="kidsvideo kidsboard">
 			                                          <iframe width="100%" height="180px" src="https://www.youtube.com/embed/2tV6RFYqCZg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                   
 			                                        </div>
-			                                        <h4>Название</h4>             
+			                                        <h4>Мультфильм</h4>             
 			                                    </div>
 			                                    <div class="col-md-3 col-sm-6">
 			                                        <div class="kidsvideo kidsboard">
 			                                            <iframe width="100%" height="180px" src="https://www.youtube.com/embed/2tV6RFYqCZg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                   
 			                                        </div>
-			                                        <h4>Название</h4>    
+			                                        <h4>Мультфильм</h4>    
 			                                    </div>                                 
 				                              
 				                            </div>

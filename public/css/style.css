@@ -2393,7 +2393,7 @@ display: block;
 }
 .fixed {
     position: fixed;
-    top: 0;
+    top: 0 !important;
     max-width: 1170px;
     z-index: 99;
     background-color: #F44336;
@@ -2693,7 +2693,7 @@ display: block;
     float: none;
 }
 .channel_switch .sitemenu a {
-    opacity: 0.1;
+    opacity: 0.3;
     transition: opacity 0.1s ease 0s;
 }
 .channel_switch .sitemenu a.active, .channel_switch .sitemenu a:hover {
@@ -4041,29 +4041,36 @@ ul.social-share li a:hover {
 .kidsvblock .panel {
     background: none;
 }
+.kidsvblock h3 {
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+    color: #fff;
+    font-size: 18px;
+}
 .kidsvblock .panel-body {
     padding: 0px 100px;
 }
-.kidsvideoblock .panel-body{
+.kidsvideoblock .panel-body {
     padding: 0px;
 }
 .kidsvideoblock .panel {
     background: none;
 }
-.kidsvideoblock h4{
+.kidsvideoblock h4 {
     color: #fff;
+    text-align: center;
 }
-.kidsvideoblock h3{
+.kidsvideoblock h3 {
     color: #fff;
+    margin: 0px 20px;
+    text-align: center;
 }
-
-.kidsmainv{
+.kidsmainv {
     background: url(../images/channels/balastan/chalkboard.png) no-repeat;
     background-size: contain;
-    width: 103%;
-    margin-left: 15px !important;
+    width: 101%;
 }
-
 @media (max-width:1170px) {
     .kidsvblock .panel-body {
         padding: 0px;
@@ -4076,11 +4083,9 @@ ul.social-share li a:hover {
 }
 @media (max-width:750px) {
     .cloudlinks li {
-       font-size: 18px;
+        font-size: 18px;
     }
 }
-
-
 .kidsvblock .panel .panel-heading {
     text-align: center;
     border-bottom: none !important;
@@ -4180,8 +4185,7 @@ ul.social-share li a:hover {
     height: auto;
     text-align: center;
 }
-
-.worldmain .panel{
+.worldmain .panel {
     background: none;
 }
 .worldall {
@@ -4190,7 +4194,7 @@ ul.social-share li a:hover {
 .worldall img {
     margin: 0px;
 }
-.worldall .col-md-8{
+.worldall .col-md-8 {
     padding: 20px 10px 0px 10px;
 }
 .world1 {
@@ -4201,19 +4205,19 @@ ul.social-share li a:hover {
     background: #DE3F18;
     color: #fff;
 }
-.world3{
+.world3 {
     background: #184F78;
     color: #fff;
 }
-.world4{
+.world4 {
     background: #A1B400;
     color: #fff;
 }
-.world5{
+.world5 {
     background: #2196F3;
     color: #fff;
 }
-.world6{
+.world6 {
     background: #E91E63;
     color: #fff;
 }

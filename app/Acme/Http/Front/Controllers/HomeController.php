@@ -33,28 +33,44 @@ class HomeController extends Controller
             $projects = \Model\Project\ModelName::where('nameRu','<>','')->get();
         }
 
-        $dayVideo = \Model\Media\ModelName::where('dayVideo','=','1')->first();
+        $dayVideo1 = \Model\Media\ModelName::where('dayVideo','=','1')->first();
+        $dayVideo2 = \Model\Media\ModelName::where('dayVideo','=','2')->first();
+        $dayVideo3 = \Model\Media\ModelName::where('dayVideo','=','3')->first();
+        $dayVideo4 = \Model\Media\ModelName::where('dayVideo','=','4')->first();
+        $dayVideo5 = \Model\Media\ModelName::where('dayVideo','=','5')->first();
 
-        if($dayVideo){
-            $lastDayVideos = \Model\Media\ModelName::orderBy('id','desc')->where('status','=',1)->where('id','<>',$dayVideo->id)->take(4)->get();
+        if($dayVideo1){
+            $dayVideo1 = $dayVideo1;
         } else {
-            $lastDayVideos = "";
+            $dayVideo1 = '';
+        }
+        if($dayVideo2){
+            $dayVideo2 = $dayVideo2;
+        } else {
+            $dayVideo2 = '';
+        }
+        if($dayVideo3){
+            $dayVideo3 = $dayVideo3;
+        } else {
+            $dayVideo3 = '';
+        }
+        if($dayVideo4){
+            $dayVideo4 = $dayVideo4;
+        } else {
+            $dayVideo4 = '';
+        }
+        if($dayVideo5){
+            $dayVideo5 = $dayVideo5;
+        } else {
+            $dayVideo5 = '';
         }
 
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
         $peopleReporters = \Model\PeopleReporter\ModelName::where('published','=',true)->get();
 
-        // FotoParent - photo gallery
-        $photoParent = \Model\PhotoParent\ModelName::where('published','=',true)->first();
-        if($photoParent != null){
-            $images = json_decode($photoParent->images); // array of images
-        }else{
-            $images = 1;
-        }
 
         // Photo Gallery
-        $photoGallery = \Model\PhotoParent\ModelName::where('published','=',true)->take('10')->orderBy('id','desc')->get();
-        
+        $photoGalleries = \Model\PhotoParent\ModelName::where('published','=',true)->take('10')->orderBy('id','desc')->get();
         
 
         $MediaCategories = \Model\MediaCategory\ModelName::orderBy('id','asc')->get();
@@ -71,19 +87,23 @@ class HomeController extends Controller
         }
 
         $mediaLastVideos = \Model\Media\ModelName::orderBy('id','desc')->take(9)->get();
-        
+        $defaultVideo = 'pnrUhMN8H4Y';
         return view('Front::home', [
-            'images' => $images,
+            
             'generalPosts'   => $generalPosts,
-            'dayVideo'      => $dayVideo,
-            'lastDayVideos'      => $lastDayVideos,
+            'dayVideo1'      => $dayVideo1,
+            'dayVideo2'      => $dayVideo2,
+            'dayVideo3'      => $dayVideo3,
+            'dayVideo4'      => $dayVideo4,
+            'dayVideo5'      => $dayVideo5,
+            'defaultVideo'   => $defaultVideo,
 
             'positionTop'    => $this->positionTop,
             'positionRight'  => $this->positionRight,
             'positionCenter' => $this->positionCenter,
             'positionBottom' => $this->positionBottom,
             'peopleReporters' => $peopleReporters,
-            //'parentId' => $parentId,
+            'photoGalleries' => $photoGalleries,
             
             'backgroundMain' => $backgroundMain,
             'MediaCategories' => $MediaCategories,
@@ -361,6 +381,27 @@ class HomeController extends Controller
             'perPage'=> $perPage,
             'category'=> $category,
             'posts' => $postAllFromTo,
+            'categories'=>$categories,
+            'backgroundMain' => $backgroundMain,
+            ]);
+    }
+
+    public function Gallery(Request $request)
+    {
+        $lc = app()->getlocale();
+
+        $id =$request->photoParentId;
+        $row = \Model\PhotoParent\ModelName::where('id','=',$id)->first();
+
+        $images = json_decode($row->images); // array of images
+
+        $categories = \Model\Category\ModelName::all();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+        return view('Front::gallery.gallery',[
+            'row' => $row,
+            'lc' => $lc,
+            'images' => $images,
             'categories'=>$categories,
             'backgroundMain' => $backgroundMain,
             ]);

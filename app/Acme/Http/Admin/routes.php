@@ -20,8 +20,14 @@ Route::group(['prefix' => 'admin', 'middleware' => 'access:admin', 'namespace' =
     Route::resource('category', 'CategoryController');
     Route::resource('channel', 'ChannelController');
 
+    // Media routes
     Route::resource('media', 'MediaController');
-    Route::get('media.dayVideo',['as' => 'admin.media.dayVideo', 'uses' => 'MediaController@dayVideo']);
+    Route::get('media.dayVideo1',['as' => 'admin.media.dayVideo1', 'uses' => 'MediaController@dayVideo1']);
+    Route::get('media.dayVideo2',['as' => 'admin.media.dayVideo2', 'uses' => 'MediaController@dayVideo2']);
+    Route::get('media.dayVideo3',['as' => 'admin.media.dayVideo3', 'uses' => 'MediaController@dayVideo3']);
+    Route::get('media.dayVideo4',['as' => 'admin.media.dayVideo4', 'uses' => 'MediaController@dayVideo4']);
+    Route::get('media.dayVideo5',['as' => 'admin.media.dayVideo5', 'uses' => 'MediaController@dayVideo5']);
+    
     Route::resource('banner', 'BannerController');
     Route::resource('schedule', 'ScheduleController');
     Route::resource('page', 'PageController');
@@ -31,6 +37,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'access:admin', 'namespace' =
 
     Route::resource('photoParent','PhotoParentController');
     Route::get('photoParent.photodelete', ['as' => 'admin.photoParent.photodelete', 'uses' => 'PhotoParentController@photodelete']);
+    Route::get('photoParent.publish', ['as' => 'admin.photoParent.publish', 'uses' => 'PhotoParentController@publish']); // publish the Gallery
+    Route::get('photoParent.unpublish', ['as' => 'admin.photoParent.unpublish', 'uses' => 'PhotoParentController@unpublish']); // unpublish the Gallery
+
+    
     Route::resource('photoChild','PhotoChildController');
     Route::resource('peopleReporter','PeopleReporterController');
     Route::resource('project','ProjectController');
