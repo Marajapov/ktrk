@@ -73,7 +73,7 @@
 
 
 
-            <div class="row">               
+            <div class="row" style="margin-top: 50px;">               
                 <div class="col-md-12 aboutkids">
                     <div class="panel panel-default">
                         <div class="panel-heading">
@@ -83,11 +83,11 @@
                             <div class="row">
                                 <img class="forabout" src="{{asset('images/channels/balastan/forabout.png')}}" alt="">
                                 <div class="col-md-4">
-                                    <img class="leftrightimg" src="{{asset('images/channels/balastan/birge.png')}}" alt="" style="margin-left: 25px;">
+                                    <img class="leftrightimg" src="{{asset('images/channels/balastan/birge3.png')}}" alt="" style="margin-left: 25px;">
 
                                 </div>
                                 <div class="col-md-offset-4 col-md-4">
-                                    <img class="leftrightimg" src="{{asset('images/channels/balastan/birge.png')}}" alt="" style="margin-left: -25px;">
+                                    <img class="leftrightimg" src="{{asset('images/channels/balastan/birge2.png')}}" alt="" style="margin-left: -25px;">
 
                                 </div>
                                 <div class="col-md-5 firstp">
