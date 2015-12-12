@@ -146,7 +146,68 @@ class PhotoParentController extends Controller
      */
     public function update(Request $request, PhotoParent $photoParent)
     {
-        $photoParent->update($request->except('images','q'));
+        $photoParent->update($request->except('images','q','status'));
+        
+        $files = Input::file('images');
+
+        $result = array();
+
+        $file_count = count($files);
+
+        
+        if($request->hasFile('status'))
+        {
+            $file = $request->file('status');
+            $dir  = 'img/thumbnail';
+            $btw = time();
+
+            $name = $photoParent->id().$btw.'.'.$file->getClientOriginalExtension();
+
+//            $manager = new ImageManager(array('driver' => 'imagick'));
+
+            $storage = \Storage::disk('public');
+            $storage->makeDirectory($dir);
+
+            Image::make($_FILES['status']['tmp_name'])->resize(250, 150)->save($dir.'/'.$name);
+
+            $photoParent->status = $dir.'/'.$name;
+            $photoParent->save();
+        }
+
+
+        // start count how many uploaded
+        $uploadcount = 0;
+
+        foreach($files as $key=>$file) {
+
+          // $rules = array('file' => 'required'); //'required|mimes:png,gif,jpeg,txt,pdf,doc'
+          // $validator = Validator::make(array('file'=> $file), $rules);
+          // if($validator->passes()){
+            $storage = \Storage::disk('public');
+            $destinationPath = 'froala/uploads';
+            $storage->makeDirectory($destinationPath);
+            $filename = time().$key.'.'.$file->getClientOriginalExtension();
+
+            $upload_success = $file->move($destinationPath, $filename);
+
+            $file_array = array();
+            $file_array = array_collapse([$file_array, [
+                    'id' => $key+1,
+                    'name' => $filename
+                ]]);
+
+            $result = array_add($result, $key , $file_array);
+            
+            $jsonresult = json_encode($result);
+            //$files_ser = serialize($result);
+            
+            $photoParent->images = $jsonresult;
+            $photoParent->save();
+
+            $uploadcount ++;
+
+          // } // endif
+        }
 
         return redirect()->route('admin.photoParent.show', $photoParent);
     }
