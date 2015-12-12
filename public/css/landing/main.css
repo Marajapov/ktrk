@@ -12,7 +12,7 @@ Author URL: http://shapebootstrap.net
 **************************/
 body {
   padding-top: 0px;
-  background: #fff;
+  background: #eee;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   color: #64686d;
@@ -46,6 +46,13 @@ header {
   margin-right: -15px;
   margin-left: -15px;
 }
+.homepage .switch{
+  background: #2196F3 !important;
+}
+#about img{
+  height: 320px;
+  width: auto;
+}
 .fixed {
   position: fixed;
   max-width: 100% !important;
@@ -61,6 +68,26 @@ header {
   left: 0;
   right: 0;
   margin: 0px auto;
+}
+.onetime {
+  display: inline;
+    position: relative;
+    top: 10px;
+    left: 20px;
+}
+.onetime .btn{
+    background: #F44336;
+    color: #fff;
+    font-size: 16px;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #2F2F2F;
+    font-size: 20px;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #FFF;
 }
 .gradiant {
   background-image: -moz-linear-gradient(90deg, #2caab3 0%, #2c8cb3 100%);
@@ -351,7 +378,7 @@ ul.nostyle i {
   color: #fff;
   padding-top: 20px;
   padding-bottom: 20px;
-  margin-bottom: 70px;
+  margin-top: 40px;
 }
 #cta2 .btn {
   margin-top: 10px;
@@ -686,15 +713,15 @@ ul.nostyle i {
 }
 .nav.main-tab {
   background: #eee;
-  border-bottom: 3px solid #222534;
+  border-bottom: 3px solid #0C4273;
   border-radius: 3px 3px 0 0;
 }
 .nav.main-tab > li > a {
   color: #272727;
 }
 .nav.main-tab > li.active > a {
-  background: #222534;
-  color: #45aed6;
+    background: #04549C;
+    color: #FFFFFF;
 }
 .nav.main-tab > li:first-child > a {
   border-radius: 3px 0 0 0;
