@@ -212,7 +212,7 @@ return [
     //Post Menu
     'AdminPostAddNew' => 'Создать новую статью',
     'AdminPostChange' => 'Изменить статью',
-    'AdminPostThemeAdminPostTheme' => 'Материал к теме',
+    'AdminPostTheme' => 'Материал к теме',
     'AdminPostThemaone' => 'Материал к теме 1',
     'AdminPostThematwo' => 'Материал к теме 2',
     'AdminPostThemathree' => 'Материал к теме 3',
