@@ -194,6 +194,24 @@ class PhotoParentController extends Controller
         $photoParent->save();
 
         return redirect()->route('admin.photoParent.index');
-    }        
+    } 
+
+    public function publish(Request $request)
+    {
+        $id =$request->photoParentId;
+        $photoParent = \Model\PhotoParent\ModelName::where('id','=', $id)->first();
+        $photoParent->published = 1;
+        $photoParent->save();
+        return redirect()->route('admin.photoParent.index');
+    }     
+
+    public function unpublish(Request $request)
+    {
+        $id =$request->photoParentId;
+        $photoParent = \Model\PhotoParent\ModelName::where('id','=', $id)->first();
+        $photoParent->published = 0;
+        $photoParent->save();
+        return redirect()->route('admin.photoParent.index');
+    }    
     
 }
