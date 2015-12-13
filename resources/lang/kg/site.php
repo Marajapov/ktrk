@@ -214,9 +214,12 @@ return [
     //Post menu
     'AdminPostAddNew' => 'Жаңы макала жазуу',
     'AdminPostChange' => 'Макаланы өзгөртүү',
-    'AdminPostThemaone' => '1 темага материалдар',
-    'AdminPostThematwo' => '2 темага материалдар',
-    'AdminPostThemathree' => '3 темага материалдар',
+    'AdminPostTheme' => 'Темага материал',
+    'AdminPostThemaone' => 'Темага материал 1',
+    'AdminPostThematwo' => 'Темага материал 2',
+    'AdminPostThemathree' => 'Темага материал 3',
+    'AdminPostEnterText' => 'Текст киргизиңиз...',
+    'AdminPostCreatedDate' => 'Кошулган датасы',
     '' => '',
 
     //User menu

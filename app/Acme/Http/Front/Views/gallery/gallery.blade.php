@@ -2,6 +2,13 @@
 @section('title', $row->getName())
 
 @section('styles')
+  {{--<link rel="stylesheet" type="text/css" href="{{ asset('/static/css/styles.css') }}">--}}
+  <link rel="stylesheet" href="{{ asset('css/articles.css') }}"/>
+  <link rel="stylesheet" href="{{ asset('css/pages.css') }}"/>
+  <link rel="stylesheet" href="{{ asset('css/build.css') }}"/>
+@stop
+
+@section('styles')
   <link rel="stylesheet" href="{{ asset('css/articles.css') }}"/>
 @endsection()
 
@@ -9,204 +16,100 @@
   <div class="container main-wrapper">
     <div class="row">
     	<section class="content clearfix">
+        <div class="clearfix">
+          <div class="top-left-block col-xs-12 col-sm-12 col-md-12">
+            <div class="panel panel-default panel-kenesh">
+              <div class="panel-heading">
+                <h3 class="panel-title"><span>{{ $row->getName() }}</span></h3>
+              </div>
+              <div class="panel-body">
 
-            <div class="clearfix">
-                <div class="top-left-block col-md-12">
-                    <div class="panel panel-default panel-videos">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">
-                                Галерея
-                            </h3>
-                        </div>
-                        <div class="panel-body">
-                            <div id="grid-gallery" class="grid-gallery">
-                                <section class="grid-wrap">
-                                    <ul class="grid">
-                                        <li>
-                                            <figure>
-                                                <img src="{{ asset('images/5.jpg') }}" alt="img26">
-                                            </figure>
-                                        </li>
-                                        <li>
-                                            <figure>
-                                                <img src="{{ asset('images/5.jpg') }}" alt="img25">
-                                            </figure>
-                                        </li>
-                                        <li>
-                                            <figure>
-                                                <img src="{{ asset('images/1.jpg') }}" alt="img24">
-                                            </figure>
-                                        </li>
-                                        <li>
-                                            <figure>
-                                                <img src="{{ asset('images/10.png') }}" alt="img24">
-                                            </figure>
-                                        </li>
-                                        <li>
-                                            <figure>
-                                                <img src="{{ asset('images/1.jpg') }}" alt="img24">
-                                            </figure>
-                                        </li>
-                                        <li>
-                                            <figure>
-                                                <img src="{{ asset('images/1.jpg') }}" alt="img24">
-                                            </figure>
-                                        </li>
-                                        <li>
-                                            <figure>
-                                                <img src="{{ asset('images/1.jpg') }}" alt="img24">
-                                            </figure>
-                                        </li>
-                                        <li>
-                                            <figure>
-                                                <img src="{{ asset('images/1.jpg') }}" alt="img24">
-                                            </figure>
-                                        </li>
-                                    </ul>
-                                </section><!-- // grid-wrap -->
-                                
-                                <section class="slideshow">
-                                    <ul>
-                                        <li>
-                                            <figure>
-                                                <img src="{{ asset('images/10.png') }}" alt="img24">
-                                            </figure>
-                                        </li>
-                                        <li>
-                                            <figure>
-                                                <img src="{{ asset('images/1.jpg') }}" alt="img24">
-                                            </figure>
-                                        </li>
-                                        <li>
-                                            <figure>
-                                                <img src="{{ asset('images/1.jpg') }}" alt="img24">
-                                            </figure>
-                                        </li>
-                                        <li>
-                                            <figure>
-                                                <img src="{{ asset('images/1.jpg') }}" alt="img24">
-                                            </figure>
-                                        </li>
-                                        <li>
-                                            <figure>
-                                                <img src="{{ asset('images/1.jpg') }}" alt="img24">
-                                            </figure>
-                                        </li>
-                                    </ul>
-                                    <nav>
-                                        <span class="icon nav-prev"></span>
-                                        <span class="icon nav-next"></span>
-                                        <span class="icon nav-close"></span>
-                                    </nav>
-                                    <div class="info-keys icon">УПРАВЛЯЙТЕ С ПОМОЩЬЮ СТРЕЛОК</div>
-                                </section><!-- // slideshow -->
+                <div class="col-md-10">
+                  <div class="row">
+                    <div class="panel-heading second-panel-heading">
+                      
+                    </div>
+                    <div class="panel-body second-panel-body">
+
+                      <div class="col-md-12">
+
+                        <div class="row">
+                          <div class="slider-for">
+                            @foreach($images as $image)
+                            <div>
+                              <img class="img" src="{{ asset('froala/uploads/'.$image->name) }}" alt=""/>
+                              <span class="slide-caption">
+                                @if($lc == 'kg') "Ала-Тоо" аянты алаканга салгандай
+                                @elseif($lc == 'ru') Площадь "Ала-Тоо" как на ладони
+                                @endif
+                              </span>
                             </div>
-                        </div>
+                            @endforeach
+                            
+                          </div>
 
-                        <a href="#" class="text-center ads">
-                            <img src="images/ads_1.jpg" alt=""/>
-                        </a>
+                          <div class="slider-nav col-md-12">
+                            @foreach($images as $image)
+                            <div>
+                              <img class="img" src="{{ asset('froala/uploads/'.$image->name) }}" alt=""/>
+                            </div>
+                            @endforeach
+                          </div>
+                         
+                        </div>
+                      </div>
 
                     </div>
 
-                    <div class="top-right-block col-md-3 hidden">
-                        <div class="panel panel-default ctg-panel">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><span>Категориялар</span></h3>
-                            </div>
-                            <div class="panel-body">
-                                <div class="col-md-12">
-                                    <div class="row">
-                                        <ul class="list-group">
-                                            <li class="list-group-item">
-                                                <a href="#">Саясат жана коом</a>
-                                            </li>
-                                            <li class="list-group-item">
-                                                <a href="#">Экономика жана бизнес</a>
-                                            </li>
-                                            <li class="list-group-item">
-                                                <a href="#">Музыка жана чыгармачылык</a>
-                                            </li>
-                                            <li class="list-group-item">
-                                                <a href="#">Илим жана билим</a>
-                                            </li>
-                                            <li class="list-group-item">
-                                                <a href="#">Айыл чарба</a>
-                                            </li>
-                                            <li class="list-group-item">
-                                                <a href="#">Маданият</a>
-                                            </li>
-                                            <li class="list-group-item">
-                                                <a href="#">Спорт</a>
-                                            </li>
-                                            <li class="list-group-item">
-                                                <a href="#">Ден соолук</a>
-                                            </li>
-                                            <li class="list-group-item">
-                                                <a href="#">Балдар</a>
-                                            </li>
-                                            <li class="list-group-item">
-                                                <a href="#">Интернет жана технологиялар</a>
-                                            </li>
-                                            <li class="list-group-item">
-                                                <a href="#">Коргонуу жана коопсуздук</a>
-                                            </li>
-                                            <li class="list-group-item">
-                                                <a href="#">Коррупция</a>
-                                            </li>
-                                            <li class="list-group-item">
-                                                <a href="#">Кылмыш</a>
-                                            </li>
-                                            <li class="list-group-item">
-                                                <a href="#">Дин</a>
-                                            </li>
-                                            <li class="list-group-item">
-                                                <a href="#">Аналитика</a>
-                                            </li>
-                                            <li class="list-group-item">
-                                                <a href="#">Аймактык жаңылыктар</a>
-                                            </li>
-                                            <li class="list-group-item">
-                                                <a href="#">Чек ара</a>
-                                            </li>
-                                            <li class="list-group-item">
-                                                <a href="#">Экология</a>
-                                            </li>
-                                            <li class="list-group-item">
-                                                <a href="#">Туризм</a>
-                                            </li>
-                                            <li class="list-group-item">
-                                                <a href="#">Укук коргоо</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <a href="#" class="text-center ads ads-300x250">
-                            <img src="images/ads_240x400.jpg" alt=""/>
-                        </a>
-
-                    </div>
-
+                  </div>
                 </div>
 
-        </section>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
     </div><!-- end row-->
   </div><!-- end container main-wrapper -->
 
 @stop
-@section('footerscript2')
-<script src="js/jquery-1.11.2.min.js"></script>
-<script src="js/bootstrap.js"></script>
-<script src="js/imagesloaded.pkgd.min.js"></script>
-<script src="js/masonry.pkgd.min.js"></script>
-<script src="js/classie.js"></script>
-<script src="js/cbpGridGallery.js"></script>
+@section('footerScript')
 
-<script>
-    new CBPGridGallery( document.getElementById( 'grid-gallery' ) );
-</script>
+  <script>
+    function getVote(int) {
+      if (window.XMLHttpRequest) {
+        // code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp=new XMLHttpRequest();
+      } else {  // code for IE6, IE5
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+      }
+      xmlhttp.onreadystatechange=function() {
+        if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+          document.getElementById("poll").innerHTML=xmlhttp.responseText;
+        }
+      }
+      xmlhttp.open("GET","{{ asset('poll_vote.php') }}?vote="+int,true);
+      xmlhttp.send();
+    }
+  </script>
+
+  <!--Carousel-->
+  <script>
+    $('.slider-for').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      fade: true,
+      asNavFor: '.slider-nav'
+    });
+    $('.slider-nav').slick({
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      asNavFor: '.slider-for',
+      centerMode: true,
+      focusOnSelect: true,
+      variableWidth: true
+    });
+  </script>
+
 @endsection

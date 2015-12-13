@@ -191,71 +191,70 @@
               </div>
               <div class="panel-body main-video">
 
-                <!--        @if($dayVideo)
-                  <div class="col-md-12 block main-video">
-                    <div class="embed-responsive embed-responsive-16by9">
-                      <iframe class="embed-responsive-item" src="//www.youtube.com/embed/{{ $dayVideo->url }}" allowfullscreen=""></iframe>
-                    </div>
-
-                    <a href="{{ route('front.media.video', $dayVideo) }}">
-                      <h4>{{ $dayVideo->getName() }}</h4>
-                    </a>
-                  </div>
-                @endif
-
-                @if($lastDayVideos)
-
-                  <h4 class="old-videos text-center">{{ trans('site.FrontPostLastDays') }}</h4>
-
-                  @foreach($lastDayVideos as $lastDayVideo)
-
-                    <div class="col-md-6 block main-video">
-                      <div class="embed-responsive embed-responsive-16by9">
-
-                        <a href="{{ route('front.media.video', $lastDayVideo) }}">
-                          <img src="http://img.youtube.com/vi/{{ $lastDayVideo->getUrl()}}/mqdefault.jpg" alt="" />
-                        </a>
-
-                      </div>
-                    </div>
-
-                  @endforeach
-
-                @endif -->
-
                 <div class="slider slider-for">
-                  <div>
 
+                  <div> <!-- video1 -->
                     <div class="embed-youtube embed-responsive embed-responsive-16by9 slider-text">
-                      <iframe class="embed-responsive-item" src="//www.youtube.com/embed/yCG-yNC-aqk?enablejsapi=1&version=3&playerapiid=ytplayer" allowfullscreen=""></iframe>
+<iframe class="embed-responsive-item" src="//www.youtube.com/embed/@if($dayVideo1){{$dayVideo1->getUrl()}}@else{{$defaultVideo}}@endif?enablejsapi=1&version=3&playerapiid=ytplayer" allowfullscreen=""></iframe>
                     </div>
                     <div class="slick-text">
-                      <a href="{{ route('front.media.video', $dayVideo) }}">
-                        <h2>@if($dayVideo){{ $dayVideo->getName() }} @endif</h2>
+                      <a href="{{ route('front.media.video', $dayVideo1) }}">
+                        <h2>@if($dayVideo1){{ $dayVideo1->getName() }} @endif</h2>
                       </a>
                     </div>
+                  </div>
 
+                  <div> <!-- video2 -->
+                    <div class="embed-youtube embed-responsive embed-responsive-16by9 slider-text">
+<iframe class="embed-responsive-item" src="//www.youtube.com/embed/@if($dayVideo2){{$dayVideo2->getUrl()}}@else{{$defaultVideo}}@endif?enablejsapi=1&version=3&playerapiid=ytplayer" allowfullscreen=""></iframe>
+                    </div>
+                    <div class="slick-text">
+                      <a href="{{ route('front.media.video', $dayVideo2) }}">
+                        <h2>@if($dayVideo2){{ $dayVideo2->getName() }} @endif</h2>
+                      </a>
+                    </div>
                   </div>
-                  <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="//www.youtube.com/embed/66ehf69z_PI?enablejsapi=1&version=3&playerapiid=ytplayer" allowfullscreen=""></iframe>
+
+                  <div> <!-- video3 -->
+                    <div class="embed-youtube embed-responsive embed-responsive-16by9 slider-text">
+<iframe class="embed-responsive-item" src="//www.youtube.com/embed/@if($dayVideo3){{$dayVideo3->getUrl()}}@else{{$defaultVideo}}@endif?enablejsapi=1&version=3&playerapiid=ytplayer" allowfullscreen=""></iframe>
+                    </div>
+                    <div class="slick-text">
+                      <a href="{{ route('front.media.video', $dayVideo3) }}">
+                        <h2>@if($dayVideo3){{ $dayVideo3->getName() }} @endif</h2>
+                      </a>
+                    </div>
                   </div>
-                  <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="//www.youtube.com/embed/khhdag87Poc?enablejsapi=1&version=3&playerapiid=ytplayer" allowfullscreen=""></iframe>
+
+                  <div> <!-- video4 -->
+                    <div class="embed-youtube embed-responsive embed-responsive-16by9 slider-text">
+<iframe class="embed-responsive-item" src="//www.youtube.com/embed/@if($dayVideo4){{$dayVideo4->getUrl()}}@else{{$defaultVideo}}@endif?enablejsapi=1&version=3&playerapiid=ytplayer" allowfullscreen=""></iframe>
+                    </div>
+                    <div class="slick-text">
+                      <a href="{{ route('front.media.video', $dayVideo4) }}">
+                        <h2>@if($dayVideo4){{ $dayVideo4->getName() }} @endif</h2>
+                      </a>
+                    </div>
                   </div>
-                  <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="//www.youtube.com/embed/Zgfwy2dR_vA?enablejsapi=1&version=3&playerapiid=ytplayer" allowfullscreen=""></iframe>
-                  </div>
-                  <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="//www.youtube.com/embed/pnrUhMN8H4Y?enablejsapi=1&version=3&playerapiid=ytplayer" allowfullscreen=""></iframe>
+
+                  <div> <!-- video5 -->
+                    <div class="embed-youtube embed-responsive embed-responsive-16by9 slider-text">
+<iframe class="embed-responsive-item" src="//www.youtube.com/embed/@if($dayVideo5){{$dayVideo5->getUrl()}}@else{{$defaultVideo}}@endif?enablejsapi=1&version=3&playerapiid=ytplayer" allowfullscreen=""></iframe>
+                    </div>
+                    <div class="slick-text">
+                      <a href="{{ route('front.media.video', $dayVideo5) }}">
+                        <h2>@if($dayVideo5){{ $dayVideo5->getName() }} @endif</h2>
+                      </a>
+                    </div>
                   </div>
 
                 </div>
                 <div class="slider slider-nav">
-                  <div data-toggle="tooltip" data-placement="top" title="Tooltip on top"><img src="http://img.youtube.com/vi/yCG-yNC-aqk/mqdefault.jpg" alt="" /></div>
-                  <div data-toggle="tooltip" data-placement="top" title="Tooltip on top"><img src="http://img.youtube.com/vi/66ehf69z_PI/mqdefault.jpg" alt="" /></div>
-                  <div data-toggle="tooltip" data-placement="top" title="Tooltip on top"><img src="http://img.youtube.com/vi/khhdag87Poc/mqdefault.jpg" alt="" /></div>
-                  <div data-toggle="tooltip" data-placement="top" title="Tooltip on top"><img src="http://img.youtube.com/vi/Zgfwy2dR_vA/mqdefault.jpg" alt="" /></div>
-                  <div data-toggle="tooltip" data-placement="top" title="Tooltip on top"><img src="http://img.youtube.com/vi/pnrUhMN8H4Y/mqdefault.jpg" alt="" /></div>
+                  <div data-toggle="tooltip" data-placement="top" title="Tooltip on top"><img src="http://img.youtube.com/vi/@if($dayVideo1){{$dayVideo1->getUrl()}}@else{{$defaultVideo}}@endif/mqdefault.jpg" alt="" /></div>
+                  <div data-toggle="tooltip" data-placement="top" title="Tooltip on top"><img src="http://img.youtube.com/vi/@if($dayVideo2){{$dayVideo2->getUrl()}}@else{{$defaultVideo}}@endif/mqdefault.jpg" alt="" /></div>
+                  <div data-toggle="tooltip" data-placement="top" title="Tooltip on top"><img src="http://img.youtube.com/vi/@if($dayVideo3){{$dayVideo3->getUrl()}}@else{{$defaultVideo}}@endif/mqdefault.jpg" alt="" /></div>
+                  <div data-toggle="tooltip" data-placement="top" title="Tooltip on top"><img src="http://img.youtube.com/vi/@if($dayVideo4){{$dayVideo4->getUrl()}}@else{{$defaultVideo}}@endif/mqdefault.jpg" alt="" /></div>
+                  <div data-toggle="tooltip" data-placement="top" title="Tooltip on top"><img src="http://img.youtube.com/vi/@if($dayVideo5){{$dayVideo5->getUrl()}}@else{{$defaultVideo}}@endif/mqdefault.jpg" alt="" /></div>
                 </div>
 
                 <footer>

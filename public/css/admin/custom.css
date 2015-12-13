@@ -824,7 +824,6 @@ li.current-page a {
 
 .top_search {
     padding: 0;
-    width: auto;
     display: table-cell;
 }
 
@@ -2406,7 +2405,6 @@ span.section {
 
 .form-control {
     border-radius: 0;
-    line-height: 30px;
     width: 100%;
 }
 

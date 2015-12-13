@@ -1,40 +1,81 @@
 @extends('Admin::layouts.default')
-@section('title', $post->getTitle())
+@section('title', $post->getTitleRuOrKg())
 
 @section('content')
 <div class="row modals">
-<div>
-    {!! Form::open(['route' => ['admin.post.destroy', $post], 'method' => 'DELETE', 'onsubmit' => "return confirm('Вы уверены ?')"]) !!}
-    <a href="{{ route('admin.post.edit', $post) }}" class="btn btn-labeled btn-success"><span class="btn-label"><i class="glyphicon glyphicon-cog"></i></span>{{ trans('site.Change') }}</a>
-    <button class="btn btn-labeled btn-danger" type="submit"><span class="btn-label"><i class="glyphicon glyphicon-remove"></i></span>{{ trans('site.Delete') }}</button>
-    
-    {!! Form::close() !!}
+
+  <div class="x_panel">
+
+    <div class="x_title clearfix">
+
+      <h4>{{ trans('site.Articles') }}</h4>
+
+      <a href="{{ route('admin.post.index') }}" class="btn btn-default pull-right btn-back">{{ trans('site.Back') }}</a>
+
+      {!! Form::open(['route' => ['admin.post.destroy', $post], 'method' => 'DELETE', 'onsubmit' => "return confirm('Вы уверены ?')"]) !!}
+      <button type="submit" class="btn btn-danger" href="#">
+        <i class="fa fa-times"></i>
+        {{ trans('site.Delete') }}
+      </button>
+      {!! Form::close() !!}
+
+      <a href="{{ route('admin.post.edit', $post) }}" class="btn btn-success pull-right">
+        <i class="fa fa-edit"></i>
+        {{ trans('site.Change') }}
+      </a>
+
+    </div>
+
+    <div class="x_content post-info clearfix">
+
+      <ul class="list-group">
+        <li class="list-group-item">
+          <p class="header">{{ trans('site.Title') }}</p>
+          <p class="body">
+            {{ $post->getTitleRuOrKg() }}
+          </p>
+        </li>
+        <li class="list-group-item">
+          <p class="header">Миниатюра</p>
+          <p class="body">
+            <img src="{{ asset($post->getFile()) }}" alt="" class="img-thumbnail"/>
+          </p>
+        </li>
+        <li class="list-group-item">
+          <p class="header">Категория</p>
+          <p class="body">
+            <a href="{{ route('admin.category.show', $post->category) }}">
+              {{ $post->category->getTitle() }}
+            </a>
+          </p>
+        </li>
+        <li class="list-group-item">
+          <p class="header">{{ trans('site.Tags') }}</p>
+          <p class="body tags">
+            @foreach($post->getTagListAttribute() as $tag)
+              <span class="label">{{ $tag }}</span>
+            @endforeach
+          </p>
+        </li>
+        <li class="list-group-item">
+          <p class="header">Автор</p>
+          <p class="body tags">
+            {{ $post->owner()->first()->name }}
+          </p>
+        </li>
+        <li class="list-group-item">
+          <p class="header">{{ trans('site.AdminPostCreatedDate') }}</p>
+          <p class="body tags">
+            {{ $post->getTime().', '.$post->getDateFormatted() }}
+          </p>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+
 </div>
 
-
-<div>
-    <h3>{{ $post->getTitle() }}</h3>
-    <p>Категория: <a href="{{ route('admin.category.show', $post->category) }}">{{ $post->category->getTitle()  }}</a></p>
-    <hr>
-    <p>{!! $post->getContent() !!}</p>
-</div>
-<hr />
-<div>
-    <p>Миниатюра:</p>
-    @if($post->isImage())
-    <img src="{{ asset($post->getFile()) }}" width="200" height="100">
-    @endif
-</div>
-
-@if(count($post->tags)>0)
-<hr>
-<div>
-    <h4>{{ trans('site.Tags') }}:</h4>
-    @foreach($post->tags as $tag)
-    <span>{{ $tag->getName() }}</span>
-    @endforeach
-</div>
-</div>
-@endif
 @stop
 

@@ -257,6 +257,7 @@ class PhotoParentController extends Controller
         return redirect()->route('admin.photoParent.index');
     } 
 
+    // Day video first
     public function publish(Request $request)
     {
         $id =$request->photoParentId;
@@ -273,6 +274,6 @@ class PhotoParentController extends Controller
         $photoParent->published = 0;
         $photoParent->save();
         return redirect()->route('admin.photoParent.index');
-    }    
+    }      
     
 }
