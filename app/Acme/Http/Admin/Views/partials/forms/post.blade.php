@@ -146,21 +146,21 @@
       <div class="form-group">
         <label for="channel_id" class="col-sm-2 control-label">{{ trans('site.AdminPostTheme') }}</label>
         <div class="col-sm-10">
-          {!! Form::select('related1', $relatedPosts, null, ["class" => "selectpicker", "data-live-search"=>"true", "required" => true, "title" => "-- Выберите --"]) !!}
+          {!! Form::select('related1', $relatedPosts, null, ["class" => "selectpicker", "data-live-search"=>"true", "title" => "-- Выберите --"]) !!}
         </div>
       </div>
 
       <div class="form-group">
         <label for="channel_id" class="col-sm-2 control-label">{{ trans('site.AdminPostTheme') }}</label>
         <div class="col-sm-10">
-          {!! Form::select('related2', $relatedPosts, null, ["class" => "selectpicker", "data-live-search"=>"true", "required" => true, "title" => "-- Выберите --"]) !!}
+          {!! Form::select('related2', $relatedPosts, null, ["class" => "selectpicker", "data-live-search"=>"true", "title" => "-- Выберите --"]) !!}
         </div>
       </div>
 
       <div class="form-group">
         <label for="channel_id" class="col-sm-2 control-label">{{ trans('site.AdminPostTheme') }}</label>
         <div class="col-sm-10">
-          {!! Form::select('related3', $relatedPosts, null, ["class" => "selectpicker", "data-live-search"=>"true", "required" => true, "title" => "-- Выберите --"]) !!}
+          {!! Form::select('related3', $relatedPosts, null, ["class" => "selectpicker", "data-live-search"=>"true", "title" => "-- Выберите --"]) !!}
         </div>
       </div>
 
@@ -199,21 +199,21 @@
       <div class="form-group">
         <label for="channel_id" class="col-sm-2 control-label">{{ trans('site.AdminPostTheme') }}</label>
         <div class="col-sm-10">
-          {!! Form::select('relatedRu1', $relatedPosts2, null, ["class" => "selectpicker", "data-live-search"=>"true", "required" => true, "title" => "-- Выберите --"]) !!}
+          {!! Form::select('relatedRu1', $relatedPosts2, null, ["class" => "selectpicker", "data-live-search"=>"true", "title" => "-- Выберите --"]) !!}
         </div>
       </div>
 
       <div class="form-group">
         <label for="channel_id" class="col-sm-2 control-label">{{ trans('site.AdminPostTheme') }}</label>
         <div class="col-sm-10">
-          {!! Form::select('relatedRu2', $relatedPosts2, null, ["class" => "selectpicker", "data-live-search"=>"true", "required" => true, "title" => "-- Выберите --"]) !!}
+          {!! Form::select('relatedRu2', $relatedPosts2, null, ["class" => "selectpicker", "data-live-search"=>"true", "title" => "-- Выберите --"]) !!}
         </div>
       </div>
 
       <div class="form-group">
         <label for="channel_id" class="col-sm-2 control-label">{{ trans('site.AdminPostTheme') }}</label>
         <div class="col-sm-10">
-          {!! Form::select('relatedRu3', $relatedPosts2, null, ["class" => "selectpicker", "data-live-search"=>"true", "required" => true, "title" => "-- Выберите --"]) !!}
+          {!! Form::select('relatedRu3', $relatedPosts2, null, ["class" => "selectpicker", "data-live-search"=>"true", "title" => "-- Выберите --"]) !!}
         </div>
       </div>
 
