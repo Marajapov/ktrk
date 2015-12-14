@@ -29,17 +29,17 @@
             </a>
         </li>
         <li>
-            <a href="#">
+            <a href="{{ route('kyrgyzradio.home') }}">
                 <img src="{{ asset('images/channels/kg-radio.png') }}" alt=""/>
             </a>
         </li>
         <li>
-            <a href="#">
+            <a href="{{ route('dostuk.home') }}">
                 <img src="{{ asset('images/channels/dostuk.png') }}" alt=""/>
             </a>
         </li>
         <li>
-            <a href="#">
+            <a href="{{ route('minkiyal.home') }}">
                 <img src="{{ asset('images/channels/min-kiyal.png') }}" alt=""/>
             </a>
         </li>
