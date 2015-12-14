@@ -70,7 +70,12 @@ class ModelName extends Model
 
     }
 
-    public function mediaHasCategory()
+    public function getVideoType()
+    {
+        return $this->videoType;
+    }
+
+    public function hasMediaCategory()
     {
         return $this->videoType;
     }
