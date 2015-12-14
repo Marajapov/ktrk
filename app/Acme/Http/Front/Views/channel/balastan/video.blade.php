@@ -100,12 +100,12 @@
                                 <h2>Передачи</h2>
                                 <nav>
                                     <ul>
-                                        <li><a href="">Бирге окуйбуз</a></li>
-                                        <li><a href="">Читаем вместе</a></li>
-                                        <li><a href="">Баарын билгим келет</a></li>
-                                        <li><a href="">Манас таануу</a></li>
-                                        <li><a href="">Таалимтай</a></li>
-                                        <li><a href="">Күн балдары</a></li>
+                                        <li><a class="kid1" href=""><i class="fa fa-envelope"></i>Бирге окуйбуз</a></li>
+                                        <li><a class="kid2" href=""><i class="fa fa-envelope"></i>Читаем вместе</a></li>
+                                        <li><a class="kid3" href=""><i class="fa fa-envelope"></i>Баарын билгим келет</a></li>
+                                        <li><a class="kid4" href=""><i class="fa fa-envelope"></i>Манас таануу</a></li>
+                                        <li><a class="kid5" href=""><i class="fa fa-envelope"></i>Таалимтай</a></li>
+                                        <li><a class="kid6" href=""><i class="fa fa-envelope"></i>Күн балдары</a></li>
                                     </ul>
                                 </nav>
                            </div>

@@ -4075,22 +4075,89 @@ ul.social-share li a:hover {
     width: 104%;
 }
 .kidspered{
-    padding-left: 50px;
+    padding-left: 40px;
 
 }
 .kidspered h2 {
     color: #FFC107;
     text-transform: uppercase;
     font-weight: bold;
+    margin-left: 10px;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.kidspered ul {
+    position: relative;
+    background: #fff;
+    width: 350px;
+    margin: auto;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    -webkit-border-radius: 5px !important;
+    -moz-border-radius: 5px !important;
+    border-radius: 5px !important;
+    -webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
 }
 .kidspered li{
+    border-bottom: 1px solid gainsboro;
+}
+.kidspered li:hover{
+    color: #673AB7;
+    -webkit-transition: top 1s ease-out 0.5s;
+    -moz-transition: top 1s ease-out 0.5s;
+    -o-transition: top 1s ease-out 0.5s;
+    transition: top 1s ease-out 0.5s;
+    text-shadow: none;
+    background: #efefef;
 
 }
+.kidspered li a:hover{
+    color: red;
+}
+
+.kidspered .kid2{
+    border-left: 10px solid #fecf54;
+}
+
+.kidspered .kid3{
+    border-left: 10px solid #cf2130;
+}
+.kidspered .kid4{
+    border-left: 10px solid #2196F3;
+}
+.kidspered .kid5{
+    border-left: 10px solid #673AB7;
+}
+.kidspered .kid6{
+    border-left: 10px solid #795548;
+}
+
 .kidspered li a{
-    color: #FFEB3B;
-    font-size: 26px;
-    text-shadow: 0px 1px 1px #028;
+    width: 225px;
+    padding-left: 10px;
+    height: 50px;
+    line-height: 50px;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 18px;
+    color: #686868;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+    border-left: 10px solid #008747;
     
+}
+
+.kidspered li i{
+    margin: 0px 10px;
 }
 @media (max-width:1170px) {
     .kidsvblock .panel-body {

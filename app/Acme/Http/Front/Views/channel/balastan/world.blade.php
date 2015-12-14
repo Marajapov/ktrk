@@ -87,7 +87,7 @@
 <!--                   <div class="panel-heading">
                      <h3 class="panel-title"><span>В мире Баластана</span></h3>
                   </div> -->
-                  <div class="panel-body">
+                  <div class="panel-body" style="padding: 0px;">
                      <div class="row worldtext">
                         <div class="col-md-12 worldall world1">                           
                            <div class="col-md-8">
@@ -97,12 +97,12 @@
                               </p>
                            </div>
                            <div class="col-md-4">
-                              <img src="{{asset('images/channels/balastan/birge.png')}}" alt="">
+                              <img src="{{asset('images/channels/balastan/birge_ru.png')}}" alt="">
                            </div>
                         </div>
                         <div class="col-md-12 worldall world2">
                            <div class="col-md-4">
-                              <img src="{{asset('images/channels/balastan/birge4.png')}}" alt="">
+                              <img src="{{asset('images/channels/balastan/birge_kg.png')}}" alt="">
                            </div>
                            <div class="col-md-8">
                               <h2>«Бирге окуйбуз»</h2>
@@ -125,7 +125,7 @@
                         </div>
                         <div class="col-md-12 worldall world4">  
                             <div class="col-md-4">
-                             <img src="{{asset('images/channels/balastan/birge.png')}}" alt="">
+                             <img src="{{asset('images/channels/balastan/manastaanuu.jpg')}}" alt="">
                            </div>                         
                            <div class="col-md-8">
                               <h2>“Манас таануу” интеллектуалдык таймашы</h2>
@@ -138,7 +138,7 @@
                               <p>“Күн балдары”  - бул балдар үчүн концерттик программасы талантуу, ыр-бийге шыктуу балдардын катышуусундагы көрсөтүү.  Күн балдарына катышуучу таланттар ата-эне, мекен, балалык жана башка  балдар темасына арналган ырларды,  кыргыз,  башка улуттардын элдик бийлерин жана заманбап бийлерди аткарышат.  Программа  ар жуманын ишемби жана жекшемби күндөрү Коомдук биринчи каналдын эфиринен көрсөтүлөт.</p>
                            </div>
                            <div class="col-md-4">
-                             <img src="{{asset('images/channels/balastan/birge.png')}}" alt="">
+                             <img src="{{asset('images/channels/balastan/sun-kids.jpg')}}" alt="">
                            </div>
                         </div>
                         <div class="col-md-12 worldall world6">                           

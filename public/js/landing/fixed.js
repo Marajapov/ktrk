@@ -3,9 +3,10 @@ $(function() {
 	// cache and configuration
 
 	// Menu
-	var menu = $('.fixedheader2');
+	var menu = $('#main-menu');
 	// Menu offset
-	var menuOffset = menu.offset().top;
+	var menuOffset = menu.height();
+	// alert(menuOffset);
 
 
 	// scroll event

@@ -10,8 +10,6 @@
         <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
         <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
         <link rel="stylesheet" href="css/style.css"/>
-        <link href="css/allinone_carousel.css" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="css/iphone.css" media="only screen and (max-device-width: 480px)" />
 
 
     </head>
@@ -150,36 +148,32 @@
                 </div>
             </div>
             <div class="row">               
-                <div class="col-xs-12 kidsvblock">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title"><span>Фотогалерея</span></h3>
-                        </div>
-                        <div class="panel-body">
-                            <div class="row ">                                                    
-                                <div class="colallinone_carousel charming ui-draggable">
-                                   <div id="allinone_carousel_charming">
-                                      <div class="myloader" style="display: none;"></div>
-                                      <!-- CONTENT -->
-                                      <ul class="allinone_carousel_list">
-                                    
-                                         <li><img src="{{asset('images/channels/balastan/birge.png')}}" alt=""></li>
-                                         <li><img src="{{asset('images/channels/balastan/baaryn.png')}}" alt=""></li>
-                                         <li><img src="{{asset('images/channels/balastan/taalimtay.png')}}" alt=""></li> 
-                                         <li><img src="{{asset('images/channels/balastan/birge.png')}}" alt=""></li>
-                                         <li><img src="{{asset('images/channels/balastan/baaryn.png')}}" alt=""></li>
-                                         <li><img src="{{asset('images/channels/balastan/taalimtay.png')}}" alt=""></li>
-
-                                      </ul>
-                                   </div>                         
-
-                                </div>                          
-                              
+                    <div class="col-md-12 kidsvblock">
+                        <div class="panel panel-default panel-carousel ">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><span>Фотогалерея</span></h3>
                             </div>
+                            <div class="panel-body" style="margin-top:20px;">
+                                <div class="col-md-12 broadimages">
+                                    <div class="carousel-slick">
+                                        <div class="col-md-4"><a href="#"><img src="images/gallery/001.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
+                                        <div class="col-md-4"><a href="#"><img src="images/gallery/002.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
+                                        <div class="col-md-4"><a href="#"><img src="images/gallery/003.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
+                                        <div class="col-md-4"><a href="#"><img src="images/gallery/004.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
+                                        <div class="col-md-4"><a href="#"><img src="images/gallery/005.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
+                                        <div class="col-md-4"><a href="#"><img src="images/gallery/006.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
+                                        <div class="col-md-4"><a href="#"><img src="images/gallery/007.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
+                                        <div class="col-md-4"><a href="#"><img src="images/gallery/008.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
+                                        <div class="col-md-4"><a href="#"><img src="images/gallery/009.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
+                                        <div class="col-md-4"><a href="#"><img src="images/gallery/010.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
+                                        <div class="col-md-4"><a href="#"><img src="images/gallery/011.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
+                                        <div class="col-md-4"><a href="#"><img src="images/gallery/012.jpg" alt=""/><span>Название</span><div class="overlay"></div></a></div>
+                                    </div>
+                                </div>
 
+                            </div>
                         </div>
                     </div>
-                </div>
             </div> 
         </div>
                  
@@ -214,32 +208,37 @@
 
         <script src="js/jquery-1.11.2.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
-        <script src="js/balastan/jquery.min.js" type="text/javascript"></script>
-        <script src="js/balastan/jquery-ui.min.js"></script>
-        <script src="js/balastan/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
-        <script src="js/balastan/allinone_carousel.js" type="text/javascript"></script>
-            <script>
-         jQuery(function() {
-         
-           jQuery('#allinone_carousel_charming').allinone_carousel({
-             skin: 'charming',
-             width: 990,
-             height: 410,
-             autoPlay: 3,
-             resizeImages:true,
-             autoHideBottomNav:false,
-             showElementTitle:false,
-             verticalAdjustment:50,
-             showPreviewThumbs:false,
-             //easing:'easeOutBounce',
-             numberOfVisibleItems:5,
-             nextPrevMarginTop:0,
-             playMovieMarginTop:0,
-             bottomNavMarginBottom:-10
-           });                 
-           
-         });
-      </script>
+
+
+        <script type="text/javascript" src="filter/js/jquery.easing.min.js"></script>
+        <script type="text/javascript" src="filter/js/jquery.mixitup.min.js"></script>
+
+        <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+        <script type="text/javascript" src="slick/slick.min.js"></script>
+        <script type="text/javascript" src="js/jquery.roundabout.js"></script>
+
+
+         <script>
+            if ($(window).width() > 768) {
+      
+                $('.carousel-slick').slick({
+                    infinite: true,
+                    slidesToShow: 4,
+                    slidesToScroll: 1,
+
+                });
+            }
+
+            if ($(window).width() < 768) {
+                $('.carousel-slick').slick({
+                    infinite: true,
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+    
+                });
+            }
+
+         </script>
 
     </body>
 </html>
