@@ -2,7 +2,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>Главная страница</title>
+    <title>Достук</title>
 
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" href="css/font-awesome.css"/>
@@ -64,7 +64,7 @@
                 
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li class="scroll active"><a href="#home">Главная</a></li>
+                        <li class="scroll active"><a href="#home">Башкы</a></li>
 
                         <li class="scroll"><a href="#services">Уктуруулар</a></li>
                         <li class="scroll"><a href="#portfolio">Фотогалерея</a></li>
@@ -127,8 +127,10 @@
 
     <section id="cta2">
         <div class="container">
-            <div class="text-center">
-                <h2 class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="0ms"><span>“Биримдигибиз ынтымакта!” </span></h2>
+            <div class="section-header">
+                <h2 class="section-title text-center wow fadeInDown"></h2>
+                <h2 data-wow-duration="300ms" data-wow-delay="0ms"><span>“Биримдигибиз ынтымакта!” </span></h2>
+                <h2 class="section-title text-center wow fadeInDown"></h2>  
             </div>
         </div>
     </section>
@@ -578,8 +580,24 @@
             </div>
         </div>
     </section><!--/#about-->
+        <section id="get-in-touch">
+        <div class="container">
+            <div class="section-header">            
+                <h2 class="section-title text-center wow fadeInDown">Адрес</h2>
+                <p class="text-center wow fadeInDown">Кыргызстан, город Бишкек, бульвар Молодой Гвардии, 59</p>
+            </div>
+            <div class="section-header">            
+                <h2 class="section-title text-center wow fadeInDown">Телефон студии:</h2>
+                <p class="text-center wow fadeInDown">0312 65 67 04 <br> 0312 65 66 10</p>
+            </div>
+            <div class="section-header">            
+                <h2 class="section-title text-center wow fadeInDown">На волне 106.9 </h2>
+            </div>            
+        </div>
+    </section><!--/#get-in-touch-->
 
-
+</div>
+<div class="container" style="padding: 0px; margin-top: 20px;">
     <footer class="footer">
         <div class="panel panel-default">
             <div class="panel-body">
