@@ -46,6 +46,7 @@ class PostController extends Controller
 
         $relatedPosts = \Model\Post\ModelName::where('title','<>','')->lists('title', 'id')->toArray();
         $relatedPosts2 = \Model\Post\ModelName::where('titleRu','<>','')->lists('titleRu', 'id')->toArray();
+
         return view('Admin::post.create', [
             'post' => new Post, 
             'tags' => $tags,
@@ -246,7 +247,6 @@ class PostController extends Controller
             $post->thumbnail = $dir.'/'.$name;
             $post->save();
         }
-
 
         return redirect()->route('admin.post.show', $post);
     }

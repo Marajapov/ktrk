@@ -57,8 +57,29 @@ class MediaController extends Controller
      */
     public function show(Media $media)
     {
+        if($media->videoType)
+        {
+            $mediaCategory = \Model\MediaCategory\ModelName::where('videoType','=',$media->videoType)->first();
+        }
+        else
+        {
+            $mediaCategory = '';
+        }
 
-        return view('Admin::media.show', ['media' => $media]);
+        if($media->program)
+        {
+            $project = \Model\Project\ModelName::where('id','=',$media->program)->first();
+        }
+        else
+        {
+            $project = '';
+        }
+
+        return view('Admin::media.show', [
+            'media' => $media,
+            'mediaCategory' => $mediaCategory,
+            'project' => $project,
+        ]);
     }
 
     /**

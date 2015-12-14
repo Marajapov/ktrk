@@ -166,6 +166,8 @@ return [
     'AdminMediaArticles' => 'Медиа статьи',
     'AdminMediaTypeSelect' => 'Выберите тип медии',
     'AdminMediaURL' => 'Youtube ID (пример:jh2kL40iY2o)',
+    'AdminMediaView' => 'Кол-во просмотров',
+    'AdminMediaProject' => 'Передача',
     '' => '',
 
     //Media Category menu
@@ -259,4 +261,12 @@ return [
     'LastVideos' => 'Последние видео',
     'TopVideos' => 'Топ видео',
     'Episodes' => 'Выпуски',
+
+    'DataTableTotal' => 'всего',
+    'DataTableSearch' => 'Поиск',
+    'DataTableNoResult' => 'Не найдено медиа',
+    'DataTableFirstPage' => 'Начало',
+    'DataTableLastPage' => 'Конец',
+    'DataTableNextPage' => 'След.',
+    'DataTablePreviousPage' => 'Пред.',
 ];

@@ -13,9 +13,19 @@ trait ModelRelationships
         return $this->hasMany(\Model\Channel\ModelName::class, 'channel_id');
     }
 
+    public function owner()
+    {
+        return $this->belongsTo(\Model\User\ModelName::class, 'owner_id');
+    }
+
     public function videoType()
     {
         return $this->hasOne(\Model\MediaCategory\ModelName::class, 'videoType');
+    }
+
+    public function program()
+    {
+        return $this->hasOne(\Model\Project\ModelName::class, 'program');
     }
 
     public function hasProject()

@@ -19,10 +19,6 @@
   </div>
 @stop
 
-@section('styles')
-  <link rel="stylesheet" href="{{ asset('css/admin/select/select2.min.css') }}"/>
-@stop
-
 @section('scripts')
 
   <!-- Include JS files. -->
@@ -105,10 +101,10 @@
       }
     );
     $('#tag_ru').tokenfield(
-            {
-              typeahead: [null, { source: engine.ttAdapter() }],
-              delimiter: ";"
-            }
+      {
+        typeahead: [null, { source: engine.ttAdapter() }],
+        delimiter: ";"
+      }
     );
   </script>
 @stop

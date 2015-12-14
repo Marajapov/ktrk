@@ -167,6 +167,8 @@ return [
     'AdminMediaArticles' => 'Медиа макалалар',
     'AdminMediaTypeSelect' => 'Медиянын тибин тандаңыз',
     'AdminMediaURL' => 'Youtube ID (мисалы: jh2kL40iY2o)',
+    'AdminMediaView' => 'Кароо саны',
+    'AdminMediaProject' => 'Телеберүү',
     '' => '',
  
     //Media Category menu
@@ -261,4 +263,12 @@ return [
     'LastVideos' => 'Акыркы видеолор',
     'TopVideos' => 'Топ видеолор',
     'Episodes' => 'Чыгаруулар',
+
+    'DataTableTotal' => 'жалпы',
+    'DataTableSearch' => 'Издөө',
+    'DataTableNoResult' => 'Медиа табылган жок',
+    'DataTableFirstPage' => 'Башы',
+    'DataTableLastPage' => 'Аягы',
+    'DataTableNextPage' => 'Кийинки',
+    'DataTablePreviousPage' => 'Мурунку',
 ];
