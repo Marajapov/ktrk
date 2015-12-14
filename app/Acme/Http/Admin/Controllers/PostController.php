@@ -79,10 +79,11 @@ class PostController extends Controller
         if(!empty($tags)){
             foreach ($tags as $key => $name)
             {
-                if(!is_numeric($name))
+                if(!is_numeric($name) && !empty($name))
                 {
                     $tag = \Model\Tag\Tag::firstOrNew(['name' => $name]);
                     $tag->name = $name;
+                    $tag->lang = 'kg';
                     $tag->save();
                     $tags[$key] = $tag->id();
                 }
@@ -95,10 +96,11 @@ class PostController extends Controller
         if(!empty($tags2)){
             foreach ($tags2 as $key => $name)
             {
-                if(!is_numeric($name))
+                if(!is_numeric($name) && !empty($name))
                 {
                     $tag = \Model\Tag\Tag::firstOrNew(['name' => $name]);
                     $tag->name = $name;
+                    $tag->lang = 'ru';
                     $tag->save();
                     $tags2[$key] = $tag->id();
                 }
@@ -190,43 +192,29 @@ class PostController extends Controller
         $tag_kg_string = $request->input('tag_kg');
         $tags = explode("; ",$tag_kg_string);
 
-//        dd($tags);
-
         $tag_ru_string = $request->input('tag_ru');
         $tags2 = explode("; ",$tag_ru_string);
-
-        $post->tags()->delete();
 
         if(!empty($tags)){
 
             foreach ($tags as $key => $name)
             {
-                if(!is_numeric($name))
+                if(!is_numeric($name) && !empty($name))
                 {
                     $tag = \Model\Tag\Tag::firstOrNew(['name' => $name]);
                     $tag->name = $name;
                     $tag->save();
                     $tags[$key] = $tag->id();
-
-
-//                    foreach($post->getTagListAttribute() as $postTag)
-//                    {
-//                        if($postTag != $tag->id)
-//                        {
-//
-//                        }
-//                    }
-
                 }
             }
 
-            $post->tags()->attach($tags);
+//            $post->tags()->sync($tags);
         }// end if
 
         if(!empty($tags2)){
             foreach ($tags2 as $key => $name)
             {
-                if(!is_numeric($name))
+                if(!is_numeric($name) && !empty($name))
                 {
                     $tag = \Model\Tag\Tag::firstOrNew(['name' => $name]);
                     $tag->name = $name;
@@ -235,9 +223,12 @@ class PostController extends Controller
                 }
             }
 
-            $post->tags()->attach($tags2);
+//            $post->tags()->sync($tags2);
 
         }// end if
+
+        $tagsCommon = array_collapse([$tags, $tags2]);
+        $post->tags()->sync($tagsCommon);
 
         if($request->hasFile('thumbnail'))
         {

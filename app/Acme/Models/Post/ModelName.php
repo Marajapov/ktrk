@@ -47,12 +47,12 @@ class ModelName extends Model
 
     public function getTitle()
     {
-        $lc = app()->getlocale();
-        if($lc == 'kg'){
-            return $this->title;
-        }else{
-            return $this->titleRu;
-        }
+        return $this->title;
+    }
+
+    public function getTitleRu()
+    {
+        return $this->titleRu;
     }
 
     public function getTitleRuOrKg()
@@ -62,7 +62,6 @@ class ModelName extends Model
         }else{
             return $this->title;
         }
-    
     }
     // end title
 

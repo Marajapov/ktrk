@@ -120,8 +120,8 @@
       }
     );
     $('#tag_kg').tokenfield('setTokens', [
-      @foreach($post->getTagListName() as $key => $tag)
-        '{{ $tag }}'@if($key<count($post->getTagListAttribute())-1),@endif
+      @foreach($post->getTagListAttributeKg() as $key => $tag)
+        '{{ $tag->name }}'@if($key<count($post->getTagListAttributeKg())-1),@endif
       @endforeach
     ]);
     $('#tag_ru').tokenfield(
@@ -130,6 +130,11 @@
         delimiter: ";"
       }
     );
+    $('#tag_ru').tokenfield('setTokens', [
+      @foreach($post->getTagListAttributeRu() as $key => $tag)
+      '{{ $tag->name }}'@if($key<count($post->getTagListAttributeRu())-1),@endif
+      @endforeach
+    ]);
   </script>
 
 @stop

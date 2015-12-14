@@ -34,9 +34,15 @@
 
       <ul class="list-group">
         <li class="list-group-item">
-          <p class="header">{{ trans('site.Title') }}</p>
+          <p class="header">{{ trans('site.TitleKG') }}</p>
           <p class="body">
-            {{ $post->getTitleRuOrKg() }}
+            {{ $post->getTitle() }}
+          </p>
+        </li>
+        <li class="list-group-item">
+          <p class="header">{{ trans('site.TitleRU') }}</p>
+          <p class="body">
+            {{ $post->getTitleRu() }}
           </p>
         </li>
         <li class="list-group-item">
@@ -54,11 +60,21 @@
           </p>
         </li>
         <li class="list-group-item">
-          <p class="header">{{ trans('site.Tags') }}</p>
+          <p class="header">{{ trans('site.TagsKG') }}</p>
           <p class="body tags">
-            @foreach($post->getTagListName() as $tag)
+            @foreach($post->getTagListAttributeKg() as $tag)
               @if($tag != '')
-                <span class="label">{{ $tag }}</span>
+                <span class="label">{{ $tag->name }}</span>
+              @endif
+            @endforeach
+          </p>
+        </li>
+        <li class="list-group-item">
+          <p class="header">{{ trans('site.TagsRU') }}</p>
+          <p class="body tags">
+            @foreach($post->getTagListAttributeRu() as $tag)
+              @if($tag != '')
+                <span class="label">{{ $tag->name }}</span>
               @endif
             @endforeach
           </p>

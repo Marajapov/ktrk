@@ -32,7 +32,8 @@
           <thead>
             <tr>
               <th>Миниатюра</th>
-              <th>Название</th>
+              <th>{{ trans('site.TitleKG') }}</th>
+              <th>{{ trans('site.TitleRU') }}</th>
               <th class="hidden-xs">Автор</th>
               <th class="hidden-xs">Дата добавления</th>
               <th class="hidden-xs">Статус</th>
@@ -47,7 +48,12 @@
                 </td>
                 <td class="table-title">
                   <a href="{{ route('admin.post.show', $post) }}">
-                    {{ $post->getTitleRuOrKg() }}
+                    {{ $post->getTitle() }}
+                  </a>
+                </td>
+                <td class="table-title">
+                  <a href="{{ route('admin.post.show', $post) }}">
+                    {{ $post->getTitleRu() }}
                   </a>
                 </td>
                 <td class="hidden-xs">{{ $post->owner()->first()->name }}</td>
