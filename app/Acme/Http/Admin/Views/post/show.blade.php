@@ -1,6 +1,10 @@
 @extends('Admin::layouts.default')
 @section('title', $post->getTitleRuOrKg())
 
+@section('styles')
+  <link rel="stylesheet" href="{{ asset('css/build.css') }}"/>
+@endsection
+
 @section('content')
 <div class="row modals">
 
@@ -69,6 +73,16 @@
           <p class="header">{{ trans('site.AdminPostCreatedDate') }}</p>
           <p class="body tags">
             {{ $post->getTime().', '.$post->getDateFormatted() }}
+          </p>
+        </li>
+        <li class="list-group-item">
+          <p class="header">{{ trans('site.PublishStatus') }}</p>
+          <p class="body tags">
+            @if($post->published == '1')
+              опубликован
+            @elseif($post->published == '0')
+              не опубликован
+            @endif
           </p>
         </li>
       </ul>
