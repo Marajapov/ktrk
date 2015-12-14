@@ -18,6 +18,7 @@ Route::group(['domain' => '1000.ktrk.kg', 'prefix' => '/balastan', 'namespace' =
     Route::get('/photos', ['as' => 'balastan.photos',   'uses' => 'BalastanController@photos']);
     Route::get('/world', ['as' => 'balastan.world',   'uses' => 'BalastanController@world']);
     Route::get('/about', ['as' => 'balastan.about',   'uses' => 'BalastanController@about']);
+    //New page video
     Route::get('/video', ['as' => 'balastan.video',   'uses' => 'BalastanController@video']);   
 
 });
@@ -91,6 +92,8 @@ Route::group(['domain' => '1000.ktrk.kg', 'prefix' => '/minkiyal', 'namespace' =
 
     Route::get('/', ['as' => 'minkiyal.home',   'uses' => 'MinkiyalController@Home']);
     Route::get('/posts', ['as' => 'minkiyal.posts',   'uses' => 'MinkiyalController@posts']);
+    Route::get('/gallery', ['as' => 'minkiyal.gallery',   'uses' => 'MinkiyalController@gallery']);
+
 
 });
 
@@ -124,15 +127,16 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
     Route::get('history', ['as' => 'front.history', 'uses' => 'PageController@historyPage']);
     Route::get('director', ['as' => 'front.pages.director', 'uses' => 'PageController@directorPage']);
     Route::get('leaders', ['as' => 'front.pages.leaders', 'uses' => 'PageController@leadersPage']);
+//    Route::get('leader/{leader}', ['as' => 'front.pages.leader', 'uses' => 'PageController@leaderPage']);
     Route::get('strategy', ['as' => 'front.pages.strategy', 'uses' => 'PageController@strategyPage']);
     Route::get('normalbase', ['as' => 'front.pages.normalbase', 'uses' => 'PageController@normalbasePage']);
     Route::get('rrts', ['as' => 'front.pages.rrts', 'uses' => 'PageController@rrtsPage']);
     Route::get('report', ['as' => 'front.pages.report', 'uses' => 'PageController@reportPage']);
     Route::get('teleprogram', ['as' => 'front.pages.teleprogram', 'uses' => 'PageController@teleprogramPage']);
-   // Route::get('ns', ['as' => 'front.pages.ns', 'uses' => 'PageController@keneshPage']);
+//    Route::get('ns', ['as' => 'front.pages.ns', 'uses' => 'PageController@keneshPage']);
     Route::get('editionkenesh', ['as' => 'front.pages.editionkenesh', 'uses' => 'PageController@editionkeneshPage']);
 
-    //    BaikoochuKenesh
+//    BaikoochuKenesh
     Route::get('ns', ['as' => 'front.ns.index', 'uses' => 'NsController@index']);
     Route::get('ns/team', ['as' => 'front.ns.team', 'uses' => 'NsController@team']);
     Route::get('ns/posts', ['as' => 'front.ns.posts', 'uses' => 'NsController@posts']);
@@ -142,7 +146,7 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
     Route::get('ns/reports', ['as' => 'front.ns.reports', 'uses' => 'NsController@reports']);
     Route::get('ns/contacts', ['as' => 'front.ns.contacts', 'uses' => 'NsController@contacts']);
 
-    //    RedakciyaKenesh
+//    RedakciyaKenesh
     Route::get('rs', ['as' => 'front.rs.index', 'uses' => 'RsController@index']);
     Route::get('rs/about', ['as' => 'front.rs.about', 'uses' => 'RsController@about']);
     Route::get('rs/person/{person}', ['as' => 'front.rs.person', 'uses' => 'RsController@person']);
@@ -153,8 +157,7 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
     Route::get('rs/contacts', ['as' => 'front.rs.contacts', 'uses' => 'RsController@contacts']);
 
     // Gallery page
-    Route::get('post/gallery/{gallery}',['as' => 'front.post.gallery','uses'=> 'HomeController@gallery']);
-    
+    Route::get('/gallery/{gallery}',['as' => 'front.gallery','uses'=> 'HomeController@Gallery']);
 
 Route::get('locale/{locale?}',   ['as' => 'locale',   'uses' => 'CommonController@setLocale']);
 

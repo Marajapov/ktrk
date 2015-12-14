@@ -469,13 +469,11 @@
 
                         <div class="col-md-4">
                           {!! Form::open(['route' => ['front.gallery', $photoGallery->id], 'method' => 'get', 'onclick' => "submit()"]) !!}
-                            <img src="{{ asset($photoGallery->status) }}" alt=""/><span>Название</span>
+                            <img src="{{ asset($photoGallery->status) }}" alt=""/><span>{{ $photoGallery->getName() }}</span>
                             <div class="overlay"></div>
                             <input type="hidden" value="{{ $photoGallery->id }}" name="photoParentId">
                           {!! Form::close() !!}
-                        </div>
-              
-                    
+                        </div>                    
                   
                       @endforeach
                     @endif
@@ -484,16 +482,6 @@
 
               </div>
             </div>
-
-            <!-- @if(!empty($parentId))
-                @foreach($photoChilds as $photoChild)
-                <div class="col-md-4">
-                <a href="#"><img src="{{ asset($photoChild->getFile()) }}" alt=""/><span>Название</span>
-                <div class="overlay"></div>
-              </a>
-            </div>
-            @endforeach
-            @endif  -->
 
           </div>
         </div>
