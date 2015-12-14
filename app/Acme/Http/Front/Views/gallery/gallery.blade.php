@@ -39,9 +39,7 @@
                             <div>
                               <img class="img" src="{{ asset('froala/uploads/'.$image->name) }}" alt=""/>
                               <span class="slide-caption">
-                                @if($lc == 'kg') "Ала-Тоо" аянты алаканга салгандай
-                                @elseif($lc == 'ru') Площадь "Ала-Тоо" как на ладони
-                                @endif
+                                {{ $row->getName() }}
                               </span>
                             </div>
                             @endforeach
@@ -63,7 +61,6 @@
 
                   </div>
                 </div>
-
               </div>
             </div>
 
