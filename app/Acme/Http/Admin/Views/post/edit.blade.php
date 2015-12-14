@@ -103,7 +103,7 @@
     var engine = new Bloodhound({
       local: [
         @foreach($tags as $tag)
-        {value: '{{ $tag }}' },
+          {value: '{{ $tag }}' },
         @endforeach
       ],
       datumTokenizer: function(d) {
@@ -114,16 +114,21 @@
 
     engine.initialize();
     $('#tag_kg').tokenfield(
-            {
-              typeahead: [null, { source: engine.ttAdapter() }],
-              delimiter: ";"
-            }
+      {
+        typeahead: [null, { source: engine.ttAdapter() }],
+        delimiter: ";"
+      }
     );
+    $('#tag_kg').tokenfield('setTokens', [
+      @foreach($post->getTagListName() as $key => $tag)
+        '{{ $tag }}'@if($key<count($post->getTagListAttribute())-1),@endif
+      @endforeach
+    ]);
     $('#tag_ru').tokenfield(
-            {
-              typeahead: [null, { source: engine.ttAdapter() }],
-              delimiter: ";"
-            }
+      {
+        typeahead: [null, { source: engine.ttAdapter() }],
+        delimiter: ";"
+      }
     );
   </script>
 

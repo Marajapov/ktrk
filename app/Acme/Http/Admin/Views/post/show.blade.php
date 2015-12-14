@@ -52,8 +52,10 @@
         <li class="list-group-item">
           <p class="header">{{ trans('site.Tags') }}</p>
           <p class="body tags">
-            @foreach($post->getTagListAttribute() as $tag)
-              <span class="label">{{ $tag }}</span>
+            @foreach($post->getTagListName() as $tag)
+              @if($tag != '')
+                <span class="label">{{ $tag }}</span>
+              @endif
             @endforeach
           </p>
         </li>
