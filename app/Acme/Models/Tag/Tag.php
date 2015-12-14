@@ -49,4 +49,9 @@ class Tag extends Model
         return $this->name;
     }
 
+    public function getLang()
+    {
+        return $this->lang;
+    }
+
 }

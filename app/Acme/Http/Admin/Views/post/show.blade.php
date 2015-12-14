@@ -1,6 +1,10 @@
 @extends('Admin::layouts.default')
 @section('title', $post->getTitleRuOrKg())
 
+@section('styles')
+  <link rel="stylesheet" href="{{ asset('css/build.css') }}"/>
+@endsection
+
 @section('content')
 <div class="row modals">
 
@@ -30,9 +34,15 @@
 
       <ul class="list-group">
         <li class="list-group-item">
-          <p class="header">{{ trans('site.Title') }}</p>
+          <p class="header">{{ trans('site.TitleKG') }}</p>
           <p class="body">
-            {{ $post->getTitleRuOrKg() }}
+            {{ $post->getTitle() }}
+          </p>
+        </li>
+        <li class="list-group-item">
+          <p class="header">{{ trans('site.TitleRU') }}</p>
+          <p class="body">
+            {{ $post->getTitleRu() }}
           </p>
         </li>
         <li class="list-group-item">
@@ -50,10 +60,22 @@
           </p>
         </li>
         <li class="list-group-item">
-          <p class="header">{{ trans('site.Tags') }}</p>
+          <p class="header">{{ trans('site.TagsKG') }}</p>
           <p class="body tags">
-            @foreach($post->getTagListAttribute() as $tag)
-              <span class="label">{{ $tag }}</span>
+            @foreach($post->getTagListAttributeKg() as $tag)
+              @if($tag != '')
+                <span class="label">{{ $tag->name }}</span>
+              @endif
+            @endforeach
+          </p>
+        </li>
+        <li class="list-group-item">
+          <p class="header">{{ trans('site.TagsRU') }}</p>
+          <p class="body tags">
+            @foreach($post->getTagListAttributeRu() as $tag)
+              @if($tag != '')
+                <span class="label">{{ $tag->name }}</span>
+              @endif
             @endforeach
           </p>
         </li>
@@ -67,6 +89,16 @@
           <p class="header">{{ trans('site.AdminPostCreatedDate') }}</p>
           <p class="body tags">
             {{ $post->getTime().', '.$post->getDateFormatted() }}
+          </p>
+        </li>
+        <li class="list-group-item">
+          <p class="header">{{ trans('site.PublishStatus') }}</p>
+          <p class="body tags">
+            @if($post->published == '1')
+              опубликован
+            @elseif($post->published == '0')
+              не опубликован
+            @endif
           </p>
         </li>
       </ul>

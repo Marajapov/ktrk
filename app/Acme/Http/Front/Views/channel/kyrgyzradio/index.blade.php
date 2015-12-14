@@ -15,6 +15,7 @@
     <link href="css/landing/main.css" rel="stylesheet">
     <link href="css/landing/responsive.css" rel="stylesheet">
 
+
 </head>
 <body id="home" class="homepage">
     <div class="container-fluid switch">
@@ -158,7 +159,7 @@
                                     </ul>
                                     <div id="tab-content" class="tab-content">
                                         <div role="tabpanel" class="tab-pane fade active in" id="tab01" aria-labelledby="tab01">
-                                            <p>Sound Cloud</p>
+                                            <p><iframe width="100%" height="100" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/235888059&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe></p>
                                         </div>
                                         <div role="tabpanel" class="tab-pane fade" id="tab02" aria-labelledby="tab02">
                                            <p>Көзү  өтүп  кеткен  белгилүү  инсандардын  жубайлары  менен  маек. Баш  кошкон  мезгилинен  тартып, бирге  жашаган  турмушундагы  кубаныч, өкүнүчтөрү  менен  бирдикте, өмүрлүк  жарынын  кандай  адам  болгонун  кеңири  айтып  беришет.</p>
@@ -186,7 +187,7 @@
                                     </ul>
                                     <div id="tab-content" class="tab-content">
                                         <div role="tabpanel" class="tab-pane fade active in" id="tab5" aria-labelledby="tab5">
-                                            <p>Sound Cloud</p>
+                                            <p><iframe width="100%" height="100" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/235888059&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe></p>
                                         </div>
                                         <div role="tabpanel" class="tab-pane fade" id="tab6" aria-labelledby="tab6">
                                            <p>Көзү  өтүп  кеткен  белгилүү  инсандардын  жубайлары  менен  маек. Баш  кошкон  мезгилинен  тартып, бирге  жашаган  турмушундагы  кубаныч, өкүнүчтөрү  менен  бирдикте, өмүрлүк  жарынын  кандай  адам  болгонун  кеңири  айтып  беришет.</p>
@@ -918,7 +919,6 @@
 <script src="js/jquery-1.11.2.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 
-<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
 <script src="js/landing/owl.carousel.min.js"></script>
 <script src="js/landing/mousescroll.js"></script>
 <script src="js/landing/smoothscroll.js"></script>

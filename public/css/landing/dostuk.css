@@ -76,7 +76,7 @@ header {
     left: 20px;
 }
 .onetime .btn{
-    background: #F44336;
+    background: #2196F3;
     color: #fff;
     font-size: 16px;
 }
@@ -219,7 +219,7 @@ ul.nostyle i {
   float: left;
 }
 .navbar-brand {
-  color: #005197 !important;
+  color: #FFEB3B  !important;
   font-size: 30px;
   font-weight: bold;
   line-height: 2;
@@ -228,7 +228,7 @@ ul.nostyle i {
 }
 @media only screen and (min-width:768px) {
   #main-menu.navbar-default {
-    background: #fff;
+    background: #F44336;
     -webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.6);
     box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.6);
     z-index:1000;
@@ -237,12 +237,12 @@ ul.nostyle i {
     padding-top: 20px;
     padding-bottom: 20px;
     font-size: 19px;
-    color: #005197;
+    color: #FFEB3B;
     font-weight: bold;
   }
   #main-menu.navbar-default .navbar-nav > li.active > a, #main-menu.navbar-default .navbar-nav > li.open > a, #main-menu.navbar-default .navbar-nav > li:hover > a {
-    background: #04549C;
-    color: #fff;
+    background: #4CAF50;
+    color: #FFFFFF;
   }
   #main-menu.navbar-default .dropdown-menu {
     padding: 0 20px;
@@ -374,11 +374,14 @@ ul.nostyle i {
   margin-top: 40px;
 }
 #cta2 {
-  background: #444;
+  background: #F44336;
   color: #fff;
   padding-top: 20px;
   padding-bottom: 20px;
   margin-top: 40px;
+    border-radius: 5px !important;
+    border-left: 12px solid #4CAF50;
+    border-right: 12px solid #4CAF50;
 }
 #cta2 .btn {
   margin-top: 10px;
@@ -389,7 +392,7 @@ ul.nostyle i {
   line-height: 1;
 }
 #cta2 h2 > span {
-  color: #45aed6;
+  color: #FFEB3B;
 }
 #features {
   padding: 100px 0;
@@ -441,7 +444,7 @@ ul.nostyle i {
 }
 #portfolio {
   padding: 100px 0;
-  background: #f5f5f5;
+  background: #D2D2D2;
 }
 #portfolio .portfolio-filter {
   list-style: none;

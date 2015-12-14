@@ -430,6 +430,7 @@ form:after {
 }
 .post-info .list-group-item .body{
     padding-left: 20px;
+    padding-left: 20px;
     color: #333333;
 }
 .post-info .list-group-item span, .post-info .list-group-item p{
@@ -474,7 +475,7 @@ form:after {
     font-size: 12px;
     text-transform: uppercase;
 }
-.tags .label{
+.post-info .list-group-item .tags .label{
     border: 1px solid #cccccc;
     display: inline-block;
     padding: 5px 10px;

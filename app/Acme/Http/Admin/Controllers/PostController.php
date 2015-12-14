@@ -68,20 +68,22 @@ class PostController extends Controller
     public function store(Request $request)
     {
 
-        $post = Post::create($request->except('tag_kg','tag_list2','thumbnail','q'));
+        $post = Post::create($request->except('tag_kg','tag_ru','thumbnail','q'));
 
         $tag_kg_string = $request->input('tag_kg');
         $tags = explode("; ",$tag_kg_string);
 
-        $tags2 = $request->input('tag_list2');
+        $tag_ru_string = $request->input('tag_ru');
+        $tags2 = explode("; ",$tag_ru_string);
 
         if(!empty($tags)){
             foreach ($tags as $key => $name)
             {
-                if(!is_numeric($name))
+                if(!is_numeric($name) && !empty($name))
                 {
                     $tag = \Model\Tag\Tag::firstOrNew(['name' => $name]);
                     $tag->name = $name;
+                    $tag->lang = 'kg';
                     $tag->save();
                     $tags[$key] = $tag->id();
                 }
@@ -94,10 +96,11 @@ class PostController extends Controller
         if(!empty($tags2)){
             foreach ($tags2 as $key => $name)
             {
-                if(!is_numeric($name))
+                if(!is_numeric($name) && !empty($name))
                 {
                     $tag = \Model\Tag\Tag::firstOrNew(['name' => $name]);
                     $tag->name = $name;
+                    $tag->lang = 'ru';
                     $tag->save();
                     $tags2[$key] = $tag->id();
                 }
@@ -184,38 +187,48 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        $post->update($request->except('tag_list','tag_list2','thumbnail','q'));
+        $post->update($request->except('tag_kg','tag_ru','thumbnail','q'));
 
-        $tags = $request->input('tag_list');
-        $tags2 = $request->input('tag_list2');
+        $tag_kg_string = $request->input('tag_kg');
+        $tags = explode("; ",$tag_kg_string);
+
+        $tag_ru_string = $request->input('tag_ru');
+        $tags2 = explode("; ",$tag_ru_string);
 
         if(!empty($tags)){
-        foreach ($tags as $key => $name)
-        {
-            if(!is_numeric($name))
+
+            foreach ($tags as $key => $name)
             {
-                $tag = \Model\Tag\Tag::firstOrNew(['name' => $name]);
-                $tag->name = $name;
-                $tag->save();
-                $tags[$key] = $tag->id();
+                if(!is_numeric($name) && !empty($name))
+                {
+                    $tag = \Model\Tag\Tag::firstOrNew(['name' => $name]);
+                    $tag->name = $name;
+                    $tag->save();
+                    $tags[$key] = $tag->id();
+                }
             }
-        }
-        $post->tags()->sync($tags);
+
+//            $post->tags()->sync($tags);
         }// end if
 
         if(!empty($tags2)){
-        foreach ($tags2 as $key => $name)
-        {
-            if(!is_numeric($name))
+            foreach ($tags2 as $key => $name)
             {
-                $tag = \Model\Tag\Tag::firstOrNew(['name' => $name]);
-                $tag->name = $name;
-                $tag->save();
-                $tags2[$key] = $tag->id();
+                if(!is_numeric($name) && !empty($name))
+                {
+                    $tag = \Model\Tag\Tag::firstOrNew(['name' => $name]);
+                    $tag->name = $name;
+                    $tag->save();
+                    $tags2[$key] = $tag->id();
+                }
             }
-        }
-        $post->tags()->sync($tags2);
+
+//            $post->tags()->sync($tags2);
+
         }// end if
+
+        $tagsCommon = array_collapse([$tags, $tags2]);
+        $post->tags()->sync($tagsCommon);
 
         if($request->hasFile('thumbnail'))
         {
