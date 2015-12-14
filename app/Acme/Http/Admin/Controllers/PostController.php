@@ -68,12 +68,13 @@ class PostController extends Controller
     public function store(Request $request)
     {
 
-        $post = Post::create($request->except('tag_kg','tag_list2','thumbnail','q'));
+        $post = Post::create($request->except('tag_kg','tag_ru','thumbnail','q'));
 
         $tag_kg_string = $request->input('tag_kg');
         $tags = explode("; ",$tag_kg_string);
 
-        $tags2 = $request->input('tag_list2');
+        $tag_ru_string = $request->input('tag_ru');
+        $tags2 = explode("; ",$tag_ru_string);
 
         if(!empty($tags)){
             foreach ($tags as $key => $name)
@@ -184,10 +185,13 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        $post->update($request->except('tag_list','tag_list2','thumbnail','q'));
+        $post->update($request->except('tag_kg','tag_ru','thumbnail','q'));
 
-        $tags = $request->input('tag_list');
-        $tags2 = $request->input('tag_list2');
+        $tag_kg_string = $request->input('tag_kg');
+        $tags = explode("; ",$tag_kg_string);
+
+        $tag_ru_string = $request->input('tag_ru');
+        $tags2 = explode("; ",$tag_ru_string);
 
         if(!empty($tags)){
         foreach ($tags as $key => $name)
