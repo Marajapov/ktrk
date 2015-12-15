@@ -29,7 +29,7 @@
               <div class="panel-body">
                 <div class="col-md-12 block news-block">
                   <h4 class="news-title">
-                    {{ $post->getTitle() }}
+                    {{ $post->getTitleRuOrKg() }}
                     <div class="extra">
                       <span class="art-date"><i class="fa fa-calendar"></i>{{ $post->getDay() }} {{ $post->getMonthRu() }}, {{ $post->getYear() }}</span>
                       <span class="art-view"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>

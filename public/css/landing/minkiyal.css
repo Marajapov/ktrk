@@ -72,6 +72,16 @@ header {
   top: 10px;
   left: 20px;
 }
+
+@media (max-width:550px) {
+  .onetime {
+    right: 70px !important;
+    position: absolute;
+    display: block;
+    left: inherit;
+    top: -42px;
+  }
+}
 .onetime .btn {
   background: #C4157A;
   color: #fff;
@@ -214,6 +224,9 @@ ul.nostyle i {
   border: 0;
   border-radius: 0;
   margin-bottom: 0;
+  background:#607D8B;
+  padding: 0px 10px 0px 10px;
+  z-index: 9999;
 }
 .navbar.navbar-default .navbar-toggle {
 }
@@ -729,7 +742,7 @@ ul.nostyle i {
   color: #272727;
 }
 .nav.main-tab > li.active > a {
-    background: #04549C;
+    background: #C4157A;
     color: #FFFFFF;
 }
 .nav.main-tab > li:first-child > a {

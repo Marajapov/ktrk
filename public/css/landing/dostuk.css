@@ -73,6 +73,16 @@ header {
   position: relative;
   top: 10px;
   left: 20px;
+  z-index: 1;
+}
+@media (max-width:550px) {
+  .onetime {
+    right: 70px !important;
+    position: absolute;
+    display: block;
+    left: inherit;
+    top: -42px;
+  }
 }
 .onetime .btn {
   background: #FF9800;
@@ -120,14 +130,15 @@ header {
   margin: 0 0 20px;
 }
 .section-header .section-title:before {
-  content: "";
-  position: absolute;
-  width: 140px;
-  bottom: 0;
-  left: 50%;
-  margin-left: -70px;
-  height: 1px;
-  background: #ebebeb;
+    content: "";
+    position: absolute;
+    width: 640px;
+    bottom: 0;
+    height: 1px;
+    background: #ebebeb;
+    left: 0;
+    right: 0;
+    margin: auto;
 }
 .section-header .section-title:after {
   content: "";
@@ -139,7 +150,7 @@ header {
   margin-left: -12px;
   border: 5px solid #fff;
   border-radius: 20px;
-  background: #45aed6;
+  background: #607D8B;
 }
 .btn {
   border-width: 0;
@@ -214,6 +225,9 @@ ul.nostyle i {
   border: 0;
   border-radius: 0;
   margin-bottom: 0;
+  background:#607D8B;
+  padding: 0px 10px 0px 10px;
+  z-index: 9999;
 }
 .navbar.navbar-default .navbar-toggle {
 }
@@ -288,7 +302,6 @@ ul.nostyle i {
 }
 #main-slider {
   overflow: hidden;
-  margin-top: 50px;
 }
 #main-slider .item {
   height: 358px;
@@ -491,7 +504,7 @@ ul.nostyle i {
   border-radius: 0 4px 4px 0;
 }
 #portfolio .portfolio-items {
-  margin: -15px;
+
 }
 #portfolio .portfolio-item {
   width: 24%;
@@ -729,8 +742,6 @@ ul.nostyle i {
 .nav.main-tab > li.active > a {
   background: #607D8B;
   color: #FFFFFF;
-  font-weight: bold;
-  font-size: 17px;
 }
 .nav.main-tab > li:first-child > a {
   border-radius: 3px 0 0 0;
@@ -853,11 +864,11 @@ ul.nostyle i {
 }
 #get-in-touch {
   padding: 100px 0 50px;
-  background-image: -moz-linear-gradient(90deg, #2caab3 0%, #fff 100%);
-  background-image: -webkit-linear-gradient(90deg, #2caab3 0%, #fff 100%);
-  background-image: -ms-linear-gradient(90deg, #2caab3 0%, #fff 100%);
+  background-image: -moz-linear-gradient(90deg, #2caab3 0%, #FF9800  100%);
+  background-image: -webkit-linear-gradient(90deg, #2caab3 0%, #FF9800  100%);
+  background-image: -ms-linear-gradient(90deg, #2caab3 0%, #FF9800  100%);
   color: #fff;
-  margin: 50px 0px;
+  margin-top: 40px;
 }
 #get-in-touch h1, #get-in-touch h2 {
   color: #fff;

@@ -74,6 +74,16 @@ header {
     top: 10px;
     left: 20px;
 }
+
+@media (max-width:550px) {
+  .onetime {
+    right: 70px !important;
+    position: absolute;
+    display: block;
+    left: inherit;
+    top: -42px;
+  }
+}
 .onetime .btn{
     background: #F44336;
     color: #fff;
@@ -86,7 +96,7 @@ header {
 }
 
 .navbar-default .navbar-toggle .icon-bar {
-    background-color: #FFF;
+    background-color: #005197;
 }
 .gradiant {
   background-image: -moz-linear-gradient(90deg, #2caab3 0%, #2c8cb3 100%);
@@ -204,6 +214,9 @@ ul.nostyle i {
   border: 0;
   border-radius: 0;
   margin-bottom: 0;
+  background:#fff;
+  padding: 0px 10px 0px 10px;
+    z-index: 9999;
 }
 .navbar.navbar-default .navbar-toggle {
 }
@@ -278,7 +291,6 @@ ul.nostyle i {
 }
 #main-slider {
   overflow: hidden;
-  margin-top: 50px; 
 }
 #main-slider .item {
   height: 358px;
@@ -353,9 +365,17 @@ ul.nostyle i {
   background: rgba(0, 0, 0, 0.1);
 }
 #cta {
-  padding: 5px 0;
   background-color: #eeeeee;
   margin-top: 70px;
+}
+
+#cta p>span {
+  background: url('./../../images/channels/kyrgyzradio/blockquote.gif') no-repeat;
+  display: block;
+  float: left;
+  width: 46px;
+  height: 33px;
+  margin-top: 8px;
 }
 
 #cta img{
@@ -381,6 +401,14 @@ ul.nostyle i {
 }
 #cta2 .btn {
   margin-top: 10px;
+}
+
+#cta .col-sm-9{
+  padding-top: 5px;
+  margin-bottom: -5px;
+}
+#cta2 p{
+  font-size: 18px;
 }
 #cta2 h2 {
   color: #fff;

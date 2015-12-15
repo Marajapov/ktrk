@@ -39,7 +39,7 @@
                       </p>
                       <a class="news-title" href="{{ route('front.post', $post) }}">
                         <!--<h2>{!! $result = substr($post->getTitle(),0,75) !!}...</h2> -->
-                        <h2>{{ $post->getTitle() }}</h2>
+                        <h2>{{ $post->getTitleRuOrKg() }}</h2>
                       </a>
                     </figure>
                   </div>
@@ -283,7 +283,7 @@
                     <li class="list-group-item news-item">
                       <div class="news-body clearfix">
                         <a href="{{ route('front.post', $post) }}">
-                          <p class="news-title">{{ $post->getTitle() }}</p>
+                          <p class="news-title">{{ $post->getTitleRuOrKg() }}</p>
                           <span class="ctg"><img src="{{ $post->isChannelIcon($post->channel_id)}}" alt=""/></span>
                         </a>
                       </div>
