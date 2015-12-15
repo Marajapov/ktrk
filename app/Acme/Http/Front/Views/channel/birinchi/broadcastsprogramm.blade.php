@@ -106,12 +106,15 @@
                                 <li class="dropdown">
                                     <a href="{{ route('birinchi.broadcasts') }}" class="dropdown-toggle" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Передачи <i class="fa fa-angle-down"></i></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="#">Сереп</a></li>
-                                        <li><a href="#">Аймактар үнү</a></li>
+                                        <li><a href="#">Багыт</a></li>
+                                        <li><a href="#">Инсанат</a></li>
+                                        <li><a href="#">Кыргызстан</a></li>
+                                        <li><a href="#">Радиокүзөт</a></li>
+                                        <li><a href="#">Күндүн темасы</a></li>
                                     </ul>
                                 </li>                             
                                 <li>
-                                    <a href="{{ route('birinchi.broadcastsprogramm') }}">
+                                    <a class="active" href="{{ route('birinchi.broadcastsprogramm') }}">
                                         Программа передач <!-- <span class="caret"></span> -->
                                     </a>
                                 </li>

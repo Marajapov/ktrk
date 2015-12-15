@@ -379,7 +379,7 @@ ul.nostyle i {
 }
 
 #cta img{
-  height: 131px;
+  max-height: 131px;
   width: auto;
 
 }

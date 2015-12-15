@@ -81,6 +81,9 @@
 .onenavbar {
   margin: 0px;
 }
+.onenavbar .active{
+  background: #999999;
+}
 .birinchiradio .navbar .dropdown-menu, .birinchiradio .navbar .dropdown-menu li>a {
   background: #eee;
   color: #444;
@@ -94,9 +97,11 @@
 .birinchiradio .navbar .dropdown-menu li>a {
   padding: 3px 5px 3px 15px !important;
 }
+.birinchiradio .oneheaderone .active {
+    background: #999999;
+}
 .birinchiradio .navbar-brand {
   height: auto;
-  background: none repeat scroll 0% 0% #999999;
 }
 .birinchiradio .navbar-brand, .birinchiradio .navbar li>a {
   color: #fff;
@@ -252,6 +257,24 @@
   float: left;
 }
 
+@media (max-width:1200px) {
+  .chastota {
+    margin: 0px;
+    bottom: 0px;
+    width: inherit;
+  }
+  .onelogos {
+    position: absolute;
+    right: 0;
+  }
+}
+@media (max-width:992px) {
+  .onelogos {
+    position: initial;
+    right: 0;
+  }
+}
+
 .btn-one {
   padding: 10px;
 }
@@ -275,6 +298,11 @@
 }
 .onenews .panel-body {
   padding: 10px 10px 10px 7px;
+}
+
+.onenews .aboutnumber p{
+  text-align: justify;
+  font-size: 16px;
 }
 .onelist .panel-heading h3, .onenews .panel-heading h3 {
   padding: 0px;
@@ -380,11 +408,8 @@
     margin-left: 0px;
   }
 
-  .onelogos {
-    height: 45px;
-  }
   .oneline {
-    margin-top: -15px !important;
+    margin-top: -24px !important;
     margin-left: 5px;
     float: left;
     display: inline-flex;
@@ -408,9 +433,6 @@
     margin-top: 10px;
     padding: 3px 0px;
   }
-  .onelogos {
-    height: 50px;
-  }
   .birinchiradio .search-block {
     margin-top: 3px;
   }
@@ -419,6 +441,10 @@
   }
   .onesoc {
     margin-top: -30px !important;
+  }
+  .oneline{
+    margin-top: -77px !important;
+    margin-right: 11px;
   }
 
   .birinchiradio .logo-block {
@@ -437,8 +463,9 @@
   }
   .birinchiradio .sitemenu span {
     font-weight: bold;
-    font-size: 20px;
-    padding: 0px 5px;
+  }
+  .birinchiradio .chastota {
+    margin-left: 10px;
   }
   .onesoc span {
     display: none;
@@ -450,24 +477,6 @@
 @media (max-width:550px) {
   .birinchiradio .form-search .form-group input {
     width: 180px;
-  }
-  .oneheader {
-    display: inline-flex;
-    float: right;
-  }
-  .oneline {
-    margin-right: 30px;
-    margin-top: -30px !important;
-  }
-  .onetime span {
-    display: none;
-  }
-  .onetime {
-
-  }
-  .onetime i {
-    padding: 0px;
-    font-size: 18px;
   }
 }
 .birinchiradio .e-views {
