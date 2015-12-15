@@ -30,8 +30,9 @@
                     @endforeach 
                 </ul>
                 <ul class="topradio pull-right">
-                    <li><a href="#">Кыргыз Радиосу</a></li>
-                    <li><a href="#">Миң Кыял</a></li>
+                    <li><a href="{{ route('kyrgyzradio.home') }}">Кыргыз Радиосу</a></li>
+                    <li><a href="{{ route('minkiyal.home') }}">Миң Кыял</a></li>
+                    <li><a href="{{ route('dostuk.home') }}">Достук</a></li>
                     <li></li>
                 </ul>
 

@@ -2,7 +2,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>Главная страница</title>
+    <title>Кыргыз Радио</title>
 
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" href="css/font-awesome.css"/>
@@ -47,7 +47,7 @@
                 </div><!-- /.navbar-collapse -->
             </nav>
     </div>
-<div class="container" style="background: #fff;">
+
     <header id="header">
         <nav id="main-menu" class="container-fluid navbar navbar-default fixedheader2 " role="banner">
             <div class="container">
@@ -59,7 +59,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="{{ route('kyrgyzradio.home') }}"><img src="{{asset('images/channels/kg-radio.png')}}" alt="logo">Кыргыз Радиосу</a>
-                    <div class="onetime"><a href=""><button class="btn"><i class="fa fa-microphone"></i><span>Прямой эфир</span></button></a></div>
+                    <div class="onetime"><a href=""><button class="btn"><i class="fa fa-microphone"></i><span>Түз эфир</span></button></a></div>
                 </div>
                <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
@@ -72,7 +72,7 @@
             </div><!--/.container-->
         </nav><!--/nav-->
     </header><!--/header-->
-
+<div class="container" style="background: #fff;padding: 0px; margin-top: 20px;">
     <section id="main-slider">
         <div class="owl-carousel">
             <div class="item">
@@ -131,6 +131,35 @@
             </div>
         </div>
     </section>
+
+    <section id="cta" class="wow fadeIn">
+        <div class="container">
+            <div class="row">
+            <div class="col-md-6" style="border-right: 10px solid #fff;">            
+                <div class="col-sm-9">
+                    <h2>Чынгыз Айтматов</h2>
+                    <p><span></span>Дос, кыйынчылыкта билинет дешет. Менимче, бактылуу кезиңде да билинет..
+                    </p>
+                </div>
+            <div class="col-sm-3">
+                <img class="img-responsive" src="{{asset('images/channels/kyrgyzradio/aitmatov.jpg')}}" height="100" width="100" alt="">
+                    
+                </div>
+            </div>  
+            <div class="col-md-6">            
+                <div class="col-sm-9">
+                    <h2>Чынгыз Айтматов</h2>
+                    <p><span></span>«Человек не умирает до тех пор, пока живут знавшие его». </p>
+                </div>
+                <div class="col-sm-3">
+                <img class="img-responsive" src="{{asset('images/channels/kyrgyzradio/aitmatov.jpg')}}" height="100" width="100" alt="">
+                    
+                </div>
+            </div>
+            </div>
+
+        </div>
+    </section><!--/#cta-->
 
     <section id="services" >
         <div class="container">
@@ -714,10 +743,10 @@
     <section id="cta" class="wow fadeIn">
         <div class="container">
             <div class="row">
-            <div class="col-md-6">            
+            <div class="col-md-6" style="border-right: 10px solid #fff;">            
                 <div class="col-sm-9">
                     <h2>Чынгыз Айтматов</h2>
-                    <p>Дос, кыйынчылыкта билинет дешет. Менимче, бактылуу кезиңде да билинет..
+                    <p><span></span>Дос, кыйынчылыкта билинет дешет. Менимче, бактылуу кезиңде да билинет..
                     </p>
                 </div>
             <div class="col-sm-3">
@@ -728,7 +757,7 @@
             <div class="col-md-6">            
                 <div class="col-sm-9">
                     <h2>Чынгыз Айтматов</h2>
-                    <p>Словно люди не понимают, сколько несчастий и убожества в их жизни поистекает и проистекало во все времена от лени.
+                    <p><span></span>Словно люди не понимают, сколько несчастий и убожества в их жизни поистекает и проистекало во все времена от лени.
                     </p>
                 </div>
                 <div class="col-sm-3">
@@ -834,10 +863,10 @@
     <section id="cta" class="wow fadeIn">
         <div class="container">
             <div class="row">
-            <div class="col-md-6">            
+            <div class="col-md-6" style="border-right: 10px solid #fff;">            
                 <div class="col-sm-9">
                     <h2>Чынгыз Айтматов</h2>
-                    <p>Дос, кыйынчылыкта билинет дешет. Менимче, бактылуу кезиңде да билинет..
+                    <p><span></span>Дос, кыйынчылыкта билинет дешет. Менимче, бактылуу кезиңде да билинет..
                     </p>
                 </div>
             <div class="col-sm-3">
@@ -848,7 +877,7 @@
             <div class="col-md-6">            
                 <div class="col-sm-9">
                     <h2>Чынгыз Айтматов</h2>
-                    <p>Словно люди не понимают, сколько несчастий и убожества в их жизни поистекает и проистекало во все времена от лени.
+                    <p><span></span>Словно люди не понимают, сколько несчастий и убожества в их жизни поистекает и проистекало во все времена от лени.
                     </p>
                 </div>
                 <div class="col-sm-3">
@@ -890,7 +919,9 @@
             </div>
         </div>
     </section><!--/#about-->
-  
+</div>
+
+<div class="container" style="padding: 0px; margin-top: 20px;">
     <footer class="footer">
         <div class="panel panel-default">
             <div class="panel-body">
@@ -913,7 +944,6 @@
             </div>
         </div>
     </footer>
-
 </div>
 
 <script src="js/jquery-1.11.2.min.js"></script>

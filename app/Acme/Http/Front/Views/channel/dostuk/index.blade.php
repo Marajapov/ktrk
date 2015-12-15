@@ -46,10 +46,10 @@
                 </div><!-- /.navbar-collapse -->
             </nav>
     </div>
-<div class="container" style="background: #fff;">
+
     <header id="header">
         <nav id="main-menu" class="navbar navbar-default fixedheader2" role="banner">
-            <div class="container">
+            <div class="container" style="padding: 0px;">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="sr-only">Меню</span>
@@ -58,7 +58,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="{{ route('dostuk.home') }}"><img src="{{ asset('images/channels/dostuk.png')}}" alt="logo">Достук радиосу</a>
-                    <div class="onetime"><a href=""><button class="btn"><i class="fa fa-microphone"></i><span>Прямой эфир</span></button></a></div>
+                    <div class="onetime"><a href=""><button class="btn"><i class="fa fa-microphone"></i><span>Түз эфир</span></button></a></div>
               
                 </div>
                 
@@ -74,7 +74,7 @@
             </div><!--/.container-->
         </nav><!--/nav-->
     </header><!--/header-->
-
+<div class="container" style="background: #fff;padding: 0px; margin-top: 20px;">
     <section id="main-slider">
         <div class="owl-carousel">
             <div class="item">

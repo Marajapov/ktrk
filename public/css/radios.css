@@ -287,10 +287,8 @@
   padding: 0px;
 }
 .onelist nav>ul>li {
-  padding-bottom: 6px;
-  padding-top: 6px;
   border-bottom: 1px solid #E0DFDF;
-  margin: 0px 10px
+  padding: 6px 6px 6px 14px;
 }
 .onelist nav>ul>li:hover {
   background: #ccc;
@@ -298,7 +296,6 @@
 .onelist nav>ul>li>a {
   font-size: 16px;
   color: #323A3E;
-  padding: 4px;
 }
 .onelist nav>ul>li:hover {
   background: #BDBDBD;
@@ -408,8 +405,8 @@
 @media (max-width:768px) {
 
   .navbar-toggle{
-    margin-top: 0px;
-    padding: 8px 0px;
+    margin-top: 10px;
+    padding: 3px 0px;
   }
   .onelogos {
     height: 50px;
