@@ -15,7 +15,7 @@ class MediaController extends Controller
      */
     public function index()
     {
-        $medias = Media::get();
+        $medias = Media::orderby('id','desc')->get();
 
         return view('Admin::media.index', ['medias' => $medias]);
     }
