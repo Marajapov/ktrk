@@ -221,7 +221,7 @@ return [
     'AdminPostThemathree' => 'Материал к теме 3',
     'AdminPostEnterText' => 'Введите текст...',
     'AdminPostCreatedDate' => 'Дата создания',
-    '' => '',
+    'AdminPostEdit' => 'Редактировать',
 
     //User menu
     'AdminUserAddNew' => 'Добавить нового пользователя',

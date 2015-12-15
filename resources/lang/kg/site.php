@@ -223,6 +223,7 @@ return [
     'AdminPostThemathree' => 'Темага материал 3',
     'AdminPostEnterText' => 'Текст киргизиңиз...',
     'AdminPostCreatedDate' => 'Кошулган датасы',
+    'AdminPostEdit' => 'Өзгөртүү',
     '' => '',
 
     //User menu
