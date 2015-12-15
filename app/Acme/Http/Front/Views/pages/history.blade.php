@@ -1,6 +1,6 @@
 @extends('Front::layouts.default')
 @section('title', trans('site.HistoryFull')." | КТРК")
-@endsection
+
 
 @section('styles')
   <link rel="stylesheet" href="{{ asset('css/pages.css') }}"/>
@@ -292,7 +292,7 @@
 
     </div>
   </div>
-@stop
+@endsection
 
 
 @section('footerScript')

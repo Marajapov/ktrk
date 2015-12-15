@@ -23,6 +23,10 @@ class AuthController extends Controller
         {
             if(auth()->user()->isAdmin()){
                 return redirect()->route('admin.home');
+            }elseif(auth()->user()->isNs()){
+                return redirect()->route('admin.home');
+            }elseif(auth()->user()->isManager()){
+                return redirect()->route('admin.home');
             }else{
                 return redirect()->route('front.home');
             }
