@@ -2,7 +2,7 @@
 @section('title', trans('site.AdminMediaArticles'))
 
 @section('styles')
-  <link rel="stylesheet" href="{{ asset('DataTables/DataTables-1.10.10/css/dataTables.bootstrap.css') }}"/>
+  <link rel="stylesheet" href="{{ asset('css/admin/dataTables.bootstrap.css') }}"/>
 @endsection
 
 @section('content')
@@ -123,8 +123,8 @@
 @stop
 
 @section('scripts')
-  <script src="{{ asset('Datatables/DataTables-1.10.10/js/jquery.dataTables.js') }}"></script>
-  <script src="{{ asset('Datatables/DataTables-1.10.10/js/dataTables.bootstrap.js') }}"></script>
+  <script src="{{ asset('js/admin/jquery.dataTables.js') }}"></script>
+  <script src="{{ asset('js/admin/dataTables.bootstrap.js') }}"></script>
 
   <script>
     $(document).ready(function() {
