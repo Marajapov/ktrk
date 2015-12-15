@@ -541,6 +541,10 @@ header.top-menu,.logo-block{
     color: #9DA8B0;
     font-size: 12px;
 }
+.panel-article .news-title .extra .art-edit{
+    position: absolute;
+    right: 0;
+}
 .panel-article .news-title .extra i{
      margin-right: 5px;
 }
