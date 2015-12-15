@@ -31,17 +31,17 @@
 
           <ul class="list-group">
             <li class="list-group-item">
-              <p class="header">{{ trans('site.TitleKG') }}</p>
+              <p class="header">{{ trans('site.Title') }}</p>
               <p class="body">
                 {{ $media->getName() }}
               </p>
             </li>
-            <li class="list-group-item">
-              <p class="header">{{ trans('site.TitleRU') }}</p>
-              <p class="body">
-                {{ $media->getNameRu() }}
-              </p>
-            </li>
+            {{--<li class="list-group-item">--}}
+              {{--<p class="header">{{ trans('site.TitleRU') }}</p>--}}
+              {{--<p class="body">--}}
+                {{--{{ $media->getNameRu() }}--}}
+              {{--</p>--}}
+            {{--</li>--}}
             <li class="list-group-item">
               <p class="header">Видео</p>
               <p class="body">
@@ -63,7 +63,7 @@
               </p>
             </li>
             <li class="list-group-item">
-              <p class="header">Проект</p>
+              <p class="header">{{ trans('site.AdminMediaProject') }}</p>
               <p class="body">
                 @if($project != '')
                   <a href="{{ route('admin.mediaCategory.show', $project->id) }}">

@@ -1,11 +1,12 @@
 body{
     background: #eff3fa;
-    /*background-image: url("img/bg.jpg");*/
-    background-repeat: repeat;
-    -webkit-background-size: cover;
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
+    background: url("../images/bg/ny_bg.png") repeat;
+    /*background: url("../images/bg/bg3.jpg") no-repeat;*/
+    /*background-repeat: repeat;*/
+    /*-webkit-background-size: cover;*/
+    /*background-size: cover;*/
+    /*background-position: center center;*/
+    /*background-attachment: fixed;*/
 
     -webkit-font-smoothing: subpixel-antialiased !important;
     -webkit-backface-visibility: hidden;
@@ -23,7 +24,7 @@ body::after{
     height: 300px;
     width: 50%;
 
-    background: url("../img/body-bg.png") no-repeat right top;
+    /*background: url("img/body-bg.png") no-repeat right top;*/
     -webkit-background-size: auto 100%;
     background-size: auto 100%;
 }
@@ -184,6 +185,9 @@ header.top-menu,.logo-block{
 }
 
 /*SOCIAL ICONS*/
+.soc{
+    z-index: 1000;
+}
 .main-header.smaller .soc{
     display: none;
 }

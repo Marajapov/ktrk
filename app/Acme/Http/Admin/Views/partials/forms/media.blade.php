@@ -11,18 +11,18 @@
   <div class="panel-body">
 
     <div class="form-group">
-      <label for="channel_id" class="col-sm-2 control-label">{{ trans('site.TitleKG') }}</label>
+      <label for="channel_id" class="col-sm-2 control-label">{{ trans('site.Title') }}</label>
       <div class="col-sm-10">
         {!! Form::text('name', null, ["class" => "form-control", "required" => true, "title" => ""]) !!}
       </div>
     </div>
 
-    <div class="form-group">
-      <label for="channel_id" class="col-sm-2 control-label">{{ trans('site.TitleRU') }}</label>
-      <div class="col-sm-10">
-        {!! Form::text('nameRu', null, ["class" => "form-control", "required" => true, "title" => ""]) !!}
-      </div>
-    </div>
+    {{--<div class="form-group">--}}
+      {{--<label for="channel_id" class="col-sm-2 control-label">{{ trans('site.TitleRU') }}</label>--}}
+      {{--<div class="col-sm-10">--}}
+        {{--{!! Form::text('nameRu', null, ["class" => "form-control", "required" => true, "title" => ""]) !!}--}}
+      {{--</div>--}}
+    {{--</div>--}}
 
     <div class="form-group">
       <label for="channel_id" class="col-sm-2 control-label">Категория</label>

@@ -25,8 +25,8 @@
             <thead>
             <tr>
               <th>Миниатюра</th>
-              <th>{{ trans('site.TitleKG') }}</th>
-              <th>{{ trans('site.TitleRU') }}</th>
+              <th>{{ trans('site.Title') }}</th>
+              {{--<th>{{ trans('site.TitleRU') }}</th>--}}
               <th class="hidden-xs">Автор</th>
               <th class="hidden-xs">{{ trans('site.AdminPostCreatedDate') }}</th>
               <th class="hidden-xs">Статус</th>
@@ -46,13 +46,13 @@
                     {{ $media->getName() }}
                   </a>
                 </td>
-                <td class="table-title">
-                  <a href="{{ route('admin.media.show', $media) }}">
-                    {{ $media->getNameRu() }}
-                  </a>
-                </td>
+                {{--<td class="table-title">--}}
+                  {{--<a href="{{ route('admin.media.show', $media) }}">--}}
+                    {{--{{ $media->getNameRu() }}--}}
+                  {{--</a>--}}
+                {{--</td>--}}
                 <td class="hidden-xs">{{ $media->owner()->first()->name }}</td>
-                <td class="hidden-xs">{{ $media->getTime().', '.$media->getDateFormatted() }} </td>
+                <td class="hidden-xs">{{ $media->getDateFormatted() }} </td>
                 <td class="hidden-xs">
                   @if($media->published == '1')
                     опубликован
@@ -146,7 +146,7 @@
         },
         "columnDefs": [
           { "orderable": false, "targets": 0 },
-          { "orderable": false, "targets": 6 }
+          { "orderable": false, "targets": 5 }
         ]
       });
     } );
