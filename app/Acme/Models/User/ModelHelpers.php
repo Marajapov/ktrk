@@ -17,5 +17,10 @@ trait ModelHelpers
     {
     	return $this->role == 'ns';
     }
+
+    public function isDirector()
+    {
+        return $this->role = 'director';
+    }
 }
 
