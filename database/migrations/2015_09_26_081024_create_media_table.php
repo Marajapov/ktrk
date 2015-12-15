@@ -30,6 +30,18 @@ class CreateMediaTable extends Migration
             $table->string('video3',500);
             $table->string('video4',500);
             $table->string('status',500);
+            
+            $table->string('director');
+            $table->string('ns');
+            $table->string('rs');
+            $table->string('muzkanal');
+            $table->string('kyrgyzradio');
+            $table->string('birinchi');
+            $table->string('balastan');
+            $table->string('madaniyat');
+            $table->string('minkiyal');
+            $table->string('extracolumn');
+
             $table->string('program');
             $table->timestamps();
 

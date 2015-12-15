@@ -30,6 +30,18 @@ class CreatePostsTable extends Migration
             $table->integer('related2')->nullable()->unsigned()->default(null);
             $table->integer('related3')->nullable()->unsigned()->default(null);
             $table->boolean('general')->nullable()->default(false);
+            
+            $table->string('director');
+            $table->string('ns');
+            $table->string('rs');
+            $table->string('muzkanal');
+            $table->string('kyrgyzradio');
+            $table->string('birinchi');
+            $table->string('balastan');
+            $table->string('madaniyat');
+            $table->string('minkiyal');
+            $table->string('extracolumn');
+            
             $table->smallInteger('viewed')->default(0);
             $table->timestamps();
 
