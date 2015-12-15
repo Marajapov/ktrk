@@ -30,7 +30,7 @@
 
                       <div class="col-md-12 block news-block">
                         <h4 class="news-title">
-                          КТРК БК: илим боюнча берүүлөр көп болсун
+                          {{ dd($post) }}
                           <div class="extra">
                             <span class="art-date"><i class="fa fa-calendar"></i>18 Нояб , 12:22</span>
                             <span class="art-view"><i class="fa fa-eye"></i>17</span>

@@ -31,6 +31,7 @@
                       {{--@include('Front::ns.lastPosts')--}}
 
                       <div class="col-md-5 first-item">
+                        
                         <div class="row">
 
                             <a href="#" class="thumb">
@@ -45,6 +46,7 @@
                             </h2>
 
                         </div>
+                        
                       </div>
                       <div class="col-md-7">
                         @include('Front::ns.lastPosts')

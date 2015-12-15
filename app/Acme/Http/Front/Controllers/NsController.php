@@ -16,10 +16,17 @@ class NsController extends Controller
 
     public function index(Request $request) // list of videos
     {
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            $posts = \Model\Post\ModelName::where('ns','=','1')->published()->languagekg()->take(6)->skip(0)->orderBy('id', 'desc')->get();    
+        }elseif($lc == 'ru'){
+            $posts = \Model\Post\ModelName::where('ns','=','1')->published()->languageru()->take(6)->skip(0)->orderBy('id', 'desc')->get();    
+        }
 
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
         return view('Front::ns.index',[
+            'posts' => $posts,
             'backgroundMain' => $backgroundMain,
         ]);
     }
@@ -34,16 +41,29 @@ class NsController extends Controller
 
     public function posts()
     {
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            $posts = \Model\Post\ModelName::where('ns','=','1')->published()->languagekg()->take(6)->skip(0)->orderBy('id', 'desc')->get();    
+        }elseif($lc == 'ru'){
+            $posts = \Model\Post\ModelName::where('ns','=','1')->published()->languageru()->take(6)->skip(0)->orderBy('id', 'desc')->get();    
+        }
+
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
         return view('Front::ns.posts',[
+            'posts' => $posts,
             'backgroundMain' => $backgroundMain,
         ]);
     }
 
-    public function post()
+    public function post(\Model\Post\ModelName $post)
     {
+        $lc = app()->getlocale();
+
+        $post->incrementViewed();
+
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
         return view('Front::ns.post',[
+            'post' => $post,
             'backgroundMain' => $backgroundMain,
         ]);
     }
