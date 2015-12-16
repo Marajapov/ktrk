@@ -103,6 +103,12 @@ return [
     'TagsRU' => 'Тегдер орусча',
     'TextKG' => 'Текст кыргызча',
     'TextRU' => 'Текст орусча',
+    'DescKG' => 'Баяндоо кыргызча',
+    'DescRU' => 'Баяндоо орусча',
+    'AuthorKG' => 'Автор кыргызча',
+    'AuthorRU' => 'Автор орусча',
+    'Images' => 'Сүрөттөр',
+    'Select' => 'Тандоо',
     '' => '',
 
 
@@ -233,6 +239,12 @@ return [
     'AdminUserAlls' => 'Баардык колдонуучулар',
     'AdminUserInfo' => 'Колдонуучу жөнүндө маалымат',
     'AdminUserName' => 'Аты жөнү',
+    '' => '',
+
+    // Project Menu
+    'AdminProjectAll' => 'Телеберүүлөр',
+    'AdminProjectAddNew' => 'Жаңы телеберүү',
+    '' => '',
     '' => '',
 
     //FRONT languages

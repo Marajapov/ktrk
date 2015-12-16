@@ -23,15 +23,15 @@
 
           <table id="example" class="table table-bordered table-striped" data-order='[[ 4, "desc" ]]' data-page-length='10'>
             <thead>
-            <tr>
-              <th>Миниатюра</th>
-              <th>{{ trans('site.Title') }}</th>
-              {{--<th>{{ trans('site.TitleRU') }}</th>--}}
-              <th class="hidden-xs">Автор</th>
-              <th class="hidden-xs">{{ trans('site.AdminPostCreatedDate') }}</th>
-              <th class="hidden-xs">Статус</th>
-              <th>Действия</th>
-            </tr>
+              <tr>
+                <th>Миниатюра</th>
+                <th>{{ trans('site.Title') }}</th>
+                {{--<th>{{ trans('site.TitleRU') }}</th>--}}
+                <th class="hidden-xs">Автор</th>
+                <th class="hidden-xs">{{ trans('site.AdminPostCreatedDate') }}</th>
+                <th class="hidden-xs">Статус</th>
+                <th>Действия</th>
+              </tr>
             </thead>
             <tbody>
             @foreach($medias as $key => $media)

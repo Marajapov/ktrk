@@ -34,7 +34,16 @@ class ModelName extends Model
         }else{
             return $this->nameRu;
         }
-        
+    }
+
+    public function getNameKg()
+    {
+        return $this->name;
+    }
+
+    public function getNameRu()
+    {
+        return $this->nameRu;
     }
 
     public function getDescription()
@@ -52,6 +61,10 @@ class ModelName extends Model
         return $this->file;
     }
 
+    public function getThumbnail()
+    {
+        return $this->status;
+    }
     public function getDay()
     {
         $fullDate = $this->created_at;
@@ -63,8 +76,6 @@ class ModelName extends Model
     {
         $fullDate = $this->created_at;
         $MonthRu = date('m', strtotime($fullDate));
-        $January = 'үчтун айы';
-        $February = 'Бирдин айы';
         
         $JanuaryRu = 'Янв';
         $FebruaryRu = 'Фев';
@@ -113,5 +124,13 @@ class ModelName extends Model
         $time = date('G:i', strtotime($fullDate));
         return $time;
     }
+
+    public function getDateFormatted()
+    {
+        $fullDate = $this->created_at;
+        $date = date('d/m/Y', strtotime($fullDate));
+        return $date;
+    }
+
 
 }

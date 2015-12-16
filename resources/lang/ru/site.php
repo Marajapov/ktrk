@@ -105,6 +105,12 @@ return [
     'TagsRU' => 'Теги на русском',
     'TextKG' => 'Текст на кыргызском',
     'TextRU' => 'Текст на русском',
+    'DescKG' => 'Описание на кыргызском',
+    'DescRU' => 'Описание на русском',
+    'AuthorKG' => 'Автор на кыргызском',
+    'AuthorRU' => 'Автор на русском',
+    'Images' => 'Изображения',
+    'Select' => 'Выбрать',
     '' => '',
 
     // Admin panel translate
@@ -232,6 +238,12 @@ return [
     'AdminUserName' => 'Имя',
     '' => '',
 
+    // Project Menu
+    'AdminProjectAll' => 'Передачи',
+    'AdminProjectAddNew' => 'Новая передача',
+    '' => '',
+    '' => '',
+
     //FRONT language
 
     //Home page
@@ -262,9 +274,10 @@ return [
     'TopVideos' => 'Топ видео',
     'Episodes' => 'Выпуски',
 
+    // Data Tables
     'DataTableTotal' => 'всего',
     'DataTableSearch' => 'Поиск',
-    'DataTableNoResult' => 'Не найдено медиа',
+    'DataTableNoResult' => 'Ничего не найдено',
     'DataTableFirstPage' => 'Начало',
     'DataTableLastPage' => 'Конец',
     'DataTableNextPage' => 'След.',

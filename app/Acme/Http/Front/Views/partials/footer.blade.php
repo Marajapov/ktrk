@@ -90,6 +90,7 @@
     });
 
     playerInstance.setup({
+        autostart: true,
         playlist: [{
             image: "{{-- asset('images/live_bg.png') --}}",
             sources: [{
