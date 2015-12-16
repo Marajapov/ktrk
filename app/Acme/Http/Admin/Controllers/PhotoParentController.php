@@ -17,7 +17,7 @@ class PhotoParentController extends Controller
      */
     public function index()
     {
-        $photoParents = PhotoParent::all();
+        $photoParents = PhotoParent::orderBy('id','desc')->get();
 
         return view('Admin::photoParent.index', [
             'photoParents' => $photoParents,
@@ -61,8 +61,6 @@ class PhotoParentController extends Controller
 
             $name = $photoParent->id().$btw.'.'.$file->getClientOriginalExtension();
 
-//            $manager = new ImageManager(array('driver' => 'imagick'));
-
             $storage = \Storage::disk('public');
             $storage->makeDirectory($dir);
 
@@ -82,12 +80,20 @@ class PhotoParentController extends Controller
           // $rules = array('file' => 'required'); //'required|mimes:png,gif,jpeg,txt,pdf,doc'
           // $validator = Validator::make(array('file'=> $file), $rules);
           // if($validator->passes()){
+
             $storage = \Storage::disk('public');
             $destinationPath = 'froala/uploads';
             $storage->makeDirectory($destinationPath);
+
             $filename = time().$key.'.'.$file->getClientOriginalExtension();
 
-            $upload_success = $file->move($destinationPath, $filename);
+//            $upload_success = $file->move($destinationPath, $filename);
+//
+//            dd($_FILES['images']['tmp_name'][$key]);
+//
+//            dd($filename);
+
+            Image::make($_FILES['images']['tmp_name'][$key])->heighten(800)->save($destinationPath.'/'.$filename);
 
             $file_array = array();
             $file_array = array_collapse([$file_array, [
@@ -148,12 +154,41 @@ class PhotoParentController extends Controller
     public function update(Request $request, PhotoParent $photoParent)
     {
         $photoParent->update($request->except('images','q','status'));
-        
-        $files = Input::file('images');
-        
-        $result = array();
 
-        $file_count = count($files);
+//        dd($request->images);
+
+//        dd($_FILES["images"]);
+
+        if($request->hasFile('images')){
+            $files = Input::file('images');
+
+            $result = array();
+
+            $uploadcount = 0;
+
+            foreach($files as $key=>$file) {
+//            if($key > 1)
+//            {
+                $storage = \Storage::disk('public');
+                $destinationPath = 'froala/uploads';
+                $storage->makeDirectory($destinationPath);
+                $filename = time().$key.'.'.$file->getClientOriginalExtension();
+                $upload_success = $file->move($destinationPath, $filename);
+                $file_array = array();
+                $file_array = array_collapse([$file_array, [
+                    'id' => $key+1,
+                    'name' => $filename
+                ]]);
+                $result = array_add($result, $key , $file_array);
+                $jsonresult = json_encode($result);
+                $photoParent->images = $jsonresult;
+                $photoParent->save();
+
+                $uploadcount ++;
+//            } // end if
+
+            }
+        }
 
         
         if($request->hasFile('status'))
@@ -169,40 +204,14 @@ class PhotoParentController extends Controller
             $storage = \Storage::disk('public');
             $storage->makeDirectory($dir);
 
-            Image::make($_FILES['status']['tmp_name'])->resize(250, 150)->save($dir.'/'.$name);
+//            Image::make($_FILES['status']['tmp_name'])->resize(250, 150)->save($dir.'/'.$name);
+            Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->save($dir.'/'.$name);
 
             $photoParent->status = $dir.'/'.$name;
             $photoParent->save();
         }
 
-
         // start count how many uploaded
-        $uploadcount = 0;
-        
-          foreach($files as $key=>$file) {
-            if($key > 1)
-            {
-              $storage = \Storage::disk('public');
-              $destinationPath = 'froala/uploads';
-              $storage->makeDirectory($destinationPath);
-              $filename = time().$key.'.'.$file->getClientOriginalExtension();
-              $upload_success = $file->move($destinationPath, $filename);
-              $file_array = array();
-              $file_array = array_collapse([$file_array, [
-                      'id' => $key+1,
-                      'name' => $filename
-                  ]]);
-              $result = array_add($result, $key , $file_array);
-              $jsonresult = json_encode($result);
-              $photoParent->images = $jsonresult;
-              $photoParent->save();
-
-              $uploadcount ++;
-            } // end if
-          
-          }
-
-        
 
         return redirect()->route('admin.photoParent.show', $photoParent);
     }
@@ -222,34 +231,32 @@ class PhotoParentController extends Controller
 
     public function photodelete(Request $request)
     {
-        $delete = $request->photoDeleteId;
-
+        $photoDeleteId = $request->photoDeleteId;
 
         $photoParentId = $request->photoParentId;
         $photoParent = \Model\PhotoParent\ModelName::where('id','=',$photoParentId)->first();
 
-        $files = json_decode($photoParent->images);
+        $files = json_decode($photoParent->images, true);
 
-        $file = array_only($files, $delete-1);
-        $name = last(last($file));
-        
-        
-        $key = array_has($files, $delete);
+        $file = $files[$photoDeleteId-1];
+
+        $name = $file['name'];
+
+        $key = array_has($files, $photoDeleteId);
 
         if($key !== false) {
-            unset($files[$delete-1]);
             $storage = \Storage::delete('/froala/uploads/'.$name);
         }
-        unset($files[$delete-1]);
+
+        unset($files[$photoDeleteId-1]);
 
         $jsonFiles = json_encode($files);
-        //dd($photoParent->images,$files,$jsonFiles);
 
         $photoParent->images = $jsonFiles;
 
         $photoParent->save();
 
-        return redirect()->route('admin.photoParent.index');
+        return redirect()->route('admin.photoParent.show', $photoParent);
     } 
 
     // Day video first

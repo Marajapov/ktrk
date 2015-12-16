@@ -76,31 +76,29 @@
                 @endif
               </p>
             </li>
+            <li class="list-group-item photos">
+              <p class="header">{{ trans('site.Images') }}</p>
+              <div class="body images">
+                @if($images != null)
+                  @foreach($images as $row)
+                    <div class="photo-child">
+                      {!! Form::open(['route' => ['admin.photoParent.photodelete', $row->id], 'method' => 'get', 'onsubmit' => "return confirm('Вы уверены ?')"]) !!}
+                      <img src="{{ asset('froala/uploads/'.$row->name) }} " alt="">
+                      <input type="hidden" value="{{ $row->id }}" name="photoDeleteId">
+                      <input type="hidden" value="{{ $photoParent->id }}" name="photoParentId">
+                      <button type="submit"><i class="fa fa-times"></i></button>
+                      {!! Form::close() !!}
+                    </div>
+                  @endforeach
+                @endif
+              </div>
+            </li>
           </ul>
 
         </div>
 
       </div>
-      <div class="col-md-12"><hr></div>
-      <div class="panel-body">
-        @if($images != null)
-          @foreach($images as $row)
 
-            <p>
-              <img width="250" height="200" src="{{ asset('froala/uploads/'.$row->name) }} " alt="">
-
-
-              {!! Form::open(['route' => ['admin.photoParent.photodelete', $row->id], 'method' => 'get', 'onsubmit' => "return confirm('Вы уверены ?')"]) !!}
-              <input type="hidden" value="{{ $row->id }}" name="photoDeleteId">
-              <input type="hidden" value="{{ $photoParent->id }}" name="photoParentId">
-
-              <button class="btn btn-labeled btn-danger" type="submit"><span class="btn-label"><i class="glyphicon glyphicon-remove"></i></span>{{ trans('site.Delete') }}</button>
-              {!! Form::close() !!}
-            </p>
-          @endforeach
-        @endif
-
-      </div>
     </div>
   </div>
 @stop

@@ -56,7 +56,7 @@
       <div class="col-sm-10">
         <div class="fileinput fileinput-new" data-provides="fileinput">
           <div class="fileinput-new thumbnail" style="width: 250px; height: 150px;">
-            @if(!empty($photoParent->getThumbnail())) <img src="{{ asset($photoParent->getThumbnail()) }}" alt="..."> @endif
+            @if($photoParent->getThumbnail()) <img src="{{ asset($photoParent->getThumbnail()) }}" alt="..."> @endif
           </div>
           <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
           <div>

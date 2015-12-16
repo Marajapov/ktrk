@@ -422,7 +422,7 @@ form:after {
 .post-info .list-group-item{
     /*border: none;*/
 }
-.post-info .list-group-item p{
+.post-info .list-group-item>p, .post-info .list-group-item>div{
     display: inline-block;
     margin: 0;
     vertical-align: middle;
@@ -438,7 +438,6 @@ form:after {
     text-transform: uppercase;
 }
 .post-info .list-group-item .body{
-    padding-left: 20px;
     padding-left: 20px;
     color: #333333;
 }
@@ -494,6 +493,34 @@ form:after {
 
     font-size: 10px;
     text-transform: uppercase;
+}
+
+/*PHOTO CHILD*/
+.post-info .list-group-item.photos > p, .post-info .list-group-item.photos > div{
+    display: table-cell;
+    vertical-align: middle;
+}
+.photo-child{
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 5px;
+}
+.photo-child button{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 24px;
+    height: 24px;
+    margin: 0;
+    padding: 0;
+    background: rgba(0,0,0,0.3);
+    border: none;
+    color: #ffffff;
+}
+.photo-child img{
+    width: auto;
+    height: 150px;
 }
 
 /*FORM HORIZONTAL*/

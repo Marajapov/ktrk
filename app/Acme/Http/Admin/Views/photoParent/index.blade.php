@@ -28,6 +28,7 @@
             <th>Миниатюра</th>
             <th>{{ trans('site.TitleKG') }}</th>
             <th>{{ trans('site.TitleRU') }}</th>
+            <th class="hidden-xs">{{ trans('site.AdminPostCreatedDate') }}</th>
             <th>Статус</th>
             <th>Действия</th>
           </tr>
@@ -48,6 +49,9 @@
                 <a href="{{ route('admin.photoParent.show', $photoParent) }}">
                   {{ $photoParent->getNameRu() }}
                 </a>
+              </td>
+              <td>
+                {{ $photoParent->getDateFormatted() }}
               </td>
               <td class="hidden-xs text-center">
                 @if($photoParent->published == 1)
@@ -124,7 +128,8 @@
         },
         "columnDefs": [
           { "orderable": false, "targets": 0 },
-          { "orderable": false, "targets": 3 }
+          { "orderable": false, "targets": 4 },
+          { "orderable": false, "targets": 5 }
         ]
       });
     } );
