@@ -135,23 +135,23 @@
     <section id="cta" class="wow fadeIn">
         <div class="container">
             <div class="row">
-            <div class="col-md-6" style="border-right: 10px solid #fff;">            
-                <div class="col-sm-9">
+            <div class="col-md-6 col-xs-12" style="border-right: 10px solid #fff;">            
+                <div class="col-xs-9">
                     <h2>Чынгыз Айтматов</h2>
                     <p><span></span>Дос, кыйынчылыкта билинет дешет. Менимче, бактылуу кезиңде да билинет..
                     </p>
                 </div>
-            <div class="col-sm-3">
+            <div class="col-xs-3">
                 <img class="img-responsive" src="{{asset('images/channels/kyrgyzradio/aitmatov.jpg')}}" height="100" width="100" alt="">
                     
                 </div>
             </div>  
-            <div class="col-md-6">            
-                <div class="col-sm-9">
+            <div class="col-md-6 col-xs-12">            
+                <div class="col-xs-9">
                     <h2>Чынгыз Айтматов</h2>
                     <p><span></span>«Человек не умирает до тех пор, пока живут знавшие его». </p>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-xs-3">
                 <img class="img-responsive" src="{{asset('images/channels/kyrgyzradio/aitmatov.jpg')}}" height="100" width="100" alt="">
                     
                 </div>
