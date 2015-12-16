@@ -52,7 +52,7 @@ class ProjectController extends Controller
             $storage = \Storage::disk('public');
             $storage->makeDirectory($dir);
 
-            Image::make($_FILES['thumbnail']['tmp_name'])->save($dir.'/'.$name);
+            Image::make($_FILES['thumbnail']['tmp_name'])->resize(200, 150)->save($dir.'/'.$name);
 
             $project->thumbnail = $dir.'/'.$name;
             $project->save();
@@ -105,7 +105,7 @@ class ProjectController extends Controller
             $storage = \Storage::disk('public');
             $storage->makeDirectory($dir);
 
-            Image::make($_FILES['thumbnail']['tmp_name'])->save($dir.'/'.$name);
+            Image::make($_FILES['thumbnail']['tmp_name'])->resize(200, 150)->save($dir.'/'.$name);
 
             $project->thumbnail = $dir.'/'.$name;
             $project->save();

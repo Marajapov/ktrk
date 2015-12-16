@@ -66,7 +66,8 @@ class PhotoParentController extends Controller
             $storage = \Storage::disk('public');
             $storage->makeDirectory($dir);
 
-            Image::make($_FILES['status']['tmp_name'])->resize(250, 150)->save($dir.'/'.$name);
+//            Image::make($_FILES['status']['tmp_name'])->resize(250, 150)->save($dir.'/'.$name);
+            Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->save($dir.'/'.$name);
 
             $photoParent->status = $dir.'/'.$name;
             $photoParent->save();

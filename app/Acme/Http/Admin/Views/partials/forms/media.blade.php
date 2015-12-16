@@ -41,7 +41,7 @@
     <div class="form-group">
       <label for="channel_id" class="col-sm-2 control-label">{{ trans('site.Content') }}</label>
       <div class="col-sm-10">
-        {!! Form::textarea('description', null, ["class" => "form-control","data-live-search"=>"true", "title" => ""]) !!}
+        {!! Form::textarea('description', null, ["class" => "form-control", "title" => ""]) !!}
       </div>
     </div>
 

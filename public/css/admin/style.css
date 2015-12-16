@@ -506,6 +506,9 @@ form:after {
 .form-horizontal .form-group:last-child{
     margin-bottom: 0;
 }
+.fileinput .form-control{
+    padding-top: 7px;
+}
 
 /*TELEPROGRAMM*/
 .x_title h2{

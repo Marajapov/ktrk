@@ -34,7 +34,16 @@ class ModelName extends Model
         }else{
             return $this->nameRu;
         }
-        
+    }
+
+    public function getNameKg()
+    {
+        return $this->name;
+    }
+
+    public function getNameRu()
+    {
+        return $this->nameRu;
     }
 
     public function getDescription()
@@ -50,6 +59,11 @@ class ModelName extends Model
     public function getFile()
     {
         return $this->file;
+    }
+
+    public function getThumbnail()
+    {
+        return $this->status;
     }
 
 }

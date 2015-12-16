@@ -1,69 +1,84 @@
 @include('Front::messages.flash')
 
-<div class="row">
-    <div class="col-sm-10">
-        <div class="form-group">
-            <label class="control-label">{{ trans('site.TitleKG') }}</label>
-            {!! Form::text('name', null, ["class" => "form-control", "required" => true, "title" => ""]) !!}
-        </div>
+@section('styles')
+  <link rel="stylesheet" href="{{ asset('css/bootstrap-select.css') }}"/>
+  <link rel="stylesheet" href="{{ asset('css/build.css') }}"/>
+@endsection
+
+<div class="panel panel-success">
+
+  <div class="panel-body">
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label">{{ trans('site.TitleKG') }}</label>
+      <div class="col-sm-10">
+        {!! Form::text('name', null, ["class" => "form-control"]) !!}
+      </div>
     </div>
 
-    <div class="col-sm-10">
-        <div class="form-group">
-            <label class="control-label">{{ trans('site.TitleRU') }}</label>
-            {!! Form::text('nameRu', null, ["class" => "form-control", "required" => true, "title" => ""]) !!}
-        </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">{{ trans('site.DescKG') }}</label>
+      <div class="col-sm-10">
+        {!! Form::textarea('description', null, ["class" => "form-control", "title" => ""]) !!}
+      </div>
     </div>
 
-    <div class="col-sm-10">
-        <div class="form-group">
-            <label class="control-label">Описание на кыргызском</label>
-            {!! Form::text('description', null, ["class" => "form-control", "title" => ""]) !!}
-        </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">{{ trans('site.TitleRU') }}</label>
+      <div class="col-sm-10">
+        {!! Form::text('nameRu', null, ["class" => "form-control"]) !!}
+      </div>
     </div>
 
-    <div class="col-sm-10">
-        <div class="form-group">
-            <label class="control-label">Описание на русском</label>
-            {!! Form::text('descriptionRu', null, ["class" => "form-control", "title" => ""]) !!}
-        </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">{{ trans('site.DescRU') }}</label>
+      <div class="col-sm-10">
+        {!! Form::textarea('descriptionRu', null, ["class" => "form-control"]) !!}
+      </div>
     </div>
 
-    <div class="col-sm-10">
-        <div class="form-group">
-            <label class="control-label">Автор картинок на кыргызском</label>
-            {!! Form::text('author', null, ["class" => "form-control", "title" => ""]) !!}
-        </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">{{ trans('site.AuthorKG') }}</label>
+      <div class="col-sm-10">
+        {!! Form::text('author', null, ["class" => "form-control"]) !!}
+      </div>
     </div>
 
-    <div class="col-sm-10">
-        <div class="form-group">
-            <label class="control-label">Автор картинок на русском</label>
-            {!! Form::text('authorRu', null, ["class" => "form-control", "title" => ""]) !!}
-        </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">{{ trans('site.AuthorRU') }}</label>
+      <div class="col-sm-10">
+        {!! Form::text('authorRu', null, ["class" => "form-control"]) !!}
+      </div>
     </div>
 
-    <div class="col-xs-12">
-        <div class="form-group">
-            <label class="control-label" style="display:block;">Миниатюра</label>
-            <div class="fileinput fileinput-new" data-provides="fileinput">
-                <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
-                <div>
-                    <span class="btn btn-default btn-file"><span class="fileinput-new">{{ trans('site.AdminBackgroundSelect') }}</span>
-                    <span class="fileinput-exists">{{ trans('site.Change') }}</span>
-                    {!! Form::file('status', null, ["class" => "form-control"]) !!}
-                </div>
-            </div>
+    <div class="form-group">
+      <label for="parentId" class="col-sm-2 control-label">Миниатюра</label>
+      <div class="col-sm-10">
+        <div class="fileinput fileinput-new" data-provides="fileinput">
+          <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
+            {{--@if(isset($project->thumbnail))<img src="{{ asset($project->thumbnail) }}" alt="...">@endif--}}
+          </div>
+          <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
+          <div>
+            <span class="btn btn-default btn-file">
+              <span class="fileinput-new">{{ trans('site.AdminBackgroundSelect') }}</span>
+              <span class="fileinput-exists">{{ trans('site.Change') }}</span>
+              {!! Form::file('status', null, ["class" => "form-control"]) !!}
+            </span>
+            <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">{{ trans('site.Delete') }}</a>
+          </div>
         </div>
+      </div>
     </div>
 
-    <div class="col-xs-12">
-        <div class="form-group">
-            <label class="control-label">Картинки</label>
-      <!--       {!! Form::file('file', array('multiple'=>true), ["class" => "form-control", "required" => true]) !!} -->
-            {!! Form::file('images[]', array('multiple'=>true)) !!}
-        </div>
+    <div class="form-group">
+      <label for="parentId" class="col-sm-2 control-label">{{ trans('site.Images') }}</label>
+      <div class="col-sm-10">
+        {!! Form::file('images[]', ["multiple" => "true", "class" => "form-control"]) !!}
+      </div>
     </div>
+
+  </div>
 
 </div>
 
