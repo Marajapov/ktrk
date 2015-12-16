@@ -444,7 +444,7 @@ form:after {
 .post-info .list-group-item span, .post-info .list-group-item p{
     margin: 0;
     padding: 0;
-    display: inline-block;
+    display: table-cell;
     vertical-align: middle;
 }
 .post-info .post-title{

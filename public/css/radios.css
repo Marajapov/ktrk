@@ -34,6 +34,15 @@
 .language li.active a{
     color: rgba(255, 255, 255, 0.65);
 }
+
+@media (max-width:770px) {
+  .language {
+    position: absolute;
+    z-index: 2;
+    right: 200px;
+  }
+}
+
 /*LANGUAGE Landing radio pages*/
 .langs{
     position: absolute;
@@ -71,6 +80,15 @@
 .langs li.active a{
     color: rgba(255, 255, 255, 0.65);
 }
+
+@media (max-width:770px) {
+  .langs {
+    position: absolute;
+    z-index: 2;
+    right: 40px;
+  }
+}
+
 /* Birinchi Radio page styles*/
 .birinchiradio {
   font-family: 'Roboto Regular';

@@ -1,15 +1,8 @@
-<!DOCTYPE html>
-<html>
-   <head lang="en">
-      <meta charset="UTF-8">
-      <title>В мире Баластана</title>
-      <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}"/>
-      <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}"/>
-      <link rel="stylesheet" href="{{ asset('filter/css/layout.css') }}">
-      <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick.css') }}"/>
-      <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick-theme.css') }}"/>
-      <link rel="stylesheet" href="{{ asset('css/style.css') }}"/>
-   </head>
+@extends('Front::channel.balastan.default')
+@section('title', "Баластан")
+@section('styles')
+@endsection
+@section('content')
    <body class="balastan">
       <div class="switch">
          <nav class="navbar">
@@ -62,21 +55,27 @@
          <div class="row">
             <div class="col-md-12 logo-block logocenter">
                <div class="row">
-                  <div class="col-md-12 clouds">
+                  <div class="col-md-12 col-sm-12 col-xs-12 clouds">
                      <div class="sun">
                         <img src="{{asset('images/channels/balastan/sun-icon.png')}}" alt=""/>
                         <!--          <img class="balastanlogo" src="images/channels/balastan_white.png" alt=""/> -->
                      </div>
+                     <div class="langs">
+                        <ul>
+                           <li @if(app()->getlocale() == 'kg') class="active" @endif><a href="/locale/kg">кырг <span></span></a></li>
+                           <li @if(app()->getlocale() == 'ru') class="active" @endif><a href="/locale/ru">рус <span></span></a></li>
+                        </ul>
+                     </div>
                      <img src="{{asset('images/channels/balastan/clouds.png')}}" alt=""/> 
-                             <nav class="cloudlinks"> 
-                               <ul>
-                                   <li><a href="{{ route('balastan.home') }}">Главная</a></li>
-                                   <li><a href="{{ route('balastan.about') }}">О нас</a></li>
-                                   <li><a class="active" href="{{ route('balastan.world') }}">В мире Баластана</a></li>
-                                   <li><a href="{{ route('balastan.video') }}">Видео</a></li>
-                                   <li><a href="{{ route('balastan.photos') }}">Фотогалерея</a></li>
-                               </ul>
-                           </nav>
+                     <nav class="cloudlinks">
+                        <ul>
+                           <li><a href="{{ route('balastan.home') }}">{{ trans('radiopages.Home') }}</a></li>
+                           <li><a href="{{ route('balastan.about') }}">{{ trans('radiopages.BAbout') }}</a></li>
+                           <li><a class="active" href="{{ route('balastan.world') }}">{{ trans('radiopages.Bworld') }}</a></li>
+                           <li><a href="{{ route('balastan.video') }}">Видео</a></li>
+                           <li><a href="{{ route('balastan.photos') }}">{{ trans('radiopages.Photos') }}</a></li>
+                        </ul>
+                     </nav>
                   </div>
                </div>
             </div>
@@ -89,6 +88,7 @@
                   </div> -->
                   <div class="panel-body" style="padding: 0px;">
                      <div class="row worldtext">
+                        @if(app()->getlocale() == 'ru')
                         <div class="col-md-12 worldall world1">                           
                            <div class="col-md-8">
                               <h2>«Читаем вместе»</h2>
@@ -100,6 +100,7 @@
                               <img src="{{asset('images/channels/balastan/birge_ru.png')}}" alt="">
                            </div>
                         </div>
+                        @elseif(app()->getlocale() == 'kg')
                         <div class="col-md-12 worldall world2">
                            <div class="col-md-4">
                               <img src="{{asset('images/channels/balastan/birge_kg.png')}}" alt="">
@@ -111,6 +112,7 @@
                               </p>
                            </div>
                         </div>
+                        @endif
                         <div class="col-md-12 worldall world3">                            
                            <div class="col-md-8">
                               <h2>Таалимтай</h2>
@@ -165,34 +167,6 @@
             </div>
          </div>
       </div>
-      <footer class="footer">
-         <div class="panel panel-default">
-            <div class="panel-body">
-               <div class="container">
-                  <div class="row">
-                     <div class="col-md-12">
-                        <div class="row">
-                           <ul>
-                              <li><a href="#">Башкы бет</a></li>
-                              <li><a href="#">КТРК</a></li>
-                              <li><a href="#">Видеопортал</a></li>
-                              <li><a href="#">Телепрограмма</a></li>
-                              <li><a href="#">Байкоочу кеңеш</a></li>
-                              <li><a href="#">Редакциялык кеңешчи</a></li>
-                           </ul>
-                        </div>
-                     </div>
-                     <div class="col-md-12 copy"><i class="fa fa-copyright"></i> 2015 Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясы</div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </footer>
-      <div class="container-fluid">
-         <!--        <img src="{{ asset('images/channels/balastan/footer.png')}}" alt=""> -->
-      </div>
-      <script src="js/jquery-1.11.2.min.js"></script>
-      <script src="js/bootstrap.min.js"></script>
-      <script src="js/balastan/jquery.min.js" type="text/javascript"></script>
-   </body>
-</html>
+   @stop
+   @section('footerscript2')
+   @stop

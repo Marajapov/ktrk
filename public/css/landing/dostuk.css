@@ -230,6 +230,10 @@ ul.nostyle i {
   z-index: 9999;
 }
 .navbar.navbar-default .navbar-toggle {
+  border:none !important; 
+}
+.navbar.navbar-default .navbar-toggle:hover {
+  background: none !important;
 }
 .navbar.navbar-default .navbar-brand {
   height: auto;

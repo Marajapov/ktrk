@@ -12,7 +12,12 @@ class MuzkanalController extends Controller
     {
         $channel = \Model\Channel\ModelName::name('muzkanal')->first();
 
-        return view('Front::channel.muzkanal.index', ['channel' => $channel]);
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+        return view('Front::channel.muzkanal.index', [
+            'channel' => $channel,
+            'backgroundMain' => $backgroundMain,
+            ]);
     }
 
     public function Posts()
@@ -29,32 +34,74 @@ class MuzkanalController extends Controller
 
     public function about()
     {
-        return view('Front::channel.muzkanal.about');
+        $channel = \Model\Channel\ModelName::name('muzkanal')->first();
+
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+        return view('Front::channel.muzkanal.about', [
+            'channel' => $channel,
+            'backgroundMain' => $backgroundMain,
+            ]);
     }
 
       public function video()
     {
-        return view('Front::channel.muzkanal.video');
+        $channel = \Model\Channel\ModelName::name('muzkanal')->first();
+
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+        return view('Front::channel.muzkanal.video', [
+            'channel' => $channel,
+            'backgroundMain' => $backgroundMain,
+            ]);
     }
 
   public function videos()
     {
-        return view('Front::channel.muzkanal.videos');
+        $channel = \Model\Channel\ModelName::name('muzkanal')->first();
+
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+        return view('Front::channel.muzkanal.videos', [
+            'channel' => $channel,
+            'backgroundMain' => $backgroundMain,
+            ]);
     }
 
   public function hitparad()
     {
-        return view('Front::channel.muzkanal.hitparad');
+        $channel = \Model\Channel\ModelName::name('muzkanal')->first();
+
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+        return view('Front::channel.muzkanal.hitparad', [
+            'channel' => $channel,
+            'backgroundMain' => $backgroundMain,
+            ]);
     }
 
   public function photos()
     {
-        return view('Front::channel.muzkanal.photos');
+        $channel = \Model\Channel\ModelName::name('muzkanal')->first();
+
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+        return view('Front::channel.muzkanal.photos', [
+            'channel' => $channel,
+            'backgroundMain' => $backgroundMain,
+            ]);
     }
     
   public function contacts()
     {
-        return view('Front::channel.muzkanal.contacts');
+        $channel = \Model\Channel\ModelName::name('muzkanal')->first();
+
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+        return view('Front::channel.muzkanal.contacts', [
+            'channel' => $channel,
+            'backgroundMain' => $backgroundMain,
+            ]);
     }
 
 

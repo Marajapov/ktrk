@@ -1,17 +1,8 @@
-<!DOCTYPE html>
-<html>
-    <head lang="en">
-        <meta charset="UTF-8">
-        <title>Передачи</title>
-
-        <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}"/>
-        <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}"/>
-        <link rel="stylesheet" href="{{ asset('filter/css/layout.css') }}">        
-        <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick.css') }}"/>
-        <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick-theme.css') }}"/>
-        <link rel="stylesheet" href="{{ asset('css/style.css') }}"/>
-
-    </head>
+@extends('Front::channel.madaniyat.default')
+@section('title', "Маданият")
+@section('styles')
+@endsection
+@section('content')
     <body class="madaniyat">
         <div class="switch">
             <nav class="navbar">
@@ -328,33 +319,10 @@
                         </div>
                     </div>
             </div>
-        </div>
+        </div> 
 
-        <footer class="footer">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="row">
-                                    <ul>
-                                        <li><a href="#">Башкы бет</a></li>
-                                        <li><a href="#">КТРК</a></li>
-                                        <li><a href="#">Видеопортал</a></li>
-                                        <li><a href="#">Телепрограмма</a></li>
-                                        <li><a href="#">Байкоочу кеңеш</a></li>
-                                        <li><a href="#">Редакциялык кеңешчи</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="col-md-12 copy"><i class="fa fa-copyright"></i> 2015 Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясы</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-
+   @stop
+   @section('footerscript2')
         <script src="{{ asset('js/jquery-1.11.2.min.js') }}"></script>
         <script src="{{ asset('js/bootstrap.min.js') }}"></script>
         <script src="{{ asset('js/bootstrap-hover-dropdown.js') }}"></script>
@@ -490,7 +458,7 @@
                     $(".form-search").removeClass("visible");
                 });
             });
-        </script> 
+        </script>
 
-    </body>
-</html>
+
+   @stop
