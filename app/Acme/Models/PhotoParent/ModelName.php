@@ -56,6 +56,16 @@ class ModelName extends Model
         }
     }
 
+    public function getDescriptionKg()
+    {
+        return $this->description;    
+    }
+
+    public function getDescriptionRu()
+    {
+        return $this->descriptionRu;        
+    }
+
     public function getFile()
     {
         return $this->file;

@@ -24,12 +24,14 @@
               </div>
               <div class="panel-body">
 
-                <div class="col-md-10">
+                <div class="col-md-12">
                   <div class="row">
                     <div class="panel-heading second-panel-heading">
                       
                     </div>
                     <div class="panel-body second-panel-body">
+
+                    <p>{{ $row->getDescription() }}</p>
 
                       <div class="col-md-12">
 
@@ -38,7 +40,7 @@
                             @foreach($images as $image)
                             <div>
                               <img class="img" src="{{ asset('froala/uploads/'.$image->name) }}" alt=""/>
-                              <span class="slide-caption">
+                              <span class="slide-caption hidden">
                                 {{ $row->getName() }}
                               </span>
                             </div>
