@@ -93,7 +93,7 @@ class PhotoParentController extends Controller
 //
 //            dd($filename);
 
-            Image::make($_FILES['images']['tmp_name'][$key])->heighten(800)->save($destinationPath.'/'.$filename);
+            Image::make($_FILES['images']['tmp_name'][$key])->heighten(600)->save($destinationPath.'/'.$filename);
 
             $file_array = array();
             $file_array = array_collapse([$file_array, [
@@ -173,7 +173,11 @@ class PhotoParentController extends Controller
                 $destinationPath = 'froala/uploads';
                 $storage->makeDirectory($destinationPath);
                 $filename = time().$key.'.'.$file->getClientOriginalExtension();
-                $upload_success = $file->move($destinationPath, $filename);
+
+//                $upload_success = $file->move($destinationPath, $filename);
+
+                Image::make($_FILES['images']['tmp_name'][$key])->heighten(600)->save($destinationPath.'/'.$filename);
+
                 $file_array = array();
                 $file_array = array_collapse([$file_array, [
                     'id' => $key+1,
