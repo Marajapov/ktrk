@@ -24,31 +24,31 @@
                 <div class="col-md-9">
                   <div class="row">
                     <div class="panel-heading second-panel-heading">
-                      <h3 class="panel-title"><span>Новости</span></h3>
+                      <h3 class="panel-title"><span>{{ trans('site.Top news') }}</span></h3>
                     </div>
                     <div class="panel-body second-panel-body">
 
                       <div class="col-md-12 block news-block">
                         <h4 class="news-title">
-                          КТРК БК: илим боюнча берүүлөр көп болсун
+                          {{ $post->getTitleRuOrKg() }}
                           <div class="extra">
-                            <span class="art-date"><i class="fa fa-calendar"></i>18 Нояб , 12:22</span>
-                            <span class="art-view"><i class="fa fa-eye"></i>17</span>
+                            <span class="art-date"><i class="fa fa-calendar"></i>{{ $post->getDay() }} {{ $post->getMonthRu() }}, {{ $post->getTime() }}</span>
+                            <span class="art-view"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
                           </div>
                         </h4>
 
                         <p class="post-thumb" href="#">
-                          <img height="150" class="left" src="{{ asset('images/11449585369.jpg') }}" alt="image">
+                          <img height="150" class="left" src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif" alt="image">
                         </p>
 
                         <p>
-                          Коомдук телерадио берүү корпорациясы - инновациялык жана илимге байланыштуу берүүлөрдү көбүрөөк көрсөтүшү керек. Бул тууралуу, КТРКнын байкоочу кеңешинин кезектеги жыйынында айтылды. Жыйында айтылгандарга караганда, учурда Улуттук илимдер академиясынын окумуштуулары бир катар илимий ачылыштарды жасаган. Бирок алардын эмгеги телеканалдардан чагылдырылбай жатат.
+                          {!! $post->getContent() !!}
                         </p>
 
                       </div>
 
                       <footer>
-                        <a href="{{ route('front.general') }}">
+                        <a href="{{ route('front.rs.posts') }}">
                           <span>{{ trans('site.FrontPostAll') }} <i class="fa fa-arrow-circle-right"></i></span>
                         </a>
                       </footer>

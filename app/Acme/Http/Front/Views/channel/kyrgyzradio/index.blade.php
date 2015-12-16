@@ -1,22 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>Кыргыз Радио</title>
-
-    <link rel="stylesheet" href="css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="css/font-awesome.css"/>
-    <link rel="stylesheet" href="css/style.css"/>
-
-    <link href="css/landing/animate.min.css" rel="stylesheet">
-    <link href="css/landing/owl.carousel.css" rel="stylesheet">
-    <link href="css/landing/owl.transitions.css" rel="stylesheet">
-    <link href="css/landing/prettyPhoto.css" rel="stylesheet">
-    <link href="css/landing/main.css" rel="stylesheet">
-    <link href="css/landing/responsive.css" rel="stylesheet">
-
-
-</head>
+@extends('Front::channel.kyrgyzradio.default')
+@section('title', "Кыргыз Радио")
+@section('styles')
+<link rel="stylesheet" href="{{ asset('css/radios.css')}}">
+<link rel="stylesheet" href="{{ asset('css/landing/main.css')}}">
+@endsection
+@section('content')
 <body id="home" class="homepage">
     <div class="container-fluid switch">
             <nav class="navbar">
@@ -38,9 +26,9 @@
                         <li class="sitemenu" id="site-channel1">
                             <a href="{{ route('birinchi.home') }}"><img src="{{ asset('images/channels/1-radio.png')}}" ><span>Биринчи радио</span><h4>Биринчи радио</h4></a></li>
                         <li class="sitemenu" id="site-channel1">
-                            <a href="{{ route('minkiyal.home') }}"><img src="{{ asset('images/channels/min-kiyal.png')}}"><span>Миң кыял</span><h4>Миң кыял</h4></a></li>
-                        <li class="sitemenu" id="site-channel1">
                             <a class="active" href="{{ route('kyrgyzradio.home') }}"><img src="{{ asset('images/channels/kg-radio.png')}}"><span>Кыргыз радиосу</span><h4>Кыргыз радиосу</h4></a></li>
+                        <li class="sitemenu" id="site-channel1">
+                            <a href="{{ route('minkiyal.home') }}"><img src="{{ asset('images/channels/min-kiyal.png')}}"><span>Миң кыял FM</span><h4>Миң кыял FM</h4></a></li>
                         <li class="sitemenu" id="site-channel1">
                             <a href="{{ route('dostuk.home') }}"><img src="{{ asset('images/channels/dostuk.png')}}"><span>Достук</span><h4>Достук</h4></a></li>    
                     </ul>   
@@ -49,6 +37,7 @@
     </div>
 
     <header id="header">
+
         <nav id="main-menu" class="container-fluid navbar navbar-default fixedheader2 " role="banner">
             <div class="container">
                 <div class="navbar-header">
@@ -63,10 +52,10 @@
                 </div>
                <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li class="scroll active"><a href="#home">Башкы</a></li>
-                        <li class="scroll"><a href="#services">Уктуруулар</a></li>
-                        <li class="scroll"><a href="#portfolio">Фотогалерея</a></li>  
-                        <li class="scroll"><a href="#about">Радио жөнүндө</a></li>                      
+                         <li class="scroll active"><a href="#home">Башкы</a></li>
+                         <li class="scroll"><a href="#services">Уктуруулар</a></li>
+                         <li class="scroll"><a href="#portfolio">Фотогалерея</a></li>
+                         <li class="scroll"><a href="#about">Радио жөнүндө</a></li>                    
                     </ul>
                 </div>
             </div><!--/.container-->
@@ -189,6 +178,33 @@
                                     <div id="tab-content" class="tab-content">
                                         <div role="tabpanel" class="tab-pane fade active in" id="tab01" aria-labelledby="tab01">
                                             <p><iframe width="100%" height="100" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/235888059&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe></p>
+                                            <p>Соңку чыгарылыш</p>
+                                        </div>
+                                        <div class="onenews">
+                                           <div class="panel panel-articles">
+                                              <div class="panel-body">
+                                                 <div class="panel-body">
+                                                    <div class="media">
+                                                       <div class="media-left">
+                                                          <a href="#">
+                                                          <img class="media-object thumb" src="http://sputnik.kg/images/102017/14/1020171449.jpg" alt="image">
+                                                          </a>
+                                                       </div>
+                                                       <div class="media-body">
+                                                          <div class="extra">
+                                                             <span class="e-datetime">18 Нояб , 12:22</span>
+                                                             <span class="e-views"><i class="fa fa-eye"></i>17</span>
+                                                          </div>
+                                                          <a class="media-heading" href="#">КТРК: из-за работы я стал изгоем для родственников</a>
+                                                       </div>
+                                                    </div>
+
+                                                    <footer>
+                                                       <a href="#">{{ trans('radiopages.Morenews') }}</a>
+                                                    </footer>
+                                                 </div>
+                                              </div>
+                                           </div>
                                         </div>
                                         <div role="tabpanel" class="tab-pane fade" id="tab02" aria-labelledby="tab02">
                                            <p>Көзү  өтүп  кеткен  белгилүү  инсандардын  жубайлары  менен  маек. Баш  кошкон  мезгилинен  тартып, бирге  жашаган  турмушундагы  кубаныч, өкүнүчтөрү  менен  бирдикте, өмүрлүк  жарынын  кандай  адам  болгонун  кеңири  айтып  беришет.</p>
@@ -217,6 +233,32 @@
                                     <div id="tab-content" class="tab-content">
                                         <div role="tabpanel" class="tab-pane fade active in" id="tab5" aria-labelledby="tab5">
                                             <p><iframe width="100%" height="100" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/235888059&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe></p>
+                                            <p>Соңку чыгарылыш</p>
+                                        </div>
+                                        <div class="onenews">
+                                           <div class="panel panel-articles">
+                                              <div class="panel-body">
+                                                 <div class="panel-body">
+                                                    <div class="media">
+                                                       <div class="media-left">
+                                                          <a href="#">
+                                                          <img class="media-object thumb" src="http://ktrk.kg/sites/default/files/styles/juicebox_medium/public/gallery/album/fotos/_mg_9802.jpg" alt="image">
+                                                          </a>
+                                                       </div>
+                                                       <div class="media-body">
+                                                          <div class="extra">
+                                                             <span class="e-datetime">18 Нояб , 12:22</span>
+                                                             <span class="e-views"><i class="fa fa-eye"></i>17</span>
+                                                          </div>
+                                                          <a class="media-heading" href="#">КТРКнын жаңыланган заманбап кеңсеси</a>
+                                                       </div>
+                                                    </div>
+                                                    <footer>
+                                                       <a href="#">{{ trans('radiopages.Morenews') }}</a>
+                                                    </footer>
+                                                 </div>
+                                              </div>
+                                           </div>
                                         </div>
                                         <div role="tabpanel" class="tab-pane fade" id="tab6" aria-labelledby="tab6">
                                            <p>Көзү  өтүп  кеткен  белгилүү  инсандардын  жубайлары  менен  маек. Баш  кошкон  мезгилинен  тартып, бирге  жашаган  турмушундагы  кубаныч, өкүнүчтөрү  менен  бирдикте, өмүрлүк  жарынын  кандай  адам  болгонун  кеңири  айтып  беришет.</p>
@@ -244,7 +286,32 @@
                                     </ul>
                                     <div id="tab-content" class="tab-content">
                                         <div role="tabpanel" class="tab-pane fade active in" id="tab7" aria-labelledby="tab7">
-                                            <p>Sound Cloud</p>
+                                        <div class="onenews">
+                                           <div class="panel panel-articles">
+                                              <div class="panel-body">
+                                                 <div class="panel-body">
+                                                    <div class="media">
+                                                       <div class="media-left">
+                                                          <a href="#">
+                                                          <img class="media-object thumb" src="http://sputnik.kg/images/102017/14/1020171449.jpg" alt="image">
+                                                          </a>
+                                                       </div>
+                                                       <div class="media-body">
+                                                          <div class="extra">
+                                                             <span class="e-datetime">18 Нояб , 12:22</span>
+                                                             <span class="e-views"><i class="fa fa-eye"></i>17</span>
+                                                          </div>
+                                                          <a class="media-heading" href="#">КТРК: из-за работы я стал изгоем для родственников</a>
+                                                       </div>
+                                                    </div>
+                                                    
+                                                    <footer>
+                                                       <a href="#">{{ trans('radiopages.Morenews') }}</a>
+                                                    </footer>
+                                                 </div>
+                                              </div>
+                                           </div>
+                                        </div>
                                         </div>
                                         <div role="tabpanel" class="tab-pane fade" id="tab8" aria-labelledby="tab8">
                                             <p>Түнкү  адабий-музыкалуу  уктуруусу. Жашоо, турмуш, сүйүү, мамилелер  тууралуу  чакан  аңгеме, новелла  жанрындагы  көркөм  баяндар, ой-толгоолор  </p>
@@ -272,7 +339,32 @@
                                     </ul>
                                     <div id="tab-content" class="tab-content">
                                         <div role="tabpanel" class="tab-pane fade active in" id="tab9" aria-labelledby="tab9">
-                                            <p>Sound Cloud</p>
+                                        <div class="onenews">
+                                           <div class="panel panel-articles">
+                                              <div class="panel-body">
+                                                 <div class="panel-body">
+                                                    <div class="media">
+                                                       <div class="media-left">
+                                                          <a href="#">
+                                                          <img class="media-object thumb" src="http://sputnik.kg/images/102017/14/1020171449.jpg" alt="image">
+                                                          </a>
+                                                       </div>
+                                                       <div class="media-body">
+                                                          <div class="extra">
+                                                             <span class="e-datetime">18 Нояб , 12:22</span>
+                                                             <span class="e-views"><i class="fa fa-eye"></i>17</span>
+                                                          </div>
+                                                          <a class="media-heading" href="#">КТРК: из-за работы я стал изгоем для родственников</a>
+                                                       </div>
+                                                    </div>
+                                                    
+                                                    <footer>
+                                                       <a href="#">{{ trans('radiopages.Morenews') }}</a>
+                                                    </footer>
+                                                 </div>
+                                              </div>
+                                           </div>
+                                        </div>
                                         </div>
                                         <div role="tabpanel" class="tab-pane fade" id="tab10" aria-labelledby="tab10">
                                             <p>Рубрикаларында кесиби башка болсо да кыргыздын ыргактарын созолонткон ыр жандуу башка улуттун  өкүлдөрүн жана  жаңы жазылган ырларды жарыка алып чыккан “Музыкалык аялдама” уктуруусу Кыргыз радиосунун толкунунда  </p>
@@ -920,32 +1012,8 @@
         </div>
     </section><!--/#about-->
 </div>
-
-<div class="container" style="padding: 0px; margin-top: 20px;">
-    <footer class="footer">
-        <div class="panel panel-default">
-            <div class="panel-body">
-           
-                        <div class="col-md-12">
-                            <div class="row">
-                                <ul>
-                                    <li><a href="#">Башкы бет</a></li>
-                                    <li><a href="#">КТРК</a></li>
-                                    <li><a href="#">Видеопортал</a></li>
-                                    <li><a href="#">Телепрограмма</a></li>
-                                    <li><a href="#">Байкоочу кеңеш</a></li>
-                                    <li><a href="#">Редакциялык кеңешчи</a></li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="col-md-12 copy"><i class="fa fa-copyright"></i> 2015 Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясы</div>
-         
-            </div>
-        </div>
-    </footer>
-</div>
-
+@stop
+@section('footerscript2')
 <script src="js/jquery-1.11.2.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 
@@ -959,7 +1027,4 @@
 <script src="js/landing/main.js"></script>
 <script src="js/landing/jquery.js"></script>
 <script src="js/landing/fixed.js"></script>
-
-
-</body>
-</html>
+@stop

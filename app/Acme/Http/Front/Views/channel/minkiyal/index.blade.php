@@ -45,15 +45,15 @@
                      </a>
                   </li>
                   <li class="sitemenu" id="site-channel1">
-                     <a class="active" href="{{ route('minkiyal.home') }}">
-                        <img src="{{ asset('images/channels/min-kiyal.png')}}"><span>Миң кыял</span>
-                        <h4>Миң кыял</h4>
-                     </a>
-                  </li>
-                  <li class="sitemenu" id="site-channel1">
                      <a href="{{ route('kyrgyzradio.home') }}">
                         <img src="{{ asset('images/channels/kg-radio.png')}}"><span>Кыргыз радиосу</span>
                         <h4>Кыргыз радиосу</h4>
+                     </a>
+                  </li>
+                  <li class="sitemenu" id="site-channel1">
+                     <a class="active" href="{{ route('minkiyal.home') }}">
+                        <img src="{{ asset('images/channels/min-kiyal.png')}}"><span>Миң кыял FM</span>
+                        <h4>Миң кыял FM</h4>
                      </a>
                   </li>
                   <li class="sitemenu" id="site-channel1">
@@ -77,7 +77,7 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                   </button>
-                  <a class="navbar-brand" href="{{ route('dostuk.home') }}"><img src="{{ asset('images/channels/min-kiyal.png')}}" alt="logo">Миң кыял</a>
+                  <a class="navbar-brand" href="{{ route('dostuk.home') }}"><img src="{{ asset('images/channels/min-kiyal.png')}}" alt="logo">Миң кыял FM</a>
                   <div class="onetime"><a href=""><button class="btn"><i class="fa fa-microphone"></i><span>Түз эфир</span></button></a></div>
                </div>
                <div class="collapse navbar-collapse navbar-right">

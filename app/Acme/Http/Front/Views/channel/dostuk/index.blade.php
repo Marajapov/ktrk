@@ -1,21 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>Достук</title>
-
-    <link rel="stylesheet" href="css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="css/font-awesome.css"/>
-    <link rel="stylesheet" href="css/style.css"/>
-
-    <link href="css/landing/animate.min.css" rel="stylesheet">
-    <link href="css/landing/owl.carousel.css" rel="stylesheet">
-    <link href="css/landing/owl.transitions.css" rel="stylesheet">
-    <link href="css/landing/prettyPhoto.css" rel="stylesheet">
-    <link href="css/landing/dostuk.css" rel="stylesheet">
-    <link href="css/landing/responsive.css" rel="stylesheet">
-
-</head>
+@extends('Front::channel.kyrgyzradio.default')
+@section('title', "Достук Радиосу")
+@section('styles')
+<link rel="stylesheet" href="{{ asset('css/radios.css')}}">
+<link rel="stylesheet" href="{{ asset('css/landing/dostuk.css')}}">
+@endsection
+@section('content')
 <body id="home" class="homepage">
     <div class="container-fluid switch">
             <nav class="navbar">
@@ -37,9 +26,9 @@
                         <li class="sitemenu" id="site-channel1">
                             <a href="{{ route('birinchi.home') }}"><img src="{{ asset('images/channels/1-radio.png')}}" ><span>Биринчи радио</span><h4>Биринчи радио</h4></a></li>
                         <li class="sitemenu" id="site-channel1">
-                            <a href="{{ route('minkiyal.home') }}"><img src="{{ asset('images/channels/min-kiyal.png')}}"><span>Миң кыял</span><h4>Миң кыял</h4></a></li>
-                        <li class="sitemenu" id="site-channel1">
                             <a href="{{ route('kyrgyzradio.home') }}"><img src="{{ asset('images/channels/kg-radio.png')}}"><span>Кыргыз радиосу</span><h4>Кыргыз радиосу</h4></a></li>
+                        <li class="sitemenu" id="site-channel1">
+                            <a href="{{ route('minkiyal.home') }}"><img src="{{ asset('images/channels/min-kiyal.png')}}"><span>Миң кыял FM</span><h4>Миң кыял FM</h4></a></li>
                         <li class="sitemenu" id="site-channel1">
                             <a class="active" href="{{ route('dostuk.home') }}"><img src="{{ asset('images/channels/dostuk.png')}}"><span>Достук</span><h4>Достук</h4></a></li>    
                     </ul>   
@@ -50,6 +39,12 @@
     <header id="header">
         <nav id="main-menu" class="navbar navbar-default fixedheader2" role="banner">
             <div class="container" style="padding: 0px;">
+                <div class="langs">
+                    <ul>
+                        <li @if(app()->getlocale() == 'kg') class="active" @endif><a href="/locale/kg">кырг <span></span></a></li>
+                        <li @if(app()->getlocale() == 'ru') class="active" @endif><a href="/locale/ru">рус <span></span></a></li>
+                    </ul>
+                </div>
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="sr-only">Меню</span>
@@ -58,17 +53,16 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="{{ route('dostuk.home') }}"><img src="{{ asset('images/channels/dostuk.png')}}" alt="logo">Достук</a>
-                    <div class="onetime"><a href=""><button class="btn"><i class="fa fa-microphone"></i><span>Түз эфир</span></button></a></div>
+                    <div class="onetime"><a href=""><button class="btn"><i class="fa fa-microphone"></i><span>{{ trans('radiopages.Live') }}</span></button></a></div>
               
                 </div>
                 
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li class="scroll active"><a href="#home">Башкы</a></li>
-
-                        <li class="scroll"><a href="#services">Уктуруулар</a></li>
-                        <li class="scroll"><a href="#portfolio">Фотогалерея</a></li>
-                        <li class="scroll"><a href="#about">Радио жөнүндө</a></li>                        
+                        <li class="scroll active"><a href="#home">{{ trans('radiopages.Home') }}</a></li>
+                        <li class="scroll"><a href="#services">{{ trans('radiopages.Peredachi') }}</a></li>
+                        <li class="scroll"><a href="#portfolio">{{ trans('radiopages.Photos') }}</a></li>  
+                        <li class="scroll"><a href="#about">{{ trans('radiopages.About') }}</a></li>                        
                     </ul>
                 </div>
             </div><!--/.container-->
@@ -129,7 +123,7 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title text-center wow fadeInDown"></h2>
-                <h2 data-wow-duration="300ms" data-wow-delay="0ms"><span>“Биримдигибиз ынтымакта!” </span></h2>
+                <h2 data-wow-duration="300ms" data-wow-delay="0ms"><span>{{ trans('radiopages.DostukSlogan') }}</span></h2>
                 <h2 class="section-title text-center wow fadeInDown"></h2>  
             </div>
         </div>
@@ -139,8 +133,8 @@
         <div class="container">
 
             <div class="section-header">
-                <h2 class="section-title text-center wow fadeInDown">Уктуруулар</h2>
-                <p class="text-center wow fadeInDown">Достук радиосу 6 тилде программаларын жасап эфирге берип келет. Алар: орус, поляк, татар, түрк, украин, дунган тилдеринде. <br> Бул тилдерде этностордун маданиятын, салтын, улуттук майрамдарын чагылдырган уктуруулар даярдалып келет. Уктуруулар төмөнкү тилдерде которуусу менен берилип келет. </p>
+                <h2 class="section-title text-center wow fadeInDown">{{ trans('radiopages.Peredachi') }}</h2>
+                <p class="text-center wow fadeInDown">{{ trans('radiopages.Dostuklangs') }}<br>{{ trans('radiopages.Dostuklangs2') }}</p>
           </div>
 
             <div class="row">
@@ -158,7 +152,7 @@
                                             <a href="#tab01" role="tab" data-toggle="tab" aria-controls="tab01" aria-expanded="true">Наш человек</a>
                                         </li>
                                         <li role="presentation">
-                                            <a href="#tab02" role="tab" data-toggle="tab" aria-controls="tab02" aria-expanded="false">Уктуруу жөнүндө</a>
+                                            <a href="#tab02" role="tab" data-toggle="tab" aria-controls="tab02" aria-expanded="false">{{ trans('radiopages.OPeredachi') }}</a>
                                         </li>
                                     </ul>
                                     <div id="tab-content" class="tab-content">
@@ -186,7 +180,7 @@
                                             <a href="#tab5" role="tab" data-toggle="tab" aria-controls="tab5" aria-expanded="true">Звезды мировой музыки</a>
                                         </li>
                                         <li role="presentation">
-                                            <a href="#tab6" role="tab" data-toggle="tab" aria-controls="tab6" aria-expanded="false">Уктуруу жөнүндө</a>
+                                            <a href="#tab6" role="tab" data-toggle="tab" aria-controls="tab6" aria-expanded="false">{{ trans('radiopages.OPeredachi') }}</a>
                                         </li>
                                     </ul>
                                     <div id="tab-content" class="tab-content">
@@ -214,7 +208,7 @@
                                             <a href="#tab7" role="tab" data-toggle="tab" aria-controls="tab7" aria-expanded="true">Бар бол достук</a>
                                         </li>
                                         <li role="presentation">
-                                            <a href="#tab8" role="tab" data-toggle="tab" aria-controls="tab8" aria-expanded="false">Уктуруу жөнүндө</a>
+                                            <a href="#tab8" role="tab" data-toggle="tab" aria-controls="tab8" aria-expanded="false">{{ trans('radiopages.OPeredachi') }}</a>
                                         </li>
                                     </ul>
                                     <div id="tab-content" class="tab-content">
@@ -242,7 +236,7 @@
                                             <a href="#tab9" role="tab" data-toggle="tab" aria-controls="tab9" aria-expanded="true">Дүйнөлүк поэзия</a>
                                         </li>
                                         <li role="presentation">
-                                            <a href="#tab10" role="tab" data-toggle="tab" aria-controls="tab10" aria-expanded="false">Уктуруу жөнүндө</a>
+                                            <a href="#tab10" role="tab" data-toggle="tab" aria-controls="tab10" aria-expanded="false">{{ trans('radiopages.OPeredachi') }}</a>
                                         </li>
                                     </ul>
                                     <div id="tab-content" class="tab-content">
@@ -270,7 +264,7 @@
                                             <a href="#tab11" role="tab" data-toggle="tab" aria-controls="tab11" aria-expanded="true">Данакер</a>
                                         </li>
                                         <li role="presentation">
-                                            <a href="#tab12" role="tab" data-toggle="tab" aria-controls="tab12" aria-expanded="false">Уктуруу жөнүндө</a>
+                                            <a href="#tab12" role="tab" data-toggle="tab" aria-controls="tab12" aria-expanded="false">{{ trans('radiopages.OPeredachi') }}</a>
                                         </li>
                                     </ul>
                                     <div id="tab-content" class="tab-content">
@@ -299,7 +293,7 @@
                                             <a href="#tab13" role="tab" data-toggle="tab" aria-controls="tab13" aria-expanded="true">Ашкана ажары</a>
                                         </li>
                                         <li role="presentation">
-                                            <a href="#tab14" role="tab" data-toggle="tab" aria-controls="tab14" aria-expanded="false">Уктуруу жөнүндө</a>
+                                            <a href="#tab14" role="tab" data-toggle="tab" aria-controls="tab14" aria-expanded="false">{{ trans('radiopages.OPeredachi') }}</a>
                                         </li>
                                     </ul>
                                     <div id="tab-content" class="tab-content">
@@ -327,7 +321,7 @@
                                             <a href="#tab15" role="tab" data-toggle="tab" aria-controls="tab15" aria-expanded="true">Түрк тилин үйрөнөбүз</a>
                                         </li>
                                         <li role="presentation">
-                                            <a href="#tab16" role="tab" data-toggle="tab" aria-controls="tab16" aria-expanded="false">Уктуруу жөнүндө</a>
+                                            <a href="#tab16" role="tab" data-toggle="tab" aria-controls="tab16" aria-expanded="false">{{ trans('radiopages.OPeredachi') }}</a>
                                         </li>
                                     </ul>
                                     <div id="tab-content" class="tab-content">
@@ -352,10 +346,10 @@
                                 <div role="tabpanel">
                                     <ul class="nav main-tab nav-justified" role="tablist">
                                         <li role="presentation" class="active">
-                                            <a href="#tab17" role="tab" data-toggle="tab" aria-controls="tab17" aria-expanded="true">“Адеп</a>
+                                            <a href="#tab17" role="tab" data-toggle="tab" aria-controls="tab17" aria-expanded="true">Эгиз тилдеги эргүүлөр</a>
                                         </li>
                                         <li role="presentation">
-                                            <a href="#tab18" role="tab" data-toggle="tab" aria-controls="tab18" aria-expanded="false">Эгиз тилдеги эргүүлөр</a>
+                                            <a href="#tab18" role="tab" data-toggle="tab" aria-controls="tab18" aria-expanded="false">{{ trans('radiopages.OPeredachi') }}</a>
                                         </li>
                                     </ul>
                                     <div id="tab-content" class="tab-content">
@@ -383,7 +377,7 @@
                                             <a href="#tab19" role="tab" data-toggle="tab" aria-controls="tab19" aria-expanded="true">Древо дружбы</a>
                                         </li>
                                         <li role="presentation">
-                                            <a href="#tab20" role="tab" data-toggle="tab" aria-controls="tab20" aria-expanded="false">Уктуруу жөнүндө</a>
+                                            <a href="#tab20" role="tab" data-toggle="tab" aria-controls="tab20" aria-expanded="false">{{ trans('radiopages.OPeredachi') }}</a>
                                         </li>
                                     </ul>
                                     <div id="tab-content" class="tab-content">
@@ -411,7 +405,7 @@
                                             <a href="#tab21" role="tab" data-toggle="tab" aria-controls="tab21" aria-expanded="true">Эл ынтымагы ыйык</a>
                                         </li>
                                         <li role="presentation">
-                                            <a href="#tab22" role="tab" data-toggle="tab" aria-controls="tab22" aria-expanded="false">Уктуруу жөнүндө</a>
+                                            <a href="#tab22" role="tab" data-toggle="tab" aria-controls="tab22" aria-expanded="false">{{ trans('radiopages.OPeredachi') }}</a>
                                         </li>
                                     </ul>
                                     <div id="tab-content" class="tab-content">
@@ -439,7 +433,7 @@
                                             <a href="#tab23" role="tab" data-toggle="tab" aria-controls="tab23" aria-expanded="true">Закымадаган замандар</a>
                                         </li>
                                         <li role="presentation">
-                                            <a href="#tab24" role="tab" data-toggle="tab" aria-controls="tab24" aria-expanded="false">Уктуруу жөнүндө</a>
+                                            <a href="#tab24" role="tab" data-toggle="tab" aria-controls="tab24" aria-expanded="false">{{ trans('radiopages.OPeredachi') }}</a>
                                         </li>
                                     </ul>
                                     <div id="tab-content" class="tab-content">
@@ -462,7 +456,7 @@
     <section id="portfolio">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title text-center wow fadeInDown">Сүрөт галереясы</h2>
+                <h2 class="section-title text-center wow fadeInDown">{{ trans('radiopages.Photos') }}</h2>
             </div>
 
             <div class="portfolio-items">
@@ -553,8 +547,8 @@
         <div class="container">
 
             <div class="section-header">
-                <h2 class="section-title text-center wow fadeInDown">Достук радиосу тууралуу</h2>
-                <p class="text-center wow fadeInDown">Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясынын “Достук” радиосу корпорациянын структуралык түзүлүшү болуп саналат. радионун урааны бул “Биримдигибиз ынтымакта!” же орус тилинде “Наша сила в единстве!” </p>
+                <h2 class="section-title text-center wow fadeInDown">{{ trans('radiopages.AboutDostuk') }}</h2>
+                <p class="text-center wow fadeInDown">{{ trans('radiopages.AboutDostukup') }}</p>
             </div>
 
             <div class="row">
@@ -564,18 +558,22 @@
                     <div class="img-responsive">
                       <img src="{{asset('images/channels/dostuk.png')}}" alt="">
                     </div>
-                    <p>Улуттар аралык ынтымакты бекемдөө максатында “Достук” радиосу ар этностун маданиятын, салтын угармандарга тартуулап келет. Маданият этносторду бириктирип, мамлекеттин ынтымагы, бейкуттугу үчүн чогуу күрөшүү деген ойду элге жеткирет. Албетте этникалык аралашууга алып келет. Ар этностун бир уй-було куруусу, Этностор аралык ынтымак бекем болуунун дагы бир жолу этностун маданияты, тили, салтынын сакталуусу да. </p>   
+                    <p>{{ trans('radiopages.AboutPromo') }}</p>   
                 </div>
 
                 <div class="col-sm-6 wow fadeInRight">
-                    <h3 class="column-title">Милдеттери:</h3>
-                    <p>-жогорку сапаттагы радио программаларды жаратуу таанып-билуучу адабий, музыкалык көңүл-ачуучу программаларды радионун толкундарында турууну жүзөгө ашыруу; </p>
-                    <p>-радиоугуучулар менен баарлашууну тереңдетүү жана кеңейтүү </p>
-                    <p>-Кыргызстанда ынтымакты жана достук мамилелерди өнүктүрүүгө көмөктөшүү</p>
-                    <p>-Кыргызстандын этникалык азчылыктарынын музыкасына багыт алуу, ата-мекендик аткаруучуларга колдоо көрсөтүү </p>
-                    <p>-КР аракеттиги мыйзамдарына жана ушул жобого ылайык жарнамалык коммерциялык жана башка чарбалык ишмердүүлүктү жүргүзүү </p>
-                    <p>-Кыргызстан көп улуттуу өлкө, жана бир нече этностор жашап, иштеп келет. Этностор аралык ынтымак бекем болуу учун КТРКнын Достук радиосу 2013- жылы ноябрь айында ачылды. </p>
-                    <p>Достук радиосу 6 тилде программаларын жасап эфирге берип келет. Алар: орус, поляк, татар, түрк, украин, дунган тилдеринде. Бул тилдерде этностордун маданиятын, салтын, улуттук майрамдарын чагылдырган уктуруулар даярдалып келет. Уктуруулар төмөнкү тилдерде которуусу менен берилип келет</p> 
+                    <h3 class="column-title">{{ trans('radiopages.AboutAim') }}</h3>
+                    <p>{{ trans('radiopages.DostukText1') }}</p>
+                    <p>{{ trans('radiopages.DostukText2') }}</p>
+                    <p>{{ trans('radiopages.DostukText3') }}</p>
+                    <p>{{ trans('radiopages.DostukText4') }}</p>
+                    <p>{{ trans('radiopages.DostukText5') }}</p>
+                    <p>{{ trans('radiopages.DostukText6') }}</p>
+                    <p>{{ trans('radiopages.DostukText7') }}</p>
+                    <p>{{ trans('radiopages.DostukText8') }}</p>
+                    <p>{{ trans('radiopages.DostukText9') }}</p>
+                    <p>{{ trans('radiopages.DostukText10') }}</p>
+                    <p>{{ trans('radiopages.DostukText11') }}</p>
                 </div>
             </div>
         </div>
@@ -583,45 +581,23 @@
         <section id="get-in-touch">
         <div class="container">
             <div class="section-header">            
-                <h2 class="section-title text-center wow fadeInDown">Адрес</h2>
-                <p class="text-center wow fadeInDown">Кыргызстан, город Бишкек, бульвар Молодой Гвардии, 59</p>
+                <h2 class="section-title text-center wow fadeInDown">{{ trans('radiopages.Address') }}</h2>
+                <p class="text-center wow fadeInDown">{{ trans('radiopages.AddressName') }}</p>
             </div>
             <div class="section-header">            
-                <h2 class="section-title text-center wow fadeInDown">Телефон студии:</h2>
+                <h2 class="section-title text-center wow fadeInDown">{{ trans('radiopages.Phone') }}</h2>
                 <p class="text-center wow fadeInDown">0312 65 67 04 <br> 0312 65 66 10</p>
             </div>
             <div class="section-header">            
-                <h2 class="section-title text-center wow fadeInDown">На волне 106.9 </h2>
+                <h2 class="section-title text-center wow fadeInDown">{{ trans('radiopages.Volna') }}</h2>
             </div>            
         </div>
     </section><!--/#get-in-touch-->
 
 </div>
-<div class="container" style="padding: 0px; margin-top: 20px;">
-    <footer class="footer">
-        <div class="panel panel-default">
-            <div class="panel-body">
-           
-                        <div class="col-md-12">
-                            <div class="row">
-                                <ul>
-                                    <li><a href="#">Башкы бет</a></li>
-                                    <li><a href="#">КТРК</a></li>
-                                    <li><a href="#">Видеопортал</a></li>
-                                    <li><a href="#">Телепрограмма</a></li>
-                                    <li><a href="#">Байкоочу кеңеш</a></li>
-                                    <li><a href="#">Редакциялык кеңешчи</a></li>
-                                </ul>
-                            </div>
-                        </div>
 
-                        <div class="col-md-12 copy"><i class="fa fa-copyright"></i> 2015 Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясы</div>
-         
-            </div>
-        </div>
-    </footer>
-</div>
-
+@stop
+@section('footerscript2')
 <script src="js/jquery-1.11.2.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 
@@ -635,5 +611,4 @@
 <script src="js/landing/main.js"></script>
 <script src="js/landing/jquery.js"></script>
 <script src="js/landing/fixed.js"></script>
-</body>
-</html>
+@stop

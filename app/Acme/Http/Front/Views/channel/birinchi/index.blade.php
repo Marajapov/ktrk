@@ -26,7 +26,7 @@
          </ul>
          <ul class="topradio pull-right">
             <li><a href="{{ route('kyrgyzradio.home') }}">Кыргыз Радиосу</a></li>
-            <li><a href="{{ route('minkiyal.home') }}">Миң Кыял</a></li>
+            <li><a href="{{ route('minkiyal.home') }}">Миң Кыял FM</a></li>
             <li><a href="{{ route('dostuk.home') }}">Достук</a></li>
          </ul>
       </nav>
@@ -35,6 +35,12 @@
 <div class="container-fluid cffix">
    <div class="col-md-12 topheader">
       <div class="container onepadding">
+        <div class="language">
+            <ul>
+                <li @if(app()->getlocale() == 'kg') class="active" @endif><a href="/locale/kg">кырг <span></span></a></li>
+                <li @if(app()->getlocale() == 'ru') class="active" @endif><a href="/locale/ru">рус <span></span></a></li>
+            </ul>
+        </div>
          <div class="col-md-3">
             <nav>
                <ul>
@@ -51,7 +57,7 @@
          <div class="col-md-9 oneheader onepadding">
             <ul class="nav navbar-nav chastota">
                <li>Бишкек 104.1</li>
-               <li>Ыссык-Көл 102.4</li>
+               <li>{{ trans('radiopages.Issyk') }} 102.4</li>
                <li>Нарын 100.5</li>
                <li>Ош 100.7</li>
                <li>Баткен 104.2</li>
@@ -60,7 +66,7 @@
             </ul>
             <ul class="nav navbar-nav oneline">
                <li><a class="time" href="#"><time>11:15</time></a></li>
-               <li class="onetime"><a href=""><button class="btn"><i class="fa fa-microphone"></i><span>Прямой эфир</span></button></a></li>
+               <li class="onetime"><a href=""><button class="btn"><i class="fa fa-microphone"></i><span>{{ trans('radiopages.Live') }}</span></button></a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right onesoc">
                <li class="onepost"><a href=""><i class="fa fa-facebook"></i><span>facebook</span></a></li>
@@ -93,14 +99,14 @@
                         </button>
                      </form>
                   </div>
-                  <a class="navbar-brand active" href="{{ route('birinchi.home') }}"> Башкы</a>
+                  <a class="navbar-brand active" href="{{ route('birinchi.home') }}">{{ trans('radiopages.Home') }}</a>
                </div>
                <!-- Collect the nav links, forms, and other content for toggling -->
                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                   <ul class="nav navbar-nav onenavbar">
-                     <li><a href="{{ route('birinchi.about') }}">О радио</a></li>
+                     <li><a href="{{ route('birinchi.about') }}">{{ trans('radiopages.About') }}</a></li>
                      <li class="dropdown">
-                        <a href="{{ route('birinchi.broadcasts') }}" class="dropdown-toggle" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Передачи <i class="fa fa-angle-down"></i></a>
+                        <a href="{{ route('birinchi.broadcasts') }}" class="dropdown-toggle" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ trans('radiopages.Peredachi') }} <i class="fa fa-angle-down"></i></a>
                         <ul class="dropdown-menu">
                            <li><a href="#">Багыт</a></li>
                            <li><a href="#">Инсанат</a></li>
@@ -111,10 +117,10 @@
                      </li>
                      <li>
                         <a href="{{ route('birinchi.broadcastsprogramm') }}">
-                           Программа передач <!-- <span class="caret"></span> -->
+                           {{ trans('radiopages.Prperedach') }}
                         </a>
                      </li>
-                     <li><a href="{{ route('birinchi.photos') }}">Фотогалерея</a></li>
+                     <li><a href="{{ route('birinchi.photos') }}"> {{ trans('radiopages.Photos') }}</a></li>
                   </ul>
                   <ul class="nav navbar-nav navbar-right logo-block onesearch">
                      <a class="search-toggle"><i class="fa fa-search"></i></a>
@@ -130,6 +136,7 @@
                         </button>
                      </form>
                   </ul>
+
                </div>
                <!-- /.navbar-collapse -->
             </div>
@@ -208,7 +215,7 @@
                         </div>
                      </div>
                      <div class="carousel-navigation hidden-xs hidden-sm">
-                        <h2 class="widget-title">Главные новости</h2>
+                        <h2 class="widget-title">{{ trans('radiopages.Mainnews') }}</h2>
                         <ol class="carousel-title-indicators">
                            <li data-target="#carousel-news-slider-2" data-slide-to="0" class="">Кыргыз бильярдчылар Орусияда күч сынашууда</li>
                            <li data-target="#carousel-news-slider-2" data-slide-to="1" class="">Орусия тыюу салган түрк товарлардын тизмеси жарыяланды</li>
@@ -230,7 +237,7 @@
             <div class="col-md-3 onepadding">
                <div class="panel panel-default onelist">
                   <div class="panel-heading">
-                     <h3 class="panel-title">Категории</h3>
+                     <h3 class="panel-title">{{ trans('radiopages.Categories') }}</h3>
                   </div>
                   <div class="panel-body">
                      <nav>
@@ -259,7 +266,7 @@
             <div class="col-md-9 onenews ">
                <div class="panel panel-articles">
                   <div class="panel-heading">
-                     <h3 class="panel-title">Лента новостей</h3>
+                     <h3 class="panel-title">{{ trans('radiopages.Newslenta') }}</h3>
                   </div>
                   <div class="panel-body">
                      <div class="panel-body">
@@ -354,7 +361,7 @@
                            </div>
                         </div>
                         <footer>
-                           <a href="#">Еще статьи</a>
+                           <a href="#">{{ trans('radiopages.Morenews') }}</a>
                         </footer>
                      </div>
                   </div>
@@ -380,7 +387,7 @@
    <div class="row specnews">
       <div class="panel onenews">
          <div class="panel-heading">
-            <h3 class="panel-title"><span>Передачи</span></h3>
+            <h3 class="panel-title"><span>{{ trans('radiopages.Peredachi') }}</span></h3>
          </div>
          <div class="panel-body">
             <div class="row specpad">
@@ -517,7 +524,7 @@
    <div class="row specnews">
       <div class="panel onenews ">
          <div class="panel-heading">
-            <h3 class="panel-title"><span>Фотогалерея</span></h3>
+            <h3 class="panel-title"><span>{{ trans('radiopages.Photos') }}</span></h3>
          </div>
          <div class="panel-body">
             <div class="col-md-12 col-sm-6 col-xs-12 specpad">
