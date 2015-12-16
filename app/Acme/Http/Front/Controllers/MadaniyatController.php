@@ -29,19 +29,47 @@ class MadaniyatController extends Controller
 
     public function about()
     {
-        return view('Front::channel.madaniyat.about');
+        $channel = \Model\Channel\ModelName::name('madaniyat')->first();
+
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+        return view('Front::channel.madaniyat.about', [
+            'channel' => $channel,
+            'backgroundMain' => $backgroundMain,
+            ]);
     }
     public function contacts()
     {
-        return view('Front::channel.madaniyat.contacts');
+        $channel = \Model\Channel\ModelName::name('madaniyat')->first();
+
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+        return view('Front::channel.madaniyat.contacts', [
+            'channel' => $channel,
+            'backgroundMain' => $backgroundMain,
+            ]);
     }
     public function photos()
     {
-        return view('Front::channel.madaniyat.photos');
+        $channel = \Model\Channel\ModelName::name('madaniyat')->first();
+
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+        return view('Front::channel.madaniyat.photos', [
+            'channel' => $channel,
+            'backgroundMain' => $backgroundMain,
+            ]);
     }
     public function broadcasts()
     {
-        return view('Front::channel.madaniyat.broadcasts');
+        $channel = \Model\Channel\ModelName::name('madaniyat')->first();
+
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+        return view('Front::channel.madaniyat.broadcasts', [
+            'channel' => $channel,
+            'backgroundMain' => $backgroundMain,
+            ]);
     }
 
 }

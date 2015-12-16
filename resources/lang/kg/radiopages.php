@@ -74,4 +74,10 @@ return [
 		'DostukText15' => '',
 		'' => '',
 
+		//Balastan page
+		'BAbout' => 'Биз жөнүндө',
+		'Bworld' => 'Баластан',	
+		'BirgeRead' => 'Бирге окуйбуз',	
+		'Bperedachi' => 'Көрсөтүүлөр',	
+		'' => '',	
 ];
