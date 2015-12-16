@@ -29,70 +29,27 @@
                     <div class="panel-body second-panel-body">
 
                       <section>
-
+                      @if($galleries)
+                      @foreach($galleries as $gallery)
                         <div class="col-md-4">
+                        {!! Form::open(['route' => ['front.ns.gallery', $gallery->id], 'method' => 'get', 'onclick' => "submit()"]) !!}
                           <div class="gallery-item">
                             <a href="#" class="thumb">
-                              <img src="{{ asset('images/gallery/001.jpg') }}" alt="..." class="img-thumbnail">
+                              <img src="{{ asset($gallery->status) }}" alt="..." class="img-thumbnail">
                               <i class="fa fa-camera"></i>
                             </a>
                             <h2>
                               <div class="extra">
-                                <span class="e-datetime">18 Нояб , 12:22</span>
-                                <span class="e-views"><i class="fa fa-eye"></i>17</span>
+                                <span class="e-datetime">{{ $gallery->getDay() }} {{ $gallery->getMonthRu() }}, {{ $gallery->getTime() }}</span>
                               </div>
-                              <a href="#">Атамбаев Кыргызстанда “кол тийбес” аткаминерлер жок экенин айтты</a>
+                              <a href="#">{{ $gallery->getName() }}</a>
                             </h2>
                           </div>
+                          <input type="hidden" value="{{ $gallery->id }}" name="photoParentId">
+                          {!! Form::close() !!}
                         </div>
-
-                        <div class="col-md-4">
-                          <div class="gallery-item">
-                            <a href="#" class="thumb">
-                              <img src="{{ asset('images/gallery/001.jpg') }}" alt="..." class="img-thumbnail">
-                              <i class="fa fa-camera"></i>
-                            </a>
-                            <h2>
-                              <div class="extra">
-                                <span class="e-datetime">18 Нояб , 12:22</span>
-                                <span class="e-views"><i class="fa fa-eye"></i>17</span>
-                              </div>
-                              <a href="#">Атамбаев Кыргызстанда “кол тийбес” аткаминерлер жок экенин айтты</a>
-                            </h2>
-                          </div>
-                        </div>
-
-                        <div class="col-md-4">
-                          <div class="gallery-item">
-                            <a href="#" class="thumb">
-                              <img src="{{ asset('images/gallery/001.jpg') }}" alt="..." class="img-thumbnail">
-                              <i class="fa fa-camera"></i>
-                            </a>
-                            <h2>
-                              <div class="extra">
-                                <span class="e-datetime">18 Нояб , 12:22</span>
-                                <span class="e-views"><i class="fa fa-eye"></i>17</span>
-                              </div>
-                              <a href="#">Атамбаев Кыргызстанда “кол тийбес” аткаминерлер жок экенин айтты</a>
-                            </h2>
-                          </div>
-                        </div>
-
-                        <div class="col-md-4">
-                          <div class="gallery-item">
-                            <a href="#" class="thumb">
-                              <img src="{{ asset('images/gallery/001.jpg') }}" alt="..." class="img-thumbnail">
-                              <i class="fa fa-camera"></i>
-                            </a>
-                            <h2>
-                              <div class="extra">
-                                <span class="e-datetime">18 Нояб , 12:22</span>
-                                <span class="e-views"><i class="fa fa-eye"></i>17</span>
-                              </div>
-                              <a href="#">Атамбаев Кыргызстанда “кол тийбес” аткаминерлер жок экенин айтты</a>
-                            </h2>
-                          </div>
-                        </div>
+                        @endforeach
+                        @endif
 
                       </section>
 

@@ -149,7 +149,7 @@ class PhotoParentController extends Controller
         $photoParent->update($request->except('images','q','status'));
         
         $files = Input::file('images');
-
+        
         $result = array();
 
         $file_count = count($files);
@@ -177,37 +177,31 @@ class PhotoParentController extends Controller
 
         // start count how many uploaded
         $uploadcount = 0;
+        
+          foreach($files as $key=>$file) {
+            if($key > 1)
+            {
+              $storage = \Storage::disk('public');
+              $destinationPath = 'froala/uploads';
+              $storage->makeDirectory($destinationPath);
+              $filename = time().$key.'.'.$file->getClientOriginalExtension();
+              $upload_success = $file->move($destinationPath, $filename);
+              $file_array = array();
+              $file_array = array_collapse([$file_array, [
+                      'id' => $key+1,
+                      'name' => $filename
+                  ]]);
+              $result = array_add($result, $key , $file_array);
+              $jsonresult = json_encode($result);
+              $photoParent->images = $jsonresult;
+              $photoParent->save();
 
-        foreach($files as $key=>$file) {
+              $uploadcount ++;
+            } // end if
+          
+          }
 
-          // $rules = array('file' => 'required'); //'required|mimes:png,gif,jpeg,txt,pdf,doc'
-          // $validator = Validator::make(array('file'=> $file), $rules);
-          // if($validator->passes()){
-            $storage = \Storage::disk('public');
-            $destinationPath = 'froala/uploads';
-            $storage->makeDirectory($destinationPath);
-            $filename = time().$key.'.'.$file->getClientOriginalExtension();
-
-            $upload_success = $file->move($destinationPath, $filename);
-
-            $file_array = array();
-            $file_array = array_collapse([$file_array, [
-                    'id' => $key+1,
-                    'name' => $filename
-                ]]);
-
-            $result = array_add($result, $key , $file_array);
-            
-            $jsonresult = json_encode($result);
-            //$files_ser = serialize($result);
-            
-            $photoParent->images = $jsonresult;
-            $photoParent->save();
-
-            $uploadcount ++;
-
-          // } // endif
-        }
+        
 
         return redirect()->route('admin.photoParent.show', $photoParent);
     }

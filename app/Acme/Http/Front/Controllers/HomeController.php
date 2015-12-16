@@ -26,10 +26,10 @@ class HomeController extends Controller
         $channel = \Model\Channel\ModelName::general();
        
         if($lc == 'kg'){
-            $generalPosts = \Model\Post\ModelName::general($channel)->published()->languagekg()->take(6)->skip(0)->orderBy('id', 'desc')->get();    
+            $generalPosts = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->take(6)->skip(0)->orderBy('id', 'desc')->get();    
             $projects = \Model\Project\ModelName::having('name','<>','')->get();
         }elseif($lc == 'ru'){
-            $generalPosts = \Model\Post\ModelName::general($channel)->published()->languageru()->take(6)->skip(0)->orderBy('id', 'desc')->get();    
+            $generalPosts = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languageru()->take(6)->skip(0)->orderBy('id', 'desc')->get();    
             $projects = \Model\Project\ModelName::where('nameRu','<>','')->get();
         }
 
@@ -70,7 +70,7 @@ class HomeController extends Controller
 
 
         // Photo Gallery
-        $photoGalleries = \Model\PhotoParent\ModelName::where('published','=',true)->take('10')->orderBy('id','desc')->get();
+        $photoGalleries = \Model\PhotoParent\ModelName::where('extracolumn','=','1')->where('published','=',true)->take('10')->orderBy('id','desc')->get();
         
 
         $MediaCategories = \Model\MediaCategory\ModelName::orderBy('id','asc')->get();
@@ -185,9 +185,9 @@ class HomeController extends Controller
         $lc = app()->getlocale();
         $perPage = 10;
         if($lc == 'kg'){
-            $postAll = \Model\Post\ModelName::where('title','<>','')->orderBy('id','desc')->paginate($perPage);    
+            $postAll = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->orderBy('id','desc')->paginate($perPage);    
         }elseif($lc == 'ru'){
-            $postAll = \Model\Post\ModelName::where('titleRu','<>','')->orderBy('id','desc')->paginate($perPage);
+            $postAll = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->orderBy('id','desc')->paginate($perPage);
         }
         
 
