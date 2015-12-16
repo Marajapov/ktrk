@@ -124,10 +124,10 @@
                                                 <i class="fa fa-search"></i>
                                             </button>
                                         </form>
-                                        <button class="btn btn-danger btn-live" data-toggle="modal" data-target="#liveModal">
+<!--                                         <button class="btn btn-danger btn-live" data-toggle="modal" data-target="#liveModal">
                                             <i class="fa fa-dot-circle-o"></i>
                                             түз эфир
-                                        </button>
+                                        </button> -->
                                     </ul>
                                 </div><!-- /.navbar-collapse -->
                             </div><!-- /.container-fluid -->
@@ -1159,10 +1159,11 @@
             //    });
 
             playerInstance.setup({
+                autostart: true,
                 playlist: [{
                         image: "{{ asset('images/channels/muztv.png') }}",
                         sources: [{
-                                file: "rtmp://212.112.96.233:1936/live/ktrk.stream"
+                                file: "http://212.112.97.18:80/live/4002.flv"
                             }]
                     }],
                 width: "100%",
