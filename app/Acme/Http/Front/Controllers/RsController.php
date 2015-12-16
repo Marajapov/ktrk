@@ -17,9 +17,20 @@ class RsController extends Controller
     public function index(Request $request) // list of videos
     {
 
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            $posts = \Model\Post\ModelName::where('ns','=','1')->published()->languagekg()->take(10)->skip(2)->orderBy('id', 'desc')->get();    
+            $popPosts = \Model\Post\ModelName::where('ns','=','1')->published()->languagekg()->take(2)->skip(0)->orderBy('id', 'desc')->get();
+        }elseif($lc == 'ru'){
+            $posts = \Model\Post\ModelName::where('ns','=','1')->published()->languageru()->take(10)->skip(2)->orderBy('id', 'desc')->get();  
+            $popPosts = \Model\Post\ModelName::where('ns','=','1')->published()->languageru()->take(2)->skip(0)->orderBy('id', 'desc')->get();  
+        }
+
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
-        return view('Front::rs.index',[
+        return view('Front::ns.index',[
+            'posts' => $posts,
+            'popPosts' => $popPosts,
             'backgroundMain' => $backgroundMain,
         ]);
     }

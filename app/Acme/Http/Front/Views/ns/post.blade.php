@@ -30,19 +30,19 @@
 
                       <div class="col-md-12 block news-block">
                         <h4 class="news-title">
-                          {{ dd($post) }}
+                          {{ $post->getTitleRuOrKg() }}
                           <div class="extra">
-                            <span class="art-date"><i class="fa fa-calendar"></i>18 Нояб , 12:22</span>
-                            <span class="art-view"><i class="fa fa-eye"></i>17</span>
+                            <span class="art-date"><i class="fa fa-calendar"></i>{{ $post->getDay() }} {{ $post->getMonthRu() }}, {{ $post->getTime() }}</span>
+                            <span class="art-view"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
                           </div>
                         </h4>
 
                         <p class="post-thumb" href="#">
-                          <img height="150" class="left" src="{{ asset('images/11449585369.jpg') }}" alt="image">
+                          <img height="150" class="left" src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif" alt="image">
                         </p>
 
                         <p>
-                          Коомдук телерадио берүү корпорациясы - инновациялык жана илимге байланыштуу берүүлөрдү көбүрөөк көрсөтүшү керек. Бул тууралуу, КТРКнын байкоочу кеңешинин кезектеги жыйынында айтылды. Жыйында айтылгандарга караганда, учурда Улуттук илимдер академиясынын окумуштуулары бир катар илимий ачылыштарды жасаган. Бирок алардын эмгеги телеканалдардан чагылдырылбай жатат.
+                          {!! $post->getContent() !!}
                         </p>
 
                       </div>

@@ -509,6 +509,18 @@ form:after {
 .fileinput .form-control{
     padding-top: 7px;
 }
+.btn-publish{
+    text-transform: uppercase;
+    font-size: 10px;
+    line-height: 24px;
+}
+.x_content .table .form-publish{
+    float: none;
+}
+.x_content .table .btn-publish{
+    float: none;
+    margin: 0;
+}
 
 /*TELEPROGRAMM*/
 .x_title h2{

@@ -57,7 +57,7 @@
                       <i class="fa fa-pencil"></i>
                     </a>
                     {!! Form::open(['route' => ['admin.project.destroy', $project], 'method' => 'DELETE', 'onsubmit' => "return confirm('Вы уверены ?')"]) !!}
-                    <button type="submit" class="btn btn-default" href="#">
+                    <button type="submit" class="btn btn-default">
                       {{--<span class="glyphicon glyphicon-trash"></span>--}}
                       <i class="fa fa-trash"></i>
                     </button>

@@ -3,6 +3,7 @@
 
 @section('styles')
   <link rel="stylesheet" href="{{ asset('css/admin/dataTables.bootstrap.css') }}"/>
+  <link rel="stylesheet" href="{{ asset('css/build.css') }}"/>
 @endsection
 
 @section('content')
@@ -27,36 +28,60 @@
             <th>Миниатюра</th>
             <th>{{ trans('site.TitleKG') }}</th>
             <th>{{ trans('site.TitleRU') }}</th>
+            <th>Статус</th>
             <th>Действия</th>
           </tr>
           </thead>
 
           <tbody>
           @foreach($photoParents as $photoParent)
-            <tr>
+            <tr class="@if($photoParent->published == 1) success @elseif($photoParent->published == 0) danger @endif">
               <td class="table-img text-center">
                 <img src="{{ asset($photoParent->getThumbnail()) }}" alt=""/>
               </td>
               <td class="table-title">
-                <a href="{{ route('admin.project.show', $photoParent) }}">
+                <a href="{{ route('admin.photoParent.show', $photoParent) }}">
                   {{ $photoParent->getNameKg() }}
                 </a>
               </td>
               <td class="table-title">
-                <a href="{{ route('admin.project.show', $photoParent) }}">
+                <a href="{{ route('admin.photoParent.show', $photoParent) }}">
                   {{ $photoParent->getNameRu() }}
                 </a>
               </td>
+              <td class="hidden-xs text-center">
+                @if($photoParent->published == 1)
+
+                  <p>опубликован</p>
+
+                  {!! Form::open(['route' => ['admin.photoParent.unpublish', $photoParent->id],'class'=>'form-publish', 'method' => 'get', 'onsubmit' => "return confirm('Вы уверены ?')"]) !!}
+                  <input type="hidden" value="{{ $photoParent->id }}" name="photoParentId">
+
+                  <button class="btn btn-labeled btn-danger btn-publish" type="submit">Снять</button>
+                  {!! Form::close() !!}
+
+                @else
+
+                  <p>не опубликован</p>
+
+                  {!! Form::open(['route' => ['admin.photoParent.publish', $photoParent->id],'class'=>'form-publish', 'method' => 'get', 'onsubmit' => "return confirm('Вы уверены ?')"]) !!}
+                  <input type="hidden" value="{{ $photoParent->id }}" name="photoParentId">
+
+                  <button class="btn btn-labeled btn-success btn-publish" type="submit">опубликовать</button>
+                  {!! Form::close() !!}
+
+                @endif
+              </td>
               <td>
-                <a class="btn btn-default" href="{{ route('admin.project.show', $photoParent) }}">
+                <a class="btn btn-default" href="{{ route('admin.photoParent.show', $photoParent) }}">
                   {{--<span class="glyphicon glyphicon-eye-open"></span>--}}
                   <i class="fa fa-eye"></i>
                 </a>
-                <a class="btn btn-default" href="{{ route('admin.project.edit', $photoParent) }}">
+                <a class="btn btn-default" href="{{ route('admin.photoParent.edit', $photoParent) }}">
                   {{--<span class="glyphicon glyphicon-pencil"></span>--}}
                   <i class="fa fa-pencil"></i>
                 </a>
-                {!! Form::open(['route' => ['admin.project.destroy', $photoParent], 'method' => 'DELETE', 'onsubmit' => "return confirm('Вы уверены ?')"]) !!}
+                {!! Form::open(['route' => ['admin.photoParent.destroy', $photoParent], 'method' => 'DELETE', 'onsubmit' => "return confirm('Вы уверены ?')"]) !!}
                 <button type="submit" class="btn btn-default" href="#">
                   {{--<span class="glyphicon glyphicon-trash"></span>--}}
                   <i class="fa fa-trash"></i>
@@ -69,29 +94,6 @@
 
         </table>
 
-				<div class="clearfix"></div>
-				<div class="list-group">
-					@foreach($photoParents as $photoParent)
-					<a href="{{ route('admin.photoParent.show', $photoParent) }}" class="list-group-item col-md-1">
-						{{ $photoParent->getName() }}
-					</a>
-					@if($photoParent->published == 1)
-					{!! Form::open(['route' => ['admin.photoParent.unpublish', $photoParent->id], 'method' => 'get', 'onsubmit' => "return confirm('Вы уверены ?')"]) !!}
-              			<input type="hidden" value="{{ $photoParent->id }}" name="photoParentId">
-              
-              			<button class="btn btn-labeled btn-danger" type="submit"><span class="btn-label"><i class="glyphicon glyphicon-checked"></i></span>Снять</button>
-              		{!! Form::close() !!}
-					@else
-					
-					{!! Form::open(['route' => ['admin.photoParent.publish', $photoParent->id], 'method' => 'get', 'onsubmit' => "return confirm('Вы уверены ?')"]) !!}
-              			<input type="hidden" value="{{ $photoParent->id }}" name="photoParentId">
-              
-              			<button class="btn btn-labeled btn-success" type="submit"><span class="btn-label"><i class="glyphicon glyphicon-remove"></i></span>Опубликовать</button>
-              		{!! Form::close() !!}
-
-					@endif
-					@endforeach
-				</div>
 			</div>
 		</div>
 	</div>

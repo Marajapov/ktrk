@@ -27,168 +27,50 @@
                       <h3 class="panel-title"><span>{{ trans('site.Top news') }}</span></h3>
                     </div>
                     <div class="panel-body second-panel-body">
+                      @foreach($postAll as $post)
                       <div class="media">
                         <div class="media-left">
-                          <a href="#">
-                            <img class="media-object thumb" src="http://sputnik.kg/images/102017/14/1020171449.jpg" alt="image">
+                          <a href="{{ route('front.ns.post', $post) }}">
+                            <img class="media-object thumb" src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif" alt="image">
                           </a>
                         </div>
                         <div class="media-body">
                           <div class="extra">
-                            <span class="e-datetime">18 Нояб , 12:22</span>
-                            <span class="e-views"><i class="fa fa-eye"></i>17</span>
+                            <span class="e-datetime">{{ $post->getDay() }} {{ $post->getMonthRu() }}, {{ $post->getTime() }}</span>
+                            <span class="e-views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
                           </div>
-                          <a class="media-heading" href="http://1000.ktrk.kg/post/1">КТРК: из-за работы я стал изгоем для родственников</a>
+                          <a class="media-heading" href="{{ route('front.ns.post', $post) }}">{{ $post->getTitleRuOrKg() }}</a>
                         </div>
                       </div>
-                      <div class="media">
-                        <div class="media-left">
-                          <a href="#">
-                            <img class="media-object thumb" src="http://ktrk.kg/sites/default/files/styles/juicebox_medium/public/gallery/album/fotos/_mg_9802.jpg?itok=YROMXAeD" alt="image">
-                          </a>
-                        </div>
-                        <div class="media-body">
-                          <div class="extra">
-                            <span class="e-datetime">18 Нояб , 12:22</span>
-                            <span class="e-views"><i class="fa fa-eye"></i>17</span>
-                          </div>
-                          <a class="media-heading" href="http://1000.ktrk.kg/post/1">КТРКнын жаңыланган заманбап кеңсеси</a>
-                        </div>
-                      </div>
-                      <div class="media">
-                        <div class="media-left">
-                          <a href="#">
-                            <img class="media-object thumb" src="http://1000.ktrk.kg/img/thumbnail/11447849392.png" alt="image">
-                          </a>
-                        </div>
-                        <div class="media-body">
-                          <div class="extra">
-                            <span class="e-datetime">18 Нояб , 12:22</span>
-                            <span class="e-views"><i class="fa fa-eye"></i>17</span>
-                          </div>
-                          <a class="media-heading" href="http://1000.ktrk.kg/post/1">КМЮА: ректор шайланды</a>
-                        </div>
-                      </div>
-                      <div class="media">
-                        <div class="media-left">
-                          <a href="#">
-                            <img class="media-object thumb" src="http://sputnik.kg/images/102017/14/1020171449.jpg" alt="image">
-                          </a>
-                        </div>
-                        <div class="media-body">
-                          <div class="extra">
-                            <span class="e-datetime">18 Нояб , 12:22</span>
-                            <span class="e-views"><i class="fa fa-eye"></i>17</span>
-                          </div>
-                          <a class="media-heading" href="http://1000.ktrk.kg/post/1">КТРК: из-за работы я стал изгоем для родственников</a>
-                        </div>
-                      </div>
+                      @endforeach
 
-                      <div class="media">
-                        <div class="media-left">
-                          <a href="#">
-                            <img class="media-object thumb" src="http://ktrk.kg/sites/default/files/styles/juicebox_medium/public/gallery/album/fotos/_mg_9802.jpg?itok=YROMXAeD" alt="image">
-                          </a>
-                        </div>
-                        <div class="media-body">
-                          <div class="extra">
-                            <span class="e-datetime">18 Нояб , 12:22</span>
-                            <span class="e-views"><i class="fa fa-eye"></i>17</span>
-                          </div>
-                          <a class="media-heading" href="http://1000.ktrk.kg/post/1">КТРКнын жаңыланган заманбап кеңсеси</a>
-                        </div>
-                      </div>
-                      <div class="media">
-                        <div class="media-left">
-                          <a href="#">
-                            <img class="media-object thumb" src="http://ktrk.kg/sites/default/files/styles/juicebox_medium/public/gallery/album/fotos/_mg_9802.jpg?itok=YROMXAeD" alt="image">
-                          </a>
-                        </div>
-                        <div class="media-body">
-                          <div class="extra">
-                            <span class="e-datetime">18 Нояб , 12:22</span>
-                            <span class="e-views"><i class="fa fa-eye"></i>17</span>
-                          </div>
-                          <a class="media-heading" href="http://1000.ktrk.kg/post/1">КТРКнын жаңыланган заманбап кеңсеси</a>
-                        </div>
-                      </div>
-                      <div class="media">
-                        <div class="media-left">
-                          <a href="#">
-                            <img class="media-object thumb" src="http://ktrk.kg/sites/default/files/styles/juicebox_medium/public/gallery/album/fotos/_mg_9802.jpg?itok=YROMXAeD" alt="image">
-                          </a>
-                        </div>
-                        <div class="media-body">
-                          <div class="extra">
-                            <span class="e-datetime">18 Нояб , 12:22</span>
-                            <span class="e-views"><i class="fa fa-eye"></i>17</span>
-                          </div>
-                          <a class="media-heading" href="http://1000.ktrk.kg/post/1">КТРКнын жаңыланган заманбап кеңсеси</a>
-                        </div>
-                      </div>
-                      <div class="media">
-                        <div class="media-left">
-                          <a href="#">
-                            <img class="media-object thumb" src="http://ktrk.kg/sites/default/files/styles/juicebox_medium/public/gallery/album/fotos/_mg_9802.jpg?itok=YROMXAeD" alt="image">
-                          </a>
-                        </div>
-                        <div class="media-body">
-                          <div class="extra">
-                            <span class="e-datetime">18 Нояб , 12:22</span>
-                            <span class="e-views"><i class="fa fa-eye"></i>17</span>
-                          </div>
-                          <a class="media-heading" href="http://1000.ktrk.kg/post/1">КТРКнын жаңыланган заманбап кеңсеси</a>
-                        </div>
-                      </div>
-                      <div class="media">
-                        <div class="media-left">
-                          <a href="#">
-                            <img class="media-object thumb" src="http://ktrk.kg/sites/default/files/styles/juicebox_medium/public/gallery/album/fotos/_mg_9802.jpg?itok=YROMXAeD" alt="image">
-                          </a>
-                        </div>
-                        <div class="media-body">
-                          <div class="extra">
-                            <span class="e-datetime">18 Нояб , 12:22</span>
-                            <span class="e-views"><i class="fa fa-eye"></i>17</span>
-                          </div>
-                          <a class="media-heading" href="http://1000.ktrk.kg/post/1">КТРКнын жаңыланган заманбап кеңсеси</a>
-                        </div>
-                      </div>
-                      <div class="media">
-                        <div class="media-left">
-                          <a href="#">
-                            <img class="media-object thumb" src="http://ktrk.kg/sites/default/files/styles/juicebox_medium/public/gallery/album/fotos/_mg_9802.jpg?itok=YROMXAeD" alt="image">
-                          </a>
-                        </div>
-                        <div class="media-body">
-                          <div class="extra">
-                            <span class="e-datetime">18 Нояб , 12:22</span>
-                            <span class="e-views"><i class="fa fa-eye"></i>17</span>
-                          </div>
-                          <a class="media-heading" href="http://1000.ktrk.kg/post/1">КТРКнын жаңыланган заманбап кеңсеси</a>
-                        </div>
-                      </div>
                     </div>
 
-                    <nav>
-                      <ul class="pagination">
-                        <li class="hidden">
-                          <a href="#" aria-label="Previous">
-                            <span aria-hidden="true">«</span>
-                          </a>
-                        </li>
-                        <li class="active"><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
+                     <nav>
+                    <ul class="pagination">
+
+                      <li>
+                        <a href="{{ route('front.ns.posts', ['page' => 1]) }}" class="btn btn-default @if($postAll->currentPage() == 1) disabled @endif">{{ trans('site.Start') }}</a>
+                      </li>
+                      <li>
+                        <a href="{{ $postAll->previousPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                      </li>
+                      <li>
+                        <a href="{{ $postAll->nextPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                      </li>
+
+                      @for($i = 0, $j = 1; $i < $postAll->total(); $i+=$perPage)
                         <li>
-                          <a href="#" aria-label="Next">
-                            <span aria-hidden="true">»</span>
-                          </a>
+                          <a href="{{ route('front.general', ['page' => $j]) }}" class="btn btn-default @if($postAll->currentPage() == $j) active @endif">{{ $j++ }}</a>
                         </li>
-                      </ul>
-                    </nav>
+                      @endfor
+
+                      <li>
+                        <a href="{{ route('front.general', ['page' => ceil($postAll->total()/$perPage)]) }}" class="btn btn-default @if($postAll->currentPage() == ceil($postAll->total()/$perPage)) disabled @endif">{{ trans('site.End') }}</a>
+                      </li>
+
+                    </ul>
+                  </nav>
 
                   </div>
                 </div>
