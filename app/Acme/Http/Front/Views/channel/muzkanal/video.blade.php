@@ -124,10 +124,10 @@
                                                 <i class="fa fa-search"></i>
                                             </button>
                                         </form>
-                                        <button class="btn btn-danger btn-live" data-toggle="modal" data-target="#liveModal">
+<!--                                         <button class="btn btn-danger btn-live" data-toggle="modal" data-target="#liveModal">
                                             <i class="fa fa-dot-circle-o"></i>
                                             түз эфир
-                                        </button>
+                                        </button> -->
                                     </ul>
                                 </div><!-- /.navbar-collapse -->
                             </div><!-- /.container-fluid -->

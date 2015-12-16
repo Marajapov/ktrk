@@ -1,3 +1,76 @@
+/*LANGUAGE Birinchi radio*/
+.language{
+    position: absolute;
+    z-index: 2;
+
+    margin-left: -43px;
+    margin-top: 4px;
+
+    -webkit-transition: bottom 0.3s;
+    -moz-transition: bottom 0.3s;
+    -ms-transition: bottom 0.3s;
+    -o-transition: bottom 0.3s;
+    transition: bottom 0.3s;
+}
+.language ul{
+    text-align: center;
+}
+.language li{
+    padding: 0 7px;
+
+    background: #484646;
+}
+.language li a{
+    position: relative;
+
+    color: #ffffff;
+
+    font-size: 11px;
+    text-transform: uppercase;
+}
+.language li.active{
+    background: #EE3224;
+}
+.language li.active a{
+    color: rgba(255, 255, 255, 0.65);
+}
+/*LANGUAGE Landing radio pages*/
+.langs{
+    position: absolute;
+    z-index: 2;
+
+    margin-left: -58px;
+    margin-top: 3px;
+
+    -webkit-transition: bottom 0.3s;
+    -moz-transition: bottom 0.3s;
+    -ms-transition: bottom 0.3s;
+    -o-transition: bottom 0.3s;
+    transition: bottom 0.3s;
+}
+.langs ul{
+    text-align: center;
+}
+.langs li{
+    padding: 0 7px;
+
+    background: none;
+    border-radius: 3px !important;
+}
+.langs li a{
+    position: relative;
+
+    color: #000;
+
+    font-size: 11px;
+    text-transform: uppercase;
+}
+.langs li.active{
+    background: #0CB2AB;
+}
+.langs li.active a{
+    color: rgba(255, 255, 255, 0.65);
+}
 /* Birinchi Radio page styles*/
 .birinchiradio {
   font-family: 'Roboto Regular';
@@ -126,7 +199,6 @@
 .birinchiradio #site-channel1 a {
   display: block;
   padding: 0px;
-  margin-bottom: 5px;
   float: left;
 }
 .birinchiradio .sitemenu a {
@@ -140,7 +212,7 @@
   color: #FFFFFF;
   font-size: 31px;
   float: left;
-  margin: 10px 0px 0px 0px;
+  margin: 11px 0px 0px 0px;
 }
 .birinchiradio .navbar i {
   padding-right: 10px;
