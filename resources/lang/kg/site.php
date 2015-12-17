@@ -218,6 +218,7 @@ return [
     'AdminPhotoParentChange' => 'Сүрөт галересяын өзгөртүү',
     'AdminPhotoParentNewGal' => 'Жаңы сүрөт галереясы',
     'AdminPhotoParents' => 'Сүрөт галереялары',
+    'AdminPhotoParentLocation' => 'Жайгашкан жери',
     '' => '',
 
     //Post menu

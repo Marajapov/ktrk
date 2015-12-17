@@ -37,6 +37,12 @@
               </p>
             </li>
             <li class="list-group-item">
+              <p class="header">{{ trans('site.AdminPhotoParentLocation') }}</p>
+              <p class="body">
+                {{ $photoParent->getLocation() }}
+              </p>
+            </li>
+            <li class="list-group-item">
               <p class="header">{{ trans('site.Title') }}</p>
               <p class="body">
                 {{ $photoParent->getNameKg() }}

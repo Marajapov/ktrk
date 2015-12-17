@@ -75,6 +75,25 @@ class ModelName extends Model
     {
         return $this->status;
     }
+
+    public function getLocation()
+    {
+        $result = '';
+        if($this->extracolumn == '1') $result .= trans('site.AdminHomeTitle');
+        if($this->ns == '1') $result .= ', '.trans('site.BaikoochuKenesh');
+        if($this->rs == '1') $result .= ', '.trans('site.RedKenesh');
+        if($this->director == '1') $result .= ', Ген.директор';
+        if($this->muzkanal == '1') $result .= ', Музканал';
+        if($this->kyrgyzradio == '1') $result .= ', Кыргыз радио';
+        if($this->birinchi == '1') $result .= ', Биринчи радио';
+        if($this->balastan == '1') $result .= ', Баластан';
+        if($this->madaniyat == '1') $result .= ', Маданият';
+        if($this->minkiyal == '1') $result .= ', Мин кыял';
+
+        return $result;
+
+    }
+
     public function getDay()
     {
         $fullDate = $this->created_at;

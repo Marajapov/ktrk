@@ -1196,6 +1196,9 @@ header {
     -o-transition: opacity 0.3s ease, transform 0.3s ease;
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
+.gallery .slick-slide span{
+    padding: 0 20px;
+}
 .gallery .slick-slide:hover span, .broadimages .slick-slide:hover span {
     opacity: 1;
     -moz-transform: scale(1);
@@ -1222,6 +1225,14 @@ header {
 .gallery .slick-prev:before, .gallery .slick-next:before {
     color: #ffffff;
     font-size: 25px;
+}
+.gallery .slick-slide i{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 3;
+    color: #fff;
+    font-size: 20px;
 }
 
 /*CAROUSEL POST*/

@@ -21,7 +21,6 @@ class HomeController extends Controller
      */
     public function Home()
     {
-
         $lc = app()->getlocale();
         $channel = \Model\Channel\ModelName::general();
        
@@ -386,24 +385,34 @@ class HomeController extends Controller
             ]);
     }
 
-    public function Gallery(Request $request)
+    public function Galleries()
+    {
+        $lc = app()->getlocale();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+        $galleries = \Model\PhotoParent\ModelName::where('extracolumn','=','1')->where('published','=',true)->orderBy('id','desc')->get();
+
+        return view('Front::gallery.galleries',[
+            'backgroundMain' => $backgroundMain,
+
+            'galleries' => $galleries,
+        ]);
+    }
+
+    public function Gallery(Request $request, $galleryId)
     {
         $lc = app()->getlocale();
 
-        $id =$request->photoParentId;
-        $row = \Model\PhotoParent\ModelName::where('id','=',$id)->first();
+        $gallery = \Model\PhotoParent\ModelName::where('id','=',$galleryId)->first();
+        $images = json_decode($gallery->images);
 
-        $images = json_decode($row->images); // array of images
-
-        $categories = \Model\Category\ModelName::all();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
         return view('Front::gallery.gallery',[
-            'row' => $row,
             'lc' => $lc,
             'images' => $images,
-            'categories'=>$categories,
             'backgroundMain' => $backgroundMain,
+            'gallery' => $gallery,
             ]);
     }
 
