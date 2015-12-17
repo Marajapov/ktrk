@@ -124,7 +124,7 @@ class PostController extends Controller
             $storage = \Storage::disk('public');
             $storage->makeDirectory($dir);
 
-            Image::make($_FILES['thumbnail']['tmp_name'])->resize(250, 150)->save($dir.'/'.$name);
+            Image::make($_FILES['thumbnail']['tmp_name'])->fit(250, 150)->save($dir.'/'.$name);
 
             $post->thumbnail = $dir.'/'.$name;
             $post->save();
@@ -239,7 +239,7 @@ class PostController extends Controller
 
             $name = $post->id().$btw.'.'.$file->getClientOriginalExtension();
 
-            Image::make($_FILES['thumbnail']['tmp_name'])->resize(250, 150)->save($dir.'/'.$name);
+            Image::make($_FILES['thumbnail']['tmp_name'])->fit(250, 150)->save($dir.'/'.$name);
 
             $storage = \Storage::disk('public');
             $storage->makeDirectory($dir);

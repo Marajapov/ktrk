@@ -113,6 +113,10 @@ return [
     'Select' => 'Выбрать',
     '' => '',
 
+    //    Народный репортер
+    'Reporter' => 'Народный репортер',
+    'ReporterAdd' => 'Добавить новость',
+
     // Admin panel translate
     'AdminHomeTitle' => 'Главная',
     'AdminPhotoUploadTitle' => 'База картинок',

@@ -18,7 +18,7 @@ class CreatePeoplereporterTable extends Migration
             $table->string('nameRu');
             $table->text('content');
             $table->text('contentRu');
-            $table->string('thumbnail');
+            $table->binary('thumbnail');
             $table->string('video');
             $table->boolean('published')->nullable()->default(false);
             $table->smallInteger('viewed')->default(0);

@@ -466,14 +466,6 @@
                   <div class="carousel-slick">
                     @if($photoGalleries)
                       @foreach($photoGalleries as $photoGallery)
-
-                        <div class="col-md-4 hidden">
-                          {!! Form::open(['route' => ['front.gallery', $photoGallery->id], 'method' => 'get', 'onclick' => "submit()"]) !!}
-                            <img src="{{ asset($photoGallery->status) }}" alt=""/><span>{{ $photoGallery->getName() }}</span>
-                            <div class="overlay"></div>
-                            <input type="hidden" value="{{ $photoGallery->id }}" name="photoParentId">
-                          {!! Form::close() !!}
-                        </div>                    
                         
                         <div class="col-md-4">
                           <a href="{{ route('front.gallery', $photoGallery) }}">

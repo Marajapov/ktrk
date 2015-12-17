@@ -2,6 +2,9 @@
 namespace Front\Controllers;
 //use Illuminate\Http\Request;
 use Illuminate\Http\Request;
+use Input;
+use Intervention\Image\ImageManagerStatic as Image;
+use Illuminate\Support\Facades\Validator;
 
 class HomeController extends Controller
 {
@@ -393,6 +396,7 @@ class HomeController extends Controller
         $galleries = \Model\PhotoParent\ModelName::where('extracolumn','=','1')->where('published','=',true)->orderBy('id','desc')->get();
 
         return view('Front::gallery.galleries',[
+            'lc' => $lc,
             'backgroundMain' => $backgroundMain,
 
             'galleries' => $galleries,
@@ -416,5 +420,101 @@ class HomeController extends Controller
             ]);
     }
 
+    public function Reporter()
+    {
+        $lc = app()->getlocale();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+//        $galleries = \Model\PhotoParent\ModelName::where('extracolumn','=','1')->where('published','=',true)->orderBy('id','desc')->get();
+
+        return view('Front::reporter.index',[
+            'lc' => $lc,
+            'backgroundMain' => $backgroundMain,
+
+//            'galleries' => $galleries,
+        ]);
+    }
+
+    public function ReporterAdd(Request $request)
+    {
+        $lc = app()->getlocale();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+        $reporter = \Model\PeopleReporter\ModelName::create($request->except('images','video','q'));
+
+        $images = $request->file('images');
+        $rules = array(
+            'image' => 'image'
+        );
+
+        $result = array();
+
+        if($request->hasFile('images'))
+        {
+            foreach($images as $key=>$image)
+            {
+                $target = array('image' => $image);
+                $validator = Validator::make($target, $rules);
+
+                if ($validator->fails())
+                {
+                    return redirect()->route('front.reporter');
+                }
+                else
+                {
+                    $storage = \Storage::disk('public');
+                    $destinationPath = 'froala/uploads';
+                    $storage->makeDirectory($destinationPath);
+
+                    $filename = time().$key.'.'.$image->getClientOriginalExtension();
+
+                    Image::make($_FILES['images']['tmp_name'][$key])->fit(250,150)->save($destinationPath.'/'.$filename);
+
+                    $files_array = array();
+                    $files_array = array_collapse([$files_array, [
+                        'id' => $key+1,
+                        'name' => $filename
+                    ]]);
+
+                    $result = array_add($result, $key , $files_array);
+                    $jsonresult = json_encode($result);
+
+                    $reporter->thumbnail = $jsonresult;
+                    $reporter->save();
+                }
+            }
+        }
+
+        $video = $request->file('video');
+        $video_rules = array(
+            'video' => 'mimes:mimes:m4v,avi,flv,mp4,mov,3gp | max:51200'
+        );
+
+        if($request->hasFile('video')){
+            $targetVideo = array(
+                'video' => $video
+            );
+            $validator = Validator::make($targetVideo, $video_rules);
+
+            if ($validator->fails())
+            {
+                return redirect()->route('front.reporter');
+            }
+            else
+            {
+                $storage = \Storage::disk('public');
+                $destinationPath = 'froala/videos';
+                $storage->makeDirectory($destinationPath);
+
+                $filename = time().'.'.$video->getClientOriginalExtension();
+                $video->move($destinationPath, $filename);
+
+                $reporter->video = $filename;
+                $reporter->save();
+            }
+        }
+
+        return redirect()->route('front.reporter');
+    }
 }
 
