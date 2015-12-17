@@ -153,82 +153,28 @@
                <aside class="dw_focus_widget_news_slider">
                   <div id="carousel-news-slider-2" class="carousel slide" data-ride="carousel">
                      <div class="carousel-inner" role="listbox">
+                        @foreach($generalPosts as $generalPost)
                         <div class="item next left">
                            <article class="carousel-entry">
-                              <a href="#"><img width="710" height="400" src="{{asset('images/gallery/001.jpg')}}" alt=""></a>
-                              <span class="cat-links "><a href="#" rel="category tag">Спорт</a></span>                     
-                              <div class="carousel-caption">
-                                 <div class="entry-meta ">
-                                    <span class="entry-date"><i class="fa fa-clock-o"></i>2 Декабрь, 2015</span>
-                                 </div>
-                                 <h1 class="entry-title"><a href="#">Кыргыз бильярдчылар Орусияда күч сынашууда</a></h1>
-                              </div>
-                           </article>
-                        </div>
-                        <div class="item">
-                           <article class="carousel-entry">
-                              <a href="#"><img width="710" height="400" src="{{asset('images/gallery/002.jpg')}}" alt=""></a>
-                              <span class="cat-links "><a href="#" rel="category tag">Эконоимка</a>, <a href="#" rel="category tag">Орусия</a></span>                     
-                              <div class="carousel-caption">
-                                 <div class="entry-meta ">
-                                    <span class="entry-date"><i class="fa fa-clock-o"></i>2 Декабрь, 2015</span>
-                                 </div>
-                                 <h1 class="entry-title"><a href="#">Орусия тыюу салган түрк товарлардын тизмеси жарыяланды</a></h1>
-                              </div>
-                           </article>
-                        </div>
-                        <div class="item">
-                           <article class="carousel-entry">
-                              <a href="#"><img width="710" height="400" src="{{asset('images/gallery/003.jpg')}}" alt=""></a>
-                              <span class="cat-links "><a href="#" rel="category tag">Кырсык</a></span>                     
-                              <div class="carousel-caption">
-                                 <div class="entry-meta ">
-                                    <span class="entry-date"><i class="fa fa-clock-o"></i>2 Декабрь, 2015</span>
-                                 </div>
-                                 <h1 class="entry-title"><a href="#">Кечээ болгон жер титирөөдөн бир катар социалдык объекттер жабыркады</a></h1>
-                              </div>
-                           </article>
-                        </div>
-                        <div class="item">
-                           <article class="carousel-entry">
-                              <a href="#"><img width="710" height="400" src="{{asset('images/gallery/004.jpg')}}" alt=""></a>
-                              <span class="cat-links "><a href="#" rel="category tag">Дүйнө жаңылыктары</a></span>                        
+                              <a href="#"><img width="710" height="400" src="@if(!($generalPost->getFile()))images/live_bg.png @else {{ asset($generalPost->getFile()) }} @endif" alt=""></a>
+                              <span class="cat-links"><a href="#" rel="category tag">{{ $generalPost->category('category_id')->first()->getTitle() }}</a></span>                        
                               <div class="carousel-caption">
                                  <div class="entry-meta">
-                                    <span class="entry-date"><i class="fa fa-clock-o"></i>2 Декабрь, 2015</span>                                             
+                                    <span class="entry-date"><i class="fa fa-clock-o"></i>{{ $generalPost->getDay() }} , {{ $generalPost->getMonthRu() }} {{ $generalPost->getYear() }}</span>                                                
                                  </div>
-                                 <h1 class="entry-title"><a href="#">Стамбулдагы жарылуудан беш киши жаракат алды</a></h1>
+                                 <h1 class="entry-title"><a href="#">{{ $generalPost->getTitleRuOrKg() }}</a></h1>
                               </div>
                            </article>
                         </div>
-                        <div class="item active left">
-                           <article class="carousel-entry">
-                              <a href="#"><img width="710" height="400" src="{{asset('images/gallery/005.jpg')}}" alt=""></a>
-                              <span class="cat-links"><a href="#" rel="category tag">Экономика</a></span>                        
-                              <div class="carousel-caption">
-                                 <div class="entry-meta">
-                                    <span class="entry-date"><i class="fa fa-clock-o"></i>2 Декабрь, 2015</span>                                                
-                                 </div>
-                                 <h1 class="entry-title"><a href="#">Доллардан баш тартууга мүмкүнбү?</a></h1>
-                              </div>
-                           </article>
-                        </div>
+                        @endforeach
                      </div>
                      <div class="carousel-navigation hidden-xs hidden-sm">
                         <h2 class="widget-title">{{ trans('radiopages.Mainnews') }}</h2>
                         <ol class="carousel-title-indicators">
-                           <li data-target="#carousel-news-slider-2" data-slide-to="0" class="">Кыргыз бильярдчылар Орусияда күч сынашууда</li>
-                           <li data-target="#carousel-news-slider-2" data-slide-to="1" class="">Орусия тыюу салган түрк товарлардын тизмеси жарыяланды</li>
-                           <li data-target="#carousel-news-slider-2" data-slide-to="2" class="">Кечээ болгон жер титирөөдөн бир катар социалдык объекттер жабыркады</li>
-                           <li data-target="#carousel-news-slider-2" data-slide-to="3" class="">Стамбулдагы жарылуудан беш киши жаракат алды</li>
                            <li data-target="#carousel-news-slider-2" data-slide-to="4" class="active">Доллардан баш тартууга мүмкүнбү?</li>
                         </ol>
                         <ol class="carousel-indicators">
-                           <li data-target="#carousel-news-slider-2" data-slide-to="0" class="active"></li>
-                           <li data-target="#carousel-news-slider-2" data-slide-to="1" class=""></li>
-                           <li data-target="#carousel-news-slider-2" data-slide-to="2" class=""></li>
-                           <li data-target="#carousel-news-slider-2" data-slide-to="3" class=""></li>
-                           <li data-target="#carousel-news-slider-2" data-slide-to="4" class=""></li>
+                           <li data-target="#carousel-news-slider-2" data-slide-to="4" class="active"></li>
                         </ol>
                      </div>
                   </div>
