@@ -94,4 +94,38 @@ return [
 		'' => '',	
 		'' => '',	
 		'' => '',	
+
+        //Madaniyat channel
+		'Mabout' => 'О канале',		
+		'Korsotuu' => 'Передачи',
+		'NewKorsotuu' => 'Новые передачи',
+		'TopKorsotuu' => 'Популярные передачи',			
+		'AllVideos' => 'Все видео',	
+		'MadanTV' => 'Телеканал Маданият',	
+		'OtherGallery' => 'Другие галереи',
+		'Zoom' => 'Увеличить',		
+		'ImgDesc' => 'Описание картинки',
+		'Root' => 'Источник:',
+		'Close' => 'Закрыть',
+		'' => '',
+
+		//Kundor
+		'Monday' => 'Пн',
+		'Tuesday' => 'Вт',
+		'Wednesday' => 'Ср',
+		'Thursday' => 'Чт',
+		'Friday' => 'Пт',
+		'Saturday' => 'Сб',
+		'Sunday' => 'Вс',
+
+		//Muzic channel
+		'Clips'=> 'Клипы',			
+		'KorsotuuList'=> 'Программа передач',			
+		'NewClips'=> 'Новые клипы',			
+		'TopCLips'=> 'Популярдуу клиптер',			
+		'New'=> 'Новый!',			
+		'AboutMusic'=> 'О телеканале «МУЗЫКА»',			
+		''=> '',			
+		''=> '',			
+	
 ];

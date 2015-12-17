@@ -158,7 +158,8 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
     Route::get('rs/contacts', ['as' => 'front.rs.contacts', 'uses' => 'RsController@contacts']);
 
     // Gallery page
-    Route::get('/gallery/{gallery}',['as' => 'front.gallery','uses'=> 'HomeController@Gallery']);
+    Route::get('/gallery/{gallery}',['as' => 'front.gallery','uses'=> 'HomeController@Gallery'] );
+    Route::get('/galleries',['as' => 'front.gallery.galleries','uses'=> 'HomeController@Galleries']);
 
 Route::get('locale/{locale?}',   ['as' => 'locale',   'uses' => 'CommonController@setLocale']);
 

@@ -11,11 +11,15 @@ class BirinchiController extends Controller
     {
         $channel = \Model\Channel\ModelName::name('birinchi')->first();
 
+        $generalPosts = \Model\Post\ModelName::where('birinchi','=',1)->take(5)->orderBy('id','desc')->get();
+
+
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
         return view('Front::channel.birinchi.index', [
             'channel' => $channel,
             'backgroundMain' => $backgroundMain,
+            'generalPosts' => $generalPosts,
             ]);
     }
 

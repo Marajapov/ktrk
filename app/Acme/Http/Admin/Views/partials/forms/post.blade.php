@@ -148,19 +148,6 @@
         </div>
       </div>
 
-      <!-- kyrgyzradio -->
-      <div class="form-group">
-        <label for="parentId" class="col-sm-2 control-label"></label>
-        <div class="col-sm-10">
-          <div class="checkbox checkbox-primary ">
-            {!! Form::hidden('kyrgyzradio', 0) !!}
-            {!! Form::checkbox('kyrgyzradio', 1, null, ["id" => "kyrgyzradio", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
-            <label for="kyrgyzradio">
-              Кыргыз радио
-            </label>
-          </div>
-        </div>
-      </div>
 
       <!-- birinchi -->
       <div class="form-group">
