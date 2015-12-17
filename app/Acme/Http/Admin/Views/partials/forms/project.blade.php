@@ -39,10 +39,10 @@
       <label for="parentId" class="col-sm-2 control-label">Миниатюра</label>
       <div class="col-sm-10">
         <div class="fileinput fileinput-new" data-provides="fileinput">
-          <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
+          <div class="fileinput-new thumbnail" style="width: 250px; height: 150px;">
             @if(isset($project->thumbnail))<img src="{{ asset($project->thumbnail) }}" alt="...">@endif
           </div>
-          <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
+          <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 250px; max-height: 150px;"></div>
           <div>
                 <span class="btn btn-default btn-file">
                   <span class="fileinput-new">{{ trans('site.AdminBackgroundSelect') }}</span>

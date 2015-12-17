@@ -4,6 +4,7 @@ namespace Admin\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 
+use Illuminate\Support\Facades\File;
 use Model\Project\ModelName as Project;
 use Intervention\Image\ImageManagerStatic as Image;
 
@@ -52,7 +53,7 @@ class ProjectController extends Controller
             $storage = \Storage::disk('public');
             $storage->makeDirectory($dir);
 
-            Image::make($_FILES['thumbnail']['tmp_name'])->resize(200, 150)->save($dir.'/'.$name);
+            Image::make($_FILES['thumbnail']['tmp_name'])->fit(250, 150)->save($dir.'/'.$name);
 
             $project->thumbnail = $dir.'/'.$name;
             $project->save();
@@ -100,12 +101,14 @@ class ProjectController extends Controller
             $dir  = 'img/thumbnail/projects';
             $btw = time();
 
+            File::delete($project->thumbnail);
+
             $name = $project->id().$btw.'.'.$file->getClientOriginalExtension();
             
             $storage = \Storage::disk('public');
             $storage->makeDirectory($dir);
 
-            Image::make($_FILES['thumbnail']['tmp_name'])->resize(200, 150)->save($dir.'/'.$name);
+            Image::make($_FILES['thumbnail']['tmp_name'])->fit(250, 150)->save($dir.'/'.$name);
 
             $project->thumbnail = $dir.'/'.$name;
             $project->save();

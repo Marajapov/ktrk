@@ -1,5 +1,4 @@
 @extends('Admin::layouts.default')
-
 @section('title', $project->getName())
 
 @section('content')
@@ -44,7 +43,7 @@
               </p>
             </li>
             <li class="list-group-item">
-              <p class="header">{{ trans('site.TextKG') }}</p>
+              <p class="header">{{ trans('site.DescKG') }}</p>
               <p class="body">
                 {{ $project->description }}
               </p>
@@ -56,7 +55,7 @@
               </p>
             </li>
             <li class="list-group-item">
-              <p class="header">{{ trans('site.TextRU') }}</p>
+              <p class="header">{{ trans('site.DescRU') }}</p>
               <p class="body">
                 {{ $project->descriptionRu }}
               </p>
