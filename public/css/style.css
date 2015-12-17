@@ -2393,6 +2393,10 @@ display: block;
     text-decoration: none;
     background-color: #CF3529;
 }
+.fixedheader>.navbar .nav > li >.active{
+    background: #CF3529;
+}
+
 .fixedheader>.navbar i {
     padding-right: 5px;
 }

@@ -91,18 +91,5 @@ class MuzkanalController extends Controller
             'backgroundMain' => $backgroundMain,
             ]);
     }
-    
-  public function contacts()
-    {
-        $channel = \Model\Channel\ModelName::name('muzkanal')->first();
-
-        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
-
-        return view('Front::channel.muzkanal.contacts', [
-            'channel' => $channel,
-            'backgroundMain' => $backgroundMain,
-            ]);
-    }
-
 
 }

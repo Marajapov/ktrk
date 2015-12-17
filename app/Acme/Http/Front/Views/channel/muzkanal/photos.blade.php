@@ -1,28 +1,10 @@
-<!DOCTYPE html>
-<html>
-    <head lang="en">
-        <meta charset="UTF-8">
-        <title>Фото Галерея</title>
+@extends('Front::channel.muzkanal.default')
+@section('title', "Музканал")
+@section('styles')
+@endsection
+@section('content')
 
-        <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}"/>
-        <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}"/>
-        <link rel="stylesheet" href="{{ asset('filter/css/layout.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/gallery/component.css') }}" />
-        <link rel="stylesheet" href="{{ asset('css/style.css') }}"/>
-        <link rel="stylesheet" href="{{ asset('css/audio/muzslider.css') }}"/>
-        <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick.css') }}"/>
-        <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick-theme.css') }}"/>
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/custombox.css') }}"/>
 
-        <link rel="stylesheet"  href="{{ asset('css/lightslider.css') }}"/>
-        <link rel="stylesheet" href="{{ asset('css/gallery.css') }}"/>
-
-        <!-- Image Slider -->
-        <!-- Image Slider -->
-
-        <script src="{{ asset('js/gallery/modernizr.custom.js') }}"></script>        
-
-    </head>
     <body class="music">  
         <div class="switch">
             <nav class="navbar">
@@ -91,18 +73,12 @@
                                 <!-- Collect the nav links, forms, and other content for toggling -->
                                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">                                           
                                     <ul class="nav navbar-nav">
-                                        <li class="dropdown">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-info-circle"></i>О канале <span class="caret"></span></a>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="{{ route('muzkanal.about') }}"><i class="fa fa-television"></i>О телеканале</a></li>
-                                                <li><a href="{{ route('muzkanal.contacts') }}"><i class="fa fa-envelope-o"></i>Контакты</a></li>                                                
-                                            </ul>
-                                        </li>  
+                                        <li><a  href="{{ route('muzkanal.about') }}"></i>О канале</a></li>    
                                         <li>
                                             <a href="{{ route('muzkanal.hitparad') }}"><i class="fa fa-microphone"></i>Хит-Парад <!-- <span class="caret"></span> --></a>
 
                                         </li>
-                                        <li><a href="{{ route('muzkanal.photos') }}"><i class="fa fa-picture-o"></i>Фото</a></li>
+                                        <li><a class="active" href="{{ route('muzkanal.photos') }}"><i class="fa fa-picture-o"></i>Фото</a></li>
                                         <li><a href="{{ route('muzkanal.videos') }}"><i class="fa fa-youtube-play"></i>Клипы</a></li>
                                     </ul>
 
@@ -306,31 +282,10 @@
             </div>
 
         </div>
-        <footer class="footer">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="row">
-                                    <ul>
-                                        <li><a href="#">Башкы бет</a></li>
-                                        <li><a href="#">КТРК</a></li>
-                                        <li><a href="#">Видеопортал</a></li>
-                                        <li><a href="#">Телепрограмма</a></li>
-                                        <li><a href="#">Байкоочу кеңеш</a></li>
-                                        <li><a href="#">Редакциялык кеңешчи</a></li>
-                                    </ul>
-                                </div>
-                            </div>
 
-                            <div class="col-md-12 copy"><i class="fa fa-copyright"></i> 2015 Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясы</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
 
+   @stop
+   @section('footerscript2')
         <script src="{{ asset('js/jquery-1.11.2.min.js') }}"></script>
         <script src="{{ asset('js/bootstrap.min.js') }}"></script> 
 
@@ -347,75 +302,7 @@
             });
         </script>               
 
-        <script type="text/javascript" src="{{ asset('js/jquery-migrate-1.2.1.min.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('slick/slick.min.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('js/jquery.roundabout.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('js/custombox.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('js/legacy.js') }}"></script>
         <!-- Fixed Sticky header -->
         <script type ="text/javascript" src ="{{ asset('js/script.js') }}"></script>   
         <!-- Fixed Sticky header -->
-
-
-        <script>
-            $(document).ready(function () {
-                $(".img-wrap img").each(function () {
-                    var width = $(this).width();
-                    var height = $(this).height();
-
-                    if ((width > height)) {
-                        $(this).css({
-                            width: "auto",
-                            height: "170px"
-                        });
-                    }
-                    else {
-                        $(this).css({
-                            width: "100%",
-                            height: "auto"
-                        });
-                    }
-                });
-            });
-        </script>
-
-        <script>
-            $(function () {
-                function galleryModal(button, target) {
-                    $(button).on('click', function (e) {
-                        Custombox.open({
-                            target: target,
-                            effect: 'fadein'
-                        });
-                        e.preventDefault();
-                    });
-                }
-
-                galleryModal($('#myModal1'), '#modal1');
-                galleryModal($('#myModal2'), '#modal2');
-                galleryModal($('#myModal3'), '#modal3');
-                galleryModal($('#myModal4'), '#modal4');
-                galleryModal($('#myModal5'), '#modal5');
-            });
-        </script>
-
-        <script>
-            $('.slider-for').slick({
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                arrows: false,
-                fade: true,
-                asNavFor: '.slider-nav'
-            });
-            $('.slider-nav').slick({
-                slidesToShow: 4,
-                slidesToScroll: 1,
-                asNavFor: '.slider-for',
-                dots: false,
-                centerMode: true,
-                focusOnSelect: true
-            });
-        </script>
-
-    </body>
-</html>
+   @stop

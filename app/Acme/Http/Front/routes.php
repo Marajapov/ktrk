@@ -34,7 +34,6 @@ Route::group(['domain' => 'ktrk.dev', 'prefix' => '/muzkanal', 'namespace' => 'F
     Route::get('/videos', ['as' => 'muzkanal.videos',   'uses' => 'MuzkanalController@videos']);
     Route::get('/hitparad', ['as' => 'muzkanal.hitparad',   'uses' => 'MuzkanalController@hitparad']);
     Route::get('/photos', ['as' => 'muzkanal.photos',   'uses' => 'MuzkanalController@photos']);
-    Route::get('/contacts', ['as' => 'muzkanal.contacts',   'uses' => 'MuzkanalController@contacts']);
 
 });
 
@@ -50,7 +49,6 @@ Route::group(['domain' => 'ktrk.dev', 'prefix' => '/madaniyat', 'namespace' => '
     Route::get('/', ['as' => 'madaniyat.home',   'uses' => 'MadaniyatController@Home']);
     Route::get('/posts', ['as' => 'madaniyat.posts',   'uses' => 'MadaniyatController@posts']);
     Route::get('/about', ['as' => 'madaniyat.about',   'uses' => 'MadaniyatController@about']);
-    Route::get('/contacts', ['as' => 'madaniyat.contacts',   'uses' => 'MadaniyatController@contacts']);
     Route::get('/photos', ['as' => 'madaniyat.photos',   'uses' => 'MadaniyatController@photos']);
     Route::get('/broadcasts', ['as' => 'madaniyat.broadcasts',   'uses' => 'MadaniyatController@broadcasts']);
 

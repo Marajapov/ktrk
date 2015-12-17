@@ -3,6 +3,7 @@
 return [
 		
 		// FAW
+		'Homepage' => 'Башкы барак',
 		'Categories' => 'Категориялар',
 		'Newslenta' => 'Жаңылыктар лентасы',
 		'Morenews' => 'Баардык жаңылыктар',

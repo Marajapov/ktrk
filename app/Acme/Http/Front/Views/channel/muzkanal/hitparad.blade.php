@@ -1,22 +1,10 @@
-<!DOCTYPE html>
-<html>
-    <head lang="en">
-        <meta charset="UTF-8">
-        <title>Хит-Парад ТОП-10</title>
-
-        <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}"/>
-        <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}"/>
-        <link rel="stylesheet" href="{{ asset('filter/css/layout.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/gallery/component.css') }}" />
-        <link rel="stylesheet" href="{{ asset('css/style.css') }}"/>
+@extends('Front::channel.muzkanal.default')
+@section('title', "Музканал")
+@section('styles')
         <link rel="stylesheet" href="{{ asset('css/audio/muzslider.css') }}"/>
-        <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick.css') }}"/>
-        <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick-theme.css') }}"/>
-        <link rel="stylesheet"  href="{{ asset('css/lightslider.css') }}"/>
+@endsection
+@section('content')
 
-        <script src="{{ asset('js/gallery/modernizr.custom.js') }}"></script>        
-
-    </head>
     <body class="music">  
        <div class="switch">
             <nav class="navbar">
@@ -85,15 +73,9 @@
                                 <!-- Collect the nav links, forms, and other content for toggling -->
                                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">                                           
                                     <ul class="nav navbar-nav">
-                                        <li class="dropdown">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-info-circle"></i>О канале <span class="caret"></span></a>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="{{ route('muzkanal.about') }}"><i class="fa fa-television"></i>О телеканале</a></li>
-                                                <li><a href="{{ route('muzkanal.contacts') }}"><i class="fa fa-envelope-o"></i>Контакты</a></li>                                                
-                                            </ul>
-                                        </li>  
+                                        <li><a href="{{ route('muzkanal.about') }}"></i>О канале</a></li>   
                                         <li>
-                                            <a href="{{ route('muzkanal.hitparad') }}"><i class="fa fa-microphone"></i>Хит-Парад <!-- <span class="caret"></span> --></a>
+                                            <a class="active" href="{{ route('muzkanal.hitparad') }}"><i class="fa fa-microphone"></i>Хит-Парад <!-- <span class="caret"></span> --></a>
 
                                         </li>
                                         <li><a href="{{ route('muzkanal.photos') }}"><i class="fa fa-picture-o"></i>Фото</a></li>
@@ -621,31 +603,10 @@
             </div>
           
         </div>
-        <footer class="footer">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="row">
-                                    <ul>
-                                        <li><a href="#">Башкы бет</a></li>
-                                        <li><a href="#">КТРК</a></li>
-                                        <li><a href="#">Видеопортал</a></li>
-                                        <li><a href="#">Телепрограмма</a></li>
-                                        <li><a href="#">Байкоочу кеңеш</a></li>
-                                        <li><a href="#">Редакциялык кеңешчи</a></li>
-                                    </ul>
-                                </div>
-                            </div>
 
-                            <div class="col-md-12 copy"><i class="fa fa-copyright"></i> 2015 Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясы</div>
-                        </div>
-                    </div>
-                </div>
-            </div>    
-        </footer>
-
+   @stop
+   @section('footerscript2')
+ 
         <script src="{{ asset('js/jquery-1.11.2.min.js') }}"></script>
         <script src="{{ asset('js/bootstrap.min.js') }}"></script> 
 
@@ -878,7 +839,4 @@ new CBPGridGallery(document.getElementById('grid-gallery'));
                 })
             })
         </script>
-
-
-    </body>
-</html>
+   @stop

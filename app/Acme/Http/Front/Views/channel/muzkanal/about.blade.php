@@ -1,22 +1,10 @@
-<!DOCTYPE html>
-<html>
-    <head lang="en">
-        <meta charset="UTF-8">
-        <title>Главная страница</title>
-
-        <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}"/>
-        <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}"/>
-        <link rel="stylesheet" href="{{ asset('filter/css/layout.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/gallery/component.css') }}" />
-        <link rel="stylesheet" href="{{ asset('css/style.css') }}"/>
+@extends('Front::channel.madaniyat.default')
+@section('title', "Музканал")
+@section('styles')
         <link rel="stylesheet" href="{{ asset('css/audio/muzslider.css') }}"/>
-        <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick.css') }}"/>
-        <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick-theme.css') }}"/>
-        <link rel="stylesheet"  href="{{ asset('css/lightslider.css') }}"/>
+@endsection
+@section('content')
 
-        <script src="{{ asset('js/gallery/modernizr.custom.js') }}"></script>        
-
-    </head>
     <body class="music">  
         <div class="switch">
             <nav class="navbar">
@@ -85,13 +73,7 @@
                                 <!-- Collect the nav links, forms, and other content for toggling -->
                                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">                                           
                                     <ul class="nav navbar-nav">
-                                        <li class="dropdown">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-info-circle"></i>О канале <span class="caret"></span></a>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="{{ route('muzkanal.about') }}"><i class="fa fa-television"></i>О телеканале</a></li>
-                                                <li><a href="{{ route('muzkanal.contacts') }}"><i class="fa fa-envelope-o"></i>Контакты</a></li>                                                
-                                            </ul>
-                                        </li>  
+                                        <li><a class="active" href="{{ route('muzkanal.about') }}"></i>О канале</a></li>  
                                         <li>
                                             <a href="{{ route('muzkanal.hitparad') }}"><i class="fa fa-microphone"></i>Хит-Парад <!-- <span class="caret"></span> --></a>
 
@@ -189,266 +171,16 @@
                 </div>                  
             </div>   
         </div>    
-        <footer class="footer">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="row">
-                                    <ul>
-                                        <li><a href="#">Башкы бет</a></li>
-                                        <li><a href="#">КТРК</a></li>
-                                        <li><a href="#">Видеопортал</a></li>
-                                        <li><a href="#">Телепрограмма</a></li>
-                                        <li><a href="#">Байкоочу кеңеш</a></li>
-                                        <li><a href="#">Редакциялык кеңешчи</a></li>
-                                    </ul>
-                                </div>
-                            </div>
 
-                            <div class="col-md-12 copy"><i class="fa fa-copyright"></i> 2015 Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясы</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-        </footer>
+   @stop
+   @section('footerscript2')
 
         <script src="{{ asset('js/jquery-1.11.2.min.js') }}"></script>
         <script src="{{ asset('js/bootstrap.min.js') }}"></script> 
-
-        <script>
-        $(document).ready(function () {
-            $(".search-toggle").click(function () {
-                $(".logo-block").addClass("search-show");
-                $(".form-search").addClass("visible");
-            });
-            $(".close-search").click(function () {
-                $(".logo-block").removeClass("search-show");
-                $(".form-search").removeClass("visible");
-            });
-        });
-        </script>   
-
-        <script src="{{ asset('js/gallery/imagesloaded.pkgd.min.js') }}"></script>
-        <script src="{{ asset('js/gallery/masonry.pkgd.min.js') }}"></script>
-        <script src="{{ asset('js/gallery/classie.js') }}"></script>
-        <script src="{{ asset('js/gallery/cbpGridGallery.js') }}"></script>
-
-        <script>
-        new CBPGridGallery(document.getElementById('grid-gallery'));
-        </script>
-
-        <script>
-            var serverTZoffset = 360;
-        </script>
-
-        <script src="{{ asset('js/lightslider.js') }}"></script>
-
-        <script>
-            $(document).ready(function () {
-                $("#content-slider").lightSlider({
-                    loop: true,
-                    keyPress: true
-                });
-                $('#image-gallery').lightSlider({
-                    gallery: true,
-                    item: 1,
-                    thumbItem: 9,
-                    slideMargin: 0,
-                    speed: 500,
-                    auto: true,
-                    loop: true,
-                    onSliderLoad: function () {
-                        $('#image-gallery').removeClass('cS-hidden');
-                    }
-                });
-            });
-        </script>
-
-        <script src="{{ asset('js/audio/dkp.min.js') }}"></script>
-
-        <script type="text/javascript" src="{{ asset('filter/js/jquery.easing.min.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('filter/js/jquery.mixitup.min.js') }}"></script>
-
-        <script type="text/javascript" src="{{ asset('js/jquery-migrate-1.2.1.min.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('slick/slick.min.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('js/jquery.roundabout.js') }}"></script>
 
         <!-- Fixed Sticky header -->
         <script type ="text/javascript" src ="{{ asset('js/script.js') }}"></script>   
         <!-- Fixed Sticky header -->
 
-        <!-- Programm title Anima -->
-        <script src="{{ asset('js/audio/jquery.newsTicker.js') }}"></script>
-        <script>
 
-            var nt_title = $('#nt-title').newsTicker({
-                row_height: 30,
-                max_rows: 1,
-                duration: 3000,
-                pauseOnHover: 0
-            });
-            var nt_example1 = $('#nt-example1').newsTicker({
-                row_height: 30,
-                max_rows: 3,
-                duration: 4000,
-                prevButton: $('#nt-example1-prev'),
-                nextButton: $('#nt-example1-next')
-            });
-
-            var state = 'stopped';
-            var speed;
-            var add;
-
-        </script>
-        <!-- Ptogramm title Anima -->
-        <script type="text/javascript">
-            $(function () {
-
-                var filterList = {
-                    init: function () {
-
-                        // MixItUp plugin
-                        // http://mixitup.io
-                        $('#portfoliolist').mixitup({
-                            showOnLoad: 'all-videos',
-                            targetSelector: '.portfolio',
-                            filterSelector: '.filter',
-                            effects: ['fade'],
-                            easing: 'snap',
-                            // call the hover effect
-                            onMixEnd: filterList.hoverEffect()
-                        });
-
-                    },
-                    hoverEffect: function () {
-
-                        // Simple parallax effect
-                        $('#portfoliolist .portfolio').hover(
-                                function () {
-                                    $(this).find('.label').stop().animate({bottom: 0}, 200, 'easeOutQuad');
-                                    $(this).find('img').stop().animate({top: -40}, 250, 'easeOutQuad');
-                                },
-                                function () {
-                                    $(this).find('.label').stop().animate({bottom: -40}, 200, 'easeInQuad');
-                                    $(this).find('img').stop().animate({top: 0}, 300, 'easeOutQuad');
-                                }
-                        );
-
-                    }
-
-                };
-                // Run the show!
-                filterList.init();
-            });
-        </script>
-
-        <script src="{{ asset('jwplayer/jwplayer.js') }}"></script>
-        <script>jwplayer.key = "tmEO2SU8NzqLBoHr2Vq6nV13XCyfo8xbdiCb/Q==";</script>
-
-        <script type="text/javascript">
-
-            var playerInstance = jwplayer("player");
-
-            //    $('#playerPlay').click(function(){
-            //        playerInstance.play();
-            //    });
-
-            playerInstance.setup({
-                playlist: [{
-                        image: "{{ asset('images/channels/muztv.png') }}",
-                        sources: [{
-                                file: "rtmp://212.112.96.233:1936/live/ktrk.stream"
-                            }]
-                    }],
-                width: "100%",
-                height: "100%",
-                aspectratio: "16:9",
-                primary: "flash",
-                skin: {
-                    name: "five"
-                },
-                stretching: "exactfit"
-            });
-        </script>
-
-
-        <!--Carousel-->
-        <script>
-            if ($(window).width() > 768) {
-                $('.carousel-slick').slick({
-                    infinite: true,
-                    slidesToShow: 4,
-                    slidesToScroll: 1,
-                    autoplay: false,
-                    autoplaySpeed: 4500
-                });
-                $('.carousel-slick1').slick({
-                    infinite: true,
-                    slidesToShow: 3,
-                    slidesToScroll: 1,
-                    autoplay: false,
-                    autoplaySpeed: 4500
-                });
-            }
-
-            if ($(window).width() < 768) {
-                $('.carousel-slick1').slick({
-                    infinite: true,
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                    autoplay: false,
-                    autoplaySpeed: 4500
-                });
-            }
-
-            if ($(window).width() < 768) {
-                $('.carousel-slick').slick({
-                    infinite: true,
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                    autoplay: false,
-                    autoplaySpeed: 4500
-                });
-            }
-
-        </script>
-
-        <script>
-            $(document).ready(function () {
-                var likes = 12;
-                var dislikes = 6;
-                $('.like').attr('data-likes', likes);
-                $('.dislike').attr('data-dislikes', dislikes);
-                $('.text').click(function () {
-                    $('.like').toggleClass('like_active');
-                    $('.dislike').toggleClass('dislike_active');
-                    if ($('.text').text() == 'Vote') {
-                        $('.text').text('Cancel');
-                    } else {
-                        $('.text').text('Vote');
-                    }
-                })
-                $('.like').click(function () {
-                    likes++;
-                    $('.like').attr('data-likes', likes);
-                    $('.like').removeClass('like_active');
-                    $('.dislike').removeClass('dislike_active');
-                    $('.text').text('Vote');
-                })
-                $('.dislike').click(function () {
-                    dislikes++;
-                    $('.dislike').attr('data-dislikes', dislikes);
-                    $('.like').removeClass('like_active');
-                    $('.dislike').removeClass('dislike_active');
-                    $('.text').text('Vote');
-                })
-            })
-        </script>
-
-
-    </body>
-</html>
+   @stop
