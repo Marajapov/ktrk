@@ -457,8 +457,8 @@
             <div class="panel panel-default panel-carousel gallery">
               <div class="panel-heading">
                 <h3 class="panel-title">
-                  <a href="#"><span>Фотогалерея</span></a>
-                  <a class="all" href="#">{{ trans('site.FrontGalleryAll') }} <i class="fa fa-arrow-circle-right"></i></a>
+                  <a href="{{ route('front.gallery.galleries') }}"><span>Фотогалерея</span></a>
+                  <a class="all" href="{{ route('front.gallery.galleries') }}">{{ trans('site.FrontGalleryAll') }} <i class="fa fa-arrow-circle-right"></i></a>
                 </h3>
               </div>
               <div class="panel-body">
@@ -467,13 +467,21 @@
                     @if($photoGalleries)
                       @foreach($photoGalleries as $photoGallery)
 
-                        <div class="col-md-4">
+                        <div class="col-md-4 hidden">
                           {!! Form::open(['route' => ['front.gallery', $photoGallery->id], 'method' => 'get', 'onclick' => "submit()"]) !!}
                             <img src="{{ asset($photoGallery->status) }}" alt=""/><span>{{ $photoGallery->getName() }}</span>
                             <div class="overlay"></div>
                             <input type="hidden" value="{{ $photoGallery->id }}" name="photoParentId">
                           {!! Form::close() !!}
                         </div>                    
+                        
+                        <div class="col-md-4">
+                          <a href="{{ route('front.gallery', $photoGallery) }}">
+                            <img src="{{ asset($photoGallery->status) }}" alt=""/><span>{{ $photoGallery->getName() }}</span>
+                            <div class="overlay"></div>
+                            <i class="fa fa-camera"></i>
+                          </a>
+                        </div>
                   
                       @endforeach
                     @endif

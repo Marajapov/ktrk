@@ -216,6 +216,7 @@ return [
     'AdminPhotoParentChange' => 'Изменить фото галерею',
     'AdminPhotoParentNewGal' => 'Новая фото галерея',
     'AdminPhotoParents' => 'Фото галереи',
+    'AdminPhotoParentLocation' => 'Расположение',
     '' => '',
 
     //Post Menu

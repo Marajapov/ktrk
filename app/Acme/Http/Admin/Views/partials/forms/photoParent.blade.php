@@ -78,10 +78,6 @@
       </div>
     </div>
 
-  </div>
-
-  <div class="hidden">
-
     <!-- main -->
     <div class="form-group">
       <label for="parentId" class="col-sm-2 control-label"></label>
@@ -104,7 +100,7 @@
           {!! Form::hidden('ns', 0) !!}
           {!! Form::checkbox('ns', 1, null, ["id" => "ns", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
           <label for="ns">
-            Наблюдательный совет
+            {{ trans('site.BaikoochuKenesh') }}
           </label>
         </div>
       </div>
@@ -118,7 +114,7 @@
           {!! Form::hidden('rs', 0) !!}
           {!! Form::checkbox('rs', 1, null, ["id" => "rs", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
           <label for="rs">
-            Редакционный совет
+            {{ trans('site.RedKenesh') }}
           </label>
         </div>
       </div>
@@ -132,7 +128,7 @@
           {!! Form::hidden('director', 0) !!}
           {!! Form::checkbox('director', 1, null, ["id" => "director", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
           <label for="director">
-            Страница Ген. директора
+            Ген.директор
           </label>
         </div>
       </div>
@@ -147,20 +143,6 @@
           {!! Form::checkbox('muzkanal', 1, null, ["id" => "muzkanal", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
           <label for="muzkanal">
             Муз канал
-          </label>
-        </div>
-      </div>
-    </div>
-
-    <!-- kyrgyzradio -->
-    <div class="form-group">
-      <label for="parentId" class="col-sm-2 control-label"></label>
-      <div class="col-sm-10">
-        <div class="checkbox checkbox-primary ">
-          {!! Form::hidden('kyrgyzradio', 0) !!}
-          {!! Form::checkbox('kyrgyzradio', 1, null, ["id" => "kyrgyzradio", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
-          <label for="kyrgyzradio">
-            Кыргыз радио
           </label>
         </div>
       </div>
@@ -235,6 +217,7 @@
         </div>
       </div>
     </div>
+
   </div>
 
 </div>
