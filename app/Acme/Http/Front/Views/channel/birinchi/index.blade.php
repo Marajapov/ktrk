@@ -35,12 +35,12 @@
 <div class="container-fluid cffix">
    <div class="col-md-12 topheader">
       <div class="container onepadding">
-        <div class="language">
+         <div class="language">
             <ul>
-                <li @if(app()->getlocale() == 'kg') class="active" @endif><a href="/locale/kg">кырг <span></span></a></li>
-                <li @if(app()->getlocale() == 'ru') class="active" @endif><a href="/locale/ru">рус <span></span></a></li>
+               <li @if(app()->getlocale() == 'kg') class="active" @endif><a href="/locale/kg">кырг <span></span></a></li>
+               <li @if(app()->getlocale() == 'ru') class="active" @endif><a href="/locale/ru">рус <span></span></a></li>
             </ul>
-        </div>
+         </div>
          <div class="col-md-3">
             <nav>
                <ul>
@@ -117,7 +117,7 @@
                      </li>
                      <li>
                         <a href="{{ route('birinchi.broadcastsprogramm') }}">
-                           {{ trans('radiopages.Prperedach') }}
+                        {{ trans('radiopages.Prperedach') }}
                         </a>
                      </li>
                      <li><a href="{{ route('birinchi.photos') }}"> {{ trans('radiopages.Photos') }}</a></li>
@@ -136,7 +136,6 @@
                         </button>
                      </form>
                   </ul>
-
                </div>
                <!-- /.navbar-collapse -->
             </div>
@@ -150,37 +149,65 @@
       <div class="col-md-12">
          <div class="row onepadding">
             <div class="col-md-9 onepadding">
-               <aside class="dw_focus_widget_news_slider">
-                  <div id="carousel-news-slider-2" class="carousel slide" data-ride="carousel">
-                     <div class="carousel-inner" role="listbox">
-                        @foreach($generalPosts as $generalPost)
-                        <div class="item next left">
-                           <article class="carousel-entry">
-                              <a href="#"><img width="710" height="400" src="@if(!($generalPost->getFile()))images/live_bg.png @else {{ asset($generalPost->getFile()) }} @endif" alt=""></a>
-                              <span class="cat-links"><a href="#" rel="category tag">{{ $generalPost->category('category_id')->first()->getTitle() }}</a></span>                        
-                              <div class="carousel-caption">
-                                 <div class="entry-meta">
-                                    <span class="entry-date"><i class="fa fa-clock-o"></i>{{ $generalPost->getDay() }} , {{ $generalPost->getMonthRu() }} {{ $generalPost->getYear() }}</span>                                                
-                                 </div>
-                                 <h1 class="entry-title"><a href="#">{{ $generalPost->getTitleRuOrKg() }}</a></h1>
-                              </div>
+               <div class="panel onelist">
+                  <div class="panel-heading">
+                     <h3 class="panel-title"><span>{{ trans('radiopages.Peredachi') }}</span></h3>
+                  </div>
+                  <div class="panel-body">
+                     <div class="row specpad">
+                        <div class="blocks col-md-4 col-sm-6 col-xs-12">
+                           <span class="cart-title category">
+                           <a href="#">Спорт</a>
+                           </span>
+                           <article>
+                              <a href="#" class="image-link">
+                              <img src="{{asset('images/gallery/001.jpg')}}">
+                              <span class="date">2 Декабрь, 2015</span>
+                              </a>
+                              <h3 class="name headline">
+                                 <a href="#" title="Premiere for The Invisible Woman">
+                                 Кыргыз бильярдчылар Орусияда күч сынашууда
+                                 </a>
+                              </h3>
                            </article>
                         </div>
-                        @endforeach
-                     </div>
-                     <div class="carousel-navigation hidden-xs hidden-sm">
-                        <h2 class="widget-title">{{ trans('radiopages.Mainnews') }}</h2>
-                        <ol class="carousel-title-indicators">
-                           <li data-target="#carousel-news-slider-2" data-slide-to="4" class="active">Доллардан баш тартууга мүмкүнбү?</li>
-                        </ol>
-                        <ol class="carousel-indicators">
-                           <li data-target="#carousel-news-slider-2" data-slide-to="4" class="active"></li>
-                        </ol>
+                        <div class="blocks col-md-4 col-sm-6 col-xs-12">
+                           <span class="cart-title category">
+                           <a href="#">Санкция</a>
+                           </span>
+                           <article>
+                              <a href="#" class="image-link">
+                              <img src="{{asset('images/gallery/002.jpg')}}">
+                              <span class="date">2 Декабрь, 2015</span>
+                              </a>
+                              <h3 class="name headline">
+                                 <a href="#" title="Premiere for The Invisible Woman">
+                                 Орусия тыюу салган түрк товарлардын тизмеси жарыяланды
+                                 </a>
+                              </h3>
+                           </article>
+                        </div>
+                        <div class="blocks col-md-4 col-sm-6 col-xs-12">
+                           <span class="cart-title category">
+                           <a href="#">Кырсык</a>
+                           </span>
+                           <article>
+                              <a href="#" class="image-link">
+                              <img src="{{asset('images/gallery/003.jpg')}}">
+                              <span class="date">2 Декабрь, 2015</span>
+                              </a>
+                              <h3 class="name headline">
+                                 <a href="#" title="Premiere for The Invisible Woman">
+                                 Кечээ болгон жер титирөөдөн бир катар социалдык объекттер жабыркады
+                                 </a>
+                              </h3>
+                           </article>
+                        </div>
                      </div>
                   </div>
-               </aside>
+               </div>
             </div>
-            <div class="col-md-3 onepadding">
+            <div class="col-md-3 onepadding" style="float:right">
                <div class="panel panel-default onelist">
                   <div class="panel-heading">
                      <h3 class="panel-title">{{ trans('radiopages.Categories') }}</h3>
@@ -198,17 +225,11 @@
                            <li><a href="">Туризм</a></li>
                            <li><a href="">Граница</a></li>
                            <li><a href="">Сельское хозяйство</a></li>
-                        </ul>
+                           </ul>
                      </nav>
                   </div>
                </div>
             </div>
-         </div>
-      </div>
-   </div>
-   <div class="row">
-      <div class="col-md-12">
-         <div class="row">
             <div class="col-md-9 onenews ">
                <div class="panel panel-articles">
                   <div class="panel-heading">
@@ -313,6 +334,7 @@
                   </div>
                </div>
             </div>
+
             <div class="col-md-3 oneserep onefix">
                <nav>
                   <ul>
@@ -327,6 +349,7 @@
                </nav>
                <iframe width="100%" height="280" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/171625446&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
             </div>
+
          </div>
       </div>
    </div>

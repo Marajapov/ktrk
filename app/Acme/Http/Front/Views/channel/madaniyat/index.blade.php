@@ -77,14 +77,14 @@
                         </button>
                      </form>
                   </div>
-                  <a class="navbar-brand" href="{{ route('madaniyat.home') }}"> <i class="fa fa-home"></i>Башкы</a>
+                  <a class="navbar-brand" href="{{ route('madaniyat.home') }}"> <i class="fa fa-home"></i>{{ trans('radiopages.Home') }}</a>
                </div>
                <!-- Collect the nav links, forms, and other content for toggling -->
                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                   <ul class="nav navbar-nav">
-                     <li><a href="{{ route('madaniyat.about') }}"></i>О канале</a></li>
+                     <li><a href="{{ route('madaniyat.about') }}"></i>{{ trans('radiopages.Mabout') }}</a></li>
                      <li class="dropdown">
-                        <a href="{{ route('madaniyat.broadcasts') }}" class="dropdown-toggle" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-television"></i>Передачи <span class="caret"></span></a>
+                        <a href="{{ route('madaniyat.broadcasts') }}" class="dropdown-toggle" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-television"></i>{{ trans('radiopages.Korsotuu') }}<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                            <li><a href="#"><i class="fa fa-minus"></i>Тоолуктардын ток-шоусу</a></li>
                            <li><a href="#"><i class="fa fa-minus"></i>Улутман</a></li>
@@ -98,11 +98,10 @@
                            <li><a href="#"><i class="fa fa-minus"></i>ТВнын  казынасынан</a></li>
                         </ul>
                      </li>
-                     <li><a href="{{ route('madaniyat.photos') }}"><i class="fa fa-picture-o"></i>Фотогалерея</a></li>
+                     <li><a href="{{ route('madaniyat.photos') }}"><i class="fa fa-picture-o"></i>{{ trans('radiopages.Photos') }}</a></li>
                   </ul>
                   <ul class="nav navbar-nav navbar-right logo-block">
-                     <ul class="soc socmuz">
-                        <li class="tw"><a href="#" title="Twitter"><i class="fa fa-twitter"></i> </a>  </li>
+                     <ul class="soc socmuz">    
                         <li class="fb"><a href="#" title="Facebook"><i class="fa fa-facebook"></i></a></li>
                         <li class="ok"><a href="#" title="Odnoklassniki"><i class="fa fa-odnoklassniki"></i></a></li>
                         <li class="yt"><a href="#" title="YouTube"><i class="fa fa-youtube"></i></a></li>
@@ -120,9 +119,15 @@
                         <i class="fa fa-search"></i>
                         </button>
                      </form>
+                     <div class="clangs">
+                        <ul>
+                           <li @if(app()->getlocale() == 'kg') class="active" @endif><a href="/locale/kg">кырг <span></span></a></li>
+                           <li @if(app()->getlocale() == 'ru') class="active" @endif><a href="/locale/ru">рус <span></span></a></li>
+                        </ul>
+                     </div>
                      <button class="btn btn-danger btn-live" data-toggle="modal" data-target="#liveModal">
                      <i class="fa fa-dot-circle-o"></i>
-                     түз эфир
+                     {{ trans('radiopages.Live') }}
                      </button>
                   </ul>
                </div>
@@ -159,7 +164,7 @@
             <div class="col-md-12" style="padding:0px;">
                <div class="panel panel-default panel-carousel">
                   <div class="panel-heading madaniyatcolor">
-                     <h3 class="panel-title"><span>Новые передачи</span></h3>
+                     <h3 class="panel-title"><span>{{ trans('radiopages.NewKorsotuu') }}</span></h3>
                   </div>
                   <div class="panel-body">
                      <div class="col-md-12">
@@ -193,12 +198,12 @@
                      </div>
                      <footer>
                         <a href="#">
-                        <span>Все видео <i class="fa fa-arrow-circle-right"></i></span>
+                        <span>{{ trans('radiopages.AllVideos') }}<i class="fa fa-arrow-circle-right"></i></span>
                         </a>
                      </footer>
                   </div>
                   <div class="panel-heading madaniyatcolor madaniyatfix">
-                     <h3 class="panel-title"><span>Популярные передачи</span></h3>
+                     <h3 class="panel-title"><span>{{ trans('radiopages.TopKorsotuu') }}</span></h3>
                   </div>
                   <div class="panel-body">
                      <div class="col-md-12">
@@ -219,7 +224,7 @@
                      </div>
                      <footer>
                         <a href="#">
-                        <span>Все видео <i class="fa fa-arrow-circle-right"></i></span>
+                        <span>{{ trans('radiopages.AllVideos') }}<i class="fa fa-arrow-circle-right"></i></span>
                         </a>
                      </footer>
                   </div>
@@ -228,7 +233,7 @@
             <div class="col-md-12" style="padding: 10px 0px 0px 0px;">
                <div class="panel panel-default panel-carousel ">
                   <div class="panel-heading madaniyatcolor">
-                     <h3 class="panel-title"><span>Фотогалерея</span></h3>
+                     <h3 class="panel-title"><span>{{ trans('radiopages.Photos') }}</span></h3>
                   </div>
                   <div class="panel-body">
                      <div class="col-md-12 broadimages">
@@ -323,10 +328,12 @@
           $(".search-toggle").click(function () {
               $(".logo-block").addClass("search-show");
               $(".form-search").addClass("visible");
+              $(".clangs").addClass("visible");
           });
           $(".close-search").click(function () {
               $(".logo-block").removeClass("search-show");
               $(".form-search").removeClass("visible");
+              $(".clangs").removeClass("visible");
           });
       });
    </script> 
