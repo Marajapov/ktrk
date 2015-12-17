@@ -3,6 +3,7 @@
 return [
 
 		// FAW
+		'Homepage' => 'Главная страница',
 		'Categories' => 'Категории',
 		'Newslenta' => 'Лента новостей',
 		'Morenews' => 'Все новости',

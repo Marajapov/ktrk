@@ -69,16 +69,10 @@
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">                                           
                             <ul class="nav navbar-nav">
-                                <li class="dropdown">
-                                    <a href="{{ route('madaniyat.about') }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-info-circle"></i>О канале <span class="caret"></span></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="{{ route('madaniyat.about') }}"><i class="fa fa-minus"></i>О телеканале</a></li>
-                                        <li><a href="{{ route('madaniyat.contacts') }}"><i class="fa fa-minus"></i>Контакты</a></li>                                                
-                                    </ul>
-                                </li>
+                                <li><a href="{{ route('madaniyat.about') }}"></i>О канале</a></li>  
 
                                 <li class="dropdown">
-                                    <a href="{{ route('madaniyat.broadcasts') }}" class="dropdown-toggle" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-television"></i>Передачи <span class="caret"></span></a>
+                                    <a class="active" href="{{ route('madaniyat.broadcasts') }}" class="dropdown-toggle" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-television"></i>Передачи <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="#"><i class="fa fa-minus"></i>Тоолуктардын ток-шоусу</a></li>
                                         <li><a href="#"><i class="fa fa-minus"></i>Улутман</a></li>
