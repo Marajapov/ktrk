@@ -121,7 +121,7 @@
 
     <section id="cta2">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header2">
                 <h2 class="section-title text-center wow fadeInDown"></h2>
                 <h2 data-wow-duration="300ms" data-wow-delay="0ms"><span>{{ trans('radiopages.DostukSlogan') }}</span></h2>
                 <h2 class="section-title text-center wow fadeInDown"></h2>  
@@ -455,7 +455,7 @@
 
     <section id="portfolio">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header2">
                 <h2 class="section-title text-center wow fadeInDown">{{ trans('radiopages.Photos') }}</h2>
             </div>
 
@@ -552,8 +552,8 @@
             </div>
 
             <div class="row">
-                <div class="col-sm-6 wow fadeInLeft">
-                    <h3 class="column-title">Промо</h3>
+                <div class="col-sm-4 wow fadeInLeft">
+                    <h3 class="column-title">Логотип</h3>
                
                     <div class="img-responsive">
                       <img src="{{asset('images/channels/dostuk.png')}}" alt="">
@@ -561,7 +561,7 @@
                     <p>{{ trans('radiopages.AboutPromo') }}</p>   
                 </div>
 
-                <div class="col-sm-6 wow fadeInRight">
+                <div class="col-sm-8 wow fadeInRight">
                     <h3 class="column-title">{{ trans('radiopages.AboutAim') }}</h3>
                     <p>{{ trans('radiopages.DostukText1') }}</p>
                     <p>{{ trans('radiopages.DostukText2') }}</p>
@@ -580,15 +580,15 @@
     </section><!--/#about-->
         <section id="get-in-touch">
         <div class="container">
-            <div class="section-header">            
+            <div class="section-header2">            
                 <h2 class="section-title text-center wow fadeInDown">{{ trans('radiopages.Address') }}</h2>
                 <p class="text-center wow fadeInDown">{{ trans('radiopages.AddressName') }}</p>
             </div>
-            <div class="section-header">            
+            <div class="section-header2">            
                 <h2 class="section-title text-center wow fadeInDown">{{ trans('radiopages.Phone') }}</h2>
                 <p class="text-center wow fadeInDown">0312 65 67 04 <br> 0312 65 66 10</p>
             </div>
-            <div class="section-header">            
+            <div class="section-header2">            
                 <h2 class="section-title text-center wow fadeInDown">{{ trans('radiopages.Volna') }}</h2>
             </div>            
         </div>

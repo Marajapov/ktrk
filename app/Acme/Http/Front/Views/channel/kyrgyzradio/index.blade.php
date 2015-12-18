@@ -141,6 +141,7 @@
                     <h2>Чынгыз Айтматов</h2>
                     <p><span></span>«Человек не умирает до тех пор, пока живут знавшие его». </p>
                 </div>
+                <div class="righter"><i class="fa fa-play"></i></div>
                 <div class="col-xs-3">
                 <img class="img-responsive" src="{{asset('images/channels/kyrgyzradio/aitmatov.jpg')}}" height="100" width="100" alt="">
                     
@@ -180,33 +181,34 @@
                                         <div role="tabpanel" class="tab-pane fade active in" id="tab01" aria-labelledby="tab01">
                                             <p><iframe width="100%" height="100" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/235888059&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe></p>
                                             <p>Соңку чыгарылыш</p>
-                                        </div>
-                                        <div class="onenews">
-                                           <div class="panel panel-articles">
-                                              <div class="panel-body">
-                                                 <div class="panel-body">
-                                                    <div class="media">
-                                                       <div class="media-left">
-                                                          <a href="#">
-                                                          <img class="media-object thumb" src="http://sputnik.kg/images/102017/14/1020171449.jpg" alt="image">
-                                                          </a>
-                                                       </div>
-                                                       <div class="media-body">
-                                                          <div class="extra">
-                                                             <span class="e-datetime">18 Нояб , 12:22</span>
-                                                             <span class="e-views"><i class="fa fa-eye"></i>17</span>
-                                                          </div>
-                                                          <a class="media-heading" href="#">КТРК: из-за работы я стал изгоем для родственников</a>
-                                                       </div>
-                                                    </div>
+                                            <div class="onenews">
+                                               <div class="panel panel-articles">
+                                                  <div class="panel-body">
+                                                     <div class="panel-body">
+                                                        <div class="media">
+                                                           <div class="media-left">
+                                                              <a href="#">
+                                                              <img class="media-object thumb" src="http://sputnik.kg/images/102017/14/1020171449.jpg" alt="image">
+                                                              </a>
+                                                           </div>
+                                                           <div class="media-body">
+                                                              <div class="extra">
+                                                                 <span class="e-datetime">18 Нояб , 12:22</span>
+                                                                 <span class="e-views"><i class="fa fa-eye"></i>17</span>
+                                                              </div>
+                                                              <a class="media-heading" href="#">КТРК: из-за работы я стал изгоем для родственников</a>
+                                                           </div>
+                                                        </div>
 
-                                                    <footer>
-                                                       <a href="#">{{ trans('radiopages.Morenews') }}</a>
-                                                    </footer>
-                                                 </div>
-                                              </div>
-                                           </div>
+                                                        <footer>
+                                                           <a href="#">{{ trans('radiopages.Morenews') }}</a>
+                                                        </footer>
+                                                     </div>
+                                                  </div>
+                                               </div>
+                                            </div>
                                         </div>
+
                                         <div role="tabpanel" class="tab-pane fade" id="tab02" aria-labelledby="tab02">
                                            <p>Көзү  өтүп  кеткен  белгилүү  инсандардын  жубайлары  менен  маек. Баш  кошкон  мезгилинен  тартып, бирге  жашаган  турмушундагы  кубаныч, өкүнүчтөрү  менен  бирдикте, өмүрлүк  жарынын  кандай  адам  болгонун  кеңири  айтып  беришет.</p>
                                        </div>
@@ -235,31 +237,31 @@
                                         <div role="tabpanel" class="tab-pane fade active in" id="tab5" aria-labelledby="tab5">
                                             <p><iframe width="100%" height="100" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/235888059&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe></p>
                                             <p>Соңку чыгарылыш</p>
-                                        </div>
-                                        <div class="onenews">
-                                           <div class="panel panel-articles">
-                                              <div class="panel-body">
-                                                 <div class="panel-body">
-                                                    <div class="media">
-                                                       <div class="media-left">
-                                                          <a href="#">
-                                                          <img class="media-object thumb" src="http://ktrk.kg/sites/default/files/styles/juicebox_medium/public/gallery/album/fotos/_mg_9802.jpg" alt="image">
-                                                          </a>
-                                                       </div>
-                                                       <div class="media-body">
-                                                          <div class="extra">
-                                                             <span class="e-datetime">18 Нояб , 12:22</span>
-                                                             <span class="e-views"><i class="fa fa-eye"></i>17</span>
-                                                          </div>
-                                                          <a class="media-heading" href="#">КТРКнын жаңыланган заманбап кеңсеси</a>
-                                                       </div>
-                                                    </div>
-                                                    <footer>
-                                                       <a href="#">{{ trans('radiopages.Morenews') }}</a>
-                                                    </footer>
-                                                 </div>
-                                              </div>
-                                           </div>
+                                            <div class="onenews">
+                                               <div class="panel panel-articles">
+                                                  <div class="panel-body">
+                                                     <div class="panel-body">
+                                                        <div class="media">
+                                                           <div class="media-left">
+                                                              <a href="#">
+                                                              <img class="media-object thumb" src="http://ktrk.kg/sites/default/files/styles/juicebox_medium/public/gallery/album/fotos/_mg_9802.jpg" alt="image">
+                                                              </a>
+                                                           </div>
+                                                           <div class="media-body">
+                                                              <div class="extra">
+                                                                 <span class="e-datetime">18 Нояб , 12:22</span>
+                                                                 <span class="e-views"><i class="fa fa-eye"></i>17</span>
+                                                              </div>
+                                                              <a class="media-heading" href="#">КТРКнын жаңыланган заманбап кеңсеси</a>
+                                                           </div>
+                                                        </div>
+                                                        <footer>
+                                                           <a href="#">{{ trans('radiopages.Morenews') }}</a>
+                                                        </footer>
+                                                     </div>
+                                                  </div>
+                                               </div>
+                                            </div>
                                         </div>
                                         <div role="tabpanel" class="tab-pane fade" id="tab6" aria-labelledby="tab6">
                                            <p>Көзү  өтүп  кеткен  белгилүү  инсандардын  жубайлары  менен  маек. Баш  кошкон  мезгилинен  тартып, бирге  жашаган  турмушундагы  кубаныч, өкүнүчтөрү  менен  бирдикте, өмүрлүк  жарынын  кандай  адам  болгонун  кеңири  айтып  беришет.</p>
@@ -836,25 +838,26 @@
     <section id="cta" class="wow fadeIn">
         <div class="container">
             <div class="row">
-            <div class="col-md-6">            
+            <div class="col-md-6 col-xs-12">            
                 <div class="col-xs-9">
                     <h2>Чынгыз Айтматов</h2>
-                    <p><span></span>Дос, кыйынчылыкта билинет дешет. Менимче, бактылуу кезиңде да билинет..
+                    <p><span></span>Дос, кыйынчылыкта билинет дешет. Менимче, бактылуу кезиңде да билинет.. 
                     </p>
                 </div>
-            <div class="col-sm-3">
-                <img src="{{asset('images/channels/kyrgyzradio/aitmatov.jpg')}}" height="100" width="100" alt="">
+                <div class="righter"><i class="fa fa-play"></i></div>
+            <div class="col-xs-3">
+                <img class="img-responsive" src="{{asset('images/channels/kyrgyzradio/aitmatov.jpg')}}" height="100" width="100" alt="">
                     
                 </div>
             </div>  
-            <div class="col-md-6">            
+            <div class="col-md-6 col-xs-12">            
                 <div class="col-xs-9">
                     <h2>Чынгыз Айтматов</h2>
-                    <p><span></span>Словно люди не понимают, сколько несчастий и убожества в их жизни поистекает и проистекало во все времена от лени.
-                    </p>
+                    <p><span></span>«Человек не умирает до тех пор, пока живут знавшие его». </p>
                 </div>
-                <div class="col-sm-3">
-                <img src="{{asset('images/channels/kyrgyzradio/aitmatov.jpg')}}" height="100" width="100" alt="">
+                <div class="righter"><i class="fa fa-play"></i></div>
+                <div class="col-xs-3">
+                <img class="img-responsive" src="{{asset('images/channels/kyrgyzradio/aitmatov.jpg')}}" height="100" width="100" alt="">
                     
                 </div>
             </div>
@@ -956,26 +959,26 @@
     <section id="cta" class="wow fadeIn">
         <div class="container">
             <div class="row">
-            <div class="col-md-6">            
+            <div class="col-md-6 col-xs-12">            
                 <div class="col-xs-9">
                     <h2>Чынгыз Айтматов</h2>
-
-                    <p><span></span>Дос, кыйынчылыкта билинет дешет. Менимче, бактылуу кезиңде да билинет..
+                    <p><span></span>Дос, кыйынчылыкта билинет дешет. Менимче, бактылуу кезиңде да билинет.. 
                     </p>
                 </div>
-            <div class="col-sm-3">
-                <img src="{{asset('images/channels/kyrgyzradio/aitmatov.jpg')}}" height="100" width="100" alt="">
+                <div class="righter"><i class="fa fa-play"></i></div>
+            <div class="col-xs-3">
+                <img class="img-responsive" src="{{asset('images/channels/kyrgyzradio/aitmatov.jpg')}}" height="100" width="100" alt="">
                     
                 </div>
             </div>  
-            <div class="col-md-6">            
+            <div class="col-md-6 col-xs-12">            
                 <div class="col-xs-9">
                     <h2>Чынгыз Айтматов</h2>
-                    <p><span></span>Словно люди не понимают, сколько несчастий и убожества в их жизни поистекает и проистекало во все времена от лени.
-                    </p>
+                    <p><span></span>«Человек не умирает до тех пор, пока живут знавшие его». </p>
                 </div>
-                <div class="col-sm-3">
-                <img src="{{asset('images/channels/kyrgyzradio/aitmatov.jpg')}}" height="100" width="100" alt="">
+                <div class="righter"><i class="fa fa-play"></i></div>
+                <div class="col-xs-3">
+                <img class="img-responsive" src="{{asset('images/channels/kyrgyzradio/aitmatov.jpg')}}" height="100" width="100" alt="">
                     
                 </div>
             </div>
@@ -1029,4 +1032,5 @@
 <script src="js/landing/main.js"></script>
 <script src="js/landing/jquery.js"></script>
 <script src="js/landing/fixed.js"></script>
+
 @stop

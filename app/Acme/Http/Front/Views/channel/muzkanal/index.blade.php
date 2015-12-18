@@ -1239,7 +1239,7 @@
       //    });
       
       playerInstance.setup({
-          autostart: false,
+          autostart: true,
           playlist: [{
                   image: "{{ asset('images/channels/muztv.png') }}",
                   sources: [{

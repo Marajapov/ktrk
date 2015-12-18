@@ -166,7 +166,7 @@
                            <img src="{{ asset('images/1.jpg') }}" alt="">
                         </div>
                         <div class="col-xs-8 topartist" style="height:50px;">
-                           <h3>Мирбек Атабеков - Мөлмөлүм</h3>
+                           <a href="#"><h3>Мирбек Атабеков - Мөлмөлүм</h3></a>
                         </div>
                         <div class="col-xs-1 topclip" style="height:50px;">
                            <a href="#"><i class="glyphicon glyphicon-play"></i> </a>
@@ -185,7 +185,7 @@
                               <img src="{{ asset('images/8.jpg') }}" alt="">
                            </div>
                            <div class="col-xs-8 topartist" style="height:50px;">
-                              <h3>Урмат Усенов - Жазгы жамгыр</h3>
+                              <a href="#"><h3>Урмат Усенов - Жазгы жамгыр</h3></a>
                            </div>
                            <div class="col-xs-1 topclip" style="height:50px;">
                               <a href="#"><i class="glyphicon glyphicon-play"></i> </a>
@@ -205,7 +205,7 @@
                               <img src="{{ asset('images/7.jpg') }}" alt="">
                            </div>
                            <div class="col-xs-8 topartist" style="height:50px;">
-                              <h3>Султан Садыралиев - Кыргыз бийи</h3>
+                              <a href="#"><h3>Султан Садыралиев - Кыргыз бийи</h3></a>
                            </div>
                            <div class="col-xs-1 topclip" style="height:50px;">
                               <a href="#"><i class="glyphicon glyphicon-play"></i> </a>
@@ -225,7 +225,7 @@
                               <img src="{{ asset('images/6.jpg') }}" alt="">
                            </div>
                            <div class="col-xs-8 topartist" style="height:50px;">
-                              <h3>Султан Садыралиев - Кыргыз бийи</h3>
+                              <a href="#"><h3>Султан Садыралиев - Кыргыз бийи</h3></a>
                            </div>
                            <div class="col-xs-1 topclip" style="height:50px;">
                               <a href="#"><i class="glyphicon glyphicon-play"></i> </a>
@@ -245,7 +245,7 @@
                               <img src="{{ asset('images/5.jpg') }}" alt="">
                            </div>
                            <div class="col-xs-8 topartist" style="height:50px;">
-                              <h3>Анжелика - Менин сүйүүм</h3>
+                              <a href="#"><h3>Анжелика - Менин сүйүүм</h3></a>
                            </div>
                            <div class="col-xs-1 topclip" style="height:50px;">
                               <a href="#"><i class="glyphicon glyphicon-play"></i> </a>
@@ -265,7 +265,7 @@
                               <img src="{{ asset('images/4.jpg') }}" alt="">
                            </div>
                            <div class="col-xs-8 topartist" style="height:50px;">
-                              <h3>Кайрат Примбердиев - Поезддеги махабат</h3>
+                              <a href=""><h3>Кайрат Примбердиев - Поезддеги махабат</h3></a>
                            </div>
                            <div class="col-xs-1 topclip" style="height:50px;">
                               <a href="#"><i class="glyphicon glyphicon-play"></i> </a>
@@ -285,7 +285,7 @@
                               <img src="{{ asset('images/3.jpg') }}" alt="">
                            </div>
                            <div class="col-xs-8 topartist" style="height:50px;">
-                              <h3>Арсен - Тагдырым мага жазбачы</h3>
+                              <a href=""><h3>Арсен - Тагдырым мага жазбачы</h3></a>
                            </div>
                            <div class="col-xs-1 topclip" style="height:50px;">
                               <a href="#"><i class="glyphicon glyphicon-play"></i> </a>
@@ -305,7 +305,7 @@
                               <img src="{{ asset('images/2.jpg') }}" alt="">
                            </div>
                            <div class="col-xs-8 topartist" style="height:50px;">
-                              <h3>Гүлжигит Калыков - Кыргыз бийи</h3>
+                              <a href=""><h3>Гүлжигит Калыков - Кыргыз бийи</h3></a>
                            </div>
                            <div class="col-xs-1 topclip" style="height:50px;">
                               <a href="#"><i class="glyphicon glyphicon-play"></i> </a>
@@ -325,7 +325,7 @@
                               <img src="{{ asset('images/9.jpg') }}" alt="">
                            </div>
                            <div class="col-xs-8 topartist" style="height:50px;">
-                              <h3>Мирбек Иманбеков - Таластык кыз</h3>
+                              <a href=""><h3>Мирбек Иманбеков - Таластык кыз</h3></a>
                            </div>
                            <div class="col-xs-1 topclip" style="height:50px;">
                               <a href="#"><i class="glyphicon glyphicon-play"></i> </a>
@@ -345,7 +345,7 @@
                               <img src="{{ asset('images/1.jpg') }}" alt="">
                            </div>
                            <div class="col-xs-8 topartist" style="height:50px;">
-                              <h3>Гүлнур Сатылганова - Орто жаштан өткөндө</h3>
+                              <a href=""><h3>Гүлнур Сатылганова - Орто жаштан өткөндө</h3></a>
                            </div>
                            <div class="col-xs-1 topclip" style="height:50px;">
                               <a href="#"><i class="glyphicon glyphicon-play"></i> </a>
@@ -367,12 +367,8 @@
                      </h4>
                   </div>
                </div>
-               <iframe width="100%" height="310px" src="https://www.youtube.com/embed/nA2tGgAzQ9E" frameborder="0" allowfullscreen></iframe>
-               <div class="panel-body">
-                  <img src="{{ asset('images/channels/muzkanal/chart.jpg') }}" alt="">
-                  </br></br>
-                  <img src="{{ asset('images/channels/muzkanal/12.png') }}" alt="">
-               </div>
+               <iframe width="100%" height="300px" src="https://www.youtube.com/embed/nA2tGgAzQ9E" frameborder="0" allowfullscreen></iframe>
+
             </div>
          </div>
       </div>
