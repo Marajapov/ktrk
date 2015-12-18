@@ -116,6 +116,8 @@ return [
     //    Народный репортер
     'Reporter' => 'Народный репортер',
     'ReporterAdd' => 'Добавить новость',
+    'AdminReporterName' => 'Имя',
+    'AdminReporter' => '',
 
     // Admin panel translate
     'AdminHomeTitle' => 'Главная',

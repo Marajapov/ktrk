@@ -413,6 +413,10 @@ form:after {
     font-weight: bold;
     text-transform: uppercase;
 }
+.x_content .media-content i{
+    font-size: 24px;
+    padding-right: 10px;
+}
 .x_content .table form,.x_content .table .btn{
     float: left;
 }

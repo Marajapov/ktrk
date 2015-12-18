@@ -27,7 +27,7 @@ return [
 	    'About' => 'Радио жөнүндө',
 	    'Peredachi' => 'Уктуруулар',
 	    'Prperedach' => 'Уктуруулар программасы',
-	    'Photos' => 'Сүрөт көргөзмө',
+	    'Photos' => 'Сүрөттөр',
 	    '' => '',
 
 	    //Content slider
@@ -80,5 +80,40 @@ return [
 		'Bworld' => 'Баластан',	
 		'BirgeRead' => 'Бирге окуйбуз',	
 		'Bperedachi' => 'Көрсөтүүлөр',	
+		'' => '',
+
+		//Madaniyat channel
+		'Mabout' => 'Канал жөнүндө',		
+		'Korsotuu' => 'Көрсөтүүлөр',		
+		'NewKorsotuu' => 'Жаңы көрсөтүүлөр',		
+		'TopKorsotuu' => 'Популярдуу көрсөтүүлөр',		
+		'AllVideos' => 'Баардык видеолор',		
+		'MadanTV' => 'Маданият телеканалы',
+		'OtherGallery' => 'Башка галереялар',
+		'Zoom' => 'Чоңойтуу',
+		'ImgDesc' => 'Cүрөттүн баяндамасы',	
+		'Root' => 'Булак:',	
+		'Close' => 'Жабуу',	
 		'' => '',	
+
+		//Kundor
+		'Monday' => 'Дү',
+		'Tuesday' => 'Ше',
+		'Wednesday' => 'Ша',
+		'Thursday' => 'Бе',
+		'Friday' => 'Жу',
+		'Saturday' => 'Иш',
+		'Sunday' => 'Же',
+		'' => '',
+
+		//Muzic channel
+		'Clips'=> 'Клиптер',			
+		'KorsotuuList'=> 'Көрсөтүүлөр программасы',			
+		'NewClips'=> 'Жаңы клиптер',			
+		'TopCLips'=> 'Популярдуу клиптер',			
+		'New'=> 'Жаңы!',			
+		'AboutMusic'=> '«МУЗЫКА» телеканалы жөнүндө',			
+		''=> '',			
+		''=> '',			
+
 ];

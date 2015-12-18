@@ -1,18 +1,17 @@
 @extends('Admin::layouts.default')
-@section('title', $mediaCategory->getName())
+@section('title', trans('site.AdminMediaCategoryNew'))
 
 @section('content')
 <div class="row modals">
 	<div class="col-md-12 col-sm-12 col-xs-12">
 		<div class="x_panel">
-			<div class="x_title">
-				<h2>{{ trans('site.AdminMediaCategoryNew') }}
-</h2>
 
-				<div class="clearfix"></div>
-			</div>
+      <div class="x_title">
+        <h4>{{ trans('site.AdminMediaCategoryNew') }}</h4>
+      </div>
+
 			<div class="x_content">
-				{!! Form::model($mediaCategory, ['route' => 'admin.mediaCategory.store']) !!}
+				{!! Form::model($mediaCategory, ['route' => 'admin.mediaCategory.store', 'enctype' => 'multipart/form-data', 'class'=>'form-horizontal']) !!}
 				@include('Admin::partials.forms.mediaCategory', $mediaCategory)
 				{!! Form::close() !!}
 

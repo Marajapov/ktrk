@@ -1781,7 +1781,7 @@ header {
 /*Panel show*/
 .panel-show .media-left a {
     height: 150px;
-    width: 200px;
+    width: 250px;
 }
 .panel-show .media-left a img {
     height: 150px;
@@ -2977,7 +2977,7 @@ display: block;
     border: none;
     border-bottom: 2px solid #F1F4F9;
     padding-right: 90px;
-    width: 250px;    /*background: rgba(35,125,172,0.8);*/
+    width: 206px;    /*background: rgba(35,125,172,0.8);*/
     background: none;
     color: #ffffff;
     -webkit-box-shadow: none;
@@ -3014,7 +3014,7 @@ display: block;
 /*LIVE*/
 .btn-live {
     position: absolute;
-    right: 50px;
+    right: 128px;
     z-index: 2;
     margin-right: 0;
     opacity: 1;
@@ -3970,7 +3970,7 @@ ul.social-share li a:hover {
     line-height: 13px;
 }
 .schedule span.day_active {
-    background: #B10036;
+    background: #CF3529;
 }
 .aboutperedachi {
     display: block;
@@ -4535,4 +4535,52 @@ background-size: cover;
 }
 .firstcloud {
     margin-left: 60px;
+}
+
+/*LANGUAGE Muz Channel and Madaniyat pages*/
+.clangs{
+    position: absolute;
+    z-index: 2;
+
+    margin-left: -117px;
+    margin-top: 21px;
+
+    -webkit-transition: bottom 0.3s;
+    -moz-transition: bottom 0.3s;
+    -ms-transition: bottom 0.3s;
+    -o-transition: bottom 0.3s;
+    transition: bottom 0.3s;
+}
+.clangs ul{
+    text-align: center;
+}
+.clangs li{
+    padding: 0 4px;
+    float: left;
+
+    background: none;
+    border-radius: 3px !important;
+}
+.clangs li a{
+    position: relative;
+
+    color: #fff;
+
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.clangs li.active{
+    background: #C42026;
+}
+.clangs li.active a{
+    color: #fff;
+}
+
+@media (max-width:770px) {
+  .clangs {
+    position: absolute;
+    z-index: 2;
+    right: 40px;
+  }
 }

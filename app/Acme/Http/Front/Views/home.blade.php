@@ -76,7 +76,7 @@
 
                   <div class="panel-heading2">
                     <h3 class="panel-title">
-                      <a  type="button" data-toggle="modal" data-target="#exampleModal"><span>Жаңылык кошуу</span><span class="prrus">Добавить новость</span><i class="fa fa-file-text-o"></i></a>
+                      <a href="{{ route('front.reporter') }}"><span>Жаңылык кошуу</span><span class="prrus">Добавить новость</span><i class="fa fa-file-text-o"></i></a>
                     </h3>
 
                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
