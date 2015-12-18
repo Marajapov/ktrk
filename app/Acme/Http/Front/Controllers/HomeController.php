@@ -468,7 +468,7 @@ class HomeController extends Controller
 
                     $filename = time().$key.'.'.$image->getClientOriginalExtension();
 
-                    Image::make($_FILES['images']['tmp_name'][$key])->fit(250,150)->save($destinationPath.'/'.$filename);
+                    Image::make($_FILES['images']['tmp_name'][$key])->heighten(600)->save($destinationPath.'/'.$filename);
 
                     $files_array = array();
                     $files_array = array_collapse([$files_array, [
