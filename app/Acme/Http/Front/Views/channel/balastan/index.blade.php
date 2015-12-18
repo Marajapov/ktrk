@@ -88,7 +88,7 @@
          <div class="col-md-8" style="text-align:center;">
             <img class="tvthree" src="{{ asset('images/channels/balastan/tv3.png')}}" alt="">
             <div class="iconcenter">                            
-               <iframe width="495" height="360" src="https://www.youtube.com/embed/2tV6RFYqCZg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>
+               <iframe width="495" height="360" src="https://www.youtube.com/embed/{{$firstMedia->getUrl()}}/?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>
             </div>
             <img class="tvtop" src="{{ asset('images/channels/balastan/tvtop.png')}}" alt="">
             <img class="tvbottom" src="{{ asset('images/channels/balastan/tvbottom.png')}}" alt="">
@@ -108,42 +108,14 @@
                </div>
                <div class="panel-body">
                   <div class="row ">
+                     @foreach($medias as $media)
                      <div class="col-md-4 col-sm-6">
                         <div class="kidsvideo kidsboard">
-                           <iframe width="100%" height="180px" src="https://www.youtube.com/embed/2tV6RFYqCZg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                   
+                           <iframe width="100%" height="180px" src="https://www.youtube.com/embed/{{$media->getUrl()}}?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                   
                         </div>
-                        <h3>Мультфильм</h3>
+                        <h3>{{ $media->getName() }}</h3>
                      </div>
-                     <div class="col-md-4 col-sm-6">
-                        <div class="kidsvideo kidsboard">
-                           <iframe width="100%" height="180px" src="https://www.youtube.com/embed/2tV6RFYqCZg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                            
-                        </div>
-                        <h3>Мультфильм</h3>
-                     </div>
-                     <div class="col-md-4 col-sm-6">
-                        <div class="kidsvideo kidsboard">
-                           <iframe width="100%" height="180px" src="https://www.youtube.com/embed/2tV6RFYqCZg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                                   
-                        </div>
-                        <h3>Мультфильм</h3>
-                     </div>
-                     <div class="col-md-4 col-sm-6">
-                        <div class="kidsvideo kidsboard">
-                           <iframe width="100%" height="180px" src="https://www.youtube.com/embed/2tV6RFYqCZg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                   
-                        </div>
-                        <h3>Мультфильм</h3>
-                     </div>
-                     <div class="col-md-4 col-sm-6">
-                        <div class="kidsvideo kidsboard">
-                           <iframe width="100%" height="180px" src="https://www.youtube.com/embed/2tV6RFYqCZg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                   
-                        </div>
-                        <h3>Мультфильм</h3>
-                     </div>
-                     <div class="col-md-4 col-sm-6">
-                        <div class="kidsvideo kidsboard">
-                           <iframe width="100%" height="180px" src="https://www.youtube.com/embed/2tV6RFYqCZg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                   
-                        </div>
-                        <h3>Мультфильм</h3>
-                     </div>
+                     @endforeach
                   </div>
                </div>
             </div>
