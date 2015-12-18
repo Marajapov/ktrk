@@ -98,10 +98,10 @@
                            <li><a href="#"><i class="fa fa-minus"></i>ТВнын  казынасынан</a></li>
                         </ul>
                      </li>
-                     <li><a href="{{ route('madaniyat.photos') }}"><i class="fa fa-picture-o"></i>{{ trans('radiopages.Photos') }}</a></li>
+                     <li><a class="active" href="{{ route('madaniyat.photos') }}"><i class="fa fa-picture-o"></i>{{ trans('radiopages.Photos') }}</a></li>
                   </ul>
                   <ul class="nav navbar-nav navbar-right logo-block">
-                     <ul class="soc socmuz">
+                     <ul class="soc socmuz">    
                         <li class="fb"><a href="#" title="Facebook"><i class="fa fa-facebook"></i></a></li>
                         <li class="ok"><a href="#" title="Odnoklassniki"><i class="fa fa-odnoklassniki"></i></a></li>
                         <li class="yt"><a href="#" title="YouTube"><i class="fa fa-youtube"></i></a></li>
@@ -163,7 +163,7 @@
                                  <a class="btn btn-primary loopmode" href="#modal2" id="myModal2">
                                  <i class="fa fa-search-plus"></i> {{ trans('radiopages.Zoom') }}</a>
                                  <div class="imagegridtext">
-                                    <p>Описание картинки</p>
+                                    <p>{{ trans('radiopages.ImgDesc') }}</p>
                                     <span>{{ trans('radiopages.Root') }} КТРК</span>
                                  </div>
                               </div>
@@ -172,7 +172,7 @@
                                  <a class="btn btn-primary loopmode" href="#modal3" id="myModal3">
                                  <i class="fa fa-search-plus"></i> {{ trans('radiopages.Zoom') }}</a>
                                  <div class="imagegridtext">
-                                    <p>Описание картинки</p>
+                                    <p>{{ trans('radiopages.ImgDesc') }}</p>
                                     <span>{{ trans('radiopages.Root') }} КТРК</span>
                                  </div>
                               </div>
@@ -181,16 +181,16 @@
                                  <a class="btn btn-primary loopmode" href="#modal4" id="myModal4">
                                  <i class="fa fa-search-plus"></i> {{ trans('radiopages.Zoom') }}</a>
                                  <div class="imagegridtext">
-                                    <p>Описание картинки</p>
+                                    <p>{{ trans('radiopages.ImgDesc') }}</p>
                                     <span>{{ trans('radiopages.Root') }} КТРК</span>
                                  </div>
                               </div>
                               <div class="imagebig">
                                  <img src="{{ asset('images/channels/muzkanal/12.png') }}" alt="..."> 
                                  <a class="btn btn-primary loopmode" href="#modal5" id="myModal5">
-                                 <i class="fa fa-search-plus"></i> {{ trans('radiopages.Zoom') }}</a>
+                                 <i class="fa fa-search-plus"></i> Увеличить</a>
                                  <div class="imagegridtext">
-                                    <p>Описание картинки</p>
+                                    <p>{{ trans('radiopages.ImgDesc') }}</p>
                                     <span>{{ trans('radiopages.Root') }} КТРК</span>
                                  </div>
                               </div>
@@ -284,6 +284,7 @@
                </div>
             </div>
          </div>
+
       </div>
    </div>
    @stop
@@ -301,7 +302,6 @@
           $(".img-wrap img").each(function () {
               var width = $(this).width();
               var height = $(this).height();
-      
               if ((width > height)) {
                   $(this).css({
                       width: "auto",
@@ -328,7 +328,6 @@
                   e.preventDefault();
               });
           }
-      
           galleryModal($('#myModal1'), '#modal1');
           galleryModal($('#myModal2'), '#modal2');
           galleryModal($('#myModal3'), '#modal3');

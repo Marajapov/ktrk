@@ -88,7 +88,7 @@
          <div class="col-md-8" style="text-align:center;">
             <img class="tvthree" src="{{ asset('images/channels/balastan/tv3.png')}}" alt="">
             <div class="iconcenter">                            
-               <iframe width="495" height="360" src="https://www.youtube.com/embed/2tV6RFYqCZg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>
+               <iframe width="495" height="360" src="https://www.youtube.com/embed/{{$firstMedia->getUrl()}}/?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>
             </div>
             <img class="tvtop" src="{{ asset('images/channels/balastan/tvtop.png')}}" alt="">
             <img class="tvbottom" src="{{ asset('images/channels/balastan/tvbottom.png')}}" alt="">
@@ -108,42 +108,14 @@
                </div>
                <div class="panel-body">
                   <div class="row ">
+                     @foreach($medias as $media)
                      <div class="col-md-4 col-sm-6">
                         <div class="kidsvideo kidsboard">
-                           <iframe width="100%" height="180px" src="https://www.youtube.com/embed/2tV6RFYqCZg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                   
+                           <iframe width="100%" height="180px" src="https://www.youtube.com/embed/{{$media->getUrl()}}?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                   
                         </div>
-                        <h3>Мультфильм</h3>
+                        <h3>{{ $media->getName() }}</h3>
                      </div>
-                     <div class="col-md-4 col-sm-6">
-                        <div class="kidsvideo kidsboard">
-                           <iframe width="100%" height="180px" src="https://www.youtube.com/embed/2tV6RFYqCZg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                            
-                        </div>
-                        <h3>Мультфильм</h3>
-                     </div>
-                     <div class="col-md-4 col-sm-6">
-                        <div class="kidsvideo kidsboard">
-                           <iframe width="100%" height="180px" src="https://www.youtube.com/embed/2tV6RFYqCZg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                                   
-                        </div>
-                        <h3>Мультфильм</h3>
-                     </div>
-                     <div class="col-md-4 col-sm-6">
-                        <div class="kidsvideo kidsboard">
-                           <iframe width="100%" height="180px" src="https://www.youtube.com/embed/2tV6RFYqCZg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                   
-                        </div>
-                        <h3>Мультфильм</h3>
-                     </div>
-                     <div class="col-md-4 col-sm-6">
-                        <div class="kidsvideo kidsboard">
-                           <iframe width="100%" height="180px" src="https://www.youtube.com/embed/2tV6RFYqCZg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                   
-                        </div>
-                        <h3>Мультфильм</h3>
-                     </div>
-                     <div class="col-md-4 col-sm-6">
-                        <div class="kidsvideo kidsboard">
-                           <iframe width="100%" height="180px" src="https://www.youtube.com/embed/2tV6RFYqCZg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                   
-                        </div>
-                        <h3>Мультфильм</h3>
-                     </div>
+                     @endforeach
                   </div>
                </div>
             </div>
@@ -158,78 +130,20 @@
                <div class="panel-body" style="margin-top:20px;">
                   <div class="col-md-12 broadimages">
                      <div class="carousel-slick">
+
+                     @if($photoGalleries)
+                      @foreach($photoGalleries as $photoGallery)
+                        
                         <div class="col-md-4">
-                           <a href="#">
-                              <img src="images/gallery/001.jpg" alt=""/><span>Название</span>
-                              <div class="overlay"></div>
-                           </a>
+                          <a href="{{ route('front.balastan.photos', $photoGallery) }}">
+                            <img src="{{ asset($photoGallery->status) }}" alt=""/><span>{{ $photoGallery->getName() }}</span>
+                            <div class="overlay"></div>
+                            <i class="fa fa-camera"></i>
+                          </a>
                         </div>
-                        <div class="col-md-4">
-                           <a href="#">
-                              <img src="images/gallery/002.jpg" alt=""/><span>Название</span>
-                              <div class="overlay"></div>
-                           </a>
-                        </div>
-                        <div class="col-md-4">
-                           <a href="#">
-                              <img src="images/gallery/003.jpg" alt=""/><span>Название</span>
-                              <div class="overlay"></div>
-                           </a>
-                        </div>
-                        <div class="col-md-4">
-                           <a href="#">
-                              <img src="images/gallery/004.jpg" alt=""/><span>Название</span>
-                              <div class="overlay"></div>
-                           </a>
-                        </div>
-                        <div class="col-md-4">
-                           <a href="#">
-                              <img src="images/gallery/005.jpg" alt=""/><span>Название</span>
-                              <div class="overlay"></div>
-                           </a>
-                        </div>
-                        <div class="col-md-4">
-                           <a href="#">
-                              <img src="images/gallery/006.jpg" alt=""/><span>Название</span>
-                              <div class="overlay"></div>
-                           </a>
-                        </div>
-                        <div class="col-md-4">
-                           <a href="#">
-                              <img src="images/gallery/007.jpg" alt=""/><span>Название</span>
-                              <div class="overlay"></div>
-                           </a>
-                        </div>
-                        <div class="col-md-4">
-                           <a href="#">
-                              <img src="images/gallery/008.jpg" alt=""/><span>Название</span>
-                              <div class="overlay"></div>
-                           </a>
-                        </div>
-                        <div class="col-md-4">
-                           <a href="#">
-                              <img src="images/gallery/009.jpg" alt=""/><span>Название</span>
-                              <div class="overlay"></div>
-                           </a>
-                        </div>
-                        <div class="col-md-4">
-                           <a href="#">
-                              <img src="images/gallery/010.jpg" alt=""/><span>Название</span>
-                              <div class="overlay"></div>
-                           </a>
-                        </div>
-                        <div class="col-md-4">
-                           <a href="#">
-                              <img src="images/gallery/011.jpg" alt=""/><span>Название</span>
-                              <div class="overlay"></div>
-                           </a>
-                        </div>
-                        <div class="col-md-4">
-                           <a href="#">
-                              <img src="images/gallery/012.jpg" alt=""/><span>Название</span>
-                              <div class="overlay"></div>
-                           </a>
-                        </div>
+                  
+                      @endforeach
+                        
                      </div>
                   </div>
                </div>

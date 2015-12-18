@@ -39,7 +39,7 @@
     <header id="header">
         <nav id="main-menu" class="navbar navbar-default fixedheader2" role="banner">
             <div class="container" style="padding: 0px;">
-                <div class="langs">
+                <div class="languages">
                     <ul>
                         <li @if(app()->getlocale() == 'kg') class="active" @endif><a href="/locale/kg">кырг <span></span></a></li>
                         <li @if(app()->getlocale() == 'ru') class="active" @endif><a href="/locale/ru">рус <span></span></a></li>

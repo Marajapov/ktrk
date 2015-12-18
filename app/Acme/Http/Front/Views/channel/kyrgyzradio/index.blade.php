@@ -124,12 +124,13 @@
     <section id="cta" class="wow fadeIn">
         <div class="container">
             <div class="row">
-            <div class="col-md-6 col-xs-12" style="border-right: 10px solid #fff;">            
+            <div class="col-md-6 col-xs-12">            
                 <div class="col-xs-9">
                     <h2>Чынгыз Айтматов</h2>
-                    <p><span></span>Дос, кыйынчылыкта билинет дешет. Менимче, бактылуу кезиңде да билинет..
+                    <p><span></span>Дос, кыйынчылыкта билинет дешет. Менимче, бактылуу кезиңде да билинет.. 
                     </p>
                 </div>
+                <div class="righter"><i class="fa fa-play"></i></div>
             <div class="col-xs-3">
                 <img class="img-responsive" src="{{asset('images/channels/kyrgyzradio/aitmatov.jpg')}}" height="100" width="100" alt="">
                     
@@ -835,8 +836,8 @@
     <section id="cta" class="wow fadeIn">
         <div class="container">
             <div class="row">
-            <div class="col-md-6" style="border-right: 10px solid #fff;">            
-                <div class="col-sm-9">
+            <div class="col-md-6">            
+                <div class="col-xs-9">
                     <h2>Чынгыз Айтматов</h2>
                     <p><span></span>Дос, кыйынчылыкта билинет дешет. Менимче, бактылуу кезиңде да билинет..
                     </p>
@@ -847,7 +848,7 @@
                 </div>
             </div>  
             <div class="col-md-6">            
-                <div class="col-sm-9">
+                <div class="col-xs-9">
                     <h2>Чынгыз Айтматов</h2>
                     <p><span></span>Словно люди не понимают, сколько несчастий и убожества в их жизни поистекает и проистекало во все времена от лени.
                     </p>
@@ -955,9 +956,10 @@
     <section id="cta" class="wow fadeIn">
         <div class="container">
             <div class="row">
-            <div class="col-md-6" style="border-right: 10px solid #fff;">            
-                <div class="col-sm-9">
+            <div class="col-md-6">            
+                <div class="col-xs-9">
                     <h2>Чынгыз Айтматов</h2>
+
                     <p><span></span>Дос, кыйынчылыкта билинет дешет. Менимче, бактылуу кезиңде да билинет..
                     </p>
                 </div>
@@ -967,7 +969,7 @@
                 </div>
             </div>  
             <div class="col-md-6">            
-                <div class="col-sm-9">
+                <div class="col-xs-9">
                     <h2>Чынгыз Айтматов</h2>
                     <p><span></span>Словно люди не понимают, сколько несчастий и убожества в их жизни поистекает и проистекало во все времена от лени.
                     </p>

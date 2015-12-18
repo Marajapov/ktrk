@@ -44,7 +44,7 @@
 }
 
 /*LANGUAGE Landing radio pages*/
-.langs{
+.languages{
     position: absolute;
     z-index: 2;
 
@@ -57,16 +57,16 @@
     -o-transition: bottom 0.3s;
     transition: bottom 0.3s;
 }
-.langs ul{
+.languages ul{
     text-align: center;
 }
-.langs li{
+.languages li{
     padding: 0 7px;
 
     background: none;
     border-radius: 3px !important;
 }
-.langs li a{
+.languages li a{
     position: relative;
 
     color: #000;
@@ -74,15 +74,15 @@
     font-size: 11px;
     text-transform: uppercase;
 }
-.langs li.active{
+.languages li.active{
     background: #0CB2AB;
 }
-.langs li.active a{
+.languages li.active a{
     color: rgba(255, 255, 255, 0.65);
 }
 
 @media (max-width:770px) {
-  .langs {
+  .languages {
     position: absolute;
     z-index: 2;
     right: 40px;
