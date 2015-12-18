@@ -130,78 +130,20 @@
                <div class="panel-body" style="margin-top:20px;">
                   <div class="col-md-12 broadimages">
                      <div class="carousel-slick">
+
+                     @if($photoGalleries)
+                      @foreach($photoGalleries as $photoGallery)
+                        
                         <div class="col-md-4">
-                           <a href="#">
-                              <img src="images/gallery/001.jpg" alt=""/><span>Название</span>
-                              <div class="overlay"></div>
-                           </a>
+                          <a href="{{ route('front.balastan.photos', $photoGallery) }}">
+                            <img src="{{ asset($photoGallery->status) }}" alt=""/><span>{{ $photoGallery->getName() }}</span>
+                            <div class="overlay"></div>
+                            <i class="fa fa-camera"></i>
+                          </a>
                         </div>
-                        <div class="col-md-4">
-                           <a href="#">
-                              <img src="images/gallery/002.jpg" alt=""/><span>Название</span>
-                              <div class="overlay"></div>
-                           </a>
-                        </div>
-                        <div class="col-md-4">
-                           <a href="#">
-                              <img src="images/gallery/003.jpg" alt=""/><span>Название</span>
-                              <div class="overlay"></div>
-                           </a>
-                        </div>
-                        <div class="col-md-4">
-                           <a href="#">
-                              <img src="images/gallery/004.jpg" alt=""/><span>Название</span>
-                              <div class="overlay"></div>
-                           </a>
-                        </div>
-                        <div class="col-md-4">
-                           <a href="#">
-                              <img src="images/gallery/005.jpg" alt=""/><span>Название</span>
-                              <div class="overlay"></div>
-                           </a>
-                        </div>
-                        <div class="col-md-4">
-                           <a href="#">
-                              <img src="images/gallery/006.jpg" alt=""/><span>Название</span>
-                              <div class="overlay"></div>
-                           </a>
-                        </div>
-                        <div class="col-md-4">
-                           <a href="#">
-                              <img src="images/gallery/007.jpg" alt=""/><span>Название</span>
-                              <div class="overlay"></div>
-                           </a>
-                        </div>
-                        <div class="col-md-4">
-                           <a href="#">
-                              <img src="images/gallery/008.jpg" alt=""/><span>Название</span>
-                              <div class="overlay"></div>
-                           </a>
-                        </div>
-                        <div class="col-md-4">
-                           <a href="#">
-                              <img src="images/gallery/009.jpg" alt=""/><span>Название</span>
-                              <div class="overlay"></div>
-                           </a>
-                        </div>
-                        <div class="col-md-4">
-                           <a href="#">
-                              <img src="images/gallery/010.jpg" alt=""/><span>Название</span>
-                              <div class="overlay"></div>
-                           </a>
-                        </div>
-                        <div class="col-md-4">
-                           <a href="#">
-                              <img src="images/gallery/011.jpg" alt=""/><span>Название</span>
-                              <div class="overlay"></div>
-                           </a>
-                        </div>
-                        <div class="col-md-4">
-                           <a href="#">
-                              <img src="images/gallery/012.jpg" alt=""/><span>Название</span>
-                              <div class="overlay"></div>
-                           </a>
-                        </div>
+                  
+                      @endforeach
+                        
                      </div>
                   </div>
                </div>
