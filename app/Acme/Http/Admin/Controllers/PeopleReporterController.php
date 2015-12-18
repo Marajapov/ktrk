@@ -15,7 +15,7 @@ class PeopleReporterController extends Controller
      */
     public function index()
     {
-        $peopleReporters = PeopleReporter::get();
+        $peopleReporters = PeopleReporter::orderBy('id', 'desc')->get();
 
         return view('Admin::peopleReporter.index', ['peopleReporters' => $peopleReporters]);
     }
@@ -78,8 +78,12 @@ class PeopleReporterController extends Controller
      */
     public function show(PeopleReporter $peopleReporter)
     {
+        $images = json_decode($peopleReporter->thumbnail);
 
-        return view('Admin::peopleReporter.show', ['peopleReporter' => $peopleReporter]);
+        return view('Admin::peopleReporter.show', [
+            'peopleReporter' => $peopleReporter,
+            'images' => $images,
+        ]);
     }
 
     /**
@@ -121,6 +125,36 @@ class PeopleReporterController extends Controller
         }
 
         return redirect()->route('admin.peopleReporter.show', $peopleReporter);
+    }
+
+    public function photodelete(Request $request)
+    {
+        $photoDeleteId = $request->photoDeleteId;
+
+        $photoParentId = $request->photoParentId;
+        $peopleReporter = \Model\PeopleReporter\ModelName::where('id','=',$photoParentId)->first();
+
+        $files = json_decode($peopleReporter->images, true);
+
+        $file = $files[$photoDeleteId-1];
+
+        $name = $file['name'];
+
+        $key = array_has($files, $photoDeleteId);
+
+        if($key !== false) {
+            $storage = \Storage::delete('/froala/uploads/'.$name);
+        }
+
+        unset($files[$photoDeleteId-1]);
+
+        $jsonFiles = json_encode($files);
+
+        $photoParent->images = $jsonFiles;
+
+        $photoParent->save();
+
+        return redirect()->route('admin.photoParent.show', $photoParent);
     }
 
     /**
