@@ -137,7 +137,7 @@
    <!-- Main slider -->
    <div class="container">
       <div class="row photosmuz">
-         <div class="col-md-9 topchart">
+         <div class="col-md-12 topchart">
             <div class="panel">
                <div class="panel-heading">
                   <div class="panel-title">
@@ -148,7 +148,7 @@
                </div>
                <div class="panel-body imagegrid">
                   <div class="row">
-                     <div class="col-md-12">
+                     <div class="col-md-9">
                         <div class="imagepad">
                            <div class="slider slider-for">
                               <div class="imagebig">
@@ -242,50 +242,51 @@
                            </div>
                         </div>
                      </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="col-md-3 topchart">
-            <div class="panel">
-               <div class="panel-heading">
-                  <div class="panel-title">
-                     <h4 class="show-title">
-                        <a href="#">{{ trans('radiopages.OtherGallery') }}</a> 
-                     </h4>
-                  </div>
-               </div>
-               <div class="panel-body imagegrid">
-                  <div class="row">
-                     <div class="col-md-12 otherphotos">
-                        <div class="grid_gallery">
-                           <div class="grid_item">
-                              <a href="#" class="img-wrap">
-                                 <img src="{{ asset('images/channels/muzkanal/12.png') }}" alt=""/>
-                                 <span>Открыть галерею</span>
-                                 <div class="overlay"></div>
-                              </a>
+                  <div class="col-md-3">
+                     <div class="panel">
+                        <div class="panel-heading">
+                           <div class="panel-title">
+                              <h4 class="show-title">
+                                 <a href="#">{{ trans('radiopages.OtherGallery') }}</a> 
+                              </h4>
                            </div>
-                           <div class=" grid_item">
-                              <a href="#" class="img-wrap">
-                                 <img src="{{ asset('images/channels/muzkanal/mirbek.jpg') }}" alt=""/>
-                                 <span>Открыть галерею</span>
-                                 <div class="overlay"></div>
-                              </a>
-                           </div>
-                           <div class=" grid_item">
-                              <a href="#" class="img-wrap">
-                                 <img src="{{ asset('images/channels/muzkanal/kalykov.jpg') }}" alt=""/>
-                                 <span>Открыть галерею</span>
-                                 <div class="overlay"></div>
-                              </a>
+                        </div>
+                        <div class="panel-body imagegrid">
+                           <div class="row">
+                              <div class="col-md-12 otherphotos">
+                                 <div class="grid_gallery">
+                                    <div class="grid_item">
+                                       <a href="#" class="img-wrap">
+                                          <img src="{{ asset('images/channels/muzkanal/12.png') }}" alt=""/>
+                                          <span>Открыть галерею</span>
+                                          <div class="overlay"></div>
+                                       </a>
+                                    </div>
+                                    <div class=" grid_item">
+                                       <a href="#" class="img-wrap">
+                                          <img src="{{ asset('images/channels/muzkanal/mirbek.jpg') }}" alt=""/>
+                                          <span>Открыть галерею</span>
+                                          <div class="overlay"></div>
+                                       </a>
+                                    </div>
+                                    <div class=" grid_item">
+                                       <a href="#" class="img-wrap">
+                                          <img src="{{ asset('images/channels/muzkanal/kalykov.jpg') }}" alt=""/>
+                                          <span>Открыть галерею</span>
+                                          <div class="overlay"></div>
+                                       </a>
+                                    </div>
+                                 </div>
+                              </div>
                            </div>
                         </div>
                      </div>
                   </div>
+                  </div>
                </div>
             </div>
          </div>
+
       </div>
    </div>
    @stop

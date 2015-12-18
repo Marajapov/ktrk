@@ -51,6 +51,8 @@ header {
 #about img {
   height: 320px;
   width: auto;
+  margin: auto;
+  display: block;
 }
 .fixed {
   position: fixed;
@@ -85,7 +87,7 @@ header {
   }
 }
 .onetime .btn {
-  background: #FF9800;
+  background: #0CB2AB;
   color: #fff;
   font-size: 16px;
   border-radius: 5px !important;
@@ -94,7 +96,7 @@ header {
 }
 .onetime i {
   padding: 10px;
-  background: #CA7B07;
+  background: #2DA29E;
   border-top-left-radius: 5px !important;
   border-bottom-left-radius: 5px !important;
 }
@@ -134,8 +136,8 @@ header {
     position: absolute;
     width: 640px;
     bottom: 0;
-    height: 1px;
-    background: #ebebeb;
+    height: 2px;
+    background: #0CB2AB;
     left: 0;
     right: 0;
     margin: auto;
@@ -151,6 +153,39 @@ header {
   border: 5px solid #fff;
   border-radius: 20px;
   background: #607D8B;
+}
+
+.section-header2 {
+  margin-bottom: 50px;
+}
+.section-header2 .section-title {
+  font-size: 44px;
+  color: #272727;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 20px;
+  margin: 0 0 20px;
+}
+.section-header2 .section-title:before {
+    content: "";
+    position: absolute;
+    width: 640px;
+    bottom: 0;
+    height: 1px;
+    background: #ebebeb;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.section-header2 .section-title:after {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  bottom: -11px;
+  left: 50%;
+  margin-left: -12px;
+  border-radius: 20px;
 }
 .btn {
   border-width: 0;
@@ -170,14 +205,15 @@ header {
   border-bottom: 1px solid #eee;
   margin-bottom: 15px;
   position: relative;
+  text-align: center;
 }
 .column-title:after {
   content: " ";
   position: absolute;
   bottom: -1px;
   left: 0;
-  width: 40%;
-  border-bottom: 1px solid #45aed6;
+  width: 100%;
+  border-bottom: 2px solid #45aed6;
 }
 ul.nostyle {
   list-style: none;
@@ -228,6 +264,8 @@ ul.nostyle i {
   background:#607D8B;
   padding: 0px 10px 0px 10px;
   z-index: 9999;
+    -webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.6);
 }
 .navbar.navbar-default .navbar-toggle {
   border:none !important; 
@@ -244,6 +282,7 @@ ul.nostyle i {
   height: 50px;
   width: auto;
   float: left;
+  margin-top: 5px;
 }
 .navbar-brand {
   color: #fff !important;

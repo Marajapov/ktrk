@@ -139,7 +139,7 @@
    </div>
    <div class="container">
       <div class="row">
-         <div class="col-md-12" style="padding:0px;">
+         <div class="col-md-12" style="padding:10px 0px;">
             <div class="panel panel-default panel-carousel">
                <div class="panel-heading madaniyatcolor">
                   <h3 class="panel-title"><span>{{ trans('radiopages.Korsotuu') }}</span></h3>

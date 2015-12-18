@@ -55,10 +55,21 @@
                   @if($images != null)
                     @foreach($images as $row)
                       <div class="photo-child">
-                        <img src="{{ asset('froala/uploads/'.$row->name) }} " alt="">
+                        <img src="{{ asset('froala/uploads/'.$row->name) }}" alt="">
+                        <a href="{{ asset('froala/uploads/'.$row->name) }}"></a>
                       </div>
                     @endforeach
                   @endif
+                </div>
+              </li>
+            @endif
+            @if($peopleReporter->video)
+              <li class="list-group-item photos">
+                <p class="header">Видео</p>
+                <div class="body images">
+                  <a class="btn-download" download href="{{ asset('froala/videos/1450419002.mp4') }}"><i class="fa fa-download"></i></a>
+                  <div id="player">
+                  </div>
                 </div>
               </li>
             @endif
@@ -72,4 +83,21 @@
   </div>
 
 @stop
+
+@section('scripts')
+  <script src="{{ asset('jwplayer/jwplayer.js') }}"></script>
+  <script>jwplayer.key="tmEO2SU8NzqLBoHr2Vq6nV13XCyfo8xbdiCb/Q==";</script>
+
+  <script type="text/javascript">
+
+    var playerInstance = jwplayer("player");
+
+    playerInstance.setup({
+      file: "{{ asset('froala/videos/1450419002.mp4') }}",
+      width: "640",
+      height: "360"
+    });
+
+  </script>
+@endsection
 

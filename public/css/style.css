@@ -3492,6 +3492,10 @@ display: block;
     color: #3F51B5;
     font-size: 22px;
 }
+
+.topartist h3:hover{
+    color: #F44336;
+}
 .topborder {
     border: 2px solid #fff;
     margin: 0px;
@@ -3504,6 +3508,10 @@ display: block;
     padding-top: 3px;
     font-size: 32px;
     border-left: 2px solid #fff;
+}
+
+.topclip a:hover{
+    color: #F44336;
 }
 @media (max-width:650px) {
     .topnumber h2 {

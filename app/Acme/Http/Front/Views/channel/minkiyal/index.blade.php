@@ -1,18 +1,10 @@
-<!DOCTYPE html>
-<html>
-   <head lang="en">
-      <meta charset="UTF-8">
-      <title>Миң кыял</title>
-      <link rel="stylesheet" href="css/bootstrap.min.css"/>
-      <link rel="stylesheet" href="css/font-awesome.css"/>
-      <link rel="stylesheet" href="css/style.css"/>
-      <link href="css/landing/animate.min.css" rel="stylesheet">
-      <link href="css/landing/owl.carousel.css" rel="stylesheet">
-      <link href="css/landing/owl.transitions.css" rel="stylesheet">
-      <link href="css/landing/prettyPhoto.css" rel="stylesheet">
-      <link href="css/landing/minkiyal.css" rel="stylesheet">
-      <link href="css/landing/responsive.css" rel="stylesheet">
-   </head>
+@extends('Front::channel.kyrgyzradio.default')
+@section('title', "Кыргыз Радио")
+@section('styles')
+<link rel="stylesheet" href="{{ asset('css/radios.css')}}">
+<link rel="stylesheet" href="{{ asset('css/landing/minkiyal.css')}}">
+@endsection
+@section('content')
    <body id="home" class="homepage">
       <div class="container-fluid switch">
          <nav class="navbar">
@@ -151,7 +143,7 @@
          <!--/#main-slider-->
          <section id="cta2">
             <div class="container">
-               <div class="section-header">
+               <div class="section-header2">
                   <h2 class="section-title text-center wow fadeInDown"></h2>
                   <h2 data-wow-duration="300ms" data-wow-delay="0ms"><span>Радио “Миң кыял FM”</span>- Кыялдар орундалат!!!</h2>
                   <h2 class="section-title text-center wow fadeInDown"></h2>
@@ -430,38 +422,20 @@
          </section>
          <!--/#get-in-touch-->
       </div>
-      <div class="container" style="padding: 0px; margin-top: 20px;">
-         <footer class="footer">
-            <div class="panel panel-default">
-               <div class="panel-body">
-                  <div class="col-md-12">
-                     <div class="row">
-                        <ul>
-                           <li><a href="#">Башкы бет</a></li>
-                           <li><a href="#">КТРК</a></li>
-                           <li><a href="#">Видеопортал</a></li>
-                           <li><a href="#">Телепрограмма</a></li>
-                           <li><a href="#">Байкоочу кеңеш</a></li>
-                           <li><a href="#">Редакциялык кеңешчи</a></li>
-                        </ul>
-                     </div>
-                  </div>
-                  <div class="col-md-12 copy"><i class="fa fa-copyright"></i> 2015 Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясы</div>
-               </div>
-            </div>
-         </footer>
-      </div>
-      <script src="js/jquery-1.11.2.min.js"></script>
-      <script src="js/bootstrap.min.js"></script>
-      <script src="js/landing/owl.carousel.min.js"></script>
-      <script src="js/landing/mousescroll.js"></script>
-      <script src="js/landing/smoothscroll.js"></script>
-      <script src="js/landing/jquery.prettyPhoto.js"></script>
-      <script src="js/landing/jquery.isotope.min.js"></script>
-      <script src="js/landing/jquery.inview.min.js"></script>
-      <script src="js/landing/wow.min.js"></script>
-      <script src="js/landing/main.js"></script>
-      <script src="js/landing/jquery.js"></script>
-      <script src="js/landing/fixed.js"></script>
-   </body>
-</html>
+@stop
+@section('footerscript2')
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<script src="js/landing/owl.carousel.min.js"></script>
+<script src="js/landing/mousescroll.js"></script>
+<script src="js/landing/smoothscroll.js"></script>
+<script src="js/landing/jquery.prettyPhoto.js"></script>
+<script src="js/landing/jquery.isotope.min.js"></script>
+<script src="js/landing/jquery.inview.min.js"></script>
+<script src="js/landing/wow.min.js"></script>
+<script src="js/landing/main.js"></script>
+<script src="js/landing/jquery.js"></script>
+<script src="js/landing/fixed.js"></script>
+
+@stop

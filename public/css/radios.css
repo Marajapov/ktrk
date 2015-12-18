@@ -123,6 +123,7 @@
   position: relative;
   top: 0;
 }
+
 .birinchiradio .top-nav .dropdown-menu {
   background: #444;
 
@@ -138,6 +139,7 @@
 .birinchiradio .top-nav li a {
   color: #D2D0D0;
   border-left: 1px solid #333333;
+  display: flex;
 
 }
 .birinchiradio .top-nav li a:hover {
