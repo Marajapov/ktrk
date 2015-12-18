@@ -230,7 +230,7 @@
                   </div>
                </div>
             </div>
-            <div class="col-md-9 onenews ">
+            <div class="col-md-9 onenews">
                <div class="panel panel-articles">
                   <div class="panel-heading">
                      <h3 class="panel-title">{{ trans('radiopages.Newslenta') }}</h3>
@@ -334,7 +334,6 @@
                   </div>
                </div>
             </div>
-
             <div class="col-md-3 oneserep onefix">
                <nav>
                   <ul>

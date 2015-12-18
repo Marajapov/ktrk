@@ -377,7 +377,6 @@ ul.nostyle i {
   background: rgba(0, 0, 0, 0.1);
 }
 #cta {
-  background-color: #eeeeee;
   margin-top: 70px;
 }
 
@@ -391,9 +390,13 @@ ul.nostyle i {
 }
 
 #cta img{
-  max-height: 131px;
+  max-height: 104px;
   width: auto;
 
+}
+
+#cta .col-md-6 .col-xs-9{
+    background-color: #eeeeee;
 }
 #cta p{
   font-size: 16px;

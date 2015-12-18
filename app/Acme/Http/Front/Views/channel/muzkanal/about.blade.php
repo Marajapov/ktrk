@@ -85,7 +85,7 @@
                      <!-- Collect the nav links, forms, and other content for toggling -->
                      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
-                           <li><a href="{{ route('muzkanal.about') }}"></i>{{ trans('radiopages.Mabout') }}</a></li>
+                           <li><a class="active" href="{{ route('muzkanal.about') }}"></i>{{ trans('radiopages.Mabout') }}</a></li>
                            <li>
                               <a href="{{ route('muzkanal.hitparad') }}">
                                  <i class="fa fa-microphone"></i>Хит-Парад <!-- <span class="caret"></span> -->
