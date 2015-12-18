@@ -91,24 +91,12 @@
                <div class="panel-body">
                   <div class="row" style="margin: 20px;">
                      <ul id="imageGallery">
-                        <li data-thumb="{{ asset('images/channels/balastan/baaryn.png') }}" data-src="{{ asset('images/channels/balastan/baaryn.png') }}">
-                           <img class="resizegallery" src="{{ asset('images/channels/balastan/baaryn.png') }}" />
+                     @foreach($images as $image)
+                        <li data-thumb="{{ asset('froala/uploads/'.$image->name) }}" data-src="{{ asset('froala/uploads/'.$image->name) }}">
+                           <img class="resizegallery" src="{{ asset('froala/uploads/'.$image->name) }}" />
                         </li>
-                        <li data-thumb="{{ asset('images/channels/balastan/birge.png') }}" data-src="{{ asset('images/channels/balastan/birge.png') }}">
-                           <img class="resizegallery" src="{{ asset('images/channels/balastan/birge.png') }}" />
-                        </li>
-                        <li data-thumb="{{ asset('images/channels/balastan/taalimtay.png') }}" data-src="{{ asset('images/channels/balastan/taalimtay.png') }}">
-                           <img class="resizegallery" src="{{ asset('images/channels/balastan/taalimtay.png') }}" />
-                        </li>
-                        <li data-thumb="{{ asset('images/channels/balastan/birge2.png') }}" data-src="{{ asset('images/channels/balastan/birge2.png') }}">
-                           <img class="resizegallery" src="{{ asset('images/channels/balastan/birge2.png') }}" />
-                        </li>
-                        <li data-thumb="{{ asset('images/channels/balastan/birge3.png') }}" data-src="{{ asset('images/channels/balastan/birge3.png') }}">
-                           <img class="resizegallery" src="{{ asset('images/channels/balastan/birge3.png') }}" />
-                        </li>
-                        <li data-thumb="{{ asset('images/channels/balastan/birge4.png') }}" data-src="{{ asset('images/channels/balastan/birge4.png') }}">
-                           <img class="resizegallery" src="{{ asset('images/channels/balastan/birge4.png') }}" />
-                        </li>
+                     @endforeach
+                        
                      </ul>
                   </div>
                </div>

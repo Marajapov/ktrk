@@ -1,6 +1,7 @@
 <?php
 namespace Front\Controllers;
-//use Illuminate\Http\Request;
+use Illuminate\Http\Request;
+
 class BalastanController extends Controller
 {
     public function __construct()
@@ -16,12 +17,24 @@ class BalastanController extends Controller
         $firstMedia = \Model\Media\ModelName::where('balastan','=','1')->orderBy('id','desc')->first();
         $medias = \Model\Media\ModelName::where('balastan','=','1')->take(6)->orderBy('id','desc')->get();
 
+        // Photo Gallery
+        $photoGalleries = \Model\PhotoParent\ModelName::where('balastan','=','1')->where('published','=',true)->take('10')->orderBy('id','desc')->get();
+
+if(count($medias) > 0){ $medias = $medias;
+}else{ $medias = null; }
+if(count($photoGalleries) > 0){
+    $photoGalleries = $photoGalleries;
+}else{ $photoGalleries = null; }
+if(count($firstMedia)){ $firstMedia = $firstMedia;
+}else{ $firstMedia = null; }
+
         return view('Front::channel.balastan.index', [
             'channel' => $channel,
             'backgroundMain' => $backgroundMain,
 
             'firstMedia' => $firstMedia,
             'medias' => $medias,
+            'photoGalleries' => $photoGalleries,
             ]);
     }
 
@@ -62,14 +75,65 @@ class BalastanController extends Controller
             'backgroundMain' => $backgroundMain,
             ]);
     }   
-    public function video()
+    public function video(Request $request, $media)
     {
         $channel = \Model\Channel\ModelName::name('balastan')->first();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
+        $balastanLastVideo = \Model\Media\ModelName::where('balastan','=','1')->take(1)->orderBy('id','desc')->first();
+        $balastaProjects = \Model\Project\ModelName::where('balastan','=','1')->orderBy('id','desc')->get();
+        $balastanMedias = \Model\Media\ModelName::where('balastan','=','1')->take(8)->skip(0)->orderBy('id','desc')->get();
+
+        if($media){
+            $balastanLastVideo = \Model\Media\ModelName::where('id','=',$media)->where('balastan','=','1')->take(1)->orderBy('id','desc')->first();
+        }
+
         return view('Front::channel.balastan.video', [
             'channel' => $channel,
             'backgroundMain' => $backgroundMain,
+
+            'balastanLastVideo' => $balastanLastVideo,
+            'balastanProjects' => $balastaProjects,
+            'balastanMedias' => $balastanMedias,
+            ]);
+    }
+
+    // For photos page One gallery 
+     public function Gallery(Request $request, $galleryId)
+    {
+        $lc = app()->getlocale();
+
+        $gallery = \Model\PhotoParent\ModelName::where('balastan','=','1')->where('id','=',$galleryId)->first();
+        $images = json_decode($gallery->images);
+
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+        return view('Front::channel.balastan.photos',[
+            'lc' => $lc,
+            'images' => $images,
+            'backgroundMain' => $backgroundMain,
+            'gallery' => $gallery,
+            ]);
+    }
+
+    public function projectVideos(Request $request, $project)
+    {
+        $channel = \Model\Channel\ModelName::name('balastan')->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+        $programId = $project;
+        $balastanLastVideo = \Model\Media\ModelName::where('program','=',$programId)->take(1)->orderBy('id','desc')->first();
+        $balastaProjects = \Model\Project\ModelName::where('balastan','=','1')->orderBy('id','desc')->get();
+        $balastanMedias = \Model\Media\ModelName::where('program','=',$programId)->take(8)->skip(0)->orderBy('id','desc')->get();
+        
+
+        return view('Front::channel.balastan.video', [
+            'channel' => $channel,
+            'backgroundMain' => $backgroundMain,
+
+            'balastanLastVideo' => $balastanLastVideo,
+            'balastanProjects' => $balastaProjects,
+            'balastanMedias' => $balastanMedias,
             ]);
     }
 

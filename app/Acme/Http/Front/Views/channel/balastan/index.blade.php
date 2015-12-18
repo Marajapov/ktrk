@@ -19,6 +19,7 @@
                <h4>Баластан</h4>
             </a>
          </div>
+
          <!-- Collect the nav links, forms, and other content for toggling -->
          <div class="collapse navbar-collapse" id="menu">
             <ul class="nav navbar-nav channel_switch">
@@ -87,9 +88,15 @@
          </div>
          <div class="col-md-8" style="text-align:center;">
             <img class="tvthree" src="{{ asset('images/channels/balastan/tv3.png')}}" alt="">
-            <div class="iconcenter">                            
-               <iframe width="495" height="360" src="https://www.youtube.com/embed/{{$firstMedia->getUrl()}}/?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>
+            @if($firstMedia != null)
+            <div class="iconcenter">
+               <iframe width="495" height="360" src="https://www.youtube.com/embed/{{$firstMedia->getUrl()}}?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>
             </div>
+            @else
+            <div class="iconcenter">
+               <iframe width="495" height="360" src="https://www.youtube.com/embed/rYEDA3JcQqw?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>
+            </div>
+            @endif
             <img class="tvtop" src="{{ asset('images/channels/balastan/tvtop.png')}}" alt="">
             <img class="tvbottom" src="{{ asset('images/channels/balastan/tvbottom.png')}}" alt="">
             <img class="tvleft" src="{{ asset('images/channels/balastan/tvleft.png')}}" alt="">
@@ -108,14 +115,31 @@
                </div>
                <div class="panel-body">
                   <div class="row ">
+
+                    @if($medias != null)
                      @foreach($medias as $media)
                      <div class="col-md-4 col-sm-6">
                         <div class="kidsvideo kidsboard">
-                           <iframe width="100%" height="180px" src="https://www.youtube.com/embed/{{$media->getUrl()}}?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                   
+                        <a href="{{ route('balastan.video', $media) }}">
+                                  <img width="100%" height="180px" src="http://img.youtube.com/vi/{{ $media->getUrl()}}/mqdefault.jpg" alt="" />
+                                  <i class="fa fa-youtube-play"></i>
+                                </a>
                         </div>
                         <h3>{{ $media->getName() }}</h3>
                      </div>
                      @endforeach
+                   @else
+                   <div class="col-md-4 col-sm-6">
+                        <div class="kidsvideo kidsboard">
+                        <a href="#">
+                                  <img width="100%" height="180px" src="http://img.youtube.com/vi/rYEDA3JcQqw/mqdefault.jpg" alt="" />
+                                  <i class="fa fa-youtube-play"></i>
+                                </a>
+                        </div>
+                        <h3>adele rolling in the deep</h3>
+                     </div>
+                   @endif
+
                   </div>
                </div>
             </div>
@@ -131,11 +155,12 @@
                   <div class="col-md-12 broadimages">
                      <div class="carousel-slick">
 
-                     @if($photoGalleries)
+                     @if($photoGalleries != null)
+
                       @foreach($photoGalleries as $photoGallery)
                         
                         <div class="col-md-4">
-                          <a href="{{ route('front.balastan.photos', $photoGallery) }}">
+                          <a href="{{ route('balastan.photos', $photoGallery) }}">
                             <img src="{{ asset($photoGallery->status) }}" alt=""/><span>{{ $photoGallery->getName() }}</span>
                             <div class="overlay"></div>
                             <i class="fa fa-camera"></i>
@@ -143,6 +168,15 @@
                         </div>
                   
                       @endforeach
+                      @else
+                      <div class="col-md-4">
+                          <a href="#">
+                            <img src="" alt=""/><span>aba</span>
+                            <div class="overlay"></div>
+                            <i class="fa fa-camera"></i>
+                          </a>
+                        </div>
+                      @endif
                         
                      </div>
                   </div>
@@ -165,7 +199,7 @@
       
           $('.carousel-slick').slick({
               infinite: true,
-              slidesToShow: 4,
+              slidesToShow: 3,
               slidesToScroll: 1,
       
           });
