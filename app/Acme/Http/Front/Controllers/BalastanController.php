@@ -13,9 +13,15 @@ class BalastanController extends Controller
         $channel = \Model\Channel\ModelName::name('balastan')->first();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
+        $firstMedia = \Model\Media\ModelName::where('balastan','=','1')->orderBy('id','desc')->first();
+        $medias = \Model\Media\ModelName::where('balastan','=','1')->take(6)->orderBy('id','desc')->get();
+
         return view('Front::channel.balastan.index', [
             'channel' => $channel,
             'backgroundMain' => $backgroundMain,
+
+            'firstMedia' => $firstMedia,
+            'medias' => $medias,
             ]);
     }
 
