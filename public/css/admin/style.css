@@ -549,6 +549,10 @@ form:after {
     font-weight: normal;
     text-transform: uppercase;
 }
+.morepages .form-group label{
+    float: none !important;
+}
+
 .form-horizontal .form-group:last-child{
     margin-bottom: 0;
 }

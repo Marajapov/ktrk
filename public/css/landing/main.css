@@ -235,8 +235,9 @@ ul.nostyle i {
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.6);
 }
 .navbar.navbar-default .navbar-toggle {
-  border: none;
+  border: 1px solid #005197;
   margin-top: 15px;
+  padding: 5px
 }
 .navbar.navbar-default .navbar-brand {
   height: auto;

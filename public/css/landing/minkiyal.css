@@ -104,7 +104,7 @@ header {
   font-size: 20px;
 }
 .navbar-default .navbar-toggle .icon-bar {
-  background-color: #FFF;
+  background-color: #98125F;
 }
 .gradiant {
   background-image: -moz-linear-gradient(90deg, #2caab3 0%, #2c8cb3 100%);
@@ -267,6 +267,9 @@ ul.nostyle i {
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.6);
 }
 .navbar.navbar-default .navbar-toggle {
+    border: 1px solid #C4157A;
+    padding: 5px;
+    margin-top: 15px;
 }
 .navbar.navbar-default .navbar-brand {
   height: auto;

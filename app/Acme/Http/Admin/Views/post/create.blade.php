@@ -107,4 +107,16 @@
       }
     );
   </script>
+
+  <script type="text/javascript" src="{{ asset('js/moment.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/ru.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/transition.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/collapse.js') }}"></script>
+  <script src="{{ asset('js/bootstrap-datetimepicker.js') }}"></script>
+  <script>
+    $('#date').datetimepicker({
+      locale: 'ru',
+      format: 'DD-MM-YYYY'
+    });
+  </script>
 @stop
