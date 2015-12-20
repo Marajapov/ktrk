@@ -298,6 +298,8 @@ class HomeController extends Controller
         $categories = \Model\Category\ModelName::all();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
+        $mediaPop = \Model\Media\ModelName::where()->get();
+
         return view('Front::media.index',[
             'mediaPost' => $media,
             
