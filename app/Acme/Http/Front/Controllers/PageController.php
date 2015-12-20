@@ -30,8 +30,11 @@ class PageController extends Controller
         $lc = app()->getlocale();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
+        $directorPosts = \Model\Post\ModelName::where('director','=','1')->orderBy('id','desc')->get();
+
         return view('Front::pages.director', [
             'backgroundMain' => $backgroundMain,
+            'directorPosts' => $directorPosts,
             'lc' => $lc,
         ]);
     }

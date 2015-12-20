@@ -164,6 +164,10 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
     Route::get('/gallery/{gallery}',['as' => 'front.gallery','uses'=> 'HomeController@Gallery'] );
     Route::get('/galleries',['as' => 'front.gallery.galleries','uses'=> 'HomeController@Galleries']);
 
+    //    Народный репортер
+    Route::get('/reporter',['as'=>'front.reporter','uses'=>'HomeController@Reporter']);
+    Route::post('reporter.add',['as'=>'front.reporter.add','uses'=>'HomeController@ReporterAdd']);
+
 Route::get('locale/{locale?}',   ['as' => 'locale',   'uses' => 'CommonController@setLocale']);
 
 });

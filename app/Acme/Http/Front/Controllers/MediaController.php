@@ -34,7 +34,7 @@ class MediaController extends Controller
         $mainBanner = \Model\Background\ModelName::where('name','=','main')->first();
         $categories = \Model\Category\ModelName::all();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
-        $projectList = \Model\Project\ModelName::get();
+        $projectList = \Model\Project\ModelName::orderBy('id','desc')->get();
 
         return view('Front::media.index',[
             'mediaAll' => $mediaAll,

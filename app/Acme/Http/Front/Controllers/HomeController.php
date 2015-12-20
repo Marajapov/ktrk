@@ -30,9 +30,11 @@ class HomeController extends Controller
         if($lc == 'kg'){
             $generalPosts = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->take(6)->skip(0)->orderBy('id', 'desc')->get();    
             $projects = \Model\Project\ModelName::having('name','<>','')->get();
+            $directorPosts = \Model\Post\ModelName::where('director','=','1')->orderBy('id','desc')->take(3)->languagekg()->get();
         }elseif($lc == 'ru'){
             $generalPosts = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languageru()->take(6)->skip(0)->orderBy('id', 'desc')->get();    
             $projects = \Model\Project\ModelName::where('nameRu','<>','')->get();
+            $directorPosts = \Model\Post\ModelName::where('director','=','1')->orderBy('id','desc')->take(3)->languageru()->get();
         }
 
         $dayVideo1 = \Model\Media\ModelName::where('dayVideo','=','1')->first();
@@ -112,6 +114,7 @@ class HomeController extends Controller
             'categoriesVideos' => $categoriesVideos,
             'mediaLastVideos' => $mediaLastVideos,
             'projects' => $projects,
+            'directorPosts' => $directorPosts,
             ]);
     }
 
