@@ -257,6 +257,8 @@ return [
     'FrontPostAll' => 'Все новости',    
     'FrontPostLastNews' => 'Последние новости',
     'FrontPostDaysVideo' => 'Видео дня',    
+    'FrontPostDaysNews' => 'Новость дня',
+    'FrontPostDaysEpisode' => 'Выпуск передачи',
     'FrontPostLastDays' => 'Прошедшие дни',
     'FrontDirectorPage' => 'Страница генерального директора',    
     'FrontVideoAll' => 'Перейти на видеопортал',

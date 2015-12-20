@@ -63,7 +63,7 @@
                 </div>
               </li>
             @endif
-            @if($peopleReporter->video)
+            {{--@if($peopleReporter->video)--}}
               <li class="list-group-item photos">
                 <p class="header">Видео</p>
                 <div class="body images">
@@ -72,11 +72,13 @@
                   </div>
                 </div>
               </li>
-            @endif
+            {{--@endif--}}
 
           </ul>
 
         </div>
+
+        <div id="player1"></div>
 
       </div>
     </div>
@@ -91,11 +93,36 @@
   <script type="text/javascript">
 
     var playerInstance = jwplayer("player");
+    var playerInstance1 = jwplayer("player1");
 
     playerInstance.setup({
       file: "{{ asset('froala/videos/1450419002.mp4') }}",
       width: "640",
       height: "360"
+    });
+
+//    playerInstance1.setup({
+//      height: 30,
+//      width: 45,
+//      mute: false,
+//      primary:'flash',
+//      playlist: [
+//        {
+//          sources:[
+//            {file: "http://31.192.250.52:8000/obondoru128"}
+//          ]
+//        }
+//      ],
+//      rtmp:{
+//        subscribe: false
+//      }
+//    });
+
+    playerInstance1.setup({
+      file: "http://31.192.250.52:8000/obondoru128",
+      type: "mp3",
+      width: 45,
+      height: 30
     });
 
   </script>

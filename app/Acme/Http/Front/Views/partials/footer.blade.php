@@ -36,6 +36,14 @@
             $(".logo-block").removeClass("search-show");
             $(".form-search").removeClass("visible");
         });
+
+      var header = $('#videoTitle span');
+      $('.slider-nav .slick-slide').each(function(){
+        var videoTitle = $(this).children('.videoTitle').text();
+        $(this).click(function () {
+          header.text(videoTitle);
+        });
+      });
     });
 </script>
 
