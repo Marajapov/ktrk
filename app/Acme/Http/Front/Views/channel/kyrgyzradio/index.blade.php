@@ -49,6 +49,7 @@
                     </button>
                     <a class="navbar-brand" href="{{ route('kyrgyzradio.home') }}"><img src="{{asset('images/channels/kg-radio.png')}}" alt="logo">Кыргыз Радиосу</a>
                     <div class="onetime"><a href=""><button class="btn"><i class="fa fa-microphone"></i><span>Түз эфир</span></button></a></div>
+
                 </div>
                <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
@@ -120,6 +121,8 @@
             </div>
         </div>
     </section>
+    <br>
+    <section><div id="player"></div></section>
 
     <section id="cta" class="wow fadeIn">
         <div class="container">
@@ -1021,6 +1024,66 @@
 @section('footerscript2')
 <script src="js/jquery-1.11.2.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+
+   <script src="{{ asset('jwplayer/jwplayer.js') }}"></script>
+   // <script>jwplayer.key = "tmEO2SU8NzqLBoHr2Vq6nV13XCyfo8xbdiCb/Q==";</script>
+   <!-- <script type="text/javascript">
+      var playerInstance = jwplayer("player");
+      
+      //    $('#playerPlay').click(function(){
+      //        playerInstance.play();
+      //    });
+      
+      playerInstance.setup({
+          autostart: true,
+          playlist: [{
+                  image: "{{ asset('images/channels/muztv.png') }}",
+                  sources: [{
+                          file: "http://212.112.96.232:8083;stream.nsv"
+                      }]
+              }],
+          width: "100%",
+          height: "100%",
+          aspectratio: "16:9",
+          primary: "flash",
+          skin: {
+              name: "five"
+          },
+          stretching: "exactfit"
+      });
+   </script>
+
+
+
+<script type='text/javascript'>
+jwplayer('player').setup({
+'author': 'Kyrgyz',
+'description': 'Kyrgyz',
+'file': 'http://server1.cityedv.at:9036/64kbps',
+'type': 'mp3',
+'provider': 'sound',
+'autostart': 'true',
+'controlbar': 'bottom',
+'width': '470',
+'height': '20',
+'skin': 'bekle',
+});
+</script>-->
+
+<script type='text/javascript'>
+jwplayer('player').setup({
+'author': 'Kyrgyz',
+'description': 'Kyrgyz',
+'file': 'http://server1.cityedv.at:9036/64kbps',
+'type': 'mp3',
+'provider': 'sound',
+'autostart': 'true',
+'controlbar': 'bottom',
+'width': '470',
+'height': '20',
+'skin': 'bekle',
+});
+</script>
 
 <script src="js/landing/owl.carousel.min.js"></script>
 <script src="js/landing/mousescroll.js"></script>
