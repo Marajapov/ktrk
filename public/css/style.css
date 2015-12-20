@@ -844,7 +844,7 @@ header {
     float: left;
     height: 100px;
     width: auto;
-    margin: 3px 3px;
+    margin: 3px;
 }
 @media (max-width:1170px) {
     .main-video .slick-slide img {
@@ -868,6 +868,17 @@ header {
 .main-video  .slider-nav .slick-current {
     display: none !important;
 }
+.main-video  .slider-nav .slick-slide span{
+    padding-left: 5px;
+    color: #8493A3;
+    font-size: 14px;
+}
+.main-video  .slider-nav .slick-slide h4{
+    float: left;
+    width: 100%;
+    font-size: 14px;
+    text-align: center;
+}
 .main-video  .slider-for .slick-slide {
 }
 .main-video .slider-for .slider-text {
@@ -878,6 +889,7 @@ header {
 }
 .slick-text h2 {
     margin: 15px 0px;
+    height: 60px;
     color: #4e5e6a;
     font-size: 14px;
     font-weight: bold;

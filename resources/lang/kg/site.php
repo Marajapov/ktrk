@@ -256,7 +256,9 @@ return [
     //Home page
     'FrontPostAll' => 'Бардык жаңылыктар',
     'FrontPostLastNews' => 'Акыркы жаңылыктар',
-    'FrontPostDaysVideo' => 'Күндүн видеосу',    
+    'FrontPostDaysVideo' => 'Күндүн видеосу',
+    'FrontPostDaysNews' => 'Күндүн жаңылыгы',
+    'FrontPostDaysEpisode' => 'Телеберүү чыгаруусу',
     'FrontPostLastDays' => 'Өткөн күндөр',
     'FrontDirectorPage' => 'Башкы директордун баракчасы',    
     'FrontVideoAll' => 'Видеопорталга өтүү',
