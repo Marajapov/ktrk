@@ -134,7 +134,6 @@
          </div>
       </div>
    </div>
-
    <!-- Main slider -->
    <div class="container">
       <div class="row">
@@ -147,57 +146,52 @@
                   <div class="panel-body">
                      <div class="col-md-12 videofix">
                         <div class="row" style="margin:-11px;">
-                        @if($postAll)
+                           @if($postAll)
                            @foreach($postAll as $allVideo)   
                            <div class="col-md-3 muzvideomain col-sm-6 col-xs-12">
-                           <div class="muzvideoall">
-                              <a href="{{ route('muzkanal.video', $allVideo)}}">
-                              <img src="http://img.youtube.com/vi/{{ $allVideo->getUrl()}}/mqdefault.jpg" alt=""/></a>
-                              <div class="item-desc">
-                                 <ul>
-                                    <a href="{{ route('muzkanal.video', $allVideo)}}">
-                                       <li class="item-artist">{{ $allVideo->getName() }}</li>
-                                    </a>
-                                 </ul>
+                              <div class="muzvideoall">
+                                 <a href="{{ route('muzkanal.video', $allVideo)}}">
+                                 <img src="http://img.youtube.com/vi/{{ $allVideo->getUrl()}}/mqdefault.jpg" alt=""/></a>
+                                 <div class="item-desc">
+                                    <ul>
+                                       <a href="{{ route('muzkanal.video', $allVideo)}}">
+                                          <li class="item-artist">{{ $allVideo->getName() }}</li>
+                                       </a>
+                                    </ul>
+                                 </div>
+                                 <div class="views"><i class="fa fa-eye"></i>{{ $allVideo->getViewed() }}</div>
                               </div>
-                              <div class="views"><i class="fa fa-eye"></i>{{ $allVideo->getViewed() }}</div>
-                           </div>
                            </div>
                            @endforeach
-                        @endif                            
+                           @endif                            
                         </div>
-                  <nav class="muzpaginate">
-                    <ul class="pagination">
-
-                      <li>
-                        <a href="{{ route('muzkanal.videos', ['page' => 1]) }}" class="btn btn-default @if($postAll->currentPage() == 1) disabled @endif">{{ trans('site.Start') }}</a>
-                      </li>
-                      <li>
-                        <a href="{{ $postAll->previousPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span></a>
-                      </li>
-                      <li>
-                        <a href="{{ $postAll->nextPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-right"></span></a>
-                      </li>
-
-                      @for($i = 0, $j = 1; $i < $postAll->total(); $i+=$perPage)
-                        <li>
-                          <a href="{{ route('muzkanal.videos', ['page' => $j]) }}" class="btn btn-default @if($postAll->currentPage() == $j) active @endif">{{ $j++ }}</a>
-                        </li>
-                      @endfor
-
-                      <li>
-                        <a href="{{ route('muzkanal.videos', ['page' => ceil($postAll->total()/$perPage)]) }}" class="btn btn-default @if($postAll->currentPage() == ceil($postAll->total()/$perPage)) disabled @endif">{{ trans('site.End') }}</a>
-                      </li>
-
-                    </ul>
-                  </nav>
+                        <nav class="muzpaginate">
+                           <ul class="pagination">
+                              <li>
+                                 <a href="{{ route('muzkanal.videos', ['page' => 1]) }}" class="btn btn-default @if($postAll->currentPage() == 1) disabled @endif">{{ trans('site.Start') }}</a>
+                              </li>
+                              <li>
+                                 <a href="{{ $postAll->previousPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                              </li>
+                              <li>
+                                 <a href="{{ $postAll->nextPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                              </li>
+                              @for($i = 0, $j = 1; $i < $postAll->total(); $i+=$perPage)
+                              <li>
+                                 <a href="{{ route('muzkanal.videos', ['page' => $j]) }}" class="btn btn-default @if($postAll->currentPage() == $j) active @endif">{{ $j++ }}</a>
+                              </li>
+                              @endfor
+                              <li>
+                                 <a href="{{ route('muzkanal.videos', ['page' => ceil($postAll->total()/$perPage)]) }}" class="btn btn-default @if($postAll->currentPage() == ceil($postAll->total()/$perPage)) disabled @endif">{{ trans('site.End') }}</a>
+                              </li>
+                           </ul>
+                        </nav>
                      </div>
                   </div>
                </div>
             </div>
          </div>
       </div>
-
    </div>
    @stop
    @section('footerscript2')
@@ -247,43 +241,5 @@
    </script>
    <!-- Ptogramm title Anima -->
    <!--Carousel-->
-   <script>
-      if ($(window).width() > 768) {
-          $('.carousel-slick').slick({
-              infinite: true,
-              slidesToShow: 4,
-              slidesToScroll: 1,
-              autoplay: false,
-              autoplaySpeed: 4500
-          });
-          $('.carousel-slick1').slick({
-              infinite: true,
-              slidesToShow: 3,
-              slidesToScroll: 1,
-              autoplay: false,
-              autoplaySpeed: 4500
-          });
-      }
-      
-      if ($(window).width() < 768) {
-          $('.carousel-slick1').slick({
-              infinite: true,
-              slidesToShow: 2,
-              slidesToScroll: 1,
-              autoplay: false,
-              autoplaySpeed: 4500
-          });
-      }
-      
-      if ($(window).width() < 768) {
-          $('.carousel-slick').slick({
-              infinite: true,
-              slidesToShow: 2,
-              slidesToScroll: 1,
-              autoplay: false,
-              autoplaySpeed: 4500
-          });
-      }
-      
-   </script>
+
    @stop

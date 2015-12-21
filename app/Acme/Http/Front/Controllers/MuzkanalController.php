@@ -21,6 +21,9 @@ class MuzkanalController extends Controller
         $MediaTop1 = \Model\Media\ModelName::orderBy('viewed','desc')-> take(6)->get();
         $MediaTop2 = \Model\Media\ModelName::orderBy('viewed','desc')->skip('6')->take(6)->get();
 
+        // Photo Gallery
+        $photoGalleries = \Model\PhotoParent\ModelName::where('muzkanal','=','1')->where('published','=',true)->take('10')->orderBy('id','asc')->get();
+
         return view('Front::channel.muzkanal.index', [
             'channel' => $channel,
             'backgroundMain' => $backgroundMain,
@@ -30,6 +33,8 @@ class MuzkanalController extends Controller
 
             'MediaTop1' => $MediaTop1,
             'MediaTop2' => $MediaTop2,
+
+            'photoGalleries' => $photoGalleries,
             ]);
     }
 
@@ -119,6 +124,22 @@ class MuzkanalController extends Controller
         return view('Front::channel.muzkanal.photos', [
             'channel' => $channel,
             'backgroundMain' => $backgroundMain,
+            ]);
+    }
+
+        // For photos page One gallery 
+     public function Gallery(Request $request, $galleryId)
+    {
+
+        $gallery = \Model\PhotoParent\ModelName::where('muzkanal','=','1')->where('id','=',$galleryId)->first();
+        $images = json_decode($gallery->images);
+
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+        return view('Front::channel.muzkanal.photos',[
+            'images' => $images,
+            'backgroundMain' => $backgroundMain,
+            'gallery' => $gallery,
             ]);
     }
 
