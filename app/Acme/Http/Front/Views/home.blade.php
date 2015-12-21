@@ -228,7 +228,7 @@
 
                   <div> <!-- video4 -->
                     <div class="embed-youtube embed-responsive embed-responsive-16by9 slider-text">
-                      <iframe class="embed-responsive-item" src="//www.youtube.com/embed/@if($dayVideo3){{$dayVideo3->getUrl()}}@else{{$defaultVideo}}@endif?enablejsapi=1&version=3&playerapiid=ytplayer" allowfullscreen=""></iframe>
+                      <iframe class="embed-responsive-item" src="//www.youtube.com/embed/@if($dayVideo4){{$dayVideo4->getUrl()}}@else{{$defaultVideo}}@endif?enablejsapi=1&version=3&playerapiid=ytplayer" allowfullscreen=""></iframe>
                     </div>
                     <div class="slick-text">
                       <a href="{{ route('front.media.video', $dayVideo4) }}">
