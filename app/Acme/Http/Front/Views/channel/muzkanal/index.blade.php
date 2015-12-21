@@ -370,325 +370,57 @@
                   <div class="panel-body">
                      <div class="col-md-12">
                         <div class="carousel-slick1">
+                        @if($MediaPop1)
+                        @foreach($MediaPop1 as $pop1)
                            <div class="col-md-4 col-xs-12">
-                              <a href="#">
-                              <img src="https://pp.vk.me/c411523/v411523588/80c5/frGFAOC5RpE.jpg" alt=""/></a>
+                              <a href="{{ route('muzkanal.video', $pop1)}}">
+                              <img src="http://img.youtube.com/vi/{{ $pop1->getUrl()}}/mqdefault.jpg" alt=""/></a>
                               <div class="item-desc">
                                  <ul>
-                                    <a href="#">
-                                       <li class="item-artist">Бегиш жана Баястан</li>
-                                       <li class="item-song">Айтчы, айтпайсыңбы эми</li>
+                                    <a href="{{ route('muzkanal.video', $pop1)}}">
+                                       <li class="item-artist">{{ $pop1->getName() }}</li>
                                     </a>
                                  </ul>
                               </div>
-                              <div class="ishit">Хит!</div>
-                              <div class="views"><i class="fa fa-eye"></i>&nbsp;235123</div>
+                              <div class="views"><i class="fa fa-eye"></i>{{ $pop1->getViewed() }}</div>
                            </div>
-                           <div class="col-md-4 col-xs-12">
-                              <a href="#"><img src="http://i.ytimg.com/vi/Kwc5i5qD88o/maxresdefault.jpg" alt=""/></a>
-                              <div class="item-desc">
-                                 <ul>
-                                    <a href="#">
-                                       <li class="item-artist">Атабеков Мирбек</li>
-                                       <li class="item-song">Мөлмөлүм</li>
-                                    </a>
-                                 </ul>
-                              </div>
-                              <div class="isnew">Жаңы!</div>
-                              <div class="views"><i class="fa fa-eye"></i>&nbsp;2351</div>
-                           </div>
-                           <div class="col-md-4 col-xs-12">
-                              <a href="#"><img src="http://data.vb.kg/image/big/2012-11-01_03-22-47_527900.jpg" alt="Калыков Гүлжигит" alt=""/></a>
-                              <div class="item-desc">
-                                 <ul>
-                                    <a href="#">
-                                       <li class="item-artist">Калыков Гүлжигит</li>
-                                       <li class="item-song">Жамгыр төктү</li>
-                                    </a>
-                                 </ul>
-                              </div>
-                              <div class="ishit">Хит!</div>
-                              <div class="views"><i class="fa fa-eye"></i>&nbsp;2351</div>
-                           </div>
+                           @endforeach
+                        @endif
+                        </div>
+
+                        <div class="carousel-slick1 videosfix">
+                        @if($MediaPop2)
+                        @foreach($MediaPop2 as $pop2)
                            <div class="col-md-4">
-                              <a href="#"><img src="http://tumar.fm/uploads/posts/2014-10/1413603938_screenshot_81.png" alt=""/></a>
+                              <a href="{{ route('muzkanal.video', $pop2)}}"><img src="http://img.youtube.com/vi/{{ $pop2->getUrl()}}/mqdefault.jpg" alt=""/></a> 
                               <div class="item-desc">
                                  <ul>
-                                    <a href="#">
-                                       <li class="item-artist">Анжелика</li>
-                                       <li class="item-song">Менин сүйүүм</li>
+                                    <a href="{{ route('muzkanal.video', $pop2)}}">
+                                       <li class="item-artist">{{ $pop2->getName() }}</li>
                                     </a>
                                  </ul>
                               </div>
-                              <div class="ishit">Хит!</div>
-                              <div class="views"><i class="fa fa-eye"></i>&nbsp;2351</div>
+                              <div class="views"><i class="fa fa-eye"></i>{{ $pop2->getViewed() }}</div>
                            </div>
-                           <div class="col-md-4">
-                              <a href="#"><img src="http://tumar.fm/uploads/posts/2015-02/1424795870_screenshot_2.png" alt=""/></a>
-                              <div class="item-desc">
-                                 <ul>
-                                    <a href="#">
-                                       <li class="item-artist">Арсен</li>
-                                       <li class="item-song">Тагдырым сага жазганда</li>
-                                    </a>
-                                 </ul>
-                              </div>
-                              <div class="ishit">Хит!</div>
-                              <div class="views"><i class="fa fa-eye"></i>&nbsp;2351</div>
-                           </div>
-                           <div class="col-md-4">
-                              <a href="#"><img src="http://data.vb.kg/kyrgyz/image/original/2015-03-12_12-25-35_386407_w.jpg" alt=""/></a>  
-                              <div class="item-desc">
-                                 <ul>
-                                    <a href="#">
-                                       <li class="item-artist">Нурзат Садыкова</li>
-                                       <li class="item-song">Балалык</li>
-                                    </a>
-                                 </ul>
-                              </div>
-                              <div class="ishit">Хит!</div>
-                              <div class="views"><i class="fa fa-eye"></i>&nbsp;2351</div>
-                           </div>
-                           <div class="col-md-4">
-                              <a href="#"><img src="http://i.ytimg.com/vi/VR32pj_ulW8/maxresdefault.jpg" alt=""/></a> 
-                              <div class="item-desc">
-                                 <ul>
-                                    <a href="#">
-                                       <li class="item-artist">НОН СТОП дуети</li>
-                                       <li class="item-song">Кыздар ай, балдар ай</li>
-                                    </a>
-                                 </ul>
-                              </div>
-                              <div class="ishit">Хит!</div>
-                              <div class="views"><i class="fa fa-eye"></i>&nbsp;2351</div>
-                           </div>
-                           <div class="col-md-4">
-                              <a href="#"><img src="http://img.youtube.com/vi/_oPnqszMoHM/mqdefault.jpg" alt=""/></a>  
-                              <div class="item-desc">
-                                 <ul>
-                                    <a href="#">
-                                       <li class="item-artist">Борбиев Бек</li>
-                                       <li class="item-song">Тамчы шүүдүрүм</li>
-                                    </a>
-                                 </ul>
-                              </div>
-                              <div class="ishit">Хит!</div>
-                              <div class="views"><i class="fa fa-eye"></i>&nbsp;2351</div>
-                           </div>
+                           @endforeach
+                        @endif
                         </div>
                         <div class="carousel-slick1 videosfix">
+                        @if($MediaPop3)
+                        @foreach($MediaPop3 as $pop3)                        
                            <div class="col-md-4">
-                              <a href="#"><img src="http://data.vb.kg/kyrgyz/image/original/2015-03-12_12-25-35_386407_w.jpg" alt=""/></a> 
+                              <a href="{{ route('muzkanal.video', $pop3)}}"><img src="http://img.youtube.com/vi/{{ $pop3->getUrl()}}/mqdefault.jpg" alt=""/></a> 
                               <div class="item-desc">
                                  <ul>
-                                    <a href="#">
-                                       <li class="item-artist">Нурзат Садыкова</li>
-                                       <li class="item-song">Балалык</li>
+                                    <a href="{{ route('muzkanal.video', $pop3)}}">
+                                       <li class="item-artist">{{ $pop3->getName() }}</li>
                                     </a>
                                  </ul>
                               </div>
-                              <div class="ishit">Хит!</div>
-                              <div class="views"><i class="fa fa-eye"></i>&nbsp;2351</div>
+                              <div class="views"><i class="fa fa-eye"></i>{{ $pop3->getViewed() }}</div>
                            </div>
-                           <div class="col-md-4">
-                              <a href="#"><img src="http://i.ytimg.com/vi/VR32pj_ulW8/maxresdefault.jpg" alt=""/></a> 
-                              <div class="item-desc">
-                                 <ul>
-                                    <a href="#">
-                                       <li class="item-artist">НОН СТОП дуети</li>
-                                       <li class="item-song">Кыздар ай, балдар ай</li>
-                                    </a>
-                                 </ul>
-                              </div>
-                              <div class="ishit">Хит!</div>
-                              <div class="views"><i class="fa fa-eye"></i>&nbsp;2351</div>
-                           </div>
-                           <div class="col-md-4">
-                              <a href="#"><img src="http://img.youtube.com/vi/_oPnqszMoHM/mqdefault.jpg" alt=""/></a>  
-                              <div class="item-desc">
-                                 <ul>
-                                    <a href="#">
-                                       <li class="item-artist">Борбиев Бек</li>
-                                       <li class="item-song">Тамчы шүүдүрүм</li>
-                                    </a>
-                                 </ul>
-                              </div>
-                              <div class="ishit">Хит!</div>
-                              <div class="views"><i class="fa fa-eye"></i>&nbsp;2351</div>
-                           </div>
-                           <div class="col-md-4">
-                              <a href="#">
-                              <img src="https://pp.vk.me/c411523/v411523588/80c5/frGFAOC5RpE.jpg" alt=""/></a>
-                              <div class="item-desc">
-                                 <ul>
-                                    <a href="#">
-                                       <li class="item-artist">Бегиш жана Баястан</li>
-                                       <li class="item-song">Айтчы, айтпайсыңбы эми</li>
-                                    </a>
-                                 </ul>
-                              </div>
-                              <div class="ishit">Хит!</div>
-                              <div class="views"><i class="fa fa-eye"></i>&nbsp;2351</div>
-                           </div>
-                           <div class="col-md-4">
-                              <a href="#"><img src="http://i.ytimg.com/vi/Kwc5i5qD88o/maxresdefault.jpg" alt=""/></a>
-                              <div class="item-desc">
-                                 <ul>
-                                    <a href="#">
-                                       <li class="item-artist">Атабеков Мирбек</li>
-                                       <li class="item-song">Мөлмөлүм</li>
-                                    </a>
-                                 </ul>
-                              </div>
-                              <div class="isnew">Жаңы!</div>
-                              <div class="views"><i class="fa fa-eye"></i>&nbsp;2351</div>
-                           </div>
-                           <div class="col-md-4">
-                              <a href="#"><img src="http://data.vb.kg/image/big/2012-11-01_03-22-47_527900.jpg" alt="Калыков Гүлжигит" alt=""/></a>
-                              <div class="item-desc">
-                                 <ul>
-                                    <a href="#">
-                                       <li class="item-artist">Калыков Гүлжигит</li>
-                                       <li class="item-song">Жамгыр төктү</li>
-                                    </a>
-                                 </ul>
-                              </div>
-                              <div class="ishit">Хит!</div>
-                              <div class="views"><i class="fa fa-eye"></i>&nbsp;2351</div>
-                           </div>
-                           <div class="col-md-4">
-                              <a href="#"><img src="http://tumar.fm/uploads/posts/2014-10/1413603938_screenshot_81.png" alt=""/></a>
-                              <div class="item-desc">
-                                 <ul>
-                                    <a href="#">
-                                       <li class="item-artist">Анжелика</li>
-                                       <li class="item-song">Менин сүйүүм</li>
-                                    </a>
-                                 </ul>
-                              </div>
-                              <div class="ishit">Хит!</div>
-                              <div class="views"><i class="fa fa-eye"></i>&nbsp;2351</div>
-                           </div>
-                           <div class="col-md-4">
-                              <a href="#"><img src="http://tumar.fm/uploads/posts/2015-02/1424795870_screenshot_2.png" alt=""/></a>
-                              <div class="item-desc">
-                                 <ul>
-                                    <a href="#">
-                                       <li class="item-artist">Арсен</li>
-                                       <li class="item-song">Тагдырым сага жазганда</li>
-                                    </a>
-                                 </ul>
-                              </div>
-                              <div class="ishit">Хит!</div>
-                              <div class="views"><i class="fa fa-eye"></i>&nbsp;2351</div>
-                           </div>
-                        </div>
-                        <div class="carousel-slick1 videosfix">
-                           <div class="col-md-4">
-                              <a href="#"><img src="http://data.vb.kg/kyrgyz/image/original/2015-03-12_12-25-35_386407_w.jpg" alt=""/></a> 
-                              <div class="item-desc">
-                                 <ul>
-                                    <a href="#">
-                                       <li class="item-artist">Нурзат Садыкова</li>
-                                       <li class="item-song">Балалык</li>
-                                    </a>
-                                 </ul>
-                              </div>
-                              <div class="ishit">Хит!</div>
-                              <div class="views"><i class="fa fa-eye"></i>&nbsp;2351</div>
-                           </div>
-                           <div class="col-md-4">
-                              <a href="#"><img src="http://i.ytimg.com/vi/VR32pj_ulW8/maxresdefault.jpg" alt=""/></a> 
-                              <div class="item-desc">
-                                 <ul>
-                                    <a href="#">
-                                       <li class="item-artist">НОН СТОП дуети</li>
-                                       <li class="item-song">Кыздар ай, балдар ай</li>
-                                    </a>
-                                 </ul>
-                              </div>
-                              <div class="ishit">Хит!</div>
-                              <div class="views"><i class="fa fa-eye"></i>&nbsp;2351</div>
-                           </div>
-                           <div class="col-md-4">
-                              <a href="#"><img src="http://img.youtube.com/vi/_oPnqszMoHM/mqdefault.jpg" alt=""/></a>  
-                              <div class="item-desc">
-                                 <ul>
-                                    <a href="#">
-                                       <li class="item-artist">Борбиев Бек</li>
-                                       <li class="item-song">Тамчы шүүдүрүм</li>
-                                    </a>
-                                 </ul>
-                              </div>
-                              <div class="ishit">Хит!</div>
-                              <div class="views"><i class="fa fa-eye"></i>&nbsp;2351</div>
-                           </div>
-                           <div class="col-md-4">
-                              <a href="#">
-                              <img src="https://pp.vk.me/c411523/v411523588/80c5/frGFAOC5RpE.jpg" alt=""/></a>
-                              <div class="item-desc">
-                                 <ul>
-                                    <a href="#">
-                                       <li class="item-artist">Бегиш жана Баястан</li>
-                                       <li class="item-song">Айтчы, айтпайсыңбы эми</li>
-                                    </a>
-                                 </ul>
-                              </div>
-                              <div class="ishit">Хит!</div>
-                              <div class="views"><i class="fa fa-eye"></i>&nbsp;2351</div>
-                           </div>
-                           <div class="col-md-4">
-                              <a href="#"><img src="http://i.ytimg.com/vi/Kwc5i5qD88o/maxresdefault.jpg" alt=""/></a>
-                              <div class="item-desc">
-                                 <ul>
-                                    <a href="#">
-                                       <li class="item-artist">Атабеков Мирбек</li>
-                                       <li class="item-song">Мөлмөлүм</li>
-                                    </a>
-                                 </ul>
-                              </div>
-                              <div class="isnew">Жаңы!</div>
-                              <div class="views"><i class="fa fa-eye"></i>&nbsp;2351</div>
-                           </div>
-                           <div class="col-md-4">
-                              <a href="#"><img src="http://data.vb.kg/image/big/2012-11-01_03-22-47_527900.jpg" alt="Калыков Гүлжигит" alt=""/></a>
-                              <div class="item-desc">
-                                 <ul>
-                                    <a href="#">
-                                       <li class="item-artist">Калыков Гүлжигит</li>
-                                       <li class="item-song">Жамгыр төктү</li>
-                                    </a>
-                                 </ul>
-                              </div>
-                              <div class="ishit">Хит!</div>
-                              <div class="views"><i class="fa fa-eye"></i>&nbsp;2351</div>
-                           </div>
-                           <div class="col-md-4">
-                              <a href="#"><img src="http://tumar.fm/uploads/posts/2014-10/1413603938_screenshot_81.png" alt=""/></a>
-                              <div class="item-desc">
-                                 <ul>
-                                    <a href="#">
-                                       <li class="item-artist">Анжелика</li>
-                                       <li class="item-song">Менин сүйүүм</li>
-                                    </a>
-                                 </ul>
-                              </div>
-                              <div class="ishit">Хит!</div>
-                              <div class="views"><i class="fa fa-eye"></i>&nbsp;2351</div>
-                           </div>
-                           <div class="col-md-4">
-                              <a href="#"><img src="http://tumar.fm/uploads/posts/2015-02/1424795870_screenshot_2.png" alt=""/></a>
-                              <div class="item-desc">
-                                 <ul>
-                                    <a href="#">
-                                       <li class="item-artist">Арсен</li>
-                                       <li class="item-song">Тагдырым сага жазганда</li>
-                                    </a>
-                                 </ul>
-                              </div>
-                              <div class="ishit">Хит!</div>
-                              <div class="views"><i class="fa fa-eye"></i>&nbsp;2351</div>
-                           </div>
+                           @endforeach
+                        @endif                                 
                         </div>
                         <footer>
                            <a href="{{ route('muzkanal.videos') }}">
@@ -841,218 +573,39 @@
                   <div class="panel-body">
                      <div class="col-md-12">
                         <div class="carousel-slick">
+                           @if($MediaTop1)
+                           @foreach($MediaTop1 as $top1)
                            <div class="col-md-4">
-                              <a href="#">
-                              <img src="https://pp.vk.me/c411523/v411523588/80c5/frGFAOC5RpE.jpg" alt=""/></a>
+                              <a href="{{ route('muzkanal.video', $top1)}}">
+                              <img src="http://img.youtube.com/vi/{{ $top1->getUrl() }}/mqdefault.jpg" alt=""/></a>
                               <div class="item-desc">
                                  <ul>
-                                    <a href="#">
-                                       <li class="item-artist">Бегиш жана Баястан</li>
-                                       <li class="item-song">Айтчы, айтпайсыңбы эми</li>
+                                    <a href="{{ route('muzkanal.video', $top1)}}">
+                                       <li class="item-artist">{{ $top1->getName() }}</li>
                                     </a>
                                  </ul>
                               </div>
-                              <div class="ishit">Хит!</div>
-                              <div class="views"><i class="fa fa-eye"></i>&nbsp;2351</div>
+                              <div class="views"><i class="fa fa-eye"></i>{{ $top1->getViewed() }}</div>
                            </div>
-                           <div class="col-md-4">
-                              <a href="#"><img src="http://i.ytimg.com/vi/Kwc5i5qD88o/maxresdefault.jpg" alt=""/></a>
-                              <div class="item-desc">
-                                 <ul>
-                                    <a href="#">
-                                       <li class="item-artist">Атабеков Мирбек</li>
-                                       <li class="item-song">Мөлмөлүм</li>
-                                    </a>
-                                 </ul>
-                              </div>
-                              <div class="isnew">{{ trans('radiopages.New') }}</div>
-                              <div class="views"><i class="fa fa-eye"></i>&nbsp;2351</div>
-                           </div>
-                           <div class="col-md-4">
-                              <a href="#"><img src="http://data.vb.kg/image/big/2012-11-01_03-22-47_527900.jpg" alt="Калыков Гүлжигит" alt=""/></a>
-                              <div class="item-desc">
-                                 <ul>
-                                    <a href="#">
-                                       <li class="item-artist">Калыков Гүлжигит</li>
-                                       <li class="item-song">Жамгыр төктү</li>
-                                    </a>
-                                 </ul>
-                              </div>
-                              <div class="ishit">Хит!</div>
-                              <div class="views"><i class="fa fa-eye"></i>&nbsp;2351</div>
-                           </div>
-                           <div class="col-md-4">
-                              <a href="#"><img src="http://tumar.fm/uploads/posts/2014-10/1413603938_screenshot_81.png" alt=""/></a>
-                              <div class="item-desc">
-                                 <ul>
-                                    <a href="#">
-                                       <li class="item-artist">Анжелика</li>
-                                       <li class="item-song">Менин сүйүүм</li>
-                                    </a>
-                                 </ul>
-                              </div>
-                              <div class="ishit">Хит!</div>
-                              <div class="views"><i class="fa fa-eye"></i>&nbsp;2351</div>
-                           </div>
-                           <div class="col-md-4">
-                              <a href="#"><img src="http://tumar.fm/uploads/posts/2015-02/1424795870_screenshot_2.png" alt=""/></a>
-                              <div class="item-desc">
-                                 <ul>
-                                    <a href="#">
-                                       <li class="item-artist">Арсен</li>
-                                       <li class="item-song">Тагдырым сага жазганда</li>
-                                    </a>
-                                 </ul>
-                              </div>
-                              <div class="ishit">Хит!</div>
-                              <div class="views"><i class="fa fa-eye"></i>&nbsp;2351</div>
-                           </div>
-                           <div class="col-md-4">
-                              <a href="#"><img src="http://data.vb.kg/kyrgyz/image/original/2015-03-12_12-25-35_386407_w.jpg" alt=""/></a>  
-                              <div class="item-desc">
-                                 <ul>
-                                    <a href="#">
-                                       <li class="item-artist">Нурзат Садыкова</li>
-                                       <li class="item-song">Балалык</li>
-                                    </a>
-                                 </ul>
-                              </div>
-                              <div class="ishit">Хит!</div>
-                              <div class="views"><i class="fa fa-eye"></i>&nbsp;2351</div>
-                           </div>
-                           <div class="col-md-4">
-                              <a href="#"><img src="http://i.ytimg.com/vi/VR32pj_ulW8/maxresdefault.jpg" alt=""/></a> 
-                              <div class="item-desc">
-                                 <ul>
-                                    <a href="#">
-                                       <li class="item-artist">НОН СТОП дуети</li>
-                                       <li class="item-song">Кыздар ай, балдар ай</li>
-                                    </a>
-                                 </ul>
-                              </div>
-                              <div class="ishit">{{ trans('radiopages.New') }}</div>
-                              <div class="views"><i class="fa fa-eye"></i>&nbsp;2351</div>
-                           </div>
-                           <div class="col-md-4">
-                              <a href="#"><img src="http://img.youtube.com/vi/_oPnqszMoHM/mqdefault.jpg" alt=""/></a>  
-                              <div class="item-desc">
-                                 <ul>
-                                    <a href="#">
-                                       <li class="item-artist">Борбиев Бек</li>
-                                       <li class="item-song">Тамчы шүүдүрүм</li>
-                                    </a>
-                                 </ul>
-                              </div>
-                              <div class="ishit">Хит!</div>
-                              <div class="views"><i class="fa fa-eye"></i>&nbsp;2351</div>
-                           </div>
+                           @endforeach
+                          @endif                           
                         </div>
                         <div class="carousel-slick videosfix">
+                           @if($MediaTop2)
+                           @foreach($MediaTop2 as $top2)                        
                            <div class="col-md-4">
-                              <a href="#"><img src="http://data.vb.kg/kyrgyz/image/original/2015-03-12_12-25-35_386407_w.jpg" alt=""/></a> 
+                              <a href="{{ route('muzkanal.video', $top2)}}"><img src="http://img.youtube.com/vi/{{ $top2->getUrl() }}/mqdefault.jpg" alt=""/></a> 
                               <div class="item-desc">
                                  <ul>
-                                    <a href="#">
-                                       <li class="item-artist">Нурзат Садыкова</li>
-                                       <li class="item-song">Балалык</li>
+                                    <a href="{{ route('muzkanal.video', $top2)}}">
+                                       <li class="item-artist">{{ $top2->getName() }}</li>
                                     </a>
                                  </ul>
                               </div>
-                              <div class="ishit">Хит!</div>
-                              <div class="views"><i class="fa fa-eye"></i>&nbsp;2351</div>
+                              <div class="views"><i class="fa fa-eye"></i>{{ $top2->getViewed() }}</div>
                            </div>
-                           <div class="col-md-4">
-                              <a href="#"><img src="http://i.ytimg.com/vi/VR32pj_ulW8/maxresdefault.jpg" alt=""/></a> 
-                              <div class="item-desc">
-                                 <ul>
-                                    <a href="#">
-                                       <li class="item-artist">НОН СТОП дуети</li>
-                                       <li class="item-song">Кыздар ай, балдар ай</li>
-                                    </a>
-                                 </ul>
-                              </div>
-                              <div class="ishit">Хит!</div>
-                              <div class="views"><i class="fa fa-eye"></i>&nbsp;2351</div>
-                           </div>
-                           <div class="col-md-4">
-                              <a href="#"><img src="http://img.youtube.com/vi/_oPnqszMoHM/mqdefault.jpg" alt=""/></a>  
-                              <div class="item-desc">
-                                 <ul>
-                                    <a href="#">
-                                       <li class="item-artist">Борбиев Бек</li>
-                                       <li class="item-song">Тамчы шүүдүрүм</li>
-                                    </a>
-                                 </ul>
-                              </div>
-                              <div class="ishit">Хит!</div>
-                              <div class="views"><i class="fa fa-eye"></i>&nbsp;2351</div>
-                           </div>
-                           <div class="col-md-4">
-                              <a href="#">
-                              <img src="https://pp.vk.me/c411523/v411523588/80c5/frGFAOC5RpE.jpg" alt=""/></a>
-                              <div class="item-desc">
-                                 <ul>
-                                    <a href="#">
-                                       <li class="item-artist">Бегиш жана Баястан</li>
-                                       <li class="item-song">Айтчы, айтпайсыңбы эми</li>
-                                    </a>
-                                 </ul>
-                              </div>
-                              <div class="ishit">{{ trans('radiopages.New') }}</div>
-                              <div class="views"><i class="fa fa-eye"></i>&nbsp;2351</div>
-                           </div>
-                           <div class="col-md-4">
-                              <a href="#"><img src="http://i.ytimg.com/vi/Kwc5i5qD88o/maxresdefault.jpg" alt=""/></a>
-                              <div class="item-desc">
-                                 <ul>
-                                    <a href="#">
-                                       <li class="item-artist">Атабеков Мирбек</li>
-                                       <li class="item-song">Мөлмөлүм</li>
-                                    </a>
-                                 </ul>
-                              </div>
-                              <div class="isnew">{{ trans('radiopages.New') }}</div>
-                              <div class="views"><i class="fa fa-eye"></i>&nbsp;2351</div>
-                           </div>
-                           <div class="col-md-4">
-                              <a href="#"><img src="http://data.vb.kg/image/big/2012-11-01_03-22-47_527900.jpg" alt="Калыков Гүлжигит" alt=""/></a>
-                              <div class="item-desc">
-                                 <ul>
-                                    <a href="#">
-                                       <li class="item-artist">Калыков Гүлжигит</li>
-                                       <li class="item-song">Жамгыр төктү</li>
-                                    </a>
-                                 </ul>
-                              </div>
-                              <div class="ishit">Хит!</div>
-                              <div class="views"><i class="fa fa-eye"></i>&nbsp;2351</div>
-                           </div>
-                           <div class="col-md-4">
-                              <a href="#"><img src="http://tumar.fm/uploads/posts/2014-10/1413603938_screenshot_81.png" alt=""/></a>
-                              <div class="item-desc">
-                                 <ul>
-                                    <a href="#">
-                                       <li class="item-artist">Анжелика</li>
-                                       <li class="item-song">Менин сүйүүм</li>
-                                    </a>
-                                 </ul>
-                              </div>
-                              <div class="ishit">Хит!</div>
-                              <div class="views"><i class="fa fa-eye"></i>&nbsp;2351</div>
-                           </div>
-                           <div class="col-md-4">
-                              <a href="#"><img src="http://tumar.fm/uploads/posts/2015-02/1424795870_screenshot_2.png" alt=""/></a>
-                              <div class="item-desc">
-                                 <ul>
-                                    <a href="#">
-                                       <li class="item-artist">Арсен</li>
-                                       <li class="item-song">Тагдырым сага жазганда</li>
-                                    </a>
-                                 </ul>
-                              </div>
-                              <div class="ishit">Хит!</div>
-                              <div class="views"><i class="fa fa-eye"></i>&nbsp;2351</div>
-                           </div>
+                           @endforeach
+                          @endif                             
                         </div>
                         <footer>
                            <a href="#">
@@ -1073,36 +626,19 @@
                      <h3 class="panel-title"><span> - {{ trans('radiopages.Photos') }} - </span></h3>
                   </div>
                   <div class="ia-container">
-                     <figure>
-                        <img src="images/channels/muzkanal/mirbek.jpg" alt="image01" />
-                        <input type="radio" name="radio-set" checked="checked"/>
-                        <figcaption><a href=""><span>Мирбек Атабеков</span></a></figcaption>
+      
+                      @if($photoGalleries != null)
+                      @foreach($photoGalleries as $key=>$photoGallery)
                         <figure>
-                           <img src="images/channels/muzkanal/kalykov.jpg" alt="image02" />
-                           <input type="radio" name="radio-set" />
-                           <figcaption><a href=""><span>Гүлжигит Калыков</span></a></figcaption>
-                           <figure>
-                              <img src="images/channels/muzkanal/minura.jpg" alt="image03" />
-                              <input type="radio" name="radio-set" />
-                              <figcaption><a href=""><span>Минюра Рахимжанова</span></a></figcaption>
-                              <figure>
-                                 <img src="images/channels/muzkanal/top10.jpg" alt="image04" />
-                                 <input type="radio" name="radio-set" />
-                                 <figcaption><a href=""><span>Хит-Парад</span></a></figcaption>
-                                 <figure>
-                                    <img src="images/channels/muzkanal/14.jpg" alt="image05" />
-                                    <input type="radio" name="radio-set" />
-                                    <figcaption><a href=""><span>Хит-Парад</span></a></figcaption>
-                                    <figure>
-                                       <img src="images/channels/muzkanal/soon.jpg" alt="image06" />
-                                       <input type="radio" name="radio-set" />
-                                       <figcaption><a href=""><span>Жакында</span></a></figcaption>
-                                    </figure>
-                                 </figure>
-                              </figure>
-                           </figure>
-                        </figure>
-                     </figure>
+                        <img src="{{ asset($photoGallery->status) }}" />
+                        <input type="radio" name="radio-set" @if($key == 0) checked="checked" @endif/>
+                        <figcaption><a href="{{ route('muzkanal.photos', $photoGallery) }}"><span>{{ $photoGallery->getName() }}</span></a></figcaption>
+                        
+                     @endforeach
+                     @endif
+                </figure>
+
+                     
                   </div>
                   <!-- ia-container -->
                </div>
@@ -1126,36 +662,12 @@
           });
       });
    </script>   
-   <script src="js/gallery/imagesloaded.pkgd.min.js"></script>
-   <script src="js/gallery/masonry.pkgd.min.js"></script>
-   <script src="js/gallery/classie.js"></script>
-   <script src="js/gallery/cbpGridGallery.js"></script>
-   <script>
-      new CBPGridGallery(document.getElementById('grid-gallery'));
-   </script>
+
+
    <script>
       var serverTZoffset = 360;
    </script>
-   <script src="js/lightslider.js"></script>
-   <script>
-      $(document).ready(function () {
-          $("#content-slider").lightSlider({
-              loop: true,
-              keyPress: true
-          });
-          $('#image-gallery').lightSlider({
-              gallery: true,
-              item: 1,
-              thumbItem: 9,
-              slideMargin: 0,
-              speed: 500,
-              auto: true,
-              loop: true,
-              onSliderLoad: function () {
-                  $('#image-gallery').removeClass('cS-hidden');
-              }
-          });
-      });
+
    </script>
    <script src="js/audio/dkp.min.js"></script>
    <script type="text/javascript" src="filter/js/jquery.easing.min.js"></script>
@@ -1239,7 +751,7 @@
       //    });
       
       playerInstance.setup({
-          autostart: true,
+          autostart: false,
           playlist: [{
                   image: "{{ asset('images/channels/muztv.png') }}",
                   sources: [{
