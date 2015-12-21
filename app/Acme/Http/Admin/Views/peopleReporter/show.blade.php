@@ -11,7 +11,7 @@
 
           <h4>{{ trans('site.Info') }}</h4>
 
-          <a href="{{ route('admin.project.index') }}" class="btn btn-default pull-right btn-back">{{ trans('site.Back') }}</a>
+          <a href="{{ route('admin.peopleReporter.index') }}" class="btn btn-default pull-right btn-back">{{ trans('site.Back') }}</a>
 
           {!! Form::open(['route' => ['admin.peopleReporter.destroy', $peopleReporter], 'method' => 'DELETE', 'onsubmit' => "return confirm('Вы уверены ?')"]) !!}
           <button type="submit" class="btn btn-danger" href="#">
@@ -67,7 +67,7 @@
               <li class="list-group-item photos">
                 <p class="header">Видео</p>
                 <div class="body images">
-                  <a class="btn-download" download href="{{ asset('froala/videos/1450419002.mp4') }}"><i class="fa fa-download"></i></a>
+                  <a class="btn-download" download href="{{ asset('froala/videos/'.$peopleReporter->video) }}"><i class="fa fa-download"></i></a>
                   <div id="player">
                   </div>
                 </div>
@@ -94,7 +94,7 @@
     var playerInstance1 = jwplayer("player1");
 
     playerInstance.setup({
-      file: "{{ asset('froala/videos/1450419002.mp4') }}",
+      file: "{{ asset('froala/videos/'.$peopleReporter->video) }}",
       width: "640",
       height: "360"
     });
