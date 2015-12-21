@@ -844,7 +844,13 @@ header {
     float: left;
     height: 100px;
     width: auto;
-    margin: 3px;
+    cursor: pointer;
+
+    -webkit-transform: scale(1.35);
+    -moz-transform: scale(1.35);
+    -ms-transform: scale(1.35);
+    -o-transform: scale(1.35);
+    transform: scale(1.35);
 }
 @media (max-width:1170px) {
     .main-video .slick-slide img {
@@ -863,10 +869,13 @@ header {
     }
 }
 .main-video .slick-initialized .slick-slide {
+    position: relative;
     display: inline-table;
+    margin: 3px;
+    overflow: hidden;
 }
 .main-video  .slider-nav .slick-current {
-    display: none !important;
+    /*display: none !important;*/
 }
 .main-video  .slider-nav .slick-slide span{
     padding-left: 5px;
@@ -874,10 +883,22 @@ header {
     font-size: 14px;
 }
 .main-video  .slider-nav .slick-slide h4{
-    float: left;
-    width: 100%;
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    padding: 5px 10px;
+    margin: 0;
+    width: 90%;
+
+    background: #bb0f04;
+    background: rgba(214,0,0,0.5);
+    /*background: #29a2f8;*/
+    color: #ffffff;
+
     font-size: 14px;
-    text-align: center;
+    text-align: left;
+
+    cursor: pointer;
 }
 .main-video  .slider-for .slick-slide {
 }
@@ -889,7 +910,7 @@ header {
 }
 .slick-text h2 {
     margin: 15px 0px;
-    height: 60px;
+    /*height: 60px;*/
     color: #4e5e6a;
     font-size: 14px;
     font-weight: bold;

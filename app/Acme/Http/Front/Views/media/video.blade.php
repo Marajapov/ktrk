@@ -27,7 +27,9 @@
                 <article data-cat="all-videos">
                   <h4 class="show-title">
                     <a href="#">{{ $videoProject}}</a>
-                    <i class="fa fa-circle"></i>
+                    @if($videoProject)
+                      <i class="fa fa-circle"></i>
+                    @endif
                     <span>{{ $videoName }}</span>
                   </h4>
                            <div class="extra">

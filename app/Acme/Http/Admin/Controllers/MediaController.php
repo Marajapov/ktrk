@@ -195,22 +195,4 @@ class MediaController extends Controller
         
         return redirect()->route('admin.media.index');
     }
-
-    // video5
-    public function dayVideo5(Request $request)
-    {
-        $id = $request->media;
-        $mediaStars = \Model\Media\ModelName::where('dayVideo','=','5')->get();
-        foreach($mediaStars as $mediaStar)
-        {
-            $mediaStar->dayVideo = 0;
-            $mediaStar->save();
-        }
-
-        $row = \Model\Media\ModelName::where('id','=',$id)->first();
-        $row->dayVideo = 5;
-        $row->save();
-        
-        return redirect()->route('admin.media.index');
-    }
 }

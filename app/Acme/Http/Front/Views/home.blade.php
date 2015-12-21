@@ -187,7 +187,7 @@
           <div class="top-right-block col-md-4">
             <div class="panel panel-default panel-promo">
               <div class="panel-heading">
-                <h3 class="panel-title" id="videoTitle"><span>{{ trans('site.FrontPostDaysVideo') }}</span></h3>
+                <h3 class="panel-title" id="videoTitle"><span>{{ trans('site.FrontPostDaysNews') }}</span></h3>
               </div>
               <div class="panel-body main-video">
 
@@ -199,7 +199,7 @@
                     </div>
                     <div class="slick-text">
                       <a href="{{ route('front.media.video', $dayVideo1) }}">
-                        <h2>@if($dayVideo1){{ $dayVideo1->getName() }} @else THE MOST POPULAR RESPONSIVE FRAMEWORK @endif</h2>
+                        <h2>@if($dayVideo1){{ $dayVideo1->getName() }} @else {{ trans('site.FrontPostDaysNews') }} @endif</h2>
                       </a>
                     </div>
                   </div>
@@ -210,7 +210,7 @@
                     </div>
                     <div class="slick-text">
                       <a href="{{ route('front.media.video', $dayVideo2) }}">
-                        <h2>@if($dayVideo2){{ $dayVideo2->getName() }} @else THE MOST POPULAR RESPONSIVE FRAMEWORK @endif</h2>
+                        <h2>@if($dayVideo2){{ $dayVideo2->getName() }} @else {{ trans('site.FrontPostDaysEpisode') }} @endif</h2>
                       </a>
                     </div>
                   </div>
@@ -221,58 +221,45 @@
                     </div>
                     <div class="slick-text">
                       <a href="{{ route('front.media.video', $dayVideo3) }}">
-                        <h2>@if($dayVideo3){{ $dayVideo3->getName() }} @else THE MOST POPULAR RESPONSIVE FRAMEWORK @endif</h2>
+                        <h2>@if($dayVideo3){{ $dayVideo3->getName() }} @else {{ trans('site.FrontPostDaysAnons') }} @endif</h2>
                       </a>
                     </div>
                   </div>
 
-                  {{--<div> <!-- video4 -->--}}
-                    {{--<div class="embed-youtube embed-responsive embed-responsive-16by9 slider-text">--}}
-{{--<iframe class="embed-responsive-item" src="//www.youtube.com/embed/@if($dayVideo4){{$dayVideo4->getUrl()}}@else{{$defaultVideo}}@endif?enablejsapi=1&version=3&playerapiid=ytplayer" allowfullscreen=""></iframe>--}}
-                    {{--</div>--}}
-                    {{--<div class="slick-text">--}}
-                      {{--<a href="{{ route('front.media.video', $dayVideo4) }}">--}}
-                        {{--<h2>@if($dayVideo4){{ $dayVideo4->getName() }} @endif</h2>--}}
-                      {{--</a>--}}
-                    {{--</div>--}}
-                  {{--</div>--}}
-
-                  {{--<div> <!-- video5 -->--}}
-                    {{--<div class="embed-youtube embed-responsive embed-responsive-16by9 slider-text">--}}
-{{--<iframe class="embed-responsive-item" src="//www.youtube.com/embed/@if($dayVideo5){{$dayVideo5->getUrl()}}@else{{$defaultVideo}}@endif?enablejsapi=1&version=3&playerapiid=ytplayer" allowfullscreen=""></iframe>--}}
-                    {{--</div>--}}
-                    {{--<div class="slick-text">--}}
-                      {{--<a href="{{ route('front.media.video', $dayVideo5) }}">--}}
-                        {{--<h2>@if($dayVideo5){{ $dayVideo5->getName() }} @endif</h2>--}}
-                      {{--</a>--}}
-                    {{--</div>--}}
-                  {{--</div>--}}
+                  <div> <!-- video4 -->
+                    <div class="embed-youtube embed-responsive embed-responsive-16by9 slider-text">
+                      <iframe class="embed-responsive-item" src="//www.youtube.com/embed/@if($dayVideo4){{$dayVideo4->getUrl()}}@else{{$defaultVideo}}@endif?enablejsapi=1&version=3&playerapiid=ytplayer" allowfullscreen=""></iframe>
+                    </div>
+                    <div class="slick-text">
+                      <a href="{{ route('front.media.video', $dayVideo4) }}">
+                        <h2>@if($dayVideo4){{ $dayVideo4->getName() }} @else {{ trans('site.FrontPostDaysMaanai') }} @endif</h2>
+                      </a>
+                    </div>
+                  </div>
 
                 </div>
                 <div class="slider slider-nav">
                   <div>
-                    <span class="videoTitle">{{ trans('site.FrontPostDaysVideo') }}</span>
+                    <span class="videoTitle hidden">{{ trans('site.FrontPostDaysNews') }}</span>
                     <img src="http://img.youtube.com/vi/@if($dayVideo1){{$dayVideo1->getUrl()}}@else{{$defaultVideo}}@endif/mqdefault.jpg" alt="" />
-                    <h4>@if($dayVideo1){{ $dayVideo1->getName() }} @else Because lead pencils are pretty smart looking. @endif</h4>
+                    <h4>@if($dayVideo1){{ $dayVideo1->getName() }} @else {{ trans('site.FrontPostDaysMaanai') }} @endif</h4>
                   </div>
                   <div>
-                    <span class="videoTitle">{{ trans('site.FrontPostDaysNews') }}</span>
+                    <span class="videoTitle hidden">{{ trans('site.FrontPostDaysEpisode') }}</span>
                     <img src="http://img.youtube.com/vi/@if($dayVideo2){{$dayVideo2->getUrl()}}@else{{$defaultVideo}}@endif/mqdefault.jpg" alt="" />
-                    <h4>@if($dayVideo2){{ $dayVideo2->getName() }} @else For you are a magnet and I am steel. @endif</h4>
+                    <h4>@if($dayVideo2){{ $dayVideo2->getName() }} @else {{ trans('site.FrontPostDaysMaanai') }} @endif</h4>
                   </div>
                   <div>
-                    <span class="videoTitle">{{ trans('site.FrontPostDaysEpisode') }}</span>
+                    <span class="videoTitle hidden">{{ trans('site.FrontPostDaysAnons') }}</span>
                     <img src="http://img.youtube.com/vi/@if($dayVideo3){{$dayVideo3->getUrl()}}@else{{$defaultVideo}}@endif/mqdefault.jpg" alt="" />
-                    <h4>@if($dayVideo3){{ $dayVideo3->getName() }} @else For you are a magnet and I am steel. @endif</h4>
+                    <h4>@if($dayVideo3){{ $dayVideo3->getName() }} @else {{ trans('site.FrontPostDaysMaanai') }} @endif</h4>
                   </div>
-                  {{--<div>--}}
-                    {{--<span class="videoTitle hidden">{{ trans('site.FrontPostDaysVideo') }}</span>--}}
-                    {{--<img src="http://img.youtube.com/vi/@if($dayVideo4){{$dayVideo4->getUrl()}}@else{{$defaultVideo}}@endif/mqdefault.jpg" alt="" />--}}
-                  {{--</div>--}}
-                  {{--<div>--}}
-                    {{--<span class="videoTitle hidden">{{ trans('site.FrontPostDaysVideo') }}</span>--}}
-                    {{--<img src="http://img.youtube.com/vi/@if($dayVideo5){{$dayVideo5->getUrl()}}@else{{$defaultVideo}}@endif/mqdefault.jpg" alt="" />--}}
-                  {{--</div>--}}
+
+                  <div>
+                    <span class="videoTitle hidden">{{ trans('site.FrontPostDaysMaanai') }}</span>
+                    <img src="http://img.youtube.com/vi/@if($dayVideo4){{$dayVideo4->getUrl()}}@else{{$defaultVideo}}@endif/mqdefault.jpg" alt="" />
+                    <h4>@if($dayVideo4){{ $dayVideo4->getName() }} @else {{ trans('site.FrontPostDaysMaanai') }} @endif</h4>
+                  </div>
                 </div>
 
                 <footer>
@@ -550,7 +537,7 @@
       autoplay:false
     });
     $('.slider-nav').slick({
-      slidesToShow: 3,
+      slidesToShow: 4,
       asNavFor: '.slider-for',
       focusOnSelect: true
     });

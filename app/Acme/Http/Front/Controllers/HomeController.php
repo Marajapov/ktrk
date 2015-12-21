@@ -63,11 +63,6 @@ class HomeController extends Controller
         } else {
             $dayVideo4 = '';
         }
-        if($dayVideo5){
-            $dayVideo5 = $dayVideo5;
-        } else {
-            $dayVideo5 = '';
-        }
 
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
         $peopleReporters = \Model\PeopleReporter\ModelName::where('published','=',true)->get();
@@ -91,7 +86,7 @@ class HomeController extends Controller
         }
 
         $mediaLastVideos = \Model\Media\ModelName::orderBy('id','desc')->take(9)->get();
-        $defaultVideo = 'pnrUhMN8H4Y';
+        $defaultVideo = 'rjXSurFi8uQ';
         return view('Front::home', [
             
             'generalPosts'   => $generalPosts,
@@ -99,7 +94,6 @@ class HomeController extends Controller
             'dayVideo2'      => $dayVideo2,
             'dayVideo3'      => $dayVideo3,
             'dayVideo4'      => $dayVideo4,
-            'dayVideo5'      => $dayVideo5,
             'defaultVideo'   => $defaultVideo,
 
             'positionTop'    => $this->positionTop,
