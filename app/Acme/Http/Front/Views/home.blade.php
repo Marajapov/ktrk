@@ -226,38 +226,16 @@
                     </div>
                   </div>
 
-                  <div> <!-- video3 -->
+                  <div> <!-- video4 -->
                     <div class="embed-youtube embed-responsive embed-responsive-16by9 slider-text">
                       <iframe class="embed-responsive-item" src="//www.youtube.com/embed/@if($dayVideo3){{$dayVideo3->getUrl()}}@else{{$defaultVideo}}@endif?enablejsapi=1&version=3&playerapiid=ytplayer" allowfullscreen=""></iframe>
                     </div>
                     <div class="slick-text">
                       <a href="{{ route('front.media.video', $dayVideo4) }}">
-                        <h2>@if($dayVideo3){{ $dayVideo4->getName() }} @else {{ trans('site.FrontPostDaysMaanai') }} @endif</h2>
+                        <h2>@if($dayVideo4){{ $dayVideo4->getName() }} @else {{ trans('site.FrontPostDaysMaanai') }} @endif</h2>
                       </a>
                     </div>
                   </div>
-
-                  {{--<div> <!-- video4 -->--}}
-                    {{--<div class="embed-youtube embed-responsive embed-responsive-16by9 slider-text">--}}
-{{--<iframe class="embed-responsive-item" src="//www.youtube.com/embed/@if($dayVideo4){{$dayVideo4->getUrl()}}@else{{$defaultVideo}}@endif?enablejsapi=1&version=3&playerapiid=ytplayer" allowfullscreen=""></iframe>--}}
-                    {{--</div>--}}
-                    {{--<div class="slick-text">--}}
-                      {{--<a href="{{ route('front.media.video', $dayVideo4) }}">--}}
-                        {{--<h2>@if($dayVideo4){{ $dayVideo4->getName() }} @endif</h2>--}}
-                      {{--</a>--}}
-                    {{--</div>--}}
-                  {{--</div>--}}
-
-                  {{--<div> <!-- video5 -->--}}
-                    {{--<div class="embed-youtube embed-responsive embed-responsive-16by9 slider-text">--}}
-{{--<iframe class="embed-responsive-item" src="//www.youtube.com/embed/@if($dayVideo5){{$dayVideo5->getUrl()}}@else{{$defaultVideo}}@endif?enablejsapi=1&version=3&playerapiid=ytplayer" allowfullscreen=""></iframe>--}}
-                    {{--</div>--}}
-                    {{--<div class="slick-text">--}}
-                      {{--<a href="{{ route('front.media.video', $dayVideo5) }}">--}}
-                        {{--<h2>@if($dayVideo5){{ $dayVideo5->getName() }} @endif</h2>--}}
-                      {{--</a>--}}
-                    {{--</div>--}}
-                  {{--</div>--}}
 
                 </div>
                 <div class="slider slider-nav">
@@ -279,17 +257,9 @@
 
                   <div>
                     <span class="videoTitle hidden">{{ trans('site.FrontPostDaysMaanai') }}</span>
-                    <img src="http://img.youtube.com/vi/@if($dayVideo3){{$dayVideo3->getUrl()}}@else{{$defaultVideo}}@endif/mqdefault.jpg" alt="" />
+                    <img src="http://img.youtube.com/vi/@if($dayVideo4){{$dayVideo4->getUrl()}}@else{{$defaultVideo}}@endif/mqdefault.jpg" alt="" />
                     <h4>{{ trans('site.FrontPostDaysMaanai') }}</h4>
                   </div>
-                  {{--<div>--}}
-                    {{--<span class="videoTitle hidden">{{ trans('site.FrontPostDaysVideo') }}</span>--}}
-                    {{--<img src="http://img.youtube.com/vi/@if($dayVideo4){{$dayVideo4->getUrl()}}@else{{$defaultVideo}}@endif/mqdefault.jpg" alt="" />--}}
-                  {{--</div>--}}
-                  {{--<div>--}}
-                    {{--<span class="videoTitle hidden">{{ trans('site.FrontPostDaysVideo') }}</span>--}}
-                    {{--<img src="http://img.youtube.com/vi/@if($dayVideo5){{$dayVideo5->getUrl()}}@else{{$defaultVideo}}@endif/mqdefault.jpg" alt="" />--}}
-                  {{--</div>--}}
                 </div>
 
                 <footer>
