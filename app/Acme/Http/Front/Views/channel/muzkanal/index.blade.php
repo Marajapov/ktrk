@@ -134,7 +134,6 @@
          </div>
       </div>
    </div>
-
    <!-- Main slider -->
    <div class="container">
       <div class="row">
@@ -370,8 +369,8 @@
                   <div class="panel-body">
                      <div class="col-md-12">
                         <div class="carousel-slick1">
-                        @if($MediaPop1)
-                        @foreach($MediaPop1 as $pop1)
+                           @if($MediaPop1)
+                           @foreach($MediaPop1 as $pop1)
                            <div class="col-md-4 col-xs-12">
                               <a href="{{ route('muzkanal.video', $pop1)}}">
                               <img src="http://img.youtube.com/vi/{{ $pop1->getUrl()}}/mqdefault.jpg" alt=""/></a>
@@ -385,12 +384,11 @@
                               <div class="views"><i class="fa fa-eye"></i>{{ $pop1->getViewed() }}</div>
                            </div>
                            @endforeach
-                        @endif
+                           @endif
                         </div>
-
                         <div class="carousel-slick1 videosfix">
-                        @if($MediaPop2)
-                        @foreach($MediaPop2 as $pop2)
+                           @if($MediaPop2)
+                           @foreach($MediaPop2 as $pop2)
                            <div class="col-md-4">
                               <a href="{{ route('muzkanal.video', $pop2)}}"><img src="http://img.youtube.com/vi/{{ $pop2->getUrl()}}/mqdefault.jpg" alt=""/></a> 
                               <div class="item-desc">
@@ -403,11 +401,11 @@
                               <div class="views"><i class="fa fa-eye"></i>{{ $pop2->getViewed() }}</div>
                            </div>
                            @endforeach
-                        @endif
+                           @endif
                         </div>
                         <div class="carousel-slick1 videosfix">
-                        @if($MediaPop3)
-                        @foreach($MediaPop3 as $pop3)                        
+                           @if($MediaPop3)
+                           @foreach($MediaPop3 as $pop3)                        
                            <div class="col-md-4">
                               <a href="{{ route('muzkanal.video', $pop3)}}"><img src="http://img.youtube.com/vi/{{ $pop3->getUrl()}}/mqdefault.jpg" alt=""/></a> 
                               <div class="item-desc">
@@ -420,7 +418,7 @@
                               <div class="views"><i class="fa fa-eye"></i>{{ $pop3->getViewed() }}</div>
                            </div>
                            @endforeach
-                        @endif                                 
+                           @endif                                 
                         </div>
                         <footer>
                            <a href="{{ route('muzkanal.videos') }}">
@@ -588,7 +586,7 @@
                               <div class="views"><i class="fa fa-eye"></i>{{ $top1->getViewed() }}</div>
                            </div>
                            @endforeach
-                          @endif                           
+                           @endif                           
                         </div>
                         <div class="carousel-slick videosfix">
                            @if($MediaTop2)
@@ -605,10 +603,10 @@
                               <div class="views"><i class="fa fa-eye"></i>{{ $top2->getViewed() }}</div>
                            </div>
                            @endforeach
-                          @endif                             
+                           @endif                             
                         </div>
                         <footer>
-                           <a href="#">
+                           <a href="{{ route('muzkanal.videos')}}">
                            <span>{{ trans('radiopages.AllVideos') }} <i class="fa fa-arrow-circle-right"></i></span>
                            </a>
                         </footer>
@@ -626,19 +624,15 @@
                      <h3 class="panel-title"><span> - {{ trans('radiopages.Photos') }} - </span></h3>
                   </div>
                   <div class="ia-container">
-      
-                      @if($photoGalleries != null)
-                      @foreach($photoGalleries as $key=>$photoGallery)
-                        <figure>
+                     @if($photoGalleries != null)
+                     @foreach($photoGalleries as $key=>$photoGallery)
+                     <figure>
                         <img src="{{ asset($photoGallery->status) }}" />
                         <input type="radio" name="radio-set" @if($key == 0) checked="checked" @endif/>
                         <figcaption><a href="{{ route('muzkanal.photos', $photoGallery) }}"><span>{{ $photoGallery->getName() }}</span></a></figcaption>
-                        
-                     @endforeach
-                     @endif
-                </figure>
-
-                     
+                        @endforeach
+                        @endif
+                     </figure>
                   </div>
                   <!-- ia-container -->
                </div>
@@ -662,12 +656,9 @@
           });
       });
    </script>   
-
-
    <script>
       var serverTZoffset = 360;
    </script>
-
    </script>
    <script src="js/audio/dkp.min.js"></script>
    <script type="text/javascript" src="filter/js/jquery.easing.min.js"></script>
@@ -808,5 +799,4 @@
       }
       
    </script>
-
    @stop
