@@ -148,16 +148,44 @@
                      </h4>
                   </div>
                </div>
-               <div class="panel-body">
-                  <div class="row" style="margin: 20px;">
-                     <ul id="imageGallery">
-                     @foreach($images as $image)
-                        <li data-thumb="{{ asset('froala/uploads/'.$image->name) }}" data-src="{{ asset('froala/uploads/'.$image->name) }}">
-                           <img class="resizegallery" src="{{ asset('froala/uploads/'.$image->name) }}" />
-                        </li>
-                     @endforeach
-                        
-                     </ul>
+               <div class="panel-body imagegrid">
+                  <div class="row">
+                     <div class="col-md-12 otherphotos">
+                        <div class="grid_gallery">
+                        @if($photoGalleries != null)
+                        @foreach($photoGalleries as $photoGallery)
+                           <div class="col-md-3">
+                              <a href="{{ route('muzkanal.photos', $photoGallery) }}" class="img-wrap">
+                                 <img src="{{ asset($photoGallery->status) }}" alt=""/>
+                                 <span>{{ $photoGallery->getName() }}</span>
+                                 <div class="overlay"></div>
+                              </a>
+                           </div>
+                        @endforeach
+                        @endif                  
+                        </div>
+                        <nav class="muzpaginate">
+                           <ul class="pagination">
+                              <li>
+                                 <a href="{{ route('muzkanal.videos', ['page' => 1]) }}" class="btn btn-default @if($postAll->currentPage() == 1) disabled @endif">{{ trans('site.Start') }}</a>
+                              </li>
+                              <li>
+                                 <a href="{{ $postAll->previousPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                              </li>
+                              <li>
+                                 <a href="{{ $postAll->nextPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                              </li>
+                              @for($i = 0, $j = 1; $i < $postAll->total(); $i+=$perPage)
+                              <li>
+                                 <a href="{{ route('muzkanal.videos', ['page' => $j]) }}" class="btn btn-default @if($postAll->currentPage() == $j) active @endif">{{ $j++ }}</a>
+                              </li>
+                              @endfor
+                              <li>
+                                 <a href="{{ route('muzkanal.videos', ['page' => ceil($postAll->total()/$perPage)]) }}" class="btn btn-default @if($postAll->currentPage() == ceil($postAll->total()/$perPage)) disabled @endif">{{ trans('site.End') }}</a>
+                              </li>
+                           </ul>
+                        </nav>
+                     </div>
                   </div>
                </div>
             </div>

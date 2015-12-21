@@ -22,7 +22,7 @@ class MuzkanalController extends Controller
         $MediaTop2 = \Model\Media\ModelName::orderBy('viewed','desc')->skip('6')->take(6)->get();
 
         // Photo Gallery
-        $photoGalleries = \Model\PhotoParent\ModelName::where('muzkanal','=','1')->where('published','=',true)->take('10')->orderBy('id','asc')->get();
+        $photoGalleries = \Model\PhotoParent\ModelName::where('muzkanal','=','1')->where('published','=',true)->take('6')->orderBy('id','desc')->get();
 
         return view('Front::channel.muzkanal.index', [
             'channel' => $channel,
@@ -89,7 +89,7 @@ class MuzkanalController extends Controller
   public function videos()
     {
         $channel = \Model\Channel\ModelName::name('muzkanal')->first();
-        $perPage = 8;
+        $perPage = 24;
 
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
@@ -115,17 +115,29 @@ class MuzkanalController extends Controller
             ]);
     }
 
-  public function photos()
+  public function allphotos()
     {
         $channel = \Model\Channel\ModelName::name('muzkanal')->first();
+        $perPage = 24;
 
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
-        return view('Front::channel.muzkanal.photos', [
+        $postAll = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->orderBy('id', 'desc')->paginate($perPage);        
+
+
+        // Photo Gallery
+        $photoGalleries = \Model\PhotoParent\ModelName::where('muzkanal','=','1')->where('published','=',true)->take('10')->orderBy('id','desc')->get();        
+        return view('Front::channel.muzkanal.allphotos', [
             'channel' => $channel,
             'backgroundMain' => $backgroundMain,
+            'photoGalleries' => $photoGalleries,
+            'postAll' => $postAll,
+            'perPage' => $perPage,
+
             ]);
     }
+
+
 
         // For photos page One gallery 
      public function Gallery(Request $request, $galleryId)

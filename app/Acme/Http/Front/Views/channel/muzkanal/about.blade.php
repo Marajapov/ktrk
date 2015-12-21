@@ -91,7 +91,7 @@
                                  <i class="fa fa-microphone"></i>Хит-Парад <!-- <span class="caret"></span> -->
                               </a>
                            </li>
-                           <li><a href="{{ route('muzkanal.photos') }}"><i class="fa fa-picture-o"></i>{{ trans('radiopages.Photos') }}</a></li>
+                           <li><a href="{{ route('muzkanal.allPhotos') }}"><i class="fa fa-picture-o"></i>{{ trans('radiopages.Photos') }}</a></li>
                            <li><a href="{{ route('muzkanal.videos') }}"><i class="fa fa-youtube-play"></i>{{ trans('radiopages.Clips') }}</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right logo-block">
