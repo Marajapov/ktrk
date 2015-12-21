@@ -31,6 +31,8 @@ class MediaController extends Controller
 
         $mediaLastVideos = \Model\Media\ModelName::orderBy('id','desc')->take(9)->get();
 
+        $mediaPops = \Model\Media\ModelName::orderBy('viewed','desc')->take(9)->get();
+
         $mainBanner = \Model\Background\ModelName::where('name','=','main')->first();
         $categories = \Model\Category\ModelName::all();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
@@ -44,7 +46,8 @@ class MediaController extends Controller
             'projectList' => $projectList,
             'mediaCategories'=>$MediaCategories,
             'backgroundMain' => $backgroundMain,
-            'categoriesVideos' => $categoriesVideos
+            'categoriesVideos' => $categoriesVideos,
+            'mediaPops' => $mediaPops
             ]);
     }
 

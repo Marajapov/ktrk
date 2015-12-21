@@ -78,8 +78,6 @@
 
         </div>
 
-        <div id="player1"></div>
-
       </div>
     </div>
   </div>
@@ -118,12 +116,12 @@
 //      }
 //    });
 
-    playerInstance1.setup({
+    /*playerInstance1.setup({
       file: "http://31.192.250.52:8000/obondoru128",
       type: "mp3",
       width: 45,
       height: 30
-    });
+    });*/
 
   </script>
 @endsection

@@ -43,17 +43,6 @@
         </div>
       </div>
 
-      <div class="thumbnail">
-        <a href="{{ route('front.rs.person',1) }}">
-          <img src="{{ asset('static/images/rs/gulnara.jpg') }}" alt="...">
-        </a>
-        <div class="caption">
-          <h3>Мамбеталиева Гульнара Мунуровна</h3>
-          <p>ассистент редакционного советника КТРК</p>
-          <a class="btn btn-default" href="{{ route('front.rs.person',2) }}">Подробнее</a>
-        </div>
-      </div>
-
     </div>
 
   </div>

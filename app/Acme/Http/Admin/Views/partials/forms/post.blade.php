@@ -31,14 +31,6 @@
 
     <div class="panel-body">     
 
-      <!-- Channel -->
-    <div class="form-group">
-      <label for="channel_id" class="col-sm-2 control-label">Канал</label>
-      <div class="col-sm-10">
-        {!! Form::select('channel_id', $channelList, null, ["class" => "selectpicker", "data-live-search"=>"true", "required" => true, "title" => "-- Выберите --"]) !!}
-      </div>
-    </div>
-
     <!-- Category -->
     <div class="form-group">
       <label for="category_id" class="col-sm-2 control-label">Категория</label>
@@ -77,9 +69,9 @@
 
     <!-- Datepicker -->
     <div class="form-group">
-    <label for="date" class="col-sm-2 control-label">Дата</label>
+    <label for="created_at" class="col-sm-2 control-label">Дата</label>
       <div class="col-sm-2">
-        {!! Form::text('date', null, ["class" => "form-control", "id" => "date", "required" => true, "title" => ""]) !!}
+        {!! Form::text('created_at', null, ["class" => "form-control", "id" => "date", "title" => ""]) !!}
       </div>
     </div>
 

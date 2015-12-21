@@ -69,7 +69,7 @@ class PostController extends Controller
     public function store(Request $request)
     {
 
-        $post = Post::create($request->except('tag_kg','tag_ru','thumbnail','q'));
+        $post = Post::create($request->except('tag_kg','tag_ru','thumbnail','q','channel_id','created_at'));
 
         $tag_kg_string = $request->input('tag_kg');
         $tags = explode("; ",$tag_kg_string);
@@ -127,6 +127,22 @@ class PostController extends Controller
             Image::make($_FILES['thumbnail']['tmp_name'])->fit(250, 150)->save($dir.'/'.$name);
 
             $post->thumbnail = $dir.'/'.$name;
+            $post->save();
+        }
+
+        if($request->input('channel_id') == null){
+            $channel_id = 1;
+            $post->channel_id = $channel_id;
+        }
+        if($request->input('created_at') != null){
+            $postDate = $request->input('created_at');
+            $todayTime = date('H:i:s');
+            $saveDate = date('Y-m-d', strtotime($postDate));
+            $result = $saveDate.' '.$todayTime;
+            $post->created_at = $result;
+            $post->save();
+        }else{
+            $post->created_at = date('Y-m-d H:i:s');
             $post->save();
         }
 
@@ -188,7 +204,7 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        $post->update($request->except('tag_kg','tag_ru','thumbnail','q'));
+        $post->update($request->except('tag_kg','tag_ru','thumbnail','q','channel_id','created_at'));
 
         $tag_kg_string = $request->input('tag_kg');
         $tags = explode("; ",$tag_kg_string);
@@ -245,6 +261,26 @@ class PostController extends Controller
             $storage->makeDirectory($dir);
 
             $post->thumbnail = $dir.'/'.$name;
+            $post->save();
+        }
+
+        if($request->input('channel_id') == null){
+            $channel_id = 1;
+            $post->channel_id = $channel_id;
+        }
+        if($request->input('created_at') != null){
+
+            $postDate = $request->input('created_at');
+            
+            $todayTime = date('H:i:s');
+            $saveDate = date('Y-m-d', strtotime($postDate));
+            $result = $saveDate.' '.$todayTime;
+            $post->created_at = $result;
+            $post->save();
+        }else{
+            $today = date('Y-m-d H:i:s');
+            dd($today);
+            $post->created_at = date('Y-m-d H:i:s');
             $post->save();
         }
 

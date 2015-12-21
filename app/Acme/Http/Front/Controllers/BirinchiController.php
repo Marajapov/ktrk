@@ -11,8 +11,10 @@ class BirinchiController extends Controller
     {
         $channel = \Model\Channel\ModelName::name('birinchi')->first();
 
-        $generalPosts = \Model\Post\ModelName::where('birinchi','=',1)->take(5)->orderBy('id','desc')->get();
+        $generalPosts = \Model\Post\ModelName::where('birinchi','=',1)->where('general','=','1')->take(3)->orderBy('id','desc')->get();
 
+        $allPost = \Model\Post\ModelName::where('birinchi','=',1)->orderBy('id','desc')->get();
+        
 
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
@@ -20,6 +22,7 @@ class BirinchiController extends Controller
             'channel' => $channel,
             'backgroundMain' => $backgroundMain,
             'generalPosts' => $generalPosts,
+            'allPost' => $allPost,
             ]);
     }
 
