@@ -70,31 +70,25 @@
                   <!-- video1 -->
                   {!! Form::open(['route' => ['admin.media.dayVideo1', $media->id], 'method' => 'get', 'onsubmit' => "return confirm('Вы уверены ?')"]) !!}
                   <input type="hidden" value="{{ $media->id }}" name="media">
-                  <button class="btn @if($media->dayVideo == 1) btn-warning @else btn-default @endif" type="submit"><i class="fa fa-star"></i></button>
+                  <button class="btn @if($media->dayVideo == 1) btn-warning @else btn-default @endif" type="submit">1</button>
                   {!! Form::close() !!}
 
                   <!-- video2 -->
                   {!! Form::open(['route' => ['admin.media.dayVideo2', $media->id], 'method' => 'get', 'onsubmit' => "return confirm('Вы уверены ?')"]) !!}
                   <input type="hidden" value="{{ $media->id }}" name="media">
-                  <button class="btn @if($media->dayVideo == 2) btn-warning @else btn-default @endif" type="submit">1</button>
+                  <button class="btn @if($media->dayVideo == 2) btn-warning @else btn-default @endif" type="submit">2</button>
                   {!! Form::close() !!}
 
                   <!-- video3 -->
                   {!! Form::open(['route' => ['admin.media.dayVideo3', $media->id], 'method' => 'get', 'onsubmit' => "return confirm('Вы уверены ?')"]) !!}
                   <input type="hidden" value="{{ $media->id }}" name="media">
-                  <button class="btn @if($media->dayVideo == 3) btn-warning @else btn-default @endif" type="submit">2</button>
+                  <button class="btn @if($media->dayVideo == 3) btn-warning @else btn-default @endif" type="submit">3</button>
                   {!! Form::close() !!}
 
                   <!-- video4 -->
                   {!! Form::open(['route' => ['admin.media.dayVideo4', $media->id], 'method' => 'get', 'onsubmit' => "return confirm('Вы уверены ?')"]) !!}
                   <input type="hidden" value="{{ $media->id }}" name="media">
-                  <button class="btn @if($media->dayVideo == 4) btn-warning @else btn-default @endif" type="submit">3</button>
-                  {!! Form::close() !!}
-
-                  <!-- video5 -->
-                  {!! Form::open(['route' => ['admin.media.dayVideo5', $media->id], 'method' => 'get', 'onsubmit' => "return confirm('Вы уверены ?')"]) !!}
-                  <input type="hidden" value="{{ $media->id }}" name="media">
-                  <button class="btn @if($media->dayVideo == 5) btn-warning @else btn-default @endif" type="submit">4</button>
+                  <button class="btn @if($media->dayVideo == 4) btn-warning @else btn-default @endif" type="submit">4</button>
                   {!! Form::close() !!}
 
                   <a class="btn btn-default" href="{{ route('admin.media.edit', $media) }}">
