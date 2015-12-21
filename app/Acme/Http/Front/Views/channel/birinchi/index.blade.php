@@ -155,54 +155,28 @@
                   </div>
                   <div class="panel-body">
                      <div class="row specpad">
+                        @if($generalPosts)
+                        @foreach($generalPosts as $post)
+
                         <div class="blocks col-md-4 col-sm-6 col-xs-12">
                            <span class="cart-title category">
                            <a href="#">Спорт</a>
                            </span>
                            <article>
                               <a href="#" class="image-link">
-                              <img src="{{asset('images/gallery/001.jpg')}}">
-                              <span class="date">2 Декабрь, 2015</span>
+                              <img src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif">
+                              <span class="date">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
                               </a>
                               <h3 class="name headline">
                                  <a href="#" title="Premiere for The Invisible Woman">
-                                 Кыргыз бильярдчылар Орусияда күч сынашууда
+                                 {{ $post->getTitleRuOrKg() }}
                                  </a>
                               </h3>
                            </article>
                         </div>
-                        <div class="blocks col-md-4 col-sm-6 col-xs-12">
-                           <span class="cart-title category">
-                           <a href="#">Санкция</a>
-                           </span>
-                           <article>
-                              <a href="#" class="image-link">
-                              <img src="{{asset('images/gallery/002.jpg')}}">
-                              <span class="date">2 Декабрь, 2015</span>
-                              </a>
-                              <h3 class="name headline">
-                                 <a href="#" title="Premiere for The Invisible Woman">
-                                 Орусия тыюу салган түрк товарлардын тизмеси жарыяланды
-                                 </a>
-                              </h3>
-                           </article>
-                        </div>
-                        <div class="blocks col-md-4 col-sm-6 col-xs-12">
-                           <span class="cart-title category">
-                           <a href="#">Кырсык</a>
-                           </span>
-                           <article>
-                              <a href="#" class="image-link">
-                              <img src="{{asset('images/gallery/003.jpg')}}">
-                              <span class="date">2 Декабрь, 2015</span>
-                              </a>
-                              <h3 class="name headline">
-                                 <a href="#" title="Premiere for The Invisible Woman">
-                                 Кечээ болгон жер титирөөдөн бир катар социалдык объекттер жабыркады
-                                 </a>
-                              </h3>
-                           </article>
-                        </div>
+
+                        @endforeach                        
+                       @endif
                      </div>
                   </div>
                </div>
@@ -237,98 +211,28 @@
                   </div>
                   <div class="panel-body">
                      <div class="panel-body">
+                     @if($allPost)
+                     @foreach($allPost as $post)
                         <div class="media">
                            <div class="media-left">
-                              <a href="#">
-                              <img class="media-object thumb" src="http://sputnik.kg/images/102017/14/1020171449.jpg" alt="image">
+                              <a href="{{ route('front.post', $post) }}">
+                              <img class="media-object thumb" src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif" alt="image">
                               </a>
                            </div>
                            <div class="media-body">
                               <div class="extra">
-                                 <span class="e-datetime">18 Нояб , 12:22</span>
-                                 <span class="e-views"><i class="fa fa-eye"></i>17</span>
+                                 <span class="e-datetime">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
+                                 <span class="e-views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
                               </div>
-                              <a class="media-heading" href="#">КТРК: из-за работы я стал изгоем для родственников</a>
-                              <h5 class="media-desc">
-                                 <p>Кабинет, как у бизнесмена средней руки. Нет ни мебели красного дерева, как в вотчинах других чиновников высокого ранга, ни канцелярского набора из бирюзы. Из роскоши — 6 плазменных телевизоров на стене. Под столом склад жестянок с безалкогольным энергетиком.
-                                 </p>
-                              </h5>
+                              <a class="media-heading" href="{{ route('front.post', $post) }}">{{ $post->getTitleRuOrKg() }}</a>
+                              
                            </div>
                         </div>
-                        <div class="media">
-                           <div class="media-left">
-                              <a href="#">
-                              <img class="media-object thumb" src="http://ktrk.kg/sites/default/files/styles/juicebox_medium/public/gallery/album/fotos/_mg_9802.jpg" alt="image">
-                              </a>
-                           </div>
-                           <div class="media-body">
-                              <div class="extra">
-                                 <span class="e-datetime">18 Нояб , 12:22</span>
-                                 <span class="e-views"><i class="fa fa-eye"></i>17</span>
-                              </div>
-                              <a class="media-heading" href="#">КТРКнын жаңыланган заманбап кеңсеси</a>
-                              <h5 class="media-desc">
-                                 <p>Бүгүн, 6-ноябрда Коомдук телерадиоберүү корпорациясында жаңыланган заманбап үлгүдөгү иш кабинеттеринин ачылышы болду.
-                                 </p>
-                              </h5>
-                           </div>
-                        </div>
-                        <div class="media">
-                           <div class="media-left">
-                              <a href="#">
-                              <img class="media-object thumb" src="http://1000.ktrk.kg/img/thumbnail/11447849392.png" alt="image">
-                              </a>
-                           </div>
-                           <div class="media-body">
-                              <div class="extra">
-                                 <span class="e-datetime">18 Нояб , 12:22</span>
-                                 <span class="e-views"><i class="fa fa-eye"></i>17</span>
-                              </div>
-                              <a class="media-heading" href="#">КМЮА: ректор шайланды</a>
-                              <h5 class="media-desc">
-                                 <p>Кыргызстандын жогорку окуу жайларында ректорду шайлоо өтүп жатат. Бүгүн кыргыз мамлекеттик юридикалык академиясы өзүнүн жетекчисин шайлады. Ага беш талапкер катышып, ар бири өзүнүн иш пландары менен тааныштырды.
-                                 </p>
-                              </h5>
-                           </div>
-                        </div>
-                        <div class="media">
-                           <div class="media-left">
-                              <a href="#">
-                              <img class="media-object thumb" src="http://sputnik.kg/images/102017/14/1020171449.jpg" alt="image">
-                              </a>
-                           </div>
-                           <div class="media-body">
-                              <div class="extra">
-                                 <span class="e-datetime">18 Нояб , 12:22</span>
-                                 <span class="e-views"><i class="fa fa-eye"></i>17</span>
-                              </div>
-                              <a class="media-heading" href="#">КТРК: из-за работы я стал изгоем для родственников</a>
-                              <h5 class="media-desc">
-                                 <p>Кабинет, как у бизнесмена средней руки. Нет ни мебели красного дерева, как в вотчинах других чиновников высокого ранга, ни канцелярского набора из бирюзы. Из роскоши — 6 плазменных телевизоров на стене. Под столом склад жестянок с безалкогольным энергетиком.
-                                 </p>
-                              </h5>
-                           </div>
-                        </div>
-                        <div class="media">
-                           <div class="media-left">
-                              <a href="#">
-                              <img class="media-object thumb" src="http://ktrk.kg/sites/default/files/styles/juicebox_medium/public/gallery/album/fotos/_mg_9802.jpg?itok=YROMXAeD" alt="image">
-                              </a>
-                           </div>
-                           <div class="media-body">
-                              <div class="extra">
-                                 <span class="e-datetime">18 Нояб , 12:22</span>
-                                 <span class="e-views"><i class="fa fa-eye"></i>17</span>
-                              </div>
-                              <a class="media-heading" href="#">КТРКнын жаңыланган заманбап кеңсеси</a>
-                              <h5 class="media-desc">
-                                 <p>Бүгүн, 6-ноябрда Коомдук телерадиоберүү корпорациясында жаңыланган заманбап үлгүдөгү иш кабинеттеринин ачылышы болду.
-                                 </p>
-                              </h5>
-                           </div>
-                        </div>
+                        @endforeach
+                        @endif
+                        
                         <footer>
-                           <a href="#">{{ trans('radiopages.Morenews') }}</a>
+                           <a href="{{ route('front.general') }}">{{ trans('radiopages.Morenews') }}</a>
                         </footer>
                      </div>
                   </div>

@@ -114,15 +114,20 @@
                           </div>
 
                           <div class="panel-body">
+                          @if($mediaPops)
+                            @foreach($mediaPops as $pop)
                             <article class="col-md-4" data-cat="all-videos">
                               <a href="#" class="img">
-                                <img src="http://img.youtube.com/vi/cwLRQn61oUY/mqdefault.jpg" alt=""/>
-                                <h4><i class="fa fa-play-circle-o"></i>Замана</h4>
+                              <span class="media-view"><i class="fa fa-eye"></i>{{ $pop->getViewed() }}</span>
+                                <img src="http://img.youtube.com/vi/{{ $pop->getUrl() }}/mqdefault.jpg" alt=""/>
+                                
                               </a>
                               <a href="#" class="media-title">
-                                <h4>{{-- $media->videoType()->getName() --}} {{ $MediaCategory->getName() }}</h4>
+                                <h4>{{ $pop->getName() }}</h4>
                               </a>
                             </article>
+                            @endforeach
+                          @endif
 
 
                           </div>

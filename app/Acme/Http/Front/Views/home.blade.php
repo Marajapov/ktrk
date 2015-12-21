@@ -344,6 +344,19 @@
 
                 <div class="">
                   <div class="carousel carousel-director">
+                    
+                    @if($directorPosts)
+                    @foreach($directorPosts as $post)
+                      <div>
+                        <a href="#">
+                          <img src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif" alt=""/>
+                        </a>
+                        <a href="#">
+                          {{ $post->getTitleRuOrKg() }}
+                        </a>
+                      </div>  
+                    @endforeach
+                    @else
                     <div>
                       <a href="#">
                         <img src="{{ asset('images/gallery/001.jpg') }}" alt=""/>
@@ -352,18 +365,8 @@
                         Мы разворачиваем масштабную работу по реализации проекта «Ухта — Торжок-2». Задачи поставлены, сроки определены. До конца 2019 года газопровод будет построен и готов к эксплуатации.
                       </a>
                     </div>
-                    <div>
-                      <a href="#">
-                        <img src="{{ asset('images/gallery/002.jpg') }}" alt=""/>
-                      </a>
-                      Мы разворачиваем масштабную работу по реализации проекта «Ухта — Торжок-2». Задачи поставлены, сроки определены. До конца 2019 года газопровод будет построен и готов к эксплуатации.
-                    </div>
-                    <div>
-                      <a href="#">
-                        <img src="{{ asset('images/gallery/003.jpg') }}" alt=""/>
-                      </a>
-                      Мы разворачиваем масштабную работу по реализации проекта «Ухта — Торжок-2». Задачи поставлены, сроки определены. До конца 2019 года газопровод будет построен и готов к эксплуатации.
-                    </div>
+                    @endif
+
                   </div>
                 </div>
 
