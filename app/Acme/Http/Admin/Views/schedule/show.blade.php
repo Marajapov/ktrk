@@ -1,5 +1,5 @@
 @extends('Admin::layouts.default')
-@section('title', $schedule->date))
+@section('title', $schedule->date)
 
 @section('content')
   <div class="row modals program-show">
