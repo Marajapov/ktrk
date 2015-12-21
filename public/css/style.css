@@ -884,11 +884,11 @@ header {
 }
 .main-video  .slider-nav .slick-slide h4{
     position: absolute;
-    bottom: 5px;
-    left: 5px;
+    bottom: 5%;
+    left: 5%;
     padding: 5px 10px;
     margin: 0;
-    width: 120px;
+    width: 90%;
 
     background: #bb0f04;
     background: rgba(214,0,0,0.7);
