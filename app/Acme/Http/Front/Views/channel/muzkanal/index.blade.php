@@ -626,36 +626,19 @@
                      <h3 class="panel-title"><span> - {{ trans('radiopages.Photos') }} - </span></h3>
                   </div>
                   <div class="ia-container">
-                     <figure>
-                        <img src="images/channels/muzkanal/mirbek.jpg" alt="image01" />
-                        <input type="radio" name="radio-set" checked="checked"/>
-                        <figcaption><a href=""><span>Мирбек Атабеков</span></a></figcaption>
+      
+                      @if($photoGalleries != null)
+                      @foreach($photoGalleries as $key=>$photoGallery)
                         <figure>
-                           <img src="images/channels/muzkanal/kalykov.jpg" alt="image02" />
-                           <input type="radio" name="radio-set" />
-                           <figcaption><a href=""><span>Гүлжигит Калыков</span></a></figcaption>
-                           <figure>
-                              <img src="images/channels/muzkanal/minura.jpg" alt="image03" />
-                              <input type="radio" name="radio-set" />
-                              <figcaption><a href=""><span>Минюра Рахимжанова</span></a></figcaption>
-                              <figure>
-                                 <img src="images/channels/muzkanal/top10.jpg" alt="image04" />
-                                 <input type="radio" name="radio-set" />
-                                 <figcaption><a href=""><span>Хит-Парад</span></a></figcaption>
-                                 <figure>
-                                    <img src="images/channels/muzkanal/14.jpg" alt="image05" />
-                                    <input type="radio" name="radio-set" />
-                                    <figcaption><a href=""><span>Хит-Парад</span></a></figcaption>
-                                    <figure>
-                                       <img src="images/channels/muzkanal/soon.jpg" alt="image06" />
-                                       <input type="radio" name="radio-set" />
-                                       <figcaption><a href=""><span>Жакында</span></a></figcaption>
-                                    </figure>
-                                 </figure>
-                              </figure>
-                           </figure>
-                        </figure>
-                     </figure>
+                        <img src="{{ asset($photoGallery->status) }}" />
+                        <input type="radio" name="radio-set" @if($key == 0) checked="checked" @endif/>
+                        <figcaption><a href="{{ route('muzkanal.photos', $photoGallery) }}"><span>{{ $photoGallery->getName() }}</span></a></figcaption>
+                        
+                     @endforeach
+                     @endif
+                </figure>
+
+                     
                   </div>
                   <!-- ia-container -->
                </div>
@@ -679,36 +662,12 @@
           });
       });
    </script>   
-   <script src="js/gallery/imagesloaded.pkgd.min.js"></script>
-   <script src="js/gallery/masonry.pkgd.min.js"></script>
-   <script src="js/gallery/classie.js"></script>
-   <script src="js/gallery/cbpGridGallery.js"></script>
-   <script>
-      new CBPGridGallery(document.getElementById('grid-gallery'));
-   </script>
+
+
    <script>
       var serverTZoffset = 360;
    </script>
-   <script src="js/lightslider.js"></script>
-   <script>
-      $(document).ready(function () {
-          $("#content-slider").lightSlider({
-              loop: true,
-              keyPress: true
-          });
-          $('#image-gallery').lightSlider({
-              gallery: true,
-              item: 1,
-              thumbItem: 9,
-              slideMargin: 0,
-              speed: 500,
-              auto: true,
-              loop: true,
-              onSliderLoad: function () {
-                  $('#image-gallery').removeClass('cS-hidden');
-              }
-          });
-      });
+
    </script>
    <script src="js/audio/dkp.min.js"></script>
    <script type="text/javascript" src="filter/js/jquery.easing.min.js"></script>
@@ -792,7 +751,7 @@
       //    });
       
       playerInstance.setup({
-          autostart: true,
+          autostart: false,
           playlist: [{
                   image: "{{ asset('images/channels/muztv.png') }}",
                   sources: [{
