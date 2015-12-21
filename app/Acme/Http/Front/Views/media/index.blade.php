@@ -24,17 +24,6 @@
       <div>
         <div class="overlay"></div>
         <a href="#">
-          <img src="{{ asset('images/projects/jumakairyk.jpg') }}" alt=""/>
-        </a>
-        <div class="show-info">
-          <h4>Жумакайрык</h4>
-          <span class="show-day">{{ trans('site.Sunday') }}</span>
-          <span class="show-time">21:00</span>
-        </div>
-      </div>
-      <div>
-        <div class="overlay"></div>
-        <a href="#">
           <img src="{{ asset('images/projects/zamana.jpg') }}" alt=""/>
         </a>
         <div class="show-info">
@@ -46,7 +35,7 @@
       <div>
         <div class="overlay"></div>
         <a href="#">
-          <img src="{{ asset('images/projects/hit-parad2.jpg') }}" alt=""/>
+          <img src="{{ asset('images/projects/hit-parad.jpg') }}" alt=""/>
         </a>
         <div class="show-info">
           <h4>Хит-Парад</h4>

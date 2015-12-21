@@ -1,12 +1,12 @@
 body{
     background: #eff3fa;
-    background: url("../images/bg/ny_bg.png") repeat;
-    /*background: url("../images/bg/bg3.jpg") no-repeat;*/
+    /*background: url("../images/bg/ny_bg.png") repeat;*/
+    background: url("../images/bg/bg4.jpg") no-repeat;
     /*background-repeat: repeat;*/
-    /*-webkit-background-size: cover;*/
-    /*background-size: cover;*/
-    /*background-position: center center;*/
-    /*background-attachment: fixed;*/
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
 
     -webkit-font-smoothing: subpixel-antialiased !important;
     -webkit-backface-visibility: hidden;
