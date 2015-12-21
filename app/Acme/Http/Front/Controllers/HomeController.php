@@ -91,7 +91,7 @@ class HomeController extends Controller
         }
 
         $mediaLastVideos = \Model\Media\ModelName::orderBy('id','desc')->take(9)->get();
-        $defaultVideo = 'pnrUhMN8H4Y';
+        $defaultVideo = 'rjXSurFi8uQ';
         return view('Front::home', [
             
             'generalPosts'   => $generalPosts,
