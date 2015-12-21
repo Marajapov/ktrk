@@ -8,73 +8,76 @@
 
   <div class="container main-wrapper">
     <div class="row">
-      <div class="col-md-12">
-        <div class="panel panel-default teleprogramm">
-          <div class="panel-heading">
-            <h3 class="panel-title">ТВ-программа</h3>
-          </div>
-          <div class="panel-body">
+      <div class="panel panel-default teleprogramm">
+        <div class="panel-heading">
+          <h3 class="panel-title">ТВ-программа</h3>
+        </div>
 
-            <ul id="tabs" class="nav nav-tabs teletabs" data-tabs="tabs">
+        <div class="panel-body">
+          
+        </div>
 
-              @foreach($programs as $key => $program)
-                {{--{{ dd($program['date']) }}--}}
-                @foreach($schedules as $schedule)
-                  @if($program['date'] == $schedule->date)
-                    <li class="@if($currentDate == $program['date']) active @endif">
-                      <a href="#{{ $program['date'] }}" data-toggle="tab">
-                        @if($lc == 'kg')
-                          {{ $schedule->getDay().' '.$schedule->getMonth().' - '.$schedule->getWeekKg() }}
-                        @elseif($lc == 'ru')
-                          {{ $schedule->getDay().' '.$schedule->getMonth().' - '.$schedule->getWeekRu() }}
-                        @endif
-                      </a>
-                    </li>
-                  @endif
-                @endforeach
+        <div class="panel-body hidden">
+
+          <ul id="tabs" class="nav nav-tabs teletabs" data-tabs="tabs">
+
+            @foreach($programs as $key => $program)
+              {{--{{ dd($program['date']) }}--}}
+              @foreach($schedules as $schedule)
+                @if($program['date'] == $schedule->date)
+                  <li class="@if($currentDate == $program['date']) active @endif">
+                    <a href="#{{ $program['date'] }}" data-toggle="tab">
+                      @if($lc == 'kg')
+                        {{ $schedule->getDay().' '.$schedule->getMonth().' - '.$schedule->getWeekKg() }}
+                      @elseif($lc == 'ru')
+                        {{ $schedule->getDay().' '.$schedule->getMonth().' - '.$schedule->getWeekRu() }}
+                      @endif
+                    </a>
+                  </li>
+                @endif
               @endforeach
+            @endforeach
 
-            </ul>
+          </ul>
 
-            <div id="my-tab-content" class="tab-content">
+          <div id="my-tab-content" class="tab-content">
 
-              @foreach($programs as $key => $program)
+            @foreach($programs as $key => $program)
 
-                @foreach($schedules as $schedule)
+              @foreach($schedules as $schedule)
 
-                  @if($program['date'] == $schedule->date)
+                @if($program['date'] == $schedule->date)
 
-                    <div class="tab-pane @if($schedule->date == $currentDate) active @endif" id="{{ $schedule->date }}">
+                  <div class="tab-pane @if($schedule->date == $currentDate) active @endif" id="{{ $schedule->date }}">
 
-                      <table class="table program">
-                        <tbody>
-                        @for($i=0; $i<count($program)-1; $i++)
+                    <table class="table program">
+                      <tbody>
+                      @for($i=0; $i<count($program)-1; $i++)
 
-                          @if((strtotime($schedule->date) < strtotime($currentDate)))
-                            <tr class="tele-row tele-passed">
+                        @if((strtotime($schedule->date) < strtotime($currentDate)))
+                          <tr class="tele-row tele-passed">
 
-                          @elseif(($schedule->date == $currentDate) && ($i < count($program)-2))
+                            @elseif(($schedule->date == $currentDate) && ($i < count($program)-2))
 
-                            @if((strtotime($program[$i]->time) <= strtotime($currentTime)) && (strtotime($currentTime) < strtotime($program[$i+1]->time)))
-                              <tr class="tele-row tele-live">
+                              @if((strtotime($program[$i]->time) <= strtotime($currentTime)) && (strtotime($currentTime) < strtotime($program[$i+1]->time)))
+                          <tr class="tele-row tele-live">
                             @elseif((strtotime($program[$i]->time) < strtotime($currentTime)) && ($program[$i]->time != '00:00'))
-                              <tr class="tele-row tele-passed">
+                          <tr class="tele-row tele-passed">
                             @endif
 
-                          @elseif(($schedule->date == $currentDate) && ($i == count($program)-1))
+                            @elseif(($schedule->date == $currentDate) && ($i == count($program)-1))
 
-                            @if((strtotime($program[$i]->time) <= strtotime($currentTime)))
-                              <tr class="tele-row tele-live">
+                              @if((strtotime($program[$i]->time) <= strtotime($currentTime)))
+                          <tr class="tele-row tele-live">
                             @elseif((strtotime($program[$i]->time) < strtotime($currentTime)) && ($program[$i]->time != '00:00'))
-                              <tr class="tele-row tele-passed">
-                            @endif
+                          <tr class="tele-row tele-passed">
+                        @endif
 
-                          @else
-                            <tr class="tele-row ">
-                          @endif
+                        @else
+                          <tr class="tele-row ">
+                            @endif
                             <th class="tele-time">
                               {{ $program[$i]->time }}
-                              {{ strtotime($program[$i]->time) }}
                             </th>
                             <td class="tele-show">
 
@@ -108,23 +111,22 @@
                               {{--<h5 class="tele-extra"><i class="fa fa-play-circle-o"></i>Сериал</h5>--}}
                             </td>
                           </tr>
-                        @endfor
-                        </tbody>
-                      </table>
+                          @endfor
+                      </tbody>
+                    </table>
 
-                    </div>
+                  </div>
 
-                  @endif
-
-                @endforeach
+                @endif
 
               @endforeach
 
-            </div>
+            @endforeach
 
           </div>
 
         </div>
+
       </div>
     </div>
   </div>

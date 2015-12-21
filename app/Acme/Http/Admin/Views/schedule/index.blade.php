@@ -23,7 +23,14 @@
                 <ul class="actions">
                   <li><a class="btn btn-default action-view" href="{{ route('admin.schedule.show', $schedule) }}"><i class="fa fa-eye"></i></a></li>
                   <li><a class="btn btn-default action-edit" href="{{ route('admin.schedule.edit', $schedule) }}"><i class="fa fa-edit"></i></a></li>
-                  <li><a class="btn btn-default action-delete" href="#"><i class="fa fa-times"></i></a></li>
+                  <li>
+                    {!! Form::open(['route' => ['admin.schedule.destroy', $schedule], 'method' => 'DELETE', 'onsubmit' => "return confirm('Вы уверены ?')"]) !!}
+                    <button type="submit" class="btn btn-default" href="#" style="margin: 0;padding: 5px 8px;font-size: 18px;">
+                      {{--<span class="glyphicon glyphicon-trash"></span>--}}
+                      <i class="fa fa-trash"></i>
+                    </button>
+                    {!! Form::close() !!}
+                  </li>
                 </ul>
               </div>
             @endforeach

@@ -488,7 +488,7 @@ class HomeController extends Controller
         $video_rules = array(
             'video' => 'mimes:mimes:m4v,avi,flv,mp4,mov,3gp | max:51200'
         );
-        
+
         if($request->hasFile('video')){
             $targetVideo = array(
                 'video' => $video
