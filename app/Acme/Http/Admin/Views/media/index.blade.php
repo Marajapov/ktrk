@@ -103,6 +103,14 @@
                   </button>
                   {!! Form::close() !!}
 
+        
+                  <div class="input-group">
+                    <input type="text" class="form-control">
+                    <span class="input-group-btn">
+                    <button type="button" class="btn btn-primary">Ок!</button> 
+                    </span>
+                  </div>
+                                       
                 </td>
               </tr>
             @endforeach
