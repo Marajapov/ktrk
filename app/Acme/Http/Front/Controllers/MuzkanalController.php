@@ -1,6 +1,6 @@
 <?php
 namespace Front\Controllers;
-//use Illuminate\Http\Request;
+use Illuminate\Http\Request;
 class MuzkanalController extends Controller
 {
     public function __construct()
@@ -13,10 +13,23 @@ class MuzkanalController extends Controller
         $channel = \Model\Channel\ModelName::name('muzkanal')->first();
 
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        $MediaPop1 = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->orderBy('id', 'desc')->skip('0')->take('5')->get();
+        $MediaPop2 = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->orderBy('id', 'desc')->skip('5')->take('5')->get();
+        $MediaPop3 = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->orderBy('id', 'desc')->skip('10')->take('5')->get();
+        
+        //Top clips
+        $MediaTop1 = \Model\Media\ModelName::orderBy('viewed','desc')-> take(6)->get();
+        $MediaTop2 = \Model\Media\ModelName::orderBy('viewed','desc')->skip('6')->take(6)->get();
 
         return view('Front::channel.muzkanal.index', [
             'channel' => $channel,
             'backgroundMain' => $backgroundMain,
+            'MediaPop1' => $MediaPop1,
+            'MediaPop2' => $MediaPop2,
+            'MediaPop3' => $MediaPop3,
+
+            'MediaTop1' => $MediaTop1,
+            'MediaTop2' => $MediaTop2,
             ]);
     }
 
@@ -44,27 +57,44 @@ class MuzkanalController extends Controller
             ]);
     }
 
-      public function video()
+      public function video(Request $request, $id)
     {
+
         $channel = \Model\Channel\ModelName::name('muzkanal')->first();
 
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
+        $muzkanalvideo = \Model\Media\ModelName::where('id','=', $id)->first();
+        $muzkanalvideo->incrementViewed();
+
+        //Related Videos
+        $videoType = $muzkanalvideo->videoType; 
+        $relatedmuzkanalVideos = \Model\Media\ModelName::where('videoType','=', $videoType)->get();
+        $relatedmuzkanalVideos2 = \Model\Media\ModelName::where('videoType','=', $videoType)->get();
+
         return view('Front::channel.muzkanal.video', [
             'channel' => $channel,
             'backgroundMain' => $backgroundMain,
+            'muzkanalvideo' => $muzkanalvideo,
+            'relatedmuzkanalVideos' => $relatedmuzkanalVideos,
+            'relatedmuzkanalVideos2' => $relatedmuzkanalVideos2,
             ]);
     }
 
   public function videos()
     {
         $channel = \Model\Channel\ModelName::name('muzkanal')->first();
+        $perPage = 8;
 
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+        $postAll = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->orderBy('id', 'desc')->paginate($perPage);
 
         return view('Front::channel.muzkanal.videos', [
             'channel' => $channel,
             'backgroundMain' => $backgroundMain,
+            'postAll' => $postAll,
+            'perPage' => $perPage,
             ]);
     }
 
