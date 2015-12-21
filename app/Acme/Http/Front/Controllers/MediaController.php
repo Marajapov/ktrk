@@ -62,9 +62,9 @@ class MediaController extends Controller
         $projectId = $video->program; // 0
 
         $videoType = $video->videoType; // serials
+        $videoName = $video->name;
 
         if($lc == 'kg'){
-            $videoName = $video->getName();
             $result = \Model\Project\ModelName::where('id','=',$projectId)->first();
             if($result){
                 $videoProject = $result->getName();
@@ -78,8 +78,7 @@ class MediaController extends Controller
 
             $relatedVideos = \Model\Media\ModelName::where('name','<>','')->where('program','=',$projectId)->get();
 
-        }else{
-            $videoName = $video->getNameRu();
+        }elseif($lc == 'ru'){
             $result = \Model\Project\ModelName::where('id','=',$projectId)->first();
             if($result != null){
                 $videoProject = $result->getNameRu();    
