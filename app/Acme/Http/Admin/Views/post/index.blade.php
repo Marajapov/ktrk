@@ -1,6 +1,10 @@
 @extends('Admin::layouts.default')
 @section('title', "Posts")
 
+@section('styles')
+  <link rel="stylesheet" href="{{ asset('css/admin/dataTables.bootstrap.css') }}"/>
+@endsection
+
 @section('content')
   <div class="row modals">
 
@@ -16,7 +20,7 @@
 
       <div class="x_content clearfix">
 
-        <table id="example" class="table table-striped table-bordered">
+        <table id="example" class="table table-striped table-bordered" data-order='[[ 0, "desc" ]]' data-page-length='10'>
           <thead>
             <tr>
               <th>ID</th>
@@ -129,8 +133,8 @@
           }
         },
         "columnDefs": [
-          { "orderable": false, "targets": 0 },
-          { "orderable": false, "targets": 5 }
+          { "orderable": false, "targets": 1 },
+          { "orderable": false, "targets": 7 }
         ]
       });
     } );

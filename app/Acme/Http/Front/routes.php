@@ -138,6 +138,7 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
     Route::get('rrts', ['as' => 'front.pages.rrts', 'uses' => 'PageController@rrtsPage']);
     Route::get('report', ['as' => 'front.pages.report', 'uses' => 'PageController@reportPage']);
     Route::get('teleprogram', ['as' => 'front.pages.teleprogram', 'uses' => 'PageController@teleprogramPage']);
+    Route::get('teleprogram/{channel}', ['as' => 'front.pages.teleprogram', 'uses' => 'PageController@ChannelTeleprogram']);
 //    Route::get('ns', ['as' => 'front.pages.ns', 'uses' => 'PageController@keneshPage']);
     Route::get('editionkenesh', ['as' => 'front.pages.editionkenesh', 'uses' => 'PageController@editionkeneshPage']);
 
@@ -170,17 +171,7 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
     Route::post('reporter.add',['as'=>'front.reporter.add','uses'=>'HomeController@ReporterAdd']);
 
 //    AJAX CALL
-    Route::get('/ajax_program', function(){
-        $channel = Input::get('channel');
-
-        if($channel == 1){
-            $program = 'success';
-        }
-        else
-            $program = 'error';
-
-        return Response::json($program);
-    });
+    Route::get('/ajax_program', 'PageController@AjaxProgram');
 
 Route::get('locale/{locale?}',   ['as' => 'locale',   'uses' => 'CommonController@setLocale']);
 

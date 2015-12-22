@@ -385,14 +385,26 @@
     text-align: center;
     text-transform: uppercase;
 }
+.channels{
+    margin-bottom: 20px;
+}
+.channels > div{
+    height: 120px;
+}
 .channels > div a{
+    position: relative;
     display: block;
-    padding:15px 30px;
+    height: 100%;
+    padding:30px 45px 0;
 }
-.channels.radiolor > div a{
-    padding: 15px 40px;
+.channels span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    line-height: 20px;
 }
-
 .teletabs{
     text-align: center;
     border-bottom: 0;

@@ -4,31 +4,51 @@
 
 @section('content')
 
-<div class="row modals">
-  <div class="col-md-12 col-sm-12 col-xs-12">
-    <div class="x_panel">
-      <div class="x_title">
-        <h2>{{ trans('site.Info') }}</h2>
-        <div class="clearfix"></div>
-      </div>      
-      <div class="panel-body">
-        <div class="col-md-5"><h3>{{ $category->getTitle() }}</h3>({{ $category->getTitle() }})</div>
-        <div class="col-md-5">
-{!! Form::open(['route' => ['admin.category.destroy', $category], 'method' => 'DELETE', 'onsubmit' => "return confirm('Вы уверены ?')" ]) !!}
-         <a href="{{ route('admin.category.edit', $category) }}" class="btn btn-labeled btn-success"><span class="btn-label"><i class="glyphicon glyphicon-cog"></i></span>{{ trans('site.Change') }}</a>
-         <button class="btn btn-labeled btn-danger" type="submit"><span class="btn-label"><i class="glyphicon glyphicon-remove"></i></span>{{ trans('site.Delete') }}</button>
-         {!! Form::close() !!}
-       </div>
-     </div>
-   </div>
- </div>
-</div>
+  <div class="row modals">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="x_panel">
 
-<h2><span class="label label-default">{{ trans('site.AdminCategoryTekteshArticles') }}</span></h2>
-<div class="list-group">
-  @foreach($category->posts as $post)
-  <a href="{{ route('admin.post.show', $post) }}" class="list-group-item">{{ $post->getTitle() }}</a>
-  @endforeach
-</div>
+        <div class="x_title clearfix">
+
+          <h4>{{ trans('site.Info') }}</h4>
+
+          <a href="{{ route('admin.category.index') }}" class="btn btn-default pull-right btn-back">{{ trans('site.Back') }}</a>
+
+          {!! Form::open(['route' => ['admin.category.destroy', $category], 'method' => 'DELETE', 'onsubmit' => "return confirm('Вы уверены ?')"]) !!}
+          <button type="submit" class="btn btn-danger" href="#">
+            <i class="fa fa-times"></i>
+            {{ trans('site.Delete') }}
+          </button>
+          {!! Form::close() !!}
+
+          <a href="{{ route('admin.category.edit', $category) }}" class="btn btn-success pull-right">
+            <i class="fa fa-edit"></i>
+            {{ trans('site.Change') }}
+          </a>
+
+        </div>
+
+        <div class="x_content post-info clearfix">
+
+          <ul class="list-group">
+            <li class="list-group-item">
+              <p class="header">{{ trans('site.TitleKG') }}</p>
+              <p class="body">
+                {{ $category->title }}
+              </p>
+            </li>
+            <li class="list-group-item">
+              <p class="header">{{ trans('site.TitleRU') }}</p>
+              <p class="body">
+                {{ $category->titleRu }}
+              </p>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
 @stop
-

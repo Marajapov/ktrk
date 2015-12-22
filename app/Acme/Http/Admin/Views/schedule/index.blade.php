@@ -22,6 +22,7 @@
                   <h4>{{ $schedule->getMonthFull() }}</h4>
                   <h1>{{ $schedule->getDay() }}</h1>
                   <h5>{{ $schedule->getWeekRuFull() }}</h5>
+                  <a href="#">{{ $schedule->channel()->first()->display }}</a>
                 </div>
                 <ul class="actions">
                   <li><a class="btn btn-default action-view" href="{{ route('admin.schedule.show', $schedule) }}"><i class="fa fa-eye"></i></a></li>

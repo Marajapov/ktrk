@@ -194,7 +194,7 @@
 
                   <div> <!-- video1 -->
                     <div class="embed-youtube embed-responsive embed-responsive-16by9 slider-text">
-<iframe class="embed-responsive-item" src="//www.youtube.com/embed/@if($dayVideo1){{$dayVideo1->getUrl()}}@else{{$defaultVideo}}@endif?enablejsapi=1&version=3&playerapiid=ytplayer" allowfullscreen=""></iframe>
+                      <iframe class="embed-responsive-item" src="//www.youtube.com/embed/@if($dayVideo1){{$dayVideo1->getUrl()}}@else{{$defaultVideo}}@endif?enablejsapi=1&version=3&playerapiid=ytplayer" allowfullscreen=""></iframe>
                     </div>
                     <div class="slick-text">
                       <a href="{{ route('front.media.video', $dayVideo1) }}">
@@ -205,7 +205,7 @@
 
                   <div> <!-- video2 -->
                     <div class="embed-youtube embed-responsive embed-responsive-16by9 slider-text">
-<iframe class="embed-responsive-item" src="//www.youtube.com/embed/@if($dayVideo2){{$dayVideo2->getUrl()}}@else{{$defaultVideo}}@endif?enablejsapi=1&version=3&playerapiid=ytplayer" allowfullscreen=""></iframe>
+                      <iframe class="embed-responsive-item" src="//www.youtube.com/embed/@if($dayVideo2){{$dayVideo2->getUrl()}}@else{{$defaultVideo}}@endif?enablejsapi=1&version=3&playerapiid=ytplayer" allowfullscreen=""></iframe>
                     </div>
                     <div class="slick-text">
                       <a href="{{ route('front.media.video', $dayVideo2) }}">
@@ -216,7 +216,7 @@
 
                   <div> <!-- video3 -->
                     <div class="embed-youtube embed-responsive embed-responsive-16by9 slider-text">
-<iframe class="embed-responsive-item" src="//www.youtube.com/embed/@if($dayVideo3){{$dayVideo3->getUrl()}}@else{{$defaultVideo}}@endif?enablejsapi=1&version=3&playerapiid=ytplayer" allowfullscreen=""></iframe>
+                      <iframe class="embed-responsive-item" src="//www.youtube.com/embed/@if($dayVideo3){{$dayVideo3->getUrl()}}@else{{$defaultVideo}}@endif?enablejsapi=1&version=3&playerapiid=ytplayer" allowfullscreen=""></iframe>
                     </div>
                     <div class="slick-text">
                       <a href="{{ route('front.media.video', $dayVideo3) }}">
@@ -330,27 +330,27 @@
 
                 <div class="">
                   <div class="carousel carousel-director">
-                    
+
                     @if($directorPosts)
-                    @foreach($directorPosts as $post)
+                      @foreach($directorPosts as $post)
+                        <div>
+                          <a href="#">
+                            <img src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif" alt=""/>
+                          </a>
+                          <a href="#">
+                            {{ $post->getTitleRuOrKg() }}
+                          </a>
+                        </div>
+                      @endforeach
+                    @else
                       <div>
                         <a href="#">
-                          <img src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif" alt=""/>
+                          <img src="{{ asset('images/gallery/001.jpg') }}" alt=""/>
                         </a>
                         <a href="#">
-                          {{ $post->getTitleRuOrKg() }}
+                          Мы разворачиваем масштабную работу по реализации проекта «Ухта — Торжок-2». Задачи поставлены, сроки определены. До конца 2019 года газопровод будет построен и готов к эксплуатации.
                         </a>
-                      </div>  
-                    @endforeach
-                    @else
-                    <div>
-                      <a href="#">
-                        <img src="{{ asset('images/gallery/001.jpg') }}" alt=""/>
-                      </a>
-                      <a href="#">
-                        Мы разворачиваем масштабную работу по реализации проекта «Ухта — Торжок-2». Задачи поставлены, сроки определены. До конца 2019 года газопровод будет построен и готов к эксплуатации.
-                      </a>
-                    </div>
+                      </div>
                     @endif
 
                   </div>
@@ -473,7 +473,7 @@
                   <div class="carousel-slick">
                     @if($photoGalleries)
                       @foreach($photoGalleries as $photoGallery)
-                        
+
                         <div class="col-md-4">
                           <a href="{{ route('front.gallery', $photoGallery) }}">
                             <img src="{{ asset($photoGallery->status) }}" alt=""/><span>{{ $photoGallery->getName() }}</span>
@@ -481,7 +481,7 @@
                             <i class="fa fa-camera"></i>
                           </a>
                         </div>
-                  
+
                       @endforeach
                     @endif
                   </div>
