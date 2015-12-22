@@ -18,8 +18,6 @@ class HomeController extends Controller {
 	public function Home()
 	{
 		$lc = app()->getlocale();
-		dd($lc);
-
         return view('Admin::home', ['lc' => $lc]);
 		
 	}
