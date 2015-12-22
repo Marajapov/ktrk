@@ -41,6 +41,9 @@ class CreatePostsTable extends Migration
             $table->string('madaniyat');
             $table->string('minkiyal');
             $table->string('extracolumn');
+
+            // Add locally
+            $table->string('number');
             
             $table->smallInteger('viewed')->default(0);
             $table->timestamps();

@@ -31,6 +31,7 @@
         <table class="table table-striped">
           <thead>
             <tr>
+              <th>№</th>
               <th>Миниатюра</th>
               <th>{{ trans('site.TitleKG') }}</th>
               <th>{{ trans('site.TitleRU') }}</th>
@@ -43,6 +44,9 @@
           <tbody>
             @foreach($posts as $key => $post)
               <tr>
+                <td>
+                  {{ $post->id }}
+                </td>
                 <td class="table-img">
                   <img src="{{ asset($post->thumbnail) }}" alt=""/>
                 </td>
@@ -80,13 +84,27 @@
                     <i class="fa fa-trash"></i>
                   </button>
                   {!! Form::close() !!}
+                  
+                  @if(($post->number) > 0 && ($post->number) != 99)
+                    {!! Form::open(['route' => ['admin.post.unnumber', $post], 'method' => 'GET', 'onsubmit' => "return confirm('Вы уверены ?')"]) !!}
+                    <div class="input-group">
+                      <input type="text" disabled="disabled" value="{{ $post->number}}" class="form-control">
+                      <span class="input-group-btn">
+                      <button type="submit" class="btn btn-primary">Убрать!</button> 
+                      </span>
+                    </div>
+                    {!! Form::close() !!}
+                  @else
+                    {!! Form::open(['route' => ['admin.post.number', $post], 'method' => 'GET', 'onsubmit' => "return confirm('Вы уверены ?')"]) !!}
+                    <div class="input-group">
+                      <input name="number" type="text" class="form-control">
+                      <span class="input-group-btn">
+                      <button type="submit" class="btn btn-primary">Ок!</button> 
+                      </span>
+                    </div>
+                    {!! Form::close() !!}
+                  @endif
 
-                  <div class="input-group">
-                    <input type="text" class="form-control">
-                    <span class="input-group-btn">
-                    <button type="button" class="btn btn-primary">Ок!</button> 
-                    </span>
-                  </div>
                 </td>
               </tr>
             @endforeach

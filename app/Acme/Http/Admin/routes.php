@@ -55,4 +55,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'access:admin', 'namespace' =
     Route::get('test', ['as' => 'admin.test', 'uses' => 'TestController@index']);
     Route::post('test/store', ['as' => 'admin.test.store', 'uses' => 'TestController@store']);
     Route::get('test/show', ['as' => 'admin.show', 'uses' => 'TestController@show']);
+
+    // added for latest post in main window last 6 posts
+    Route::get('post/number/{number}', ['as' => 'admin.post.number', 'uses' => 'PostController@number']);
+    Route::get('post/unnumber/{number}', ['as' => 'admin.post.unnumber', 'uses' => 'PostController@unnumber']);
 });

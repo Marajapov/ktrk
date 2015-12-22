@@ -43,7 +43,6 @@
                       </a>
                     </figure>
                   </div>
-
                 @endforeach
 
                 <footer>

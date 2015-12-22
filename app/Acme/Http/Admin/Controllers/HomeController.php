@@ -17,7 +17,11 @@ class HomeController extends Controller {
 	 */
 	public function Home()
 	{
-		return view('Admin::home');
+		$lc = app()->getlocale();
+		dd($lc);
+
+        return view('Admin::home', ['lc' => $lc]);
+		
 	}
 
 	public function History()
