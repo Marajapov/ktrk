@@ -266,6 +266,7 @@ return [
     'FrontVideoAll' => 'Видеопорталга өтүү',
     'FrontGalleryAll' => 'Бардык галереялар',
     'FrontToDirectorPage' => 'Баракчага кирүү',
+    'FrontTeleprogrammChoose' => 'Канал тандаңыз',
     '' => '',    
     '' => '',
     '' => '',    

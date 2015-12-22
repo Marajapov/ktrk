@@ -606,14 +606,16 @@ a:hover{ text-decoration: underline; }
 
 
 .program-block{
+    display: inline-block;
     border: 1px solid #cccccc;
-    border-left: 0;
+    margin-right: 10px;
     padding: 0;
 }
-.program-block.first{
-    border-left: 1px solid #cccccc;
-}
 .program-date{
+    display: table-cell;
+    vertical-align: middle;
+    border-right: 1px solid #cccccc;
+    padding: 15px 30px;
     color: #333333;
     text-align: center;
 }
@@ -626,13 +628,19 @@ a:hover{ text-decoration: underline; }
     font-size: 12px;
 }
 .actions{
+    display: table-cell;
+    vertical-align: middle;
     list-style-type: none;
     text-align: center;
-    margin:10px 0;
-    padding: 0;
+    margin:0;
+    padding: 5px;
 }
 .actions li{
-    display: inline-block;
+    display: block;
+    margin-bottom: 5px;
+}
+.actions li:last-child{
+    margin-bottom: 0;
 }
 .actions li a{
     margin: 0;

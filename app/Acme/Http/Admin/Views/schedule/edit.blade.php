@@ -4,11 +4,11 @@
 @section('content')
   <div class="row modals">
     <div class="x_panel">
+
       <div class="x_title">
-        <h2>
-          Программа передач {{ $schedule->getDay().'-'.mb_strtolower($schedule->getMonthFull()) }}
-        </h2>
+        <h4>Программа передач {{ $schedule->getDay().'-'.mb_strtolower($schedule->getMonthFull()) }}</h4>
       </div>
+
       <div class="x_content program">
 
         {!! Form::model($schedule, ['route' => ['admin.schedule.update', $schedule], 'method' => 'PUT', 'enctype' => 'multipart/form-data']) !!}

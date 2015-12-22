@@ -266,7 +266,7 @@ return [
     'FrontVideoAll' => 'Перейти на видеопортал',
     'FrontGalleryAll' => 'Все галереи',
     'FrontToDirectorPage' => 'Перейти на страницу',
-    '' => '',
+    'FrontTeleprogrammChoose' => 'Выберите канал',
     '' => '',
     '' => '',    
     '' => '',
@@ -293,4 +293,5 @@ return [
     'DataTableLastPage' => 'Конец',
     'DataTableNextPage' => 'След.',
     'DataTablePreviousPage' => 'Пред.',
+
 ];

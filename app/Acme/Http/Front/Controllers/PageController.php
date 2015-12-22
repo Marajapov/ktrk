@@ -167,6 +167,15 @@ class PageController extends Controller
             ]);
     }
 
+    public function getPositions($id)
+    {
+        if (Request::ajax())
+        {
+            $positions = 'ajax worked';
+            return Response::json( $positions );
+        }
+    }
+
     public function keneshPage()
     {
         $categories = \Model\Category\ModelName::all();

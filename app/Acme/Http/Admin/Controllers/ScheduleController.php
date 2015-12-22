@@ -70,13 +70,18 @@ class ScheduleController extends Controller
         $string = $request->program;
 
         $new_string = preg_split('/[\r\n#]+/', $string, -1, PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE);
+        foreach($new_string as $new_string1)
+        {
+            if($new_string1 != ' ')
+            $new_string2[] = $new_string1;
+        }
+
         $program = array();
 
-        for($i=0; $i<count($new_string); $i++){
-            for($j=0; $j<count($new_string); $j++){
+        for($i=0; $i<count($new_string2); $i++){
+            for($j=0; $j<count($new_string2); $j++){
                 if($j%2==0) {
-                    $program = array_add($program, $j/2, ['time' => $new_string[$j], 'name' => $new_string[$j+1]]);
-
+                    $program = array_add($program, $j/2, ['time' => $new_string2[$j], 'name' => $new_string2[$j+1]]);
                 }
             }
         }
