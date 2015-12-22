@@ -661,3 +661,20 @@ a:hover{ text-decoration: underline; }
 .program-show form{
     margin: 0;
 }
+
+/*Admin media creat Muzkanal anons*/
+.noneliststyle ul{
+    margin: 0px;
+}
+.noneliststyle ul>li {
+    list-style-type: none;
+    margin-right: 8px;
+    display: inline;
+    margin: inherit;
+}
+.noneliststyle .checkbox{
+    display: inline;
+}
+.noneliststyle .form-horizontal .control-label{
+    padding:4px; 
+}
