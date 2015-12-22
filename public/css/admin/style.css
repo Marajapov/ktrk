@@ -570,6 +570,9 @@ a:hover{ text-decoration: underline; }
     float: none;
     margin: 0;
 }
+.form-horizontal textarea{
+    resize: vertical;
+}
 
 /*TELEPROGRAMM*/
 .x_title h2{

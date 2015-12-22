@@ -306,6 +306,7 @@ button.close span {
 }
 .main-wrapper {
     background: #f1f4f9;
+    padding-bottom: 2px;
 }
 header {
     height: 65px;
@@ -338,7 +339,7 @@ header {
 
 /*Connexxification*/
 .bottom-right-block .ads {
-    margin: 40px 0;
+    margin: 30px 0;
 }
 .top-header {
     position: relative;
