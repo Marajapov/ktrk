@@ -6,15 +6,18 @@
   <div class="row modals">
     <div class="col-md-12 col-sm-12 col-xs-12">
       <div class="x_panel">
-        <div class="x_title">
-          <a href="{{ route('admin.schedule.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i>Новая программа передач</a>
-          <div class="clearfix"></div>
+        <div class="x_title clearfix">
+
+          <h4>Программа передач</h4>
+          <a href="{{ route('admin.schedule.create') }}" class="btn btn-success pull-right">
+            <i class="fa fa-plus"></i>
+            Новая программа передач
+          </a>
         </div>
         <div class="x_content program">
-          <h2>Программа передач</h2>
 
             @foreach($schedules as $key=>$schedule)
-              <div class="col-md-1 @if($key%13==0) first @endif program-block">
+              <div class="@if($key%13==0) first @endif program-block">
                 <div class="program-date">
                   <h4>{{ $schedule->getMonthFull() }}</h4>
                   <h1>{{ $schedule->getDay() }}</h1>
@@ -25,7 +28,7 @@
                   <li><a class="btn btn-default action-edit" href="{{ route('admin.schedule.edit', $schedule) }}"><i class="fa fa-edit"></i></a></li>
                   <li>
                     {!! Form::open(['route' => ['admin.schedule.destroy', $schedule], 'method' => 'DELETE', 'onsubmit' => "return confirm('Вы уверены ?')"]) !!}
-                    <button type="submit" class="btn btn-default" href="#" style="margin: 0;padding: 5px 8px;font-size: 18px;">
+                    <button type="submit" class="btn btn-default action-delete" href="#" style="margin: 0;padding: 5px 8px;font-size: 18px;">
                       {{--<span class="glyphicon glyphicon-trash"></span>--}}
                       <i class="fa fa-trash"></i>
                     </button>

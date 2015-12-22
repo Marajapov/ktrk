@@ -171,6 +171,19 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
     Route::get('/reporter',['as'=>'front.reporter','uses'=>'HomeController@Reporter']);
     Route::post('reporter.add',['as'=>'front.reporter.add','uses'=>'HomeController@ReporterAdd']);
 
+//    AJAX CALL
+    Route::get('/ajax_program', function(){
+        $channel = Input::get('channel');
+
+        if($channel == 1){
+            $program = 'success';
+        }
+        else
+            $program = 'error';
+
+        return Response::json($program);
+    });
+
 Route::get('locale/{locale?}',   ['as' => 'locale',   'uses' => 'CommonController@setLocale']);
 
 });

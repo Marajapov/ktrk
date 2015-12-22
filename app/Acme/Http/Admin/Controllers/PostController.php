@@ -19,9 +19,16 @@ class PostController extends Controller
      */
     public function index()
     {
+        $lc = app()->getlocale();
         $perPage = 15;
-        $posts = Post::orderBy('id', 'desc')->paginate($perPage);
+        if($lc == 'kg'){
+            $posts = Post::where('title','<>','')->orderBy('number','asc')->orderBy('id', 'desc')->paginate($perPage);    
+        }else{
+            $posts = Post::where('titleRu','<>','')->orderBy('number','asc')->orderBy('id', 'desc')->paginate($perPage);
+        }
+        
 
+        
         return view('Admin::post.index', [
             'posts' => $posts,
             'perPage' => $perPage,
@@ -69,7 +76,10 @@ class PostController extends Controller
     public function store(Request $request)
     {
 
-        $post = Post::create($request->except('tag_kg','tag_ru','thumbnail','q','channel_id','created_at'));
+        $post = Post::create($request->except('tag_kg','tag_ru','thumbnail','q','channel_id','created_at','number'));
+
+        $post->number = 99;
+        $post->save();
 
         $tag_kg_string = $request->input('tag_kg');
         $tags = explode("; ",$tag_kg_string);
@@ -297,6 +307,29 @@ class PostController extends Controller
     {
         $post->delete();
 
+        return redirect()->route('admin.post.index');
+    }
+
+    // Number for list the rating
+    public function number(Request $request, $number)
+    {
+        $postId = $number;
+        $number = $request->number;
+
+        $row = \Model\Post\ModelName::where('id','=',$postId)->first();
+        $row->number = $number;
+        $row->save();
+        return redirect()->route('admin.post.index');
+    }
+
+    // Unnumber for list the rating
+    public function unnumber(Request $request, $number)
+    {
+        $postId = $number;
+
+        $row = \Model\Post\ModelName::where('id','=',$postId)->first();
+        $row->number = 99;
+        $row->save();
         return redirect()->route('admin.post.index');
     }
 }

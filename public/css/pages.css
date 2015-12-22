@@ -379,6 +379,20 @@
 .teleprogramm .panel-body{
     padding: 15px;
 }
+.channel-choose{
+    margin: 15px 0;
+    font-size: 20px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.channels > div a{
+    display: block;
+    padding:15px 30px;
+}
+.channels.radiolor > div a{
+    padding: 15px 40px;
+}
+
 .teletabs{
     text-align: center;
     border-bottom: 0;
