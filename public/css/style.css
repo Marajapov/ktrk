@@ -3671,6 +3671,14 @@ display: block;
 .otherphotos .grid_item {
     padding: 0px 10px 42px 10px;
 }
+.otherphotos .img-wrap .overlay{
+    height: 92%;
+    bottom: 7px;
+}
+.otherphotos .pagination {
+    margin-right: 15px;
+    margin-top: 15px;
+}
 .otherphotos h4 {
     font-weight: bold;
     font-size: 16px;
@@ -4086,6 +4094,7 @@ ul.social-share li a:hover {
     height: 250px;
     width: auto;
     margin-left: -70px;
+    left: 0
 }
 .clouds {
     z-index: 1;
@@ -4132,6 +4141,23 @@ ul.social-share li a:hover {
 .tvblock {
     margin-top: 50px;
 }
+.kidgallery .panel-carousel .slick-slide{
+    position: relative;
+    overflow: hidden;
+    height: 150px;
+    margin: 0 10px;
+    padding: 0;
+    background: none;
+/*    width: 250px !important;*/
+}
+
+.kidphotos .lSSlideOuter .lSPager.lSGallery{
+    margin: auto
+}
+.kidgallery .panel-carousel .slick-slide img{
+    height: auto;
+    width: auto
+}
 .balastanlogo {
     height: 108px !important;
     top: 29px !important;
@@ -4168,8 +4194,34 @@ ul.social-share li a:hover {
 }
 .kidsmainv {
     background: url(../images/channels/balastan/chalkboard.png) no-repeat;
-    background-size: contain;
-    width: 104%;
+    background-size: cover;
+    width: 110%;
+}
+.boardaim{
+    margin-top: 20px;
+}
+.boardaim .item-desc .item-artist, .item-desc2 .item-artist{
+    color: #fff;
+    
+}
+.boardimg{
+    position: absolute;
+    padding: 10px;
+    max-width: 271px;
+
+}
+
+.mainboardimg {
+    position: absolute;
+    padding: 10px;
+    width: auto;
+}
+
+.mainboarddesc {
+    height: auto;
+}
+.boarddesc {
+    max-height: 160px;
 }
 .kidspered{
     padding-left: 40px;

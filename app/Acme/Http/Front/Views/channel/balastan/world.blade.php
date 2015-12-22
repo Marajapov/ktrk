@@ -72,7 +72,7 @@
                         <li><a href="{{ route('balastan.about') }}">{{ trans('radiopages.BAbout') }}</a></li>
                         <li><a class="active" href="{{ route('balastan.world') }}">{{ trans('radiopages.Bworld') }}</a></li>
                         <li><a href="{{ route('balastan.video') }}">Видео</a></li>
-                        <li><a href="{{ route('balastan.photos') }}">{{ trans('radiopages.Photos') }}</a></li>
+                        <li><a href="{{ route('balastan.allphotos') }}">{{ trans('radiopages.Photos') }}</a></li>
                      </ul>
                   </nav>
                </div>

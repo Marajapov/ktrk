@@ -97,7 +97,6 @@ if(count($firstMedia)){ $firstMedia = $firstMedia;
             'balastanMedias' => $balastanMedias,
             ]);
     }
-
     // For photos page One gallery 
      public function Gallery(Request $request, $galleryId)
     {
@@ -134,6 +133,28 @@ if(count($firstMedia)){ $firstMedia = $firstMedia;
             'balastanLastVideo' => $balastanLastVideo,
             'balastanProjects' => $balastaProjects,
             'balastanMedias' => $balastanMedias,
+            ]);
+    }
+
+      public function allphotos()
+    {
+        $channel = \Model\Channel\ModelName::name('balastan')->first();
+        $perPage = 24;
+
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+        $postAll = \Model\Media\ModelName::where('published','=',true)->where('balastan','=','1')->orderBy('id', 'desc')->paginate($perPage);        
+
+
+        // Photo Gallery
+        $photoGalleries = \Model\PhotoParent\ModelName::where('balastan','=','1')->where('published','=',true)->take('10')->orderBy('id','desc')->get();        
+        return view('Front::channel.balastan.allphotos', [
+            'channel' => $channel,
+            'backgroundMain' => $backgroundMain,
+            'photoGalleries' => $photoGalleries,
+            'postAll' => $postAll,
+            'perPage' => $perPage,
+
             ]);
     }
 

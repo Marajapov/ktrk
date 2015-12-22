@@ -18,7 +18,7 @@
     <div class="col-md-6 col-sm-6">
         <div class="form-group">
             <label class="control-label">Роль</label>
-            {!! Form::select('role', ['ADMIN' => 'admin', 'MANAGER' => 'manager'], null, ["class" => "select2_group form-control", "required" => true, "title" => ""]) !!}
+            {!! Form::select('role', ['ADMIN' => 'admin', 'MANAGER' => 'manager', 'NS'=>'ns','BIRINCHI'=> 'birinchi', 'MUZKANAL'=> 'muzkanal'], null, ["class" => "select2_group form-control", "required" => true, "title" => ""]) !!}
         </div>
     </div>
 

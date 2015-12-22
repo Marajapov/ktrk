@@ -154,7 +154,7 @@
                         <div class="grid_gallery">
                         @if($photoGalleries != null)
                         @foreach($photoGalleries as $photoGallery)
-                           <div class="col-md-3">
+                           <div class="col-md-3 col-sm-4 col-xs-6">
                               <a href="{{ route('muzkanal.photos', $photoGallery) }}" class="img-wrap">
                                  <img src="{{ asset($photoGallery->status) }}" alt=""/>
                                  <span>{{ $photoGallery->getName() }}</span>

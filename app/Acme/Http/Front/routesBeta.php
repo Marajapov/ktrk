@@ -29,15 +29,16 @@ Route::group(['domain' => 'beta.ktrk.kg', 'prefix' => '/balastan', 'namespace' =
 
 Route::group(['domain' => 'beta.ktrk.kg', 'prefix' => '/muzkanal', 'namespace' => 'Front\Controllers'], function() {
 
-    Route::get('/', ['as' => 'muzkanal.home',   'uses' => 'HomeController@Muzkanal']);
+    Route::get('/', ['as' => 'muzkanal.home',   'uses' => 'MuzkanalController@Home']);
     Route::get('/posts', ['as' => 'muzkanal.posts',   'uses' => 'MuzkanalController@posts']);
     Route::get('/radio', ['as' => 'muzkanal.radio',   'uses' => 'MuzkanalController@radio']);
     Route::get('/about', ['as' => 'muzkanal.about',   'uses' => 'MuzkanalController@about']);
     Route::get('/video/{video}', ['as' => 'muzkanal.video',   'uses' => 'MuzkanalController@video']);
     Route::get('/videos', ['as' => 'muzkanal.videos',   'uses' => 'MuzkanalController@videos']);
     Route::get('/hitparad', ['as' => 'muzkanal.hitparad',   'uses' => 'MuzkanalController@hitparad']);
-    Route::get('/photos', ['as' => 'muzkanal.photos',   'uses' => 'MuzkanalController@photos']);
-    Route::get('/contacts', ['as' => 'muzkanal.contacts',   'uses' => 'MuzkanalController@contacts']);
+
+    Route::get('/allphotos',['as' => 'muzkanal.allphotos','uses'=> 'MuzkanalController@allphotos'] );
+    Route::get('/photos/{gallery}',['as' => 'muzkanal.photos','uses'=> 'MuzkanalController@Gallery'] );
 
 });
 
