@@ -74,7 +74,7 @@
                         <li><a href="{{ route('balastan.about') }}">{{ trans('radiopages.BAbout') }}</a></li>
                         <li><a href="{{ route('balastan.world') }}">{{ trans('radiopages.Bworld') }}</a></li>
                         <li><a href="{{ route('balastan.video') }}">Видео</a></li>
-                        <li><a href="{{ route('balastan.photos') }}">{{ trans('radiopages.Photos') }}</a></li>
+                        <li><a href="{{ route('balastan.allphotos') }}">{{ trans('radiopages.Photos') }}</a></li>
                      </ul>
                   </nav>
                </div>
@@ -122,7 +122,7 @@
                         <div class="kidsvideo kidsboard">
                         <a href="{{ route('balastan.video', $media) }}">
                                   <img width="100%" height="180px" src="http://img.youtube.com/vi/{{ $media->getUrl()}}/mqdefault.jpg" alt="" />
-                                  <i class="fa fa-youtube-play"></i>
+                        
                                 </a>
                         </div>
                         <h3>{{ $media->getName() }}</h3>
@@ -132,8 +132,7 @@
                    <div class="col-md-4 col-sm-6">
                         <div class="kidsvideo kidsboard">
                         <a href="#">
-                                  <img width="100%" height="180px" src="http://img.youtube.com/vi/rYEDA3JcQqw/mqdefault.jpg" alt="" />
-                                  <i class="fa fa-youtube-play"></i>
+                                  <img width="100%" height="180px" src="http://img.youtube.com/vi/rYEDA3JcQqw/mqdefault.jpg" alt="" />                  
                                 </a>
                         </div>
                         <h3>adele rolling in the deep</h3>
@@ -146,7 +145,7 @@
          </div>
       </div>
       <div class="row">
-         <div class="col-md-12 kidsvblock">
+         <div class="col-md-12 kidsvblock kidgallery">
             <div class="panel panel-default panel-carousel ">
                <div class="panel-heading">
                   <h3 class="panel-title"><span>{{ trans('radiopages.Photos') }}</span></h3>
@@ -162,8 +161,6 @@
                         <div class="col-md-4">
                           <a href="{{ route('balastan.photos', $photoGallery) }}">
                             <img src="{{ asset($photoGallery->status) }}" alt=""/><span>{{ $photoGallery->getName() }}</span>
-                            <div class="overlay"></div>
-                            <i class="fa fa-camera"></i>
                           </a>
                         </div>
                   
@@ -199,7 +196,7 @@
       
           $('.carousel-slick').slick({
               infinite: true,
-              slidesToShow: 3,
+              slidesToShow: 4,
               slidesToScroll: 1,
       
           });

@@ -18,11 +18,13 @@ Route::group(['domain' => 'ktrk.dev', 'prefix' => '/balastan', 'namespace' => 'F
     Route::get('/world', ['as' => 'balastan.world',   'uses' => 'BalastanController@world']);
     Route::get('/about', ['as' => 'balastan.about',   'uses' => 'BalastanController@about']);
     //New page video
-    Route::get('/video/',['as' => 'balastan.video','uses'=> 'BalastanController@video'] );
+    Route::get('/video',['as' => 'balastan.video','uses'=> 'BalastanController@video'] );
     Route::get('/video/{video}',['as' => 'balastan.video','uses'=> 'BalastanController@video'] );
     Route::get('/projectVideos/{project}',['as' => 'balastan.projectVideos','uses'=> 'BalastanController@projectVideos'] );
     
     // Balastan photos one gallery page
+    
+    Route::get('/allphotos',['as' => 'balastan.allphotos','uses'=> 'BalastanController@allphotos'] );
     Route::get('/photos/{gallery}',['as' => 'balastan.photos','uses'=> 'BalastanController@Gallery'] );
 
 });
