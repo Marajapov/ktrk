@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 
 use Model\Media\ModelName as Media;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class MediaController extends Controller
 {
@@ -44,7 +45,27 @@ class MediaController extends Controller
     public function store(Request $request)
     {
 
-        Media::create($request->except('q'));
+        $media = Media::create($request->except('q', 'thumbnail'));
+
+
+        if($request->hasFile('thumbnail'))
+        {
+            $file = $request->file('thumbnail');
+            $dir  = 'img/thumbnail';
+            $btw = time();
+
+            $name = $media->id().$btw.'.'.$file->getClientOriginalExtension();
+
+//            $manager = new ImageManager(array('driver' => 'imagick'));
+
+            $storage = \Storage::disk('public');
+            $storage->makeDirectory($dir);
+
+            Image::make($_FILES['thumbnail']['tmp_name'])->fit(250, 150)->save($dir.'/'.$name);
+
+            $media->thumbnail = $dir.'/'.$name;
+            $media->save();
+        }
 
         return redirect()->route('admin.media.index');
     }
@@ -107,7 +128,24 @@ class MediaController extends Controller
      */
     public function update(Request $request, Media $media)
     {
-        $media->update($request->except('q'));
+        $media->update($request->except('q', 'thumbnail'));
+
+        if($request->hasFile('thumbnail'))
+        {
+            $file = $request->file('thumbnail');
+            $dir  = 'img/thumbnail';
+            $btw = time();
+
+            $name = $media->id().$btw.'.'.$file->getClientOriginalExtension();
+
+            Image::make($_FILES['thumbnail']['tmp_name'])->fit(250, 150)->save($dir.'/'.$name);
+
+            $storage = \Storage::disk('public');
+            $storage->makeDirectory($dir);
+
+            $media->thumbnail = $dir.'/'.$name;
+            $media->save();
+        }
 
         return redirect()->route('admin.media.show', $media);
     }

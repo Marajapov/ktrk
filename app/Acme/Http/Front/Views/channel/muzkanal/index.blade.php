@@ -199,17 +199,20 @@
             </div>
          </div>
       </div>
+
       <div class="row dkp-big-3now ">
+      
+      @if($anons1)
          <div class="col-xs-4 rowfix" >
-            <a href="#" data-toggle="modal" data-target="#myModal" class="dkp-anonce dkp-anonce-small  dkp-border" style="background-image: url(images/channels/muzkanal/mirbek.jpg);" data-id="12269">
+            <a href="#" data-toggle="modal" data-target="#myModal" class="dkp-anonce dkp-anonce-small  dkp-border" style="background-image: url({{ $anons1->thumbnail }});" >
                <div class="dkp-3now-item-wrapper">
                   <div class="dkp-3now-item-time">
                      <span>
-                     <span>18:00</span>
+                     <span>{{$anons1->getAnonsTime1()}}</span>
                      </span>
                   </div>
                   <div class="dkp-3now-item-title">
-                     <span>Булбулум</span> Мирбек Атабеков
+                     <span>{{$anons1->getName()}}</span>
                   </div>
                </div>
             </a>
@@ -219,10 +222,13 @@
                   <div class="modal-content">
                      <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Анонс</h4>
+                        <h4 class="modal-title" id="myModalLabel">{{$anons1->getName()}}</h4>
                      </div>
                      <div class="modal-body">
-                        Телеберүү же дагы бир нерсе боюнча маалымат
+                        {{$anons1->getContent()}}
+                  <div class="embed-responsive embed-responsive-16by9 show-video">                    
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ $anons1->getUrl()}}"></iframe>
+                  </div>
                      </div>
                      <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">{{ trans('radiopages.Close') }}</button> 
@@ -231,29 +237,37 @@
                </div>
             </div>
          </div>
+        @endif 
+
+
+      @if($anons2)
+
          <div class="col-xs-4 rowfix" >
-            <a href="#" data-toggle="modal" data-target="#myModal" class="dkp-anonce dkp-anonce-small  dkp-border" style="background-image: url(images/channels/muzkanal/kalykov.jpg);" data-id="12269">
+            <a href="#" data-toggle="modal" data-target="#myModal2" class="dkp-anonce dkp-anonce-small  dkp-border" style="background-image: url({{ $anons2->thumbnail }});" data-id="12269">
                <div class="dkp-3now-item-wrapper">
                   <div class="dkp-3now-item-time">
                      <span>
-                     <span>20:00</span>
+                     <span>{{$anons2->getAnonsTime2()}}</span>
                      </span>
                   </div>
                   <div class="dkp-3now-item-title">
-                     <span>Интервью</span> Гүлжигит Калыков
+                     <span>{{$anons2->getName()}}</span>
                   </div>
                </div>
             </a>
             <!-- Анонс Модал-->
-            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                <div class="modal-dialog" role="document">
                   <div class="modal-content">
                      <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Анонс</h4>
+                        <h4 class="modal-title" id="myModalLabel">{{$anons2->getName()}}</h4>
                      </div>
                      <div class="modal-body">
-                        Телеберүү же дагы бир нерсе боюнча маалымат
+                        {{$anons2->getContent()}}
+                  <div class="embed-responsive embed-responsive-16by9 show-video">                    
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ $anons2->getUrl()}}"></iframe>
+                  </div>
                      </div>
                      <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">{{ trans('radiopages.Close') }}</button> 
@@ -262,29 +276,36 @@
                </div>
             </div>
          </div>
-         <div class="col-xs-4 rowfix">
-            <a href="#" data-toggle="modal" data-target="#myModal" class="dkp-anonce dkp-anonce-small  dkp-border" style="background-image: url(images/channels/muzkanal/minura.jpg);" data-id="14540">
+        @endif 
+
+      @if($anons3)
+
+         <div class="col-xs-4 rowfix" >
+            <a href="#" data-toggle="modal" data-target="#myModal3" class="dkp-anonce dkp-anonce-small  dkp-border" style="background-image: url({{ $anons3->thumbnail }});" data-id="12269">
                <div class="dkp-3now-item-wrapper">
                   <div class="dkp-3now-item-time">
                      <span>
-                     <span>21:30</span>
+                     <span>{{$anons3->getAnonsTime3()}}</span>
                      </span>
                   </div>
                   <div class="dkp-3now-item-title">
-                     <span>Мен кат жаздым</span>Минюра Рахимжанова
+                     <span>{{$anons3->getName()}}</span>
                   </div>
                </div>
             </a>
             <!-- Анонс Модал-->
-            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                <div class="modal-dialog" role="document">
                   <div class="modal-content">
                      <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Анонс</h4>
+                        <h4 class="modal-title" id="myModalLabel">{{$anons3->getName()}}</h4>
                      </div>
                      <div class="modal-body">
-                        Телеберүү же дагы бир нерсе боюнча маалымат
+                        {{$anons3->getContent()}}
+                  <div class="embed-responsive embed-responsive-16by9 show-video">                    
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ $anons3->getUrl()}}"></iframe>
+                  </div>
                      </div>
                      <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">{{ trans('radiopages.Close') }}</button> 
@@ -293,6 +314,7 @@
                </div>
             </div>
          </div>
+        @endif 
       </div>
    </div>
    <div class="container">

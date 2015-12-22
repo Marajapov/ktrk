@@ -13,17 +13,22 @@ class MuzkanalController extends Controller
         $channel = \Model\Channel\ModelName::name('muzkanal')->first();
 
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
-        $MediaPop1 = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->orderBy('id', 'desc')->skip('0')->take('5')->get();
-        $MediaPop2 = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->orderBy('id', 'desc')->skip('5')->take('5')->get();
-        $MediaPop3 = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->orderBy('id', 'desc')->skip('10')->take('5')->get();
+        $MediaPop1 = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->orderBy('id', 'desc')->skip('0')->take('5')->get();
+        $MediaPop2 = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->orderBy('id', 'desc')->skip('5')->take('5')->get();
+        $MediaPop3 = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->orderBy('id', 'desc')->skip('10')->take('5')->get();
         
         //Top clips
-        $MediaTop1 = \Model\Media\ModelName::orderBy('viewed','desc')-> take(6)->get();
-        $MediaTop2 = \Model\Media\ModelName::orderBy('viewed','desc')->skip('6')->take(6)->get();
+        $MediaTop1 = \Model\Media\ModelName::where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->orderBy('viewed','desc')-> take(6)->get();
+        $MediaTop2 = \Model\Media\ModelName::where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->orderBy('viewed','desc')->skip('6')->take(6)->get();
 
         // Photo Gallery
         $photoGalleries = \Model\PhotoParent\ModelName::where('muzkanal','=','1')->where('published','=',true)->take('6')->orderBy('id','desc')->get();
 
+        //Anons
+        $anons1 = \Model\Media\ModelName:: where('muzkanal', '=', 1)->where('published','=',true)->where('muzkanalanons1', '=', 1)->first();
+        $anons2 = \Model\Media\ModelName:: where('muzkanal', '=', 1)->where('published','=',true)->where('muzkanalanons2', '=', 1)->first();
+        $anons3 = \Model\Media\ModelName:: where('muzkanal', '=', 1)->where('published','=',true)->where('muzkanalanons3', '=', 1)->first();
+       
         return view('Front::channel.muzkanal.index', [
             'channel' => $channel,
             'backgroundMain' => $backgroundMain,
@@ -35,6 +40,9 @@ class MuzkanalController extends Controller
             'MediaTop2' => $MediaTop2,
 
             'photoGalleries' => $photoGalleries,
+            'anons1' => $anons1,
+            'anons2' => $anons2,
+            'anons3' => $anons3,
             ]);
     }
 
@@ -74,8 +82,8 @@ class MuzkanalController extends Controller
 
         //Related Videos
         $videoType = $muzkanalvideo->videoType; 
-        $relatedmuzkanalVideos = \Model\Media\ModelName::where('videoType','=', $videoType)->get();
-        $relatedmuzkanalVideos2 = \Model\Media\ModelName::where('videoType','=', $videoType)->get();
+        $relatedmuzkanalVideos = \Model\Media\ModelName::where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('videoType','=', $videoType)->get();
+        $relatedmuzkanalVideos2 = \Model\Media\ModelName::where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('videoType','=', $videoType)->get();
 
         return view('Front::channel.muzkanal.video', [
             'channel' => $channel,

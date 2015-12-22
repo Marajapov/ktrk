@@ -2956,7 +2956,6 @@ display: block;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=99)";
     filter: alpha(opacity=99);
     opacity: 1;
-    top: 50%;
 }
 .ia-container #ia-selector-last:checked + figcaption span {
     -webkit-transition-delay: 0.3s;
