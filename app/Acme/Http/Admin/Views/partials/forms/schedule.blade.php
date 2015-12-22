@@ -12,11 +12,8 @@
     <div class="form-group">
       <label for="category_id" class="col-sm-2 control-label">Канал/Радио</label>
       <div class="col-sm-10">
-        <select name="channel_id" class="selectpicker" data-live-search="true" title="-- {{ trans('site.FrontTeleprogrammChoose') }} --">
-          @foreach($channels as $channel)
-            <option value="{{ $channel->id }}">{{ $channel->display }}</option>
-          @endforeach
-        </select>
+
+        {!! Form::select('channel_id', $channels, null, ["class" => "selectpicker", "data-live-search"=>"true", "required" => true, "title" => "-- Выберите --"]) !!}
       </div>
     </div>
 

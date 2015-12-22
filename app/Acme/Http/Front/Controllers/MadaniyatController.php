@@ -61,4 +61,9 @@ class MadaniyatController extends Controller
             ]);
     }
 
+    public function ComingSoon()
+    {
+        return view('Front::channel.madaniyat.comingsoon',[]);
+    }
+
 }

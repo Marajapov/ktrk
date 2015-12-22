@@ -59,6 +59,7 @@ Route::group(['domain' => 'ktrk.dev', 'prefix' => '/madaniyat', 'namespace' => '
     Route::get('/about', ['as' => 'madaniyat.about',   'uses' => 'MadaniyatController@about']);
     Route::get('/photos', ['as' => 'madaniyat.photos',   'uses' => 'MadaniyatController@photos']);
     Route::get('/broadcasts', ['as' => 'madaniyat.broadcasts',   'uses' => 'MadaniyatController@broadcasts']);
+    Route::get('/comingsoon', ['as' => 'madaniyat.comingsoon',   'uses' => 'MadaniyatController@ComingSoon']);
 
 });
 
