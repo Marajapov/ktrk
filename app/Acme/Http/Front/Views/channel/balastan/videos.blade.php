@@ -92,57 +92,40 @@
 
                            
                            <div class="col-md-6" >
-                           
+                              <div class="kidsvideo kidsmainv">
                               @if($balastanLastVideo)
-                              <div class="mainboardimg"> 
-                                 <iframe width="550px" height="380px" src="https://www.youtube.com/embed/{{$balastanLastVideo->getUrl()}}?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                                           
+                                 <iframe width="100%" height="400px" src="https://www.youtube.com/embed/{{$balastanLastVideo->getUrl()}}?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                     
+                              @endif
                               </div>
-                              <img class="mainboarddesc"  src="{{asset('images/channels/balastan/chalkboard.png')}}" alt="">
-                                 <div class="item-desc2">
-                                    <ul>                                  
-                                          <li class="item-artist">{{ $balastanLastVideo->getName() }}</li>
-                                 
-                                    </ul>
-                                 </div>
-                              @endif                         
-                           </div>                           
+                              <h3>Мультфильм</h3>
+                           </div>
 
                            <div class="col-md-6 kidspered">
-                                @if($balastanProjects)
-                                    @foreach($balastanProjects as $project)
                                 <h2>{{ trans('radiopages.Bperedachi') }}</h2>
                                 <nav>
                                     <ul>
-                               
+                                    @if($balastanProjects)
+                                    @foreach($balastanProjects as $project)
                                         <li><a class="kid1" href="{{ route('balastan.projectVideos', $project) }}"><i class="fa fa-envelope"></i>{{ $project->getName() }}</a></li>
                                         {{-- <li><a class="kid2" href=""><i class="fa fa-envelope"></i>Баарын билгим келет</a></li>
                                         <li><a class="kid3" href=""><i class="fa fa-envelope"></i>Манас таануу</a></li>
                                         <li><a class="kid4" href=""><i class="fa fa-envelope"></i>Таалимтай</a></li>
                                         <li><a class="kid5" href=""><i class="fa fa-envelope"></i>Күн балдары</a></li> --}}
-                                
-                                    </ul>
-                                </nav>
                                      @endforeach
                                      @endif
+                                    </ul>
+                                </nav>
                            </div>
                         </div>
                         @if($balastanMedias)
                         @foreach($balastanMedias as $media)
-                            <div class="col-md-3 col-sm-4 col-xs-6 boardaim">
-                              <div class="boardimg">                              
-                                 <a href="{{ route('balastan.video', $media)}}">
-                                 <img src="http://img.youtube.com/vi/{{ $media->getUrl()}}/mqdefault.jpg" alt=""/></a>                        
-                              </div>
-                              <img class="boarddesc"  src="{{asset('images/channels/balastan/chalkboard.png')}}" alt="">
-                                 <div class="item-desc">
-                                    <ul>
-                                       <a href="{{ route('balastan.video', $media)}}">
-                                          <li class="item-artist">{{ $media->getName() }}</li>
-                                       </a>
-                                    </ul>
-                                 </div>
+                        <div class="col-md-3 col-sm-6">
+                           <div class="kidsvideo kidsboard">
+                              <iframe width="100%" height="180px" src="https://www.youtube.com/embed/{{ $media->getUrl()}}?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                          
                            </div>
-                           @endforeach
+                           <h4>{{ $media->getName()}}</h4>
+                        </div>
+                        @endforeach
                         @endif
                         
                     
