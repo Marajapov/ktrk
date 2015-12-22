@@ -93,7 +93,7 @@ class ChannelController extends Controller
      */
     public function update(Request $request, Channel $channel)
     {
-        $channel->update($request->except('file'));
+        $channel->update($request->except('file','q'));
 
         if($request->hasFile('file'))
         {
