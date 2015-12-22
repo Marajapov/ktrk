@@ -25,6 +25,7 @@
               <th>{{ trans('site.TitleRU') }}</th>
               <th class="hidden-xs">Автор</th>
               <th class="hidden-xs">Дата добавления</th>
+              <th class="hidden-xs">На главном(6)</th>
               <th class="hidden-xs">Статус</th>
               <th>Действия</th>
             </tr>
@@ -32,7 +33,7 @@
           <tbody>
             @foreach($posts as $key => $post)
               <tr>
-                <td>
+                <td class="table-title">
                   {{ $post->id }}
                 </td>
                 <td class="table-img">
@@ -50,6 +51,27 @@
                 </td>
                 <td class="hidden-xs">{{ $post->owner()->first()->name }}</td>
                 <td class="hidden-xs">{{ $post->getTime().', '.$post->getDateFormatted() }} </td>
+                <td>
+                  @if(($post->number) > 0 && ($post->number) != 99)
+                    {!! Form::open(['route' => ['admin.post.unnumber', $post], 'method' => 'GET', 'onsubmit' => "return confirm('Вы уверены ?')"]) !!}
+                    <div class="input-group">
+                      <input type="text" style="width:100px;" disabled="disabled" value="{{ $post->number}}" class="form-control">
+                      <span class="input-group-btn">
+                      <button type="submit" class="btn btn-primary">Убрать!</button> 
+                      </span>
+                    </div>
+                    {!! Form::close() !!}
+                  @else
+                    {!! Form::open(['route' => ['admin.post.number', $post], 'method' => 'GET', 'onsubmit' => "return confirm('Вы уверены ?')"]) !!}
+                    <div class="input-group">
+                      <input name="number" style="width:100px;" type="text" class="form-control">
+                      <span class="input-group-btn">
+                      <button type="submit" class="btn btn-primary">Ок!</button> 
+                      </span>
+                    </div>
+                    {!! Form::close() !!}
+                  @endif
+                </td>
                 <td class="hidden-xs">
                   @if($post->published == '1')
                     опубликован
@@ -72,26 +94,6 @@
                     <i class="fa fa-trash"></i>
                   </button>
                   {!! Form::close() !!}
-                  
-                  @if(($post->number) > 0 && ($post->number) != 99)
-                    {!! Form::open(['route' => ['admin.post.unnumber', $post], 'method' => 'GET', 'onsubmit' => "return confirm('Вы уверены ?')"]) !!}
-                    <div class="input-group">
-                      <input type="text" disabled="disabled" value="{{ $post->number}}" class="form-control">
-                      <span class="input-group-btn">
-                      <button type="submit" class="btn btn-primary">Убрать!</button> 
-                      </span>
-                    </div>
-                    {!! Form::close() !!}
-                  @else
-                    {!! Form::open(['route' => ['admin.post.number', $post], 'method' => 'GET', 'onsubmit' => "return confirm('Вы уверены ?')"]) !!}
-                    <div class="input-group">
-                      <input name="number" type="text" class="form-control">
-                      <span class="input-group-btn">
-                      <button type="submit" class="btn btn-primary">Ок!</button> 
-                      </span>
-                    </div>
-                    {!! Form::close() !!}
-                  @endif
 
                 </td>
               </tr>

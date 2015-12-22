@@ -22,5 +22,15 @@ trait ModelHelpers
     {
         return $this->role = 'director';
     }
+
+    public function isBirinchi()
+    {
+        return $this->role = 'birinchi';
+    }
+
+    public function isMuzkanal()
+    {
+        return $this->role = 'muzkanal';
+    }
 }
 

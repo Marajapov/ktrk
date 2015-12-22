@@ -19,15 +19,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        $lc = app()->getlocale();
-        $perPage = 15;
-        if($lc == 'kg'){
-            $posts = Post::where('title','<>','')->orderBy('number','asc')->orderBy('id', 'desc')->paginate($perPage);    
-        }else{
-            $posts = Post::where('titleRu','<>','')->orderBy('number','asc')->orderBy('id', 'desc')->paginate($perPage);
-        }
         
-
+        $perPage = 15;
+        $posts = Post::orderBy('number','asc')->orderBy('id', 'desc')->paginate($perPage);
         
         return view('Admin::post.index', [
             'posts' => $posts,

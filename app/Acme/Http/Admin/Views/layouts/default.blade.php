@@ -71,8 +71,8 @@
           </div>
 
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="/locale/kg" class="@if(app()->getlocale() =='kg') btn btn-success @endif">KG</a></li>
-            <li><a href="/locale/ru" class="@if(app()->getlocale() =='ru') btn btn-success @endif">Ru</a></li>
+            <li><a href="/locale/kg">KG</a></li>
+            <li><a href="/locale/ru">Ru</a></li>
             <li class="">
               <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-user"></i>
                 {{ auth()->user()->getName() }}
