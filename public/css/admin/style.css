@@ -674,7 +674,12 @@ a:hover{ text-decoration: underline; }
 }
 .noneliststyle .checkbox{
     display: inline;
+    display: -moz-grid-line;
 }
 .noneliststyle .form-horizontal .control-label{
     padding:4px; 
+}
+.noneliststyle .btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle){
+    width: 5px;
+    padding: 6px 15px 6px 10px;
 }

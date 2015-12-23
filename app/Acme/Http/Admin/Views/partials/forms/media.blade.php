@@ -255,7 +255,7 @@
                                 <label for="muzkanalanons3">
                                   Анонс 3
                                 </label>
-                              </div>                              
+                              </div>                                                            
                             </td>
                             <td>
                               <div class="form-group">
@@ -265,8 +265,33 @@
                                 </div>
                               </div>                              
                             </td>
-                          </tr>
-                        </table>                                                
+                          </tr>                          
+                        </table> 
+                        <div class="checkbox checkbox-primary ">
+                          {!! Form::hidden('promo', 0) !!}
+                          {!! Form::checkbox('promo', 1, null, ["id" => "promo", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
+                          <label for="promo">
+                            Промо
+                          </label>
+                        </div>
+                        <div class="row">
+                          <div class="btn-toolbar">
+                            <div class="btn-group">
+                              <button class="btn btn-success active" type="button">1</button>
+                              <button class="btn btn-success" type="button">2</button>
+                              <button class="btn btn-success" type="button">3</button>
+                              <button class="btn btn-success" type="button">4</button>                                     
+                              <button class="btn btn-success" type="button">5</button>
+                              <button class="btn btn-success" type="button">6</button>
+                              <button class="btn btn-success" type="button">7</button>
+                              <button class="btn btn-success" type="button">8</button>
+                              <button class="btn btn-success" type="button">9</button>
+                              <button class="btn btn-success" type="button">10</button>
+                            </div>
+                            
+                          </div>
+                        </div> 
+
                       </li>
                     </ul>
                   </nav>

@@ -101,31 +101,7 @@
                     {{--<span class="glyphicon glyphicon-trash"></span>--}}
                     <i class="fa fa-trash"></i>
                   </button>
-                  {!! Form::close() !!}
-
-        
-                  <td>
-                  @if(($media->number) > 0 && ($media->number) != 99)
-                    {!! Form::open(['route' => ['admin.media.unnumber', $media], 'method' => 'GET', 'onsubmit' => "return confirm('Вы уверены ?')"]) !!}
-                    <div class="input-group">
-                      <input type="text" style="width:100px;" disabled="disabled" value="{{ $media->number}}" class="form-control">
-                      <span class="input-group-btn">
-                      <button type="submit" class="btn btn-primary">Убрать!</button> 
-                      </span>
-                    </div>
-                    {!! Form::close() !!}
-                  @else
-                    {!! Form::open(['route' => ['admin.media.number', $media], 'method' => 'GET', 'onsubmit' => "return confirm('Вы уверены ?')"]) !!}
-                    <div class="input-group">
-                      <input name="number" style="width:100px;" type="text" class="form-control">
-                      <span class="input-group-btn">
-                      <button type="submit" class="btn btn-primary">Ок!</button> 
-                      </span>
-                    </div>
-                    {!! Form::close() !!}
-                  @endif
-                </td>
-                                       
+                  {!! Form::close() !!}                                       
                 </td>
               </tr>
             @endforeach
