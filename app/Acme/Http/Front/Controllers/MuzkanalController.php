@@ -33,6 +33,9 @@ class MuzkanalController extends Controller
         
         //Promo
         $promo = \Model\Media\ModelName:: where('muzkanal', '=', 1)->where('published','=',true)->where('promo', '=', 1)->first();
+
+        $hitNumbers = \Model\Media\ModelName::where('hitnumber','>=','1')->orderBy('hitnumber','asc')->get();
+
        
         return view('Front::channel.muzkanal.index', [
             'channel' => $channel,
@@ -49,6 +52,7 @@ class MuzkanalController extends Controller
             'anons2' => $anons2,
             'anons3' => $anons3,
             'promo' => $promo,
+            'hitNumbers' => $hitNumbers,
 
             ]);
     }

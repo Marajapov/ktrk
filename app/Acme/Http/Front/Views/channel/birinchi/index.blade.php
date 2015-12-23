@@ -163,12 +163,12 @@
                            <a href="#">Спорт</a>
                            </span>
                            <article>
-                              <a href="#" class="image-link">
+                              <a href="{{ route('birinchi.news', $post) }}" class="image-link">
                               <img src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif">
                               <span class="date">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
                               </a>
                               <h3 class="name headline">
-                                 <a href="#" title="Premiere for The Invisible Woman">
+                                 <a href="{{ route('birinchi.news', $post) }}" title="Premiere for The Invisible Woman">
                                  {{ $post->getTitleRuOrKg() }}
                                  </a>
                               </h3>
@@ -215,7 +215,7 @@
                      @foreach($allPost as $post)
                         <div class="media">
                            <div class="media-left">
-                              <a href="{{ route('front.post', $post) }}">
+                              <a href="{{ route('birinchi.news', $post) }}">
                               <img class="media-object thumb" src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif" alt="image">
                               </a>
                            </div>
@@ -224,7 +224,7 @@
                                  <span class="e-datetime">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
                                  <span class="e-views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
                               </div>
-                              <a class="media-heading" href="{{ route('front.post', $post) }}">{{ $post->getTitleRuOrKg() }}</a>
+                              <a class="media-heading" href="{{ route('birinchi.news', $post) }}">{{ $post->getTitleRuOrKg() }}</a>
                               
                            </div>
                         </div>

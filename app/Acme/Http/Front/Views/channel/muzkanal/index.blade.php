@@ -464,19 +464,22 @@
                </div>
                <div class="panel-body">
                   <ul class="list-group" >
-                  
+                  @if($hitNumbers)
+                  @foreach($hitNumbers as $hit)
                   <li class="list-group-item clearfix">
                      <a href="#" class="pull-right"> <i class="glyphicon glyphicon-play"></i> </a>
-                     <a href="#" class="pull-left"> <img src="{{ asset('images/1.jpg') }}" class="hitimg"> </a>
+                     <a href="#" class="pull-left"> <img src="http://img.youtube.com/vi/{{ $hit->getUrl()}}/mqdefault.jpg" class="hitimg"> </a>
                      <a class="clear" href="#">
-                        <span>Атабеков Мирбек</span>
-                        <p> <small>Мөлмөлүм</small></p>
+                        <span>{{ $hit->getName() }}</span>
+                        
                      </a>
-                     <span class="numeric">1</span>
+                     <span class="numeric">{{ $hit->hitnumber }}</span>
                      <div class="vote">
                         <div class="like" data-likes="10"><i class="fa fa-thumbs-up"></i></div>
                      </div>
                   </li>
+                  @endforeach
+                  @endif
                   
                </div>
             </div>

@@ -13,7 +13,13 @@ class BirinchiController extends Controller
 
         $generalPosts = \Model\Post\ModelName::where('birinchi','=',1)->where('general','=','1')->take(3)->orderBy('id','desc')->get();
 
-        $allPost = \Model\Post\ModelName::where('birinchi','=',1)->orderBy('id','desc')->get();
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            $allPost = \Model\Post\ModelName::where('birinchi','=',1)->languagekg()->published()->orderBy('id','desc')->get();    
+        }else{
+            $allPost = \Model\Post\ModelName::where('birinchi','=',1)->languageru()->published()->orderBy('id','desc')->get();
+        }
+        
         
 
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
@@ -47,13 +53,16 @@ class BirinchiController extends Controller
             ]);
     }
 
-    public function news()
+    public function news(\Model\Post\ModelName $post)
     {
+        $post->incrementViewed();
+
         $channel = \Model\Channel\ModelName::name('birinchi')->first();
          $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
            return view('Front::channel.birinchi.news', [
             'channel' => $channel,
+            'post' => $post,
             'backgroundMain' => $backgroundMain,
             ]);
     }

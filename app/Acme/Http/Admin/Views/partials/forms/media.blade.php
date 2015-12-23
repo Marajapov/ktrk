@@ -274,25 +274,14 @@
                             Промо
                           </label>
                         </div>
-                        <div class="row">
-                          <div class="btn-toolbar">
-                            <div class="btn-group">
-                              <button class="btn btn-success active" type="button">1</button>
-                              <button class="btn btn-success" type="button">2</button>
-                              <button class="btn btn-success" type="button">3</button>
-                              <button class="btn btn-success" type="button">4</button>                                     
-                              <button class="btn btn-success" type="button">5</button>
-                              <button class="btn btn-success" type="button">6</button>
-                              <button class="btn btn-success" type="button">7</button>
-                              <button class="btn btn-success" type="button">8</button>
-                              <button class="btn btn-success" type="button">9</button>
-                              <button class="btn btn-success" type="button">10</button>
-                            </div>
-                            
-                          </div>
-                        </div> 
 
-                      </li>
+                        <div class="form-group">
+                          <label for="channel_id" class="col-sm-2 control-label">Хит парад</label>
+                          <div class="col-sm-10">
+                            {!! Form::select('hitnumber', ['1'=>'1','2'=>'2','3'=>'3','4'=>'4','5'=>'5','6'=>'6','7'=>'7','8'=>'8','9'=>'9','10'=>'10'], null, ["class" => "selectpicker","data-live-search"=>"true", "title" => "-- Выберите --"]) !!}
+                          </div>
+                        </div>
+
                     </ul>
                   </nav>
               </div>

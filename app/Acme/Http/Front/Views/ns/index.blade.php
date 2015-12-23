@@ -49,8 +49,9 @@
                         @endforeach
 
                       </div>
+                      </div>
+                      <div class="col-md-6">
 
-                      <div class="col-md-7">
                         @include('Front::ns.lastPosts')
                       </div>
 
