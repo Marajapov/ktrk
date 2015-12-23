@@ -14,6 +14,7 @@ class CreateMediaTable extends Migration
     {
         Schema::create('medias', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('number');
             $table->integer('resource_id')->nullable()->unsigned()->default(null);
             $table->string('videoType')->nullable()->default(null);
             $table->string('name');

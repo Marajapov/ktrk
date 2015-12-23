@@ -31,10 +31,12 @@ class HomeController extends Controller
             $generalPosts = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->take(6)->skip(0)->orderBy('number','asc')->get();    
             $projects = \Model\Project\ModelName::having('name','<>','')->get();
             $directorPosts = \Model\Post\ModelName::where('director','=','1')->orderBy('id','desc')->take(3)->languagekg()->get();
+            $reporterPosts = \Model\Post\ModelName::where('reporter','=','1')->orderBy('id','desc')->take(15)->languagekg()->get();
         }elseif($lc == 'ru'){
             $generalPosts = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languageru()->take(6)->skip(0)->orderBy('number','asc')->get();    
             $projects = \Model\Project\ModelName::where('nameRu','<>','')->get();
             $directorPosts = \Model\Post\ModelName::where('director','=','1')->orderBy('id','desc')->take(3)->languageru()->get();
+            $reporterPosts = \Model\Post\ModelName::where('reporter','=','1')->orderBy('id','desc')->take(15)->languageru()->get();
         }
 
         $dayVideo1 = \Model\Media\ModelName::where('dayVideo','=','1')->first();
@@ -109,6 +111,7 @@ class HomeController extends Controller
             'mediaLastVideos' => $mediaLastVideos,
             'projects' => $projects,
             'directorPosts' => $directorPosts,
+            'reporterPosts' => $reporterPosts,
             ]);
     }
 

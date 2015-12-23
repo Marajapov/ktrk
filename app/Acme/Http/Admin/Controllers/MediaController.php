@@ -233,4 +233,27 @@ class MediaController extends Controller
         
         return redirect()->route('admin.media.index');
     }
+
+     // Number for list the rating
+    public function number(Request $request, $number)
+    {
+        $postId = $number;
+        $number = $request->number;
+
+        $row = \Model\Post\ModelName::where('id','=',$postId)->first();
+        $row->number = $number;
+        $row->save();
+        return redirect()->route('admin.media.index');
+    }
+
+    // Unnumber for list the rating
+    public function unnumber(Request $request, $number)
+    {
+        $postId = $number;
+
+        $row = \Model\Post\ModelName::where('id','=',$postId)->first();
+        $row->number = 99;
+        $row->save();
+        return redirect()->route('admin.media.index');
+    }
 }

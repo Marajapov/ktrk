@@ -210,5 +210,72 @@ class PageController extends Controller
             ]);
     }
 
+
+    // Director Post Function
+    public function directorPost(\Model\Post\ModelName $post)
+    {
+        $lc = app()->getlocale();
+
+        $post->incrementViewed();
+
+        $categories = \Model\Category\ModelName::all();
+        $positionTop = \Model\Banner\ModelName::top()->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+        
+        if(($post->parentId != '0') && ($post->parentId != null))
+        {
+            $parentId = $post->parentId;
+            $parentId = \Model\PhotoParent\ModelName::where('id','=',$parentId)->first();
+            $photoChilds = \Model\PhotoChild\ModelName::where('parentId','=',$parentId->id)->get();
+            
+        }else{
+            $parentId = '0';
+            $photoChilds = '0';
+        }
+
+        if($post->related1 != null){
+            $related1Post = \Model\Post\ModelName::where('id','=',$post->related1)->first();
+        }else{
+            $related1Post = null;
+        }
+
+        if($post->related2 != null){
+            $related2Post = \Model\Post\ModelName::where('id','=',$post->related2)->first();
+        }else{
+            $related2Post = null;
+        }
+
+        if($post->related3 != null){
+            $related3Post = \Model\Post\ModelName::where('id','=',$post->related3)->first();
+        }else{
+            $related3Post = null;
+        }
+        if($lc == 'kg'){
+            $relatedPosts = \Model\Post\ModelName::where('category_id','=',$post->category_id)->languagekg()->take(6)->skip(0)->orderBy('id', 'desc')->get();
+        }elseif($lc == 'ru'){
+            $relatedPosts = \Model\Post\ModelName::where('category_id','=',$post->category_id)->languageru()->take(6)->skip(0)->orderBy('id', 'desc')->get();
+        }
+        
+
+        return view('Front::pages.directorPost',[
+            'post' => $post,
+
+            'related1Post' => $related1Post,
+            'related2Post' => $related2Post,
+            'related3Post' => $related3Post,
+
+            'relatedPosts' => $relatedPosts,
+
+            'parentId'=> $parentId,
+            'photoChilds'=> $photoChilds,
+
+            'categories'=>$categories,
+            'positionTop'    => $positionTop,
+            'backgroundMain' => $backgroundMain,
+            ]);
+
+    }
+
 }
 
