@@ -47,8 +47,10 @@ class ScheduleController extends Controller
      */
     public function create()
     {
+        $channels = \Model\Channel\ModelName::take(8)->skip(1)->lists('display', 'id')->toArray();
         return view('Admin::schedule.create', [
-            'schedule' => new Schedule
+            'schedule' => new Schedule,
+            'channels' => $channels
         ]);
     }
 
@@ -63,20 +65,34 @@ class ScheduleController extends Controller
         setlocale(LC_TIME, 'ru_RU.CP1251', 'rus_RUS.CP1251', 'Russian_Russia.1251');
 
 //        dd($request);
+
         $schedule = Schedule::create($request->except('owner_id','q'));
 
         $date = $request->date;
 
-        $string = $request->program;
+        $string = $request->extra;
+//        dd($string);
+        $new_string2 = array();
 
         $new_string = preg_split('/[\r\n#]+/', $string, -1, PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE);
+        foreach($new_string as $new_string1)
+        {
+            if($new_string1 != ' ')
+            $new_string2[] = $new_string1;
+        }
+
         $program = array();
 
-        for($i=0; $i<count($new_string); $i++){
-            for($j=0; $j<count($new_string); $j++){
-                if($j%2==0) {
-                    $program = array_add($program, $j/2, ['time' => $new_string[$j], 'name' => $new_string[$j+1]]);
-
+        if($new_string2)
+        {
+            for($i=0; $i<count($new_string2); $i++)
+            {
+                for($j=0; $j<count($new_string2); $j++)
+                {
+                    if($j%2==0)
+                    {
+                        $program = array_add($program, $j/2, ['time' => $new_string2[$j], 'name' => $new_string2[$j+1]]);
+                    }
                 }
             }
         }
@@ -87,6 +103,7 @@ class ScheduleController extends Controller
 
         $schedule->date = $date;
         $schedule->program = $jsonProgram;
+        $schedule->extra = $string;
 
         $schedule->save();
 
@@ -119,13 +136,16 @@ class ScheduleController extends Controller
      */
     public function edit(Schedule $schedule)
     {
+        $channels = \Model\Channel\ModelName::take(8)->skip(1)->lists('display', 'id')->toArray();
         $date = $schedule->date;
-        $program = json_decode($schedule->program);
+//        $program = json_decode($schedule->program);
+        $extra = $schedule->extra;
 
         return view('Admin::schedule.edit', [
             'date' => $date,
-            'program' => $program,
-            'schedule' => $schedule
+            'extra' => $extra,
+            'schedule' => $schedule,
+            'channels' => $channels
         ]);
     }
 
@@ -138,9 +158,33 @@ class ScheduleController extends Controller
      */
     public function update(Request $request, Schedule $schedule)
     {
-//        dd($request->date);
+        $string = $request->extra;
+        $new_string2 = array();
+
+        $new_string = preg_split('/[\r\n#]+/', $string, -1, PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE);
+        foreach($new_string as $new_string1)
+        {
+            if($new_string1 != ' ')
+                $new_string2[] = $new_string1;
+        }
 
         $program = array();
+
+        if($new_string2)
+        {
+            for($i=0; $i<count($new_string2); $i++)
+            {
+                for($j=0; $j<count($new_string2); $j++)
+                {
+                    if($j%2==0)
+                    {
+                        $program = array_add($program, $j/2, ['time' => $new_string2[$j], 'name' => $new_string2[$j+1]]);
+                    }
+                }
+            }
+        }
+
+        $jsonProgram = json_encode($program);
 
         $count= count($request->time);
 
@@ -158,10 +202,9 @@ class ScheduleController extends Controller
 
         $schedule->date = $request->date;
         $schedule->program = $jsonProgram;
+        $schedule->extra = $request->extra;
 
         $schedule->update();
-
-
 
         return redirect()->route('admin.schedule.show', $schedule);
     }

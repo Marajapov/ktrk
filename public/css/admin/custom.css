@@ -5685,8 +5685,7 @@ a:hover{ text-decoration: underline; }
 .left { float:left; }
 .alignleft { float: left; margin-right: 15px; }
 .alignright { float: right; margin-left: 15px; }
-.clearfix:after,
-form:after {
+.clearfix:after{
     content: ".";
     display: block;
     height: 0;

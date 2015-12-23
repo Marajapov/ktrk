@@ -361,10 +361,49 @@
     /*padding-right: 10px;*/
     font-size: 48px;
 }
+.panel-report label{
+    padding-left: 5px;
+}
+.panel-report textarea{
+    resize: vertical;
+}
+.panel-report .btn i{
+    padding-right: 5px;
+}
+.panel-report .btn-submit{
+    margin: 15px 0;
+    float: right;
+}
 
 /*TELEPROGRAMM*/
 .teleprogramm .panel-body{
     padding: 15px;
+}
+.channel-choose{
+    margin: 15px 0;
+    font-size: 20px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.channels{
+    margin-bottom: 20px;
+}
+.channels > div{
+    height: 120px;
+}
+.channels > div a{
+    position: relative;
+    display: block;
+    height: 100%;
+    padding:30px 45px 0;
+}
+.channels span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    line-height: 20px;
 }
 .teletabs{
     text-align: center;

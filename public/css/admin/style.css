@@ -99,8 +99,7 @@ a:hover{ text-decoration: underline; }
 .left { float:left; }
 .alignleft { float: left; margin-right: 15px; }
 .alignright { float: right; margin-left: 15px; }
-.clearfix:after,
-form:after {
+.clearfix:after{
     content: ".";
     display: block;
     height: 0;
@@ -355,6 +354,15 @@ form:after {
     vertical-align: middle;
     color: #333333;
 }
+.table-bordered,
+.table-bordered > thead > tr > th,
+.table-bordered > tbody > tr > th,
+.table-bordered > tfoot > tr > th,
+.table-bordered > thead > tr > td,
+.table-bordered > tbody > tr > td,
+.table-bordered > tfoot > tr > td{
+    /*border: 1px solid #003F61;*/
+}
 .x_title{
     padding: 0;
     padding-bottom: 10px;
@@ -404,6 +412,10 @@ form:after {
     font-weight: bold;
     text-transform: uppercase;
 }
+.x_content .media-content i{
+    font-size: 24px;
+    padding-right: 10px;
+}
 .x_content .table form,.x_content .table .btn{
     float: left;
 }
@@ -413,7 +425,8 @@ form:after {
 .post-info .list-group-item{
     /*border: none;*/
 }
-.post-info .list-group-item p{
+.post-info .list-group-item>p, .post-info .list-group-item>div{
+    position: relative;
     display: inline-block;
     margin: 0;
     vertical-align: middle;
@@ -430,13 +443,12 @@ form:after {
 }
 .post-info .list-group-item .body{
     padding-left: 20px;
-    padding-left: 20px;
     color: #333333;
 }
 .post-info .list-group-item span, .post-info .list-group-item p{
     margin: 0;
     padding: 0;
-    display: inline-block;
+    display: table-cell;
     vertical-align: middle;
 }
 .post-info .post-title{
@@ -486,6 +498,48 @@ form:after {
     font-size: 10px;
     text-transform: uppercase;
 }
+.btn-download{
+    position: absolute;
+    top: 0;
+    z-index: 999;
+    padding: 10px;
+    width: 24px;
+    height: 24px;
+    color: #ffffff;
+    font-size: 24px;
+}
+.btn-download:hover,.btn-download:focus{
+    color: #ffffff;
+    opacity: 0.7;
+}
+
+/*PHOTO CHILD*/
+.post-info .list-group-item.photos > p, .post-info .list-group-item.photos > div{
+    display: table-cell;
+    vertical-align: middle;
+}
+.photo-child{
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 5px;
+}
+.photo-child button{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 24px;
+    height: 24px;
+    margin: 0;
+    padding: 0;
+    background: rgba(0,0,0,0.3);
+    border: none;
+    color: #ffffff;
+}
+.photo-child img{
+    width: auto;
+    height: 150px;
+}
 
 /*FORM HORIZONTAL*/
 .form-horizontal .form-group label{
@@ -494,8 +548,33 @@ form:after {
     font-weight: normal;
     text-transform: uppercase;
 }
+.morepages .form-group label{
+    float: none !important;
+}
+
 .form-horizontal .form-group:last-child{
     margin-bottom: 0;
+}
+.fileinput .form-control{
+    padding-top: 7px;
+}
+.btn-publish{
+    text-transform: uppercase;
+    font-size: 10px;
+    line-height: 24px;
+}
+.x_content .table .form-publish{
+    float: none;
+}
+.x_content .table .btn-publish{
+    float: none;
+    margin: 0;
+}
+.form-horizontal textarea{
+    resize: vertical;
+}
+.form-horizontal .control-label i{
+    padding-left: 5px;
 }
 
 /*TELEPROGRAMM*/
@@ -533,14 +612,16 @@ form:after {
 
 
 .program-block{
+    display: inline-block;
     border: 1px solid #cccccc;
-    border-left: 0;
+    margin-right: 10px;
     padding: 0;
 }
-.program-block.first{
-    border-left: 1px solid #cccccc;
-}
 .program-date{
+    display: table-cell;
+    vertical-align: middle;
+    border-right: 1px solid #cccccc;
+    padding: 15px 30px;
     color: #333333;
     text-align: center;
 }
@@ -553,13 +634,19 @@ form:after {
     font-size: 12px;
 }
 .actions{
+    display: table-cell;
+    vertical-align: middle;
     list-style-type: none;
     text-align: center;
-    margin:10px 0;
-    padding: 0;
+    margin:0;
+    padding: 5px;
 }
 .actions li{
-    display: inline-block;
+    display: block;
+    margin-bottom: 5px;
+}
+.actions li:last-child{
+    margin-bottom: 0;
 }
 .actions li a{
     margin: 0;
@@ -576,4 +663,26 @@ form:after {
 
 .program-show form{
     margin: 0;
+}
+
+/*Admin media creat Muzkanal anons*/
+.noneliststyle ul{
+    margin: 0px;
+}
+.noneliststyle ul>li {
+    list-style-type: none;
+    margin-right: 8px;
+    display: inline;
+    margin: inherit;
+}
+.noneliststyle .checkbox{
+    display: inline;
+    display: -moz-grid-line;
+}
+.noneliststyle .form-horizontal .control-label{
+    padding:4px; 
+}
+.noneliststyle .btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle){
+    width: 5px;
+    padding: 6px 15px 6px 10px;
 }

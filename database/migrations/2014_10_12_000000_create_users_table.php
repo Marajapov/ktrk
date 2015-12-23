@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password', 60);
-            $table->enum('role', ['manager', 'admin','ns'])->nullable()->default('manager');
+            $table->enum('role', ['manager', 'admin','ns','birinchi','muzkanal'])->nullable()->default('manager');
             $table->integer('channel_id')->nullable()->unsigned()->default(null);
             $table->rememberToken();
             $table->timestamps();

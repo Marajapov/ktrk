@@ -13,7 +13,7 @@
       <section class="content clearfix">
         <div class="clearfix">
           <div class="top-left-block col-xs-12 col-sm-12 col-md-12">
-            <div class="panel panel-default panel-kenesh">
+            <div class="panel panel-default panel-kenesh panel-rs">
               <div class="panel-heading">
                 <h3 class="panel-title"><span>{{ trans('site.BaikoochuKeneshFull') }}</span></h3>
               </div>
@@ -31,62 +31,79 @@
                       {{--@include('Front::ns.lastPosts')--}}
 
                       <div class="col-md-5 first-item">
-                        <div class="row">
+                        @foreach($popPosts as $pop)
+                          <div class="row">
 
-                            <a href="#" class="thumb">
-                              <img src="{{ asset('images/11449585369.jpg') }}" alt=""/>
+                            <a href="{{ route('front.ns.post', $pop) }}" class="thumb">
+                              <img src="@if(!($pop->getFile()))images/live_bg.png @else {{ asset($pop->thumbnail_big) }} @endif" alt=""/>
                             </a>
                             <h2>
                               <div class="extra">
-                                <span class="e-datetime">18 Нояб , 12:22</span>
-                                <span class="e-views"><i class="fa fa-eye"></i>17</span>
+                                <span class="e-datetime">{{ $pop->getDay() }} {{ $pop->getMonthRu() }}, {{ $pop->getTime() }}</span>
+                                <span class="e-views"><i class="fa fa-eye"></i>{{ $pop->getViewed() }}</span>
                               </div>
-                              <a href="#">Атамбаев Кыргызстанда “кол тийбес” аткаминерлер жок экенин айтты</a>
+                              <a href="{{ route('front.ns.post', $pop) }}">{{ $pop->getTitleRuOrKg() }}</a>
                             </h2>
 
-                        </div>
+                          </div>
+                        @endforeach
+
                       </div>
-                      <div class="col-md-7">
+                      </div>
+                      <div class="col-md-6">
+
                         @include('Front::ns.lastPosts')
                       </div>
 
                       <footer>
-                        <a href="{{ route('front.general') }}">
+                        <a href="{{ route('front.ns.posts') }}">
                           <span>{{ trans('site.FrontPostAll') }} <i class="fa fa-arrow-circle-right"></i></span>
                         </a>
                       </footer>
 
-                    </div>
+                      {{--<div class="row"> --}}
+                      {{--<div class="col-md-12 first-item">--}}
+                      {{--@foreach($popPosts as $pop)--}}
+                      {{----}}
+                      {{--<div class="col-md-4">--}}
+                      {{--<a href="{{ route('front.ns.post', $pop) }}" class="thumb">--}}
+                      {{--<img src="@if(!($pop->getFile()))images/live_bg.png @else {{ asset($pop->getFile()) }} @endif" alt=""/>--}}
+                      {{--</a>--}}
+                      {{--<h2>--}}
+                      {{--<div class="extra">--}}
+                      {{--<span class="e-datetime">{{ $pop->getDay() }} {{ $pop->getMonthRu() }}, {{ $pop->getTime() }}</span>--}}
+                      {{--<span class="e-views"><i class="fa fa-eye"></i>{{ $pop->getViewed() }}</span>--}}
+                      {{--</div>--}}
+                      {{--<a href="{{ route('front.ns.post', $pop) }}">{{ $pop->getTitleRuOrKg() }}</a>--}}
+                      {{--</h2>--}}
+                      {{--</div>--}}
+                      {{----}}
+                      {{--@endforeach--}}
 
-                    <div class="panel-heading second-panel-heading">
+                      {{--</div>--}}
+                      {{--</div>--}}
+                      {{--<div class="col-md-6">--}}
+                      {{--@include('Front::ns.lastPosts')--}}
+                      {{--</div>--}}
+                      {{--<div class="col-md-6">--}}
+                      {{--@include('Front::ns.lastPosts')--}}
+                      {{--</div>--}}
 
-                      <h3 class="panel-title"><span>{{ trans('site.BaikoochuKeneshGallery') }}</span></h3>
-                    </div>
-                    <div class="panel-body second-panel-body gallery">
+                      {{--<footer>--}}
+                      {{--<a href="{{ route('front.ns.posts') }}">--}}
+                      {{--<span>{{ trans('site.FrontPostAll') }} <i class="fa fa-arrow-circle-right"></i></span>--}}
+                      {{--</a>--}}
+                      {{--</footer>--}}
 
-                      <div class="carousel-ns">
-                        <div class="col-md-4"><a href="#"><img src="{{ asset('images/gallery/001.jpg') }}" alt=""/><span>Название</span><div class="overlay"></div></a></div>
-                        <div class="col-md-4"><a href="#"><img src="{{ asset('images/gallery/001.jpg') }}" alt=""/><span>Название</span><div class="overlay"></div></a></div>
-                        <div class="col-md-4"><a href="#"><img src="{{ asset('images/gallery/001.jpg') }}" alt=""/><span>Название</span><div class="overlay"></div></a></div>
-                        <div class="col-md-4"><a href="#"><img src="{{ asset('images/gallery/001.jpg') }}" alt=""/><span>Название</span><div class="overlay"></div></a></div>
-                        <div class="col-md-4"><a href="#"><img src="{{ asset('images/gallery/001.jpg') }}" alt=""/><span>Название</span><div class="overlay"></div></a></div>
-                      </div>
-
-                      <footer>
-                        <a href="{{ route('front.general') }}">
-                          <span>{{ trans('site.FrontGalleryAll') }} <i class="fa fa-arrow-circle-right"></i></span>
-                        </a>
-                      </footer>
-
+                      {{--</div>--}}
                     </div>
                   </div>
+
                 </div>
-
               </div>
-            </div>
 
+            </div>
           </div>
-        </div>
       </section>
     </div>
   </div>

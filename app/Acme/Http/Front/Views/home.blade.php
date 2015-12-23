@@ -39,11 +39,10 @@
                       </p>
                       <a class="news-title" href="{{ route('front.post', $post) }}">
                         <!--<h2>{!! $result = substr($post->getTitle(),0,75) !!}...</h2> -->
-                        <h2>{{ $post->getTitle() }}</h2>
+                        <h2>{{ $post->getTitleRuOrKg() }}</h2>
                       </a>
                     </figure>
                   </div>
-
                 @endforeach
 
                 <footer>
@@ -76,7 +75,7 @@
 
                   <div class="panel-heading2">
                     <h3 class="panel-title">
-                      <a  type="button" data-toggle="modal" data-target="#exampleModal"><span>Жаңылык кошуу</span><span class="prrus">Добавить новость</span><i class="fa fa-file-text-o"></i></a>
+                      <a href="{{ route('front.reporter') }}"><span>Жаңылык кошуу</span><span class="prrus">Добавить новость</span><i class="fa fa-file-text-o"></i></a>
                     </h3>
 
                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
@@ -144,38 +143,19 @@
 
                 <div class="col-md-9">
                   <div class="carousel carousel-reporter">
+                    @if($reporterPosts)
+                    @foreach($reporterPosts as $post)
                     <div class="col-md-4">
-                      <a href="#">
-                        <img src="{{ asset('images/1.jpg') }}" alt=""/>
+                      <a href="{{ route('front.post', $post) }}">
+                        <img src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif" alt=""/>
                       </a>
-                      <div class="datetime">12:11:2015</div>
-                      <div class="views"><i class="fa fa-eye"></i>&nbsp;2351</div>
-                      <p>Бүгүн Дордойдо курткалар аябагандай көп сатылды</p>
+                      <div class="datetime">{{ $post->getDay() }} {{ $post->getMonthRu() }}, {{ $post->getYear() }}</div>
+                      <div class="views"><i class="fa fa-eye"></i>&nbsp;{{ $post->getViewed() }}</div>
+                      <p>{{ $post->getTitleRuOrKg() }}</p>
                     </div>
-                    <div class="col-md-4">
-                      <a href="#">
-                        <img src="{{ asset('images/2.jpg') }}" alt=""/>
-                      </a>
-                      <div class="datetime">12:11:2015</div>
-                      <div class="views"><i class="fa fa-eye"></i>&nbsp;2351</div>
-                      <p>Суук түшкөндөн бери, эшикте аябай суук болууда</p>
-                    </div>
-                    <div class="col-md-4">
-                      <a href="#">
-                        <img src="{{ asset('images/gallery/002.jpg') }}" alt=""/>
-                      </a>
-                      <div class="datetime">12:11:2015</div>
-                      <div class="views"><i class="fa fa-eye"></i>&nbsp;2351</div>
-                      <p>Маршруткалар маселесин эртерээк чечпесес жакында транспорттук коллапс башталат </p>
-                    </div>
-                    <div class="col-md-4">
-                      <a href="#">
-                        <img src="{{ asset('images/gallery/002.jpg') }}" alt=""/>
-                      </a>
-                      <div class="datetime">12:11:2015</div>
-                      <div class="views"><i class="fa fa-eye"></i>&nbsp;2351</div>
-                      <p>Маршруткалар маселесин эртерээк чечпесе жакында транспорттук коллапс башталат </p>
-                    </div>
+                    @endforeach
+                    @endif
+
                   </div>
                 </div>
 
@@ -187,7 +167,7 @@
           <div class="top-right-block col-md-4">
             <div class="panel panel-default panel-promo">
               <div class="panel-heading">
-                <h3 class="panel-title"><span>{{ trans('site.FrontPostDaysVideo') }}</span></h3>
+                <h3 class="panel-title" id="videoTitle"><span>{{ trans('site.FrontPostDaysNews') }}</span></h3>
               </div>
               <div class="panel-body main-video">
 
@@ -195,66 +175,71 @@
 
                   <div> <!-- video1 -->
                     <div class="embed-youtube embed-responsive embed-responsive-16by9 slider-text">
-<iframe class="embed-responsive-item" src="//www.youtube.com/embed/@if($dayVideo1){{$dayVideo1->getUrl()}}@else{{$defaultVideo}}@endif?enablejsapi=1&version=3&playerapiid=ytplayer" allowfullscreen=""></iframe>
+                      <iframe class="embed-responsive-item" src="//www.youtube.com/embed/@if($dayVideo1){{$dayVideo1->getUrl()}}@else{{$defaultVideo}}@endif?enablejsapi=1&version=3&playerapiid=ytplayer" allowfullscreen=""></iframe>
                     </div>
                     <div class="slick-text">
                       <a href="{{ route('front.media.video', $dayVideo1) }}">
-                        <h2>@if($dayVideo1){{ $dayVideo1->getName() }} @endif</h2>
+                        <h2>@if($dayVideo1){{ $dayVideo1->getName() }} @else {{ trans('site.FrontPostDaysNews') }} @endif</h2>
                       </a>
                     </div>
                   </div>
 
                   <div> <!-- video2 -->
                     <div class="embed-youtube embed-responsive embed-responsive-16by9 slider-text">
-<iframe class="embed-responsive-item" src="//www.youtube.com/embed/@if($dayVideo2){{$dayVideo2->getUrl()}}@else{{$defaultVideo}}@endif?enablejsapi=1&version=3&playerapiid=ytplayer" allowfullscreen=""></iframe>
+                      <iframe class="embed-responsive-item" src="//www.youtube.com/embed/@if($dayVideo2){{$dayVideo2->getUrl()}}@else{{$defaultVideo}}@endif?enablejsapi=1&version=3&playerapiid=ytplayer" allowfullscreen=""></iframe>
                     </div>
                     <div class="slick-text">
                       <a href="{{ route('front.media.video', $dayVideo2) }}">
-                        <h2>@if($dayVideo2){{ $dayVideo2->getName() }} @endif</h2>
+                        <h2>@if($dayVideo2){{ $dayVideo2->getName() }} @else {{ trans('site.FrontPostDaysEpisode') }} @endif</h2>
                       </a>
                     </div>
                   </div>
 
                   <div> <!-- video3 -->
                     <div class="embed-youtube embed-responsive embed-responsive-16by9 slider-text">
-<iframe class="embed-responsive-item" src="//www.youtube.com/embed/@if($dayVideo3){{$dayVideo3->getUrl()}}@else{{$defaultVideo}}@endif?enablejsapi=1&version=3&playerapiid=ytplayer" allowfullscreen=""></iframe>
+                      <iframe class="embed-responsive-item" src="//www.youtube.com/embed/@if($dayVideo3){{$dayVideo3->getUrl()}}@else{{$defaultVideo}}@endif?enablejsapi=1&version=3&playerapiid=ytplayer" allowfullscreen=""></iframe>
                     </div>
                     <div class="slick-text">
                       <a href="{{ route('front.media.video', $dayVideo3) }}">
-                        <h2>@if($dayVideo3){{ $dayVideo3->getName() }} @endif</h2>
+                        <h2>@if($dayVideo3){{ $dayVideo3->getName() }} @else {{ trans('site.FrontPostDaysAnons') }} @endif</h2>
                       </a>
                     </div>
                   </div>
 
                   <div> <!-- video4 -->
                     <div class="embed-youtube embed-responsive embed-responsive-16by9 slider-text">
-<iframe class="embed-responsive-item" src="//www.youtube.com/embed/@if($dayVideo4){{$dayVideo4->getUrl()}}@else{{$defaultVideo}}@endif?enablejsapi=1&version=3&playerapiid=ytplayer" allowfullscreen=""></iframe>
+                      <iframe class="embed-responsive-item" src="//www.youtube.com/embed/@if($dayVideo4){{$dayVideo4->getUrl()}}@else{{$defaultVideo}}@endif?enablejsapi=1&version=3&playerapiid=ytplayer" allowfullscreen=""></iframe>
                     </div>
                     <div class="slick-text">
                       <a href="{{ route('front.media.video', $dayVideo4) }}">
-                        <h2>@if($dayVideo4){{ $dayVideo4->getName() }} @endif</h2>
-                      </a>
-                    </div>
-                  </div>
-
-                  <div> <!-- video5 -->
-                    <div class="embed-youtube embed-responsive embed-responsive-16by9 slider-text">
-<iframe class="embed-responsive-item" src="//www.youtube.com/embed/@if($dayVideo5){{$dayVideo5->getUrl()}}@else{{$defaultVideo}}@endif?enablejsapi=1&version=3&playerapiid=ytplayer" allowfullscreen=""></iframe>
-                    </div>
-                    <div class="slick-text">
-                      <a href="{{ route('front.media.video', $dayVideo5) }}">
-                        <h2>@if($dayVideo5){{ $dayVideo5->getName() }} @endif</h2>
+                        <h2>@if($dayVideo4){{ $dayVideo4->getName() }} @else {{ trans('site.FrontPostDaysMaanai') }} @endif</h2>
                       </a>
                     </div>
                   </div>
 
                 </div>
                 <div class="slider slider-nav">
-                  <div data-toggle="tooltip" data-placement="top" title="Tooltip on top"><img src="http://img.youtube.com/vi/@if($dayVideo1){{$dayVideo1->getUrl()}}@else{{$defaultVideo}}@endif/mqdefault.jpg" alt="" /></div>
-                  <div data-toggle="tooltip" data-placement="top" title="Tooltip on top"><img src="http://img.youtube.com/vi/@if($dayVideo2){{$dayVideo2->getUrl()}}@else{{$defaultVideo}}@endif/mqdefault.jpg" alt="" /></div>
-                  <div data-toggle="tooltip" data-placement="top" title="Tooltip on top"><img src="http://img.youtube.com/vi/@if($dayVideo3){{$dayVideo3->getUrl()}}@else{{$defaultVideo}}@endif/mqdefault.jpg" alt="" /></div>
-                  <div data-toggle="tooltip" data-placement="top" title="Tooltip on top"><img src="http://img.youtube.com/vi/@if($dayVideo4){{$dayVideo4->getUrl()}}@else{{$defaultVideo}}@endif/mqdefault.jpg" alt="" /></div>
-                  <div data-toggle="tooltip" data-placement="top" title="Tooltip on top"><img src="http://img.youtube.com/vi/@if($dayVideo5){{$dayVideo5->getUrl()}}@else{{$defaultVideo}}@endif/mqdefault.jpg" alt="" /></div>
+                  <div>
+                    <span class="videoTitle hidden">{{ trans('site.FrontPostDaysNews') }}</span>
+                    <img src="http://img.youtube.com/vi/@if($dayVideo1){{$dayVideo1->getUrl()}}@else{{$defaultVideo}}@endif/mqdefault.jpg" alt="" />
+                    <h4>@if($dayVideo1){{ $dayVideo1->getName() }} @else {{ trans('site.FrontPostDaysMaanai') }} @endif</h4>
+                  </div>
+                  <div>
+                    <span class="videoTitle hidden">{{ trans('site.FrontPostDaysEpisode') }}</span>
+                    <img src="http://img.youtube.com/vi/@if($dayVideo2){{$dayVideo2->getUrl()}}@else{{$defaultVideo}}@endif/mqdefault.jpg" alt="" />
+                    <h4>@if($dayVideo2){{ $dayVideo2->getName() }} @else {{ trans('site.FrontPostDaysMaanai') }} @endif</h4>
+                  </div>
+                  <div>
+                    <span class="videoTitle hidden">{{ trans('site.FrontPostDaysAnons') }}</span>
+                    <img src="http://img.youtube.com/vi/@if($dayVideo3){{$dayVideo3->getUrl()}}@else{{$defaultVideo}}@endif/mqdefault.jpg" alt="" />
+                    <h4>@if($dayVideo3){{ $dayVideo3->getName() }} @else {{ trans('site.FrontPostDaysMaanai') }} @endif</h4>
+                  </div>
+
+                  <div>
+                    <span class="videoTitle hidden">{{ trans('site.FrontPostDaysMaanai') }}</span>
+                    <img src="http://img.youtube.com/vi/@if($dayVideo4){{$dayVideo4->getUrl()}}@else{{$defaultVideo}}@endif/mqdefault.jpg" alt="" />
+                    <h4>@if($dayVideo4){{ $dayVideo4->getName() }} @else {{ trans('site.FrontPostDaysMaanai') }} @endif</h4>
+                  </div>
                 </div>
 
                 <footer>
@@ -283,7 +268,7 @@
                     <li class="list-group-item news-item">
                       <div class="news-body clearfix">
                         <a href="{{ route('front.post', $post) }}">
-                          <p class="news-title">{{ $post->getTitle() }}</p>
+                          <p class="news-title">{{ $post->getTitleRuOrKg() }}</p>
                           <span class="ctg"><img src="{{ $post->isChannelIcon($post->channel_id)}}" alt=""/></span>
                         </a>
                       </div>
@@ -326,26 +311,29 @@
 
                 <div class="">
                   <div class="carousel carousel-director">
-                    <div>
-                      <a href="#">
-                        <img src="{{ asset('images/gallery/001.jpg') }}" alt=""/>
-                      </a>
-                      <a href="#">
-                        Мы разворачиваем масштабную работу по реализации проекта «Ухта — Торжок-2». Задачи поставлены, сроки определены. До конца 2019 года газопровод будет построен и готов к эксплуатации.
-                      </a>
-                    </div>
-                    <div>
-                      <a href="#">
-                        <img src="{{ asset('images/gallery/002.jpg') }}" alt=""/>
-                      </a>
-                      Мы разворачиваем масштабную работу по реализации проекта «Ухта — Торжок-2». Задачи поставлены, сроки определены. До конца 2019 года газопровод будет построен и готов к эксплуатации.
-                    </div>
-                    <div>
-                      <a href="#">
-                        <img src="{{ asset('images/gallery/003.jpg') }}" alt=""/>
-                      </a>
-                      Мы разворачиваем масштабную работу по реализации проекта «Ухта — Торжок-2». Задачи поставлены, сроки определены. До конца 2019 года газопровод будет построен и готов к эксплуатации.
-                    </div>
+
+                    @if($directorPosts)
+                      @foreach($directorPosts as $post)
+                        <div>
+                          <a href="#">
+                            <img src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif" alt=""/>
+                          </a>
+                          <a href="#">
+                            {{ $post->getTitleRuOrKg() }}
+                          </a>
+                        </div>
+                      @endforeach
+                    @else
+                      <div>
+                        <a href="#">
+                          <img src="{{ asset('images/gallery/001.jpg') }}" alt=""/>
+                        </a>
+                        <a href="#">
+                          Мы разворачиваем масштабную работу по реализации проекта «Ухта — Торжок-2». Задачи поставлены, сроки определены. До конца 2019 года газопровод будет построен и готов к эксплуатации.
+                        </a>
+                      </div>
+                    @endif
+
                   </div>
                 </div>
 
@@ -457,8 +445,8 @@
             <div class="panel panel-default panel-carousel gallery">
               <div class="panel-heading">
                 <h3 class="panel-title">
-                  <a href="#"><span>Фотогалерея</span></a>
-                  <a class="all" href="#">{{ trans('site.FrontGalleryAll') }} <i class="fa fa-arrow-circle-right"></i></a>
+                  <a href="{{ route('front.gallery.galleries') }}"><span>Фотогалерея</span></a>
+                  <a class="all" href="{{ route('front.gallery.galleries') }}">{{ trans('site.FrontGalleryAll') }} <i class="fa fa-arrow-circle-right"></i></a>
                 </h3>
               </div>
               <div class="panel-body">
@@ -468,13 +456,13 @@
                       @foreach($photoGalleries as $photoGallery)
 
                         <div class="col-md-4">
-                          {!! Form::open(['route' => ['front.gallery', $photoGallery->id], 'method' => 'get', 'onclick' => "submit()"]) !!}
+                          <a href="{{ route('front.gallery', $photoGallery) }}">
                             <img src="{{ asset($photoGallery->status) }}" alt=""/><span>{{ $photoGallery->getName() }}</span>
                             <div class="overlay"></div>
-                            <input type="hidden" value="{{ $photoGallery->id }}" name="photoParentId">
-                          {!! Form::close() !!}
-                        </div>                    
-                  
+                            <i class="fa fa-camera"></i>
+                          </a>
+                        </div>
+
                       @endforeach
                     @endif
                   </div>
@@ -529,7 +517,7 @@
       autoplay:false
     });
     $('.slider-nav').slick({
-      slidesToShow: 5,
+      slidesToShow: 4,
       asNavFor: '.slider-for',
       focusOnSelect: true
     });

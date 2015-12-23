@@ -34,13 +34,7 @@ class ModelName extends Model
 
     public function getName()
     {
-        $lc = app()->getlocale();
-
-        if(($lc == 'kg') && ($this->name != '') ){
-            return $this->name;
-        }else{
-            return $this->nameRu;
-        }
+        return $this->name;
     }
 
     public function getNameRu()
@@ -77,6 +71,11 @@ class ModelName extends Model
     }
 
     public function getVideoType()
+    {
+        return $this->videoType;
+    }
+
+    public function hasMediaCategory()
     {
         return $this->videoType;
     }
@@ -192,5 +191,26 @@ class ModelName extends Model
         $fullDate = $this->created_at;
         $date = date('d-M-Y', strtotime($fullDate));
         return $date;
+    }
+
+    public function getDateFormatted()
+    {
+        $fullDate = $this->created_at;
+        $date = date('d/m/Y', strtotime($fullDate));
+        return $date;
+    }
+
+    public function getAnonsTime1()
+    {
+        return $this->anonstime1;
+    }
+
+    public function getAnonsTime2()
+    {
+        return $this->anonstime2;
+    }
+    public function getAnonsTime3()
+    {
+        return $this->anonstime3;
     }
 }

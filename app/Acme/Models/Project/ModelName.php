@@ -43,7 +43,12 @@ class ModelName extends Model
     
     public function getTitle()
     {
-        return "abakan";
+        return $this->name;
+    }
+
+    public function getTitleRu()
+    {
+        return $this->nameRu;
     }
     
     public function getNameOne()

@@ -27,11 +27,19 @@
                 <article data-cat="all-videos">
                   <h4 class="show-title">
                     <a href="#">{{ $videoProject}}</a>
-                    <i class="fa fa-circle"></i>
+                    @if($videoProject)
+                      <i class="fa fa-circle"></i>
+                    @endif
                     <span>{{ $videoName }}</span>
                   </h4>
-                  <div class="embed-responsive embed-responsive-16by9 show-video">
-                    
+                           <div class="extra">
+                              @if(auth()->user())
+                              <span class="art-edit"><a href="{{ route('admin.media.edit', $video) }}" target="_blank"><i class="fa fa-pencil"></i>{{ trans('site.AdminPostEdit') }}
+                              {{--<span class="glyphicon glyphicon-pencil"></span>--}}  </a>
+                              @endif
+                              </span>
+                           </div>
+                  <div class="embed-responsive embed-responsive-16by9 show-video">                    
                     <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ $video->getUrl()}}"></iframe>
                   </div>
                   <p class="video-desc">

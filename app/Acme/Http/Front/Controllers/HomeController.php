@@ -2,6 +2,9 @@
 namespace Front\Controllers;
 //use Illuminate\Http\Request;
 use Illuminate\Http\Request;
+use Input;
+use Intervention\Image\ImageManagerStatic as Image;
+use Illuminate\Support\Facades\Validator;
 
 class HomeController extends Controller
 {
@@ -21,16 +24,19 @@ class HomeController extends Controller
      */
     public function Home()
     {
-
         $lc = app()->getlocale();
         $channel = \Model\Channel\ModelName::general();
        
         if($lc == 'kg'){
-            $generalPosts = \Model\Post\ModelName::general($channel)->published()->languagekg()->take(6)->skip(0)->orderBy('id', 'desc')->get();    
+            $generalPosts = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->take(6)->skip(0)->orderBy('number','asc')->get();    
             $projects = \Model\Project\ModelName::having('name','<>','')->get();
+            $directorPosts = \Model\Post\ModelName::where('director','=','1')->orderBy('id','desc')->take(3)->languagekg()->get();
+            $reporterPosts = \Model\Post\ModelName::where('reporter','=','1')->orderBy('id','desc')->take(15)->languagekg()->get();
         }elseif($lc == 'ru'){
-            $generalPosts = \Model\Post\ModelName::general($channel)->published()->languageru()->take(6)->skip(0)->orderBy('id', 'desc')->get();    
+            $generalPosts = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languageru()->take(6)->skip(0)->orderBy('number','asc')->get();    
             $projects = \Model\Project\ModelName::where('nameRu','<>','')->get();
+            $directorPosts = \Model\Post\ModelName::where('director','=','1')->orderBy('id','desc')->take(3)->languageru()->get();
+            $reporterPosts = \Model\Post\ModelName::where('reporter','=','1')->orderBy('id','desc')->take(15)->languageru()->get();
         }
 
         $dayVideo1 = \Model\Media\ModelName::where('dayVideo','=','1')->first();
@@ -59,18 +65,13 @@ class HomeController extends Controller
         } else {
             $dayVideo4 = '';
         }
-        if($dayVideo5){
-            $dayVideo5 = $dayVideo5;
-        } else {
-            $dayVideo5 = '';
-        }
 
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
         $peopleReporters = \Model\PeopleReporter\ModelName::where('published','=',true)->get();
 
 
         // Photo Gallery
-        $photoGalleries = \Model\PhotoParent\ModelName::where('published','=',true)->take('10')->orderBy('id','desc')->get();
+        $photoGalleries = \Model\PhotoParent\ModelName::where('extracolumn','=','1')->where('published','=',true)->take('10')->orderBy('id','desc')->get();
         
 
         $MediaCategories = \Model\MediaCategory\ModelName::orderBy('id','asc')->get();
@@ -87,7 +88,7 @@ class HomeController extends Controller
         }
 
         $mediaLastVideos = \Model\Media\ModelName::orderBy('id','desc')->take(9)->get();
-        $defaultVideo = 'pnrUhMN8H4Y';
+        $defaultVideo = 'rjXSurFi8uQ';
         return view('Front::home', [
             
             'generalPosts'   => $generalPosts,
@@ -95,7 +96,6 @@ class HomeController extends Controller
             'dayVideo2'      => $dayVideo2,
             'dayVideo3'      => $dayVideo3,
             'dayVideo4'      => $dayVideo4,
-            'dayVideo5'      => $dayVideo5,
             'defaultVideo'   => $defaultVideo,
 
             'positionTop'    => $this->positionTop,
@@ -110,6 +110,8 @@ class HomeController extends Controller
             'categoriesVideos' => $categoriesVideos,
             'mediaLastVideos' => $mediaLastVideos,
             'projects' => $projects,
+            'directorPosts' => $directorPosts,
+            'reporterPosts' => $reporterPosts,
             ]);
     }
 
@@ -185,9 +187,9 @@ class HomeController extends Controller
         $lc = app()->getlocale();
         $perPage = 10;
         if($lc == 'kg'){
-            $postAll = \Model\Post\ModelName::where('title','<>','')->orderBy('id','desc')->paginate($perPage);    
+            $postAll = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->orderBy('id','desc')->paginate($perPage);    
         }elseif($lc == 'ru'){
-            $postAll = \Model\Post\ModelName::where('titleRu','<>','')->orderBy('id','desc')->paginate($perPage);
+            $postAll = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->orderBy('id','desc')->paginate($perPage);
         }
         
 
@@ -296,6 +298,8 @@ class HomeController extends Controller
         $categories = \Model\Category\ModelName::all();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
+        $mediaPop = \Model\Media\ModelName::where()->get();
+
         return view('Front::media.index',[
             'mediaPost' => $media,
             
@@ -386,26 +390,133 @@ class HomeController extends Controller
             ]);
     }
 
-    public function Gallery(Request $request)
+    public function Galleries()
+    {
+        $lc = app()->getlocale();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+        $galleries = \Model\PhotoParent\ModelName::where('extracolumn','=','1')->where('published','=',true)->orderBy('id','desc')->get();
+
+        return view('Front::gallery.galleries',[
+            'lc' => $lc,
+            'backgroundMain' => $backgroundMain,
+
+            'galleries' => $galleries,
+        ]);
+    }
+
+    public function Gallery(Request $request, $galleryId)
     {
         $lc = app()->getlocale();
 
-        $id =$request->photoParentId;
-        $row = \Model\PhotoParent\ModelName::where('id','=',$id)->first();
+        $gallery = \Model\PhotoParent\ModelName::where('id','=',$galleryId)->first();
+        $images = json_decode($gallery->images);
 
-        $images = json_decode($row->images); // array of images
-
-        $categories = \Model\Category\ModelName::all();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
         return view('Front::gallery.gallery',[
-            'row' => $row,
             'lc' => $lc,
             'images' => $images,
-            'categories'=>$categories,
             'backgroundMain' => $backgroundMain,
+            'gallery' => $gallery,
             ]);
     }
 
+    public function Reporter()
+    {
+        $lc = app()->getlocale();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+//        $galleries = \Model\PhotoParent\ModelName::where('extracolumn','=','1')->where('published','=',true)->orderBy('id','desc')->get();
+
+        return view('Front::reporter.index',[
+            'lc' => $lc,
+            'backgroundMain' => $backgroundMain,
+
+//            'galleries' => $galleries,
+        ]);
+    }
+
+    public function ReporterAdd(Request $request)
+    {
+        $lc = app()->getlocale();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+        $reporter = \Model\PeopleReporter\ModelName::create($request->except('images','video','q'));
+
+        $images = $request->file('images');
+        $rules = array(
+            'image' => 'image'
+        );
+
+        $result = array();
+
+        if($request->hasFile('images'))
+        {
+            foreach($images as $key=>$image)
+            {
+                $target = array('image' => $image);
+                $validator = Validator::make($target, $rules);
+
+                if ($validator->fails())
+                {
+                    return redirect()->route('front.reporter');
+                }
+                else
+                {
+                    $storage = \Storage::disk('public');
+                    $destinationPath = 'froala/uploads';
+                    $storage->makeDirectory($destinationPath);
+
+                    $filename = time().$key.'.'.$image->getClientOriginalExtension();
+
+                    Image::make($_FILES['images']['tmp_name'][$key])->heighten(600)->save($destinationPath.'/'.$filename);
+
+                    $files_array = array();
+                    $files_array = array_collapse([$files_array, [
+                        'id' => $key+1,
+                        'name' => $filename
+                    ]]);
+
+                    $result = array_add($result, $key , $files_array);
+                    $jsonresult = json_encode($result);
+
+                    $reporter->thumbnail = $jsonresult;
+                    $reporter->save();
+                }
+            }
+        }
+
+        $video = $request->file('video');
+        $video_rules = array(
+            'video' => 'mimes:mimes:m4v,avi,flv,mp4,mov,3gp | max:51200'
+        );
+
+        if($request->hasFile('video')){
+            $targetVideo = array(
+                'video' => $video
+            );
+            $validator = Validator::make($targetVideo, $video_rules);
+
+            if ($validator->fails())
+            {
+                return redirect()->route('front.reporter');
+            }
+            else
+            {
+                $storage = \Storage::disk('public');
+                $destinationPath = 'froala/videos';
+                $storage->makeDirectory($destinationPath);
+
+                $filename = time().'.'.$video->getClientOriginalExtension();
+                $video->move($destinationPath, $filename);
+
+                $reporter->video = $filename;
+                $reporter->save();
+            }
+        }
+
+        return redirect()->route('front.reporter');
+    }
 }
 

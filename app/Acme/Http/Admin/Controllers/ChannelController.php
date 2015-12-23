@@ -38,7 +38,7 @@ class ChannelController extends Controller
      */
     public function store(Request $request)
     {
-        $channel = Channel::create($request->except('file'));
+        $channel = Channel::create($request->except('file','q'));
 
         if($request->hasFile('file'))
         {
@@ -93,7 +93,7 @@ class ChannelController extends Controller
      */
     public function update(Request $request, Channel $channel)
     {
-        $channel->update($request->except('file'));
+        $channel->update($request->except('file','q'));
 
         if($request->hasFile('file'))
         {

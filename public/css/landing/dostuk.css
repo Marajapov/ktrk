@@ -51,6 +51,8 @@ header {
 #about img {
   height: 320px;
   width: auto;
+  margin: auto;
+  display: block;
 }
 .fixed {
   position: fixed;
@@ -73,9 +75,19 @@ header {
   position: relative;
   top: 10px;
   left: 20px;
+  z-index: 1;
+}
+@media (max-width:550px) {
+  .onetime {
+    right: 70px !important;
+    position: absolute;
+    display: block;
+    left: inherit;
+    top: -42px;
+  }
 }
 .onetime .btn {
-  background: #FF9800;
+  background: #0CB2AB;
   color: #fff;
   font-size: 16px;
   border-radius: 5px !important;
@@ -84,7 +96,7 @@ header {
 }
 .onetime i {
   padding: 10px;
-  background: #CA7B07;
+  background: #2DA29E;
   border-top-left-radius: 5px !important;
   border-bottom-left-radius: 5px !important;
 }
@@ -120,14 +132,15 @@ header {
   margin: 0 0 20px;
 }
 .section-header .section-title:before {
-  content: "";
-  position: absolute;
-  width: 140px;
-  bottom: 0;
-  left: 50%;
-  margin-left: -70px;
-  height: 1px;
-  background: #ebebeb;
+    content: "";
+    position: absolute;
+    width: 640px;
+    bottom: 0;
+    height: 2px;
+    background: #0CB2AB;
+    left: 0;
+    right: 0;
+    margin: auto;
 }
 .section-header .section-title:after {
   content: "";
@@ -139,7 +152,40 @@ header {
   margin-left: -12px;
   border: 5px solid #fff;
   border-radius: 20px;
-  background: #45aed6;
+  background: #607D8B;
+}
+
+.section-header2 {
+  margin-bottom: 50px;
+}
+.section-header2 .section-title {
+  font-size: 44px;
+  color: #272727;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 20px;
+  margin: 0 0 20px;
+}
+.section-header2 .section-title:before {
+    content: "";
+    position: absolute;
+    width: 640px;
+    bottom: 0;
+    height: 1px;
+    background: #ebebeb;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.section-header2 .section-title:after {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  bottom: -11px;
+  left: 50%;
+  margin-left: -12px;
+  border-radius: 20px;
 }
 .btn {
   border-width: 0;
@@ -159,14 +205,15 @@ header {
   border-bottom: 1px solid #eee;
   margin-bottom: 15px;
   position: relative;
+  text-align: center;
 }
 .column-title:after {
   content: " ";
   position: absolute;
   bottom: -1px;
   left: 0;
-  width: 40%;
-  border-bottom: 1px solid #45aed6;
+  width: 100%;
+  border-bottom: 2px solid #45aed6;
 }
 ul.nostyle {
   list-style: none;
@@ -214,8 +261,19 @@ ul.nostyle i {
   border: 0;
   border-radius: 0;
   margin-bottom: 0;
+  background:#607D8B;
+  padding: 0px 10px 0px 10px;
+  z-index: 9999;
+    -webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.6);
 }
 .navbar.navbar-default .navbar-toggle {
+  border: 1px solid #F7F8F9;
+  padding: 5px;
+  margin-top: 15px; 
+}
+.navbar.navbar-default .navbar-toggle:hover {
+  background: none !important;
 }
 .navbar.navbar-default .navbar-brand {
   height: auto;
@@ -226,6 +284,7 @@ ul.nostyle i {
   height: 50px;
   width: auto;
   float: left;
+  margin-top: 5px;
 }
 .navbar-brand {
   color: #fff !important;
@@ -288,7 +347,6 @@ ul.nostyle i {
 }
 #main-slider {
   overflow: hidden;
-  margin-top: 50px;
 }
 #main-slider .item {
   height: 358px;
@@ -491,7 +549,7 @@ ul.nostyle i {
   border-radius: 0 4px 4px 0;
 }
 #portfolio .portfolio-items {
-  margin: -15px;
+
 }
 #portfolio .portfolio-item {
   width: 24%;
@@ -729,8 +787,6 @@ ul.nostyle i {
 .nav.main-tab > li.active > a {
   background: #607D8B;
   color: #FFFFFF;
-  font-weight: bold;
-  font-size: 17px;
 }
 .nav.main-tab > li:first-child > a {
   border-radius: 3px 0 0 0;
@@ -853,11 +909,11 @@ ul.nostyle i {
 }
 #get-in-touch {
   padding: 100px 0 50px;
-  background-image: -moz-linear-gradient(90deg, #2caab3 0%, #fff 100%);
-  background-image: -webkit-linear-gradient(90deg, #2caab3 0%, #fff 100%);
-  background-image: -ms-linear-gradient(90deg, #2caab3 0%, #fff 100%);
+  background-image: -moz-linear-gradient(90deg, #2caab3 0%, #FF9800  100%);
+  background-image: -webkit-linear-gradient(90deg, #2caab3 0%, #FF9800  100%);
+  background-image: -ms-linear-gradient(90deg, #2caab3 0%, #FF9800  100%);
   color: #fff;
-  margin: 50px 0px;
+  margin-top: 40px;
 }
 #get-in-touch h1, #get-in-touch h2 {
   color: #fff;

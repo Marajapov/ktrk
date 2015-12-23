@@ -1,11 +1,9 @@
 @extends('Front::layouts.default')
-@section('title', $row->getName())
-
+@section('title', $gallery->getName())
 @section('styles')
   {{--<link rel="stylesheet" type="text/css" href="{{ asset('/static/css/styles.css') }}">--}}
   <link rel="stylesheet" href="{{ asset('css/articles.css') }}"/>
   <link rel="stylesheet" href="{{ asset('css/pages.css') }}"/>
-  <link rel="stylesheet" href="{{ asset('css/build.css') }}"/>
 @stop
 
 @section('styles')
@@ -20,37 +18,39 @@
           <div class="top-left-block col-xs-12 col-sm-12 col-md-12">
             <div class="panel panel-default panel-kenesh">
               <div class="panel-heading">
-                <h3 class="panel-title"><span>{{ $row->getName() }}</span></h3>
+                <h3 class="panel-title"><span>{{ $gallery->getName() }}</span></h3>
               </div>
               <div class="panel-body">
 
-                <div class="col-md-10">
+                <div class="col-md-12">
                   <div class="row">
                     <div class="panel-heading second-panel-heading">
                       
                     </div>
                     <div class="panel-body second-panel-body">
 
+                    <p style="margin-bottom: 20px;">{{ $gallery->getDescription() }}</p>
+
                       <div class="col-md-12">
 
                         <div class="row">
                           <div class="slider-for">
                             @foreach($images as $image)
-                            <div>
-                              <img class="img" src="{{ asset('froala/uploads/'.$image->name) }}" alt=""/>
-                              <span class="slide-caption">
-                                {{ $row->getName() }}
-                              </span>
-                            </div>
+                              <div>
+                                <img class="img" src="{{ asset('froala/uploads/'.$image->name) }}" alt=""/>
+                                <span class="slide-caption hidden">
+                                  {{ $gallery->getName() }}
+                                </span>
+                              </div>
                             @endforeach
                             
                           </div>
 
                           <div class="slider-nav col-md-12">
                             @foreach($images as $image)
-                            <div>
-                              <img class="img" src="{{ asset('froala/uploads/'.$image->name) }}" alt=""/>
-                            </div>
+                              <div>
+                                <img class="img" src="{{ asset('froala/uploads/'.$image->name) }}" alt=""/>
+                              </div>
                             @endforeach
                           </div>
                          

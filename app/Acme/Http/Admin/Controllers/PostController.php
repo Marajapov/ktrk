@@ -19,12 +19,10 @@ class PostController extends Controller
      */
     public function index()
     {
-        $perPage = 15;
-        $posts = Post::orderBy('id', 'desc')->paginate($perPage);
-
+        $posts = Post::orderBy('number','asc')->orderBy('id', 'desc')->get();
+        
         return view('Admin::post.index', [
             'posts' => $posts,
-            'perPage' => $perPage,
             ]);
     }
 
@@ -46,6 +44,7 @@ class PostController extends Controller
 
         $relatedPosts = \Model\Post\ModelName::where('title','<>','')->lists('title', 'id')->toArray();
         $relatedPosts2 = \Model\Post\ModelName::where('titleRu','<>','')->lists('titleRu', 'id')->toArray();
+
         return view('Admin::post.create', [
             'post' => new Post, 
             'tags' => $tags,
@@ -68,7 +67,10 @@ class PostController extends Controller
     public function store(Request $request)
     {
 
-        $post = Post::create($request->except('tag_kg','tag_ru','thumbnail','q'));
+        $post = Post::create($request->except('tag_kg','tag_ru','thumbnail','q','channel_id','created_at','number'));
+
+        $post->number = 99;
+        $post->save();
 
         $tag_kg_string = $request->input('tag_kg');
         $tags = explode("; ",$tag_kg_string);
@@ -117,15 +119,34 @@ class PostController extends Controller
             $btw = time();
 
             $name = $post->id().$btw.'.'.$file->getClientOriginalExtension();
+            $name2 = $post->id().$btw.'_big.'.$file->getClientOriginalExtension();
 
 //            $manager = new ImageManager(array('driver' => 'imagick'));
 
             $storage = \Storage::disk('public');
             $storage->makeDirectory($dir);
 
-            Image::make($_FILES['thumbnail']['tmp_name'])->resize(250, 150)->save($dir.'/'.$name);
+            Image::make($_FILES['thumbnail']['tmp_name'])->fit(250, 150)->save($dir.'/'.$name);
+            Image::make($_FILES['thumbnail']['tmp_name'])->fit(500, 300)->save($dir.'/'.$name2);
 
             $post->thumbnail = $dir.'/'.$name;
+            $post->thumbnail_big = $dir.'/'.$name2;
+            $post->save();
+        }
+
+        if($request->input('channel_id') == null){
+            $channel_id = 1;
+            $post->channel_id = $channel_id;
+        }
+        if($request->input('created_at') != null){
+            $postDate = $request->input('created_at');
+            $todayTime = date('H:i:s');
+            $saveDate = date('Y-m-d', strtotime($postDate));
+            $result = $saveDate.' '.$todayTime;
+            $post->created_at = $result;
+            $post->save();
+        }else{
+            $post->created_at = date('Y-m-d H:i:s');
             $post->save();
         }
 
@@ -187,7 +208,7 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        $post->update($request->except('tag_kg','tag_ru','thumbnail','q'));
+        $post->update($request->except('tag_kg','tag_ru','thumbnail','q','channel_id','created_at'));
 
         $tag_kg_string = $request->input('tag_kg');
         $tags = explode("; ",$tag_kg_string);
@@ -237,16 +258,38 @@ class PostController extends Controller
             $btw = time();
 
             $name = $post->id().$btw.'.'.$file->getClientOriginalExtension();
-
-            Image::make($_FILES['thumbnail']['tmp_name'])->resize(250, 150)->save($dir.'/'.$name);
+            $name2 = $post->id().$btw.'_big.'.$file->getClientOriginalExtension();
 
             $storage = \Storage::disk('public');
             $storage->makeDirectory($dir);
 
+            Image::make($_FILES['thumbnail']['tmp_name'])->fit(250, 150)->save($dir.'/'.$name);
+            Image::make($_FILES['thumbnail']['tmp_name'])->fit(500, 300)->save($dir.'/'.$name2);
+
             $post->thumbnail = $dir.'/'.$name;
+            $post->thumbnail_big = $dir.'/'.$name2;
             $post->save();
         }
 
+        if($request->input('channel_id') == null){
+            $channel_id = 1;
+            $post->channel_id = $channel_id;
+        }
+        if($request->input('created_at') != null){
+
+            $postDate = $request->input('created_at');
+            
+            $todayTime = date('H:i:s');
+            $saveDate = date('Y-m-d', strtotime($postDate));
+            $result = $saveDate.' '.$todayTime;
+            $post->created_at = $result;
+            $post->save();
+        }else{
+            $today = date('Y-m-d H:i:s');
+            dd($today);
+            $post->created_at = date('Y-m-d H:i:s');
+            $post->save();
+        }
 
         return redirect()->route('admin.post.show', $post);
     }
@@ -261,6 +304,29 @@ class PostController extends Controller
     {
         $post->delete();
 
+        return redirect()->route('admin.post.index');
+    }
+
+    // Number for list the rating
+    public function number(Request $request, $number)
+    {
+        $postId = $number;
+        $number = $request->number;
+
+        $row = \Model\Post\ModelName::where('id','=',$postId)->first();
+        $row->number = $number;
+        $row->save();
+        return redirect()->route('admin.post.index');
+    }
+
+    // Unnumber for list the rating
+    public function unnumber(Request $request, $number)
+    {
+        $postId = $number;
+
+        $row = \Model\Post\ModelName::where('id','=',$postId)->first();
+        $row->number = 99;
+        $row->save();
         return redirect()->route('admin.post.index');
     }
 }

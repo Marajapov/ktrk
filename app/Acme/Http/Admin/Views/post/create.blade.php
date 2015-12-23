@@ -19,10 +19,6 @@
   </div>
 @stop
 
-@section('styles')
-  <link rel="stylesheet" href="{{ asset('css/admin/select/select2.min.css') }}"/>
-@stop
-
 @section('scripts')
 
   <!-- Include JS files. -->
@@ -105,10 +101,27 @@
       }
     );
     $('#tag_ru').tokenfield(
-            {
-              typeahead: [null, { source: engine.ttAdapter() }],
-              delimiter: ";"
-            }
+      {
+        typeahead: [null, { source: engine.ttAdapter() }],
+        delimiter: ";"
+      }
     );
+  </script>
+
+  <script type="text/javascript" src="{{ asset('js/moment.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/ru.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/transition.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/collapse.js') }}"></script>
+  <script src="{{ asset('js/bootstrap-datetimepicker.js') }}"></script>
+  <script>
+    $('#date').datetimepicker({
+      locale: 'ru',
+      format: 'DD-MM-YYYY'
+    });
+
+    $('#time').datetimepicker({
+      locale: 'ru',
+      format: 'LT'
+    });
   </script>
 @stop

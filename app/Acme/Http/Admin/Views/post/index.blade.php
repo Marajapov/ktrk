@@ -1,6 +1,10 @@
 @extends('Admin::layouts.default')
 @section('title', "Posts")
 
+@section('styles')
+  <link rel="stylesheet" href="{{ asset('css/admin/dataTables.bootstrap.css') }}"/>
+@endsection
+
 @section('content')
   <div class="row modals">
 
@@ -16,26 +20,16 @@
 
       <div class="x_content clearfix">
 
-        <div class="clearfix">
-          <div class="title_right">
-            <div class="col-md-4 col-sm-4 col-xs-12 form-group pull-right top_search">
-              <div class="input-group">
-                <input type="text" class="form-control" placeholder="Издөө...">
-								<span class="input-group-btn">
-									<button class="btn btn-default" type="button">ОК!</button></span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <table class="table table-striped">
+        <table id="example" class="table table-striped table-bordered" data-order='[[ 0, "desc" ]]' data-page-length='10'>
           <thead>
             <tr>
+              <th>ID</th>
               <th>Миниатюра</th>
               <th>{{ trans('site.TitleKG') }}</th>
               <th>{{ trans('site.TitleRU') }}</th>
               <th class="hidden-xs">Автор</th>
               <th class="hidden-xs">Дата добавления</th>
+              <th class="hidden-xs">На главном(6)</th>
               <th class="hidden-xs">Статус</th>
               <th>Действия</th>
             </tr>
@@ -43,6 +37,9 @@
           <tbody>
             @foreach($posts as $key => $post)
               <tr>
+                <td class="table-title">
+                  {{ $post->id }}
+                </td>
                 <td class="table-img">
                   <img src="{{ asset($post->thumbnail) }}" alt=""/>
                 </td>
@@ -58,6 +55,27 @@
                 </td>
                 <td class="hidden-xs">{{ $post->owner()->first()->name }}</td>
                 <td class="hidden-xs">{{ $post->getTime().', '.$post->getDateFormatted() }} </td>
+                <td>
+                  @if(($post->number) > 0 && ($post->number) != 99)
+                    {!! Form::open(['route' => ['admin.post.unnumber', $post], 'method' => 'GET', 'onsubmit' => "return confirm('Вы уверены ?')"]) !!}
+                    <div class="input-group">
+                      <input type="text" style="width:100px;" disabled="disabled" value="{{ $post->number}}" class="form-control">
+                      <span class="input-group-btn">
+                      <button type="submit" class="btn btn-primary">Убрать!</button> 
+                      </span>
+                    </div>
+                    {!! Form::close() !!}
+                  @else
+                    {!! Form::open(['route' => ['admin.post.number', $post], 'method' => 'GET', 'onsubmit' => "return confirm('Вы уверены ?')"]) !!}
+                    <div class="input-group">
+                      <input name="number" style="width:100px;" type="text" class="form-control">
+                      <span class="input-group-btn">
+                      <button type="submit" class="btn btn-primary">Ок!</button> 
+                      </span>
+                    </div>
+                    {!! Form::close() !!}
+                  @endif
+                </td>
                 <td class="hidden-xs">
                   @if($post->published == '1')
                     опубликован
@@ -80,37 +98,48 @@
                     <i class="fa fa-trash"></i>
                   </button>
                   {!! Form::close() !!}
+
                 </td>
               </tr>
             @endforeach
           </tbody>
         </table>
 
-        <div class="list-group hidden">
-          @foreach($posts as $post)
-            <div class="@if(!$post->isPublished()) alert alert-danger list-group-item @endif list-group-item">
-              <i>
-                {{ $post->id() }}. </i><a href="{{ route('admin.post.show', $post) }}">{{ $post->getTitleRuOrKg() }}</a>
-              ({{ $post->category->getTitle()  }}) <span class="pull-right">Кто добавил: {{ $post->owner()->first()->name }}, Дата: {{ $post->getDate() }}</span>
-            </div>
-          @endforeach
-        </div>
-
       </div>
-
-      <a href="{{ route('admin.post.index', ['page' => 1]) }}" class="btn btn-default @if($posts->currentPage() == 1) disabled @endif">{{ trans('site.Start') }}</a>
-      <a href="{{ $posts->previousPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span></a>
-      <a href="{{ $posts->nextPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-right"></span></a>
-
-      @for($i = 0, $j = 1; $i < $posts->total(); $i+=$perPage)
-        <a href="{{ route('admin.post.index', ['page' => $j]) }}" class="btn btn-default @if($posts->currentPage() == $j) disabled @endif">{{ $j++ }}</a>
-      @endfor
-
-      <a href="{{ route('admin.post.index', ['page' => ceil($posts->total()/$perPage)]) }}" class="btn btn-default @if($posts->currentPage() == ceil($posts->total()/$perPage)) disabled @endif">{{ trans('site.End') }}</a>
-
 
     </div>
   </div>
 
 @stop
+
+@section('scripts')
+  <script src="{{ asset('js/admin/jquery.dataTables.js') }}"></script>
+  <script src="{{ asset('js/admin/dataTables.bootstrap.js') }}"></script>
+
+  <script>
+    $(document).ready(function() {
+      $('#example').DataTable({
+        "language": {
+          "info": "_START_ - _END_ : {{ trans('site.DataTableTotal') }} _TOTAL_ ",
+          "lengthMenu" : "_MENU_ ",
+          "search" : "{{ trans('site.DataTableSearch') }} ",
+          "zeroRecords" : "{{ trans('site.DataTableNoResult') }}",
+          "infoEmpty" : "0-0: {{ trans('site.DataTableTotal') }} 0",
+          "infoFiltered" : "",
+
+          "paginate": {
+            "first": "{{ trans('site.DataTableFirstPage') }}",
+            "last": "{{ trans('site.DataTableLastPage') }}",
+            "next": "{{ trans('site.DataTableNextPage') }}",
+            "previous": "{{ trans('site.DataTablePreviousPage') }}"
+          }
+        },
+        "columnDefs": [
+          { "orderable": false, "targets": 1 },
+          { "orderable": false, "targets": 7 }
+        ]
+      });
+    } );
+  </script>
+@endsection
 

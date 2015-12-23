@@ -1,15 +1,8 @@
-<!DOCTYPE html>
-<html>
-   <head lang="en">
-      <meta charset="UTF-8">
-      <title>Видео</title>
-      <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}"/>
-      <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}"/>
-      <link rel="stylesheet" href="{{ asset('filter/css/layout.css') }}">
-      <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick.css') }}"/>
-      <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick-theme.css') }}"/>
-      <link rel="stylesheet" href="{{ asset('css/style.css') }}"/>
-   </head>
+@extends('Front::channel.balastan.default')
+@section('title', "Баластан")
+@section('styles')
+@endsection
+@section('content')
    <body class="balastan">
       <div class="switch">
          <nav class="navbar">
@@ -62,19 +55,25 @@
          <div class="row">
             <div class="col-md-12 logo-block logocenter">
                <div class="row">
-                  <div class="col-md-12 clouds">
+                  <div class="col-md-12 col-sm-12 col-xs-12 clouds">
                      <div class="sun">
                         <img src="{{asset('images/channels/balastan/sun-icon.png')}}" alt=""/>
                         <!--          <img class="balastanlogo" src="images/channels/balastan_white.png" alt=""/> -->
                      </div>
+                     <div class="langs">
+                        <ul>
+                           <li @if(app()->getlocale() == 'kg') class="active" @endif><a href="/locale/kg">кырг <span></span></a></li>
+                           <li @if(app()->getlocale() == 'ru') class="active" @endif><a href="/locale/ru">рус <span></span></a></li>
+                        </ul>
+                     </div>
                      <img src="{{asset('images/channels/balastan/clouds.png')}}" alt=""/> 
                      <nav class="cloudlinks">
                         <ul>
-                           <li><a href="{{ route('balastan.home') }}">Главная</a></li>
-                           <li><a href="{{ route('balastan.about') }}">О нас</a></li>
-                           <li><a href="{{ route('balastan.world') }}">В мире Баластана</a></li>
+                           <li><a href="{{ route('balastan.home') }}">{{ trans('radiopages.Home') }}</a></li>
+                           <li><a href="{{ route('balastan.about') }}">{{ trans('radiopages.BAbout') }}</a></li>
+                           <li><a href="{{ route('balastan.world') }}">{{ trans('radiopages.Bworld') }}</a></li>
                            <li><a class="active" href="{{ route('balastan.video') }}">Видео</a></li>
-                           <li><a href="{{ route('balastan.photos') }}">Фотогалерея</a></li>
+                           <li><a href="{{ route('balastan.allphotos') }}">{{ trans('radiopages.Photos') }}</a></li>
                         </ul>
                      </nav>
                   </div>
@@ -89,109 +88,73 @@
                      </div> -->
                   <div class="panel-body" style="padding:0px;">
                      <div class="row">
-                        <div class="row" style="margin:0px;">
-                           <div class="col-md-6" >
-                              <div class="kidsvideo kidsmainv">
-                                 <iframe width="100%" height="400px" src="https://www.youtube.com/embed/2tV6RFYqCZg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                     
-                              </div>
-                              <h3>Мультфильм</h3>
-                           </div>
-                           <div class="col-md-6 kidspered">
-                                <h2>Передачи</h2>
-                                <nav>
-                                    <ul>
-                                        <li><a class="kid1" href=""><i class="fa fa-envelope"></i>Бирге окуйбуз</a></li>
-                                        <li><a class="kid2" href=""><i class="fa fa-envelope"></i>Читаем вместе</a></li>
-                                        <li><a class="kid3" href=""><i class="fa fa-envelope"></i>Баарын билгим келет</a></li>
-                                        <li><a class="kid4" href=""><i class="fa fa-envelope"></i>Манас таануу</a></li>
-                                        <li><a class="kid5" href=""><i class="fa fa-envelope"></i>Таалимтай</a></li>
-                                        <li><a class="kid6" href=""><i class="fa fa-envelope"></i>Күн балдары</a></li>
-                                    </ul>
-                                </nav>
-                           </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                           <div class="kidsvideo kidsboard">
-                              <iframe width="100%" height="180px" src="https://www.youtube.com/embed/2tV6RFYqCZg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                          
-                           </div>
-                           <h4>Мультфильм</h4>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                           <div class="kidsvideo kidsboard">
-                              <iframe width="100%" height="180px" src="https://www.youtube.com/embed/2tV6RFYqCZg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                            
-                           </div>
-                           <h4>Мультфильм</h4>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                           <div class="kidsvideo kidsboard">
-                              <iframe width="100%" height="180px" src="https://www.youtube.com/embed/2tV6RFYqCZg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                                   
-                           </div>
-                           <h4>Мультфильм</h4>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                           <div class="kidsvideo kidsboard">
-                              <iframe width="100%" height="180px" src="https://www.youtube.com/embed/2tV6RFYqCZg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                   
-                           </div>
-                           <h4>Мультфильм</h4>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                           <div class="kidsvideo kidsboard">
-                              <iframe width="100%" height="180px" src="https://www.youtube.com/embed/2tV6RFYqCZg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                   
-                           </div>
-                           <h4>Мультфильм</h4>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                           <div class="kidsvideo kidsboard">
-                              <iframe width="100%" height="180px" src="https://www.youtube.com/embed/2tV6RFYqCZg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                   
-                           </div>
-                           <h4>Мультфильм</h4>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                           <div class="kidsvideo kidsboard">
-                              <iframe width="100%" height="180px" src="https://www.youtube.com/embed/2tV6RFYqCZg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                   
-                           </div>
-                           <h4>Мультфильм</h4>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                           <div class="kidsvideo kidsboard">
-                              <iframe width="100%" height="180px" src="https://www.youtube.com/embed/2tV6RFYqCZg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                   
-                           </div>
-                           <h4>Мультфильм</h4>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <footer class="footer">
-         <div class="panel panel-default">
-            <div class="panel-body">
-               <div class="container">
-                  <div class="row">
-                     <div class="col-md-12">
-                        <div class="row">
+                     <div class="row">
+                     <div class="col-md-12 kidspered">
+                         <h2>{{ trans('radiopages.Bperedachi') }}</h2> 
+                         @if($balastanProjects)
+                         @foreach($balastanProjects as $project)                                                         
+                         <nav>
                            <ul>
-                              <li><a href="#">Башкы бет</a></li>
-                              <li><a href="#">КТРК</a></li>
-                              <li><a href="#">Видеопортал</a></li>
-                              <li><a href="#">Телепрограмма</a></li>
-                              <li><a href="#">Байкоочу кеңеш</a></li>
-                              <li><a href="#">Редакциялык кеңешчи</a></li>
-                           </ul>
-                        </div>
+
+                             <li><a class="kid1" href="{{ route('balastan.projectVideos', $project) }}"><i class="fa fa-envelope"></i>{{ $project->getName() }}</a></li>
+                             {{-- <li><a class="kid2" href=""><i class="fa fa-envelope"></i>Баарын билгим келет</a></li>
+                             <li><a class="kid3" href=""><i class="fa fa-envelope"></i>Манас таануу</a></li>
+                             <li><a class="kid4" href=""><i class="fa fa-envelope"></i>Таалимтай</a></li>
+                             <li><a class="kid5" href=""><i class="fa fa-envelope"></i>Күн балдары</a></li> --}}
+
+                          </ul>
+                       </nav>
+                       @endforeach
+                       @endif
+                    </div>
                      </div>
-                     <div class="col-md-12 copy"><i class="fa fa-copyright"></i> 2015 Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясы</div>
+                        
+                        <div class="row" style="margin:0px;">
+
+                           
+                           <div class="col-md-offset-1 col-md-10 col-md-offset-1" >
+                           
+                              @if($balastanLastVideo)
+                              <div class="mainboardimg"> 
+                                 <iframe width="854px" height="480px" src="https://www.youtube.com/embed/{{$balastanLastVideo->getUrl()}}?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                                           
+                              </div>
+                              <img class="mainboarddesc"  src="{{asset('images/channels/balastan/chalkboard.png')}}" alt="">
+                                 <div class="item-desc2">
+                                    <ul>                                  
+                                          <li class="item-artist">{{ $balastanLastVideo->getName() }}</li>
+                                 
+                                    </ul>
+                                 </div>
+                              @endif                         
+                           </div>                         
+                        
+                        </div>
+                        @if($balastanMedias)
+                        @foreach($balastanMedias as $media)
+                            <div class="col-md-3 col-sm-4 col-xs-6 boardaim">
+                              <div class="boardimg">                              
+                                 <a href="{{ route('balastan.video', $media)}}">
+                                 <img src="http://img.youtube.com/vi/{{ $media->getUrl()}}/mqdefault.jpg" alt=""/></a>                        
+                              </div>
+                              <img class="boarddesc"  src="{{asset('images/channels/balastan/chalkboard.png')}}" alt="">
+                                 <div class="item-desc">
+                                    <ul>
+                                       <a href="{{ route('balastan.video', $media)}}">
+                                          <li class="item-artist">{{ $media->getName() }}</li>
+                                       </a>
+                                    </ul>
+                                 </div>
+                           </div>
+                           @endforeach
+                        @endif
+                        
+                    
+                     </div>
                   </div>
                </div>
             </div>
          </div>
-      </footer>
-      <div class="container-fluid">
-         <!--        <img src="{{ asset('images/channels/balastan/footer.png')}}" alt=""> -->
       </div>
-      <script src="js/jquery-1.11.2.min.js"></script>
-      <script src="js/bootstrap.min.js"></script>
-      <script src="js/balastan/jquery.min.js" type="text/javascript"></script>
-   </body>
-</html>
+   @stop
+   @section('footerscript2')
+   @stop

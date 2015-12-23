@@ -16,10 +16,20 @@ class NsController extends Controller
 
     public function index(Request $request) // list of videos
     {
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            $posts = \Model\Post\ModelName::where('ns','=','1')->published()->languagekg()->take(10)->skip(3)->orderBy('id', 'desc')->get();    
+            $popPosts = \Model\Post\ModelName::where('ns','=','1')->published()->languagekg()->take(3)->skip(0)->orderBy('id', 'desc')->get();
+        }elseif($lc == 'ru'){
+            $posts = \Model\Post\ModelName::where('ns','=','1')->published()->languageru()->take(10)->skip(3)->orderBy('id', 'desc')->get();  
+            $popPosts = \Model\Post\ModelName::where('ns','=','1')->published()->languageru()->take(3)->skip(0)->orderBy('id', 'desc')->get();  
+        }
 
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
         return view('Front::ns.index',[
+            'posts' => $posts,
+            'popPosts' => $popPosts,
             'backgroundMain' => $backgroundMain,
         ]);
     }
@@ -34,34 +44,57 @@ class NsController extends Controller
 
     public function posts()
     {
+        $perPage = 10;
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            $postAll = \Model\Post\ModelName::where('ns','=','1')->where('title','<>','')->orderBy('id','desc')->paginate($perPage);
+        }elseif($lc == 'ru'){
+            $postAll = \Model\Post\ModelName::where('ns','=','1')->where('title','<>','')->orderBy('id', 'desc')->paginate($perPage);
+        }
+
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
         return view('Front::ns.posts',[
+            'postAll' => $postAll,
+            'perPage' => $perPage,
             'backgroundMain' => $backgroundMain,
         ]);
     }
 
-    public function post()
+    public function post(\Model\Post\ModelName $post)
     {
+        $lc = app()->getlocale();
+
+        $post->incrementViewed();
+
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
         return view('Front::ns.post',[
+            'post' => $post,
             'backgroundMain' => $backgroundMain,
         ]);
     }
 
     public function galleries()
     {
+        $galleries = \Model\PhotoParent\ModelName::where('ns','=','1')->where('published','=','1')->get();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
         return view('Front::ns.galleries',[
+            'galleries' => $galleries,
             'backgroundMain' => $backgroundMain,
         ]);
     }
 
-    public function gallery()
+    public function gallery(Request $request)
     {
+        $id = $request->photoParentId;
+        $row = \Model\PhotoParent\ModelName::where('id','=',$id)->first();
+        $images = json_decode($row->images); // array of images
+        
         $lc = app()->getlocale();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
         return view('Front::ns.gallery',[
             'lc' => $lc,
+            'images' => $images,
+            'row' => $row,
             'backgroundMain' => $backgroundMain,
         ]);
     }

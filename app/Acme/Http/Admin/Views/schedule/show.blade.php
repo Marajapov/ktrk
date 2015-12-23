@@ -1,21 +1,32 @@
 @extends('Admin::layouts.default')
-@section('title', $schedule->date))
+@section('title', $schedule->date)
 
 @section('content')
   <div class="row modals program-show">
 
     <div class="col-md-12 col-sm-12 col-xs-12">
       <div class="x_panel">
-        <div class="x_title">
-          <h2>
-            Программа передач {{ $schedule->getDay().'-'.mb_strtolower($schedule->getMonthFull()) }}
-            {!! Form::open(['route' => ['admin.schedule.destroy', $schedule], 'method' => 'DELETE', 'class' => 'pull-right', 'onsubmit' => "return confirm('Вы уверены ?')"]) !!}
-            <a class="btn btn-primary" href="{{ route('admin.schedule.edit', $schedule) }}"><i class="fa fa-edit"></i>{{ trans('site.Change') }}</a>
-            <button class="btn btn-danger" type="submit"><i class="fa fa-times"></i>{{ trans('site.Delete') }}</button>
 
-            {!! Form::close() !!}
-          </h2>
+        <div class="x_title clearfix">
+
+          <h4>Программа передач {{ $schedule->getDay().'-'.mb_strtolower($schedule->getMonthFull()) }}</h4>
+
+          <a href="{{ route('admin.schedule.index') }}" class="btn btn-default pull-right btn-back">{{ trans('site.Back') }}</a>
+
+          {!! Form::open(['route' => ['admin.schedule.destroy', $schedule], 'method' => 'DELETE', 'onsubmit' => "return confirm('Вы уверены ?')"]) !!}
+          <button type="submit" class="btn btn-danger" href="#">
+            <i class="fa fa-times"></i>
+            {{ trans('site.Delete') }}
+          </button>
+          {!! Form::close() !!}
+
+          <a href="{{ route('admin.schedule.edit', $schedule) }}" class="btn btn-success pull-right">
+            <i class="fa fa-edit"></i>
+            {{ trans('site.Change') }}
+          </a>
+
         </div>
+
         <div class="x_content program">
 
 

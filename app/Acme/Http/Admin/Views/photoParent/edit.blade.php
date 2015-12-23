@@ -11,7 +11,7 @@
 				<div class="clearfix"></div>
 			</div>
 			<div class="x_content">
-				{!! Form::model($photoParent, ['route' => ['admin.photoParent.update', $photoParent], 'method' => 'PUT', 'enctype' => 'multipart/form-data']) !!}
+				{!! Form::model($photoParent, ['route' => ['admin.photoParent.update', $photoParent], 'method' => 'PUT', 'enctype' => 'multipart/form-data',  'class'=>'form-horizontal']) !!}
 				@include('Admin::partials.forms.photoParent', $photoParent)
 				{!! Form::close() !!}
 			</div>

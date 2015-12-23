@@ -22,6 +22,17 @@ class CreateProjectsTable extends Migration
             $table->text('descriptionRu');
             $table->string('thumbnail');
             $table->string('status');
+
+            $table->string('director');
+            $table->string('ns');
+            $table->string('rs');
+            $table->string('muzkanal');
+            $table->string('kyrgyzradio');
+            $table->string('birinchi');
+            $table->string('balastan');
+            $table->string('madaniyat');
+            $table->string('minkiyal');
+            $table->string('extracolumn');
             $table->timestamps();
         });
     }

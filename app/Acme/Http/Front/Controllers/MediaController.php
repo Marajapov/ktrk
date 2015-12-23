@@ -31,10 +31,12 @@ class MediaController extends Controller
 
         $mediaLastVideos = \Model\Media\ModelName::orderBy('id','desc')->take(9)->get();
 
+        $mediaPops = \Model\Media\ModelName::orderBy('viewed','desc')->take(9)->get();
+
         $mainBanner = \Model\Background\ModelName::where('name','=','main')->first();
         $categories = \Model\Category\ModelName::all();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
-        $projectList = \Model\Project\ModelName::get();
+        $projectList = \Model\Project\ModelName::orderBy('id','desc')->get();
 
         return view('Front::media.index',[
             'mediaAll' => $mediaAll,
@@ -44,7 +46,8 @@ class MediaController extends Controller
             'projectList' => $projectList,
             'mediaCategories'=>$MediaCategories,
             'backgroundMain' => $backgroundMain,
-            'categoriesVideos' => $categoriesVideos
+            'categoriesVideos' => $categoriesVideos,
+            'mediaPops' => $mediaPops
             ]);
     }
 
@@ -59,9 +62,9 @@ class MediaController extends Controller
         $projectId = $video->program; // 0
 
         $videoType = $video->videoType; // serials
+        $videoName = $video->name;
 
         if($lc == 'kg'){
-            $videoName = $video->getName();
             $result = \Model\Project\ModelName::where('id','=',$projectId)->first();
             if($result){
                 $videoProject = $result->getName();
@@ -75,8 +78,7 @@ class MediaController extends Controller
 
             $relatedVideos = \Model\Media\ModelName::where('name','<>','')->where('program','=',$projectId)->get();
 
-        }else{
-            $videoName = $video->getNameRu();
+        }elseif($lc == 'ru'){
             $result = \Model\Project\ModelName::where('id','=',$projectId)->first();
             if($result != null){
                 $videoProject = $result->getNameRu();    

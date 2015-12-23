@@ -15,25 +15,33 @@ Route::group(['domain' => 'ktrk.dev', 'prefix' => '/balastan', 'namespace' => 'F
 
     Route::get('/', ['as' => 'balastan.home',   'uses' => 'BalastanController@Home']);
     Route::get('/posts', ['as' => 'balastan.posts',   'uses' => 'BalastanController@posts']);
-    Route::get('/photos', ['as' => 'balastan.photos',   'uses' => 'BalastanController@photos']);
     Route::get('/world', ['as' => 'balastan.world',   'uses' => 'BalastanController@world']);
     Route::get('/about', ['as' => 'balastan.about',   'uses' => 'BalastanController@about']);
     //New page video
-    Route::get('/video', ['as' => 'balastan.video',   'uses' => 'BalastanController@video']);   
+    Route::get('/video',['as' => 'balastan.video','uses'=> 'BalastanController@video'] );
+    Route::get('/video/{video}',['as' => 'balastan.video','uses'=> 'BalastanController@video'] );
+    Route::get('/projectVideos/{project}',['as' => 'balastan.projectVideos','uses'=> 'BalastanController@projectVideos'] );
+    
+    // Balastan photos one gallery page
+    
+    Route::get('/allphotos',['as' => 'balastan.allphotos','uses'=> 'BalastanController@allphotos'] );
+    Route::get('/photos/{gallery}',['as' => 'balastan.photos','uses'=> 'BalastanController@Gallery'] );
 
 });
 
-Route::group(['domain' => 'ktrk.dev', 'prefix' => '/muzkanal', 'namespace' => 'Front\Controllers'], function() {
 
-    Route::get('/', ['as' => 'muzkanal.home',   'uses' => 'HomeController@Muzkanal']);
+Route::group(['domain' => 'ktrk.dev', 'prefix' => '/music', 'namespace' => 'Front\Controllers'], function() {
+
+    Route::get('/', ['as' => 'muzkanal.home',   'uses' => 'MuzkanalController@Home']);
     Route::get('/posts', ['as' => 'muzkanal.posts',   'uses' => 'MuzkanalController@posts']);
     Route::get('/radio', ['as' => 'muzkanal.radio',   'uses' => 'MuzkanalController@radio']);
     Route::get('/about', ['as' => 'muzkanal.about',   'uses' => 'MuzkanalController@about']);
-    Route::get('/video', ['as' => 'muzkanal.video',   'uses' => 'MuzkanalController@video']);
+    Route::get('/video/{video}', ['as' => 'muzkanal.video',   'uses' => 'MuzkanalController@video']);
     Route::get('/videos', ['as' => 'muzkanal.videos',   'uses' => 'MuzkanalController@videos']);
     Route::get('/hitparad', ['as' => 'muzkanal.hitparad',   'uses' => 'MuzkanalController@hitparad']);
-    Route::get('/photos', ['as' => 'muzkanal.photos',   'uses' => 'MuzkanalController@photos']);
-    Route::get('/contacts', ['as' => 'muzkanal.contacts',   'uses' => 'MuzkanalController@contacts']);
+
+    Route::get('/allphotos',['as' => 'muzkanal.allphotos','uses'=> 'MuzkanalController@allphotos'] );
+    Route::get('/photos/{gallery}',['as' => 'muzkanal.photos','uses'=> 'MuzkanalController@Gallery'] );
 
 });
 
@@ -49,9 +57,9 @@ Route::group(['domain' => 'ktrk.dev', 'prefix' => '/madaniyat', 'namespace' => '
     Route::get('/', ['as' => 'madaniyat.home',   'uses' => 'MadaniyatController@Home']);
     Route::get('/posts', ['as' => 'madaniyat.posts',   'uses' => 'MadaniyatController@posts']);
     Route::get('/about', ['as' => 'madaniyat.about',   'uses' => 'MadaniyatController@about']);
-    Route::get('/contacts', ['as' => 'madaniyat.contacts',   'uses' => 'MadaniyatController@contacts']);
     Route::get('/photos', ['as' => 'madaniyat.photos',   'uses' => 'MadaniyatController@photos']);
     Route::get('/broadcasts', ['as' => 'madaniyat.broadcasts',   'uses' => 'MadaniyatController@broadcasts']);
+    Route::get('/comingsoon', ['as' => 'madaniyat.comingsoon',   'uses' => 'MadaniyatController@ComingSoon']);
 
 });
 
@@ -73,7 +81,7 @@ Route::group(['domain' => 'ktrk.dev', 'prefix' => '/kyrgyzradio', 'namespace' =>
 Route::group(['domain' => 'ktrk.dev', 'prefix' => '/birinchi', 'namespace' => 'Front\Controllers'], function() {
 
     Route::get('/', ['as' => 'birinchi.home',   'uses' => 'BirinchiController@Home']);
-    Route::get('/news', ['as' => 'birinchi.news',   'uses' => 'BirinchiController@news']);
+    Route::get('/news/{post}', ['as' => 'birinchi.news',   'uses' => 'BirinchiController@news']);
     Route::get('/broadcasts', ['as' => 'birinchi.broadcasts',   'uses' => 'BirinchiController@broadcasts']);
     Route::get('/about', ['as' => 'birinchi.about',   'uses' => 'BirinchiController@about']);
     Route::get('/photos', ['as' => 'birinchi.photos',   'uses' => 'BirinchiController@photos']);
@@ -125,7 +133,10 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
 
 
     Route::get('history', ['as' => 'front.history', 'uses' => 'PageController@historyPage']);
+//  Director routes
     Route::get('director', ['as' => 'front.pages.director', 'uses' => 'PageController@directorPage']);
+    Route::get('director/post/{post}', ['as' => 'front.pages.directorPost', 'uses' => 'PageController@directorPost']);
+
     Route::get('leaders', ['as' => 'front.pages.leaders', 'uses' => 'PageController@leadersPage']);
 //    Route::get('leader/{leader}', ['as' => 'front.pages.leader', 'uses' => 'PageController@leaderPage']);
     Route::get('strategy', ['as' => 'front.pages.strategy', 'uses' => 'PageController@strategyPage']);
@@ -133,6 +144,7 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
     Route::get('rrts', ['as' => 'front.pages.rrts', 'uses' => 'PageController@rrtsPage']);
     Route::get('report', ['as' => 'front.pages.report', 'uses' => 'PageController@reportPage']);
     Route::get('teleprogram', ['as' => 'front.pages.teleprogram', 'uses' => 'PageController@teleprogramPage']);
+    Route::get('teleprogram/{channel}', ['as' => 'front.pages.teleprogram', 'uses' => 'PageController@ChannelTeleprogram']);
 //    Route::get('ns', ['as' => 'front.pages.ns', 'uses' => 'PageController@keneshPage']);
     Route::get('editionkenesh', ['as' => 'front.pages.editionkenesh', 'uses' => 'PageController@editionkeneshPage']);
 
@@ -157,7 +169,15 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
     Route::get('rs/contacts', ['as' => 'front.rs.contacts', 'uses' => 'RsController@contacts']);
 
     // Gallery page
-    Route::get('/gallery/{gallery}',['as' => 'front.gallery','uses'=> 'HomeController@Gallery']);
+    Route::get('/gallery/{gallery}',['as' => 'front.gallery','uses'=> 'HomeController@Gallery'] );
+    Route::get('/galleries',['as' => 'front.gallery.galleries','uses'=> 'HomeController@Galleries']);
+
+//    Народный репортер
+    Route::get('/reporter',['as'=>'front.reporter','uses'=>'HomeController@Reporter']);
+    Route::post('reporter.add',['as'=>'front.reporter.add','uses'=>'HomeController@ReporterAdd']);
+
+//    AJAX CALL
+    Route::get('/ajax_program', 'PageController@AjaxProgram');
 
 Route::get('locale/{locale?}',   ['as' => 'locale',   'uses' => 'CommonController@setLocale']);
 

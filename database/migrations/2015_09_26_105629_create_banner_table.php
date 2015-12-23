@@ -28,6 +28,18 @@ class CreateBannerTable extends Migration
             $table->boolean('positionRight')->nullable()->default(false);
             $table->boolean('positionLeft')->nullable()->default(false);
             $table->boolean('positionBottom')->nullable()->default(false);
+
+            $table->string('director');
+            $table->string('ns');
+            $table->string('rs');
+            $table->string('muzkanal');
+            $table->string('kyrgyzradio');
+            $table->string('birinchi');
+            $table->string('balastan');
+            $table->string('madaniyat');
+            $table->string('minkiyal');
+            $table->string('extracolumn');
+            
             $table->timestamps();
 
             $table->foreign('category_id')->references('id')->on('categories')->onUpdate('cascade')->onDelete('set null');

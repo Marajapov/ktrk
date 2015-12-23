@@ -23,15 +23,15 @@ class UserTableSeeder extends Seeder
             'email'      => 'abakano21@gmail.com',
             'password'   => bcrypt('123123'),
             'role'       => 'admin',
-            'channel_id' => 2,
+            'channel_id' => 1,
         ]);
 
           \Model\User\ModelName::create([
-            'name'       => 'Edos',
+            'name'       => 'Eldos',
             'email'      => 'eldos@gmail.com',
             'password'   => bcrypt('123123'),
             'role'       => 'admin',
-            'channel_id' => 3,
+            'channel_id' => 1,
         ]);
 
           \Model\User\ModelName::create([
@@ -39,7 +39,7 @@ class UserTableSeeder extends Seeder
             'email'      => 'aibek@gmail.com',
             'password'   => bcrypt('123123'),
             'role'       => 'admin',
-            'channel_id' => 4,
+            'channel_id' => 1,
         ]);
 
           \Model\User\ModelName::create([
@@ -47,7 +47,7 @@ class UserTableSeeder extends Seeder
             'email'      => 'nurzatnew@gmail.com',
             'password'   => bcrypt('123123'),
             'role'       => 'admin',
-            'channel_id' => 5,
+            'channel_id' => 1,
         ]);
 
           \Model\User\ModelName::create([
@@ -55,7 +55,7 @@ class UserTableSeeder extends Seeder
             'email'      => 'ainura.niazova@gmail.com',
             'password'   => bcrypt('123123'),
             'role'       => 'admin',
-            'channel_id' => 6,
+            'channel_id' => 2,
         ]);
 
           \Model\User\ModelName::create([
@@ -63,7 +63,7 @@ class UserTableSeeder extends Seeder
             'email'      => 'gulshatimanahunova@gmail.com',
             'password'   => bcrypt('123123'),
             'role'       => 'admin',
-            'channel_id' => 7,
+            'channel_id' => 2,
         ]);
 
           \Model\User\ModelName::create([
@@ -71,7 +71,7 @@ class UserTableSeeder extends Seeder
             'email'      => 'public.relations.ktrk@gmail.com',
             'password'   => bcrypt('123123'),
             'role'       => 'admin',
-            'channel_id' => 8,
+            'channel_id' => 2,
         ]);
 
           \Model\User\ModelName::create([
@@ -79,7 +79,7 @@ class UserTableSeeder extends Seeder
             'email'      => 'alimova-mira@mail.ru',
             'password'   => bcrypt('123123'),
             'role'       => 'admin',
-            'channel_id' => 10,
+            'channel_id' => 2,
         ]);
 
           \Model\User\ModelName::create([
@@ -87,7 +87,7 @@ class UserTableSeeder extends Seeder
             'email'      => 'nsmanager@gmail.com',
             'password'   => bcrypt('123123'),
             'role'       => 'ns',
-            'channel_id' => 11,
+            'channel_id' => 2,
         ]);
 
           \Model\User\ModelName::create([
@@ -95,7 +95,23 @@ class UserTableSeeder extends Seeder
             'email'      => 'aigera.250990@gmail.com',
             'password'   => bcrypt('123123'),
             'role'       => 'admin',
-            'channel_id' => 12,
+            'channel_id' => 2,
+        ]);
+
+          \Model\User\ModelName::create([
+            'name'       => 'Usubaly',
+            'email'      => 'usubaly.mambetov@gmail.com',
+            'password'   => bcrypt('usubaly123'),
+            'role'       => 'birinchi',
+            'channel_id' => 7,
+        ]);
+
+          \Model\User\ModelName::create([
+            'name'       => 'Bektur',
+            'email'      => 'bektur_ods@mail.ru',
+            'password'   => bcrypt('bektur123'),
+            'role'       => 'muzkanal',
+            'channel_id' => 3,
         ]);
         //factory(\Model\User\ModelName::class, 50)->create();
     }

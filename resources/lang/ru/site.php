@@ -105,7 +105,19 @@ return [
     'TagsRU' => 'Теги на русском',
     'TextKG' => 'Текст на кыргызском',
     'TextRU' => 'Текст на русском',
+    'DescKG' => 'Описание на кыргызском',
+    'DescRU' => 'Описание на русском',
+    'AuthorKG' => 'Автор на кыргызском',
+    'AuthorRU' => 'Автор на русском',
+    'Images' => 'Изображения',
+    'Select' => 'Выбрать',
     '' => '',
+
+    //    Народный репортер
+    'Reporter' => 'Народный репортер',
+    'ReporterAdd' => 'Добавить новость',
+    'AdminReporterName' => 'Имя',
+    'AdminReporter' => '',
 
     // Admin panel translate
     'AdminHomeTitle' => 'Главная',
@@ -166,6 +178,8 @@ return [
     'AdminMediaArticles' => 'Медиа статьи',
     'AdminMediaTypeSelect' => 'Выберите тип медии',
     'AdminMediaURL' => 'Youtube ID (пример:jh2kL40iY2o)',
+    'AdminMediaView' => 'Кол-во просмотров',
+    'AdminMediaProject' => 'Передача',
     '' => '',
 
     //Media Category menu
@@ -208,6 +222,7 @@ return [
     'AdminPhotoParentChange' => 'Изменить фото галерею',
     'AdminPhotoParentNewGal' => 'Новая фото галерея',
     'AdminPhotoParents' => 'Фото галереи',
+    'AdminPhotoParentLocation' => 'Расположение',
     '' => '',
 
     //Post Menu
@@ -219,7 +234,7 @@ return [
     'AdminPostThemathree' => 'Материал к теме 3',
     'AdminPostEnterText' => 'Введите текст...',
     'AdminPostCreatedDate' => 'Дата создания',
-    '' => '',
+    'AdminPostEdit' => 'Редактировать',
 
     //User menu
     'AdminUserAddNew' => 'Добавить нового пользователя',
@@ -230,18 +245,28 @@ return [
     'AdminUserName' => 'Имя',
     '' => '',
 
+    // Project Menu
+    'AdminProjectAll' => 'Передачи',
+    'AdminProjectAddNew' => 'Новая передача',
+    '' => '',
+    '' => '',
+
     //FRONT language
 
     //Home page
     'FrontPostAll' => 'Все новости',    
     'FrontPostLastNews' => 'Последние новости',
     'FrontPostDaysVideo' => 'Видео дня',    
+    'FrontPostDaysNews' => 'Выпуск новостей',
+    'FrontPostDaysEpisode' => 'Телепроект',
+    'FrontPostDaysAnons' => 'Анонс',
+    'FrontPostDaysMaanai' => 'Маанайшат',
     'FrontPostLastDays' => 'Прошедшие дни',
     'FrontDirectorPage' => 'Страница генерального директора',    
     'FrontVideoAll' => 'Перейти на видеопортал',
     'FrontGalleryAll' => 'Все галереи',
     'FrontToDirectorPage' => 'Перейти на страницу',
-    '' => '',
+    'FrontTeleprogrammChoose' => 'Выберите канал',
     '' => '',
     '' => '',    
     '' => '',
@@ -259,4 +284,14 @@ return [
     'LastVideos' => 'Последние видео',
     'TopVideos' => 'Топ видео',
     'Episodes' => 'Выпуски',
+
+    // Data Tables
+    'DataTableTotal' => 'всего',
+    'DataTableSearch' => 'Поиск',
+    'DataTableNoResult' => 'Ничего не найдено',
+    'DataTableFirstPage' => 'Начало',
+    'DataTableLastPage' => 'Конец',
+    'DataTableNextPage' => 'След.',
+    'DataTablePreviousPage' => 'Пред.',
+
 ];

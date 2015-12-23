@@ -15,7 +15,7 @@ class PeopleReporterController extends Controller
      */
     public function index()
     {
-        $peopleReporters = PeopleReporter::get();
+        $peopleReporters = PeopleReporter::orderBy('id', 'desc')->get();
 
         return view('Admin::peopleReporter.index', ['peopleReporters' => $peopleReporters]);
     }
@@ -38,8 +38,8 @@ class PeopleReporterController extends Controller
      */
     public function store(Request $request)
     {
+        dd($request);
 
-        
         $name = $_FILES['video']['name'];
         $temp = $_FILES['video']['tmp_name'];
         $type = $_FILES['video']['type'];
@@ -67,7 +67,7 @@ class PeopleReporterController extends Controller
         //if((strtolower(end(explode(".",$ff))) =="3gp") || (strtolower(end(explode(".",$ff))) =="flv") || (strtolower(end(explode(".",$ff))) =="x-flv") || (strtolower(end(explode(".",$ff))) =="mp4"))
 
 
-        return redirect()->route('admin.peopleReporter.index');
+        return redirect()->route('front.reporter.index');
     }
 
     /**
@@ -78,8 +78,13 @@ class PeopleReporterController extends Controller
      */
     public function show(PeopleReporter $peopleReporter)
     {
+        $images = json_decode($peopleReporter->thumbnail);
+//        $video = $peopleReporter->video;
 
-        return view('Admin::peopleReporter.show', ['peopleReporter' => $peopleReporter]);
+        return view('Admin::peopleReporter.show', [
+            'peopleReporter' => $peopleReporter,
+            'images' => $images,
+        ]);
     }
 
     /**

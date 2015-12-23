@@ -1,52 +1,38 @@
 @include('Front::messages.flash')
 
-<div class="row">
-    <div class="col-md-6 col-sm-6">
-        <div class="form-group">
-            <label class="control-label">{{ trans('site.AdminUserName') }}</label>
-            {!! Form::text('name', null, ["class" => "form-control", "required" => true, "title" => ""]) !!}
-        </div>
+<div class="panel panel-success">
+  <div class="panel-body">
+
+    <div class="form-group">
+      <label for="channel_id" class="col-sm-2 control-label">{{ trans('site.AdminUserName') }}</label>
+      <div class="col-sm-10">
+        {!! Form::text('name', null, ["class" => "form-control", "required" => true, "title" => ""]) !!}
+      </div>
     </div>
 
-    <div class="col-md-6 col-sm-6">
-        <div class="form-group">
-            <label class="control-label">Канал</label>
-            {!! Form::select('channel_id', \Model\Channel\ModelName::lists('display', 'id')->toArray(), null, ["class" => "select2_group form-control", "required" => true, "title" => ""]) !!}
-        </div>
+    <div class="form-group">
+      <label for="channel_id" class="col-sm-2 control-label">E-mail</label>
+      <div class="col-sm-10">
+        {!! Form::email('email', null, ["class" => "form-control", "required" => true, "title" => ""]) !!}
+      </div>
     </div>
 
-    <div class="col-md-6 col-sm-6">
-        <div class="form-group">
-            <label class="control-label">Роль</label>
-            {!! Form::select('role', ['ADMIN' => 'admin', 'MANAGER' => 'manager'], null, ["class" => "select2_group form-control", "required" => true, "title" => ""]) !!}
-        </div>
+    <div class="form-group">
+      <label for="channel_id" class="col-sm-2 control-label">Канал</label>
+      <div class="col-sm-10">
+        {!! Form::select('channel_id', \Model\Channel\ModelName::lists('display', 'id')->toArray(), null, ["class" => "selectpicker","data-live-search"=>"true", "title" => "-- Выберите --"]) !!}
+      </div>
     </div>
 
-    <div class="col-md-6 col-sm-6">
-        <div class="form-group">
-            <label class="control-label">Почта</label>
-            {!! Form::email('email', null, ["class" => "form-control tinymce-container"]) !!}
-        </div>
+    <div class="form-group">
+      <label for="channel_id" class="col-sm-2 control-label">Роль</label>
+      <div class="col-sm-10">
+        {!! Form::select('role', ['ADMIN' => 'admin', 'MANAGER' => 'manager', 'NS'=>'ns','BIRINCHI'=> 'birinchi', 'MUZKANAL'=> 'muzkanal'], null, ["class" => "selectpicker","data-live-search"=>"true", "title" => "-- Выберите --"]) !!}
+      </div>
     </div>
 
+  </div>
 </div>
 
 <button type="submit" class="btn btn-primary">{{ trans('site.Save') }}</button>
 <a href="{{ route('admin.user.index') }}" class="btn btn-default">{{ trans('site.Back') }}</a>
-
-<!-- select2 -->
-<script>
-    $(document).ready(function () {
-        $(".select2_single").select2({
-            placeholder: "Select a state",
-            allowClear: true
-        });
-        $(".select2_group").select2({});
-        $(".select2_multiple").select2({
-            maximumSelectionLength: 4,
-            placeholder: "With Max Selection limit 4",
-            allowClear: true
-        });
-    });
-</script>
-        <!-- /select2 -->

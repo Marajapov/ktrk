@@ -17,9 +17,20 @@ class RsController extends Controller
     public function index(Request $request) // list of videos
     {
 
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            $posts = \Model\Post\ModelName::where('rs','=','1')->published()->languagekg()->take(10)->skip(3)->orderBy('id', 'desc')->get();    
+            $popPosts = \Model\Post\ModelName::where('rs','=','1')->published()->languagekg()->take(3)->skip(0)->orderBy('id', 'desc')->get();
+        }elseif($lc == 'ru'){
+            $posts = \Model\Post\ModelName::where('rs','=','1')->published()->languageru()->take(10)->skip(3)->orderBy('id', 'desc')->get();  
+            $popPosts = \Model\Post\ModelName::where('rs','=','1')->published()->languageru()->take(3)->skip(0)->orderBy('id', 'desc')->get();  
+        }
+
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
         return view('Front::rs.index',[
+            'posts' => $posts,
+            'popPosts' => $popPosts,
             'backgroundMain' => $backgroundMain,
         ]);
     }
@@ -50,16 +61,31 @@ class RsController extends Controller
 
     public function posts()
     {
+        $perPage = 10;
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            $postAll = \Model\Post\ModelName::where('rs','=','1')->where('title','<>','')->orderBy('id','desc')->paginate($perPage);
+        }elseif($lc == 'ru'){
+            $postAll = \Model\Post\ModelName::where('rs','=','1')->where('title','<>','')->orderBy('id', 'desc')->paginate($perPage);
+        }
+
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
         return view('Front::rs.posts',[
+            'postAll' => $postAll,
+            'perPage' => $perPage,
             'backgroundMain' => $backgroundMain,
         ]);
     }
 
-    public function post()
+    public function post(\Model\Post\ModelName $post)
     {
+        $lc = app()->getlocale();
+
+        $post->incrementViewed();
+
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
         return view('Front::rs.post',[
+            'post' => $post,
             'backgroundMain' => $backgroundMain,
         ]);
     }

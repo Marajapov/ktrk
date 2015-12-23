@@ -28,103 +28,28 @@
                     </div>
                     <div class="panel-body second-panel-body">
 
-                      <h4 class="gallery-title">Асылбек Жээнбеков КТРКнын Байкоочу кеңеши менен жолукту</h4>
+                      <h4 class="gallery-title">{{ $row->getName() }}</h4>
 
                       <div class="col-md-12">
                         <div class="row">
                           <div class="slider-for">
+                          @foreach($images as $image)
                             <div>
-                              <img class="img" src="{{ asset('images/gallery/001.jpg') }}" alt=""/>
+                              <img class="img" src="{{ asset('froala/uploads/'.$image->name) }}" alt=""/>
                               <span class="slide-caption">
-                                @if($lc == 'kg') "Ала-Тоо" аянты алаканга салгандай
-                                @elseif($lc == 'ru') Площадь "Ала-Тоо" как на ладони
-                                @endif
+                                {{ $row->getName() }}
                               </span>
                             </div>
-                            <div>
-                              <img class="img" src="{{ asset('images/gallery/001.jpg') }}" alt=""/>
-                              <span class="slide-caption">
-                                @if($lc == 'kg') "Ала-Тоо" аянты алаканга салгандай
-                                @elseif($lc == 'ru') Площадь "Ала-Тоо" как на ладони
-                                @endif
-                              </span>
-                            </div>
-                            <div>
-                              <img class="img" src="{{ asset('images/gallery/001.jpg') }}" alt=""/>
-                              <span class="slide-caption">
-                                @if($lc == 'kg') "Ала-Тоо" аянты алаканга салгандай
-                                @elseif($lc == 'ru') Площадь "Ала-Тоо" как на ладони
-                                @endif
-                              </span>
-                            </div>
-                            <div>
-                              <img class="img" src="{{ asset('images/gallery/001.jpg') }}" alt=""/>
-                              <span class="slide-caption">
-                                @if($lc == 'kg') "Ала-Тоо" аянты алаканга салгандай
-                                @elseif($lc == 'ru') Площадь "Ала-Тоо" как на ладони
-                                @endif
-                              </span>
-                            </div>
-                            <div>
-                              <img class="img" src="{{ asset('images/gallery/001.jpg') }}" alt=""/>
-                              <span class="slide-caption">
-                                @if($lc == 'kg') "Ала-Тоо" аянты алаканга салгандай
-                                @elseif($lc == 'ru') Площадь "Ала-Тоо" как на ладони
-                                @endif
-                              </span>
-                            </div>
-                            <div>
-                              <img class="img" src="{{ asset('images/gallery/001.jpg') }}" alt=""/>
-                              <span class="slide-caption">
-                                @if($lc == 'kg') "Ала-Тоо" аянты алаканга салгандай
-                                @elseif($lc == 'ru') Площадь "Ала-Тоо" как на ладони
-                                @endif
-                              </span>
-                            </div>
-                            <div>
-                              <img class="img" src="{{ asset('images/gallery/001.jpg') }}" alt=""/>
-                              <span class="slide-caption">
-                                @if($lc == 'kg') "Ала-Тоо" аянты алаканга салгандай
-                                @elseif($lc == 'ru') Площадь "Ала-Тоо" как на ладони
-                                @endif
-                              </span>
-                            </div>
-                            <div>
-                              <img class="img" src="{{ asset('images/gallery/001.jpg') }}" alt=""/>
-                              <span class="slide-caption">
-                                @if($lc == 'kg') "Ала-Тоо" аянты алаканга салгандай
-                                @elseif($lc == 'ru') Площадь "Ала-Тоо" как на ладони
-                                @endif
-                              </span>
-                            </div>
+                            @endforeach
+                            
                           </div>
 
                           <div class="slider-nav col-md-12">
+                            @foreach($images as $image)
                             <div>
-                              <img class="img" src="{{ asset('images/gallery/001.jpg') }}" alt=""/>
+                              <img class="img" src="{{ asset('froala/uploads/'.$image->name) }}" alt=""/>
                             </div>
-                            <div>
-                              <img class="img" src="{{ asset('images/gallery/001.jpg') }}" alt=""/>
-                            </div>
-                            <div>
-                              <img class="img" src="{{ asset('images/gallery/001.jpg') }}" alt=""/>
-                            </div>
-                            <div>
-                              <img class="img" src="{{ asset('images/gallery/001.jpg') }}" alt=""/>
-                            </div>
-                            <div>
-                              <img class="img" src="{{ asset('images/gallery/001.jpg') }}" alt=""/>
-                            </div>
-                            <div>
-                              <img class="img" src="{{ asset('images/gallery/001.jpg') }}" alt=""/>
-                            </div>
-                            <div>
-                              <img class="img" src="{{ asset('images/gallery/001.jpg') }}" alt=""/>
-                            </div>
-                            <div>
-                              <img class="img" src="{{ asset('images/gallery/001.jpg') }}" alt=""/>
-                            </div>
-
+                            @endforeach
                           </div>
                         </div>
                       </div>
@@ -174,7 +99,7 @@
       asNavFor: '.slider-nav'
     });
     $('.slider-nav').slick({
-      slidesToShow: 5,
+      slidesToShow: 3,
       slidesToScroll: 1,
       asNavFor: '.slider-for',
       centerMode: true,

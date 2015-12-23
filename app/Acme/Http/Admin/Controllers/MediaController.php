@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 
 use Model\Media\ModelName as Media;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class MediaController extends Controller
 {
@@ -15,7 +16,7 @@ class MediaController extends Controller
      */
     public function index()
     {
-        $medias = Media::get();
+        $medias = Media::orderby('id','desc')->get();
 
         return view('Admin::media.index', ['medias' => $medias]);
     }
@@ -28,10 +29,12 @@ class MediaController extends Controller
     public function create()
     {
         $projectList = \Model\Project\ModelName::lists('name', 'id')->toArray();
+        
 
         return view('Admin::media.create', [
             'media' => new Media,
             'projectList' => $projectList,
+        
             ]);
     }
 
@@ -44,7 +47,38 @@ class MediaController extends Controller
     public function store(Request $request)
     {
 
-        Media::create($request->except('q'));
+        $media = Media::create($request->except('q', 'thumbnail','hitnumber'));
+
+        if($request->input('hitnumber')){
+            $hitnumber = $request->input('hitnumber');
+            $allMedias = \Model\Media\ModelName::where('hitnumber','=',$hitnumber)->get();
+            foreach ($allMedias as $key => $value) {
+                $value->hitnumber = 0;
+            }
+
+            $media->hitnumber = $hitnumber;
+            $media->save();
+        }
+
+
+        if($request->hasFile('thumbnail'))
+        {
+            $file = $request->file('thumbnail');
+            $dir  = 'img/thumbnail';
+            $btw = time();
+
+            $name = $media->id().$btw.'.'.$file->getClientOriginalExtension();
+
+//            $manager = new ImageManager(array('driver' => 'imagick'));
+
+            $storage = \Storage::disk('public');
+            $storage->makeDirectory($dir);
+
+            Image::make($_FILES['thumbnail']['tmp_name'])->fit(250, 150)->save($dir.'/'.$name);
+
+            $media->thumbnail = $dir.'/'.$name;
+            $media->save();
+        }
 
         return redirect()->route('admin.media.index');
     }
@@ -57,8 +91,29 @@ class MediaController extends Controller
      */
     public function show(Media $media)
     {
+        if($media->videoType)
+        {
+            $mediaCategory = \Model\MediaCategory\ModelName::where('videoType','=',$media->videoType)->first();
+        }
+        else
+        {
+            $mediaCategory = '';
+        }
 
-        return view('Admin::media.show', ['media' => $media]);
+        if($media->program)
+        {
+            $project = \Model\Project\ModelName::where('id','=',$media->program)->first();
+        }
+        else
+        {
+            $project = '';
+        }
+
+        return view('Admin::media.show', [
+            'media' => $media,
+            'mediaCategory' => $mediaCategory,
+            'project' => $project,
+        ]);
     }
 
     /**
@@ -70,7 +125,7 @@ class MediaController extends Controller
     public function edit(Media $media)
     {
         $projectList = \Model\Project\ModelName::lists('name', 'id')->toArray();
-
+        
         return view('Admin::media.edit', [
             'media' => $media,
             'projectList' => $projectList,
@@ -86,7 +141,37 @@ class MediaController extends Controller
      */
     public function update(Request $request, Media $media)
     {
-        $media->update($request->except('q'));
+        $media->update($request->except('q', 'thumbnail','hitnumber'));
+
+        if($request->input('hitnumber')){
+            $hitnumber = $request->input('hitnumber');
+            
+            $allMedias = \Model\Media\ModelName::where('hitnumber','=',$hitnumber)->get();
+            foreach ($allMedias as $key => $value) {
+                $value->hitnumber = 0;
+                $value->save();
+            }
+
+            $media->hitnumber = $hitnumber;
+            $media->save();
+        }
+
+        if($request->hasFile('thumbnail'))
+        {
+            $file = $request->file('thumbnail');
+            $dir  = 'img/thumbnail';
+            $btw = time();
+
+            $name = $media->id().$btw.'.'.$file->getClientOriginalExtension();
+
+            Image::make($_FILES['thumbnail']['tmp_name'])->fit(250, 150)->save($dir.'/'.$name);
+
+            $storage = \Storage::disk('public');
+            $storage->makeDirectory($dir);
+
+            $media->thumbnail = $dir.'/'.$name;
+            $media->save();
+        }
 
         return redirect()->route('admin.media.show', $media);
     }
@@ -175,21 +260,26 @@ class MediaController extends Controller
         return redirect()->route('admin.media.index');
     }
 
-    // video5
-    public function dayVideo5(Request $request)
+     // Number for list the rating
+    public function number(Request $request, $number)
     {
-        $id = $request->media;
-        $mediaStars = \Model\Media\ModelName::where('dayVideo','=','5')->get();
-        foreach($mediaStars as $mediaStar)
-        {
-            $mediaStar->dayVideo = 0;
-            $mediaStar->save();
-        }
+        $postId = $number;
+        $number = $request->number;
 
-        $row = \Model\Media\ModelName::where('id','=',$id)->first();
-        $row->dayVideo = 5;
+        $row = \Model\Post\ModelName::where('id','=',$postId)->first();
+        $row->number = $number;
         $row->save();
-        
+        return redirect()->route('admin.media.index');
+    }
+
+    // Unnumber for list the rating
+    public function unnumber(Request $request, $number)
+    {
+        $postId = $number;
+
+        $row = \Model\Post\ModelName::where('id','=',$postId)->first();
+        $row->number = 99;
+        $row->save();
         return redirect()->route('admin.media.index');
     }
 }

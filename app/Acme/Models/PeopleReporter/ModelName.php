@@ -68,4 +68,11 @@ class ModelName extends Model
         return $this->contentRu;
     }
 
+    public function getDateFormatted()
+    {
+        $fullDate = $this->created_at;
+        $date = date('d/m/Y', strtotime($fullDate));
+        return $date;
+    }
+
 }

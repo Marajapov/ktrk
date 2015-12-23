@@ -24,17 +24,6 @@
       <div>
         <div class="overlay"></div>
         <a href="#">
-          <img src="{{ asset('images/projects/jumakairyk.jpg') }}" alt=""/>
-        </a>
-        <div class="show-info">
-          <h4>Жумакайрык</h4>
-          <span class="show-day">{{ trans('site.Sunday') }}</span>
-          <span class="show-time">21:00</span>
-        </div>
-      </div>
-      <div>
-        <div class="overlay"></div>
-        <a href="#">
           <img src="{{ asset('images/projects/zamana.jpg') }}" alt=""/>
         </a>
         <div class="show-info">
@@ -46,7 +35,7 @@
       <div>
         <div class="overlay"></div>
         <a href="#">
-          <img src="{{ asset('images/projects/hit-parad2.jpg') }}" alt=""/>
+          <img src="{{ asset('images/projects/hit-parad.jpg') }}" alt=""/>
         </a>
         <div class="show-info">
           <h4>Хит-Парад</h4>
@@ -125,15 +114,20 @@
                           </div>
 
                           <div class="panel-body">
+                          @if($mediaPops)
+                            @foreach($mediaPops as $pop)
                             <article class="col-md-4" data-cat="all-videos">
                               <a href="#" class="img">
-                                <img src="http://img.youtube.com/vi/cwLRQn61oUY/mqdefault.jpg" alt=""/>
-                                <h4><i class="fa fa-play-circle-o"></i>Замана</h4>
+                              <span class="media-view"><i class="fa fa-eye"></i>{{ $pop->getViewed() }}</span>
+                                <img src="http://img.youtube.com/vi/{{ $pop->getUrl() }}/mqdefault.jpg" alt=""/>
+                                
                               </a>
                               <a href="#" class="media-title">
-                                <h4>{{-- $media->videoType()->getName() --}} {{ $MediaCategory->getName() }}</h4>
+                                <h4>{{ $pop->getName() }}</h4>
                               </a>
                             </article>
+                            @endforeach
+                          @endif
 
 
                           </div>

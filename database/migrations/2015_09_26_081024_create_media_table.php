@@ -14,6 +14,7 @@ class CreateMediaTable extends Migration
     {
         Schema::create('medias', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('number');
             $table->integer('resource_id')->nullable()->unsigned()->default(null);
             $table->string('videoType')->nullable()->default(null);
             $table->string('name');
@@ -30,6 +31,27 @@ class CreateMediaTable extends Migration
             $table->string('video3',500);
             $table->string('video4',500);
             $table->string('status',500);
+            
+            $table->string('director');
+            $table->string('ns');
+            $table->string('rs');
+            $table->string('muzkanal');
+            $table->string('promo');
+            $table->string('hitnumber');
+            $table->string('thumbnail');
+            $table->string('muzkanalanons1');
+            $table->string('muzkanalanons2');
+            $table->string('muzkanalanons3');
+            $table->string('anonstime1');
+            $table->string('anonstime2');
+            $table->string('anonstime3');
+            $table->string('kyrgyzradio');
+            $table->string('birinchi');
+            $table->string('balastan');
+            $table->string('madaniyat');
+            $table->string('minkiyal');
+            $table->string('extracolumn');
+
             $table->string('program');
             $table->timestamps();
 

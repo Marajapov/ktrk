@@ -103,9 +103,18 @@ return [
     'TagsRU' => 'Тегдер орусча',
     'TextKG' => 'Текст кыргызча',
     'TextRU' => 'Текст орусча',
+    'DescKG' => 'Баяндоо кыргызча',
+    'DescRU' => 'Баяндоо орусча',
+    'AuthorKG' => 'Автор кыргызча',
+    'AuthorRU' => 'Автор орусча',
+    'Images' => 'Сүрөттөр',
+    'Select' => 'Тандоо',
     '' => '',
 
 
+//    Народный репортер
+    'Reporter' => 'Элдик репортер',
+    'ReporterAdd' => 'Жаңылык кошуу',
 
 
 
@@ -167,6 +176,8 @@ return [
     'AdminMediaArticles' => 'Медиа макалалар',
     'AdminMediaTypeSelect' => 'Медиянын тибин тандаңыз',
     'AdminMediaURL' => 'Youtube ID (мисалы: jh2kL40iY2o)',
+    'AdminMediaView' => 'Кароо саны',
+    'AdminMediaProject' => 'Телеберүү',
     '' => '',
  
     //Media Category menu
@@ -210,6 +221,7 @@ return [
     'AdminPhotoParentChange' => 'Сүрөт галересяын өзгөртүү',
     'AdminPhotoParentNewGal' => 'Жаңы сүрөт галереясы',
     'AdminPhotoParents' => 'Сүрөт галереялары',
+    'AdminPhotoParentLocation' => 'Жайгашкан жери',
     '' => '',
 
     //Post menu
@@ -221,6 +233,7 @@ return [
     'AdminPostThemathree' => 'Темага материал 3',
     'AdminPostEnterText' => 'Текст киргизиңиз...',
     'AdminPostCreatedDate' => 'Кошулган датасы',
+    'AdminPostEdit' => 'Өзгөртүү',
     '' => '',
 
     //User menu
@@ -232,17 +245,28 @@ return [
     'AdminUserName' => 'Аты жөнү',
     '' => '',
 
+    // Project Menu
+    'AdminProjectAll' => 'Телеберүүлөр',
+    'AdminProjectAddNew' => 'Жаңы телеберүү',
+    '' => '',
+    '' => '',
+
     //FRONT languages
 
     //Home page
     'FrontPostAll' => 'Бардык жаңылыктар',
     'FrontPostLastNews' => 'Акыркы жаңылыктар',
-    'FrontPostDaysVideo' => 'Күндүн видеосу',    
+    'FrontPostDaysVideo' => 'Күндүн видеосу',
+    'FrontPostDaysNews' => 'Жаңылыктар чыгарылышы',
+    'FrontPostDaysEpisode' => 'Телеберүү',
+    'FrontPostDaysAnons' => 'Анонс',
+    'FrontPostDaysMaanai' => 'Маанайшат',
     'FrontPostLastDays' => 'Өткөн күндөр',
     'FrontDirectorPage' => 'Башкы директордун баракчасы',    
     'FrontVideoAll' => 'Видеопорталга өтүү',
     'FrontGalleryAll' => 'Бардык галереялар',
     'FrontToDirectorPage' => 'Баракчага кирүү',
+    'FrontTeleprogrammChoose' => 'Канал тандаңыз',
     '' => '',    
     '' => '',
     '' => '',    
@@ -261,4 +285,12 @@ return [
     'LastVideos' => 'Акыркы видеолор',
     'TopVideos' => 'Топ видеолор',
     'Episodes' => 'Чыгаруулар',
+
+    'DataTableTotal' => 'жалпы',
+    'DataTableSearch' => 'Издөө',
+    'DataTableNoResult' => 'Медиа табылган жок',
+    'DataTableFirstPage' => 'Башы',
+    'DataTableLastPage' => 'Аягы',
+    'DataTableNextPage' => 'Кийинки',
+    'DataTablePreviousPage' => 'Мурунку',
 ];

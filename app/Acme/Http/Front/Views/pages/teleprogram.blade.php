@@ -3,122 +3,152 @@
 @section('styles')
   {{--<link rel="stylesheet" type="text/css" href="{{ asset('/static/css/styles.css') }}">--}}
   <link rel="stylesheet" type="text/css" href="{{ asset('css/pages.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/bootstrap-select.css') }}"/>
 @stop
 @section('content')
 
   <div class="container main-wrapper">
     <div class="row">
-      <div class="col-md-12">
-        <div class="panel panel-default teleprogramm">
-          <div class="panel-heading">
-            <h3 class="panel-title">ТВ-программа</h3>
-          </div>
-          <div class="panel-body">
+      <div class="panel panel-default teleprogramm clearfix">
+        <div class="panel-heading">
+          <h3 class="panel-title">ТВ-программа</h3>
+        </div>
 
-            <ul id="tabs" class="nav nav-tabs teletabs" data-tabs="tabs">
+        <div class="panel-body">
 
-              @foreach($programs as $key => $program)
-                {{--{{ dd($program['date']) }}--}}
-                @foreach($schedules as $schedule)
-                  @if($program['date'] == $schedule->date)
-                    <li class="@if($currentDate == $program['date']) active @endif">
-                      <a href="#{{ $program['date'] }}" data-toggle="tab">
-                        @if($lc == 'kg')
-                          {{ $schedule->getDay().' '.$schedule->getMonth().' - '.$schedule->getWeekKg() }}
-                        @elseif($lc == 'ru')
-                          {{ $schedule->getDay().' '.$schedule->getMonth().' - '.$schedule->getWeekRu() }}
-                        @endif
-                      </a>
-                    </li>
-                  @endif
-                @endforeach
+          <div class="">
+            <h4 class="channel-choose">{{ trans('site.FrontTeleprogrammChoose') }}</h4>
+
+            <div class="channels clearfix">
+              @foreach($channels as $key=>$channel)
+                <div class="col-md-2 @if($key==0 || $key == 4) col-md-offset-2 @endif">
+                  <a href="{{ route('front.pages.teleprogram', $channel->id) }}">
+                    <img src="{{ asset($channel->file) }}" alt=""/>
+                    <span class="channel-name">{{ $channel->display }}</span>
+                  </a>
+                </div>
               @endforeach
+            </div>
+            <div>
+              {{--@if($lc == 'kg')--}}
+              {{--<select name="channel" id="cnahhel" class="selectpicker" date-live-search="true" title="-- {{ trans('site.FrontTeleprogrammChoose') }} --">--}}
+              {{--@foreach($channels as $channel)--}}
+              {{--<option value="{{ $channel->id }}">{{ $channel->display }}</option>--}}
+              {{--@endforeach--}}
+              {{--</select>--}}
+              {{--@else--}}
+              {{--{!! Form::select('category_id', ['КТРК', 'Музканал','Маданият','Баластан','Биринчи Радио','Кыргыз Радиосу','Миң Кыял ФМ','Достук'], null, ["class" => "selectpicker", "data-live-search"=>"true", "required" => true, "title" => "-- Выберите канал --"]) !!}--}}
+              {{--@endif--}}
 
-            </ul>
+              <ul id="tabs" class="nav nav-tabs teletabs" data-tabs="tabs">
 
-            <div id="my-tab-content" class="tab-content">
-
-              @foreach($programs as $key => $program)
-
-                @foreach($schedules as $schedule)
-
-                  @if($program['date'] == $schedule->date)
-
-                    <div class="tab-pane @if($schedule->date == $currentDate) active @endif" id="{{ $schedule->date }}">
-
-                      <table class="table program">
-                        <tbody>
-                        @for($i=0; $i<count($program)-1; $i++)
-
-                          @if((strtotime($schedule->date) < strtotime($currentDate)))
-                            <tr class="tele-row tele-passed">
-
-                          @elseif(($schedule->date == $currentDate) && ($i < count($program)-2))
-
-                            @if((strtotime($program[$i]->time) <= strtotime($currentTime)) && (strtotime($currentTime) < strtotime($program[$i+1]->time)))
-                              <tr class="tele-row tele-live">
-                            @elseif((strtotime($program[$i]->time) < strtotime($currentTime)) && ($program[$i]->time != '00:00'))
-                              <tr class="tele-row tele-passed">
-                            @endif
-
-                          @elseif(($schedule->date == $currentDate) && ($i == count($program)-1))
-
-                            @if((strtotime($program[$i]->time) <= strtotime($currentTime)))
-                              <tr class="tele-row tele-live">
-                            @elseif((strtotime($program[$i]->time) < strtotime($currentTime)) && ($program[$i]->time != '00:00'))
-                              <tr class="tele-row tele-passed">
-                            @endif
-
-                          @else
-                            <tr class="tele-row ">
+                @foreach($programs as $key => $program)
+                  {{--{{ dd($program['date']) }}--}}
+                  @foreach($schedules as $schedule)
+                    @if($program['date'] == $schedule->date)
+                      <li class="@if($currentDate == $program['date']) active @endif">
+                        <a href="#{{ $program['date'] }}" data-toggle="tab">
+                          @if($lc == 'kg')
+                            {{ $schedule->getDay().' '.$schedule->getMonth().' - '.$schedule->getWeekKg() }}
+                          @elseif($lc == 'ru')
+                            {{ $schedule->getDay().' '.$schedule->getMonth().' - '.$schedule->getWeekRu() }}
                           @endif
-                            <th class="tele-time">
-                              {{ $program[$i]->time }}
-                              {{ strtotime($program[$i]->time) }}
-                            </th>
-                            <td class="tele-show">
+                        </a>
+                      </li>
+                    @endif
+                  @endforeach
+                @endforeach
 
-                              @if(($schedule->date == $currentDate) && ($i < count($program)-2))
+              </ul>
 
-                                @if((strtotime($program[$i]->time) <= strtotime($currentTime)) && (strtotime($currentTime) < strtotime($program[$i+1]->time)))
+              @if($programs)
 
-                                  @if($lc == 'kg')
-                                    <span id="bcLive"><i class="fa fa-circle"></i>азыр эфирде</span>
-                                  @elseif($lc == 'ru')
-                                    <span id="bcLive"><i class="fa fa-circle"></i>сейчас в эфире</span>
+                <div id="my-tab-content" class="tab-content">
+
+                  @foreach($programs as $key => $program)
+
+                    @foreach($schedules as $schedule)
+
+                      @if($program['date'] == $schedule->date)
+
+                        <div class="tab-pane @if($schedule->date == $currentDate) active @endif" id="{{ $schedule->date }}">
+
+                          <table class="table program">
+                            <tbody>
+                            @for($i=0; $i<count($program)-1; $i++)
+
+                              @if((strtotime($schedule->date) < strtotime($currentDate)))
+                                <tr class="tele-row tele-passed">
+
+                                  @elseif(($schedule->date == $currentDate) && ($i < count($program)-2))
+
+                                    @if((strtotime($program[$i]->time) <= strtotime($currentTime)) && (strtotime($currentTime) < strtotime($program[$i+1]->time)))
+                                <tr class="tele-row tele-live">
+                                  @elseif((strtotime($program[$i]->time) < strtotime($currentTime)) && ($program[$i]->time != '00:00'))
+                                <tr class="tele-row tele-passed">
                                   @endif
 
-                                @endif
+                                  @elseif(($schedule->date == $currentDate) && ($i == count($program)-1))
 
-                              @elseif(($schedule->date == $currentDate) && ($i == count($program)-1))
-
-                                @if((strtotime($program[$i]->time) <= strtotime($currentTime)))
-
-                                  @if($lc == 'kg')
-                                    <span id="bcLive"><i class="fa fa-circle"></i>азыр эфирде</span>
-                                  @elseif($lc == 'ru')
-                                    <span id="bcLive"><i class="fa fa-circle"></i>сейчас в эфире</span>
-                                  @endif
-
-                                @endif
-
+                                    @if((strtotime($program[$i]->time) <= strtotime($currentTime)))
+                                <tr class="tele-row tele-live">
+                                  @elseif((strtotime($program[$i]->time) < strtotime($currentTime)) && ($program[$i]->time != '00:00'))
+                                <tr class="tele-row tele-passed">
                               @endif
 
-                              <h4>{{ $program[$i]->name }}</h4>
-                              {{--<h5 class="tele-extra"><i class="fa fa-play-circle-o"></i>Сериал</h5>--}}
-                            </td>
-                          </tr>
-                        @endfor
-                        </tbody>
-                      </table>
+                              @else
+                                <tr class="tele-row ">
+                                  @endif
+                                  <th class="tele-time">
+                                    {{ $program[$i]->time }}
+                                  </th>
+                                  <td class="tele-show">
 
-                    </div>
+                                    @if(($schedule->date == $currentDate) && ($i < count($program)-2))
 
-                  @endif
+                                      @if((strtotime($program[$i]->time) <= strtotime($currentTime)) && (strtotime($currentTime) < strtotime($program[$i+1]->time)))
 
-                @endforeach
+                                        @if($lc == 'kg')
+                                          <span id="bcLive"><i class="fa fa-circle"></i>азыр эфирде</span>
+                                        @elseif($lc == 'ru')
+                                          <span id="bcLive"><i class="fa fa-circle"></i>сейчас в эфире</span>
+                                        @endif
 
-              @endforeach
+                                      @endif
+
+                                    @elseif(($schedule->date == $currentDate) && ($i == count($program)-1))
+
+                                      @if((strtotime($program[$i]->time) <= strtotime($currentTime)))
+
+                                        @if($lc == 'kg')
+                                          <span id="bcLive"><i class="fa fa-circle"></i>азыр эфирде</span>
+                                        @elseif($lc == 'ru')
+                                          <span id="bcLive"><i class="fa fa-circle"></i>сейчас в эфире</span>
+                                        @endif
+
+                                      @endif
+
+                                    @endif
+
+                                    <h4>{{ $program[$i]->name }}</h4>
+                                    {{--<h5 class="tele-extra"><i class="fa fa-play-circle-o"></i>Сериал</h5>--}}
+                                  </td>
+                                </tr>
+                                @endfor
+                            </tbody>
+                          </table>
+
+                        </div>
+
+                      @endif
+
+                    @endforeach
+
+                  @endforeach
+
+                </div>
+
+              @endif
 
             </div>
 
@@ -132,6 +162,8 @@
 @stop
 
 @section('footerScript')
+
+  <script type="text/javascript" src="{{ asset('js/bootstrap-select.js') }}"></script>
 
   <script type="text/javascript">
     jQuery(document).ready(function ($) {

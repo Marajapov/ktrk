@@ -23,6 +23,7 @@ class CreatePostsTable extends Migration
             $table->integer('owner_id')->nullable()->unsigned()->default(null);
             $table->integer('parentId')->nullable();
             $table->string('thumbnail');
+            $table->string('thumbnail_big');
             $table->enum('type', ['page', 'post'])->nullable()->default('post');
             $table->boolean('published')->nullable()->default(false);
             $table->boolean('announcement')->nullable()->default(false);
@@ -30,6 +31,23 @@ class CreatePostsTable extends Migration
             $table->integer('related2')->nullable()->unsigned()->default(null);
             $table->integer('related3')->nullable()->unsigned()->default(null);
             $table->boolean('general')->nullable()->default(false);
+            
+            $table->string('director');
+            $table->string('ns');
+            $table->string('rs');
+            $table->string('muzkanal');
+            $table->string('kyrgyzradio');
+            $table->string('birinchi');
+            $table->string('balastan');
+            $table->string('madaniyat');
+            $table->string('minkiyal');
+            $table->string('reporter');
+            $table->string('extracolumn');
+
+            // Add locally
+            $table->string('number');
+            $table->string('audio');
+            
             $table->smallInteger('viewed')->default(0);
             $table->timestamps();
 
