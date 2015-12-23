@@ -67,6 +67,9 @@
 
                   @foreach($programs as $key => $program)
 
+                    {{--{{ dd(strtotime('24 hours')) }}--}}
+                    {{--{{ dd(strtotime($currentTime)) }}--}}
+
                     @foreach($schedules as $schedule)
 
                       @if($program['date'] == $schedule->date)
@@ -75,30 +78,39 @@
 
                           <table class="table program">
                             <tbody>
-                            @for($i=0; $i<count($program)-1; $i++)
+                              @for($i=0; $i<count($program)-1; $i++)
 
-                              @if((strtotime($schedule->date) < strtotime($currentDate)))
-                                <tr class="tele-row tele-passed">
+                                @if((strtotime($schedule->date) < strtotime($currentDate)))
+                                  <tr class="tele-row tele-passed">
 
-                                  @elseif(($schedule->date == $currentDate) && ($i < count($program)-2))
+                                @elseif(($schedule->date == $currentDate) && ($i < count($program)-2))
 
-                                    @if((strtotime($program[$i]->time) <= strtotime($currentTime)) && (strtotime($currentTime) < strtotime($program[$i+1]->time)))
-                                <tr class="tele-row tele-live">
-                                  @elseif((strtotime($program[$i]->time) < strtotime($currentTime)) && ($program[$i]->time != '00:00'))
-                                <tr class="tele-row tele-passed">
+                                  @if((strtotime($program[$i]->time) <= strtotime($currentTime)) && (strtotime($currentTime) < strtotime($program[$i+1]->time)))
+                                    <tr class="tele-row tele-live">
+
+                                  @elseif( (strtotime($program[$i]->time) < strtotime($currentTime)) && ($program[$i]->time != '00:00') )
+                                    @if( (strtotime($program[$i]->time) > strtotime('00:00')) && (strtotime($program[$i]->time) < strtotime('05:00')) )
+                                      <tr class="tele-row">
+                                    @else
+                                      <tr class="tele-row tele-passed">
+                                    @endif
+
+
                                   @endif
 
-                                  @elseif(($schedule->date == $currentDate) && ($i == count($program)-1))
+                                @elseif(($schedule->date == $currentDate) && ($i == count($program)- 1))
 
-                                    @if((strtotime($program[$i]->time) <= strtotime($currentTime)))
-                                <tr class="tele-row tele-live">
+                                  @if((strtotime($program[$i]->time) <= strtotime($currentTime)))
+                                    <tr class="tele-row tele-live">
+
                                   @elseif((strtotime($program[$i]->time) < strtotime($currentTime)) && ($program[$i]->time != '00:00'))
-                                <tr class="tele-row tele-passed">
-                              @endif
+                                    <tr class="tele-row tele-passed">
 
-                              @else
-                                <tr class="tele-row ">
                                   @endif
+
+                                @else
+                                  <tr class="tele-row ">
+                                @endif
                                   <th class="tele-time">
                                     {{ $program[$i]->time }}
                                   </th>
@@ -134,7 +146,8 @@
                                     {{--<h5 class="tele-extra"><i class="fa fa-play-circle-o"></i>Сериал</h5>--}}
                                   </td>
                                 </tr>
-                                @endfor
+                              @endfor
+
                             </tbody>
                           </table>
 
