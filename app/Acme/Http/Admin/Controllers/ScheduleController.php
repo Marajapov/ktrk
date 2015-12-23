@@ -77,8 +77,8 @@ class ScheduleController extends Controller
         $new_string = preg_split('/[\r\n#]+/', $string, -1, PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE);
         foreach($new_string as $new_string1)
         {
-            if($new_string1 != ' ')
-            $new_string2[] = $new_string1;
+            if(!(ctype_space($new_string1)))
+                $new_string2[] = $new_string1;
         }
 
         $program = array();
@@ -164,7 +164,7 @@ class ScheduleController extends Controller
         $new_string = preg_split('/[\r\n#]+/', $string, -1, PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE);
         foreach($new_string as $new_string1)
         {
-            if($new_string1 != ' ')
+            if(!(ctype_space($new_string1)))
                 $new_string2[] = $new_string1;
         }
 
