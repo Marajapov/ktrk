@@ -29,10 +29,12 @@ class MediaController extends Controller
     public function create()
     {
         $projectList = \Model\Project\ModelName::lists('name', 'id')->toArray();
+        
 
         return view('Admin::media.create', [
             'media' => new Media,
             'projectList' => $projectList,
+        
             ]);
     }
 
@@ -45,7 +47,18 @@ class MediaController extends Controller
     public function store(Request $request)
     {
 
-        $media = Media::create($request->except('q', 'thumbnail'));
+        $media = Media::create($request->except('q', 'thumbnail','hitnumber'));
+
+        if($request->input('hitnumber')){
+            $hitnumber = $request->input('hitnumber');
+            $allMedias = \Model\Media\ModelName::where('hitnumber','=',$hitnumber)->get();
+            foreach ($allMedias as $key => $value) {
+                $value->hitnumber = 0;
+            }
+
+            $media->hitnumber = $hitnumber;
+            $media->save();
+        }
 
 
         if($request->hasFile('thumbnail'))
@@ -112,7 +125,7 @@ class MediaController extends Controller
     public function edit(Media $media)
     {
         $projectList = \Model\Project\ModelName::lists('name', 'id')->toArray();
-
+        
         return view('Admin::media.edit', [
             'media' => $media,
             'projectList' => $projectList,
@@ -128,7 +141,20 @@ class MediaController extends Controller
      */
     public function update(Request $request, Media $media)
     {
-        $media->update($request->except('q', 'thumbnail'));
+        $media->update($request->except('q', 'thumbnail','hitnumber'));
+
+        if($request->input('hitnumber')){
+            $hitnumber = $request->input('hitnumber');
+            
+            $allMedias = \Model\Media\ModelName::where('hitnumber','=',$hitnumber)->get();
+            foreach ($allMedias as $key => $value) {
+                $value->hitnumber = 0;
+                $value->save();
+            }
+
+            $media->hitnumber = $hitnumber;
+            $media->save();
+        }
 
         if($request->hasFile('thumbnail'))
         {

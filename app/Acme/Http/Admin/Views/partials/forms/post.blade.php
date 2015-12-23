@@ -52,9 +52,9 @@
       <label for="parentId" class="col-sm-2 control-label">Миниатюра</label>
       <div class="col-sm-10">
         <div class="fileinput fileinput-new" data-provides="fileinput">
-          <div class="fileinput-new thumbnail" style="width: 132px; height: 100px;">
+          <div class="fileinput-new thumbnail" style="width: 250px; height: 150px;">
           </div>
-          <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 132px; max-height: 100px;"></div>
+          <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 250px; max-height: 150px;"></div>
           <div>
               <span class="btn btn-default btn-file">
                 <span class="fileinput-new">{{ trans('site.AdminBackgroundSelect') }}</span>
@@ -77,9 +77,17 @@
 
     <!-- Datepicker -->
     <div class="form-group">
-    <label for="created_at" class="col-sm-2 control-label">Дата</label>
+    <label for="created_at" class="col-sm-2 control-label">Дата <i class="fa fa-calendar"></i></label>
       <div class="col-sm-2">
         {!! Form::text('created_at', null, ["class" => "form-control", "id" => "date", "title" => ""]) !!}
+      </div>
+    </div>
+
+    <!-- Timepicker -->
+    <div class="form-group">
+      <label for="created_at" class="col-sm-2 control-label">Время<i class="fa fa-clock-o"></i></label>
+      <div class="col-sm-2">
+        {!! Form::text('created_at', null, ["class" => "form-control", "id" => "time", "title" => ""]) !!}
       </div>
     </div>
 

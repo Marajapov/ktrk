@@ -707,15 +707,15 @@
 .first-item .thumb{
     position: relative;
     display: block;
-    width: 250px;
-    height: 150px;
+    width: 100%;
+    height: 300px;
     overflow: hidden;
 }
 .first-item .thumb img{
     position: absolute;
     left: 50%;
     top: 50%;
-    height: auto;
+    height: 300px;
     width: auto;
     -webkit-transition: opacity 0.2s ease;
     -moz-transition: opacity 0.2s ease;

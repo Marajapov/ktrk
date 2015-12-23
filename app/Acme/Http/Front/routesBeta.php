@@ -30,7 +30,7 @@ Route::group(['domain' => 'beta.ktrk.kg', 'prefix' => '/balastan', 'namespace' =
 });
 
 
-Route::group(['domain' => 'beta.ktrk.kg', 'prefix' => '/muzkanal', 'namespace' => 'Front\Controllers'], function() {
+Route::group(['domain' => 'beta.ktrk.kg', 'prefix' => '/music', 'namespace' => 'Front\Controllers'], function() {
 
     Route::get('/', ['as' => 'muzkanal.home',   'uses' => 'MuzkanalController@Home']);
     Route::get('/posts', ['as' => 'muzkanal.posts',   'uses' => 'MuzkanalController@posts']);

@@ -23,6 +23,7 @@ class CreatePostsTable extends Migration
             $table->integer('owner_id')->nullable()->unsigned()->default(null);
             $table->integer('parentId')->nullable();
             $table->string('thumbnail');
+            $table->string('thumbnail_big');
             $table->enum('type', ['page', 'post'])->nullable()->default('post');
             $table->boolean('published')->nullable()->default(false);
             $table->boolean('announcement')->nullable()->default(false);
