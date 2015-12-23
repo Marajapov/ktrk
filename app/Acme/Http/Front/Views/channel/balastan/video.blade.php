@@ -89,7 +89,7 @@
                   <div class="panel-body" style="padding:0px;">
                      <div class="row">
                      <div class="row">
-                     <div class="col-md-12 kidspered">
+                     <div class="col-md-12 kidspered text-center">
                          <h2>{{ trans('radiopages.Bperedachi') }}</h2> 
                          @if($balastanProjects)
                          @foreach($balastanProjects as $project)                                                         

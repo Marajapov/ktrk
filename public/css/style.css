@@ -4172,6 +4172,7 @@ ul.social-share li a:hover {
     padding: 0px;
     color: #fff;
     font-size: 18px;
+    height: 90px;
 }
 .kidsvblock .panel-body {
     padding: 0px 100px;
@@ -4230,6 +4231,7 @@ ul.social-share li a:hover {
 .kidspered nav{
     width: 1070px;
     margin: 0 auto;
+    margin-left: 220px;
 }
 .kidspered h2 {
     color: #FFC107;
@@ -4505,7 +4507,7 @@ ul.social-share li a:hover {
 /*LANGUAGE Landing radio pages*/
 .langs{
     position: absolute;
-    left: 0;
+    left: 745px;
     right: 0;
     width: 100px;
     margin: auto;
@@ -4533,6 +4535,7 @@ ul.social-share li a:hover {
     position: relative;
 
     color: #000;
+    font-weight: bold;
 
     font-size: 14px;
     text-transform: uppercase;
