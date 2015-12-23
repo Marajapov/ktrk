@@ -147,6 +147,11 @@
       locale: 'ru',
       format: 'YYYY-MM-DD'
     });
+
+    $('#time').datetimepicker({
+      locale: 'ru',
+      format: 'LT'
+    });
   </script>
 
 @stop

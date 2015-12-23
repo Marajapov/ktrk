@@ -16,22 +16,22 @@ class ChannelTableSeeder extends Seeder
         \Model\Channel\ModelName::create([
             'id'        => 1,
             'name'      => 'general',
-            'display'   => 'Главная',
+            'display'   => 'Общий',
             'file'       => 'images/logo_notext.png',
             'published' => true,
         ]);
 
         \Model\Channel\ModelName::create([
             'id'        => 2,
-            'name'      => 'ktr',
-            'display'   => 'КТР',
+            'name'      => 'ktrk',
+            'display'   => 'КТРК',
             'published' => true,
         ]);
 
         \Model\Channel\ModelName::create([
             'id'        => 3,
             'name'      => 'muzkanal',
-            'display'   => 'Муз Канал',
+            'display'   => 'Музыка',
             'published' => true,
         ]);
 

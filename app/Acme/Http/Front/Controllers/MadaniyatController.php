@@ -10,16 +10,14 @@ class MadaniyatController extends Controller
 
     public function Home()
     {
-        return view('Front::channel.madaniyat.comingsoon',[]);
-        
-        /*$channel = \Model\Channel\ModelName::name('madaniyat')->first();
+        $channel = \Model\Channel\ModelName::name('madaniyat')->first();
 
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
         return view('Front::channel.madaniyat.index', [
             'channel' => $channel,
             'backgroundMain' => $backgroundMain,
-            ]);*/
+            ]);
     }
 
     public function Posts()
@@ -65,7 +63,10 @@ class MadaniyatController extends Controller
 
     public function ComingSoon()
     {
-        return view('Front::channel.madaniyat.comingsoon',[]);
+        $lc = app()->getlocale();
+        return view('Front::channel.madaniyat.comingsoon',[
+            'lc' => $lc
+        ]);
     }
 
 }
