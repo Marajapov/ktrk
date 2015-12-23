@@ -88,14 +88,35 @@
                      </div> -->
                   <div class="panel-body" style="padding:0px;">
                      <div class="row">
+                     <div class="row">
+                     <div class="col-md-12 kidspered">
+                         <h2>{{ trans('radiopages.Bperedachi') }}</h2> 
+                         @if($balastanProjects)
+                         @foreach($balastanProjects as $project)                                                         
+                         <nav>
+                           <ul>
+
+                             <li><a class="kid1" href="{{ route('balastan.projectVideos', $project) }}"><i class="fa fa-envelope"></i>{{ $project->getName() }}</a></li>
+                             {{-- <li><a class="kid2" href=""><i class="fa fa-envelope"></i>Баарын билгим келет</a></li>
+                             <li><a class="kid3" href=""><i class="fa fa-envelope"></i>Манас таануу</a></li>
+                             <li><a class="kid4" href=""><i class="fa fa-envelope"></i>Таалимтай</a></li>
+                             <li><a class="kid5" href=""><i class="fa fa-envelope"></i>Күн балдары</a></li> --}}
+
+                          </ul>
+                       </nav>
+                       @endforeach
+                       @endif
+                    </div>
+                     </div>
+                        
                         <div class="row" style="margin:0px;">
 
                            
-                           <div class="col-md-6" >
+                           <div class="col-md-offset-1 col-md-10 col-md-offset-1" >
                            
                               @if($balastanLastVideo)
                               <div class="mainboardimg"> 
-                                 <iframe width="550px" height="380px" src="https://www.youtube.com/embed/{{$balastanLastVideo->getUrl()}}?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                                           
+                                 <iframe width="854px" height="480px" src="https://www.youtube.com/embed/{{$balastanLastVideo->getUrl()}}?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                                           
                               </div>
                               <img class="mainboarddesc"  src="{{asset('images/channels/balastan/chalkboard.png')}}" alt="">
                                  <div class="item-desc2">
@@ -105,26 +126,8 @@
                                     </ul>
                                  </div>
                               @endif                         
-                           </div>                           
-
-                           <div class="col-md-6 kidspered">
-                                @if($balastanProjects)
-                                    @foreach($balastanProjects as $project)
-                                <h2>{{ trans('radiopages.Bperedachi') }}</h2>
-                                <nav>
-                                    <ul>
-                               
-                                        <li><a class="kid1" href="{{ route('balastan.projectVideos', $project) }}"><i class="fa fa-envelope"></i>{{ $project->getName() }}</a></li>
-                                        {{-- <li><a class="kid2" href=""><i class="fa fa-envelope"></i>Баарын билгим келет</a></li>
-                                        <li><a class="kid3" href=""><i class="fa fa-envelope"></i>Манас таануу</a></li>
-                                        <li><a class="kid4" href=""><i class="fa fa-envelope"></i>Таалимтай</a></li>
-                                        <li><a class="kid5" href=""><i class="fa fa-envelope"></i>Күн балдары</a></li> --}}
-                                
-                                    </ul>
-                                </nav>
-                                     @endforeach
-                                     @endif
-                           </div>
+                           </div>                         
+                        
                         </div>
                         @if($balastanMedias)
                         @foreach($balastanMedias as $media)

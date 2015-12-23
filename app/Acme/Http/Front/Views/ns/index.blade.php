@@ -30,11 +30,11 @@
 
                       {{--@include('Front::ns.lastPosts')--}}  
 
-
-                      <div class="col-md-5 first-item">
+                    <div class="row"> 
+                      <div class="col-md-12 first-item">
                         @foreach($popPosts as $pop)
-                        <div class="row">
-
+                      
+                        <div class="col-md-4">
                             <a href="{{ route('front.ns.post', $pop) }}" class="thumb">
                               <img src="@if(!($pop->getFile()))images/live_bg.png @else {{ asset($pop->getFile()) }} @endif" alt=""/>
                             </a>
@@ -45,12 +45,16 @@
                               </div>
                               <a href="{{ route('front.ns.post', $pop) }}">{{ $pop->getTitleRuOrKg() }}</a>
                             </h2>
-
                         </div>
+                    
                         @endforeach
 
                       </div>
-                      <div class="col-md-7">
+                      </div>
+                      <div class="col-md-6">
+                        @include('Front::ns.lastPosts')
+                      </div>
+                        <div class="col-md-6">
                         @include('Front::ns.lastPosts')
                       </div>
 

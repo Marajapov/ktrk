@@ -2923,7 +2923,6 @@ display: block;
 .ia-container figcaption span {
     position: absolute;
     top: 40%;
-    margin-top: 50px;
     right: 20px;
     left: 20px;
     overflow: hidden;
@@ -4217,7 +4216,8 @@ ul.social-share li a:hover {
 }
 
 .mainboarddesc {
-    height: auto;
+    height: 502px;
+    width: 873px;
 }
 .boarddesc {
     max-height: 160px;
@@ -4225,6 +4225,10 @@ ul.social-share li a:hover {
 .kidspered{
     padding-left: 40px;
 
+}
+.kidspered nav{
+    width: 1070px;
+    margin: 0 auto;
 }
 .kidspered h2 {
     color: #FFC107;
@@ -4236,22 +4240,12 @@ ul.social-share li a:hover {
 }
 
 .kidspered ul {
-    position: relative;
-    background: #fff;
-    width: 350px;
-    margin: auto;
-    padding: 0;
-    list-style: none;
-    overflow: hidden;
-    -webkit-border-radius: 5px !important;
-    -moz-border-radius: 5px !important;
-    border-radius: 5px !important;
-    -webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+    float: left;
 }
 .kidspered li{
-    border-bottom: 1px solid gainsboro;
+    margin-right: 20px;
+    background: #FDFDFD;
+    margin-bottom: 10px;
 }
 .kidspered li:hover{
     color: #673AB7;
@@ -4260,11 +4254,11 @@ ul.social-share li a:hover {
     -o-transition: top 1s ease-out 0.5s;
     transition: top 1s ease-out 0.5s;
     text-shadow: none;
-    background: #efefef;
+    background: #008747;
 
 }
 .kidspered li a:hover{
-    color: red;
+    color: #fff;
 }
 
 .kidspered .kid2{
@@ -4285,14 +4279,9 @@ ul.social-share li a:hover {
 }
 
 .kidspered li a{
-    width: 225px;
-    padding-left: 10px;
-    height: 50px;
-    line-height: 50px;
+    line-height: 40px;
     display: block;
     overflow: hidden;
-    position: relative;
-    text-decoration: none;
     text-transform: uppercase;
     font-size: 18px;
     color: #686868;
@@ -4301,11 +4290,12 @@ ul.social-share li a:hover {
     -o-transition: all 0.2s linear;
     transition: all 0.2s linear;
     border-left: 10px solid #008747;
+    padding: 0px 5px;
     
 }
 
 .kidspered li i{
-    margin: 0px 10px;
+    margin: 0px 5px 0px 0px;
 }
 @media (max-width:1170px) {
     .kidsvblock .panel-body {

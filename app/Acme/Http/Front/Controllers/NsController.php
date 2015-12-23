@@ -18,11 +18,11 @@ class NsController extends Controller
     {
         $lc = app()->getlocale();
         if($lc == 'kg'){
-            $posts = \Model\Post\ModelName::where('ns','=','1')->published()->languagekg()->take(10)->skip(2)->orderBy('id', 'desc')->get();    
-            $popPosts = \Model\Post\ModelName::where('ns','=','1')->published()->languagekg()->take(2)->skip(0)->orderBy('id', 'desc')->get();
+            $posts = \Model\Post\ModelName::where('ns','=','1')->published()->languagekg()->take(10)->skip(3)->orderBy('id', 'desc')->get();    
+            $popPosts = \Model\Post\ModelName::where('ns','=','1')->published()->languagekg()->take(3)->skip(0)->orderBy('id', 'desc')->get();
         }elseif($lc == 'ru'){
-            $posts = \Model\Post\ModelName::where('ns','=','1')->published()->languageru()->take(10)->skip(2)->orderBy('id', 'desc')->get();  
-            $popPosts = \Model\Post\ModelName::where('ns','=','1')->published()->languageru()->take(2)->skip(0)->orderBy('id', 'desc')->get();  
+            $posts = \Model\Post\ModelName::where('ns','=','1')->published()->languageru()->take(10)->skip(3)->orderBy('id', 'desc')->get();  
+            $popPosts = \Model\Post\ModelName::where('ns','=','1')->published()->languageru()->take(3)->skip(0)->orderBy('id', 'desc')->get();  
         }
 
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
