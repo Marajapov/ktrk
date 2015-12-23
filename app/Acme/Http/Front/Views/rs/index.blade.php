@@ -55,10 +55,7 @@
                       <div class="col-md-6">
                         @include('Front::rs.lastPosts')
                       </div>
-                      <div class="col-md-6">
-                        @include('Front::rs.lastPosts')
-                      </div>
-
+                      
                        <footer>
                         <a href="{{ route('front.rs.posts') }}">
                           <span>{{ trans('site.FrontPostAll') }} <i class="fa fa-arrow-circle-right"></i></span>

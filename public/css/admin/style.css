@@ -573,6 +573,9 @@ a:hover{ text-decoration: underline; }
 .form-horizontal textarea{
     resize: vertical;
 }
+.form-horizontal .control-label i{
+    padding-left: 5px;
+}
 
 /*TELEPROGRAMM*/
 .x_title h2{

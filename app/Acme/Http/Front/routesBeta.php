@@ -30,7 +30,7 @@ Route::group(['domain' => 'beta.ktrk.kg', 'prefix' => '/balastan', 'namespace' =
 });
 
 
-Route::group(['domain' => 'beta.ktrk.kg', 'prefix' => '/muzkanal', 'namespace' => 'Front\Controllers'], function() {
+Route::group(['domain' => 'beta.ktrk.kg', 'prefix' => '/music', 'namespace' => 'Front\Controllers'], function() {
 
     Route::get('/', ['as' => 'muzkanal.home',   'uses' => 'MuzkanalController@Home']);
     Route::get('/posts', ['as' => 'muzkanal.posts',   'uses' => 'MuzkanalController@posts']);
@@ -80,7 +80,7 @@ Route::group(['domain' => 'beta.ktrk.kg', 'prefix' => '/kyrgyzradio', 'namespace
 Route::group(['domain' => 'beta.ktrk.kg', 'prefix' => '/birinchi', 'namespace' => 'Front\Controllers'], function() {
 
     Route::get('/', ['as' => 'birinchi.home',   'uses' => 'BirinchiController@Home']);
-    Route::get('/news', ['as' => 'birinchi.news',   'uses' => 'BirinchiController@news']);
+    Route::get('/news/{post}', ['as' => 'birinchi.news',   'uses' => 'BirinchiController@news']);
     Route::get('/broadcasts', ['as' => 'birinchi.broadcasts',   'uses' => 'BirinchiController@broadcasts']);
     Route::get('/about', ['as' => 'birinchi.about',   'uses' => 'BirinchiController@about']);
     Route::get('/photos', ['as' => 'birinchi.photos',   'uses' => 'BirinchiController@photos']);

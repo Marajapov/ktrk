@@ -28,15 +28,14 @@
                     </div>
                     <div class="panel-body second-panel-body">
 
-                      {{--@include('Front::ns.lastPosts')--}}  
+                      {{--@include('Front::ns.lastPosts')--}}
 
-                    <div class="row"> 
-                      <div class="col-md-12 first-item">
+                      <div class="col-md-5 first-item">
                         @foreach($popPosts as $pop)
-                      
-                        <div class="col-md-4">
+                          <div class="row">
+
                             <a href="{{ route('front.ns.post', $pop) }}" class="thumb">
-                              <img src="@if(!($pop->getFile()))images/live_bg.png @else {{ asset($pop->getFile()) }} @endif" alt=""/>
+                              <img src="@if(!($pop->getFile()))images/live_bg.png @else {{ asset($pop->thumbnail_big) }} @endif" alt=""/>
                             </a>
                             <h2>
                               <div class="extra">
@@ -45,16 +44,14 @@
                               </div>
                               <a href="{{ route('front.ns.post', $pop) }}">{{ $pop->getTitleRuOrKg() }}</a>
                             </h2>
-                        </div>
-                    
+
+                          </div>
                         @endforeach
 
                       </div>
-                      </div>
+
                       <div class="col-md-6">
-                        @include('Front::ns.lastPosts')
-                      </div>
-                        <div class="col-md-6">
+
                         @include('Front::ns.lastPosts')
                       </div>
 
@@ -65,6 +62,43 @@
                       </footer>
 
                     </div>
+
+
+                    {{--<div class="row"> --}}
+                    {{--<div class="col-md-12 first-item">--}}
+                    {{--@foreach($popPosts as $pop)--}}
+                    {{----}}
+                    {{--<div class="col-md-4">--}}
+                    {{--<a href="{{ route('front.ns.post', $pop) }}" class="thumb">--}}
+                    {{--<img src="@if(!($pop->getFile()))images/live_bg.png @else {{ asset($pop->getFile()) }} @endif" alt=""/>--}}
+                    {{--</a>--}}
+                    {{--<h2>--}}
+                    {{--<div class="extra">--}}
+                    {{--<span class="e-datetime">{{ $pop->getDay() }} {{ $pop->getMonthRu() }}, {{ $pop->getTime() }}</span>--}}
+                    {{--<span class="e-views"><i class="fa fa-eye"></i>{{ $pop->getViewed() }}</span>--}}
+                    {{--</div>--}}
+                    {{--<a href="{{ route('front.ns.post', $pop) }}">{{ $pop->getTitleRuOrKg() }}</a>--}}
+                    {{--</h2>--}}
+                    {{--</div>--}}
+                    {{----}}
+                    {{--@endforeach--}}
+
+                    {{--</div>--}}
+                    {{--</div>--}}
+                    {{--<div class="col-md-6">--}}
+                    {{--@include('Front::ns.lastPosts')--}}
+                    {{--</div>--}}
+                    {{--<div class="col-md-6">--}}
+                    {{--@include('Front::ns.lastPosts')--}}
+                    {{--</div>--}}
+
+                    {{--<footer>--}}
+                    {{--<a href="{{ route('front.ns.posts') }}">--}}
+                    {{--<span>{{ trans('site.FrontPostAll') }} <i class="fa fa-arrow-circle-right"></i></span>--}}
+                    {{--</a>--}}
+                    {{--</footer>--}}
+
+                    {{--</div>--}}
                   </div>
                 </div>
 

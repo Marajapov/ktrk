@@ -118,5 +118,10 @@
       locale: 'ru',
       format: 'DD-MM-YYYY'
     });
+
+    $('#time').datetimepicker({
+      locale: 'ru',
+      format: 'LT'
+    });
   </script>
 @stop

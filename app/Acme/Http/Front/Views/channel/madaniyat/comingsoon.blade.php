@@ -9,30 +9,36 @@
 
   <style>
     body{
-      width: 100%;
-      height: 100%;
+
     }
     .container{
-      position: relative;
+      position: absolute;
+      margin: auto;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 400px;
+      border-radius: 3px;
+
+      text-align: center;
     }
     .container .media{
-      margin-top: 50px;
     }
     .media-left{
-      width: 30%;
+      width: 40%;
       padding-right: 100px;
     }
     .media-body h4{
       padding: 0;
       margin: 0;
       color: #ffffff;
-      font-size: 64px;
+      font-size: 48px;
       font-weight: bold;
       text-transform: uppercase;
     }
     .btn{
-      display: block;
-      margin: 50px auto 0;
+      margin: 75px auto 0;
       padding: 10px 30px;
       background: #ffffff;
       color: #b60038;
@@ -59,18 +65,25 @@
     <div class="media">
       <div class="media-left media-middle">
         <a href="#">
-          <img class="media-object" src="{{ asset('images/channels/madaniyat_white.png') }}" alt="">
+          <img class="media-object" src="{{ asset('images/channels/madaniyat_lg.png') }}" alt="">
         </a>
       </div>
       <div class="media-body media-middle">
-        <h4 class="media-heading">Бул баракча иштеп чыгуу стадиясында.</h4>
-        ...
+        <h4 class="media-heading">
+          @if($lc == 'kg')
+            УЧУРДА БУЛ БАРАКЧА ИШТЕЛИП ЖАТАТ.
+          @else
+            СТРАНИЦА НА СТАДИИ РАЗРАБОТКИ
+          @endif
+        </h4>
       </div>
     </div>
-    <a href="{{ route('front.home') }}">
-    <button class="btn">
-      Артка кайтуу
-    </button>
+    <a class="btn" href="{{ route('front.home') }}">
+      @if($lc=='kg')
+        Артка кайтуу
+      @else
+        Назад
+      @endif
     </a>
 
 </div>

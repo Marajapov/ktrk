@@ -155,35 +155,26 @@
                     <div class="col-md-9 onenewspage">
                         <div class="panel panel-default onearticle">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><span> Новости </span></h3>
+                                <h3 class="panel-title"><span> Новости: {{ $post->getTitleRuOrKg() }} </span></h3>
                             </div>
                             <div class="panel-body">
                                 <div class="col-md-12">
-                                    <h2>Кыргызская келин Оливия!</h2>
+                                    <h2>{{ $post->getTitleRuOrKg() }}</h2>
                                     <div class="muzimg">
-                                        <img src="{{asset('images/channels/birinchiradio/olivia.jpg')}}" alt="" data-toggle="tooltip" data-placement="top" title="Бул жөн гана сүрөт эмес">
-                                        <iframe width="100%" height="auto" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/230240104&amp;color=ff5500&amp;show_artwork=false&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+                                        <img src="@if(empty($post->getFile()))images/2.jpg @else {{  asset($post->getFile()) }} @endif" alt="" data-toggle="tooltip" data-placement="top" title="Бул жөн гана сүрөт эмес">
+                                        
+                                        <iframe width="250" height="auto" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/230240104&amp;color=ff5500&amp;show_artwork=false&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+
+                                        <br />
+                                        <hr /> 
+                                        <br />
                                         <div class="audioinfo">
-                                            <p><h4>Тема:</h4><h5>Кыргыз келини Оливия</h5></p>
-                                            <p><h4>Алып баруучу:</h4><h5>Кыргыз кызы Кыргызгүл</h5></p>
-                                            <p><h4>Маектешкен:</h4><h5>Оливия Браун</h5></p>
-                                            <p><h6>Аудиону көчүрүп алуу:</h6><a class="audiosrc" title="Маустун оң жагын басып көчүрүп алсаңыз болот" href="{{asset('static/files/audio.mp3')}}" >Бактылуу Оливия <i class="fa fa-download"></i></a></p>
+                                            <p><h4>Тема:</h4><h5>{{ $post->getTitleRuOrKg() }}</h5></p>
                                         </div>
                                     </div>
 
                                     <article>
-                                        <p>
-                                            Межнациональные браки в мире – тема давняя и уже привычная. Однако некоторые союзы разных этносов и культур все же еще способны удивить. Как например, история жительницы Пенсильвании Оливия Стивенс, которая вышла замуж за кыргызстанца Каната и стала настоящей кыргызской келинкой. Предлагаем вам узнать, как необычная влюбленная пара живет вместе.</p>
-
-                                        <p>Канат несколько лет работает гидом, именно во время одного из туристических походов он встретился со своей будущей супругой Оливией.</p>
-
-
-                                        <blockquote> «Канат предложил не только руку, но и целый комплект» </blockquote>
-
-                                        <p>История Каната и Оливии начиналась просто - сначала общие встречи с друзьями и проводы домой, потом романтические отношения. Канат признается, что не делал предложение руки и сердца на закате солнца как в американских фильмах, он просто объяснил Оливии, что у него нет времени на пустые отношения и ему пора создавать семью.</p>
-
-                                        <p>По словам Оливии, разговор с Канатом был открытый, он откровенно сказал, что хочет жениться:</p>
-                                        <p>- Он единственный сын и живет с мамой. И это означало, что если я выхожу замуж за Каната, мы будем жить в Кыргызстане. Он предложил мне не только руку, но и целый комплект (смеется). Откровенность дала мне возможность оценить и выбрать. Я ведь даже не думала, что выйду за муж за кыргызстанца. Канат покорил меня своими личными качествами, он откровенный человек и с ним не бывает скучно. Он отличный муж, относится ко мне как к человеку, это очень редко можно встретить. Вся семья такая, они золотые. Это был для меня важный фактор.</p>
+                                        {!! $post->getContent() !!}
                                     </article>
 
                                 </div>

@@ -119,6 +119,7 @@ class PostController extends Controller
             $btw = time();
 
             $name = $post->id().$btw.'.'.$file->getClientOriginalExtension();
+            $name2 = $post->id().$btw.'_big.'.$file->getClientOriginalExtension();
 
 //            $manager = new ImageManager(array('driver' => 'imagick'));
 
@@ -126,8 +127,10 @@ class PostController extends Controller
             $storage->makeDirectory($dir);
 
             Image::make($_FILES['thumbnail']['tmp_name'])->fit(250, 150)->save($dir.'/'.$name);
+            Image::make($_FILES['thumbnail']['tmp_name'])->fit(500, 300)->save($dir.'/'.$name2);
 
             $post->thumbnail = $dir.'/'.$name;
+            $post->thumbnail_big = $dir.'/'.$name2;
             $post->save();
         }
 
@@ -255,13 +258,16 @@ class PostController extends Controller
             $btw = time();
 
             $name = $post->id().$btw.'.'.$file->getClientOriginalExtension();
-
-            Image::make($_FILES['thumbnail']['tmp_name'])->fit(250, 150)->save($dir.'/'.$name);
+            $name2 = $post->id().$btw.'_big.'.$file->getClientOriginalExtension();
 
             $storage = \Storage::disk('public');
             $storage->makeDirectory($dir);
 
+            Image::make($_FILES['thumbnail']['tmp_name'])->fit(250, 150)->save($dir.'/'.$name);
+            Image::make($_FILES['thumbnail']['tmp_name'])->fit(500, 300)->save($dir.'/'.$name2);
+
             $post->thumbnail = $dir.'/'.$name;
+            $post->thumbnail_big = $dir.'/'.$name2;
             $post->save();
         }
 
