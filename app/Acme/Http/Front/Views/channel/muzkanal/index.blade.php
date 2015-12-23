@@ -464,6 +464,7 @@
                </div>
                <div class="panel-body">
                   <ul class="list-group" >
+                  
                   <li class="list-group-item clearfix">
                      <a href="#" class="pull-right"> <i class="glyphicon glyphicon-play"></i> </a>
                      <a href="#" class="pull-left"> <img src="{{ asset('images/1.jpg') }}" class="hitimg"> </a>
@@ -476,114 +477,7 @@
                         <div class="like" data-likes="10"><i class="fa fa-thumbs-up"></i></div>
                      </div>
                   </li>
-                  <li class="list-group-item clearfix">
-                     <a href="#" class="pull-right"> <i class="glyphicon glyphicon-play"></i> </a>
-                     <a href="#" class="pull-left"> <img src="{{ asset('images/2.jpg') }}" class="hitimg"> </a>
-                     <a class="clear" href="#">
-                        <span>Борбиев Бек</span>
-                        <p> <small>Шамал</small></p>
-                     </a>
-                     <span class="numeric">2</span>
-                     <div class="vote">
-                        <div class="like" data-likes="10"><i class="fa fa-thumbs-up"></i></div>
-                     </div>
-                  </li>
-                  <li class="list-group-item clearfix">
-                     <a href="#" class="pull-right"> <i class="glyphicon glyphicon-play"></i> </a>
-                     <a href="#" class="pull-left"> <img src="{{ asset('images/3.jpg') }}" class="hitimg"> </a>
-                     <a class="clear" href="#">
-                        <span>Бегиш жана Баястан </span>
-                        <p> <small>Айтчы</small></p>
-                     </a>
-                     <span class="numeric">3</span>
-                     <div class="vote">
-                        <div class="like" data-likes="10"><i class="fa fa-thumbs-up"></i></div>
-                     </div>
-                  </li>
-                  <li class="list-group-item clearfix">
-                     <a href="#" class="pull-right"> <i class="glyphicon glyphicon-play"></i> </a>
-                     <a href="#" class="pull-left"> <img src="{{ asset('images/4.jpg') }}" class="hitimg"> </a>
-                     <a class="clear" href="#">
-                        <span>Примбердиев Кайрат</span>
-                        <p> <small>Поезддеги Махабат</small></p>
-                     </a>
-                     <span class="numeric">4</span>
-                     <div class="vote">
-                        <div class="like" data-likes="10"><i class="fa fa-thumbs-up"></i></div>
-                     </div>
-                  </li>
-                  <li class="list-group-item clearfix">
-                     <a href="#" class="pull-right"> <i class="glyphicon glyphicon-play"></i> </a>
-                     <a href="#" class="pull-left"> <img src="{{ asset('images/5.jpg') }}" class="hitimg"> </a>
-                     <a class="clear" href="#">
-                        <span>Акулова Динара</span>
-                        <p> <small>Ай кызым</small></p>
-                     </a>
-                     <span class="numeric">5</span>
-                     <div class="vote">
-                        <div class="like" data-likes="10"><i class="fa fa-thumbs-up"></i></div>
-                     </div>
-                  </li>
-                  <li class="list-group-item clearfix">
-                     <a href="#" class="pull-right"> <i class="glyphicon glyphicon-play"></i> </a>
-                     <a href="#" class="pull-left"> <img src="{{ asset('images/5.jpg') }}" class="hitimg"> </a>
-                     <a class="clear" href="#">
-                        <span>Акулова Динара</span>
-                        <p> <small>Ай кызым</small></p>
-                     </a>
-                     <span class="numeric">6</span>
-                     <div class="vote">
-                        <div class="like" data-likes="10"><i class="fa fa-thumbs-up"></i></div>
-                     </div>
-                  </li>
-                  <li class="list-group-item clearfix">
-                     <a href="#" class="pull-right"> <i class="glyphicon glyphicon-play"></i> </a>
-                     <a href="#" class="pull-left"> <img src="{{ asset('images/5.jpg') }}" class="hitimg"> </a>
-                     <a class="clear" href="#">
-                        <span>Акулова Динара</span>
-                        <p> <small>Ай кызым</small></p>
-                     </a>
-                     <span class="numeric">7</span>
-                     <div class="vote">
-                        <div class="like" data-likes="10"><i class="fa fa-thumbs-up"></i></div>
-                     </div>
-                  </li>
-                  <li class="list-group-item clearfix">
-                     <a href="#" class="pull-right"> <i class="glyphicon glyphicon-play"></i> </a>
-                     <a href="#" class="pull-left"> <img src="{{ asset('images/5.jpg') }}" class="hitimg"> </a>
-                     <a class="clear" href="#">
-                        <span>Акулова Динара</span>
-                        <p> <small>Ай кызым</small></p>
-                     </a>
-                     <span class="numeric">8</span>
-                     <div class="vote">
-                        <div class="like" data-likes="10"><i class="fa fa-thumbs-up"></i></div>
-                     </div>
-                  </li>
-                  <li class="list-group-item clearfix">
-                     <a href="#" class="pull-right"> <i class="glyphicon glyphicon-play"></i> </a>
-                     <a href="#" class="pull-left"> <img src="{{ asset('images/5.jpg') }}" class="hitimg"> </a>
-                     <a class="clear" href="#">
-                        <span>Акулова Динара</span>
-                        <p> <small>Ай кызым</small></p>
-                     </a>
-                     <span class="numeric">9</span>
-                     <div class="vote">
-                        <div class="like" data-likes="10"><i class="fa fa-thumbs-up"></i></div>
-                     </div>
-                  </li>
-                  <li class="list-group-item clearfix">
-                     <a href="#" class="pull-right"> <i class="glyphicon glyphicon-play"></i> </a>
-                     <a href="#" class="pull-left"> <img src="{{ asset('images/5.jpg') }}" class="hitimg"> </a>
-                     <a class="clear" href="#">
-                        <span>Акулова Динара</span>
-                        <p> <small>Ай кызым</small></p>
-                     </a>
-                     <span class="numeric">10</span>
-                     <div class="vote">
-                        <div class="like" data-likes="10"><i class="fa fa-thumbs-up"></i></div>
-                     </div>
-                  </li>
+                  
                </div>
             </div>
          </div>

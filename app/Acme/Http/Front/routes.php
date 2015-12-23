@@ -133,7 +133,10 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
 
 
     Route::get('history', ['as' => 'front.history', 'uses' => 'PageController@historyPage']);
+//  Director routes
     Route::get('director', ['as' => 'front.pages.director', 'uses' => 'PageController@directorPage']);
+    Route::get('director/post/{post}', ['as' => 'front.pages.directorPost', 'uses' => 'PageController@directorPost']);
+
     Route::get('leaders', ['as' => 'front.pages.leaders', 'uses' => 'PageController@leadersPage']);
 //    Route::get('leader/{leader}', ['as' => 'front.pages.leader', 'uses' => 'PageController@leaderPage']);
     Route::get('strategy', ['as' => 'front.pages.strategy', 'uses' => 'PageController@strategyPage']);

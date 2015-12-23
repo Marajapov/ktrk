@@ -97,6 +97,22 @@ class UserTableSeeder extends Seeder
             'role'       => 'admin',
             'channel_id' => 12,
         ]);
+
+          \Model\User\ModelName::create([
+            'name'       => 'Usubaly',
+            'email'      => 'usubaly.mambetov@gmail.com',
+            'password'   => bcrypt('usubaly123'),
+            'role'       => 'birinchi',
+            'channel_id' => 7,
+        ]);
+
+          \Model\User\ModelName::create([
+            'name'       => 'Bektur',
+            'email'      => 'bektur_ods@mail.ru',
+            'password'   => bcrypt('bektur123'),
+            'role'       => 'muzkanal',
+            'channel_id' => 3,
+        ]);
         //factory(\Model\User\ModelName::class, 50)->create();
     }
 }

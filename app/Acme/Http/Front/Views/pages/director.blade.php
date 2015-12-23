@@ -434,7 +434,7 @@
                     @foreach($directorPosts as $post)
                     <div class="media">
                       <div class="media-left">
-                        <a href="#">
+                        <a href="{{ route('front.pages.directorPost', $post)}}">
                           <img class="media-object thumb" src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif" alt="image">
                         </a>
                       </div>
@@ -443,7 +443,7 @@
                           <span class="e-datetime">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
                           <span class="e-views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
                         </div>
-                        <a class="media-heading" href="http://1000.ktrk.kg/post/1">{{ $post->getTitleRuOrKg() }}</a>
+                        <a class="media-heading" href="{{ route('front.pages.directorPost', $post)}}">{{ $post->getTitleRuOrKg() }}</a>
 
                         <h5 class="media-desc">
                           <p>Кабинет, как у бизнесмена средней руки. Нет ни мебели красного дерева, как в вотчинах других чиновников высокого ранга, ни канцелярского набора из бирюзы. Из роскоши — 6 плазменных телевизоров на стене. Под столом склад жестянок с безалкогольным энергетиком.

@@ -59,7 +59,7 @@
     <div class="media">
       <div class="media-left media-middle">
         <a href="#">
-          <img class="media-object" src="{{ asset('images/channels/madaniyat_white.png') }}" alt="">
+          <img class="media-object" src="{{ asset('images/channels/min-kiyal.png') }}" alt="">
         </a>
       </div>
       <div class="media-body media-middle">

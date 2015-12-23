@@ -59,4 +59,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'access:admin', 'namespace' =
     // added for latest post in main window last 6 posts
     Route::get('post/number/{number}', ['as' => 'admin.post.number', 'uses' => 'PostController@number']);
     Route::get('post/unnumber/{number}', ['as' => 'admin.post.unnumber', 'uses' => 'PostController@unnumber']);
+
+    // added for latest Media in Muzkanal
+    Route::get('media/number/{number}', ['as' => 'admin.media.number', 'uses' => 'MediaController@number']);
+    Route::get('media/unnumber/{number}', ['as' => 'admin.media.unnumber', 'uses' => 'MediaController@unnumber']);
 });

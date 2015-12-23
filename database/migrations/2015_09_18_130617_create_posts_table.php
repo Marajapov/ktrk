@@ -40,10 +40,12 @@ class CreatePostsTable extends Migration
             $table->string('balastan');
             $table->string('madaniyat');
             $table->string('minkiyal');
+            $table->string('reporter');
             $table->string('extracolumn');
 
             // Add locally
             $table->string('number');
+            $table->string('audio');
             
             $table->smallInteger('viewed')->default(0);
             $table->timestamps();

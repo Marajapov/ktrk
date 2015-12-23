@@ -143,38 +143,19 @@
 
                 <div class="col-md-9">
                   <div class="carousel carousel-reporter">
+                    @if($reporterPosts)
+                    @foreach($reporterPosts as $post)
                     <div class="col-md-4">
-                      <a href="#">
-                        <img src="{{ asset('images/1.jpg') }}" alt=""/>
+                      <a href="{{ route('front.post', $post) }}">
+                        <img src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif" alt=""/>
                       </a>
-                      <div class="datetime">12:11:2015</div>
-                      <div class="views"><i class="fa fa-eye"></i>&nbsp;2351</div>
-                      <p>Бүгүн Дордойдо курткалар аябагандай көп сатылды</p>
+                      <div class="datetime">{{ $post->getDay() }} {{ $post->getMonthRu() }}, {{ $post->getYear() }}</div>
+                      <div class="views"><i class="fa fa-eye"></i>&nbsp;{{ $post->getViewed() }}</div>
+                      <p>{{ $post->getTitleRuOrKg() }}</p>
                     </div>
-                    <div class="col-md-4">
-                      <a href="#">
-                        <img src="{{ asset('images/2.jpg') }}" alt=""/>
-                      </a>
-                      <div class="datetime">12:11:2015</div>
-                      <div class="views"><i class="fa fa-eye"></i>&nbsp;2351</div>
-                      <p>Суук түшкөндөн бери, эшикте аябай суук болууда</p>
-                    </div>
-                    <div class="col-md-4">
-                      <a href="#">
-                        <img src="{{ asset('images/gallery/002.jpg') }}" alt=""/>
-                      </a>
-                      <div class="datetime">12:11:2015</div>
-                      <div class="views"><i class="fa fa-eye"></i>&nbsp;2351</div>
-                      <p>Маршруткалар маселесин эртерээк чечпесес жакында транспорттук коллапс башталат </p>
-                    </div>
-                    <div class="col-md-4">
-                      <a href="#">
-                        <img src="{{ asset('images/gallery/002.jpg') }}" alt=""/>
-                      </a>
-                      <div class="datetime">12:11:2015</div>
-                      <div class="views"><i class="fa fa-eye"></i>&nbsp;2351</div>
-                      <p>Маршруткалар маселесин эртерээк чечпесе жакында транспорттук коллапс башталат </p>
-                    </div>
+                    @endforeach
+                    @endif
+
                   </div>
                 </div>
 

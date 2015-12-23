@@ -67,6 +67,14 @@
       </div>
     </div> 
 
+    <!-- Audio -->
+    <div class="form-group">
+    <label for="audio" class="col-sm-2 control-label">Аудио:(Из soundcloud.com)</label>
+      <div class="col-sm-2">
+        {!! Form::text('audio', null, ["class" => "form-control", "id" => "audio", "title" => ""]) !!}
+      </div>
+    </div>
+
     <!-- Datepicker -->
     <div class="form-group">
     <label for="created_at" class="col-sm-2 control-label">Дата</label>
@@ -153,6 +161,20 @@
                     {!! Form::checkbox('director', 1, null, ["id" => "director", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
                     <label for="director">
                       Страница Ген. директора
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+               <!-- reporter -->
+              <div class="form-group">
+                <label for="parentId" class="col-sm-2 control-label"></label>
+                <div class="col-sm-10">
+                  <div class="checkbox checkbox-primary ">
+                    {!! Form::hidden('reporter', 0) !!}
+                    {!! Form::checkbox('reporter', 1, null, ["id" => "reporter", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
+                    <label for="reporter">
+                      Народный репортер
                     </label>
                   </div>
                 </div>

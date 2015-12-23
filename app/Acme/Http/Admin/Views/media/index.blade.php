@@ -101,8 +101,7 @@
                     {{--<span class="glyphicon glyphicon-trash"></span>--}}
                     <i class="fa fa-trash"></i>
                   </button>
-                  {!! Form::close() !!}
-                                       
+                  {!! Form::close() !!}                                       
                 </td>
               </tr>
             @endforeach

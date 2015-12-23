@@ -121,8 +121,7 @@
             </div>
         </div>
     </section>
-    <br>
-    <section><div id="player"></div></section>
+    
 
     <section id="cta" class="wow fadeIn">
         <div class="container">
