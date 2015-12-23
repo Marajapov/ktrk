@@ -17,6 +17,11 @@
     <link rel="stylesheet" href="{{asset('css/landing/prettyPhoto.css')}}"/>
     <link rel="stylesheet" href="{{asset('css/landing/responsive.css')}}"/>
 
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/custombox.css') }}"/>
+    <link rel="stylesheet"  href="{{ asset('css/lightslider.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/gallery.css') }}"/>
+
+
 
     @yield('styles')
 
