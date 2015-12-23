@@ -67,7 +67,7 @@ class PostController extends Controller
     public function store(Request $request)
     {
 
-        $post = Post::create($request->except('tag_kg','tag_ru','thumbnail','q','channel_id','created_at','number'));
+        $post = Post::create($request->except('tag_kg','tag_ru','thumbnail','q','channel_id','created_at','number','time'));
 
         $post->number = 99;
         $post->save();
@@ -138,7 +138,10 @@ class PostController extends Controller
             $channel_id = 1;
             $post->channel_id = $channel_id;
         }
+
         if($request->input('created_at') != null){
+            $time = $request->input('time');
+            
             $postDate = $request->input('created_at');
             $todayTime = date('H:i:s');
             $saveDate = date('Y-m-d', strtotime($postDate));

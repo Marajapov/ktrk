@@ -87,7 +87,7 @@
     <div class="form-group">
       <label for="created_at" class="col-sm-2 control-label">Время<i class="fa fa-clock-o"></i></label>
       <div class="col-sm-2">
-        {!! Form::text('created_at', null, ["class" => "form-control", "id" => "time", "title" => ""]) !!}
+        {!! Form::text('time', null, ["class" => "form-control", "id" => "time", "title" => ""]) !!}
       </div>
     </div>
 
@@ -100,14 +100,6 @@
           {!! Form::checkbox('published', 1, null, ["id" => "checkboxPublished", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
           <label for="checkboxPublished">
             {{ trans('site.Publish') }}
-          </label>
-        </div>
-
-        <div class="checkbox checkbox-primary col-sm-2">
-          {!! Form::hidden('announcement', 0) !!}
-          {!! Form::checkbox('announcement', 1, null, ["id" => "checkboxAnnouncement", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
-          <label for="checkboxAnnouncement">
-            Анонс
           </label>
         </div>
 

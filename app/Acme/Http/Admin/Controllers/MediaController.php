@@ -145,7 +145,7 @@ class MediaController extends Controller
 
         if($request->input('hitnumber')){
             $hitnumber = $request->input('hitnumber');
-            
+
             $allMedias = \Model\Media\ModelName::where('hitnumber','=',$hitnumber)->get();
             foreach ($allMedias as $key => $value) {
                 $value->hitnumber = 0;
