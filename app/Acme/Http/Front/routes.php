@@ -93,6 +93,7 @@ Route::group(['domain' => 'ktrk.dev', 'prefix' => '/dostuk', 'namespace' => 'Fro
 
     Route::get('/', ['as' => 'dostuk.home',   'uses' => 'DostukController@Home']);
     Route::get('/posts', ['as' => 'dostuk.posts',   'uses' => 'DostukController@posts']);
+    Route::get('/photos/{gallery}',['as' => 'dostuk.photos','uses'=> 'DostukController@Gallery'] );
 
 });
 

@@ -40,6 +40,7 @@ class CreatePostsTable extends Migration
             $table->string('balastan');
             $table->string('madaniyat');
             $table->string('minkiyal');
+            $table->string('dostuk');
             $table->string('reporter');
             $table->string('extracolumn');
 
