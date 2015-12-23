@@ -35,7 +35,7 @@
                           <div class="row">
 
                             <a href="{{ route('front.ns.post', $pop) }}" class="thumb">
-                              <img src="@if(!($pop->getFile()))images/live_bg.png @else {{ asset($pop->getFile()) }} @endif" alt=""/>
+                              <img src="@if(!($pop->getFile()))images/live_bg.png @else {{ asset($pop->thumbnail_big) }} @endif" alt=""/>
                             </a>
                             <h2>
                               <div class="extra">
