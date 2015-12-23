@@ -3469,6 +3469,7 @@ display: block;
 
 .music .muzvideoall{
     width: 100%;
+    position: inherit;
 }
 .music .muzvideoall img{
     width: 100%;

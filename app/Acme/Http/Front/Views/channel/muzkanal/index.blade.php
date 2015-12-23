@@ -330,9 +330,14 @@
          <div class="col-md-4 promo">
             <div class="panel panel-default promorolik">
                <div class="panel-heading">
-                  <h3 class="panel-title"><span> - Промо - </span></h3>
+                  <h3 class="panel-title"><span> {{ $promo->getName()}}</span></h3>
                </div>
-               <iframe width="100%" height="100%" src="https://www.youtube.com/embed/nA2tGgAzQ9E" frameborder="0" allowfullscreen></iframe>
+               @if($promo != null)
+               <iframe width="100%" height="100%" src="https://www.youtube.com/embed/{{ $promo->getUrl()}}" frameborder="0" allowfullscreen></iframe>
+               @else
+               <iframe width="100%" height="100%" src="https://www.youtube.com/embed/t8r7ifqRViY" frameborder="0" allowfullscreen></iframe>    
+               @endif
+
             </div>
             <div class="panel panel-default programtitle">
                <div class="panel-heading">
@@ -766,7 +771,7 @@
       playerInstance.setup({
           autostart: false,
           playlist: [{
-                  image: "{{ asset('images/channels/muztv.png') }}",
+                  image: "{{ asset('images/channels/muzkanal/online.jpg') }} ",
                   sources: [{
                           file: "http://212.112.97.18:80/live/4002.flv"
                       }]
@@ -776,7 +781,7 @@
           aspectratio: "16:9",
           primary: "flash",
           skin: {
-              name: "five"
+              name: "bekle"
           },
           stretching: "exactfit"
       });
