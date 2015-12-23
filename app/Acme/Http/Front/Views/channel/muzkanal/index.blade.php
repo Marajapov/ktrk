@@ -330,7 +330,7 @@
          <div class="col-md-4 promo">
             <div class="panel panel-default promorolik">
                <div class="panel-heading">
-                  <h3 class="panel-title"><span> {{ $promo->getName()}}</span></h3>
+                  <h3 class="panel-title"><span>Промо</span></h3>
                </div>
                @if($promo != null)
                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/{{ $promo->getUrl()}}" frameborder="0" allowfullscreen></iframe>
