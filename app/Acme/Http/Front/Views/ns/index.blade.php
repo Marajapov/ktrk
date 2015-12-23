@@ -54,9 +54,6 @@
                       <div class="col-md-6">
                         @include('Front::ns.lastPosts')
                       </div>
-                        <div class="col-md-6">
-                        @include('Front::ns.lastPosts')
-                      </div>
 
                       <footer>
                         <a href="{{ route('front.ns.posts') }}">
