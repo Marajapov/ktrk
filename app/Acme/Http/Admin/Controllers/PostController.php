@@ -143,9 +143,9 @@ class PostController extends Controller
             $time = $request->input('time');
             
             $postDate = $request->input('created_at');
-            $todayTime = date('H:i:s');
+            $timeToSave = date('H:i:s', strtotime($time));
             $saveDate = date('Y-m-d', strtotime($postDate));
-            $result = $saveDate.' '.$todayTime;
+            $result = $saveDate.' '.$$timeToSave;
             $post->created_at = $result;
             $post->save();
         }else{
@@ -211,7 +211,7 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        $post->update($request->except('tag_kg','tag_ru','thumbnail','q','channel_id','created_at'));
+        $post->update($request->except('tag_kg','tag_ru','thumbnail','q','channel_id','created_at','time'));
 
         $tag_kg_string = $request->input('tag_kg');
         $tags = explode("; ",$tag_kg_string);
@@ -279,12 +279,12 @@ class PostController extends Controller
             $post->channel_id = $channel_id;
         }
         if($request->input('created_at') != null){
-
-            $postDate = $request->input('created_at');
+            $time = $request->input('time');
             
-            $todayTime = date('H:i:s');
+            $postDate = $request->input('created_at');
+            $timeToSave = date('H:i:s', strtotime($time));
             $saveDate = date('Y-m-d', strtotime($postDate));
-            $result = $saveDate.' '.$todayTime;
+            $result = $saveDate.' '.$$timeToSave;
             $post->created_at = $result;
             $post->save();
         }else{
