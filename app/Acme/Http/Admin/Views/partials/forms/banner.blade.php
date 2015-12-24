@@ -21,6 +21,12 @@
             {!! Form::text('name', null, ["class" => "form-control", "required" => true, "title" => ""]) !!}
         </div>
     </div>
+    <div class="col-sm-8">
+      <div class="form-group">
+        <label class="control-label">Ссылка</label>
+        {!! Form::text('linkTo', null, ["class" => "form-control", "required" => true, "title" => ""]) !!}
+      </div>
+    </div>
 <!--     <div class="col-xs-12">
         <div class="form-group">
             <label class="control-label">Файл</label>

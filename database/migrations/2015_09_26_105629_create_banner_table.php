@@ -19,6 +19,7 @@ class CreateBannerTable extends Migration
             $table->integer('channel_id')->nullable()->unsigned()->default(null);
             $table->integer('category_id')->nullable()->unsigned()->default(null);
             $table->string('file');
+            $table->string('linkTo');
             $table->enum('type', ['image', 'flash', 'video'])->nullable()->default('image');
             $table->integer('owner_id')->nullable()->unsigned()->default(null);
             $table->boolean('published')->nullable()->default(false);
