@@ -10,6 +10,10 @@ class PageController extends Controller
 {
     public function __construct()
     {
+        $this->positionTop = \Model\Banner\ModelName::where('positionTop','=','1')->first();
+        $this->positionRight = \Model\Banner\ModelName::where('positionRight','=','1')->first();
+        $this->positionCenter = \Model\Banner\ModelName::where('positionCenter','=','1')->first();
+        $this->positionBottom = \Model\Banner\ModelName::where('positionBottom','=','1')->first();
     }
     /**
      * Show the application dashboard to the user.
@@ -24,6 +28,10 @@ class PageController extends Controller
         return view('Front::pages.history', [
             'lc' => $lc,
             'backgroundMain' => $backgroundMain,
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
             ]);
     }
 
@@ -38,6 +46,10 @@ class PageController extends Controller
             'backgroundMain' => $backgroundMain,
             'directorPosts' => $directorPosts,
             'lc' => $lc,
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
         ]);
     }
 
@@ -48,7 +60,12 @@ class PageController extends Controller
         return view('Front::pages.leaders', [
             'backgroundMain' => $backgroundMain,
             'categories'=>$categories,
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
             ]);
+
     }
 
 //    public function leaderPage($leader)
@@ -69,6 +86,10 @@ class PageController extends Controller
             'lc' => $lc,
             'backgroundMain' => $backgroundMain,
             'categories' => $categories,
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
             ]);
     }
 
@@ -81,6 +102,10 @@ class PageController extends Controller
             'lc' => $lc,
             'backgroundMain' => $backgroundMain,
             'categories' => $categories,
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
             ]);
     }
 
@@ -93,6 +118,10 @@ class PageController extends Controller
             'lc' => $lc,
             'backgroundMain' => $backgroundMain,
             'categories' => $categories,
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
             ]);
     }
 
@@ -105,6 +134,10 @@ class PageController extends Controller
             'lc' => $lc,
             'backgroundMain' => $backgroundMain,
             'categories' => $categories,
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
             ]);
     }
 
@@ -132,6 +165,10 @@ class PageController extends Controller
             'channels' => $channels,
             'schedules' => $schedules,
             'programs' => $programs,
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
         ]);
     }
 
@@ -186,6 +223,10 @@ class PageController extends Controller
             'programs' => $programs,
             'week' => $week,
             'channels' => $channels,
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
         ]);
 
     }
@@ -197,6 +238,10 @@ class PageController extends Controller
         return view('Front::pages.ns', [
             'backgroundMain' => $backgroundMain,
             'categories' => $categories,
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
             ]);
     }
 
@@ -207,6 +252,10 @@ class PageController extends Controller
         return view('Front::pages.editionkenesh', [
             'backgroundMain' => $backgroundMain,
             'categories' => $categories,
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
             ]);
     }
 
@@ -273,6 +322,10 @@ class PageController extends Controller
             'categories'=>$categories,
             'positionTop'    => $positionTop,
             'backgroundMain' => $backgroundMain,
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
             ]);
 
     }

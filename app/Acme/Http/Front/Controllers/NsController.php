@@ -7,6 +7,10 @@ class NsController extends Controller
 {
     public function __construct()
     {
+        $this->positionTop = \Model\Banner\ModelName::where('positionTop','=','1')->first();
+        $this->positionRight = \Model\Banner\ModelName::where('positionRight','=','1')->first();
+        $this->positionCenter = \Model\Banner\ModelName::where('positionCenter','=','1')->first();
+        $this->positionBottom = \Model\Banner\ModelName::where('positionBottom','=','1')->first();
     }
     /**
      * Show the application dashboard to the user.
@@ -31,6 +35,10 @@ class NsController extends Controller
             'posts' => $posts,
             'popPosts' => $popPosts,
             'backgroundMain' => $backgroundMain,
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
         ]);
     }
 
@@ -57,6 +65,10 @@ class NsController extends Controller
             'postAll' => $postAll,
             'perPage' => $perPage,
             'backgroundMain' => $backgroundMain,
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
         ]);
     }
 
@@ -70,6 +82,10 @@ class NsController extends Controller
         return view('Front::ns.post',[
             'post' => $post,
             'backgroundMain' => $backgroundMain,
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
         ]);
     }
 
@@ -80,6 +96,10 @@ class NsController extends Controller
         return view('Front::ns.galleries',[
             'galleries' => $galleries,
             'backgroundMain' => $backgroundMain,
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
         ]);
     }
 
@@ -96,6 +116,10 @@ class NsController extends Controller
             'images' => $images,
             'row' => $row,
             'backgroundMain' => $backgroundMain,
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
         ]);
     }
 
@@ -106,6 +130,10 @@ class NsController extends Controller
         return view('Front::ns.reports',[
             'lc' => $lc,
             'backgroundMain' => $backgroundMain,
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
         ]);
     }
 
@@ -116,6 +144,10 @@ class NsController extends Controller
         return view('Front::ns.contacts',[
             'lc' => $lc,
             'backgroundMain' => $backgroundMain,
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
         ]);
     }
 

@@ -7,6 +7,10 @@ class RsController extends Controller
 {
     public function __construct()
     {
+        $this->positionTop = \Model\Banner\ModelName::where('positionTop','=','1')->first();
+        $this->positionRight = \Model\Banner\ModelName::where('positionRight','=','1')->first();
+        $this->positionCenter = \Model\Banner\ModelName::where('positionCenter','=','1')->first();
+        $this->positionBottom = \Model\Banner\ModelName::where('positionBottom','=','1')->first();
     }
     /**
      * Show the application dashboard to the user.
@@ -32,6 +36,10 @@ class RsController extends Controller
             'posts' => $posts,
             'popPosts' => $popPosts,
             'backgroundMain' => $backgroundMain,
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
         ]);
     }
 
@@ -40,6 +48,10 @@ class RsController extends Controller
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
         return view('Front::rs.about',[
             'backgroundMain' => $backgroundMain,
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
         ]);
     }
 
@@ -48,6 +60,10 @@ class RsController extends Controller
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
         return view('Front::rs.faq',[
             'backgroundMain' => $backgroundMain,
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
         ]);
     }
 
@@ -56,6 +72,10 @@ class RsController extends Controller
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
         return view('Front::rs.procedure',[
             'backgroundMain' => $backgroundMain,
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
         ]);
     }
 
@@ -74,6 +94,10 @@ class RsController extends Controller
             'postAll' => $postAll,
             'perPage' => $perPage,
             'backgroundMain' => $backgroundMain,
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
         ]);
     }
 
@@ -87,6 +111,10 @@ class RsController extends Controller
         return view('Front::rs.post',[
             'post' => $post,
             'backgroundMain' => $backgroundMain,
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
         ]);
     }
 
@@ -101,6 +129,10 @@ class RsController extends Controller
         return view('Front::rs.person',[
             'backgroundMain' => $backgroundMain,
             'person' => $person,
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
         ]);
     }
 
@@ -111,6 +143,10 @@ class RsController extends Controller
         return view('Front::rs.contacts',[
             'lc' => $lc,
             'backgroundMain' => $backgroundMain,
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
         ]);
     }
 
