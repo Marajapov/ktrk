@@ -189,6 +189,8 @@ class PostController extends Controller
         $relatedPosts = \Model\Post\ModelName::where('title','<>','')->lists('title', 'id')->toArray();
         $relatedPosts2 = \Model\Post\ModelName::where('titleRu','<>','')->lists('titleRu', 'id')->toArray();
 
+        $dostukProgramList = \Model\Project\ModelName::where('dostuk','<>','')->lists('name', 'id')->toArray();
+
         $tags = \Model\Tag\Tag::lists('name', 'id');
         $tags2 = \Model\Tag\Tag::lists('name', 'id');
 
@@ -201,6 +203,7 @@ class PostController extends Controller
             'channelList' => $channelList,
             'categoryList' => $categoryList,
             'PhotoParentList' => $PhotoParentList,
+            'dostukProgramList' => $dostukProgramList,
             ]);
     }
 

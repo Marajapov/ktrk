@@ -22,4 +22,6 @@ trait ModelRelationships
     {
         return $this->morphToMany(\Model\Tag\Tag::class, 'taggable');
     }
+
+    
 }
