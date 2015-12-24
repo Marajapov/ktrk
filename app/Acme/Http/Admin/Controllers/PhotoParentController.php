@@ -75,6 +75,8 @@ class PhotoParentController extends Controller
         // start count how many uploaded
         $uploadcount = 0;
 
+//        dd($files);
+
         foreach($files as $key=>$file) {
 
           // $rules = array('file' => 'required'); //'required|mimes:png,gif,jpeg,txt,pdf,doc'

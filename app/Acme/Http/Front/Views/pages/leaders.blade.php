@@ -19,7 +19,7 @@
                 <div class="col-md-12 directors">
                   <div class="col-md-6">
                     <div class="row">
-                      <img src="{{ asset('images/managers/1.png') }}" >
+                      <img src="{{ asset('images/managers/1_2.jpg') }}" >
                     </div>
                   </div>
                   <div class="col-md-6 director-info">
