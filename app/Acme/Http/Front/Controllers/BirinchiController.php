@@ -58,7 +58,7 @@ class BirinchiController extends Controller
         $post->incrementViewed();
 
         $channel = \Model\Channel\ModelName::name('birinchi')->first();
-         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
            return view('Front::channel.birinchi.news', [
             'channel' => $channel,

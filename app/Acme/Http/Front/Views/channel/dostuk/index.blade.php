@@ -4,6 +4,9 @@
 <link rel="stylesheet" href="{{ asset('css/radios.css')}}">
 <link rel="stylesheet" href="{{ asset('css/landing/dostuk.css')}}">
 
+ <link rel="stylesheet" href="{{ asset('css/articles.css') }}"/>
+  <link rel="stylesheet" href="{{ asset('css/pages.css') }}"/>
+
 @endsection
 @section('content')
 <body id="home" class="homepage">
@@ -158,7 +161,39 @@
                                     </ul>
                                     <div id="tab-content" class="tab-content">
                                         <div role="tabpanel" class="tab-pane fade active in" id="tab01" aria-labelledby="tab01">
-                                            <p><iframe width="100%" height="100" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/235888059&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe></p>
+                                    <div class="onenews">
+                                       <div class="panel panel-articles">
+
+                                          <div class="panel-body">
+                                             <div class="panel-body">
+                                             @if($allPost)
+                                             @foreach($allPost as $post)
+                                                <div class="media">
+                                                   <div class="media-left">
+                                                      <a href="{{ route('dostuk.news', $post) }}">
+                                                      <img class="media-object thumb" src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif" alt="image">
+                                                      </a>
+                                                   </div>
+                                                   <div class="media-body">
+                                                      <div class="extra">
+                                                         <span class="e-datetime">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
+                                                         <span class="e-views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
+                                                      </div>
+                                                      <a class="media-heading" href="{{ route('dostuk.news', $post) }}">{{ $post->getTitleRuOrKg() }}</a>
+                                                      
+                                                   </div>
+                                                </div>
+                                                @endforeach
+                                                @endif
+                                                
+                                                <footer>
+                                                   <a href="{{ route('front.general') }}">{{ trans('radiopages.Morenews') }}</a>
+                                                </footer>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+
                                         </div>
                                         <div role="tabpanel" class="tab-pane fade" id="tab02" aria-labelledby="tab02">
                                            <p>Кыргызстанга салымын кошуп жаткан белгилүү адамдар тууралуу. </p>
@@ -459,23 +494,38 @@
             <div class="section-header2">
                 <h2 class="section-title text-center wow fadeInDown">{{ trans('radiopages.Photos') }}</h2>
             </div>
+            <div class="panel-body">
 
-            <div class="portfolio-items">
-               @if($photoGalleries != null)
-               @foreach($photoGalleries as $key=>$photoGallery)
-                <div class="portfolio-item">
-                    <div class="portfolio-item-inner">
-                        <img class="img-responsive" src="{{ asset($photoGallery->status) }}" alt="">
-                        <div class="portfolio-info">
-                            <h3>Галерея</h3>
-                            <a class="preview" href="{{ route('dostuk.photos', $photoGallery) }}"><i class="fa fa-eye"></i></a>
+                <section>
+                  @if($photoGalleries != null)
+                    @foreach($photoGalleries as $photoGallery)
+
+                      <div class="col-md-4">
+
+                        <div class="gallery-item">
+                          <a href="{{ route('dostuk.photos', $photoGallery) }}" class="thumb">
+                            <img src="{{ asset($photoGallery->status) }}" alt="..." class="img-thumbnail">
+                            <i class="fa fa-camera"></i>
+                          </a>
+                          <h2>
+                            <div class="extra">
+                              <span class="e-datetime">{{ $photoGallery->getDay() }} {{ $photoGallery->getMonthRu() }}, {{ $photoGallery->getTime() }}</span>
+                            </div>
+                            <a href="{{ route('dostuk.photos', $photoGallery) }}">{{ $photoGallery->getName() }}</a>
+                          </h2>
                         </div>
-                    </div>
-                </div><!--/.portfolio-item-->
-                @endforeach
-                @endif
 
-            </div>
+                      </div>
+                    @endforeach
+                  @endif
+
+                </section>
+              <footer>
+              <a href="{{ route('dostuk.allphotos') }}">
+                     <span>{{ trans('radiopages.Allphotos') }} <i class="fa fa-arrow-circle-right"></i></span>
+                 </a>
+             </footer>
+              </div>
         </div><!--/.container-->
     </section><!--/#portfolio-->
 

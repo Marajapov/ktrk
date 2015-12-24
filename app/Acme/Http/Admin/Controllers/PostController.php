@@ -45,6 +45,8 @@ class PostController extends Controller
         $relatedPosts = \Model\Post\ModelName::where('title','<>','')->lists('title', 'id')->toArray();
         $relatedPosts2 = \Model\Post\ModelName::where('titleRu','<>','')->lists('titleRu', 'id')->toArray();
 
+        $dostukProgramList = \Model\Project\ModelName::where('dostuk','<>','')->lists('name', 'id')->toArray();
+
         return view('Admin::post.create', [
             'post' => new Post, 
             'tags' => $tags,
@@ -54,7 +56,7 @@ class PostController extends Controller
             'PhotoParentList' => $PhotoParentList,
             'relatedPosts' => $relatedPosts,
             'relatedPosts2' => $relatedPosts2,
-
+            'dostukProgramList' => $dostukProgramList,
             ]);
     }
 

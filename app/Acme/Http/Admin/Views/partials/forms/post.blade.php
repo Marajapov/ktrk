@@ -224,6 +224,27 @@
                   </div>
                 </div>
               </div>
+              <!-- dostuk -->
+              <div class="form-group">
+                <label for="parentId" class="col-sm-2 control-label"></label>
+                <div class="col-sm-10">
+                  <div class="checkbox checkbox-primary ">
+                    {!! Form::hidden('dostuk', 0) !!}
+                    {!! Form::checkbox('dostuk', 1, null, ["id" => "dostuk", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
+                    <label for="dostuk">
+                      Достук
+                    </label>
+                  </div>
+                </div>             
+                <!-- Dostuk Programm -->
+                <div class="form-group">
+                  <label for="dostukProgram" class="col-sm-3 control-label" style="float: left !important;">Передачи</label>
+                  <div class="col-sm-9">
+                    {!! Form::select('dostukProgram', $dostukProgramList, null, ["class" => "selectpicker", "data-live-search"=>"true", "title" => "-- Выберите --"]) !!}
+                  </div>
+                </div>
+        
+              </div>              
               
             </div>
             <div class="col-sm-4  panel-success">

@@ -1,9 +1,10 @@
-@extends('Front::channel.kyrgyzradio.default')
-@section('title', "Достук Радиосу")
+@extends('Front::channel.muzkanal.default')
+@section('title', trans('radiopages.Photos'))
 @section('styles')
 <link rel="stylesheet" href="{{ asset('css/radios.css')}}">
 <link rel="stylesheet" href="{{ asset('css/landing/dostuk.css')}}">
-<link rel="stylesheet"  href="{{ asset('css/lightslider.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('css/lightslider.css') }}">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.2.6/css/lightgallery.min.css">
 @endsection
 @section('content')
 <body id="home" class="homepage">
@@ -54,81 +55,18 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="{{ route('dostuk.home') }}"><img src="{{ asset('images/channels/dostuk.png')}}" alt="logo">Достук</a>
-                    <div class="onetime"><a href=""><button class="btn"><i class="fa fa-microphone"></i><span>{{ trans('radiopages.Live') }}</span></button></a></div>
-              
-                </div>
-                
+                    <div class="onetime"><a href=""><button class="btn"><i class="fa fa-microphone"></i><span>{{ trans('radiopages.Live') }}</span></button></a></div>       
+                </div>                
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li class="scroll active"><a href="#home">{{ trans('radiopages.Home') }}</a></li>
-                        <li class="scroll"><a href="#portfolio">{{ trans('radiopages.Photos') }}</a></li> 
-                       
+                        <li class="scroll"><a href="#portfolio">{{ trans('radiopages.Photos') }}</a></li>                       
                     </ul>
                 </div>
             </div><!--/.container-->
         </nav><!--/nav-->
     </header><!--/header-->
-<div class="container" style="background: #fff;padding: 0px; margin-top: 20px;">
-    <section id="main-slider">
-        <div class="owl-carousel">
-            <div class="item">
-            <img src="{{asset('images/channels/kyrgyzradio/2.jpg')}}" height="358" width="1600" alt="">
-                <div class="slider-inner">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="carousel-content">
-                                    <h2><span>Залкар инсандар</span></h2>
-                                    <p>Биздин замандын баатырлары</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><!--/.item-->
-             <div class="item">
-            <img src="{{asset('images/channels/kyrgyzradio/1.jpg')}}" height="358" width="1600" alt="">
-                <div class="slider-inner">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="carousel-content">
-                                    <h2><span>Биз билген Айтматов</span> </h2>
-                                    <p>Манас жана Айтматов</p>   
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><!--/.item-->
-            <div class="item">
-            <img src="{{asset('images/channels/kyrgyzradio/3.jpg')}}" height="358" width="1600" alt="">
-                <div class="slider-inner">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="carousel-content">
-                                    <h2><span>Улуу манасчылар</span></h2>
-                                    <p>Дүйнө аларга багынган</p>    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><!--/.item-->
-        </div><!--/.owl-carousel-->
-    </section><!--/#main-slider-->
-
-    <section id="cta2">
-        <div class="container">
-            <div class="section-header2">
-                <h2 class="section-title text-center wow fadeInDown"></h2>
-                <h2 data-wow-duration="300ms" data-wow-delay="0ms"><span>{{ trans('radiopages.DostukSlogan') }}</span></h2>
-                <h2 class="section-title text-center wow fadeInDown"></h2>  
-            </div>
-        </div>
-    </section>
-
+   <!-- Main slider -->
+   <div class="container">
 
 
     <section id="portfolio">
@@ -136,6 +74,7 @@
             <div class="section-header2">
                 <h2 class="section-title text-center wow fadeInDown">{{ trans('radiopages.Photos') }}</h2>
             </div>
+
                <div class="panel-body">
                   <div class="row" style="margin: 20px;">
                      <ul id="imageGallery">
@@ -151,31 +90,36 @@
         </div><!--/.container-->
     </section><!--/#portfolio-->
 
+   </div>
+   @stop
+   @section('footerscript2')
+   <script src="{{ asset('js/jquery-1.11.2.min.js') }}"></script>  
 
-
-</div>
-
-@stop
-@section('footerscript2')
-<script src="{{ asset('js/jquery-1.11.2.min.js') }}"></script>
-<script src="{{ asset('js/bootstrap.min.js') }}"></script>
-
-
-<script src="{{ asset('js/jquery-migrate-1.2.1.min.js') }}"></script>
-<script src="{{ asset('slick/slick.min.js') }}"></script>
-<script src="{{ asset('js/lightslider.js') }}"></script>
-<script src="{{ asset('js/lightgallery/picturefill.min.js') }}"></script>
-<script src="{{ asset('js/lightgallery/lightgallery.js') }}"></script>
-<script src="{{ asset('js/lightgallery/lg-fullscreen.js') }}"></script>
-<script src="{{ asset('js/lightgallery/lg-thumbnail.js') }}"></script>
-<script src="{{ asset('js/lightgallery/lg-video.js') }}"></script>
-<script src="{{ asset('js/lightgallery/lg-autoplay.js') }}"></script>
-<script src="{{ asset('js/lightgallery/lg-zoom.js') }}"></script>
-<script src="{{ asset('js/lightgallery/lg-hash.js') }}"></script>
-<script src="{{ asset('js/lightgallery/lg-pager.js') }}"></script>
-<script src="{{ asset('jslightgallery/jquery.mousewheel.min.js') }}"></script>
-<script type="text/javascript">
-  $(document).ready(function() {
+<script src="{{ asset('js/landing/owl.carousel.min.js') }}"></script>
+<script src="{{ asset('js/landing/mousescroll.js') }}"></script>
+<script src="{{ asset('js/landing/smoothscroll.js') }}"></script>
+<script src="{{ asset('js/landing/jquery.prettyPhoto.js') }}"></script>
+<script src="{{ asset('js/landing/jquery.isotope.min.js') }}"></script>
+<script src="{{ asset('js/landing/jquery.inview.min.js') }}"></script>
+<script src="{{ asset('js/landing/wow.min.js') }}"></script>
+<script src="{{ asset('js/landing/main.js') }}"></script>
+<script src="{{ asset('js/landing/jquery.js') }}"></script>
+<script src="{{ asset('js/landing/fixed.js') }}"></script>
+   <script src="{{ asset('js/jquery-migrate-1.2.1.min.js') }}"></script>
+   <script src="{{ asset('slick/slick.min.js') }}"></script>
+   <script src="{{ asset('js/lightslider.js') }}"></script>
+   <script src="{{ asset('js/lightgallery/picturefill.min.js') }}"></script>
+   <script src="{{ asset('js/lightgallery/lightgallery.js') }}"></script>
+   <script src="{{ asset('js/lightgallery/lg-fullscreen.js') }}"></script>
+   <script src="{{ asset('js/lightgallery/lg-thumbnail.js') }}"></script>
+   <script src="{{ asset('js/lightgallery/lg-video.js') }}"></script>
+   <script src="{{ asset('js/lightgallery/lg-autoplay.js') }}"></script>
+   <script src="{{ asset('js/lightgallery/lg-zoom.js') }}"></script>
+   <script src="{{ asset('js/lightgallery/lg-hash.js') }}"></script>
+   <script src="{{ asset('js/lightgallery/lg-pager.js') }}"></script>
+   <script src="{{ asset('jslightgallery/jquery.mousewheel.min.js') }}"></script>
+   <script type="text/javascript">
+      $(document).ready(function() {
       $('#imageGallery').lightSlider({
         gallery:true,
         item:1 ,
@@ -189,19 +133,7 @@
                 selector: '#imageGallery .lslide'
             });
         }   
-    });  
-  });
-</script>
-
-
-<script src="{{ asset('js/landing/owl.carousel.min.js') }}"></script>
-<script src="{{ asset('js/landing/mousescroll.js') }}"></script>
-<script src="{{ asset('js/landing/smoothscroll.js') }}"></script>
-<script src="{{ asset('js/landing/jquery.prettyPhoto.js') }}"></script>
-<script src="{{ asset('js/landing/jquery.isotope.min.js') }}"></script>
-<script src="{{ asset('js/landing/jquery.inview.min.js') }}"></script>
-<script src="{{ asset('js/landing/wow.min.js') }}"></script>
-<script src="{{ asset('js/landing/main.js') }}"></script>
-<script src="{{ asset('js/landing/jquery.js') }}"></script>
-<script src="{{ asset('js/landing/fixed.js') }}"></script>
-@stop
+      });  
+      });
+   </script>
+   @stop

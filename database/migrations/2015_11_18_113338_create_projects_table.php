@@ -32,6 +32,7 @@ class CreateProjectsTable extends Migration
             $table->string('balastan');
             $table->string('madaniyat');
             $table->string('minkiyal');
+            $table->string('dostuk');
             $table->string('extracolumn');
             $table->timestamps();
         });
