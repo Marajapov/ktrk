@@ -37,7 +37,7 @@ class BannerController extends Controller
      */
     public function store(Request $request)
     {
-        $banner = Banner::create($request->except('file'));
+        $banner = Banner::create($request->except('file','q'));
 
         if($request->hasFile('file'))
         {
@@ -90,7 +90,7 @@ class BannerController extends Controller
      */
     public function update(Request $request, Banner $banner)
     {
-        $banner->update($request->except('file'));
+        $banner->update($request->except('file','q'));
 
         if($request->hasFile('file'))
         {

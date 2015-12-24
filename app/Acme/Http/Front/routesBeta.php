@@ -59,6 +59,7 @@ Route::group(['domain' => 'beta.ktrk.kg', 'prefix' => '/madaniyat', 'namespace' 
     Route::get('/about', ['as' => 'madaniyat.about',   'uses' => 'MadaniyatController@about']);
     Route::get('/photos', ['as' => 'madaniyat.photos',   'uses' => 'MadaniyatController@photos']);
     Route::get('/broadcasts', ['as' => 'madaniyat.broadcasts',   'uses' => 'MadaniyatController@broadcasts']);
+    Route::get('/comingsoon', ['as' => 'madaniyat.comingsoon',   'uses' => 'MadaniyatController@ComingSoon']);
 
 });
 
@@ -92,6 +93,7 @@ Route::group(['domain' => 'beta.ktrk.kg', 'prefix' => '/dostuk', 'namespace' => 
 
     Route::get('/', ['as' => 'dostuk.home',   'uses' => 'DostukController@Home']);
     Route::get('/posts', ['as' => 'dostuk.posts',   'uses' => 'DostukController@posts']);
+    Route::get('/photos/{gallery}',['as' => 'dostuk.photos','uses'=> 'DostukController@Gallery'] );
 
 });
 
@@ -132,11 +134,10 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
 
 
     Route::get('history', ['as' => 'front.history', 'uses' => 'PageController@historyPage']);
-    
 //  Director routes
     Route::get('director', ['as' => 'front.pages.director', 'uses' => 'PageController@directorPage']);
     Route::get('director/post/{post}', ['as' => 'front.pages.directorPost', 'uses' => 'PageController@directorPost']);
-    
+
     Route::get('leaders', ['as' => 'front.pages.leaders', 'uses' => 'PageController@leadersPage']);
 //    Route::get('leader/{leader}', ['as' => 'front.pages.leader', 'uses' => 'PageController@leaderPage']);
     Route::get('strategy', ['as' => 'front.pages.strategy', 'uses' => 'PageController@strategyPage']);
