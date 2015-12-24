@@ -1,4 +1,4 @@
-@extends('Front::channel.madaniyat.default')
+@extends('Front::channel.muzkanal.default')
 @section('title', trans('radiopages.Mabout'))
 @section('styles')
 <link rel="stylesheet" href="{{ asset('css/audio/muzslider.css') }}"/>

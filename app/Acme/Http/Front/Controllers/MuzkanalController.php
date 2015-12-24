@@ -18,7 +18,6 @@ class MuzkanalController extends Controller
         $MediaPop3 = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->orderBy('id', 'desc')->skip('10')->take('5')->get();
         
         //Top clips
-
         $MediaTop1 = \Model\Media\ModelName::where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->orderBy('viewed','desc')-> take(6)->get();
         $MediaTop2 = \Model\Media\ModelName::where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->orderBy('viewed','desc')->skip('6')->take(6)->get();
 
@@ -128,9 +127,22 @@ class MuzkanalController extends Controller
 
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
+        $hitNumbers = \Model\Media\ModelName::where('hitnumber','>=','1')->orderBy('hitnumber','asc')->get();
+
+        //Top clips
+        $MediaTop1 = \Model\Media\ModelName::where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->orderBy('viewed','desc')-> take(6)->get();
+        $MediaTop2 = \Model\Media\ModelName::where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->orderBy('viewed','desc')->skip('6')->take(6)->get();
+
+        //Promo
+        $promo = \Model\Media\ModelName:: where('muzkanal', '=', 1)->where('published','=',true)->where('promo', '=', 1)->first();
+
         return view('Front::channel.muzkanal.hitparad', [
             'channel' => $channel,
             'backgroundMain' => $backgroundMain,
+            'hitNumbers' => $hitNumbers,
+            'MediaTop1' => $MediaTop1,
+            'MediaTop2' => $MediaTop2,
+            'promo' => $promo,
             ]);
     }
 

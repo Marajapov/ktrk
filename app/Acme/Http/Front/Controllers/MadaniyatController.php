@@ -10,14 +10,16 @@ class MadaniyatController extends Controller
 
     public function Home()
     {
-        $channel = \Model\Channel\ModelName::name('madaniyat')->first();
+        return view('Front::channel.madaniyat.comingsoon',[]);
+       
+       /* $channel = \Model\Channel\ModelName::name('madaniyat')->first();
 
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
         return view('Front::channel.madaniyat.index', [
             'channel' => $channel,
             'backgroundMain' => $backgroundMain,
-            ]);
+            ]);*/
     }
 
     public function Posts()

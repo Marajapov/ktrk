@@ -70,7 +70,7 @@
       </div>
       <div class="media-body media-middle">
         <h4 class="media-heading">
-          @if($lc == 'kg')
+          @if(app()->getlocale() == 'kg')
             УЧУРДА БУЛ БАРАКЧА ИШТЕЛИП ЖАТАТ.
           @else
             СТРАНИЦА НА СТАДИИ РАЗРАБОТКИ
@@ -79,7 +79,7 @@
       </div>
     </div>
     <a class="btn" href="{{ route('front.home') }}">
-      @if($lc=='kg')
+      @if(app()->getlocale()=='kg')
         Артка кайтуу
       @else
         Назад
