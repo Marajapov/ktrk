@@ -108,7 +108,7 @@
          </div>
       </div>
       <div class="row">
-         <div class="col-md-12 kidsvblock">
+         <div class="col-md-12 kidsvblock text-center">
             <div class="panel panel-default">
                <div class="panel-heading">
                   <h3 class="panel-title"><span>Видео</span></h3>

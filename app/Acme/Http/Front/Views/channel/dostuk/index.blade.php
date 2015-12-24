@@ -3,6 +3,7 @@
 @section('styles')
 <link rel="stylesheet" href="{{ asset('css/radios.css')}}">
 <link rel="stylesheet" href="{{ asset('css/landing/dostuk.css')}}">
+
 @endsection
 @section('content')
 <body id="home" class="homepage">
@@ -460,85 +461,20 @@
             </div>
 
             <div class="portfolio-items">
+               @if($photoGalleries != null)
+               @foreach($photoGalleries as $key=>$photoGallery)
                 <div class="portfolio-item">
                     <div class="portfolio-item-inner">
-                        <img class="img-responsive" src="{{asset('images/channels/kyrgyzradio/ny.jpg')}}" alt="">
+                        <img class="img-responsive" src="{{ asset($photoGallery->status) }}" alt="">
                         <div class="portfolio-info">
                             <h3>Галерея</h3>
-                            <a class="preview" href="{{asset('images/channels/kyrgyzradio/ny.jpg')}}" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                            <a class="preview" href="{{ route('dostuk.photos', $photoGallery) }}"><i class="fa fa-eye"></i></a>
                         </div>
                     </div>
                 </div><!--/.portfolio-item-->
+                @endforeach
+                @endif
 
-                <div class="portfolio-item">
-                    <div class="portfolio-item-inner">
-                        <img class="img-responsive" src="{{asset('images/channels/kyrgyzradio/ny.jpg')}}" alt="">
-                        <div class="portfolio-info">
-                            <h3>Галерея</h3>
-                            <a class="preview" href="{{asset('images/channels/kyrgyzradio/ny.jpg')}}" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
-                        </div>
-                    </div>
-                </div><!--/.portfolio-item-->
-
-                <div class="portfolio-item">
-                    <div class="portfolio-item-inner">
-                        <img class="img-responsive" src="{{asset('images/channels/kyrgyzradio/ny.jpg')}}" alt="">
-                        <div class="portfolio-info">
-                            <h3>Галерея</h3>
-                            <a class="preview" href="{{asset('images/channels/kyrgyzradio/ny.jpg')}}" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
-                        </div>
-                    </div>
-                </div><!--/.portfolio-item-->
-
-                <div class="portfolio-item">
-                    <div class="portfolio-item-inner">
-                        <img class="img-responsive" src="{{asset('images/channels/kyrgyzradio/ny.jpg')}}" alt="">
-                        <div class="portfolio-info">
-                            <h3>Галерея</h3>
-                            <a class="preview" href="{{asset('images/channels/kyrgyzradio/ny.jpg')}}" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
-                        </div>
-                    </div>
-                </div><!--/.portfolio-item-->
-
-                <div class="portfolio-item">
-                    <div class="portfolio-item-inner">
-                        <img class="img-responsive" src="{{asset('images/channels/kyrgyzradio/ny.jpg')}}" alt="">
-                        <div class="portfolio-info">
-                            <h3>Галерея</h3>
-                            <a class="preview" href="{{asset('images/channels/kyrgyzradio/ny.jpg')}}" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
-                        </div>
-                    </div>
-                </div><!--/.portfolio-item-->
-
-                <div class="portfolio-item">
-                    <div class="portfolio-item-inner">
-                        <img class="img-responsive" src="{{asset('images/channels/kyrgyzradio/ny.jpg')}}" alt="">
-                        <div class="portfolio-info">
-                            <h3>Галерея</h3>
-                            <a class="preview" href="{{asset('images/channels/kyrgyzradio/ny.jpg')}}" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
-                        </div>
-                    </div>
-                </div><!--/.portfolio-item-->
-
-                <div class="portfolio-item">
-                    <div class="portfolio-item-inner">
-                        <img class="img-responsive" src="{{asset('images/channels/kyrgyzradio/ny.jpg')}}" alt="">
-                        <div class="portfolio-info">
-                            <h3>Галерея</h3>
-                            <a class="preview" href="{{asset('images/channels/kyrgyzradio/ny.jpg')}}" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
-                        </div>
-                    </div>
-                </div><!--/.portfolio-item-->
-
-                <div class="portfolio-item">
-                    <div class="portfolio-item-inner">
-                        <img class="img-responsive" src="{{asset('images/channels/kyrgyzradio/ny.jpg')}}" alt="">
-                        <div class="portfolio-info">
-                            <h3>Галерея</h3>
-                            <a class="preview" href="{{asset('images/channels/kyrgyzradio/ny.jpg')}}" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
-                        </div>
-                    </div>
-                </div><!--/.portfolio-item-->
             </div>
         </div><!--/.container-->
     </section><!--/#portfolio-->
