@@ -36,14 +36,18 @@
                   <div class="manager">
                     <div class="col-md-12 manager-thumb">
                       <div class="row">
-                        <img src="{{ asset('images/managers/manager_2_2.jpg') }}">
+                        <img src="{{ asset('images/managers/manager_1.jpg') }}">
                       </div>
                     </div>
                     <div class="col-md-12 manager-info">
                       <div class="row">
                         <h4>Карыпбеков Илим Майрамбекович</h4>
                         <hr/>
-                        <h5>КТРКнын башкы директору</h5>
+                        @if($lc == 'kg')
+                          <h5>КТРКнын башкы директору</h5>
+                        @else
+                          <h5>Генеральный директор КТРК</h5>
+                        @endif
                       </div>
                     </div>
                   </div>
