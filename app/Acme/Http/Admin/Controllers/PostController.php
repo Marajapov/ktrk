@@ -145,7 +145,7 @@ class PostController extends Controller
             $postDate = $request->input('created_at');
             $timeToSave = date('H:i:s', strtotime($time));
             $saveDate = date('Y-m-d', strtotime($postDate));
-            $result = $saveDate.' '.$$timeToSave;
+            $result = $saveDate.' '.$timeToSave;
             $post->created_at = $result;
             $post->save();
         }else{
@@ -284,7 +284,7 @@ class PostController extends Controller
             $postDate = $request->input('created_at');
             $timeToSave = date('H:i:s', strtotime($time));
             $saveDate = date('Y-m-d', strtotime($postDate));
-            $result = $saveDate.' '.$$timeToSave;
+            $result = $saveDate.' '.$timeToSave;
             $post->created_at = $result;
             $post->save();
         }else{
