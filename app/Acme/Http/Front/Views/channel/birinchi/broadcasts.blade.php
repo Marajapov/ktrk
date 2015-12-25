@@ -1,5 +1,6 @@
 @extends('Front::channel.birinchi.default')
 @section('title', "Биринчи Радио")
+
 @section('styles')
 <link rel="stylesheet" href="{{ asset('css/radios.css')}}">
 @endsection
@@ -112,9 +113,9 @@
                         <a class="active" href="{{ route('birinchi.broadcasts') }}" class="dropdown-toggle" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ trans('radiopages.Peredachi') }} <i class="fa fa-angle-down"></i></a>
                         <ul class="dropdown-menu">                                   
                          @if($birinchiProjects) 
-                         @foreach($birinchiProjects as $project)
+                         @foreach($birinchiProjects as $birinchiProject)
                          <li class="list-group-item">
-                            <a href="{{ route('birinchi.news', $project) }}">{{ $project->getName() }}</a>
+                            <a href="{{ route('birinchi.news', $birinchiProject) }}">{{ $birinchiProject->getName() }}</a>
                          </li>
                          @endforeach
                          @endif                                 
@@ -228,9 +229,9 @@
                                  <div class="row">
                                     <ul class="list-group">
                                        @if($birinchiProjects) 
-                                         @foreach($birinchiProjects as $project)
+                                         @foreach($birinchiProjects as $project_one)
                                          <li class="list-group-item">
-                                            <a href="{{ route('birinchi.broadcasts', $project) }}">{{ $project->getName() }}</a>
+                                            <a href="{{ route('birinchi.broadcasts', $project_one) }}">{{ $project_one->getName() }}</a>
                                          </li>
                                          @endforeach
                                        @endif
