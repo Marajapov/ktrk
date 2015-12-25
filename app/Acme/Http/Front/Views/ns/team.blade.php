@@ -30,7 +30,7 @@
 
                       <div class="col-md-6 ns-team">
                         <div class="ns-photo">
-                          <img src="{{ asset('static/images/ns/abdy_satarov.jpg') }}" alt=""/>
+                          <img src="{{ asset('static/images/ns/ns_1.jpg') }}" alt=""/>
                         </div>
                         <div class="ns-info">
                           <span class="ns-name"><strong>Абды Сатаров</strong> / КТРКнын Байкоочу кеңешинин төрагасы </span>
