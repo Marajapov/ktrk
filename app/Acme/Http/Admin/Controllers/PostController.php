@@ -46,6 +46,7 @@ class PostController extends Controller
         $relatedPosts2 = \Model\Post\ModelName::where('titleRu','<>','')->lists('titleRu', 'id')->toArray();
 
         $dostukProgramList = \Model\Project\ModelName::where('dostuk','<>','')->lists('name', 'id')->toArray();
+        $birinchiProgramList = \Model\Project\ModelName::where('birinchi','<>','')->lists('name', 'id')->toArray();
 
         return view('Admin::post.create', [
             'post' => new Post, 
@@ -57,6 +58,7 @@ class PostController extends Controller
             'relatedPosts' => $relatedPosts,
             'relatedPosts2' => $relatedPosts2,
             'dostukProgramList' => $dostukProgramList,
+            'birinchiProgramList' => $birinchiProgramList,
             ]);
     }
 
@@ -167,6 +169,7 @@ class PostController extends Controller
     public function show(Post $post)
     {
         $relatedPosts = \Model\Post\ModelName::lists('title', 'id')->toArray();
+
         return view('Admin::post.show', [
             'post' => $post,
             'relatedPosts'=> $relatedPosts,
@@ -190,6 +193,7 @@ class PostController extends Controller
         $relatedPosts2 = \Model\Post\ModelName::where('titleRu','<>','')->lists('titleRu', 'id')->toArray();
 
         $dostukProgramList = \Model\Project\ModelName::where('dostuk','<>','')->lists('name', 'id')->toArray();
+        $birinchiProgramList = \Model\Project\ModelName::where('birinchi','<>','')->lists('name', 'id')->toArray();
 
         $tags = \Model\Tag\Tag::lists('name', 'id');
         $tags2 = \Model\Tag\Tag::lists('name', 'id');
@@ -204,6 +208,7 @@ class PostController extends Controller
             'categoryList' => $categoryList,
             'PhotoParentList' => $PhotoParentList,
             'dostukProgramList' => $dostukProgramList,
+            'birinchiProgramList' => $birinchiProgramList,
             ]);
     }
 

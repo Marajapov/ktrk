@@ -53,11 +53,12 @@
                            {!! $post->getContent() !!}
                         </p>
                         <div class="carousel-post">
-                           @if($parentId != '0')
-                           @foreach($photoChilds as $photoChild)
+                           @if($images)
+                           @foreach($images as $image)
                            <div class="col-md-4">
                               <a href="#">
-                              <img src="{{ asset($photoChild->getFile()) }}" alt=""/>
+
+                              <img src="{{ asset('froala/uploads/'.$image->name) }}" alt=""/>
                               </a>
                            </div>
                            @endforeach

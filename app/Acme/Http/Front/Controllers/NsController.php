@@ -78,6 +78,10 @@ class NsController extends Controller
 
         $post->incrementViewed();
 
+        // Photo Gallery
+        $parent = \Model\PhotoParent\ModelName::where('id','=',$post->parentId)->first();
+        $images = json_decode($parent->images);
+
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
         return view('Front::ns.post',[
             'post' => $post,
@@ -86,6 +90,7 @@ class NsController extends Controller
             'positionRight'  => $this->positionRight,
             'positionCenter' => $this->positionCenter,
             'positionBottom' => $this->positionBottom,
+            'images' => $images,
         ]);
     }
 

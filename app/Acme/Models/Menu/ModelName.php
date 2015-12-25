@@ -30,6 +30,11 @@ class ModelName extends Model
         return $this->name;
     }
 
+    public function getNameRu()
+    {
+        return $this->nameRu;
+    }
+
     public function getParent()
     {
         return $this->parent;
