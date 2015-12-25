@@ -154,7 +154,7 @@
                   <div class="col-md-12 broadimages">
                      <div class="carousel-slick">
 
-                     @if($photoGalleries != null)
+                     @if($photoGalleries)
 
                       @foreach($photoGalleries as $photoGallery)
                         

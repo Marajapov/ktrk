@@ -53,7 +53,7 @@
                            {!! $post->getContent() !!}
                         </p>
                         <div class="carousel-post">
-                           @if($images)
+                           @if($images != null)
                            @foreach($images as $image)
                            <div class="col-md-4">
                               <a href="#">
