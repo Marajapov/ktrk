@@ -33,7 +33,7 @@
                 {{--</div>--}}
 
                 <div class="col-md-4">
-                  <div class="manager">
+                  <div class="manager clearfix">
                     <div class="col-md-12 manager-thumb">
                       <div class="row">
                         <img src="{{ asset('images/managers/manager_1.jpg') }}">
@@ -54,7 +54,7 @@
                 </div>
 
                 <div class="col-md-4">
-                  <div class="manager">
+                  <div class="manager clearfix">
                     <div class="col-md-12 manager-thumb">
                       <div class="row">
                         <img src="{{ asset('images/managers/manager_2.jpg') }}">
@@ -76,7 +76,7 @@
                 </div>
 
                 <div class="col-md-4">
-                  <div class="manager">
+                  <div class="manager clearfix">
                     <div class="col-md-12 manager-thumb">
                       <div class="row">
                         <img src="{{ asset('images/managers/manager_3.jpg') }}">
@@ -98,7 +98,7 @@
                 </div>
 
                 <div class="col-md-4">
-                  <div class="manager">
+                  <div class="manager clearfix">
                     <div class="col-md-12 manager-thumb">
                       <div class="row">
                         <img src="{{ asset('images/managers/manager_4.jpg') }}">
@@ -119,7 +119,7 @@
                 </div>
 
                 <div class="col-md-4">
-                  <div class="manager">
+                  <div class="manager clearfix">
                     <div class="col-md-12 manager-thumb">
                       <div class="row">
                         <img src="{{ asset('images/managers/manager_5.jpg') }}">
