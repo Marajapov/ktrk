@@ -25,6 +25,7 @@ class ChannelTableSeeder extends Seeder
             'id'        => 2,
             'name'      => 'ktrk',
             'display'   => 'КТРК',
+            'file'       => 'img/icons/2.svg',
             'published' => true,
         ]);
 
@@ -32,6 +33,7 @@ class ChannelTableSeeder extends Seeder
             'id'        => 3,
             'name'      => 'muzkanal',
             'display'   => 'Музыка',
+            'file'       => 'img/icons/3.png',
             'published' => true,
         ]);
 
@@ -39,6 +41,7 @@ class ChannelTableSeeder extends Seeder
             'id'        => 4,
             'name'      => 'balastan',
             'display'   => 'Баластан',
+            'file'       => 'img/icons/4.png',
             'published' => true,
         ]);
 
@@ -46,6 +49,7 @@ class ChannelTableSeeder extends Seeder
             'id'        => 5,
             'name'      => 'madaniyat',
             'display'   => 'Маданият',
+            'file'       => 'img/icons/5.png',
             'published' => true,
         ]);
 
@@ -53,6 +57,7 @@ class ChannelTableSeeder extends Seeder
             'id'        => 6,
             'name'      => 'kyrgyzradio',
             'display'   => 'Кыргыз Радио',
+            'file'       => 'img/icons/6.png',
             'published' => true,
         ]);
 
@@ -60,6 +65,7 @@ class ChannelTableSeeder extends Seeder
             'id'        => 7,
             'name'      => 'birinchi',
             'display'   => 'Биринчи Радио',
+            'file'       => 'img/icons/7.png',
             'published' => true,
         ]);
 
@@ -67,6 +73,7 @@ class ChannelTableSeeder extends Seeder
             'id'        => 8,
             'name'      => 'dostuk',
             'display'   => 'Достук',
+            'file'       => 'img/icons/8.png',
             'published' => true,
         ]);
 
@@ -74,6 +81,7 @@ class ChannelTableSeeder extends Seeder
             'id'        => 9,
             'name'      => 'minkiyal',
             'display'   => 'Мин Кыял',
+            'file'       => 'img/icons/9.png',
             'published' => true,
         ]);
 
