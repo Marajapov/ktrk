@@ -767,14 +767,14 @@
     position: relative;
     display: block;
     width: 100%;
-    height: 240px;
+    height: 200px;
     overflow: hidden;
 }
 .first-item .thumb img{
     position: absolute;
     left: 50%;
     top: 50%;
-    height: 240px;
+    height: 200px;
     width: auto;
     -webkit-transition: opacity 0.2s ease;
     -moz-transition: opacity 0.2s ease;
@@ -786,9 +786,23 @@
     -ms-transform: translateY(-50%) translateX(-50%);
     transform: translateY(-50%) translateX(-50%);
 }
+.first-item .post-box{
+    position: relative;
+
+    height: 150px;
+    max-width: 100%;
+    width: 300px;
+
+    display: table-cell;
+    vertical-align: middle;
+}
 .first-item h2{
     margin: 0;
-    margin-top: 10px;
+    margin-top: 5px;
+    padding: 0 5px;
+
+    overflow: hidden;
+
     font-size: 20px;
 }
 .first-item h2 a{
@@ -799,7 +813,11 @@
     color: #4e5e6a;
 }
 .first-item .extra{
-    margin-bottom: 10px;
+    position: absolute;
+    top: 10px;
+
+    display: block;
+    width: 100%;
 }
 
 

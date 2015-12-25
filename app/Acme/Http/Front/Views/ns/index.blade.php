@@ -29,26 +29,26 @@
                     <div class="panel-body second-panel-body">
 
                       {{--@include('Front::ns.lastPosts')--}}
+                      @foreach($popPosts as $pop)
 
-                      <div class="col-md-5 first-item">
-                        @foreach($popPosts as $pop)
-                          <div class="row">
+                      <div class="col-md-4 first-item">
 
-                            <a href="{{ route('front.ns.post', $pop) }}" class="thumb">
-                              <img src="@if(!($pop->getFile()))images/live_bg.png @else {{ asset($pop->thumbnail_big) }} @endif" alt=""/>
-                            </a>
-                            <h2>
-                              <div class="extra">
-                                <span class="e-datetime">{{ $pop->getDay() }} {{ $pop->getMonthRu() }}, {{ $pop->getTime() }}</span>
-                                <span class="e-views"><i class="fa fa-eye"></i>{{ $pop->getViewed() }}</span>
-                              </div>
-                              <a href="{{ route('front.ns.post', $pop) }}">{{ $pop->getTitleRuOrKg() }}</a>
-                            </h2>
-
+                        <a href="{{ route('front.ns.post', $pop) }}" class="thumb">
+                          <img src="@if(!($pop->getFile()))images/live_bg.png @else {{ asset($pop->thumbnail_big) }} @endif" alt=""/>
+                        </a>
+                        <div class="post-box">
+                          <div class="extra">
+                            <span class="e-datetime">{{ $pop->getDay() }} {{ $pop->getMonthRu() }}, {{ $pop->getTime() }}</span>
+                            <span class="e-views"><i class="fa fa-eye"></i>{{ $pop->getViewed() }}</span>
                           </div>
-                        @endforeach
+                          <h2>
+                            <a href="{{ route('front.ns.post', $pop) }}">{{ $pop->getTitleRuOrKg() }}</a>
+                          </h2>
+                        </div>
 
                       </div>
+
+                      @endforeach
 
                       <div class="col-md-6">
 
