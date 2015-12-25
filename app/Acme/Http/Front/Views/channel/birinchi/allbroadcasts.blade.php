@@ -177,7 +177,7 @@
                                   </a>
                                </h2>
                                <div class="description">
-                                  <p>{{ $post->getTitleRuOrKg() }}</p>
+                                  <p>{!! substr($post->getContent(),0,205) !!}</p>
                                </div>
                             </article>
                          </div>

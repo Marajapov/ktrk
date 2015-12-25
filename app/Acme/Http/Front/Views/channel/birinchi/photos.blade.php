@@ -162,41 +162,24 @@
                      
 
               <div class="panel-heading">
-                <h3 class="panel-title"><span> {{ trans('radiopages.Photos') }}</span></h3>
+                <h3 class="panel-title"><span> {{ $gallery->getName() }}</span></h3>
               </div>
 
               <div class="panel-body">
+                  <div class="row" style="margin: 20px;">
+                   <p style="text-align:center;color: #272727;font-size: 18px;">{{ $gallery->getDescription() }}</p>
+                     <ul id="imageGallery">
+                     @if($images != null)
+                     @foreach($images as $image)
 
-                <div class="col-md-offset-1 col-md-10 col-md-offset-1" >
-                  <div class="row">
-                    <ul id="imageGallery">
-                      <li data-thumb="{{ asset('static/files/rrts/1.jpg') }}" data-src="{{ asset('static/files/rrts/1.jpg') }}">
-                        <img class="resizegallery" src="{{ asset('static/files/rrts/1.jpg') }}" />
-                      </li>
-                      <li data-thumb="{{ asset('static/files/rrts/2.jpg') }}" data-src="{{ asset('static/files/rrts/2.jpg') }}">
-                        <img class="resizegallery" src="{{ asset('static/files/rrts/2.jpg') }}" />
-                      </li>
-                       <li data-thumb="{{ asset('static/files/rrts/3.jpg') }}" data-src="{{ asset('static/files/rrts/3.jpg') }}">
-                        <img class="resizegallery" src="{{ asset('static/files/rrts/3.jpg') }}" />
-                      </li>
-                       <li data-thumb="{{ asset('static/files/rrts/4.jpg') }}" data-src="{{ asset('static/files/rrts/4.jpg') }}">
-                        <img class="resizegallery" src="{{ asset('static/files/rrts/4.jpg') }}" />
-                      </li>
-                       <li data-thumb="{{ asset('static/files/rrts/5.jpg') }}" data-src="{{ asset('static/files/rrts/5.jpg') }}">
-                        <img class="resizegallery"src="{{ asset('static/files/rrts/5.jpg') }}" />
-                      </li>
-                       <li data-thumb="{{ asset('static/files/rrts/6.jpg') }}" data-src="{{ asset('static/files/rrts/6.jpg') }}">
-                        <img class="resizegallery"src="{{ asset('static/files/rrts/6.jpg') }}" />
-                      </li>
-                       <li data-thumb="{{ asset('static/files/rrts/7.jpg') }}" data-src="{{ asset('static/files/rrts/6.jpg') }}">
-                        <img class="resizegallery" src="{{ asset('static/files/rrts/7.jpg') }}" />
-                      </li>
-                       <li data-thumb="{{ asset('static/files/rrts/8.jpg') }}" data-src="{{ asset('static/files/rrts/8.jpg') }}">
-                        <img class="resizegallery" src="{{ asset('static/files/rrts/8.jpg') }}" />
-                      </li>
-                    </ul>
+                        <li data-thumb="{{ asset('froala/uploads/'.$image->name) }}" data-src="{{ asset('froala/uploads/'.$image->name) }}">
+                           <img class="resizegallery" src="{{ asset('froala/uploads/'.$image->name) }}" />
+                        </li>
+                     @endforeach
+                     @endif
+                        
+                     </ul>
                   </div>
-                </div>
 
               </div>
 

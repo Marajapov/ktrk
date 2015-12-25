@@ -44,6 +44,18 @@
                         <p>
                           {!! $post->getContent() !!}
                         </p>
+                        <div class="carousel-post">
+                             @if($images != null)
+                             @foreach($images as $image)
+                             <div class="col-md-4">
+                                <a href="#">
+
+                                <img src="{{ asset('froala/uploads/'.$image->name) }}" alt=""/>
+                                </a>
+                             </div>
+                             @endforeach
+                             @endif
+                          </div>
 
                       </div>
 

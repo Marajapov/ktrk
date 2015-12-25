@@ -33,6 +33,8 @@ class CreatePostsTable extends Migration
             $table->boolean('general')->nullable()->default(false);
             
             $table->string('director');
+            $table->string('fbpost');
+
             $table->string('ns');
             $table->string('rs');
             $table->string('muzkanal');
