@@ -22,7 +22,7 @@
                      <div class="row">
                         <div class="media media-director">
                            <div class="media-left media-middle text-center">
-                              <img src="{{ asset('images/chief.jpg') }}" class="img-circle">
+                              <img src="{{ asset('images/manager_main.jpg') }}" class="">
                               <button class="btn btn-default" id="button" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                               {{ trans('site.More') }}
                               </button>
