@@ -2,6 +2,8 @@
 @section('title', "Биринчи Радио")
 @section('styles')
 <link rel="stylesheet" href="{{ asset('css/radios.css')}}">
+<link rel="stylesheet" href="{{ asset('css/articles.css') }}"/>
+<link rel="stylesheet" href="{{ asset('css/pages.css') }}"/>
 @endsection
 @section('content')
 <div class="birinchiradio">
@@ -106,13 +108,15 @@
                   <ul class="nav navbar-nav onenavbar">
                      <li><a href="{{ route('birinchi.about') }}">{{ trans('radiopages.About') }}</a></li>
                      <li class="dropdown">
-                        <a href="{{ route('birinchi.broadcasts') }}" class="dropdown-toggle" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ trans('radiopages.Peredachi') }} <i class="fa fa-angle-down"></i></a>
+                        <a href="{{ route('birinchi.allbroadcasts') }}" class="dropdown-toggle" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ trans('radiopages.Peredachi') }} <i class="fa fa-angle-down"></i></a>
                         <ul class="dropdown-menu">
-                           <li><a href="#">Багыт</a></li>
-                           <li><a href="#">Инсанат</a></li>
-                           <li><a href="#">Кыргызстан</a></li>
-                           <li><a href="#">Радиокүзөт</a></li>
-                           <li><a href="#">Күндүн темасы</a></li>
+                         @if($birinchiProjects) 
+                         @foreach($birinchiProjects as $birinchiProject)
+                         <li>
+                            <a href="{{ route('birinchi.broadcasts', $birinchiProject) }}">{{ $birinchiProject->getName() }}</a>
+                         </li>
+                         @endforeach
+                         @endif
                         </ul>
                      </li>
                      <li>
@@ -147,11 +151,11 @@
 <div class="container">
    <div class="row" style="margin-top:10px;">
       <div class="col-md-12">
-         <div class="row onepadding">
+         <div class="row onepadding" style="background: #f1f4f9;">
             <div class="col-md-9 onepadding">
                <div class="panel onelist">
                   <div class="panel-heading">
-                     <h3 class="panel-title"><span>{{ trans('radiopages.Peredachi') }}</span></h3>
+                     <h3 class="panel-title"><span>{{ trans('radiopages.Mainnews') }}</span></h3>
                   </div>
                   <div class="panel-body">
                      <div class="row specpad">
@@ -191,7 +195,7 @@
                          <div class="row">
                              <ul class="list-group">
                                  @foreach($categories as $category)
-                                 <li class="list-group-item">
+                                 <li class="list-group-item"  style="margin-left: 10px;">
                                      <a href="{{ route('front.category', $category) }}">{{ $category->getTitle() }}</a>
                                  </li>
                                  @endforeach
@@ -246,7 +250,7 @@
                         @endforeach
                         @endif                     
                         <footer>
-                           <a href="{{ route('front.general') }}">{{ trans('radiopages.Morenews') }}</a>
+                           <a href="{{ route('birinchi.allnews') }}">{{ trans('radiopages.Morenews') }}</a>
                         </footer>
                      </div>
                   </div>

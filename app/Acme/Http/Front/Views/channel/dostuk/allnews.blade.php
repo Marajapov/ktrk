@@ -3,8 +3,8 @@
 @section('styles')
 <link rel="stylesheet" href="{{ asset('css/radios.css')}}">
 <link rel="stylesheet" href="{{ asset('css/landing/dostuk.css')}}">
- <link rel="stylesheet" href="{{ asset('css/articles.css') }}"/>
-  <link rel="stylesheet" href="{{ asset('css/pages.css') }}"/>
+<link rel="stylesheet" href="{{ asset('css/articles.css') }}"/>
+<link rel="stylesheet" href="{{ asset('css/pages.css') }}"/>
 @endsection
 @section('content')
 <body id="home" class="homepage">
@@ -97,7 +97,7 @@
          <div class="container">
             <div class="row">
 
-               <div class="col-md-9">
+            <div class="col-md-9">
                 <div class="panel panel-articles">
                      <div class="panel-heading">
                         <h3 class="panel-title"><span>{{ trans('site.FrontPostAll') }}</span></h3>
@@ -126,7 +126,7 @@
                    </div>
 
                 </div>
-             </div>
+            </div>
 
             <div class="col-md-3">
                   <div class="panel ctg-panel media-ctg-panel">
@@ -149,7 +149,7 @@
                         </div>
                      </div>
                   </div>
-               </div>           
+            </div>           
               
             </div>
          </div>

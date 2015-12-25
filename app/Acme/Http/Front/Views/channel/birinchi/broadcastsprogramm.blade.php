@@ -110,13 +110,15 @@
                 <ul class="nav navbar-nav onenavbar">
                   <li><a href="{{ route('birinchi.about') }}">{{ trans('radiopages.About') }}</a></li>
                   <li class="dropdown">
-                    <a href="{{ route('birinchi.broadcasts') }}" class="dropdown-toggle" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ trans('radiopages.Peredachi') }} <i class="fa fa-angle-down"></i></a>
+                    <a href="{{ route('birinchi.allbroadcasts') }}" class="dropdown-toggle" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ trans('radiopages.Peredachi') }} <i class="fa fa-angle-down"></i></a>
                     <ul class="dropdown-menu">
-                      <li><a href="#">Багыт</a></li>
-                      <li><a href="#">Инсанат</a></li>
-                      <li><a href="#">Кыргызстан</a></li>
-                      <li><a href="#">Радиокүзөт</a></li>
-                      <li><a href="#">Күндүн темасы</a></li>
+                         @if($birinchiProjects) 
+                         @foreach($birinchiProjects as $birinchiProject)
+                         <li>
+                            <a href="{{ route('birinchi.broadcasts', $birinchiProject) }}">{{ $birinchiProject->getName() }}</a>
+                         </li>
+                         @endforeach
+                         @endif
                     </ul>
                   </li>
                   <li>
