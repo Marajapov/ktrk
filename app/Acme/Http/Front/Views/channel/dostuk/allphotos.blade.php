@@ -1,5 +1,5 @@
 @extends('Front::channel.muzkanal.default')
-@section('title', trans('radiopages.Photos'))
+@section('title', trans('radiopages.Allphotos'))
 @section('styles')
 <link rel="stylesheet" href="{{ asset('css/radios.css')}}">
 <link rel="stylesheet" href="{{ asset('css/landing/dostuk.css')}}">
