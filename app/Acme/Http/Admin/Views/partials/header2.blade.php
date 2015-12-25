@@ -26,7 +26,9 @@
       <li><a href="{{ route('admin.schedule.index') }}"><i class="fa fa-caret-square-o-right"></i>Телепрограмма</a></li>
       <li><a href="{{ route('admin.page.index') }}"><i class="fa fa-columns"></i>{{ trans('site.AdminPagesTitle') }}</a></li>
       <li><a href="{{ route('admin.menu.index') }}"><i class="fa fa-chevron-circle-down"></i>Меню</a></li>
+      @if(auth()->user()->getChannelId() == 1)
       <li><a href="{{ route('admin.user.index') }}"><i class="fa fa-user"></i>{{ trans('site.AdminUsersTitle') }}</a></li>
+      @endif
       <li><a href="{{ route('admin.background.index') }}"><i class="fa fa-backward"></i>{{ trans('site.AdminBackgroundTitle') }}</a></li>
       <li><a href="{{ route('admin.peopleReporter.index') }}"><i class="fa fa-users"></i>Элдик репортер</a></li>
     </ul>

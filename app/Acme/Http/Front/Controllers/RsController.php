@@ -109,7 +109,13 @@ class RsController extends Controller
 
         // Photo Gallery
         $parent = \Model\PhotoParent\ModelName::where('id','=',$post->parentId)->first();
-        $images = json_decode($parent->images);
+        if($parent)
+        {
+            $images = json_decode($parent->images);
+        }else{
+            $images = null;
+        }
+
 
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
         return view('Front::rs.post',[

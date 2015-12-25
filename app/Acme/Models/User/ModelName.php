@@ -40,4 +40,9 @@ class ModelName extends Model implements AuthenticatableContract, CanResetPasswo
         return $this->role;
     }
 
+    public function getChannelId()
+    {
+        return $this->channel_id;
+    }
+
 }
