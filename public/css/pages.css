@@ -864,8 +864,10 @@
 }
 .gallery-item h2 a{
     display: block;
+    height: 50px;
     color: #2D3E4A;
     font-weight: bold;
+    line-height: 16px;
     text-align: center;
 }
 .gallery-item h2 a:hover{
