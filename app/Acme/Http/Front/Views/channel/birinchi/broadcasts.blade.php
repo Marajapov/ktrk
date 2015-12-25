@@ -153,9 +153,11 @@
 <div class="container">
        <div class="row specnews">
             <div class="panel onenews">
+
                 <div class="panel-heading">
                     <h3 class="panel-title"><span>{{ trans('radiopages.Peredachi') }}</span></h3>
                 </div>
+                
                 <div class="panel-body">
                      <div class="top-left-block col-md-9">
                         <div class="panel panel-show">
@@ -215,6 +217,7 @@
                            </div>
                         </div>
                      </div>
+                     
                      <div class="top-right-block col-md-3">
                         <div class="panel ctg-panel media-ctg-panel">
                            <div class="panel-heading">
