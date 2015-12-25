@@ -128,16 +128,8 @@ class HomeController extends Controller
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
         
-        if(($post->parentId != '0') && ($post->parentId != null))
-        {
-            $parentId = $post->parentId;
-            $parentId = \Model\PhotoParent\ModelName::where('id','=',$parentId)->first();
-            $photoChilds = \Model\PhotoChild\ModelName::where('parentId','=',$parentId->id)->get();
-            
-        }else{
-            $parentId = '0';
-            $photoChilds = '0';
-        }
+        $images = json_decode($post->parentid->images);
+        dd($images);
 
         if($post->related1 != null){
             $related1Post = \Model\Post\ModelName::where('id','=',$post->related1)->first();

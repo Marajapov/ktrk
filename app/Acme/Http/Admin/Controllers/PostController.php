@@ -167,6 +167,7 @@ class PostController extends Controller
     public function show(Post $post)
     {
         $relatedPosts = \Model\Post\ModelName::lists('title', 'id')->toArray();
+
         return view('Admin::post.show', [
             'post' => $post,
             'relatedPosts'=> $relatedPosts,
