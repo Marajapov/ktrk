@@ -483,8 +483,13 @@ header.top-menu,.logo-block{
 }
 .panel-director .director-title{
     position: relative;
-    padding: 5px 0 20px;
+    border: none;
+    padding: 5px 0 32px;
     padding-left: 120px;
+
+    box-shadow: 0 9px 2px -3px rgba(128, 128, 128, 0.5);
+    /*border-bottom: 10px solid #ffffff;*/
+    background: url('../images/manager-border.png') no-repeat 0 105px;
 }
 .director-title a{
     display: inline-block;
