@@ -1,6 +1,6 @@
 <?php
 namespace Front\Controllers;
-//use Illuminate\Http\Request;
+use Illuminate\Http\Request;
 class BirinchiController extends Controller
 {
     public function __construct()
@@ -12,6 +12,8 @@ class BirinchiController extends Controller
         $channel = \Model\Channel\ModelName::name('birinchi')->first();
 
         $generalPosts = \Model\Post\ModelName::where('birinchi','=',1)->where('general','=','1')->take(3)->orderBy('id','desc')->get();
+
+        $photoGalleries = \Model\PhotoParent\ModelName::where('birinchi','=','1')->where('published','=',true)->take('6')->orderBy('id','desc')->get();
 
         $lc = app()->getlocale();
         if($lc == 'kg'){
@@ -32,6 +34,7 @@ class BirinchiController extends Controller
             'allPost' => $allPost,
             'birinchiProjects' => $birinchiProjects,
             'categories'=>$categories,
+            'photoGalleries' => $photoGalleries,
             ]);
     }
 
@@ -255,6 +258,51 @@ class BirinchiController extends Controller
 
             ]
         );
+    }
+
+    public function allphotos()
+    {
+        $channel = \Model\Channel\ModelName::name('birinchi')->first();
+        $perPage = 24;
+
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+        $postAll = \Model\Media\ModelName::where('published','=',true)->where('birinchi','=','1')->orderBy('id', 'desc')->paginate($perPage);        
+        $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi', '=', 1)->get();
+
+        // Photo Gallery
+        $photoGalleries = \Model\PhotoParent\ModelName::where('birinchi','=','1')->where('published','=',true)->take('10')->orderBy('id','desc')->get();        
+        return view('Front::channel.birinchi.allphotos', [
+            'channel' => $channel,
+            'backgroundMain' => $backgroundMain,
+            'photoGalleries' => $photoGalleries,
+            'postAll' => $postAll,
+            'perPage' => $perPage,
+            'birinchiProjects' => $birinchiProjects,  
+
+            ]);
+    }
+
+    public function Gallery(Request $request, $galleryId)
+    {
+
+        $gallery = \Model\PhotoParent\ModelName::where('birinchi','=','1')->where('id','=',$galleryId)->first();
+        if($gallery != null){
+
+        $images = json_decode($gallery->images);
+    }else{
+        $images = null;
+    }
+    $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi', '=', 1)->get();
+
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+        return view('Front::channel.birinchi.photos',[
+            'images' => $images,
+            'backgroundMain' => $backgroundMain,
+            'gallery' => $gallery,
+            'birinchiProjects' => $birinchiProjects,
+            ]);
     }
 
 }

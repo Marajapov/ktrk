@@ -164,7 +164,9 @@
 
                         <div class="blocks col-md-4 col-sm-6 col-xs-12">
                            <span class="cart-title category">
-                           <a href="#">Спорт</a>
+                             <a href="{{ route('front.category', $post->category) }}">
+                          {{ $post->category('category_id')->first()->getTitle() }}
+                        </a>
                            </span>
                            <article>
                               <a href="{{ route('birinchi.news', $post) }}" class="image-link">
@@ -286,7 +288,7 @@
                         </a>
                      </h2>
                      <div class="description">
-                        <p>{{ $post->getTitleRuOrKg() }}</p>
+                        <p>{!! substr($post->getContent(),0,205) !!}</p>
                      </div>
                   </article>
                </div>
@@ -311,128 +313,32 @@
          <div class="panel-body">
             <div class="col-md-12 col-sm-6 col-xs-12 specpad">
                <div class="featured_4 specpad" >
+                  @if($photoGalleries != null)
+                  @foreach($photoGalleries as $photoGallery)
                   <div class="col-md-3 onepadding">
                      <div class="featured_element">
-                        <div class="featured_item"> <img width="267" height="267" src="{{asset('images/gallery/001.jpg')}}" class="attachment-thr-fa-quarter wp-post-image" alt="39"></div>
+                        <div class="featured_item"> <img width="267" height="267" src="{{ asset($photoGallery->status) }}" class="attachment-thr-fa-quarter wp-post-image" alt="39"></div>
                         <div class="featured_date">
-                           <p>2 Декарь, 2015</p>
+                           <p>{{ $photoGallery->getDay() }} {{ $photoGallery->getMonthRu() }}, {{ $photoGallery->getTime() }}</p>
                         </div>
                         <div class="featured_cat">
                            <p>Спорт</p>
                         </div>
-                        <a href="#" class="f_overlay"></a>
+                        <a href="{{ route('birinchi.photos', $photoGallery) }}" class="f_overlay"></a>
                         <div class="featured_title_over" style="bottom: 0px;">
-                           <h2><a href="#">Кыргыз спортучлары Оаимпиадада 10 алытн медалге жетишишти</a></h2>
+                           <h2><a href="{{ route('birinchi.photos', $photoGallery) }}">{{ $photoGallery->getName() }}</a></h2>
                         </div>
                      </div>
                   </div>
-                  <div class="col-md-3 onepadding">
-                     <div class="featured_element">
-                        <div class="featured_item"> <img width="267" height="267" src="{{asset('images/gallery/002.jpg')}}" class="attachment-thr-fa-quarter wp-post-image" alt="44"></div>
-                        <div class="featured_date">
-                           <p>2 Декарь, 2015</p>
-                        </div>
-                        <div class="featured_cat">
-                           <p>Тар дүйнө</p>
-                        </div>
-                        <a href="#" class="f_overlay"></a>
-                        <div class="featured_title_over" style="bottom: 0px;">
-                           <h2><a href="#" >Кыргыз кимди тандайт, же кимди тандатышат?</a></h2>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-md-3 onepadding">
-                     <div class="featured_element">
-                        <div class="featured_item"> <img width="267" height="267" src="{{asset('images/gallery/003.jpg')}}" class="attachment-thr-fa-quarter wp-post-image" alt="7"></div>
-                        <div class="featured_date">
-                           <p>2 Декарь, 2015</p>
-                        </div>
-                        <div class="featured_cat">
-                           <p>Саясат</p>
-                        </div>
-                        <a href="#" class="f_overlay"></a>
-                        <div class="featured_title_over" style="bottom: 0px;">
-                           <h2><a href="#">Саястачылардын биз билбеген сырлары</a></h2>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-md-3 onepadding">
-                     <div class="featured_element">
-                        <div class="featured_item"> <img width="267" height="267" src="{{asset('images/gallery/004.jpg')}}" class="attachment-thr-fa-quarter wp-post-image" alt="7"></div>
-                        <div class="featured_date">
-                           <p>2 Декарь, 2015</p>
-                        </div>
-                        <div class="featured_cat">
-                           <p>Шоу дүйнө</p>
-                        </div>
-                        <a href="#" class="f_overlay"></a>
-                        <div class="featured_title_over" style="bottom: 0px;">
-                           <h2><a href="#">Гүлжигит Калыков Кыргызстандын тарыхындагы эң чоң концерт койду</a></h2>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-md-3 onepadding">
-                     <div class="featured_element">
-                        <div class="featured_item"> <img width="267" height="267" src="{{asset('images/gallery/005.jpg')}}" class="attachment-thr-fa-quarter wp-post-image" alt="39"></div>
-                        <div class="featured_date">
-                           <p>2 Декарь, 2015</p>
-                        </div>
-                        <div class="featured_cat">
-                           <p>Кырсык</p>
-                        </div>
-                        <a href="#" class="f_overlay"></a>
-                        <div class="featured_title_over" style="bottom: 0px;">
-                           <h2><a href="#">Стамбулдагы жарылуудан беш киши жаракат алды</a></h2>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-md-3 onepadding">
-                     <div class="featured_element">
-                        <div class="featured_item"> <img width="267" height="267" src="{{asset('images/gallery/006.jpg')}}" class="attachment-thr-fa-quarter wp-post-image" alt="44"></div>
-                        <div class="featured_date">
-                           <p>2 Декарь, 2015</p>
-                        </div>
-                        <div class="featured_cat">
-                           <p>Экономика</p>
-                        </div>
-                        <a href="#" class="f_overlay"></a>
-                        <div class="featured_title_over" style="bottom: 0px;">
-                           <h2><a href="#" >Доллардан баш тартууга мүмкүнбү?</a></h2>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-md-3 onepadding">
-                     <div class="featured_element">
-                        <div class="featured_item"> <img width="267" height="267" src="{{asset('images/gallery/007.jpg')}}" class="attachment-thr-fa-quarter wp-post-image" alt="7"></div>
-                        <div class="featured_date">
-                           <p>2 Декарь, 2015</p>
-                        </div>
-                        <div class="featured_cat">
-                           <p>Дүйнө жаңылыктары</p>
-                        </div>
-                        <a href="#" class="f_overlay"></a>
-                        <div class="featured_title_over" style="bottom: 0px;">
-                           <h2><a href="#">Орусия тыюу салган түрк товарлардын тизмеси жарыяланды</a></h2>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-md-3 onepadding">
-                     <div class="featured_element">
-                        <div class="featured_item"> <img width="267" height="267" src="{{asset('images/gallery/008.jpg')}}" class="attachment-thr-fa-quarter wp-post-image" alt="7"></div>
-                        <div class="featured_date">
-                           <p>2 Декарь, 2015</p>
-                        </div>
-                        <div class="featured_cat">
-                           <p>Дүйнө жаңылыктары</p>
-                        </div>
-                        <a href="#" class="f_overlay"></a>
-                        <div class="featured_title_over" style="bottom: 0px;">
-                           <h2><a href="#">Орусия тыюу салган түрк товарлардын тизмеси жарыяланды</a></h2>
-                        </div>
-                     </div>
-                  </div>
+                  @endforeach
+                  @endif
                </div>
             </div>
+            <footer>
+               <a href="{{ route('birinchi.allphotos') }}">
+                  <span>{{ trans('radiopages.Allphotos') }}<i class="fa fa-arrow-circle-right"></i></span>
+               </a>
+            </footer>
          </div>
       </div>
    </div>
