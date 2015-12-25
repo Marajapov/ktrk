@@ -1,10 +1,13 @@
-@extends('Front::channel.muzkanal.default')
+@extends('Front::channel.kyrgyzradio.default')
 @section('title', $post->getTitleRuOrKg())
 @section('styles')
 <link rel="stylesheet" href="{{ asset('css/radios.css')}}">
 <link rel="stylesheet" href="{{ asset('css/landing/dostuk.css')}}">
 <link rel="stylesheet" href="{{ asset('css/articles.css') }}"/>
 <link rel="stylesheet" href="{{ asset('css/pages.css') }}"/>
+ <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick.css') }}"/>
+ <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick-theme.css') }}"/>
+
 @endsection
 @section('content')
 <body id="home" class="homepage">
@@ -114,19 +117,8 @@
                                  </div>
                                  <article>
                                     {!! $post->getContent() !!}
-                                    <div class="carousel-post">
-                                       @if($parentId)
-                                       @foreach($photoChilds as $photoChild)
-                                       <div class="col-md-4">
-                                          <a href="#">
-                                          <img src="{{ asset($photoChild->getFile()) }}" alt=""/>
-                                          </a>
-                                       </div>
-                                       @endforeach
-                                       @endif
-                                    </div> 
-
-                                     <div class="carousel-post">
+                     
+                                     <div class="carousel-post whitefix">
                                        @if($images)
                                        @foreach($images as $image)
                                        <div class="col-md-4">
@@ -179,46 +171,12 @@
    </div>
    @stop
    @section('footerscript2')
-   <script src="{{ asset('js/jquery-1.11.2.min.js') }}"></script>  
-   <script src="{{ asset('js/landing/owl.carousel.min.js') }}"></script>
+
    <script src="{{ asset('js/landing/mousescroll.js') }}"></script>
    <script src="{{ asset('js/landing/smoothscroll.js') }}"></script>
    <script src="{{ asset('js/landing/jquery.prettyPhoto.js') }}"></script>
    <script src="{{ asset('js/landing/jquery.isotope.min.js') }}"></script>
    <script src="{{ asset('js/landing/jquery.inview.min.js') }}"></script>
-   <script src="{{ asset('js/landing/wow.min.js') }}"></script>
-   <script src="{{ asset('js/landing/main.js') }}"></script>
-   <script src="{{ asset('js/landing/jquery.js') }}"></script>
    <script src="{{ asset('js/landing/fixed.js') }}"></script>
-   <script src="{{ asset('js/jquery-migrate-1.2.1.min.js') }}"></script>
-   <script src="{{ asset('slick/slick.min.js') }}"></script>
-   <script src="{{ asset('js/lightslider.js') }}"></script>
-   <script src="{{ asset('js/lightgallery/picturefill.min.js') }}"></script>
-   <script src="{{ asset('js/lightgallery/lightgallery.js') }}"></script>
-   <script src="{{ asset('js/lightgallery/lg-fullscreen.js') }}"></script>
-   <script src="{{ asset('js/lightgallery/lg-thumbnail.js') }}"></script>
-   <script src="{{ asset('js/lightgallery/lg-video.js') }}"></script>
-   <script src="{{ asset('js/lightgallery/lg-autoplay.js') }}"></script>
-   <script src="{{ asset('js/lightgallery/lg-zoom.js') }}"></script>
-   <script src="{{ asset('js/lightgallery/lg-hash.js') }}"></script>
-   <script src="{{ asset('js/lightgallery/lg-pager.js') }}"></script>
-   <script src="{{ asset('jslightgallery/jquery.mousewheel.min.js') }}"></script>
-   <script type="text/javascript">
-      $(document).ready(function() {
-      $('#imageGallery').lightSlider({
-        gallery:true,
-        item:1 ,
-        loop:true,
-        thumbItem:8,
-        slideMargin:0,
-        enableDrag: true,
-        currentPagerPosition:'right',
-        onSliderLoad: function(el) {
-            el.lightGallery({
-                selector: '#imageGallery .lslide'
-            });
-        }   
-      });  
-      });
-   </script>
+
    @stop

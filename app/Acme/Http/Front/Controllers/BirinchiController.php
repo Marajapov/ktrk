@@ -23,6 +23,7 @@ class BirinchiController extends Controller
         $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi', '=', 1)->get();
 
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        $categories = \Model\Category\ModelName::all();
 
         return view('Front::channel.birinchi.index', [
             'channel' => $channel,
@@ -30,17 +31,20 @@ class BirinchiController extends Controller
             'generalPosts' => $generalPosts,
             'allPost' => $allPost,
             'birinchiProjects' => $birinchiProjects,
+            'categories'=>$categories,
             ]);
     }
 
-    public function broadcasts()
+    public function allbroadcasts()
     {
         $channel = \Model\Channel\ModelName::name('birinchi')->first();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi', '=', 1)->get();
 
-           return view('Front::channel.birinchi.broadcasts', [
+           return view('Front::channel.birinchi.allbroadcasts', [
             'channel' => $channel,
             'backgroundMain' => $backgroundMain,
+            'birinchiProjects' => $birinchiProjects
             ]);
     }
     public function about()
@@ -66,6 +70,54 @@ class BirinchiController extends Controller
             'post' => $post,
             'backgroundMain' => $backgroundMain,
             ]);
+    }
+
+
+    public function broadcast(\Model\Post\ModelName $post)
+    {
+        $post->incrementViewed();
+
+        $channel = \Model\Channel\ModelName::name('birinchi')->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi', '=', 1)->get();
+
+           return view('Front::channel.birinchi.broadcast', [
+            'channel' => $channel,
+            'post' => $post,
+            'backgroundMain' => $backgroundMain,
+            'birinchiProjects' => $birinchiProjects,
+            ]);
+    }
+    public function broadcasts(\Model\Project\ModelName $project)
+    {
+        $projectList = \Model\Project\ModelName::get();
+//        $MediaCategory = \Model\MediaCategory\ModelName::get();
+        $mediaAll = \Model\Media\ModelName::get();
+
+        $mainBanner = \Model\Background\ModelName::where('name','=','main')->first();
+        $categories = \Model\Category\ModelName::all();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+        $relatedNews = \Model\Post\ModelName::where('published','=',true)->where('birinchi','=','1')->where('birinchiProgram','=',$project->id)->get();
+
+        // dd($relatedNews);
+
+        $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi', '=', 1)->get();
+
+
+        return view('Front::channel.birinchi.broadcasts',[
+                
+            'project' => $project,
+    //      'MediaCategories'       => $MediaCategories,
+            'mainBanner'   => $mainBanner,
+            'categories'=>$categories,
+            'projectList' => $projectList,
+            'backgroundMain' => $backgroundMain,
+            'relatedNews' => $relatedNews,
+            'birinchiProjects' => $birinchiProjects,                
+
+            ]
+        );
     }
 
     public function photos()
