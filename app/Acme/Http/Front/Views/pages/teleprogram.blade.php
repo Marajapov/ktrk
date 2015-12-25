@@ -11,7 +11,15 @@
     <div class="row">
       <div class="panel panel-default teleprogramm clearfix">
         <div class="panel-heading">
-          <h3 class="panel-title">ТВ-программа</h3>
+          <h3 class="panel-title">
+            ТВ-программа
+            @if($channel)
+              <span class="divider"><i class="fa fa-circle"></i></span>
+              <span class="ctg">
+                {{ $channel->display }}
+              </span>
+            @endif
+          </h3>
         </div>
 
         <div class="panel-body">
@@ -19,12 +27,12 @@
           <div class="">
             <h4 class="channel-choose">{{ trans('site.FrontTeleprogrammChoose') }}</h4>
 
-            <div class="channels clearfix">
-              @foreach($channels as $key=>$channel)
-                <div class="col-md-2 @if($key==0 || $key == 4) col-md-offset-2 @endif">
-                  <a href="{{ route('front.pages.teleprogram', $channel->id) }}">
-                    <img src="{{ asset($channel->file) }}" alt=""/>
-                    <span class="channel-name">{{ $channel->display }}</span>
+            <div class="channels @if($channel)channel-selected @endif clearfix">
+              @foreach($channels as $key=>$channel_one)
+                <div class="col-md-2 @if($key==0 || $key == 4) col-md-offset-2 @endif @if($channel && ($channel_one->id == $channel->id))active @endif">
+                  <a href="{{ route('front.pages.teleprogram', $channel_one->id) }}">
+                    <img src="{{ asset($channel_one->file) }}" alt=""/>
+                    <span class="channel-name">{{ $channel_one->display }}</span>
                   </a>
                 </div>
               @endforeach

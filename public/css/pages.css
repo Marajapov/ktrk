@@ -123,7 +123,6 @@
 }
 .manager-thumb{
     padding: 0 30px;
-
 }
 .manager-info{
     display: block;
@@ -407,13 +406,15 @@
     padding: 15px;
 }
 .channel-choose{
-    margin: 15px 0;
+    margin: 0;
+    padding: 15px 0;
     font-size: 20px;
     text-align: center;
     text-transform: uppercase;
 }
 .channels{
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    margin-top: 30px;
 }
 .channels > div{
     height: 120px;
@@ -424,6 +425,15 @@
     height: 100%;
     padding:30px 45px 0;
 }
+.channels > div.active a{
+    padding: 30px 30px 0;
+
+    font-weight: bold;
+    font-size: 20px;
+}
+.channels > div.active a:hover{
+    color: #237dac;
+}
 .channels span{
     position: absolute;
     top: 0;
@@ -431,6 +441,28 @@
     width: 100%;
     text-align: center;
     line-height: 20px;
+}
+.channels.channel-selected img{
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+    filter: url(grayscale.svg#greyscale);
+    filter: gray;
+
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+.channels .active img, .channels img:hover{
+    -webkit-filter: grayscale(0%);
+    -moz-filter: grayscale(0%);
+    -ms-filter: grayscale(0%);
+    -o-filter: grayscale(0%);
+    filter: none;
 }
 .teletabs{
     text-align: center;
@@ -832,8 +864,10 @@
 }
 .gallery-item h2 a{
     display: block;
+    height: 50px;
     color: #2D3E4A;
     font-weight: bold;
+    line-height: 16px;
     text-align: center;
 }
 .gallery-item h2 a:hover{

@@ -158,6 +158,7 @@ class PageController extends Controller
 
         $programs = array();
         $schedules = array();
+        $channel = '';
 
         return view('Front::pages.teleprogram', [
             'lc' => $lc,
@@ -167,6 +168,7 @@ class PageController extends Controller
             'channels' => $channels,
             'schedules' => $schedules,
             'programs' => $programs,
+            'channel' => $channel,
             'positionTop'    => $this->positionTop,
             'positionRight'  => $this->positionRight,
             'positionCenter' => $this->positionCenter,
@@ -185,6 +187,8 @@ class PageController extends Controller
         $currentDate = date('d-m-Y');
         $currentTime = date('H:i');
         $weekDay = date('N', strtotime($now));
+
+        $channel = \Model\Channel\ModelName::where('id','=',$channel->id)->first();
 
         if($channel){
             $schedules = \Model\Schedule\ModelName::where('channel_id','=',$channel->id)->orderBy('date', 'desc')->get();
@@ -225,6 +229,7 @@ class PageController extends Controller
             'programs' => $programs,
             'week' => $week,
             'channels' => $channels,
+            'channel' => $channel,
             'positionTop'    => $this->positionTop,
             'positionRight'  => $this->positionRight,
             'positionCenter' => $this->positionCenter,

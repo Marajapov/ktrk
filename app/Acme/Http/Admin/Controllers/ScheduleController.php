@@ -99,8 +99,6 @@ class ScheduleController extends Controller
 
         $jsonProgram = json_encode($program);
 
-//        dd($jsonProgram);
-
         $schedule->date = $date;
         $schedule->program = $jsonProgram;
         $schedule->extra = $string;
@@ -162,6 +160,8 @@ class ScheduleController extends Controller
         $new_string2 = array();
 
         $new_string = preg_split('/[\r\n#]+/', $string, -1, PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE);
+
+
         foreach($new_string as $new_string1)
         {
             if(!(ctype_space($new_string1)))
@@ -185,20 +185,6 @@ class ScheduleController extends Controller
         }
 
         $jsonProgram = json_encode($program);
-
-        $count= count($request->time);
-
-        for($i=0; $i<$count; $i++){
-            if (($request->time[$i]) && ($request->name[$i])) {
-                $program = array_add($program, $i, ['time' => $request->time[$i], 'name' => $request->name[$i]]);
-            }
-        }
-
-        $programSort = array_values(array_sort($program, function ($value) {
-            return $value['time'];
-        }));
-
-        $jsonProgram = json_encode($programSort);
 
         $schedule->date = $request->date;
         $schedule->program = $jsonProgram;
