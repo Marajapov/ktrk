@@ -2,6 +2,7 @@
 @section('title', "Биринчи Радио")
 @section('styles')
 <link rel="stylesheet" href="{{ asset('css/radios.css')}}">
+
 @endsection
 @section('content')
 <div class="birinchiradio">
@@ -109,15 +110,15 @@
                   <ul class="nav navbar-nav onenavbar">
                      <li><a href="{{ route('birinchi.about') }}">{{ trans('radiopages.About') }}</a></li>
                      <li class="dropdown">
-                        <a class="active" href="{{ route('birinchi.broadcasts') }}" class="dropdown-toggle" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ trans('radiopages.Peredachi') }} <i class="fa fa-angle-down"></i></a>
+                        <a class="active" href="{{ route('birinchi.allbroadcasts') }}" class="dropdown-toggle" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ trans('radiopages.Peredachi') }} <i class="fa fa-angle-down"></i></a>
                         <ul class="dropdown-menu">                                   
                          @if($birinchiProjects) 
-                         @foreach($birinchiProjects as $project)
-                         <li class="list-group-item">
-                            <a href="{{ route('birinchi.news', $project) }}">{{ $project->getName() }}</a>
+                         @foreach($birinchiProjects as $birinchiProject)
+                         <li>
+                            <a href="{{ route('birinchi.broadcasts', $birinchiProject) }}">{{ $birinchiProject->getName() }}</a>
                          </li>
                          @endforeach
-                         @endif                                 
+                         @endif                                
                         </ul>
                      </li>
                      <li>
@@ -166,7 +167,7 @@
                             <a href="#">{{ $project->getName() }}</a>
                             </span>
                             <article>
-                               <a href="{{ route('birinchi.news', $post) }}" class="image-link">
+                               <a href="{{ route('birinchi.broadcast', $post) }}" class="image-link">
                                <img src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif">
                                <span class="date">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
                                </a>

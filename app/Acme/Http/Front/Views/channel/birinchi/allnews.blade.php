@@ -1,11 +1,9 @@
 @extends('Front::channel.birinchi.default')
 @section('title', "Биринчи Радио")
-
 @section('styles')
 <link rel="stylesheet" href="{{ asset('css/radios.css')}}">
-  {{--<link rel="stylesheet" type="text/css" href="{{ asset('/static/css/styles.css') }}">--}}
-  <link rel="stylesheet" type="text/css" href="{{ asset('css/pages.css') }}">
-
+ <link rel="stylesheet" href="{{ asset('css/articles.css') }}"/>
+  <link rel="stylesheet" href="{{ asset('css/pages.css') }}"/>
 @endsection
 @section('content')
 <div class="birinchiradio">
@@ -30,10 +28,11 @@
                 </ul>
                 <ul class="topradio pull-right">
                     <li><a href="{{ route('kyrgyzradio.home') }}">Кыргыз Радиосу</a></li>
-                    <li><a href="{{ route('minkiyal.home') }}">Миң Кыял FM</a></li>
+                    <li><a href="{{ route('minkiyal.home') }}">Миң Кыял</a></li>
                     <li><a href="{{ route('dostuk.home') }}">Достук</a></li>
                     <li></li>
                 </ul>
+
 
             </nav>
         </div>
@@ -110,7 +109,7 @@
                <!-- Collect the nav links, forms, and other content for toggling -->
                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                   <ul class="nav navbar-nav onenavbar">
-                     <li><a class="active" href="{{ route('birinchi.about') }}">{{ trans('radiopages.About') }}</a></li>
+                     <li><a href="{{ route('birinchi.about') }}">{{ trans('radiopages.About') }}</a></li>
                      <li class="dropdown">
                         <a href="{{ route('birinchi.allbroadcasts') }}" class="dropdown-toggle" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ trans('radiopages.Peredachi') }} <i class="fa fa-angle-down"></i></a>
                         <ul class="dropdown-menu">
@@ -120,7 +119,7 @@
                             <a href="{{ route('birinchi.broadcasts', $birinchiProject) }}">{{ $birinchiProject->getName() }}</a>
                          </li>
                          @endforeach
-                         @endif 
+                         @endif
                         </ul>
                      </li>
                      <li>
@@ -155,35 +154,80 @@
 </div>
     <div class="container">
         <div class="row">
-         <div class="top-left-block col-md-12">
-            <div class="panel panel-default onenews">                    
-              <div class="panel-heading">
-                <h3 class="panel-title"><span>{{ trans('radiopages.About') }}</span></h3>
-              </div>
+            <div class="col-md-12">
+                <div class="row">
+                  <div class="col-md-9 onenews">
+                       <div class="panel panel-articles">
+                          <div class="panel-heading">
+                             <h3 class="panel-title">{{ trans('radiopages.Newslenta') }}</h3>
+                          </div>
+                          <div class="panel-body">
+                             <div class="panel-body">
+                             @if($allPost)
+                             @foreach($allPost as $post)
+                                <div class="media">
+                                   <div class="media-left">
+                                      <a href="{{ route('birinchi.news', $post) }}">
+                                      <img class="media-object thumb" src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif" alt="image">
+                                      </a>
+                                   </div>
+                                   <div class="media-body">
+                                      <div class="extra">
+                                         <span class="e-datetime">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
+                                         <span class="e-views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
+                                      </div>
+                                      <a class="media-heading" href="{{ route('birinchi.news', $post) }}">{{ $post->getTitleRuOrKg() }}</a>
 
-              <div class="panel-body aboutnumber">
-                <p>{{ trans('radiopages.AboutText1') }} </p>
-                <p>{{ trans('radiopages.AboutText2') }}</p>    
-                <p>{{ trans('radiopages.AboutText3') }}</p>    
-                <p>{{ trans('radiopages.AboutText4') }}</p>    
-                <p><h3 class="text-center">{{ trans('radiopages.AboutText5') }}</h3></p>
-                <p>{{ trans('radiopages.AboutText6') }}</p>
-                <p>{{ trans('radiopages.AboutText7') }}</p>
-                <p>{{ trans('radiopages.AboutText8') }}</p>  
-              </div>
-            </div><!-- end panel default -->
-          </div>
-        </div>  
- 
-    </div>
+                                      <p>
+                                         {!! substr($post->getContent(),0,205) !!}
+                                      </p>
+                                      
+                                   </div>
+                                </div>
+                                @endforeach
+                                @endif                     
+                                <footer>
+                                   <a href="{{ route('birinchi.allnews') }}">{{ trans('radiopages.Morenews') }}</a>
+                                </footer>
+                             </div>
+                          </div>
+                       </div>
+                  </div>
+
+                  <div class="col-md-3 onenews">
+                        <div class="panel ctg-panel media-ctg-panel">
+                           <div class="panel-heading">
+                              <h3 class="panel-title"><span>{{ trans('radiopages.Peredachi') }}</span></h3>
+                           </div>
+                           <div class="panel-body">
+                              <div class="col-md-12">
+                                 <div class="row">
+                                   <ul class="list-group">
+                                       @foreach($categories as $category)
+                                       <li class="list-group-item">
+                                           <a href="{{ route('front.category', $category) }}">{{ $category->getTitle() }}</a>
+                                       </li>
+                                       @endforeach
+                                   </ul>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>   
 </div>
 
 @stop
 
 @section('footerscript2')
-
-<script type="text/javascript" src="{{ asset('js/jquery-migrate-1.2.1.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('slick/slick.min.js') }}"></script>
-        
-
+   	<script src="{{ asset('js/audio/audioplayer.js') }}"></script>
+        <script>
+            $(function ()
+            {
+                $('audio').audioPlayer();
+            });
+        </script>
 @stop

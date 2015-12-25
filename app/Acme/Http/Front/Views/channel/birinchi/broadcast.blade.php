@@ -2,6 +2,7 @@
 @section('title', "Биринчи Радио")
 @section('styles')
 <link rel="stylesheet" href="{{ asset('css/radios.css')}}">
+
 @endsection
 @section('content')
 <div class="birinchiradio">
@@ -109,13 +110,15 @@
                   <ul class="nav navbar-nav onenavbar">
                      <li><a href="{{ route('birinchi.about') }}">{{ trans('radiopages.About') }}</a></li>
                      <li class="dropdown">
-                        <a href="{{ route('birinchi.broadcasts') }}" class="dropdown-toggle" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ trans('radiopages.Peredachi') }} <i class="fa fa-angle-down"></i></a>
+                        <a href="{{ route('birinchi.allbroadcasts') }}" class="dropdown-toggle" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ trans('radiopages.Peredachi') }} <i class="fa fa-angle-down"></i></a>
                         <ul class="dropdown-menu">
-                           <li><a href="#">Багыт</a></li>
-                           <li><a href="#">Инсанат</a></li>
-                           <li><a href="#">Кыргызстан</a></li>
-                           <li><a href="#">Радиокүзөт</a></li>
-                           <li><a href="#">Күндүн темасы</a></li>
+                         @if($birinchiProjects) 
+                         @foreach($birinchiProjects as $birinchiProject)
+                         <li>
+                            <a href="{{ route('birinchi.broadcasts', $birinchiProject) }}">{{ $birinchiProject->getName() }}</a>
+                         </li>
+                         @endforeach
+                         @endif
                         </ul>
                      </li>
                      <li>
@@ -149,66 +152,54 @@
    </div>
 </div>>
     <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="row" style="margin-top:10px;">
-                    <div class="col-md-9 onenewspage">
-                        <div class="panel panel-default onearticle">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><span> Новости: {{ $post->getTitleRuOrKg() }} </span></h3>
-                            </div>
-                            <div class="panel-body">
-                                <div class="col-md-12">
-                                    <h2>{{ $post->getTitleRuOrKg() }}</h2>
-                                    <div class="muzimg">
-                                        <img src="@if(empty($post->getFile()))images/2.jpg @else {{  asset($post->getFile()) }} @endif" alt="" data-toggle="tooltip" data-placement="top" title="Бул жөн гана сүрөт эмес">
-                                    </div>
+        <div class="row">        
+          <div class="col-md-9 onepadding">
+              <div class="panel panel-default onelist">
+                  <div class="panel-heading">
+                      <h3 class="panel-title"><span> Новости:</span></h3>
+                  </div>
+                  <div class="panel-body">
+                      <div class="col-md-12">
+                          <h2>{{ $post->getTitleRuOrKg() }}</h2>
+                          <div class="muzimg">
+                              <img src="@if(empty($post->getFile()))images/2.jpg @else {{  asset($post->getFile()) }} @endif" alt="" data-toggle="tooltip" data-placement="top" title="Бул жөн гана сүрөт эмес">
+                          </div>
 
-                                    <article>
-                                        {!! $post->getContent() !!}
-                                    </article>
+                          <article>
+                              {!! $post->getContent() !!}
+                          </article>
 
-                                </div>
+                      </div>
 
-                                <footer>
-                                    <a href="#">
-                                        <span>Архив <i class="fa fa-arrow-circle-right"></i></span>
-                                    </a>
-                                </footer>
+                      <footer>
+                          <a href="#">
+                              <span>Архив <i class="fa fa-arrow-circle-right"></i></span>
+                          </a>
+                      </footer>
 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 onefix">
-                        <div class="panel panel-default onelist">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">Категории</h3>
-                            </div>
-                            <div class="panel-body">
-                                <nav>
-                                  <ul class="list-group">
-                                   @if($birinchiProjects) 
-                                   @foreach($birinchiProjects as $project)
-                                   <li class="list-group-item">
-                                    <a href="{{ route('birinchi.broadcasts', $project) }}">{{ $project->getName() }}</a>
-                                  </li>
-                                  @endforeach
-                                  @endif
-                                </ul>
-                                </nav>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <div class="panel">
-              
-            </div>
+                  </div>
+              </div>
           </div>
+          <div class="col-md-3 onepadding" style="border-left: 2px solid #fff;">
+              <div class="panel panel-default onelist ctg-panel">
+                  <div class="panel-heading">
+                      <h3 class="panel-title">Категории</h3>
+                  </div>
+                  <div class="panel-body">
+                      <nav>
+                        <ul class="list-group">
+                         @if($birinchiProjects) 
+                         @foreach($birinchiProjects as $project)
+                         <li class="list-group-item" style="padding-left:10px;">
+                          <a href="{{ route('birinchi.broadcasts', $project) }}">{{ $project->getName() }}</a>
+                        </li>
+                        @endforeach
+                        @endif
+                      </ul>
+                      </nav>
+                  </div>
+              </div>
+          </div>     
         </div>
     </div>   
 </div>

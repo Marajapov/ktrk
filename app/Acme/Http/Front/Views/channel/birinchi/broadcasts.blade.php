@@ -3,6 +3,9 @@
 
 @section('styles')
 <link rel="stylesheet" href="{{ asset('css/radios.css')}}">
+<link rel="stylesheet" href="{{ asset('css/articles.css') }}"/>
+<link rel="stylesheet" href="{{ asset('css/pages.css') }}"/>
+
 @endsection
 @section('content')
 <div class="birinchiradio">
@@ -110,15 +113,15 @@
                   <ul class="nav navbar-nav onenavbar">
                      <li><a href="{{ route('birinchi.about') }}">{{ trans('radiopages.About') }}</a></li>
                      <li class="dropdown">
-                        <a class="active" href="{{ route('birinchi.broadcasts') }}" class="dropdown-toggle" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ trans('radiopages.Peredachi') }} <i class="fa fa-angle-down"></i></a>
+                        <a class="active" href="{{ route('birinchi.allbroadcasts') }}" class="dropdown-toggle" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ trans('radiopages.Peredachi') }} <i class="fa fa-angle-down"></i></a>
                         <ul class="dropdown-menu">                                   
                          @if($birinchiProjects) 
                          @foreach($birinchiProjects as $birinchiProject)
-                         <li class="list-group-item">
-                            <a href="{{ route('birinchi.news', $birinchiProject) }}">{{ $birinchiProject->getName() }}</a>
+                         <li>
+                            <a href="{{ route('birinchi.broadcasts', $birinchiProject) }}">{{ $birinchiProject->getName() }}</a>
                          </li>
                          @endforeach
-                         @endif                                 
+                         @endif                                
                         </ul>
                      </li>
                      <li>
@@ -152,19 +155,14 @@
    </div>
 </div>
 <div class="container">
-       <div class="row specnews">
-            <div class="panel onenews">
-
-                <div class="panel-heading">
-                    <h3 class="panel-title"><span>{{ trans('radiopages.Peredachi') }}</span></h3>
-                </div>
-                
+       <div class="row">
+            <div class="panel onenews" style="padding:0px;">             
                 <div class="panel-body">
                      <div class="top-left-block col-md-9">
                         <div class="panel panel-show">
                            <div class="panel-heading">
                               <h3 class="panel-title">
-                                 <a href="{{ route('front.media.index') }}">{{ trans('radiopages.Peredachi') }}</a>
+                                 <a href="{{ route('front.media.index') }}">{{ $project->getNameOne() }}</a>
                               </h3>
                            </div>
                            <div class="panel-body">
@@ -177,7 +175,7 @@
                                           </a>
                                        </div>
                                        <div class="media-body">
-                                          <h4 class="show-title media-heading">{{ $project->id }}</h4>
+                                          <h4 class="show-title media-heading">{{ $project->getNameOne() }}</h4>
                                           <p class="show-desc">
                                              {{ $project->description }}
                                           </p>
@@ -242,7 +240,6 @@
                         </div>
                      </div>
                 </div>
-
             </div>
         </div> 
 </div>
