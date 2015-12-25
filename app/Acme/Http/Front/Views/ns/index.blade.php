@@ -50,7 +50,7 @@
 
                       @endforeach
 
-                      <div class="col-md-6">
+                      <div class="col-md-6 hidden">
 
                         @include('Front::ns.lastPosts')
                       </div>
