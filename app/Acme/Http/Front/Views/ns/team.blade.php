@@ -41,7 +41,7 @@
 
                       <div class="col-md-6 ns-team">
                         <div class="ns-photo">
-                          <img src="{{ asset('static/images/ns/anatay_omurkanov.jpg') }}" alt=""/>
+                          <img src="{{ asset('static/images/ns/ns_2.jpg') }}" alt=""/>
                         </div>
                         <div class="ns-info">
                           <span class="ns-name"><strong>Анатай Омурканов</strong></span>
@@ -52,7 +52,7 @@
 
                       <div class="col-md-6 ns-team">
                         <div class="ns-photo">
-                          <img src="{{ asset('static/images/ns/igor_shestakov.jpg') }}" alt=""/>
+                          <img src="{{ asset('static/images/ns/ns_3.jpg') }}" alt=""/>
                         </div>
                         <div class="ns-info">
                           <span class="ns-name"><strong>Игорь Шестаков</strong></span>
@@ -64,7 +64,7 @@
 
                       <div class="col-md-6 ns-team">
                         <div class="ns-photo">
-                          <img src="{{ asset('static/images/ns/zhyldyz_bakasheva.jpg') }}" alt=""/>
+                          <img src="{{ asset('static/images/ns/ns_4.jpg') }}" alt=""/>
                         </div>
                         <div class="ns-info">
                           <span class="ns-name"><strong>Жылдыз Бакашева</strong></span>
@@ -75,7 +75,7 @@
 
                       <div class="col-md-6 ns-team">
                         <div class="ns-photo">
-                          <img src="{{ asset('static/images/ns/sabyrbek_mukambetov.jpg') }}" alt=""/>
+                          <img src="{{ asset('static/images/ns/ns_5.jpg') }}" alt=""/>
                         </div>
                         <div class="ns-info">
                           <span class="ns-name"><strong>Сабырбек Мукамбетов</strong></span>
@@ -86,7 +86,7 @@
 
                       <div class="col-md-6 ns-team">
                         <div class="ns-photo">
-                          <img src="{{ asset('static/images/ns/tamara_zhamanbaeva.jpg') }}" alt=""/>
+                          <img src="{{ asset('static/images/ns/ns_6.jpg') }}" alt=""/>
                         </div>
                         <div class="ns-info">
                           <span class="ns-name"><strong>Тамара Жаманбаева</strong></span>
@@ -97,7 +97,7 @@
 
                       <div class="col-md-6 ns-team">
                         <div class="ns-photo">
-                          <img src="{{ asset('static/images/ns/tynchtykbek_chorotegin.jpg') }}" alt=""/>
+                          <img src="{{ asset('static/images/ns/ns_7.jpg') }}" alt=""/>
                         </div>
                         <div class="ns-info">
                           <span class="ns-name"><strong>Тынчтыкбек Чоротегин</strong></span>
@@ -157,7 +157,7 @@
 
                       <div class="col-md-6 ns-team">
                         <div class="ns-photo">
-                          <img src="{{ asset('static/images/ns/alhojoev_timur.jpg') }}" alt=""/>
+                          <img src="{{ asset('static/images/ns/ns_8.jpg') }}" alt=""/>
                         </div>
                         <div class="ns-info">
                           <span class="ns-name"><strong>Алхожоев Тимур</strong></span>
