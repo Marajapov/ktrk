@@ -482,15 +482,19 @@ header.top-menu,.logo-block{
     padding: 15px;
 }
 .panel-director .director-title{
-    padding: 0;
+    position: relative;
+    padding: 5px 0 20px;
+    padding-left: 120px;
 }
 .director-title a{
     display: inline-block;
     vertical-align: middle;
 }
 .director-img{
-    overflow: hidden;
-    width: 30%;
+    position: absolute;
+    width: 100px;
+    left: 10px;
+    top: 2px;
 }
 .director-text{
     padding-left: 10px;

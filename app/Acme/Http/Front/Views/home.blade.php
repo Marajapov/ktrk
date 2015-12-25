@@ -302,7 +302,7 @@
               <div class="panel-heading">
                 <h3 class="panel-title director-title">
                   <a class="director-img" href="{{ route('front.pages.director') }}">
-                    <img src="{{ asset('images/chief.png') }}" alt="директор"/>
+                    <img src="{{ asset('images/manager.png') }}" alt="директор"/>
                   </a>
                   <a class="director-text" href="{{ route('front.pages.director') }}">{{ trans('site.FrontDirectorPage') }}</a>
                 </h3>

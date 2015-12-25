@@ -9,7 +9,7 @@
                 <div class="col-md-12 logo-block">
                     <div class="row">
                         <a class="logo" href="{{ route('front.home') }}">
-                            <img src="{{ asset('images/ktrk_last.svg') }}" alt=""/>
+                            <img src="{{ asset('images/logo.png') }}" alt=""/>
                         </a>
 
                         <nav class="top-nav clearfix">
