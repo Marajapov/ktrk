@@ -143,7 +143,6 @@
 
             <div class="row">
                 <div class="features">
-
                     @if($dostukProjects) 
                     @foreach($dostukProjects as $key=> $project)
 

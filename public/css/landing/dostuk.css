@@ -54,6 +54,9 @@ header {
   margin: auto;
   display: block;
 }
+.whitefix .slick-prev:before, .slick-next:before {
+  color: #202d3a;
+}
 .fixed {
   position: fixed;
   max-width: 100% !important;

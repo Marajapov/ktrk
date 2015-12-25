@@ -182,27 +182,38 @@
                </div>
             </div>
             <div class="col-md-3 onepadding" style="float:right">
-               <div class="panel panel-default onelist">
+               <div class="panel panel-default onelist ctg-panel">
                   <div class="panel-heading">
                      <h3 class="panel-title">{{ trans('radiopages.Categories') }}</h3>
                   </div>
                   <div class="panel-body">
-                     <nav>
-                        <ul>
-                           <li><a href="">Политика</a></li>
-                           <li><a href="">Общество</a></li>
-                           <li><a href="">Эконоимка</a></li>
-                           <li><a href="">Культура</a></li>
-                           <li><a href="">Спорт</a></li>
-                           <li><a href="">Происшествия</a></li>
-                           <li><a href="">Наука и образование</a></li>
-                           <li><a href="">Туризм</a></li>
-                           <li><a href="">Граница</a></li>
-                           <li><a href="">Сельское хозяйство</a></li>
-                           </ul>
-                     </nav>
+                     <div class="col-md-12">
+                         <div class="row">
+                             <ul class="list-group">
+                                 @foreach($categories as $category)
+                                 <li class="list-group-item">
+                                     <a href="{{ route('front.category', $category) }}">{{ $category->getTitle() }}</a>
+                                 </li>
+                                 @endforeach
+                             </ul>
+                         </div>
+                     </div>
                   </div>
                </div>
+               <div class="oneserep onefix">
+               <nav>
+                  <ul>
+                     <li><a href="{{ route('birinchi.news') }}">Выпуск новостей</a></li>
+                  </ul>
+               </nav>
+               <iframe width="100%" height="280" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/171625446&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+               <nav>
+                  <ul>
+                     <li><a href="{{ route('birinchi.news') }}">Сереп</a></li>
+                  </ul>
+               </nav>
+               <iframe width="100%" height="280" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/171625446&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+            </div>
             </div>
             <div class="col-md-9 onenews">
                <div class="panel panel-articles">
@@ -233,8 +244,7 @@
                            </div>
                         </div>
                         @endforeach
-                        @endif
-                        
+                        @endif                     
                         <footer>
                            <a href="{{ route('front.general') }}">{{ trans('radiopages.Morenews') }}</a>
                         </footer>
@@ -242,20 +252,7 @@
                   </div>
                </div>
             </div>
-            <div class="col-md-3 oneserep onefix">
-               <nav>
-                  <ul>
-                     <li><a href="{{ route('birinchi.news') }}">Выпуск новостей</a></li>
-                  </ul>
-               </nav>
-               <iframe width="100%" height="280" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/171625446&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
-               <nav>
-                  <ul>
-                     <li><a href="{{ route('birinchi.news') }}">Сереп</a></li>
-                  </ul>
-               </nav>
-               <iframe width="100%" height="280" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/171625446&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
-            </div>
+
 
          </div>
       </div>
@@ -268,13 +265,14 @@
          <div class="panel-body">
             <div class="row specpad">
             @if($birinchiProjects) 
-            @foreach($birinchiProjects as $key=> $project)
+            @foreach($birinchiProjects as $project)
+            @foreach($project->oneprogram()->get() as $post)
                <div class="blocks col-md-4 col-sm-6 col-xs-12">
                   <span class="cart-title category">
-                  <a href="#">Спорт</a>
+                  <a href="{{ route('birinchi.broadcasts', $project) }}">{{ $project->getName() }}</a>
                   </span>
                   <article>
-                     <a href="{{ route('birinchi.news', $post) }}" class="image-link">
+                     <a href="{{ route('birinchi.broadcast', $post) }}" class="image-link">
                      <img src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif">
                      <span class="date">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
                      </a>
@@ -289,9 +287,16 @@
                   </article>
                </div>
             @endforeach
+            @endforeach
             @endif
             </div>
+            <footer>
+               <a href="{{ route('birinchi.allbroadcasts') }}">
+                  <span>{{ trans('radiopages.AllPereadachi') }}<i class="fa fa-arrow-circle-right"></i></span>
+               </a>
+            </footer>
          </div>
+
       </div>
    </div>
    <div class="row specnews">

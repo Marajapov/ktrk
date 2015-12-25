@@ -128,8 +128,7 @@ class DostukController extends Controller
         return view('Front::channel.dostuk.project',[
                 
             'project' => $project,
-    //                'MediaCategories'       => $MediaCategories,
-
+    //      'MediaCategories'       => $MediaCategories,
             'mainBanner'   => $mainBanner,
             'categories'=>$categories,
             'projectList' => $projectList,

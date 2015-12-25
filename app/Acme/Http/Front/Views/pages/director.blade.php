@@ -468,17 +468,8 @@
             </div>
 
             <div class="panel-body">
-              <a class="twitter-timeline" href="https://twitter.com/ilimkm" data-widget-id="667225139168337920">Твиты от @ilimkm</a>
-              <script>!function (d, s, id) {
-                  var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
-                  if (!d.getElementById(id)) {
-                    js = d.createElement(s);
-                    js.id = id;
-                    js.src = p + "://platform.twitter.com/widgets.js";
-                    fjs.parentNode.insertBefore(js, fjs);
-                  }
-                }(document, "script", "twitter-wjs");
-              </script>
+<a class="twitter-timeline" href="https://twitter.com/KTRK_kg" data-widget-id="680334843398492160">Твиты от @KTRK_kg</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
             </div>
 
             <div class="panel-heading">
@@ -486,7 +477,7 @@
             </div>
 
             <div class="panel-body">
-              <div class="fb-post" data-href="https://www.facebook.com/ilim.karypbekov/posts/10153204500493016?pnref=story" data-width="300">
+              <div class="fb-post" data-href="https://www.facebook.com/photo.php?fbid=10153270112968016&set=a.10151185782023016.444229.716033015&type=3&theater" data-width="300">
 
               </div>
             </div>
