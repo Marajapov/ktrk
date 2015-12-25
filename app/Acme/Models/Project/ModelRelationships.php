@@ -7,4 +7,9 @@ trait ModelRelationships
     {
         return $this->hasMany(\Model\Post\ModelName::class, 'dostukProgram');
     }
+
+    public function oneprogram()
+    {
+        return $this->hasMany(\Model\Post\ModelName::class, 'birinchiProgram');
+    }
 }

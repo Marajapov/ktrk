@@ -263,132 +263,29 @@
          </div>
          <div class="panel-body">
             <div class="row specpad">
+            @if($birinchiProjects) 
+            @foreach($birinchiProjects as $key=> $project)
                <div class="blocks col-md-4 col-sm-6 col-xs-12">
                   <span class="cart-title category">
                   <a href="#">Спорт</a>
                   </span>
                   <article>
-                     <a href="#" class="image-link">
-                     <img src="{{asset('images/gallery/001.jpg')}}">
-                     <span class="date">2 Декабрь, 2015</span>
+                     <a href="{{ route('birinchi.news', $post) }}" class="image-link">
+                     <img src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif">
+                     <span class="date">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
                      </a>
                      <h2 class="name headline">
-                        <a href="#" title="Premiere for The Invisible Woman">
-                        Кыргыз бильярдчылар Орусияда күч сынашууда
+                        <a href="#" title="">
+                        {{ $post->getTitleRuOrKg() }}
                         </a>
                      </h2>
                      <div class="description">
-                        <p>
-                           Кыргызстандык бильярдчылар Орусиянын  Томск шаарында отуп жаткан  бильярддын "эркин пирамида" түрү боюнча дүйнө чемпионатына катышууда. . 
-                        </p>
+                        <p>{{ $post->getTitleRuOrKg() }}</p>
                      </div>
                   </article>
                </div>
-               <div class="blocks col-md-4 col-sm-6 col-xs-12">
-                  <span class="cart-title category">
-                  <a href="#">Санкция</a>
-                  </span>
-                  <article>
-                     <a href="#" class="image-link">
-                     <img src="{{asset('images/gallery/002.jpg')}}">
-                     <span class="date">2 Декабрь, 2015</span>
-                     </a>
-                     <h2 class="name headline">
-                        <a href="#" title="Premiere for The Invisible Woman">
-                        Орусия тыюу салган түрк товарлардын тизмеси жарыяланды
-                        </a>
-                     </h2>
-                     <div class="description">
-                        <p>
-                           Орус өкмөтү 2016-жылдын 1-январынан тарта Түркиядан алып келүүгө чек койгон азыктардын арасында түстүү капуста, бадыраң, апельсин, мандарин, жүзүм, өрүк,тоок жана үндү эти бар. 
-                        </p>
-                     </div>
-                  </article>
-               </div>
-               <div class="blocks col-md-4 col-sm-6 col-xs-12">
-                  <span class="cart-title category">
-                  <a href="#">Кырсык</a>
-                  </span>
-                  <article>
-                     <a href="#" class="image-link">
-                     <img src="{{asset('images/gallery/003.jpg')}}">
-                     <span class="date">2 Декабрь, 2015</span>
-                     </a>
-                     <h2 class="name headline">
-                        <a href="#" title="Premiere for The Invisible Woman">
-                        Кечээ болгон жер титирөөдөн бир катар социалдык объекттер жабыркады
-                        </a>
-                     </h2>
-                     <div class="description">
-                        <p>
-                           Кечээ, 1-декабрда Жалал-Абад облусунун  аймагында  күчү 5,5 баллга  жеткен жер  титирөөдөн  Базар-Коргон жана Сузак райондорундагы  бир катар социалдык объекттер жабыркады 
-                        </p>
-                     </div>
-                  </article>
-               </div>
-               <div class="blocks col-md-4 col-sm-6 col-xs-12">
-                  <span class="cart-title category">
-                  <a href="#">Кырсык</a>
-                  </span>
-                  <article>
-                     <a href="#" class="image-link">
-                     <img src="{{asset('images/gallery/003.jpg')}}">
-                     <span class="date">2 Декабрь, 2015</span>
-                     </a>
-                     <h2 class="name headline">
-                        <a href="#" title="Premiere for The Invisible Woman">
-                        Стамбулдагы жарылуудан беш киши жаракат алды
-                        </a>
-                     </h2>
-                     <div class="description">
-                        <p>
-                           Жергиликтүү бийлик өкүлүнүн айтымында, жасалма бомба метросундагы өткөөл жолдун жанына ташталган. 
-                        </p>
-                     </div>
-                  </article>
-               </div>
-               <div class="blocks col-md-4 col-sm-6 col-xs-12">
-                  <span class="cart-title category">
-                  <a href="#">Экономика</a>
-                  </span>
-                  <article>
-                     <a href="#" class="image-link">
-                     <img src="{{asset('images/gallery/003.jpg')}}">
-                     <span class="date">2 Декабрь, 2015</span>
-                     </a>
-                     <h2 class="name headline">
-                        <a href="#" title="Premiere for The Invisible Woman">
-                        Доллардан баш тартууга мүмкүнбү?
-                        </a>
-                     </h2>
-                     <div class="description">
-                        <p>
-                           Мындан ары кыймылсыз жана кыймылдуу мүлктөр  улуттук валюта сом менен гана сатылып башташы ыктымал. 
-                        </p>
-                     </div>
-                  </article>
-               </div>
-               <div class="blocks col-md-4 col-sm-6 col-xs-12">
-                  <span class="cart-title category">
-                  <a href="#">Саясат</a>
-                  </span>
-                  <article>
-                     <a href="#" class="image-link">
-                     <img src="{{asset('images/gallery/003.jpg')}}">
-                     <span class="date">2 Декабрь, 2015</span>
-                     </a>
-                     <h2 class="name headline">
-                        <a href="#" title="Premiere for The Invisible Woman">
-                        АКШ “ИМ”ге каршы күрөшкө жоокерлерин жиберет
-                        </a>
-                     </h2>
-                     <div class="description">
-                        <p>
-                           Иракка жибериле турган атайын бөлүктүн жоокерлери жергиликтүү күчтөргө колдоо көргөзүп, рейддерди өткөрөт, барымтада калгандарды куткарат, чалгын маалыматтарын жыйнайт, “Ислам мамлекети” тобунун лидерлерин колго түшүрүү же өлтүрүү максатын көздөйт. 
-                        </p>
-                     </div>
-                  </article>
-               </div>
+            @endforeach
+            @endif
             </div>
          </div>
       </div>
