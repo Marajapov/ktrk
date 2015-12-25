@@ -264,7 +264,7 @@
               </div>
               <div class="panel-body">
                 <ul class="list-group">
-                  @foreach($generalPosts as $post)
+                  @foreach($latestPosts as $post)
                     <li class="list-group-item news-item">
                       <div class="news-body clearfix">
                         <a href="{{ route('front.post', $post) }}">
@@ -315,10 +315,10 @@
                     @if($directorPosts)
                       @foreach($directorPosts as $post)
                         <div>
-                          <a href="#">
+                          <a href="{{ route('front.post', $post) }}">
                             <img src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif" alt=""/>
                           </a>
-                          <a href="#">
+                          <a href="{{ route('front.post', $post) }}">
                             {{ $post->getTitleRuOrKg() }}
                           </a>
                         </div>

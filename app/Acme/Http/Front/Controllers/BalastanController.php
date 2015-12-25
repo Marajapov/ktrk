@@ -20,13 +20,13 @@ class BalastanController extends Controller
         // Photo Gallery
         $photoGalleries = \Model\PhotoParent\ModelName::where('balastan','=','1')->where('published','=',true)->take('10')->orderBy('id','desc')->get();
 
-if(count($medias) > 0){ $medias = $medias;
-}else{ $medias = null; }
-if(count($photoGalleries) > 0){
-    $photoGalleries = $photoGalleries;
-}else{ $photoGalleries = null; }
-if(count($firstMedia)){ $firstMedia = $firstMedia;
-}else{ $firstMedia = null; }
+        if(count($medias) > 0){ $medias = $medias;
+        }else{ $medias = null; }
+        if(count($photoGalleries) > 0){
+            $photoGalleries = $photoGalleries;
+        }else{ $photoGalleries = null; }
+        if(count($firstMedia)){ $firstMedia = $firstMedia;
+        }else{ $firstMedia = null; }
 
         return view('Front::channel.balastan.index', [
             'channel' => $channel,

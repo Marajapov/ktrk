@@ -39,6 +39,12 @@ class HomeController extends Controller
             $reporterPosts = \Model\Post\ModelName::where('reporter','=','1')->orderBy('id','desc')->take(15)->languageru()->get();
         }
 
+        if($lc == 'kg'){
+            $latestPosts = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->take(6)->skip(0)->orderBy('id','desc')->get();    
+        }elseif($lc == 'ru'){
+            $latestPosts = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languageru()->take(6)->skip(0)->orderBy('id','desc')->get();    
+        }
+
         $dayVideo1 = \Model\Media\ModelName::where('dayVideo','=','1')->first();
         $dayVideo2 = \Model\Media\ModelName::where('dayVideo','=','2')->first();
         $dayVideo3 = \Model\Media\ModelName::where('dayVideo','=','3')->first();
@@ -112,6 +118,7 @@ class HomeController extends Controller
             'projects' => $projects,
             'directorPosts' => $directorPosts,
             'reporterPosts' => $reporterPosts,
+            'latestPosts' => $latestPosts,
             ]);
     }
 
@@ -128,7 +135,12 @@ class HomeController extends Controller
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
         $parent = \Model\PhotoParent\ModelName::where('id','=',$post->parentId)->first();
-        $images = json_decode($parent->images);
+        if($parent){
+            $images = json_decode($parent->images);    
+        }else{
+            $images = null;
+        }
+        
         
 
         if($post->related1 != null){
