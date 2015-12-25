@@ -162,6 +162,13 @@
                     <label for="director">
                       Страница Ген. директора
                     </label>
+                     <div class="checkbox checkbox-primary ">
+                    {!! Form::hidden('fbpost', 0) !!}
+                    {!! Form::checkbox('fbpost', 1, null, ["id" => "fbpost", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
+                    <label for="fbpost">
+                      Пост из Facebook
+                    </label>
+                  </div>
                   </div>
                 </div>
               </div>

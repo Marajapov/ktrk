@@ -461,8 +461,12 @@
                   <h3 class="panel-title"><span>Facebook</span></h3>
                </div>
                <div class="panel-body">
-                  <div class="fb-post" data-href="https://www.facebook.com/photo.php?fbid=10153270112968016&set=a.10151185782023016.444229.716033015&type=3&theater" data-width="300">
+               @if($fbpost != null)
+               @foreach($fbpost as $post)
+                  <div class="fb-post" data-href="https://www.facebook.com/{{$post->title}}" data-width="300">
                   </div>
+                  @endforeach
+                  @endif
                </div>
             </div>
          </div>
