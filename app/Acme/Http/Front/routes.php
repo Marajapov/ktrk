@@ -87,7 +87,8 @@ Route::group(['domain' => 'ktrk.dev', 'prefix' => '/birinchi', 'namespace' => 'F
     Route::get('/allbroadcasts', ['as' => 'birinchi.allbroadcasts',   'uses' => 'BirinchiController@allbroadcasts']);
     Route::get('/broadcasts/{project}', ['as' => 'birinchi.broadcasts',   'uses' => 'BirinchiController@broadcasts']);        
     Route::get('/about', ['as' => 'birinchi.about',   'uses' => 'BirinchiController@about']);
-    Route::get('/photos', ['as' => 'birinchi.photos',   'uses' => 'BirinchiController@photos']);
+    Route::get('/photos/{gallery}', ['as' => 'birinchi.photos',   'uses' => 'BirinchiController@Gallery']);
+    Route::get('/allphotos',['as' => 'birinchi.allphotos','uses'=> 'BirinchiController@allphotos'] );
     Route::get('/broadcastsprogramm', ['as' => 'birinchi.broadcastsprogramm',   'uses' => 'BirinchiController@broadcastsprogramm']);
 
 });

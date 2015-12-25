@@ -247,13 +247,13 @@
     padding: 0 15px !important;
 }
 .directorpages .media-director .media-left img{
-    width: 150px;
+    width: 250px;
 }
 .directorpages .media-director .list-group{
     margin: 0;
 }
 .directorpages .media-director .list-group-item:first-child{
-    font-size: 14px;
+    font-size: 20px;
     font-weight: bold;
     text-transform: uppercase;
 }

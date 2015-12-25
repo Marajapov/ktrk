@@ -67,6 +67,7 @@ class DostukController extends Controller
 
             ]);
     }
+    
     public function allphotos()
     {
         $channel = \Model\Channel\ModelName::name('dostuk')->first();

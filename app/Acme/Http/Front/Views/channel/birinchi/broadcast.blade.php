@@ -156,7 +156,7 @@
           <div class="col-md-9 onepadding">
               <div class="panel panel-default onelist">
                   <div class="panel-heading">
-                      <h3 class="panel-title"><span> Новости:</span></h3>
+                      <h3 class="panel-title"><span> {{ $birinchiProject->getName() }} : </span></h3>
                   </div>
                   <div class="panel-body">
                       <div class="col-md-12">
