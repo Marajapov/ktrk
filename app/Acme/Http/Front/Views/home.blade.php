@@ -315,8 +315,9 @@
                     @if($directorPosts)
                       @foreach($directorPosts as $post)
                         <div>
+
                           <a href="{{ route('front.post', $post) }}">
-                            <img src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif" alt=""/>
+                            <img src="@if(!($post->thumbnail_big))images/live_bg.png @else {{ asset($post->thumbnail_big) }} @endif" alt=""/>
                           </a>
                           <a href="{{ route('front.post', $post) }}">
                             {{ $post->getTitleRuOrKg() }}
