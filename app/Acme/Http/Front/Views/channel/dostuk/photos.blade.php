@@ -1,5 +1,5 @@
 @extends('Front::channel.muzkanal.default')
-@section('title', trans('radiopages.Photos'))
+@section('title', $gallery->getName())
 @section('styles')
 <link rel="stylesheet" href="{{ asset('css/radios.css')}}">
 <link rel="stylesheet" href="{{ asset('css/landing/dostuk.css')}}">
@@ -60,6 +60,7 @@
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li><a href="{{ route('dostuk.home') }}">{{ trans('radiopages.Home') }}</a></li>                       
+                        <li><a href="{{ route('dostuk.allphotos') }}">{{ trans('radiopages.Allphotos') }}</a></li>                       
                         <li class="scroll"><a href="#portfolio">{{ trans('radiopages.Photos') }}</a></li>                       
                     </ul>
                 </div>

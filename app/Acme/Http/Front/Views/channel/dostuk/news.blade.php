@@ -1,5 +1,5 @@
 @extends('Front::channel.muzkanal.default')
-@section('title', trans('radiopages.Photos'))
+@section('title', $post->getTitleRuOrKg())
 @section('styles')
 <link rel="stylesheet" href="{{ asset('css/radios.css')}}">
 <link rel="stylesheet" href="{{ asset('css/landing/dostuk.css')}}">
@@ -114,6 +114,17 @@
                                  </div>
                                  <article>
                                     {!! $post->getContent() !!}
+                                    <div class="carousel-post">
+                                       @if($parentId)
+                                       @foreach($photoChilds as $photoChild)
+                                       <div class="col-md-4">
+                                          <a href="#">
+                                          <img src="{{ asset($photoChild->getFile()) }}" alt=""/>
+                                          </a>
+                                       </div>
+                                       @endforeach
+                                       @endif
+                                    </div>                                    
                                  </article>
                               </div>
          
