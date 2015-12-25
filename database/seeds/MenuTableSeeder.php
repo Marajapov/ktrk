@@ -17,6 +17,7 @@ class MenuTableSeeder extends Seeder
             'parent_id' => null,
             'code'		=> 'main',
             'name'      => 'Башкы Бет',
+            'nameRu'      => 'Главная',
             'url'		=> 'http://ktrk.dev',
             'order' 	=> 1,
         ]);
@@ -25,7 +26,8 @@ class MenuTableSeeder extends Seeder
             'id'        => 2,
             'parent_id' => null,
             'code'		=> 'main',
-            'name'      => 'КТРК',
+            'name'      => 'КТРК',            
+            'nameRu'      => 'КТРК',            
             'url'		=> 'http://ktrk.dev',
             'order' 	=> 2,
         ]);
@@ -35,6 +37,7 @@ class MenuTableSeeder extends Seeder
             'parent_id' => 2,
             'code'		=> 'main',
             'name'      => 'Тарыхы',
+            'nameRu'      => 'История',
             'url'		=> 'http://ktrk.dev/history',
             'order' 	=> 3,
         ]);
@@ -44,6 +47,7 @@ class MenuTableSeeder extends Seeder
             'parent_id' => 2,
             'code'		=> 'main',
             'name'      => 'Жетекчилер',
+            'nameRu'      => 'Руководство',
             'url'		=> 'http://ktrk.dev/leaders',
             'order' 	=> 4,
         ]);
@@ -53,6 +57,7 @@ class MenuTableSeeder extends Seeder
             'parent_id' => 2,
             'code'		=> 'main',
             'name'      => 'Стратегия',
+            'nameRu'      => 'Стратегия',
             'url'		=> 'http://ktrk.dev/strategy',
             'order' 	=> 5,
         ]);
@@ -62,6 +67,7 @@ class MenuTableSeeder extends Seeder
             'parent_id' => 2,
             'code'		=> 'main',
             'name'      => 'Нормативдик база',
+            'nameRu'      => 'Нормативная база',
             'url'		=> 'http://ktrk.dev/normalbase',
             'order' 	=> 6,
         ]);
@@ -71,6 +77,7 @@ class MenuTableSeeder extends Seeder
             'parent_id' => 2,
             'code'		=> 'main',
             'name'      => 'РРТЦ',
+            'nameRu'    => 'Республиканский радиотелецентр',
             'url'		=> 'http://ktrk.dev/rrts',
             'order' 	=> 7,
         ]);
@@ -80,6 +87,7 @@ class MenuTableSeeder extends Seeder
             'parent_id' => 2,
             'code'		=> 'main',
             'name'      => 'Отчет',
+            'nameRu'      => 'Отчет',
             'url'		=> 'http://ktrk.dev/report',
             'order' 	=> 8,
         ]);
@@ -89,6 +97,7 @@ class MenuTableSeeder extends Seeder
             'parent_id' => null,
             'code'		=> 'main',
             'name'      => 'Телепрограмма',
+            'nameRu'      => 'Телепрограмма',
             'url'		=> 'http://ktrk.dev/teleprogram',
             'order' 	=> 9,
         ]);
@@ -98,6 +107,7 @@ class MenuTableSeeder extends Seeder
             'parent_id' => null,
             'code'		=> 'main',
             'name'      => 'БАЙКООЧУ КЕҢЕШ',
+            'nameRu'      => 'Наблюдательный совет',
             'url'		=> 'http://ktrk.dev/ns',
             'order' 	=> 10,
         ]);
@@ -107,6 +117,7 @@ class MenuTableSeeder extends Seeder
             'parent_id' => null,
             'code'		=> 'main',
             'name'      => 'РЕДАКЦИЯЛЫК КЕҢЕШЧИ',
+            'nameRu'      => 'Редакционный советник',
             'url'		=> 'http://ktrk.dev/rs',
             'order' 	=> 11,
         ]);

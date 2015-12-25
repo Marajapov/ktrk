@@ -225,6 +225,10 @@
                                  <span class="e-views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
                               </div>
                               <a class="media-heading" href="{{ route('birinchi.news', $post) }}">{{ $post->getTitleRuOrKg() }}</a>
+
+                              <p>
+                                 {!! substr($post->getContent(),0,205) !!}
+                              </p>
                               
                            </div>
                         </div>

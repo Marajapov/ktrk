@@ -124,7 +124,20 @@
                                        </div>
                                        @endforeach
                                        @endif
-                                    </div>                                    
+                                    </div> 
+
+                                     <div class="carousel-post">
+                                       @if($images)
+                                       @foreach($images as $image)
+                                       <div class="col-md-4">
+                                          <a href="#">
+
+                                          <img src="{{ asset('froala/uploads/'.$image->name) }}" alt=""/>
+                                          </a>
+                                       </div>
+                                       @endforeach
+                                       @endif
+                                    </div>                                  
                                  </article>
                               </div>
          

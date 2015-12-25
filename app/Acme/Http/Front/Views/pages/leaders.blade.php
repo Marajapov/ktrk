@@ -33,7 +33,7 @@
                 {{--</div>--}}
 
                 <div class="col-md-4">
-                  <div class="manager">
+                  <div class="manager clearfix">
                     <div class="col-md-12 manager-thumb">
                       <div class="row">
                         <img src="{{ asset('images/managers/manager_1.jpg') }}">
@@ -54,7 +54,7 @@
                 </div>
 
                 <div class="col-md-4">
-                  <div class="manager">
+                  <div class="manager clearfix">
                     <div class="col-md-12 manager-thumb">
                       <div class="row">
                         <img src="{{ asset('images/managers/manager_2.jpg') }}">
@@ -67,7 +67,7 @@
                         @if($lc == 'kg')
                           <h5>КТРКнын башкы директорунун телеберүүлөр боюнча орун басары</h5>
                         @else
-                          <h5>Заместитель генерального директора КТРК КР по телевещанию</h5>
+                          <h5>Заместитель генерального директора КТРК по телевещанию</h5>
                         @endif
 
                       </div>
@@ -76,7 +76,7 @@
                 </div>
 
                 <div class="col-md-4">
-                  <div class="manager">
+                  <div class="manager clearfix">
                     <div class="col-md-12 manager-thumb">
                       <div class="row">
                         <img src="{{ asset('images/managers/manager_3.jpg') }}">
@@ -89,7 +89,7 @@
                         @if($lc == 'kg')
                           <h5>КТРКнын башкы директорунун радио уктуруулар боюнча орун басары</h5>
                         @else
-                          <h5>Заместитель генерального директора КТРК КР по радио вещанию </h5>
+                          <h5>Заместитель генерального директора КТРК по радио вещанию </h5>
                         @endif
 
                       </div>
@@ -98,7 +98,7 @@
                 </div>
 
                 <div class="col-md-4">
-                  <div class="manager">
+                  <div class="manager clearfix">
                     <div class="col-md-12 manager-thumb">
                       <div class="row">
                         <img src="{{ asset('images/managers/manager_4.jpg') }}">
@@ -111,7 +111,7 @@
                         @if($lc == 'kg')
                           <h5>КТРКнын Республикалык радио телеборборунун директору</h5>
                         @else
-                          <h5>Директор Республиканского радиотелецентра КТРК КР</h5>
+                          <h5>Директор Республиканского радиотелецентра КТРК</h5>
                         @endif
                       </div>
                     </div>
@@ -119,7 +119,7 @@
                 </div>
 
                 <div class="col-md-4">
-                  <div class="manager">
+                  <div class="manager clearfix">
                     <div class="col-md-12 manager-thumb">
                       <div class="row">
                         <img src="{{ asset('images/managers/manager_5.jpg') }}">
@@ -129,6 +129,7 @@
                       <div class="row">
                         <h4>Асанбек уулу Руслан</h4>
                         <hr/>
+
                         @if($lc == 'kg')
                           <h5>КТРКнын аппарат жетекчиси</h5>
                         @else
