@@ -20,7 +20,7 @@
                                         <a href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="100" data-close-others="false" role="button" aria-expanded="false">{{ $menu->getName() }}</a>
                                         <ul class="dropdown-menu" role="menu">
                                             @foreach($menu->submenus as $submenu)
-                                            <li><a href="{{ $submenu->getUrl() }}">{{ $submenu->getName() }}</a></li>
+                                            <li><a href="{{ $submenu->getUrl() }}">@if(app()->getlocale() == 'kg'){{ $submenu->getName() }} @else {{ $submenu->getNameRu() }} @endif</a></li>
                                             @endforeach
                                         </ul>
                                     </li><li> / </li>
