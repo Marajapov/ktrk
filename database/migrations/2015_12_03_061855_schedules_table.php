@@ -18,7 +18,7 @@ class SchedulesTable extends Migration
             $table->binary('program');
             $table->string('channel_id');
             $table->string('universal');
-            $table->string('extra');
+            $table->text('extra');
             $table->timestamps();
         });
     }
