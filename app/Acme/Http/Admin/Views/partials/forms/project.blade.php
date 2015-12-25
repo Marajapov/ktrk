@@ -118,7 +118,7 @@
             {!! Form::hidden('muzkanal', 0) !!}
             {!! Form::checkbox('muzkanal', 1, null, ["id" => "muzkanal", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
             <label for="muzkanal">
-              Муз канал
+              Музыка
             </label>
           </div>
         </div>
@@ -193,6 +193,20 @@
           </div>
         </div>
       </div>
+
+      <!-- Dostuk -->
+      <div class="form-group">
+        <label for="parentId" class="col-sm-2 control-label"></label>
+        <div class="col-sm-10">
+          <div class="checkbox checkbox-primary ">
+            {!! Form::hidden('dostuk', 0) !!}
+            {!! Form::checkbox('dostuk', 1, null, ["id" => "dostuk", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
+            <label for="dostuk">
+              Достук
+            </label>
+          </div>
+        </div>
+      </div>      
 
   </div>
 </div>

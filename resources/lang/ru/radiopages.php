@@ -40,6 +40,7 @@ return [
 
 	   	//Content slider
 	    'Mainnews' => 'Главные новости',
+	    'Allphotos' => 'Все фотографии',
 		'' => '',
 		'' => '',
 

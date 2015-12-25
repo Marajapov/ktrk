@@ -7,6 +7,10 @@ class MediaController extends Controller
 {
     public function __construct()
     {
+        $this->positionTop = \Model\Banner\ModelName::where('positionTop','=','1')->first();
+        $this->positionRight = \Model\Banner\ModelName::where('positionRight','=','1')->first();
+        $this->positionCenter = \Model\Banner\ModelName::where('positionCenter','=','1')->first();
+        $this->positionBottom = \Model\Banner\ModelName::where('positionBottom','=','1')->first();
     }
     /**
      * Show the application dashboard to the user.

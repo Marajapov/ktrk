@@ -32,7 +32,7 @@ return [
 
 	    //Content slider
 	    'Mainnews' => 'Башкы жаңылыктар',
-		'' => '',
+		'Allphotos' => 'Баардык сүрөттөр',
 		'' => '',
 
 		//About text of Birinchi Radio

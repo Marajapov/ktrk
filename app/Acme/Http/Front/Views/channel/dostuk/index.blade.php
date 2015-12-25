@@ -4,6 +4,9 @@
 <link rel="stylesheet" href="{{ asset('css/radios.css')}}">
 <link rel="stylesheet" href="{{ asset('css/landing/dostuk.css')}}">
 
+ <link rel="stylesheet" href="{{ asset('css/articles.css') }}"/>
+  <link rel="stylesheet" href="{{ asset('css/pages.css') }}"/>
+
 @endsection
 @section('content')
 <body id="home" class="homepage">
@@ -141,33 +144,8 @@
             <div class="row">
                 <div class="features">
 
-                    <div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="100ms">
-                        <div class="media service-box">
-                            <div class="pull-left">
-                                <i class="fa fa-bullhorn"></i>
-                            </div>
-                            <div class="media-body">
-                                <div role="tabpanel">
-                                    <ul class="nav main-tab nav-justified" role="tablist">
-                                        <li role="presentation" class="active">
-                                            <a href="#tab01" role="tab" data-toggle="tab" aria-controls="tab01" aria-expanded="true">Наш человек</a>
-                                        </li>
-                                        <li role="presentation">
-                                            <a href="#tab02" role="tab" data-toggle="tab" aria-controls="tab02" aria-expanded="false">{{ trans('radiopages.OPeredachi') }}</a>
-                                        </li>
-                                    </ul>
-                                    <div id="tab-content" class="tab-content">
-                                        <div role="tabpanel" class="tab-pane fade active in" id="tab01" aria-labelledby="tab01">
-                                            <p><iframe width="100%" height="100" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/235888059&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe></p>
-                                        </div>
-                                        <div role="tabpanel" class="tab-pane fade" id="tab02" aria-labelledby="tab02">
-                                           <p>Кыргызстанга салымын кошуп жаткан белгилүү адамдар тууралуу. </p>
-                                       </div>
-                                   </div>
-                               </div>
-                            </div>
-                        </div>
-                    </div><!--/.col-md-4-->
+                    @if($dostukProjects) 
+                    @foreach($dostukProjects as $key=> $project)
 
                     <div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="100ms">
                         <div class="media service-box">
@@ -178,277 +156,57 @@
                                 <div role="tabpanel">
                                     <ul class="nav main-tab nav-justified" role="tablist">
                                         <li role="presentation" class="active">
-                                            <a href="#tab5" role="tab" data-toggle="tab" aria-controls="tab5" aria-expanded="true">Звезды мировой музыки</a>
+                                            <a href="#{{ $project->id+ $project->program()->first()->id}}" role="tab" data-toggle="tab" aria-controls="{{ $project->id+ $project->program()->first()->id }}" aria-expanded="true">{{ $project->getName() }}</a>
                                         </li>
                                         <li role="presentation">
-                                            <a href="#tab6" role="tab" data-toggle="tab" aria-controls="tab6" aria-expanded="false">{{ trans('radiopages.OPeredachi') }}</a>
+                                            <a href="#{{ $key+99 }}" role="tab" data-toggle="tab" aria-controls="{{ $key+99 }}" aria-expanded="false">{{ trans('radiopages.OPeredachi') }}</a>
                                         </li>
                                     </ul>
                                     <div id="tab-content" class="tab-content">
-                                        <div role="tabpanel" class="tab-pane fade active in" id="tab5" aria-labelledby="tab5">
-                                            <p><iframe width="100%" height="100" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/235888059&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe></p>
+                                        <div role="tabpanel" class="tab-pane fade active in" id="{{ $project->id+ $project->program()->first()->id }}" aria-labelledby="{{ $project->id+ $project->program()->first()->id }}">
+                                            <div class="onenews">
+                                               <div class="panel panel-articles">
+
+                                                
+                                                     <div class="panel-body">
+                                                     @foreach($project->program()->get() as $post)
+                                                        <div class="media">
+                                                           <div class="media-left">
+                                                              <a href="{{ route('dostuk.news', $post) }}">
+                                                              <img class="media-object thumb" src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif" alt="image">
+                                                              </a>
+                                                           </div>
+                                                           <div class="media-body">
+                                                              <div class="extra">
+                                                                 <span class="e-datetime">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
+                                                                 <span class="e-views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
+                                                              </div>
+                                                              <a class="media-heading" href="{{ route('dostuk.news', $post) }}">{{ $post->getTitleRuOrKg() }}</a>
+                                                              
+                                                           </div>
+                                                        </div>
+                                                        @endforeach
+                                                        
+                                                        <footer>
+                                                           <a href="{{ route('dostuk.allnews') }}">{{ trans('site.FrontPostAll') }}</a>
+                                                        </footer>
+                                                     </div>
+                                              
+                                               </div>
+                                            </div>
+
                                         </div>
-                                        <div role="tabpanel" class="tab-pane fade" id="tab6" aria-labelledby="tab6">
-                                           <p>Бул программа дүйнөнүн белгилүү композиторлору, чыгармалары тууралуу</p>
+                                        <div role="tabpanel" class="tab-pane fade" id="{{ $key+99 }}" aria-labelledby="{{ $key+99 }}">
+                                           <p>{{ $project->description }}</p>
                                        </div>
                                    </div>
                                </div>
                             </div>
                         </div>
-                    </div><!--/.col-md-4-->                    
-
-                    <div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="400ms">
-                        <div class="media service-box">
-                            <div class="pull-left">
-                                <i class="fa fa-bullhorn"></i>
-                            </div>
-                            <div class="media-body">
-                                <div role="tabpanel">
-                                    <ul class="nav main-tab nav-justified" role="tablist">
-                                        <li role="presentation" class="active">
-                                            <a href="#tab7" role="tab" data-toggle="tab" aria-controls="tab7" aria-expanded="true">Бар бол достук</a>
-                                        </li>
-                                        <li role="presentation">
-                                            <a href="#tab8" role="tab" data-toggle="tab" aria-controls="tab8" aria-expanded="false">{{ trans('radiopages.OPeredachi') }}</a>
-                                        </li>
-                                    </ul>
-                                    <div id="tab-content" class="tab-content">
-                                        <div role="tabpanel" class="tab-pane fade active in" id="tab7" aria-labelledby="tab7">
-                                            <p><iframe width="100%" height="100" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/235888059&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe></p>
-                                        </div>
-                                        <div role="tabpanel" class="tab-pane fade" id="tab8" aria-labelledby="tab8">
-                                            <p>Кыргызстанда жашаган этностордун ар кандай маданий-майрамдык кечелерин чагылдырат</p>
-                                        </div>
-                                   </div>
-                               </div>
-                            </div>
-                        </div>
                     </div><!--/.col-md-4-->
-
-                    <div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="400ms">
-                        <div class="media service-box">
-                            <div class="pull-left">
-                                <i class="fa fa-bullhorn"></i>
-                            </div>
-                            <div class="media-body">
-                                <div role="tabpanel">
-                                    <ul class="nav main-tab nav-justified" role="tablist">
-                                        <li role="presentation" class="active">
-                                            <a href="#tab9" role="tab" data-toggle="tab" aria-controls="tab9" aria-expanded="true">Дүйнөлүк поэзия</a>
-                                        </li>
-                                        <li role="presentation">
-                                            <a href="#tab10" role="tab" data-toggle="tab" aria-controls="tab10" aria-expanded="false">{{ trans('radiopages.OPeredachi') }}</a>
-                                        </li>
-                                    </ul>
-                                    <div id="tab-content" class="tab-content">
-                                        <div role="tabpanel" class="tab-pane fade active in" id="tab9" aria-labelledby="tab9">
-                                            <p><iframe width="100%" height="100" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/235888059&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe></p>
-                                        </div>
-                                        <div role="tabpanel" class="tab-pane fade" id="tab10" aria-labelledby="tab10">
-                                            <p>Бул берүүдө дүйнөлүк классикалык поэзияны айтып берет.</p>
-                                        </div>
-                                   </div>
-                               </div>
-                            </div>
-                        </div>
-                    </div><!--/.col-md-4--> 
-
-                    <div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="400ms">
-                        <div class="media service-box">
-                            <div class="pull-left">
-                                <i class="fa fa-bullhorn"></i>
-                            </div>
-                            <div class="media-body">
-                                <div role="tabpanel">
-                                    <ul class="nav main-tab nav-justified" role="tablist">
-                                        <li role="presentation" class="active">
-                                            <a href="#tab11" role="tab" data-toggle="tab" aria-controls="tab11" aria-expanded="true">Данакер</a>
-                                        </li>
-                                        <li role="presentation">
-                                            <a href="#tab12" role="tab" data-toggle="tab" aria-controls="tab12" aria-expanded="false">{{ trans('radiopages.OPeredachi') }}</a>
-                                        </li>
-                                    </ul>
-                                    <div id="tab-content" class="tab-content">
-                                        <div role="tabpanel" class="tab-pane fade active in" id="tab11" aria-labelledby="tab11">
-                                            <p><iframe width="100%" height="100" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/235888059&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe></p>
-                                        </div>
-                                        <div role="tabpanel" class="tab-pane fade" id="tab12" aria-labelledby="tab12">
-                                            <p>Бул программа дуйнонун жана Кыргызстандын эки элге копуро болгон адамдары менен маек</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!--/.col-md-4-->
-
-
-                    <div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="400ms">
-                        <div class="media service-box">
-                            <div class="pull-left">
-                                <i class="fa fa-bullhorn"></i>
-                            </div>
-                            <div class="media-body">
-                                <div role="tabpanel">
-                                    <ul class="nav main-tab nav-justified" role="tablist">
-                                        <li role="presentation" class="active">
-                                            <a href="#tab13" role="tab" data-toggle="tab" aria-controls="tab13" aria-expanded="true">Ашкана ажары</a>
-                                        </li>
-                                        <li role="presentation">
-                                            <a href="#tab14" role="tab" data-toggle="tab" aria-controls="tab14" aria-expanded="false">{{ trans('radiopages.OPeredachi') }}</a>
-                                        </li>
-                                    </ul>
-                                    <div id="tab-content" class="tab-content">
-                                        <div role="tabpanel" class="tab-pane fade active in" id="tab13" aria-labelledby="tab13">
-                                            <p><iframe width="100%" height="100" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/235888059&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe></p>
-                                        </div>
-                                        <div role="tabpanel" class="tab-pane fade" id="tab14" aria-labelledby="tab14">
-                                            <p>Бул программада улуттардын ашканасы тууралуу.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!--/.col-md-4-->
-
-                    <div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="400ms">
-                        <div class="media service-box">
-                            <div class="pull-left">
-                                <i class="fa fa-bullhorn"></i>
-                            </div>
-                            <div class="media-body">
-                                <div role="tabpanel">
-                                    <ul class="nav main-tab nav-justified" role="tablist">
-                                        <li role="presentation" class="active">
-                                            <a href="#tab15" role="tab" data-toggle="tab" aria-controls="tab15" aria-expanded="true">Түрк тилин үйрөнөбүз</a>
-                                        </li>
-                                        <li role="presentation">
-                                            <a href="#tab16" role="tab" data-toggle="tab" aria-controls="tab16" aria-expanded="false">{{ trans('radiopages.OPeredachi') }}</a>
-                                        </li>
-                                    </ul>
-                                    <div id="tab-content" class="tab-content">
-                                        <div role="tabpanel" class="tab-pane fade active in" id="tab15" aria-labelledby="tab15">
-                                            <p><iframe width="100%" height="100" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/235888059&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe></p>
-                                        </div>
-                                        <div role="tabpanel" class="tab-pane fade" id="tab16" aria-labelledby="tab16">
-                                            <p>Тил үйрөтүүчү радио курс. Ошондой эле улуттар аралык мамилени бекемдөө максатында да бир топ уктуруулар программага киргизилген. </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!--/.col-md-4-->    
-
-                    <div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="400ms">
-                        <div class="media service-box">
-                            <div class="pull-left">
-                                <i class="fa fa-bullhorn"></i>
-                            </div>
-                            <div class="media-body">
-                                <div role="tabpanel">
-                                    <ul class="nav main-tab nav-justified" role="tablist">
-                                        <li role="presentation" class="active">
-                                            <a href="#tab17" role="tab" data-toggle="tab" aria-controls="tab17" aria-expanded="true">Эгиз тилдеги эргүүлөр</a>
-                                        </li>
-                                        <li role="presentation">
-                                            <a href="#tab18" role="tab" data-toggle="tab" aria-controls="tab18" aria-expanded="false">{{ trans('radiopages.OPeredachi') }}</a>
-                                        </li>
-                                    </ul>
-                                    <div id="tab-content" class="tab-content">
-                                        <div role="tabpanel" class="tab-pane fade active in" id="tab17" aria-labelledby="tab17">
-                                            <p><iframe width="100%" height="100" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/235888059&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe></p>
-                                        </div>
-                                        <div role="tabpanel" class="tab-pane fade" id="tab18" aria-labelledby="tab18">
-                                            <p>Казак-кыргыз музыкалык берүүлөрү</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!--/.col-md-4-->
-
-                    <div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="400ms">
-                        <div class="media service-box">
-                            <div class="pull-left">
-                                <i class="fa fa-bullhorn"></i>
-                            </div>
-                            <div class="media-body">
-                                <div role="tabpanel">
-                                    <ul class="nav main-tab nav-justified" role="tablist">
-                                        <li role="presentation" class="active">
-                                            <a href="#tab19" role="tab" data-toggle="tab" aria-controls="tab19" aria-expanded="true">Древо дружбы</a>
-                                        </li>
-                                        <li role="presentation">
-                                            <a href="#tab20" role="tab" data-toggle="tab" aria-controls="tab20" aria-expanded="false">{{ trans('radiopages.OPeredachi') }}</a>
-                                        </li>
-                                    </ul>
-                                    <div id="tab-content" class="tab-content">
-                                        <div role="tabpanel" class="tab-pane fade active in" id="tab19" aria-labelledby="tab19">
-                                            <p><iframe width="100%" height="100" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/235888059&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe></p>
-                                        </div>
-                                        <div role="tabpanel" class="tab-pane fade" id="tab20" aria-labelledby="tab20">
-                                            <p>Ар этностун өкүлдөүрүнү өздөрүнүн баяндоосу</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!--/.col-md-4--> 
-
-                    <div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="400ms">
-                        <div class="media service-box">
-                            <div class="pull-left">
-                                <i class="fa fa-bullhorn"></i>
-                            </div>
-                            <div class="media-body">
-                                <div role="tabpanel">
-                                    <ul class="nav main-tab nav-justified" role="tablist">
-                                        <li role="presentation" class="active">
-                                            <a href="#tab21" role="tab" data-toggle="tab" aria-controls="tab21" aria-expanded="true">Эл ынтымагы ыйык</a>
-                                        </li>
-                                        <li role="presentation">
-                                            <a href="#tab22" role="tab" data-toggle="tab" aria-controls="tab22" aria-expanded="false">{{ trans('radiopages.OPeredachi') }}</a>
-                                        </li>
-                                    </ul>
-                                    <div id="tab-content" class="tab-content">
-                                        <div role="tabpanel" class="tab-pane fade active in" id="tab21" aria-labelledby="tab21">
-                                            <p><iframe width="100%" height="100" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/235888059&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe></p>
-                                        </div>
-                                        <div role="tabpanel" class="tab-pane fade" id="tab22" aria-labelledby="tab22">
-                                            <p>Дүйнө элдеринин салты, маданияты, кенири маалымат.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!--/.col-md-4-->       
-
-                    <div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="400ms">
-                        <div class="media service-box">
-                            <div class="pull-left">
-                                <i class="fa fa-bullhorn"></i>
-                            </div>
-                            <div class="media-body">
-                                <div role="tabpanel">
-                                    <ul class="nav main-tab nav-justified" role="tablist">
-                                        <li role="presentation" class="active">
-                                            <a href="#tab23" role="tab" data-toggle="tab" aria-controls="tab23" aria-expanded="true">Закымадаган замандар</a>
-                                        </li>
-                                        <li role="presentation">
-                                            <a href="#tab24" role="tab" data-toggle="tab" aria-controls="tab24" aria-expanded="false">{{ trans('radiopages.OPeredachi') }}</a>
-                                        </li>
-                                    </ul>
-                                    <div id="tab-content" class="tab-content">
-                                        <div role="tabpanel" class="tab-pane fade active in" id="tab23" aria-labelledby="tab23">
-                                            <p><iframe width="100%" height="100" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/235888059&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe></p>
-                                        </div>
-                                        <div role="tabpanel" class="tab-pane fade" id="tab24" aria-labelledby="tab24">
-                                            <p>Белгилүү адамдардын жетишкендиги, эмгектери, дуйнөлүк даанышмандардын ой толгоолору ( Ойчулдардын орошон ойлору, Ду Фунун ырга берген сырлары, Мао Цзы ж.б)  деген биздин радио сыяктуу көп тилдүү радио дүйнө жүзүндө саналуу гана өлкөлөрдө бар</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!--/.col-md-4-->                                       
+                    @endforeach
+                    @endif
+                                      
                 </div>
             </div><!--/.row-->    
         </div><!--/.container-->
@@ -459,23 +217,38 @@
             <div class="section-header2">
                 <h2 class="section-title text-center wow fadeInDown">{{ trans('radiopages.Photos') }}</h2>
             </div>
+            <div class="panel-body">
 
-            <div class="portfolio-items">
-               @if($photoGalleries != null)
-               @foreach($photoGalleries as $key=>$photoGallery)
-                <div class="portfolio-item">
-                    <div class="portfolio-item-inner">
-                        <img class="img-responsive" src="{{ asset($photoGallery->status) }}" alt="">
-                        <div class="portfolio-info">
-                            <h3>Галерея</h3>
-                            <a class="preview" href="{{ route('dostuk.photos', $photoGallery) }}"><i class="fa fa-eye"></i></a>
+                <section>
+                  @if($photoGalleries != null)
+                    @foreach($photoGalleries as $photoGallery)
+
+                      <div class="col-md-4">
+
+                        <div class="gallery-item">
+                          <a href="{{ route('dostuk.photos', $photoGallery) }}" class="thumb">
+                            <img src="{{ asset($photoGallery->status) }}" alt="..." class="img-thumbnail">
+                            <i class="fa fa-camera"></i>
+                          </a>
+                          <h2>
+                            <div class="extra">
+                              <span class="e-datetime">{{ $photoGallery->getDay() }} {{ $photoGallery->getMonthRu() }}, {{ $photoGallery->getTime() }}</span>
+                            </div>
+                            <a href="{{ route('dostuk.photos', $photoGallery) }}">{{ $photoGallery->getName() }}</a>
+                          </h2>
                         </div>
-                    </div>
-                </div><!--/.portfolio-item-->
-                @endforeach
-                @endif
 
-            </div>
+                      </div>
+                    @endforeach
+                  @endif
+
+                </section>
+              <footer>
+              <a href="{{ route('dostuk.allphotos') }}">
+                     <span>{{ trans('radiopages.Allphotos') }} <i class="fa fa-arrow-circle-right"></i></span>
+                 </a>
+             </footer>
+              </div>
         </div><!--/.container-->
     </section><!--/#portfolio-->
 

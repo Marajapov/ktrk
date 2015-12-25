@@ -55,11 +55,13 @@ class PageController extends Controller
 
     public function leadersPage()
     {
+        $lc = app()->getlocale();
         $categories = \Model\Category\ModelName::all();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
         return view('Front::pages.leaders', [
             'backgroundMain' => $backgroundMain,
             'categories'=>$categories,
+            'lc' => $lc,
             'positionTop'    => $this->positionTop,
             'positionRight'  => $this->positionRight,
             'positionCenter' => $this->positionCenter,
