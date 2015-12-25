@@ -107,6 +107,10 @@ class RsController extends Controller
 
         $post->incrementViewed();
 
+        // Photo Gallery
+        $parent = \Model\PhotoParent\ModelName::where('id','=',$post->parentId)->first();
+        $images = json_decode($parent->images);
+
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
         return view('Front::rs.post',[
             'post' => $post,
@@ -115,6 +119,7 @@ class RsController extends Controller
             'positionRight'  => $this->positionRight,
             'positionCenter' => $this->positionCenter,
             'positionBottom' => $this->positionBottom,
+            'images' => $images,
         ]);
     }
 

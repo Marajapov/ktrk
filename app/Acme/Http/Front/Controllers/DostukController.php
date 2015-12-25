@@ -98,24 +98,15 @@ class DostukController extends Controller
 
         $dostukProjects = \Model\Project\ModelName::where('published','=',true)->where('dostuk', '=', 1)->get();
 
-        if(($post->parentId != '0') && ($post->parentId != null))
-        {
-            $parentId = $post->parentId;
-            $parentId = \Model\PhotoParent\ModelName::where('id','=',$parentId)->first();
-            $photoChilds = \Model\PhotoChild\ModelName::where('parentId','=',$parentId->id)->get();
-
-            dd($photoChilds);
-            
-        }else{
-            $parentId = '0';
-            $photoChilds = '0';
-        }        
+        $parent = \Model\PhotoParent\ModelName::where('id','=',$post->parentId)->first();
+        $images = json_decode($parent->images);
 
            return view('Front::channel.dostuk.news', [
             'channel' => $channel,
             'post' => $post,
             'backgroundMain' => $backgroundMain,
             'dostukProjects' => $dostukProjects,
+            'images' => $images,
             ]);
     }
     

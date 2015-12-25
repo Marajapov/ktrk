@@ -127,9 +127,9 @@ class HomeController extends Controller
         $positionTop = \Model\Banner\ModelName::top()->first();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
+        $parent = \Model\PhotoParent\ModelName::where('id','=',$post->parentId)->first();
+        $images = json_decode($parent->images);
         
-        $images = json_decode($post->parentid->images);
-        dd($images);
 
         if($post->related1 != null){
             $related1Post = \Model\Post\ModelName::where('id','=',$post->related1)->first();
@@ -164,8 +164,7 @@ class HomeController extends Controller
 
             'relatedPosts' => $relatedPosts,
 
-            'parentId'=> $parentId,
-            'photoChilds'=> $photoChilds,
+            'images' => $images,
 
             'categories'=>$categories,
             'positionTop'    => $positionTop,
