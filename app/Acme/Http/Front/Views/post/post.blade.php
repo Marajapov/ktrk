@@ -31,15 +31,9 @@
                       <span class="art-view"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
                     </div>
                   </h4>
-                  @if($post->thumbnail_big)
-                    <p class="post-thumb" href="{{ route('front.post', $post) }}">
-                      <img class="left" src="@if(empty($post->thumbnail_big))images/2.jpg @else {{  asset($post->thumbnail_big) }} @endif" alt="image">
-                    </p>
-                  @else
-                    <p class="post-thumb" href="{{ route('front.post', $post) }}">
-                      <img class="left" src="@if(empty($post->thumbnail))images/2.jpg @else {{  asset($post->thumbnail) }} @endif" alt="image">
-                    </p>
-                  @endif
+                  <p class="post-thumb" href="{{ route('front.post', $post) }}">
+                    <img class="left" src="@if(empty($post->thumbnail))images/2.jpg @else {{  asset($post->thumbnail) }} @endif" alt="image">
+                  </p>
                   @if(!empty($post->related2))
                     <div class="related2">
                       <a href="{{ route('front.post', $post->related2) }}">{{ $related2Post->getName() }}</a>

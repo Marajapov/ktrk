@@ -107,7 +107,7 @@
 }
 .panel-article .news-title{
     margin-bottom: 0;
-    padding: 0 150px 10px 5px;
+    padding: 0 150px 10px 0;
     font-size: 20px;
 }
 .panel-article .news-title .extra{
@@ -116,7 +116,13 @@
     right: 5px;
 }
 .post-thumb{
+    float: left;
     margin-bottom: 15px;
+    margin-right: 15px;
+}
+.post-thumb img{
+    height: 150px;
+    width: auto;
 }
 .related-title{
     display: table-cell;
