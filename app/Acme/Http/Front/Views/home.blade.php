@@ -450,7 +450,7 @@
               <div class="panel-heading">
                 <h3 class="panel-title">
                   <a href="{{ route('front.gallery.galleries') }}"><span>Фотогалерея</span></a>
-                  <a class="all" href="{{ route('front.gallery.galleries') }}">{{ trans('site.FrontGalleryAll') }} <i class="fa fa-arrow-circle-right"></i></a>
+                  {{--<a class="all" href="{{ route('front.gallery.galleries') }}">{{ trans('site.FrontGalleryAll') }} <i class="fa fa-arrow-circle-right"></i></a>--}}
                 </h3>
               </div>
               <div class="panel-body">
@@ -471,6 +471,13 @@
                     @endif
                   </div>
                 </div>
+
+                <footer>
+                  <a href="{{ route('front.gallery.galleries') }}">
+                    <span>{{ trans('site.FrontGalleryAll') }} <i class="fa fa-arrow-circle-right"></i></span>
+                  </a>
+
+                </footer>
 
               </div>
             </div>

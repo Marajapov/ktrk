@@ -116,6 +116,10 @@ return [
     'Reporter' => 'Элдик репортер',
     'ReporterAdd' => 'Жаңылык кошуу',
 
+//    Teleprogram
+    'Teleprogram' => 'Көрсөтүүлөр программасы',
+    'Contacts' => 'Байланыш',
+    'Ads' => 'Жарнак',
 
 
     // Admin panel translate

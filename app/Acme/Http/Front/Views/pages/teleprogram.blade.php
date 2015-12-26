@@ -12,7 +12,7 @@
       <div class="panel panel-default teleprogramm clearfix">
         <div class="panel-heading">
           <h3 class="panel-title">
-            ТВ-программа
+            {{ trans('site.Teleprogram') }}
             @if($channel)
               <span class="divider"><i class="fa fa-circle"></i></span>
               <span class="ctg">

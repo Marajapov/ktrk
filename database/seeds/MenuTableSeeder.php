@@ -17,7 +17,7 @@ class MenuTableSeeder extends Seeder
             'parent_id' => null,
             'code'		=> 'main',
             'name'      => 'Башкы Бет',
-            'nameRu'      => 'Главная',
+            'nameRu'    => 'Главная',
             'url'		=> 'http://ktrk.dev',
             'order' 	=> 1,
         ]);
@@ -27,7 +27,7 @@ class MenuTableSeeder extends Seeder
             'parent_id' => null,
             'code'		=> 'main',
             'name'      => 'КТРК',            
-            'nameRu'      => 'КТРК',            
+            'nameRu'    => 'КТРК',
             'url'		=> 'http://ktrk.dev',
             'order' 	=> 2,
         ]);
@@ -96,8 +96,8 @@ class MenuTableSeeder extends Seeder
             'id'        => 9,
             'parent_id' => null,
             'code'		=> 'main',
-            'name'      => 'Телепрограмма',
-            'nameRu'      => 'Телепрограмма',
+            'name'      => 'Программа',
+            'nameRu'    => 'Программа передач',
             'url'		=> 'http://ktrk.dev/teleprogram',
             'order' 	=> 9,
         ]);

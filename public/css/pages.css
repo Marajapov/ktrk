@@ -255,16 +255,24 @@
 .directorpages .media-director .list-group-item:first-child{
     font-size: 20px;
     font-weight: bold;
+}
+.directorpages .media-director .list-group-item:first-child h4{
+    margin: 5px 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+.directorpages .media-director .list-group-item:first-child h5{
+    margin: 15px 0;
+    font-size: 12px;
     text-transform: uppercase;
 }
 .directorpages .list-group{
     padding: 5px 15px;
 }
 #button{
-    margin-top: 15px;
 }
 .directorpages #button{
-    width: 100%;
+    width: auto;
 }
 
 /*PANEL BASE*/

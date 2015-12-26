@@ -1,4 +1,4 @@
-<footer class="footer">
+<footer class="footer hidden">
     <div class="panel panel-default">
         <div class="panel-body">
             <div class="container">
@@ -9,7 +9,7 @@
                                 <li><a href="#">{{ trans('site.Homepage') }}</a></li>
                                 <li><a href="#">КТРК</a></li>
                                 <li><a href="#">Видеопортал</a></li>
-                                <li><a href="#">Телепрограмма</a></li>
+                                <li><a href="#">Программа передач</a></li>
                                 <li><a href="#">{{ trans('site.BaikoochuKenesh') }}</a></li>
                                 <li><a href="#">{{ trans('site.RedKenesh') }}</a></li>
                             </ul>

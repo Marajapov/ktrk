@@ -1,6 +1,6 @@
-<div class="container prefooter">
+<div class="container prefooter clearfix">
 
-  <div class="footer-channels col-md-12">
+  <div class="footer-channels">
     <ul>
       <li>
         <a href="{{ route('front.home') }}">
@@ -45,26 +45,38 @@
     </ul>
   </div>
 
-  <div class="col-md-4 apps-logo">
-    <p>
-      Мобильное
-    </p>
-    <ul>
-      <li>
-        <a href="#">
-          <img src="{{ asset('images/android.png') }}" alt="ktrk_adnroid"/>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <img src="{{ asset('images/ios.png') }}" alt="ktrk_ios"/>
-        </a>
-      </li>
-    </ul>
-  </div>
+  <div class="footer-info clearfix">
+    <div class="col-md-4 apps-logo">
+      <p>
+        Мобильное приложение КТРК
+      </p>
+      <ul>
+        <li>
+          <a href="#">
+            <img src="{{ asset('images/android.png') }}" alt="ktrk_adnroid"/>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="{{ asset('images/ios.png') }}" alt="ktrk_ios"/>
+          </a>
+        </li>
+      </ul>
+    </div>
 
-  <div class="col-md-8">
-    <h4 class="copyright"><i class="fa fa-copyright"></i>2015 {{ trans('site.TradeMark') }}</h4>
+    <div class="col-md-8 footer-menu">
+
+      <ul>
+        <li><a href="{{ route('front.home') }}">{{ trans('site.Homepage') }}</a></li>
+        <li>/</li>
+        <li><a href="{{ route('front.media.index') }}">Видеопортал</a></li><li>/</li>
+        <li><a href="{{ route('front.pages.program') }}">Программа</a></li><li>/</li>
+        <li><a href="{{ route('front.pages.program') }}">{{ trans('site.Ads') }}</a></li><li>/</li>
+        <li><a href="#">{{ trans('site.Contacts') }}</a></li>
+      </ul>
+
+      <h4 class="copyright"><i class="fa fa-copyright"></i>2015 {{ trans('site.TradeMark') }}</h4>
+    </div>
   </div>
 
 </div>

@@ -19,7 +19,7 @@ return [
     'Ktrk' => 'Общественная телерадиовещательная корпорация',
 
     //Header Footer titles
-    'Homepage' => 'Главная страница',
+    'Homepage' => 'Главная',
     'BaikoochuKenesh' => 'Наблюдательный совет',
     'BaikoochuKeneshFull' => 'Наблюдательный совет Общественной Телерадиовещательной корпорации',
 
@@ -118,6 +118,11 @@ return [
     'ReporterAdd' => 'Добавить новость',
     'AdminReporterName' => 'Имя',
     'AdminReporter' => '',
+
+    //    Teleprogram
+    'Teleprogram' => 'Программа передач',
+    'Contacts' => 'Контакты',
+    'Ads' => 'Реклама',
 
     // Admin panel translate
     'AdminHomeTitle' => 'Главная',

@@ -154,6 +154,7 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
     Route::get('rrts', ['as' => 'front.pages.rrts', 'uses' => 'PageController@rrtsPage']);
     Route::get('report', ['as' => 'front.pages.report', 'uses' => 'PageController@reportPage']);
     Route::get('teleprogram', ['as' => 'front.pages.teleprogram', 'uses' => 'PageController@teleprogramPage']);
+    Route::get('program', ['as' => 'front.pages.program', 'uses' => 'PageController@teleprogramPage']);
     Route::get('teleprogram/{channel}', ['as' => 'front.pages.teleprogram', 'uses' => 'PageController@ChannelTeleprogram']);
 //    Route::get('ns', ['as' => 'front.pages.ns', 'uses' => 'PageController@keneshPage']);
     Route::get('editionkenesh', ['as' => 'front.pages.editionkenesh', 'uses' => 'PageController@editionkeneshPage']);
