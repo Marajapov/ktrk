@@ -94,75 +94,70 @@
       <!--/nav-->
    </header>
    <!--/header-->
-   <!-- Main slider -->
-   <div class="container">
+   <div class="container" style="margin: 20px auto;">
          <section id="services" style="background: #f1f4f9;padding: 0px; margin: 20px -15px 20px -15px;">
          <div class="container">
             <div class="row">
-               <section class="content clearfix">
-                  <div class="clearfix">
-                     <div class="top-left-block col-md-9">  
-                        <div class="panel panel-articles">
-                           <div class="panel-body panel-show">
-                           <div class="panel-heading">
-                              <h3 class="panel-title">
-                                 <a href="{{ route('front.media.index') }}">{{ trans('radiopages.Peredachi') }}</a>
-                                 <span>{{ $post->getTitleRuOrKg() }}</span>
-                              </h3>
-                           </div>
-                              <div class="col-md-12">
-                                 <h2>{{ $post->getTitleRuOrKg() }}</h2>
-                                 <div class="muzimg">
-                                    <img src="@if(empty($post->getFile()))images/2.jpg @else {{  asset($post->getFile()) }} @endif" alt="" data-toggle="tooltip" data-placement="top" title="Бул жөн гана сүрөт эмес">
-                                 </div>
-                                 <article>
-                                    {!! $post->getContent() !!}
-                     
-                                     <div class="carousel-post whitefix">
-                                       @if($images)
-                                       @foreach($images as $image)
-                                       <div class="col-md-4">
-                                          <a href="#">
-
-                                          <img src="{{ asset('froala/uploads/'.$image->name) }}" alt=""/>
-                                          </a>
-                                       </div>
-                                       @endforeach
-                                       @endif
-                                    </div>                                  
-                                 </article>
-                              </div>
-         
-                              <footer>
-                                 <a href="{{ route('dostuk.allnews') }}">{{ trans('radiopages.Morenews') }}</a>
-                              </footer>
-                           </div>
-                        </div>
+               <div class="top-left-block col-md-9">  
+                  <div class="panel panel-articles">
+                     <div class="panel-body panel-show">
+                     <div class="panel-heading">
+                        <h3 class="panel-title">
+                           <a href="{{ route('front.media.index') }}">{{ trans('radiopages.Peredachi') }}</a>
+                           <span>{{ $post->getTitleRuOrKg() }}</span>
+                        </h3>
                      </div>
-                     <div class="top-right-block col-md-3">
-                        <div class="panel ctg-panel media-ctg-panel">
-                           <div class="panel-heading">
-                              <h3 class="panel-title"><span>{{ trans('radiopages.Peredachi') }}</span></h3>
+                        <div class="col-md-12">
+                           <h2>{{ $post->getTitleRuOrKg() }}</h2>
+                           <div class="muzimg">
+                              <img src="@if(empty($post->getFile()))images/2.jpg @else {{  asset($post->getFile()) }} @endif" alt="" data-toggle="tooltip" data-placement="top" title="Бул жөн гана сүрөт эмес">
                            </div>
-                           <div class="panel-body">
-                              <div class="col-md-12">
-                                 <div class="row">
-                                    <ul class="list-group">
-                                       @if($dostukProjects) 
-                                       @foreach($dostukProjects as $key=> $project)
-                                       <li class="list-group-item">
-                                          <a href="{{ route('dostuk.project', $project) }}">{{ $project->getName() }}</a>
-                                       </li>
-                                       @endforeach
-                                       @endif
-                                    </ul>
+                           <article>
+                              {!! $post->getContent() !!}
+               
+                               <div class="carousel-post whitefix">
+                                 @if($images)
+                                 @foreach($images as $image)
+                                 <div class="col-md-4">
+                                    <a href="#">
+
+                                    <img src="{{ asset('froala/uploads/'.$image->name) }}" alt=""/>
+                                    </a>
                                  </div>
-                              </div>
+                                 @endforeach
+                                 @endif
+                              </div>                                  
+                           </article>
+                        </div>
+   
+                        <footer>
+                           <a href="{{ route('dostuk.allnews') }}">{{ trans('radiopages.Morenews') }}</a>
+                        </footer>
+                     </div>
+                  </div>
+               </div>
+               <div class="top-right-block col-md-3">
+                  <div class="panel ctg-panel media-ctg-panel">
+                     <div class="panel-heading">
+                        <h3 class="panel-title"><span>{{ trans('radiopages.Peredachi') }}</span></h3>
+                     </div>
+                     <div class="panel-body">
+                        <div class="col-md-12">
+                           <div class="row">
+                              <ul class="list-group">
+                                 @if($dostukProjects) 
+                                 @foreach($dostukProjects as $key=> $project)
+                                 <li class="list-group-item">
+                                    <a href="{{ route('dostuk.project', $project) }}">{{ $project->getName() }}</a>
+                                 </li>
+                                 @endforeach
+                                 @endif
+                              </ul>
                            </div>
                         </div>
                      </div>
                   </div>
-               </section>
+               </div>
             </div>
          </div>
          <!--/.container-->

@@ -3,11 +3,11 @@
 @section('styles')
 <link rel="stylesheet" href="{{ asset('css/radios.css')}}">
 <link rel="stylesheet" href="{{ asset('css/landing/dostuk.css')}}">
+<link rel="stylesheet" href="{{ asset('css/articles.css') }}"/>
+<link rel="stylesheet" href="{{ asset('css/pages.css') }}"/>
 <link rel="stylesheet" type="text/css" href="{{ asset('css/lightslider.css') }}">
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.2.6/css/lightgallery.min.css">
 
-
- <link rel="stylesheet" href="{{ asset('css/pages.css') }}"/>
 @endsection
 @section('content')
 <body id="home" class="homepage">
@@ -69,7 +69,7 @@
         </nav><!--/nav-->
     </header><!--/header-->
    <!-- Main slider -->
-   <div class="container" style="background: #fff;padding: 0px; margin-top: 20px;">
+   <div class="container" style="background: #fff;padding: 0px; margin: 20px auto;">
 
 
     <section id="portfolio" style="padding:20px 0px;background:#fff;" >
@@ -105,27 +105,6 @@
                         @endif
 
                       </section>
-                        <nav class="muzpaginate">
-                           <ul class="pagination">
-                              <li>
-                                 <a href="{{ route('muzkanal.videos', ['page' => 1]) }}" class="btn btn-default @if($postAll->currentPage() == 1) disabled @endif">{{ trans('site.Start') }}</a>
-                              </li>
-                              <li>
-                                 <a href="{{ $postAll->previousPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span></a>
-                              </li>
-                              <li>
-                                 <a href="{{ $postAll->nextPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-right"></span></a>
-                              </li>
-                              @for($i = 0, $j = 1; $i < $postAll->total(); $i+=$perPage)
-                              <li>
-                                 <a href="{{ route('muzkanal.videos', ['page' => $j]) }}" class="btn btn-default @if($postAll->currentPage() == $j) active @endif">{{ $j++ }}</a>
-                              </li>
-                              @endfor
-                              <li>
-                                 <a href="{{ route('muzkanal.videos', ['page' => ceil($postAll->total()/$perPage)]) }}" class="btn btn-default @if($postAll->currentPage() == ceil($postAll->total()/$perPage)) disabled @endif">{{ trans('site.End') }}</a>
-                              </li>
-                           </ul>
-                        </nav>
                      </div>
                   </div>
                </div>
