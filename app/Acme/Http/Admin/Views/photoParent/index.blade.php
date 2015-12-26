@@ -21,7 +21,7 @@
 
 			<div class="x_content">
 
-        <table id="example" class="table table-bordered table-striped" data-order='[[ 1, "asc" ]]' data-page-length='10'>
+        <table id="example" class="table table-bordered table-striped" data-order='[[ 3, "desc" ]]' data-page-length='10'>
 
           <thead>
           <tr>

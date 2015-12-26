@@ -35,16 +35,18 @@
                         @foreach($popPosts as $pop)
                         <div class="col-md-4">
 
-                            <a href="{{ route('front.rs.post', $pop) }}" class="thumb">
-                              <img src="@if(!($pop->getFile()))images/live_bg.png @else {{ asset($pop->thumbnail_big) }} @endif" alt=""/>
-                            </a>
+                          <a href="{{ route('front.ns.post', $pop) }}" class="thumb">
+                            <img src="@if(!($pop->getFile()))images/live_bg.png @else {{ asset($pop->thumbnail_big) }} @endif" alt=""/>
+                          </a>
+                          <div class="post-box">
+                            <div class="extra">
+                              <span class="e-datetime">{{ $pop->getDay() }} {{ $pop->getMonthRu() }}, {{ $pop->getTime() }}</span>
+                              <span class="e-views"><i class="fa fa-eye"></i>{{ $pop->getViewed() }}</span>
+                            </div>
                             <h2>
-                              <div class="extra">
-                                <span class="e-datetime">{{ $pop->getDay() }} {{ $pop->getMonthRu() }}, {{ $pop->getTime() }}</span>
-                                <span class="e-views"><i class="fa fa-eye"></i>{{ $pop->getViewed() }}</span>
-                              </div>
-                              <a href="{{ route('front.rs.post', $pop) }}">{{ $pop->getTitleRuOrKg() }}</a>
+                              <a href="{{ route('front.ns.post', $pop) }}">{{ $pop->getTitleRuOrKg() }}</a>
                             </h2>
+                          </div>
 
                         </div>
                         @endforeach
@@ -52,7 +54,7 @@
                       </div> 
                       </div>
 
-                      <div class="col-md-6">
+                      <div class="col-md-6 hidden">
                         @include('Front::rs.lastPosts')
                       </div>
                       
