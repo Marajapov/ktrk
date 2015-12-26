@@ -102,9 +102,11 @@
                                     </h4>
                                   @endif
                                 </div>
-                                <a href="{{ route('front.media.video', $mediaLastVideo) }}" class="media-title">
-                                  <h4>{{ $mediaLastVideo->getName() }}</h4>
-                                </a>
+                                <div class="media-title">
+                                  <a href="{{ route('front.media.video', $mediaLastVideo) }}">
+                                    <h4>{{ $mediaLastVideo->getName() }}</h4>
+                                  </a>
+                                </div>
                               </article>
                             @endforeach
 
@@ -125,14 +127,23 @@
                             @if($mediaPops)
                               @foreach($mediaPops as $pop)
                                 <article class="col-md-4" data-cat="all-videos">
-                                  <a href="#" class="img">
-                                    <span class="media-view"><i class="fa fa-eye"></i>{{ $pop->getViewed() }}</span>
-                                    <img src="http://img.youtube.com/vi/{{ $pop->getUrl() }}/mqdefault.jpg" alt=""/>
-
-                                  </a>
-                                  <a href="#" class="media-title">
-                                    <h4>{{ $pop->getName() }}</h4>
-                                  </a>
+                                  <div class="img">
+                                    <a href="{{ route('front.media.video', $pop) }}">
+                                      <span class="media-view"><i class="fa fa-eye"></i>{{ $pop->getViewed() }}</span>
+                                      <span class="media-date">{{ $pop->getTime() }}, {{ $pop->getDay() }} {{ $pop->getMonthRu() }}</span>
+                                      <img src="http://img.youtube.com/vi/{{ $pop->getUrl() }}/mqdefault.jpg" alt=""/>
+                                    </a>
+                                    @if($pop->program)
+                                      <h4>
+                                        <a class="media-project" href="{{ route('front.media.project', $pop->program) }}"><i class="fa fa-play-circle-o"></i>{{ $pop->getProgramName() }}</a>
+                                      </h4>
+                                    @endif
+                                  </div>
+                                  <div class="media-title">
+                                    <a href="{{ route('front.media.video', $pop) }}">
+                                      <h4>{{ $pop->getName() }}</h4>
+                                    </a>
+                                  </div>
                                 </article>
                               @endforeach
                             @endif
@@ -183,9 +194,11 @@
                                           </h4>
                                         @endif
                                       </div>
-                                      <a href="{{ route('front.media.video', $row) }}" class="media-title">
-                                        <h4>{{ $row->getName() }}</h4>
-                                      </a>
+                                      <div class="media-title">
+                                        <a href="{{ route('front.media.video', $row) }}">
+                                          <h4>{{ $row->getName() }}</h4>
+                                        </a>
+                                      </div>
                                     </article>
                                   @endif
                                 @endforeach
@@ -222,9 +235,11 @@
                                             </h4>
                                           @endif
                                         </div>
-                                        <a href="{{ route('front.media.video', $row) }}" class="media-title">
-                                          <h4>{{ $row->getName() }}</h4>
-                                        </a>
+                                        <div class="media-title">
+                                          <a href="{{ route('front.media.video', $row) }}">
+                                            <h4>{{ $row->getName() }}</h4>
+                                          </a>
+                                        </div>
                                       </article>
                                     @endif
                                   @endforeach

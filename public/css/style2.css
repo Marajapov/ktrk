@@ -566,6 +566,7 @@ header.top-menu,.logo-block{
 .gallery{
     border-left: 2px solid #F1F4F9;
     border-top: 2px solid #F1F4F9;
+    border-right: none;
     height: auto;
 
     background: #ffffff;
@@ -824,7 +825,7 @@ header.top-menu,.logo-block{
     padding: 10px 0 0;
 }
 .media-ctg .media-ctg-panel .panel-heading h3{
-    border-bottom: 1px solid #F1F4F9;
+    border-bottom: 1px solid #4e5e6a;
     color: #4e5e6a;
     font-size: 14px;
 }
@@ -843,13 +844,13 @@ header.top-menu,.logo-block{
     padding: 0 10px;
 }
 .media-videos .panel-body{
-    padding: 15px 5px;
+    padding: 15px 5px 0;
 }
 .media-videos .panel-heading{
     padding: 10px 15px 0;
 }
 .media-videos .panel-heading h3{
-    border-bottom: 1px solid #F1F4F9;
+    border-bottom: 1px solid #4e5e6a;
     margin: 0;
 
     color: #4e5e6a;
@@ -870,13 +871,13 @@ header.top-menu,.logo-block{
 }
 .footer-channels ul{
     display: block;
-    text-align: left;
+    text-align: center;
 }
 .footer-channels li{
     display: inline-block;
     vertical-align: middle;
 
-    margin: 0 5px;
+    margin: 0 10px;
 }
 .footer-channels li img{
     height: 50px;
@@ -896,11 +897,11 @@ header.top-menu,.logo-block{
 
 /* Applications panel */
 .apps-logo{
-    padding: 30px 25px 30px 0;
+    padding: 15px 0 15px 10px;
 }
 .apps-logo ul{
     display: block;
-    text-align: right;
+    text-align: left;
 }
 .apps-logo li{
     display: inline-block;
@@ -919,6 +920,7 @@ header.top-menu,.logo-block{
     padding: 20px;
     margin: 0;
     font-size: 14px;
+    line-height: 1;
     text-align: center;
 }
 .copyright i{

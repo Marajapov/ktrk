@@ -28,7 +28,7 @@
 
                         <div class="gallery-item">
                           <a href="{{ route('front.gallery', $gallery) }}" class="thumb">
-                            <img src="{{ asset($gallery->status) }}" alt="..." class="img-thumbnail">
+                            <img src="{{ asset($gallery->thumbnail_big) }}" alt="..." class="img-thumbnail">
                             <i class="fa fa-camera"></i>
                           </a>
                           <h2>

@@ -1,6 +1,6 @@
 <div class="container prefooter">
 
-  <div class="footer-channels col-md-8">
+  <div class="footer-channels col-md-12">
     <ul>
       <li>
         <a href="{{ route('front.home') }}">
@@ -46,6 +46,9 @@
   </div>
 
   <div class="col-md-4 apps-logo">
+    <p>
+      Мобильное
+    </p>
     <ul>
       <li>
         <a href="#">
@@ -60,6 +63,8 @@
     </ul>
   </div>
 
-  <h4 class="copyright"><i class="fa fa-copyright"></i>2015 {{ trans('site.TradeMark') }}</h4>
+  <div class="col-md-8">
+    <h4 class="copyright"><i class="fa fa-copyright"></i>2015 {{ trans('site.TradeMark') }}</h4>
+  </div>
 
 </div>

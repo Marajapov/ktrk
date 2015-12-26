@@ -380,9 +380,11 @@
                             </div>
                           @endif
                         </div>
-                        <a class="media-title" href="{{ route('front.media.video', $media) }}">
-                          <h4>{{ $media->getName() }}</h4>
-                        </a>
+                        <div class="media-title">
+                          <a href="{{ route('front.media.video', $media) }}">
+                            <h4>{{ $media->getName() }}</h4>
+                          </a>
+                        </div>
 
                       </div>
                     </div>
@@ -411,10 +413,11 @@
                                   </div>
                                 @endif
                               </div>
-                              <a class="media-title" href="{{ route('front.media.video', $media) }}">
-                                <h4>{{ $row->getName() }}</h4>
-                              </a>
-
+                              <div class="media-title">
+                                <a href="{{ route('front.media.video', $media) }}">
+                                  <h4>{{ $row->getName() }}</h4>
+                                </a>
+                              </div>
                             </div>
                           </div>
                         @endif
@@ -458,7 +461,7 @@
 
                         <div class="col-md-4">
                           <a href="{{ route('front.gallery', $photoGallery) }}">
-                            <img src="{{ asset($photoGallery->status) }}" alt=""/><span>{{ $photoGallery->getName() }}</span>
+                            <img src="{{ asset($photoGallery->thumbnail_big) }}" alt=""/><span>{{ $photoGallery->getName() }}</span>
                             <div class="overlay"></div>
                             <i class="fa fa-camera"></i>
                           </a>
