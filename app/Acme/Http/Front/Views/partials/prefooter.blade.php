@@ -59,4 +59,7 @@
       </li>
     </ul>
   </div>
+
+  <h4 class="copyright"><i class="fa fa-copyright"></i>2015 {{ trans('site.TradeMark') }}</h4>
+
 </div>

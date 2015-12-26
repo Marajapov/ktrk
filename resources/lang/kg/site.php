@@ -281,7 +281,7 @@ return [
     'Saturday' => 'Ишемби',
     'Sunday' => 'Жекшемби',
 
-    'AllVideos' => 'Жалпы',
+    'AllVideos' => 'Бардык видеолор',
     'LastVideos' => 'Акыркы видеолор',
     'TopVideos' => 'Топ видеолор',
     'Episodes' => 'Чыгаруулар',

@@ -306,6 +306,7 @@ button.close span {
 }
 .main-wrapper {
     background: #f1f4f9;
+    padding-bottom: 2px;
 }
 header {
     height: 65px;
@@ -1890,7 +1891,7 @@ header {
     background: none;
 }
 .footer .panel-body {
-    padding: 0 0 20px;
+    padding: 0;
 }
 
 /*.footer .container{*/

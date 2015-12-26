@@ -734,7 +734,7 @@ header.top-menu,.logo-block{
     padding: 0;
 }
 .panel-videos .tab-pane{
-    padding: 25px 5px;
+    padding: 25px 5px 0;
 }
 .panel-videos .nav-tabs{
     border-bottom: 2px solid #237dac;
@@ -860,7 +860,6 @@ header.top-menu,.logo-block{
 /*PREFOOTER*/
 .prefooter{
     border-top: 2px solid #F1F4F9;
-    margin-bottom: 20px;
     padding: 0;
     background: #ffffff;
 }
@@ -914,4 +913,14 @@ header.top-menu,.logo-block{
 .apps-logo img {
     height: 50px;
     width: auto;
+}
+
+.copyright{
+    padding: 20px;
+    margin: 0;
+    font-size: 14px;
+    text-align: center;
+}
+.copyright i{
+    padding-right: 5px;
 }

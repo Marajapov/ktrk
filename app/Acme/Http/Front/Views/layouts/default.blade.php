@@ -71,11 +71,7 @@
     @include('Front::partials.header')
 
     @include('Front::partials.banner')
-
     @yield('content')
-
-    @include('Front::partials.prefooter')
-
     @include('Front::partials.footer')
     @yield('footerscript2')
     
