@@ -306,7 +306,6 @@ button.close span {
 }
 .main-wrapper {
     background: #f1f4f9;
-    padding-bottom: 2px;
 }
 header {
     height: 65px;
@@ -1819,30 +1818,6 @@ header {
 }
 .panel-show .media-left a img {
     height: 150px;
-}
-
-/* Applications panel */
-.panel-apps p {
-    margin-bottom: 10px;
-}
-.panel-apps ul {
-    padding-left: 20px;
-    margin-bottom: 10px;
-    list-style-type: disc;
-}
-.apps-logo a {
-    display: block;
-    margin: 10px 0;
-}
-.apps-logo a img {
-    height: 60px;
-    width: auto;
-}
-.apps-logo .ios {
-    float: left;
-}
-.apps-logo .android {
-    float: right;
 }
 
 /*Pagination*/

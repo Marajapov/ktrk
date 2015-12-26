@@ -6,7 +6,7 @@
 <div class="loginform">
 
     <div class="logintitle clearfix">
-      <img src="{{ asset('images/logo.png') }}" alt=""/>
+      <img src="{{ asset('images/ktrk_last.svg') }}" alt=""/>
 
       <h4>Авторизация</h4>
     </div>

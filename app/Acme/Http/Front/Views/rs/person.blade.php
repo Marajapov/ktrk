@@ -39,7 +39,7 @@
                       @if($person == 1)
 
                         <p class="text-center">
-                          <img class="img-thumbnail" src="{{ asset('static/images/rs/tamara1.jpg') }}" alt=""/>
+                          <img class="img-thumbnail" src="{{ asset('static/images/rs/rs.jpg') }}" alt=""/>
                         </p>
 
                         <p class="text-center"><strong>Редакционный советник КТРК (Омбудсмен)</strong></p>

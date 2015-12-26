@@ -588,11 +588,6 @@ header.top-menu,.logo-block{
     padding-left: 5px;
 }
 
-/*APPs BLOCK*/
-.apps-logo a{
-    margin: 20px 0;
-}
-
 /*SHOWS-SLIDER*/
 .shows-slider{
     z-index: 101;
@@ -860,4 +855,63 @@ header.top-menu,.logo-block{
     color: #4e5e6a;
     font-size: 14px;
     text-align: left;
+}
+
+/*PREFOOTER*/
+.prefooter{
+    border-top: 2px solid #F1F4F9;
+    margin-bottom: 20px;
+    padding: 0;
+    background: #ffffff;
+}
+
+/*FOOTER CHANNELS*/
+.footer-channels{
+    padding: 30px 0 30px 25px;
+}
+.footer-channels ul{
+    display: block;
+    text-align: left;
+}
+.footer-channels li{
+    display: inline-block;
+    vertical-align: middle;
+
+    margin: 0 5px;
+}
+.footer-channels li img{
+    height: 50px;
+    width: auto;
+    max-width: 100%;
+
+    opacity: 0.4;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+.footer-channels a:hover img{
+    opacity: 1;
+}
+
+/* Applications panel */
+.apps-logo{
+    padding: 30px 25px 30px 0;
+}
+.apps-logo ul{
+    display: block;
+    text-align: right;
+}
+.apps-logo li{
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 5px;
+}
+.apps-logo a {
+    display: block;
+}
+.apps-logo img {
+    height: 50px;
+    width: auto;
 }

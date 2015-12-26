@@ -34,7 +34,7 @@
 
       <div class="thumbnail">
         <a href="{{ route('front.rs.person',1) }}">
-          <img src="{{ asset('static/images/rs/tamara1.jpg') }}" alt="...">
+          <img src="{{ asset('static/images/rs/rs.jpg') }}" alt="...">
         </a>
         <div class="caption">
           <h3>Валиева Тамара Бектурсуновна</h3>

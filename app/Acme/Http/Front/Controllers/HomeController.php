@@ -26,6 +26,8 @@ class HomeController extends Controller
     {
         $lc = app()->getlocale();
         $channel = \Model\Channel\ModelName::general();
+
+        $channels = \Model\Channel\ModelName::take(8)->skip(1)->get();
        
         if($lc == 'kg'){
             $generalPosts = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->take(6)->skip(0)->orderBy('number','asc')->get();    
@@ -119,6 +121,8 @@ class HomeController extends Controller
             'directorPosts' => $directorPosts,
             'reporterPosts' => $reporterPosts,
             'latestPosts' => $latestPosts,
+
+            'channels' => $channels,
             ]);
     }
 
