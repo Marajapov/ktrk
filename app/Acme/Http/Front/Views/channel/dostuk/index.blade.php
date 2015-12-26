@@ -64,7 +64,18 @@
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li class="scroll active"><a href="#home">{{ trans('radiopages.Home') }}</a></li>
-                        <li class="scroll"><a href="#services">{{ trans('radiopages.Peredachi') }}</a></li>
+                         <li class="scroll dropdown">
+                            <a href="#services" class="dropdown-toggle" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ trans('radiopages.Peredachi') }}<i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                             @if($dostukProjects) 
+                             @foreach($dostukProjects as $dostukProject)
+                             <li>
+                                <a href="{{ route('dostuk.project', $dostukProject) }}">{{ $dostukProject->getName() }}</a>
+                            </li>
+                            @endforeach
+                            @endif
+                            </ul>
+                        </li>                        
                         <li class="scroll"><a href="#portfolio">{{ trans('radiopages.Photos') }}</a></li>  
                         <li class="scroll"><a href="#about">{{ trans('radiopages.About') }}</a></li>                        
                     </ul>

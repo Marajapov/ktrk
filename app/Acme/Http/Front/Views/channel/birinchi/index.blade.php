@@ -283,7 +283,7 @@
                      <span class="date">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
                      </a>
                      <h2 class="name headline">
-                        <a href="#" title="">
+                        <a href="{{ route('birinchi.broadcast', $post) }}" title="">
                         {{ $post->getTitleRuOrKg() }}
                         </a>
                      </h2>

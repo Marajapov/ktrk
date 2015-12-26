@@ -58,7 +58,18 @@
                <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                          <li class="scroll active"><a href="#home">Башкы</a></li>
-                         <li class="scroll"><a href="#services">Уктуруулар</a></li>
+                         <li class="scroll dropdown">
+                            <a href="#services" class="dropdown-toggle" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ trans('radiopages.Peredachi') }}<i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                             @if($kyrgyzradioProjects) 
+                             @foreach($kyrgyzradioProjects as $kyrgyzradioProject)
+                             <li>
+                                <a href="{{ route('kyrgyzradio.project', $kyrgyzradioProject) }}">{{ $kyrgyzradioProject->getName() }}</a>
+                            </li>
+                            @endforeach
+                            @endif
+                            </ul>
+                        </li>
                          <li class="scroll"><a href="#portfolio">Фотогалерея</a></li>
                          <li class="scroll"><a href="#about">Радио жөнүндө</a></li>                    
                     </ul>

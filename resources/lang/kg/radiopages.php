@@ -5,7 +5,7 @@ return [
 		// FAW
 		'Homepage' => 'Башкы барак',
 		'Categories' => 'Категориялар',
-		'Newslenta' => 'Жаңылыктар лентасы',
+		'Newslenta' => 'Жаңылыктар түрмөгү',
 		'Morenews' => 'Баардык жаңылыктар',
 		'Teleperedachi' => 'Телеберүүлөр',
 		'OPeredachi' => 'Уктуруу жөнүндө',
