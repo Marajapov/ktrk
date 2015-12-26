@@ -94,13 +94,20 @@
     border-right: 2px solid #F1F4F9;
     border-bottom: 1px solid #F1F4F9;
 }
+.panel-article .panel-body{
+    padding: 15px;
+}
+.panel-article .panel-body footer{
+    padding: 15px 0 5px;
 
+    border-top: 3px solid #F1F4F9;
+}
 .panel-article .block{
     padding: 5px;
 }
 .panel-article .news-title{
     margin-bottom: 0;
-    padding: 0 130px 10px 5px;
+    padding: 0 150px 10px 5px;
     font-size: 20px;
 }
 .panel-article .news-title .extra{
@@ -109,8 +116,7 @@
     right: 5px;
 }
 .post-thumb{
-    float: left;
-    margin: 5px 10px 5px 0;
+    margin-bottom: 15px;
 }
 .related-title{
     display: table-cell;
@@ -124,5 +130,10 @@
     font-size: 14px;
     font-weight: bold;
     line-height: 1;
-    
+}
+.post-edit{
+    float: left;
+}
+.post-edit i{
+    padding-right: 5px;
 }

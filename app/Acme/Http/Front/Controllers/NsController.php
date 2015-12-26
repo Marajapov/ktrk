@@ -44,8 +44,10 @@ class NsController extends Controller
 
     public function team()
     {
+        $lc = app()->getlocale();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
         return view('Front::ns.team',[
+            'lc' => $lc,
             'backgroundMain' => $backgroundMain,
         ]);
     }
