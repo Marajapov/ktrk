@@ -263,25 +263,34 @@ a:hover{ text-decoration: underline; }
 /********** end of sign in ********************/
 
 /*Login form*/
+
+.login{
+    background: #F1F4F9;
+}
 .wrapper {
     right: 0px;
     margin: 0px auto;
     margin-top: 10%;
     position: relative;
 }
-
 .logintitle {
 	margin: 0 auto;
     position: relative;
     text-align: center;
 
 }
-.logintitle h1 {
-	font: normal 25px Helvetica, Arial, sans-serif;
-    letter-spacing: -0.01em;
-    line-height: 20px;
-    margin: 10px 0 30px;
-    color: #fff;
+.logintitle img{
+    height: 75px;
+    width: auto;
+}
+.logintitle h4 {
+    margin: 30px 0;
+
+    color: #237dac;
+
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 .logintitle h1:before, .logintitle h1:after {
@@ -298,27 +307,32 @@ a:hover{ text-decoration: underline; }
 	right: 0px;
     margin-top: 5%;
     width: 370px;
-    font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+    font-family: "Roboto Regular", Arial, sans-serif;
     border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.25) 0 2px 4px 1px, rgba(0, 0, 0, 0.25) 0 2px 55px 3px;
-    background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgi…pZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
-    background: -moz-radial-gradient(#8dddff, #0566a9);
-    /* background: -webkit-radial-gradient(#8dddff, #0566a9); */
-    background: radial-gradient(#8dddff, #0566a9);
-    background-size: 360px 600px;
-    background-position: center -90%;
+    background: none;
 }
 
 .buttonscry {
-	padding: 20px 35px 0px 35px;
+    padding: 0 30px;
 	border-radius: 5px !important;
 }
-
-.loginbutton {
-	margin: 0px auto;
-	display: block;
+.buttonscry form{
+    margin: 0;
 }
+.buttonscry .input-group{
+    margin-bottom: 20px;
+}
+.loginbutton {
+	margin: 0 auto;
+	display: block;
 
+    background: #237dac;
+    color: #ffffff;
+}
+.loginbutton:hover{
+    background: #1b99f1;
+    color: #ffffff;
+}
 .site_title{
 	display: block;
 	height: 50px;

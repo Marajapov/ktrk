@@ -21,10 +21,7 @@
     @yield('styles')
 
 </head>
-<body>
-    <div class="wrapper">
-             
-    </div>
+<body class="login">
     @yield('content')
   
 </body>

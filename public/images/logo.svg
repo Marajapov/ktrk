@@ -73,8 +73,8 @@
 	.st67{opacity:0.5;clip-path:url(#SVGID_138_);fill:#005CA9;enable-background:new    ;}
 	.st68{opacity:0.5;clip-path:url(#SVGID_140_);fill:#006FB9;enable-background:new    ;}
 	.st69{fill:#FFFFFF;}
-	.st70{fill:#0099CC;}
-	.st71{font-family:'Roboto-Regular';}
+	.st70{fill:#008BD2;}
+	.st71{font-family:'Plumb-Bold';}
 	.st72{font-size:63.0769px;}
 </style>
 <g>
@@ -722,5 +722,5 @@
 </g>
 <path class="st69" d="M127,317.6H-19c-6.6,0-12-5.4-12-12v-40.4c0-6.6,5.4-12,12-12h146c6.6,0,12,5.4,12,12v40.4
 	C139,312.2,133.6,317.6,127,317.6z"/>
-<text transform="matrix(1 0 0 1 -10.8356 305.527)" class="st70 st71 st72">beta</text>
+<text transform="matrix(1 0 0 1 -7.8647 306.1689)" class="st70 st71 st72">beta</text>
 </svg>
