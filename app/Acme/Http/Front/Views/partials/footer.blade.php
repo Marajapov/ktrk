@@ -15,13 +15,13 @@
                             </ul>
                         </div>
                     </div>
-
-                    <div class="col-md-12 copy"><i class="fa fa-copyright"></i>2015 {{ trans('site.TradeMark') }}</div>
                 </div>
             </div>
         </div>
     </div>
 </footer>
+
+@include('Front::partials.prefooter')
 
 <script type="text/javascript" src="{{ asset('js/bootstrap.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/bootstrap-hover-dropdown.js') }}"></script>

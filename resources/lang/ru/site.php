@@ -280,7 +280,7 @@ return [
     'Saturday' => 'Суббота',
     'Sunday' => 'Воскресенье',
 
-    'AllVideos' => 'Все',
+    'AllVideos' => 'Все видео',
     'LastVideos' => 'Последние видео',
     'TopVideos' => 'Топ видео',
     'Episodes' => 'Выпуски',

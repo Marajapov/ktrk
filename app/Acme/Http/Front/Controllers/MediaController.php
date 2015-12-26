@@ -24,14 +24,17 @@ class MediaController extends Controller
         $mediaAll = \Model\Media\ModelName::get();
 
         $categoriesVideos = array();
+        $topCategoriesVideos = array();
 
         foreach($MediaCategories as $MediaCategory){
 
             $CategoryVideos = \Model\Media\ModelName::where('videoType','=',$MediaCategory->videoType)->orderBy('id','desc')->take(9)->get();
+            $TopCategoryVideos = \Model\Media\ModelName::where('videoType','=',$MediaCategory->videoType)->orderBy('viewed','desc')->take(9)->get();
 
             $categoriesVideos = array_add($categoriesVideos, $MediaCategory->videoType, $CategoryVideos);
+            $topCategoriesVideos = array_add($topCategoriesVideos, $MediaCategory->videoType, $TopCategoryVideos);
         }
-//        dd($categoriesVideos['tele']);
+//        dd($topCategoriesVideos);
 
         $mediaLastVideos = \Model\Media\ModelName::orderBy('id','desc')->take(9)->get();
 
@@ -51,6 +54,7 @@ class MediaController extends Controller
             'mediaCategories'=>$MediaCategories,
             'backgroundMain' => $backgroundMain,
             'categoriesVideos' => $categoriesVideos,
+            'topCategoriesVideos' => $topCategoriesVideos,
             'mediaPops' => $mediaPops
             ]);
     }
@@ -151,6 +155,27 @@ class MediaController extends Controller
                 'backgroundMain' => $backgroundMain,
                 'relatedVideos' => $relatedVideos,
 
+            ]
+        );
+    }
+
+    public function allVideos()
+    {
+        $projectList = \Model\Project\ModelName::where('published','=',true)->get();
+        $mainBanner = \Model\Background\ModelName::where('name','=','main')->first();
+        $categories = \Model\Category\ModelName::all();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        $perPage = 15;
+
+        $allVideos = \Model\Media\ModelName::where('published','=',true)->orderBy('id','desc')->paginate($perPage);
+
+        return view('Front::media.all',[
+            'perPage'=> $perPage,
+            'mainBanner'   => $mainBanner,
+            'categories'=>$categories,
+            'projectList' => $projectList,
+            'backgroundMain' => $backgroundMain,
+            'allVideos' => $allVideos,
             ]
         );
     }

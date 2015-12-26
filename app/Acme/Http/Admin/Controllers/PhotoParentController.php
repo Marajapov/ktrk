@@ -60,14 +60,17 @@ class PhotoParentController extends Controller
             $btw = time();
 
             $name = $photoParent->id().$btw.'.'.$file->getClientOriginalExtension();
+            $name2 = $photoParent->id().$btw.'_big.'.$file->getClientOriginalExtension();
 
             $storage = \Storage::disk('public');
             $storage->makeDirectory($dir);
 
 //            Image::make($_FILES['status']['tmp_name'])->resize(250, 150)->save($dir.'/'.$name);
             Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->save($dir.'/'.$name);
+            Image::make($_FILES['status']['tmp_name'])->fit(300, 180)->save($dir.'/'.$name2);
 
             $photoParent->status = $dir.'/'.$name;
+            $photoParent->thumbnail_big = $dir.'/'.$name2;
             $photoParent->save();
         }
 

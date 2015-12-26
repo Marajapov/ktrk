@@ -179,22 +179,17 @@
 }
 
 .media-title{
-    /*display: table-cell;*/
-    /*height: 50px;*/
-    /*margin: 0;*/
-    /*padding: 0;*/
-    /*vertical-align: middle;*/
-
-    color: #4e5e6a;
+    display: table-cell;
+    vertical-align: middle;
+    max-width: 100%;
+    width: 300px;
+    height: 50px;
 }
 .media-title h4{
-    display: inline-block;
-    width: 100%;
     margin: 0;
-    padding: 10px 0;
-    height: 50px;
-    vertical-align: middle;
+    color: #4e5e6a;
     font-size: 14px;
+    font-weight: bold;
     line-height: 1;
     text-align: center;
 }

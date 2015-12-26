@@ -1,5 +1,5 @@
 @extends('Front::layouts.default')
-@section('title', 'Название | Телеберүүлөр | КТРК')
+@section('title', $project->getNameOne().' | КТРК')
 
 @section('styles')
   <link rel="stylesheet" href="{{ asset('css/videoportal.css') }}"/>
