@@ -1078,3 +1078,33 @@ ul.nostyle i {
   box-shadow: none;
   -webkit-box-shadow: none;
 }
+
+
+/* For Main menu in Ukturrrular part*/
+.dropdown-menu{
+  background: #3E74A5 !important; 
+  min-width: inherit !important; 
+}
+.dropdown i{
+  margin-left: 5px !important;
+}
+.dropdown .dropdown-menu > li {
+    margin: 0px !important; 
+    padding: 0px !important;
+    border: none !important;
+    transition: all 0.2s linear !important;
+}
+.dropdown .dropdown-menu:hover {
+  background: #04549C !important;
+}
+
+.dropdown .dropdown-menu li a {
+  padding: 5px !important;
+  margin: 0px;
+  color: #fff !important;
+  font-size: 18px !important;
+}
+
+.dropdown .dropdown-menu li a:hover{
+  border: none !important; 
+}

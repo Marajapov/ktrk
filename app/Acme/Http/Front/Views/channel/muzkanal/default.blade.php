@@ -14,6 +14,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick-theme.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}"/>
 
+
     <link rel="stylesheet" type="text/css" href="{{ asset('css/custombox.css') }}"/>
     <link rel="stylesheet"  href="{{ asset('css/lightslider.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/gallery.css') }}"/>
@@ -66,23 +67,6 @@
 
 
     @yield('content')
-
-    <div class="container">
-      <div class="col-md-12 apps-logo">
-        <div class="row">
-          <div class="col-md-3 col-md-offset-3">
-            <a href="#" class="android">
-              <img src="{{ asset('images/android.png') }}" alt=""/>
-            </a>
-          </div>
-          <div class="col-md-3">
-            <a href="#" class="ios">
-              <img src="{{ asset('images/ios.png') }}" alt=""/>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
 
     @include('Front::partials.footer')
     @yield('footerscript2')
