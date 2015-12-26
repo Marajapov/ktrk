@@ -548,13 +548,12 @@ header.top-menu,.logo-block{
     right: auto;
     top: auto;
 
-    display: block;
+    display: inline-block;
     vertical-align: middle;
-    margin-bottom: 5px;
+    margin-left: 5px;
 
     color: #9DA8B0;
     font-size: 12px;
-    text-align: right;
 }
 .panel-article .news-title .extra .art-edit{
     position: absolute;
