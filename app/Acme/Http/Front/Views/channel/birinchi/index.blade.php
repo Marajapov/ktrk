@@ -244,7 +244,7 @@
                               <a class="media-heading" href="{{ route('birinchi.news', $post) }}">{{ $post->getTitleRuOrKg() }}</a>
 
                               <p>
-                                 {!! substr($post->getContent(),0,205) !!}
+                                 {!! mb_substr($post->getContent(), 0, 290, "UTF-8") !!}
                               </p>
                               
                            </div>

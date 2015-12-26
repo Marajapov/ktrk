@@ -84,12 +84,21 @@ class ModelName extends Model
 
     public function getIsPhoto() // at least one photo
     {
-        $image = $this->content;
-        
-        if (stripos($image, "<img") !== false) {
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            $image = $this->content; 
+            if (stripos($image, "<img") !== false) {
             return "yes";
-        }else{
-            return "no";
+            }else{
+                return "no";
+            }   
+        }elseif($lc == 'ru'){
+            $image = $this->contentRu;
+            if (stripos($image, "<img") !== false) {
+            return "yes";
+            }else{
+                return "no";
+            }
         }
     }
 

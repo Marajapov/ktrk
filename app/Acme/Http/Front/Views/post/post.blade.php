@@ -1,5 +1,5 @@
 @extends('Front::layouts.default')
-@section('title', $post->getTitle())
+@section('title', $post->getTitleRuOrKg())
 @section('styles')
 <link rel="stylesheet" href="{{ asset('css/articles.css') }}"/>
 @endsection()
