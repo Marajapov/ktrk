@@ -92,69 +92,67 @@
    </header>
    <!--/header-->
    <!-- Main slider -->
-   <div class="container">
-      <section id="services" style="background: #fff;padding: 0px; margin: 20px -15px 20px -15px;">
+   <div class="container" style="background: #fff;padding: 0px; margin: 20px auto; ">
+    <section id="services" style="padding: 0px; margin: 20px -15px 20px -15px;">
          <div class="container">
             <div class="row">
+              <div class="col-md-9">
+                  <div class="panel panel-articles">
+                       <div class="panel-heading">
+                          <h3 class="panel-title"><span>{{ trans('site.FrontPostAll') }}</span></h3>
+                       </div>
 
-            <div class="col-md-9">
-                <div class="panel panel-articles">
-                     <div class="panel-heading">
-                        <h3 class="panel-title"><span>{{ trans('site.FrontPostAll') }}</span></h3>
-                     </div>
-
-                   <div class="panel-body">
-                      @if($allPost)
-                     @foreach($allPost as $post)
-                      <div class="media">
-                         <div class="media-left">
-                            <a href="{{ route('dostuk.news', $post) }}">
-                               <img class="media-object thumb" src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif" alt="image">
-                            </a>
-                         </div>
-                         <div class="media-body">
-                            <div class="extra">
-                               <span class="e-datetime">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
-                               <span class="e-views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
-                            </div>
-                            <a class="media-heading" href="{{ route('dostuk.news', $post) }}">{{ $post->getTitleRuOrKg() }}</a>
-
-                         </div>
-                      </div>
-                      @endforeach
-                      @endif
-                   </div>
-
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                  <div class="panel ctg-panel media-ctg-panel">
-                     <div class="panel-heading">
-                        <h3 class="panel-title"><span>{{ trans('radiopages.Peredachi') }}</span></h3>
-                     </div>
                      <div class="panel-body">
-                        <div class="col-md-12">
-                           <div class="row">
-                              <ul class="list-group">
-                                 @if($dostukProjects) 
-                                 @foreach($dostukProjects as $key=> $project)
-                                 <li class="list-group-item">
-                                    <a href="{{ route('dostuk.project', $project) }}">{{ $project->getName() }}</a>
-                                 </li>
-                                 @endforeach
-                                 @endif
-                              </ul>
+                        @if($allPost)
+                       @foreach($allPost as $post)
+                        <div class="media">
+                           <div class="media-left">
+                              <a href="{{ route('dostuk.news', $post) }}">
+                                 <img class="media-object thumb" src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif" alt="image">
+                              </a>
+                           </div>
+                           <div class="media-body">
+                              <div class="extra">
+                                 <span class="e-datetime">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
+                                 <span class="e-views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
+                              </div>
+                              <a class="media-heading" href="{{ route('dostuk.news', $post) }}">{{ $post->getTitleRuOrKg() }}</a>
+
                            </div>
                         </div>
+                        @endforeach
+                        @endif
                      </div>
+
                   </div>
-            </div>           
-              
+              </div>
+
+              <div class="col-md-3">
+                    <div class="panel ctg-panel media-ctg-panel">
+                       <div class="panel-heading">
+                          <h3 class="panel-title"><span>{{ trans('radiopages.Peredachi') }}</span></h3>
+                       </div>
+                       <div class="panel-body">
+                          <div class="col-md-12">
+                             <div class="row">
+                                <ul class="list-group">
+                                   @if($dostukProjects) 
+                                   @foreach($dostukProjects as $key=> $project)
+                                   <li class="list-group-item">
+                                      <a href="{{ route('dostuk.project', $project) }}">{{ $project->getName() }}</a>
+                                   </li>
+                                   @endforeach
+                                   @endif
+                                </ul>
+                             </div>
+                          </div>
+                       </div>
+                    </div>
+              </div> 
             </div>
          </div>
          <!--/.container-->
-      </section>
+    </section>
    </div>
    @stop
    @section('footerscript2')

@@ -39,6 +39,7 @@ class CreatePostsTable extends Migration
             $table->string('rs');
             $table->string('muzkanal');
             $table->string('kyrgyzradio');
+            $table->string('kyrgyzradioProgram');
             $table->string('birinchi');
             $table->string('birinchiProgram');
             $table->string('balastan');

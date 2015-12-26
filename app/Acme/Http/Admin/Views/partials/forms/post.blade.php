@@ -204,6 +204,13 @@
                     </label>
                   </div>
                 </div>
+                <!-- KyrgyzRadio Programm -->
+                <div class="form-group">
+                  <label for="kyrgyzradioProgram" class="col-sm-3 control-label" style="float: left !important;">Передачи</label>
+                  <div class="col-sm-9">
+                    {!! Form::select('kyrgyzradioProgram', $kyrgyzradioProgramList, null, ["class" => "selectpicker", "data-live-search"=>"true", "title" => "-- Выберите --"]) !!}
+                  </div>
+                </div>                
               </div>
               <!-- birinchi -->
               <div class="form-group">

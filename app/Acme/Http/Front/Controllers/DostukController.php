@@ -100,7 +100,13 @@ class DostukController extends Controller
         $dostukProjects = \Model\Project\ModelName::where('published','=',true)->where('dostuk', '=', 1)->get();
 
         $parent = \Model\PhotoParent\ModelName::where('id','=',$post->parentId)->first();
-        $images = json_decode($parent->images);
+        
+        if($parent != null){
+            $images = json_decode($parent->images);    
+        }else{
+            $images = null;
+        }
+        
 
            return view('Front::channel.dostuk.news', [
             'channel' => $channel,

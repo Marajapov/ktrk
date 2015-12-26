@@ -4,8 +4,8 @@
 <link rel="stylesheet" href="{{ asset('css/radios.css')}}">
 <link rel="stylesheet" href="{{ asset('css/landing/dostuk.css')}}">
 
- <link rel="stylesheet" href="{{ asset('css/articles.css') }}"/>
-  <link rel="stylesheet" href="{{ asset('css/pages.css') }}"/>
+<link rel="stylesheet" href="{{ asset('css/articles.css') }}"/>
+<link rel="stylesheet" href="{{ asset('css/pages.css') }}"/>
 
 @endsection
 @section('content')
@@ -72,7 +72,7 @@
             </div><!--/.container-->
         </nav><!--/nav-->
     </header><!--/header-->
-<div class="container" style="background: #fff;padding: 0px; margin-top: 20px;">
+<div class="container" style="background: #fff;padding: 0px; margin: 20px auto;">
     <section id="main-slider">
         <div class="owl-carousel">
             <div class="item">

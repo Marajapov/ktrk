@@ -12,4 +12,8 @@ trait ModelRelationships
     {
         return $this->hasMany(\Model\Post\ModelName::class, 'birinchiProgram');
     }
+    public function kgprogram()
+    {
+        return $this->hasMany(\Model\Post\ModelName::class, 'kyrgyzradioProgram');
+    }
 }

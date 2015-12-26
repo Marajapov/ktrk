@@ -47,6 +47,7 @@ class PostController extends Controller
 
         $dostukProgramList = \Model\Project\ModelName::where('dostuk','<>','')->lists('name', 'id')->toArray();
         $birinchiProgramList = \Model\Project\ModelName::where('birinchi','<>','')->lists('name', 'id')->toArray();
+        $kyrgyzradioProgramList = \Model\Project\ModelName::where('kyrgyzradio','<>','')->lists('name', 'id')->toArray();
 
         return view('Admin::post.create', [
             'post' => new Post, 
@@ -59,6 +60,7 @@ class PostController extends Controller
             'relatedPosts2' => $relatedPosts2,
             'dostukProgramList' => $dostukProgramList,
             'birinchiProgramList' => $birinchiProgramList,
+            'kyrgyzradioProgramList' => $kyrgyzradioProgramList,
             ]);
     }
 
@@ -194,6 +196,7 @@ class PostController extends Controller
 
         $dostukProgramList = \Model\Project\ModelName::where('dostuk','<>','')->lists('name', 'id')->toArray();
         $birinchiProgramList = \Model\Project\ModelName::where('birinchi','<>','')->lists('name', 'id')->toArray();
+        $kyrgyzradioProgramList = \Model\Project\ModelName::where('kyrgyzradio','<>','')->lists('name', 'id')->toArray();
 
         $tags = \Model\Tag\Tag::lists('name', 'id');
         $tags2 = \Model\Tag\Tag::lists('name', 'id');
@@ -209,6 +212,7 @@ class PostController extends Controller
             'PhotoParentList' => $PhotoParentList,
             'dostukProgramList' => $dostukProgramList,
             'birinchiProgramList' => $birinchiProgramList,
+            'kyrgyzradioProgramList' => $kyrgyzradioProgramList,
             ]);
     }
 
