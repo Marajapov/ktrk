@@ -52,12 +52,12 @@
       </p>
       <ul>
         <li>
-          <a href="#">
+          <a href="https://play.google.com/store/apps/details?id=ktrk.kg.app">
             <img src="{{ asset('images/android.png') }}" alt="ktrk_adnroid"/>
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="https://itunes.apple.com/kg/app/ktrk-official/id1004194204">
             <img src="{{ asset('images/ios.png') }}" alt="ktrk_ios"/>
           </a>
         </li>
