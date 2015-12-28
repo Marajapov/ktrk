@@ -22,9 +22,9 @@
               </div>
               <div class="panel-body">
 
-                <p style="margin-bottom: 20px;">{{ $gallery->getDescription() }}</p>
+                <p style="margin: 20px 0;">{{ $gallery->getDescription() }}</p>
 
-                <div class="col-md-12" style="margin: 15px 0; ">
+                <div class="col-md-12" style="margin-bottom: 15px;">
 
                   <div class="row">
                     <div class="slider-for">
