@@ -36,7 +36,7 @@ body::after{
 
     display: block;
     height: 200px;
-    width: 50%;
+    width: 300px;
 
     background: url("img/bottom-bg.png") no-repeat right top;
     -webkit-background-size: auto 100%;
@@ -116,6 +116,9 @@ body::after{
 }
 @media screen and (max-width: 1400px){
     .main-header::before,.main-header::after{
+        display: none;
+    }
+    .bottom-bg{
         display: none;
     }
 }
