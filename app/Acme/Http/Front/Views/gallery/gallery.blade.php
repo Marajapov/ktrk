@@ -24,7 +24,7 @@
 
                 <p style="margin-bottom: 20px;">{{ $gallery->getDescription() }}</p>
 
-                <div class="col-md-12" style="margin-bottom: 15px;">
+                <div class="col-md-12" style="margin: 15px 0; ">
 
                   <div class="row">
                     <div class="slider-for">
