@@ -60,7 +60,6 @@ class MediaController extends Controller
             $media->save();
         }
 
-
         if($request->hasFile('thumbnail'))
         {
             $file = $request->file('thumbnail');
@@ -68,6 +67,7 @@ class MediaController extends Controller
             $btw = time();
 
             $name = $media->id().$btw.'.'.$file->getClientOriginalExtension();
+            $name2 = $media->id().$btw.'_big.'.$file->getClientOriginalExtension();
 
 //            $manager = new ImageManager(array('driver' => 'imagick'));
 
@@ -75,8 +75,10 @@ class MediaController extends Controller
             $storage->makeDirectory($dir);
 
             Image::make($_FILES['thumbnail']['tmp_name'])->fit(250, 150)->save($dir.'/'.$name);
+            Image::make($_FILES['thumbnail']['tmp_name'])->fit(500, 300)->save($dir.'/'.$name2);
 
             $media->thumbnail = $dir.'/'.$name;
+            $media->thumbnail_big = $dir.'/'.$name2;
             $media->save();
         }
 
@@ -156,23 +158,27 @@ class MediaController extends Controller
             $media->save();
         }
 
-        if($request->hasFile('thumbnail'))
+       if($request->hasFile('thumbnail'))
         {
             $file = $request->file('thumbnail');
             $dir  = 'img/thumbnail';
             $btw = time();
 
             $name = $media->id().$btw.'.'.$file->getClientOriginalExtension();
+            $name2 = $media->id().$btw.'_big.'.$file->getClientOriginalExtension();
 
-            Image::make($_FILES['thumbnail']['tmp_name'])->fit(250, 150)->save($dir.'/'.$name);
+//            $manager = new ImageManager(array('driver' => 'imagick'));
 
             $storage = \Storage::disk('public');
             $storage->makeDirectory($dir);
 
+            Image::make($_FILES['thumbnail']['tmp_name'])->fit(250, 150)->save($dir.'/'.$name);
+            Image::make($_FILES['thumbnail']['tmp_name'])->fit(500, 300)->save($dir.'/'.$name2);
+
             $media->thumbnail = $dir.'/'.$name;
+            $media->thumbnail_big = $dir.'/'.$name2;
             $media->save();
         }
-
         return redirect()->route('admin.media.show', $media);
     }
 

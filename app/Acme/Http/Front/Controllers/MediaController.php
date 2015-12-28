@@ -43,7 +43,7 @@ class MediaController extends Controller
         $mainBanner = \Model\Background\ModelName::where('name','=','main')->first();
         $categories = \Model\Category\ModelName::all();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
-        $projectList = \Model\Project\ModelName::orderBy('id','desc')->get();
+        $projectList = \Model\Project\ModelName::where('extracolumn','=','1')->orderBy('id','desc')->get();
 
         return view('Front::media.index',[
             'mediaAll' => $mediaAll,
@@ -133,7 +133,7 @@ class MediaController extends Controller
 
     public function project(\Model\Project\ModelName $project)
     {
-        $projectList = \Model\Project\ModelName::get();
+        $projectList = \Model\Project\ModelName::where('extracolumn','=','1')->orderBy('id','desc')->get();
 //        $MediaCategory = \Model\MediaCategory\ModelName::get();
         $mediaAll = \Model\Media\ModelName::get();
 
@@ -161,7 +161,7 @@ class MediaController extends Controller
 
     public function allVideos()
     {
-        $projectList = \Model\Project\ModelName::where('published','=',true)->get();
+        $projectList = \Model\Project\ModelName::where('extracolumn','=','1')->orderBy('id','desc')->get();
         $mainBanner = \Model\Background\ModelName::where('name','=','main')->first();
         $categories = \Model\Category\ModelName::all();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
