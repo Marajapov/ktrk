@@ -43,7 +43,7 @@ class PageController extends Controller
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
         $directorPosts = \Model\Post\ModelName::where('director','=','1')->orderBy('id','desc')->get();
-        $fbpost = \Model\Post\ModelName::where('director','=','1')->where('fbpost','=','1')->orderBy('id','desc')->get();
+        $fbpost = \Model\Post\ModelName::where('director','<>','1')->where('fbpost','=','1')->orderBy('id','desc')->get();
         if($fbpost){
             $fbpost = $fbpost;
         }else {
@@ -347,6 +347,5 @@ class PageController extends Controller
         ]);
 
     }
-
 }
 
