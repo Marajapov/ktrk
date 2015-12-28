@@ -247,10 +247,6 @@
   margin-bottom: 0;
   width: 100%;
 }
-select.bs-select-hidden,
-select.selectpicker {
-  display: none !important;
-}
 select.mobile-device {
   position: absolute !important;
   top: 0;

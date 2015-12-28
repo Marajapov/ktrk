@@ -1,114 +1,131 @@
 @include('Front::messages.flash')
 
-<div class="row">
-    <div class="col-sm-6">
-        <div class="form-group">
-            <label class="control-label">Канал</label>
-            {!! Form::select('channel_id', \Model\Channel\ModelName::lists('display', 'id')->toArray(), null, ["class" => "select2_group form-control", "required" => true, "title" => ""]) !!}
-        </div>
-    </div>
+@section('styles')
+  <link rel="stylesheet" href="{{ asset('css/bootstrap-select.css') }}"/>
+  <link rel="stylesheet" href="{{ asset('css/build.css') }}"/>
+@endsection
 
-    <div class="col-sm-6">
+<div class="panel panel-success">
+    <div class="panel-body">
         <div class="form-group">
-            <label class="control-label">Категория</label>
-            {!! Form::select('category_id', \Model\Category\ModelName::lists('title', 'id')->toArray(), null, ["class" => "select2_group form-control", "required" => true, "title" => ""]) !!}
+            <label class="col-sm-2 control-label">Канал</label>
+            <div class="col-sm-10">
+                {!! Form::select('channel_id', \Model\Channel\ModelName::lists('display', 'id')->toArray(), null, ["class" => "select2_group form-control", "required" => true, "title" => ""]) !!}               
+            </div>
         </div>
-    </div>
 
-    <div class="col-sm-8">
         <div class="form-group">
-            <label class="control-label">{{ trans('site.Title') }}</label>
-            {!! Form::text('name', null, ["class" => "form-control", "required" => true, "title" => ""]) !!}
+            <label class="col-sm-2 control-label">Категория</label>
+            <div class="col-sm-10">
+                {!! Form::select('category_id', \Model\Category\ModelName::lists('title', 'id')->toArray(), null, ["class" => "select2_group form-control", "required" => true, "title" => ""]) !!}                
+            </div>
         </div>
-    </div>
-    <div class="col-sm-8">
-      <div class="form-group">
-        <label class="control-label">Ссылка</label>
-        {!! Form::text('linkTo', null, ["class" => "form-control", "required" => true, "title" => ""]) !!}
-      </div>
-    </div>
-<!--     <div class="col-xs-12">
+        
+        
         <div class="form-group">
-            <label class="control-label">Файл</label>
-            {!! Form::file('file', null, ["class" => "form-control", "required" => true]) !!}
+            <label class="col-sm-2 control-label">{{ trans('site.Title') }}</label>
+            <div class="col-sm-10">
+                {!! Form::text('name', null, ["class" => "form-control", "required" => true, "title" => ""]) !!}
+            </div>
         </div>
+        
+
+        
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Ссылка</label>
+            <div class="col-sm-10">
+                {!! Form::text('linkTo', null, ["class" => "form-control", "required" => true, "title" => ""]) !!}
+            </div>
+        </div>
+        
+    <!--     <div class="col-xs-12">
+            <div class="form-group">
+                <label class="control-label">Файл</label>
+                {!! Form::file('file', null, ["class" => "form-control", "required" => true]) !!}
+            </div>
+        </div> -->
+
+
+        <div class="form-group">
+            <label for="file" class="col-sm-2 control-label">Фото</label>
+            <div class="col-sm-10">
+                <div class="fileinput fileinput-new input-group" data-provides="fileinput">
+                  <div class="form-control" data-trigger="fileinput"><i class="glyphicon glyphicon-file fileinput-exists"></i> <span class="fileinput-filename"></span></div>
+                  <span class="input-group-addon btn btn-default btn-file"><span class="fileinput-new">{{ trans('site.AdminBannerSelectImg') }}</span><span class="fileinput-exists">{{ trans('site.Change') }}</span>
+                  {!! Form::file('file', null, ["class" => "form-control", "required" => true]) !!}
+                </div>
+            </div>
+        </div>
+      
+        <div class="row">
+            <div class="clearfix"></div>
+        <div class="col-sm-2">
+            <div class="form-group">
+                <label class="control-label">{{ trans('site.Publish') }}</label>
+                {!! Form::hidden('published', 0) !!}
+                {!! Form::checkbox('published', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
+            </div>
+        </div>
+
+    <!-- <div class=" col-md-12 raspoloj">
+        <div class="form-group">
+            <div class="checkbox checkbox-info">
+               <input id="checkbox2" type="checkbox">
+               <label class="control-label">Үстү жагында (top)</label>
+               {!! Form::hidden('positionTop', 0) !!}         
+               {!! Form::checkbox('positionTop', 1, null, ["class" => "checkbox2 form-control", "style" => "width: 34px; margin: 0"]) !!}
+               <div class="topbanner"></div>
+           </div>
+       </div>
     </div> -->
 
+        <div class=" col-sm-2">
+            <div class="form-group">
+                <label class="control-label">{{ trans('site.Top') }}</label>
+                {!! Form::hidden('positionTop', 0) !!}         
+                {!! Form::checkbox('positionTop', 1, null, ["class" => " form-control", "style" => "width: 34px; margin: 0"]) !!}
+                <div class="topbanner"></div>
+            </div>
+        </div>
 
-    <div class="col-xs-8">
-        <div class="fileinput fileinput-new input-group" data-provides="fileinput">
-          <div class="form-control" data-trigger="fileinput"><i class="glyphicon glyphicon-file fileinput-exists"></i> <span class="fileinput-filename"></span></div>
-          <span class="input-group-addon btn btn-default btn-file"><span class="fileinput-new">{{ trans('site.AdminBannerSelectImg') }}</span><span class="fileinput-exists">{{ trans('site.Change') }}</span>
-          {!! Form::file('file', null, ["class" => "form-control", "required" => true]) !!}
-      </div>
-  </div>
-  
-  <div class="clearfix"></div>
-  <div class="col-sm-1">
-    <div class="form-group">
-        <label class="control-label">{{ trans('site.Publish') }}</label>
-        {!! Form::hidden('published', 0) !!}
-        {!! Form::checkbox('published', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
+        <div class="col-sm-2">
+            <div class="form-group">
+                <label class="control-label">{{ trans('site.Center') }}</label>
+                {!! Form::hidden('positionCenter', 0) !!}
+                {!! Form::checkbox('positionCenter', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
+                <div class="centerbanner"></div>
+            </div>
+        </div>
+
+        <div class="col-sm-2">
+            <div class="form-group">
+                <label class="control-label">{{ trans('site.Right') }}</label>
+                {!! Form::hidden('positionRight', 0) !!}
+                {!! Form::checkbox('positionRight', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
+                <div class="rightbanner"></div>
+            </div>
+        </div>
+
+        <div class="col-sm-2">
+            <div class="form-group">
+                <label class="control-label">{{ trans('site.Left') }}</label>
+                {!! Form::hidden('positionLeft', 0) !!}
+                {!! Form::checkbox('positionLeft', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
+                <div class="leftbanner"></div>
+            </div>
+        </div>
+
+
+        <div class="col-sm-2">
+            <div class="form-group">
+                <label class="control-label">{{ trans('site.Bottom') }}</label>
+                {!! Form::hidden('positionBottom', 0) !!}
+                {!! Form::checkbox('positionBottom', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
+                <div class="bottombanner"></div>
+            </div>
+        </div>
+        </div>
     </div>
-</div>
-
-<!-- <div class=" col-md-12 raspoloj">
-    <div class="form-group">
-        <div class="checkbox checkbox-info">
-           <input id="checkbox2" type="checkbox">
-           <label class="control-label">Үстү жагында (top)</label>
-           {!! Form::hidden('positionTop', 0) !!}         
-           {!! Form::checkbox('positionTop', 1, null, ["class" => "checkbox2 form-control", "style" => "width: 34px; margin: 0"]) !!}
-           <div class="topbanner"></div>
-       </div>
-   </div>
-</div> -->
-
-<div class=" col-sm-1 ">
-    <div class="form-group">
-        <label class="control-label">{{ trans('site.Top') }}</label>
-        {!! Form::hidden('positionTop', 0) !!}         
-        {!! Form::checkbox('positionTop', 1, null, ["class" => " form-control", "style" => "width: 34px; margin: 0"]) !!}
-        <div class="topbanner"></div>
-    </div>
-</div>
-
-<div class="col-sm-1 ">
-    <div class="form-group">
-        <label class="control-label">{{ trans('site.Center') }}</label>
-        {!! Form::hidden('positionCenter', 0) !!}
-        {!! Form::checkbox('positionCenter', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
-        <div class="centerbanner"></div>
-    </div>
-</div>
-
-<div class="col-sm-1 ">
-    <div class="form-group">
-        <label class="control-label">{{ trans('site.Right') }}</label>
-        {!! Form::hidden('positionRight', 0) !!}
-        {!! Form::checkbox('positionRight', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
-        <div class="rightbanner"></div>
-    </div>
-</div>
-
-<div class="col-sm-1 ">
-    <div class="form-group">
-        <label class="control-label">{{ trans('site.Left') }}</label>
-        {!! Form::hidden('positionLeft', 0) !!}
-        {!! Form::checkbox('positionLeft', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
-        <div class="leftbanner"></div>
-    </div>
-</div>
-
-
-<div class="col-sm-1 ">
-    <div class="form-group">
-        <label class="control-label">{{ trans('site.Bottom') }}</label>
-        {!! Form::hidden('positionBottom', 0) !!}
-        {!! Form::checkbox('positionBottom', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
-        <div class="bottombanner"></div>
-    </div>
-</div>
 </div>
 
 <button type="submit" class="btn btn-primary">{{ trans('site.Save') }}</button>
@@ -129,4 +146,4 @@
                 });
             });
         </script>
-        <!-- /select2 -->
+<!-- /select2 -->

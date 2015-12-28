@@ -46,4 +46,11 @@ class ModelName extends Model
     {
         return $this->published;
     }
+
+    public function getDateFormatted()
+    {
+        $fullDate = $this->created_at;
+        $date = date('d/m/Y', strtotime($fullDate));
+        return $date;
+    }
 }
