@@ -327,10 +327,32 @@ class PostController extends Controller
     // Number for list the rating
     public function number(Request $request, $number)
     {
-        $postId = $number;
-        $number = $request->number;
+        $postId = $number; // Post id
+        $number = $request->number; // Number posted to be rating number
 
         $row = \Model\Post\ModelName::where('id','=',$postId)->first();
+        $title = $row->title;
+        $titleRu = $row->titleRu;
+        if($title != ''){
+            $allPostKg = \Model\Post\ModelName::where('title','<>','')->where('number','=',$number)->first();
+            if($allPostKg != null){
+                foreach($allPostKg as $post){
+                    $post->number = '99';
+                    $post->save();    
+                }
+            }
+
+        }else{
+            $allPostRu = \Model\Post\ModelName::where('titleRu','<>','')->where('number','=',$number)->get();
+            if($allPostRu != null){
+                foreach($allPostRu as $post){
+                    $post->number = '99';
+                    $post->save();    
+                }
+                
+            }
+            
+        }
         $row->number = $number;
         $row->save();
         return redirect()->route('admin.post.index');

@@ -5,6 +5,8 @@ use Illuminate\Http\Request;
 
 class NsController extends Controller
 {
+    protected $positionTop, $positionRight, $positionCenter, $positionBottom;
+
     public function __construct()
     {
         $this->positionTop = \Model\Banner\ModelName::where('positionTop','=','1')->first();

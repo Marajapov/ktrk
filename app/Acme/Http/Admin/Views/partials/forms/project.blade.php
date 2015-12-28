@@ -68,6 +68,20 @@
       </div>
     </div>
 
+     <!-- extracolumn For main window of media (Videoportal) -->
+      <div class="form-group">
+        <label for="parentId" class="col-sm-2 control-label"></label>
+        <div class="col-sm-10">
+          <div class="checkbox checkbox-primary ">
+            {!! Form::hidden('extracolumn', 0) !!}
+            {!! Form::checkbox('extracolumn', 1, null, ["id" => "extracolumn", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
+            <label for="extracolumn">
+              Главная
+            </label>
+          </div>
+        </div>
+      </div>
+
     <!-- ns -->
       <div class="form-group">
         <label for="parentId" class="col-sm-2 control-label"></label>

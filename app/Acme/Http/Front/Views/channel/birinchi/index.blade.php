@@ -124,7 +124,7 @@
                         {{ trans('radiopages.Prperedach') }}
                         </a>
                      </li>
-                     <li><a href="{{ route('birinchi.photos') }}"> {{ trans('radiopages.Photos') }}</a></li>
+                     <li><a href="{{ route('birinchi.allphotos') }}"> {{ trans('radiopages.Photos') }}</a></li>
                   </ul>
                   <ul class="nav navbar-nav navbar-right logo-block onesearch">
                      <a class="search-toggle"><i class="fa fa-search"></i></a>
@@ -244,7 +244,7 @@
                               <a class="media-heading" href="{{ route('birinchi.news', $post) }}">{{ $post->getTitleRuOrKg() }}</a>
 
                               <p>
-                                 {!! substr($post->getContent(),0,205) !!}
+                                 {!! mb_substr($post->getContent(), 0, 290, "UTF-8") !!}
                               </p>
                               
                            </div>

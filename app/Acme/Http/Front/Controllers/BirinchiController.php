@@ -15,17 +15,28 @@ class BirinchiController extends Controller
 
         $photoGalleries = \Model\PhotoParent\ModelName::where('birinchi','=','1')->where('published','=',true)->take('6')->orderBy('id','desc')->get();
 
+        $categoryArray = array();
         $lc = app()->getlocale();
         if($lc == 'kg'){
             $allPost = \Model\Post\ModelName::where('birinchi','=',1)->where('birinchiProgram','<>','1')->languagekg()->take(10)->skip(0)->published()->orderBy('id','desc')->get();    
+            foreach ($allPost as $key => $value) {
+                $category = \Model\Category\ModelName::where('id','=',$value->category_id)->first();
+                $categoryArray[] = $category;
+                
+            }
+            
         }else{
             $allPost = \Model\Post\ModelName::where('birinchi','=',1)->where('birinchiProgram','<>','1')->languageru()->take(10)->skip(0)->published()->orderBy('id','desc')->get();
+            foreach ($allPost as $key => $value) {
+                $category = \Model\Category\ModelName::where('id','=',$value->category_id)->first();
+                $categoryArray[] = $category;
+                
+            }
         }
         
         $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi', '=', 1)->get();
 
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
-        $categories = \Model\Category\ModelName::all();
 
         return view('Front::channel.birinchi.index', [
             'channel' => $channel,
@@ -33,7 +44,7 @@ class BirinchiController extends Controller
             'generalPosts' => $generalPosts,
             'allPost' => $allPost,
             'birinchiProjects' => $birinchiProjects,
-            'categories'=>$categories,
+            'categories'=>$categoryArray,
             'photoGalleries' => $photoGalleries,
             ]);
     }

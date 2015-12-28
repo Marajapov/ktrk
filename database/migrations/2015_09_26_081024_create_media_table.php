@@ -37,8 +37,9 @@ class CreateMediaTable extends Migration
             $table->string('rs');
             $table->string('muzkanal');
             $table->string('promo');
-            $table->string('hitnumber');
+            $table->integer('hitnumber');
             $table->string('thumbnail');
+            $table->string('thumbnail_big');
             $table->string('muzkanalanons1');
             $table->string('muzkanalanons2');
             $table->string('muzkanalanons3');
