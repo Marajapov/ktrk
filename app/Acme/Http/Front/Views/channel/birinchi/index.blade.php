@@ -321,9 +321,9 @@
                         <div class="featured_date">
                            <p>{{ $photoGallery->getDay() }} {{ $photoGallery->getMonthRu() }}, {{ $photoGallery->getTime() }}</p>
                         </div>
-                        <div class="featured_cat">
-                         <!--<p>Спорт</p> -->
-                        </div>
+<!--                         <div class="featured_cat">
+                           <p>Спорт</p>
+                        </div> -->
                         <a href="{{ route('birinchi.photos', $photoGallery) }}" class="f_overlay"></a>
                         <div class="featured_title_over" style="bottom: 0px;">
                            <h2><a href="{{ route('birinchi.photos', $photoGallery) }}">{{ $photoGallery->getName() }}</a></h2>

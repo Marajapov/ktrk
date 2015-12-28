@@ -1,7 +1,9 @@
 @extends('Front::channel.muzkanal.default')
-@section('title', trans('radiopages.Clips'))
+@section('title', trans('radiopages.Teleperedachi'))
 @section('styles')
 <link rel="stylesheet" href="{{ asset('css/audio/muzslider.css') }}"/>
+<link rel="stylesheet" type="text/css" href="{{ asset('css/pages.css') }}">
+<link rel="stylesheet" href="{{ asset('css/bootstrap-select.css') }}"/>
 @endsection
 @section('content')
 <body class="music">
@@ -92,8 +94,8 @@
                               </a>
                            </li>
                            <li><a href="{{ route('muzkanal.allphotos') }}"><i class="fa fa-picture-o"></i>{{ trans('radiopages.Photos') }}</a></li>
-                           <li><a class="active" href="{{ route('muzkanal.videos') }}"><i class="fa fa-youtube-play"></i>{{ trans('radiopages.Clips') }}</a></li>
-                           <li><a href="{{ route('muzkanal.teleprogram') }}"><i class="fa fa-television"></i>{{ trans('site.Teleprogram') }}</a></li>
+                           <li><a href="{{ route('muzkanal.videos') }}"><i class="fa fa-youtube-play"></i>{{ trans('radiopages.Clips') }}</a></li>
+                           <li><a class="active" href="{{ route('muzkanal.teleprogram') }}"><i class="fa fa-television"></i>{{ trans('site.Teleprogram') }}</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right logo-block">
                            <ul class="soc socmuz">
@@ -135,60 +137,97 @@
          </div>
       </div>
    </div>
+   <!--     <a href="#" class="col-md-12 hidden-xs text-center ads">
+      <img src="images/ads_1.jpg" alt=""/>
+      </a> -->
    <!-- Main slider -->
    <div class="container">
       <div class="row">
-         <div class="col-md-12">
-            <div class="row topvideos videostyle">
-               <div class="panel panel-default">
-                  <div class="panel-heading">
-                     <h3 class="panel-title"><span>{{ trans('radiopages.AllVideos') }}</span></h3>
-                  </div>
-                  <div class="panel-body">
-                     <div class="col-md-12 videofix">
-                        <div class="row" style="margin:-11px;">
-                           @if($postAll)
-                           @foreach($postAll as $allVideo)   
-                           <div class="col-md-3 muzvideomain col-sm-6 col-xs-12">
-                              <div class="muzvideoall">
-                                 <a href="{{ route('muzkanal.video', $allVideo)}}">
-                                 <img src="http://img.youtube.com/vi/{{ $allVideo->getUrl()}}/mqdefault.jpg" alt=""/></a>
-                                 <div class="item-desc">
-                                    <ul>
-                                       <a href="{{ route('muzkanal.video', $allVideo)}}">
-                                          <li class="item-artist">{{ $allVideo->getName() }}</li>
-                                       </a>
-                                    </ul>
-                                 </div>
-                                 <div class="views"><i class="fa fa-eye"></i>{{ $allVideo->getViewed() }}</div>
-                              </div>
-                           </div>
-                           @endforeach
-                           @endif                            
-                        </div>
-                        <nav class="muzpaginate">
-                           <ul class="pagination">
-                              <li>
-                                 <a href="{{ route('muzkanal.videos', ['page' => 1]) }}" class="btn btn-default @if($postAll->currentPage() == 1) disabled @endif">{{ trans('site.Start') }}</a>
-                              </li>
-                              <li>
-                                 <a href="{{ $postAll->previousPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span></a>
-                              </li>
-                              <li>
-                                 <a href="{{ $postAll->nextPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-right"></span></a>
-                              </li>
-                              @for($i = 0, $j = 1; $i < $postAll->total(); $i+=$perPage)
-                              <li>
-                                 <a href="{{ route('muzkanal.videos', ['page' => $j]) }}" class="btn btn-default @if($postAll->currentPage() == $j) active @endif">{{ $j++ }}</a>
-                              </li>
+         <div class="col-md-12 aboutmuz">
+            <div class="panel onenews teleprogramm">
+               <div class="panel-heading">
+                  <h3 class="panel-title"><span>{{ trans('radiopages.Teleperedachi') }}</span></h3>
+               </div>
+               <div class="panel-body">
+                  <ul id="tabs" class="nav nav-tabs teletabs" data-tabs="tabs">
+                     @foreach($programs as $key => $program)
+                     @foreach($schedules as $schedule)
+                     @if($program['date'] == $schedule->date)
+                     <li class="@if($currentDate == $program['date']) active @endif">
+                        <a href="#{{ $program['date'] }}" data-toggle="tab">
+                        @if($lc == 'kg')
+                        {{ $schedule->getDay().' '.$schedule->getMonth().' - '.$schedule->getWeekKg() }}
+                        @elseif($lc == 'ru')
+                        {{ $schedule->getDay().' '.$schedule->getMonth().' - '.$schedule->getWeekRu() }}
+                        @endif
+                        </a>
+                     </li>
+                     @endif
+                     @endforeach
+                     @endforeach
+                  </ul>
+                  @if($programs)
+                  <div id="my-tab-content" class="tab-content">
+                     @foreach($programs as $key => $program)
+                     @foreach($schedules as $schedule)
+                     @if($program['date'] == $schedule->date)
+                     <div class="tab-pane @if($schedule->date == $currentDate) active @endif" id="{{ $schedule->date }}">
+                        <table class="table program">
+                           <tbody>
+                              @for($i=0; $i<count($program)-1; $i++)
+                              @if((strtotime($schedule->date) < strtotime($currentDate)))
+                              <tr class="tele-row tele-passed">
+                                 @elseif(($schedule->date == $currentDate) && ($i < count($program)-2))
+                                 @if((strtotime($program[$i]->time) <= strtotime($currentTime)) && (strtotime($currentTime) < strtotime($program[$i+1]->time)))
+                              <tr class="tele-row tele-live">
+                                 @elseif((strtotime($program[$i]->time) < strtotime($currentTime)) && ($program[$i]->time != '00:00'))
+                              <tr class="tele-row tele-passed">
+                                 @endif
+                                 @elseif(($schedule->date == $currentDate) && ($i == count($program)-1))
+                                 @if((strtotime($program[$i]->time) <= strtotime($currentTime)))
+                              <tr class="tele-row tele-live">
+                                 @elseif((strtotime($program[$i]->time) < strtotime($currentTime)) && ($program[$i]->time != '00:00'))
+                              <tr class="tele-row tele-passed">
+                                 @endif
+                                 @else
+                              <tr class="tele-row ">
+                                 @endif
+                                 <th class="tele-time">
+                                    {{ $program[$i]->time }}
+                                 </th>
+                                 <td class="tele-show">
+                                    @if(($schedule->date == $currentDate) && ($i < count($program)-2))
+                                    @if((strtotime($program[$i]->time) <= strtotime($currentTime)) && (strtotime($currentTime) < strtotime($program[$i+1]->time)))
+                                    @if($lc == 'kg')
+                                    <span id="bcLive"><i class="fa fa-circle"></i>азыр эфирде</span>
+                                    @elseif($lc == 'ru')
+                                    <span id="bcLive"><i class="fa fa-circle"></i>сейчас в эфире</span>
+                                    @endif
+                                    @endif
+                                    @elseif(($schedule->date == $currentDate) && ($i == count($program)-1))
+                                    @if((strtotime($program[$i]->time) <= strtotime($currentTime)))
+                                    @if($lc == 'kg')
+                                    <span id="bcLive"><i class="fa fa-circle"></i>азыр эфирде</span>
+                                    @elseif($lc == 'ru')
+                                    <span id="bcLive"><i class="fa fa-circle"></i>сейчас в эфире</span>
+                                    @endif
+                                    @endif
+                                    @endif
+                                    <h4>{{ $program[$i]->name }}</h4>
+                                    {{--
+                                    <h5 class="tele-extra"><i class="fa fa-play-circle-o"></i>Сериал</h5>
+                                    --}}
+                                 </td>
+                              </tr>
                               @endfor
-                              <li>
-                                 <a href="{{ route('muzkanal.videos', ['page' => ceil($postAll->total()/$perPage)]) }}" class="btn btn-default @if($postAll->currentPage() == ceil($postAll->total()/$perPage)) disabled @endif">{{ trans('site.End') }}</a>
-                              </li>
-                           </ul>
-                        </nav>
+                           </tbody>
+                        </table>
                      </div>
+                     @endif
+                     @endforeach
+                     @endforeach
                   </div>
+                  @endif
                </div>
             </div>
          </div>
@@ -198,49 +237,34 @@
    @section('footerscript2')
    <script src="{{ asset('js/jquery-1.11.2.min.js') }}"></script>
    <script src="{{ asset('js/bootstrap.min.js') }}"></script> 
-   <script>
-      $(document).ready(function () {
-          $(".search-toggle").click(function () {
-              $(".logo-block").addClass("search-show");
-              $(".form-search").addClass("visible");
-          });
-          $(".close-search").click(function () {
-              $(".logo-block").removeClass("search-show");
-              $(".form-search").removeClass("visible");
-          });
-      });
-   </script>  
-   <script type="text/javascript" src="{{ asset('filter/js/jquery.easing.min.js') }}"></script>
-   <script type="text/javascript" src="{{ asset('filter/js/jquery.mixitup.min.js') }}"></script>
-   <script type="text/javascript" src="{{ asset('js/jquery-migrate-1.2.1.min.js') }}"></script>
-   <script type="text/javascript" src="{{ asset('slick/slick.min.js') }}"></script>
-   <script type="text/javascript" src="{{ asset('js/jquery.roundabout.js') }}"></script>
    <!-- Fixed Sticky header -->
    <script type ="text/javascript" src ="{{ asset('js/script.js') }}"></script>   
    <!-- Fixed Sticky header -->
-   <!-- Programm title Anima -->
-   <script src="{{ asset('js/audio/jquery.newsTicker.js') }}"></script>
-   <script>
-      var nt_title = $('#nt-title').newsTicker({
-          row_height: 30,
-          max_rows: 1,
-          duration: 3000,
-          pauseOnHover: 0
-      });
-      var nt_example1 = $('#nt-example1').newsTicker({
-          row_height: 30,
-          max_rows: 3,
-          duration: 4000,
-          prevButton: $('#nt-example1-prev'),
-          nextButton: $('#nt-example1-next')
-      });
-      
-      var state = 'stopped';
-      var speed;
-      var add;
-      
-   </script>
-   <!-- Ptogramm title Anima -->
-   <!--Carousel-->
+   <script type="text/javascript" src="{{ asset('js/bootstrap-select.js') }}"></script>
 
+   <script type="text/javascript">
+      jQuery(document).ready(function ($) {
+        $('#nt-example1').tab();
+      
+        blink($('#bcLive'), -1, 500);
+      
+        function blink(elem, times, speed) {
+          if (times > 0 || times < 0) {
+            if ($(elem).hasClass("blink"))
+              $(elem).removeClass("blink");
+            else
+              $(elem).addClass("blink");
+          }
+          clearTimeout(function () {
+            blink(elem, times, speed);
+          });
+          if (times > 0 || times < 0) {
+            setTimeout(function () {
+              blink(elem, times, speed);
+            }, speed);
+            times -= .5;
+          }
+        }
+      });
+   </script>
    @stop

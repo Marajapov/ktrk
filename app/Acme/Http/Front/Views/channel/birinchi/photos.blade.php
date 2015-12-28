@@ -157,7 +157,7 @@
 </div>
     <div class="container">
         <div class="row">
-         <div class="top-left-block col-md-12">
+         <div class="top-left-block col-md-12" style="padding:0px;">
             <div class="panel panel-default onenews">
                      
 
