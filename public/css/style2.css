@@ -482,7 +482,7 @@ header.top-menu,.logo-block{
     border-right: 2px solid #F1F4F9;
 }
 .panel-director .panel-body{
-    padding: 15px;
+    padding: 25px 15px 15px;
 }
 .panel-director .director-title{
     position: relative;
