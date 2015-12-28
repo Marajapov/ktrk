@@ -13,7 +13,7 @@
 @section('content')
   <div class="container main-wrapper">
     <div class="row">
-    	<section class="content clearfix">
+      <section class="content clearfix">
         <div class="clearfix">
           <div class="top-left-block col-xs-12 col-sm-12 col-md-12">
             <div class="panel panel-default panel-kenesh">
@@ -22,48 +22,44 @@
               </div>
               <div class="panel-body">
 
-                <div class="col-md-12">
+                <p style="margin-bottom: 20px;">{{ $gallery->getDescription() }}</p>
+
+                <div class="col-md-12" style="margin-bottom: 15px;">
+
                   <div class="row">
-                    <div class="panel-heading second-panel-heading">
-                      
-                    </div>
-                    <div class="panel-body second-panel-body">
-
-                    <p style="margin-bottom: 20px;">{{ $gallery->getDescription() }}</p>
-
-                      <div class="col-md-12">
-
-                        <div class="row">
-                          <div class="slider-for">
-                            @if($images)
-                              @foreach($images as $image)
-                                <div>
-                                  <img class="img" src="{{ asset('froala/uploads/'.$image->name) }}" alt=""/>
+                    <div class="slider-for">
+                      @if($images)
+                        @foreach($images as $image)
+                          <div>
+                            <img class="img" src="{{ asset('froala/uploads/'.$image->name) }}" alt=""/>
                                 <span class="slide-caption hidden">
                                   {{ $gallery->getName() }}
                                 </span>
-                                </div>
-                              @endforeach
-                            @endif
                           </div>
+                        @endforeach
+                      @endif
+                    </div>
 
-                          <div class="slider-nav col-md-12">
-                            @if($images)
-                              @foreach($images as $image)
-                                <div>
-                                  <img class="img" src="{{ asset('froala/uploads/'.$image->name) }}" alt=""/>
-                                </div>
-                              @endforeach
-                            @endif
+                    <div class="slider-nav col-md-12">
+                      @if($images)
+                        @foreach($images as $image)
+                          <div>
+                            <img class="img" src="{{ asset('froala/uploads/'.$image->name) }}" alt=""/>
                           </div>
-                         
-                        </div>
-                      </div>
-
+                        @endforeach
+                      @endif
                     </div>
 
                   </div>
                 </div>
+
+                <footer>
+                  <a href="{{ route('front.gallery.galleries') }}">
+                    <span>{{ trans('site.FrontGalleryAll') }} <i class="fa fa-arrow-circle-right"></i></span>
+                  </a>
+
+                </footer>
+
               </div>
             </div>
 

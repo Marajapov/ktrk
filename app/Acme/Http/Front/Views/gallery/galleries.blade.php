@@ -20,7 +20,7 @@
               </div>
               <div class="panel-body">
 
-                <section>
+                <section class="clearfix">
                   @if($galleries)
                     @foreach($galleries as $gallery)
 
@@ -44,6 +44,32 @@
                   @endif
 
                 </section>
+
+                <nav>
+                  <ul class="pagination">
+
+                    <li>
+                      <a href="{{ route('front.gallery.galleries', ['page' => 1]) }}" class="btn btn-default @if($galleries->currentPage() == 1) disabled @endif">{{ trans('site.Start') }}</a>
+                    </li>
+                    <li>
+                      <a href="{{ $galleries->previousPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                    </li>
+                    <li>
+                      <a href="{{ $galleries->nextPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                    </li>
+
+                    @for($i = 0, $j = 1; $i < $galleries->total(); $i+=$perPage)
+                      <li>
+                        <a href="{{ route('front.gallery.galleries', ['page' => $j]) }}" class="btn btn-default @if($galleries->currentPage() == $j) active @endif">{{ $j++ }}</a>
+                      </li>
+                    @endfor
+
+                    <li>
+                      <a href="{{ route('front.gallery.galleries', ['page' => ceil($galleries->total()/$perPage)]) }}" class="btn btn-default @if($galleries->currentPage() == ceil($galleries->total()/$perPage)) disabled @endif">{{ trans('site.End') }}</a>
+                    </li>
+
+                  </ul>
+                </nav>
 
               </div>
             </div>

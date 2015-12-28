@@ -400,14 +400,15 @@ class HomeController extends Controller
     public function Galleries()
     {
         $lc = app()->getlocale();
+        $perPage = 15;
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
-        $galleries = \Model\PhotoParent\ModelName::where('extracolumn','=','1')->where('published','=',true)->orderBy('id','desc')->get();
+        $galleries = \Model\PhotoParent\ModelName::where('extracolumn','=','1')->where('published','=',true)->orderBy('id','desc')->paginate($perPage);
 
         return view('Front::gallery.galleries',[
             'lc' => $lc,
+            'perPage'=> $perPage,
             'backgroundMain' => $backgroundMain,
-
             'galleries' => $galleries,
         ]);
     }

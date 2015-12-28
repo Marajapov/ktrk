@@ -97,7 +97,7 @@
                   </div>
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-offset-2 col-md-4">
                   <div class="manager clearfix">
                     <div class="col-md-12 manager-thumb">
                       <div class="row">
