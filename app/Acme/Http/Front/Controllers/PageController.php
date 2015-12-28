@@ -345,6 +345,7 @@ class PageController extends Controller
             'positionCenter' => $this->positionCenter,
             'positionBottom' => $this->positionBottom,
         ]);
+
     }
 }
 

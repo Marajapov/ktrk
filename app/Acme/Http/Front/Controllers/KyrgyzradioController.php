@@ -10,30 +10,32 @@ class KyrgyzradioController extends Controller
 
     public function Home()
     {
-        $channel = \Model\Channel\ModelName::name('kyrgyzradio')->first();
 
-        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        return view('Front::channel.kyrgyzradio.comingsoon',[]);
+        // $channel = \Model\Channel\ModelName::name('kyrgyzradio')->first();
+
+        // $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
         
-         // Photo Gallery
-        $photoGalleries = \Model\PhotoParent\ModelName::where('kyrgyzradio','=','1')->where('published','=',true)->take('6')->orderBy('id','desc')->get();
+        //  // Photo Gallery
+        // $photoGalleries = \Model\PhotoParent\ModelName::where('kyrgyzradio','=','1')->where('published','=',true)->take('6')->orderBy('id','desc')->get();
 
-        $lc = app()->getlocale();
-        if($lc == 'kg'){
-            $allPost = \Model\Post\ModelName::where('kyrgyzradio','=',1)->languagekg()->published()->orderBy('id','desc')->get();    
-        }else{
-            $allPost = \Model\Post\ModelName::where('kyrgyzradio','=',1)->languageru()->published()->orderBy('id','desc')->get();
-        }
+        // $lc = app()->getlocale();
+        // if($lc == 'kg'){
+        //     $allPost = \Model\Post\ModelName::where('kyrgyzradio','=',1)->languagekg()->published()->orderBy('id','desc')->get();    
+        // }else{
+        //     $allPost = \Model\Post\ModelName::where('kyrgyzradio','=',1)->languageru()->published()->orderBy('id','desc')->get();
+        // }
 
-        $kyrgyzradioProjects = \Model\Project\ModelName::where('published','=',true)->where('kyrgyzradio', '=', 1)->get();
+        // $kyrgyzradioProjects = \Model\Project\ModelName::where('published','=',true)->where('kyrgyzradio', '=', 1)->get();
 
-        return view('Front::channel.kyrgyzradio.index', [
-            'channel' => $channel,
-            'backgroundMain' => $backgroundMain,
-            'photoGalleries' => $photoGalleries,
-            'allPost' => $allPost,
-            'kyrgyzradioProjects' => $kyrgyzradioProjects,
+        // return view('Front::channel.kyrgyzradio.index', [
+        //     'channel' => $channel,
+        //     'backgroundMain' => $backgroundMain,
+        //     'photoGalleries' => $photoGalleries,
+        //     'allPost' => $allPost,
+        //     'kyrgyzradioProjects' => $kyrgyzradioProjects,
 
-            ]);
+        //     ]);
     }
 
     public function Posts()

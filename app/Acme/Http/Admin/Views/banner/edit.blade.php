@@ -7,11 +7,11 @@
 	<div class="col-md-12 col-sm-12 col-xs-12">
 		<div class="x_panel">
 			<div class="x_title">
-				<h2>{{ trans('site.AdminBannerChanged') }}</h2>
-				<div class="clearfix"></div>
+				<h4>{{ trans('site.AdminBannerChanged') }}</h4>
+
 			</div>
 			<div class="x_content">
-				{!! Form::model($banner, ['route' => ['admin.banner.update', $banner], 'method' => 'PUT', 'enctype' => 'multipart/form-data']) !!}
+				{!! Form::model($banner, ['route' => ['admin.banner.update', $banner], 'method' => 'PUT', 'enctype' => 'multipart/form-data', 'class'=>'form-horizontal']) !!}
 				@include('Admin::partials.forms.banner', $banner)
 				{!! Form::close() !!}
 			</div>

@@ -10,7 +10,7 @@
         <h4>{{ trans('site.AdminChannelAddNew') }}</h4>
       </div>
 			<div class="x_content">
-				{!! Form::model($channel, ['route' => 'admin.channel.store', 'enctype' => 'multipart/form-data']) !!}
+				{!! Form::model($channel, ['route' => 'admin.channel.store', 'enctype' => 'multipart/form-data', 'class'=>'form-horizontal']) !!}
 				@include('Admin::partials.forms.channel', $channel)
 				{!! Form::close() !!}
 			</div>
