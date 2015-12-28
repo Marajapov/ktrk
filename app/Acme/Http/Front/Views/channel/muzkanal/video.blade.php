@@ -186,48 +186,50 @@
             </div>
          </div>
          <div class="col-md-3 videopage">
-         <div class="panel panel-default programtitle">
-            <div class="panel-heading">
-               <h3 class="panel-title"><span> - {{ trans('radiopages.KorsotuuList') }} - </span></h3>
-            </div>
-            @if($programs != null)
+         <div class="panel panel-video">
+               <div class="panel-heading">
+                  <div class="panel-title">
+                     <h4 class="show-title">
+                        <span>{{ trans('radiopages.KorsotuuList') }}</span>
+                     </h4>
+                  </div>
+               </div>
+            @if($program)
             <div class="centered">
                <div id="nt-example1-container" >
                   <i class="fa fa-arrow-up" id="nt-example1-prev"></i>
                   <i class="fa fa-arrow-down" id="nt-example1-next" style="right:25px;"></i>
                   <ul id="nt-example1" data-tabs="nt-example1">
-                     @foreach($programs as $key => $program)
-                     @foreach($schedules as $schedule)
-                     @if($program['date'] == $schedule->date)
-                     @for($i=0; $i<count($program)-1; $i++)
-                     <li style="display:table-row">
-                        <span>{{ $program[$i]->time }}</span>
 
-                        <h4 class="currenttime">
-                           @if(($schedule->date == $currentDate) && ($i < count($program)-2))
-                           @if((strtotime($program[$i]->time) <= strtotime($currentTime)) && (strtotime($currentTime) < strtotime($program[$i+1]->time)))
-                           @if($lc == 'kg')
-                           <section id="bcLive"></i>азыр эфирде</section>
-                           @elseif($lc == 'ru')
-                           <section id="bcLive"></i>сейчас в эфире</section>
-                           @endif
-                           @endif
-                           @elseif(($schedule->date == $currentDate) && ($i == count($program)-1))
-                           @if((strtotime($program[$i]->time) <= strtotime($currentTime)))
-                           @if($lc == 'kg')
-                           <section id="bcLive"></i>азыр эфирде</section>
-                           @elseif($lc == 'ru')
-                           <section id="bcLive"></i>сейчас в эфире</section>
-                           @endif
-                           @endif
-                           @endif
-                           <p>{{ $program[$i]->name }}</p>
-                        </h4>
-                     </li>
-                     @endfor
-                     @endif
+                     @foreach($program as $row)
+                        <li style="display:table-row;">
+
+                           <span>{{ $row->time }}</span>
+
+                           <h4>
+
+                              @if((strtotime($row->time) <= strtotime($currentTime)) && (strtotime($currentTime) < strtotime($row->time)))
+                                 @if($lc == 'kg')
+                                    <section id="bcLive"></i>азыр эфирде</section>
+                                 @elseif($lc == 'ru')
+                                    <section id="bcLive"></i>сейчас в эфире</section>
+                                 @endif
+                              @endif
+
+                              @if((strtotime($row->time) <= strtotime($currentTime)))
+                                 @if($lc == 'kg')
+                                    <section id="bcLive"></i>азыр эфирде</section>
+                                 @elseif($lc == 'ru')
+                                    <section id="bcLive"></i>сейчас в эфире</section>
+                                 @endif
+                              @endif
+
+                              <p>{{ $row->name }}</p>
+                           </h4>
+
+                        </li>
                      @endforeach
-                     @endforeach                       
+                                        
                   </ul>
                </div>
             </div>
@@ -260,22 +262,6 @@
                            </div>
                            @endforeach
 
-                        </div>
-                        <div class="carousel-slick videosfix">
-                        @foreach($relatedmuzkanalVideos2 as $relatedmuzkanalVideo2)
-                           <div class="col-md-4">
-                              <a href="{{ route('muzkanal.video', $relatedmuzkanalVideo2)}}"><img src="http://img.youtube.com/vi/{{ $relatedmuzkanalVideo2->getUrl() }}/mqdefault.jpg" alt=""/></a> 
-                              <div class="item-desc">
-                                 <ul>
-                                    <a href="{{ route('muzkanal.video', $relatedmuzkanalVideo2)}}">
-                                       <li class="item-artist">{{ $relatedmuzkanalVideo2->getViewed() }}</li>
-                                    </a>
-                                 </ul>
-                              </div>
-                              <div class="ishit">Хит!</div>
-                              <div class="views"><i class="fa fa-eye"></i>{{ $relatedmuzkanalVideo2->getViewed() }}</div>
-                           </div>
-                           @endforeach
                         </div>
                         <footer>
                            <a href="{{ route('muzkanal.videos')}}">

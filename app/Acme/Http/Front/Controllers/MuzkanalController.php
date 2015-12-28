@@ -47,36 +47,14 @@ class MuzkanalController extends Controller
         $weekDay = date('N', strtotime($now));
 
         if($channel){
-            $schedules = \Model\Schedule\ModelName::where('channel_id','=',$channel->id)->orderBy('date', 'desc')->get();
+            $schedule = \Model\Schedule\ModelName::where('channel_id','=',$channel->id)->where('date','=',$currentDate)->first();
 
-            for($i=1; $i<=7; $i++){
-                if($i < $weekDay){
-                    $weekDayNew = date('d-m-Y', strtotime('-'.($weekDay - $i).' day'));
-                    $week[] = $weekDayNew;
-                } elseif ($i > $weekDay) {
-                    $weekDayNew = date('d-m-Y', strtotime('+'.($i - $weekDay).' day'));
-                    $week[] = $weekDayNew;
-                } else {
-                    $weekDayNew = date('d-m-Y', strtotime($now));
-                    $week[] = $weekDayNew;
-                }
-            }
-            if(!empty($schedules)){
-                $programs = array();
-                foreach($schedules as $schedule){
-                    $scheduleWeek = date('N',strtotime($schedule->date));
-                    for($j=0; $j<count($week);$j++){;
-                        if(strtotime($week[$j]) == strtotime($schedule->date)){
-                            $program = json_decode($schedule->program);
-                            $programNew = array_add($program, 'date', $schedule->date);
-                            $programs[] =$programNew;
-                        }
-                    }
-                }
-                $programs = array_reverse($programs);
+            if(!empty($schedule)){
+                $program = json_decode($schedule->program);
+                // dd($program);
+                $programNew = array_add($program, 'date', $schedule->date);
             }
         }
-
 
        
         return view('Front::channel.muzkanal.index', [
@@ -100,9 +78,7 @@ class MuzkanalController extends Controller
             'currentDate' => $currentDate,
             'currentTime' => $currentTime,
             'backgroundMain' => $backgroundMain,
-            'schedules' => $schedules,
-            'programs' => $programs,
-            'week' => $week,
+            'program' => $program,
 
             ]);
     }
@@ -154,33 +130,12 @@ class MuzkanalController extends Controller
         $weekDay = date('N', strtotime($now));
 
         if($channel){
-            $schedules = \Model\Schedule\ModelName::where('channel_id','=',$channel->id)->orderBy('date', 'desc')->get();
+            $schedule = \Model\Schedule\ModelName::where('channel_id','=',$channel->id)->where('date','=',$currentDate)->first();
 
-            for($i=1; $i<=7; $i++){
-                if($i < $weekDay){
-                    $weekDayNew = date('d-m-Y', strtotime('-'.($weekDay - $i).' day'));
-                    $week[] = $weekDayNew;
-                } elseif ($i > $weekDay) {
-                    $weekDayNew = date('d-m-Y', strtotime('+'.($i - $weekDay).' day'));
-                    $week[] = $weekDayNew;
-                } else {
-                    $weekDayNew = date('d-m-Y', strtotime($now));
-                    $week[] = $weekDayNew;
-                }
-            }
-            if(!empty($schedules)){
-                $programs = array();
-                foreach($schedules as $schedule){
-                    $scheduleWeek = date('N',strtotime($schedule->date));
-                    for($j=0; $j<count($week);$j++){;
-                        if(strtotime($week[$j]) == strtotime($schedule->date)){
-                            $program = json_decode($schedule->program);
-                            $programNew = array_add($program, 'date', $schedule->date);
-                            $programs[] =$programNew;
-                        }
-                    }
-                }
-                $programs = array_reverse($programs);
+            if(!empty($schedule)){
+                $program = json_decode($schedule->program);
+                // dd($program);
+                $programNew = array_add($program, 'date', $schedule->date);
             }
         }
 
@@ -195,9 +150,7 @@ class MuzkanalController extends Controller
             'currentDate' => $currentDate,
             'currentTime' => $currentTime,
             'backgroundMain' => $backgroundMain,
-            'schedules' => $schedules,
-            'programs' => $programs,
-            'week' => $week,
+            'program' => $program,
             ]);
     }
 

@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="css/audio/muzslider.css">
 @endsection
 @section('content')
+
 <body class="music">
    <div class="switch">
       <nav class="navbar">
@@ -347,44 +348,40 @@
             <div class="panel-heading">
                <h3 class="panel-title"><span> - {{ trans('radiopages.KorsotuuList') }} - </span></h3>
             </div>
-            @if($programs != null)
+            @if($program)
             <div class="centered">
                <div id="nt-example1-container" >
                   <i class="fa fa-arrow-up" id="nt-example1-prev"></i>
                   <i class="fa fa-arrow-down" id="nt-example1-next" style="right:25px;"></i>
                   <ul id="nt-example1" data-tabs="nt-example1">
-                     @foreach($programs as $key => $program)
-                     @foreach($schedules as $schedule)
-                     @if($program['date'] == $schedule->date)
-                     @for($i=0; $i<count($program)-1; $i++)
-                     <li>
-                        <span>{{ $program[$i]->time }}</span>
+                     @foreach($program as $row)
+                        <li style="">
 
-                        <h4 class="currenttime">
-                           @if(($schedule->date == $currentDate) && ($i < count($program)-2))
-                           @if((strtotime($program[$i]->time) <= strtotime($currentTime)) && (strtotime($currentTime) < strtotime($program[$i+1]->time)))
-                           @if($lc == 'kg')
-                           <section id="bcLive"></i>азыр эфирде</section>
-                           @elseif($lc == 'ru')
-                           <section id="bcLive"></i>сейчас в эфире</section>
-                           @endif
-                           @endif
-                           @elseif(($schedule->date == $currentDate) && ($i == count($program)-1))
-                           @if((strtotime($program[$i]->time) <= strtotime($currentTime)))
-                           @if($lc == 'kg')
-                           <section id="bcLive"></i>азыр эфирде</section>
-                           @elseif($lc == 'ru')
-                           <section id="bcLive"></i>сейчас в эфире</section>
-                           @endif
-                           @endif
-                           @endif
-                           <p>{{ $program[$i]->name }}</p>
-                        </h4>
-                     </li>
-                     @endfor
-                     @endif
-                     @endforeach
-                     @endforeach                       
+                           <span>{{ $row->time }}</span>
+
+                           <h4>
+
+                              <!-- @if((strtotime($row->time) <= strtotime($currentTime)) && (strtotime($currentTime) < strtotime($row->time)))
+                                 @if($lc == 'kg')
+                                    <section id="bcLive"></i>азыр эфирде</section>
+                                 @elseif($lc == 'ru')
+                                    <section id="bcLive"></i>сейчас в эфире</section>
+                                 @endif
+                              @endif
+
+                              @if((strtotime($row->time) <= strtotime($currentTime)))
+                                 @if($lc == 'kg')
+                                    <section id="bcLive"></i>азыр эфирде</section>
+                                 @elseif($lc == 'ru')
+                                    <section id="bcLive"></i>сейчас в эфире</section>
+                                 @endif
+                              @endif -->
+
+                              <p>{{ $row->name }}</p>
+                           </h4>
+
+                        </li>
+                     @endforeach                     
                   </ul>
                </div>
             </div>
@@ -571,34 +568,17 @@
       </div>
    </div>
    @stop
-   @section('footerscript2')
-   <script src="js/jquery-1.11.2.min.js"></script>
-   <script src="js/bootstrap.min.js"></script> 
-   <script>
-      $(document).ready(function () {
-          $(".search-toggle").click(function () {
-              $(".logo-block").addClass("search-show");
-              $(".form-search").addClass("visible");
-          });
-          $(".close-search").click(function () {
-              $(".logo-block").removeClass("search-show");
-              $(".form-search").removeClass("visible");
-          });
-      });
-   </script>   
 
-   </script>
+   @section('footerscript2') 
+
    <script src="js/audio/dkp.min.js"></script>
-   <script type="text/javascript" src="filter/js/jquery.easing.min.js"></script>
-   <script type="text/javascript" src="filter/js/jquery.mixitup.min.js"></script>
-   <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
-   <script type="text/javascript" src="slick/slick.min.js"></script>
    <script type="text/javascript" src="js/jquery.roundabout.js"></script>
    <!-- Fixed Sticky header -->
    <script type ="text/javascript" src ="js/script.js"></script>   
    <!-- Fixed Sticky header -->
    <!-- Programm title Anima -->
    <script src="js/audio/jquery.newsTicker.js"></script> 
+
    <script>
       var nt_title = $('#nt-title').newsTicker({
           row_height: 30,
@@ -620,10 +600,7 @@
       var add;
       
    </script>
-   <!-- Ptogramm title Anima -->
-   <script src="{{ asset('jwplayer/jwplayer.js') }}"></script>
 
-   <script>jwplayer.key = "tmEO2SU8NzqLBoHr2Vq6nV13XCyfo8xbdiCb/Q==";</script>
    <script type="text/javascript">
       var playerInstance = jwplayer("player");
       
@@ -689,4 +666,5 @@
       }
       
    </script>
+
    @stop
