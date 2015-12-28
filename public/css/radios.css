@@ -948,7 +948,7 @@
 }
 .featured_title_over h2,
 .featured_title_wrapper h2{
-  font-size: 24px;
+  font-size: 16px;
   line-height: 1.325em;
   color: #FFF;
   text-shadow: rgba(0,0,0,.6) 0 0 5px;
@@ -968,6 +968,7 @@
       -ms-transition: all .2s ease-in-out;
        -o-transition: all .2s ease-in-out;
           transition: all .2s ease-in-out;
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.8) 70%);
 }
 .featured_title_under h2 a,
 .featured_title_over h2 a{
