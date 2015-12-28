@@ -156,6 +156,7 @@
                 <div class="features">
                     @if($dostukProjects) 
                     @foreach($dostukProjects as $key=> $project)
+                    @foreach($project->program()->get() as $post)
 
                     <div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="100ms">
                         <div class="media service-box">
@@ -214,6 +215,7 @@
                             </div>
                         </div>
                     </div><!--/.col-md-4-->
+                    @endforeach
                     @endforeach
                     @endif
                                       

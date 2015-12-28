@@ -36,6 +36,7 @@ Route::group(['domain' => 'beta.ktrk.kg', 'prefix' => '/music', 'namespace' => '
     Route::get('/posts', ['as' => 'muzkanal.posts',   'uses' => 'MuzkanalController@posts']);
     Route::get('/radio', ['as' => 'muzkanal.radio',   'uses' => 'MuzkanalController@radio']);
     Route::get('/about', ['as' => 'muzkanal.about',   'uses' => 'MuzkanalController@about']);
+    
     Route::get('/video/{video}', ['as' => 'muzkanal.video',   'uses' => 'MuzkanalController@video']);
     Route::get('/videos', ['as' => 'muzkanal.videos',   'uses' => 'MuzkanalController@videos']);
     Route::get('/hitparad', ['as' => 'muzkanal.hitparad',   'uses' => 'MuzkanalController@hitparad']);
@@ -79,7 +80,7 @@ Route::group(['domain' => 'beta.ktrk.kg', 'prefix' => '/kyrgyzradio', 'namespace
     Route::get('/news/{post}', ['as' => 'kyrgyzradio.news',   'uses' => 'KyrgyzradioController@news']);
     Route::get('allnews', ['as' => 'kyrgyzradio.allnews',   'uses' => 'KyrgyzradioController@allnews']);
     Route::get('/allphotos',['as' => 'kyrgyzradio.allphotos','uses'=> 'KyrgyzradioController@allphotos'] );
-    Route::get('/project/{project}',['as' => 'kyrgyzradio.project','uses'=> 'KyrgyzradioController@project'] ); 
+    Route::get('/project/{project}',['as' => 'kyrgyzradio.project','uses'=> 'KyrgyzradioController@project'] );    
 
 });
 
