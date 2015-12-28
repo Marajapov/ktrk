@@ -83,7 +83,7 @@ class ModelName extends Model
         if($this->ns == '1') $result .= ', '.trans('site.BaikoochuKenesh');
         if($this->rs == '1') $result .= ', '.trans('site.RedKenesh');
         if($this->director == '1') $result .= ', Ген.директор';
-        if($this->muzkanal == '1') $result .= ', Музканал';
+        if($this->muzkanal == '1') $result .= ', Музыка';
         if($this->kyrgyzradio == '1') $result .= ', Кыргыз радио';
         if($this->birinchi == '1') $result .= ', Биринчи радио';
         if($this->balastan == '1') $result .= ', Баластан';

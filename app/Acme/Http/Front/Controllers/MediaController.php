@@ -5,6 +5,8 @@ use Illuminate\Http\Request;
 
 class MediaController extends Controller
 {
+    protected $positionTop, $positionRight, $positionCenter, $positionBottom;
+
     public function __construct()
     {
         $this->positionTop = \Model\Banner\ModelName::where('positionTop','=','1')->first();
@@ -55,7 +57,12 @@ class MediaController extends Controller
             'backgroundMain' => $backgroundMain,
             'categoriesVideos' => $categoriesVideos,
             'topCategoriesVideos' => $topCategoriesVideos,
-            'mediaPops' => $mediaPops
+            'mediaPops' => $mediaPops,
+
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
             ]);
     }
 
@@ -128,6 +135,11 @@ class MediaController extends Controller
             'projectList' => $projectList,
             'categories'=>$categories,
             'backgroundMain' => $backgroundMain,
+
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
         ]);
     }
 
@@ -147,13 +159,17 @@ class MediaController extends Controller
         return view('Front::media.project',[
                 
                 'project' => $project,
-//                'MediaCategories'       => $MediaCategories,
 
                 'mainBanner'   => $mainBanner,
                 'categories'=>$categories,
                 'projectList' => $projectList,
                 'backgroundMain' => $backgroundMain,
                 'relatedVideos' => $relatedVideos,
+
+                'positionTop'    => $this->positionTop,
+                'positionRight'  => $this->positionRight,
+                'positionCenter' => $this->positionCenter,
+                'positionBottom' => $this->positionBottom,
 
             ]
         );
@@ -176,8 +192,12 @@ class MediaController extends Controller
             'projectList' => $projectList,
             'backgroundMain' => $backgroundMain,
             'allVideos' => $allVideos,
-            ]
-        );
+
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
+        ]);
     }
 
 }
