@@ -5,32 +5,85 @@
 <div class="row modals">
   <div class="col-md-12 col-sm-12 col-xs-12">
 <div class="x_panel">
-      <div class="x_title">
-        <h2>{{ trans('site.Info') }}</h2>
-        <div class="clearfix"></div>
-      </div>  
-    <div class="col-md-12">
-      <h2><span class="label label-default"></span>{{ $photoChild->getName() }}</h2>
-    </div>
+      <div class="x_title clearfix">
 
-    <div class="col-md-4">
-      {!! Form::open(['route' => ['admin.photoChild.destroy', $photoChild], 'method' => 'DELETE', 'onsubmit' => "return confirm('Вы уверены ?')"]) !!}
-      <a href="{{ route('admin.photoChild.edit', $photoChild) }}" class="btn btn-labeled btn-success"><span class="btn-label"><i class="glyphicon glyphicon-cog"></i></span>{{ trans('site.Change') }}</a>
-      <button class="btn btn-labeled btn-danger" type="submit"><span class="btn-label"><i class="glyphicon glyphicon-remove"></i></span>{{ trans('site.Delete') }}</button>
+          <h4>{{ trans('site.Info') }}</h4>
 
-      {!! Form::close() !!}
-    </div>
+          <a href="{{ route('admin.photoChild.index') }}" class="btn btn-default pull-right btn-back">{{ trans('site.Back') }}</a>
+
+          {!! Form::open(['route' => ['admin.photoChild.destroy', $photoChild], 'method' => 'DELETE', 'onsubmit' => "return confirm('Вы уверены ?')"]) !!}
+          <button type="submit" class="btn btn-danger" href="#">
+            <i class="fa fa-times"></i>
+            {{ trans('site.Delete') }}
+          </button>
+          {!! Form::close() !!}
+
+          <a href="{{ route('admin.photoChild.edit', $photoChild) }}" class="btn btn-success pull-right">
+            <i class="fa fa-edit"></i>
+            {{ trans('site.Change') }}
+          </a>
+
+      </div> 
+
+      <div class="x_content post-info clearfix">
+        <ul class="list-group">
+          <li class="list-group-item">
+            <p class="header">Файл</p>
+            <p class="body">@if($photoChild->isImage())
+              <img src="{{ asset($photoChild->getFile()) }}" width="200" height="120">
+              @else
+              <object width="200" height="120" type="application/x-shockwave-flash" data="{{ asset($photoChild->getFile()) }}"></object>
+              @endif
+            </p>
+          </li>
+
+          <li class="list-group-item">
+            <p class="header">{{ trans('site.TitleKG') }}</p>
+            <p class="body">{{ $photoChild->name }}</p>
+          </li>
+
+          <li class="list-group-item">
+            <p class="header">{{ trans('site.TitleRU') }}</p>
+            <p class="body">{{ $photoChild->nameRu }}</p>
+          </li>
+
+          <li class="list-group-item">
+            <p class="header">Фото галерея</p>
+            <p class="body">{{ $photoChild->PhotoParentList }}</p>
+          </li>
+
+          <li class="list-group-item">
+            <p class="header">Источник на кыргызском</p>
+            <p class="body">{{ $photoChild->description }}</p>
+          </li>
+
+          <li class="list-group-item">
+            <p class="header">Источник на русском</p>
+            <p class="body">{{ $photoChild->descriptionRu }}</p>
+          </li>
+
+          <li class="list-group-item">
+            <p class="header">Таг на кыргызском</p>
+            <p class="body">{{ $photoChild->photoTag }}</p>
+          </li>
+
+          <li class="list-group-item">
+            <p class="header">Таг на русском</p>
+            <p class="body">{{ $photoChild->photoTagRu }}</p>
+          </li>
+
+          <li class="list-group-item">
+            <p class="header">{{ trans('site.AdminPostCreatedDate') }}</p>
+            <p class="body">{{ $photoChild->getDateFormatted() }}</p>
+          </li>
+        </ul>
+
+      </div>
+
+    
+
+   
   </div>
-  <div class="col-md-12"><hr></div>
-  <div class="panel-body">
-    @if($photoChild->isImage())
-    <img src="{{ asset($photoChild->getFile()) }}" width="200" height="120">
-    @else
-    <object width="200" height="120" type="application/x-shockwave-flash" data="{{ asset($photoChild->getFile()) }}"></object>
-    @endif
-
-  </div>
-</div>
 </div>
 </div>
 @stop

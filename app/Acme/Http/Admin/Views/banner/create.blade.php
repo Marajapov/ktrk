@@ -7,12 +7,11 @@
 	<div class="col-md-12 col-sm-12 col-xs-12">
 		<div class="x_panel">
 			<div class="x_title">
-				<h2>{{ trans('site.AdminBannerCreate') }}</h2>
-
-				<div class="clearfix"></div>
+				<h4>{{ trans('site.AdminBannerCreate') }}</h4>
 			</div>
+
 			<div class="x_content">
-				{!! Form::model($banner, ['route' => 'admin.banner.store', 'enctype' => 'multipart/form-data']) !!}
+				{!! Form::model($banner, ['route' => 'admin.banner.store', 'enctype' => 'multipart/form-data', 'class'=>'form-horizontal']) !!}
 				@include('Admin::partials.forms.banner', $banner)
 				{!! Form::close() !!}
 
@@ -25,6 +24,7 @@
 
 @section('styles')
 <link rel="stylesheet" href="{{ asset('css/admin/select/select2.min.css') }}"/>
+<script type="text/javascript" src="{{ asset('js/bootstrap-select.js') }}"></script>
 @stop
 
 @section('scripts')
