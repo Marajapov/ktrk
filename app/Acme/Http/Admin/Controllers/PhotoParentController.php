@@ -178,6 +178,7 @@ class PhotoParentController extends Controller
                 $destinationPath = 'froala/uploads';
                 $storage->makeDirectory($destinationPath);
                 $filename = time().$key.'.'.$file->getClientOriginalExtension();
+                $name2 = $photoParent->id().$btw.'_big.'.$file->getClientOriginalExtension();
 
 //                $upload_success = $file->move($destinationPath, $filename);
 
@@ -207,16 +208,17 @@ class PhotoParentController extends Controller
             $btw = time();
 
             $name = $photoParent->id().$btw.'.'.$file->getClientOriginalExtension();
-
-//            $manager = new ImageManager(array('driver' => 'imagick'));
+            $name2 = $photoParent->id().$btw.'_big.'.$file->getClientOriginalExtension();
 
             $storage = \Storage::disk('public');
             $storage->makeDirectory($dir);
 
 //            Image::make($_FILES['status']['tmp_name'])->resize(250, 150)->save($dir.'/'.$name);
             Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->save($dir.'/'.$name);
+            Image::make($_FILES['status']['tmp_name'])->fit(300, 180)->save($dir.'/'.$name2);
 
             $photoParent->status = $dir.'/'.$name;
+            $photoParent->thumbnail_big = $dir.'/'.$name2;
             $photoParent->save();
         }
 

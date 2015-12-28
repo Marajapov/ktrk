@@ -314,6 +314,11 @@ class HomeController extends Controller
             'categories'=>$categories,
             'backgroundMain' => $backgroundMain,
 
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
+
             ]
             );
     }

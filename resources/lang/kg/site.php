@@ -12,10 +12,12 @@ return [
     | these language lines according to your application's requirements.
     |
     */
-
+    
     'Top news' => 'Жаңылыктар',
     'All news' => 'Бардык',
     'Info' => 'Маалымат',
+
+    'AdminPostThemeRu' => 'Темага материалдар орусча',
 
     'Ktrk' => 'Коомдук телерадиоберүү корпорациясы',
 
