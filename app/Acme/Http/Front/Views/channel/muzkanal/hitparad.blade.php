@@ -85,14 +85,11 @@
                      <!-- Collect the nav links, forms, and other content for toggling -->
                      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
-                           <li><a href="{{ route('muzkanal.about') }}"></i>{{ trans('radiopages.Mabout') }}</a></li>
-                           <li>
-                              <a href="{{ route('muzkanal.hitparad') }}">
-                                 <i class="fa fa-microphone"></i>Хит-Парад <!-- <span class="caret"></span> -->
-                              </a>
-                           </li>
-                           <li><a href="{{ route('muzkanal.allphotos') }}"><i class="fa fa-picture-o"></i>{{ trans('radiopages.Photos') }}</a></li>
-                           <li><a href="{{ route('muzkanal.videos') }}"><i class="fa fa-youtube-play"></i>{{ trans('radiopages.Clips') }}</a></li>
+                          <li><a href="{{ route('muzkanal.about') }}"></i>{{ trans('radiopages.Mabout') }}</a></li>
+                          <li><a class="active" href="{{ route('muzkanal.hitparad') }}"><i class="fa fa-microphone"></i>Хит-Парад</a></li>
+                          <li><a href="{{ route('muzkanal.allphotos') }}"><i class="fa fa-picture-o"></i>{{ trans('radiopages.Photos') }}</a></li>
+                          <li><a href="{{ route('muzkanal.videos') }}"><i class="fa fa-youtube-play"></i>{{ trans('radiopages.Clips') }}</a></li>
+                          <li><a href="{{ route('muzkanal.teleprogram') }}"><i class="fa fa-television"></i>{{ trans('site.Teleprogram') }}</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right logo-block">
                            <ul class="soc socmuz">

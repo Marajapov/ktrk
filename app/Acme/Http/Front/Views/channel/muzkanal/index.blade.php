@@ -93,6 +93,7 @@
                            </li>
                            <li><a href="{{ route('muzkanal.allphotos') }}"><i class="fa fa-picture-o"></i>{{ trans('radiopages.Photos') }}</a></li>
                            <li><a href="{{ route('muzkanal.videos') }}"><i class="fa fa-youtube-play"></i>{{ trans('radiopages.Clips') }}</a></li>
+                           <li><a href="{{ route('muzkanal.teleprogram') }}"><i class="fa fa-television"></i>{{ trans('site.Teleprogram') }}</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right logo-block">
                            <ul class="soc socmuz">
@@ -142,17 +143,17 @@
             <div id="dkp-slideshow-left"></div>
             <div class="row dkp-slide">
                <a href="#">
-                  <div class="col-sm-12 dkp-anonce dkp-anonce-big" style="background-image: url(images/channels/muzkanal/12.png);">
+                  <div class="col-sm-12 dkp-anonce dkp-anonce-big" style="background-image: url(images/channels/muzkanal/hit-parad.jpg);">
                      <div class="dkp-anonce-time">
                         <span>21:00</span>
                      </div>
                      <div class="dkp-anonce-title">
-                        Анжелика - Кызыма
+                        Хит-Парад ТОП-10
                      </div>
                      <div class="dkp-anonce-when">
                         <span>
                         <span>
-                        ЭКЛЮЗИВ
+                        Ар Жекшемби
                         </span>
                         </span>
                      </div>
@@ -161,12 +162,12 @@
             </div>
             <div class="row dkp-slide slide-left">
                <a href="#">
-                  <div class="col-sm-12 dkp-anonce dkp-anonce-big" style="background-image: url(images/channels/muzkanal/14.jpg);">
+                  <div class="col-sm-12 dkp-anonce dkp-anonce-big" style="background-image: url(images/channels/muzkanal/);">
                      <div class="dkp-anonce-time">
                         <span>21:30</span>
                      </div>
                      <div class="dkp-anonce-title">
-                        Хит-Парад ТОП-10
+                        ...
                      </div>
                      <div class="dkp-anonce-when">
                         <span>
@@ -180,12 +181,12 @@
             </div>
             <div class="row dkp-slide slide-left">
                <a href="#">
-                  <div class="col-sm-12 dkp-anonce dkp-anonce-big" style="background-image: url(images/channels/muzkanal/soon.jpg);">
+                  <div class="col-sm-12 dkp-anonce dkp-anonce-big" style="background-image: url(images/channels/muzkanal/);">
                      <div class="dkp-anonce-time">
                         <span>18:30</span>
                      </div>
                      <div class="dkp-anonce-title">
-                        Жаңы программа. 
+                        ... 
                      </div>
                      <div class="dkp-anonce-when">
                         <span>
@@ -204,7 +205,7 @@
       
       @if($anons1)
          <div class="col-xs-4 rowfix" >
-            <a href="#" data-toggle="modal" data-target="#myModal" class="dkp-anonce dkp-anonce-small  dkp-border" style="background-image: url({{ $anons1->thumbnail }});" >
+            <a href="#" data-toggle="modal" data-target="#myModal" class="dkp-anonce dkp-anonce-small  dkp-border" style="background-image: url({{ $anons1->thumbnail_big }});" >
                <div class="dkp-3now-item-wrapper">
                   <div class="dkp-3now-item-time">
                      <span>
@@ -243,7 +244,7 @@
       @if($anons2)
 
          <div class="col-xs-4 rowfix" >
-            <a href="#" data-toggle="modal" data-target="#myModal2" class="dkp-anonce dkp-anonce-small  dkp-border" style="background-image: url({{ $anons2->thumbnail }});" data-id="12269">
+            <a href="#" data-toggle="modal" data-target="#myModal2" class="dkp-anonce dkp-anonce-small  dkp-border" style="background-image: url({{ $anons2->thumbnail_big }});" data-id="12269">
                <div class="dkp-3now-item-wrapper">
                   <div class="dkp-3now-item-time">
                      <span>
@@ -281,7 +282,7 @@
       @if($anons3)
 
          <div class="col-xs-4 rowfix" >
-            <a href="#" data-toggle="modal" data-target="#myModal3" class="dkp-anonce dkp-anonce-small  dkp-border" style="background-image: url({{ $anons3->thumbnail }});" data-id="12269">
+            <a href="#" data-toggle="modal" data-target="#myModal3" class="dkp-anonce dkp-anonce-small  dkp-border" style="background-image: url({{ $anons3->thumbnail_big }});" data-id="12269">
                <div class="dkp-3now-item-wrapper">
                   <div class="dkp-3now-item-time">
                      <span>
@@ -339,51 +340,53 @@
                @endif
 
             </div>
-            <div class="panel panel-default programtitle">
-               <div class="panel-heading">
-                  <h3 class="panel-title"><span> - {{ trans('radiopages.KorsotuuList') }} - </span></h3>
-               </div>
-               <div class="centered">
-                  <div id="nt-example1-container">
-                     <i class="fa fa-arrow-up" id="nt-example1-prev"></i>
-                     <i class="fa fa-arrow-down" id="nt-example1-next" style="right:25px;"></i>
-                     <ul id="nt-example1">
-                        <li>
-                           <span>13:00</span>
-                           <h4>Хит-Парад ТОП-10</h4>
-                        </li>
-                        <li>
-                           <span>14:00</span>
-                           <h4>Ырдайлы кыргыз ырларын</h4>
-                        </li>
-                        <li>
-                           <span>15:00</span>
-                           <h4>Орто Азия хиттери.</h4>
-                        </li>
-                        <li>
-                           <span>16:00</span>
-                           <h4>Айылдын таланттары конокто</h4>
-                        </li>
-                        <li>
-                           <span>17:00</span>
-                           <h4>Атабековдон кем эмес</h4>
-                        </li>
-                        <li>
-                           <span>18:00</span>
-                           <h4>90-жылдардын дискотекасы</h4>
-                        </li>
-                        <li>
-                           <span>19:00</span>
-                           <h4>Кайдасың менин 18 жашым</h4>
-                        </li>
-                        <li>
-                           <span>20:00</span>
-                           <h4>Хит-Парад ТОП-10</h4>
-                        </li>
-                     </ul>
-                  </div>
+         <div class="panel panel-default programtitle">
+            <div class="panel-heading">
+               <h3 class="panel-title"><span> - {{ trans('radiopages.KorsotuuList') }} - </span></h3>
+            </div>
+            @if($programs != null)
+            <div class="centered">
+               <div id="nt-example1-container" >
+                  <i class="fa fa-arrow-up" id="nt-example1-prev"></i>
+                  <i class="fa fa-arrow-down" id="nt-example1-next" style="right:25px;"></i>
+                  <ul id="nt-example1" data-tabs="nt-example1">
+                     @foreach($programs as $key => $program)
+                     @foreach($schedules as $schedule)
+                     @if($program['date'] == $schedule->date)
+                     @for($i=0; $i<count($program)-1; $i++)
+                     <li>
+                        <span>{{ $program[$i]->time }}</span>
+
+                        <h4 class="currenttime">
+                           @if(($schedule->date == $currentDate) && ($i < count($program)-2))
+                           @if((strtotime($program[$i]->time) <= strtotime($currentTime)) && (strtotime($currentTime) < strtotime($program[$i+1]->time)))
+                           @if($lc == 'kg')
+                           <section id="bcLive"></i>азыр эфирде</section>
+                           @elseif($lc == 'ru')
+                           <section id="bcLive"></i>сейчас в эфире</section>
+                           @endif
+                           @endif
+                           @elseif(($schedule->date == $currentDate) && ($i == count($program)-1))
+                           @if((strtotime($program[$i]->time) <= strtotime($currentTime)))
+                           @if($lc == 'kg')
+                           <section id="bcLive"></i>азыр эфирде</section>
+                           @elseif($lc == 'ru')
+                           <section id="bcLive"></i>сейчас в эфире</section>
+                           @endif
+                           @endif
+                           @endif
+                           <p>{{ $program[$i]->name }}</p>
+                        </h4>
+                     </li>
+                     @endfor
+                     @endif
+                     @endforeach
+                     @endforeach                       
+                  </ul>
                </div>
             </div>
+            @endif
+         </div>
          </div>
       </div>
       <div class="row">
@@ -594,20 +597,21 @@
    <script type ="text/javascript" src ="js/script.js"></script>   
    <!-- Fixed Sticky header -->
    <!-- Programm title Anima -->
-   <script src="js/audio/jquery.newsTicker.js"></script>
+   <script src="js/audio/jquery.newsTicker.js"></script> 
    <script>
       var nt_title = $('#nt-title').newsTicker({
           row_height: 30,
           max_rows: 1,
           duration: 3000,
-          pauseOnHover: 0
+          pauseOnHover: 1
       });
       var nt_example1 = $('#nt-example1').newsTicker({
           row_height: 30,
           max_rows: 3,
           duration: 4000,
           prevButton: $('#nt-example1-prev'),
-          nextButton: $('#nt-example1-next')
+          nextButton: $('#nt-example1-next'),
+
       });
       
       var state = 'stopped';
@@ -616,46 +620,6 @@
       
    </script>
    <!-- Ptogramm title Anima -->
-   <script type="text/javascript">
-      $(function () {
-      
-          var filterList = {
-              init: function () {
-      
-                  // MixItUp plugin
-                  // http://mixitup.io
-                  $('#portfoliolist').mixitup({
-                      showOnLoad: 'all-videos',
-                      targetSelector: '.portfolio',
-                      filterSelector: '.filter',
-                      effects: ['fade'],
-                      easing: 'snap',
-                      // call the hover effect
-                      onMixEnd: filterList.hoverEffect()
-                  });
-      
-              },
-              hoverEffect: function () {
-      
-                  // Simple parallax effect
-                  $('#portfoliolist .portfolio').hover(
-                          function () {
-                              $(this).find('.label').stop().animate({bottom: 0}, 200, 'easeOutQuad');
-                              $(this).find('img').stop().animate({top: -40}, 250, 'easeOutQuad');
-                          },
-                          function () {
-                              $(this).find('.label').stop().animate({bottom: -40}, 200, 'easeInQuad');
-                              $(this).find('img').stop().animate({top: 0}, 300, 'easeOutQuad');
-                          }
-                  );
-      
-              }
-      
-          };
-          // Run the show!
-          filterList.init();
-      });
-   </script>
    <script src="{{ asset('jwplayer/jwplayer.js') }}"></script>
    <script>jwplayer.key = "tmEO2SU8NzqLBoHr2Vq6nV13XCyfo8xbdiCb/Q==";</script>
    <script type="text/javascript">

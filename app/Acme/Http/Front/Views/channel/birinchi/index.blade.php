@@ -124,7 +124,7 @@
                         {{ trans('radiopages.Prperedach') }}
                         </a>
                      </li>
-                     <li><a href="{{ route('birinchi.photos') }}"> {{ trans('radiopages.Photos') }}</a></li>
+                     <li><a href="{{ route('birinchi.allphotos') }}"> {{ trans('radiopages.Photos') }}</a></li>
                   </ul>
                   <ul class="nav navbar-nav navbar-right logo-block onesearch">
                      <a class="search-toggle"><i class="fa fa-search"></i></a>
@@ -244,7 +244,7 @@
                               <a class="media-heading" href="{{ route('birinchi.news', $post) }}">{{ $post->getTitleRuOrKg() }}</a>
 
                               <p>
-                                 {!! substr($post->getContent(),0,205) !!}
+                                 {!! mb_substr($post->getContent(), 0, 290, "UTF-8") !!}
                               </p>
                               
                            </div>
@@ -321,9 +321,9 @@
                         <div class="featured_date">
                            <p>{{ $photoGallery->getDay() }} {{ $photoGallery->getMonthRu() }}, {{ $photoGallery->getTime() }}</p>
                         </div>
-                        <div class="featured_cat">
-                         <!--<p>Спорт</p> -->
-                        </div>
+<!--                         <div class="featured_cat">
+                           <p>Спорт</p>
+                        </div> -->
                         <a href="{{ route('birinchi.photos', $photoGallery) }}" class="f_overlay"></a>
                         <div class="featured_title_over" style="bottom: 0px;">
                            <h2><a href="{{ route('birinchi.photos', $photoGallery) }}">{{ $photoGallery->getName() }}</a></h2>

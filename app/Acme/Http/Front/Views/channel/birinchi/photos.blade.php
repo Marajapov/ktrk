@@ -130,7 +130,7 @@
                            {{ trans('radiopages.Prperedach') }}
                         </a>
                      </li>
-                     <li><a class="active" href="{{ route('birinchi.photos') }}"> {{ trans('radiopages.Photos') }}</a></li>
+                     <li><a class="active" href="{{ route('birinchi.allphotos') }}"> {{ trans('radiopages.Photos') }}</a></li>
                   </ul>
                   <ul class="nav navbar-nav navbar-right logo-block onesearch">
                      <a class="search-toggle"><i class="fa fa-search"></i></a>
@@ -157,7 +157,7 @@
 </div>
     <div class="container">
         <div class="row">
-         <div class="top-left-block col-md-12">
+         <div class="top-left-block col-md-12" style="padding:0px;">
             <div class="panel panel-default onenews">
                      
 

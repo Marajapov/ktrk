@@ -13,6 +13,8 @@ return [
     |
     */
 
+    // abakan added
+    'AdminPostThemeRu' => 'Материалы по теме',
     'Top news' => 'Новости',
     'All news' => 'Все новости',
 
