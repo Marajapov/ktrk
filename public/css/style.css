@@ -4171,7 +4171,7 @@ ul.social-share li a:hover {
     padding: 0px;
     color: #fff;
     font-size: 18px;
-    height: 90px;
+    height: 56px;
 }
 .kidsvblock .panel-body {
     padding: 0px 100px;
@@ -4200,8 +4200,7 @@ ul.social-share li a:hover {
     margin-top: 20px;
 }
 .boardaim .item-desc .item-artist, .item-desc2 .item-artist{
-    color: #fff;
-    
+    color: #fff; 
 }
 .boardimg{
     position: absolute;

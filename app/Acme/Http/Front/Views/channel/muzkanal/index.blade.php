@@ -162,7 +162,7 @@
 
             </div>
             
-{{--             <div class="row dkp-slide slide-left">
+{{--        <div class="row dkp-slide slide-left">
                <a href="#">
                   <div class="col-sm-12 dkp-anonce dkp-anonce-big" style="background-image: url(images/channels/muzkanal/);">
                      <div class="dkp-anonce-time">
@@ -199,8 +199,8 @@
                      </div>
                   </div>
                </a>
+<<<<<<< HEAD
             </div> --}}
-
          </div>
       </div>
 
@@ -586,9 +586,7 @@
           });
       });
    </script>   
-   <script>
-      var serverTZoffset = 360;
-   </script>
+
    </script>
    <script src="js/audio/dkp.min.js"></script>
    <script type="text/javascript" src="filter/js/jquery.easing.min.js"></script>
@@ -624,6 +622,7 @@
    </script>
    <!-- Ptogramm title Anima -->
    <script src="{{ asset('jwplayer/jwplayer.js') }}"></script>
+
    <script>jwplayer.key = "tmEO2SU8NzqLBoHr2Vq6nV13XCyfo8xbdiCb/Q==";</script>
    <script type="text/javascript">
       var playerInstance = jwplayer("player");
