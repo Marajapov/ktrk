@@ -19,14 +19,14 @@
 
     <div class="form-group">
       <label for="channel_id" class="col-sm-2 control-label">Канал</label>
-      <div class="col-sm-10">
-        {!! Form::select('channel_id', \Model\Channel\ModelName::lists('display', 'id')->toArray(), null, ["class" => "selectpicker","data-live-search"=>"true", "title" => "-- Выберите --"]) !!}
+      <div class="col-sm-10" style="padding-top: 7px;">
+        {!! Form::select('channel_id', \Model\Channel\ModelName::lists('display', 'id')->toArray(), null, ["class" => "selectpicker","data-live-search"=>"true", "required" => true, "title" => "-- Выберите --"]) !!}
       </div>
     </div>
 
     <div class="form-group">
       <label for="channel_id" class="col-sm-2 control-label">Роль</label>
-      <div class="col-sm-10">
+      <div class="col-sm-10" style="padding-top: 7px;">
         {!! Form::select('role', ['ADMIN' => 'admin', 'MANAGER' => 'manager', 'NS'=>'ns','BIRINCHI'=> 'birinchi', 'MUZKANAL'=> 'muzkanal'], null, ["class" => "selectpicker","data-live-search"=>"true", "title" => "-- Выберите --"]) !!}
       </div>
     </div>
