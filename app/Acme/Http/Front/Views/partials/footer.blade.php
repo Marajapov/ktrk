@@ -126,5 +126,7 @@
 
 @yield('footerScript')
 
+@yield('footerscript2')
+
 </body>
 </html>

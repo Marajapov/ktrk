@@ -30,11 +30,12 @@
     <style>
         body{
 
-            @if($backgroundMain != null) background: url('{{ asset($backgroundMain->getFile()) }}') no-repeat;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-position: center;
-            background-size: cover;
+            @if($backgroundMain != null) 
+                background: url('{{ asset($backgroundMain->getFile()) }}') no-repeat;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-position: center;
+                background-size: cover;
             @endif
         }
     </style>
@@ -58,12 +59,6 @@
         window.onload = init();
     </script>
 
-  <!-- 1. skin -->
-  <link rel="stylesheet" href="{{ asset('flowplayer/skin/functional.css') }}">
-
-  <!-- 3. flowplayer -->
-  <script src="{{ asset('flowplayer/flowplayer.min.js') }}"></script>
-
 </head>
 <body>
 
@@ -73,5 +68,4 @@
     @include('Front::partials.banner')
     @yield('content')
     @include('Front::partials.footer')
-    @yield('footerscript2')
     
