@@ -17,7 +17,13 @@
                                 @foreach(\Model\Menu\ModelName::code('main')->parent()->get() as $menu)
                                     @if(count($menu->submenus) > 0)
                                     <li>
-                                        <a href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="100" data-close-others="false" role="button" aria-expanded="false">{{ $menu->getName() }}</a>
+                                        <a href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="100" data-close-others="false" role="button" aria-expanded="false">
+                                          @if(app()->getlocale() == 'kg')
+                                            {{ $menu->getName() }}
+                                          @else
+                                            {{ $menu->getNameRu() }}
+                                          @endif
+                                        </a>
                                         <ul class="dropdown-menu" role="menu">
                                             @foreach($menu->submenus as $submenu)
                                             <li><a href="{{ $submenu->getUrl() }}">@if(app()->getlocale() == 'kg'){{ $submenu->getName() }} @else {{ $submenu->getNameRu() }} @endif</a></li>
@@ -26,31 +32,24 @@
                                     </li><li> / </li>
                                     
                                     @else
-                                    <li><a href="{{ $menu->getUrl() }}">{{ $menu->getName() }}</a></li> <li> / </li>
+                                    <li><a href="{{ $menu->getUrl() }}">
+                                        @if(app()->getlocale() == 'kg')
+                                          {{ $menu->getName() }}
+                                        @else
+                                          {{ $menu->getNameRu() }}
+                                        @endif
+                                      </a></li> <li> / </li>
                                     @endif
                                 @endforeach
                             </ul>
                         </nav>
 
                         <ul class="soc">
-                            <li class="tw"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li class="fb"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li class="ok"><a href="#"><i class="fa fa-odnoklassniki"></i></a></li>
-                            <li class="yt"><a href="#"><i class="fa fa-youtube"></i></a></li>
+                            <li class="tw"><a href="https://twitter.com/KTRK_kg"><i class="fa fa-twitter"></i></a></li>
+                            <li class="fb"><a href="https://www.facebook.com/KTRKkg"><i class="fa fa-facebook"></i></a></li>
+                            <li class="ok"><a href="http://ok.ru/ktrkkg"><i class="fa fa-odnoklassniki"></i></a></li>
+                            <li class="yt"><a href="https://www.youtube.com/channel/UCOD3MESjXSvqYZcWWnZkdMQ"><i class="fa fa-youtube"></i></a></li>
                             <li class="in"><a href="#"><i class="fa fa-instagram"></i></a></li>
-                            <!--<li class="lang-title"><a>Язык:</a></li>-->
-                            <!--<li class="dropdown lang">-->
-                                <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">-->
-                                    <!--<span class="lang-type">KG</span>-->
-                                    <!--<i class="fa fa-chevron-right"></i>-->
-                                <!--</a>-->
-                                <!--<ul class="dropdown-menu">-->
-                                    <!--<li><a href="#">KG</a></li>-->
-                                    <!--<li><a href="#">RU</a></li>-->
-                                <!--</ul>-->
-                            <!--</li>-->
-                            <!--<li class="lang ru"><a href="#"><i class="ru"></i></a></li>-->
-                            <!--<li class="lang kg"><a href="#"><i class="kg"></i></a></li>-->
                         </ul>
 
                         <a class="search-toggle"><i class="fa fa-search"></i></a>

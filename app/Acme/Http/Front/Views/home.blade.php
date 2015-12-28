@@ -1,5 +1,5 @@
 @extends('Front::layouts.default')
-@section('title', "Главная страница")
+@section('title', trans('site.Homepage').' | КТРК' )
 
 @section('content')
 
