@@ -94,6 +94,7 @@
                            </li>
                            <li><a href="{{ route('muzkanal.allphotos') }}"><i class="fa fa-picture-o"></i>{{ trans('radiopages.Photos') }}</a></li>
                            <li><a href="{{ route('muzkanal.videos') }}"><i class="fa fa-youtube-play"></i>{{ trans('radiopages.Clips') }}</a></li>
+                           <li><a href="{{ route('muzkanal.teleprogram') }}"><i class="fa fa-television"></i>{{ trans('site.Teleprogram') }}</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right logo-block">
                            <ul class="soc socmuz">
@@ -185,103 +186,53 @@
             </div>
          </div>
          <div class="col-md-3 videopage">
-            <div class="panel panel-default programtitle">
-               <div class="panel-heading">
-                  <div class="panel-title">
-                     <h4 class="show-title">                                              
-                        <span>{{ trans('radiopages.KorsotuuList') }}</span>
-                     </h4>
-                  </div>
-               </div>
-               <div class="centered">
-                  <div id="nt-example1-container">
-                     <i class="fa fa-arrow-up" id="nt-example1-prev"></i>
-                     <i class="fa fa-arrow-down" id="nt-example1-next" style="right:25px;"></i>
-                     <ul id="nt-example1">
-                        <li>
-                           <span>5:00</span>
-                           <h4>Хит-Парад ТОП-10</h4>
-                        </li>
-                        <li>
-                           <span>6:00</span>
-                           <h4>Ырдайлы кыргыз ырларын</h4>
-                        </li>
-                        <li>
-                           <span>7:00</span>
-                           <h4>Орто Азия хиттери.</h4>
-                        </li>
-                        <li>
-                           <span>8:00</span>
-                           <h4>Айылдын таланттары конокто</h4>
-                        </li>
-                        <li>
-                           <span>9:00</span>
-                           <h4>Атабековдон кем эмес</h4>
-                        </li>
-                        <li>
-                           <span>10:00</span>
-                           <h4>90-жылдардын дискотекасы</h4>
-                        </li>
-                        <li>
-                           <span>11:00</span>
-                           <h4>Кайдасың менин 18 жашым</h4>
-                        </li>
-                        <li>
-                           <span>12:00</span>
-                           <h4>Хит-Парад ТОП-10</h4>
-                        </li>
-                        <li>
-                           <span>13:00</span>
-                           <h4>Хит-Парад ТОП-10</h4>
-                        </li>
-                        <li>
-                           <span>14:00</span>
-                           <h4>Ырдайлы кыргыз ырларын</h4>
-                        </li>
-                        <li>
-                           <span>15:00</span>
-                           <h4>Орто Азия хиттери.</h4>
-                        </li>
-                        <li>
-                           <span>16:00</span>
-                           <h4>Айылдын таланттары конокто</h4>
-                        </li>
-                        <li>
-                           <span>17:00</span>
-                           <h4>Атабековдон кем эмес</h4>
-                        </li>
-                        <li>
-                           <span>18:00</span>
-                           <h4>90-жылдардын дискотекасы</h4>
-                        </li>
-                        <li>
-                           <span>19:00</span>
-                           <h4>Кайдасың менин 18 жашым</h4>
-                        </li>
-                        <li>
-                           <span>20:00</span>
-                           <h4>Хит-Парад ТОП-10</h4>
-                        </li>
-                        <li>
-                           <span>21:00</span>
-                           <h4>Атабековдон кем эмес</h4>
-                        </li>
-                        <li>
-                           <span>22:00</span>
-                           <h4>90-жылдардын дискотекасы</h4>
-                        </li>
-                        <li>
-                           <span>23:00</span>
-                           <h4>Кайдасың менин 18 жашым</h4>
-                        </li>
-                        <li>
-                           <span>24:00</span>
-                           <h4>Хит-Парад ТОП-10</h4>
-                        </li>
-                     </ul>
-                  </div>
+         <div class="panel panel-default programtitle">
+            <div class="panel-heading">
+               <h3 class="panel-title"><span> - {{ trans('radiopages.KorsotuuList') }} - </span></h3>
+            </div>
+            @if($programs != null)
+            <div class="centered">
+               <div id="nt-example1-container" >
+                  <i class="fa fa-arrow-up" id="nt-example1-prev"></i>
+                  <i class="fa fa-arrow-down" id="nt-example1-next" style="right:25px;"></i>
+                  <ul id="nt-example1" data-tabs="nt-example1">
+                     @foreach($programs as $key => $program)
+                     @foreach($schedules as $schedule)
+                     @if($program['date'] == $schedule->date)
+                     @for($i=0; $i<count($program)-1; $i++)
+                     <li style="display:table-row">
+                        <span>{{ $program[$i]->time }}</span>
+
+                        <h4 class="currenttime">
+                           @if(($schedule->date == $currentDate) && ($i < count($program)-2))
+                           @if((strtotime($program[$i]->time) <= strtotime($currentTime)) && (strtotime($currentTime) < strtotime($program[$i+1]->time)))
+                           @if($lc == 'kg')
+                           <section id="bcLive"></i>азыр эфирде</section>
+                           @elseif($lc == 'ru')
+                           <section id="bcLive"></i>сейчас в эфире</section>
+                           @endif
+                           @endif
+                           @elseif(($schedule->date == $currentDate) && ($i == count($program)-1))
+                           @if((strtotime($program[$i]->time) <= strtotime($currentTime)))
+                           @if($lc == 'kg')
+                           <section id="bcLive"></i>азыр эфирде</section>
+                           @elseif($lc == 'ru')
+                           <section id="bcLive"></i>сейчас в эфире</section>
+                           @endif
+                           @endif
+                           @endif
+                           <p>{{ $program[$i]->name }}</p>
+                        </h4>
+                     </li>
+                     @endfor
+                     @endif
+                     @endforeach
+                     @endforeach                       
+                  </ul>
                </div>
             </div>
+            @endif
+         </div>
          </div>
       </div>
       <div class="row">
@@ -362,28 +313,7 @@
    <!-- Fixed Sticky header -->
    <script type ="text/javascript" src ="{{ asset('js/script.js') }}"></script>   
    <!-- Fixed Sticky header -->
-   <!-- Programm title Anima -->
-   <script src="{{ asset('js/audio/jquery.newsTicker.js') }}"></script>
-   <script>
-      var nt_title = $('#nt-title').newsTicker({
-          row_height: 30,
-          max_rows: 1,
-          duration: 3000,
-          pauseOnHover: 0
-      });
-      var nt_example1 = $('#nt-example1').newsTicker({
-          row_height: 30,
-          max_rows: 3,
-          duration: 4000,
-          prevButton: $('#nt-example1-prev'),
-          nextButton: $('#nt-example1-next')
-      });
-      
-      var state = 'stopped';
-      var speed;
-      var add;
-      
-   </script>
+
    <!-- Ptogramm title Anima -->
    <script type="text/javascript">
       $(function () {
@@ -495,5 +425,33 @@
               $('.text').text('Vote');
           })
       })
+   </script>
+
+   <script type="text/javascript" src="{{ asset('js/bootstrap-select.js') }}"></script>
+
+   <script type="text/javascript">
+      jQuery(document).ready(function ($) {
+        $('#nt-example1').tab();
+      
+        blink($('#bcLive'), -1, 500);
+      
+        function blink(elem, times, speed) {
+          if (times > 0 || times < 0) {
+            if ($(elem).hasClass("blink"))
+              $(elem).removeClass("blink");
+            else
+              $(elem).addClass("blink");
+          }
+          clearTimeout(function () {
+            blink(elem, times, speed);
+          });
+          if (times > 0 || times < 0) {
+            setTimeout(function () {
+              blink(elem, times, speed);
+            }, speed);
+            times -= .5;
+          }
+        }
+      });
    </script>
    @stop

@@ -849,6 +849,14 @@
     text-align: center;
 }
 .ns-desc{
+    line-height: 20px;
+}
+.ns-desc span{
+    display: block;
+    padding: 5px 0;
+}
+.ns-desc + [data-readmore-toggle]{
+    text-align: center;
 }
 .panel-kenesh .gallery{
     border: none;

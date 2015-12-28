@@ -12,10 +12,12 @@ return [
     | these language lines according to your application's requirements.
     |
     */
-
+    
     'Top news' => 'Жаңылыктар',
     'All news' => 'Бардык',
     'Info' => 'Маалымат',
+
+    'AdminPostThemeRu' => 'Темага материалдар орусча',
 
     'Ktrk' => 'Коомдук телерадиоберүү корпорациясы',
 
@@ -39,6 +41,8 @@ return [
     'BaikoochuKeneshAsk' => 'Сурамжылоо',
     'BaikoochuKeneshTeamTitle' => 'Коомдук телерадиоберүү корпорациясынын Байкоочу кеңешинин курамы',
     'BaikoochuKeneshReportsTitle' => 'КТРК Байкоочулар кеңешинин аткарган иштеринин жылдык отчеттору',
+    'ReadMore' => 'Толугу менен',
+    'ReadLess' => 'Жабуу',
 
     'RedKenesh' => 'Редакциялык кеңешчи',
     'RedKeneshNews' => 'Жаңылыктар',

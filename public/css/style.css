@@ -534,7 +534,7 @@ header {
 .socmuz {
     position: absolute !important;
     top: 10px !important;
-    right: 250px !important;
+    right: 128px !important;
 }
 .soc {
     position: absolute;
@@ -2282,6 +2282,22 @@ display: block;
     display: inline-table;
     color: #03A9F4;
 }
+
+#nt-example1 section{
+    color: #F44336;
+
+    font-size: 11px;
+    text-align: right;
+    text-transform: uppercase;
+    float: right;
+    font-weight: bold;
+}
+
+#nt-example1 section i{
+    padding-right: 5px;
+    color: #c42026;
+    margin: 0px !important;
+}
 #nt-example1 h4 {
     display: table-cell;
     float: none;
@@ -2319,8 +2335,15 @@ display: block;
     border-bottom: 1px solid  #E3E8E7;
     font-family: 'Roboto Condensed', serif;
 }
+#nt-example1 p{
+    display: inherit;
+}
 #nt-example1 li:hover {
     background: #FFF;
+}
+
+.currenttime{
+
 }
 .music .logo img {
     margin-top: 60px;

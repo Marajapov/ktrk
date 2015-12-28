@@ -97,6 +97,7 @@ class HomeController extends Controller
 
         $mediaLastVideos = \Model\Media\ModelName::orderBy('id','desc')->take(9)->get();
         $defaultVideo = 'rjXSurFi8uQ';
+
         return view('Front::home', [
             
             'generalPosts'   => $generalPosts,
@@ -135,7 +136,6 @@ class HomeController extends Controller
         $post->incrementViewed();
 
         $categories = \Model\Category\ModelName::all();
-        $positionTop = \Model\Banner\ModelName::top()->first();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
         $parent = \Model\PhotoParent\ModelName::where('id','=',$post->parentId)->first();
@@ -183,8 +183,11 @@ class HomeController extends Controller
             'images' => $images,
 
             'categories'=>$categories,
-            'positionTop'    => $positionTop,
             'backgroundMain' => $backgroundMain,
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
             ]);
 
     }
@@ -208,6 +211,10 @@ class HomeController extends Controller
             'postAll' => $postAll,
             'categories'=>$categories,
             'backgroundMain' => $backgroundMain,
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
             ]);
 
     }
@@ -261,6 +268,10 @@ class HomeController extends Controller
 
             'categories'=>$categories,
             'backgroundMain' => $backgroundMain,
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
             ]);
     }
 
@@ -288,6 +299,10 @@ class HomeController extends Controller
 
             'categories'=>$categories,
             'backgroundMain' => $backgroundMain,
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
         ]);
 
 
@@ -314,8 +329,12 @@ class HomeController extends Controller
             'categories'=>$categories,
             'backgroundMain' => $backgroundMain,
 
-            ]
-            );
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
+
+        ]);
     }
 
     public function filterResult(Request $request)
@@ -353,7 +372,11 @@ class HomeController extends Controller
             'postAll' => $postAllFromTo,
             'categories'=>$categories,
             'backgroundMain' => $backgroundMain,
-            ]);
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
+        ]);
     }
 
     public function filterResultCategory(Request $request)
@@ -394,7 +417,11 @@ class HomeController extends Controller
             'posts' => $postAllFromTo,
             'categories'=>$categories,
             'backgroundMain' => $backgroundMain,
-            ]);
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
+        ]);
     }
 
     public function Galleries()
@@ -410,6 +437,10 @@ class HomeController extends Controller
             'perPage'=> $perPage,
             'backgroundMain' => $backgroundMain,
             'galleries' => $galleries,
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
         ]);
     }
 
@@ -427,7 +458,11 @@ class HomeController extends Controller
             'images' => $images,
             'backgroundMain' => $backgroundMain,
             'gallery' => $gallery,
-            ]);
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
+        ]);
     }
 
     public function Reporter()
@@ -440,8 +475,10 @@ class HomeController extends Controller
         return view('Front::reporter.index',[
             'lc' => $lc,
             'backgroundMain' => $backgroundMain,
-
-//            'galleries' => $galleries,
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
         ]);
     }
 

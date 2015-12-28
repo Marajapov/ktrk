@@ -8,6 +8,8 @@ use Response;
 
 class PageController extends Controller
 {
+    protected $positionTop, $positionRight, $positionCenter, $positionBottom;
+
     public function __construct()
     {
         $this->positionTop = \Model\Banner\ModelName::where('positionTop','=','1')->first();
@@ -24,7 +26,7 @@ class PageController extends Controller
     {
         $lc = app()->getlocale();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
-        
+
         return view('Front::pages.history', [
             'lc' => $lc,
             'backgroundMain' => $backgroundMain,
@@ -32,7 +34,7 @@ class PageController extends Controller
             'positionRight'  => $this->positionRight,
             'positionCenter' => $this->positionCenter,
             'positionBottom' => $this->positionBottom,
-            ]);
+        ]);
     }
 
     public function directorPage()
@@ -43,9 +45,9 @@ class PageController extends Controller
         $directorPosts = \Model\Post\ModelName::where('director','=','1')->orderBy('id','desc')->get();
         $fbpost = \Model\Post\ModelName::where('director','=','1')->where('fbpost','=','1')->orderBy('id','desc')->get();
         if($fbpost){
-            $fbpost = $fbpost; 
+            $fbpost = $fbpost;
         }else {
-            $fbpost = null; 
+            $fbpost = null;
         }
         return view('Front::pages.director', [
             'backgroundMain' => $backgroundMain,
@@ -72,7 +74,7 @@ class PageController extends Controller
             'positionRight'  => $this->positionRight,
             'positionCenter' => $this->positionCenter,
             'positionBottom' => $this->positionBottom,
-            ]);
+        ]);
 
     }
 
@@ -98,7 +100,7 @@ class PageController extends Controller
             'positionRight'  => $this->positionRight,
             'positionCenter' => $this->positionCenter,
             'positionBottom' => $this->positionBottom,
-            ]);
+        ]);
     }
 
     public function normalbasePage()
@@ -114,7 +116,7 @@ class PageController extends Controller
             'positionRight'  => $this->positionRight,
             'positionCenter' => $this->positionCenter,
             'positionBottom' => $this->positionBottom,
-            ]);
+        ]);
     }
 
     public function rrtsPage()
@@ -130,7 +132,7 @@ class PageController extends Controller
             'positionRight'  => $this->positionRight,
             'positionCenter' => $this->positionCenter,
             'positionBottom' => $this->positionBottom,
-            ]);
+        ]);
     }
 
     public function reportPage()
@@ -146,7 +148,7 @@ class PageController extends Controller
             'positionRight'  => $this->positionRight,
             'positionCenter' => $this->positionCenter,
             'positionBottom' => $this->positionBottom,
-            ]);
+        ]);
     }
 
     public function TeleprogramPage(Request $request)
@@ -211,11 +213,11 @@ class PageController extends Controller
                     $week[] = $weekDayNew;
                 }
             }
+
             if(!empty($schedules)){
                 $programs = array();
-                foreach($schedules as $schedule){
-                    $scheduleWeek = date('N',strtotime($schedule->date));
-                    for($j=0; $j<count($week);$j++){;
+                for($j=0; $j<count($week);$j++){
+                    foreach($schedules as $schedule){
                         if(strtotime($week[$j]) == strtotime($schedule->date)){
                             $program = json_decode($schedule->program);
                             $programNew = array_add($program, 'date', $schedule->date);
@@ -223,9 +225,12 @@ class PageController extends Controller
                         }
                     }
                 }
-                $programs = array_reverse($programs);
+//                dd($programs);
+//                $programs = array_reverse($programs);
             }
         }
+
+//        dd($programs);
         return view('Front::pages.teleprogram', [
             'lc' => $lc,
             'currentDate' => $currentDate,
@@ -255,7 +260,7 @@ class PageController extends Controller
             'positionRight'  => $this->positionRight,
             'positionCenter' => $this->positionCenter,
             'positionBottom' => $this->positionBottom,
-            ]);
+        ]);
     }
 
     public function editionkeneshPage()
@@ -269,7 +274,7 @@ class PageController extends Controller
             'positionRight'  => $this->positionRight,
             'positionCenter' => $this->positionCenter,
             'positionBottom' => $this->positionBottom,
-            ]);
+        ]);
     }
 
 
@@ -284,13 +289,13 @@ class PageController extends Controller
         $positionTop = \Model\Banner\ModelName::top()->first();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
-        
+
         if(($post->parentId != '0') && ($post->parentId != null))
         {
             $parentId = $post->parentId;
             $parentId = \Model\PhotoParent\ModelName::where('id','=',$parentId)->first();
             $photoChilds = \Model\PhotoChild\ModelName::where('parentId','=',$parentId->id)->get();
-            
+
         }else{
             $parentId = '0';
             $photoChilds = '0';
@@ -318,7 +323,7 @@ class PageController extends Controller
         }elseif($lc == 'ru'){
             $relatedPosts = \Model\Post\ModelName::where('category_id','=',$post->category_id)->languageru()->take(6)->skip(0)->orderBy('id', 'desc')->get();
         }
-        
+
 
         return view('Front::pages.directorPost',[
             'post' => $post,
@@ -339,7 +344,7 @@ class PageController extends Controller
             'positionRight'  => $this->positionRight,
             'positionCenter' => $this->positionCenter,
             'positionBottom' => $this->positionBottom,
-            ]);
+        ]);
 
     }
 

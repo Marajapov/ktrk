@@ -75,6 +75,11 @@ Route::group(['domain' => 'beta.ktrk.kg', 'prefix' => '/kyrgyzradio', 'namespace
 
     Route::get('/', ['as' => 'kyrgyzradio.home',   'uses' => 'KyrgyzradioController@Home']);
     Route::get('/posts', ['as' => 'kyrgyzradio.posts',   'uses' => 'KyrgyzradioController@posts']);
+    Route::get('/photos/{gallery}',['as' => 'kyrgyzradio.photos','uses'=> 'KyrgyzradioController@Gallery'] );
+    Route::get('/news/{post}', ['as' => 'kyrgyzradio.news',   'uses' => 'KyrgyzradioController@news']);
+    Route::get('allnews', ['as' => 'kyrgyzradio.allnews',   'uses' => 'KyrgyzradioController@allnews']);
+    Route::get('/allphotos',['as' => 'kyrgyzradio.allphotos','uses'=> 'KyrgyzradioController@allphotos'] );
+    Route::get('/project/{project}',['as' => 'kyrgyzradio.project','uses'=> 'KyrgyzradioController@project'] ); 
 
 });
 
@@ -82,9 +87,13 @@ Route::group(['domain' => 'beta.ktrk.kg', 'prefix' => '/birinchi', 'namespace' =
 
     Route::get('/', ['as' => 'birinchi.home',   'uses' => 'BirinchiController@Home']);
     Route::get('/news/{post}', ['as' => 'birinchi.news',   'uses' => 'BirinchiController@news']);
-    Route::get('/broadcasts', ['as' => 'birinchi.broadcasts',   'uses' => 'BirinchiController@broadcasts']);
+    Route::get('/allnews', ['as' => 'birinchi.allnews',   'uses' => 'BirinchiController@allnews']);
+    Route::get('/broadcast/{post}', ['as' => 'birinchi.broadcast',   'uses' => 'BirinchiController@broadcast']);
+    Route::get('/allbroadcasts', ['as' => 'birinchi.allbroadcasts',   'uses' => 'BirinchiController@allbroadcasts']);
+    Route::get('/broadcasts/{project}', ['as' => 'birinchi.broadcasts',   'uses' => 'BirinchiController@broadcasts']);        
     Route::get('/about', ['as' => 'birinchi.about',   'uses' => 'BirinchiController@about']);
-    Route::get('/photos', ['as' => 'birinchi.photos',   'uses' => 'BirinchiController@photos']);
+    Route::get('/photos/{gallery}', ['as' => 'birinchi.photos',   'uses' => 'BirinchiController@Gallery']);
+    Route::get('/allphotos',['as' => 'birinchi.allphotos','uses'=> 'BirinchiController@allphotos'] );
     Route::get('/broadcastsprogramm', ['as' => 'birinchi.broadcastsprogramm',   'uses' => 'BirinchiController@broadcastsprogramm']);
 
 });
@@ -134,6 +143,7 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
     Route::get('media', ['as' => 'front.media.index', 'uses' => 'MediaController@mediaIndex']); // List of videos
     Route::get('media/project/{project}', ['as' => 'front.media.project', 'uses' => 'MediaController@project']); // Show Page
     Route::get('media/video/{video}', ['as' => 'front.media.video', 'uses' => 'MediaController@video']); // Show Video
+    Route::get('media/all', ['as' => 'front.media.all', 'uses' => 'MediaController@allVideos']); // All Videos
 
 
 
@@ -149,6 +159,7 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
     Route::get('rrts', ['as' => 'front.pages.rrts', 'uses' => 'PageController@rrtsPage']);
     Route::get('report', ['as' => 'front.pages.report', 'uses' => 'PageController@reportPage']);
     Route::get('teleprogram', ['as' => 'front.pages.teleprogram', 'uses' => 'PageController@teleprogramPage']);
+    Route::get('program', ['as' => 'front.pages.program', 'uses' => 'PageController@teleprogramPage']);
     Route::get('teleprogram/{channel}', ['as' => 'front.pages.teleprogram', 'uses' => 'PageController@ChannelTeleprogram']);
 //    Route::get('ns', ['as' => 'front.pages.ns', 'uses' => 'PageController@keneshPage']);
     Route::get('editionkenesh', ['as' => 'front.pages.editionkenesh', 'uses' => 'PageController@editionkeneshPage']);
