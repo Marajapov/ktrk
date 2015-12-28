@@ -38,6 +38,8 @@ return [
     'BaikoochuKeneshAsk' => 'Опрос',
     'BaikoochuKeneshTeamTitle' => 'Состав Наблюдательного совета Общественной телерадиовещательной корпорации',
     'BaikoochuKeneshReportsTitle' => 'Годовые отчеты о деятельности Наблюдательного Совета ОТРК',
+    'ReadMore' => 'Читать далее',
+    'ReadLess' => 'Закрыть',
 
 
     'RedKenesh' => 'Редакционный советник',

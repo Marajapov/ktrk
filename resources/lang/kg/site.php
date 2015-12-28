@@ -39,6 +39,8 @@ return [
     'BaikoochuKeneshAsk' => 'Сурамжылоо',
     'BaikoochuKeneshTeamTitle' => 'Коомдук телерадиоберүү корпорациясынын Байкоочу кеңешинин курамы',
     'BaikoochuKeneshReportsTitle' => 'КТРК Байкоочулар кеңешинин аткарган иштеринин жылдык отчеттору',
+    'ReadMore' => 'Толугу менен',
+    'ReadLess' => 'Жабуу',
 
     'RedKenesh' => 'Редакциялык кеңешчи',
     'RedKeneshNews' => 'Жаңылыктар',
