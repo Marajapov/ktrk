@@ -155,94 +155,84 @@
    </div>
 </div>
 <div class="container">
-       <div class="row">
-            <div class="panel onenews" style="padding:0px;">             
-                <div class="panel-body" style="padding:0px;">
-                     <div class="top-left-block col-md-9">
-                        <div class="panel panel-show">
-                           <div class="panel-heading">
-                              <h3 class="panel-title">
-                                 <a href="{{ route('front.media.index') }}">{{ $project->getNameOne() }}</a>
-                              </h3>
-                           </div>
-                           <div class="panel-body">
-                              <div class="row">
-                                 <div class="col-md-12 block show-block">
-                                    <div class="media">
-                                       <div class="media-left media-top">
-                                          <a>
-                                          <img class="media-object" src="@if(!($project->getFile())) {{ asset('images/project_default.png') }} @else {{ asset($project->getFile()) }} @endif" alt="{{ $project->getNameOne() }}">
-                                          </a>
-                                       </div>
-                                       <div class="media-body">
-                                          <h4 class="show-title media-heading">{{ $project->getNameOne() }}</h4>
-                                          <p class="show-desc">
-                                             {{ $project->description }}
-                                          </p>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="panel panel-articles">
-                           <div class="panel-heading">
-                              <h3 class="panel-title">
-                                 {{ trans('radiopages.Peredachi') }}
-                              </h3>
-                           </div>
-                           <div class="panel-body">
-                              @if($relatedNews)
-                                @foreach($relatedNews as $post)
-                                <div class="media">
-                                   <div class="media-left">
-                                      <a href="{{ route('birinchi.broadcast', $post) }}">
-                                      <img class="media-object thumb" src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif" alt="image">
-                                      </a>
-                                   </div>
-                                   <div class="media-body">
-                                      <div class="extra">
-                                         <span class="e-datetime">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
-                                         <span class="e-views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
-                                      </div>
-                                      <a class="media-heading" href="{{ route('birinchi.broadcast', $post) }}">{{ $post->getTitleRuOrKg() }}</a>
-                                   </div>
-                                </div>
-                                @endforeach
-                              @endif
-                              <footer>
-                                 <a href="{{ route('birinchi.allbroadcasts') }}">{{ trans('radiopages.Morenews') }}</a>
-                              </footer>
-                           </div>
-                        </div>
+      <div class="row" style="margin-top:10px;">
+         <div class="col-md-12">
+            <div class="row onepadding" style="background: #fff;">
+               <div class="top-left-block col-md-9 onepadding">
+                  <div class="panel panel-show onelist">
+                     <div class="panel-heading">
+                        <h3 class="panel-title"><span>{{ $project->getNameOne() }}</span></h3>
                      </div>
-                     
-                     <div class="top-right-block col-md-3">
-                        <div class="panel ctg-panel media-ctg-panel">
-                           <div class="panel-heading">
-                              <h3 class="panel-title"><span>{{ trans('radiopages.Peredachi') }}</span></h3>
+                     <div class="panel-body">
+                         <div class="col-md-12 block show-block">
+                            <div class="media">
+                               <div class="media-left media-top">
+                                  <a>
+                                  <img class="media-object" src="@if(!($project->getFile())) {{ asset('images/project_default.png') }} @else {{ asset($project->getFile()) }} @endif" alt="{{ $project->getNameOne() }}">
+                                  </a>
+                               </div>
+                               <div class="media-body">
+                                  <h4 class="show-title media-heading">{{ $project->getNameOne() }}</h4>
+                                  <p class="show-desc">
+                                     {{ $project->description }}
+                                  </p>
+                               </div>
+                            </div>
+                         </div>
+                     </div>
+                  </div>
+                  <div class="panel-articles onelist show-block">
+                   <div class="panel-heading">
+                      <h3 class="panel-title">
+                         {{ trans('radiopages.Peredachi') }}
+                      </h3>
+                   </div>
+                   <div class="panel-body" style="margin-top:10px">
+                      @if($relatedNews)
+                        @foreach($relatedNews as $post)
+                        <div class="media">
+                           <div class="media-left">
+                              <a href="{{ route('birinchi.broadcast', $post) }}">
+                              <img class="media-object thumb" src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif" alt="image">
+                              </a>
                            </div>
-                           <div class="panel-body">
-                              <div class="col-md-12">
-                                 <div class="row">
-                                    <ul class="list-group">
-                                       @if($birinchiProjects) 
-                                         @foreach($birinchiProjects as $project_one)
-                                         <li class="list-group-item">
-                                            <a href="{{ route('birinchi.broadcasts', $project_one) }}">{{ $project_one->getName() }}</a>
-                                         </li>
-                                         @endforeach
-                                       @endif
-                                    </ul>
-                                 </div>
+                           <div class="media-body">
+                              <div class="extra">
+                                 <span class="e-datetime">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
+                                 <span class="e-views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
                               </div>
+                              <a class="media-heading" href="{{ route('birinchi.broadcast', $post) }}">{{ $post->getTitleRuOrKg() }}</a>
                            </div>
                         </div>
-                     </div>
+                        @endforeach
+                      @endif
+                      <footer>
+                         <a href="{{ route('birinchi.allbroadcasts') }}">{{ trans('radiopages.Morenews') }}</a>
+                      </footer>
+                   </div>
                 </div>
+               </div>
+               <div class="col-md-3 onepadding">
+                  <div class="panel onelist ctg-panel">
+                     <div class="panel-heading">
+                        <h3 class="panel-title">{{ trans('radiopages.Peredachi') }}</h3>
+                     </div>
+                     <div class="panel-body">
+                        <ul class="list-group">
+                           @if($birinchiProjects) 
+                             @foreach($birinchiProjects as $project_one)
+                             <li class="list-group-item">
+                                <a href="{{ route('birinchi.broadcasts', $project_one) }}">{{ $project_one->getName() }}</a>
+                             </li>
+                             @endforeach
+                           @endif
+                        </ul>
+                     </div>
+                  </div>
+
+               </div>
             </div>
-        </div> 
+         </div>
+      </div>
 </div>
-
-
 @stop

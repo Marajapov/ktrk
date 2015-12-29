@@ -2,6 +2,9 @@
     border-right: 2px solid #F1F4F9;
     border-bottom: 1px solid #F1F4F9;
 }
+.panel-articles .panel-body{
+    padding: 15px;
+}
 .panel-articles .block{
     padding: 0 5px;
 }

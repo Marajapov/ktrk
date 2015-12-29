@@ -160,8 +160,10 @@
                      </div>
                   </div>
                </a>
+
             </div>
-<!--             <div class="row dkp-slide slide-left">
+            
+{{--        <div class="row dkp-slide slide-left">
                <a href="#">
                   <div class="col-sm-12 dkp-anonce dkp-anonce-big" style="background-image: url(images/channels/muzkanal/);">
                      <div class="dkp-anonce-time">
@@ -198,7 +200,8 @@
                      </div>
                   </div>
                </a>
-            </div> -->
+<<<<<<< HEAD
+            </div> --}}
          </div>
       </div>
 

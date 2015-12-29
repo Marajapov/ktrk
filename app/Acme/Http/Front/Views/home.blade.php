@@ -37,10 +37,12 @@
                         @if($post->getIsPhoto() == 'yes') <i class="fa fa-picture-o"></i> @endif
                       </span>
                       </p>
-                      <a class="news-title" href="{{ route('front.post', $post) }}">
-                        <!--<h2>{!! $result = substr($post->getTitle(),0,75) !!}...</h2> -->
-                        <h2>{{ $post->getTitleRuOrKg() }}</h2>
-                      </a>
+                      <div class="news-title">
+                        <a href="{{ route('front.post', $post) }}">
+                          <!--<h2>{!! $result = substr($post->getTitle(),0,75) !!}...</h2> -->
+                          {{ $post->getTitleRuOrKg() }}
+                        </a>
+                      </div>
                     </figure>
                   </div>
                 @endforeach
@@ -414,7 +416,7 @@
                                 @endif
                               </div>
                               <div class="media-title">
-                                <a href="{{ route('front.media.video', $media) }}">
+                                <a href="{{ route('front.media.video', $row) }}">
                                   <h4>{{ $row->getName() }}</h4>
                                 </a>
                               </div>

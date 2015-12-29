@@ -31,7 +31,7 @@
               </div>
             </li>
             <li><a href="{{ route('front.ns.reports') }}">{{ trans('site.BaikoochuKeneshReports') }}</a></li>
-            <li><a href="{{ route('front.ns.galleries') }}">{{ trans('site.BaikoochuKeneshGallery') }}</a></li>
+            {{--<li><a href="{{ route('front.ns.galleries') }}">{{ trans('site.BaikoochuKeneshGallery') }}</a></li>--}}
             <li><a href="{{ route('front.ns.contacts') }}">{{ trans('site.BaikoochuKeneshContacts') }}</a></li>
             {{--<li><a href="#">Сурамжылоо</a></li>--}}
           </ul>

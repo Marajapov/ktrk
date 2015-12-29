@@ -10,7 +10,7 @@
     <div class="form-group">
       <label for="channel_id" class="col-sm-2 control-label">{{ trans('site.TitleKG') }}</label>
       <div class="col-sm-10">
-        {!! Form::text('name', null, ["class" => "form-control", "required" => true, "title" => ""]) !!}
+        {!! Form::text('name', null, ["class" => "form-control", "title" => ""]) !!}
       </div>
     </div>
 
@@ -24,7 +24,7 @@
     <div class="form-group">
       <label for="channel_id" class="col-sm-2 control-label">{{ trans('site.TitleRU') }}</label>
       <div class="col-sm-10">
-        {!! Form::text('nameRu', null, ["class" => "form-control", "required" => true, "title" => ""]) !!}
+        {!! Form::text('nameRu', null, ["class" => "form-control", "title" => ""]) !!}
       </div>
     </div>
 
