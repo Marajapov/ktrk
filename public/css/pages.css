@@ -598,7 +598,7 @@
 /*PANEL KENESH*/
 
 .panel-kenesh .panel-body{
-    padding: 0 15px 15px;
+    padding: 0 15px;
 }
 .panel-kenesh .navbar{
     margin-top: 15px;
@@ -702,7 +702,6 @@
 }
 .panel-kenesh .second-panel-body{
     padding-top: 15px;
-    padding-bottom: 15px;
 }
 .sidebar-panel-body .poll{
     /*padding: 5px 10px;*/
