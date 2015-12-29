@@ -198,6 +198,9 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
     // Reklama
     Route::get('/advertisement',['as'=>'front.pages.reklama', 'uses'=>'PageController@Reklama']);
 
+    //Contacts
+    Route::get('/contacts',['as'=>'front.pages.contacts', 'uses',]);
+
 //    AJAX CALL
     Route::get('/ajax_program', 'PageController@AjaxProgram');
 
