@@ -117,3 +117,31 @@
 .slick-arrow.slick-hidden {
     display: none;
 }
+
+.videopage .righttopvideo .views{
+    position: absolute;
+    left: 15px;
+    top: 0px;
+    background: rgba(0, 0, 0, 0.5) none repeat scroll 0% 0%;
+    font-size: 14px;
+    padding: 0px 3px;
+    color: white;
+}
+
+.videopage .righttopvideo .item-desc{
+    overflow: hidden;
+    float: left;
+    z-index: 999;
+    position: absolute;
+    bottom: 5px;
+    padding: 5px 10px;
+    background: rgba(0, 0, 0, 0.5) none repeat scroll 0% 0%;
+    line-height: 15px;
+}
+.videopage .righttopvideo .item-desc a{
+    color: #FFF;
+}
+
+.music .videopage{
+    margin: 0px;
+}
