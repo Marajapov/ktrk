@@ -5,12 +5,13 @@ use Illuminate\Http\Request;
 
 class MediaController extends Controller
 {
-    protected $positionTop, $positionRight, $positionCenter, $positionBottom;
+    protected $positionTop, $positionRight, $positionCenter, $positionBottom, $positionLeft;
 
     public function __construct()
     {
         $this->positionTop = \Model\Banner\ModelName::where('positionTop','=','1')->first();
         $this->positionRight = \Model\Banner\ModelName::where('positionRight','=','1')->first();
+        $this->positionleft = \Model\Banner\ModelName::where('positionLeft','=','1')->first();
         $this->positionCenter = \Model\Banner\ModelName::where('positionCenter','=','1')->first();
         $this->positionBottom = \Model\Banner\ModelName::where('positionBottom','=','1')->first();
     }
@@ -63,6 +64,7 @@ class MediaController extends Controller
             'positionRight'  => $this->positionRight,
             'positionCenter' => $this->positionCenter,
             'positionBottom' => $this->positionBottom,
+            'positionLeft' => $this->positionLeft,
             ]);
     }
 
@@ -140,6 +142,7 @@ class MediaController extends Controller
             'positionRight'  => $this->positionRight,
             'positionCenter' => $this->positionCenter,
             'positionBottom' => $this->positionBottom,
+            'positionLeft' => $this->positionLeft,
         ]);
     }
 
@@ -170,6 +173,7 @@ class MediaController extends Controller
                 'positionRight'  => $this->positionRight,
                 'positionCenter' => $this->positionCenter,
                 'positionBottom' => $this->positionBottom,
+                'positionLeft' => $this->positionLeft,
 
             ]
         );
@@ -197,6 +201,7 @@ class MediaController extends Controller
             'positionRight'  => $this->positionRight,
             'positionCenter' => $this->positionCenter,
             'positionBottom' => $this->positionBottom,
+            'positionLeft' => $this->positionLeft,
         ]);
     }
 
