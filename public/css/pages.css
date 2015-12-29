@@ -1126,9 +1126,30 @@
 }
 
 /*PANEL CONTACTS*/
-.panel-contatcs .panel-body{
+.panel-contacts .panel-body{
     padding: 30px 15px 15px;
 }
 .panel-contacts .table{
+    margin: 0;
     max-width: 100%;
+}
+.panel-contacts .table th,
+.panel-contacts .table td{
+    vertical-align: middle;
+}
+.panel-contacts li{
+    margin-bottom: 5px;
+}
+.panel-contacts li i{
+    padding-right: 5px;
+    font-size: 20px;
+}
+.panel-contacts .fb i{
+    color: #3a5795;
+}
+.panel-contacts .tw i{
+    color: #55acee;
+}
+.panel-contacts .yt i{
+    color: #cc181e;
 }
