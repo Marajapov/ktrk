@@ -3427,11 +3427,30 @@ display: block;
     -o-transition: all 0.2s ease;
     transition: all 0.2s ease;
 }
-@media screen and (max-width:1000px) {
+@media screen and (max-width:1200px) {
     .soc {
         display: none;
     }
 }
+
+@media screen and (max-width:1200px) {
+    .fixedheader>.navbar .container-fluid .navbar-brand span {
+        display: none !important;
+    }
+}
+
+@media screen and (max-width:970px) {
+    .clangs {
+        display: none !important;
+    }
+}
+
+@media screen and (min-width: 770px){
+.clangs {
+    display: block;
+    }
+}
+
 
 /*Muz kanal video page*/
 
