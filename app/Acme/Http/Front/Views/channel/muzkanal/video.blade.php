@@ -52,7 +52,6 @@
          <!-- /.navbar-collapse -->
       </nav>
    </div>
-
    <div class="container main-header">
       <div class="row">
          <div class="col-md-12">
@@ -136,11 +135,10 @@
          </div>
       </div>
    </div>
-
    <!-- Main slider -->
    <div class="container">
-      <div class="row">
-         <div class="col-md-9 videopage">
+      <div class="row" style="background:#fff; margin-top:10px;">
+         <div class="col-md-9 videopage" style="border-right: 1px solid #DEDEDE;">
             <div class="panel panel-video">
                <div class="panel-heading">
                   <div class="panel-title">
@@ -160,8 +158,8 @@
                               <div class="extra">
                                  @if(auth()->user())
                                  <span class="art-edit"><a href="{{ route('admin.media.edit', $muzkanalvideo) }}" target="_blank"><i class="fa fa-pencil"></i>{{ trans('site.AdminPostEdit') }}
-                                    {{--<span class="glyphicon glyphicon-pencil"></span>--}}  </a>
-                                    @endif
+                                 {{--<span class="glyphicon glyphicon-pencil"></span>--}}  </a>
+                                 @endif
                                  </span>
                               </div>
                               <div class="embed-responsive embed-responsive-16by9 show-video">
@@ -178,63 +176,55 @@
                            </div>
                         </div>
                         <p class="video-desc">
-                         {{ $muzkanalvideo->getContent()}}
-                      </p>
+                           {{ $muzkanalvideo->getContent()}}
+                        </p>
                      </div>
                   </div>
                </div>
             </div>
          </div>
-         <div class="col-md-3 videopage">
-         <div class="panel panel-video">
+         <div class="col-md-3 videopage" style="padding:0px;">
+            <div class="panel panel-video">
                <div class="panel-heading">
                   <div class="panel-title">
                      <h4 class="show-title">
-                        <span>{{ trans('radiopages.KorsotuuList') }}</span>
+                        <span>{{ trans('radiopages.TopCLips') }}</span>
                      </h4>
                   </div>
                </div>
-            @if($program)
-            <div class="centered">
-               <div id="nt-example1-container" >
-                  <i class="fa fa-arrow-up" id="nt-example1-prev"></i>
-                  <i class="fa fa-arrow-down" id="nt-example1-next" style="right:25px;"></i>
-                  <ul id="nt-example1" data-tabs="nt-example1">
-
-                     @foreach($program as $row)
-                        <li style="display:table-row;">
-
-                           <span>{{ $row->time }}</span>
-
-                           <h4>
-
-                              @if((strtotime($row->time) <= strtotime($currentTime)) && (strtotime($currentTime) < strtotime($row->time)))
-                                 @if($lc == 'kg')
-                                    <section id="bcLive"></i>азыр эфирде</section>
-                                 @elseif($lc == 'ru')
-                                    <section id="bcLive"></i>сейчас в эфире</section>
-                                 @endif
-                              @endif
-
-                              @if((strtotime($row->time) <= strtotime($currentTime)))
-                                 @if($lc == 'kg')
-                                    <section id="bcLive"></i>азыр эфирде</section>
-                                 @elseif($lc == 'ru')
-                                    <section id="bcLive"></i>сейчас в эфире</section>
-                                 @endif
-                              @endif
-
-                              <p>{{ $row->name }}</p>
-                           </h4>
-
-                        </li>
-                     @endforeach
-                                        
-                  </ul>
+               <div class="panel-body">
+                  <div class="col-md-12">
+                     <div class="righttopvideo">
+                        @if($MediaTop1)
+                        @foreach($MediaTop1 as $top1)
+                        <div class="row" style="margin: 0px -25px 5px -25px">
+                           <div class="col-md-12" style="margin-bottom:10px;">
+                              <a href="{{ route('muzkanal.video', $top1)}}">
+                              <img src="http://img.youtube.com/vi/{{ $top1->getUrl() }}/mqdefault.jpg" alt=""/></a>
+                              <div class="views"><i class="fa fa-eye"></i>{{ $top1->getViewed() }}</div>
+                               <div class="item-desc">
+                                 <ul>
+                                    <a href="{{ route('muzkanal.video', $top1)}}">
+                                       <li class="item-artist">{{ $top1->getName() }}</li>
+                                    </a>
+                                 </ul>
+                              </div>
+                           </div>
+                           
+                          
+                         
+                        </div>
+                        @endforeach
+                        @endif                           
+                     </div>
+                     <footer>
+                        <a href="{{ route('muzkanal.videos')}}">
+                        <span>{{ trans('radiopages.AllVideos') }} <i class="fa fa-arrow-circle-right"></i></span>
+                        </a>
+                     </footer>
+                  </div>
                </div>
             </div>
-            @endif
-         </div>
          </div>
       </div>
       <div class="row">
@@ -261,7 +251,6 @@
                               <div class="views"><i class="fa fa-eye"></i>{{ $relatedmuzkanalVideo->getViewed() }}</div>
                            </div>
                            @endforeach
-
                         </div>
                         <footer>
                            <a href="{{ route('muzkanal.videos')}}">
@@ -299,48 +288,6 @@
    <!-- Fixed Sticky header -->
    <script type ="text/javascript" src ="{{ asset('js/script.js') }}"></script>   
    <!-- Fixed Sticky header -->
-
-   <!-- Ptogramm title Anima -->
-   <script type="text/javascript">
-      $(function () {
-      
-          var filterList = {
-              init: function () {
-      
-                  // MixItUp plugin
-                  // http://mixitup.io
-                  $('#portfoliolist').mixitup({
-                      showOnLoad: 'all-videos',
-                      targetSelector: '.portfolio',
-                      filterSelector: '.filter',
-                      effects: ['fade'],
-                      easing: 'snap',
-                      // call the hover effect
-                      onMixEnd: filterList.hoverEffect()
-                  });
-      
-              },
-              hoverEffect: function () {
-      
-                  // Simple parallax effect
-                  $('#portfoliolist .portfolio').hover(
-                          function () {
-                              $(this).find('.label').stop().animate({bottom: 0}, 200, 'easeOutQuad');
-                              $(this).find('img').stop().animate({top: -40}, 250, 'easeOutQuad');
-                          },
-                          function () {
-                              $(this).find('.label').stop().animate({bottom: -40}, 200, 'easeInQuad');
-                              $(this).find('img').stop().animate({top: 0}, 300, 'easeOutQuad');
-                          }
-                  );
-      
-              }
-      
-          };
-          // Run the show!
-          filterList.init();
-      });
-   </script>
    <!--Carousel-->
    <script>
       if ($(window).width() > 768) {
@@ -351,24 +298,7 @@
               autoplay: false,
               autoplaySpeed: 4500
           });
-          $('.carousel-slick1').slick({
-              infinite: true,
-              slidesToShow: 3,
-              slidesToScroll: 1,
-              autoplay: false,
-              autoplaySpeed: 4500
-          });
-      }
-      
-      if ($(window).width() < 768) {
-          $('.carousel-slick1').slick({
-              infinite: true,
-              slidesToShow: 2,
-              slidesToScroll: 1,
-              autoplay: false,
-              autoplaySpeed: 4500
-          });
-      }
+      }      
       
       if ($(window).width() < 768) {
           $('.carousel-slick').slick({
@@ -411,33 +341,5 @@
               $('.text').text('Vote');
           })
       })
-   </script>
-
-   <script type="text/javascript" src="{{ asset('js/bootstrap-select.js') }}"></script>
-
-   <script type="text/javascript">
-      jQuery(document).ready(function ($) {
-        $('#nt-example1').tab();
-      
-        blink($('#bcLive'), -1, 500);
-      
-        function blink(elem, times, speed) {
-          if (times > 0 || times < 0) {
-            if ($(elem).hasClass("blink"))
-              $(elem).removeClass("blink");
-            else
-              $(elem).addClass("blink");
-          }
-          clearTimeout(function () {
-            blink(elem, times, speed);
-          });
-          if (times > 0 || times < 0) {
-            setTimeout(function () {
-              blink(elem, times, speed);
-            }, speed);
-            times -= .5;
-          }
-        }
-      });
    </script>
    @stop

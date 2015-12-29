@@ -118,6 +118,9 @@ class MuzkanalController extends Controller
         $muzkanalvideo = \Model\Media\ModelName::where('id','=', $id)->first();
         $muzkanalvideo->incrementViewed();
 
+        $MediaTop1 = \Model\Media\ModelName::where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->orderBy('viewed','desc')-> take(3)->get();
+       
+
         //Related Videos
         $videoType = $muzkanalvideo->videoType; 
         $relatedmuzkanalVideos = \Model\Media\ModelName::where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->where('videoType','=', $videoType)->get();
@@ -143,6 +146,7 @@ class MuzkanalController extends Controller
             'channel' => $channel,
             'backgroundMain' => $backgroundMain,
             'muzkanalvideo' => $muzkanalvideo,
+            'MediaTop1' => $MediaTop1,
             'relatedmuzkanalVideos' => $relatedmuzkanalVideos,
             'relatedmuzkanalVideos2' => $relatedmuzkanalVideos2,
 
