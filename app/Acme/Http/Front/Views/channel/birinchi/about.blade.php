@@ -153,29 +153,32 @@
       </div>
    </div>
 </div>
-    <div class="container">
-        <div class="row">
-         <div class="top-left-block col-md-12">
-            <div class="panel panel-default onenews">                    
-              <div class="panel-heading">
-                <h3 class="panel-title"><span>{{ trans('radiopages.About') }}</span></h3>
-              </div>
 
-              <div class="panel-body aboutnumber">
-                <p>{{ trans('radiopages.AboutText1') }} </p>
-                <p>{{ trans('radiopages.AboutText2') }}</p>    
-                <p>{{ trans('radiopages.AboutText3') }}</p>    
-                <p>{{ trans('radiopages.AboutText4') }}</p>    
-                <p><h3 class="text-center">{{ trans('radiopages.AboutText5') }}</h3></p>
-                <p>{{ trans('radiopages.AboutText6') }}</p>
-                <p>{{ trans('radiopages.AboutText7') }}</p>
-                <p>{{ trans('radiopages.AboutText8') }}</p>  
-              </div>
-            </div><!-- end panel default -->
-          </div>
-        </div>  
- 
-    </div>
+    <div class="container">
+      <div class="row" style="margin-top:10px;">
+         <div class="col-md-12">
+            <div class="row onepadding" style="background: #fff;">
+               <div class="col-md-12 onepadding">
+                  <div class="panel onelist">
+                     <div class="panel-heading">
+                        <h3 class="panel-title"><span>{{ trans('radiopages.About') }}</span></h3>
+                     </div>
+                      <div class="panel-body aboutnumber" style="padding:10px">
+                        <p>{{ trans('radiopages.AboutText1') }} </p>
+                        <p>{{ trans('radiopages.AboutText2') }}</p>    
+                        <p>{{ trans('radiopages.AboutText3') }}</p>    
+                        <p>{{ trans('radiopages.AboutText4') }}</p>    
+                        <p><h3 class="text-center">{{ trans('radiopages.AboutText5') }}</h3></p>
+                        <p>{{ trans('radiopages.AboutText6') }}</p>
+                        <p>{{ trans('radiopages.AboutText7') }}</p>
+                        <p>{{ trans('radiopages.AboutText8') }}</p>  
+                      </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
 </div>
 
 @stop
