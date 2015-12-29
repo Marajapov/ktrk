@@ -27,18 +27,6 @@
   <script src="{{ asset('js/jquery-1.11.2.min.js') }}"></script>
   <script src="{{ asset('js/admin/jasny/jasny-bootstrap.min.js') }}"></script>
   <script src="{{ asset('js/fileinput.js') }}"></script>
-
-<<<<<<< HEAD
-            @if($backgroundMain != null) 
-                background: url('{{ asset($backgroundMain->getFile()) }}') no-repeat;
-                background-repeat: no-repeat;
-                background-attachment: fixed;
-                background-position: center;
-                background-size: cover;
-            @endif
-        }
-    </style>
-=======
   @yield('styles')
 
   <style>
@@ -52,7 +40,6 @@
     @endif
 }
   </style>
->>>>>>> c89295431c28c603f27db6c7aa376be6a9c54b04
 
   <script src="{{ asset('js/classie.js') }}"></script>
   <script>
@@ -78,15 +65,6 @@
 
 @include('Front::partials.modal')
 @include('Front::partials.header')
-
-<<<<<<< HEAD
-    @include('Front::partials.banner')
-    @yield('content')
-    @include('Front::partials.footer')
-    
-=======
 @include('Front::partials.banner')
 @yield('content')
 @include('Front::partials.footer')
-@yield('footerscript2')
->>>>>>> c89295431c28c603f27db6c7aa376be6a9c54b04
