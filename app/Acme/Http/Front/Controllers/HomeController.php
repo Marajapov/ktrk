@@ -135,6 +135,13 @@ class HomeController extends Controller
     {
         $lc = app()->getlocale();
 
+        if($lc == 'kg' && ($post->title != '')){
+            
+        }elseif($lc == 'ru' && ($post->titleRu != '')){
+            
+        }else{
+            return redirect()->route('front.home');
+        }
         $post->incrementViewed();
 
         $categories = \Model\Category\ModelName::all();
