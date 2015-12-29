@@ -395,7 +395,7 @@
                   </div>
                   <div class="panel-body">
                      <div class="col-md-12">
-                        <div class="carousel-slick1">
+                        <div class="carousel-slick10">
                            @if($MediaPop1)
                            @foreach($MediaPop1 as $pop1)
                            <div class="col-md-4 col-xs-12">
@@ -413,7 +413,7 @@
                            @endforeach
                            @endif
                         </div>
-                        <div class="carousel-slick1 videosfix">
+                        <div class="carousel-slick10 videosfix">
                            @if($MediaPop2)
                            @foreach($MediaPop2 as $pop2)
                            <div class="col-md-4">
@@ -430,7 +430,7 @@
                            @endforeach
                            @endif
                         </div>
-                        <div class="carousel-slick1 videosfix">
+                        <div class="carousel-slick10 videosfix">
                            @if($MediaPop3)
                            @foreach($MediaPop3 as $pop3)                        
                            <div class="col-md-4">
@@ -495,7 +495,7 @@
                   </div>
                   <div class="panel-body">
                      <div class="col-md-12">
-                        <div class="carousel-slick">
+                        <div class="carousel-slick11">
                            @if($MediaTop1)
                            @foreach($MediaTop1 as $top1)
                            <div class="col-md-4">
@@ -513,7 +513,7 @@
                            @endforeach
                            @endif                           
                         </div>
-                        <div class="carousel-slick videosfix">
+                        <div class="carousel-slick11 videosfix">
                            @if($MediaTop2)
                            @foreach($MediaTop2 as $top2)                        
                            <div class="col-md-4">
@@ -626,14 +626,14 @@
    <!--Carousel-->
    <script>
       if ($(window).width() > 768) {
-          $('.carousel-slick').slick({
+          $('.carousel-slick11').slick({
               infinite: true,
               slidesToShow: 4,
               slidesToScroll: 1,
               autoplay: false,
               autoplaySpeed: 4500
           });
-          $('.carousel-slick1').slick({
+          $('.carousel-slick10').slick({
               infinite: true,
               slidesToShow: 3,
               slidesToScroll: 1,
@@ -643,7 +643,7 @@
       }
       
       if ($(window).width() < 768) {
-          $('.carousel-slick1').slick({
+          $('.carousel-slick10').slick({
               infinite: true,
               slidesToShow: 2,
               slidesToScroll: 1,
@@ -653,7 +653,7 @@
       }
       
       if ($(window).width() < 768) {
-          $('.carousel-slick').slick({
+          $('.carousel-slick11').slick({
               infinite: true,
               slidesToShow: 2,
               slidesToScroll: 1,
