@@ -129,10 +129,12 @@ class HomeController extends Controller
             ]);
     }
 
-    
+
 
     public function Post(\Model\Post\ModelName $post)
     {
+        $contentOriginal = $post->getContent();
+
         $lc = app()->getlocale();
         if($lc == 'kg' && ($post->title != '')){            
         }elseif($lc == 'ru' && ($post->titleRu != '')){            
@@ -151,43 +153,128 @@ class HomeController extends Controller
         }else{
             $images = null;
         }
-        
-        
 
-        if($post->related1 != null){
-            $related1Post = \Model\Post\ModelName::where('id','=',$post->related1)->first();
-        }else{
-            $related1Post = null;
-        }
-
-        if($post->related2 != null){
-            $related2Post = \Model\Post\ModelName::where('id','=',$post->related2)->first();
-        }else{
-            $related2Post = null;
-        }
-
-        if($post->related3 != null){
-            $related3Post = \Model\Post\ModelName::where('id','=',$post->related3)->first();
-        }else{
-            $related3Post = null;
-        }
         if($lc == 'kg'){
+
             $relatedPosts = \Model\Post\ModelName::where('category_id','=',$post->category_id)->languagekg()->take(6)->skip(0)->orderBy('id', 'desc')->get();
+
+            if($post->related1)
+            {
+                if (strpos($contentOriginal,'POST1POST2') !== false) {
+                    if($post->related2)
+                    {
+                        $twoPostsPos = strripos($contentOriginal,'POST1POST2');
+                        $contentRelatedPosts = substr_replace($contentOriginal, $post->twoRelatedFunction($post->related1, $post->related2), $twoPostsPos, 10);
+                        $contentFinal = $contentRelatedPosts;
+                    }
+                }
+                else
+                {
+                    $post1Pos = strripos($contentOriginal,'POST1');
+                    $contentRelated1 = substr_replace($contentOriginal, $post->relatedFunction($post->related1), $post1Pos, 5);
+
+                    if($post->related2)
+                    {
+                        if(strpos($contentOriginal,'POST2POST3') !== false)
+                        {
+                            $twoPostsPos = strripos($contentRelated1,'POST2POST3');
+                            $contentRelatedPosts = substr_replace($contentRelated1, $post->twoRelatedFunction($post->related2, $post->related3), $twoPostsPos, 10);
+                            $contentFinal = $contentRelatedPosts;
+                        }
+                        else
+                        {
+                            $post2Pos = strripos($contentRelated1,'POST2');
+                            $contentRelated2 = substr_replace($contentRelated1, $post->relatedFunction($post->related2), $post2Pos, 5);
+
+                            if($post->related3)
+                            {
+                                $post3Pos = strripos($contentRelated2,'POST3');
+                                $contentRelated3 = substr_replace($contentRelated2, $post->relatedFunction($post->related3), $post3Pos, 5);
+                                $contentFinal = $contentRelated3;
+                            }
+                            else
+                            {
+                                $contentFinal = $contentRelated2;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        $contentFinal = $contentRelated1;
+                    }
+                }
+
+            }
+            else
+            {
+                $contentFinal = $contentOriginal;
+            }
+
         }elseif($lc == 'ru'){
+
             $relatedPosts = \Model\Post\ModelName::where('category_id','=',$post->category_id)->languageru()->take(6)->skip(0)->orderBy('id', 'desc')->get();
+
+            if($post->relatedRu1)
+            {
+                if (strpos($contentOriginal,'POST1POST2') !== false) {
+                    if($post->relatedRu2)
+                    {
+                        $twoPostsPos = strripos($contentOriginal,'POST1POST2');
+                        $contentRelatedPosts = substr_replace($contentOriginal, $post->twoRelatedFunction($post->relatedRu1, $post->relatedRu2), $twoPostsPos, 10);
+                        $contentFinal = $contentRelatedPosts;
+                    }
+                }
+                else
+                {
+                    $post1Pos = strripos($contentOriginal,'POST1');
+                    $contentRelated1 = substr_replace($contentOriginal, $post->relatedFunction($post->relatedRu1), $post1Pos, 5);
+
+                    if($post->relatedRu2)
+                    {
+                        if(strpos($contentOriginal,'POST2POST3') !== false)
+                        {
+                            $twoPostsPos = strripos($contentRelated1,'POST2POST3');
+                            $contentRelatedPosts = substr_replace($contentRelated1, $post->twoRelatedFunction($post->relatedRu2, $post->relatedRu3), $twoPostsPos, 10);
+                            $contentFinal = $contentRelatedPosts;
+                        }
+                        else
+                        {
+                            $post2Pos = strripos($contentRelated1,'POST2');
+                            $contentRelated2 = substr_replace($contentRelated1, $post->relatedFunction($post->relatedRu2), $post2Pos, 5);
+
+                            if($post->relatedRu3)
+                            {
+                                $post3Pos = strripos($contentRelated2,'POST3');
+                                $contentRelated3 = substr_replace($contentRelated2, $post->relatedFunction($post->relatedRu3), $post3Pos, 5);
+                                $contentFinal = $contentRelated3;
+                            }
+                            else
+                            {
+                                $contentFinal = $contentRelated2;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        $contentFinal = $contentRelated1;
+                    }
+                }
+
+            }
+            else
+            {
+                $contentFinal = $contentOriginal;
+            }
         }
         
 
         return view('Front::post.post',[
             'post' => $post,
 
-            'related1Post' => $related1Post,
-            'related2Post' => $related2Post,
-            'related3Post' => $related3Post,
-
             'relatedPosts' => $relatedPosts,
 
             'images' => $images,
+            'content' => $contentFinal,
 
             'categories'=>$categories,
             'backgroundMain' => $backgroundMain,

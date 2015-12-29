@@ -34,17 +34,8 @@
                   <p class="post-thumb" href="{{ route('front.post', $post) }}">
                     <img class="left" src="@if(empty($post->thumbnail))images/2.jpg @else {{  asset($post->thumbnail) }} @endif" alt="image">
                   </p>
-                  @if(!empty($post->related2))
-                    <div class="related2">
-                      <a href="{{ route('front.post', $post->related2) }}">{{ $related2Post->getName() }}</a>
-                    </div>
-                  @endif
-                  @if(!empty($post->related3))
-                    <div class="related3">
-                      <a href="{{ route('front.post', $post->related3) }}">{{ $related3Post->getName() }}</a>
-                    </div>
-                  @endif
-                  {!! $post->getContent() !!}
+                  {{--{!! $post->getContent() !!}--}}
+                  {!! $content !!}
                   <div class="carousel-post">
                     @if($images != null)
                       @foreach($images as $image)
@@ -58,31 +49,6 @@
                     @endif
                   </div>
                 </div>
-                @if(!empty($post->related1))
-                  <aside>
-                    <div class="topics-box">
-                      <h2>{{ trans('site.MatpoTeme') }}</h2>
-                      <div class="topics">
-                        <div class="topic clearfix">
-                          <div class="t-date">
-                                    <span class="date">
-                                    <span class="time">{{ $related1Post->getTime() }}</span>
-                                      {{ $related1Post->getDay() }} {{ $related1Post->getMonthRu() }} {{ $related1Post->getYear() }}
-                                    </span>
-                          </div>
-                          <a class="t-thumb" href="{{ route('front.post', $post->related1) }}">
-                            <img alt="alt photo text" src="{{ asset($related1Post->getFile()) }}">
-                          </a>
-                          <div class="t-info">
-                            <h4>
-                              <a class="js-dh" href="{{ route('front.post', $post->related1)}}">{{ $related1Post->getTitle() }}</a>
-                            </h4>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </aside>
-                @endif
                 <footer>
                   @if(auth()->user())
                     <a class="post-edit" href="{{ route('admin.post.edit', $post) }}" target="_blank"><i class="fa fa-pencil"></i>{{ trans('site.AdminPostEdit') }}</a>
