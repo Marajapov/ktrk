@@ -26,34 +26,36 @@
 
               <div class="panel-body">
 
-                @if($allVideos)
-                  @foreach($allVideos as $video)
-                    <div class="col-md-4 block">
-                      <div class="video-thumb">
-                        <a href="{{ route('front.media.video',$video) }}">
-                          <img src="http://img.youtube.com/vi/{{$video->url}}/mqdefault.jpg" alt=""/>
-                        </a>
-                        @if($video->program)
-                        <a href="{{ route('front.media.project', $video->program) }}">
+                <section class="clearfix">
+                  @if($allVideos)
+                    @foreach($allVideos as $video)
+                      <div class="col-md-4 block">
+                        <div class="video-thumb">
+                          <a href="{{ route('front.media.video',$video) }}">
+                            <img src="http://img.youtube.com/vi/{{$video->url}}/mqdefault.jpg" alt=""/>
+                          </a>
+                          @if($video->program)
+                            <a href="{{ route('front.media.project', $video->program) }}">
                           <span>
                           <i class="fa fa-play-circle-o"></i>
 
-                              {{ $video->getProgramName() }}
+                            {{ $video->getProgramName() }}
 
                         </span>
-                        </a>
-                        @else
-                          <i class="fa fa-play-circle-o"></i>
-                        @endif
+                            </a>
+                          @else
+                            <i class="fa fa-play-circle-o"></i>
+                          @endif
+                        </div>
+                        <div class="media-box">
+                          <a href="{{ route('front.media.video',$video) }}" class="">
+                            {{$video->getName()}}
+                          </a>
+                        </div>
                       </div>
-                      <div class="media-box">
-                        <a href="{{ route('front.media.video',$video) }}" class="">
-                          <h4>{{$video->getName()}}</h4>
-                        </a>
-                      </div>
-                    </div>
-                  @endforeach
-                @endif
+                    @endforeach
+                  @endif
+                </section>
 
                   <nav>
                     <ul class="pagination">

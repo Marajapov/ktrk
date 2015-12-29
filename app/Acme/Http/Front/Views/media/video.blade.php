@@ -32,20 +32,25 @@
                     @endif
                     <span>{{ $videoName }}</span>
                   </h4>
-                           <div class="extra">
-                              @if(auth()->user())
-                              <span class="art-edit"><a href="{{ route('admin.media.edit', $video) }}" target="_blank"><i class="fa fa-pencil"></i>{{ trans('site.AdminPostEdit') }}
-                              {{--<span class="glyphicon glyphicon-pencil"></span>--}}  </a>
-                              @endif
-                              </span>
-                           </div>
-                  <div class="embed-responsive embed-responsive-16by9 show-video">                    
+                  <div class="embed-responsive embed-responsive-16by9 show-video">
                     <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ $video->getUrl()}}"></iframe>
                   </div>
                   <p class="video-desc">
                     {{ $video->getContent()}}
                   </p>
                 </article>
+
+                <footer>
+                  @if(auth()->user())
+                    <a class="post-edit pull-left" href="{{ route('admin.media.edit', $video) }}" target="_blank">
+                      <i class="fa fa-pencil"></i>
+                      {{ trans('site.AdminPostEdit') }}
+                    </a>
+                  @endif
+                  <a href="{{ route('front.media.all') }}">
+                    <span>{{ trans('site.AllVideos') }}<i class="fa fa-arrow-circle-right"></i></span>
+                  </a>
+                </footer>
 
               </div>
             </div>
@@ -67,9 +72,11 @@
                     <img src="http://img.youtube.com/vi/{{ $relatedVideo->getUrl() }}/mqdefault.jpg" alt=""/>
                     <i class="fa fa-play-circle-o"></i>
                   </a>
-                  <a href="#" class="video-title">
-                    <h4>{{ $relatedVideo->getName() }}</h4>
-                  </a>
+                  <div class="video-title">
+                    <a href="#">
+                      {{ $relatedVideo->getName() }}
+                    </a>
+                  </div>
                 </div>
                 @endforeach
 

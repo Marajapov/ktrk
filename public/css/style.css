@@ -262,11 +262,12 @@ img {
     text-transform: uppercase;
 }
 .panel-body {
-    padding: 10px;
+    padding: 15px 15px 0;
 }
 .panel-body footer {
+    padding: 15px 0;
+    border-top: 3px solid #F1F4F9;
     clear: both;
-    padding: 10px;
     text-align: right;
 }
 .panel-body footer a {
@@ -1621,7 +1622,7 @@ header {
     position: relative;
 }
 .panel-videos .panel-body, .panel-video .panel-body, .panel-shows .panel-body, .panel-show .panel-body {
-    padding: 10px 15px 20px;
+    padding: 15px 15px 0;
 }
 .videos-block {
     border: 0;
@@ -1711,7 +1712,7 @@ header {
     text-transform: uppercase;
 }
 .show-title {
-    margin: 10px 0;
+    margin: 0;
 }
 .show-title i {
     display: inline-block;
@@ -1759,24 +1760,26 @@ header {
 }
 .panel-related-videos .video-title {
     display: table-cell;
-    height: 70px;
+    height: 50px;
+    width: 300px;
+    max-width: 100%;
     margin: 0;
     padding: 0;
     vertical-align: middle;
 }
-.panel-related-videos .block h4 {
-    display: inline-block;
+.panel-related-videos .block a {
+    display: block;
     width: 100%;
     margin: 0;
-    vertical-align: middle;
     line-height: 1;
     color: #2D3E4A;
     font-size: 14px;
     font-weight: bold;
     text-align: center;
 }
-.panel-related-videos .block h4:hover {
+.panel-related-videos .block a:hover {
     color: #4e5e6a;
+    text-decoration: underline;
 }
 
 /*Panel shows*/

@@ -416,7 +416,7 @@
                                 @endif
                               </div>
                               <div class="media-title">
-                                <a href="{{ route('front.media.video', $media) }}">
+                                <a href="{{ route('front.media.video', $row) }}">
                                   <h4>{{ $row->getName() }}</h4>
                                 </a>
                               </div>

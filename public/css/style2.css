@@ -458,10 +458,15 @@ header.top-menu,.logo-block{
 .panel-promo{
     border-left: 2px solid #F1F4F9;
 }
+.panel-promo .panel-body{
+    padding: 15px 10px 0px;
+}
 .panel-top-news .panel-body footer,.panel-promo .panel-body footer{
     position: absolute;
-    bottom: 10px;
-    right: 10px;
+    bottom: 0;
+    left: 0;
+    padding: 15px;
+    width: 100%;
 }
 
 /*LATEST NEWS*/
@@ -848,7 +853,7 @@ header.top-menu,.logo-block{
     padding: 0 10px;
 }
 .media-videos .panel-body{
-    padding: 15px 5px 0;
+    padding: 15px 15px 0 5px;
 }
 .media-videos .panel-heading{
     padding: 10px 15px 0;
