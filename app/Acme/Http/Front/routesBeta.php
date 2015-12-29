@@ -36,7 +36,7 @@ Route::group(['domain' => 'beta.ktrk.kg', 'prefix' => '/music', 'namespace' => '
     Route::get('/posts', ['as' => 'muzkanal.posts',   'uses' => 'MuzkanalController@posts']);
     Route::get('/radio', ['as' => 'muzkanal.radio',   'uses' => 'MuzkanalController@radio']);
     Route::get('/about', ['as' => 'muzkanal.about',   'uses' => 'MuzkanalController@about']);
-    
+    Route::get('/teleprogram', ['as' => 'muzkanal.teleprogram',   'uses' => 'MuzkanalController@teleprogram']);
     Route::get('/video/{video}', ['as' => 'muzkanal.video',   'uses' => 'MuzkanalController@video']);
     Route::get('/videos', ['as' => 'muzkanal.videos',   'uses' => 'MuzkanalController@videos']);
     Route::get('/hitparad', ['as' => 'muzkanal.hitparad',   'uses' => 'MuzkanalController@hitparad']);
@@ -80,7 +80,8 @@ Route::group(['domain' => 'beta.ktrk.kg', 'prefix' => '/kyrgyzradio', 'namespace
     Route::get('/news/{post}', ['as' => 'kyrgyzradio.news',   'uses' => 'KyrgyzradioController@news']);
     Route::get('allnews', ['as' => 'kyrgyzradio.allnews',   'uses' => 'KyrgyzradioController@allnews']);
     Route::get('/allphotos',['as' => 'kyrgyzradio.allphotos','uses'=> 'KyrgyzradioController@allphotos'] );
-    Route::get('/project/{project}',['as' => 'kyrgyzradio.project','uses'=> 'KyrgyzradioController@project'] );    
+    Route::get('/project/{project}',['as' => 'kyrgyzradio.project','uses'=> 'KyrgyzradioController@project'] ); 
+    Route::get('/comingsoon', ['as' => 'kyrgyzradio.comingsoon',   'uses' => 'KyrgyzradioController@ComingSoon']);   
 
 });
 
@@ -108,6 +109,7 @@ Route::group(['domain' => 'beta.ktrk.kg', 'prefix' => '/dostuk', 'namespace' => 
     Route::get('allnews', ['as' => 'dostuk.allnews',   'uses' => 'DostukController@allnews']);
     Route::get('/allphotos',['as' => 'dostuk.allphotos','uses'=> 'DostukController@allphotos'] );
     Route::get('/project/{project}',['as' => 'dostuk.project','uses'=> 'DostukController@project'] );
+    Route::get('/comingsoon', ['as' => 'dostuk.comingsoon',   'uses' => 'DostukController@ComingSoon']);
 
 });
 
@@ -192,6 +194,12 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
 //    Народный репортер
     Route::get('/reporter',['as'=>'front.reporter','uses'=>'HomeController@Reporter']);
     Route::post('reporter.add',['as'=>'front.reporter.add','uses'=>'HomeController@ReporterAdd']);
+
+    // Reklama
+    Route::get('/advertisement',['as'=>'front.pages.reklama', 'uses'=>'PageController@Reklama']);
+
+    //Contacts
+    Route::get('/contacts',['as'=>'front.pages.contacts', 'uses'=>'PageController@Contacts']);
 
 //    AJAX CALL
     Route::get('/ajax_program', 'PageController@AjaxProgram');
