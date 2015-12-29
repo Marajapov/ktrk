@@ -676,16 +676,28 @@ header {
     line-height: 1;
     text-align: center;
 }
-.panel-top-news  a.news-title {
+.panel-top-news  div.news-title {
     display: table-cell;
+    vertical-align: middle;
+    width: 250px;
+    max-width: 100%;
     height: 50px;
     margin: 0;
     padding: 0;
     vertical-align: middle;
     color: #4e5e6a;
 }
-.panel-top-news  h2:hover a {
-    color: #2D3E4A;
+.panel-top-news  div.news-title a{
+    display: block;
+    padding: 0 10px;
+    color: #4e5e6a;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1;
+    text-align: center;
+}
+.panel-top-news  div.news-title a:hover{
+    text-decoration: underline;
 }
 .panel-top-news figcaption p.icon-links a {
     padding: 0px 3px;
