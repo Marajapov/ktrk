@@ -191,8 +191,8 @@ class PostController extends Controller
         $categoryList = \Model\Category\ModelName::lists('titleRu', 'id')->toArray();
         $PhotoParentList = \Model\PhotoParent\ModelName::lists('name', 'id')->toArray();
 
-        $relatedPosts = \Model\Post\ModelName::where('title','<>','')->lists('title', 'id')->toArray();
-        $relatedPosts2 = \Model\Post\ModelName::where('titleRu','<>','')->lists('titleRu', 'id')->toArray();
+        $relatedPosts = \Model\Post\ModelName::where('title','<>','')->where('id','<>',$post->id)->lists('title', 'id')->toArray();
+        $relatedPosts2 = \Model\Post\ModelName::where('titleRu','<>','')->where('id','<>',$post->id)->lists('titleRu', 'id')->toArray();
 
         $dostukProgramList = \Model\Project\ModelName::where('dostuk','=','1')->lists('name', 'id')->toArray();
         $birinchiProgramList = \Model\Project\ModelName::where('birinchi','=','1')->lists('name', 'id')->toArray();

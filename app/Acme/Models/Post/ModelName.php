@@ -78,8 +78,6 @@ class ModelName extends Model
         }else{
             return $this->contentRu;
         }
-
-        return $this->content;
     }
 
     public function getIsPhoto() // at least one photo
