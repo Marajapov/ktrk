@@ -8,12 +8,13 @@ use Response;
 
 class PageController extends Controller
 {
-    protected $positionTop, $positionRight, $positionCenter, $positionBottom;
+    protected $positionTop, $positionRight, $positionCenter, $positionBottom, $positionLeft;
 
     public function __construct()
     {
         $this->positionTop = \Model\Banner\ModelName::where('positionTop','=','1')->first();
         $this->positionRight = \Model\Banner\ModelName::where('positionRight','=','1')->first();
+        $this->positionLeft = \Model\Banner\ModelName::where('positionLeft','=','1')->first();
         $this->positionCenter = \Model\Banner\ModelName::where('positionCenter','=','1')->first();
         $this->positionBottom = \Model\Banner\ModelName::where('positionBottom','=','1')->first();
     }
@@ -34,6 +35,7 @@ class PageController extends Controller
             'positionRight'  => $this->positionRight,
             'positionCenter' => $this->positionCenter,
             'positionBottom' => $this->positionBottom,
+            'positionLeft'  => $this->positionLeft,
         ]);
     }
 
@@ -57,6 +59,7 @@ class PageController extends Controller
             'positionRight'  => $this->positionRight,
             'positionCenter' => $this->positionCenter,
             'positionBottom' => $this->positionBottom,
+            'positionLeft'  => $this->positionLeft,
             'fbpost' => $fbpost,
         ]);
     }
@@ -74,6 +77,7 @@ class PageController extends Controller
             'positionRight'  => $this->positionRight,
             'positionCenter' => $this->positionCenter,
             'positionBottom' => $this->positionBottom,
+            'positionLeft'  => $this->positionLeft,
         ]);
 
     }
@@ -100,6 +104,7 @@ class PageController extends Controller
             'positionRight'  => $this->positionRight,
             'positionCenter' => $this->positionCenter,
             'positionBottom' => $this->positionBottom,
+            'positionLeft'  => $this->positionLeft,
         ]);
     }
 
@@ -116,6 +121,7 @@ class PageController extends Controller
             'positionRight'  => $this->positionRight,
             'positionCenter' => $this->positionCenter,
             'positionBottom' => $this->positionBottom,
+            'positionLeft'  => $this->positionLeft,
         ]);
     }
 
@@ -132,6 +138,7 @@ class PageController extends Controller
             'positionRight'  => $this->positionRight,
             'positionCenter' => $this->positionCenter,
             'positionBottom' => $this->positionBottom,
+            'positionLeft'  => $this->positionLeft,
         ]);
     }
 
@@ -148,6 +155,7 @@ class PageController extends Controller
             'positionRight'  => $this->positionRight,
             'positionCenter' => $this->positionCenter,
             'positionBottom' => $this->positionBottom,
+            'positionLeft'  => $this->positionLeft,
         ]);
     }
 
@@ -181,6 +189,7 @@ class PageController extends Controller
             'positionRight'  => $this->positionRight,
             'positionCenter' => $this->positionCenter,
             'positionBottom' => $this->positionBottom,
+            'positionLeft'  => $this->positionLeft,
         ]);
     }
 
@@ -245,6 +254,7 @@ class PageController extends Controller
             'positionRight'  => $this->positionRight,
             'positionCenter' => $this->positionCenter,
             'positionBottom' => $this->positionBottom,
+            'positionLeft'  => $this->positionLeft,
         ]);
 
     }
@@ -260,6 +270,7 @@ class PageController extends Controller
             'positionRight'  => $this->positionRight,
             'positionCenter' => $this->positionCenter,
             'positionBottom' => $this->positionBottom,
+            'positionLeft'  => $this->positionLeft,
         ]);
     }
 
@@ -274,6 +285,7 @@ class PageController extends Controller
             'positionRight'  => $this->positionRight,
             'positionCenter' => $this->positionCenter,
             'positionBottom' => $this->positionBottom,
+            'positionLeft'  => $this->positionLeft,
         ]);
     }
 
@@ -344,8 +356,41 @@ class PageController extends Controller
             'positionRight'  => $this->positionRight,
             'positionCenter' => $this->positionCenter,
             'positionBottom' => $this->positionBottom,
+            'positionLeft'  => $this->positionLeft,
         ]);
 
+    }
+
+    public function Reklama()
+    {
+        $lc = app()->getlocale();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+        return view('Front::pages.reklama',[
+            'lc'            => $lc,
+            'backgroundMain' => $backgroundMain,
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
+            'positionLeft'  => $this->positionLeft,
+        ]);
+    }
+
+    public function Contacts()
+    {
+        $lc = app()->getlocale();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+        return view('Front::pages.contacts',[
+            'lc'            => $lc,
+            'backgroundMain' => $backgroundMain,
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
+            'positionLeft'  => $this->positionLeft,
+        ]);
     }
 }
 

@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="css/audio/muzslider.css">
 @endsection
 @section('content')
+
 <body class="music">
    <div class="switch">
       <nav class="navbar">
@@ -143,7 +144,7 @@
             <div id="dkp-slideshow-left"></div>
             <div class="row dkp-slide">
                <a href="#">
-                  <div class="col-sm-12 dkp-anonce dkp-anonce-big" style="background-image: url(images/channels/muzkanal/hit-parad.jpg);">
+                  <div class="col-sm-12 dkp-anonce dkp-anonce-big" style="background-image: url({{ asset('images/channels/muzkanal/hit-parad.jpg') }});">
                      <div class="dkp-anonce-time">
                         <span>21:00</span>
                      </div>
@@ -344,44 +345,40 @@
             <div class="panel-heading">
                <h3 class="panel-title"><span> - {{ trans('radiopages.KorsotuuList') }} - </span></h3>
             </div>
-            @if($programs != null)
+            @if($program)
             <div class="centered">
                <div id="nt-example1-container" >
                   <i class="fa fa-arrow-up" id="nt-example1-prev"></i>
                   <i class="fa fa-arrow-down" id="nt-example1-next" style="right:25px;"></i>
                   <ul id="nt-example1" data-tabs="nt-example1">
-                     @foreach($programs as $key => $program)
-                     @foreach($schedules as $schedule)
-                     @if($program['date'] == $schedule->date)
-                     @for($i=0; $i<count($program)-1; $i++)
-                     <li>
-                        <span>{{ $program[$i]->time }}</span>
+                     @foreach($program as $row)
+                        <li style="">
 
-                        <h4 class="currenttime">
-                           @if(($schedule->date == $currentDate) && ($i < count($program)-2))
-                           @if((strtotime($program[$i]->time) <= strtotime($currentTime)) && (strtotime($currentTime) < strtotime($program[$i+1]->time)))
-                           @if($lc == 'kg')
-                           <section id="bcLive"></i>азыр эфирде</section>
-                           @elseif($lc == 'ru')
-                           <section id="bcLive"></i>сейчас в эфире</section>
-                           @endif
-                           @endif
-                           @elseif(($schedule->date == $currentDate) && ($i == count($program)-1))
-                           @if((strtotime($program[$i]->time) <= strtotime($currentTime)))
-                           @if($lc == 'kg')
-                           <section id="bcLive"></i>азыр эфирде</section>
-                           @elseif($lc == 'ru')
-                           <section id="bcLive"></i>сейчас в эфире</section>
-                           @endif
-                           @endif
-                           @endif
-                           <p>{{ $program[$i]->name }}</p>
-                        </h4>
-                     </li>
-                     @endfor
-                     @endif
-                     @endforeach
-                     @endforeach                       
+                           <span>{{ $row->time }}</span>
+
+                           <h4>
+
+                              <!-- @if((strtotime($row->time) <= strtotime($currentTime)) && (strtotime($currentTime) < strtotime($row->time)))
+                                 @if($lc == 'kg')
+                                    <section id="bcLive"></i>азыр эфирде</section>
+                                 @elseif($lc == 'ru')
+                                    <section id="bcLive"></i>сейчас в эфире</section>
+                                 @endif
+                              @endif
+
+                              @if((strtotime($row->time) <= strtotime($currentTime)))
+                                 @if($lc == 'kg')
+                                    <section id="bcLive"></i>азыр эфирде</section>
+                                 @elseif($lc == 'ru')
+                                    <section id="bcLive"></i>сейчас в эфире</section>
+                                 @endif
+                              @endif -->
+
+                              <p>{{ $row->name }}</p>
+                           </h4>
+
+                        </li>
+                     @endforeach                     
                   </ul>
                </div>
             </div>
@@ -398,7 +395,7 @@
                   </div>
                   <div class="panel-body">
                      <div class="col-md-12">
-                        <div class="carousel-slick1">
+                        <div class="carousel-slick10">
                            @if($MediaPop1)
                            @foreach($MediaPop1 as $pop1)
                            <div class="col-md-4 col-xs-12">
@@ -416,7 +413,7 @@
                            @endforeach
                            @endif
                         </div>
-                        <div class="carousel-slick1 videosfix">
+                        <div class="carousel-slick10 videosfix">
                            @if($MediaPop2)
                            @foreach($MediaPop2 as $pop2)
                            <div class="col-md-4">
@@ -433,7 +430,7 @@
                            @endforeach
                            @endif
                         </div>
-                        <div class="carousel-slick1 videosfix">
+                        <div class="carousel-slick10 videosfix">
                            @if($MediaPop3)
                            @foreach($MediaPop3 as $pop3)                        
                            <div class="col-md-4">
@@ -468,21 +465,22 @@
                <div class="panel-body">
                   <ul class="list-group" >
                   @if($hitNumbers)
-                  @foreach($hitNumbers as $hit)
-                  <li class="list-group-item clearfix">
-                     <a href="#" class="pull-right"> <i class="glyphicon glyphicon-play"></i> </a>
-                     <a href="#" class="pull-left"> <img src="http://img.youtube.com/vi/{{ $hit->getUrl()}}/mqdefault.jpg" class="hitimg"> </a>
-                     <a class="clear" href="#">
-                        <span>{{ $hit->getName() }}</span>
-                        
-                     </a>
-                     <span class="numeric">{{ $hit->hitnumber }}</span>
-                     <div class="vote">
-                        <div class="like" data-likes="10"><i class="fa fa-thumbs-up"></i></div>
-                     </div>
-                  </li>
-                  @endforeach
+                    @foreach($hitNumbers as $hit)
+                    <li class="list-group-item clearfix">
+                       <a href="#" class="pull-right"> <i class="glyphicon glyphicon-play"></i> </a>
+                       <a href="#" class="pull-left"> <img src="http://img.youtube.com/vi/{{ $hit->getUrl()}}/mqdefault.jpg" class="hitimg"> </a>
+                       <a class="clear" href="#">
+                          <span>{{ $hit->getName() }}</span>
+
+                       </a>
+                       <span class="numeric">{{ $hit->hitnumber }}</span>
+                       <div class="vote">
+                          <div class="like" data-likes="10"><i class="fa fa-thumbs-up"></i></div>
+                       </div>
+                    </li>
+                    @endforeach
                   @endif
+                 </ul>
                   
                </div>
             </div>
@@ -497,7 +495,7 @@
                   </div>
                   <div class="panel-body">
                      <div class="col-md-12">
-                        <div class="carousel-slick">
+                        <div class="carousel-slick11">
                            @if($MediaTop1)
                            @foreach($MediaTop1 as $top1)
                            <div class="col-md-4">
@@ -515,7 +513,7 @@
                            @endforeach
                            @endif                           
                         </div>
-                        <div class="carousel-slick videosfix">
+                        <div class="carousel-slick11 videosfix">
                            @if($MediaTop2)
                            @foreach($MediaTop2 as $top2)                        
                            <div class="col-md-4">
@@ -568,34 +566,17 @@
       </div>
    </div>
    @stop
-   @section('footerscript2')
-   <script src="js/jquery-1.11.2.min.js"></script>
-   <script src="js/bootstrap.min.js"></script> 
-   <script>
-      $(document).ready(function () {
-          $(".search-toggle").click(function () {
-              $(".logo-block").addClass("search-show");
-              $(".form-search").addClass("visible");
-          });
-          $(".close-search").click(function () {
-              $(".logo-block").removeClass("search-show");
-              $(".form-search").removeClass("visible");
-          });
-      });
-   </script>   
 
-   </script>
+   @section('footerscript2') 
+
    <script src="js/audio/dkp.min.js"></script>
-   <script type="text/javascript" src="filter/js/jquery.easing.min.js"></script>
-   <script type="text/javascript" src="filter/js/jquery.mixitup.min.js"></script>
-   <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
-   <script type="text/javascript" src="slick/slick.min.js"></script>
    <script type="text/javascript" src="js/jquery.roundabout.js"></script>
    <!-- Fixed Sticky header -->
    <script type ="text/javascript" src ="js/script.js"></script>   
    <!-- Fixed Sticky header -->
    <!-- Programm title Anima -->
    <script src="js/audio/jquery.newsTicker.js"></script> 
+
    <script>
       var nt_title = $('#nt-title').newsTicker({
           row_height: 30,
@@ -608,8 +589,7 @@
           max_rows: 3,
           duration: 4000,
           prevButton: $('#nt-example1-prev'),
-          nextButton: $('#nt-example1-next'),
-
+          nextButton: $('#nt-example1-next')
       });
       
       var state = 'stopped';
@@ -617,10 +597,7 @@
       var add;
       
    </script>
-   <!-- Ptogramm title Anima -->
-   <script src="{{ asset('jwplayer/jwplayer.js') }}"></script>
 
-   <script>jwplayer.key = "tmEO2SU8NzqLBoHr2Vq6nV13XCyfo8xbdiCb/Q==";</script>
    <script type="text/javascript">
       var playerInstance = jwplayer("player");
       
@@ -649,14 +626,14 @@
    <!--Carousel-->
    <script>
       if ($(window).width() > 768) {
-          $('.carousel-slick').slick({
+          $('.carousel-slick11').slick({
               infinite: true,
               slidesToShow: 4,
               slidesToScroll: 1,
               autoplay: false,
               autoplaySpeed: 4500
           });
-          $('.carousel-slick1').slick({
+          $('.carousel-slick10').slick({
               infinite: true,
               slidesToShow: 3,
               slidesToScroll: 1,
@@ -666,7 +643,7 @@
       }
       
       if ($(window).width() < 768) {
-          $('.carousel-slick1').slick({
+          $('.carousel-slick10').slick({
               infinite: true,
               slidesToShow: 2,
               slidesToScroll: 1,
@@ -676,7 +653,7 @@
       }
       
       if ($(window).width() < 768) {
-          $('.carousel-slick').slick({
+          $('.carousel-slick11').slick({
               infinite: true,
               slidesToShow: 2,
               slidesToScroll: 1,
@@ -686,4 +663,5 @@
       }
       
    </script>
+
    @stop

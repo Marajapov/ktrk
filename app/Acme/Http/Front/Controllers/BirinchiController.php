@@ -11,7 +11,13 @@ class BirinchiController extends Controller
     {
         $channel = \Model\Channel\ModelName::name('birinchi')->first();
 
-        $generalPosts = \Model\Post\ModelName::where('birinchi','=',1)->where('general','=','1')->take(3)->orderBy('id','desc')->get();
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            $generalPosts = \Model\Post\ModelName::where('birinchi','=',1)->where('general','=','1')->languagekg()->take(3)->orderBy('id','desc')->get();    
+        }else{
+            $generalPosts = \Model\Post\ModelName::where('birinchi','=',1)->where('general','=','1')->languageru()->take(3)->orderBy('id','desc')->get();
+        }
+        
 
         $photoGalleries = \Model\PhotoParent\ModelName::where('birinchi','=','1')->where('published','=',true)->take('6')->orderBy('id','desc')->get();
 

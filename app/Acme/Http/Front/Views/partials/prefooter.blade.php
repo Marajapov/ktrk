@@ -52,12 +52,12 @@
       </p>
       <ul>
         <li>
-          <a href="#">
+          <a href="https://play.google.com/store/apps/details?id=ktrk.kg.app">
             <img src="{{ asset('images/android.png') }}" alt="ktrk_adnroid"/>
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="https://itunes.apple.com/kg/app/ktrk-official/id1004194204">
             <img src="{{ asset('images/ios.png') }}" alt="ktrk_ios"/>
           </a>
         </li>
@@ -71,8 +71,10 @@
         <li>/</li>
         <li><a href="{{ route('front.media.index') }}">Видеопортал</a></li><li>/</li>
         <li><a href="{{ route('front.pages.program') }}">Программа</a></li><li>/</li>
-        <li><a href="{{ route('front.pages.program') }}">{{ trans('site.Ads') }}</a></li><li>/</li>
+        <li><a href="#">{{ trans('site.Ads') }}</a></li><li>/</li>
+        {{--<li><a href="{{ route('front.pages.reklama') }}">{{ trans('site.Ads') }}</a></li><li>/</li>--}}
         <li><a href="#">{{ trans('site.Contacts') }}</a></li>
+        {{--<li><a href="{{ route('front.pages.contacts') }}">{{ trans('site.Contacts') }}</a></li>--}}
       </ul>
 
       <h4 class="copyright"><i class="fa fa-copyright"></i>2015 {{ trans('site.TradeMark') }}</h4>

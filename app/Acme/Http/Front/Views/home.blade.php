@@ -1,5 +1,5 @@
 @extends('Front::layouts.default')
-@section('title', "Главная страница")
+@section('title', trans('site.Homepage').' | КТРК' )
 
 @section('content')
 
@@ -54,7 +54,7 @@
             </div>
 
             <a href="#" class="text-center ads middle-ad">
-              <img src="@if(!empty($positionCenter->file)) {{ asset($positionCenter->file) }} @else images/ads_1.jpg @endif" alt=""/>
+              <img src="@if(!empty($positionLeft->file)) {{ asset($positionLeft->file) }} @else {{ asset('images/banner_default_728x90.png') }} @endif" alt=""/>
             </a>
 
             <div class="panel panel-default panel-carousel peoplereporter">
@@ -252,7 +252,7 @@
             </div>
 
             <a href="#" class="text-center ads ads-300x250 middle-ad">
-              <img src="@if(!empty($positionRight->file)) {{ asset($positionRight->file) }} @else images/banner_300x250.png @endif" alt="phot1"/>
+              <img src="@if(!empty($positionRight->file)) {{ asset($positionRight->file) }} @else {{ asset('images/banner_300x250.png') }} @endif" alt="phot1"/>
             </a>
 
           </div>
@@ -443,7 +443,7 @@
             </div>
 
             <a href="#" class="text-center ads">
-              <img src="@if(!empty($positionCenter->file)) {{ asset($positionCenter->file) }} @else images/ads_1.jpg @endif" alt=""/>
+              <img src="@if(!empty($positionCenter->file)) {{ asset($positionCenter->file) }} @else {{ asset('images/banner_default_728x90.png') }} @endif" alt=""/>
             </a>
 
             <div class="panel panel-default panel-carousel gallery">
