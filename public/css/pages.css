@@ -1080,3 +1080,55 @@
     width: 30%;
     margin: 0 auto;
 }
+
+
+/*PANEL REKLAMA*/
+.panel-reklama .panel-body{
+    padding: 30px 15px 15px;
+}
+.panel-reklama .table{
+    float: left;
+    margin: 0;
+    max-width: 80%;
+}
+.panel-reklama .table th{
+    text-transform: uppercase;
+}
+.price{
+    padding: 30px 15px 15px;
+    width: 20%;
+    float: right;
+
+    text-align: center;
+}
+.price p{
+    font-size: 16px;
+    font-weight: bold;
+}
+.price a{
+    display: block;
+    padding: 15px 0;
+}
+.price a i{
+    font-size: 48px;
+}
+.price a span{
+    display: block;
+    margin-top: 10px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+.panel-reklama .tech-price .table{
+    max-width: 100%;
+}
+.tech-price th:first-child,.tech-price td:first-child{
+    text-align: center;
+}
+
+/*PANEL CONTACTS*/
+.panel-contatcs .panel-body{
+    padding: 30px 15px 15px;
+}
+.panel-contacts .table{
+    max-width: 100%;
+}

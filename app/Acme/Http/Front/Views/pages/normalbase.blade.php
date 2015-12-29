@@ -29,7 +29,7 @@
                               <p>2011-жылдын 18-ноябрында Кыргыз Республикасынын Президенти Алмазбек Атамбаев  КРнын Жогорку Кеңеши тарабынан кабыл алынган "Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясы тууралуу" мыйзамга кол койгон.</p>
                             </div>
                             <div class="media-right">
-                              <a target="_blank" href="{{ asset('static/files/zakon.pdf') }}" class="btn btn-default"><i class="fa fa-file-pdf-o"></i></a>
+                              <a target="_blank" href="{{ asset('static/files/zakon_kg.pdf') }}" class="btn btn-default"><i class="fa fa-file-pdf-o"></i></a>
                               {{--<a target="_blank" class="otchet" href="{{ asset('static/files/report/2014_kg.pdf') }}">Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясынын 2014-жылдык ишинин отчету</a>--}}
                             </div>
                           </div>
@@ -115,7 +115,7 @@
                               <p>18 ноября 2011 года Президент Кыргызской Республики Алмазбек Атамбаев подписал Закон «Об Общественной телерадиовещательной корпорации Кыргызской Республики», принятый Жогорку Кенешем Кыргызской Республики. Законом предусматривается правовое положение Общественной телерадиовещательной корпорации Кыргызстана, как важного демократического института в республике.</p>
                             </div>
                             <div class="media-right">
-                              <a target="_blank" href="{{ asset('static/files/zakon.pdf') }}" class="btn btn-default"><i class="fa fa-file-pdf-o"></i></a>
+                              <a target="_blank" href="{{ asset('static/files/zakon_ru.pdf') }}" class="btn btn-default"><i class="fa fa-file-pdf-o"></i></a>
                               {{--<a target="_blank" class="otchet" href="{{ asset('static/files/report/2014_kg.pdf') }}">Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясынын 2014-жылдык ишинин отчету</a>--}}
                             </div>
                           </div>
