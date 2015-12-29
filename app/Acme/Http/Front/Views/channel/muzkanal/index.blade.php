@@ -144,7 +144,7 @@
             <div id="dkp-slideshow-left"></div>
             <div class="row dkp-slide">
                <a href="#">
-                  <div class="col-sm-12 dkp-anonce dkp-anonce-big" style="background-image: url(images/channels/muzkanal/hit-parad.jpg);">
+                  <div class="col-sm-12 dkp-anonce dkp-anonce-big" style="background-image: url({{ asset('images/channels/muzkanal/hit-parad.jpg') }});">
                      <div class="dkp-anonce-time">
                         <span>21:00</span>
                      </div>
@@ -468,21 +468,22 @@
                <div class="panel-body">
                   <ul class="list-group" >
                   @if($hitNumbers)
-                  @foreach($hitNumbers as $hit)
-                  <li class="list-group-item clearfix">
-                     <a href="#" class="pull-right"> <i class="glyphicon glyphicon-play"></i> </a>
-                     <a href="#" class="pull-left"> <img src="http://img.youtube.com/vi/{{ $hit->getUrl()}}/mqdefault.jpg" class="hitimg"> </a>
-                     <a class="clear" href="#">
-                        <span>{{ $hit->getName() }}</span>
-                        
-                     </a>
-                     <span class="numeric">{{ $hit->hitnumber }}</span>
-                     <div class="vote">
-                        <div class="like" data-likes="10"><i class="fa fa-thumbs-up"></i></div>
-                     </div>
-                  </li>
-                  @endforeach
+                    @foreach($hitNumbers as $hit)
+                    <li class="list-group-item clearfix">
+                       <a href="#" class="pull-right"> <i class="glyphicon glyphicon-play"></i> </a>
+                       <a href="#" class="pull-left"> <img src="http://img.youtube.com/vi/{{ $hit->getUrl()}}/mqdefault.jpg" class="hitimg"> </a>
+                       <a class="clear" href="#">
+                          <span>{{ $hit->getName() }}</span>
+
+                       </a>
+                       <span class="numeric">{{ $hit->hitnumber }}</span>
+                       <div class="vote">
+                          <div class="like" data-likes="10"><i class="fa fa-thumbs-up"></i></div>
+                       </div>
+                    </li>
+                    @endforeach
                   @endif
+                 </ul>
                   
                </div>
             </div>
@@ -591,8 +592,7 @@
           max_rows: 3,
           duration: 4000,
           prevButton: $('#nt-example1-prev'),
-          nextButton: $('#nt-example1-next'),
-
+          nextButton: $('#nt-example1-next')
       });
       
       var state = 'stopped';
