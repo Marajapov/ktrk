@@ -256,4 +256,8 @@ select.mobile-device {
   height: 100% !important;
   opacity: 0;
 }
+select.bs-select-hidden,
+select.selectpicker {
+    display: none !important;
+}
 /*# sourceMappingURL=bootstrap-select.css.map */

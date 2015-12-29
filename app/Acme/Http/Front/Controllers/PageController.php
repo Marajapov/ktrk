@@ -354,7 +354,22 @@ class PageController extends Controller
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
         return view('Front::pages.reklama',[
-            'lc'             => $lc,
+            'lc'            => $lc,
+            'backgroundMain' => $backgroundMain,
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
+        ]);
+    }
+
+    public function Contacts()
+    {
+        $lc = app()->getlocale();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+        return view('Front::pages.contacts',[
+            'lc'            => $lc,
             'backgroundMain' => $backgroundMain,
             'positionTop'    => $this->positionTop,
             'positionRight'  => $this->positionRight,
