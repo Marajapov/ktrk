@@ -54,9 +54,7 @@
 				            	@endif
 				            </td>
 				            <td>
-		            			<a href="{{ route('admin.banner.show', $banner) }}">
-				                  {{ $banner->linkTo }}
-				                </a>
+				                  {{ $banner->linkTo }}				                
 				            </td>
 				            <td>
 				                <a class="btn btn-default" href="{{ route('admin.banner.show', $banner) }}">

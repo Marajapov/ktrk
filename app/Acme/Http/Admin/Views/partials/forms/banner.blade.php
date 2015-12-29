@@ -14,13 +14,6 @@
             </div>
         </div>
 
-        <div class="form-group">
-            <label class="col-sm-2 control-label">Категория</label>
-            <div class="col-sm-10">
-                {!! Form::select('category_id', \Model\Category\ModelName::lists('title', 'id')->toArray(), null, ["class" => "select2_group form-control", "required" => true, "title" => ""]) !!}                
-            </div>
-        </div>
-        
         
         <div class="form-group">
             <label class="col-sm-2 control-label">{{ trans('site.Title') }}</label>
@@ -59,71 +52,89 @@
       
         <div class="row">
             <div class="clearfix"></div>
-        <div class="col-sm-2">
             <div class="form-group">
-                <label class="control-label">{{ trans('site.Publish') }}</label>
-                {!! Form::hidden('published', 0) !!}
-                {!! Form::checkbox('published', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
+              <label for="parentId" class="col-sm-2 control-label"></label>
+              <div class="col-sm-10">
+                <div class="checkbox checkbox-primary ">
+                  {!! Form::hidden('published', 0) !!}
+                  {!! Form::checkbox('published', 1, null, ["id" => "checkboxPublished", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
+                  <label for="checkboxPublished">
+                    {{ trans('site.Publish') }}
+                  </label>
+                </div>
+              </div>
             </div>
-        </div>
 
-    <!-- <div class=" col-md-12 raspoloj">
-        <div class="form-group">
-            <div class="checkbox checkbox-info">
-               <input id="checkbox2" type="checkbox">
-               <label class="control-label">Үстү жагында (top)</label>
-               {!! Form::hidden('positionTop', 0) !!}         
-               {!! Form::checkbox('positionTop', 1, null, ["class" => "checkbox2 form-control", "style" => "width: 34px; margin: 0"]) !!}
-               <div class="topbanner"></div>
-           </div>
-       </div>
-    </div> -->
-
-        <div class=" col-sm-2">
             <div class="form-group">
-                <label class="control-label">{{ trans('site.Top') }}</label>
-                {!! Form::hidden('positionTop', 0) !!}         
-                {!! Form::checkbox('positionTop', 1, null, ["class" => " form-control", "style" => "width: 34px; margin: 0"]) !!}
-                <div class="topbanner"></div>
+                <label for="parentId" class="col-sm-2 control-label"></label>
+                <div class="col-sm-2">
+                  <div class="checkbox checkbox-primary ">
+                    {!! Form::hidden('positionTop', 0) !!}         
+                    {!! Form::checkbox('positionTop', 1, null, ["class" => " form-control", "style" => "width: 34px; margin: 0"]) !!}
+                    <label for="extracolumn">
+                      {{ trans('site.Top') }}
+                    </label>
+                  </div>
+                </div>
             </div>
-        </div>
 
-        <div class="col-sm-2">
-            <div class="form-group">
-                <label class="control-label">{{ trans('site.Center') }}</label>
-                {!! Form::hidden('positionCenter', 0) !!}
-                {!! Form::checkbox('positionCenter', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
-                <div class="centerbanner"></div>
+            <!-- <div class=" col-md-12 raspoloj">
+                <div class="form-group">
+                    <div class="checkbox checkbox-info">
+                       <input id="checkbox2" type="checkbox">
+                       <label class="control-label">Үстү жагында (top)</label>
+                       {!! Form::hidden('positionTop', 0) !!}         
+                       {!! Form::checkbox('positionTop', 1, null, ["class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
+                       
+                   </div>
+               </div>
+            </div> -->
+
+            <div class=" col-sm-2">
+                <div class="form-group">
+                    <label class="control-label">{{ trans('site.Top') }}</label>
+                    {!! Form::hidden('positionTop', 0) !!}         
+                    {!! Form::checkbox('positionTop', 1, null, ["class" => " form-control", "style" => "width: 34px; margin: 0"]) !!}
+                    <div class="topbanner"></div>
+                </div>
             </div>
-        </div>
 
-        <div class="col-sm-2">
-            <div class="form-group">
-                <label class="control-label">{{ trans('site.Right') }}</label>
-                {!! Form::hidden('positionRight', 0) !!}
-                {!! Form::checkbox('positionRight', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
-                <div class="rightbanner"></div>
+            <div class="col-sm-2">
+                <div class="form-group">
+                    <label class="control-label">{{ trans('site.Center') }}</label>
+                    {!! Form::hidden('positionCenter', 0) !!}
+                    {!! Form::checkbox('positionCenter', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
+                    <div class="centerbanner"></div>
+                </div>
             </div>
-        </div>
 
-        <div class="col-sm-2">
-            <div class="form-group">
-                <label class="control-label">{{ trans('site.Left') }}</label>
-                {!! Form::hidden('positionLeft', 0) !!}
-                {!! Form::checkbox('positionLeft', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
-                <div class="leftbanner"></div>
+            <div class="col-sm-2">
+                <div class="form-group">
+                    <label class="control-label">{{ trans('site.Right') }}</label>
+                    {!! Form::hidden('positionRight', 0) !!}
+                    {!! Form::checkbox('positionRight', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
+                    <div class="rightbanner"></div>
+                </div>
             </div>
-        </div>
 
-
-        <div class="col-sm-2">
-            <div class="form-group">
-                <label class="control-label">{{ trans('site.Bottom') }}</label>
-                {!! Form::hidden('positionBottom', 0) !!}
-                {!! Form::checkbox('positionBottom', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
-                <div class="bottombanner"></div>
+            <div class="col-sm-2">
+                <div class="form-group">
+                    <label class="control-label">{{ trans('site.Left') }}</label>
+                    {!! Form::hidden('positionLeft', 0) !!}
+                    {!! Form::checkbox('positionLeft', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
+                    <div class="leftbanner"></div>
+                </div>
             </div>
-        </div>
+
+
+            <div class="col-sm-2">
+                <div class="form-group">
+                    <label class="control-label">{{ trans('site.Bottom') }}</label>
+                    {!! Form::hidden('positionBottom', 0) !!}
+                    {!! Form::checkbox('positionBottom', 1, null, ["class" => "form-control", "style" => "width: 34px; margin: 0"]) !!}
+                    <div class="bottombanner"></div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -45,13 +45,6 @@
           </li>
 
           <li class="list-group-item">
-            <p class="header">Категория</p>
-            <p class="body">
-              <a href="{{ route('admin.category.show', $banner->category) }}">{{ $banner->category->getTitle()  }}</a>
-            </p>
-          </li>
-
-          <li class="list-group-item">
             <p class="header">{{ trans('site.AdminPostCreatedDate') }}</p>
             <p class="body">{{ $banner->getDateFormatted() }}</p>
           </li>
@@ -71,9 +64,7 @@
           <li class="list-group-item">
             <p class="header">Ссылка</p>
             <p class="body">
-              <a href="{{ route('admin.banner.show', $banner) }}">
-                {{ $banner->linkTo }}
-              </a>
+                {{ $banner->linkTo }}              
             </p>
           </li>
       </div>    

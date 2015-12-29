@@ -1,6 +1,10 @@
 @extends('Admin::layouts.default')
 @section('title', $user->getName())
 
+@section('styles')
+  <link rel="stylesheet" href="{{ asset('css/bootstrap-select.css') }}"/>
+@endsection
+
 @section('content')
 <div class="row modals">
 	<div class="col-md-12 col-sm-12 col-xs-12">
@@ -22,3 +26,6 @@
 
 @stop
 
+@section('scripts')
+  <script type="text/javascript" src="{{ asset('js/bootstrap-select.js') }}"></script>
+@stop
