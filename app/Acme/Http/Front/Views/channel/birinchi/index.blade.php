@@ -151,7 +151,7 @@
 <div class="container">
    <div class="row" style="margin-top:10px;">
       <div class="col-md-12">
-         <div class="row onepadding" style="background: #f1f4f9;">
+         <div class="row onepadding" style="background: #fff;">
             <div class="col-md-9 onepadding">
                <div class="panel onelist">
                   <div class="panel-heading">
@@ -221,7 +221,7 @@
                <iframe width="100%" height="280" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/171625446&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
             </div>
             </div>
-            <div class="col-md-9 onenews">
+            <div class="col-md-9 onenews" style="margin-top: 0px;">
                <div class="panel panel-articles">
                   <div class="panel-heading">
                      <h3 class="panel-title">{{ trans('radiopages.Newslenta') }}</h3>
