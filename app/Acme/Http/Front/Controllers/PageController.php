@@ -347,5 +347,20 @@ class PageController extends Controller
         ]);
 
     }
+
+    public function Reklama()
+    {
+        $lc = app()->getlocale();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+        return view('Front::pages.reklama',[
+            'lc'             => $lc,
+            'backgroundMain' => $backgroundMain,
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
+        ]);
+    }
 }
 
