@@ -155,6 +155,12 @@ class BirinchiController extends Controller
 
     public function broadcast(\Model\Post\ModelName $post)
     {
+        $lc = app()->getlocale();
+        if($lc == 'kg' && ($post->title != '')){          
+        }elseif($lc == 'ru' && ($post->titleRu != '')){        
+        }else{
+            return redirect()->route('birinchi.home');
+        }
         $post->incrementViewed();
 
         $channel = \Model\Channel\ModelName::name('birinchi')->first();
@@ -175,6 +181,13 @@ class BirinchiController extends Controller
     }
     public function broadcasts(\Model\Project\ModelName $project)
     {
+        $lc = app()->getlocale();
+        if($lc == 'kg' && ($project->name != '')){         
+        }elseif($lc == 'ru' && ($project->nameRu != '')){           
+        }else{
+            return redirect()->route('birinchi.home');
+        }
+
         $projectList = \Model\Project\ModelName::get();
 //        $MediaCategory = \Model\MediaCategory\ModelName::get();
         $mediaAll = \Model\Media\ModelName::get();
@@ -193,6 +206,7 @@ class BirinchiController extends Controller
         }else{
             $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('nameRu','<>','' )->get();
         }
+
 
 
         return view('Front::channel.birinchi.broadcasts',[
