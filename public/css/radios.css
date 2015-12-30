@@ -103,7 +103,7 @@
     background: #333333;
 }
 .onepadding{
-    padding: 5px;
+    padding: 0px;
 }
 .onemargin{
     margin:0px;
@@ -1168,6 +1168,9 @@
 }
 .specpad {
     padding: 5px 5px 10px;
+}
+.specpad .onepadding{
+    padding: 5px;
 }
 .birinchiradio .blocks{
 
