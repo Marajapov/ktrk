@@ -156,7 +156,7 @@ class HomeController extends Controller
 
         if($lc == 'kg'){
 
-            $relatedPosts = \Model\Post\ModelName::where('category_id','=',$post->category_id)->languagekg()->take(6)->skip(0)->orderBy('id', 'desc')->get();
+            $relatedPosts = \Model\Post\ModelName::where('category_id','=',$post->category_id)->where('general','=','1')->languagekg()->take(6)->skip(0)->orderBy('id', 'desc')->get();
 
             if($post->related1)
             {
@@ -212,7 +212,7 @@ class HomeController extends Controller
 
         }elseif($lc == 'ru'){
 
-            $relatedPosts = \Model\Post\ModelName::where('category_id','=',$post->category_id)->languageru()->take(6)->skip(0)->orderBy('id', 'desc')->get();
+            $relatedPosts = \Model\Post\ModelName::where('category_id','=',$post->category_id)->where('general','=','1')->languageru()->take(6)->skip(0)->orderBy('id', 'desc')->get();
 
             if($post->relatedRu1)
             {

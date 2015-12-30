@@ -75,7 +75,7 @@
                         <img src="@if(empty($relatedPost->getFile()))images/live_bg.png @else {{ asset($relatedPost->getFile()) }} @endif" alt=""/>
                       </a>
                       <a class="related-title" href="{{ route('front.post', $relatedPost) }}">
-                        {{ $relatedPost->getTitle() }}
+                        {{ $relatedPost->getTitleRuOrKg() }}
                       </a>
                     </div>
                   @endif
