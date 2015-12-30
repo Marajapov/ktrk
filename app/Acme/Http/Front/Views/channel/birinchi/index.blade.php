@@ -250,7 +250,7 @@
                                                         <a class="media-heading" href="{{ route('birinchi.news', $post) }}">{{ $post->getTitleRuOrKg() }}</a>
 
                                                         <p>
-                                                            {!! mb_substr($post->getContent(), 0, 290, "UTF-8") !!} ...<a class="text-lowercase" href="{{ route('birinchi.news', $post) }}"> {{ trans('site.More') }}</a>
+                                                            {{ $post->getShortDescription() }} ...<a class="text-lowercase" href="{{ route('birinchi.news', $post) }}"> {{ trans('site.ReadMore') }}</a>
                                                         </p>
 
                                                     </div>
@@ -324,17 +324,19 @@
                                     @foreach($photoGalleries as $photoGallery)
                                         <div class="col-md-3 onepadding">
                                             <div class="featured_element">
+
+                                                <div class="featured_title_over" style="bottom: 0px;">
+                                                    <h2><a href="{{ route('birinchi.photos', $photoGallery) }}">{{ $photoGallery->getName() }}</a></h2>
+                                                </div>
+
                                                 <div class="featured_item"> <img width="267" height="267" src="{{ asset($photoGallery->status) }}" class="attachment-thr-fa-quarter wp-post-image" alt="39"></div>
                                                 <div class="featured_date">
-                                                    <p>{{ $photoGallery->getDay() }} {{ $photoGallery->getMonthRu() }}, {{ $photoGallery->getTime() }}</p>
+                                                    
                                                 </div>
                                                 <!--                         <div class="featured_cat">
                                                                            <p>Спорт</p>
                                                                         </div> -->
                                                 <a href="{{ route('birinchi.photos', $photoGallery) }}" class="f_overlay"></a>
-                                                <div class="featured_title_over" style="bottom: 0px;">
-                                                    <h2><a href="{{ route('birinchi.photos', $photoGallery) }}">{{ $photoGallery->getName() }}</a></h2>
-                                                </div>
                                             </div>
                                         </div>
                                     @endforeach

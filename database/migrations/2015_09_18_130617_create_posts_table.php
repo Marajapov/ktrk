@@ -18,6 +18,8 @@ class CreatePostsTable extends Migration
             $table->string('titleRu');
             $table->text('content');
             $table->text('contentRu');
+            $table->string('shortDescription');
+            $table->string('shortDescriptionRu');
             $table->integer('channel_id')->nullable()->unsigned()->default(null);
             $table->integer('category_id')->nullable()->unsigned()->default(null);
             $table->integer('owner_id')->nullable()->unsigned()->default(null);

@@ -341,6 +341,13 @@
       </div>
 
       <div class="form-group">
+        <label for="channel_id" class="col-sm-2 control-label">{{ trans('site.shortDescriptionKg') }}</label>
+        <div class="col-sm-10">
+          {!! Form::text('shortDescription', null, ["class" => "form-control"]) !!}
+        </div>
+      </div>
+
+      <div class="form-group">
         <label for="channel_id" class="col-sm-2 control-label">{{ trans('site.TextKG') }}</label>
         <div class="col-sm-10">
           {!! Form::textarea('content', null, ["class" => "form-control", "id" => "editKg"]) !!}
@@ -390,6 +397,13 @@
         <label for="channel_id" class="col-sm-2 control-label">{{ trans('site.TitleRU') }}</label>
         <div class="col-sm-10">
           {!! Form::text('titleRu', null, ["class" => "form-control"]) !!}
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="channel_id" class="col-sm-2 control-label">{{ trans('site.shortDescriptionRu') }}</label>
+        <div class="col-sm-10">
+          {!! Form::text('shortDescriptionRu', null, ["class" => "form-control"]) !!}
         </div>
       </div>
 

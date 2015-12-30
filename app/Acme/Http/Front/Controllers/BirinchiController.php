@@ -26,7 +26,7 @@ class BirinchiController extends Controller
         if($lc == 'kg'){
             $allPost = \Model\Post\ModelName::where('birinchi','=',1)->where('birinchiProgram','<>','1')->languagekg()->take(10)->skip(0)->published()->orderBy('id','desc')->get();    
             foreach ($allPost as $key => $value) {
-                $category = \Model\Category\ModelName::where('id','=',$value->category_id)->first();
+                $category = \Model\Category\ModelName::where('id','=',$value->category_id)->where('titleRu','<>','')->first();
                 $categoryArray[] = $category;
                 
             }
@@ -34,7 +34,7 @@ class BirinchiController extends Controller
         }else{
             $allPost = \Model\Post\ModelName::where('birinchi','=',1)->where('birinchiProgram','<>','1')->languageru()->take(10)->skip(0)->published()->orderBy('id','desc')->get();
             foreach ($allPost as $key => $value) {
-                $category = \Model\Category\ModelName::where('id','=',$value->category_id)->first();
+                $category = \Model\Category\ModelName::where('id','=',$value->category_id)->where('titleRu','<>','')->first();
                 $categoryArray[] = $category;
                 
             }
@@ -108,7 +108,22 @@ class BirinchiController extends Controller
         }else{
             $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('nameRu','<>','' )->get();
         }
-        $categories = \Model\Category\ModelName::all();
+        if($lc == 'kg'){
+            $allPost = \Model\Post\ModelName::where('birinchi','=',1)->where('birinchiProgram','<>','1')->languagekg()->take(10)->skip(0)->published()->orderBy('id','desc')->get();    
+            foreach ($allPost as $key => $value) {
+                $category = \Model\Category\ModelName::where('id','=',$value->category_id)->where('titleRu','<>','')->first();
+                $categories[] = $category;
+                
+            }
+            
+        }else{
+            $allPost = \Model\Post\ModelName::where('birinchi','=',1)->where('birinchiProgram','<>','1')->languageru()->take(10)->skip(0)->published()->orderBy('id','desc')->get();
+            foreach ($allPost as $key => $value) {
+                $category = \Model\Category\ModelName::where('id','=',$value->category_id)->where('titleRu','<>','')->first();
+                $categories[] = $category;
+                
+            }
+        }
 
            return view('Front::channel.birinchi.news', [
             'channel' => $channel,

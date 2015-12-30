@@ -22,6 +22,9 @@ return [
     'Ktrk' => 'Коомдук телерадиоберүү корпорациясы',
     'KtrkApp' => 'КТРК Мобилдик Тиркемеси',
 
+    'shortDescriptionKg' => 'Короткое описание на кыргызском',
+    'shortDescriptionRu' => 'Короткое описание на русском',
+
 
     //Header Footer titles
     'Homepage' => 'Башкы бет',

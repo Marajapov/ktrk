@@ -236,4 +236,15 @@ class ModelName extends Model
     {
         return $this->parentId;
     }
+
+    public function getShortDescription()
+    {
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            return $this->shortDescription;    
+        }else{
+            return $this->shortDescriptionRu;
+        }
+        
+    }
 }
