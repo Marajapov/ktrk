@@ -1131,7 +1131,7 @@
 }
 .panel-contacts .table{
     margin: 0;
-    max-width: 100%;
+    /*max-width: 100%;*/
 }
 .panel-contacts .table th,
 .panel-contacts .table td{
