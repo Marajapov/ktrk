@@ -227,6 +227,11 @@ class ModelName extends Model
         return $this->thumbnail;
     }
 
+    public function getFileBig()
+    {
+        return $this->thumbnail_big;
+    }
+
     public function getParentId()
     {
         return $this->parentId;

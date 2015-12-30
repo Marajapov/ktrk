@@ -72,7 +72,7 @@
                   @else
                     <div class="col-md-4 block">
                       <a href="{{ route('front.post', $relatedPost) }}" class="news-thumb">
-                        <img src="@if(empty($relatedPost->getFile()))images/live_bg.png @else {{ asset($relatedPost->getFile()) }} @endif" alt=""/>
+                        <img src="@if(empty($relatedPost->getFileBig())) {{ asset($relatedPost->getFile() )}} @else {{ asset($relatedPost->getFileBig()) }} @endif" alt=""/>
                       </a>
                       <a class="related-title" href="{{ route('front.post', $relatedPost) }}">
                         {{ $relatedPost->getTitleRuOrKg() }}
