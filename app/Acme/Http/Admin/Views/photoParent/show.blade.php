@@ -106,10 +106,13 @@
                                 @if($photoChildren)
                                     @foreach($photoChildren as $photoChild)
                                         <div class="photo-child">
-                                            {!! Form::open(['route' => ['admin.photoParent.photodelete', $photoChild], 'method' => 'get', 'onsubmit' => "return confirm('Вы уверены ?')"]) !!}
-                                            <img src="{{ asset('froala/uploads/'.$photoChild->name) }} " alt="">
-                                            <input type="hidden" value="{{ $photoChild }}" name="photoDeleteId">
-                                            <input type="hidden" value="{{ $photoChild }}" name="photoParentId">
+                                            <img src="{{ asset($photoChild->file) }} " alt="">
+                                            <a class="edit" href="{{ route('admin.photoChild.edit', $photoChild) }}">
+                                                <i class="fa fa-pencil"></i>
+                                            </a>
+                                            {!! Form::open(['route' => ['admin.photoParent.destroyChild', $photoChild], 'method' => 'get', 'onsubmit' => "return confirm('Вы уверены ?')"]) !!}
+                                            <input type="hidden" value="{{ $photoChild->id }}" name="photoDeleteId">
+                                            <input type="hidden" value="{{ $photoParent->id }}" name="photoParentId">
                                             <button type="submit"><i class="fa fa-times"></i></button>
                                             {!! Form::close() !!}
                                         </div>

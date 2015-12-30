@@ -68,7 +68,7 @@
                         </ul>
                         <ul class="nav navbar-nav oneline">
                             <li><a class="time" href="#"><time>11:15</time></a></li>
-                            <li class="onetime"><a href=""><button class="btn"><i class="fa fa-microphone"></i><span>{{ trans('radiopages.Live') }}</span></button></a></li>
+                            <li class="onetime"><a target="_blank" href="http://ktrk.kg/online-1radio.php"><button class="btn"><i class="fa fa-microphone"></i><span>{{ trans('radiopages.Live') }}</span></button></a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right onesoc">
                             <li class="onepost"><a href=""><i class="fa fa-facebook"></i><span>facebook</span></a></li>
@@ -281,9 +281,9 @@
                                 @foreach($birinchiProjects as $project)
                                     @foreach($project->oneprogram()->get() as $post)
                                         <div class="blocks col-md-4 col-sm-6 col-xs-12">
-                  <span class="cart-title category">
-                  <a href="{{ route('birinchi.broadcasts', $project) }}">{{ $project->getName() }}</a>
-                  </span>
+                                          <span class="cart-title category">
+                                          <a href="{{ route('birinchi.broadcasts', $project) }}">{{ $project->getName() }}</a>
+                                          </span>
                                             <article>
                                                 <a href="{{ route('birinchi.broadcast', $post) }}" class="image-link">
                                                     <img src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif">
@@ -318,30 +318,27 @@
                         <h3 class="panel-title"><span>{{ trans('radiopages.Photos') }}</span></h3>
                     </div>
                     <div class="panel-body">
-                        <div class="col-md-12 col-sm-6 col-xs-12 specpad">
-                            <div class="featured_4 specpad" >
-                                @if($photoGalleries != null)
-                                    @foreach($photoGalleries as $photoGallery)
-                                        <div class="col-md-3 onepadding">
-                                            <div class="featured_element">
+                        <div class="featured_4 specpad clearfix">
+                            @if($photoGalleries != null)
+                                @foreach($photoGalleries as $photoGallery)
+                                    <div class="col-md-3 onepadding">
+                                        <div class="featured_element">
 
-                                                <div class="featured_title_over" style="bottom: 0px;">
-                                                    <h2><a href="{{ route('birinchi.photos', $photoGallery) }}">{{ $photoGallery->getName() }}</a></h2>
-                                                </div>
-
-                                                <div class="featured_item"> <img width="267" height="267" src="{{ asset($photoGallery->status) }}" class="attachment-thr-fa-quarter wp-post-image" alt="39"></div>
-                                                <div class="featured_date">
-                                                    
-                                                </div>
-                                                <!--                         <div class="featured_cat">
-                                                                           <p>Спорт</p>
-                                                                        </div> -->
-                                                <a href="{{ route('birinchi.photos', $photoGallery) }}" class="f_overlay"></a>
+                                            <div class="featured_title_over">
+                                                <a href="{{ route('birinchi.photos', $photoGallery) }}">
+                                                    {{ $photoGallery->getName() }}
+                                                </a>
                                             </div>
+
+                                            <div class="featured_item"> <img width="267" height="267" src="{{ asset($photoGallery->status) }}" class="attachment-thr-fa-quarter wp-post-image" alt="39"></div>
+                                            <div class="featured_date">
+
+                                            </div>
+                                            <a href="{{ route('birinchi.photos', $photoGallery) }}" class="f_overlay"></a>
                                         </div>
-                                    @endforeach
-                                @endif
-                            </div>
+                                    </div>
+                                @endforeach
+                            @endif
                         </div>
                         <footer>
                             <a href="{{ route('birinchi.allphotos') }}">
@@ -356,7 +353,7 @@
 @stop
 
 @section('footerscript2')
-    <script src="{{ asset('js/newsslider.js') }}"></script>
+    {{--<script src="{{ asset('js/newsslider.js') }}"></script>--}}
     <script>
         if ($(window).width() > 768) {
             $('.carousel-slick-birinchi').slick({
@@ -391,16 +388,16 @@
             });
         }
     </script>
-    <script>
-        $(document).ready(function () {
-            $("div.bhoechie-tab-menu>div.list-group>a").click(function (e) {
-                e.preventDefault();
-                $(this).siblings('a.active').removeClass("active");
-                $(this).addClass("active");
-                var index = $(this).index();
-                $("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
-                $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
-            });
-        });
-    </script>
+    {{--<script>--}}
+    {{--$(document).ready(function () {--}}
+    {{--$("div.bhoechie-tab-menu>div.list-group>a").click(function (e) {--}}
+    {{--e.preventDefault();--}}
+    {{--$(this).siblings('a.active').removeClass("active");--}}
+    {{--$(this).addClass("active");--}}
+    {{--var index = $(this).index();--}}
+    {{--$("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");--}}
+    {{--$("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");--}}
+    {{--});--}}
+    {{--});--}}
+    {{--</script>--}}
 @stop
