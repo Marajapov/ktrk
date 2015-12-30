@@ -30,12 +30,13 @@ class PhotoChildController extends Controller
      */
     public function create()
     {
-        
+        $tags = \Model\Tag\Tag::lists('name', 'id');
         $PhotoParentList = \Model\PhotoParent\ModelName::lists('name', 'id')->toArray();
 
         return view('Admin::photoChild.create', [
             'PhotoParentList' => $PhotoParentList,
-            'photoChild' => new PhotoChild
+            'photoChild' => new PhotoChild,
+            'tags' => $tags,
             ]);
     }
 

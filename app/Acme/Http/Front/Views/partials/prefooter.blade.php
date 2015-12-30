@@ -48,7 +48,7 @@
   <div class="footer-info clearfix">
     <div class="col-md-4 apps-logo">
       <p>
-        Мобильное приложение КТРК
+        {{ trans('site.KtrkApp') }}
       </p>
       <ul>
         <li>

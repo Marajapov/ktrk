@@ -6,6 +6,7 @@ use App\Http\Requests;
 use Input;
 
 use Model\PhotoParent\ModelName as PhotoParent;
+use Model\PhotoChild\ModelName as PhotoChild;
 use Intervention\Image\ImageManagerStatic as Image;
 
 class PhotoParentController extends Controller
@@ -21,7 +22,7 @@ class PhotoParentController extends Controller
 
         return view('Admin::photoParent.index', [
             'photoParents' => $photoParents,
-            ]);
+        ]);
     }
 
     /**
@@ -43,7 +44,7 @@ class PhotoParentController extends Controller
     public function store(Request $request)
     {
         $photoParent = PhotoParent::create($request->except('images','q','status'));
-        
+
         // getting all of the post data
 
         $files = Input::file('images');
@@ -52,7 +53,7 @@ class PhotoParentController extends Controller
 
         $file_count = count($files);
 
-        
+
         if($request->hasFile('status'))
         {
             $file = $request->file('status');
@@ -74,17 +75,9 @@ class PhotoParentController extends Controller
             $photoParent->save();
         }
 
-
-        // start count how many uploaded
         $uploadcount = 0;
 
-//        dd($files);
-
         foreach($files as $key=>$file) {
-
-          // $rules = array('file' => 'required'); //'required|mimes:png,gif,jpeg,txt,pdf,doc'
-          // $validator = Validator::make(array('file'=> $file), $rules);
-          // if($validator->passes()){
 
             $storage = \Storage::disk('public');
             $destinationPath = 'froala/uploads';
@@ -92,31 +85,27 @@ class PhotoParentController extends Controller
 
             $filename = time().$key.'.'.$file->getClientOriginalExtension();
 
-//            $upload_success = $file->move($destinationPath, $filename);
-//
-//            dd($_FILES['images']['tmp_name'][$key]);
-//
-//            dd($filename);
-
             Image::make($_FILES['images']['tmp_name'][$key])->heighten(600)->save($destinationPath.'/'.$filename);
 
             $file_array = array();
             $file_array = array_collapse([$file_array, [
-                    'id' => $key+1,
-                    'name' => $filename
-                ]]);
+                'id' => $key+1,
+                'name' => $filename
+            ]]);
 
             $result = array_add($result, $key , $file_array);
-            
+
             $jsonresult = json_encode($result);
-            //$files_ser = serialize($result);
-            
+
+            \Model\PhotoChild\ModelName::create([
+                'file' => $destinationPath.'/'.$filename,
+                'parentId' => $photoParent->id
+            ]);
+
             $photoParent->images = $jsonresult;
             $photoParent->save();
 
             $uploadcount ++;
-
-          // } // endif
         }
 
         return redirect()->route('admin.photoParent.index');
@@ -130,7 +119,7 @@ class PhotoParentController extends Controller
      */
     public function show(PhotoParent $photoParent)
     {
-        $images = json_decode($photoParent->images);
+        $images = \Model\PhotoChild\ModelName::where('parentId','=',$photoParent->id)->get();
 
         return view('Admin::photoParent.show', [
             'photoParent' => $photoParent,
@@ -200,7 +189,7 @@ class PhotoParentController extends Controller
             }
         }
 
-        
+
         if($request->hasFile('status'))
         {
             $file = $request->file('status');
@@ -240,6 +229,18 @@ class PhotoParentController extends Controller
         return redirect()->route('admin.photoParent.index');
     }
 
+    public function destroyChild(Request $request)
+    {
+        $photoDeleteId = $request->photoDeleteId;
+        $photoChild = \Model\PhotoChild\ModelName::where('id','=',$photoDeleteId)->first();
+
+        $photoParentId = $request->photoParentId;
+        $photoChild->delete();
+        $photoParent = \Model\PhotoParent\ModelName::where('id','=',$photoParentId)->first();
+
+        return redirect()->route('admin.photoParent.show', $photoParent);
+    }
+
     public function photodelete(Request $request)
     {
         $photoDeleteId = $request->photoDeleteId;
@@ -268,7 +269,7 @@ class PhotoParentController extends Controller
         $photoParent->save();
 
         return redirect()->route('admin.photoParent.show', $photoParent);
-    } 
+    }
 
     // Day video first
     public function publish(Request $request)
@@ -278,7 +279,7 @@ class PhotoParentController extends Controller
         $photoParent->published = 1;
         $photoParent->save();
         return redirect()->route('admin.photoParent.index');
-    }     
+    }
 
     public function unpublish(Request $request)
     {
@@ -287,6 +288,6 @@ class PhotoParentController extends Controller
         $photoParent->published = 0;
         $photoParent->save();
         return redirect()->route('admin.photoParent.index');
-    }      
-    
+    }
+
 }
