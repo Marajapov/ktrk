@@ -21,4 +21,9 @@ trait ModelRelationships
         return $this->morphedByMany(\Model\Post\ModelName::class, 'taggable');
     }
 
+    public function photoChilds()
+    {
+        return $this->morphedByMany(\Model\Post\ModelName::class, 'taggable');
+    }
+
 }
