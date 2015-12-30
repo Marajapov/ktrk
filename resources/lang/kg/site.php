@@ -20,6 +20,7 @@ return [
     'AdminPostThemeRu' => 'Темага материалдар орусча',
 
     'Ktrk' => 'Коомдук телерадиоберүү корпорациясы',
+    'KtrkApp' => 'КТРК Мобилдик Тиркемеси',
 
 
     //Header Footer titles

@@ -35,8 +35,6 @@
                     <li><a href="{{ route('dostuk.home') }}">Достук</a></li>
                     <li></li>
                 </ul>
-
-
             </nav>
         </div>
     </div>
@@ -193,40 +191,40 @@
 
 @stop
 
-@section('footerscript2')
+@section('footerScript')
 
-<script type="text/javascript" src="{{ asset('js/jquery-migrate-1.2.1.min.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('slick/slick.min.js') }}"></script>
-        <script src="{{ asset('js/lightslider.js') }}"></script>
-        <script src="{{ asset('js/lightgallery/picturefill.min.js') }}"></script>
-        <script src="{{ asset('js/lightgallery/lightgallery.js') }}"></script>
-        <script src="{{ asset('js/lightgallery/lg-fullscreen.js') }}"></script>
-        <script src="{{ asset('js/lightgallery/lg-thumbnail.js') }}"></script>
-        <script src="{{ asset('js/lightgallery/lg-video.js') }}"></script>
-        <script src="{{ asset('js/lightgallery/lg-autoplay.js') }}"></script>
-        <script src="{{ asset('js/lightgallery/lg-zoom.js') }}"></script>
-        <script src="{{ asset('js/lightgallery/lg-hash.js') }}"></script>
-        <script src="{{ asset('js/lightgallery/lg-pager.js') }}"></script>
-        <script src="{{ asset('jslightgallery/jquery.mousewheel.min.js') }}"></script>
-
-             <script type="text/javascript">
-                $(document).ready(function() {
-              $('#imageGallery').lightSlider({
-                  gallery:true,
-                  item:1 ,
-                  loop:true,
-                  thumbItem:8,
-                  slideMargin:0,
-                  enableDrag: true,
-                  currentPagerPosition:'right',
-                  onSliderLoad: function(el) {
-                      el.lightGallery({
-                          selector: '#imageGallery .lslide'
-                      });
-                  }   
-              });  
+   <script src="{{ asset('js/jquery-1.11.2.min.js') }}"></script>  
+   <script type="text/javascript" src="{{ asset('js/jquery-migrate-1.2.1.min.js') }}"></script>
+   <script type="text/javascript" src="{{ asset('slick/slick.min.js') }}"></script>
+   <script src="{{ asset('js/lightslider.js') }}"></script>
+   <script src="{{ asset('js/lightgallery/picturefill.min.js') }}"></script>
+   <script src="{{ asset('js/lightgallery/lightgallery.js') }}"></script>
+   <script src="{{ asset('js/lightgallery/lg-fullscreen.js') }}"></script>
+   <script src="{{ asset('js/lightgallery/lg-thumbnail.js') }}"></script>
+   <script src="{{ asset('js/lightgallery/lg-video.js') }}"></script>
+   <script src="{{ asset('js/lightgallery/lg-autoplay.js') }}"></script>
+   <script src="{{ asset('js/lightgallery/lg-zoom.js') }}"></script>
+   <script src="{{ asset('js/lightgallery/lg-hash.js') }}"></script>
+   <script src="{{ asset('js/lightgallery/lg-pager.js') }}"></script>
+   <script src="{{ asset('js/lightgallery/jquery.mousewheel.min.js') }}"></script>
+   <script type="text/javascript">
+      $(document).ready(function() {
+      $('#imageGallery').lightSlider({
+        gallery:true,
+        item:1 ,
+        loop:true,
+        thumbItem:8,
+        slideMargin:0,
+        enableDrag: true,
+        currentPagerPosition:'right',
+        onSliderLoad: function(el) {
+            el.lightGallery({
+                selector: '#imageGallery .lslide'
             });
-        </script>
+        }   
+      });  
+      });
+   </script>
 
 
 @stop

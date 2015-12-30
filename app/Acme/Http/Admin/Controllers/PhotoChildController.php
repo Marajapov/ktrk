@@ -5,49 +5,76 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 
 use Model\PhotoChild\ModelName as PhotoChild;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class PhotoChildController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        $photoChilds = PhotoChild::all();
-
+        $photoChilds = PhotoChild::orderBy('id','desc')->get();
 
         return view('Admin::photoChild.index', [
             'photoChilds' => $photoChilds,
-            ]);
+        ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        
+        $tags = \Model\Tag\Tag::lists('name', 'id');
+
         $PhotoParentList = \Model\PhotoParent\ModelName::lists('name', 'id')->toArray();
 
         return view('Admin::photoChild.create', [
             'PhotoParentList' => $PhotoParentList,
-            'photoChild' => new PhotoChild
-            ]);
+            'photoChild' => new PhotoChild,
+            'tags' => $tags,
+        ]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        $photoChild = PhotoChild::create($request->except('file','q'));
+        $photoChild = PhotoChild::create($request->except('file','tag_kg','tag_ru','q'));
+
+        $tag_kg_string = $request->input('tag_kg');
+        $tags = explode("; ",$tag_kg_string);
+
+        $tag_ru_string = $request->input('tag_ru');
+        $tags2 = explode("; ",$tag_ru_string);
+
+        if(!empty($tags)){
+            foreach ($tags as $key => $name)
+            {
+                if(!is_numeric($name) && !empty($name))
+                {
+                    $tag = \Model\Tag\Tag::firstOrNew(['name' => $name]);
+                    $tag->name = $name;
+                    $tag->lang = 'kg';
+                    $tag->save();
+                    $tags[$key] = $tag->id();
+                }
+            }// end foreach
+
+            $photoChild->tags()->attach($tags);
+
+        }// end if
+
+        if(!empty($tags2)){
+            foreach ($tags2 as $key => $name)
+            {
+                if(!is_numeric($name) && !empty($name))
+                {
+                    $tag = \Model\Tag\Tag::firstOrNew(['name' => $name]);
+                    $tag->name = $name;
+                    $tag->lang = 'ru';
+                    $tag->save();
+                    $tags2[$key] = $tag->id();
+                }
+            }// end foreach
+
+            $photoChild->tags()->attach($tags2);
+
+        }// end if
 
         if($request->hasFile('file'))
         {
@@ -58,56 +85,81 @@ class PhotoChildController extends Controller
 
             $storage = \Storage::disk('public');
             $storage->makeDirectory($dir);
-            // $storage->put($dir.'/'.$name, $file);
+
+            Image::make($_FILES['file']['tmp_name'])->heighten(600)->save($dir.'/'.$name);
 
             $photoChild->file = $dir.'/'.$name;
             $photoChild->save();
-            $file->move($dir, $name);
         }
 
         return redirect()->route('admin.photoChild.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show(PhotoChild $photoChild)
     {
         $PhotoParentList = \Model\PhotoParent\ModelName::lists('name', 'id')->toArray();
+
         return view('Admin::photoChild.show', [
             'PhotoParentList' => $PhotoParentList,
             'photoChild' => $photoChild,
         ]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit(PhotoChild $photoChild)
     {
+        $tags = \Model\Tag\Tag::lists('name', 'id');
         $PhotoParentList = \Model\PhotoParent\ModelName::lists('name', 'id')->toArray();
-        return view(
-            'Admin::photoChild.edit', ['photoChild' => $photoChild,
+        return view('Admin::photoChild.edit', [
+            'photoChild' => $photoChild,
             'PhotoParentList' => $PhotoParentList,
-            ]);
+            'tags' => $tags,
+        ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, PhotoChild $photoChild)
     {
-        $photoChild->update($request->except('file','q'));
+        $photoChild->update($request->except('file','tag_kg','tag_ru','q'));
+
+        $tag_kg_string = $request->input('tag_kg');
+        $tags = explode("; ",$tag_kg_string);
+
+        $tag_ru_string = $request->input('tag_ru');
+        $tags2 = explode("; ",$tag_ru_string);
+
+        if(!empty($tags)){
+
+            foreach ($tags as $key => $name)
+            {
+                if(!is_numeric($name) && !empty($name))
+                {
+                    $tag = \Model\Tag\Tag::firstOrNew(['name' => $name]);
+                    $tag->name = $name;
+                    $tag->save();
+                    $tags[$key] = $tag->id();
+                }
+            }
+
+//            $post->tags()->sync($tags);
+        }// end if
+
+        if(!empty($tags2)){
+            foreach ($tags2 as $key => $name)
+            {
+                if(!is_numeric($name) && !empty($name))
+                {
+                    $tag = \Model\Tag\Tag::firstOrNew(['name' => $name]);
+                    $tag->name = $name;
+                    $tag->save();
+                    $tags2[$key] = $tag->id();
+                }
+            }
+
+//            $post->tags()->sync($tags2);
+
+        }// end if
+
+        $tagsCommon = array_collapse([$tags, $tags2]);
+        $photoChild->tags()->sync($tagsCommon);
 
         if($request->hasFile('file'))
         {
@@ -119,20 +171,15 @@ class PhotoChildController extends Controller
             $storage = \Storage::disk('public');
             $storage->makeDirectory($dir);
 
+            Image::make($_FILES['file']['tmp_name'])->heighten(600)->save($dir.'/'.$name);
+
             $photoChild->file = $dir.'/'.$name;
             $photoChild->save();
-            $file->move($dir, $name);
         }
 
         return redirect()->route('admin.photoChild.show', $photoChild);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(PhotoChild $photoChild)
     {
         $photoChild->delete();

@@ -5,7 +5,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ModelName extends Model
 {
-    use ModelHelpers,ModelRelationships;
+    use ModelHelpers, ModelRelationships;
     /**
      * The database table used by the model.
      *

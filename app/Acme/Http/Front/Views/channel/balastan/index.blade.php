@@ -90,7 +90,7 @@
             <img class="tvthree" src="{{ asset('images/channels/balastan/tv3.png')}}" alt="">
             @if($firstMedia != null)
             <div class="iconcenter">
-               <iframe width="495" height="360" src="https://www.youtube.com/embed/{{$firstMedia->getUrl()}}?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>
+               <iframe width="495" height="360" src="https://www.youtube.com/embed/{{$firstMedia->getUrl()}}?rel=0&amp;controls=1&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>
             </div>
             @else
             <div class="iconcenter">
@@ -144,7 +144,7 @@
             </div>
          </div>
       </div>
-      <div class="row">
+      <div class="row" style="margin-bottom: 40px;">
          <div class="col-md-12 kidsvblock kidgallery">
             <div class="panel panel-default panel-carousel ">
                <div class="panel-heading">
@@ -152,7 +152,7 @@
                </div>
                <div class="panel-body" style="margin-top:20px;">
                   <div class="col-md-12 broadimages">
-                     <div class="carousel-slick">
+                     <div class="carousel-slickkid">
 
                      @if($photoGalleries)
 
@@ -186,15 +186,11 @@
    @section('footerscript2')
    <script src="js/jquery-1.11.2.min.js"></script>
    <script src="js/bootstrap.min.js"></script>
-   <script type="text/javascript" src="filter/js/jquery.easing.min.js"></script>
-   <script type="text/javascript" src="filter/js/jquery.mixitup.min.js"></script>
-   <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
    <script type="text/javascript" src="slick/slick.min.js"></script>
-   <script type="text/javascript" src="js/jquery.roundabout.js"></script>
    <script>
       if ($(window).width() > 768) {
       
-          $('.carousel-slick').slick({
+          $('.carousel-slickkid').slick({
               infinite: true,
               slidesToShow: 4,
               slidesToScroll: 1,
@@ -203,7 +199,7 @@
       }
       
       if ($(window).width() < 768) {
-          $('.carousel-slick').slick({
+          $('.carousel-slickkid').slick({
               infinite: true,
               slidesToShow: 2,
               slidesToScroll: 1,

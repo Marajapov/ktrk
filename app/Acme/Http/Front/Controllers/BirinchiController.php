@@ -65,7 +65,12 @@ class BirinchiController extends Controller
     {
         $channel = \Model\Channel\ModelName::name('birinchi')->first();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
-        $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi', '=', 1)->get();
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('name','<>','' )->get();    
+        }else{
+            $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('nameRu','<>','' )->get();
+        }
 
            return view('Front::channel.birinchi.allbroadcasts', [
             'channel' => $channel,
@@ -77,7 +82,12 @@ class BirinchiController extends Controller
     {
         $channel = \Model\Channel\ModelName::name('birinchi')->first();
          $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
-         $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi', '=', 1)->get();
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('name','<>','' )->get();    
+        }else{
+            $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('nameRu','<>','' )->get();
+        }
 
            return view('Front::channel.birinchi.about', [
             'channel' => $channel,
@@ -92,7 +102,12 @@ class BirinchiController extends Controller
 
         $channel = \Model\Channel\ModelName::name('birinchi')->first();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
-        $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi', '=', 1)->get();
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('name','<>','' )->get();    
+        }else{
+            $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('nameRu','<>','' )->get();
+        }
         $categories = \Model\Category\ModelName::all();
 
            return view('Front::channel.birinchi.news', [
@@ -118,7 +133,12 @@ class BirinchiController extends Controller
             $allPost = \Model\Post\ModelName::where('birinchi','=',1)->languageru()->published()->orderBy('id','desc')->get();
         }
 
-        $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi', '=', 1)->get();
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('name','<>','' )->get();    
+        }else{
+            $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('nameRu','<>','' )->get();
+        }
         $categories = \Model\Category\ModelName::all();
 
         return view('Front::channel.birinchi.allnews', [
@@ -135,11 +155,22 @@ class BirinchiController extends Controller
 
     public function broadcast(\Model\Post\ModelName $post)
     {
+        $lc = app()->getlocale();
+        if($lc == 'kg' && ($post->title != '')){          
+        }elseif($lc == 'ru' && ($post->titleRu != '')){        
+        }else{
+            return redirect()->route('birinchi.home');
+        }
         $post->incrementViewed();
 
         $channel = \Model\Channel\ModelName::name('birinchi')->first();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
-        $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi', '=', 1)->get();
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('name','<>','' )->get();    
+        }else{
+            $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('nameRu','<>','' )->get();
+        }
 
            return view('Front::channel.birinchi.broadcast', [
             'channel' => $channel,
@@ -150,6 +181,13 @@ class BirinchiController extends Controller
     }
     public function broadcasts(\Model\Project\ModelName $project)
     {
+        $lc = app()->getlocale();
+        if($lc == 'kg' && ($project->name != '')){         
+        }elseif($lc == 'ru' && ($project->nameRu != '')){           
+        }else{
+            return redirect()->route('birinchi.home');
+        }
+
         $projectList = \Model\Project\ModelName::get();
 //        $MediaCategory = \Model\MediaCategory\ModelName::get();
         $mediaAll = \Model\Media\ModelName::get();
@@ -162,7 +200,13 @@ class BirinchiController extends Controller
 
         // dd($relatedNews);
 
-        $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi', '=', 1)->get();
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('name','<>','' )->get();    
+        }else{
+            $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('nameRu','<>','' )->get();
+        }
+
 
 
         return view('Front::channel.birinchi.broadcasts',[
@@ -184,6 +228,7 @@ class BirinchiController extends Controller
     {
         $channel = \Model\Channel\ModelName::name('birinchi')->first();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
         $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi', '=', 1)->get();
 
            return view('Front::channel.birinchi.photos', [
@@ -198,7 +243,12 @@ class BirinchiController extends Controller
         $channel = \Model\Channel\ModelName::where('name','=','birinchi')->first();
         $lc = app()->getlocale();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
-        $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi', '=', 1)->get();
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('name','<>','' )->get();    
+        }else{
+            $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('nameRu','<>','' )->get();
+        }
 
         date_default_timezone_set('Asia/Bishkek');
         $now = date("d-m-Y H:i");
@@ -266,9 +316,9 @@ class BirinchiController extends Controller
 
         $lc = app()->getlocale();
         if($lc == 'kg'){
-            $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('name','<>','' )->orderBy('id','desc')->get();    
+            $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('name','<>','' )->get();    
         }else{
-            $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('nameRu','<>','' )->orderBy('id','desc')->get();
+            $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('nameRu','<>','' )->get();
         }
 
 
@@ -296,8 +346,12 @@ class BirinchiController extends Controller
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
         $postAll = \Model\Media\ModelName::where('published','=',true)->where('birinchi','=','1')->orderBy('id', 'desc')->paginate($perPage);        
-        $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi', '=', 1)->get();
-
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('name','<>','' )->get();    
+        }else{
+            $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('nameRu','<>','' )->get();
+        }
         // Photo Gallery
         $photoGalleries = \Model\PhotoParent\ModelName::where('birinchi','=','1')->where('published','=',true)->take('10')->orderBy('id','desc')->get();        
         return view('Front::channel.birinchi.allphotos', [
@@ -321,8 +375,7 @@ class BirinchiController extends Controller
     }else{
         $images = null;
     }
-    $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi', '=', 1)->get();
-
+        $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi', '=', 1)->get();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
         return view('Front::channel.birinchi.photos',[
