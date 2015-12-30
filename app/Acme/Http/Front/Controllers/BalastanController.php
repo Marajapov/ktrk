@@ -117,14 +117,14 @@ class BalastanController extends Controller
 
     public function projectVideos(Request $request, $project)
     {
+
         $channel = \Model\Channel\ModelName::name('balastan')->first();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
         $programId = $project;
         $balastanLastVideo = \Model\Media\ModelName::where('program','=',$programId)->take(1)->orderBy('id','desc')->first();
         $balastaProjects = \Model\Project\ModelName::where('balastan','=','1')->orderBy('id','desc')->get();
-        $balastanMedias = \Model\Media\ModelName::where('program','=',$programId)->take(8)->skip(0)->orderBy('id','desc')->get();
-        
+        $balastanMedias = \Model\Media\ModelName::where('program','=',$programId->id)->take(8)->skip(0)->orderBy('id','desc')->get();
 
         return view('Front::channel.balastan.video', [
             'channel' => $channel,

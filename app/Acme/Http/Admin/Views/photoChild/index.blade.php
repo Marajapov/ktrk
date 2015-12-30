@@ -1,5 +1,5 @@
 @extends('Admin::layouts.default')
-@section('title', "Фотогалерея")
+@section('title', trans('site.AdminPhotoUploadTitle'))
 
 @section('styles')
     <link rel="stylesheet" href="{{ asset('css/admin/dataTables.bootstrap.css') }}"/>
@@ -23,18 +23,19 @@
                     <table id="example" class="table table-bordered table-striped" data-order='[[ 0, "desc" ]]' data-page-length='10'>
                         <thead>
                         <tr>
-                            <th>ID</th>
+                            <th class="text-center">ID</th>
                             <th>Файл</th>
                             <th>{{ trans('site.TitleKG') }}</th>
                             <th>{{ trans('site.TitleRU') }}</th>
+                            <th>Фотогалерея</th>
                             <th class="hidden-xs">{{ trans('site.AdminPostCreatedDate') }}</th>
                             <th>Действия</th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($photoChilds as $photoChild)
-                            <tr class="@if($photoChild->published == 1) success @elseif($photoChild->published == 0) danger @endif">
-                                <td>
+                            <tr>
+                                <td class="text-center">
                                     {{ $photoChild->id }}
                                 </td>
                                 <td class="table-img text-center">
@@ -50,11 +51,18 @@
                                         {{ $photoChild->nameRu }}
                                     </a>
                                 </td>
-                                <td>
+                                <td class="table-title">
+                                    @if($photoChild->parentId != 0)
+                                        <a href="{{ route('admin.photoParent.show', $photoChild->parentId) }}">
+                                            {{ $photoChild->parent()->first()->getName() }}
+                                        </a>
+                                    @endif
+                                </td>
+                                <td class="text-center">
                                     {{ $photoChild->getDateFormatted() }}
                                 </td>
 
-                                <td>
+                                <td class="text-center">
                                     <a class="btn btn-default" href="{{ route('admin.photoChild.show', $photoChild) }}">
                                         {{--<span class="glyphicon glyphicon-eye-open"></span>--}}
                                         <i class="fa fa-eye"></i>

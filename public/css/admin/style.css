@@ -431,7 +431,8 @@ a:hover{ text-decoration: underline; }
     padding-right: 10px;
 }
 .x_content .table form,.x_content .table .btn{
-    float: left;
+    float: none;
+    display: inline-block;
 }
 .post-info .list-group{
     margin: 0;

@@ -6,6 +6,7 @@ use App\Http\Requests;
 use Input;
 
 use Model\PhotoParent\ModelName as PhotoParent;
+use Model\PhotoChild\ModelName as PhotoChild;
 use Intervention\Image\ImageManagerStatic as Image;
 
 class PhotoParentController extends Controller
@@ -96,8 +97,8 @@ class PhotoParentController extends Controller
 
             $jsonresult = json_encode($result);
 
-            \Model\PhotoChild\ModelName::create([
-                'file '=> $destinationPath.'/'.$filename,
+            PhotoChild::create([
+                'file'=> $destinationPath.'/'.$filename,
                 'parentId' => $photoParent->id
             ]);
 
@@ -119,10 +120,12 @@ class PhotoParentController extends Controller
     public function show(PhotoParent $photoParent)
     {
         $images = json_decode($photoParent->images);
+        $photoChildren = PhotoChild::where('parentId','=',$photoParent->id)->get();
 
         return view('Admin::photoParent.show', [
             'photoParent' => $photoParent,
             'images' => $images,
+            'photoChildren' => $photoChildren,
         ]);
     }
 
@@ -275,6 +278,19 @@ class PhotoParentController extends Controller
         $photoParent->published = 0;
         $photoParent->save();
         return redirect()->route('admin.photoParent.index');
+    }
+
+//    Destroy Child
+    public function destroyChild(Request $request)
+    {
+        $photoDeleteId = $request->photoDeleteId;
+        $photoChild = \Model\PhotoChild\ModelName::where('id','=',$photoDeleteId)->first();
+
+        $photoParentId = $request->photoParentId;
+        $photoChild->delete();
+        $photoParent = \Model\PhotoParent\ModelName::where('id','=',$photoParentId)->first();
+
+        return redirect()->route('admin.photoParent.show', $photoParent);
     }
 
 }
