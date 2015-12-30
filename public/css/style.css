@@ -4877,3 +4877,29 @@ background-size: cover;
 .copyright i{
     padding-right: 5px;
 }
+
+/*FOOTER MENU Balastan unigue style*/
+.balastan .prefooter{
+    border-top: none;
+    padding: 0;
+    background: none;
+}
+
+.balastan .footer-info {
+    background: none;
+}
+.balastan .footer-channels li img{
+    opacity: 0.7;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+.balastan .footer-channels a:hover img{
+    opacity: 1;
+}
+
+.balastan .footer-menu li a:hover {
+    color: #000000;
+}

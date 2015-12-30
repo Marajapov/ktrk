@@ -144,7 +144,7 @@
             </div>
          </div>
       </div>
-      <div class="row">
+      <div class="row" style="margin-bottom: 40px;">
          <div class="col-md-12 kidsvblock kidgallery">
             <div class="panel panel-default panel-carousel ">
                <div class="panel-heading">
