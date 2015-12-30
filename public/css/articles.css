@@ -93,9 +93,28 @@
     border-bottom: 1px solid #F1F4F9;
 }
 
-.panel-article,.panel-related{
+.panel-article, .panel-related{
     border-right: 2px solid #F1F4F9;
     border-bottom: 1px solid #F1F4F9;
+}
+
+.panel-related .extrarel{
+    position: absolute;
+    bottom: 5px;
+    left: 0px;
+}
+.panel-related .extrarel span{
+    position: relative;
+    right: auto;
+    top: auto;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 5px;
+    color: #fff;
+    font-size: 12px;
+}
+.panel-related .extrarel span i{
+    margin-right: 5px;
 }
 .panel-article .panel-body{
     padding: 15px;
