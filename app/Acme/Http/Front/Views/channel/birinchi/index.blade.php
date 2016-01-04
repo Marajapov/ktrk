@@ -323,17 +323,18 @@
                         <div class="featured_4 specpad clearfix">
                             @if($photoGalleries != null)
                                 @foreach($photoGalleries as $photoGallery)
-                                    <div class="col-md-3 onepadding">
-                                        <div class="featured_element">
-
-                                            <div class="featured_title_over">
+                                    <div class="col-md-3 col-sm-4 col-xs-6 onepadding">
+                                        <div class="featured_element">                                         
+                                            <div class="featured_item"> <img src="{{ asset($photoGallery->thumbnail_big) }}"></div>
+                                            <a href="{{ route('birinchi.photos', $photoGallery) }}" class="f_overlay"></a>
+                                              <div class="extra text-center">
+                                                <span class="e-datetime">{{ $photoGallery->getDay() }} {{ $photoGallery->getMonthRu() }}, {{ $photoGallery->getTime() }}</span>
+                                              </div>                                            
+                                             <div class="featured_title_over">
                                                 <a href="{{ route('birinchi.photos', $photoGallery) }}">
                                                     {{ $photoGallery->getName() }}
                                                 </a>
                                             </div>
-
-                                            <div class="featured_item"> <img src="{{ asset($photoGallery->thumbnail_big) }}"></div>
-                                            <a href="{{ route('birinchi.photos', $photoGallery) }}" class="f_overlay"></a>
                                         </div>
                                     </div>
                                 @endforeach

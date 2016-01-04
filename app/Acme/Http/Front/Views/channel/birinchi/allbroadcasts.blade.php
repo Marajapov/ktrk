@@ -195,34 +195,4 @@
 
 @section('footerscript2')
 
-<script>
-    if ($(window).width() > 768) {
-        $('.carousel-slick-peredacha').slick({
-            infinite: true,
-            slidesToShow: 4,
-            slidesToScroll: 1,
-        });
-    }
-    if ($(window).width() < 768) {
-        $('.carousel-slick-peredacha').slick({
-            infinite: true,
-            slidesToShow: 2,
-            slidesToScroll: 1,
-        });
-    }
-</script>
-
-<script>
-    $(document).ready(function () {
-        $("div.bhoechie-tab-menu>div.list-group>a").click(function (e) {
-            e.preventDefault();
-            $(this).siblings('a.active').removeClass("active");
-            $(this).addClass("active");
-            var index = $(this).index();
-            $("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
-            $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
-        });
-    });
-</script>
-
 @stop
