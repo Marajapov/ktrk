@@ -1,10 +1,11 @@
 /*LANGUAGE Birinchi radio*/
 .language{
-    position: absolute;
-    z-index: 2;
+    position: inherit;
+    z-index: 0;
+    display: block;
 
-    margin-left: -43px;
     margin-top: 4px;
+    margin-right: 32px;
 
     -webkit-transition: bottom 0.3s;
     -moz-transition: bottom 0.3s;
@@ -16,32 +17,27 @@
     text-align: center;
 }
 .language li{
-    padding: 0 7px;
-
-    background: #484646;
+    padding: 0px 5px !important;
+    float: left;
 }
 .language li a{
-    position: relative;
+    padding: 0px 8px 1px 8px !important;
+    margin: -6px;
 
     color: #ffffff;
 
-    font-size: 11px;
-    text-transform: uppercase;
+}
+.language li a.hover{
+    padding: 0px 5px !important;
+    background: red !important;
 }
 .language li.active{
-    background: #EE3224;
+    background: #484646;
 }
 .language li.active a{
     color: rgba(255, 255, 255, 0.65);
 }
 
-@media (max-width:770px) {
-    .language {
-        position: absolute;
-        z-index: 2;
-        right: 200px;
-    }
-}
 
 /*LANGUAGE Landing radio pages*/
 .languages{
@@ -156,7 +152,7 @@
 }
 
 .birinchiradio .search-toggle, .birinchiradio .form-search.visible {
-    margin: 0px -10px 0px 0px;
+    margin: -6px -10px 0px 0px;
 }
 .birinchiradio .logo-block {
     position: relative;
@@ -298,7 +294,7 @@
     float: left;
     position: absolute;
     right: 0px;
-    background: #F5695F;
+/*    background: #55646B;*/
     margin-top: -10px;
 
 }
@@ -322,13 +318,21 @@
     padding: 0px !important;
 }
 .onetime .btn{
-    color: #FFFFFF;
-    background: #F44336;
+/*    color: #FFFFFF;
+    background: #607D8B;*/
+    color: #FFEB3B;
+    background: #292828;
     font-weight: bold;
     font-size: initial;
     border: none;
-    padding: 5px;
+    padding: 5px 15px;
     font-size: 18px;
+    border-radius: 2px !important;
+}
+
+.onetime .btn:hover{
+    color: #FFFFFF;
+    background: #4E7486;
 }
 .onetime a:hover{
     background: none !important;
@@ -390,6 +394,10 @@
 }
 .onenews .panel-body {
     padding: 10px 10px 10px 7px;
+}
+
+.onenews .panel-articles{
+    border:none;
 }
 
 .onenews .aboutnumber p{
@@ -490,11 +498,11 @@
 }
 
 
-@media (max-width:1170px) {
+/*@media (max-width:1170px) {
     .birinchiradio .logo-block {
         display: none;
     }
-}
+}*/
 @media (max-width:992px) {
     .chastota{
         margin-left: 0px;
@@ -527,6 +535,9 @@
     }
     .birinchiradio .search-block {
         margin-top: 3px;
+    }
+    .birinchiradio .search-toggle, .birinchiradio .form-search.visible {
+    margin: 0px -10px 0px 0px;
     }
     .oneheader {
         margin-top: 40px;

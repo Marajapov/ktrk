@@ -77,7 +77,6 @@ class MuzkanalController extends Controller
             'lc' => $lc,            
             'currentDate' => $currentDate,
             'currentTime' => $currentTime,
-            'backgroundMain' => $backgroundMain,
             'program' => $program,
             ]);
     }
