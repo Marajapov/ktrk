@@ -53,6 +53,8 @@ class MuzkanalController extends Controller
                 $program = json_decode($schedule->program);
                 // dd($program);
                 $programNew = array_add($program, 'date', $schedule->date);
+            }else{
+                $program = '';
             }
         }
 
@@ -124,21 +126,7 @@ class MuzkanalController extends Controller
         $relatedmuzkanalVideos = \Model\Media\ModelName::where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->where('videoType','=', $videoType)->get();
         $relatedmuzkanalVideos2 = \Model\Media\ModelName::where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->where('videoType','=', $videoType)->get();
 
-        date_default_timezone_set('Asia/Bishkek');
-        $now = date("d-m-Y H:i");
-        $currentDate = date('d-m-Y');
-        $currentTime = date('H:i');
-        $weekDay = date('N', strtotime($now));
 
-        if($channel){
-            $schedule = \Model\Schedule\ModelName::where('channel_id','=',$channel->id)->where('date','=',$currentDate)->first();
-
-            if(!empty($schedule)){
-                $program = json_decode($schedule->program);
-                // dd($program);
-                $programNew = array_add($program, 'date', $schedule->date);
-            }
-        }
 
         return view('Front::channel.muzkanal.video', [
             'channel' => $channel,
@@ -149,10 +137,6 @@ class MuzkanalController extends Controller
             'relatedmuzkanalVideos2' => $relatedmuzkanalVideos2,
 
             'lc' => $lc,            
-            'currentDate' => $currentDate,
-            'currentTime' => $currentTime,
-            'backgroundMain' => $backgroundMain,
-            'program' => $program,
             ]);
     }
 

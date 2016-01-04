@@ -163,8 +163,8 @@
                           </div>
                           <div class="panel-body">
                              <div class="panel-body">
-                             @if($allPost)
-                             @foreach($allPost as $post)
+                             @if($postAll)
+                             @foreach($postAll as $post)
                                 <div class="media">
                                    <div class="media-left">
                                       <a href="{{ route('birinchi.news', $post) }}">
@@ -187,7 +187,31 @@
                                 @endforeach
                                 @endif                     
                                 <footer>
-                                   <a href="{{ route('birinchi.allnews') }}">{{ trans('radiopages.Morenews') }}</a>
+                                    <nav>
+                                      <ul class="pagination">
+
+                                        <li>
+                                          <a href="{{ route('birinchi.allnews', ['page' => 1]) }}" class="btn btn-default @if($postAll->currentPage() == 1) disabled @endif">{{ trans('site.Start') }}</a>
+                                        </li>
+                                        <li>
+                                          <a href="{{ $postAll->previousPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                                        </li>
+                                        <li>
+                                          <a href="{{ $postAll->nextPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                                        </li>
+
+                                        @for($i = 0, $j = 1; $i < $postAll->total(); $i+=$perPage)
+                                          <li>
+                                            <a href="{{ route('birinchi.allnews', ['page' => $j]) }}" class="btn btn-default @if($postAll->currentPage() == $j) active @endif">{{ $j++ }}</a>
+                                          </li>
+                                        @endfor
+
+                                        <li>
+                                          <a href="{{ route('birinchi.allnews', ['page' => ceil($postAll->total()/$perPage)]) }}" class="btn btn-default @if($postAll->currentPage() == ceil($postAll->total()/$perPage)) disabled @endif">{{ trans('site.End') }}</a>
+                                        </li>
+
+                                      </ul>
+                                    </nav>
                                 </footer>
                              </div>
                           </div>

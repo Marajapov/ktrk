@@ -98,6 +98,7 @@
                                         </button>
                                     </form>
                                 </div>
+                                
                                 <a class="navbar-brand active" href="{{ route('birinchi.home') }}">{{ trans('radiopages.Home') }}</a>
                             </div>
                             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -124,12 +125,12 @@
                                     <li><a href="{{ route('birinchi.allphotos') }}"> {{ trans('radiopages.Photos') }}</a></li>
                                 </ul>
                                 <ul class="nav navbar-nav navbar-right logo-block onesearch">
-                                                                        <div class="language">
-                                            <ul>
-                                                <li @if(app()->getlocale() == 'kg') class="active" @endif><a href="/locale/kg">кырг</a></li>
-                                                <li @if(app()->getlocale() == 'ru') class="active" @endif><a href="/locale/ru">рус</a></li>
-                                            </ul>
-                                        </div>
+                                    <div class="language">
+                                        <ul>
+                                            <li @if(app()->getlocale() == 'kg') class="active" @endif><a href="/locale/kg">кырг</a></li>
+                                            <li @if(app()->getlocale() == 'ru') class="active" @endif><a href="/locale/ru">рус</a></li>
+                                        </ul>
+                                    </div>
                                     <a class="search-toggle"><i class="fa fa-search"></i></a>
                                     <form class="form-search" action="{{ route('front.search') }}" method="get">
                                         <div class="form-group pull-right">
@@ -235,7 +236,6 @@
                                 <div class="panel-heading">
                                     <h3 class="panel-title">{{ trans('radiopages.Newslenta') }}</h3>
                                 </div>
-                                <div class="panel-body">
                                     <div class="panel-body">
                                         @if($allPost)
                                             @foreach($allPost as $post)
@@ -264,7 +264,6 @@
                                             <a href="{{ route('birinchi.allnews') }}">{{ trans('radiopages.Morenews') }}</a>
                                         </footer>
                                     </div>
-                                </div>
                             </div>
                         </div>
 

@@ -159,10 +159,10 @@
                         <img src="http://img.youtube.com/vi/{{ $hit->getUrl()}}/mqdefault.jpg" alt="">
                      </div>
                      <div class="col-xs-8 topartist" style="height:50px;">
-                        <a href="#"><h3>{{ $hit->getName() }}</h3></a>
+                        <a href="{{route('muzkanal.video', $hit)}}"><h3>{{ $hit->getName() }}</h3></a>
                      </div>
                      <div class="col-xs-1 topclip" style="height:50px;">
-                        <a href="#"><i class="glyphicon glyphicon-play"></i> </a>
+                        <a href="{{route('muzkanal.video', $hit)}}"><i class="glyphicon glyphicon-play"></i> </a>
                      </div>
                   </div>
                   @endforeach

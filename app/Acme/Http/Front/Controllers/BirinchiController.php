@@ -24,14 +24,16 @@ class BirinchiController extends Controller
         $categoryArray = array();
         $lc = app()->getlocale();
         if($lc == 'kg'){
+        
             $allPost = \Model\Post\ModelName::where('birinchi','=',1)->where('birinchiProgram','<>','1')->languagekg()->take(10)->skip(0)->published()->orderBy('id','desc')->get();    
             foreach ($allPost as $key => $value) {
-                $category = \Model\Category\ModelName::where('id','=',$value->category_id)->where('titleRu','<>','')->first();
+                $category = \Model\Category\ModelName::where('id','=',$value->category_id)->where('title','<>','')->first();
                 $categoryArray[] = $category;
                 
             }
             
         }else{
+        
             $allPost = \Model\Post\ModelName::where('birinchi','=',1)->where('birinchiProgram','<>','1')->languageru()->take(10)->skip(0)->published()->orderBy('id','desc')->get();
             foreach ($allPost as $key => $value) {
                 $category = \Model\Category\ModelName::where('id','=',$value->category_id)->where('titleRu','<>','')->first();
@@ -141,11 +143,12 @@ class BirinchiController extends Controller
 
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
+        $perPage = 10;
         $lc = app()->getlocale();
         if($lc == 'kg'){
-            $allPost = \Model\Post\ModelName::where('birinchi','=',1)->languagekg()->published()->orderBy('id','desc')->get();    
+            $postAll = \Model\Post\ModelName::where('birinchi','=',1)->where('title','<>','')->published()->orderBy('id','desc')->paginate($perPage);    
         }else{
-            $allPost = \Model\Post\ModelName::where('birinchi','=',1)->languageru()->published()->orderBy('id','desc')->get();
+            $postAll = \Model\Post\ModelName::where('birinchi','=',1)->where('titleRu','<>','')->published()->orderBy('id','desc')->paginate($perPage);
         }
 
         $lc = app()->getlocale();
@@ -157,9 +160,10 @@ class BirinchiController extends Controller
         $categories = \Model\Category\ModelName::all();
 
         return view('Front::channel.birinchi.allnews', [
+            'perPage' => $perPage,
             'channel' => $channel,
             'backgroundMain' => $backgroundMain,
-            'allPost' => $allPost,
+            'postAll' => $postAll,
             'birinchiProjects' => $birinchiProjects,
             'categories'=>$categories,
 
