@@ -232,7 +232,6 @@
                                 <div class="panel-heading">
                                     <h3 class="panel-title">{{ trans('radiopages.Newslenta') }}</h3>
                                 </div>
-                                <div class="panel-body">
                                     <div class="panel-body">
                                         @if($allPost)
                                             @foreach($allPost as $post)
@@ -261,7 +260,6 @@
                                             <a href="{{ route('birinchi.allnews') }}">{{ trans('radiopages.Morenews') }}</a>
                                         </footer>
                                     </div>
-                                </div>
                             </div>
                         </div>
 
