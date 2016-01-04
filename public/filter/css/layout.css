@@ -197,6 +197,7 @@
     position: relative;
     overflow: hidden;
     display: block;
+    height: 130px;
 
     box-shadow: 0px 1px 9px 0px rgba(0, 0, 0, 0.9);
     -webkit-backface-visibility: hidden;
