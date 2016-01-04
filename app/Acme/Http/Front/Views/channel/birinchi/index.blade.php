@@ -63,7 +63,7 @@
                         </ul>
                         <ul class="nav navbar-nav oneline">
 <!--                             <li><a class="time" href="#"><time>11:15</time></a></li> -->
-                            <li class="onetime"><a target="_blank" href="http://ktrk.kg/online-1radio.php"><button class="btn"><i class="fa fa-microphone"></i><span>{{ trans('radiopages.Live') }}</span></button></a></li>
+                            <li class="onetime"><a target="_blank" href="http://ktrk.kg/online-1radio.php"><button class="btn"><i class="fa fa-microphone blink"></i><span>{{ trans('radiopages.Live') }}</span></button></a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right onesoc">
                             <li class="onepost"><a href=""><i class="fa fa-facebook"></i><span>facebook</span></a></li>
@@ -98,7 +98,7 @@
                                         </button>
                                     </form>
                                 </div>
-                                
+
                                 <a class="navbar-brand active" href="{{ route('birinchi.home') }}">{{ trans('radiopages.Home') }}</a>
                             </div>
                             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -332,10 +332,7 @@
                                                 </a>
                                             </div>
 
-                                            <div class="featured_item"> <img width="267" height="267" src="{{ asset($photoGallery->status) }}" class="attachment-thr-fa-quarter wp-post-image" alt="39"></div>
-                                            <div class="featured_date">
-
-                                            </div>
+                                            <div class="featured_item"> <img src="{{ asset($photoGallery->thumbnail_big) }}"></div>
                                             <a href="{{ route('birinchi.photos', $photoGallery) }}" class="f_overlay"></a>
                                         </div>
                                     </div>
