@@ -156,7 +156,7 @@
 }
 
 .birinchiradio .search-toggle, .birinchiradio .form-search.visible {
-    margin: 0px -10px 0px 0px;
+    margin: -1px -10px 0px 0px;
 }
 .birinchiradio .logo-block {
     position: relative;
@@ -379,17 +379,20 @@
 }
 .onelist {
     background: #fff;
+    box-shadow: initial;
 }
 .onelist .panel-heading {
     padding: 10px 0px 10px 15px;
     background: #666666;
 }
 .onenews .panel-heading {
-    padding: 10px 0px 10px 20px;
     background: #666666;
 }
 .onenews .panel-body {
     padding: 10px 10px 10px 7px;
+}
+.onenews .panel-articles {
+    border: none;
 }
 
 .onenews .aboutnumber p{
@@ -978,7 +981,6 @@
     vertical-align: middle;
     width: 300px;
     max-width: 100%;
-    padding: 0 10px;
     color: #FFF;
     text-align: center;
 }
@@ -1167,7 +1169,7 @@
     padding: 10px 10px 10px 7px;
 }
 .specpad {
-    padding: 5px 5px 10px;
+    padding: 5px 15px 0px;
 }
 .specpad .onepadding{
     padding: 5px;
