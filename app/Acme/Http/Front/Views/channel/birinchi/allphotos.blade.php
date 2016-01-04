@@ -67,7 +67,6 @@
                <li>Талас 102.0</li>
             </ul>
             <ul class="nav navbar-nav oneline">
-               <li><a class="time" href="#"><time>11:15</time></a></li>
                <li class="onetime"><a href=""><button class="btn"><i class="fa fa-microphone"></i><span>{{ trans('radiopages.Live') }}</span></button></a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right onesoc">
