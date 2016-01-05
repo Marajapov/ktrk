@@ -3,6 +3,7 @@
 @section('styles')
 <link rel="stylesheet" type="text/css" href="{{ asset('css/lightslider.css') }}">
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.2.6/css/lightgallery.min.css">
+<link rel="stylesheet" href="{{ asset('css/radios.css')}}">
 @endsection
 @section('content')
 <body class="music">
@@ -149,51 +150,38 @@
                      </h4>
                   </div>
                </div>
-               <div class="panel-body imagegrid">
-                  <div class="row">
-                     <div class="col-md-12 otherphotos">
-                        <div class="grid_gallery">
-                        @if($photoGalleries != null)
-                        @foreach($photoGalleries as $photoGallery)
-                           <div class="col-md-3 col-sm-4 col-xs-6">
-                              <a href="{{ route('muzkanal.photos', $photoGallery) }}" class="img-wrap">
-                                 <img src="{{ asset($photoGallery->status) }}" alt=""/>
-                                 <span>{{ $photoGallery->getName() }}</span>
-                                 <div class="overlay"></div>
-                              </a>
+               <div class="panel-body">
+               <div class="featured_4 allphotospace clearfix">
+                  @if($photoGalleries != null)
+                  @foreach($photoGalleries as $photoGallery)
+                  <div class="col-md-3 col-sm-4 col-xs-6 onepadding">
+                     <div class="featured_element">
+                        <div class="featured_item">
+                           <img src="{{ asset($photoGallery->thumbnail_big) }}">
+                           <div class="extra">                                              
+                              <span class="e-datetime"><i class="fa  fa-calendar"></i>  {{ $photoGallery->getDay() }} {{ $photoGallery->getMonthRu() }}, {{ $photoGallery->getTime() }}</span>
                            </div>
-                        @endforeach
-                        @endif                  
+                           <i class="fa fa-camera"></i>
                         </div>
-                        <nav class="muzpaginate">
-                           <ul class="pagination">
-                              <li>
-                                 <a href="{{ route('muzkanal.videos', ['page' => 1]) }}" class="btn btn-default @if($postAll->currentPage() == 1) disabled @endif">{{ trans('site.Start') }}</a>
-                              </li>
-                              <li>
-                                 <a href="{{ $postAll->previousPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span></a>
-                              </li>
-                              <li>
-                                 <a href="{{ $postAll->nextPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-right"></span></a>
-                              </li>
-                              @for($i = 0, $j = 1; $i < $postAll->total(); $i+=$perPage)
-                              <li>
-                                 <a href="{{ route('muzkanal.videos', ['page' => $j]) }}" class="btn btn-default @if($postAll->currentPage() == $j) active @endif">{{ $j++ }}</a>
-                              </li>
-                              @endfor
-                              <li>
-                                 <a href="{{ route('muzkanal.videos', ['page' => ceil($postAll->total()/$perPage)]) }}" class="btn btn-default @if($postAll->currentPage() == ceil($postAll->total()/$perPage)) disabled @endif">{{ trans('site.End') }}</a>
-                              </li>
-                           </ul>
-                        </nav>
+                        <a href="{{ route('muzkanal.photos', $photoGallery) }}" class="f_overlay"></a>
+                        
+                           <div class="featured_title_overmz text-center"> 
+                              <a href="{{ route('muzkanal.photos', $photoGallery) }}">                                                
+                              {{ $photoGallery->getName() }}
+                              </a>                                                
+                           </div>                        
                      </div>
                   </div>
+                  @endforeach
+                  @endif
+               </div>
                </div>
             </div>
          </div>
 
       </div>
    </div>
+
    @stop
    @section('footerscript2')
    <script src="{{ asset('js/jquery-1.11.2.min.js') }}"></script>  

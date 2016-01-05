@@ -598,7 +598,7 @@
 .birinchiradio .e-views {
     float: right;
 }
-.birinchiradio .extra {
+.birinchiradio .extra, .music .extra  {
     color: #FFFFFF;
     font-size: 12px;
     position: absolute;
@@ -606,7 +606,7 @@
     left: 5px;
 }
 
-.birinchiradio .fa-camera {
+.birinchiradio .fa-camera, .music .fa-camera {
     position: absolute;
     top: 0;
     right: 0;
@@ -943,7 +943,7 @@
 .featured_4 .featured_element{
     margin: 0 0 1px 1px;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-    border-radius: 1px !important;
+    border-radius: 2px !important;
 }
 .featured_4 .featured_title_wrapper{
     height: 100px;
@@ -1004,6 +1004,28 @@
 .featured_title_over:hover{
     background: #E0DFDF;
 }
+
+.featured_title_overmz{
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1001;
+    display: inline-table;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+.featured_title_overmz:hover{
+    background: #D33649;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
 .featured_title_under a,
 .featured_title_over a{
     display: table-cell;
@@ -1020,6 +1042,21 @@
 .featured_title_under a:hover,
 .featured_title_over a:hover {
     color: #101010;
+}
+.featured_title_overmz a{
+    display: table-cell;
+    vertical-align: middle;
+    height: 50px;
+    overflow: hidden;
+    color: #4e5e6a;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1;
+    text-align: center;
+}
+
+.featured_title_overmz a:hover {
+    color: #fff;
 }
 
 
@@ -1211,7 +1248,7 @@
 .specpad {
     padding: 5px 15px 0px;
 }
-.specpad .onepadding{
+.specpad .onepadding, .music .allphotospace .onepadding{
     padding: 5px;
 }
 .birinchiradio .blocks{
