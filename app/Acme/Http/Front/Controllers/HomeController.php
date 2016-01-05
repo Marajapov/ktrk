@@ -200,42 +200,6 @@ class HomeController extends Controller
                     $contentFinal = $contentOriginal;
                 }
 
-//                elseif(strpos($contentOriginal,'POST1') !== false)
-//                {
-//                    $post1Pos = strripos($contentOriginal,'POST1');
-//                    $contentRelated1 = substr_replace($contentOriginal, $post->relatedFunction($post->related1), $post1Pos, 5);
-//
-//                    if($post->related2)
-//                    {
-//                        if(strpos($contentOriginal,'POST2POST3') !== false)
-//                        {
-//                            $twoPostsPos = strripos($contentRelated1,'POST2POST3');
-//                            $contentRelatedPosts = substr_replace($contentRelated1, $post->twoRelatedFunction($post->related2, $post->related3), $twoPostsPos, 10);
-//                            $contentFinal = $contentRelatedPosts;
-//                        }
-//                        else
-//                        {
-//                            $post2Pos = strripos($contentRelated1,'POST2');
-//                            $contentRelated2 = substr_replace($contentRelated1, $post->relatedFunction($post->related2), $post2Pos, 5);
-//
-//                            if($post->related3)
-//                            {
-//                                $post3Pos = strripos($contentRelated2,'POST3');
-//                                $contentRelated3 = substr_replace($contentRelated2, $post->relatedFunction($post->related3), $post3Pos, 5);
-//                                $contentFinal = $contentRelated3;
-//                            }
-//                            else
-//                            {
-//                                $contentFinal = $contentRelated2;
-//                            }
-//                        }
-//                    }
-//                    else
-//                    {
-//                        $contentFinal = $contentRelated1;
-//                    }
-//                }
-
             }
             else
             {
@@ -248,51 +212,44 @@ class HomeController extends Controller
 
             if($post->relatedRu1)
             {
-                if (strpos($contentOriginal,'POST1POST2') !== false) {
-
-                    if($post->relatedRu2)
-                    {
-                        $twoPostsPos = strripos($contentOriginal,'POST1POST2');
-                        $contentRelatedPosts = substr_replace($contentOriginal, $post->twoRelatedFunction($post->relatedRu1, $post->relatedRu2), $twoPostsPos, 10);
-                        $contentFinal = $contentRelatedPosts;
-                    }
-
-                }
-
-                elseif(strpos($contentOriginal,'POST1') !== false)
-                {
+                if(strpos($contentOriginal, 'POST1') != false){
                     $post1Pos = strripos($contentOriginal,'POST1');
                     $contentRelated1 = substr_replace($contentOriginal, $post->relatedFunction($post->relatedRu1), $post1Pos, 5);
 
-                    if($post->relatedRu2)
-                    {
-                        if(strpos($contentOriginal,'POST2POST3') !== false)
-                        {
-                            $twoPostsPos = strripos($contentRelated1,'POST2POST3');
-                            $contentRelatedPosts = substr_replace($contentRelated1, $post->twoRelatedFunction($post->relatedRu2, $post->relatedRu3), $twoPostsPos, 10);
-                            $contentFinal = $contentRelatedPosts;
-                        }
-                        else
+                    if($post->relatedRu2){
+
+                        if(strpos($contentOriginal,'POST2') !== false)
                         {
                             $post2Pos = strripos($contentRelated1,'POST2');
                             $contentRelated2 = substr_replace($contentRelated1, $post->relatedFunction($post->relatedRu2), $post2Pos, 5);
 
-                            if($post->relatedRu3)
-                            {
-                                $post3Pos = strripos($contentRelated2,'POST3');
-                                $contentRelated3 = substr_replace($contentRelated2, $post->relatedFunction($post->relatedRu3), $post3Pos, 5);
-                                $contentFinal = $contentRelated3;
+                            if($post->relatedRu3){
+
+                                if(strpos($contentOriginal,'POST3') !== false)
+                                {
+                                    $post3Pos = strripos($contentRelated2,'POST3');
+                                    $contentRelated3 = substr_replace($contentRelated2, $post->relatedFunction($post->relatedRu3), $post3Pos, 5);
+                                    $contentFinal = $contentRelated3;
+                                }
+
                             }
-                            else
-                            {
+                            else{
                                 $contentFinal = $contentRelated2;
                             }
+                        }
+                        else{
+                            $contentFinal = $contentRelated1;
                         }
                     }
                     else
                     {
                         $contentFinal = $contentRelated1;
                     }
+
+                }
+                else
+                {
+                    $contentFinal = $contentOriginal;
                 }
 
             }
