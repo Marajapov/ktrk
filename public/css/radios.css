@@ -598,7 +598,13 @@
 .birinchiradio .e-views {
     float: right;
 }
-.birinchiradio .extra, .music .extra  {
+.birinchiradio .extra {
+    color: #FFFFFF;
+    font-size: 12px;
+    top: 5px;
+    right: 5px;
+}
+.music .extra  {
     color: #FFFFFF;
     font-size: 12px;
     position: absolute;

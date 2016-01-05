@@ -173,7 +173,7 @@
                                  <span class="date">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
                                  </a>
                                  <h3 class="name headline">
-                                    <a href="{{ route('birinchi.news', $post) }}" title="Premiere for The Invisible Woman">
+                                    <a href="{{ route('birinchi.news', $post) }}" title="">
                                     {{ $post->getTitleRuOrKg() }}
                                     </a>
                                  </h3>
@@ -242,11 +242,12 @@
                               <div class="extra">
                                  <span class="e-datetime">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
                                  <span class="e-views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
-                              </div>
+                              </div> 
                               <a class="media-heading" href="{{ route('birinchi.news', $post) }}">{{ $post->getTitleRuOrKg() }}</a>
                               <p>
                                  {{ $post->getShortDescription() }} ...<a class="text-lowercase" href="{{ route('birinchi.news', $post) }}"> {{ trans('site.ReadMore') }}</a>
                               </p>
+
                            </div>
                         </div>
                         @endforeach
