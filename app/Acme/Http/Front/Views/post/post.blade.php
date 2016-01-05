@@ -34,7 +34,6 @@
                                     <p class="post-thumb" href="{{ route('front.post', $post) }}">
                                         <img class="left" src="@if(empty($post->thumbnail))images/2.jpg @else {{  asset($post->thumbnail) }} @endif" alt="image">
                                     </p>
-                                    {{--{!! $post->getContent() !!}--}}
                                     {!! $content !!}
                                     <div class="carousel-post">
                                         @if($images != null)
