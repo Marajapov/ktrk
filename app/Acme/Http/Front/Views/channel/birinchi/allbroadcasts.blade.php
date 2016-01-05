@@ -39,12 +39,6 @@
 <div class="container-fluid cffix">
    <div class="col-md-12 topheader">
       <div class="container onepadding">
-        <div class="language">
-            <ul>
-                <li @if(app()->getlocale() == 'kg') class="active" @endif><a href="/locale/kg">кырг <span></span></a></li>
-                <li @if(app()->getlocale() == 'ru') class="active" @endif><a href="/locale/ru">рус <span></span></a></li>
-            </ul>
-        </div>
          <div class="col-md-3">
             <nav>
                <ul>
@@ -69,7 +63,6 @@
                <li>Талас 102.0</li>
             </ul>
             <ul class="nav navbar-nav oneline">
-               <li><a class="time" href="#"><time>11:15</time></a></li>
                <li class="onetime"><a href=""><button class="btn"><i class="fa fa-microphone"></i><span>{{ trans('radiopages.Live') }}</span></button></a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right onesoc">
@@ -129,6 +122,12 @@
                      <li><a href="{{ route('birinchi.allphotos') }}"> {{ trans('radiopages.Photos') }}</a></li>
                   </ul>
                   <ul class="nav navbar-nav navbar-right logo-block onesearch">
+                    <div class="language">
+                        <ul>
+                            <li @if(app()->getlocale() == 'kg') class="active" @endif><a href="/locale/kg">кырг</a></li>
+                            <li @if(app()->getlocale() == 'ru') class="active" @endif><a href="/locale/ru">рус</a></li>
+                        </ul>
+                    </div>                  
                      <a class="search-toggle"><i class="fa fa-search"></i></a>
                      <form class="form-search" action="{{ route('front.search') }}" method="get">
                         <div class="form-group pull-right">
@@ -195,35 +194,5 @@
 @stop
 
 @section('footerscript2')
-
-<script>
-    if ($(window).width() > 768) {
-        $('.carousel-slick-peredacha').slick({
-            infinite: true,
-            slidesToShow: 4,
-            slidesToScroll: 1,
-        });
-    }
-    if ($(window).width() < 768) {
-        $('.carousel-slick-peredacha').slick({
-            infinite: true,
-            slidesToShow: 2,
-            slidesToScroll: 1,
-        });
-    }
-</script>
-
-<script>
-    $(document).ready(function () {
-        $("div.bhoechie-tab-menu>div.list-group>a").click(function (e) {
-            e.preventDefault();
-            $(this).siblings('a.active').removeClass("active");
-            $(this).addClass("active");
-            var index = $(this).index();
-            $("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
-            $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
-        });
-    });
-</script>
 
 @stop

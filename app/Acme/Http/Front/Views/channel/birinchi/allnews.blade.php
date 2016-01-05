@@ -40,12 +40,6 @@
 <div class="container-fluid cffix">
    <div class="col-md-12 topheader">
       <div class="container onepadding">
-        <div class="language">
-            <ul>
-                <li @if(app()->getlocale() == 'kg') class="active" @endif><a href="/locale/kg">кырг <span></span></a></li>
-                <li @if(app()->getlocale() == 'ru') class="active" @endif><a href="/locale/ru">рус <span></span></a></li>
-            </ul>
-        </div>
          <div class="col-md-3">
             <nav>
                <ul>
@@ -70,7 +64,6 @@
                <li>Талас 102.0</li>
             </ul>
             <ul class="nav navbar-nav oneline">
-               <li><a class="time" href="#"><time>11:15</time></a></li>
                <li class="onetime"><a href=""><button class="btn"><i class="fa fa-microphone"></i><span>{{ trans('radiopages.Live') }}</span></button></a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right onesoc">
@@ -130,6 +123,12 @@
                      <li><a href="{{ route('birinchi.allphotos') }}"> {{ trans('radiopages.Photos') }}</a></li>
                   </ul>
                   <ul class="nav navbar-nav navbar-right logo-block onesearch">
+                    <div class="language">
+                        <ul>
+                            <li @if(app()->getlocale() == 'kg') class="active" @endif><a href="/locale/kg">кырг</a></li>
+                            <li @if(app()->getlocale() == 'ru') class="active" @endif><a href="/locale/ru">рус</a></li>
+                        </ul>
+                    </div>                  
                      <a class="search-toggle"><i class="fa fa-search"></i></a>
                      <form class="form-search" action="{{ route('front.search') }}" method="get">
                         <div class="form-group pull-right">

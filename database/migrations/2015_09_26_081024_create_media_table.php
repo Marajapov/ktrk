@@ -43,6 +43,7 @@ class CreateMediaTable extends Migration
             $table->string('muzkanalanons1');
             $table->string('muzkanalanons2');
             $table->string('muzkanalanons3');
+            $table->string('exclusive');
             $table->string('anonstime1');
             $table->string('anonstime2');
             $table->string('anonstime3');

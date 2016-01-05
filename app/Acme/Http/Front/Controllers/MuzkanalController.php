@@ -1,6 +1,7 @@
 <?php
 namespace Front\Controllers;
 use Illuminate\Http\Request;
+
 class MuzkanalController extends Controller
 {
     public function __construct()
@@ -57,8 +58,6 @@ class MuzkanalController extends Controller
                 $program = '';
             }
         }
-
-       
         return view('Front::channel.muzkanal.index', [
             'channel' => $channel,
             'backgroundMain' => $backgroundMain,
@@ -79,7 +78,6 @@ class MuzkanalController extends Controller
             'lc' => $lc,            
             'currentDate' => $currentDate,
             'currentTime' => $currentTime,
-            'backgroundMain' => $backgroundMain,
             'program' => $program,
             ]);
     }
@@ -147,13 +145,33 @@ class MuzkanalController extends Controller
         $perPage = 24;
 
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        
+        //New clips
+        $MediaNew = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->orderBy('id', 'desc')->take(12)->get();        
 
-        $postAll = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->orderBy('id', 'desc')->paginate($perPage);
+        //Top clips
+$MediaTop = \Model\Media\ModelName::where('muzkanal','=','1')->
+where('created_at','>=','CURDATE() - 10 DAY')->
+where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')
+->where('muzkanalanons3','<>','1')->where('promo','<>','1')
+->orderBy('viewed','desc')->take(12)->get();
+
+        //Exclusive 
+        $MediaLive = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->where('exclusive','=', 1)->orderBy('id', 'desc')->take(12)->get();
+     
+        $postAllNew = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->orderBy('id', 'desc')->paginate($perPage);
+        $postAllTop = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->where('exclusive','<>','1')->orderBy('id', 'desc')->paginate($perPage);
+        $postAllLive = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->where('exclusive','=','1')->orderBy('id', 'desc')->paginate($perPage);
 
         return view('Front::channel.muzkanal.videos', [
             'channel' => $channel,
             'backgroundMain' => $backgroundMain,
-            'postAll' => $postAll,
+            'MediaNew' => $MediaNew,
+            'MediaTop' => $MediaTop,
+            'MediaLive' => $MediaLive,
+            'postAllNew' => $postAllNew,
+            'postAllTop' => $postAllTop,
+            'postAllLive' => $postAllLive,
             'perPage' => $perPage,
             ]);
     }

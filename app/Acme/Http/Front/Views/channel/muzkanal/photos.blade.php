@@ -142,25 +142,26 @@
       <div class="row photosmuz">
          <div class="col-md-12 topchart">
             <div class="panel">
-               <div class="panel-heading">
-                  <div class="panel-title">
-                     <h4 class="show-title">
-                        <a href="#">{{ trans('radiopages.Photos') }}</a> 
-                     </h4>
-                  </div>
-               </div>
-               <div class="panel-body">
+              <div class="panel-heading">
+                <h3 class="panel-title text-center"><span> {{ $gallery->getName() }}</span></h3>
+              </div>
+              <div class="panel-body">
                   <div class="row" style="margin: 20px;">
+                   <p style="text-align:center;color: #272727;font-size: 18px;">{{ $gallery->getDescription() }}</p>
                      <ul id="imageGallery">
+                     @if($images != null)
                      @foreach($images as $image)
+
                         <li data-thumb="{{ asset('froala/uploads/'.$image->name) }}" data-src="{{ asset('froala/uploads/'.$image->name) }}">
                            <img class="resizegallery" src="{{ asset('froala/uploads/'.$image->name) }}" />
                         </li>
                      @endforeach
+                     @endif
                         
                      </ul>
                   </div>
-               </div>
+
+              </div>
             </div>
          </div>
 

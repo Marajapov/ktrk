@@ -1,10 +1,11 @@
 /*LANGUAGE Birinchi radio*/
 .language{
-    position: absolute;
-    z-index: 2;
+    position: inherit;
+    z-index: 0;
+    display: block;
 
-    margin-left: -43px;
     margin-top: 4px;
+    margin-right: 32px;
 
     -webkit-transition: bottom 0.3s;
     -moz-transition: bottom 0.3s;
@@ -16,32 +17,27 @@
     text-align: center;
 }
 .language li{
-    padding: 0 7px;
-
-    background: #484646;
+    padding: 0px 5px !important;
+    float: left;
 }
 .language li a{
-    position: relative;
+    padding: 0px 8px 1px 8px !important;
+    margin: -6px;
 
     color: #ffffff;
 
-    font-size: 11px;
-    text-transform: uppercase;
+}
+.language li a.hover{
+    padding: 0px 5px !important;
+    background: red !important;
 }
 .language li.active{
-    background: #EE3224;
+    background: #484646;
 }
 .language li.active a{
     color: rgba(255, 255, 255, 0.65);
 }
 
-@media (max-width:770px) {
-    .language {
-        position: absolute;
-        z-index: 2;
-        right: 200px;
-    }
-}
 
 /*LANGUAGE Landing radio pages*/
 .languages{
@@ -156,7 +152,7 @@
 }
 
 .birinchiradio .search-toggle, .birinchiradio .form-search.visible {
-    margin: -1px -10px 0px 0px;
+    margin: -6px -10px 0px 0px;
 }
 .birinchiradio .logo-block {
     position: relative;
@@ -298,7 +294,7 @@
     float: left;
     position: absolute;
     right: 0px;
-    background: #F5695F;
+/*    background: #55646B;*/
     margin-top: -10px;
 
 }
@@ -322,13 +318,21 @@
     padding: 0px !important;
 }
 .onetime .btn{
-    color: #FFFFFF;
-    background: #F44336;
+/*    color: #FFFFFF;
+    background: #607D8B;*/
+    color: #FFEB3B;
+    background: #292828;
     font-weight: bold;
     font-size: initial;
     border: none;
-    padding: 5px;
+    padding: 5px 15px;
     font-size: 18px;
+    border-radius: 2px !important;
+}
+
+.onetime .btn:hover{
+    color: #FFFFFF;
+    background: #4E7486;
 }
 .onetime a:hover{
     background: none !important;
@@ -336,6 +340,16 @@
 }
 .onetime i {
     padding-right: 10px;
+  text-shadow: 0 -1px rgba(0,0,0,0.1);
+  -webkit-animation: i 1.5s linear infinite;
+  animation: i 1.5s linear infinite;
+}
+
+@-webkit-keyframes i {
+ 50% { color: #fff; text-shadow: 0 -1px rgba(0,0,0,.3), 0 0 5px #ffd, 0 0 8px #fff; }
+}
+@keyframes i {
+ 50% { color: #fff; text-shadow: 0 -1px rgba(0,0,0,.3), 0 0 5px #ffd, 0 0 8px #fff; }
 }
 
 .chastota{
@@ -393,6 +407,10 @@
 }
 .onenews .panel-articles {
     border: none;
+}
+
+.onenews .panel-articles{
+    border:none;
 }
 
 .onenews .aboutnumber p{
@@ -493,11 +511,11 @@
 }
 
 
-@media (max-width:1170px) {
+/*@media (max-width:1170px) {
     .birinchiradio .logo-block {
         display: none;
     }
-}
+}*/
 @media (max-width:992px) {
     .chastota{
         margin-left: 0px;
@@ -530,6 +548,9 @@
     }
     .birinchiradio .search-block {
         margin-top: 3px;
+    }
+    .birinchiradio .search-toggle, .birinchiradio .form-search.visible {
+    margin: 0px -10px 0px 0px;
     }
     .oneheader {
         margin-top: 40px;
@@ -578,9 +599,26 @@
     float: right;
 }
 .birinchiradio .extra {
-    margin-bottom: 5px;
-    color: #9DA8B0;
+    color: #FFFFFF;
     font-size: 12px;
+    top: 5px;
+    right: 5px;
+}
+.music .extra  {
+    color: #FFFFFF;
+    font-size: 12px;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+.birinchiradio .fa-camera, .music .fa-camera {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 20px;
+    color: #fff;
+    padding: 5px;
 }
 
 /*Broadcasts page*/
@@ -893,9 +931,7 @@
     -o-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
 }
-.featured_element:hover .f_overlay{
-    opacity: 1;
-}
+
 .f_read_more{
     font-size: 12px;
     background-color: #e23a3e;
@@ -909,10 +945,11 @@
 }
 .featured_4 .featured_item{
     width: 100%;
-    height: 267px;
 }
 .featured_4 .featured_element{
     margin: 0 0 1px 1px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    border-radius: 2px !important;
 }
 .featured_4 .featured_title_wrapper{
     height: 100px;
@@ -941,7 +978,7 @@
     height: 100px;
 }
 .featured_4 .featured_item img{
-    height: 100%;
+    height: initial;
     width: initial;
 }
 .featured_2 .featured_element:first-child,
@@ -953,36 +990,79 @@
 .featured_title_wrapper h2{
     font-size: 16px;
     line-height: 1.325em;
-    color: #FFF;
-    text-shadow: rgba(0,0,0,.6) 0 0 5px;
     z-index: 1001;
     position: relative;
     margin-bottom: 0;
 }
 .featured_title_over{
-    position: absolute;
+    position: relative;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 50px;
     z-index: 1001;
+    display: inline-table;
     -webkit-transition: all .2s ease-in-out;
     -moz-transition: all .2s ease-in-out;
     -ms-transition: all .2s ease-in-out;
     -o-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
+}
+.featured_title_over:hover{
+    background: #E0DFDF;
+}
 
-    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.8) 70%);
+.featured_title_overmz{
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1001;
+    display: inline-table;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+.featured_title_overmz:hover{
+    background: #D33649;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
 }
 .featured_title_under a,
 .featured_title_over a{
-    height: 50px;
     display: table-cell;
     vertical-align: middle;
-    width: 300px;
-    max-width: 100%;
-    color: #FFF;
+    height: 50px;
+    overflow: hidden;
+    color: #4e5e6a;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1;
     text-align: center;
+}
+
+.featured_title_under a:hover,
+.featured_title_over a:hover {
+    color: #101010;
+}
+.featured_title_overmz a{
+    display: table-cell;
+    vertical-align: middle;
+    height: 50px;
+    overflow: hidden;
+    color: #4e5e6a;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1;
+    text-align: center;
+}
+
+.featured_title_overmz a:hover {
+    color: #fff;
 }
 
 
@@ -1168,10 +1248,13 @@
 .specnews .panel-body{
     padding: 10px 10px 10px 7px;
 }
+.specnews .specpad{
+    padding: 0px 5px;
+}
 .specpad {
     padding: 5px 15px 0px;
 }
-.specpad .onepadding{
+.specpad .onepadding, .music .allphotospace .onepadding{
     padding: 5px;
 }
 .birinchiradio .blocks{
