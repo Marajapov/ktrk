@@ -24,9 +24,8 @@ trait ModelHelpers
     }
 
     public function isChannelIcon($query)
-    {        
+    {
         $channel = \Model\Channel\ModelName::where('id','=',$query)->first();
-
         return $channel->file;
     }
 
@@ -34,28 +33,23 @@ trait ModelHelpers
 
         $relatedPost = \Model\Post\ModelName::where('id','=',$postId)->first();
 
-        return '<div>
-        <aside>
-                    <div class="topics-box">
-                      <h2>'.trans('site.MatpoTeme').'</h2>
-                      <div class="topics">
+        return '
+        <div>
+            <aside>
+                <div class="topics-box">
+                    <div class="topics">
                         <div class="topic clearfix">
-                          <div class="t-date">
-                                    <span class="date">
-                                    <span class="time">'. $relatedPost->getTime() .'</span>
-                                      '. $relatedPost->getDay().' '.$relatedPost->getMonthRu().', '.$relatedPost->getYear().'
-                                    </span>
-                          </div>
-                          <a class="t-thumb" href="'. route('front.post', $postId) .'">
-                            <img alt="alt photo text" src="'. asset($relatedPost->getFile()) .'">
-                          </a>
-                          <div class="t-info">
-                              <a class="js-dh" href="'. route('front.post', $postId).'">'.$relatedPost->getTitle().'</a>
-                          </div>
+                            <a class="t-thumb" href="'. route('front.post', $postId) .'">
+                                <img alt="alt photo text" src="'. asset($relatedPost->thumbnail_big) .'">
+                            </a>
+                            <div class="t-info">
+                                <a class="js-dh" href="'. route('front.post', $postId) .'">'.$relatedPost->getTitle() .'</a>
+                            </div>
                         </div>
-                      </div>
                     </div>
-                  </aside></div>
+                </div>
+            </aside>
+        </div>
         ';
 
     }

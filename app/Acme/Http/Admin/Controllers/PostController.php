@@ -146,8 +146,12 @@ class PostController extends Controller
         }
 
         if($request->input('created_at') != null){
-            $time = $request->input('time');
-            
+            if($request->input('time')){
+                $time = $request->input('time');
+            } else
+            {
+                $time = date('H:i:s');
+            }
             $postDate = $request->input('created_at');
             $timeToSave = date('H:i:s', strtotime($time));
             $saveDate = date('Y-m-d', strtotime($postDate));
@@ -293,7 +297,13 @@ class PostController extends Controller
             $post->channel_id = $channel_id;
         }
         if($request->input('created_at') != null){
-            $time = $request->input('time');
+
+            if($request->input('time')){
+                $time = $request->input('time');
+            } else
+            {
+                $time = date('H:i:s');
+            }
             
             $postDate = $request->input('created_at');
             $timeToSave = date('H:i:s', strtotime($time));
@@ -334,7 +344,7 @@ class PostController extends Controller
         $title = $row->title;
         $titleRu = $row->titleRu;
         if($title != ''){
-            $allPostKg = \Model\Post\ModelName::where('title','<>','')->where('number','=','99')->where('number','=',$number)->first();
+            $allPostKg = \Model\Post\ModelName::where('title','<>','')->where('number','=','99')->where('number','=',$number)->get();
             if($allPostKg != null){
                 foreach($allPostKg as $post){
                     $post->number = '99';

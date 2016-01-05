@@ -61,7 +61,7 @@
                     <div class="input-group">
                       <input type="text" style="width:100px;" disabled="disabled" value="{{ $post->number}}" class="form-control">
                       <span class="input-group-btn">
-                      <button type="submit" class="btn btn-primary">Убрать!</button> 
+                      <button type="submit" class="btn btn-primary">Убрать!</button>
                       </span>
                     </div>
                     {!! Form::close() !!}
@@ -70,7 +70,7 @@
                     <div class="input-group">
                       <input name="number" style="width:100px;" type="text" class="form-control">
                       <span class="input-group-btn">
-                      <button type="submit" class="btn btn-primary">Ок!</button> 
+                      <button type="submit" class="btn btn-primary">Ок!</button>
                       </span>
                     </div>
                     {!! Form::close() !!}
