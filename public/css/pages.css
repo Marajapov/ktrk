@@ -1130,7 +1130,7 @@
 }
 .panel-contacts .table{
     margin: 0;
-    /*max-width: 100%;*/
+    max-width: 100%;
 }
 .panel-contacts .table th,
 .panel-contacts .table td{
@@ -1151,4 +1151,14 @@
 }
 .panel-contacts .yt i{
     color: #cc181e;
+}
+.panel-contacts .table p{
+    margin: 0;
+}
+.panel-contacts form{
+    margin-top: 20px;
+}
+.panel-contacts textarea{
+    width: 100%;
+    resize: vertical;
 }
