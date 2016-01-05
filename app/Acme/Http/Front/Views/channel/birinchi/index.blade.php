@@ -315,7 +315,7 @@
                      <div class="featured_element">
                         <div class="featured_item">
                            <img src="{{ asset($photoGallery->thumbnail_big) }}">
-                           <div class="extra">                                              
+                           <div class="extraone">                                              
                               <span class="e-datetime"><i class="fa  fa-calendar"></i>  {{ $photoGallery->getDay() }} {{ $photoGallery->getMonthRu() }}, {{ $photoGallery->getTime() }}</span>
                            </div>
                            <i class="fa fa-camera"></i>

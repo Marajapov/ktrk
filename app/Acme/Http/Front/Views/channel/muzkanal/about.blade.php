@@ -97,11 +97,11 @@
                         </ul>
                         <ul class="nav navbar-nav navbar-right logo-block">
                            <ul class="soc socmuz">
-                              <li class="tw"><a href="#" title="Twitter"><i class="fa fa-twitter"></i> </a>  </li>
-                              <li class="fb"><a href="#" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-                              <li class="ok"><a href="#" title="Odnoklassniki"><i class="fa fa-odnoklassniki"></i></a></li>
-                              <li class="yt"><a href="#" title="YouTube"><i class="fa fa-youtube"></i></a></li>
-                              <li class="in"><a href="#" title="Instagram"><i class="fa fa-instagram"></i></a></li>
+                              <li class="tw"><a href="https://twitter.com/TelekanalMuzyka" title="Twitter"><i class="fa fa-twitter"></i> </a>  </li>
+                              <li class="fb"><a href="https://www.facebook.com/muzykaotrk/" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                              <li class="ok"><a href="http://ok.ru/group/52901559140520" title="Odnoklassniki"><i class="fa fa-odnoklassniki"></i></a></li>
+                              <li class="yt"><a href="https://www.youtube.com/channel/UCPYuDx0G3WgGH3SR86VUnlA" title="YouTube"><i class="fa fa-youtube"></i></a></li>
+                              <li class="in"><a href="https://www.instagram.com/muzyka.otrk/" title="Instagram"><i class="fa fa-instagram"></i></a></li>
                            </ul>
                            <a class="search-toggle"><i class="fa fa-search"></i></a>
                            <form class="form-search" action="{{ route('front.search') }}" method="get">
@@ -212,7 +212,9 @@
                         <iframe src="http://www.youtube.com/embed/d1Lagbbn4TM?hd=1&rel=0&autohide=1&showinfo=0" frameborder="0" width="100%" height="200"></iframe>
                      </div>
                   </div>
+
                </div>
+                <br>
             </div>
          </div>
       </div>
