@@ -58,7 +58,7 @@ class MuzkanalController extends Controller
             }
         }
 
-       
+       dd($program);
         return view('Front::channel.muzkanal.index', [
             'channel' => $channel,
             'backgroundMain' => $backgroundMain,
