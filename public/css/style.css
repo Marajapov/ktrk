@@ -3593,7 +3593,6 @@ display: block;
 }
 .topnumber h2 {
     display: inherit;
-    width: 40px;
     margin-top: 6px;
     font-size: 30px;
     font-weight: bold;
@@ -3635,15 +3634,24 @@ display: block;
 .topartist {
     border-left: 2px solid #fff;
 }
+.topartist:hover{
+    background: #F44336;
+    cursor: pointer;
+}
 .topartist h3 {
     float: left;
-    margin-top: 10px;
+    margin-top: 13px;
     color: #3F51B5;
     font-size: 22px;
 }
-
+.topborder a:hover, .topborder a:focus{
+    color: #F7F7F7;
+}
 .topartist h3:hover{
-    color: #F44336;
+    float: left;
+    margin-top: 13px;
+    color: #F7F7F7;
+    font-size: 22px;
 }
 .topborder {
     border: 2px solid #fff;
@@ -3657,6 +3665,12 @@ display: block;
     padding-top: 3px;
     font-size: 32px;
     border-left: 2px solid #fff;
+}
+.topclip i {
+    color: #F44336;
+}
+.topclip i:hover{
+    color:red;
 }
 
 .topclip a:hover{
