@@ -599,9 +599,20 @@
     float: right;
 }
 .birinchiradio .extra {
-    margin-bottom: 5px;
-    color: #9DA8B0;
+    color: #FFFFFF;
     font-size: 12px;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+.birinchiradio .fa-camera {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 20px;
+    color: #fff;
+    padding: 5px;
 }
 
 /*Broadcasts page*/
@@ -931,7 +942,8 @@
 }
 .featured_4 .featured_element{
     margin: 0 0 1px 1px;
-
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    border-radius: 1px !important;
 }
 .featured_4 .featured_title_wrapper{
     height: 100px;
@@ -982,11 +994,15 @@
     left: 0;
     width: 100%;
     z-index: 1001;
+    display: inline-table;
     -webkit-transition: all .2s ease-in-out;
     -moz-transition: all .2s ease-in-out;
     -ms-transition: all .2s ease-in-out;
     -o-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
+}
+.featured_title_over:hover{
+    background: #E0DFDF;
 }
 .featured_title_under a,
 .featured_title_over a{
