@@ -3540,7 +3540,8 @@ display: block;
     /* opacity: 1; */
 }
 .music .muzpaginate {
-    margin: 25px 0px;
+    margin: 15px 0px;
+    padding-bottom: 25px;
 }
 .music .muzvideomain{
     margin: 15px 0px 0px 0px;
