@@ -3,15 +3,6 @@
 <div class="panel panel-success">
   <div class="panel-body">
       <div class="form-group">
-          <label class="col-sm-2 control-label">{{ trans('site.Title') }}</label>
-          <div class="col-sm-10">
-            {!! Form::text('name', null, ["class" => "form-control", "required" => true, "title" => ""]) !!}
-          </div>
-      </div>
-  
-
-    
-      <div class="form-group">
           <label class="col-sm-2 control-label">Дисплей</label>
           <div class="col-sm-10">
             {!! Form::text('display', null, ["class" => "form-control", "required" => true, "title" => ""]) !!}
