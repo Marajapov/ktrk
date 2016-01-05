@@ -604,6 +604,12 @@
     top: 5px;
     right: 5px;
 }
+.birinchiradio .extraone {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    color: #fff;
+}
 .music .extra  {
     color: #FFFFFF;
     font-size: 12px;
@@ -861,6 +867,9 @@
     position: relative;
     overflow: hidden;
 }
+.featured_element:hover{
+    opacity: 0.9;
+} 
 .featured_title_wrapper{
     width: 100%;
     text-align: center;
@@ -1011,27 +1020,6 @@
     background: #E0DFDF;
 }
 
-.featured_title_overmz{
-    position: relative;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1001;
-    display: inline-table;
-    -webkit-transition: all .2s ease-in-out;
-    -moz-transition: all .2s ease-in-out;
-    -ms-transition: all .2s ease-in-out;
-    -o-transition: all .2s ease-in-out;
-    transition: all .2s ease-in-out;
-}
-.featured_title_overmz:hover{
-    background: #D33649;
-    -webkit-transition: all .2s ease-in-out;
-    -moz-transition: all .2s ease-in-out;
-    -ms-transition: all .2s ease-in-out;
-    -o-transition: all .2s ease-in-out;
-    transition: all .2s ease-in-out;
-}
 .featured_title_under a,
 .featured_title_over a{
     display: table-cell;
@@ -1048,21 +1036,6 @@
 .featured_title_under a:hover,
 .featured_title_over a:hover {
     color: #101010;
-}
-.featured_title_overmz a{
-    display: table-cell;
-    vertical-align: middle;
-    height: 50px;
-    overflow: hidden;
-    color: #4e5e6a;
-    font-size: 14px;
-    font-weight: bold;
-    line-height: 1;
-    text-align: center;
-}
-
-.featured_title_overmz a:hover {
-    color: #fff;
 }
 
 

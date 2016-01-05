@@ -283,9 +283,9 @@
                         </div>
 
                         <div class="form-group">
-                          <label for="channel_id" class="col-sm-2 control-label">Хит парад</label>
-                          <div class="col-sm-10">
-                            {!! Form::select('hitnumber', ['1'=>'1','2'=>'2','3'=>'3','4'=>'4','5'=>'5','6'=>'6','7'=>'7','8'=>'8','9'=>'9','10'=>'10'], null, ["class" => "selectpicker","data-live-search"=>"true", "title" => "-- Выберите --"]) !!}
+                          <label for="channel_id" class="col-sm-2 control-label"></label>
+                          <div class="col-sm-10" style="padding: 0px;">
+                            {!! Form::select('hitnumber', ['1'=>'1','2'=>'2','3'=>'3','4'=>'4','5'=>'5','6'=>'6','7'=>'7','8'=>'8','9'=>'9','10'=>'10'], null, ["class" => "selectpicker","data-live-search"=>"true", "title" => "-- Хит Парад --"]) !!}
                           </div>
                         </div>
 
