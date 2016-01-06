@@ -2209,7 +2209,7 @@ Author: Eldos;
     padding: 2px 10px 2px 0px;
 }
 .hit-parad .list-group {
-    margin-bottom: 0px !important;
+    margin-bottom: 4px !important;
 }
 .hit-parad .list-group-item:last-child {
     border-bottom: none;
