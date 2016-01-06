@@ -179,6 +179,10 @@ class HomeController extends Controller
                                     $contentRelated3 = substr_replace($contentRelated2, $post->relatedFunction($post->related3), $post3Pos, 5);
                                     $contentFinal = $contentRelated3;
                                 }
+                                else
+                                {
+                                    $contentFinal = $contentRelated2;
+                                }
 
                             }
                             else{
@@ -213,6 +217,7 @@ class HomeController extends Controller
             if($post->relatedRu1)
             {
                 if(strpos($contentOriginal, 'POST1') != false){
+
                     $post1Pos = strripos($contentOriginal,'POST1');
                     $contentRelated1 = substr_replace($contentOriginal, $post->relatedFunction($post->relatedRu1), $post1Pos, 5);
 
@@ -230,6 +235,10 @@ class HomeController extends Controller
                                     $post3Pos = strripos($contentRelated2,'POST3');
                                     $contentRelated3 = substr_replace($contentRelated2, $post->relatedFunction($post->relatedRu3), $post3Pos, 5);
                                     $contentFinal = $contentRelated3;
+                                }
+                                else
+                                {
+                                    $contentFinal = $contentRelated2;
                                 }
 
                             }
