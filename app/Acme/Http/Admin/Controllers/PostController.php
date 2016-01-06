@@ -344,7 +344,7 @@ class PostController extends Controller
         $title = $row->title;
         $titleRu = $row->titleRu;
         if($title != ''){
-            $allPostKg = \Model\Post\ModelName::where('title','<>','')->where('number','=','99')->where('number','=',$number)->get();
+            $allPostKg = \Model\Post\ModelName::where('title','<>','')->where('number','=',$number)->get();
             if($allPostKg != null){
                 foreach($allPostKg as $post){
                     $post->number = '99';
@@ -353,7 +353,7 @@ class PostController extends Controller
             }
 
         }else{
-            $allPostRu = \Model\Post\ModelName::where('titleRu','<>','')->where('number','=','99')->where('number','=',$number)->get();
+            $allPostRu = \Model\Post\ModelName::where('titleRu','<>','')->where('number','=',$number)->get();
             if($allPostRu != null){
                 foreach($allPostRu as $post){
                     $post->number = '99';
@@ -363,8 +363,10 @@ class PostController extends Controller
             }
             
         }
+
         $row->number = $number;
         $row->save();
+        
         return redirect()->route('admin.post.index');
     }
 

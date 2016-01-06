@@ -31,12 +31,29 @@ class HomeController extends Controller
         $channels = \Model\Channel\ModelName::take(8)->skip(1)->get();
        
         if($lc == 'kg'){
-            $generalPosts = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->take(6)->skip(0)->orderBy('number','asc')->get();    
+            $generalPost1 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->where('number','=',1)->languagekg()first();
+            $generalAlternative1 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->first();
+
+            $generalPost2 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->where('number','=',2)->languagekg()first();
+            $generalAlternative2 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->first();
+
+            $generalPost3 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->where('number','=',3)->languagekg()first();
+            $generalAlternative3 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->first();
+
+            $generalPost4 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->where('number','=',4)->languagekg()first();
+            $generalAlternative4 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->first();
+
+            $generalPost5 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->where('number','=',5)->languagekg()first();
+            $generalAlternative5 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->first();
+
+            $generalPost6 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->where('number','=',6)->languagekg()first();
+            $generalAlternative6 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->first();
+            
             $projects = \Model\Project\ModelName::having('name','<>','')->get();
             $directorPosts = \Model\Post\ModelName::where('director','=','1')->orderBy('id','desc')->take(3)->languagekg()->get();
             $reporterPosts = \Model\Post\ModelName::where('reporter','=','1')->orderBy('id','desc')->take(15)->languagekg()->get();
         }elseif($lc == 'ru'){
-            $generalPosts = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languageru()->take(6)->skip(0)->orderBy('number','asc')->get();    
+            $generalPosts = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->where('number','<>','99')->languageru()->take(6)->skip(0)->orderBy('number','asc')->get();    
             $projects = \Model\Project\ModelName::where('nameRu','<>','')->get();
             $directorPosts = \Model\Post\ModelName::where('director','=','1')->orderBy('id','desc')->take(3)->languageru()->get();
             $reporterPosts = \Model\Post\ModelName::where('reporter','=','1')->orderBy('id','desc')->take(15)->languageru()->get();
@@ -78,30 +95,41 @@ class HomeController extends Controller
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
         $peopleReporters = \Model\PeopleReporter\ModelName::where('published','=',true)->get();
 
-
         // Photo Gallery
         $photoGalleries = \Model\PhotoParent\ModelName::where('extracolumn','=','1')->where('published','=',true)->take('10')->orderBy('id','desc')->get();
-        
 
         $MediaCategories = \Model\MediaCategory\ModelName::orderBy('id','asc')->get();
         $mediaPosts = \Model\Media\ModelName::orderBy('id','desc')->get();
 
-
         $categoriesVideos = array();
 
         foreach($MediaCategories as $MediaCategory){
-
             $CategoryVideos = \Model\Media\ModelName::where('videoType','=',$MediaCategory->videoType)->orderBy('id','desc')->take(9)->get();
-
             $categoriesVideos = array_add($categoriesVideos, $MediaCategory->videoType, $CategoryVideos);
         }
-
         $mediaLastVideos = \Model\Media\ModelName::orderBy('id','desc')->take(9)->get();
         $defaultVideo = 'rjXSurFi8uQ';
 
         return view('Front::home', [
             
-            'generalPosts'   => $generalPosts,
+            'generalPost1'   => $generalPost1,
+            'generalAlternative1'   => $generalAlternative1,
+            
+            'generalPost2'   => $generalPost2,
+            'generalAlternative2'   => $generalAlternative2,
+            
+            'generalPost3'   => $generalPost3,
+            'generalAlternative3'   => $generalAlternative3,
+            
+            'generalPost4'   => $generalPost4,
+            'generalAlternative4'   => $generalAlternative4,
+            
+            'generalPost5'   => $generalPost5,
+            'generalAlternative5'   => $generalAlternative5,
+            
+            'generalPost6'   => $generalPost6,
+            'generalAlternative6'   => $generalAlternative6,
+
             'dayVideo1'      => $dayVideo1,
             'dayVideo2'      => $dayVideo2,
             'dayVideo3'      => $dayVideo3,
