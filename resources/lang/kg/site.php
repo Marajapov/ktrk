@@ -25,6 +25,8 @@ return [
     'shortDescriptionKg' => 'Короткое описание на кыргызском',
     'shortDescriptionRu' => 'Короткое описание на русском',
 
+    'Comments' => 'Комментарийлер',
+
 
     //Header Footer titles
     'Homepage' => 'Башкы бет',

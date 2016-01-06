@@ -186,113 +186,95 @@ class HomeController extends Controller
 
             $relatedPosts = \Model\Post\ModelName::where('category_id','=',$post->category_id)->where('general','=','1')->languagekg()->take(6)->skip(0)->orderBy('id', 'desc')->get();
 
+            $contentFinal = $contentOriginal;
+
             if($post->related1)
             {
-                if(strpos($contentOriginal, 'POST1') != false){
-                    $post1Pos = strripos($contentOriginal,'POST1');
-                    $contentRelated1 = substr_replace($contentOriginal, $post->relatedFunction($post->related1), $post1Pos, 5);
-
-                    if($post->related2){
-
-                        if(strpos($contentOriginal,'POST2') !== false)
-                        {
-                            $post2Pos = strripos($contentRelated1,'POST2');
-                            $contentRelated2 = substr_replace($contentRelated1, $post->relatedFunction($post->related2), $post2Pos, 5);
-
-                            if($post->related3){
-
-                                if(strpos($contentOriginal,'POST3') !== false)
-                                {
-                                    $post3Pos = strripos($contentRelated2,'POST3');
-                                    $contentRelated3 = substr_replace($contentRelated2, $post->relatedFunction($post->related3), $post3Pos, 5);
-                                    $contentFinal = $contentRelated3;
-                                }
-                                else
-                                {
-                                    $contentFinal = $contentRelated2;
-                                }
-
-                            }
-                            else{
-                                $contentFinal = $contentRelated2;
-                            }
-                        }
-                        else{
-                            $contentFinal = $contentRelated1;
-                        }
-                    }
-                    else
-                    {
-                        $contentFinal = $contentRelated1;
-                    }
-
-                }
-                else
+                if(strpos($contentFinal, 'POST1LEFT') != false)
                 {
-                    $contentFinal = $contentOriginal;
+                    $post1Pos = strripos($contentFinal, 'POST1LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionLeft($post->related1), $post1Pos, 9);
                 }
-
+                elseif(strpos($contentFinal, 'POST1RIGHT') != false)
+                {
+                    $post1Pos = strripos($contentFinal, 'POST1RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionRight($post->related1), $post1Pos, 10);
+                }
             }
-            else
+
+            if($post->related2)
             {
-                $contentFinal = $contentOriginal;
+                if(strpos($contentFinal, 'POST2LEFT') != false)
+                {
+                    $post2Pos = strripos($contentFinal, 'POST2LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionLeft($post->related2), $post2Pos, 9);
+                }
+                elseif(strpos($contentFinal, 'POST2RIGHT') != false)
+                {
+                    $post2Pos = strripos($contentFinal, 'POST2RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionRight($post->related2), $post2Pos, 10);
+                }
+            }
+
+            if($post->related3)
+            {
+                if(strpos($contentFinal, 'POST3LEFT') != false)
+                {
+                    $post3Pos = strripos($contentFinal, 'POST3LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionLeft($post->related3), $post3Pos, 9);
+                }
+                elseif(strpos($contentFinal, 'POST3RIGHT') != false)
+                {
+                    $post3Pos = strripos($contentFinal, 'POST3RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionRight($post->related3), $post3Pos, 10);
+                }
             }
 
         }elseif($lc == 'ru'){
 
             $relatedPosts = \Model\Post\ModelName::where('category_id','=',$post->category_id)->where('general','=','1')->languageru()->take(6)->skip(0)->orderBy('id', 'desc')->get();
 
+            $contentFinal = $contentOriginal;
             if($post->relatedRu1)
             {
-                if(strpos($contentOriginal, 'POST1') != false){
-
-                    $post1Pos = strripos($contentOriginal,'POST1');
-                    $contentRelated1 = substr_replace($contentOriginal, $post->relatedFunction($post->relatedRu1), $post1Pos, 5);
-
-                    if($post->relatedRu2){
-
-                        if(strpos($contentOriginal,'POST2') !== false)
-                        {
-                            $post2Pos = strripos($contentRelated1,'POST2');
-                            $contentRelated2 = substr_replace($contentRelated1, $post->relatedFunction($post->relatedRu2), $post2Pos, 5);
-
-                            if($post->relatedRu3){
-
-                                if(strpos($contentOriginal,'POST3') !== false)
-                                {
-                                    $post3Pos = strripos($contentRelated2,'POST3');
-                                    $contentRelated3 = substr_replace($contentRelated2, $post->relatedFunction($post->relatedRu3), $post3Pos, 5);
-                                    $contentFinal = $contentRelated3;
-                                }
-                                else
-                                {
-                                    $contentFinal = $contentRelated2;
-                                }
-
-                            }
-                            else{
-                                $contentFinal = $contentRelated2;
-                            }
-                        }
-                        else{
-                            $contentFinal = $contentRelated1;
-                        }
-                    }
-                    else
-                    {
-                        $contentFinal = $contentRelated1;
-                    }
-
-                }
-                else
+                if(strpos($contentFinal, 'POST1LEFT') != false)
                 {
-                    $contentFinal = $contentOriginal;
+                    $post1Pos = strripos($contentFinal, 'POST1LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionLeft($post->relatedRu1), $post1Pos, 9);
                 }
-
+                elseif(strpos($contentFinal, 'POST1RIGHT') != false)
+                {
+                    $post1Pos = strripos($contentFinal, 'POST1RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionRight($post->relatedRu1), $post1Pos, 10);
+                }
             }
-            else
+
+            if($post->relatedRu2)
             {
-                $contentFinal = $contentOriginal;
+                if(strpos($contentFinal, 'POST2LEFT') != false)
+                {
+                    $post2Pos = strripos($contentFinal, 'POST2LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionLeft($post->relatedRu2), $post2Pos, 9);
+                }
+                elseif(strpos($contentFinal, 'POST2RIGHT') != false)
+                {
+                    $post2Pos = strripos($contentFinal, 'POST2RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionRight($post->relatedRu2), $post2Pos, 10);
+                }
+            }
+
+            if($post->relatedRu3)
+            {
+                if(strpos($contentFinal, 'POST3LEFT') != false)
+                {
+                    $post3Pos = strripos($contentFinal, 'POST3LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionLeft($post->relatedRu3), $post3Pos, 9);
+                }
+                elseif(strpos($contentFinal, 'POST3RIGHT') != false)
+                {
+                    $post3Pos = strripos($contentFinal, 'POST3RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionRight($post->relatedRu3), $post3Pos, 10);
+                }
             }
         }
         

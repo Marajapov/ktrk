@@ -29,13 +29,13 @@ trait ModelHelpers
         return $channel->file;
     }
 
-    public function relatedFunction($postId){
+    public function relatedFunctionLeft($postId){
 
         $relatedPost = \Model\Post\ModelName::where('id','=',$postId)->first();
 
         return '
-        <div>
-            <aside>
+        <span>
+            <aside class="pull-left">
                 <div class="topics-box">
                     <div class="topics">
                         <div class="topic clearfix">
@@ -50,7 +50,32 @@ trait ModelHelpers
                     </div>
                 </div>
             </aside>
-        </div>
+        </span>
+        ';
+
+    }
+
+    public function relatedFunctionRight($postId){
+
+        $relatedPost = \Model\Post\ModelName::where('id','=',$postId)->first();
+
+        return '
+        <span>
+            <aside class="pull-right">
+                <div class="topics-box">
+                    <div class="topics">
+                        <div class="topic clearfix">
+                            <a class="t-thumb" href="'. route('front.post', $postId) .'">
+                                <img alt="alt photo text" src="'. asset($relatedPost->thumbnail_big) .'">
+                            </a>
+                            <div class="t-info">
+                                <a class="js-dh" href="'. route('front.post', $postId) .'">'.$relatedPost->getTitleRuOrKg() .'</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </span>
         ';
 
     }

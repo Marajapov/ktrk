@@ -2059,11 +2059,17 @@ header {
 
 /*Материалы по теме*/
 .panel-article aside {
-    display: inline;
-    float: left;
-    margin-left: 20px;
+    display: inline-block;
     padding: 10px;
-    width: 270px;
+    width: 260px;
+}
+.panel-article aside.pull-left{
+    margin-right: 20px;
+    padding-left: 0;
+}
+.panel-article aside.pull-right{
+    margin-left: 20px;
+    padding-right: 0;
 }
 .topics-box {
     border-top: 3px solid #237dac;
