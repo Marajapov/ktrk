@@ -214,6 +214,9 @@
                                     </a>
                                  </ul>
                               </div>
+                              @if($top1->exclusive == 1)
+                                 <div class="ishit">Экслюзив!</div>
+                              @endif
                               <div class="views"><i class="fa fa-eye"></i>{{ $top1->getViewed() }}</div>
                            </div>
                            @endforeach
