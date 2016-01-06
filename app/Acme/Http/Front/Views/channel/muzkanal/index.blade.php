@@ -410,6 +410,9 @@
                                     </a>
                                  </ul>
                               </div>
+                              @if($pop1->exclusive == 1)
+                                 <div class="ishit">Экслюзив!</div>
+                              @endif
                               <div class="views"><i class="fa fa-eye"></i>{{ $pop1->getViewed() }}</div>
                            </div>
                            @endforeach
@@ -427,6 +430,9 @@
                                     </a>
                                  </ul>
                               </div>
+                              @if($pop2->exclusive == 1)
+                                 <div class="ishit">Экслюзив!</div>
+                              @endif
                               <div class="views"><i class="fa fa-eye"></i>{{ $pop2->getViewed() }}</div>
                            </div>
                            @endforeach
@@ -444,6 +450,9 @@
                                     </a>
                                  </ul>
                               </div>
+                              @if($pop3->exclusive == 1)
+                                 <div class="ishit">Экслюзив!</div>
+                              @endif
                               <div class="views"><i class="fa fa-eye"></i>{{ $pop3->getViewed() }}</div>
                            </div>
                            @endforeach
@@ -469,9 +478,9 @@
                   @if($hitNumbers)
                     @foreach($hitNumbers as $hit)
                     <li class="list-group-item clearfix">
-                       <a href="#" class="pull-right"> <i class="glyphicon glyphicon-play"></i> </a>
-                       <a href="#" class="pull-left"> <img src="http://img.youtube.com/vi/{{ $hit->getUrl()}}/mqdefault.jpg" class="hitimg"> </a>
-                       <a class="clear" href="#">
+                      <!--  <a href="#" class="pull-right"> <i class="glyphicon glyphicon-play"></i> </a> -->
+                       <a href="{{ route('muzkanal.video', $hit)}}" class="pull-left"> <img src="http://img.youtube.com/vi/{{ $hit->getUrl()}}/mqdefault.jpg" class="hitimg"> </a>
+                       <a class="clear" href="{{ route('muzkanal.video', $hit)}}">
                           <span>{{ $hit->getName() }}</span>
 
                        </a>
@@ -510,6 +519,9 @@
                                     </a>
                                  </ul>
                               </div>
+                              @if($top1->exclusive == 1)
+                                 <div class="ishit">Экслюзив!</div>
+                              @endif
                               <div class="views"><i class="fa fa-eye"></i>{{ $top1->getViewed() }}</div>
                            </div>
                            @endforeach
@@ -527,6 +539,9 @@
                                     </a>
                                  </ul>
                               </div>
+                              @if($top2->exclusive == 1)
+                                 <div class="ishit">Экслюзив!</div>
+                              @endif
                               <div class="views"><i class="fa fa-eye"></i>{{ $top2->getViewed() }}</div>
                            </div>
                            @endforeach
