@@ -160,6 +160,9 @@
                                        </a>
                                     </ul>
                                  </div>
+                                 @if($newVideo->exclusive == 1)
+                                 <div class="ishit">Экслюзив!</div>
+                                 @endif
                                  <div class="views"><i class="fa fa-eye"></i>{{ $newVideo->getViewed() }}</div>
                               </div>
                            </div>
@@ -214,6 +217,9 @@
                                        </a>
                                     </ul>
                                  </div>
+                                 @if($topVideo->exclusive == 1)
+                                 <div class="ishit">Экслюзив!</div>
+                                 @endif
                                  <div class="views"><i class="fa fa-eye"></i>{{ $topVideo->getViewed() }}</div>
                               </div>
                            </div>
