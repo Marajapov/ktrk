@@ -383,6 +383,7 @@ ul.nostyle i {
   z-index: 999;
   width: 100%;
   background: rgba(0, 0, 0, 0.1);
+  display: none;
 }
 #cta {
   margin: 50px 0px 70px 0px;
@@ -803,7 +804,6 @@ ul.nostyle i {
 .tab-content {
   border: 1px solid #eee;
   border-top: 0;
-  padding: 20px 20px 10px;
   border-radius: 0 0 3px 3px;
 }
 .panel-default {
@@ -1086,15 +1086,15 @@ ul.nostyle i {
 .onenews .panel-articles .media-left a {
   position: relative;
   display: block;
-  width: 50px;
-  height: 36px;
+  width: 96px;
+  height: 60px;
   overflow: hidden;
 }
 .onenews .panel-articles .media .thumb {
   position: absolute;
   left: 50%;
   top: 50%;
-  height: 36px;
+  height: 60px;
   width: auto;
   -webkit-transition: opacity 0.2s ease;
   -moz-transition: opacity 0.2s ease;

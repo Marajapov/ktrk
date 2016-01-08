@@ -1,5 +1,5 @@
 @extends('Front::channel.kyrgyzradio.default')
-@section('title', "Кыргыз Радио")
+@section('title', "Миң Кыял ФМ")
 @section('styles')
 <link rel="stylesheet" href="{{ asset('css/radios.css')}}">
 <link rel="stylesheet" href="{{ asset('css/landing/minkiyal.css')}}">
@@ -422,20 +422,4 @@
          </section>
          <!--/#get-in-touch-->
       </div>
-@stop
-@section('footerscript2')
-<script src="js/jquery-1.11.2.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-
-<script src="js/landing/owl.carousel.min.js"></script>
-<script src="js/landing/mousescroll.js"></script>
-<script src="js/landing/smoothscroll.js"></script>
-<script src="js/landing/jquery.prettyPhoto.js"></script>
-<script src="js/landing/jquery.isotope.min.js"></script>
-<script src="js/landing/jquery.inview.min.js"></script>
-<script src="js/landing/wow.min.js"></script>
-<script src="js/landing/main.js"></script>
-<script src="js/landing/jquery.js"></script>
-<script src="js/landing/fixed.js"></script>
-
 @stop

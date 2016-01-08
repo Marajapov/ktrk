@@ -180,30 +180,33 @@
                 <div class="features">
     
                     @if($kyrgyzradioProjects) 
+
                     @foreach($kyrgyzradioProjects as $key=> $project)
-                    @foreach($project->kgprogram()->get() as $post)
+                    @if($project->kgprogram()->first())
+                    
+                    
 
                     <div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="100ms">
                         <div class="media service-box">
-                            <div class="pull-left">
-                                <i class="fa fa-bullhorn"></i>
-                            </div>
+        
                             <div class="media-body">
                                 <div role="tabpanel">
                                     <ul class="nav main-tab nav-justified" role="tablist">
                                         <li role="presentation" class="active"> 
 
-                                            <a href="#{{ $project->id+ $project->kgprogram()->first()->id}}" role="tab" data-toggle="tab" aria-controls="{{ $project->id+ $project->kgprogram()->first()->id }}" aria-expanded="true">{{ $project->getName() }}</a>
+<a href="#{{ $project->id}}" role="tab" data-toggle="tab" aria-controls="{{ $project->id}}" aria-expanded="true">{{ $project->getName() }}</a>
                                         </li>
                                         <li role="presentation">
                                             <a href="#{{ $key+99 }}" role="tab" data-toggle="tab" aria-controls="{{ $key+99 }}" aria-expanded="false">{{ trans('radiopages.OPeredachi') }}</a>
                                         </li>
+
                                     </ul>
                                     <div id="tab-content" class="tab-content">
-                                        <div role="tabpanel" class="tab-pane fade active in" id="{{ $project->id+ $project->kgprogram()->first()->id }}" aria-labelledby="{{ $project->id+ $project->kgprogram()->first()->id }}">
+                                        <div role="tabpanel" class="tab-pane fade active in" id="{{ $project->id}}" aria-labelledby="{{ $project->id}}">
                                             <div class="onenews">
                                                <div class="panel panel-articles">                                                
-                                                     <div class="panel-body">
+                                                     <div class="panel-body" style="padding: 0px 15px;">
+                                                     @if($project->kgprogram()->get())
                                                      @foreach($project->kgprogram()->get() as $post)
                                                         <div class="media">
                                                            <div class="media-left">
@@ -221,8 +224,8 @@
                                                            </div>
                                                         </div>
                                                         @endforeach
-                                                        
-                                                        <footer>
+                                                        @endif
+                                                        <footer style="padding: 0;border: none;">
                                                            <a href="{{ route('kyrgyzradio.allnews') }}">{{ trans('site.FrontPostAll') }}</a>
                                                         </footer>
                                                      </div>
@@ -239,7 +242,7 @@
                             </div>
                         </div>
                     </div><!--/.col-md-4-->
-                    @endforeach
+                    @endif
                     @endforeach
                     @endif                             
 
@@ -380,80 +383,4 @@
         </div>
     </section><!--/#about-->
 </div>
-@stop
-@section('footerscript2')
-<script src="js/jquery-1.11.2.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-
-   <script src="{{ asset('jwplayer/jwplayer.js') }}"></script>
-   // <script>jwplayer.key = "tmEO2SU8NzqLBoHr2Vq6nV13XCyfo8xbdiCb/Q==";</script>
-   <!-- <script type="text/javascript">
-      var playerInstance = jwplayer("player");
-      
-      //    $('#playerPlay').click(function(){
-      //        playerInstance.play();
-      //    });
-      
-      playerInstance.setup({
-          autostart: true,
-          playlist: [{
-                  image: "{{ asset('images/channels/muztv.png') }}",
-                  sources: [{
-                          file: "http://212.112.96.232:8083;stream.nsv"
-                      }]
-              }],
-          width: "100%",
-          height: "100%",
-          aspectratio: "16:9",
-          primary: "flash",
-          skin: {
-              name: "five"
-          },
-          stretching: "exactfit"
-      });
-   </script>
-
-
-
-<script type='text/javascript'>
-jwplayer('player').setup({
-'author': 'Kyrgyz',
-'description': 'Kyrgyz',
-'file': 'http://server1.cityedv.at:9036/64kbps',
-'type': 'mp3',
-'provider': 'sound',
-'autostart': 'true',
-'controlbar': 'bottom',
-'width': '470',
-'height': '20',
-'skin': 'bekle',
-});
-</script>-->
-
-<script type='text/javascript'>
-jwplayer('player').setup({
-'author': 'Kyrgyz',
-'description': 'Kyrgyz',
-'file': 'http://server1.cityedv.at:9036/64kbps',
-'type': 'mp3',
-'provider': 'sound',
-'autostart': 'true',
-'controlbar': 'bottom',
-'width': '470',
-'height': '20',
-'skin': 'bekle',
-});
-</script>
-
-<script src="js/landing/owl.carousel.min.js"></script>
-<script src="js/landing/mousescroll.js"></script>
-<script src="js/landing/smoothscroll.js"></script>
-<script src="js/landing/jquery.prettyPhoto.js"></script>
-<script src="js/landing/jquery.isotope.min.js"></script>
-<script src="js/landing/jquery.inview.min.js"></script>
-<script src="js/landing/wow.min.js"></script>
-<script src="js/landing/main.js"></script>
-<script src="js/landing/jquery.js"></script>
-<script src="js/landing/fixed.js"></script>
-
 @stop
