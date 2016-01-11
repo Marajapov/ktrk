@@ -1100,8 +1100,9 @@ header {
     font-weight: bold;
 }
 .ctg-panel.affix {
-    top: 90px;
-    width: 283px;
+    position: fixed;
+    top: 92px;
+    width: 293px;
 }
 .ctg-panel .panel-body {
     padding: 15px;

@@ -419,7 +419,7 @@ header.top-menu,.logo-block{
 
 /*ADVERTISEMENT*/
 .top-ad{
-    padding-top: 140px;
+    padding-top: 70px;
 }
 .top-left-block .middle-ad,.top-right-block .middle-ad{
     margin: 10px 0;
@@ -976,4 +976,32 @@ header.top-menu,.logo-block{
 }
 .copyright i{
     padding-right: 5px;
+}
+
+/*----------- MEDIA QUERIES ----------*/
+
+/* Smartphones(max-width-768px) */
+@media (max-width: 767px){
+    .top-ad{
+        padding: 10px 15px;
+    }
+
+    .panel-top-news, .panel-promo{
+        height: auto;
+        padding-bottom: 60px;
+    }
+    .main-video .slider-for .slider-text{
+        height: 150px !important;
+    }
+    .embed-responsive .embed-responsive-item, .embed-responsive embed, .embed-responsive iframe, .embed-responsive object, .embed-responsive video{
+        height: auto;
+    }
+
+    .director-title a{
+        font-size: 20px;
+    }
+
+    .copyright{
+        padding: 10px;
+    }
 }
