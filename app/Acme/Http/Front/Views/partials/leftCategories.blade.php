@@ -1,6 +1,6 @@
 <div class="top-right-block col-md-3">
 
-    <div class="panel panel-default ctg-panel">
+    <div class="panel panel-default ctg-panel" data-spy="affix" data-offset-top="170" data-offset-bottom="225">
         <div class="panel-heading">
             <h3 class="panel-title"><span>{{ trans('site.AdminCategories') }}</span></h3>
         </div>
