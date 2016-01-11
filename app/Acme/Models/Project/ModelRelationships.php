@@ -14,6 +14,7 @@ trait ModelRelationships
     }
     public function kgprogram()
     {
+        
         return $this->hasMany(\Model\Post\ModelName::class, 'kyrgyzradioProgram');
     }
 }

@@ -9,7 +9,7 @@ trait ModelHelpers
 
         $type = $exists ? \Storage::disk('public')->mimeType($this->getFile()) : '';
 
-        return in_array($type, ['image/png', 'image/jpg', 'image/jpeg', 'image/gif']);
+        return in_array($type, ['image/png', 'image/jpg', 'image/jpeg', 'image/gif', 'image/svg+xml']);
     }
 
     

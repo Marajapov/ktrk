@@ -84,12 +84,14 @@
       </div>
       <div class="row" style="margin-top: 50px;">
          <div class="col-md-12">
-            <div class="panel" style="background:none">
-               <!--                         <div class="panel-heading">
-                  <h3 class="panel-title"><span>Фотогалерея</span></h3>
-                  </div> -->
-               <div class="panel-body kidphotos">
+            <div class="panel balastanphoto" style="background:none">
+            
+            <div>
+                <h3 class="panel-title text-center"><span> {{ $gallery->getName() }}</span></h3>
+              </div>
+               <div class="panel-body kidphotos" style="padding: 0;margin-top: -10px;">
                   <div class="row" style="margin: 20px;">
+                  <p style="text-align:center; color: #fff; font-size: 18px;">{{ $gallery->getDescription() }}</p>
                      <ul id="imageGallery">
                      @foreach($images as $image)
                         <li data-thumb="{{ asset('froala/uploads/'.$image->name) }}" data-src="{{ asset('froala/uploads/'.$image->name) }}">

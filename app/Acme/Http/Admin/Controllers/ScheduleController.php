@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 
 use Model\Schedule\ModelName as Schedule;
+use Model\Channel\ModelName as Channel;
 
 class ScheduleController extends Controller
 {
@@ -15,6 +16,8 @@ class ScheduleController extends Controller
      */
     public function index()
     {
+        $channels = Channel::take(8)->skip(1)->get();
+
         setlocale(LC_TIME, 'ru_RU.CP1251', 'rus_RUS.CP1251', 'Russian_Russia.1251');
 
         $test = \Model\Schedule\ModelName::orderBy('created_at', 'desc')->first();
@@ -38,6 +41,7 @@ class ScheduleController extends Controller
         return view('Admin::schedule.index', [
             'schedules' => $schedules,
             'programs' => $programs,
+            'channels' => $channels
         ]);
     }
     /**
@@ -206,5 +210,16 @@ class ScheduleController extends Controller
         $schedule->delete();
 
         return redirect()->route('admin.schedule.index');
+    }
+
+    public  function channel($channel)
+    {
+        $schedules = Schedule::where('channel_id','=',$channel->id)->orderBy('date','asc')->get();
+//        dd($schedules);
+
+        return view('Admin::schedule.channel', [
+            'schedules' => $schedules,
+            'channel' => $channel,
+        ]);
     }
 }

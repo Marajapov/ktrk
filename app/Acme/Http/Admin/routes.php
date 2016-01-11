@@ -29,7 +29,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'access:admin', 'namespace' =
     Route::get('media.dayVideo5',['as' => 'admin.media.dayVideo5', 'uses' => 'MediaController@dayVideo5']);
     
     Route::resource('banner', 'BannerController');
-    Route::resource('schedule', 'ScheduleController');
     Route::resource('page', 'PageController');
 
     Route::resource('background', 'BackgroundController');
@@ -64,4 +63,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'access:admin', 'namespace' =
     // added for latest Media in Muzkanal
     Route::get('media/number/{number}', ['as' => 'admin.media.number', 'uses' => 'MediaController@number']);
     Route::get('media/unnumber/{number}', ['as' => 'admin.media.unnumber', 'uses' => 'MediaController@unnumber']);
+
+    // Schedule
+    Route::resource('schedule', 'ScheduleController');
+    Route::get('schedule/channel/{channel}',['as'=>'admin.schedule.channel','uses'=>'ScheduleController@channel']);
 });

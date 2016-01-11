@@ -1,8 +1,11 @@
 @extends('Front::layouts.default')
-@section('title', trans('site.Strategy').'| КТРК')
+@section('title', trans('site.Strategy').' | КТРК')
 @section('styles')
     {{--<link rel="stylesheet" type="text/css" href="{{ asset('static/css/styles.css') }}">--}}
     <link rel="stylesheet" type="text/css" href="{{ asset('css/pages.css') }}">
+
+    <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+    <script type="text/javascript">stLight.options({publisher: "79400afe-6dec-4a9a-959c-75aae52269a9", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
 @stop
 @section('content')
 
@@ -84,7 +87,23 @@
                                 </h3>
                             </div>
                             <div class="panel-body">
-
+                                <div class="share">
+                                    <a onClick="window.open('https://vkontakte.ru/share.php?url=','sharer','toolbar=0,status=0,width=700,height=400');" href="javascript: void(0)" class="vkontakte">asd</a>
+                                    <a onClick="window.open('https://www.facebook.com/sharer.php?u=','sharer','toolbar=0,status=0,width=700,height=400');" href="javascript: void(0)" class="facebook"></a>
+                                    <a onClick="window.open('https://plus.google.com/share?url=','sharer','toolbar=0,status=0,width=700,height=400');" href="javascript: void(0)" class="google"></a>
+                                    <a onClick="window.open('http://www.livejournal.com/update.bml?event=&subject=','sharer','toolbar=0,status=0,width=700,height=400');" href="javascript: void(0)" class="livejournal"></a>
+                                    <a onClick="window.open('https://twitter.com/intent/tweet?text= ','sharer','toolbar=0,status=0,width=700,height=400');" href="javascript: void(0)" class="twitter"></a>
+                                    <a onClick="window.open('https://connect.mail.ru/share?url=','sharer','toolbar=0,status=0,width=700,height=400');" href="javascript: void(0)" class="mail"></a>
+                                    <a onClick="window.open('http://ok.ru/dk?st.cmd=addShare&st.s=1&st._surl=','sharer','toolbar=0,status=0,width=700,height=400');" href="javascript: void(0)" class="odnoklassniki"></a>
+                                    <a onClick="window.open('https://ru.pinterest.com/pin/create/button/?url=','sharer','toolbar=0,status=0,width=700,height=400');" href="javascript: void(0)" class="pinterest"></a>
+                                    <a onClick="window.open('https://www.evernote.com/clip.action?url=&target=blog','sharer','toolbar=0,status=0,width=930,height=500');" href="javascript: void(0)" class="evernote"></a>
+                                    <a onClick="window.open('http://www.liveinternet.ru/journal_post.php?action=','sharer','toolbar=0,status=0,width=812,height=585');" href="javascript: void(0)" class="liveinternet"></a>
+                                    <a onClick="window.open('http://digg.com/submit?url=','sharer','toolbar=0,status=0,width=812,height=585');" href="javascript: void(0)" class="digg"></a>
+                                    <a onClick="window.open('http://new.spring.me/#!/welcome?url=','sharer','toolbar=0,status=0,width=812,height=585');" href="javascript: void(0)" class="spring"></a>
+                                    <a href="" class="bookmark" rel="sidebar"></a>
+                                    <a href="mailto:?subject=&body=" class="email"></a>
+                                    <a href='javascript:window.print(); void 0;' class="print"></a>
+                                </div>
                             </div>
                         </div>
 

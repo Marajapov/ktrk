@@ -4253,19 +4253,61 @@ ul.social-share li a:hover {
 .kidgallery .panel-carousel .slick-slide{
     position: relative;
     overflow: hidden;
-    height: 150px;
+    height: 200px;
     margin: 0 10px;
     padding: 0;
     background: none;
-/*    width: 250px !important;*/
+    border-radius: 3px !important;
 }
 
 .kidphotos .lSSlideOuter .lSPager.lSGallery{
     margin: auto
 }
 .kidgallery .panel-carousel .slick-slide img{
-    height: auto;
-    width: auto
+    position: relative;
+    
+    height: initial;    
+    left: inherit;
+
+    opacity: 1;
+    transform: initial;
+}
+
+.kidgallery .desc{
+    position: absolute;
+    
+    display: table;
+    bottom: 0px;
+    width: inherit;
+    height: 50px;
+    padding: 5px;
+
+    background: #4CAF50;
+
+    text-align: center;
+}
+.kidgallery .desc a{
+    display: table-cell;
+    vertical-align: middle;
+    overflow: hidden;
+    color: #fff;
+    font-size: 14px;
+    line-height: 1;
+    text-align: center;
+}
+.kidgallery .desc a:hover{
+    color: blue;
+}
+.balastanphoto span{
+    display: inline;
+
+    padding: 10px;
+   
+    color: #FFC107;
+
+    font-size: 23px;
+    font-weight: bold;
+    text-align: center;
 }
 .balastanlogo {
     height: 108px !important;

@@ -158,10 +158,13 @@
 
                       @foreach($photoGalleries as $photoGallery)
                         
-                        <div class="col-md-4">
+                        <div>
                           <a href="{{ route('balastan.photos', $photoGallery) }}">
-                            <img src="{{ asset($photoGallery->status) }}" alt=""/><span>{{ $photoGallery->getName() }}</span>
+                            <img src="{{ asset($photoGallery->status) }}" alt=""/>
                           </a>
+                          <div class="desc">
+                            <a href="{{route('balastan.photos', $photoGallery)}}">{{ $photoGallery->getName() }}</a>
+                          </div>
                         </div>
                   
                       @endforeach
