@@ -88,29 +88,93 @@
                             </div>
                         </div>
 
-                        <div class="panel panel-default panel-related hidden">
+                        <div class="panel panel-default panel-comments">
                             <div class="panel-heading">
                                 <h3 class="panel-title">
                                     {{ trans('site.Comments') }}
+                                    <a class="commentadd" href="#respond">Оставить комментарий</a>
                                 </h3>
                             </div>
                             <div class="panel-body">
-                                @foreach($relatedPosts as $relatedPost)
-                                    @if($relatedPost->id == $post->id)
-                                    @else
-                                        <div class="col-md-4 block">
-                                            <a href="{{ route('front.post', $relatedPost) }}" class="news-thumb">
-                                                <img src="@if(empty($relatedPost->getFileBig())) {{ asset($relatedPost->getFile() )}} @else {{ asset($relatedPost->getFileBig()) }} @endif" alt=""/>
-                                                <div class="extrarel">
-                                                    <span class="art-date"><i class="fa fa-calendar"></i>{{ $relatedPost->getDay() }} {{ $relatedPost->getMonthRu() }}, {{ $relatedPost->getYear() }}</span>
+
+                                <ul class="comment-list">
+                                    <li class="comment">
+                                        <article>
+                                            <footer class="comment-meta">
+                                                <div class="comment-author">
+								                    <span class="commentthumb">
+									                    <img alt="" src="{{ asset('images/extra/profile.png') }}" class="avatar">
+                                                    </span>
+                                                    <span class="commentauthorname">Author Name</span>
+                                                    <p href="#" class="commenttime">
+                                                        <span>6 янв, 2016 13:43</span>
+                                                    </p>
                                                 </div>
-                                            </a>
-                                            <a class="related-title" href="{{ route('front.post', $relatedPost) }}">
-                                                {{ $relatedPost->getTitleRuOrKg() }}
-                                            </a>
-                                        </div>
-                                    @endif
-                                @endforeach
+                                            </footer>
+
+                                            <div class="commentcontent">
+                                                <p>Thank you for sharing,<br>
+                                                    New year first article is really great !!</p>
+                                                <p>Thanks you :)</p>
+                                            </div>
+                                        </article>
+                                    </li>
+                                    <li class="comment">
+                                        <article>
+                                            <footer class="comment-meta">
+                                                <div class="comment-author">
+								                    <span class="commentthumb">
+									                    <img alt="" src="{{ asset('images/extra/profile-2.png') }}" class="avatar">
+                                                    </span>
+                                                    <span class="commentauthorname">Author Name</span>
+                                                    <p href="#" class="commenttime">
+                                                        <span>6 янв, 2016 13:43</span>
+                                                    </p>
+                                                </div>
+                                            </footer>
+
+                                            <div class="commentcontent">
+                                                <p>Thank you for sharing,<br>
+                                                    New year first article is really great !!</p>
+                                                <p>Thanks you :)</p>
+                                            </div>
+                                        </article>
+                                    </li>
+                                </ul>
+
+                            </div>
+                            <div class="panel-heading">
+                                <h3 class="panel-title">
+                                    Оставить комментарий
+                                </h3>
+                            </div>
+                            <div class="panel-body">
+
+                                <div class="comment-block">
+                                    <div id="respond" class="comment-respond">
+                                        <form action="" method="post" id="commentform" class="comment-form">
+                                            <p class="comment-form-author">
+                                                <label for="author">Имя <span class="required">*</span></label>
+                                                <input id="author" name="author" type="text" value="" size="30" aria-required="true" required="required">
+                                            </p>
+                                            <p class="comment-form-email">
+                                                <label for="email">Email <span class="required">*</span></label>
+                                                <input id="email" name="email" type="text" value="" size="30" aria-required="true" required="required">
+                                            </p>
+                                            <p class="comment-form-comment">
+                                                <label for="comment">Комментарий</label>
+                                                <textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" required="required"></textarea>
+                                            </p>
+                                            <p class="form-submit">
+                                                <input name="submit" type="submit" id="submit" class="submit" value="Отправить">
+                                                <input type="hidden" name="comment_post_ID" value="25842" id="comment_post_ID">
+                                                <input type="hidden" name="comment_parent" id="comment_parent" value="0">
+                                            </p>
+                                        </form>
+                                    </div><!-- #respond -->
+                                    <div class="clr"></div>
+                                </div>
+
                             </div>
                         </div>
 
