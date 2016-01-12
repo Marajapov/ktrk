@@ -32,6 +32,7 @@ class HomeController extends Controller
        
         if($lc == 'kg'){
             $generalPost1 = \Model\Post\ModelName::general($channel)->published()->having('number','=',1)->languagekg()->first();
+
             if($generalPost1 == null){
                 $generalPost1 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(10)->first();    
             }

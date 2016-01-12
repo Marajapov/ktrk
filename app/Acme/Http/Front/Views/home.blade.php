@@ -14,6 +14,7 @@
               </div>
               <div class="panel-body">
                 <!-- generalPost1 -->
+                @if($generalPost1)
                   <div class="col-md-4 block">
                     <figure class="effect-zoe">
                       <a href="{{ route('front.post', $generalPost1) }}" class="main-img">
@@ -36,9 +37,11 @@
                       </div>
                     </figure>
                   </div>
+                  @endif
                 <!-- end generalPost1 -->
 
                  <!-- generalPost2 -->
+                 @if($generalPost2)
                   <div class="col-md-4 block">
                     <figure class="effect-zoe">
                       <a href="{{ route('front.post', $generalPost2) }}" class="main-img">
@@ -61,9 +64,11 @@
                       </div>
                     </figure>
                   </div>
+                  @endif
                 <!-- end generalPost2 -->
 
                  <!-- generalPost3 -->
+                 @if($generalPost3)
                   <div class="col-md-4 block">
                     <figure class="effect-zoe">
                       <a href="{{ route('front.post', $generalPost3) }}" class="main-img">
@@ -86,9 +91,11 @@
                       </div>
                     </figure>
                   </div>
+                  @endif
                 <!-- end generalPost3 -->
 
                  <!-- generalPost4 -->
+                 @if($generalPost4)
                   <div class="col-md-4 block">
                     <figure class="effect-zoe">
                       <a href="{{ route('front.post', $generalPost4) }}" class="main-img">
@@ -111,9 +118,11 @@
                       </div>
                     </figure>
                   </div>
+                  @endif
                 <!-- end generalPost4 -->
 
                  <!-- generalPost5 -->
+                 @if($generalPost5)
                   <div class="col-md-4 block">
                     <figure class="effect-zoe">
                       <a href="{{ route('front.post', $generalPost5) }}" class="main-img">
@@ -136,9 +145,11 @@
                       </div>
                     </figure>
                   </div>
+                  @endif
                 <!-- end generalPost5 -->
 
                  <!-- generalPost6 -->
+                 @if($generalPost6)
                   <div class="col-md-4 block">
                     <figure class="effect-zoe">
                       <a href="{{ route('front.post', $generalPost6) }}" class="main-img">
@@ -161,6 +172,7 @@
                       </div>
                     </figure>
                   </div>
+                  @endif
                 <!-- end generalPost6 -->
 
 
