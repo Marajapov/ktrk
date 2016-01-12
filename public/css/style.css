@@ -5011,3 +5011,19 @@ background-size: cover;
 .balastan .footer-menu li a:hover {
     color: #000000;
 }
+/*Madaniyat*/
+.madaniyat .photoDate{
+    /*background: rgba(0, 0, 0, 0.5);*/
+    position: absolute;
+    bottom: 255px;
+    left: 250px;
+    color: #fff;
+    text-shadow: 1px 1px 2px black, 0 0 1em black;
+}
+
+.madaniyat .photoDate:hover{
+    color: #000;
+    text-shadow: 2px 1px 2px black, 0 0 1em white;
+}
+
+ 

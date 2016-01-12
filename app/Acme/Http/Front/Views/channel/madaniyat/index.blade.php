@@ -1,3 +1,5 @@
+
+
 @extends('Front::channel.madaniyat.default')
 @section('title', trans('radiopages.Homepage'))
 @section('styles')
@@ -98,7 +100,7 @@
                            <li><a href="#"><i class="fa fa-minus"></i>ТВнын  казынасынан</a></li>
                         </ul>
                      </li>
-                     <li><a href="{{ route('madaniyat.photos') }}"><i class="fa fa-picture-o"></i>{{ trans('radiopages.Photos') }}</a></li>
+                     <li><a href="{{ route('madaniyat.allphotos') }}"><i class="fa fa-picture-o"></i>{{ trans('radiopages.Photos') }}</a></li>
                   </ul>
                   <ul class="nav navbar-nav navbar-right logo-block">
                      <ul class="soc socmuz">    
