@@ -88,32 +88,6 @@
                             </div>
                         </div>
 
-                        <div class="panel panel-default panel-related hidden">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">
-                                    {{ trans('site.Comments') }}
-                                </h3>
-                            </div>
-                            <div class="panel-body">
-                                @foreach($relatedPosts as $relatedPost)
-                                    @if($relatedPost->id == $post->id)
-                                    @else
-                                        <div class="col-md-4 block">
-                                            <a href="{{ route('front.post', $relatedPost) }}" class="news-thumb">
-                                                <img src="@if(empty($relatedPost->getFileBig())) {{ asset($relatedPost->getFile() )}} @else {{ asset($relatedPost->getFileBig()) }} @endif" alt=""/>
-                                                <div class="extrarel">
-                                                    <span class="art-date"><i class="fa fa-calendar"></i>{{ $relatedPost->getDay() }} {{ $relatedPost->getMonthRu() }}, {{ $relatedPost->getYear() }}</span>
-                                                </div>
-                                            </a>
-                                            <a class="related-title" href="{{ route('front.post', $relatedPost) }}">
-                                                {{ $relatedPost->getTitleRuOrKg() }}
-                                            </a>
-                                        </div>
-                                    @endif
-                                @endforeach
-                            </div>
-                        </div>
-
                     </div>
                     @include('Front::partials.leftCategories')
                 </div>
@@ -121,3 +95,7 @@
         </div>
     </div>
 @stop
+
+@section('footerScript')
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+@endsection
