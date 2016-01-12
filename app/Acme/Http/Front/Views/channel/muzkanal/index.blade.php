@@ -569,7 +569,7 @@
                      @if($photoGalleries != null)
                      @foreach($photoGalleries as $key=>$photoGallery)
                      <figure>
-                        <img src="{{ asset($photoGallery->status) }}" />
+                        <img src="{{ asset($photoGallery->thumbnail_big) }}" />
                         <input type="radio" name="radio-set" @if($key == 0) checked="checked" @endif/>
                         <figcaption><a href="{{ route('muzkanal.photos', $photoGallery) }}"><span>{{ $photoGallery->getName() }}</span></a></figcaption>
                         @endforeach

@@ -44,7 +44,11 @@ class PageController extends Controller
         $lc = app()->getlocale();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
-        $directorPosts = \Model\Post\ModelName::where('director','=','1')->orderBy('id','desc')->get();
+        if($lc == 'kg'){
+            $directorPosts = \Model\Post\ModelName::where('director','=','1')->languagekg()->orderBy('id','desc')->get();
+        }else{
+            $directorPosts = \Model\Post\ModelName::where('director','=','1')->languageru()->orderBy('id','desc')->get();
+        }
         $fbpost = \Model\Post\ModelName::where('director','<>','1')->where('fbpost','=','1')->orderBy('id','desc')->get();
         if($fbpost){
             $fbpost = $fbpost;

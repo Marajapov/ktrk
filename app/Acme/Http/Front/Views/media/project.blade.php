@@ -66,7 +66,7 @@
                         <i class="fa fa-play-circle-o"></i>
                       </a>
                       <a href="{{ route('front.media.video',$relatedVideo) }}" class="video-title">
-                        <h4>{{$relatedVideo->getName()}}</h4>
+                        {{$relatedVideo->getName()}}
                       </a>
                     </div>
                   @endforeach

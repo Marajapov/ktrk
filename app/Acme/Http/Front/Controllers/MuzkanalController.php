@@ -151,7 +151,7 @@ class MuzkanalController extends Controller
 
         //Top clips
 $MediaTop = \Model\Media\ModelName::where('muzkanal','=','1')->
-where('created_at','>=','CURDATE() - 10 DAY')->
+whereRaw('created_at BETWEEN DATE_SUB(NOW(), INTERVAL 10 DAY) AND NOW()')->
 where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')
 ->where('muzkanalanons3','<>','1')->where('promo','<>','1')
 ->orderBy('viewed','desc')->take(12)->get();
