@@ -207,7 +207,8 @@ class HomeController extends Controller
 
         $post->incrementViewed();
 
-        $categories = \Model\Category\ModelName::all();
+        $categories = \Model\Category\ModelName::where('general','=','1')->get();
+        
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
         $parent = \Model\PhotoParent\ModelName::where('id','=',$post->parentId)->first();
@@ -344,7 +345,7 @@ class HomeController extends Controller
         }
         
 
-        $categories = \Model\Category\ModelName::all();
+        $categories = \Model\Category\ModelName::where('general','=','1')->get();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
         return view('Front::post.posts',[
@@ -400,7 +401,7 @@ class HomeController extends Controller
         $pages = \Model\Page\ModelName::search($request->input('search'))->get();
         $searchKey = $request->input('search');
 
-        $categories = \Model\Category\ModelName::all();
+        $categories = \Model\Category\ModelName::where('general','=','1')->get();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
         return view('Front::result', [
@@ -432,7 +433,7 @@ class HomeController extends Controller
         }
 
 
-        $categories = \Model\Category\ModelName::all();
+        $categories = \Model\Category\ModelName::where('general','=','1')->get();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
         return view('Front::category.index',[
@@ -461,7 +462,7 @@ class HomeController extends Controller
 
 
         $mainBanner = \Model\Background\ModelName::where('name','=','main')->first();
-        $categories = \Model\Category\ModelName::all();
+        $categories = \Model\Category\ModelName::where('general','=','1')->get();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
         $mediaPop = \Model\Media\ModelName::where()->get();
@@ -493,7 +494,7 @@ class HomeController extends Controller
 
         $perPage = 10;
 
-        $categories = \Model\Category\ModelName::all();
+        $categories = \Model\Category\ModelName::where('general','=','1')->get();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
         
         if($lc == 'kg' AND $df != '' AND $dt != ''){
@@ -538,7 +539,7 @@ class HomeController extends Controller
 
         $perPage = 10;
         
-        $categories = \Model\Category\ModelName::all();
+        $categories = \Model\Category\ModelName::where('general','=','1')->get();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
         
         if($lc == 'kg' AND $df != '' AND $dt != ''){

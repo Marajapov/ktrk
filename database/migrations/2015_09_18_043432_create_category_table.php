@@ -17,6 +17,7 @@ class CreateCategoryTable extends Migration
             $table->string('title');
             $table->string('titleRu');
 
+            $table->string('general');
             $table->string('ns');
             $table->string('rs');
             $table->string('muzkanal');
