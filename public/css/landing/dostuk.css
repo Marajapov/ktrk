@@ -1079,3 +1079,6 @@ ul.nostyle i {
   box-shadow: none;
   -webkit-box-shadow: none;
 }
+.dropdown i {
+    margin-left: 5px !important;
+}
