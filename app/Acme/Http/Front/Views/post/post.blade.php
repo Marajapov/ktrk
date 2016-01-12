@@ -13,13 +13,15 @@
                             <div class="panel-heading">
                                 <h3 class="panel-title">
                                     {{ trans('site.Top news') }} <span class="divider"><i class="fa fa-circle"></i></span>
-                                    <a href="{{ route('front.category', $post->category) }}"><span class="ctg">
-                        @if(app()->getlocale() == 'kg')
+                                    <a href="{{ route('front.category', $post->category) }}">
+                                        <span class="ctg">
+                                            @if(app()->getlocale() == 'kg')
                                                 {{ $post->category('category_id')->first()->title }}
                                             @else
                                                 {{ $post->category('category_id')->first()->titleRu }}
                                             @endif
-                        </span></a>
+                                        </span>
+                                    </a>
                                 </h3>
                             </div>
                             <div class="panel-body">
@@ -32,7 +34,7 @@
                                         </div>
                                     </h4>
                                     <p class="post-thumb" href="{{ route('front.post', $post) }}">
-                                        <img class="left" src="@if(empty($post->thumbnail))images/2.jpg @else {{  asset($post->thumbnail) }} @endif" alt="image">
+                                        <img class="left" src="@if(empty($post->thumbnail))images/2.jpg @else {{  asset($post->thumbnail_big) }} @endif" alt="image">
                                     </p>
                                     {!! $content !!}
                                     <div class="carousel-post">
@@ -46,24 +48,6 @@
                                             @endforeach
                                         @endif
                                     </div>
-
-                                    {{--<div>--}}
-                                        {{--<aside>--}}
-                                            {{--<div class="topics-box">--}}
-                                                {{--<h2>{{ trans('site.MatpoTeme') }}</h2>--}}
-                                                {{--<div class="topics">--}}
-                                                    {{--<div class="topic clearfix">--}}
-                                                        {{--<a class="t-thumb" href="{{ route('front.post', $post) }}">--}}
-                                                            {{--<img alt="alt photo text" src="{{ asset($post->thumbnail_big) }}">--}}
-                                                        {{--</a>--}}
-                                                        {{--<div class="t-info">--}}
-                                                            {{--<a class="js-dh" href="{{ route('front.post', $post) }}">{{$post->getTitle()}}</a>--}}
-                                                        {{--</div>--}}
-                                                    {{--</div>--}}
-                                                {{--</div>--}}
-                                            {{--</div>--}}
-                                        {{--</aside>--}}
-                                    {{--</div>--}}
                                 </div>
                                 <footer>
                                     @if(auth()->user())
@@ -75,7 +59,9 @@
                                 </footer>
                             </div>
                         </div>
+
                         @include('Front::partials.postBanner')
+
                         <div class="panel panel-default panel-related">
                             <div class="panel-heading">
                                 <h3 class="panel-title">
@@ -101,6 +87,33 @@
                                 @endforeach
                             </div>
                         </div>
+
+                        <div class="panel panel-default panel-related hidden">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">
+                                    {{ trans('site.Comments') }}
+                                </h3>
+                            </div>
+                            <div class="panel-body">
+                                @foreach($relatedPosts as $relatedPost)
+                                    @if($relatedPost->id == $post->id)
+                                    @else
+                                        <div class="col-md-4 block">
+                                            <a href="{{ route('front.post', $relatedPost) }}" class="news-thumb">
+                                                <img src="@if(empty($relatedPost->getFileBig())) {{ asset($relatedPost->getFile() )}} @else {{ asset($relatedPost->getFileBig()) }} @endif" alt=""/>
+                                                <div class="extrarel">
+                                                    <span class="art-date"><i class="fa fa-calendar"></i>{{ $relatedPost->getDay() }} {{ $relatedPost->getMonthRu() }}, {{ $relatedPost->getYear() }}</span>
+                                                </div>
+                                            </a>
+                                            <a class="related-title" href="{{ route('front.post', $relatedPost) }}">
+                                                {{ $relatedPost->getTitleRuOrKg() }}
+                                            </a>
+                                        </div>
+                                    @endif
+                                @endforeach
+                            </div>
+                        </div>
+
                     </div>
                     @include('Front::partials.leftCategories')
                 </div>

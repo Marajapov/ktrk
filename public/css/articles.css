@@ -129,7 +129,7 @@
 }
 .panel-article .news-title{
     margin-bottom: 0;
-    padding: 0 150px 10px 0;
+    padding: 0 150px 20px 0;
     font-size: 20px;
 }
 .panel-article .news-title .extra{
@@ -143,7 +143,7 @@
     margin-right: 15px;
 }
 .post-thumb img{
-    height: 150px;
+    height: 200px;
     width: auto;
 }
 .related-title{
