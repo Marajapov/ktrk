@@ -87,7 +87,7 @@
     <section id="main-slider">
         <div class="owl-carousel">
             <div class="item">
-            <img src="{{asset('images/channels/kyrgyzradio/2.jpg')}}" height="358" width="1600" alt="">
+            <img src="{{asset('images/channels/kyrgyzradio/1.png')}}" height="358" width="1600" alt="">
                 <div class="slider-inner">
                     <div class="container">
                         <div class="row">
@@ -102,7 +102,7 @@
                 </div>
             </div><!--/.item-->
              <div class="item">
-            <img src="{{asset('images/channels/kyrgyzradio/1.jpg')}}" height="358" width="1600" alt="">
+            <img src="{{asset('images/channels/kyrgyzradio/2.png')}}" height="358" width="1600" alt="">
                 <div class="slider-inner">
                     <div class="container">
                         <div class="row">
@@ -117,7 +117,7 @@
                 </div>
             </div><!--/.item-->
             <div class="item">
-            <img src="{{asset('images/channels/kyrgyzradio/3.jpg')}}" height="358" width="1600" alt="">
+            <img src="{{asset('images/channels/kyrgyzradio/3.png')}}" height="358" width="1600" alt="">
                 <div class="slider-inner">
                     <div class="container">
                         <div class="row">
