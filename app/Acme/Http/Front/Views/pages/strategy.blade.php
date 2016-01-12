@@ -144,7 +144,7 @@
 
                                 <div class="comment-block">
                                     <div id="respond" class="comment-respond">
-                                        <form action="" method="post" id="commentform" class="comment-form">
+                                        <form action="{{ asset('captcha.php') }}" method="post" id="commentform" class="comment-form">
                                             <p class="comment-form-author">
                                                 <label for="author">Имя <span class="required">*</span></label>
                                                 <input id="author" name="author" type="text" value="" size="30" aria-required="true" required="required">
