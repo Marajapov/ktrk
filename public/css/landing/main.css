@@ -253,7 +253,6 @@ ul.nostyle i {
 .navbar-brand {
   color: #005197 !important;
   font-size: 30px;
-  font-weight: bold;
   line-height: 2;
   text-transform: uppercase;
   text-transform: uppercase;
@@ -270,14 +269,25 @@ ul.nostyle i {
     padding-bottom: 20px;
     font-size: 19px;
     color: #005197;
-    font-weight: bold;
   }
+
+@media (max-width:1170px) {
+  #main-menu.navbar-default .navbar-nav > li > a {
+  padding: 20px 5px;
+  }
+}
+@media (max-width:970px) {
+  #main-menu.navbar-default .navbar-nav > li > a {
+    padding: 10px;
+  }
+}
+
   #main-menu.navbar-default .navbar-nav > li.active > a, #main-menu.navbar-default .navbar-nav > li.open > a, #main-menu.navbar-default .navbar-nav > li:hover > a {
     background: #04549C;
     color: #fff;
   }
   #main-menu.navbar-default .dropdown-menu {
-    padding: 0 20px;
+    padding: 0px;
     min-width: 220px;
     background-color: rgba(26, 28, 40, 0.9);
     border: 0;
@@ -288,13 +298,10 @@ ul.nostyle i {
   }
   #main-menu.navbar-default .dropdown-menu > li {
     border-left: 3px solid transparent;
-    margin-left: -20px;
-    padding-left: 17px;
     -webit-transition: border-color 400ms;
     transition: border-color 400ms;
   }
   #main-menu.navbar-default .dropdown-menu > li > a {
-    border-top: 1px solid #404455;
     padding: 15px 0;
     color: #eeeeee;
   }
@@ -806,6 +813,9 @@ ul.nostyle i {
   border-top: 0;
   border-radius: 0 0 3px 3px;
 }
+.tab-content>.active{
+  padding: 10px;
+}
 .panel-default {
   border-color: #eee;
 }
@@ -1120,7 +1130,7 @@ ul.nostyle i {
 }
 .dropdown .dropdown-menu > li {
     margin: 0px !important; 
-    padding: 0px !important;
+    padding: 5px 10px;
     border: none !important;
     transition: all 0.2s linear !important;
 }
@@ -1132,9 +1142,20 @@ ul.nostyle i {
   padding: 5px !important;
   margin: 0px;
   color: #fff !important;
-  font-size: 18px !important;
+}
+.dropdown .dropdown-menu li:hover{
+  background: #1A4063;
 }
 
 .dropdown .dropdown-menu li a:hover{
   border: none !important; 
 }
+
+#services .panel-body{
+  padding: 0px 15px;
+}
+
+#services .panel-heading h3{
+    color: #04549C;
+}
+

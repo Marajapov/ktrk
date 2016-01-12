@@ -136,12 +136,14 @@ class KyrgyzradioController extends Controller
 
         $postAll = \Model\Media\ModelName::where('published','=',true)->where('kyrgyzradio','=','1')->orderBy('id', 'desc')->paginate($perPage);        
 
+        $kyrgyzradioProjects = \Model\Project\ModelName::where('published','=',true)->where('kyrgyzradio', '=', 1)->get();    
 
         // Photo Gallery
         $photoGalleries = \Model\PhotoParent\ModelName::where('kyrgyzradio','=','1')->where('published','=',true)->take('10')->orderBy('id','desc')->get();        
         return view('Front::channel.kyrgyzradio.allphotos', [
             'channel' => $channel,
             'backgroundMain' => $backgroundMain,
+            'kyrgyzradioProjects' => $kyrgyzradioProjects,
             'photoGalleries' => $photoGalleries,
             'postAll' => $postAll,
             'perPage' => $perPage,
