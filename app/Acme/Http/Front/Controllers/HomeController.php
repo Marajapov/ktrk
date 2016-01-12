@@ -103,9 +103,9 @@ class HomeController extends Controller
         }
 
         if($lc == 'kg'){
-            $latestPosts = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->take(6)->skip(0)->orderBy('id','desc')->get();    
+            $latestPosts = \Model\Post\ModelName::general($channel)->published()->where('number','=','99')->where('general','=','1')->languagekg()->take(6)->skip(0)->orderBy('id','desc')->get();    
         }elseif($lc == 'ru'){
-            $latestPosts = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languageru()->take(6)->skip(0)->orderBy('id','desc')->get();    
+            $latestPosts = \Model\Post\ModelName::general($channel)->published()->where('number','=','99')->where('general','=','1')->languageru()->take(6)->skip(0)->orderBy('id','desc')->get();    
         }
 
         $dayVideo1 = \Model\Media\ModelName::where('dayVideo','=','1')->first();
@@ -150,7 +150,9 @@ class HomeController extends Controller
             $CategoryVideos = \Model\Media\ModelName::where('videoType','=',$MediaCategory->videoType)->orderBy('id','desc')->take(9)->get();
             $categoriesVideos = array_add($categoriesVideos, $MediaCategory->videoType, $CategoryVideos);
         }
+
         $mediaLastVideos = \Model\Media\ModelName::orderBy('id','desc')->take(9)->get();
+
         $defaultVideo = 'rjXSurFi8uQ';
 
         return view('Front::home', [

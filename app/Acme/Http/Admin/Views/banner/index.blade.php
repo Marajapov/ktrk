@@ -43,7 +43,7 @@
 				                </a>
 		            		</td>
 		            		<td>
-				                {{ $banner->getDateFormatted() }}
+				                {{ $banner->created_at }}
 				            </td>
 				            <td>
 				            	@if($banner->positionTop == 1) Сверху 

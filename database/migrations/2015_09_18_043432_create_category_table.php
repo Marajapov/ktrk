@@ -16,7 +16,19 @@ class CreateCategoryTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('titleRu');
+
+            $table->string('ns');
+            $table->string('rs');
+            $table->string('muzkanal');
+            $table->string('kyrgyzradio');
+            $table->string('birinchi');
+            $table->string('balastan');
+            $table->string('madaniyat');
+            $table->string('minkiyal');
+            $table->string('dostuk');
+
             $table->string('description', 500);
+            $table->string('descriptionRu', 500);
             $table->smallInteger('order')->nullable()->default(0);
             $table->boolean('published')->nullable()->default(false);
             $table->timestamps();

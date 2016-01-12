@@ -28,7 +28,16 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('Admin::category.create', ['category' => new Category]);
+        $dostukProgramList = \Model\Project\ModelName::where('dostuk','=','1')->lists('name', 'id')->toArray();
+        $birinchiProgramList = \Model\Project\ModelName::where('birinchi','=','1')->lists('name', 'id')->toArray();
+        $kyrgyzradioProgramList = \Model\Project\ModelName::where('kyrgyzradio','=','1')->lists('name', 'id')->toArray();
+
+        return view('Admin::category.create', [
+            'category' => new Category,
+            'dostukProgramList' => $dostukProgramList,
+            'birinchiProgramList' => $birinchiProgramList,
+            'kyrgyzradioProgramList' => $kyrgyzradioProgramList,
+            ]);
     }
 
     /**
