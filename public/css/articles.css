@@ -295,21 +295,21 @@ h3#reply-title {
     padding-bottom: 65px;
     width: 100%;
 }
-#respond form p {
+#respond form p,#respond form .captcha {
     clear: both;
     margin: 10px 0;
 }
-#respond form label {
+#respond form label,.g-recaptcha {
     position: relative;
     display: inline-block;
     vertical-align: middle;
     padding-right: 15px;
-    width: 65px;
+    width: 100px;
     color: #9DA8B0;
     text-align: right;
     font-weight: normal;
 }
-#respond form p .required {
+#respond form .required {
     position: absolute;
     top: 0;
     right: 5px;
@@ -326,10 +326,9 @@ h3#reply-title {
     font-size: 13px;
 }
 #respond form textarea {
-    display: block;
+    display: inline-block;
     float: none;
     clear: both;
-    width: 100%;
     resize: vertical;
 }
 #respond form p.form-submit {

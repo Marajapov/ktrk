@@ -3,6 +3,7 @@
 
 @section('content')
 
+
     <div class="container main-wrapper">
         <div class="row">
             <section class="content clearfix">
@@ -14,161 +15,173 @@
                             </div>
                             <div class="panel-body">
                                 <!-- generalPost1 -->
-                                <div class="col-md-4 block">
-                                    <figure class="effect-zoe">
-                                        <a href="{{ route('front.post', $generalPost1) }}" class="main-img">
-                                            <img src="@if(!($generalPost1->getFile()))images/live_bg.png @else {{ asset($generalPost1->getFile()) }} @endif" alt="img26">
-                                        </a>
-                                        <p class="description clearfix">
-                                            <a href="{{ route('front.category', $generalPost1->category) }}">
-                                                {{ $generalPost1->category('category_id')->first()->getTitle() }}
+                                @if($generalPost1)
+                                    <div class="col-md-4 block">
+                                        <figure class="effect-zoe">
+                                            <a href="{{ route('front.post', $generalPost1) }}" class="main-img">
+                                                <img src="@if(!($generalPost1->getFile()))images/live_bg.png @else {{ asset($generalPost1->getFile()) }} @endif" alt="img26">
                                             </a>
+                                            <p class="description clearfix">
+                                                <a href="{{ route('front.category', $generalPost1->category) }}">
+                                                    {{ $generalPost1->category('category_id')->first()->getTitle() }}
+                                                </a>
 
                       <span>
                         @if($generalPost1->getIsVideo() == 'yes')<i class="fa fa-play-circle-o"></i> @endif
                           @if($generalPost1->getIsPhoto() == 'yes') <i class="fa fa-picture-o"></i> @endif
                       </span>
-                                        </p>
-                                        <div class="news-title">
-                                            <a href="{{ route('front.post', $generalPost1) }}">
-                                                {{ $generalPost1->getTitleRuOrKg() }}
-                                            </a>
-                                        </div>
-                                    </figure>
-                                </div>
-                                <!-- end generalPost1 -->
+                                            </p>
+                                            <div class="news-title">
+                                                <a href="{{ route('front.post', $generalPost1) }}">
+                                                    {{ $generalPost1->getTitleRuOrKg() }}
+                                                </a>
+                                            </div>
+                                        </figure>
+                                    </div>
+                                    @endif
+                                        <!-- end generalPost1 -->
 
-                                <!-- generalPost2 -->
-                                <div class="col-md-4 block">
-                                    <figure class="effect-zoe">
-                                        <a href="{{ route('front.post', $generalPost2) }}" class="main-img">
-                                            <img src="@if(!($generalPost2->getFile()))images/live_bg.png @else {{ asset($generalPost2->getFile()) }} @endif" alt="img26">
-                                        </a>
-                                        <p class="description clearfix">
-                                            <a href="{{ route('front.category', $generalPost2->category) }}">
-                                                {{ $generalPost2->category('category_id')->first()->getTitle() }}
-                                            </a>
+                                    <!-- generalPost2 -->
+                                    @if($generalPost2)
+                                        <div class="col-md-4 block">
+                                            <figure class="effect-zoe">
+                                                <a href="{{ route('front.post', $generalPost2) }}" class="main-img">
+                                                    <img src="@if(!($generalPost2->getFile()))images/live_bg.png @else {{ asset($generalPost2->getFile()) }} @endif" alt="img26">
+                                                </a>
+                                                <p class="description clearfix">
+                                                    <a href="{{ route('front.category', $generalPost2->category) }}">
+                                                        {{ $generalPost2->category('category_id')->first()->getTitle() }}
+                                                    </a>
 
                       <span>
                         @if($generalPost2->getIsVideo() == 'yes')<i class="fa fa-play-circle-o"></i> @endif
                           @if($generalPost2->getIsPhoto() == 'yes') <i class="fa fa-picture-o"></i> @endif
                       </span>
-                                        </p>
-                                        <div class="news-title">
-                                            <a href="{{ route('front.post', $generalPost2) }}">
-                                                {{ $generalPost2->getTitleRuOrKg() }}
-                                            </a>
+                                                </p>
+                                                <div class="news-title">
+                                                    <a href="{{ route('front.post', $generalPost2) }}">
+                                                        {{ $generalPost2->getTitleRuOrKg() }}
+                                                    </a>
+                                                </div>
+                                            </figure>
                                         </div>
-                                    </figure>
-                                </div>
-                                <!-- end generalPost2 -->
+                                        @endif
+                                            <!-- end generalPost2 -->
 
-                                <!-- generalPost3 -->
-                                <div class="col-md-4 block">
-                                    <figure class="effect-zoe">
-                                        <a href="{{ route('front.post', $generalPost3) }}" class="main-img">
-                                            <img src="@if(!($generalPost3->getFile()))images/live_bg.png @else {{ asset($generalPost3->getFile()) }} @endif" alt="img26">
-                                        </a>
-                                        <p class="description clearfix">
-                                            <a href="{{ route('front.category', $generalPost3->category) }}">
-                                                {{ $generalPost3->category('category_id')->first()->getTitle() }}
-                                            </a>
+                                        <!-- generalPost3 -->
+                                        @if($generalPost3)
+                                            <div class="col-md-4 block">
+                                                <figure class="effect-zoe">
+                                                    <a href="{{ route('front.post', $generalPost3) }}" class="main-img">
+                                                        <img src="@if(!($generalPost3->getFile()))images/live_bg.png @else {{ asset($generalPost3->getFile()) }} @endif" alt="img26">
+                                                    </a>
+                                                    <p class="description clearfix">
+                                                        <a href="{{ route('front.category', $generalPost3->category) }}">
+                                                            {{ $generalPost3->category('category_id')->first()->getTitle() }}
+                                                        </a>
 
                       <span>
                         @if($generalPost3->getIsVideo() == 'yes')<i class="fa fa-play-circle-o"></i> @endif
                           @if($generalPost3->getIsPhoto() == 'yes') <i class="fa fa-picture-o"></i> @endif
                       </span>
-                                        </p>
-                                        <div class="news-title">
-                                            <a href="{{ route('front.post', $generalPost3) }}">
-                                                {{ $generalPost3->getTitleRuOrKg() }}
-                                            </a>
-                                        </div>
-                                    </figure>
-                                </div>
-                                <!-- end generalPost3 -->
+                                                    </p>
+                                                    <div class="news-title">
+                                                        <a href="{{ route('front.post', $generalPost3) }}">
+                                                            {{ $generalPost3->getTitleRuOrKg() }}
+                                                        </a>
+                                                    </div>
+                                                </figure>
+                                            </div>
+                                            @endif
+                                                <!-- end generalPost3 -->
 
-                                <!-- generalPost4 -->
-                                <div class="col-md-4 block">
-                                    <figure class="effect-zoe">
-                                        <a href="{{ route('front.post', $generalPost4) }}" class="main-img">
-                                            <img src="@if(!($generalPost4->getFile()))images/live_bg.png @else {{ asset($generalPost4->getFile()) }} @endif" alt="img26">
-                                        </a>
-                                        <p class="description clearfix">
-                                            <a href="{{ route('front.category', $generalPost4->category) }}">
-                                                {{ $generalPost4->category('category_id')->first()->getTitle() }}
-                                            </a>
+                                            <!-- generalPost4 -->
+                                            @if($generalPost4)
+                                                <div class="col-md-4 block">
+                                                    <figure class="effect-zoe">
+                                                        <a href="{{ route('front.post', $generalPost4) }}" class="main-img">
+                                                            <img src="@if(!($generalPost4->getFile()))images/live_bg.png @else {{ asset($generalPost4->getFile()) }} @endif" alt="img26">
+                                                        </a>
+                                                        <p class="description clearfix">
+                                                            <a href="{{ route('front.category', $generalPost4->category) }}">
+                                                                {{ $generalPost4->category('category_id')->first()->getTitle() }}
+                                                            </a>
 
                       <span>
                         @if($generalPost1->getIsVideo() == 'yes')<i class="fa fa-play-circle-o"></i> @endif
                           @if($generalPost1->getIsPhoto() == 'yes') <i class="fa fa-picture-o"></i> @endif
                       </span>
-                                        </p>
-                                        <div class="news-title">
-                                            <a href="{{ route('front.post', $generalPost4) }}">
-                                                {{ $generalPost4->getTitleRuOrKg() }}
-                                            </a>
-                                        </div>
-                                    </figure>
-                                </div>
-                                <!-- end generalPost4 -->
+                                                        </p>
+                                                        <div class="news-title">
+                                                            <a href="{{ route('front.post', $generalPost4) }}">
+                                                                {{ $generalPost4->getTitleRuOrKg() }}
+                                                            </a>
+                                                        </div>
+                                                    </figure>
+                                                </div>
+                                                @endif
+                                                    <!-- end generalPost4 -->
 
-                                <!-- generalPost5 -->
-                                <div class="col-md-4 block">
-                                    <figure class="effect-zoe">
-                                        <a href="{{ route('front.post', $generalPost5) }}" class="main-img">
-                                            <img src="@if(!($generalPost5->getFile()))images/live_bg.png @else {{ asset($generalPost5->getFile()) }} @endif" alt="img26">
-                                        </a>
-                                        <p class="description clearfix">
-                                            <a href="{{ route('front.category', $generalPost5->category) }}">
-                                                {{ $generalPost5->category('category_id')->first()->getTitle() }}
-                                            </a>
+                                                <!-- generalPost5 -->
+                                                @if($generalPost5)
+                                                    <div class="col-md-4 block">
+                                                        <figure class="effect-zoe">
+                                                            <a href="{{ route('front.post', $generalPost5) }}" class="main-img">
+                                                                <img src="@if(!($generalPost5->getFile()))images/live_bg.png @else {{ asset($generalPost5->getFile()) }} @endif" alt="img26">
+                                                            </a>
+                                                            <p class="description clearfix">
+                                                                <a href="{{ route('front.category', $generalPost5->category) }}">
+                                                                    {{ $generalPost5->category('category_id')->first()->getTitle() }}
+                                                                </a>
 
                       <span>
                         @if($generalPost5->getIsVideo() == 'yes')<i class="fa fa-play-circle-o"></i> @endif
                           @if($generalPost5->getIsPhoto() == 'yes') <i class="fa fa-picture-o"></i> @endif
                       </span>
-                                        </p>
-                                        <div class="news-title">
-                                            <a href="{{ route('front.post', $generalPost5) }}">
-                                                {{ $generalPost5->getTitleRuOrKg() }}
-                                            </a>
-                                        </div>
-                                    </figure>
-                                </div>
-                                <!-- end generalPost5 -->
+                                                            </p>
+                                                            <div class="news-title">
+                                                                <a href="{{ route('front.post', $generalPost5) }}">
+                                                                    {{ $generalPost5->getTitleRuOrKg() }}
+                                                                </a>
+                                                            </div>
+                                                        </figure>
+                                                    </div>
+                                                    @endif
+                                                        <!-- end generalPost5 -->
 
-                                <!-- generalPost6 -->
-                                <div class="col-md-4 block">
-                                    <figure class="effect-zoe">
-                                        <a href="{{ route('front.post', $generalPost6) }}" class="main-img">
-                                            <img src="@if(!($generalPost6->getFile()))images/live_bg.png @else {{ asset($generalPost6->getFile()) }} @endif" alt="img26">
-                                        </a>
-                                        <p class="description clearfix">
-                                            <a href="{{ route('front.category', $generalPost6->category) }}">
-                                                {{ $generalPost6->category('category_id')->first()->getTitle() }}
-                                            </a>
+                                                    <!-- generalPost6 -->
+                                                    @if($generalPost6)
+                                                        <div class="col-md-4 block">
+                                                            <figure class="effect-zoe">
+                                                                <a href="{{ route('front.post', $generalPost6) }}" class="main-img">
+                                                                    <img src="@if(!($generalPost6->getFile()))images/live_bg.png @else {{ asset($generalPost6->getFile()) }} @endif" alt="img26">
+                                                                </a>
+                                                                <p class="description clearfix">
+                                                                    <a href="{{ route('front.category', $generalPost6->category) }}">
+                                                                        {{ $generalPost6->category('category_id')->first()->getTitle() }}
+                                                                    </a>
 
                       <span>
                         @if($generalPost6->getIsVideo() == 'yes')<i class="fa fa-play-circle-o"></i> @endif
                           @if($generalPost6->getIsPhoto() == 'yes') <i class="fa fa-picture-o"></i> @endif
                       </span>
-                                        </p>
-                                        <div class="news-title">
-                                            <a href="{{ route('front.post', $generalPost6) }}">
-                                                {{ $generalPost6->getTitleRuOrKg() }}
-                                            </a>
-                                        </div>
-                                    </figure>
-                                </div>
-                                <!-- end generalPost6 -->
+                                                                </p>
+                                                                <div class="news-title">
+                                                                    <a href="{{ route('front.post', $generalPost6) }}">
+                                                                        {{ $generalPost6->getTitleRuOrKg() }}
+                                                                    </a>
+                                                                </div>
+                                                            </figure>
+                                                        </div>
+                                                        @endif
+                                                            <!-- end generalPost6 -->
 
 
-                                <footer>
-                                    <a href="{{ route('front.general') }}">
-                                        <span>{{ trans('site.FrontPostAll') }} <i class="fa fa-arrow-circle-right"></i></span>
-                                    </a>
-                                </footer>
+                                                        <footer>
+                                                            <a href="{{ route('front.general') }}">
+                                                                <span>{{ trans('site.FrontPostAll') }} <i class="fa fa-arrow-circle-right"></i></span>
+                                                            </a>
+                                                        </footer>
                             </div>
                         </div>
 
