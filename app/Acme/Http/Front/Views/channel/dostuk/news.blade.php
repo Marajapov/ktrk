@@ -85,7 +85,21 @@
             </div>
             <div class="collapse navbar-collapse navbar-right">
                <ul class="nav navbar-nav">
-                  <li><a href="{{ route('dostuk.home') }}">{{ trans('radiopages.Home') }}</a></li> 
+                  <li class=""><a href="{{route('kyrgyzradio.home')}}">Башкы</a></li>
+                  <li class="active dropdown">
+                     <a class="dropdown-toggle" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ trans('radiopages.Peredachi') }}<i class="fa fa-angle-down"></i></a>
+                     <ul class="dropdown-menu">
+                        @if($kyrgyzradioProjects) 
+                        @foreach($kyrgyzradioProjects as $kyrgyzradioProject)
+                        <li>
+                           <a href="{{ route('kyrgyzradio.project', $kyrgyzradioProject) }}">{{ $kyrgyzradioProject->getName() }}</a>
+                        </li>
+                        @endforeach
+                        @endif
+                     </ul>
+                  </li>
+                  <li><a href="{{route('kyrgyzradio.allphotos')}}">Фотогалерея</a></li>
+                  <li><a href="{{route('kyrgyzradio.home')}}#about">Радио жөнүндө</a></li>
                </ul>
             </div>
          </div>
@@ -103,7 +117,7 @@
                      <div class="panel-body panel-show">
                      <div class="panel-heading">
                         <h3 class="panel-title">
-                           <a href="{{ route('front.media.index') }}">{{ trans('radiopages.Peredachi') }}</a>
+                           <a href="{{ route('front.media.index') }}">{{ trans('radiopages.Peredachi') }}</a><i class="fa fa-circle" style="padding: 0px 5px;font-size: 8px;vertical-align: middle;margin-top: -2px;"></i>
                            <span>{{ $post->getTitleRuOrKg() }}</span>
                         </h3>
                      </div>
