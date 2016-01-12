@@ -92,6 +92,7 @@
             <div class="iconcenter">
                <iframe width="495" height="360" src="https://www.youtube.com/embed/{{$firstMedia->getUrl()}}?rel=0&amp;controls=1&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>
             </div>
+            <h3>{{ $firstMedia->getName() }}</h3>
             @else
             <div class="iconcenter">
                <iframe width="495" height="360" src="https://www.youtube.com/embed/rYEDA3JcQqw?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>
@@ -121,8 +122,7 @@
                      <div class="col-md-4 col-sm-6">
                         <div class="kidsvideo kidsboard">
                         <a href="{{ route('balastan.video', $media) }}">
-                                  <img width="100%" height="180px" src="http://img.youtube.com/vi/{{ $media->getUrl()}}/mqdefault.jpg" alt="" />
-                        
+                                  <img width="100%" height="180px" src="http://img.youtube.com/vi/{{ $media->getUrl()}}/mqdefault.jpg" alt="" />                       
                                 </a>
                         </div>
                         <h3>{{ $media->getName() }}</h3>
