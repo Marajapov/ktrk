@@ -10,31 +10,31 @@ class DostukController extends Controller
 
     public function Home()
     {
-        // return view('Front::channel.dostuk.comingsoon',[]);
-        $channel = \Model\Channel\ModelName::name('dostuk')->first();
+         return view('Front::channel.dostuk.comingsoon',[]);
+        // $channel = \Model\Channel\ModelName::name('dostuk')->first();
 
-        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        // $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
-         // Photo Gallery
-        $photoGalleries = \Model\PhotoParent\ModelName::where('dostuk','=','1')->where('published','=',true)->take('6')->orderBy('id','desc')->get();
+        //  // Photo Gallery
+        // $photoGalleries = \Model\PhotoParent\ModelName::where('dostuk','=','1')->where('published','=',true)->take('6')->orderBy('id','desc')->get();
 
-        $lc = app()->getlocale();
-        if($lc == 'kg'){
-            $allPost = \Model\Post\ModelName::where('dostuk','=',1)->languagekg()->published()->orderBy('id','desc')->get();    
-        }else{
-            $allPost = \Model\Post\ModelName::where('dostuk','=',1)->languageru()->published()->orderBy('id','desc')->get();
-        }
+        // $lc = app()->getlocale();
+        // if($lc == 'kg'){
+        //     $allPost = \Model\Post\ModelName::where('dostuk','=',1)->languagekg()->published()->orderBy('id','desc')->get();    
+        // }else{
+        //     $allPost = \Model\Post\ModelName::where('dostuk','=',1)->languageru()->published()->orderBy('id','desc')->get();
+        // }
 
-        $dostukProjects = \Model\Project\ModelName::where('published','=',true)->where('dostuk', '=', 1)->get();
+        // $dostukProjects = \Model\Project\ModelName::where('published','=',true)->where('dostuk', '=', 1)->get();
 
-        return view('Front::channel.dostuk.index', [
-            'channel' => $channel,
-            'backgroundMain' => $backgroundMain,
-            'photoGalleries' => $photoGalleries,
-            'allPost' => $allPost,
-            'dostukProjects' => $dostukProjects,
+        // return view('Front::channel.dostuk.index', [
+        //     'channel' => $channel,
+        //     'backgroundMain' => $backgroundMain,
+        //     'photoGalleries' => $photoGalleries,
+        //     'allPost' => $allPost,
+        //     'dostukProjects' => $dostukProjects,
 
-            ]);
+        //     ]);
     }
 
     public function Posts()
