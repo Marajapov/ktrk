@@ -85,21 +85,21 @@
             </div>
             <div class="collapse navbar-collapse navbar-right">
                <ul class="nav navbar-nav">
-                  <li class=""><a href="{{route('kyrgyzradio.home')}}">Башкы</a></li>
+                  <li class=""><a href="{{route('dostuk.home')}}">Башкы</a></li>
                   <li class="active dropdown">
                      <a class="dropdown-toggle" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ trans('radiopages.Peredachi') }}<i class="fa fa-angle-down"></i></a>
                      <ul class="dropdown-menu">
-                        @if($kyrgyzradioProjects) 
-                        @foreach($kyrgyzradioProjects as $kyrgyzradioProject)
+                        @if($dostukProjects) 
+                        @foreach($dostukProjects as $dostukProject)
                         <li>
-                           <a href="{{ route('kyrgyzradio.project', $kyrgyzradioProject) }}">{{ $kyrgyzradioProject->getName() }}</a>
+                           <a href="{{ route('dostuk.project', $dostukProject) }}">{{ $dostukProject->getName() }}</a>
                         </li>
                         @endforeach
                         @endif
                      </ul>
                   </li>
-                  <li><a href="{{route('kyrgyzradio.allphotos')}}">Фотогалерея</a></li>
-                  <li><a href="{{route('kyrgyzradio.home')}}#about">Радио жөнүндө</a></li>
+                  <li><a href="{{route('dostuk.allphotos')}}">Фотогалерея</a></li>
+                  <li><a href="{{route('dostuk.home')}}#about">Радио жөнүндө</a></li>
                </ul>
             </div>
          </div>
@@ -108,46 +108,40 @@
       <!--/nav-->
    </header>
    <!--/header-->
-   <div class="container" style="margin: 20px auto;">
-         <section id="services" style="background: #f1f4f9;padding: 0px; margin: 20px -15px 20px -15px;">
+   <div class="container" style="background: #fff;padding: 0px; margin: 20px auto;">
+      <section id="services" style="padding: 0px;">
          <div class="container">
             <div class="row">
-               <div class="top-left-block col-md-9">  
-                  <div class="panel panel-articles">
-                     <div class="panel-body panel-show">
+               <div class="top-left-block col-md-9">
+                  <div>
                      <div class="panel-heading">
-                        <h3 class="panel-title">
-                           <a href="{{ route('front.media.index') }}">{{ trans('radiopages.Peredachi') }}</a><i class="fa fa-circle" style="padding: 0px 5px;font-size: 8px;vertical-align: middle;margin-top: -2px;"></i>
-                           <span>{{ $post->getTitleRuOrKg() }}</span>
+                        <h3 class="panel-title">                        
+                           <a href="{{ route('dostuk.allnews') }}">{{ $dostukProject->getName() }}</a>
                         </h3>
                      </div>
-                        <div class="col-md-12">
-                           <h2>{{ $post->getTitleRuOrKg() }}</h2>
-                           <div class="muzimg">
-                              <img src="@if(empty($post->getFile()))images/2.jpg @else {{  asset($post->getFile()) }} @endif" alt="" data-toggle="tooltip" data-placement="top" title="Бул жөн гана сүрөт эмес">
-                           </div>
-                           <article>
-                              {!! $post->getContent() !!}
-               
-                               <div class="carousel-post whitefix">
-                                 @if($images)
-                                 @foreach($images as $image)
-                                 <div class="col-md-4">
-                                    <a href="#">
-
-                                    <img src="{{ asset('froala/uploads/'.$image->name) }}" alt=""/>
-                                    </a>
-                                 </div>
-                                 @endforeach
-                                 @endif
-                              </div>                                  
-                           </article>
+                     <div class="col-md-12">
+                        <h2 style="margin: 0px 0px 10px 0px;font-size: 21px;">{{ $post->getTitleRuOrKg() }}</h2>
+                        <div class="muzimg">
+                           <img src="@if(empty($post->getFile()))images/2.jpg @else {{  asset($post->getFile()) }} @endif" alt="" data-toggle="tooltip" data-placement="top" title="Бул жөн гана сүрөт эмес">
                         </div>
-   
-                        <footer>
-                           <a href="{{ route('dostuk.allnews') }}">{{ trans('radiopages.Morenews') }}</a>
-                        </footer>
+                        <article>
+                           {!! $post->getContent() !!}
+                           <div class="carousel-post whitefix">
+                              @if($images)
+                              @foreach($images as $image)
+                              <div class="col-md-4">
+                                 <a href="#">
+                                 <img src="{{ asset('froala/uploads/'.$image->name) }}" alt=""/>
+                                 </a>
+                              </div>
+                              @endforeach
+                              @endif
+                           </div>
+                        </article>
                      </div>
+                     <footer>
+                        <a class="pull-right" href="{{ route('dostuk.allnews') }}">{{ trans('radiopages.Morenews') }}</a>
+                     </footer>
                   </div>
                </div>
                <div class="top-right-block col-md-3">
@@ -176,7 +170,6 @@
          </div>
          <!--/.container-->
       </section>
-
    </div>
    @stop
    @section('footerscript2')

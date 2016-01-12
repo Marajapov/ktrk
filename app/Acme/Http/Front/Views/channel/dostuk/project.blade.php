@@ -91,16 +91,15 @@
       <!--/nav-->
    </header>
    <!--/header-->
-   <div class="container" style="margin: 20px auto;">
-      <section id="services" style="background: #f1f4f9;padding: 0px; margin: 20px -15px 20px -15px;">
+   <div class="container" style="background: #fff;padding: 0px; margin: 20px auto;">
+      <section id="services" style="padding: 0px;">
          <div class="container">
-            <div class="row">               
-               <div class="top-left-block col-md-9">
+            <div class="row">
+               <div class="top-left-block col-md-9" style="border-right: 1px solid #F1F4F9;">
                   <div class="panel panel-show">
                      <div class="panel-heading">
                         <h3 class="panel-title">
-                           <a href="{{ route('front.media.index') }}">{{ trans('radiopages.Peredachi') }}</a>
-                           <span>{{ $project->getNameOne() }}</span>
+                           <a href="{{ route('dostuk.allnews') }}">{{ trans('radiopages.Peredachi') }}</a>
                         </h3>
                      </div>
                      <div class="panel-body">
@@ -175,7 +174,7 @@
                         </div>
                      </div>
                   </div>
-               </div>               
+               </div>
             </div>
          </div>
          <!--/.container-->

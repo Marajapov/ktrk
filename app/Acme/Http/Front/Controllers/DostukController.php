@@ -75,6 +75,7 @@ class DostukController extends Controller
         $perPage = 24;
 
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        $dostukProjects = \Model\Project\ModelName::where('published','=',true)->where('dostuk', '=', 1)->get();
 
         $postAll = \Model\Media\ModelName::where('published','=',true)->where('dostuk','=','1')->orderBy('id', 'desc')->paginate($perPage);        
 
@@ -87,7 +88,7 @@ class DostukController extends Controller
             'photoGalleries' => $photoGalleries,
             'postAll' => $postAll,
             'perPage' => $perPage,
-
+            'dostukProjects' => $dostukProjects,
             ]);
     }
 
