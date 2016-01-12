@@ -1767,12 +1767,8 @@ header {
     margin: 0;
     padding: 0;
     vertical-align: middle;
-}
-.panel-related-videos .block a {
-    display: block;
-    width: 100%;
-    margin: 0;
-    line-height: 1;
+
+
     color: #2D3E4A;
     font-size: 14px;
     font-weight: bold;
