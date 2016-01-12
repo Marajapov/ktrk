@@ -3,7 +3,6 @@
 
 @section('styles')
 <link rel="stylesheet" href="{{ asset('css/radios.css')}}">
-  {{--<link rel="stylesheet" type="text/css" href="{{ asset('/static/css/styles.css') }}">--}}
   <link rel="stylesheet" type="text/css" href="{{ asset('css/pages.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('css/lightslider.css') }}">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.2.6/css/lightgallery.min.css">
