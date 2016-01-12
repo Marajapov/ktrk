@@ -107,8 +107,7 @@
                   <div class="panel panel-show">
                      <div class="panel-heading">
                         <h3 class="panel-title">
-                           <a href="{{ route('front.media.index') }}">{{ trans('radiopages.Peredachi') }}</a><i class="fa fa-circle" style="padding: 0px 5px;font-size: 8px;vertical-align: middle;margin-top: -2px;"></i>
-                           <span>{{ $project->getNameOne() }}</span>
+                           <a href="{{ route('front.media.index') }}">{{ trans('radiopages.Peredachi') }}</a>
                         </h3>
                      </div>
                      <div class="panel-body">

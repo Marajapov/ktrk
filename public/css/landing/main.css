@@ -41,7 +41,7 @@ header {
   height: 50px;
 }
 .container>.navbar-collapse {
-  margin-right: -15px;
+  margin-right: -30px;
   margin-left: -15px;
 }
 .homepage .switch{
@@ -406,7 +406,7 @@ ul.nostyle i {
 }
 
 #cta img{
-  max-height: 104px;
+  max-height: 105px;
   width: auto;
   margin-top: -14px;
   margin-left: -3p
@@ -436,6 +436,8 @@ ul.nostyle i {
 #cta h2 {
   margin-top: 4px;
   margin-bottom: 4px;
+  font-weight: normal;
+  text-align: center;
 }
 #cta .btn {
   margin-top: 40px;
@@ -1146,16 +1148,16 @@ ul.nostyle i {
 .dropdown .dropdown-menu li:hover{
   background: #1A4063;
 }
-
 .dropdown .dropdown-menu li a:hover{
   border: none !important; 
 }
-
 #services .panel-body{
   padding: 0px 15px;
 }
 
 #services .panel-heading h3{
-    color: #04549C;
+  color: #04549C;
 }
-
+#services .ctg-panel .list-group{
+  margin-bottom: 10px; 
+}

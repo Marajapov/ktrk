@@ -98,10 +98,18 @@ class MuzkanalController extends Controller
     {
         $channel = \Model\Channel\ModelName::name('muzkanal')->first();
 
+        $anons1 = \Model\Media\ModelName:: where('muzkanal', '=', 1)->where('published','=',true)->where('muzkanalanons1', '=', 1)->first();
+        $anons2 = \Model\Media\ModelName:: where('muzkanal', '=', 1)->where('published','=',true)->where('muzkanalanons2', '=', 1)->first();
+        $anons3 = \Model\Media\ModelName:: where('muzkanal', '=', 1)->where('published','=',true)->where('muzkanalanons3', '=', 1)->first();
+      
+
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
         return view('Front::channel.muzkanal.about', [
             'channel' => $channel,
+            'anons1' => $anons1,
+            'anons2' => $anons2,
+            'anons3' => $anons3,
             'backgroundMain' => $backgroundMain,
             ]);
     }

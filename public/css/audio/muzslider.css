@@ -1306,8 +1306,9 @@ font-weight: bold;
     }
 }
 @media (min-width: 1200px) {
-    .dkp-big-3now {
+    .dkp-big-3now .modal-open .modal{
    /*     margin: 0 0 80px 0*/
+        z-index: 99999;
     }
     .dkp-big-3now .dkp-3now-item-wrapper {
         height: 100px

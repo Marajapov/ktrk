@@ -106,8 +106,8 @@
                <div class="top-left-block col-md-9">
                   <div>
                      <div class="panel-heading">
-                        <h3 class="panel-title">
-                           <a href="{{ route('front.media.index') }}">{{ $kyrgyzradioProject->getName() }}</a>
+                        <h3 class="panel-title">                        
+                           <a href="{{ route('kyrgyzradio.allnews') }}">{{ $kyrgyzradioProject->getName() }}</a>
                         </h3>
                      </div>
                      <div class="col-md-12">
