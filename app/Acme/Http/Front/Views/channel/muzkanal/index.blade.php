@@ -4,7 +4,6 @@
 <link rel="stylesheet" href="css/audio/muzslider.css">
 @endsection
 @section('content')
-
 <body class="music">
    <div class="switch">
       <nav class="navbar">
@@ -160,17 +159,15 @@
                      </div>
                   </div>
                </a>
-
             </div>
-            
-{{--        <div class="row dkp-slide slide-left">
+            {{--        
+            <div class="row dkp-slide slide-left">
                <a href="#">
                   <div class="col-sm-12 dkp-anonce dkp-anonce-big" style="background-image: url(images/channels/muzkanal/);">
                      <div class="dkp-anonce-time">
                         <span>21:30</span>
                      </div>
                      <div class="dkp-anonce-title">
-                        ...
                      </div>
                      <div class="dkp-anonce-when">
                         <span>
@@ -200,13 +197,12 @@
                      </div>
                   </div>
                </a>
-            </div> --}}
+            </div>
+            --}}
          </div>
       </div>
-
       <div class="row dkp-big-3now ">
-      
-      @if($anons1)
+         @if($anons1)
          <div class="col-xs-4 rowfix" >
             <a href="#" data-toggle="modal" data-target="#myModal" class="dkp-anonce dkp-anonce-small  dkp-border" style="background-image: url({{ $anons1->thumbnail_big }});" >
                <div class="dkp-3now-item-wrapper">
@@ -230,9 +226,9 @@
                      </div>
                      <div class="modal-body">
                         {{$anons1->getContent()}}
-                  <div class="embed-responsive embed-responsive-16by9 show-video">                    
-                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ $anons1->getUrl()}}"></iframe>
-                  </div>
+                        <div class="embed-responsive embed-responsive-16by9 show-video">                    
+                           <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ $anons1->getUrl()}}"></iframe>
+                        </div>
                      </div>
                      <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">{{ trans('radiopages.Close') }}</button> 
@@ -241,11 +237,8 @@
                </div>
             </div>
          </div>
-        @endif 
-
-
-      @if($anons2)
-
+         @endif 
+         @if($anons2)
          <div class="col-xs-4 rowfix" >
             <a href="#" data-toggle="modal" data-target="#myModal2" class="dkp-anonce dkp-anonce-small  dkp-border" style="background-image: url({{ $anons2->thumbnail_big }});" data-id="12269">
                <div class="dkp-3now-item-wrapper">
@@ -269,9 +262,9 @@
                      </div>
                      <div class="modal-body">
                         {{$anons2->getContent()}}
-                  <div class="embed-responsive embed-responsive-16by9 show-video">                    
-                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ $anons2->getUrl()}}"></iframe>
-                  </div>
+                        <div class="embed-responsive embed-responsive-16by9 show-video">                    
+                           <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ $anons2->getUrl()}}"></iframe>
+                        </div>
                      </div>
                      <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">{{ trans('radiopages.Close') }}</button> 
@@ -280,10 +273,8 @@
                </div>
             </div>
          </div>
-        @endif 
-
-      @if($anons3)
-
+         @endif 
+         @if($anons3)
          <div class="col-xs-4 rowfix" >
             <a href="#" data-toggle="modal" data-target="#myModal3" class="dkp-anonce dkp-anonce-small  dkp-border" style="background-image: url({{ $anons3->thumbnail_big }});" data-id="12269">
                <div class="dkp-3now-item-wrapper">
@@ -307,9 +298,9 @@
                      </div>
                      <div class="modal-body">
                         {{$anons3->getContent()}}
-                  <div class="embed-responsive embed-responsive-16by9 show-video">                    
-                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ $anons3->getUrl()}}"></iframe>
-                  </div>
+                        <div class="embed-responsive embed-responsive-16by9 show-video">                    
+                           <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ $anons3->getUrl()}}"></iframe>
+                        </div>
                      </div>
                      <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">{{ trans('radiopages.Close') }}</button> 
@@ -318,7 +309,7 @@
                </div>
             </div>
          </div>
-        @endif 
+         @endif 
       </div>
    </div>
    <div class="container">
@@ -341,51 +332,45 @@
                @else
                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/t8r7ifqRViY" frameborder="0" allowfullscreen></iframe>    
                @endif
-
             </div>
-         <div class="panel panel-default programtitle">
-            <div class="panel-heading">
-               <h3 class="panel-title"><span> - {{ trans('radiopages.KorsotuuList') }} - </span></h3>
-            </div>
-            @if($program)
-            <div class="centered">
-               <div id="nt-example1-container" >
-                  <i class="fa fa-arrow-up" id="nt-example1-prev"></i>
-                  <i class="fa fa-arrow-down" id="nt-example1-next" style="right:25px;"></i>
-                  <ul id="nt-example1" data-tabs="nt-example1">
-                     @foreach($program as $row)
+            <div class="panel panel-default programtitle">
+               <div class="panel-heading">
+                  <h3 class="panel-title"><span> - {{ trans('radiopages.KorsotuuList') }} - </span></h3>
+               </div>
+               @if($program)
+               <div class="centered">
+                  <div id="nt-example1-container" >
+                     <i class="fa fa-arrow-up" id="nt-example1-prev"></i>
+                     <i class="fa fa-arrow-down" id="nt-example1-next" style="right:25px;"></i>
+                     <ul id="nt-example1" data-tabs="nt-example1">
+                        @foreach($program as $row)
                         <li style="">
-
                            <span>{{ $row->time }}</span>
-
                            <h4>
-
                               <!-- @if((strtotime($row->time) <= strtotime($currentTime)) && (strtotime($currentTime) < strtotime($row->time)))
                                  @if($lc == 'kg')
                                     <section id="bcLive"></i>азыр эфирде</section>
                                  @elseif($lc == 'ru')
                                     <section id="bcLive"></i>сейчас в эфире</section>
                                  @endif
-                              @endif
-
-                              @if((strtotime($row->time) <= strtotime($currentTime)))
+                                 @endif
+                                 
+                                 @if((strtotime($row->time) <= strtotime($currentTime)))
                                  @if($lc == 'kg')
                                     <section id="bcLive"></i>азыр эфирде</section>
                                  @elseif($lc == 'ru')
                                     <section id="bcLive"></i>сейчас в эфире</section>
                                  @endif
-                              @endif -->
-
+                                 @endif -->
                               <p>{{ $row->name }}</p>
                            </h4>
-
                         </li>
-                     @endforeach                     
-                  </ul>
+                        @endforeach                     
+                     </ul>
+                  </div>
                </div>
+               @endif
             </div>
-            @endif
-         </div>
          </div>
       </div>
       <div class="row">
@@ -411,7 +396,7 @@
                                  </ul>
                               </div>
                               @if($pop1->exclusive == 1)
-                                 <div class="ishit">Экслюзив!</div>
+                              <div class="ishit">Экслюзив!</div>
                               @endif
                               <div class="views"><i class="fa fa-eye"></i>{{ $pop1->getViewed() }}</div>
                            </div>
@@ -431,7 +416,7 @@
                                  </ul>
                               </div>
                               @if($pop2->exclusive == 1)
-                                 <div class="ishit">Экслюзив!</div>
+                              <div class="ishit">Экслюзив!</div>
                               @endif
                               <div class="views"><i class="fa fa-eye"></i>{{ $pop2->getViewed() }}</div>
                            </div>
@@ -451,7 +436,7 @@
                                  </ul>
                               </div>
                               @if($pop3->exclusive == 1)
-                                 <div class="ishit">Экслюзив!</div>
+                              <div class="ishit">Экслюзив!</div>
                               @endif
                               <div class="views"><i class="fa fa-eye"></i>{{ $pop3->getViewed() }}</div>
                            </div>
@@ -475,24 +460,22 @@
                </div>
                <div class="panel-body">
                   <ul class="list-group" >
-                  @if($hitNumbers)
-                    @foreach($hitNumbers as $hit)
-                    <li class="list-group-item clearfix">
-                      <!--  <a href="#" class="pull-right"> <i class="glyphicon glyphicon-play"></i> </a> -->
-                       <a href="{{ route('muzkanal.video', $hit)}}" class="pull-left"> <img src="http://img.youtube.com/vi/{{ $hit->getUrl()}}/mqdefault.jpg" class="hitimg"> </a>
-                       <a class="clear" href="{{ route('muzkanal.video', $hit)}}">
-                          <span>{{ $hit->getName() }}</span>
-
-                       </a>
-                       <span class="numeric">{{ $hit->hitnumber }}</span>
-<!--                        <div class="vote">
-                          <div class="like" data-likes="10"><i class="fa fa-thumbs-up"></i></div>
-                       </div> -->
-                    </li>
-                    @endforeach
-                  @endif
-                 </ul>
-                  
+                     @if($hitNumbers)
+                     @foreach($hitNumbers as $hit)
+                     <li class="list-group-item clearfix">
+                        <!--  <a href="#" class="pull-right"> <i class="glyphicon glyphicon-play"></i> </a> -->
+                        <a href="{{ route('muzkanal.video', $hit)}}" class="pull-left"> <img src="http://img.youtube.com/vi/{{ $hit->getUrl()}}/mqdefault.jpg" class="hitimg"> </a>
+                        <a class="clear" href="{{ route('muzkanal.video', $hit)}}">
+                        <span>{{ $hit->getName() }}</span>
+                        </a>
+                        <span class="numeric">{{ $hit->hitnumber }}</span>
+                        <!--                        <div class="vote">
+                           <div class="like" data-likes="10"><i class="fa fa-thumbs-up"></i></div>
+                           </div> -->
+                     </li>
+                     @endforeach
+                     @endif
+                  </ul>
                </div>
             </div>
          </div>
@@ -520,7 +503,7 @@
                                  </ul>
                               </div>
                               @if($top1->exclusive == 1)
-                                 <div class="ishit">Экслюзив!</div>
+                              <div class="ishit">Экслюзив!</div>
                               @endif
                               <div class="views"><i class="fa fa-eye"></i>{{ $top1->getViewed() }}</div>
                            </div>
@@ -540,7 +523,7 @@
                                  </ul>
                               </div>
                               @if($top2->exclusive == 1)
-                                 <div class="ishit">Экслюзив!</div>
+                              <div class="ishit">Экслюзив!</div>
                               @endif
                               <div class="views"><i class="fa fa-eye"></i>{{ $top2->getViewed() }}</div>
                            </div>
@@ -583,17 +566,51 @@
       </div>
    </div>
    @stop
-
    @section('footerscript2') 
-
    <script src="js/audio/dkp.min.js"></script>
    <script type="text/javascript" src="js/jquery.roundabout.js"></script>
    <!-- Fixed Sticky header -->
+   <script>
+      $(function(){
+       var url = $('#myModal iframe').attr('src');
+       $('.modal').click(function() {
+           $('#myModal iframe').show();
+           $('#myModal iframe').attr('src', url);
+       });
+       $('button.close').click(function() {
+           $('#myModal').hide();
+           $('#myModal').attr('src', '');
+       });      
+      });
+      
+      $(function(){
+       var url = $('#myModal2 iframe').attr('src');
+       $('.modal').click(function() {
+           $('#myModal2 iframe').show();
+           $('#myModal2 iframe').attr('src', url);
+       });
+       $('button.close').click(function() {
+           $('#myModal2').hide();
+           $('#myModal2').attr('src', '');
+       });      
+      });
+      
+      $(function(){
+       var url = $('#myModal3 iframe').attr('src');
+       $('.modal').click(function() {
+           $('#myModal3 iframe').show();
+           $('#myModal3 iframe').attr('src', url);
+       });
+       $('button.close').click(function() {
+           $('#myModal3').hide();
+           $('#myModal3').attr('src', '');
+       });      
+      });
+   </script>
    <script type ="text/javascript" src ="js/script.js"></script>   
    <!-- Fixed Sticky header -->
    <!-- Programm title Anima -->
    <script src="js/audio/jquery.newsTicker.js"></script> 
-
    <script>
       var nt_title = $('#nt-title').newsTicker({
           row_height: 30,
@@ -614,7 +631,6 @@
       var add;
       
    </script>
-
    <script type="text/javascript">
       var playerInstance = jwplayer("player");
       
@@ -680,5 +696,4 @@
       }
       
    </script>
-
    @stop
