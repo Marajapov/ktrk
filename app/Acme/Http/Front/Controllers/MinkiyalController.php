@@ -10,16 +10,16 @@ class MinkiyalController extends Controller
 
     public function Home()
     {
-        // return view('Front::channel.minkiyal.comingsoon',[]);
+         return view('Front::channel.minkiyal.comingsoon',[]);
         
-        $channel = \Model\Channel\ModelName::name('minkiyal')->first();
+        // $channel = \Model\Channel\ModelName::name('minkiyal')->first();
 
-        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        // $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
-        return view('Front::channel.minkiyal.index', [
-            'channel' => $channel,
-            'backgroundMain' => $backgroundMain,
-            ]);
+        // return view('Front::channel.minkiyal.index', [
+        //     'channel' => $channel,
+        //     'backgroundMain' => $backgroundMain,
+        //     ]);
     }
 
     public function Posts()
