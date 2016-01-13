@@ -1,4 +1,4 @@
-@extends('Front::channel.muzkanal.default')
+@extends('Front::channel.kyrgyzradio.default')
 @section('title', $gallery->getName())
 @section('styles')
 <link rel="stylesheet" href="{{ asset('css/radios.css')}}">
@@ -59,9 +59,21 @@
                 </div>                
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li><a href="{{ route('dostuk.home') }}">{{ trans('radiopages.Home') }}</a></li>                       
-                        <li><a href="{{ route('dostuk.allphotos') }}">{{ trans('radiopages.Allphotos') }}</a></li>                       
-                        <li class="scroll"><a href="#portfolio">{{ trans('radiopages.Photos') }}</a></li>                       
+                       <li><a href="{{route('dostuk.home')}}">{{ trans('radiopages.Home') }}</a></li>
+                       <li class="dropdown">
+                          <a class="dropdown-toggle" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ trans('radiopages.Peredachi') }}<i class="fa fa-angle-down"></i></a>
+                          <ul class="dropdown-menu">
+                             @if($dostukProjects) 
+                             @foreach($dostukProjects as $dostukProject)
+                             <li>
+                                <a href="{{ route('dostuk.project', $dostukProject) }}">{{ $dostukProject->getName() }}</a>
+                             </li>
+                             @endforeach
+                             @endif
+                          </ul>
+                       </li>
+                       <li><a href="{{route('dostuk.allphotos')}}">{{ trans('radiopages.Photos') }}</a></li>
+                       <li><a href="{{route('dostuk.home')}}#about">{{ trans('radiopages.About') }}</a></li>
                     </ul>
                 </div>
             </div><!--/.container-->
@@ -71,15 +83,15 @@
    <div class="container" style="background: #fff;padding: 0px; margin: 20px auto;">
 
 
-    <section id="portfolio" style="padding:20px 0px;">
+    <section id="portfolio2 " style="padding:20px 0px;">
         <div class="container">
             <div class="section-header2" style="margin:0px">
-                <h2 class="section-title text-center wow fadeInDown">{{ $gallery->getName() }}</h2>
+                <h2 class="section-title2 text-center wow fadeInDown" style="margin:0px;">{{ $gallery->getName() }}</h2>
 
             </div>
 
                <div class="panel-body">
-                  <div class="row" style="margin: 20px;">
+                  <div class="row">
                    <p style="text-align:center;color: #272727;font-size: 18px;">{{ $gallery->getDescription() }}</p>
                      <ul id="imageGallery">
                      @foreach($images as $image)
@@ -98,18 +110,6 @@
    </div>
    @stop
    @section('footerscript2')
-   <script src="{{ asset('js/jquery-1.11.2.min.js') }}"></script>  
-
-<script src="{{ asset('js/landing/owl.carousel.min.js') }}"></script>
-<script src="{{ asset('js/landing/mousescroll.js') }}"></script>
-<script src="{{ asset('js/landing/smoothscroll.js') }}"></script>
-<script src="{{ asset('js/landing/jquery.prettyPhoto.js') }}"></script>
-<script src="{{ asset('js/landing/jquery.isotope.min.js') }}"></script>
-<script src="{{ asset('js/landing/jquery.inview.min.js') }}"></script>
-<script src="{{ asset('js/landing/wow.min.js') }}"></script>
-<script src="{{ asset('js/landing/main.js') }}"></script>
-<script src="{{ asset('js/landing/jquery.js') }}"></script>
-<script src="{{ asset('js/landing/fixed.js') }}"></script>
    <script src="{{ asset('js/jquery-migrate-1.2.1.min.js') }}"></script>
    <script src="{{ asset('slick/slick.min.js') }}"></script>
    <script src="{{ asset('js/lightslider.js') }}"></script>

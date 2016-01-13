@@ -2,6 +2,7 @@
 @section('title', $post->getTitleRuOrKg())
 @section('styles')
     <link rel="stylesheet" href="{{ asset('css/articles.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/sweetalert.css') }}">
 @endsection()
 @section('content')
     <div class="container main-wrapper">
@@ -88,7 +89,7 @@
                             </div>
                         </div>
 
-                        <div id="comments" class="panel panel-default panel-comments">
+                        <div id="comments" class="panel panel-default panel-comments hidden">
                             <div class="panel-heading">
                                 <h3 class="panel-title">
                                     {{ trans('site.Comments') }}
@@ -101,6 +102,7 @@
                                     @foreach($comments as $key=>$comment)
                                         <li class="comment">
                                             <article>
+
                                                 <footer class="comment-meta">
                                                     <div class="comment-author">
 								                    <span class="commentthumb">
@@ -117,9 +119,10 @@
                                                     {{ $comment->text }}
                                                 </div>
 
-                                                <div class="commentreply">
+                                                <div class="commentreply hidden">
                                                     <a class="comment-reply-link" href="#" aria-label="Reply to Author Name">Ответить</a>
                                                 </div>
+
                                             </article>
                                         </li>
                                     @endforeach
@@ -177,5 +180,16 @@
 @stop
 
 @section('footerScript')
+    {{-- Google reCaptcha --}}
     <script src='https://www.google.com/recaptcha/api.js'></script>
+
+    {{-- Sweet Alert --}}
+    <script src="{{ asset('js/sweetalert.min.js') }}"></script>
+    <script>
+        @if(session('success') == 'true')
+            swal("Спасибо!", "Ваш комментарий принят на модерацию!", "success");
+        @elseif(session('success') == 'false')
+            swal("", "Где то произошла ошибка!", "error");
+        @endif
+    </script>
 @endsection
