@@ -136,7 +136,7 @@
 
     <section id="cta2">
         <div class="container">
-            <div class="section-header2">
+            <div class="section-header3">
                 <h2 class="section-title text-center wow fadeInDown"></h2>
                 <h2 data-wow-duration="300ms" data-wow-delay="0ms"><span>{{ trans('radiopages.DostukSlogan') }}</span></h2>
                 <h2 class="section-title text-center wow fadeInDown"></h2>  
@@ -222,31 +222,26 @@
                 <h2 class="section-title text-center wow fadeInDown">{{ trans('radiopages.Photos') }}</h2>
             </div>
             <div class="panel-body">
-
-                <section>
+               <section>
                   @if($photoGalleries != null)
-                    @foreach($photoGalleries as $photoGallery)
-
-                      <div class="col-md-4">
-
-                        <div class="gallery-item">
-                          <a href="{{ route('dostuk.photos', $photoGallery) }}" class="thumb">
-                            <img src="{{ asset($photoGallery->status) }}" alt="..." class="img-thumbnail">
-                            <i class="fa fa-camera"></i>
-                          </a>
-                          <h2>
-                            <div class="extra">
+                  @foreach($photoGalleries as $photoGallery)
+                  <div class="col-md-4">
+                     <div class="gallery-item">
+                        <a href="{{ route('dostuk.photos', $photoGallery) }}" class="thumb">
+                           <img src="{{ asset($photoGallery->status) }}" alt="...">
+                           <i class="fa fa-camera"></i>
+                           <div class="extra" style="position: absolute; bottom: 0px; left: 10px;color: #fff;">
                               <span class="e-datetime">{{ $photoGallery->getDay() }} {{ $photoGallery->getMonthRu() }}, {{ $photoGallery->getTime() }}</span>
-                            </div>
-                            <a href="{{ route('dostuk.photos', $photoGallery) }}">{{ $photoGallery->getName() }}</a>
-                          </h2>
-                        </div>
-
-                      </div>
-                    @endforeach
+                           </div>
+                        </a>
+                        <h2>                           
+                           <a href="{{ route('dostuk.photos', $photoGallery) }}">{{ $photoGallery->getName() }}</a>
+                        </h2>
+                     </div>
+                  </div>
+                  @endforeach
                   @endif
-
-                </section>
+               </section>
               <footer>
               <a href="{{ route('dostuk.allphotos') }}">
                      <span>{{ trans('radiopages.Allphotos') }} <i class="fa fa-arrow-circle-right"></i></span>
@@ -293,15 +288,15 @@
     </section><!--/#about-->
         <section id="get-in-touch">
         <div class="container">
-            <div class="section-header2">            
+            <div class="section-header3">            
                 <h2 class="section-title text-center wow fadeInDown">{{ trans('radiopages.Address') }}</h2>
                 <p class="text-center wow fadeInDown">{{ trans('radiopages.AddressName') }}</p>
             </div>
-            <div class="section-header2">            
+            <div class="section-header3">            
                 <h2 class="section-title text-center wow fadeInDown">{{ trans('radiopages.Phone') }}</h2>
                 <p class="text-center wow fadeInDown">0312 65 67 04 <br> 0312 65 66 10</p>
             </div>
-            <div class="section-header2">            
+            <div class="section-header3">            
                 <h2 class="section-title text-center wow fadeInDown">{{ trans('radiopages.Volna') }}</h2>
             </div>            
         </div>
