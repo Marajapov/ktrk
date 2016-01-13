@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 
 use Model\Category\ModelName as Category;
+use PhpParser\Comment;
 
 class CategoryController extends Controller
 {
@@ -95,6 +96,7 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function destroy(Category $category)
     {
         $category->delete();

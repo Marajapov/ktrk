@@ -269,6 +269,9 @@ return [
     '' => '',
     '' => '',
 
+//    Comments
+    'AdminCommentChange' => 'Комментарийди өзгөртүү',
+
     //FRONT languages
 
     //Home page

@@ -67,4 +67,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'access:admin', 'namespace' =
     // Schedule
     Route::resource('schedule', 'ScheduleController');
     Route::get('schedule/channel/{channel}',['as'=>'admin.schedule.channel','uses'=>'ScheduleController@channel']);
+
+    //Comments
+    Route::resource('comment', 'CommentController');
+    Route::get('comment.approve', ['as' => 'admin.comment.approve', 'uses' => 'CommentController@approve']); // approve comment
+    Route::get('comment.deny', ['as' => 'admin.comment.deny', 'uses' => 'CommentController@deny']); // deny comment
 });
