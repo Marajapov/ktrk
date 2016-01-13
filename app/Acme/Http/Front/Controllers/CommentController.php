@@ -33,9 +33,14 @@ class CommentController extends Controller
         if(!$response)
         {
             Comment::create($request->except('g-recaptcha-response','q'));
+
+            return redirect()->route('front.post',$request->resourceId)->with('success','true');
+        }
+        else
+        {
+            return redirect()->route('front.post',$request->resourceId)->with('success','false');
         }
 
-        return redirect()->route('front.post',$request->resourceId);
     }
 
 }

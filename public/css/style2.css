@@ -543,6 +543,9 @@ header.top-menu,.logo-block{
 .peoplereporter .panel-heading2 a:hover{
     color: #ffffff;
 }
+.peoplereporter .panel-body{
+    padding-bottom: 10px;
+}
 
 /*VIDEOPORTAL*/
 .videoportal{
