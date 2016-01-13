@@ -101,6 +101,7 @@
                                     @foreach($comments as $key=>$comment)
                                         <li class="comment">
                                             <article>
+
                                                 <footer class="comment-meta">
                                                     <div class="comment-author">
 								                    <span class="commentthumb">
@@ -117,9 +118,10 @@
                                                     {{ $comment->text }}
                                                 </div>
 
-                                                <div class="commentreply">
+                                                <div class="commentreply hidden">
                                                     <a class="comment-reply-link" href="#" aria-label="Reply to Author Name">Ответить</a>
                                                 </div>
+
                                             </article>
                                         </li>
                                     @endforeach
