@@ -17,7 +17,8 @@ class CreateCommentsTable extends Migration
             $table->string('author');
             $table->string('email');
             $table->string('text');
-            $table->string('post');
+            $table->string('resourceType');
+            $table->string('resourceId');
             $table->string('replyTo');
             $table->integer('approved');
             $table->string('like');

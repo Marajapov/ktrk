@@ -271,6 +271,9 @@ return [
     '' => '',
     '' => '',
 
+    //    Comments
+    'AdminCommentChange' => 'Изменить комментарий',
+
     //FRONT language
 
     //Home page

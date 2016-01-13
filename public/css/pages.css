@@ -1263,6 +1263,17 @@
     line-height: 1.5;
 }
 
+.commentreply a {
+    position: absolute;
+    right: 12px;
+    bottom: 3px;
+    display: block;
+    text-transform: uppercase;
+    white-space: nowrap;
+    font-size: 12px;
+    font-weight: 600;
+}
+
 /*COMMENT FORM*/
 .comment-block {
     clear: both;

@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Input;
 use Intervention\Image\ImageManagerStatic as Image;
 use Illuminate\Support\Facades\Validator;
+use \Model\Comment\ModelName as Comment;
 
 class HomeController extends Controller
 {
@@ -313,6 +314,8 @@ class HomeController extends Controller
                 }
             }
         }
+
+        $comments = Comment::where('resourceType','=','post')->where('resourceId','=',$post->id)->where('approved','=','1')->orderBy('id','desc')->get();
         
 
         return view('Front::post.post',[
@@ -322,6 +325,7 @@ class HomeController extends Controller
 
             'images' => $images,
             'content' => $contentFinal,
+            'comments' => $comments,
 
             'categories'=>$categories,
             'backgroundMain' => $backgroundMain,

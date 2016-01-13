@@ -109,6 +109,10 @@
                                                     New year first article is really great !!</p>
                                                 <p>Thanks you :)</p>
                                             </div>
+
+                                            <div class="commentreply">
+                                                <a class="comment-reply-link" href="#" aria-label="Reply to Author Name">Ответить</a>
+                                            </div>
                                         </article>
                                     </li>
                                     <li class="comment">
@@ -130,6 +134,10 @@
                                                     New year first article is really great !!</p>
                                                 <p>Thanks you :)</p>
                                             </div>
+
+                                            <div class="commentreply">
+                                                <a class="comment-reply-link" href="#" aria-label="Reply to Author Name">Ответить</a>
+                                            </div>
                                         </article>
                                     </li>
                                 </ul>
@@ -144,7 +152,7 @@
 
                                 <div class="comment-block">
                                     <div id="respond" class="comment-respond">
-                                        <form action="{{ asset('captcha.php') }}" method="post" id="commentform" class="comment-form">
+                                        {!! Form::open(array('route' => 'front.comment', 'method' => 'post', 'id'=>'commentform', 'enctype' => 'multipart/form-data', 'class'=>'comment-form')) !!}
                                             <p class="comment-form-author">
                                                 <label for="author">Имя <span class="required">*</span></label>
                                                 <input id="author" name="author" type="text" value="" size="30" aria-required="true" required="required">
@@ -162,11 +170,9 @@
                                                 <div class="g-recaptcha" data-sitekey="6LcBGBUTAAAAAIuKMiXH16edZGH4hRR58GJgqeDq"></div>
                                             </div>
                                             <p class="form-submit">
-                                                <input name="submit" type="submit" id="submit" class="submit" value="Отправить">
-                                                <input type="hidden" name="comment_post_ID" value="25842" id="comment_post_ID">
-                                                <input type="hidden" name="comment_parent" id="comment_parent" value="0">
+                                                <button type="submit" id="submit" class="submit">Отправить</button>
                                             </p>
-                                        </form>
+                                        {!! Form::close() !!}
                                     </div><!-- #respond -->
                                     <div class="clr"></div>
                                 </div>
