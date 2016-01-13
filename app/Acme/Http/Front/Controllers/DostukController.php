@@ -157,11 +157,13 @@ class DostukController extends Controller
         $images = json_decode($gallery->images);
 
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        $dostukProjects = \Model\Project\ModelName::where('published','=',true)->where('dostuk', '=', 1)->get();
 
         return view('Front::channel.dostuk.photos',[
             'images' => $images,
             'backgroundMain' => $backgroundMain,
             'gallery' => $gallery,
+            'dostukProjects' => $dostukProjects,
             ]);
     }
 

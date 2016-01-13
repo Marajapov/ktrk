@@ -160,10 +160,13 @@ class KyrgyzradioController extends Controller
 
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
+        $kyrgyzradioProjects = \Model\Project\ModelName::where('published','=',true)->where('kyrgyzradio', '=', 1)->get();
+
         return view('Front::channel.kyrgyzradio.photos',[
             'images' => $images,
             'backgroundMain' => $backgroundMain,
             'gallery' => $gallery,
+            'kyrgyzradioProjects' => $kyrgyzradioProjects,
             ]);
     }
 

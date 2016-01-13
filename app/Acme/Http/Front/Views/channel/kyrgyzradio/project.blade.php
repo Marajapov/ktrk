@@ -107,7 +107,7 @@
                   <div class="panel panel-show">
                      <div class="panel-heading">
                         <h3 class="panel-title">
-                           <a href="{{ route('front.media.index') }}">{{ trans('radiopages.Peredachi') }}</a>
+                           <a href="{{ route('kyrgyzradio.allnews') }}">{{ trans('radiopages.Peredachi') }}</a>
                         </h3>
                      </div>
                      <div class="panel-body">
@@ -138,7 +138,7 @@
                      </div>
                      <div class="panel-body">
                         @if($relatedNews)
-                        @foreach($project->program()->get() as $post)
+                        @foreach($project->kgprogram()->get() as $post)
                         <div class="media">
                            <div class="media-left">
                               <a href="{{ route('kyrgyzradio.news', $post) }}">
