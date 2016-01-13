@@ -157,11 +157,11 @@
                   <div class="col-md-3 col-sm-4 col-xs-6 onepadding">
                      <div class="featured_element">
                         <div class="featured_item">
-                           <img src="{{ asset($photoGallery->thumbnail_big) }}">
-                           <div class="extra">                                              
-                              <span class="e-datetime"><i class="fa  fa-calendar"></i>  {{ $photoGallery->getDay() }} {{ $photoGallery->getMonthRu() }}, {{ $photoGallery->getTime() }}</span>
-                           </div>
+                           <img src="{{ asset($photoGallery->thumbnail_big) }}">                           
                            <i class="fa fa-camera"></i>
+                           <div class="extra" style="position: absolute; bottom: 0px; left: 10px;color: #fff;">
+                              <span class="e-datetime">{{ $photoGallery->getDay() }} {{ $photoGallery->getMonthRu() }}, {{ $photoGallery->getTime() }}</span>
+                           </div>
                         </div>
                         <a href="{{ route('muzkanal.photos', $photoGallery) }}" class="f_overlay"></a>
                         

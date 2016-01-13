@@ -169,7 +169,7 @@ class PhotoParentController extends Controller
                 $destinationPath = 'froala/uploads';
                 $storage->makeDirectory($destinationPath);
                 $filename = time().$key.'.'.$file->getClientOriginalExtension();
-                $name2 = $photoParent->id().$btw.'_big.'.$file->getClientOriginalExtension();
+//                $name2 = $photoParent->id().$btw.'_big.'.$file->getClientOriginalExtension();
 
 //                $upload_success = $file->move($destinationPath, $filename);
 

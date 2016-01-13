@@ -130,6 +130,7 @@ header {
   position: relative;
   padding-bottom: 20px;
   margin: 0 0 20px;
+  font-family: 'Roboto condensed'
 }
 .section-header .section-title:before {
   content: "";
@@ -153,6 +154,40 @@ header {
   border: 5px solid #fff;
   border-radius: 20px;
   background: #FF5722;
+}
+
+.section-header2 {
+  margin-bottom: 50px;
+}
+.section-header2 .section-title, .section-header2 .section-title2 {
+  font-size: 44px;
+  color: #015198;
+  text-transform: initial;
+  position: relative;
+  padding-bottom: 20px;
+  margin: 0 0 20px;
+  font-family: 'Roboto condensed';
+}
+.section-header2 .section-title:before, .section-header2 .section-title2:before {
+  content: "";
+  position: absolute;
+  width: 640px;
+  bottom: 0;
+  height: 2px;
+  background: #015198;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.section-header2 .section-title:after, .section-header2 .section-title2:after {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  bottom: -11px;
+  left: 50%;
+  margin-left: -12px;
+  border-radius: 20px;
 }
 .btn {
   border-width: 0;
@@ -242,6 +277,7 @@ ul.nostyle i {
 .navbar.navbar-default .navbar-brand {
   height: auto;
   padding: 0px !important;
+  font-family: 'Roboto condensed';
 }
 .navbar-brand>img {
   display: block;
@@ -249,6 +285,7 @@ ul.nostyle i {
   width: auto;
   float: left;
   margin-top: 5px;
+  margin-right: 10px;
 }
 .navbar-brand {
   color: #005197 !important;
@@ -267,8 +304,8 @@ ul.nostyle i {
   #main-menu.navbar-default .navbar-nav > li > a {
     padding-top: 20px;
     padding-bottom: 20px;
-    font-size: 19px;
     color: #005197;
+    font-family: 'Roboto condensed';
   }
 
 @media (max-width:1170px) {
@@ -458,12 +495,14 @@ ul.nostyle i {
   margin-bottom: -5px;
 }
 #cta2 p{
-  font-size: 18px;
+  font-size: 22px;
+  font-family: 'Roboto condensed'
 }
 #cta2 h2 {
   color: #fff;
   font-size: 44px;
   line-height: 1;
+  font-family: 'Roboto condensed';
 }
 #cta2 h2 > span {
   color: #45aed6;

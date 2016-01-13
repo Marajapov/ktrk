@@ -207,6 +207,9 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
 //    AJAX CALL
     Route::get('/ajax_program', 'PageController@AjaxProgram');
 
+//    COMMENTS
+    Route::post('/comment', ['as'=>'front.comment', 'uses'=> 'CommentController@store']);
+
 Route::get('locale/{locale?}',   ['as' => 'locale',   'uses' => 'CommonController@setLocale']);
 
 });

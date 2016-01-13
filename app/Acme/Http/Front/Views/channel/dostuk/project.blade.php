@@ -1,4 +1,4 @@
-@extends('Front::channel.muzkanal.default')
+@extends('Front::channel.kyrgyzradio.default')
 @section('title', $project->getNameOne())
 @section('styles')
 <link rel="stylesheet" href="{{ asset('css/radios.css')}}">
@@ -81,9 +81,23 @@
                <div class="onetime"><a href=""><button class="btn"><i class="fa fa-microphone"></i><span>{{ trans('radiopages.Live') }}</span></button></a></div>
             </div>
             <div class="collapse navbar-collapse navbar-right">
-               <ul class="nav navbar-nav">
-                  <li><a href="{{ route('dostuk.home') }}">{{ trans('radiopages.Home') }}</a></li> 
-               </ul>
+              <ul class="nav navbar-nav">
+                 <li><a href="{{route('dostuk.home')}}">{{ trans('radiopages.Home') }}</a></li>
+                 <li class="dropdown">
+                    <a class="dropdown-toggle" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ trans('radiopages.Peredachi') }}<i class="fa fa-angle-down"></i></a>
+                    <ul class="dropdown-menu">
+                       @if($dostukProjects) 
+                       @foreach($dostukProjects as $dostukProject)
+                       <li>
+                          <a href="{{ route('dostuk.project', $dostukProject) }}">{{ $dostukProject->getName() }}</a>
+                       </li>
+                       @endforeach
+                       @endif
+                    </ul>
+                 </li>
+                 <li><a href="{{route('dostuk.allphotos')}}">{{ trans('radiopages.Photos') }}</a></li>
+                 <li><a href="{{route('dostuk.home')}}#about">{{ trans('radiopages.About') }}</a></li>
+              </ul>
             </div>
          </div>
          <!--/.container-->
@@ -180,48 +194,4 @@
          <!--/.container-->
       </section>
    </div>
-   @stop
-   @section('footerscript2')
-   <script src="{{ asset('js/jquery-1.11.2.min.js') }}"></script>  
-   <script src="{{ asset('js/landing/owl.carousel.min.js') }}"></script>
-   <script src="{{ asset('js/landing/mousescroll.js') }}"></script>
-   <script src="{{ asset('js/landing/smoothscroll.js') }}"></script>
-   <script src="{{ asset('js/landing/jquery.prettyPhoto.js') }}"></script>
-   <script src="{{ asset('js/landing/jquery.isotope.min.js') }}"></script>
-   <script src="{{ asset('js/landing/jquery.inview.min.js') }}"></script>
-   <script src="{{ asset('js/landing/wow.min.js') }}"></script>
-   <script src="{{ asset('js/landing/main.js') }}"></script>
-   <script src="{{ asset('js/landing/jquery.js') }}"></script>
-   <script src="{{ asset('js/landing/fixed.js') }}"></script>
-   <script src="{{ asset('js/jquery-migrate-1.2.1.min.js') }}"></script>
-   <script src="{{ asset('slick/slick.min.js') }}"></script>
-   <script src="{{ asset('js/lightslider.js') }}"></script>
-   <script src="{{ asset('js/lightgallery/picturefill.min.js') }}"></script>
-   <script src="{{ asset('js/lightgallery/lightgallery.js') }}"></script>
-   <script src="{{ asset('js/lightgallery/lg-fullscreen.js') }}"></script>
-   <script src="{{ asset('js/lightgallery/lg-thumbnail.js') }}"></script>
-   <script src="{{ asset('js/lightgallery/lg-video.js') }}"></script>
-   <script src="{{ asset('js/lightgallery/lg-autoplay.js') }}"></script>
-   <script src="{{ asset('js/lightgallery/lg-zoom.js') }}"></script>
-   <script src="{{ asset('js/lightgallery/lg-hash.js') }}"></script>
-   <script src="{{ asset('js/lightgallery/lg-pager.js') }}"></script>
-   <script src="{{ asset('jslightgallery/jquery.mousewheel.min.js') }}"></script>
-   <script type="text/javascript">
-      $(document).ready(function() {
-      $('#imageGallery').lightSlider({
-        gallery:true,
-        item:1 ,
-        loop:true,
-        thumbItem:8,
-        slideMargin:0,
-        enableDrag: true,
-        currentPagerPosition:'right',
-        onSliderLoad: function(el) {
-            el.lightGallery({
-                selector: '#imageGallery .lslide'
-            });
-        }   
-      });  
-      });
-   </script>
    @stop

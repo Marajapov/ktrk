@@ -46,6 +46,7 @@ class RouteServiceProvider extends ServiceProvider
         $router->model('photoChild', \Model\PhotoChild\ModelName::class);
         
         $router->model('background', \Model\Background\ModelName::class);
+        $router->model('comment', \Model\Comment\ModelName::class);
 
         $this->app['view']->addNamespace('Front', app_path().'/Acme/Http/Front/Views/');
         $this->app['view']->addNamespace('Admin', app_path().'/Acme/Http/Admin/Views/');
