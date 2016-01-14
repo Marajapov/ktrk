@@ -398,6 +398,7 @@
                             </div>
                             <div class="panel-body">
                                 <ul class="list-group">
+
                                     @foreach($latestPosts as $post)
                                         <li class="list-group-item news-item">
                                             <div class="news-body clearfix">
@@ -420,7 +421,7 @@
                                             <div class="clearfix"></div>
                                         </li>
                                     @endforeach
-
+                                
                                 </ul>
 
                                 <footer>
