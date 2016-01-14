@@ -446,7 +446,7 @@ h3#reply-title {
     display: inline-block;
     vertical-align: middle;
     float: none;
-    width: 15%;
+    width: 20%;
     line-height: 36px;
     text-align: right;
 }
@@ -454,7 +454,7 @@ h3#reply-title {
     text-align: left;
 }
 .pluso{
-    width: 69%;
+    width: 59%;
     display: inline-block;
     vertical-align: middle;
 }
