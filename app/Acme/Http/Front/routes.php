@@ -220,7 +220,8 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
         );
 
         Mail::send('Front::message', $data, function($message) {
-            $message->to('kendirbaev.aibek@gmail.com', 'Codelution Staff')->subject('Laravel 4 GMail App!');
+            $message->to('kendirbaev.aibek@gmail.com', 'Aibek Kendirbaev')->subject('Ошибка в тексте');
+            $message->from('kendirbaev11@yandex.ru', 'Aibek Kendirbaev');
         });
 
     });
