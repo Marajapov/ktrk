@@ -2,6 +2,8 @@
 namespace Front\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Mail as Mail;
 use \Model\Comment\ModelName as Comment;
 
 class CommentController extends Controller
@@ -45,7 +47,30 @@ class CommentController extends Controller
 
     public function orphus(Request $request)
     {
-        dd($request);
+//        dd(Input::get('message'));
+        $text = Input::get('message');
+
+        $part1 = preg_split('/[\r\n****]+/', $text, -1, PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE);
+        $part2 = preg_split('/[\r\n####]+/', $part1[1], -1, PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE);
+        $mistake = $part2[0];
+//        dd($mistake);
+
+        Mail::send('Front::message',
+            array(
+                'url' => Input::get('url'),
+                'part1' => $part1[0],
+                'part2' => $part2[1],
+                'mistake' => $mistake,
+
+            ),
+            function($message)
+            {
+                $message->to('kendirbaev.aibek@gmail.com', 'Aibek Kendirbaev')->subject('Ошибка в материале '.Input::get('url'));
+                $message->from('ktrkkg@yandex.ru', 'KTRK.KG - Общественная Телерадиовещательная корпорация Кыргызской Республики');
+            }
+        );
+
+        return redirect()->route('front.post',$request->postId)->with('send','true');
     }
 
 }

@@ -117,10 +117,10 @@
     margin-right: 5px;
 }
 .panel-article .panel-body{
-    padding: 15px;
+    padding: 15px 15px 10px;
 }
 .panel-article .panel-body footer{
-    padding: 15px 0 5px;
+    padding: 10px 0 5px;
 
     border-top: 3px solid #F1F4F9;
 }
@@ -400,6 +400,8 @@ h3#reply-title {
 }
 .orphus form {
     margin: 15px;
+    margin-bottom: 0;
+    padding-bottom: 15px;
 }
 .orphus form input[type="text"] {
     width: 100%;
@@ -424,4 +426,41 @@ h3#reply-title {
 }
 .orphus .buttons .cancel {
     display: none;
+}
+
+.orphus-mistake h4{
+    margin: 0;
+    padding: 10px 0 20px;
+    color: #c42026;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+}
+.orphus-mistake h4 i {
+    padding-right: 5px;
+}
+
+
+/*SHARE LINKS*/
+.with-share a{
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+    width: 20%;
+    line-height: 36px;
+    text-align: right;
+}
+.with-share .post-edit{
+    text-align: left;
+}
+.pluso{
+    width: 59%;
+    display: inline-block;
+    vertical-align: middle;
+}
+.pluso>div{
+    text-align: center;
+}
+.pluso-more{
+    display: none !important;
 }

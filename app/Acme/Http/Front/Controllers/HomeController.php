@@ -68,6 +68,7 @@ class HomeController extends Controller
             $projects = \Model\Project\ModelName::having('name','<>','')->get();
             $directorPosts = \Model\Post\ModelName::where('director','=','1')->orderBy('id','desc')->take(3)->languagekg()->get();
             $reporterPosts = \Model\Post\ModelName::where('reporter','=','1')->orderBy('id','desc')->take(15)->languagekg()->get();
+            
         }elseif($lc == 'ru'){
             $generalPost1 = \Model\Post\ModelName::general($channel)->published()->having('number','=',1)->languageru()->first();
             if($generalPost1 == null){
@@ -105,9 +106,9 @@ class HomeController extends Controller
         }
 
         if($lc == 'kg'){
-            $latestPosts = \Model\Post\ModelName::general($channel)->published()->where('number','=','99')->where('general','=','1')->languagekg()->take(6)->skip(0)->orderBy('id','desc')->get();    
+            $latestPosts = \Model\Post\ModelName::general($channel)->published()->having('number','=','99')->where('general','=','1')->languagekg()->take(6)->skip(0)->orderBy('created_at','desc')->get();    
         }elseif($lc == 'ru'){
-            $latestPosts = \Model\Post\ModelName::general($channel)->published()->where('number','=','99')->where('general','=','1')->languageru()->take(6)->skip(0)->orderBy('id','desc')->get();    
+            $latestPosts = \Model\Post\ModelName::general($channel)->published()->having('number','=','99')->where('general','=','1')->languageru()->take(6)->skip(0)->orderBy('created_at','desc')->get();    
         }
 
         $dayVideo1 = \Model\Media\ModelName::where('dayVideo','=','1')->first();
@@ -319,6 +320,7 @@ class HomeController extends Controller
         
 
         return view('Front::post.post',[
+            'lc' => $lc,
             'post' => $post,
 
             'relatedPosts' => $relatedPosts,

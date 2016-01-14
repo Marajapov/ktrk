@@ -43,18 +43,6 @@
                     <span class="show-time">22:00</span>
                 </div>
             </div>
-
-            <div>
-                <div class="overlay"></div>
-                <a href="#">
-                    <img src="{{ asset('images/projects/oi-ordo.jpg') }}" alt=""/>
-                </a>
-                <div class="show-info">
-                    <h4>Ой-Ордо</h4>
-                    <span class="show-day">{{ trans('site.Tuesday') }}, {{ trans('site.Wednesday') }}, {{ trans('site.Thursday') }}</span>
-                    <span class="show-time">20:10</span>
-                </div>
-            </div>
         </div>
     </div>
 
@@ -106,7 +94,7 @@
                                                                     <a href="{{ route('front.media.video', $mediaLastVideo) }}">
                                                                         <span class="media-view"><i class="fa fa-eye"></i>{{ $mediaLastVideo->getViewed() }}</span>
                                                                         <span class="media-date">{{ $mediaLastVideo->getTime() }}, {{ $mediaLastVideo->getDay() }} {{ $mediaLastVideo->getMonthRu() }}</span>
-                                                                        <img src="http://img.youtube.com/vi/{{ $mediaLastVideo->getUrl() }}/mqdefault.jpg" alt=""/>
+                                                                        <img src="@if($mediaLastVideo->thumbnail_big) {{ $mediaLastVideo->thumbnail_big}} @else http://img.youtube.com/vi/{{ $mediaLastVideo->getUrl() }}/mqdefault.jpg @endif" alt=""/>
                                                                     </a>
                                                                     @if($mediaLastVideo->program)
                                                                         <h4>

@@ -343,6 +343,7 @@ class PostController extends Controller
         $row = \Model\Post\ModelName::where('id','=',$postId)->first();
         $title = $row->title;
         $titleRu = $row->titleRu;
+        
         if($title != ''){
             $allPostKg = \Model\Post\ModelName::where('title','<>','')->where('number','=',$number)->get();
             if($allPostKg != null){
@@ -352,7 +353,7 @@ class PostController extends Controller
                 }
             }
 
-        }else{
+        }elseif($titleRu != ''){
             $allPostRu = \Model\Post\ModelName::where('titleRu','<>','')->where('number','=',$number)->get();
             if($allPostRu != null){
                 foreach($allPostRu as $post){
@@ -362,6 +363,15 @@ class PostController extends Controller
                 
             }
             
+        }else{
+            $allPostRu = \Model\Post\ModelName::where('titleRu','<>','')->where('number','=',$number)->get();
+            if($allPostRu != null){
+                foreach($allPostRu as $post){
+                    $post->number = '99';
+                    $post->save();    
+                }
+                
+            }
         }
 
         $row->number = $number;

@@ -288,6 +288,8 @@
                                             @endforeach
                                         @endif
 
+                                       
+
                                     </div>
                                 </div>
 
@@ -383,7 +385,7 @@
                             </div>
                         </div>
 
-                        <a href="#" class="text-center ads ads-300x250 middle-ad">
+                        <a target="_blank" href="@if($positionRight) {{ $positionRight->linkTo }} @else # @endif" class="text-center ads ads-300x250 middle-ad">
                             <img src="@if(!empty($positionRight->file)) {{ asset($positionRight->file) }} @else {{ asset('images/banner_300x250.png') }} @endif" alt="phot1"/>
                         </a>
 
@@ -396,28 +398,31 @@
                             </div>
                             <div class="panel-body">
                                 <ul class="list-group">
-                                    @foreach($latestPosts as $post)
-                                        <li class="list-group-item news-item">
-                                            <div class="news-body clearfix">
-                                                <a href="{{ route('front.post', $post) }}">
-                                                    <p class="news-title">{{ $post->getTitleRuOrKg() }}</p>
-                                                    <span class="ctg"><img src="@if($post->channel_id){{ $post->isChannelIcon($post->channel_id)}}@else {{ asset('images/logo_notext.png') }} @endif" alt=""/></span>
-                                                </a>
-                                            </div>
-                                            <div class="news-adds clearfix">
-                                                <a href="{{ route('front.category', $post->category) }}" class="">{{ $post->category('category_id')->first()->getTitle() }}</a>
+                                    @if($latestPosts)
+                                        @foreach($latestPosts as $post)
+                                            <li class="list-group-item news-item">
+                                                <div class="news-body clearfix">
+                                                    <a href="{{ route('front.post', $post) }}">
+                                                        <p class="news-title">{{ $post->getTitleRuOrKg() }}</p>
+                                                        <span class="ctg"><img src="@if($post->channel_id){{ $post->isChannelIcon($post->channel_id)}}@else {{ asset('images/logo_notext.png') }} @endif" alt=""/></span>
+                                                    </a>
+                                                </div>
+                                                <div class="news-adds clearfix">
+                                                    <a href="{{ route('front.category', $post->category) }}" class="">{{ $post->category('category_id')->first()->getTitle() }}</a>
 
-                            <span class="news-file">
-                              @if($post->getIsVideo() == 'yes')<i class="fa fa-play-circle-o"></i> @endif
-                                @if($post->getIsPhoto() == 'yes')<i class="fa fa-picture-o"></i> @endif
-                            </span>
-                                                <span class="news-time pull-right"> {{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
-                                                <span class="news-timer pull-right"><i class="fa fa-eye"></i>&nbsp;{{ $post->getViewed() }}</span>
+                                                <span class="news-file">
+                                                  @if($post->getIsVideo() == 'yes')<i class="fa fa-play-circle-o"></i> @endif
+                                                    @if($post->getIsPhoto() == 'yes')<i class="fa fa-picture-o"></i> @endif
+                                                </span>
+                                                    <span class="news-time pull-right"> {{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
+                                                    <span class="news-timer pull-right"><i class="fa fa-eye"></i>&nbsp;{{ $post->getViewed() }}</span>
 
-                                            </div>
-                                            <div class="clearfix"></div>
-                                        </li>
-                                    @endforeach
+
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </li>
+                                        @endforeach
+                                    @endif
 
                                 </ul>
 
@@ -500,7 +505,7 @@
                                             <div class="portfolio-wrapper">
                                                 <div class="media-image">
                                                     <a href="{{ route('front.media.video', $media) }}">
-                                                        <img src="http://img.youtube.com/vi/{{ $media->getUrl()}}/mqdefault.jpg" alt="" />
+                                                        <img src="@if($media->thumbnail_big) {{ $media->thumbnail_big}} @else http://img.youtube.com/vi/{{ $media->getUrl() }}/mqdefault.jpg @endif" alt="" />
                                                         <i class="fa fa-youtube-play"></i>
                                                     </a>
                                                     @if(($media->getProgramName()))
