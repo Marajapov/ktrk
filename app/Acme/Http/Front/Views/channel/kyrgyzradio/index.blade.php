@@ -78,7 +78,7 @@
                <ul class="nav navbar-nav">
                   <li class="scroll active"><a href="#home">Башкы</a></li>
                   <li class="scroll dropdown">
-                     <a href="#services" class="dropdown-toggle" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ trans('radiopages.Peredachi') }}<i class="fa fa-angle-down"></i></a>
+                     <a href="#services" class="dropdown-toggle" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Уктуруулар<i class="fa fa-angle-down"></i></a>
                      <ul class="dropdown-menu">
                         @if($kyrgyzradioProjects) 
                         @foreach($kyrgyzradioProjects as $kyrgyzradioProject)
@@ -209,7 +209,7 @@
                                     <a href="#{{ $project->id}}" role="tab" data-toggle="tab" aria-controls="{{ $project->id}}" aria-expanded="true">{{ $project->getName() }}</a>
                                  </li>
                                  <li role="presentation">
-                                    <a href="#{{ $key+99 }}" role="tab" data-toggle="tab" aria-controls="{{ $key+99 }}" aria-expanded="false">{{ trans('radiopages.OPeredachi') }}</a>
+                                    <a href="#{{ $key+99 }}" role="tab" data-toggle="tab" aria-controls="{{ $key+99 }}" aria-expanded="false">Уктуруу жөнүндө</a>
                                  </li>
                               </ul>
                               <div id="tab-content" class="tab-content">
@@ -292,7 +292,7 @@
       <section id="portfolio">
          <div class="container">
             <div class="section-header2">
-               <h2 class="section-title text-center wow fadeInDown">{{ trans('radiopages.Photos') }}</h2>
+               <h2 class="section-title text-center wow fadeInDown">Сүрөттөр</h2>
             </div>
             <div class="panel-body">
                <section>
@@ -317,7 +317,7 @@
                </section>
                <footer>
                   <a href="{{ route('kyrgyzradio.allphotos') }}">
-                  <span>{{ trans('radiopages.Allphotos') }} <i class="fa fa-arrow-circle-right"></i></span>
+                  <span>Баардык сүрөттөр <i class="fa fa-arrow-circle-right"></i></span>
                   </a>
                </footer>
             </div>

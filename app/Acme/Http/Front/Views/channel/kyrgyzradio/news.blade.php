@@ -78,7 +78,7 @@
                <ul class="nav navbar-nav">
                   <li class=""><a href="{{route('kyrgyzradio.home')}}">Башкы</a></li>
                   <li class="active dropdown">
-                     <a class="dropdown-toggle" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ trans('radiopages.Peredachi') }}<i class="fa fa-angle-down"></i></a>
+                     <a class="dropdown-toggle" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Уктуруулар<i class="fa fa-angle-down"></i></a>
                      <ul class="dropdown-menu">
                         @if($kyrgyzradioProjects) 
                         @foreach($kyrgyzradioProjects as $kyrgyzradioProject)
@@ -131,14 +131,14 @@
                         </article>
                      </div>
                      <footer>
-                        <a class="pull-right" href="{{ route('kyrgyzradio.allnews') }}">{{ trans('radiopages.Morenews') }}</a>
+                        <a class="pull-right" href="{{ route('kyrgyzradio.allnews') }}">Башка жаңылыктар</a>
                      </footer>
                   </div>
                </div>
                <div class="top-right-block col-md-3">
                   <div class="panel ctg-panel media-ctg-panel">
                      <div class="panel-heading">
-                        <h3 class="panel-title"><span>{{ trans('radiopages.Peredachi') }}</span></h3>
+                        <h3 class="panel-title"><span>Уктуруулар</span></h3>
                      </div>
                      <div class="panel-body">
                         <div class="col-md-12">

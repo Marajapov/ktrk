@@ -1,5 +1,5 @@
 @extends('Front::channel.kyrgyzradio.default')
-@section('title', trans('radiopages.Allphotos'))
+@section('title', 'Баардык сүрөттөр')
 @section('styles')
 <link rel="stylesheet" href="{{ asset('css/radios.css')}}">
 <link rel="stylesheet" href="{{ asset('css/landing/main.css')}}">
@@ -80,7 +80,7 @@
                <ul class="nav navbar-nav">
                   <li class=""><a href="{{route('kyrgyzradio.home')}}">Башкы</a></li>
                   <li class="dropdown">
-                     <a class="dropdown-toggle" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ trans('radiopages.Peredachi') }}<i class="fa fa-angle-down"></i></a>
+                     <a class="dropdown-toggle" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Уктуруулар<i class="fa fa-angle-down"></i></a>
                      <ul class="dropdown-menu">
                         @if($kyrgyzradioProjects) 
                         @foreach($kyrgyzradioProjects as $kyrgyzradioProject)
@@ -105,7 +105,7 @@
       <section id="portfolio" style="padding:20px 0px;background:#fff;" >
          <div class="container">
             <div class="section-header2">
-               <h2 class="section-title text-center wow fadeInDown">{{ trans('radiopages.Photos') }}</h2>
+               <h2 class="section-title text-center wow fadeInDown">Сүрөттөр</h2>
             </div>
             <div class="panel-body imagegrid">
                <div class="row">
