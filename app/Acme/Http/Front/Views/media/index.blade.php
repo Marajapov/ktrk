@@ -106,7 +106,7 @@
                                                                     <a href="{{ route('front.media.video', $mediaLastVideo) }}">
                                                                         <span class="media-view"><i class="fa fa-eye"></i>{{ $mediaLastVideo->getViewed() }}</span>
                                                                         <span class="media-date">{{ $mediaLastVideo->getTime() }}, {{ $mediaLastVideo->getDay() }} {{ $mediaLastVideo->getMonthRu() }}</span>
-                                                                        <img src="http://img.youtube.com/vi/{{ $mediaLastVideo->getUrl() }}/mqdefault.jpg" alt=""/>
+                                                                        <img src="@if($mediaLastVideo->thumbnail_big) {{ $mediaLastVideo->thumbnail_big}} @else http://img.youtube.com/vi/{{ $mediaLastVideo->getUrl() }}/mqdefault.jpg @endif" alt=""/>
                                                                     </a>
                                                                     @if($mediaLastVideo->program)
                                                                         <h4>

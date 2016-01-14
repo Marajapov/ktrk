@@ -500,7 +500,7 @@
                                             <div class="portfolio-wrapper">
                                                 <div class="media-image">
                                                     <a href="{{ route('front.media.video', $media) }}">
-                                                        <img src="http://img.youtube.com/vi/{{ $media->getUrl()}}/mqdefault.jpg" alt="" />
+                                                        <img src="@if($media->thumbnail_big) {{ $media->thumbnail_big}} @else http://img.youtube.com/vi/{{ $media->getUrl() }}/mqdefault.jpg @endif" alt="" />
                                                         <i class="fa fa-youtube-play"></i>
                                                     </a>
                                                     @if(($media->getProgramName()))
