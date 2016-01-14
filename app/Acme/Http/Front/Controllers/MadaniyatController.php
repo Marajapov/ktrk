@@ -120,5 +120,30 @@ class MadaniyatController extends Controller
 
             ]);
     }
+    public function videos()
+    {
+        $channel = \Model\Channel\ModelName::name('madaniyat')->first();
+
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        
+        return view('Front::channel.madaniyat.videos', [
+            'channel' => $channel,
+            'backgroundMain' => $backgroundMain,
+        ]);
+    }
+
+        public function video()
+    {
+
+        $channel = \Model\Channel\ModelName::where('name','=','madaniyat')->first();
+
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+       
+
+        return view('Front::channel.madaniyat.video', [
+            'channel' => $channel,
+            'backgroundMain' => $backgroundMain,           
+            ]);
+    }
 
 }
