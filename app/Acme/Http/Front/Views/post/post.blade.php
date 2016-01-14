@@ -27,7 +27,7 @@
                                     </a>
                                 </h3>
                             </div>
-                            <div class="panel-body">
+                            <div class="panel-body clearfix">
                                 <div class="col-md-12 block news-block">
                                     <span class="hidden" id="postId">{{ $post->id }}</span>
                                     <span class="hidden" id="orphusAction">{{ route('front.orphus') }}</span>
@@ -59,7 +59,66 @@
                                     <a href="http://orphus.ru" id="orphus" class="hidden" target="_blank"><img alt="Система Orphus" src="{{ asset('js/orphus.gif') }}" border="0" width="240" height="80" /></a>
                                 </p>
 
+                                <div class="orphus-mistake col-md-12">
+                                    <h4><i class="fa fa-exclamation-circle"></i> Если вы обнаружили ошибку, выделите текст и нажмите Ctrl+Enter</h4>
+                                </div>
+
                                 <footer>
+                                  <div class="row">
+                                    <ul class="social-icons">
+                                      <li class="social-icon">
+                                        {{--<a expr:share_url='data:post.url'--}}
+                                           {{--href='http://www.facebook.com/sharer.php'--}}
+                                           {{--name='fb_share'--}}
+                                           {{--type='button_count'>--}}
+                                          {{--Share--}}
+                                        {{--</a>--}}
+                                        {{--<script--}}
+                                          {{--src='http://static.ak.fbcdn.net/connect.php/js/FB.Share'--}}
+                                          {{--type='text/javascript'>--}}
+                                        {{--</script>--}}
+                                      {{--</li>--}}
+                                       {{--<li class="social-icon">--}}
+                                         {{--<script type="text/javascript" src="http://vk.com/js/api/share.js?93" charset="windows-1251"></script>--}}
+                                         {{--<script type="text/javascript"><!----}}
+                                           {{--document.write(VK.Share.button({url: "http://"},{type: "round", text: "Поделиться"}));--}}
+                                           {{----></script>--}}
+                                       {{--</li>--}}
+                                      {{--<li>--}}
+                                        {{--<a href="https://twitter.com/share" class="twitter-share-button"></a>--}}
+                                      {{--</li>--}}
+
+                                      {{--<li><a href="http://www.odnoklassniki.ru/dk?st.cmd=addShare&st._surl=http://www.youtube.com/watch?v=b9xBAtCsCTQ" class="social-icon"> <i class="fa fa-odnoklassniki"></i></a></li>--}}
+                                      <!-- AddToAny BEGIN -->
+                                      {{--<div class="a2a_kit a2a_default_style">--}}
+                                        {{--<a class="" href="https://www.addtoany.com/share">Поделиться</a>--}}
+                                        {{--<span class="a2a_divider"></span>--}}
+                                        {{--<a class="a2a_button_facebook"></a>--}}
+                                        {{--<a class="a2a_button_twitter"></a>--}}
+                                        {{--<a class="a2a_button_google_plus"></a>--}}
+                                        {{--<a class="a2a_button_odnoklassniki"></a>--}}
+                                        {{--<a class="a2a_button_mail_ru"></a>--}}
+                                        {{--<a class="a2a_button_vk"></a>--}}
+                                      {{--</div>--}}
+                                      {{--<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>--}}
+                                      {{--<!-- AddToAny END -->--}}
+                                        <script type="text/javascript">(function() {
+                                            if (window.pluso)if (typeof window.pluso.start == "function") return;
+                                            if (window.ifpluso==undefined) { window.ifpluso = 1;
+                                              var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
+                                              s.type = 'text/javascript'; s.charset='UTF-8'; s.async = true;
+                                              s.src = ('https:' == window.location.protocol ? 'https' : 'http')  + '://share.pluso.ru/pluso-like.js';
+                                              var h=d[g]('body')[0];
+                                              h.appendChild(s);
+                                            }})();</script>
+                                        <div class="pluso" data-background="transparent" data-options="medium,square,line,horizontal,nocounter,theme=06" data-services="vkontakte,odnoklassniki,facebook,twitter,google"></div>
+
+                                    </ul>
+
+                                  </div>
+
+
+
                                     @if(auth()->user())
                                         <a class="post-edit" href="{{ route('admin.post.edit', $post) }}" target="_blank"><i class="fa fa-pencil"></i>{{ trans('site.AdminPostEdit') }}</a>
                                     @endif
@@ -84,7 +143,7 @@
                                     @else
                                         <div class="col-md-4 block">
                                             <a href="{{ route('front.post', $relatedPost) }}" class="news-thumb">
-                                                <img src="@if(empty($relatedPost->getFileBig())) {{ asset($relatedPost->getFile() )}} @else {{ asset($relatedPost->getFileBig()) }} @endif" alt=""/>
+                                                <img src="@if(($relatedPost->getFileBig())) {{ asset($relatedPost->getFileBig() )}} @else {{ asset($relatedPost->getFile()) }} @endif" alt=""/>
                                                 <div class="extrarel">
                                                     <span class="art-date"><i class="fa fa-calendar"></i>{{ $relatedPost->getDay() }} {{ $relatedPost->getMonthRu() }}, {{ $relatedPost->getYear() }}</span>
                                                 </div>
@@ -202,33 +261,13 @@
         @endif
     </script>
 
-    {{--@if(Request::get('send') == 'true')--}}
-    {{--<script>--}}
-    {{--swal("Спасибо!", "В ближайшее время ошибка будет устранена!", "success");--}}
-    {{--</script>--}}
-    {{--@elseif(Request::get('send') == 'false')--}}
-    {{--<script>--}}
-    {{--swal("", "Где то произошла ошибка!", "error");--}}
-    {{--</script>--}}
-    {{--@endif--}}
-
-    <script>
-        $('.confirm').click(function () {
-            function setGetParameter(paramName)
-            {
-                var url = window.location.href;
-
-                var prefix = url.substring(0, url.indexOf('?'+paramName));
-                url = prefix;
-
-                window.location.href = url;
-            }
-            setGetParameter('send');
-        });
-    </script>
+    @if(session('send') == 'true')
+        <script>
+        swal("Спасибо!", "В ближайшее время ошибка будет устранена!", "success");
+        </script>
+    @endif
 
     {{--Orphus--}}
-    {{--<script type="text/javascript" src="{{ asset('js/orphus.js') }}"></script>--}}
     <script>
         var formAction = $("#orphusAction").text();
         var postId = $("#postId").text();
@@ -238,8 +277,8 @@
         (function(){var _1="5.01";
             var _2="!ekdnriabvea.bikeg@amlic.mo";
             var hq="http://orphus.ru/ru/";
-            var _4="#*";
-            var _5="#*";
+            var _4="****";
+            var _5="####";
             var _6=60;
             var _7=256;
             var _8={// Russian (\u0420\u0443\u0441\u0441\u043A\u0438\u0439)
@@ -325,7 +364,7 @@
                 var div=d.createElement("DIV");
                 var w=550;
                 if(w>b.clientWidth-10){w=b.clientWidth-10;}div.style.zIndex="10001";
-                div.innerHTML=""+"<div class=\"orphus clearfix\" style=\"width:"+w+"px; z-index:10001; \">"+"<a href=\"javascript:void(0)\" onclick=\"$(this).parent('.orphus').find('form .buttons input:first').click();\" class=\"sprite_close\"><i class=\"fa fa-close\"></i></a>"+"<div class=\"header\">"+_8.intextmsg+"</div>"+"<div class=\"item\">&laquo;&#133;"+_36.replace(_4,"<u style=\"color:red\">").replace(_5,"</u>")+"&#133;&raquo;</div>"+"<div class=\"message\">"+_8.ifsendmsg.replace(/\n/,"<br/>")+"</div>"+"<form action=\""+formAction+"\" id=\"orphus\" method=\"post\"><input name=\"comment\" placeholder=\"Комментарий для автора (необязательно)\" type=\"text\"/><input name=\"message\" value=\""+_36+"\" type=\"hidden\"/>"+"<div class=\"buttons\">"+"<input name=\"submit\" type=\"submit\" value=\""+_8.send+"\">"+"<input type=\"button\" value=\""+_8.cancel+"\" class=\"cancel\"><input type=\"hidden\" name=\"_token\" value=\""+_token+"\"/><input type=\"hidden\" name=\"url\" value=\""+url+"\"/>"+"</div>"+"</form>"+"</div>"+"";
+                div.innerHTML=""+"<div class=\"orphus clearfix\" style=\"width:"+w+"px; z-index:10001; \">"+"<a href=\"javascript:void(0)\" onclick=\"$(this).parent('.orphus').find('form .buttons input:first').click();\" class=\"sprite_close\"><i class=\"fa fa-close\"></i></a>"+"<div class=\"header\">"+_8.intextmsg+"</div>"+"<div class=\"item\">&laquo;&#133;"+_36.replace(_4,"<u style=\"color:red\">").replace(_5,"</u>")+"&#133;&raquo;</div>"+"<div class=\"message\">"+_8.ifsendmsg.replace(/\n/,"<br/>")+"</div>"+"<form action=\""+formAction+"\" id=\"orphus\" method=\"post\"><input name=\"comment\" placeholder=\"Комментарий для автора (необязательно)\" type=\"text\"/><input name=\"message\" value=\""+_36+"\" type=\"hidden\"/>"+"<div class=\"buttons\">"+"<input name=\"submit\" type=\"submit\" value=\""+_8.send+"\">"+"<input type=\"button\" value=\""+_8.cancel+"\" class=\"cancel\"><input type=\"hidden\" name=\"_token\" value=\""+_token+"\"/><input type=\"hidden\" name=\"url\" value=\""+url+"\"/><input type=\"hidden\" name=\"postId\" value=\""+postId+"\"/>"+"</div>"+"</form>"+"</div>"+"";
                 _1b(div);
                 var _3a=div.getElementsByTagName("input");
                 var _3b=div.getElementsByTagName("form");
