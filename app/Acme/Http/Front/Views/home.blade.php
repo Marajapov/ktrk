@@ -383,7 +383,7 @@
                             </div>
                         </div>
 
-                        <a href="#" class="text-center ads ads-300x250 middle-ad">
+                        <a href="{{ $positionRight->linkTo }}" class="text-center ads ads-300x250 middle-ad">
                             <img src="@if(!empty($positionRight->file)) {{ asset($positionRight->file) }} @else {{ asset('images/banner_300x250.png') }} @endif" alt="phot1"/>
                         </a>
 

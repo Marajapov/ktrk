@@ -1,13 +1,20 @@
 <?php
 
-if(isset($_POST['asd']))
+if(isset($_POST['submit']))
 {
-    echo $_POST['message'];
+    $to      = 'kendirbaev.aibek@gmail.com';
+    $subject = 'Ошибка в тексте! ';
+    $message = 'hello';
+    $headers = 'From: webmaster@example.com' . "\r\n" .
+        'Reply-To: webmaster@example.com' . "\r\n" .
+        'X-Mailer: PHP/' . phpversion();
+
+    mail($to, $subject, $message, $headers);
+    header('Location: ' . $_SERVER['HTTP_REFERER'].'?send=true');
 }
 else
 {
-    $_SESSION['orphus'] = false;
-    header('Location: ' . $_SERVER['HTTP_REFERER'].'?orphus=true');
+    header('Location: ' . $_SERVER['HTTP_REFERER'].'?send=false');
 }
 
 ?>

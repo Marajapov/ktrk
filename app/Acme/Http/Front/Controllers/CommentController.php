@@ -2,6 +2,7 @@
 namespace Front\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail as Mail;
 use \Model\Comment\ModelName as Comment;
 
 class CommentController extends Controller
@@ -46,6 +47,21 @@ class CommentController extends Controller
     public function orphus(Request $request)
     {
         dd($request);
+
+        $string = $request->message;
+
+        $data = array(
+            'name' => "Learning Laravel",
+            'url' => $request->url,
+            ''
+        );
+
+        Mail::send('Front::message', $data, function($message) {
+            $message->to('kendirbaev.aibek@gmail.com', 'Aibek Kendirbaev')->subject('Ошибка в материале '.);
+            $message->from('kendirbaev11@yandex.ru', 'Aibek Kendirbaev');
+        });
+
+        return redirect()->route('front.post',$request->resourceId)->with('success','true');
     }
 
 }
