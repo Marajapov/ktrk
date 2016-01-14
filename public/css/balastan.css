@@ -1,0 +1,235 @@
+#balastan {
+	font-family: 'Roboto condensed';
+}
+
+#balastan .switch{
+	-webkit-box-shadow: 0 1px 27px 0 rgb(0, 0, 0);
+	box-shadow: 0 1px 27px 0 rgb(0, 0, 0);
+	z-index: 1;
+}
+
+/*BEGIN Header*/
+.kidstopheader{
+
+    border-radius: 5px !important;
+
+    background: #FFEB3B;
+}
+
+.kidstopheader ul{
+	text-align: center;
+}
+
+.kidstopheader ul li{
+	display:inline-block;
+	padding: 10px;
+}
+
+.kidstopheader ul li:hover{
+	background: #FF5722;
+}
+
+.kidstopheader ul li:hover a, .kidstopheader ul li:hover i{
+	color: #fff;
+}
+
+.kidstopheader ul li:hover .i1, .i2, .i3, .i4, .i5, .i6{
+	color: #fff;
+}
+
+.kidstopheader ul li a{
+	font-size: 30px;
+	font-weight: 600;
+	text-transform: uppercase;
+
+	color: #414142;
+}
+
+.kidstopheader ul li a:hover{
+
+}
+
+.kidstopheader ul li a i{
+	margin-right:10px; 
+}
+
+.kidstopheader ul li:hover i{
+	animation-name: i;
+	-webkit-animation-name: i;	
+
+	animation-duration: 0.7s;	
+	-webkit-animation-duration: 0.7s;
+
+	animation-timing-function: ease;	
+	-webkit-animation-timing-function: ease;		
+
+	visibility: visible !important;	
+}
+
+@keyframes i {
+	0% {
+		transform: translateY(100%) scale(0.6) scaleY(0.5);
+	}
+	60%{
+		transform: translateY(-7%) scaleY(1.12);
+	}
+	75%{
+		transform: translateY(3%);
+	}	
+	100% {
+		transform: translateY(0%) scale(1) scaleY(1);
+	}	
+}
+
+@-webkit-keyframes i {
+	0% {
+		-webkit-transform: translateY(100%) scale(0.6) scaleY(0.5);
+	}
+	60%{
+		-webkit-transform: translateY(-7%) scaleY(1.12);
+	}
+	75%{
+		-webkit-transform: translateY(3%);
+	}	
+	100% {
+		-webkit-transform: translateY(0%) scale(1) scaleY(1);
+	}	
+}
+
+.kidstopheader ul li a .i1, .i2, .i3, .i4, .i5, .i6{
+	font-size: 40px;
+	color:#F44336;
+
+}
+/* END Header*/
+
+/* BEGIN Main Home video*/
+
+.firsteye{
+	margin-top: 20px;
+}
+
+.homevideo{
+}
+.homevideo:hover{
+/*	-webkit-transform: scale(1.05);
+	-ms-transform: scale(1.05);
+	-o-transform: scale(1.05);
+	transform: scale(1.05);*/
+}
+.homevideo iframe {
+	border-radius: 5px !important;
+}
+.homevideo .homevideoname{
+	position: absolute;
+	bottom: 20px;
+
+	padding: 10px;
+	border-radius: 0px 5px 5px 0px !important;
+
+	color: #414142;
+	background: #FFEB3B;
+
+	font-size: 30px;
+	font-weight: 600;	
+}
+.homevideo .homevideocat{
+	position: absolute;
+
+	padding: 10px;
+	border-radius: 0px 5px 5px 0px !important;
+
+	color: #FFEB3B;
+	background: #03A9F4;
+
+	font-size: 30px;
+	font-weight: 600;
+	text-shadow: 1px 0px 0px rgb(45, 45, 45), 0 0 1em rgba(255, 250, 250, 0.04);
+}
+
+.homevideo .homevideocat .keremet{
+    height: 44px;
+    width: auto;
+    margin-right: 5px;
+
+}
+.firsteye .right a img, .firsteye .rightbottom a img{
+	height: 240px;
+	width: 100%;
+	border-radius: 5px !important;
+}
+
+.firsteye .right a img:first-child{
+	margin-bottom: 20px;
+}
+
+.firsteye .right .cat, .firsteye .rightbottom .cat{
+	position: absolute;
+	top: 0px;
+
+	padding: 10px;
+	border-radius: 0px 5px 5px 0px !important;
+
+	color: #414142;
+	background: #FFEB3B;
+
+	font-size: 30px;
+	font-weight: 600;
+}
+
+
+
+/* END Main Home video*/
+
+/* BEGIN Programms slide*/
+.programs-slide {
+	padding: 20px 75px;
+}
+
+.programs-slide .kids-slide .slick-next{
+	margin-top: -20px;
+}
+.programs-slide .kids-slide .slick-prev{
+	margin-top: -20px;
+	margin-left:-30px; 
+}
+.programs-slide .kids-slide .slick-next:before{
+
+	color: #FFE500 !important;
+
+	font-size: 60px;
+
+	content: "\f0a9";
+	opacity: 1;
+}
+.programs-slide .kids-slide .slick-next:hover{
+	color:red;
+}
+.programs-slide .kids-slide .slick-prev:before{
+	color: #FFE500 !important;
+
+	font-size: 60px;
+
+	content: "\f0a8";
+	opacity: 1;
+}
+.programs-slide .kids-slide .slick-slide img{
+    border-radius: 5px !important;
+     height: 180px;
+    width: 100%;
+}
+
+.programs-slide .kids-slide .programmcat{
+    position: absolute;
+    bottom: 0px;
+
+    border-radius: 0px 4px 4px 0px !important;
+    padding: 5px;
+
+    font-weight: 600;
+    text-transform: uppercase;
+
+    color: #414142; 
+    background:#FFEB3B;
+}
+/* END Programms slide*/
