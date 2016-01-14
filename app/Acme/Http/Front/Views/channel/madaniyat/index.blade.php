@@ -1,5 +1,3 @@
-
-
 @extends('Front::channel.madaniyat.default')
 @section('title', trans('radiopages.Homepage'))
 @section('styles')
@@ -181,7 +179,7 @@
                                  </div>
                                  <div class="txt">
                                     <div class="date">11.11.15</div>
-                                    <a href="#">Адыгейский сор из избы. Самые драматичные моменты</a>
+                                    <a href="#">Адыгейский сорfgfgf из избы. Самые драматичные моменты</a>
                                  </div>
                               </div>
                            </div>
@@ -199,7 +197,7 @@
                         </div>
                      </div>
                      <footer>
-                        <a href="#">
+                        <a href="{{ route('madaniyat.videos') }}">
                         <span>{{ trans('radiopages.AllVideos') }}<i class="fa fa-arrow-circle-right"></i></span>
                         </a>
                      </footer>
@@ -330,12 +328,15 @@
           $(".search-toggle").click(function () {
               $(".logo-block").addClass("search-show");
               $(".form-search").addClass("visible");
-              $(".clangs").addClass("visible");
+              $(".clangs").addClass("hidden");
+              $(".soc").addClass("hidden");
           });
           $(".close-search").click(function () {
               $(".logo-block").removeClass("search-show");
               $(".form-search").removeClass("visible");
-              $(".clangs").removeClass("visible");
+              $(".clangs").removeClass("hidden");
+              $(".soc").removeClass("hidden");
+
           });
       });
    </script> 

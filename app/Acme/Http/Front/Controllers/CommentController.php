@@ -43,4 +43,9 @@ class CommentController extends Controller
 
     }
 
+    public function orphus(Request $request)
+    {
+        dd($request);
+    }
+
 }

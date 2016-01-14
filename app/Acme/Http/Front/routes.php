@@ -62,6 +62,8 @@ Route::group(['domain' => 'ktrk.dev', 'prefix' => '/madaniyat', 'namespace' => '
     Route::get('/broadcasts', ['as' => 'madaniyat.broadcasts',   'uses' => 'MadaniyatController@broadcasts']);
     Route::get('/comingsoon', ['as' => 'madaniyat.comingsoon',   'uses' => 'MadaniyatController@ComingSoon']);
     Route::get('/allphotos', ['as' => 'madaniyat.allphotos',   'uses' => 'MadaniyatController@allphotos']);
+    Route::get('/videos', ['as' => 'madaniyat.videos',   'uses' => 'MadaniyatController@videos']);
+    Route::get('/video', ['as' => 'madaniyat.video',   'uses' => 'MadaniyatController@video']);
 
 });
 
@@ -207,6 +209,9 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
 
 //    COMMENTS
     Route::post('/comment', ['as'=>'front.comment', 'uses'=> 'CommentController@store']);
+
+//    Orphus
+    Route::post('/orphus', ['as'=>'front.orphus', 'uses'=>'CommentController@orphus']);
 
 Route::get('locale/{locale?}',   ['as' => 'locale',   'uses' => 'CommonController@setLocale']);
 
