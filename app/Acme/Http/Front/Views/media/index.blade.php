@@ -43,18 +43,6 @@
                     <span class="show-time">22:00</span>
                 </div>
             </div>
-
-            <div>
-                <div class="overlay"></div>
-                <a href="#">
-                    <img src="{{ asset('images/projects/oi-ordo.jpg') }}" alt=""/>
-                </a>
-                <div class="show-info">
-                    <h4>Ой-Ордо</h4>
-                    <span class="show-day">{{ trans('site.Tuesday') }}, {{ trans('site.Wednesday') }}, {{ trans('site.Thursday') }}</span>
-                    <span class="show-time">20:10</span>
-                </div>
-            </div>
         </div>
     </div>
 
