@@ -7,6 +7,6 @@ return [
     'port' => 465,
     'encryption' => 'ssl',
     'username' => 'ktrkkg@yandex.ru',//ваш логин
-    'password' => '1qazXSW@',//ваш пароль
+    'password' => 'slimshady11',//ваш пароль
 
 ];

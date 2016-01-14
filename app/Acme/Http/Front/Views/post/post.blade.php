@@ -27,7 +27,7 @@
                                     </a>
                                 </h3>
                             </div>
-                            <div class="panel-body">
+                            <div class="panel-body clearfix">
                                 <div class="col-md-12 block news-block">
                                     <span class="hidden" id="postId">{{ $post->id }}</span>
                                     <span class="hidden" id="orphusAction">{{ route('front.orphus') }}</span>
@@ -58,6 +58,10 @@
                                 <p>
                                     <a href="http://orphus.ru" id="orphus" class="hidden" target="_blank"><img alt="Система Orphus" src="{{ asset('js/orphus.gif') }}" border="0" width="240" height="80" /></a>
                                 </p>
+
+                                <div class="orphus-mistake col-md-12">
+                                    <h4><i class="fa fa-exclamation-circle"></i> Если вы обнаружили ошибку, выделите текст и нажмите Ctrl+Enter</h4>
+                                </div>
 
                                 <footer>
                                     @if(auth()->user())
@@ -202,33 +206,13 @@
         @endif
     </script>
 
-    {{--@if(Request::get('send') == 'true')--}}
-    {{--<script>--}}
-    {{--swal("Спасибо!", "В ближайшее время ошибка будет устранена!", "success");--}}
-    {{--</script>--}}
-    {{--@elseif(Request::get('send') == 'false')--}}
-    {{--<script>--}}
-    {{--swal("", "Где то произошла ошибка!", "error");--}}
-    {{--</script>--}}
-    {{--@endif--}}
-
-    <script>
-        $('.confirm').click(function () {
-            function setGetParameter(paramName)
-            {
-                var url = window.location.href;
-
-                var prefix = url.substring(0, url.indexOf('?'+paramName));
-                url = prefix;
-
-                window.location.href = url;
-            }
-            setGetParameter('send');
-        });
-    </script>
+    @if(session('send') == 'true')
+        <script>
+        swal("Спасибо!", "В ближайшее время ошибка будет устранена!", "success");
+        </script>
+    @endif
 
     {{--Orphus--}}
-    {{--<script type="text/javascript" src="{{ asset('js/orphus.js') }}"></script>--}}
     <script>
         var formAction = $("#orphusAction").text();
         var postId = $("#postId").text();
@@ -238,8 +222,8 @@
         (function(){var _1="5.01";
             var _2="!ekdnriabvea.bikeg@amlic.mo";
             var hq="http://orphus.ru/ru/";
-            var _4="#*";
-            var _5="#*";
+            var _4="****";
+            var _5="####";
             var _6=60;
             var _7=256;
             var _8={// Russian (\u0420\u0443\u0441\u0441\u043A\u0438\u0439)
@@ -325,7 +309,7 @@
                 var div=d.createElement("DIV");
                 var w=550;
                 if(w>b.clientWidth-10){w=b.clientWidth-10;}div.style.zIndex="10001";
-                div.innerHTML=""+"<div class=\"orphus clearfix\" style=\"width:"+w+"px; z-index:10001; \">"+"<a href=\"javascript:void(0)\" onclick=\"$(this).parent('.orphus').find('form .buttons input:first').click();\" class=\"sprite_close\"><i class=\"fa fa-close\"></i></a>"+"<div class=\"header\">"+_8.intextmsg+"</div>"+"<div class=\"item\">&laquo;&#133;"+_36.replace(_4,"<u style=\"color:red\">").replace(_5,"</u>")+"&#133;&raquo;</div>"+"<div class=\"message\">"+_8.ifsendmsg.replace(/\n/,"<br/>")+"</div>"+"<form action=\""+formAction+"\" id=\"orphus\" method=\"post\"><input name=\"comment\" placeholder=\"Комментарий для автора (необязательно)\" type=\"text\"/><input name=\"message\" value=\""+_36+"\" type=\"hidden\"/>"+"<div class=\"buttons\">"+"<input name=\"submit\" type=\"submit\" value=\""+_8.send+"\">"+"<input type=\"button\" value=\""+_8.cancel+"\" class=\"cancel\"><input type=\"hidden\" name=\"_token\" value=\""+_token+"\"/><input type=\"hidden\" name=\"url\" value=\""+url+"\"/>"+"</div>"+"</form>"+"</div>"+"";
+                div.innerHTML=""+"<div class=\"orphus clearfix\" style=\"width:"+w+"px; z-index:10001; \">"+"<a href=\"javascript:void(0)\" onclick=\"$(this).parent('.orphus').find('form .buttons input:first').click();\" class=\"sprite_close\"><i class=\"fa fa-close\"></i></a>"+"<div class=\"header\">"+_8.intextmsg+"</div>"+"<div class=\"item\">&laquo;&#133;"+_36.replace(_4,"<u style=\"color:red\">").replace(_5,"</u>")+"&#133;&raquo;</div>"+"<div class=\"message\">"+_8.ifsendmsg.replace(/\n/,"<br/>")+"</div>"+"<form action=\""+formAction+"\" id=\"orphus\" method=\"post\"><input name=\"comment\" placeholder=\"Комментарий для автора (необязательно)\" type=\"text\"/><input name=\"message\" value=\""+_36+"\" type=\"hidden\"/>"+"<div class=\"buttons\">"+"<input name=\"submit\" type=\"submit\" value=\""+_8.send+"\">"+"<input type=\"button\" value=\""+_8.cancel+"\" class=\"cancel\"><input type=\"hidden\" name=\"_token\" value=\""+_token+"\"/><input type=\"hidden\" name=\"url\" value=\""+url+"\"/><input type=\"hidden\" name=\"postId\" value=\""+postId+"\"/>"+"</div>"+"</form>"+"</div>"+"";
                 _1b(div);
                 var _3a=div.getElementsByTagName("input");
                 var _3b=div.getElementsByTagName("form");

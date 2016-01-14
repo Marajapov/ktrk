@@ -427,3 +427,15 @@ h3#reply-title {
 .orphus .buttons .cancel {
     display: none;
 }
+
+.orphus-mistake h4{
+    margin: 0;
+    padding: 10px 0 20px;
+    color: #c42026;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+}
+.orphus-mistake h4 i{
+    padding-right: 5px;
+}
