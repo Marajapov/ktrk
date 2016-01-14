@@ -64,6 +64,61 @@
                                 </div>
 
                                 <footer>
+                                  <div class="row">
+                                    <ul class="social-icons">
+                                      <li class="social-icon">
+                                        {{--<a expr:share_url='data:post.url'--}}
+                                           {{--href='http://www.facebook.com/sharer.php'--}}
+                                           {{--name='fb_share'--}}
+                                           {{--type='button_count'>--}}
+                                          {{--Share--}}
+                                        {{--</a>--}}
+                                        {{--<script--}}
+                                          {{--src='http://static.ak.fbcdn.net/connect.php/js/FB.Share'--}}
+                                          {{--type='text/javascript'>--}}
+                                        {{--</script>--}}
+                                      {{--</li>--}}
+                                       {{--<li class="social-icon">--}}
+                                         {{--<script type="text/javascript" src="http://vk.com/js/api/share.js?93" charset="windows-1251"></script>--}}
+                                         {{--<script type="text/javascript"><!----}}
+                                           {{--document.write(VK.Share.button({url: "http://"},{type: "round", text: "Поделиться"}));--}}
+                                           {{----></script>--}}
+                                       {{--</li>--}}
+                                      {{--<li>--}}
+                                        {{--<a href="https://twitter.com/share" class="twitter-share-button"></a>--}}
+                                      {{--</li>--}}
+
+                                      {{--<li><a href="http://www.odnoklassniki.ru/dk?st.cmd=addShare&st._surl=http://www.youtube.com/watch?v=b9xBAtCsCTQ" class="social-icon"> <i class="fa fa-odnoklassniki"></i></a></li>--}}
+                                      <!-- AddToAny BEGIN -->
+                                      {{--<div class="a2a_kit a2a_default_style">--}}
+                                        {{--<a class="" href="https://www.addtoany.com/share">Поделиться</a>--}}
+                                        {{--<span class="a2a_divider"></span>--}}
+                                        {{--<a class="a2a_button_facebook"></a>--}}
+                                        {{--<a class="a2a_button_twitter"></a>--}}
+                                        {{--<a class="a2a_button_google_plus"></a>--}}
+                                        {{--<a class="a2a_button_odnoklassniki"></a>--}}
+                                        {{--<a class="a2a_button_mail_ru"></a>--}}
+                                        {{--<a class="a2a_button_vk"></a>--}}
+                                      {{--</div>--}}
+                                      {{--<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>--}}
+                                      {{--<!-- AddToAny END -->--}}
+                                        <script type="text/javascript">(function() {
+                                            if (window.pluso)if (typeof window.pluso.start == "function") return;
+                                            if (window.ifpluso==undefined) { window.ifpluso = 1;
+                                              var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
+                                              s.type = 'text/javascript'; s.charset='UTF-8'; s.async = true;
+                                              s.src = ('https:' == window.location.protocol ? 'https' : 'http')  + '://share.pluso.ru/pluso-like.js';
+                                              var h=d[g]('body')[0];
+                                              h.appendChild(s);
+                                            }})();</script>
+                                        <div class="pluso" data-background="transparent" data-options="medium,square,line,horizontal,nocounter,theme=06" data-services="vkontakte,odnoklassniki,facebook,twitter,google"></div>
+
+                                    </ul>
+
+                                  </div>
+
+
+
                                     @if(auth()->user())
                                         <a class="post-edit" href="{{ route('admin.post.edit', $post) }}" target="_blank"><i class="fa fa-pencil"></i>{{ trans('site.AdminPostEdit') }}</a>
                                     @endif
@@ -88,7 +143,7 @@
                                     @else
                                         <div class="col-md-4 block">
                                             <a href="{{ route('front.post', $relatedPost) }}" class="news-thumb">
-                                                <img src="@if(empty($relatedPost->getFileBig())) {{ asset($relatedPost->getFile() )}} @else {{ asset($relatedPost->getFileBig()) }} @endif" alt=""/>
+                                                <img src="@if(($relatedPost->getFileBig())) {{ asset($relatedPost->getFileBig() )}} @else {{ asset($relatedPost->getFile()) }} @endif" alt=""/>
                                                 <div class="extrarel">
                                                     <span class="art-date"><i class="fa fa-calendar"></i>{{ $relatedPost->getDay() }} {{ $relatedPost->getMonthRu() }}, {{ $relatedPost->getYear() }}</span>
                                                 </div>
