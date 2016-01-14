@@ -46,7 +46,22 @@ class CommentController extends Controller
 
     public function orphus(Request $request)
     {
-        return view('front.mail',[]);
+        dd($request);
+
+        $string = $request->message;
+
+        $data = array(
+            'name' => "Learning Laravel",
+            'url' => $request->url,
+            ''
+        );
+
+        Mail::send('Front::message', $data, function($message) {
+            $message->to('kendirbaev.aibek@gmail.com', 'Aibek Kendirbaev')->subject('Ошибка в материале '.);
+            $message->from('kendirbaev11@yandex.ru', 'Aibek Kendirbaev');
+        });
+
+        return redirect()->route('front.post',$request->resourceId)->with('success','true');
     }
 
 }
