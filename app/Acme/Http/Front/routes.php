@@ -213,6 +213,18 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
 //    Orphus
     Route::post('/orphus', ['as'=>'front.orphus', 'uses'=>'CommentController@orphus']);
 
+    Route::get('mail', function () {
+
+        $data = array(
+            'name' => "Learning Laravel",
+        );
+
+        Mail::send('Front::message', $data, function($message) {
+            $message->to('kendirbaev.aibek@gmail.com', 'Codelution Staff')->subject('Laravel 4 GMail App!');
+        });
+
+    });
+
 Route::get('locale/{locale?}',   ['as' => 'locale',   'uses' => 'CommonController@setLocale']);
 
 });

@@ -2,6 +2,7 @@
 namespace Front\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail as Mail;
 use \Model\Comment\ModelName as Comment;
 
 class CommentController extends Controller
@@ -45,7 +46,7 @@ class CommentController extends Controller
 
     public function orphus(Request $request)
     {
-        dd($request);
+        return view('front.mail',[]);
     }
 
 }

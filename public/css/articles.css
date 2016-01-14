@@ -400,6 +400,8 @@ h3#reply-title {
 }
 .orphus form {
     margin: 15px;
+    margin-bottom: 0;
+    padding-bottom: 15px;
 }
 .orphus form input[type="text"] {
     width: 100%;
