@@ -117,10 +117,10 @@
     margin-right: 5px;
 }
 .panel-article .panel-body{
-    padding: 15px;
+    padding: 15px 15px 10px;
 }
 .panel-article .panel-body footer{
-    padding: 15px 0 5px;
+    padding: 10px 0 5px;
 
     border-top: 3px solid #F1F4F9;
 }
@@ -442,7 +442,25 @@ h3#reply-title {
 
 
 /*SHARE LINKS*/
-
+.with-share a{
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+    width: 15%;
+    line-height: 36px;
+    text-align: right;
+}
+.with-share .post-edit{
+    text-align: left;
+}
 .pluso{
-    width: 200px;
+    width: 69%;
+    display: inline-block;
+    vertical-align: middle;
+}
+.pluso>div{
+    text-align: center;
+}
+.pluso-more{
+    display: none !important;
 }
