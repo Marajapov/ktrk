@@ -201,8 +201,14 @@ class HomeController extends Controller
         $contentOriginal = $post->getContent();
 
         $lc = app()->getlocale();
-        if($lc == 'kg' && ($post->title != '')){            
-        }elseif($lc == 'ru' && ($post->titleRu != '')){            
+        if($lc == 'kg'){
+            if($post->title != ''){
+
+            }
+            if($post->titleRu != ''){
+                return redirect()->route('front.home'.'/locale/ru');
+            }
+        }elseif($lc == 'ru' && ($post->titleRu != '')){
         }else{
             return redirect()->route('front.home');
         }

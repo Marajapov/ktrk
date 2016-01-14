@@ -1,4 +1,5 @@
 .env
+.envHost
 /vendor
 /node_modules
 Homestead.yaml
