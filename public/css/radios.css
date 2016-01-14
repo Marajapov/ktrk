@@ -44,14 +44,16 @@
     position: absolute;
     z-index: 2;
 
-    margin-left: -58px;
-    margin-top: 3px;
+    right: 0;
+    margin-top: 60px;
 
     -webkit-transition: bottom 0.3s;
     -moz-transition: bottom 0.3s;
     -ms-transition: bottom 0.3s;
     -o-transition: bottom 0.3s;
     transition: bottom 0.3s;
+
+    background: #0CB2AB;   
 }
 .languages ul{
     text-align: center;
@@ -60,17 +62,20 @@
     padding: 0 7px;
 
     background: none;
-    border-radius: 3px !important;
 }
 .languages li a{
     position: relative;
 
     color: #000;
 
-    font-size: 11px;
+    font-size: 14px;
     text-transform: uppercase;
+    font-family: 'Roboto condensed';
 }
 .languages li.active{
+    background: #444;
+}
+.languages li:hover{
     background: #0CB2AB;
 }
 .languages li.active a{
@@ -80,8 +85,9 @@
 @media (max-width:770px) {
     .languages {
         position: absolute;
-        z-index: 2;
+        top: -55px;
         right: 50px;
+        display: inline-block;
     }
 }
 

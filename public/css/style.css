@@ -4010,13 +4010,16 @@ ul.social-share li a:hover {
     height: 200px;
 }
 .madaniyat .peredacha img {
-    width: auto;
-    height: 200px;
+
 }
 .madaniyat .first .img {
     position: absolute;
     height: 100%;
     width: 100%;
+}
+
+.madaniyat .mvideo .first .img {
+    position: relative;
 }
 .madaniyat .views {
     position: absolute;
@@ -5025,5 +5028,38 @@ background-size: cover;
     color: #000;
     text-shadow: 2px 1px 2px black, 0 0 1em white;
 }
-
- 
+.madaniyat .socmuz{
+    position: absolute !important;
+    right: 300px !important;
+    top: 10px !important;
+ }
+.madaniyat .mvideo .text{
+    position: absolute;
+    bottom: 0px;
+    height: 70px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 0px 10px 0 13px;
+}
+.madaniyat .text a{
+    color: #fff;
+    font-family: 'Roboto Regular', Arial, sans-serif;
+}
+.madaniyat .panelVideo{
+    padding: 0;
+}
+.madaniyat a.korsotuu{
+    color: #fff;
+    font-size: 16px;
+}
+.madaniyat li.korsotuu{
+    background: #710022;
+    margin-top: 5px;
+    padding: 10px 0 10px 5px;
+}
+.madaniyat .colormad a {
+    color: #6D0120;
+    font-weight: bold;
+    font-family: 'Roboto Condensed', serif;
+    text-transform: uppercase;  
+    font-size: 16px;
+}

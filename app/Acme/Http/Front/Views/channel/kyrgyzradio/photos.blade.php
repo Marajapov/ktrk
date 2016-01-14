@@ -59,7 +59,7 @@
                <ul class="nav navbar-nav">
                   <li class=""><a href="{{route('kyrgyzradio.home')}}">Башкы</a></li>
                   <li class="dropdown">
-                     <a class="dropdown-toggle" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ trans('radiopages.Peredachi') }}<i class="fa fa-angle-down"></i></a>
+                     <a class="dropdown-toggle" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Уктуруулар<i class="fa fa-angle-down"></i></a>
                      <ul class="dropdown-menu">
                         @if($kyrgyzradioProjects) 
                         @foreach($kyrgyzradioProjects as $kyrgyzradioProject)
