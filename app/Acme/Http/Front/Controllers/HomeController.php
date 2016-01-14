@@ -326,6 +326,7 @@ class HomeController extends Controller
         
 
         return view('Front::post.post',[
+            'lc' => $lc,
             'post' => $post,
 
             'relatedPosts' => $relatedPosts,

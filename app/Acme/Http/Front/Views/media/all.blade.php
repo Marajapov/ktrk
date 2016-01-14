@@ -47,7 +47,7 @@
                             <i class="fa fa-play-circle-o"></i>
                           @endif
                         </div>
-                        <div class="media-box">
+                        <div class="media-box video-title">
                           <a href="{{ route('front.media.video',$video) }}" class="">
                             {{$video->getName()}}
                           </a>
