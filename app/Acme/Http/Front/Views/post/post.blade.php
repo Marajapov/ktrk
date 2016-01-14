@@ -2,6 +2,8 @@
 @section('title', $post->getTitleRuOrKg())
 @section('styles')
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta property="og:image" content="{{ $post->thumbnail_big }}"/>
+    <meta property="og:image:secure_url" content="{{ $post->thumbnail_big }}" />
     <link rel="stylesheet" href="{{ asset('css/articles.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/sweetalert.css') }}">
     <link href="{{ asset('froala/css/froala_style.min.css') }}" rel="stylesheet" type="text/css" />
@@ -60,7 +62,14 @@
                                 </p>
 
                                 <div class="orphus-mistake col-md-12">
-                                    <h4><i class="fa fa-exclamation-circle"></i> Если вы обнаружили ошибку, выделите текст и нажмите Ctrl+Enter</h4>
+                                    <h4>
+                                        <i class="fa fa-exclamation-circle"></i>
+                                        @if($lc=='kg')
+                                            Эгерде ката тапсаңыз, текстти белгилеп Ctrl+Enter басыңыз
+                                        @elseif($lc == 'ru')
+                                            Если вы обнаружили ошибку, выделите текст и нажмите Ctrl+Enter
+                                        @endif
+                                    </h4>
                                 </div>
 
                                 <footer class="with-share">
