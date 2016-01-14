@@ -208,6 +208,9 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
 //    COMMENTS
     Route::post('/comment', ['as'=>'front.comment', 'uses'=> 'CommentController@store']);
 
+//    Orphus
+    Route::post('/orphus', ['as'=>'front.orphus', 'uses'=>'CommentController@orphus']);
+
 Route::get('locale/{locale?}',   ['as' => 'locale',   'uses' => 'CommonController@setLocale']);
 
 });

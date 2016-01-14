@@ -3,6 +3,7 @@
 @section('styles')
     <link rel="stylesheet" href="{{ asset('css/articles.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/sweetalert.css') }}">
+    <link href="{{ asset('froala/css/froala_style.min.css') }}" rel="stylesheet" type="text/css" />
 @endsection()
 @section('content')
     <div class="container main-wrapper">
@@ -50,6 +51,11 @@
                                         @endif
                                     </div>
                                 </div>
+
+                                <p>
+                                    <a href="http://orphus.ru" id="orphus" class="hidden" target="_blank"><img alt="Система Orphus" src="{{ asset('js/orphus.gif') }}" border="0" width="240" height="80" /></a>
+                                </p>
+
                                 <footer>
                                     @if(auth()->user())
                                         <a class="post-edit" href="{{ route('admin.post.edit', $post) }}" target="_blank"><i class="fa fa-pencil"></i>{{ trans('site.AdminPostEdit') }}</a>
@@ -192,4 +198,13 @@
             swal("", "Где то произошла ошибка!", "error");
         @endif
     </script>
+
+    {{--@if(!session('orphus'))--}}
+        {{--<script>--}}
+            {{--swal("", "Где то произошла ошибка!", "error");--}}
+        {{--</script>--}}
+    {{--@endif--}}
+
+    {{--Orphus--}}
+    <script type="text/javascript" src="{{ asset('js/orphus.js') }}"></script>
 @endsection
