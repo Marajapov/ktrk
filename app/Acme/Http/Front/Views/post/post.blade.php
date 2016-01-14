@@ -63,7 +63,7 @@
                                     <h4><i class="fa fa-exclamation-circle"></i> Если вы обнаружили ошибку, выделите текст и нажмите Ctrl+Enter</h4>
                                 </div>
 
-                                <footer>
+                                <footer class="with-share">
 
                                     @if(auth()->user())
                                         <a class="post-edit" href="{{ route('admin.post.edit', $post) }}" target="_blank"><i class="fa fa-pencil"></i>{{ trans('site.AdminPostEdit') }}</a>
