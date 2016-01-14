@@ -425,3 +425,134 @@ h3#reply-title {
 .orphus .buttons .cancel {
     display: none;
 }
+
+/*SHARE LINKS*/
+.panel-body footer i{
+  /*padding-left: 10px !important;*/
+}
+ul {
+  padding:0;
+  list-style: none;
+}
+
+ul.social-icons {
+  margin-left: 15px;
+  margin-bottom: 10px;
+  float: left;
+}
+
+.social-icons li {
+  vertical-align: top;
+  display: inline;
+}
+
+.social-icons a {
+  color: rgb(72, 147, 186);
+  /*text-decoration: none;*/
+  /*text-align: center;*/
+}
+
+
+.fa-facebook {
+  padding:7px 11px 4px 11px;
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition: .5s;
+  background-color: #959595;
+  margin-left: 2px;
+}
+
+.fa-facebook:hover {
+  background-color: #3d5b99;
+}
+
+.fa-vk {
+  padding:7px 8px 4px 10px;
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition: .5s;
+  background-color: #959595;
+  margin-left: 5px;
+}
+
+.fa-vk:hover {
+  background-color: #6385AA;
+}
+
+.fa-odnoklassniki {
+  padding:7px 9px 4px 9px;
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition: .5s;
+  background-color: #959595;
+  margin-left: 5px;
+}
+
+.fa-odnoklassniki:hover {
+  background-color: #FC6719;
+}
+
+.fa-youtube {
+  padding:7px 9px 4px 8px;
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition: .5s;
+  background-color: #959595;
+  margin-left: 5px;
+}
+
+.fa-youtube:hover {
+  background-color: #e64a41;
+}
+
+.fa-linkedin {
+  padding:7px 9px 4px 8px;
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition: .5s;
+  background-color: #959595;
+  margin-left: 5px;
+}
+
+.fa-linkedin:hover {
+  background-color: #0073a4;
+}
+
+.fa-google-plus {
+  padding:7px 7px 4px 7px;
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition: .5s;
+  background-color: #959595;
+  margin-left: 5px;
+}
+
+.fa-google-plus:hover {
+  background-color: #d94a39;
+}
+
+.count{
+  background-color: #fff;
+  padding:7px 11px 4px 11px;
+  min-width: 10px;
+  padding: 0 9px;
+  font-size: 11px;
+  text-align: center;
+  border: 1px solid #d3d3d3;
+  border-radius: 3px;
+  color: #151515;
+  text-shadow: none;
+  margin-left: 3px;
+}
