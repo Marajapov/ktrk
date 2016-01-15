@@ -317,4 +317,8 @@ return [
     'DataTableNextPage' => 'След.',
     'DataTablePreviousPage' => 'Пред.',
 
+
+//    Post
+    'PostAktualno'=>'Актуально',
+
 ];

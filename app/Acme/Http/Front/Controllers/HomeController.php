@@ -317,11 +317,17 @@ class HomeController extends Controller
         }
 
         $comments = Comment::where('resourceType','=','post')->where('resourceId','=',$post->id)->where('approved','=','1')->orderBy('id','desc')->get();
-        
+
+        if($lc == 'kg'){
+            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->orderBy('id','desc')->take(6)->get();
+        }elseif($lc == 'ru'){
+            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->orderBy('id','desc')->take(6)->get();
+        }
 
         return view('Front::post.post',[
             'lc' => $lc,
             'post' => $post,
+            'topArticles' => $topArticles,
 
             'relatedPosts' => $relatedPosts,
 
@@ -349,7 +355,12 @@ class HomeController extends Controller
         }elseif($lc == 'ru'){
             $postAll = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->orderBy('id','desc')->paginate($perPage);
         }
-        
+
+        if($lc == 'kg'){
+            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->orderBy('id','desc')->take(6)->get();
+        }elseif($lc == 'ru'){
+            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->orderBy('id','desc')->take(6)->get();
+        }
 
         $categories = \Model\Category\ModelName::where('general','=','1')->get();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
@@ -357,6 +368,7 @@ class HomeController extends Controller
         return view('Front::post.posts',[
             'perPage'=> $perPage,
             'postAll' => $postAll,
+            'topArticles' => $topArticles,
             'categories'=>$categories,
             'backgroundMain' => $backgroundMain,
             'positionTop'    => $this->positionTop,
@@ -438,6 +450,11 @@ class HomeController extends Controller
             $posts = \Model\Post\ModelName::where('category_id','=',$category_id)->where('titleRu','<>','')->orderBy('id','desc')->paginate($perPage);
         }
 
+        if($lc == 'kg'){
+            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->orderBy('id','desc')->take(6)->get();
+        }elseif($lc == 'ru'){
+            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->orderBy('id','desc')->take(6)->get();
+        }
 
         $categories = \Model\Category\ModelName::where('general','=','1')->get();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
@@ -446,6 +463,7 @@ class HomeController extends Controller
             'perPage'=> $perPage,
             'posts' => $posts,
             'category' => $category,
+            'topArticles' => $topArticles,
 
             'categories'=>$categories,
             'backgroundMain' => $backgroundMain,
