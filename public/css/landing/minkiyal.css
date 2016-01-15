@@ -7,7 +7,8 @@ Author URL: http://shapebootstrap.net
 
 /*************************
 *******Typography******
-**************************/
+**************************
+*/
 body {
   padding-top: 0px;
   font-family: 'Roboto', sans-serif;
@@ -17,7 +18,7 @@ body {
 }
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   color: #272727;
 }
 a {
@@ -283,16 +284,17 @@ ul.nostyle i {
   margin-top: 5px;
 }
 .navbar-brand {
-  color: #005197 !important;
+  color: #fff !important;
   font-size: 30px;
   font-weight: bold;
+  font-family: 'Roboto Condensed';
   line-height: 2;
   text-transform: uppercase;
   text-transform: uppercase;
 }
 @media only screen and (min-width:768px) {
   #main-menu.navbar-default {
-    background: #CDDC39;
+    background: #3D9970;
     -webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.6);
     box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.6);
     z-index: 1000;
@@ -301,8 +303,9 @@ ul.nostyle i {
     padding-top: 20px;
     padding-bottom: 20px;
     font-size: 19px;
-    color: #005197;
+    color: #C4157A;
     font-weight: bold;
+    font-family: 'Roboto Condensed';
   }
   #main-menu.navbar-default .navbar-nav > li.active > a, #main-menu.navbar-default .navbar-nav > li.open > a, #main-menu.navbar-default .navbar-nav > li:hover > a {
     background: #C4157A;
@@ -1068,4 +1071,7 @@ ul.nostyle i {
 .form-control {
   box-shadow: none;
   -webkit-box-shadow: none;
+}
+.navbar-nav ul li.scroll a{
+  color: #fff;
 }
