@@ -1,7 +1,15 @@
 @extends('Front::layouts.default')
 @section('title', $gallery->getName())
 @section('styles')
-    {{--<link rel="stylesheet" type="text/css" href="{{ asset('/static/css/styles.css') }}">--}}
+
+    <meta property="fb:app_id"             content="564062523746973" />
+    <meta property="og:url"                content="{{ Request::url()}}" />
+    <meta property="og:site_name"          content="{{ trans('site.TradeMark') }}" />
+    <meta property="og:type"               content="article" />
+    <meta property="og:title"              content="{{ $gallery->getName() }}" />
+    <meta property="og:description"        content="$gallery->getDescription()" />
+    <meta property="og:image"              content="http://img.youtube.com/vi/{{ $gallery->thumbnail_big }}" />
+
     <link rel="stylesheet" href="{{ asset('css/articles.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/pages.css') }}"/>
 @stop

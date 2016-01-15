@@ -1,7 +1,23 @@
 @extends('Front::layouts.default')
-@section('title', 'Название | Название передачи | Телеберүүлөр | КТРК')
+@if($videoProject)
+    @section('title', $videoName.' | '.  $videoProject.' | Телеберүүлөр | КТРК')
+@else
+@section('title', $videoName.' | '.$getVideoTypeName.' | КТРК')
+@endif
 
 @section('styles')
+    <meta property="fb:app_id"             content="564062523746973" />
+    <meta property="og:url"                content="{{ Request::url()}}" />
+    <meta property="og:site_name"          content="{{ trans('site.TradeMark') }}" />
+    <meta property="og:type"               content="article" />
+    <meta property="og:title"              content="{{ $videoName }}" />
+    <meta property="og:description"        content="" />
+    @if($video->thumbnail_big)
+        <meta property="og:image"              content="{{ asset($video->thumbnail_big) }}" />
+    @else
+        <meta property="og:image"              content="http://img.youtube.com/vi/{{ $video->getUrl() }}" />
+    @endif
+
     <link rel="stylesheet" href="{{ asset('css/videoportal.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/articles.css') }}"/>
 @endsection
