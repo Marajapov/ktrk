@@ -201,10 +201,21 @@ class HomeController extends Controller
         $contentOriginal = $post->getContent();
 
         $lc = app()->getlocale();
-        if($lc == 'kg' && ($post->title != '')){
-        }elseif($lc == 'ru' && ($post->titleRu != '')){
-        }else{
-            return redirect()->route('front.home');
+        
+        if(($lc == 'kg') && ($post->title != '')){
+
+        }
+
+        if($lc == 'kg' && ($post->titleRu != '')) {
+            App::setLocale('ru');
+        }
+        
+        if($lc == 'ru' && ($post->titleRu != '')){
+
+        }
+
+        if($lc == 'ru' && ($post->title != '')){
+            App::setLocale('kg');   
         }
 
         $post->incrementViewed();
