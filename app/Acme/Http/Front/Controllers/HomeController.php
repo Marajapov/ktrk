@@ -33,36 +33,35 @@ class HomeController extends Controller
        
         if($lc == 'kg'){
             $generalPost1 = \Model\Post\ModelName::general($channel)->published()->having('number','=',1)->languagekg()->first();
-
             if($generalPost1 == null){
-                $generalPost1 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(10)->first();    
+                //$generalPost1 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(10)->first();    
             }
 
             $generalPost2 = \Model\Post\ModelName::general($channel)->published()->having('number','=',2)->languagekg()->first();
 
             if($generalPost2 == null){
-                $generalPost2 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(15)->first();
+                //$generalPost2 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(15)->first();
             }
 
             $generalPost3 = \Model\Post\ModelName::general($channel)->published()->having('number','=',3)->languagekg()->first();
             if($generalPost3 == null){
-                $generalPost3 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(2)->first();
+                //$generalPost3 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(2)->first();
             }
             
             $generalPost4 = \Model\Post\ModelName::general($channel)->published()->having('number','=',4)->languagekg()->first();
             if($generalPost4 == null){
-                $generalPost4 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(30)->first();
+                //$generalPost4 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(30)->first();
             }
             
             $generalPost5 = \Model\Post\ModelName::general($channel)->published()->having('number','=',5)->languagekg()->first();
             if($generalPost5 == null){
-                $generalPost5 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(40)->first();    
+               // $generalPost5 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(40)->first();    
             }
             
 
             $generalPost6 = \Model\Post\ModelName::general($channel)->published()->having('number','=',6)->languagekg()->first();
             if($generalPost6 == null){
-                $generalPost6 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(50)->first();
+                //$generalPost6 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(50)->first();
             }
 
             $projects = \Model\Project\ModelName::having('name','<>','')->get();
@@ -70,32 +69,32 @@ class HomeController extends Controller
             $reporterPosts = \Model\Post\ModelName::where('reporter','=','1')->orderBy('id','desc')->take(15)->languagekg()->get();
             
         }elseif($lc == 'ru'){
-            $generalPost1 = \Model\Post\ModelName::general($channel)->published()->having('number','=',1)->languageru()->first();
+            $generalPost1 = \Model\Post\ModelName::general($channel)->published()->having('numberRu','=',1)->languageru()->first();
             if($generalPost1 == null){
                 $generalPost1 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languageru()->orderBy('id','desc')->take(1)->skip(32)->first();
             }
             
-            $generalPost2 = \Model\Post\ModelName::general($channel)->published()->having('number','=',2)->languageru()->first();
+            $generalPost2 = \Model\Post\ModelName::general($channel)->published()->having('numberRu','=',2)->languageru()->first();
             if($generalPost2 == null){
                 $generalPost2 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languageru()->orderBy('id','desc')->take(1)->skip(17)->first();
             }
             
-            $generalPost3 = \Model\Post\ModelName::general($channel)->published()->having('number','=',3)->languageru()->first();
+            $generalPost3 = \Model\Post\ModelName::general($channel)->published()->having('numberRu','=',3)->languageru()->first();
             if($generalPost3 == null){
                 $generalPost3 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languageru()->orderBy('id','desc')->take(1)->skip(22)->first();
             }
             
-            $generalPost4 = \Model\Post\ModelName::general($channel)->published()->having('number','=',4)->languageru()->first();
+            $generalPost4 = \Model\Post\ModelName::general($channel)->published()->having('numberRu','=',4)->languageru()->first();
             if($generalPost4 == null){
                 $generalPost4 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languageru()->orderBy('id','desc')->take(1)->skip(33)->first();
             }
 
-            $generalPost5 = \Model\Post\ModelName::general($channel)->published()->having('number','=',5)->languageru()->first();
+            $generalPost5 = \Model\Post\ModelName::general($channel)->published()->having('numberRu','=',5)->languageru()->first();
             if($generalPost5 == null){
                 $generalPost5 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languageru()->orderBy('id','desc')->take(1)->skip(44)->first();
             }
             
-            $generalPost6 = \Model\Post\ModelName::general($channel)->published()->having('number','=',6)->languageru()->first();
+            $generalPost6 = \Model\Post\ModelName::general($channel)->published()->having('numberRu','=',6)->languageru()->first();
             if($generalPost6 == null){
                 $generalPost6 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languageru()->orderBy('id','desc')->take(1)->skip(51)->first();
             }
@@ -108,7 +107,7 @@ class HomeController extends Controller
         if($lc == 'kg'){
             $latestPosts = \Model\Post\ModelName::general($channel)->published()->having('number','=','99')->where('general','=','1')->languagekg()->take(6)->skip(0)->orderBy('created_at','desc')->get();    
         }elseif($lc == 'ru'){
-            $latestPosts = \Model\Post\ModelName::general($channel)->published()->having('number','=','99')->where('general','=','1')->languageru()->take(6)->skip(0)->orderBy('created_at','desc')->get();    
+            $latestPosts = \Model\Post\ModelName::general($channel)->published()->having('numberRu','=','99')->where('general','=','1')->languageru()->take(6)->skip(0)->orderBy('created_at','desc')->get();    
         }
 
         $dayVideo1 = \Model\Media\ModelName::where('dayVideo','=','1')->first();
@@ -207,7 +206,7 @@ class HomeController extends Controller
         }
 
         if($lc == 'kg' && ($post->titleRu != '')) {
-            App::setLocale('ru');
+            app()->setlocale('ru');
         }
         
         if($lc == 'ru' && ($post->titleRu != '')){
@@ -215,7 +214,7 @@ class HomeController extends Controller
         }
 
         if($lc == 'ru' && ($post->title != '')){
-            App::setLocale('kg');   
+            app()->setlocale('kg');
         }
 
         $post->incrementViewed();
@@ -330,9 +329,9 @@ class HomeController extends Controller
         $comments = Comment::where('resourceType','=','post')->where('resourceId','=',$post->id)->where('approved','=','1')->orderBy('id','desc')->get();
 
         if($lc == 'kg'){
-            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->orderBy('id','desc')->take(6)->get();
+            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->where('number','=','88')->orderBy('updated_at','desc')->take(6)->get();
         }elseif($lc == 'ru'){
-            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->orderBy('id','desc')->take(6)->get();
+            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->where('numberRu','=','88')->orderBy('updated_at','desc')->take(6)->get();
         }
 
         return view('Front::post.post',[
@@ -368,9 +367,9 @@ class HomeController extends Controller
         }
 
         if($lc == 'kg'){
-            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->orderBy('id','desc')->take(6)->get();
+            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->where('number','=','88')->orderBy('updated_at','desc')->take(6)->get();
         }elseif($lc == 'ru'){
-            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->orderBy('id','desc')->take(6)->get();
+            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->where('numberRu','=','88')->orderBy('updated_at','desc')->take(6)->get();
         }
 
         $categories = \Model\Category\ModelName::where('general','=','1')->get();
@@ -462,9 +461,9 @@ class HomeController extends Controller
         }
 
         if($lc == 'kg'){
-            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->orderBy('id','desc')->take(6)->get();
+            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->where('number','=','88')->orderBy('updated_at','desc')->take(6)->get();
         }elseif($lc == 'ru'){
-            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->orderBy('id','desc')->take(6)->get();
+            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->where('numberRu','=','88')->orderBy('updated_at','desc')->take(6)->get();
         }
 
         $categories = \Model\Category\ModelName::where('general','=','1')->get();

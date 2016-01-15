@@ -13,9 +13,9 @@
 
                             <div class="media-body">
                                 <div class="extra">
-                                    <span class="e-datetime">{{ $post->getDay() }} {{ $post->getMonthRu() }} , {{ $post->getTime() }}</span>
+                                    <span class="e-datetime">{{ $post->getDay() }} {{ $post->getMonthRu() }}</span>
                                     <a class="e-cat text-uppercase" href="{{ route('front.category', $post->category) }}"><span>{{ $post->category('category_id')->first()->getTitle() }}</span></a>
-                                    <span class="e-views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
+                                    {{-- <span class="e-views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span> --}}
                                 </div>
                                 <a class="media-heading" href="{{ route('front.post', $post) }}">{{ $post->getTitleRuOrKg() }}</a>
                             </div>
