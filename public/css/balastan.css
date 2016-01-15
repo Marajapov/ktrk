@@ -1,5 +1,18 @@
+@font-face {
+    font-family: 'merge_probold';
+    src: url('../fonts/merge-pro-bold.eot');
+    src: url('../fonts/merge-pro-bold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/merge-pro-bold.woff2') format('woff2'),
+         url('../fonts/merge-pro-bold.woff') format('woff'),
+         url('../fonts/merge-pro-bold.ttf') format('truetype'),
+         url('../fonts/merge-pro-bold.svg#merge_probold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 #balastan {
-	font-family: 'Roboto condensed';
+	font-family: 'merge_probold';
 }
 
 #balastan .switch{
@@ -10,20 +23,15 @@
 /*BEGIN Background images sor sections*/
 
 .kidsmainbg{
-/*	background: url('../images/channels/balastan/repeat.jpg')repeat;
-	background-size: contain;*/
+	background: url('../images/channels/balastan/bg.jpg') no-repeat;
+	background-size: cover;
 }
 .newtopvideos{
-	background: url('../images/channels/balastan/rocket.png');
-}
-.kidsslider{
-/*	background: url('../images/channels/balastan/repeat.png') repeat;
-	background-size: contain;*/
+	margin-top: -26px;
+	background: #00283D;
 }
 .kidsgallery{
-	background: url('../images/channels/balastan/kidsnew.jpg') no-repeat;
-	background-size: cover;
-	position: relative;
+	background: #94c83d;
 }
 
 
@@ -33,8 +41,7 @@
 .kidstopheader{
 
     border-radius: 5px !important;
-
-    background: #FFEB3B;
+    padding-top: 20px;
 }
 
 .kidstopheader ul{
@@ -47,7 +54,7 @@
 }
 
 .kidstopheader ul li:hover{
-	background: #FF5722;
+
 }
 
 .kidstopheader ul li:hover a, .kidstopheader ul li:hover i{
@@ -59,11 +66,11 @@
 }
 
 .kidstopheader ul li a{
-	font-size: 30px;
+	font-size: 25px;
 	font-weight: 600;
 	text-transform: uppercase;
 
-	color: #414142;
+	color: #fff;
 }
 
 .kidstopheader ul li a:hover{
@@ -119,7 +126,7 @@
 
 .kidstopheader ul li a .i1, .i2, .i3, .i4, .i5, .i6{
 	font-size: 40px;
-	color:#F44336;
+	color:#fff;
 
 }
 /* END Header*/
@@ -131,6 +138,7 @@
 }
 
 .homevideo{
+
 }
 .homevideo:hover{
 /*	-webkit-transform: scale(1.05);
@@ -143,6 +151,7 @@
 	-webkit-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
 	-moz-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
 	box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+
 }
 .homevideo .homevideoname{
 	position: absolute;
@@ -198,7 +207,7 @@
 	-moz-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
 	box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
 }
-.firsteye .right:hover, .firsteye .rightbottom:hover, .firsteye .homevideo:hover, .slick-slide:hover, .newkidvideos .col-md-6:hover, .newkidvideos .col-md-12:hover, .kidsgallery .col-md-12:hover, .kidsgallery .col-md-4:hover{
+.firsteye .right:hover, .firsteye .rightbottom:hover, .firsteye .homevideo:hover, .kidsslider .slick-slide:hover, .newkidvideos .col-md-6:hover, .newkidvideos .col-md-12:hover, .kidsgallery .col-md-4:hover{
 	-webkit-transform: scale(1.05);
 	-ms-transform: scale(1.05);
 	-o-transform: scale(1.05);
@@ -245,6 +254,10 @@
 	-webkit-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
 	-moz-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
 	box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+
+	-webkit-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
 }
 
 
@@ -282,6 +295,33 @@
 /* END Main Home video*/
 
 /* BEGIN Programms slide*/
+
+#kidsslider{
+	position: relative;
+	height: 180px;
+	
+	padding-top: 1px;
+    padding-bottom: 0;
+    margin-top: -60px;
+   
+    background: #00283d;
+
+}
+.kidsslider{
+	width: 150%;
+    border-radius: 50% !important;
+    left: -25%;
+    margin-top: -40px;
+}
+.kidsslider:before {
+	display: block;
+    width: 150%;
+    left: -25%;
+    z-index: -1;
+    top: -25px;
+    height: 180px;
+    border-radius: 50% !important;
+}
 .programs-slide {
     padding: 20px 0px;
 }
@@ -346,6 +386,9 @@
 }
 .newkidvideos {
 	position: relative;
+		-webkit-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
 }
 
 .newkidvideos .title {
@@ -432,6 +475,9 @@
 }
 .newkidvideos .videomain{
 	margin-bottom: 10px;
+		-webkit-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
 }
 .newkidvideos img{
 	border-radius: 5px !important;
@@ -480,8 +526,8 @@
 
 .kidsgallery .kidsright{
 	position: absolute;
-    top: -12px;
-    right: 10px;
+    top: -22px;
+    right: 0px;
 
 	padding: 0px 10px 8px 10px;
 	border-radius: 5px !important;
@@ -499,6 +545,10 @@
 	-moz-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
 	box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
 	text-shadow: 4px 4px 2px rgb(0, 0, 0);
+
+	-webkit-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
 }
 .kidsgallery .title{
 	position: relative;
@@ -506,20 +556,8 @@
 
 }
 .kidsgallery .title h3{
-
-	padding: 10px;
 	width: 100%;
 	border-radius: 5px !important;
-
-	background: #4CAF50;
-	background: url('../images/channels/balastan/h3.jpg') repeat;
-	background-size: inherit;
-
-	-webkit-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
-	-moz-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
-	box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
-	text-shadow: 4px 4px 2px rgb(0, 0, 0);
-
 }
 .kidsgallery .title h3 span{
 	position: relative;
@@ -535,10 +573,15 @@
 	-moz-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
 	box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
 	text-shadow: 4px 4px 2px rgb(0, 0, 0);
-
 }
+
 .kidsgallery .col-md-4{
+	position: relative;
 	margin-bottom: 15px;
+
+	-webkit-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
 }
 
 .kidsgallery .cover{
@@ -547,9 +590,7 @@
 	-moz-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
 	box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
 }
-.kidsgallery .col-md-4{
-	position: relative;
-}
+
 .kidsgallery .name {
 	position: absolute;
 	top: 0px;
@@ -568,3 +609,169 @@
 }
 
 /* END Photo Gallery*/
+
+/*PANEL GALLERY*/
+.gallery{
+    border-left: 2px solid #F1F4F9;
+    border-top: 2px solid #F1F4F9;
+    border-right: none;
+    height: auto;
+
+    background: #ffffff;
+}
+.gallery .panel-heading h3{
+    color: #8493A3;
+}
+.gallery .panel-heading a.all{
+    float: right;
+
+    color: #237dac;
+    font-family: "Roboto", Helvetica , Arial, sans-serif;
+    font-size: 12px;
+    text-transform: none;
+}
+.gallery .panel-heading a.all:hover{
+    color: #2D3E4A;
+}
+.gallery .panel-heading i{
+    padding-left: 5px;
+}
+.gallery .slick-slider{
+    padding-bottom: 15px;
+}
+
+/*SHOWS-SLIDER*/
+.shows-slider{
+    z-index: 101;
+    overflow: hidden;
+
+}
+.shows-carousel{
+    margin: 0 auto;
+    padding: 0;
+}
+.shows-carousel .slick-list{
+    overflow: visible;
+}
+.shows-carousel .slick-slide{
+    position: relative;
+
+    height: 600px;
+    margin: 0;
+
+    background: none;
+
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.shows-carousel .slick-slide .overlay{
+    position: absolute;
+    z-index: 99;
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(255, 255, 255, 0.5);
+
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+.shows-carousel .slick-slide.slick-current .overlay{
+    background: none;
+}
+.shows-carousel .slick-slide.slick-current a{
+    position: absolute;
+    z-index: 100;
+
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.shows-carousel .slick-slide img{
+    width: auto;
+    height: 450px;
+    opacity: 1;
+}
+.show-info{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 101;
+
+    height: 100px;
+    width: 100%;
+
+    color: #ffffff;
+    font-size: 40px;
+    line-height: 80px;
+
+    text-shadow: 1px 1px 5px #000000;
+
+    opacity: 0;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+.show-info h4{
+    position: absolute;
+    left: 30px;
+
+    margin: 0;
+
+    font-size: 40px;
+    line-height: 100px;
+    text-transform: uppercase;
+}
+.show-info span{
+    position: absolute;
+    right: 30px;
+    text-transform: lowercase;
+}
+.show-time{
+    top: 10px;
+    font-size: 40px;
+    line-height: 50px;
+}
+.show-day{
+    bottom: 10px;
+    font-size: 24px;
+    line-height: 40px;
+}
+.shows-carousel .slick-slide.slick-current .show-info{
+    opacity: 1;
+}
+.shows-carousel .slick-prev, .shows-carousel .slick-next{
+    z-index: 101;
+    width: 80px;
+    height: 80px;
+
+    background: rgba(255, 255, 255, 0.35);
+
+    text-align: center;
+
+    -webkit-transform: translateY(-25px);
+    -moz-transform: translateY(-25px);
+    -ms-transform: translateY(-25px);
+    -o-transform: translateY(-25px);
+    transform: translateY(-25px);
+}
+.shows-carousel .slick-prev::before, .shows-carousel .slick-next::before{
+    color: #333 !important;
+    font-size: 40px;
+}
+.shows-carousel .slick-prev{
+    left: 0px;
+}
+.shows-carousel .slick-next{
+    right: 0px;
+}
+.shows-carousel .slick-prev:hover, .shows-carousel .slick-prev:focus, .shows-carousel .slick-next:hover, .shows-carousel .slick-next:focus{
+    background: rgba(255, 255, 255, 0.5);
+}

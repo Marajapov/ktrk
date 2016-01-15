@@ -53,7 +53,7 @@
       </nav>
    </div>
    <!--END -->
-   <!-- BEGIN Home video -->
+
    <div class="container-fluid kidsmainbg">
       <div class="container">
          <div class="row">
@@ -69,44 +69,51 @@
                   </ul>
                </nav>
             </div>
-         </div>
-         <div class="row firsteye">
-            <div class="col-md-8 homevideo">
-               @if($firstMedia)
-               <h2 class="homevideocat"><img src="{{asset('images/channels/balastan/aktan_min.png')}}" alt="" class="keremet">Керемет көч</h2>
-               <iframe width="100%" height="500px" src="https://www.youtube.com/embed/{{$firstMedia->getUrl()}}?rel=0&amp;controls=1&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>
-               <h3 class="homevideoname">{{ $firstMedia->getName() }}</h3>
-               @endif
-            </div>
-            <div class="col-md-4">
-               <div class="right">
-                  <a href="">
-                     <h2 class="cat">Билгим келет</h2>
-                     <img src="{{ asset('images/channels/balastan/keremet.jpg')}}" alt=""/>
-                     <div class="play">
-                        <iframe src="https://www.youtube.com/embed/{{$firstMedia->getUrl()}}?rel=0&amp;controls=1&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>
-                     </div>
-                     <h3 class="name">24.04.2016</h3>
-                  </a>
-               </div>
-               <div class="rightbottom">
-                  <a href="">
-                     <h2 class="cat">Күн балдары</h2>
-                     <img src="{{ asset('images/channels/balastan/sun-kids.jpg')}}" alt=""/>
-                     <div class="play">
-                        <iframe src="https://www.youtube.com/embed/{{$firstMedia->getUrl()}}?rel=0&amp;controls=1&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>
-                     </div>
-                     <h3 class="name">31.02.2016</h3>
-                  </a>
-               </div>
-            </div>
-         </div>
-         <!-- END Home video -->
-         <!-- BEGIN Programms slide -->
+         </div>       
+      </div>
+      <div class="row">
+          <div class="shows-slider">
+              <div class="slider-overlay"></div>
+              <div class="shows-carousel">
+                  <div>
+                      <div class="overlay"></div>
+                      <a href="#">
+                          <img src="{{ asset('images/channels/balastan/aktan.png') }}" alt=""/>
+                      </a>
+                      <div class="show-info">
+                          <h4>Ала-Тоо</h4>
+                          <span class="show-day">{{ trans('site.Monday') }} - {{ trans('site.Friday') }}</span>
+                          <span class="show-time">19:30 / 21:30</span>
+                      </div>
+                  </div>
+                  <div>
+                      <div class="overlay"></div>
+                      <a href="#">
+                          <img src="{{ asset('images/projects/zamana.jpg') }}" alt=""/>
+                      </a>
+                      <div class="show-info">
+                          <h4>Замана</h4>
+                          <span class="show-day">{{ trans('site.Monday') }} - {{ trans('site.Friday') }}</span>
+                          <span class="show-time">07:00</span>
+                      </div>
+                  </div>
+                  <div>
+                      <div class="overlay"></div>
+                      <a href="#">
+                          <img src="{{ asset('images/projects/hit-parad.jpg') }}" alt=""/>
+                      </a>
+                      <div class="show-info">
+                          <h4>Хит-Парад</h4>
+                          <span class="show-day">{{ trans('site.Sunday') }}</span>
+                          <span class="show-time">22:00</span>
+                      </div>
+                  </div>
+              </div>
+          </div>
       </div>
    </div>
-   <div class="container-fluid kidsslider">
-      <div class="container">
+   <div id="kidsslider" class="container-fluid kidsslider">
+      <div class="container" style="margin-top: -166px;">
          <div class="row">   
             <div class="col-md-12 programs-slide">
                <div class="kids-slide">
@@ -340,5 +347,19 @@
           });
       }
       
-   </script> 
+   </script>
+       <script>
+
+        //    var current = $('.shows-carousel').slick('slickCurrentSlide');
+
+        $('.shows-carousel').slick({
+//        autoplay: true,
+//        autoplaySpeed: 2000,
+            arrows: false,
+            dots: true,
+            infinite: true,
+            slidesToShow: 1,
+            speed: 600
+        });
+    </script> 
    @stop
