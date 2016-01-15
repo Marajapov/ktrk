@@ -431,10 +431,9 @@ h3#reply-title {
 .orphus-mistake h4{
     margin: 0;
     padding: 10px 0 20px;
-    color: #c42026;
-    font-size: 14px;
-    font-weight: bold;
-    text-align: center;
+    color: #9DA8B0;
+    font-size: 13px;
+    text-align: left;
 }
 .orphus-mistake h4 i {
     padding-right: 5px;

@@ -2,12 +2,14 @@
 @section('title', $post->getTitleRuOrKg())
 @section('styles')
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    
-    <meta property="og:title" content="{{ $post->getTitleRuOrKg()}}" />
-    <meta property="og:type" content="article" />
-    <meta property="og:image" content="{{ asset($post->thumbnail_big) }}" />
-    <meta property="og:url" content="{{ Request::url()}}" />
-    <meta property="og:description" content="{{ $post->getShortDescription() }}" />
+
+    <meta property="fb:app_id"             content="564062523746973" />
+    <meta property="og:url"                content="{{ Request::url()}}" />
+    <meta property="og:site_name"          content="{{ trans('site.TradeMark') }}" />
+    <meta property="og:type"               content="article" />
+    <meta property="og:title"              content="{{ $post->getTitleRuOrKg()}}" />
+    <meta property="og:description"        content="{{ $post->getShortDescription() }}" />
+    <meta property="og:image"              content="{{ asset($post->thumbnail_big) }}" />
 
     <link rel="stylesheet" href="{{ asset('css/articles.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/sweetalert.css') }}">
