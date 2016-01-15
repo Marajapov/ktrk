@@ -1775,7 +1775,7 @@ header {
     line-height: 1;
     text-align: center;
 }
-.panel-related-videos .video-title{
+.panel-related-videos .video-title a{
     display: block;
     color: #4e5e6a;
     line-height: 1;
