@@ -14,12 +14,18 @@
 	background-size: contain;*/
 }
 .newtopvideos{
-/*	background: url('../images/channels/balastan/kidsnew.jpg');*/
+	background: url('../images/channels/balastan/rocket.png');
 }
 .kidsslider{
 /*	background: url('../images/channels/balastan/repeat.png') repeat;
 	background-size: contain;*/
 }
+.kidsgallery{
+	background: url('../images/channels/balastan/kidsnew.jpg') no-repeat;
+	background-size: cover;
+	position: relative;
+}
+
 
 /*END Background images sor sections*/
 
@@ -134,11 +140,15 @@
 }
 .homevideo iframe {
 	border-radius: 5px !important;
+	-webkit-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
 }
 .homevideo .homevideoname{
 	position: absolute;
 	bottom: 20px;
 
+	max-width: 90%;
 	padding: 10px;
 	border-radius: 0px 5px 5px 0px !important;
 
@@ -151,6 +161,7 @@
 .homevideo .homevideocat{
 	position: absolute;
 
+	max-width: 90%;
 	padding: 10px;
 	border-radius: 0px 5px 5px 0px !important;
 
@@ -183,8 +194,11 @@
 
 .firsteye .right {
 	position: relative;
+	-webkit-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
 }
-.firsteye .right:hover, .firsteye .rightbottom:hover, .firsteye .homevideo:hover, .slick-slide:hover{
+.firsteye .right:hover, .firsteye .rightbottom:hover, .firsteye .homevideo:hover, .slick-slide:hover, .newkidvideos .col-md-6:hover, .newkidvideos .col-md-12:hover, .kidsgallery .col-md-12:hover, .kidsgallery .col-md-4:hover{
 	-webkit-transform: scale(1.05);
 	-ms-transform: scale(1.05);
 	-o-transform: scale(1.05);
@@ -199,6 +213,7 @@
 .firsteye .right .cat {
 	position: absolute;
 
+	max-width: 90%;
 	padding: 10px;
 	border-radius: 0px 5px 5px 0px !important;
 
@@ -214,6 +229,7 @@
 	position: absolute;
 	bottom: 0px;
 
+	max-width: 90%;
 	padding: 10px;
 	border-radius: 0px 5px 5px 0px !important;
 
@@ -226,12 +242,16 @@
 .firsteye .rightbottom {
 	position: relative;
 	margin-top: 20px;
+	-webkit-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
 }
 
 
 .firsteye .rightbottom .cat {
 	position: absolute;
 
+	max-width: 90%;
 	padding: 10px;
 	border-radius: 0px 5px 5px 0px !important;
 
@@ -247,6 +267,7 @@
 	position: absolute;
 	bottom: 0px;
 
+	max-width: 90%;
 	padding: 10px;
 	border-radius: 0px 5px 5px 0px !important;
 
@@ -297,15 +318,16 @@
 	opacity: 1;
 }
 .programs-slide .kids-slide .slick-slide img{
-    border-radius: 5px !important;
-     height: 180px;
+    height: 180px;
     width: 100%;
+    border-radius: 5px !important;
 }
 
 .programs-slide .kids-slide .programmcat{
     position: absolute;
     bottom: 0px;
 
+    max-width: 90%;
     border-radius: 0px 4px 4px 0px !important;
     padding: 5px;
 
@@ -318,6 +340,10 @@
 /* END Programms slide*/
 
 /* BEGIN New videos*/
+.newtopvideos .row{
+	margin-top: 36px;
+	margin-bottom: 20px;
+}
 .newkidvideos {
 	position: relative;
 }
@@ -327,6 +353,23 @@
 	margin-bottom: 20px;
 }
 
+.newkidvideos .title .iconbar{
+  	position: absolute;
+    top: -69px;
+    left: -40px;
+
+    height: 120px;
+    width: inherit;
+
+	color: #E91E63;
+
+    font-weight: 600;    
+    font-size: 70px;
+
+    transform: rotate(-10deg);
+    z-index: 1;
+    box-shadow: none;
+}
 .newkidvideos .title h3{
 	position: relative;
 
@@ -338,12 +381,34 @@
 
 	font-size: 30px;
 	font-weight: 600;
+	text-align: center;
+
+	-webkit-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
 }
 .newkidvideos .title2 {
 	position: relative;
 	margin-bottom: 20px;
 }
 
+.newkidvideos .title2 .iconbar{
+  	position: absolute;
+    top: -69px;
+    right: -40px;
+
+    height: 120px;
+    width: inherit;
+
+	color: #E91E63;
+
+    font-weight: 600;    
+    font-size: 70px;
+
+    transform: rotate(1deg);
+    z-index: 1;
+    box-shadow: none;
+}
 .newkidvideos .title2 h3{
 	position: relative;
 
@@ -355,20 +420,30 @@
 
 	font-size: 30px;
 	font-weight: 600;
+	text-align: center;
+
+	-webkit-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
 }
 .newkidvideos .col-md-6{
 	margin-bottom: 10px;
+
 }
 .newkidvideos .videomain{
 	margin-bottom: 10px;
 }
 .newkidvideos img{
 	border-radius: 5px !important;
+	-webkit-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
 }
 .newkidvideos .cat{
 	position: absolute;
 	top: 0px;
 
+	max-width: 90%;
 	padding: 5px;
 	border-radius: 0px 5px 5px 0px !important;
 
@@ -382,8 +457,9 @@
 
 .newkidvideos .name{
 	position: absolute;
-	bottom: 0px;
+	bottom: 20px;
 
+	max-width: 90%;
 	padding: 10px;
 	border-radius: 0px 5px 5px 0px !important;
 
@@ -397,22 +473,32 @@
 /* END New videos*/
 
 /* BEGIN Photo Gallery*/
-.kidsgallery{
-
+.kidsgallery .row{
+	margin-top: 30px;
+	margin-bottom: 30px;
 }
+
 .kidsgallery .kidsright{
 	position: absolute;
-    top: -10px;
+    top: -12px;
     right: 10px;
 
-	border-bottom: 2px dashed;
+	padding: 0px 10px 8px 10px;
+	border-radius: 5px !important;
 
-	color: #E91E63;
+	color: #fff;
 	font-size: 30px;
 	font-weight: 600;
 	text-transform: lowercase;
+	text-shadow: 4px 4px 2px rgb(0, 0, 0);
+
+	background: #4CAF50;
 
 	cursor: pointer;
+	-webkit-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+	text-shadow: 4px 4px 2px rgb(0, 0, 0);
 }
 .kidsgallery .title{
 	position: relative;
@@ -420,22 +506,64 @@
 
 }
 .kidsgallery .title h3{
-	position: relative;
 
 	padding: 10px;
+	width: 100%;
 	border-radius: 5px !important;
 
-	color: #fff;
 	background: #4CAF50;
+	background: url('../images/channels/balastan/h3.jpg') repeat;
+	background-size: inherit;
 
+	-webkit-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+	text-shadow: 4px 4px 2px rgb(0, 0, 0);
+
+}
+.kidsgallery .title h3 span{
+	position: relative;
+	top: -3px;
+	padding: 0px 10px 4px 5px;
+	color: #fff;
 	font-size: 30px;
 	font-weight: 600;
+	background: #FCCF02;
+	border-radius: 5px !important;
+
+	-webkit-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+	text-shadow: 4px 4px 2px rgb(0, 0, 0);
 
 }
+.kidsgallery .col-md-4{
+	margin-bottom: 15px;
+}
+
 .kidsgallery .cover{
 	border-radius: 5px !important;
+	-webkit-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
 }
-.kidsgallery .name{
+.kidsgallery .col-md-4{
+	position: relative;
+}
+.kidsgallery .name {
+	position: absolute;
+	top: 0px;
+
+	max-width: 90%;
+	padding: 5px;
+	border-radius: 0px 5px 5px 0px !important;
+
+	color: #FFEB3B;
+	background: #03A9F4;
+
+	font-size: 20px;
+	font-weight: 600;
+	text-shadow: 1px 0px 0px rgb(45, 45, 45), 0 0 1em rgba(255, 250, 250, 0.04);
 
 }
 

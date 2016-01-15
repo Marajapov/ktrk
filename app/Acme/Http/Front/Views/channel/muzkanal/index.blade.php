@@ -143,7 +143,7 @@
             <div id="dkp-slideshow-left"></div>
             <div class="row dkp-slide">
                <a href="#">
-                  <div class="col-sm-12 dkp-anonce dkp-anonce-big" style="background-image: url({{ asset('images/channels/muzkanal/hit-parad.jpg') }});">
+                  <div class="col-sm-12 dkp-anonce dkp-anonce-big" style="background-image: url({{ asset('images/channels/muzkanal/hit-parad.jpg') }}); height:400px; width:100%;">
                      <div class="dkp-anonce-time">
                         <span>21:00</span>
                      </div>

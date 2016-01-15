@@ -159,34 +159,35 @@
          <div class="row">
             <div class="col-md-6 newkidvideos">
                <div class="title">
+                  <img class="iconbar" src="{{asset('images/channels/balastan/akylay_min.png')}}" alt="">
                   <h3>Жаңы видеолор</h3>
                </div>
                <div class="row">
                   <div class="col-md-12">
                      <a href="">
-                        <h2 class="cat">Манас таануу</h2>
-                        <img class="videomain" width="100%" height="340px" src="http://img.youtube.com/vi/rYEDA3JcQqw/mqdefault.jpg" alt="" />
-                        <h3 class="name">Биринчи чыгарылыш</h3>
+                        <h2 class="cat">Күн балдары</h2>
+                        <img class="videomain" width="100%" height="340px" src="http://img.youtube.com/vi/d3KWXP4ELTY/mqdefault.jpg" alt="" />
+                        <h3 class="name">Балдарга арналган майрамдык концерт. 1-бөлүк</h3>
                      </a>
                   </div>
                   <div class="col-md-6">
                      <a href="">
-                        <h2 class="cat">Манас таануу</h2>
+                        <h2 class="cat">Кермет көч</h2>
                         <img class="video" width="100%" height="180px" src="http://img.youtube.com/vi/rYEDA3JcQqw/mqdefault.jpg" alt="" />
                         <h3 class="name">Биринчи чыгарылыш</h3>
                      </a>
                   </div>
                   <div class="col-md-6">
                      <a href="">
-                        <h2 class="cat">Манас таануу</h2>
+                        <h2 class="cat">Бирге окуйбуз</h2>
                         <img class="video" width="100%" height="180px" src="http://img.youtube.com/vi/rYEDA3JcQqw/mqdefault.jpg" alt="" />
-                        <h3 class="name">Биринчи чыгарылыш</h3>
+                        <h3 class="name">Алтын казына</h3>
                      </a>
                   </div>
                   <div class="col-md-6">
                      <a href="">
                         <h2 class="cat">Манас таануу</h2>
-                        <img class="video" width="100%" height="180px" src="http://img.youtube.com/vi/rYEDA3JcQqw/mqdefault.jpg" alt="" />
+                        <img class="video" width="100%" height="180px" src="http://img.youtube.com/vi/27dLyRMZTJw/mqdefault.jpg" alt="" />
                         <h3 class="name">Биринчи чыгарылыш</h3>
                      </a>
                   </div>
@@ -201,35 +202,36 @@
             </div>
             <div class="col-md-6 newkidvideos">
                <div class="title2">
+                  <img class="iconbar" src="{{asset('images/channels/balastan/aktan_mini.png')}}" alt="">
                   <h3>Популярдуу видеолор</h3>
                </div>
                <div class="row">
                   <div class="col-md-12">
                      <a href="">
-                        <h2 class="cat">Манас таануу</h2>
-                        <img class="videomain" width="100%" height="340px" src="http://img.youtube.com/vi/rYEDA3JcQqw/mqdefault.jpg" alt="" />
-                        <h3 class="name">Биринчи чыгарылыш</h3>
+                        <h2 class="cat">Акыл ордо</h2>
+                        <img class="videomain" width="100%" height="340px" src="http://img.youtube.com/vi/umxBRokUS1M/mqdefault.jpg" alt="" />
+                        <h3 class="name">24.03.2016</h3>
                      </a>
                   </div>            
                   <div class="col-md-6">
                      <a href="">
-                        <h2 class="cat">Манас таануу</h2>
-                        <img class="video" width="100%" height="180px" src="http://img.youtube.com/vi/rYEDA3JcQqw/mqdefault.jpg" alt="" />
-                        <h3 class="name">Биринчи чыгарылыш</h3>
+                        <h2 class="cat">Бирге окуйбуз</h2>
+                        <img class="video" width="100%" height="180px" src="http://img.youtube.com/vi/CSzgApEUtvw/mqdefault.jpg" alt="" />
+                        <h3 class="name">Керемет жомок </h3>
                      </a>
                   </div>
                   <div class="col-md-6">
                      <a href="">
-                        <h2 class="cat">Манас таануу</h2>
-                        <img class="video" width="100%" height="180px" src="http://img.youtube.com/vi/rYEDA3JcQqw/mqdefault.jpg" alt="" />
-                        <h3 class="name">Биринчи чыгарылыш</h3>
+                        <h2 class="cat">Читаем вместе</h2>
+                        <img class="video" width="100%" height="180px" src="http://img.youtube.com/vi/bvRdR4IJSxQ/mqdefault.jpg" alt="" />
+                        <h3 class="name">Сказка Дюймовочка</h3>
                      </a>
                   </div>
                   <div class="col-md-6">
                      <a href="">
-                        <h2 class="cat">Манас таануу</h2>
-                        <img class="video" width="100%" height="180px" src="http://img.youtube.com/vi/rYEDA3JcQqw/mqdefault.jpg" alt="" />
-                        <h3 class="name">Биринчи чыгарылыш</h3>
+                        <h2 class="cat">Күн балдары</h2>
+                        <img class="video" width="100%" height="180px" src="http://img.youtube.com/vi/GCTWMh-Ub4k/mqdefault.jpg" alt="" />
+                        <h3 class="name"> Балдарга арналган майрамдык концерт. 1-бөлүк</h3>
                      </a>
                   </div>
                   <div class="col-md-6">
@@ -252,34 +254,46 @@
          <div class="row">
             <div class="col-md-12">
                <div class="title">
-                  <h3>Фотогалерея</h3>
-                  <h2 class="kidsright pull-right">Все фото</h2>
+                  <h3><span>Фотогалерея</span></h3>
+                  <h2 class="kidsright">Все фото</h2>
                </div>
+            </div>            
+            <div class="col-md-4">
+               <a href="">
+                  <img class="cover" src="http://img.youtube.com/vi/rZhEr9mZfh4/mqdefault.jpg" alt="">
+                  <h3 class="name">Баластан бир жашта</h3>
+               </a>               
             </div>
             <div class="col-md-4">
-               <img class="cover" src="http://img.youtube.com/vi/rYEDA3JcQqw/mqdefault.jpg" alt="">
-               <h3 class="name"></h3>
+               <a href="">
+                  <img class="cover" src="http://img.youtube.com/vi/rYEDA3JcQqw/mqdefault.jpg" alt="">
+                  <h3 class="name">Керемет көчтүн балдары Америкага барып келди</h3>
+               </a>               
             </div>
             <div class="col-md-4">
-               <img class="cover" src="http://img.youtube.com/vi/rYEDA3JcQqw/mqdefault.jpg" alt="">
-               <h3 class="name"></h3>
+               <a href="">
+                  <img class="cover" src="http://img.youtube.com/vi/rYEDA3JcQqw/mqdefault.jpg" alt="">
+                  <h3 class="name">Керемет көчтүн балдары Америкага барып келди</h3>
+               </a>               
             </div>
             <div class="col-md-4">
-               <img class="cover" src="http://img.youtube.com/vi/rYEDA3JcQqw/mqdefault.jpg" alt="">
-               <h3 class="name"></h3>
+               <a href="">
+                  <img class="cover" src="http://img.youtube.com/vi/rYEDA3JcQqw/mqdefault.jpg" alt="">
+                  <h3 class="name">Керемет көчтүн балдары Америкага барып келди</h3>
+               </a>               
             </div>
             <div class="col-md-4">
-               <img class="cover" src="http://img.youtube.com/vi/rYEDA3JcQqw/mqdefault.jpg" alt="">
-               <h3 class="name"></h3>
+               <a href="">
+                  <img class="cover" src="http://img.youtube.com/vi/rYEDA3JcQqw/mqdefault.jpg" alt="">
+                  <h3 class="name">Керемет көчтүн балдары Америкага барып келди</h3>
+               </a>               
             </div>
             <div class="col-md-4">
-               <img class="cover" src="http://img.youtube.com/vi/rYEDA3JcQqw/mqdefault.jpg" alt="">
-               <h3 class="name"></h3>
-            </div>
-            <div class="col-md-4">
-               <img class="cover" src="http://img.youtube.com/vi/rYEDA3JcQqw/mqdefault.jpg" alt="">
-               <h3 class="name"></h3>
-            </div>
+               <a href="">
+                  <img class="cover" src="http://img.youtube.com/vi/rYEDA3JcQqw/mqdefault.jpg" alt="">
+                  <h3 class="name">Керемет көчтүн балдары Америкага барып келди</h3>
+               </a>               
+            </div>                        
          </div>
       </div>
    </div>
