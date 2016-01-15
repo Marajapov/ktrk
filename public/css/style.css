@@ -1769,10 +1769,16 @@ header {
     vertical-align: middle;
 
 
-    color: #2D3E4A;
+    color: #4e5e6a;
     font-size: 14px;
     font-weight: bold;
+    line-height: 1;
     text-align: center;
+}
+.panel-related-videos .video-title{
+    display: block;
+    color: #4e5e6a;
+    line-height: 1;
 }
 .panel-related-videos .block a:hover {
     color: #4e5e6a;
