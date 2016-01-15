@@ -376,12 +376,12 @@
 
             $('.shows-carousel').slick({
                 autoplay: true,
-                autoplaySpeed: 2000,
+                autoplaySpeed: 2500,
                 arrows: false,
                 dots: true,
                 infinite: true,
                 slidesToShow: 1,
-                speed: 600
+                speed: 1000
             });
         </script>
 @stop

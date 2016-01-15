@@ -693,7 +693,7 @@
 }
 .show-info span{
     display: block;
-    font-family: Calibri, Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    font-family: 'Open Sans', Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
     text-transform: lowercase;
 }
 .show-info .show-time{
@@ -732,6 +732,10 @@
     top: 2px;
     background: #94c83d;
     box-shadow: 0 4px 0 0 #629219;
+}
+.show-btn:active{
+    top:6px;
+    box-shadow:0 1px 0 0 #629219;
 }
 .show-img{
     vertical-align: bottom;
