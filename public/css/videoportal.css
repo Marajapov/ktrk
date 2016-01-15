@@ -65,7 +65,9 @@
     height: 50px;
 }
 .panel-all-videos .media-box a{
+    display: block;
     color: #4e5e6a;
+    line-height: 1;
 }
 .panel-all-videos .video-thumb span{
     position: absolute;
