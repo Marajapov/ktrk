@@ -36,7 +36,7 @@
                                 <h3 class="panel-title">
                                     <a href="{{ route('front.media.index') }}">Видеопортал</a>
                                     <span class="divider"><i class="fa fa-circle"></i></span>
-                                    <a href="#"><span class="ctg">@if(!empty($getVideoTypeName)) {{ $getVideoTypeName }}@endif</span></a>
+                                    <a href="{{ route('front.media.index') }}"><span class="ctg">@if(!empty($getVideoTypeName)) {{ $getVideoTypeName }}@endif</span></a>
                                 </h3>
                             </div>
                             <div class="panel-body">
@@ -96,12 +96,12 @@
                             <div class="panel-body" id="relatedVideos">
                                 @foreach($relatedVideos as $relatedVideo)
                                     <div class="col-md-4 block">
-                                        <a href="#" class="video-thumb">
+                                        <a href="{{ route('front.media.video', $relatedVideo) }}" class="video-thumb">
                                             <img src="http://img.youtube.com/vi/{{ $relatedVideo->getUrl() }}/mqdefault.jpg" alt=""/>
                                             <i class="fa fa-play-circle-o"></i>
                                         </a>
                                         <div class="video-title">
-                                            <a href="#">
+                                            <a href="{{ route('front.media.video', $relatedVideo) }}">
                                                 {{ $relatedVideo->getName() }}
                                             </a>
                                         </div>
