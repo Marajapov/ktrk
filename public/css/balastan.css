@@ -12,7 +12,13 @@
 }
 
 #balastan {
-	font-family: 'merge_probold';
+    overflow-x: hidden;
+    background: #009cd9;
+	font-family: 'merge_probold', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+#balastan a{
+    outline: none;
 }
 
 #balastan .switch{
@@ -38,50 +44,51 @@
 /*END Background images sor sections*/
 
 /*BEGIN Header*/
+.bl-logo,.kidstopheader{
+    display: inline-block;
+    vertical-align: middle;
+    padding: 20px 0;
+}
+.bl-logo{
+    width: 19%;
+}
+.bl-logo img{
+    width: 100px;
+}
 .kidstopheader{
-
+    width: 80%;
     border-radius: 5px !important;
-    padding-top: 20px;
+    text-align: right;
 }
 
-.kidstopheader ul{
-	text-align: center;
-}
-
-.kidstopheader ul li{
+.kidstopheader li{
 	display:inline-block;
-	padding: 10px;
+    padding: 10px 20px;
 }
-
-.kidstopheader ul li:hover{
-
+.kidstopheader li:last-child{
+    padding-right: 0;
 }
+.kidstopheader li a{
+    display: block;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
 
-.kidstopheader ul li:hover a, .kidstopheader ul li:hover i{
+    color: #fff;
+}
+.kidstopheader li a i{
+    padding-right: 5px;
+    font-size: 30px;
+}
+.kidstopheader li a i, .kidstopheader li a span{
+    display: inline-block;
+    vertical-align: middle;
+}
+.kidstopheader li:hover a, .kidstopheader li:hover i{
 	color: #fff;
 }
 
-.kidstopheader ul li:hover .i1, .i2, .i3, .i4, .i5, .i6{
-	color: #fff;
-}
-
-.kidstopheader ul li a{
-	font-size: 25px;
-	font-weight: 600;
-	text-transform: uppercase;
-
-	color: #fff;
-}
-
-.kidstopheader ul li a:hover{
-
-}
-
-.kidstopheader ul li a i{
-	margin-right:10px; 
-}
-
-.kidstopheader ul li:hover i{
+.kidstopheader li:hover i{
 	animation-name: i;
 	-webkit-animation-name: i;	
 
@@ -122,12 +129,6 @@
 	100% {
 		-webkit-transform: translateY(0%) scale(1) scaleY(1);
 	}	
-}
-
-.kidstopheader ul li a .i1, .i2, .i3, .i4, .i5, .i6{
-	font-size: 40px;
-	color:#fff;
-
 }
 /* END Header*/
 
@@ -644,17 +645,17 @@
 .shows-slider{
     z-index: 101;
     overflow: hidden;
-
 }
 .shows-carousel{
     margin: 0 auto;
     padding: 0;
 }
 .shows-carousel .slick-list{
-    overflow: visible;
+    overflow: hidden;
 }
 .shows-carousel .slick-slide{
     position: relative;
+    overflow: hidden;
 
     height: 600px;
     margin: 0;
@@ -666,112 +667,82 @@
     -ms-backface-visibility: hidden;
     backface-visibility: hidden;
 }
-.shows-carousel .slick-slide .overlay{
-    position: absolute;
-    z-index: 99;
-    display: block;
-    width: 100%;
-    height: 100%;
-
-    background: rgba(255, 255, 255, 0.5);
-
-    -webkit-transition: all 0.2s ease;
-    -moz-transition: all 0.2s ease;
-    -ms-transition: all 0.2s ease;
-    -o-transition: all 0.2s ease;
-    transition: all 0.2s ease;
+.shows-carousel .slick-slide article{
+    height: 600px;
+    overflow: hidden;
 }
-.shows-carousel .slick-slide.slick-current .overlay{
-    background: none;
-}
-.shows-carousel .slick-slide.slick-current a{
-    position: absolute;
-    z-index: 100;
-
-    display: block;
-    width: 100%;
-    height: 100%;
-}
-.shows-carousel .slick-slide img{
-    width: auto;
-    height: 450px;
-    opacity: 1;
+.show-info,.show-img{
+    position: relative;
+    display: table-cell;
+    vertical-align: middle;
+    width: 49%;
+    height: 600px;
+    max-width: 50%;
 }
 .show-info{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    z-index: 101;
-
-    height: 100px;
-    width: 100%;
-
+    width: 50%;
     color: #ffffff;
-    font-size: 40px;
-    line-height: 80px;
-
-    text-shadow: 1px 1px 5px #000000;
-
-    opacity: 0;
-    -webkit-transition: all 0.2s ease;
-    -moz-transition: all 0.2s ease;
-    -ms-transition: all 0.2s ease;
-    -o-transition: all 0.2s ease;
-    transition: all 0.2s ease;
 }
-.show-info h4{
-    position: absolute;
-    left: 30px;
-
+.show-name{
     margin: 0;
-
-    font-size: 40px;
-    line-height: 100px;
+    margin-bottom: 50px;
+    font-family: 'merge_probold',Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 72px;
+    font-weight: bold;
     text-transform: uppercase;
 }
 .show-info span{
-    position: absolute;
-    right: 30px;
+    display: block;
+    font-family: Calibri, Arial, 'Helvetica Neue', Helvetica, sans-serif;
     text-transform: lowercase;
 }
-.show-time{
-    top: 10px;
+.show-info .show-time{
+    margin-bottom: 50px;
     font-size: 40px;
-    line-height: 50px;
+    line-height: 1;
 }
-.show-day{
-    bottom: 10px;
+.show-info .show-day{
+    margin-bottom: 5px;
     font-size: 24px;
-    line-height: 40px;
+    line-height: 1;
 }
-.shows-carousel .slick-slide.slick-current .show-info{
-    opacity: 1;
-}
-.shows-carousel .slick-prev, .shows-carousel .slick-next{
-    z-index: 101;
-    width: 80px;
-    height: 80px;
+.show-btn{
+    position: relative;
+    top: 0;
 
-    background: rgba(255, 255, 255, 0.35);
+    border: 0;
+    display: inline-block;
+    margin-bottom: 50px;
+    padding: 15px 25px;
 
-    text-align: center;
+    background: #aede55;
+    color: #00283d;
+    text-transform: uppercase;
 
-    -webkit-transform: translateY(-25px);
-    -moz-transform: translateY(-25px);
-    -ms-transform: translateY(-25px);
-    -o-transform: translateY(-25px);
-    transform: translateY(-25px);
+    box-shadow: 0 6px 0 0 #629219;
+    border-radius: 3px !important;
+    cursor: pointer;
+
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
-.shows-carousel .slick-prev::before, .shows-carousel .slick-next::before{
-    color: #333 !important;
-    font-size: 40px;
+.show-btn:hover{
+    top: 2px;
+    background: #94c83d;
+    box-shadow: 0 4px 0 0 #629219;
 }
-.shows-carousel .slick-prev{
-    left: 0px;
+.show-img{
+    vertical-align: bottom;
 }
-.shows-carousel .slick-next{
-    right: 0px;
+.show-img img{
+    width: 80%;
 }
-.shows-carousel .slick-prev:hover, .shows-carousel .slick-prev:focus, .shows-carousel .slick-next:hover, .shows-carousel .slick-next:focus{
-    background: rgba(255, 255, 255, 0.5);
+.shows-carousel .slick-dots{
+    bottom: 50px;
+    text-align: left;
+}
+.shows-carousel .slick-dots li button:before{
+    font-size: 10px;
 }
