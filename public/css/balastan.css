@@ -7,6 +7,21 @@
 	box-shadow: 0 1px 27px 0 rgb(0, 0, 0);
 	z-index: 1;
 }
+/*BEGIN Background images sor sections*/
+
+.kidsmainbg{
+/*	background: url('../images/channels/balastan/repeat.jpg')repeat;
+	background-size: contain;*/
+}
+.newtopvideos{
+/*	background: url('../images/channels/balastan/kidsnew.jpg');*/
+}
+.kidsslider{
+/*	background: url('../images/channels/balastan/repeat.png') repeat;
+	background-size: contain;*/
+}
+
+/*END Background images sor sections*/
 
 /*BEGIN Header*/
 .kidstopheader{
@@ -153,6 +168,9 @@
     margin-right: 5px;
 
 }
+.firsteye {
+	position: relative;
+}
 .firsteye .right a img, .firsteye .rightbottom a img{
 	height: 240px;
 	width: 100%;
@@ -163,9 +181,71 @@
 	margin-bottom: 20px;
 }
 
-.firsteye .right .cat, .firsteye .rightbottom .cat{
+.firsteye .right {
+	position: relative;
+}
+.firsteye .right:hover, .firsteye .rightbottom:hover, .firsteye .homevideo:hover, .slick-slide:hover{
+	-webkit-transform: scale(1.05);
+	-ms-transform: scale(1.05);
+	-o-transform: scale(1.05);
+	transform: scale(1.05);
+}
+.firsteye .right .play, .firsteye .rightbottom .play {
 	position: absolute;
-	top: 0px;
+	height: 235px;
+	width: 100%;
+	display: none;
+}
+.firsteye .right .cat {
+	position: absolute;
+
+	padding: 10px;
+	border-radius: 0px 5px 5px 0px !important;
+
+	color: #FFEB3B;
+	background: #03A9F4;
+
+	font-size: 30px;
+	font-weight: 600;
+	text-shadow: 1px 0px 0px rgb(45, 45, 45), 0 0 1em rgba(255, 250, 250, 0.04);
+}
+
+.firsteye .right .name {
+	position: absolute;
+	bottom: 0px;
+
+	padding: 10px;
+	border-radius: 0px 5px 5px 0px !important;
+
+	color: #414142;
+	background: #FFEB3B;
+
+	font-size: 30px;
+	font-weight: 600;
+}
+.firsteye .rightbottom {
+	position: relative;
+	margin-top: 20px;
+}
+
+
+.firsteye .rightbottom .cat {
+	position: absolute;
+
+	padding: 10px;
+	border-radius: 0px 5px 5px 0px !important;
+
+	color: #FFEB3B;
+	background: #03A9F4;
+
+	font-size: 30px;
+	font-weight: 600;
+	text-shadow: 1px 0px 0px rgb(45, 45, 45), 0 0 1em rgba(255, 250, 250, 0.04);
+}
+
+.firsteye .rightbottom .name {
+	position: absolute;
+	bottom: 0px;
 
 	padding: 10px;
 	border-radius: 0px 5px 5px 0px !important;
@@ -178,12 +258,15 @@
 }
 
 
-
 /* END Main Home video*/
 
 /* BEGIN Programms slide*/
 .programs-slide {
-	padding: 20px 75px;
+    padding: 20px 0px;
+}
+
+.programs-slide .slick-slider{
+	margin: 0px;
 }
 
 .programs-slide .kids-slide .slick-next{
@@ -233,3 +316,127 @@
     background:#FFEB3B;
 }
 /* END Programms slide*/
+
+/* BEGIN New videos*/
+.newkidvideos {
+	position: relative;
+}
+
+.newkidvideos .title {
+	position: relative;
+	margin-bottom: 20px;
+}
+
+.newkidvideos .title h3{
+	position: relative;
+
+	padding: 10px;
+	border-radius: 5px !important;
+
+	color: #fff;
+	background: #03A9F4;
+
+	font-size: 30px;
+	font-weight: 600;
+}
+.newkidvideos .title2 {
+	position: relative;
+	margin-bottom: 20px;
+}
+
+.newkidvideos .title2 h3{
+	position: relative;
+
+	padding: 10px;
+	border-radius: 5px !important;
+
+	color: #fff;
+	background: #4CAF50;
+
+	font-size: 30px;
+	font-weight: 600;
+}
+.newkidvideos .col-md-6{
+	margin-bottom: 10px;
+}
+.newkidvideos .videomain{
+	margin-bottom: 10px;
+}
+.newkidvideos img{
+	border-radius: 5px !important;
+}
+.newkidvideos .cat{
+	position: absolute;
+	top: 0px;
+
+	padding: 5px;
+	border-radius: 0px 5px 5px 0px !important;
+
+	color: #FFEB3B;
+	background: #03A9F4;
+
+	font-size: 20px;
+	font-weight: 600;
+	text-shadow: 1px 0px 0px rgb(45, 45, 45), 0 0 1em rgba(255, 250, 250, 0.04);
+}
+
+.newkidvideos .name{
+	position: absolute;
+	bottom: 0px;
+
+	padding: 10px;
+	border-radius: 0px 5px 5px 0px !important;
+
+	color: #414142;
+	background: #FFEB3B;
+
+	font-size: 20px;
+	font-weight: 600;
+}
+
+/* END New videos*/
+
+/* BEGIN Photo Gallery*/
+.kidsgallery{
+
+}
+.kidsgallery .kidsright{
+	position: absolute;
+    top: -10px;
+    right: 10px;
+
+	border-bottom: 2px dashed;
+
+	color: #E91E63;
+	font-size: 30px;
+	font-weight: 600;
+	text-transform: lowercase;
+
+	cursor: pointer;
+}
+.kidsgallery .title{
+	position: relative;
+	margin-bottom: 20px;
+
+}
+.kidsgallery .title h3{
+	position: relative;
+
+	padding: 10px;
+	border-radius: 5px !important;
+
+	color: #fff;
+	background: #4CAF50;
+
+	font-size: 30px;
+	font-weight: 600;
+
+}
+.kidsgallery .cover{
+	border-radius: 5px !important;
+}
+.kidsgallery .name{
+
+}
+
+/* END Photo Gallery*/
