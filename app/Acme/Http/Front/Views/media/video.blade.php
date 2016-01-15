@@ -75,7 +75,7 @@
                                                 var h=d[g]('body')[0];
                                                 h.appendChild(s);
                                             }})();</script>
-                                    <div class="pluso" data-background="transparent" data-options="medium,square,line,horizontal,nocounter,theme=06" data-services="vkontakte,odnoklassniki,facebook,twitter,google"></div>
+                                    <div class="pluso" data-background="transparent" data-options="medium,square,line,horizontal,nocounter,theme=04" data-services="vkontakte,odnoklassniki,facebook,twitter,google"></div>
 
                                     <a href="{{ route('front.media.all') }}">
                                         <span>{{ trans('site.AllVideos') }}<i class="fa fa-arrow-circle-right"></i></span>
