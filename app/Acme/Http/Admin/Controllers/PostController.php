@@ -76,6 +76,7 @@ class PostController extends Controller
         $post = Post::create($request->except('tag_kg','tag_ru','thumbnail','q','channel_id','created_at','number','time'));
 
         $post->number = 99;
+        $post->numberRu = 99;
         $post->save();
 
         $tag_kg_string = $request->input('tag_kg');
@@ -344,38 +345,57 @@ class PostController extends Controller
         $title = $row->title;
         $titleRu = $row->titleRu;
         
-        if($title != ''){
+        if(($title != '') && ($titleRu != '')){
+            $allPostKg = \Model\Post\ModelName::where('number','=',$number)->get();
+            if($allPostKg != null){
+                foreach($allPostKg as $post){
+                    $post->number = '88';
+                    $post->save();    
+                }
+            }
+            $allPostRu = \Model\Post\ModelName::where('numberRu','=',$number)->get();
+            if($allPostRu != null){
+                foreach($allPostRu as $post){
+                    $post->numberRu = '88';
+                    $post->save();    
+                }
+            }
+            $row->number = $number;
+            $row->numberRu = $number;
+            $row->save();
+        }elseif($title != ''){
             $allPostKg = \Model\Post\ModelName::where('title','<>','')->where('number','=',$number)->get();
             if($allPostKg != null){
                 foreach($allPostKg as $post){
-                    $post->number = '99';
+                    $post->number = '88';
                     $post->save();    
                 }
             }
 
+            $row->number = $number;
+            $row->save();
+
         }elseif($titleRu != ''){
-            $allPostRu = \Model\Post\ModelName::where('titleRu','<>','')->where('number','=',$number)->get();
+            $allPostRu = \Model\Post\ModelName::where('titleRu','<>','')->where('numberRu','=',$number)->get();
             if($allPostRu != null){
                 foreach($allPostRu as $post){
-                    $post->number = '99';
+                    $post->numberRu = '88';
                     $post->save();    
                 }
-                
             }
+            $row->numberRu = $number;
+            $row->save();
             
         }else{
             $allPostRu = \Model\Post\ModelName::where('titleRu','<>','')->where('number','=',$number)->get();
             if($allPostRu != null){
                 foreach($allPostRu as $post){
-                    $post->number = '99';
+                    $post->number = '88';
                     $post->save();    
                 }
                 
             }
         }
-
-        $row->number = $number;
-        $row->save();
         
         return redirect()->route('admin.post.index');
     }
@@ -387,6 +407,7 @@ class PostController extends Controller
 
         $row = \Model\Post\ModelName::where('id','=',$postId)->first();
         $row->number = 99;
+        $row->numberRu = 99;
         $row->save();
         return redirect()->route('admin.post.index');
     }

@@ -404,7 +404,7 @@
                                                 <div class="news-body clearfix">
                                                     <a href="{{ route('front.post', $post) }}">
                                                         <p class="news-title">{{ $post->getTitleRuOrKg() }}</p>
-                                                        <span class="ctg"><img src="@if($post->channel_id){{ $post->isChannelIcon($post->channel_id)}}@else {{ asset('images/logo_notext.png') }} @endif" alt=""/></span>
+                                                        {{--<span class="ctg"><img src="@if($post->channel_id){{ $post->isChannelIcon($post->channel_id)}}@else {{ asset('images/logo_notext.png') }} @endif" alt=""/></span>--}}
                                                     </a>
                                                 </div>
                                                 <div class="news-adds clearfix">

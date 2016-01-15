@@ -463,3 +463,20 @@ h3#reply-title {
 .pluso-more{
     display: none !important;
 }
+
+/*Panel TOP ARTICLES*/
+.panel-top-articles{
+    border-right: 0;
+    border-left: 1px solid #F1F4F9;
+    border-bottom: 3px solid #F1F4F9;
+}
+.with-top-articles .ctg-panel{
+    border-top: 3px solid #F1F4F9;
+}
+.panel-top-articles .panel-heading{
+    background: #48A6D8;
+}
+.panel-top-articles .panel-title{
+    border-color: #48A6D8;
+    color: #ffffff;
+}

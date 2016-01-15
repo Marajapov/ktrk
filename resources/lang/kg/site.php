@@ -314,4 +314,8 @@ return [
     'DataTableLastPage' => 'Аягы',
     'DataTableNextPage' => 'Кийинки',
     'DataTablePreviousPage' => 'Мурунку',
+
+
+//    Post
+    'PostAktualno'=>'Маанилүү',
 ];

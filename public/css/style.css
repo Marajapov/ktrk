@@ -1360,7 +1360,7 @@ header {
 .news-body .news-title {
     float: left;
     padding-right: 5px;
-    width: 90%;
+    width: 100%;
     font-size: 14px;
 }
 .news-body .ctg {
