@@ -471,7 +471,7 @@ h3#reply-title {
     border-bottom: 3px solid #F1F4F9;
 }
 .with-top-articles .ctg-panel{
-    /*border-top: 3px solid #F1F4F9;*/
+    border-top: 3px solid #F1F4F9;
 }
 .panel-top-articles .panel-heading{
     background: #48A6D8;
