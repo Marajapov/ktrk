@@ -25,12 +25,12 @@
         </li>
         <li>
             <a href="{{ route('birinchi.home') }}">
-                <img src="{{ asset('images/channels/1-radio.png') }}" alt=""/>
+                <img src="{{ asset('images/channels/1-radio_small.png') }}" alt=""/>
             </a>
         </li>
         <li>
             <a href="{{ route('kyrgyzradio.home') }}">
-                <img src="{{ asset('images/channels/kg-radio.png') }}" alt=""/>
+                <img src="{{ asset('images/channels/kg-radio_small.png') }}" alt=""/>
             </a>
         </li>
         <li>
@@ -40,7 +40,7 @@
         </li>
         <li>
             <a href="{{ route('minkiyal.home') }}">
-                <img src="{{ asset('images/channels/min-kiyal.png') }}" alt=""/>
+                <img src="{{ asset('images/channels/min-kiyal_small.png') }}" alt=""/>
             </a>
         </li>
     </ul>
