@@ -169,4 +169,33 @@ class BalastanController extends Controller
             ]);
     }
 
+    public function vertex()
+    {
+        $channel = \Model\Channel\ModelName::name('balastan')->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+        $firstMedia = \Model\Media\ModelName::where('balastan','=','1')->orderBy('id','desc')->first();
+        $medias = \Model\Media\ModelName::where('balastan','=','1')->take(6)->orderBy('id','desc')->get();
+
+        // Photo Gallery
+        $photoGalleries = \Model\PhotoParent\ModelName::where('balastan','=','1')->where('published','=',true)->take('10')->orderBy('id','desc')->get();
+
+        if(count($medias) > 0){ $medias = $medias;
+        }else{ $medias = null; }
+        if(count($photoGalleries) > 0){
+            $photoGalleries = $photoGalleries;
+        }else{ $photoGalleries = null; }
+        if(count($firstMedia)){ $firstMedia = $firstMedia;
+        }else{ $firstMedia = null; }
+
+        return view('Front::channel.balastan.vertex', [
+            'channel' => $channel,
+            'backgroundMain' => $backgroundMain,
+
+            'firstMedia' => $firstMedia,
+            'medias' => $medias,
+            'photoGalleries' => $photoGalleries,
+            ]);
+    }    
+
 }
