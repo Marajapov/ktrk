@@ -172,7 +172,6 @@
 .dkp-anonce {
     position: relative;
     background-position: inherit;
-    background-size: cover;
     overflow: hidden
 }
 .dkp-anonce:before {

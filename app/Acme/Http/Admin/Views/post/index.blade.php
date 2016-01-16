@@ -56,10 +56,19 @@
                 <td class="hidden-xs">{{ $post->owner()->first()->name }}</td>
                 <td class="hidden-xs">{{ $post->getTime().', '.$post->getDateFormatted() }} </td>
                 <td>
-                  @if(($post->number) > 0 && ($post->number) != 99)
+                  @if(($post->number) > 0 && ($post->number) != 99 && ($post->number) != 88)
                     {!! Form::open(['route' => ['admin.post.unnumber', $post], 'method' => 'GET', 'onsubmit' => "return confirm('Вы уверены ?')"]) !!}
                     <div class="input-group">
                       <input type="text" style="width:100px;" disabled="disabled" value="{{ $post->number}}" class="form-control">
+                      <span class="input-group-btn">
+                      <button type="submit" class="btn btn-primary">Убрать!</button>
+                      </span>
+                    </div>
+                    {!! Form::close() !!}
+                  @elseif(($post->numberRu) > 0 && ($post->numberRu) != 99 && ($post->numberRu) != 88)
+                    {!! Form::open(['route' => ['admin.post.unnumber', $post], 'method' => 'GET', 'onsubmit' => "return confirm('Вы уверены ?')"]) !!}
+                    <div class="input-group">
+                      <input type="text" style="width:100px;" disabled="disabled" value="{{ $post->numberRu}}" class="form-control">
                       <span class="input-group-btn">
                       <button type="submit" class="btn btn-primary">Убрать!</button>
                       </span>
