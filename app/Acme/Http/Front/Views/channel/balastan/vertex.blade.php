@@ -157,7 +157,7 @@
         </div>
     </div>
     <div id="kidsslider" class="container-fluid kidsslider">
-        <div class="container" style="margin-top: -160px;">
+        <div class="container">
             <div class="row">
                 <div class="col-md-12 programs-slide">
                     <div class="kids-slide">
@@ -197,6 +197,12 @@
                                 <h3 class="programmcat">Таалимтай</h3>
                             </a>
                         </div>
+                        <div class="col-md-3">
+                            <a href="#">
+                                <img src="{{ asset('images/channels/balastan/taalimtay.png')}}" alt=""/>
+                                <h3 class="programmcat">Баарын билгим келет</h3>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -208,90 +214,79 @@
     <div class="container-fluid preklams">
       <div class="container">
            <div class="row">
+
+               <div class="title col-md-12">
+                  <h3>Жакында</h3>
+               </div>
+
                <div class="col-md-6 adblock">
-                 <a href="">
-                   <h2 class="cat">Жакында</h2>
-                   <img class="videomain" width="100%" height="340px" src="{{asset('images/channels/balastan/legends.jpg')}}" alt="" />
-                   <h3 class="name">Түнкү сакчылардын уламышы</h3>
-                </a>
+                  <a href="#">
+                     <img class="videomain" width="100%" height="340px" src="{{asset('images/channels/balastan/legends.jpg')}}" alt="" />
+                  </a>
+                  <div class="show-text">
+                     <h2>Түнкү сакчылардын уламышы</h2>
+
+                     <a class="soon-btn" href="#">
+                        <i class="fa fa-chevron-right"></i>
+                     </a>
+                  </div>
                </div>
                <div class="col-md-6 adblock">
-                   <a href="">
-                       <h2 class="cat">Жакында</h2>
-                       <img class="videomain" width="100%" height="340px" src="{{asset('images/channels/balastan/po.jpg')}}" alt="" />
-                       <h3 class="name">Кунг Фу Панда 3</h3>
-                   </a>
+                  <a href="#">
+                     <img class="videomain" width="100%" height="340px" src="{{asset('images/channels/balastan/po.jpg')}}" alt="" />
+                  </a>
+                  <div class="show-text">
+                     <h2>Кунг Фу Панда 3</h2>
+
+                     <a class="soon-btn" href="#">
+                        <i class="fa fa-chevron-right"></i>
+                     </a>
+                  </div>
                </div>
            </div>
       </div>
     </div>
-    <div class="container-fluid newtopvideos">
-        <div class="container">
-            <div class="row">
-                <div class="newkidvideos">
-                    <div class="title">
-                        <h3>Жаңы видеолор</h3>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-8">
-                            <a href="">
-                                <h2 class="cat">Кермет көч</h2>
-                                <img class="video" width="100%" height="450px" src="http://img.youtube.com/vi/rYEDA3JcQqw/mqdefault.jpg" alt="" />
-                                <h3 class="name">Биринчи чыгарылыш</h3>
-                            </a>
-                        </div>              
-                        <div class="col-md-4">
-                            <a href="">
-                                <h2 class="cat">Бирге окуйбуз</h2>
-                                <img class="video" width="100%" height="220px" src="http://img.youtube.com/vi/rYEDA3JcQqw/mqdefault.jpg" alt="" />
-                                <h3 class="name">Алтын казына</h3>
-                            </a>
-                        </div>
-                        <div class="col-md-4">
-                            <a href="">
-                                <h2 class="cat">Манас таануу</h2>
-                                <img class="video" width="100%" height="220px" src="http://img.youtube.com/vi/27dLyRMZTJw/mqdefault.jpg" alt="" />
-                                <h3 class="name">Биринчи чыгарылыш</h3>
-                            </a>
-                        </div>
-                     </div>
-                     <div class="row">
-                        <div class="col-md-4">
-                            <a href="">
-                                <h2 class="cat">Бирге окуйбуз</h2>
-                                <img class="video" width="100%" height="220px" src="http://img.youtube.com/vi/rYEDA3JcQqw/mqdefault.jpg" alt="" />
-                                <h3 class="name">Алтын казына</h3>
-                            </a>
-                        </div>
-                        <div class="col-md-4">
-                            <a href="">
-                                <h2 class="cat">Манас таануу</h2>
-                                <img class="video" width="100%" height="220px" src="http://img.youtube.com/vi/27dLyRMZTJw/mqdefault.jpg" alt="" />
-                                <h3 class="name">Биринчи чыгарылыш</h3>
-                            </a>
-                        </div>
-                        <div class="col-md-4">
-                            <a href="">
-                                <h2 class="cat">Манас таануу</h2>
-                                <img class="video" width="100%" height="220px" src="http://img.youtube.com/vi/27dLyRMZTJw/mqdefault.jpg" alt="" />
-                                <h3 class="name">Биринчи чыгарылыш</h3>
-                            </a>
-                        </div>
-                     </div>    
-                </div>
+      <div class="container-fluid newtopvideos">
+         <div class="container">
+            <div class="newkidvideos">
+              <div class="title">
+                  <h3>Видеолор</h3>
+              </div>
+              <div class="row">
+                  <div class="col-md-8">
+                      <a href="">
+                          <h2 class="cat">Манас таануу</h2>
+                          <img class="video" width="100%" src="http://img.youtube.com/vi/rYEDA3JcQqw/maxresdefault.jpg" alt="" />
+                          <h3 class="name">Биринчи чыгарылыш</h3>
+                      </a>
+                  </div>         
+                  <div class="col-md-4">
+                      <a href="">
+                          <h2 class="cat">Бирге окуйбуз</h2>
+                          <img class="video" width="100%" src="http://img.youtube.com/vi/rYEDA3JcQqw/maxresdefault.jpg" alt="" />
+                          <h3 class="name">Алтын казына</h3>
+                      </a>
+                  </div>
+                  <div class="col-md-4">
+                      <a href="">
+                          <h2 class="cat">Манас таануу</h2>
+                          <img class="video" width="100%" src="http://img.youtube.com/vi/rYEDA3JcQqw/maxresdefault.jpg" alt="" />
+                          <h3 class="name">Биринчи чыгарылыш</h3>
+                      </a>
+                  </div>
+               </div>   
             </div>
-        </div>
-    </div>
+         </div>
+      </div>
     <!-- END NEW videos -->
-    
+
     <!-- BEGIN Photogalleries -->
     <div class="container-fluid kidsgallery">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="title">
-                        <h3><span>Фотогалерея</span></h3>
-                        <h2 class="kidsright">Все фото</h2>
+                        <h3>Фотогалерея</h3>
                     </div>
                 </div>
                 <div class="col-md-4">

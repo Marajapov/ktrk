@@ -35,6 +35,24 @@
 	color: #00283d;
 	font-size: 20px;
 }
+.title h3{
+	position: relative;
+	margin: 0 0 20px;
+	padding-bottom: 24px;
+	font-size: 40px;
+	color: #ffffff;
+}
+.title h3:after{
+    content: '';
+    background-image: url('../images/channels/balastan/wave-white.png');
+    background-repeat: repeat-x;
+    position: absolute;
+    bottom: 6px;
+    left: 0;
+    width: 100%;
+    height: 7px;
+}
+
 /*BEGIN Background images sor sections*/
 
 .kidsmainbg{
@@ -151,197 +169,20 @@
 }
 /* END Header*/
 
-/* BEGIN Main Home video*/
-
-.firsteye{
-	margin-top: 20px;
-}
-
-.homevideo{
-
-}
-.homevideo:hover{
-/*	-webkit-transform: scale(1.05);
-	-ms-transform: scale(1.05);
-	-o-transform: scale(1.05);
-	transform: scale(1.05);*/
-}
-.homevideo iframe {
-	border-radius: 5px !important;
-	-webkit-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
-	-moz-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
-	box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
-
-}
-.homevideo .homevideoname{
-	position: absolute;
-	bottom: 20px;
-
-	max-width: 90%;
-	padding: 10px;
-	border-radius: 0px 5px 5px 0px !important;
-
-	color: #414142;
-	background: #FFEB3B;
-
-	font-size: 30px;
-	font-weight: 600;	
-}
-.homevideo .homevideocat{
-	position: absolute;
-
-	max-width: 90%;
-	padding: 10px;
-	border-radius: 0px 5px 5px 0px !important;
-
-	color: #FFEB3B;
-	background: #03A9F4;
-
-	font-size: 30px;
-	font-weight: 600;
-	text-shadow: 1px 0px 0px rgb(45, 45, 45), 0 0 1em rgba(255, 250, 250, 0.04);
-}
-
-.homevideo .homevideocat .keremet{
-    height: 44px;
-    width: auto;
-    margin-right: 5px;
-
-}
-.firsteye {
-	position: relative;
-}
-.firsteye .right a img, .firsteye .rightbottom a img{
-	height: 240px;
-	width: 100%;
-	border-radius: 5px !important;
-}
-
-.firsteye .right a img:first-child{
-	margin-bottom: 20px;
-}
-
-.firsteye .right {
-	position: relative;
-	-webkit-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
-	-moz-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
-	box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
-}
-.firsteye .right:hover, .firsteye .rightbottom:hover, .firsteye .homevideo:hover, .kidsslider .slick-slide:hover, .newkidvideos .col-md-6:hover, .adblock .col-md-6:hover, .newkidvideos .col-md-12:hover, .kidsgallery .col-md-4:hover{
-	-webkit-transform: scale(1.05);
-	-ms-transform: scale(1.05);
-	-o-transform: scale(1.05);
-	transform: scale(1.05);
-}
-.firsteye .right .play, .firsteye .rightbottom .play {
-	position: absolute;
-	height: 235px;
-	width: 100%;
-	display: none;
-}
-.firsteye .right .cat {
-	position: absolute;
-
-	max-width: 90%;
-	padding: 10px;
-	border-radius: 0px 5px 5px 0px !important;
-
-	color: #FFEB3B;
-	background: #03A9F4;
-
-	font-size: 30px;
-	font-weight: 600;
-	text-shadow: 1px 0px 0px rgb(45, 45, 45), 0 0 1em rgba(255, 250, 250, 0.04);
-}
-
-.firsteye .right .name {
-	position: absolute;
-	bottom: 0px;
-
-	max-width: 90%;
-	padding: 10px;
-	border-radius: 0px 5px 5px 0px !important;
-
-	color: #414142;
-	background: #FFEB3B;
-
-	font-size: 30px;
-	font-weight: 600;
-}
-.firsteye .rightbottom {
-	position: relative;
-	margin-top: 20px;
-	-webkit-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
-	-moz-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
-	box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
-
-	-webkit-transition: all 0.2s ease;
-	-o-transition: all 0.2s ease;
-	transition: all 0.2s ease;
-}
-
-
-.firsteye .rightbottom .cat {
-	position: absolute;
-
-	max-width: 90%;
-	padding: 10px;
-	border-radius: 0px 5px 5px 0px !important;
-
-	color: #FFEB3B;
-	background: #03A9F4;
-
-	font-size: 30px;
-	font-weight: 600;
-	text-shadow: 1px 0px 0px rgb(45, 45, 45), 0 0 1em rgba(255, 250, 250, 0.04);
-}
-
-.firsteye .rightbottom .name {
-	position: absolute;
-	bottom: 0px;
-
-	max-width: 90%;
-	padding: 10px;
-	border-radius: 0px 5px 5px 0px !important;
-
-	color: #414142;
-	background: #FFEB3B;
-
-	font-size: 30px;
-	font-weight: 600;
-}
-
-
-/* END Main Home video*/
-
 /* BEGIN Programms slide*/
-
-#kidsslider{
-	position: relative;
-	
-	padding-top: 1px;
-    padding-bottom: 80px;
-   
-    background: url('../images/channels/balastan/texture.jpg');
-
-}
 .kidsslider{
+	position: relative;
 	width: 150%;
     border-radius: 50% !important;
     left: -25%;
-    margin-top: -60px;
-}
-.kidsslider:before {
-	display: block;
-    width: 150%;
-    left: -25%;
-    z-index: -1;
-    top: -25px;
-    height: 180px;
-    border-radius: 50% !important;
+    margin-top: -50px;
+
+    padding: 60px 0 40px;
+   
+    background: url('../images/channels/balastan/texture.jpg');
 }
 .programs-slide {
-    padding: 35px 0px 40px 0px;
+    /*padding: 35px 0px 40px 0px;*/
 }
 
 .programs-slide .slick-slider{
@@ -357,7 +198,7 @@
 }
 .programs-slide .kids-slide .slick-next:before{
 
-	color: #FFE500 !important;
+	color: #94c83d !important;
 
 	font-size: 60px;
 
@@ -368,32 +209,39 @@
 	color:red;
 }
 .programs-slide .kids-slide .slick-prev:before{
-	color: #FFE500 !important;
+	color: #94c83d !important;
 
 	font-size: 60px;
 
 	content: "\f0a8";
 	opacity: 1;
 }
+.programs-slide .slick-slide a{
+	display: block;
+}
 .programs-slide .kids-slide .slick-slide img{
-    height: 180px;
+    height: 150px;
     width: 100%;
-    border-radius: 5px !important;
+
+    border-radius: 3px 3px 0 0 !important;
 }
 
 .programs-slide .kids-slide .programmcat{
-    position: absolute;
-    bottom: 0px;
+	display: inline-block;
+	width: 100%;
+	top: 0;
+	margin: 0;
+    padding: 10px 15px;
 
-    max-width: 90%;
-    border-radius: 0px 4px 4px 0px !important;
-    padding: 5px;
+    background: #aede55;
+    color: #00283d;
 
-    font-weight: 600;
+    font-size: 17px;
+    line-height: 1;
     text-transform: uppercase;
+    text-align: center;
 
-    color: #414142; 
-    background:#FFEB3B;
+    border-radius: 0 0 3px 3px !important;
 }
 /* END Programms slide*/
 
@@ -402,9 +250,7 @@
 .preklams {
 	position: relative;
 	z-index: 1;
-	
-	margin-top: -70px;
-	padding: 50px 0px 70px 0px;
+	padding: 60px 0px 60px;
 	background:#FF9800;
 }
 .preklams:before{
@@ -419,135 +265,105 @@
     position: absolute;
     z-index: -1;
 }
-
+.title h3{
+	position: relative;
+	margin: 0 0 20px;
+	padding-bottom: 24px;
+	font-size: 40px;
+	color: #ffffff;
+}
+.title h3:after{
+    content: '';
+    background-image: url('../images/channels/balastan/wave-white.png');
+    background-repeat: repeat-x;
+    position: absolute;
+    bottom: 6px;
+    left: 0;
+    width: 100%;
+    height: 7px;
+}
 .adblock {
 	position: relative;
-		-webkit-transition: all 0.2s ease;
+	-webkit-transition: all 0.2s ease;
 	-o-transition: all 0.2s ease;
 	transition: all 0.2s ease;
-}
 
-.adblock .title {
-	position: relative;
-	margin-bottom: 20px;
-}
-
-.adblock .title .iconbar{
-  	position: absolute;
-    top: -69px;
-    left: -40px;
-
-    height: 120px;
-    width: inherit;
-
-	color: #E91E63;
-
-    font-weight: 600;    
-    font-size: 70px;
-
-    transform: rotate(-10deg);
-    z-index: 1;
-    box-shadow: none;
-}
-.adblock .title h3{
-	position: relative;
-
-	padding: 10px;
-	border-radius: 5px !important;
-
-	color: #fff;
-	background: #03A9F4;
-
-	font-size: 30px;
-	font-weight: 600;
 	text-align: center;
-
-	-webkit-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
-	-moz-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
-	box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
-}
-
-.adblock .col-md-6{
-	margin-bottom: 10px;
-
-}
-.adblock .videomain{
-	margin-bottom: 10px;
-		-webkit-transition: all 0.2s ease;
-	-o-transition: all 0.2s ease;
-	transition: all 0.2s ease;
 }
 .adblock img{
-	border-radius: 5px !important;
-	-webkit-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+	border-radius: 3px !important;
+	/*-webkit-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
 	-moz-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
-	box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);*/
+
+	-webkit-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+
 }
-.adblock .cat{
+.adblock .show-text{
 	position: absolute;
-	top: 0px;
+	bottom: 15px;
+	right: 30px;
 
-	max-width: 90%;
-	padding: 5px;
-	border-radius: 0px 5px 5px 0px !important;
+	width: 300px;
+	padding: 20px;
 
-	color: #fff;
-	background: #FF5722;
-
-	font-size: 30px;
-	font-weight: 600;
-	text-shadow: 1px 0px 0px rgb(45, 45, 45), 0 0 1em rgba(255, 250, 250, 0.04);
+	background: #ffffff;
 }
+.adblock .show-text h2{
+	display: table-cell;
+	vertical-align: middle;
+	margin: 0;
+	padding: 0 10px;
+	color: #2a3286;
+	font-size: 20px;
+	text-transform: uppercase;
+}
+.adblock .soon-btn{
+	display: table-cell;
+	vertical-align: middle;
+	margin: 0;
+	padding: 0;	
+}
+.adblock .soon-btn i{
+	width: 50px;
+	height: 50px;
 
-.adblock .name{
-	position: absolute;
-	bottom: 20px;
+	font-size: 24px;
+	line-height: 50px;
+	text-align: center;
 
-	max-width: 90%;
-	padding: 10px;
-	border-radius: 0px 5px 5px 0px !important;
+	background: #94c83d;
+	color: #ffffff;
 
-	color: #fff;
-	background: #FF5722;
+	border-radius: 50% !important;
+	box-shadow: none;
 
-	font-size: 30px;
-	font-weight: 600;
+	-webkit-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+.adblock .soon-btn i:hover{
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+.adblock .fa-chevron-right:before{
+	padding-left: 3px;
 }
 /* END REKLAMA sections*/
 
+
 /* BEGIN New videos*/
-.newtopvideos .row{
-	margin-top: 6px;
-	margin-bottom: 20px;
-}
 .newkidvideos {
 	position: relative;
-		-webkit-transition: all 0.2s ease;
-	-o-transition: all 0.2s ease;
-	transition: all 0.2s ease;
-}
-
-.newkidvideos .title {
-	position: relative;
-	margin-bottom: 20px;
-}
-
-.newkidvideos .title .iconbar{
-  	position: absolute;
-    top: -69px;
-    left: -40px;
-
-    height: 120px;
-    width: inherit;
-
-	color: #E91E63;
-
-    font-weight: 600;    
-    font-size: 70px;
-
-    transform: rotate(-10deg);
-    z-index: 1;
-    box-shadow: none;
+	padding: 60px 0;
 }
 .newkidvideos .title h3{
 	color: #fff;
@@ -557,41 +373,6 @@
 .newkidvideos .title2 {
 	position: relative;
 	margin-bottom: 20px;
-}
-
-.newkidvideos .title2 .iconbar{
-  	position: absolute;
-    top: -69px;
-    right: -40px;
-
-    height: 120px;
-    width: inherit;
-
-	color: #E91E63;
-
-    font-weight: 600;    
-    font-size: 70px;
-
-    transform: rotate(1deg);
-    z-index: 1;
-    box-shadow: none;
-}
-.newkidvideos .title2 h3{
-	position: relative;
-
-	padding: 10px;
-	border-radius: 5px !important;
-
-	color: #fff;
-	background: #4CAF50;
-
-	font-size: 30px;
-	font-weight: 600;
-	text-align: center;
-
-	-webkit-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
-	-moz-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
-	box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
 }
 .newkidvideos .col-md-4{
 	margin-bottom: 10px;
@@ -604,10 +385,7 @@
 	transition: all 0.2s ease;
 }
 .newkidvideos img{
-	border-radius: 5px !important;
-	-webkit-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
-	-moz-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
-	box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+	border-radius: 3px !important;
 }
 .newkidvideos .cat{
 	position: absolute;
@@ -642,21 +420,10 @@
 
 /* END New videos*/
 
-/* BEGIN RATING videos*/
-
-.ratingvideos .row{
-	margin-top: 6px;
-	margin-bottom: 20px;
-}
-/* END RATING videos*/
-
 /* BEGIN Photo Gallery*/
-.kidsgallery .row{
-	margin-bottom: 30px;
-}
 
-.kidsgallery .col-md-12{
-	padding-bottom: 10px;
+.kidsgallery{
+	padding: 60px 0;
 }
 
 .kidsgallery .kidsright{
