@@ -14,6 +14,7 @@
 #balastan {
     overflow-x: hidden;
     background: #009cd9;
+    background: url('../images/channels/balastan/texture.jpg');
 	font-family: 'merge_probold', Arial, 'Helvetica Neue', Helvetica, sans-serif;
 }
 
@@ -22,9 +23,17 @@
 }
 
 #balastan .switch{
-	-webkit-box-shadow: 0 1px 27px 0 rgb(0, 0, 0);
-	box-shadow: 0 1px 27px 0 rgb(0, 0, 0);
-	z-index: 1;
+	-webkit-box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.5);
+	box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.5);
+	background: #ffffff;
+}
+#balastan .sitemenu{
+	margin: 0 20px;
+}
+#balastan .sitemenu h4{
+	padding-left: 5px;
+	color: #00283d;
+	font-size: 20px;
 }
 /*BEGIN Background images sor sections*/
 
@@ -32,12 +41,22 @@
 	background: url('../images/channels/balastan/bg.jpg') no-repeat;
 	background-size: cover;
 }
-.newtopvideos{
-	margin-top: -26px;
-	background: #00283D;
-}
 .kidsgallery{
+	position: relative;
+	z-index: 100;
 	background: #94c83d;
+}
+.kidsgallery::before {
+    content: '';
+    background: url('../images/channels/balastan/texture-noise.jpg');
+    opacity: .15;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: block;
+    position: absolute;
+    z-index: -1;
 }
 
 
@@ -208,7 +227,7 @@
 	-moz-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
 	box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
 }
-.firsteye .right:hover, .firsteye .rightbottom:hover, .firsteye .homevideo:hover, .kidsslider .slick-slide:hover, .newkidvideos .col-md-6:hover, .newkidvideos .col-md-12:hover, .kidsgallery .col-md-4:hover{
+.firsteye .right:hover, .firsteye .rightbottom:hover, .firsteye .homevideo:hover, .kidsslider .slick-slide:hover, .newkidvideos .col-md-6:hover, .adblock .col-md-6:hover, .newkidvideos .col-md-12:hover, .kidsgallery .col-md-4:hover{
 	-webkit-transform: scale(1.05);
 	-ms-transform: scale(1.05);
 	-o-transform: scale(1.05);
@@ -299,20 +318,18 @@
 
 #kidsslider{
 	position: relative;
-	height: 180px;
 	
 	padding-top: 1px;
-    padding-bottom: 0;
-    margin-top: -60px;
+    padding-bottom: 80px;
    
-    background: #00283d;
+    background: url('../images/channels/balastan/texture.jpg');
 
 }
 .kidsslider{
 	width: 150%;
     border-radius: 50% !important;
     left: -25%;
-    margin-top: -40px;
+    margin-top: -60px;
 }
 .kidsslider:before {
 	display: block;
@@ -324,7 +341,7 @@
     border-radius: 50% !important;
 }
 .programs-slide {
-    padding: 20px 0px;
+    padding: 35px 0px 40px 0px;
 }
 
 .programs-slide .slick-slider{
@@ -380,9 +397,127 @@
 }
 /* END Programms slide*/
 
+/* BEGIN REKLAMA sections*/
+
+.preklams {
+	position: relative;
+	z-index: 1;
+	
+	margin-top: -70px;
+	padding: 50px 0px 70px 0px;
+	background:#FF9800;
+}
+.preklams:before{
+    content: '';
+    background: url('../images/channels/balastan/texture-noise.jpg');
+    opacity: .2;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: block;
+    position: absolute;
+    z-index: -1;
+}
+
+.adblock {
+	position: relative;
+		-webkit-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+}
+
+.adblock .title {
+	position: relative;
+	margin-bottom: 20px;
+}
+
+.adblock .title .iconbar{
+  	position: absolute;
+    top: -69px;
+    left: -40px;
+
+    height: 120px;
+    width: inherit;
+
+	color: #E91E63;
+
+    font-weight: 600;    
+    font-size: 70px;
+
+    transform: rotate(-10deg);
+    z-index: 1;
+    box-shadow: none;
+}
+.adblock .title h3{
+	position: relative;
+
+	padding: 10px;
+	border-radius: 5px !important;
+
+	color: #fff;
+	background: #03A9F4;
+
+	font-size: 30px;
+	font-weight: 600;
+	text-align: center;
+
+	-webkit-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+}
+
+.adblock .col-md-6{
+	margin-bottom: 10px;
+
+}
+.adblock .videomain{
+	margin-bottom: 10px;
+		-webkit-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+}
+.adblock img{
+	border-radius: 5px !important;
+	-webkit-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+}
+.adblock .cat{
+	position: absolute;
+	top: 0px;
+
+	max-width: 90%;
+	padding: 5px;
+	border-radius: 0px 5px 5px 0px !important;
+
+	color: #fff;
+	background: #FF5722;
+
+	font-size: 30px;
+	font-weight: 600;
+	text-shadow: 1px 0px 0px rgb(45, 45, 45), 0 0 1em rgba(255, 250, 250, 0.04);
+}
+
+.adblock .name{
+	position: absolute;
+	bottom: 20px;
+
+	max-width: 90%;
+	padding: 10px;
+	border-radius: 0px 5px 5px 0px !important;
+
+	color: #fff;
+	background: #FF5722;
+
+	font-size: 30px;
+	font-weight: 600;
+}
+/* END REKLAMA sections*/
+
 /* BEGIN New videos*/
 .newtopvideos .row{
-	margin-top: 36px;
+	margin-top: 6px;
 	margin-bottom: 20px;
 }
 .newkidvideos {
@@ -415,21 +550,9 @@
     box-shadow: none;
 }
 .newkidvideos .title h3{
-	position: relative;
-
-	padding: 10px;
-	border-radius: 5px !important;
-
 	color: #fff;
-	background: #03A9F4;
-
-	font-size: 30px;
+	font-size: 40px;
 	font-weight: 600;
-	text-align: center;
-
-	-webkit-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
-	-moz-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
-	box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
 }
 .newkidvideos .title2 {
 	position: relative;
@@ -470,7 +593,7 @@
 	-moz-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
 	box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
 }
-.newkidvideos .col-md-6{
+.newkidvideos .col-md-4{
 	margin-bottom: 10px;
 
 }
@@ -494,8 +617,8 @@
 	padding: 5px;
 	border-radius: 0px 5px 5px 0px !important;
 
-	color: #FFEB3B;
-	background: #03A9F4;
+	color: #fff;
+	background: #4CAF50;
 
 	font-size: 20px;
 	font-weight: 600;
@@ -504,14 +627,14 @@
 
 .newkidvideos .name{
 	position: absolute;
-	bottom: 20px;
+	bottom: -10px;
 
 	max-width: 90%;
 	padding: 10px;
-	border-radius: 0px 5px 5px 0px !important;
+	border-radius: 0px 5px 5px 5px !important;
 
-	color: #414142;
-	background: #FFEB3B;
+	color: #fff;
+	background: #F44336;
 
 	font-size: 20px;
 	font-weight: 600;
@@ -519,42 +642,33 @@
 
 /* END New videos*/
 
+/* BEGIN RATING videos*/
+
+.ratingvideos .row{
+	margin-top: 6px;
+	margin-bottom: 20px;
+}
+/* END RATING videos*/
+
 /* BEGIN Photo Gallery*/
 .kidsgallery .row{
-	margin-top: 30px;
 	margin-bottom: 30px;
+}
+
+.kidsgallery .col-md-12{
+	padding-bottom: 10px;
 }
 
 .kidsgallery .kidsright{
 	position: absolute;
-    top: -22px;
-    right: 0px;
-
-	padding: 0px 10px 8px 10px;
-	border-radius: 5px !important;
-
-	color: #fff;
-	font-size: 30px;
+    right: 0;
+	color: #11465F;
+	margin-top: 0px;
+	font-size: 40px;
 	font-weight: 600;
-	text-transform: lowercase;
-	text-shadow: 4px 4px 2px rgb(0, 0, 0);
-
-	background: #4CAF50;
-
-	cursor: pointer;
-	-webkit-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
-	-moz-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
-	box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
-	text-shadow: 4px 4px 2px rgb(0, 0, 0);
-
-	-webkit-transition: all 0.2s ease;
-	-o-transition: all 0.2s ease;
-	transition: all 0.2s ease;
 }
 .kidsgallery .title{
 	position: relative;
-	margin-bottom: 20px;
-
 }
 .kidsgallery .title h3{
 	width: 100%;
@@ -562,18 +676,11 @@
 }
 .kidsgallery .title h3 span{
 	position: relative;
-	top: -3px;
-	padding: 0px 10px 4px 5px;
-	color: #fff;
-	font-size: 30px;
+	float: left;
+	color: #11465F;
+	font-size: 40px;
 	font-weight: 600;
-	background: #FCCF02;
-	border-radius: 5px !important;
 
-	-webkit-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
-	-moz-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
-	box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
-	text-shadow: 4px 4px 2px rgb(0, 0, 0);
 }
 
 .kidsgallery .col-md-4{
@@ -594,11 +701,11 @@
 
 .kidsgallery .name {
 	position: absolute;
-	top: 0px;
+	bottom: -10px;
 
 	max-width: 90%;
 	padding: 5px;
-	border-radius: 0px 5px 5px 0px !important;
+	border-radius: 0px 5px 5px 5px !important;
 
 	color: #FFEB3B;
 	background: #03A9F4;

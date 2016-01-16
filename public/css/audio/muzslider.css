@@ -6,7 +6,8 @@
     overflow: hidden;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
-    position: relative
+    position: relative;
+    max-height: 400px;
 }
 .dkp-slideshow:before {
     display: block;
@@ -1224,7 +1225,7 @@ font-weight: bold;
         transform-origin: 100% 55%
     }
     .dkp-anonce-big .dkp-anonce-time>span {
-        top: 55%
+        top: 53%
     }
     .dkp-anonce-big .dkp-anonce-time>span.dkp-soon {
         font-size: 70px;
