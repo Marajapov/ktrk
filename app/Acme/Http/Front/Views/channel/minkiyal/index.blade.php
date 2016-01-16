@@ -16,9 +16,9 @@
                <span class="icon-bar"></span>
                <span class="icon-bar"></span>
                </button>
-               <a class="navbar-brand " href="#">
-                  <img src="{{ asset('images/channels/min-kiyal.png')}}">&nbsp;&nbsp;
-                  <h4> Миң кыял</h4>
+               <a class="navbar-brand" href="#">
+                  <img src="{{ asset('images/channels/min-kiyal.png')}}">
+                  <h4>Миң кыял</h4>
                </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
