@@ -3,7 +3,7 @@
 @section('styles')
 @endsection
 @section('content')
-<div class="container-fluid pages-header">
+<div class="container-fluid pages-header videoheader">
    <div class="row">
       @include('Front::channel.balastan.nav')
       <div class="container pages-title">
@@ -11,7 +11,11 @@
             <div class="title col-md-12">
                 @if($balastanProjects )
                 @foreach($balastanProjects as $project)  
-               <h3>{{ $project->getName() }}</h3>
+                  <h3>{{ $project->getName() }}</h3>
+               <div class="fromcat">
+                  <p>Категория:</p>
+                  <p><a href="#">Баарын билгим келет</a></p>
+               </div>
                @endforeach
                @endif
             </div>
@@ -42,7 +46,7 @@
          @foreach($balastanMedias as $media)
          <div class="col-md-4 video-block">
             <a href="{{ route('balastan.video', $media)}}" class="video-img">
-                <img src="http://img.youtube.com/vi/{{ $media->getUrl()}}/maxresdefault.jpg" alt="" />
+                <img src="http://img.youtube.com/vi/{{ $media->getUrl()}}/0.jpg" alt="" />
                 <span class="video-overlay"></span>
             </a>
             <div class="video-info">

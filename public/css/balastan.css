@@ -746,6 +746,24 @@
 .relatedvideos .title{
 	padding:20px 20px 0px 20px;
 }
+.videoheader .title h3{
+	float: left;
+}
+.videoheader .title .fromcat{
+    position: relative;
+    float: right;
+    margin-top: 10px;
+    color: #ffffff;
+    font-family: 'merge_probold', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+.videoheader .title .fromcat p{
+	line-height: 0.7;
+}
+.videoheader .title .fromcat p>a{
+	color: #FFC107;
+}
 /* END Video page*/
 
 /*Prefooter*/
