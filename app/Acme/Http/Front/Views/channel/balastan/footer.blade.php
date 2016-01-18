@@ -1,14 +1,24 @@
 <div class="container prefooter clearfix">
 
     <div class="media">
-        <div class="media-left">
+        <div class="media-left media-middle">
             <a href="#">
-                <img class="media-object" src="{{ asset('images/channels') }}" alt="...">
+                <img class="media-object" src="{{ asset('images/channels/balastan_white_notext.png') }}" alt="...">
             </a>
         </div>
-        <div class="media-body">
-            <h4 class="media-heading">Media heading</h4>
-            ...
+        <div class="media-body footer-menu media-middle">
+
+            <ul>
+                <li><a href="{{ route('front.home') }}">{{ trans('site.Homepage') }}</a></li>
+                <li>|</li>
+                <li><a href="{{ route('front.media.index') }}">{{ trans('radiopages.BAbout') }}</a></li><li>|</li>
+                <li><a href="{{ route('front.pages.program') }}">{{ trans('radiopages.Bworld') }}</a></li><li>|</li>
+                <li><a href="#">Видео</a></li><li>|</li>
+                <li><a href="#">{{ trans('radiopages.Photos') }}</a></li>
+            </ul>
+
+            <h4 class="copyright"><i class="fa fa-copyright"></i>2015 {{ trans('site.TradeMark') }}</h4>
+
         </div>
     </div>
 
