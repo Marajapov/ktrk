@@ -11,18 +11,6 @@
 
 }
 @font-face {
-    font-family: 'Droid Serif';
-    src: url('fonts/droid/droidserif-regular.eot');
-    src: url('fonts/droid/droidserif-regular.eot?#iefix') format('embedded-opentype'),
-    url('fonts/droid/droidserif-regular.woff2') format('woff2'),
-    url('fonts/droid/droidserif-regular.woff') format('woff'),
-    url('fonts/droid/droidserif-regular.ttf') format('truetype'),
-    url('fonts/droid/droidserif-regular.svg#droid_serifregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
-@font-face {
     font-family: 'merriweatherregular';
     src: url('fonts/merriweather/merriweather-regular.eot');
     src: url('fonts/merriweather/merriweather-regular.eot?#iefix') format('embedded-opentype'),
@@ -51,7 +39,7 @@
     overflow-x: hidden;
     background: #009cd9;
     background: url('../images/channels/balastan/texture.jpg');
-	font-family: 'merge_probold', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+	font-family: 'merriweatherregular', Arial, 'Helvetica Neue', Helvetica, sans-serif;
 }
 
 #balastan a{
@@ -158,7 +146,7 @@
 }
 .kidstopheader li a{
     display: block;
-    font-family: 'Droid Serif',Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    font-family: 'merge_probold',Arial, 'Helvetica Neue', Helvetica, sans-serif;
     font-size: 20px;
     font-weight: 600;
     text-transform: uppercase;
@@ -593,6 +581,7 @@
 .show-name{
     margin: 0;
     margin-bottom: 50px;
+    font-family: 'merge_probold', Arial, 'Helvetica Neue', Helvetica, sans-serif;
     font-size: 72px;
     font-weight: bold;
     text-transform: uppercase;
@@ -625,6 +614,7 @@
 
     background: #aede55;
     color: #00283d;
+    font-family: 'merge_probold', Arial, 'Helvetica Neue', Helvetica, sans-serif;
     font-size: 16px;
     text-transform: uppercase;
 

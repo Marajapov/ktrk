@@ -5,97 +5,10 @@
 @endsection
 
 @section('content')
-<!--BEGIN MAIN HEADER MENU for all channels  -->
-    <div class="switch">
-        <nav class="navbar">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false">
-                    <span class="sr-only">Меню</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">
-                    <img src="{{ asset('images/channels/balastan_white_notext.png')}}">
-                    <h4>Баластан</h4>
-                </a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="menu">
-                <ul class="nav navbar-nav channel_switch">
-                    <li class="sitemenu" id="site-channel1">
-                        <a href="{{ route('front.home') }}">
-                            <img src="{{ asset('images/ktrk_last.svg')}}"><span>КТРК</span>
-                            <h4>КТРК</h4>
-                        </a>
-                    </li>
-                    <li class="sitemenu" id="site-channel1">
-                        <a href="{{ route('muzkanal.home') }}">
-                            <img src="{{ asset('images/channels/muztv_color.png')}}" ><span>Музыка</span>
-                            <h4>Музыка</h4>
-                        </a>
-                    </li>
-                    <li class="sitemenu" id="site-channel1">
-                        <a href="{{ route('madaniyat.home') }}">
-                            <img src="{{ asset('images/channels/madaniyat_color.png')}}"><span>Маданият</span>
-                            <h4>Маданият</h4>
-                        </a>
-                    </li>
-                    <li class="sitemenu" id="site-channel1">
-                        <a class="active" href="{{ route('balastan.home') }}">
-                            <img src="{{ asset('images/channels/balastan_color.png')}}"><span>Баластан</span>
-                            <h4>Баластан</h4>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </nav>
-    </div>
-    <!--END -->
-
     <div class="container-fluid kidsmainbg">
-        <div class="container">
-            <div class="row clearfix">
-                <div class="bl-logo">
-                    <a href="{{ route('balastan.home') }}">
-                        <img src="{{ asset('images/channels/balastan_white_notext.png') }}" alt="Balastan Logo"/>
-                    </a>
-                </div>
-                <ul class="kidstopheader">
-                    <li>
-                        <a href="{{ route('balastan.about') }}">
-                            <i class="fa fa-info-circle i2"></i>
-                            <span>{{ trans('radiopages.BAbout') }}</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('balastan.world') }}">
-                            <i class="fa fa-star i3"></i>
-                            <span>{{ trans('radiopages.Bworld') }}</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('balastan.video') }}">
-                            <i class="fa fa-play i4 "></i>
-                            <span>Видео</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('balastan.allphotos') }}">
-                            <i class="fa fa-picture-o i5"></i>
-                            <span>{{ trans('radiopages.Photos') }}</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-search i6"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+
+        @include('Front::channel.balastan.nav')
+
         <div class="row">
             <div class="shows-slider">
                 <div class="shows-carousel container">
@@ -157,6 +70,7 @@
             </div>
         </div>
     </div>
+
     <div id="kidsslider" class="container-fluid kidsslider">
         <div class="container">
             <div class="row">
@@ -462,8 +376,6 @@
 
     </script>
     <script>
-        //    var current = $('.shows-carousel').slick('slickCurrentSlide');
-
         $('.shows-carousel').slick({
             autoplay: true,
             autoplaySpeed: 2500,
