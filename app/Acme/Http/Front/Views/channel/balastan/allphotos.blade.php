@@ -18,7 +18,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="container-fluid allphotos">
         <div class="row">
             <div class="container">

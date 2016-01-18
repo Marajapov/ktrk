@@ -87,8 +87,6 @@ class BalastanController extends Controller
             $mediaFull = \Model\Media\ModelName::where('balastan','=','1')->where('program','<>','')->orderBy('id','desc')->skip(4)->first();
             
         }
-        
-        
 
         $balastanLastVideo = \Model\Media\ModelName::where('balastan','=','1')->take(1)->orderBy('id','desc')->first();
         $balastaProjects = \Model\Project\ModelName::where('balastan','=','1')->orderBy('id','desc')->get();
