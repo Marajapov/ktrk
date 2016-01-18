@@ -15,7 +15,7 @@
             <li>
                 <a href="{{ route('balastan.world') }}">
                     <i class="fa fa-star i3"></i>
-                    <span>{{ trans('radiopages.Bworld') }}</span>
+                    <span>Баластан</span>
                 </a>
             </li>
             <li>

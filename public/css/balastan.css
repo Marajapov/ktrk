@@ -37,9 +37,24 @@
 
 #balastan {
     overflow-x: hidden;
-    background: #009cd9;
-    background: url('../images/channels/balastan/texture.jpg');
+    /*background: #2083c4;*/
 	font-family: 'merriweatherregular', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+
+    /*background-image: -o-linear-gradient(bottom, #FF0088 0%, #FF803C  100%);*/
+    /*background-image: -moz-linear-gradient(bottom, #FF0088 0%, #FF803C  100%);*/
+    /*background-image: -webkit-linear-gradient(bottom, #FF0088 0%, #FF803C  100%);*/
+    /*background-image: -ms-linear-gradient(bottom, #FF0088 0%, #FF803C  100%);*/
+    /*background-image: linear-gradient(to bottom, #FF0088 0%, #FF803C  100%);*/
+
+    background: -moz-radial-gradient(center, ellipse cover, #FF803C 0%, #FF0088 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#FF803C), color-stop(100%,#FF0088));
+    background: -webkit-radial-gradient(center, ellipse cover, #FF803C 0%,#FF0088 100%);
+    background: -o-radial-gradient(center, ellipse cover, #FF803C 0%,#FF0088 100%);
+    background: -ms-radial-gradient(center, ellipse cover, #FF803C 0%,#FF0088 100%);
+    background: radial-gradient(ellipse at center, #FF803C 0%,#FF0088 100%);
+
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 #balastan a{
@@ -95,35 +110,28 @@
 .maintitle{
 	margin-top: 100px;
 }
-.maintitle .title h3{
-	padding-bottom: 0px;
-}
 .maintitle .title h3:after{
 	background-image: none;
 }
 
 /*BEGIN Background images sor sections*/
-
 .kidsmainbg{
-	background: url('../images/channels/balastan/bg.jpg') no-repeat;
-	background-size: cover;
+    position: relative;
+    /*background: #ff6160;*/
+    z-index: 100;
 }
-.kidsgallery{
-	position: relative;
-	z-index: 100;
-	background: #94c83d;
-}
-.kidsgallery::before {
-    content: '';
-    background: url('../images/channels/balastan/texture-noise.jpg');
-    opacity: .15;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
+.kidsmainbg::before{
     display: block;
+    content: '';
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     position: absolute;
     z-index: -1;
+
+    background: url('../images/channels/balastan/texture3.jpg');
+    opacity: .1;
 }
 
 
@@ -223,13 +231,13 @@
 .kidsslider{
 	position: relative;
 	width: 150%;
-    border-radius: 50% !important;
+    border-radius: 50% 50% 0 0 !important;
     left: -25%;
     margin-top: -50px;
+    z-index: 101;
 
     padding: 60px 0 40px;
-
-    background: url('../images/channels/balastan/texture.jpg');
+    background: #ff6a2e;
 }
 .programs-slide {
     /*padding: 35px 0px 40px 0px;*/
@@ -248,7 +256,7 @@
 }
 .programs-slide .kids-slide .slick-next:before,.programs-slide .kids-slide .slick-prev:before{
 
-	color: #94c83d !important;
+	color: #ffffff !important;
 	font-size: 48px;
     -webkit-transition: all 0.2s ease;
     -moz-transition: all 0.2s ease;
@@ -269,7 +277,7 @@
     height: 150px;
     width: 100%;
 
-    border-radius: 3px 3px 0 0 !important;
+    /*border-radius: 3px 3px 0 0 !important;*/
 }
 
 .programs-slide .kids-slide .programmcat{
@@ -277,9 +285,9 @@
 	width: 100%;
 	top: 0;
 	margin: 0;
-    padding: 10px 15px;
+    padding: 15px 15px;
 
-    background: #aede55;
+    background: #ffffff;
     color: #00283d;
 
     font-family: 'merge_probold', Arial, 'Helvetica Neue', Helvetica, sans-serif;
@@ -289,7 +297,7 @@
     text-transform: uppercase;
     text-align: center;
 
-    border-radius: 0 0 3px 3px !important;
+    /*border-radius: 0 0 3px 3px !important;*/
 }
 /* END Programms slide*/
 
@@ -299,19 +307,8 @@
 	position: relative;
 	z-index: 1;
 	padding: 60px 0px 60px;
-	background:#FF9800;
-}
-.preklams:before{
-    content: '';
-    background: url('../images/channels/balastan/texture-noise.jpg');
-    opacity: .2;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    display: block;
-    position: absolute;
-    z-index: -1;
+	background-color:#ff6a2e;
+    background-image: url('../images/channels/balastan/texture-leafs.png');
 }
 .title h3{
 	position: relative;
@@ -339,7 +336,7 @@
 	text-align: center;
 }
 .adblock img{
-	border-radius: 3px !important;
+	/*border-radius: 3px !important;*/
 	/*-webkit-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
 	-moz-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
 	box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);*/
@@ -365,7 +362,7 @@
 	margin: 0;
 	padding: 0 10px;
     width: 100%;
-	color: #ef6700;
+	color: #00283d;
     font-family: 'merriweatherbold', Arial, 'Helvetica Neue', Helvetica, sans-serif;
 	font-size:16px;
 	text-transform: uppercase;
@@ -384,8 +381,8 @@
 	line-height: 50px;
 	text-align: center;
 
-	background: #94c83d;
-	color: #00283d;
+	background: #ff6a2e;
+	color: #ffffff;
 
 	border-radius: 50% !important;
 
@@ -477,16 +474,10 @@
     background: #ffffff;
 }
 .video-info .media-left,.video-info .media-body{
-    height: 60px;
+    height: 80px;
 }
 .video-info .media-left{
     padding: 0;
-}
-.video-project{
-    color: #999;
-    /*font-family: Calibri, Arial, 'Helvetica Neue', Helvetica, sans-serif;*/
-    font-size: 16px;
-    line-height: 20px;
 }
 .video-name, .video-icon{
     color: #00283d;
@@ -495,7 +486,9 @@
     /*text-align: center;*/
 }
 .video-name{
+    padding-right: 15px;
     font-family: 'merge_probold',Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 18px;
     margin: 0;
 }
 .video-icon{
@@ -508,10 +501,11 @@
 /* BEGIN Photo Gallery*/
 
 .kidsgallery{
-	padding: 60px 0;
-}
-.kidsgallery .video-name,.kidsgallery .video-icon{
-    color: #147843;
+    position: relative;
+    z-index: 100;
+    padding: 60px 0;
+    background: #ffa643;
+    background-image: url('../images/channels/balastan/bg-bubbles.png');
 }
 .kidsgallery .video-icon{
     font-size: 20px;
@@ -600,7 +594,7 @@
 }
 .show-info span{
     display: block;
-    color: #b5e8ff;
+    color: #ffffff;
     font-family: 'merriweatherbold', Arial, 'Helvetica Neue', Helvetica, sans-serif;
     text-transform: uppercase;
 }
@@ -624,13 +618,13 @@
     margin-bottom: 50px;
     padding: 15px 25px;
 
-    background: #aede55;
+    background: #ffffff;
     color: #00283d;
     font-family: 'merge_probold', Arial, 'Helvetica Neue', Helvetica, sans-serif;
     font-size: 16px;
     text-transform: uppercase;
 
-    box-shadow: 0 6px 0 0 #629219;
+    box-shadow: 0 6px 0 0 #c6c9cd;
     border-radius: 3px !important;
     cursor: pointer;
 
@@ -647,12 +641,12 @@
 }
 .show-btn:hover{
     top: 2px;
-    background: #94c83d;
-    box-shadow: 0 4px 0 0 #629219;
+    background: #ffffff;
+    box-shadow: 0 4px 0 0 #c6c9cd;
 }
 .show-btn:active{
     top:6px;
-    box-shadow:0 1px 0 0 #629219;
+    box-shadow:0 1px 0 0 #c6c9cd;
 }
 .show-img{
     vertical-align: bottom;
@@ -672,26 +666,32 @@
 
 /* BEGIN Balastan duinosundo*/
 .shows{
+    padding: 60px 0;
 	background: #fff;
 }
 .shows .col-md-12{
+    margin-bottom: 20px;
     padding: 20px 0;
     border-bottom: 1px solid rgba(0,0,0,.2);
 }
+.shows .col-md-12:last-child{
+    border: none;
+    margin: 0;
+}
 .shows .aboutshow h4{
     margin: 0px 0px 10px 0px;
-	font-family: 'merriweatherbold', Arial, 'Helvetica Neue', Helvetica, sans-serif;
-	font-size: 24px;
+	font-family: 'merge_probold', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+	font-size: 28px;
 }
 .shows .aboutshow p{
 	color: #666;
-	font-family: 'merriweatherregular', Arial, 'Helvetica Neue', Helvetica, sans-serif;
 	font-size: 14px;
 	line-height: 1.5em;
 	text-align: justify;
 }
 .shows .aboutshow .link{
-	font-size: 16px;
+	font-size: 14px;
+    font-style: italic;
     color: #184f76;
 }
 .shows .aboutshow .media-left img{
@@ -735,15 +735,15 @@
     color: #ffffff;
 }
 .prefooter .media-body,.prefooter .media-body li a{
-    color: #69a5dd;
+    color: #ffffff;
     font-weight: normal;
 }
 .balastan .prefooter .media-body li a:hover{
-    color: #69a5dd;
+    color: #ffffff;
 }
 .prefooter .footer-menu ul{
-    border-top: 1px solid #335364;
-    border-bottom: 1px solid #335364;
+    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
     padding: 10px 0;
 }
 .prefooter .copyright{
