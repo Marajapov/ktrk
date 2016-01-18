@@ -704,6 +704,17 @@
 }
 /* END Balastan duinosundo*/
 
+/* BEGIN Allphotos and photos page*/
+.allphotos{
+	padding: 20px 0px;
+	background: #de6035;
+}
+.lightgallery{
+	padding: 20px 0px;
+	background: #F44336;
+}
+/* END Allphotos page*/
+
 /*Prefooter*/
 .prefooter .media{
     padding: 30px 0;
