@@ -106,13 +106,6 @@
     font-size: 14px;
     text-transform: uppercase;
 }
-/* For inner pages*/
-.maintitle{
-	margin-top: 100px;
-}
-.maintitle .title h3:after{
-	background-image: none;
-}
 
 /*BEGIN Background images sor sections*/
 .kidsmainbg{
@@ -665,6 +658,15 @@
 }
 
 /* BEGIN Balastan duinosundo*/
+.pages-header{
+    background-image: url('../images/channels/balastan/texture-leafs.png');
+}
+.pages-header .pages-title{
+    margin-top: 100px;
+}
+.pages-header .title h3:after{
+    background-image: none;
+}
 .shows{
     padding: 60px 0;
 	background: #fff;

@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+
     <div class="container-fluid kidsmainbg">
 
         @include('Front::channel.balastan.nav')
