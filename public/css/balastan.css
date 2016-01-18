@@ -37,14 +37,24 @@
 
 #balastan {
     overflow-x: hidden;
-    background: #ff476b;
+    /*background: #2083c4;*/
 	font-family: 'merriweatherregular', Arial, 'Helvetica Neue', Helvetica, sans-serif;
 
-    background-image: -o-linear-gradient(bottom, #FF0088 0%, #FF803C  100%);
-    background-image: -moz-linear-gradient(bottom, #FF0088 0%, #FF803C  100%);
-    background-image: -webkit-linear-gradient(bottom, #FF0088 0%, #FF803C  100%);
-    background-image: -ms-linear-gradient(bottom, #FF0088 0%, #FF803C  100%);
-    background-image: linear-gradient(to bottom, #FF0088 0%, #FF803C  100%);
+    /*background-image: -o-linear-gradient(bottom, #FF0088 0%, #FF803C  100%);*/
+    /*background-image: -moz-linear-gradient(bottom, #FF0088 0%, #FF803C  100%);*/
+    /*background-image: -webkit-linear-gradient(bottom, #FF0088 0%, #FF803C  100%);*/
+    /*background-image: -ms-linear-gradient(bottom, #FF0088 0%, #FF803C  100%);*/
+    /*background-image: linear-gradient(to bottom, #FF0088 0%, #FF803C  100%);*/
+
+    background: -moz-radial-gradient(center, ellipse cover, #FF803C 0%, #FF0088 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#FF803C), color-stop(100%,#FF0088));
+    background: -webkit-radial-gradient(center, ellipse cover, #FF803C 0%,#FF0088 100%);
+    background: -o-radial-gradient(center, ellipse cover, #FF803C 0%,#FF0088 100%);
+    background: -ms-radial-gradient(center, ellipse cover, #FF803C 0%,#FF0088 100%);
+    background: radial-gradient(ellipse at center, #FF803C 0%,#FF0088 100%);
+
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 #balastan a{
@@ -100,9 +110,6 @@
 .maintitle{
 	margin-top: 100px;
 }
-.maintitle .title h3{
-	padding-bottom: 0px;
-}
 .maintitle .title h3:after{
 	background-image: none;
 }
@@ -115,7 +122,7 @@
 }
 .kidsmainbg{
     position: relative;
-    background: #ff6160;
+    /*background: #ff6160;*/
     z-index: 100;
 }
 .kidsmainbg::before{
@@ -134,19 +141,8 @@
 .kidsgallery{
 	position: relative;
 	z-index: 100;
-	background: #ff7840;
-}
-.kidsgallery::before {
-    content: '';
-    background: url('../images/channels/balastan/texture-noise.jpg');
-    opacity: .1;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    display: block;
-    position: absolute;
-    z-index: -1;
+	background: #ffa643;
+    background-image: url('../images/channels/balastan/bg-bubbles.png');
 }
 
 
@@ -252,7 +248,7 @@
     z-index: 101;
 
     padding: 60px 0 40px;
-    background: #ff476b;
+    background: #ff6a2e;
 }
 .programs-slide {
     /*padding: 35px 0px 40px 0px;*/
@@ -322,20 +318,8 @@
 	position: relative;
 	z-index: 1;
 	padding: 60px 0px 60px;
-	background-color:#ff476b;
+	background-color:#ff6a2e;
     background-image: url('../images/channels/balastan/texture-leafs.png');
-}
-.preklams:before{
-    content: '';
-    background: url('../images/channels/balastan/texture-noise.jpg');
-    opacity: .1;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    display: block;
-    position: absolute;
-    z-index: -1;
 }
 .title h3{
 	position: relative;
@@ -696,26 +680,32 @@
 
 /* BEGIN Balastan duinosundo*/
 .shows{
+    padding: 60px 0;
 	background: #fff;
 }
 .shows .col-md-12{
+    margin-bottom: 20px;
     padding: 20px 0;
     border-bottom: 1px solid rgba(0,0,0,.2);
 }
+.shows .col-md-12:last-child{
+    border: none;
+    margin: 0;
+}
 .shows .aboutshow h4{
     margin: 0px 0px 10px 0px;
-	font-family: 'merriweatherbold', Arial, 'Helvetica Neue', Helvetica, sans-serif;
-	font-size: 24px;
+	font-family: 'merge_probold', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+	font-size: 28px;
 }
 .shows .aboutshow p{
 	color: #666;
-	font-family: 'merriweatherregular', Arial, 'Helvetica Neue', Helvetica, sans-serif;
 	font-size: 14px;
 	line-height: 1.5em;
 	text-align: justify;
 }
 .shows .aboutshow .link{
-	font-size: 16px;
+	font-size: 14px;
+    font-style: italic;
     color: #184f76;
 }
 .shows .aboutshow .media-left img{
