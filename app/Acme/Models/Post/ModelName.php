@@ -102,13 +102,26 @@ class ModelName extends Model
 
     public function getIsVideo() // at least one photo
     {
-        $image = $this->content;
-        
-        if (stripos($image, "www.youtube.com") !== false) {
-            return "yes";
-        }else{
-            return "no";
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            $image = $this->content;
+
+            if(stripos($image, "www.youtube.com") !== false) {
+                return "yes";
+            }else{
+                return "no";
+            }
+
+        }elseif($lc == 'ru'){
+            $image = $this->contentRu;
+
+            if (stripos($image, "www.youtube.com") !== false) {
+                return "yes";
+            }else{
+                return "no";
+            }
         }
+        
     }
 
     public function getViewed()
