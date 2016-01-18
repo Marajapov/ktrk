@@ -27,6 +27,9 @@ Route::group(['domain' => 'beta.ktrk.kg', 'prefix' => '/balastan', 'namespace' =
     Route::get('/allphotos',['as' => 'balastan.allphotos','uses'=> 'BalastanController@allphotos'] );
     Route::get('/photos/{gallery}',['as' => 'balastan.photos','uses'=> 'BalastanController@Gallery'] );
 
+    //Redesign home page
+    Route::get('/vertex',['as' => 'balastan.vertex','uses'=> 'BalastanController@vertex'] );
+
 });
 
 

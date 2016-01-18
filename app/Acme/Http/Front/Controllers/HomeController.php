@@ -34,34 +34,34 @@ class HomeController extends Controller
         if($lc == 'kg'){
             $generalPost1 = \Model\Post\ModelName::general($channel)->published()->having('number','=',1)->languagekg()->first();
             if($generalPost1 == null){
-                //$generalPost1 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(10)->first();    
+                $generalPost1 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(10)->first();    
             }
 
             $generalPost2 = \Model\Post\ModelName::general($channel)->published()->having('number','=',2)->languagekg()->first();
 
             if($generalPost2 == null){
-                //$generalPost2 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(15)->first();
+                $generalPost2 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(15)->first();
             }
 
             $generalPost3 = \Model\Post\ModelName::general($channel)->published()->having('number','=',3)->languagekg()->first();
             if($generalPost3 == null){
-                //$generalPost3 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(2)->first();
+                $generalPost3 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(2)->first();
             }
             
             $generalPost4 = \Model\Post\ModelName::general($channel)->published()->having('number','=',4)->languagekg()->first();
             if($generalPost4 == null){
-                //$generalPost4 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(30)->first();
+                $generalPost4 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(30)->first();
             }
             
             $generalPost5 = \Model\Post\ModelName::general($channel)->published()->having('number','=',5)->languagekg()->first();
             if($generalPost5 == null){
-               // $generalPost5 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(40)->first();    
+                $generalPost5 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(40)->first();    
             }
             
 
             $generalPost6 = \Model\Post\ModelName::general($channel)->published()->having('number','=',6)->languagekg()->first();
             if($generalPost6 == null){
-                //$generalPost6 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(50)->first();
+                $generalPost6 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(50)->first();
             }
 
             $projects = \Model\Project\ModelName::having('name','<>','')->get();
@@ -200,22 +200,29 @@ class HomeController extends Controller
         $contentOriginal = $post->getContent();
 
         $lc = app()->getlocale();
-        
-        if(($lc == 'kg') && ($post->title != '')){
 
-        }
-
-        if($lc == 'kg' && ($post->titleRu != '')) {
+        if (($lc == 'kg') && ($post->title != '')) {
+        } elseif (($lc == 'ru') && ($post->titleRu != '')) {
+        }else{
             app()->setlocale('ru');
+            redirect()->route('front.post/l',$post);
         }
         
-        if($lc == 'ru' && ($post->titleRu != '')){
+        // if(($lc == 'kg') && ($post->title != '')){
+        //     app()->setlocale('kg');
+        // }
 
-        }
+        // if($lc == 'kg' && ($post->titleRu != '')) {
+        //     app()->setlocale('ru');
+        // }
+        
+        // if($lc == 'ru' && ($post->titleRu != '')){
+        //     app()->setlocale('ru');
+        // }
 
-        if($lc == 'ru' && ($post->title != '')){
-            app()->setlocale('kg');
-        }
+        // if($lc == 'ru' && ($post->title != '')){
+        //     app()->setlocale('kg');
+        // }
 
         $post->incrementViewed();
 
@@ -330,8 +337,18 @@ class HomeController extends Controller
 
         if($lc == 'kg'){
             $topArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->where('number','=','88')->orderBy('updated_at','desc')->take(6)->get();
+            if(count($topArticles) > 0){
+                $topArticles = $topArticles;   
+            }else{
+                $topArticles = null;
+            } 
         }elseif($lc == 'ru'){
             $topArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->where('numberRu','=','88')->orderBy('updated_at','desc')->take(6)->get();
+            if(count($topArticles) > 0){
+                $topArticles = $topArticles;   
+            }else{
+                $topArticles = null;
+            } 
         }
 
         return view('Front::post.post',[
@@ -368,8 +385,18 @@ class HomeController extends Controller
 
         if($lc == 'kg'){
             $topArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->where('number','=','88')->orderBy('updated_at','desc')->take(6)->get();
+            if(count($topArticles) > 0){
+                $topArticles = $topArticles;   
+            }else{
+                $topArticles = null;
+            } 
         }elseif($lc == 'ru'){
             $topArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->where('numberRu','=','88')->orderBy('updated_at','desc')->take(6)->get();
+            if(count($topArticles) > 0){
+                $topArticles = $topArticles;   
+            }else{
+                $topArticles = null;
+            } 
         }
 
         $categories = \Model\Category\ModelName::where('general','=','1')->get();
@@ -462,8 +489,18 @@ class HomeController extends Controller
 
         if($lc == 'kg'){
             $topArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->where('number','=','88')->orderBy('updated_at','desc')->take(6)->get();
+            if(count($topArticles) > 0){
+                $topArticles = $topArticles;   
+            }else{
+                $topArticles = null;
+            } 
         }elseif($lc == 'ru'){
             $topArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->where('numberRu','=','88')->orderBy('updated_at','desc')->take(6)->get();
+            if(count($topArticles) > 0){
+                $topArticles = $topArticles;   
+            }else{
+                $topArticles = null;
+            } 
         }
 
         $categories = \Model\Category\ModelName::where('general','=','1')->get();
@@ -530,6 +567,22 @@ class HomeController extends Controller
 
         $categories = \Model\Category\ModelName::where('general','=','1')->get();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+        if($lc == 'kg'){
+            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->where('number','=','88')->orderBy('updated_at','desc')->take(6)->get();
+            if(count($topArticles) > 0){
+                $topArticles = $topArticles;   
+            }else{
+                $topArticles = null;
+            } 
+        }elseif($lc == 'ru'){
+            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->where('numberRu','=','88')->orderBy('updated_at','desc')->take(6)->get();
+            if(count($topArticles) > 0){
+                $topArticles = $topArticles;   
+            }else{
+                $topArticles = null;
+            } 
+        }
         
         if($lc == 'kg' AND $df != '' AND $dt != ''){
             $postAllFromTo = \Model\Post\ModelName::published()->datefromkg($df)->datetokg($dt)->orderBy('id', 'desc')->paginate($perPage);
@@ -550,6 +603,7 @@ class HomeController extends Controller
         return view('Front::post.posts',[
             'perPage'=> $perPage,
             'postAll' => $postAllFromTo,
+            'topArticles' => $topArticles,
             'categories'=>$categories,
             'backgroundMain' => $backgroundMain,
             'positionTop'    => $this->positionTop,
@@ -575,6 +629,22 @@ class HomeController extends Controller
         
         $categories = \Model\Category\ModelName::where('general','=','1')->get();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+        if($lc == 'kg'){
+            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->where('number','=','88')->orderBy('updated_at','desc')->take(6)->get();
+            if(count($topArticles) > 0){
+                $topArticles = $topArticles;   
+            }else{
+                $topArticles = null;
+            } 
+        }elseif($lc == 'ru'){
+            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->where('numberRu','=','88')->orderBy('updated_at','desc')->take(6)->get();
+            if(count($topArticles) > 0){
+                $topArticles = $topArticles;   
+            }else{
+                $topArticles = null;
+            } 
+        }
         
         if($lc == 'kg' AND $df != '' AND $dt != ''){
             $postAllFromTo = \Model\Post\ModelName::published()->where('category_id','=',$category_id)->datefromkg($df)->datetokg($dt)->orderBy('id', 'desc')->paginate($perPage);
@@ -596,6 +666,7 @@ class HomeController extends Controller
             'perPage'=> $perPage,
             'category'=> $category,
             'posts' => $postAllFromTo,
+            'topArticles' => $topArticles,
             'categories'=>$categories,
             'backgroundMain' => $backgroundMain,
             'positionTop'    => $this->positionTop,
