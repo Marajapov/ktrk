@@ -201,12 +201,12 @@ class HomeController extends Controller
 
         $lc = app()->getlocale();
 
-        if (($lc == 'kg') && ($post->title != '')) {
-        } elseif (($lc == 'ru') && ($post->titleRu != '')) {
-        }else{
-            app()->setlocale('ru');
-            redirect()->route('front.post/l',$post);
-        }
+        // if (($lc == 'kg') && ($post->title != '')) {
+        // } elseif (($lc == 'ru') && ($post->titleRu != '')) {
+        // }else{
+        //     app()->setlocale('ru');
+        //     redirect()->route('front.post/l',$post);
+        // }
         
         // if(($lc == 'kg') && ($post->title != '')){
         //     app()->setlocale('kg');
