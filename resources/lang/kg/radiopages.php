@@ -78,7 +78,7 @@ return [
 
 		//Balastan page
 		'BAbout' => 'Биз жөнүндө',
-		'Bworld' => 'Баластан',	
+		'Bworld' => 'Баластан дүйнөсүндө',	
 		'BirgeRead' => 'Бирге окуйбуз',	
 		'Bperedachi' => 'Көрсөтүүлөр',	
 		'' => '',

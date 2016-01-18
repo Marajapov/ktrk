@@ -91,6 +91,16 @@
     font-size: 14px;
     text-transform: uppercase;
 }
+/* For inner pages*/
+.maintitle{
+	margin-top: 100px;
+}
+.maintitle .title h3{
+	padding-bottom: 0px;
+}
+.maintitle .title h3:after{
+	background-image: none;
+}
 
 /*BEGIN Background images sor sections*/
 
@@ -657,6 +667,40 @@
     font-family: 'FontAwesome';
     font-size: 10px;
 }
+
+/* BEGIN Balastan duinosundo*/
+.shows{
+	background: #fff;
+}
+.shows .col-md-12{
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(0,0,0,.2);
+}
+.shows .aboutshow h4{
+    margin: 0px 0px 10px 0px;
+	font-family: 'merriweatherbold', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+	font-size: 24px;
+}
+.shows .aboutshow p{
+	color: #666;
+	font-family: 'merriweatherregular', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+	font-size: 14px;
+	line-height: 1.5em;
+	text-align: justify;
+}
+.shows .aboutshow .link{
+	font-size: 16px;
+    color: #184f76;
+}
+.shows .aboutshow .media-left img{
+    height: auto;
+    width: 280px;
+    margin: 0 auto
+}
+.shows .aboutshow .media-body{
+	padding-left: 15px;
+}
+/* END Balastan duinosundo*/
 
 
 /*Prefooter*/
