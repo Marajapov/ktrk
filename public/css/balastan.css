@@ -37,9 +37,14 @@
 
 #balastan {
     overflow-x: hidden;
-    background: #009cd9;
-    background: url('../images/channels/balastan/texture.jpg');
+    background: #ff476b;
 	font-family: 'merriweatherregular', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+
+    background-image: -o-linear-gradient(bottom, #FF0088 0%, #FF803C  100%);
+    background-image: -moz-linear-gradient(bottom, #FF0088 0%, #FF803C  100%);
+    background-image: -webkit-linear-gradient(bottom, #FF0088 0%, #FF803C  100%);
+    background-image: -ms-linear-gradient(bottom, #FF0088 0%, #FF803C  100%);
+    background-image: linear-gradient(to bottom, #FF0088 0%, #FF803C  100%);
 }
 
 #balastan a{
@@ -95,18 +100,36 @@
 /*BEGIN Background images sor sections*/
 
 .kidsmainbg{
-	background: url('../images/channels/balastan/bg.jpg') no-repeat;
-	background-size: cover;
+	/*background: url('../images/channels/balastan/bg.jpg') no-repeat;*/
+	/*background-size: cover;*/
+}
+.kidsmainbg{
+    position: relative;
+    background: #ff6160;
+    z-index: 100;
+}
+.kidsmainbg::before{
+    display: block;
+    content: '';
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+
+    background: url('../images/channels/balastan/texture3.jpg');
+    opacity: .1;
 }
 .kidsgallery{
 	position: relative;
 	z-index: 100;
-	background: #94c83d;
+	background: #ff7840;
 }
 .kidsgallery::before {
     content: '';
     background: url('../images/channels/balastan/texture-noise.jpg');
-    opacity: .15;
+    opacity: .1;
     top: 0;
     left: 0;
     bottom: 0;
@@ -213,13 +236,13 @@
 .kidsslider{
 	position: relative;
 	width: 150%;
-    border-radius: 50% !important;
+    border-radius: 50% 50% 0 0 !important;
     left: -25%;
     margin-top: -50px;
+    z-index: 101;
 
     padding: 60px 0 40px;
-
-    background: url('../images/channels/balastan/texture.jpg');
+    background: #ff476b;
 }
 .programs-slide {
     /*padding: 35px 0px 40px 0px;*/
@@ -289,12 +312,13 @@
 	position: relative;
 	z-index: 1;
 	padding: 60px 0px 60px;
-	background:#FF9800;
+	background-color:#ff476b;
+    background-image: url('../images/channels/balastan/texture-leafs.png');
 }
 .preklams:before{
     content: '';
     background: url('../images/channels/balastan/texture-noise.jpg');
-    opacity: .2;
+    opacity: .1;
     top: 0;
     left: 0;
     bottom: 0;

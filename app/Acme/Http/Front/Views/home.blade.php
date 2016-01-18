@@ -355,23 +355,23 @@
                                 <div class="slider slider-nav">
                                     <div>
                                         <span class="videoTitle hidden">{{ trans('site.FrontPostDaysNews') }}</span>
-                                        <img src="http://img.youtube.com/vi/@if($dayVideo1){{$dayVideo1->getUrl()}}@else{{$defaultVideo}}@endif/mqdefault.jpg" alt="" />
+                                        <img src="http://img.youtube.com/vi/@if($dayVideo1){{$dayVideo1->getUrl()}}@else{{$defaultVideo}}@endif/0.jpg" alt="" />
                                         <h4>@if($dayVideo1){{ $dayVideo1->getName() }} @else {{ trans('site.FrontPostDaysMaanai') }} @endif</h4>
                                     </div>
                                     <div>
                                         <span class="videoTitle hidden">{{ trans('site.FrontPostDaysEpisode') }}</span>
-                                        <img src="http://img.youtube.com/vi/@if($dayVideo2){{$dayVideo2->getUrl()}}@else{{$defaultVideo}}@endif/mqdefault.jpg" alt="" />
+                                        <img src="http://img.youtube.com/vi/@if($dayVideo2){{$dayVideo2->getUrl()}}@else{{$defaultVideo}}@endif/0.jpg" alt="" />
                                         <h4>@if($dayVideo2){{ $dayVideo2->getName() }} @else {{ trans('site.FrontPostDaysMaanai') }} @endif</h4>
                                     </div>
                                     <div>
                                         <span class="videoTitle hidden">{{ trans('site.FrontPostDaysAnons') }}</span>
-                                        <img src="http://img.youtube.com/vi/@if($dayVideo3){{$dayVideo3->getUrl()}}@else{{$defaultVideo}}@endif/mqdefault.jpg" alt="" />
+                                        <img src="http://img.youtube.com/vi/@if($dayVideo3){{$dayVideo3->getUrl()}}@else{{$defaultVideo}}@endif/0.jpg" alt="" />
                                         <h4>@if($dayVideo3){{ $dayVideo3->getName() }} @else {{ trans('site.FrontPostDaysMaanai') }} @endif</h4>
                                     </div>
 
                                     <div>
                                         <span class="videoTitle hidden">{{ trans('site.FrontPostDaysMaanai') }}</span>
-                                        <img src="http://img.youtube.com/vi/@if($dayVideo4){{$dayVideo4->getUrl()}}@else{{$defaultVideo}}@endif/mqdefault.jpg" alt="" />
+                                        <img src="http://img.youtube.com/vi/@if($dayVideo4){{$dayVideo4->getUrl()}}@else{{$defaultVideo}}@endif/0.jpg" alt="" />
                                         <h4>@if($dayVideo4){{ $dayVideo4->getName() }} @else {{ trans('site.FrontPostDaysMaanai') }} @endif</h4>
                                     </div>
                                 </div>
