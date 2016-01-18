@@ -417,10 +417,7 @@
     -o-transition: all 0.2s ease;
     transition: all 0.2s ease;
 
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    -ms-backface-visibility: hidden;
-    backface-visibility: hidden;
+
 }
 .video-block:hover{
     -webkit-transform: scale(1.06);
@@ -432,17 +429,26 @@
 }
 .video-block.col-md-4 .video-img{
     position: relative;
-    height: 250px;
+    height: 190px;
     overflow: hidden;
-    padding-bottom: 60px;
-    /*border-radius: 3px !important;*/
+
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 .video-block.col-md-4 img{
     position: absolute;
-    top: -35px;
+    left: 50%;
+    top: 50%;
     z-index: 1;
-    height: 270px;
-    width: auto;
+    height: auto;
+    width: 100%;
+    opacity: 1;
+    -webkit-transform: translateY(-50%) translateX(-50%);
+    -moz-transform: translateY(-50%) translateX(-50%);
+    -ms-transform: translateY(-50%) translateX(-50%);
+    transform: translateY(-50%) translateX(-50%);
 }
 .video-block .video-overlay{
     position: absolute;
@@ -454,13 +460,7 @@
     background: rgba(0,0,0,.25);
 }
 .video-block .video-info{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: 3;
-
     margin: 0;
-    padding: 0 15px;
     width: 100%;
 }
 .video-info .media{
@@ -734,15 +734,6 @@
 /* END About page*/
 
 /* BEGIN Video page*/
-.fullvideo {
-	background-color: #131212;
-}
-.fullvideo .singlevideo{
-	width:100%;
-	height: 560px;
-	box-shadow: 12px 0 15px -4px rgb(10, 10, 10), -12px 0 8px -4px rgb(10, 10, 10); 
-	margin-bottom: -5px;
-}
 .relatedvideos .title{
 	padding:20px 20px 0px 20px;
 }

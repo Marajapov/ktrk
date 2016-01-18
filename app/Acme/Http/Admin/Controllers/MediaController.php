@@ -75,7 +75,7 @@ class MediaController extends Controller
             $storage->makeDirectory($dir);
 
             Image::make($_FILES['thumbnail']['tmp_name'])->fit(250, 150)->save($dir.'/'.$name);
-            Image::make($_FILES['thumbnail']['tmp_name'])->fit(500, 300)->save($dir.'/'.$name2);
+            Image::make($_FILES['thumbnail']['tmp_name'])->fit(1000, 600)->save($dir.'/'.$name2);
 
             $media->thumbnail = $dir.'/'.$name;
             $media->thumbnail_big = $dir.'/'.$name2;
