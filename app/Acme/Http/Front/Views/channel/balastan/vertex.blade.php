@@ -1,10 +1,11 @@
 @extends('Front::channel.balastan.default')
 @section('title', "Vertex")
+
 @section('styles')
 @endsection
+
 @section('content')
-    <body class="balastan" id="balastan">
-    <!--BEGIN MAIN HEADER MENU for all channels  -->
+<!--BEGIN MAIN HEADER MENU for all channels  -->
     <div class="switch">
         <nav class="navbar">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -380,89 +381,97 @@
                         <a href="#" class="more-link">Бардык галереялар</a>
                     </div>
                 </div>
-                <div class="col-md-12 gallery-block">
-
-                    <a href="#">
-                        <figure>
-                            <div>
-                                <img class="gallery-img" src="http://beta.ktrk.kg/img/thumbnail/591451295233_big.jpg" alt="">
+                <div class="col-md-4 video-block">
+                    <a href="#" class="video-img">
+                        <img src="http://img.youtube.com/vi/a_O0hArYqiQ/0.jpg" alt="" />
+                        <span class="video-overlay"></span>
+                    </a>
+                    <div class="video-info">
+                        <div class="media">
+                            <div class="media-left media-middle">
+                                <a href="#">
+                                    <i class="fa fa-camera video-icon"></i>
+                                </a>
                             </div>
-                            <figcaption>
-                                <img class="avatar" src="http://www.sproutonline.com/sites/sprout/files/Sprout-Avatars_NinasWorld.png" alt="">
-
-                                <h6 class="icon-game">Nina's Big Adventure</h6>
-
-                                <p>Join along on Nina &amp; Star's daily adventures!</p>
-
-                                <div class="cta cta-primary">
-                                    <i class="icon icon-game"></i>
-                                    PLAY NOW!
-                                </div>
-
-                            </figcaption>
-                        </figure>
-                    </a>
-
-                    <a href="">
-                        <img class="cover" src="http://img.youtube.com/vi/rZhEr9mZfh4/mqdefault.jpg" alt="">
-                        <h3 class="name">Баластан бир жашта</h3>
-                    </a>
+                            <div class="media-body media-middle">
+                                <h4 class="media-heading video-name">Бирге окуйбуз: "Ким күчтүү?"</h4>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <a href="">
-                        <img class="cover" src="http://img.youtube.com/vi/rYEDA3JcQqw/mqdefault.jpg" alt="">
-                        <h3 class="name">Керемет көчтүн балдары Америкага барып келди</h3>
+                <div class="col-md-4 video-block">
+                    <a href="#" class="video-img">
+                        <img src="http://img.youtube.com/vi/jCEiq-zo2BI/0.jpg" alt="" />
+                        <span class="video-overlay"></span>
                     </a>
+                    <div class="video-info">
+                        <div class="media">
+                            <div class="media-left media-middle">
+                                <a href="#">
+                                    <i class="fa fa-camera video-icon"></i>
+                                </a>
+                            </div>
+                            <div class="media-body media-middle">
+                                <h4 class="media-heading video-name">Бирге окуйбуз: "Кызык экен..."</h4>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <a href="">
-                        <img class="cover" src="http://img.youtube.com/vi/rYEDA3JcQqw/mqdefault.jpg" alt="">
-                        <h3 class="name">Керемет көчтүн балдары Америкага барып келди</h3>
+                <div class="col-md-4 video-block">
+                    <a href="#" class="video-img">
+                        <img src="http://img.youtube.com/vi/GhPBEOklj8I/0.jpg" alt="" />
+                        <span class="video-overlay"></span>
                     </a>
-                </div>
-                <div class="col-md-4">
-                    <a href="">
-                        <img class="cover" src="http://img.youtube.com/vi/rYEDA3JcQqw/mqdefault.jpg" alt="">
-                        <h3 class="name">Керемет көчтүн балдары Америкага барып келди</h3>
-                    </a>
+
+                    <div class="video-info">
+                        <div class="media">
+                            <div class="media-left media-middle">
+                                <a href="#">
+                                    <i class="fa fa-camera video-icon"></i>
+                                </a>
+                            </div>
+                            <div class="media-body media-middle">
+                                <h4 class="media-heading video-name">Баарын билгим келет: "Дүйнөдөгү эң чоң дарыя"</h4>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- END Photogalleries -->
 
-    @stop
-    @section('footerscript2')
-        <script>
-            if ($(window).width() > 768) {
-                $('.kids-slide').slick({
-                    infinite: true,
-                    slidesToShow: 4,
-                    slidesToScroll: 1
-                });
-            }
-
-            if ($(window).width() < 768) {
-                $('.kids-slide').slick({
-                    infinite: true,
-                    slidesToShow: 2,
-                    slidesToScroll: 1
-                });
-            }
-
-        </script>
-        <script>
-
-            //    var current = $('.shows-carousel').slick('slickCurrentSlide');
-
-            $('.shows-carousel').slick({
-                autoplay: true,
-                autoplaySpeed: 2500,
-                arrows: false,
-                dots: true,
+@stop
+@section('footerscript')
+    <script>
+        if ($(window).width() > 768) {
+            $('.kids-slide').slick({
                 infinite: true,
-                slidesToShow: 1,
-                speed: 1000
+                slidesToShow: 4,
+                slidesToScroll: 1
             });
-        </script>
+        }
+
+        if ($(window).width() < 768) {
+            $('.kids-slide').slick({
+                infinite: true,
+                slidesToShow: 2,
+                slidesToScroll: 1
+            });
+        }
+
+    </script>
+    <script>
+        //    var current = $('.shows-carousel').slick('slickCurrentSlide');
+
+        $('.shows-carousel').slick({
+            autoplay: true,
+            autoplaySpeed: 2500,
+            arrows: false,
+            dots: true,
+            infinite: true,
+            slidesToShow: 1,
+            speed: 1000
+        });
+    </script>
 @stop

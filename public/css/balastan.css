@@ -248,25 +248,21 @@
 	margin-top: -20px;
 	margin-left:-30px;
 }
-.programs-slide .kids-slide .slick-next:before{
+.programs-slide .kids-slide .slick-next:before,.programs-slide .kids-slide .slick-prev:before{
 
 	color: #94c83d !important;
-
-	font-size: 60px;
-
-	content: "\f0a9";
-	opacity: 1;
+	font-size: 48px;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
 }
-.programs-slide .kids-slide .slick-next:hover{
-	color:red;
+.programs-slide .kids-slide .slick-next:before{
+    content: "\f0a9";
 }
 .programs-slide .kids-slide .slick-prev:before{
-	color: #94c83d !important;
-
-	font-size: 60px;
-
 	content: "\f0a8";
-	opacity: 1;
 }
 .programs-slide .slick-slide a{
 	display: block;
@@ -514,64 +510,12 @@
 .kidsgallery{
 	padding: 60px 0;
 }
-
-.kidsgallery .kidsright{
-	position: absolute;
-    right: 0;
-	color: #11465F;
-	margin-top: 0px;
-	font-size: 40px;
-	font-weight: 600;
+.kidsgallery .video-name,.kidsgallery .video-icon{
+    color: #147843;
 }
-.kidsgallery .title{
-	position: relative;
+.kidsgallery .video-icon{
+    font-size: 20px;
 }
-.kidsgallery .title h3{
-	width: 100%;
-	border-radius: 5px !important;
-}
-.kidsgallery .title h3 span{
-	position: relative;
-	float: left;
-	color: #11465F;
-	font-size: 40px;
-	font-weight: 600;
-
-}
-
-.kidsgallery .col-md-4{
-	position: relative;
-	margin-bottom: 15px;
-
-	-webkit-transition: all 0.2s ease;
-	-o-transition: all 0.2s ease;
-	transition: all 0.2s ease;
-}
-
-.kidsgallery .cover{
-	border-radius: 5px !important;
-	-webkit-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
-	-moz-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
-	box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
-}
-
-.kidsgallery .name {
-	position: absolute;
-	bottom: -10px;
-
-	max-width: 90%;
-	padding: 5px;
-	border-radius: 0px 5px 5px 5px !important;
-
-	color: #FFEB3B;
-	background: #03A9F4;
-
-	font-size: 20px;
-	font-weight: 600;
-	text-shadow: 1px 0px 0px rgb(45, 45, 45), 0 0 1em rgba(255, 250, 250, 0.04);
-
-}
-
 /* END Photo Gallery*/
 
 /*PANEL GALLERY*/
