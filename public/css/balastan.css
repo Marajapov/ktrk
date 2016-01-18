@@ -272,6 +272,7 @@
     background: #aede55;
     color: #00283d;
 
+    font-family: 'merge_probold', Arial, 'Helvetica Neue', Helvetica, sans-serif;
     font-size: 17px;
     font-weight: bold;
     line-height: 1;
@@ -484,6 +485,7 @@
     /*text-align: center;*/
 }
 .video-name{
+    font-family: 'merge_probold',Arial, 'Helvetica Neue', Helvetica, sans-serif;
     margin: 0;
 }
 .video-icon{
