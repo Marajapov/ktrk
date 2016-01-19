@@ -707,7 +707,7 @@
 
 .aboutbtn{
 	padding:60px 0px; 
-	background-color: #ff6a2e;
+	background-color: #fff;
 	background-image: url('../images/channels/balastan/bg-bubbles.png');
 }
 .aboutbtn p{
@@ -726,6 +726,7 @@
     padding: 60px 0;
     background: #ffa643;
     background-image: url('../images/channels/balastan/bg-bubbles.png');
+    background-size: cover;
 }
 .relatedvideos .video-block{
     display: none;
@@ -804,6 +805,19 @@
     font-size: 16px;
 }
 /* END Video page*/
+
+/* BEGIN Allvideos*/
+
+.allvideos{
+    padding: 60px 0;
+	background: #ffa643;
+    background-image: url('../images/channels/balastan/bg-bubbles.png');
+    background-size: cover;
+}
+.allvideos .category{
+}
+
+/* END Allvideos*/
 
 /*Prefooter*/
 .prefooter{

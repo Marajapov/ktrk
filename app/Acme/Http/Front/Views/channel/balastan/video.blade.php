@@ -77,52 +77,6 @@
                                 </div>
                             </div>
                         </div>
-
-                        <div class="col-md-4 video-block">
-                            <a href="{{ route('balastan.video', $media)}}" class="video-img">
-                                @if($media->thumbnail_big)
-                                    <img src="{{ asset($media->thumbnail_big) }}" alt="" />
-                                @else
-                                    <img src="http://img.youtube.com/vi/{{ $media->getUrl()}}/0.jpg" alt="" />
-                                @endif
-                                <span class="video-overlay"></span>
-                            </a>
-                            <div class="video-info">
-                                <div class="media">
-                                    <div class="media-left media-middle">
-                                        <a href="#">
-                                            <i class="fa fa-youtube-play video-icon"></i>
-                                        </a>
-                                    </div>
-                                    <div class="media-body media-middle">
-                                        <h4 class="media-heading video-name"><a href="{{ route('balastan.video', $media)}}">{{ $media->getName() }}</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4 video-block">
-                            <a href="{{ route('balastan.video', $media)}}" class="video-img">
-                                @if($media->thumbnail_big)
-                                    <img src="{{ asset($media->thumbnail_big) }}" alt="" />
-                                @else
-                                    <img src="http://img.youtube.com/vi/{{ $media->getUrl()}}/0.jpg" alt="" />
-                                @endif
-                                <span class="video-overlay"></span>
-                            </a>
-                            <div class="video-info">
-                                <div class="media">
-                                    <div class="media-left media-middle">
-                                        <a href="#">
-                                            <i class="fa fa-youtube-play video-icon"></i>
-                                        </a>
-                                    </div>
-                                    <div class="media-body media-middle">
-                                        <h4 class="media-heading video-name"><a href="{{ route('balastan.video', $media)}}">{{ $media->getName() }}</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     @endforeach
 
                     <div class="col-md-12">

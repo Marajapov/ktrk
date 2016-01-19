@@ -107,7 +107,7 @@ class BalastanController extends Controller
             ]);
     }
     // For photos page One gallery 
-     public function Gallery(Request $request, $galleryId)
+     public function Gallery($galleryId)
     {
         $lc = app()->getlocale();
 
@@ -124,22 +124,36 @@ class BalastanController extends Controller
             ]);
     }
 
-    public function projectVideos(Request $request, $project)
+    public function projectVideos($project)
+    {
+        $channel = \Model\Channel\ModelName::name('balastan')->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+        $programId = $project->id;
+     
+        $balastanProjects = \Model\Project\ModelName::where('balastan','=','1')->orderBy('id','desc')->get();
+        $balastanMedias = \Model\Media\ModelName::where('program','=',$programId)->take(8)->skip(0)->orderBy('id','desc')->get();
+
+        return view('Front::channel.balastan.videos', [
+            'channel' => $channel,
+            'backgroundMain' => $backgroundMain,
+            'balastanProjects' => $balastanProjects,
+            'balastanMedias' => $balastanMedias,
+        ]);
+    }
+
+    public function videos(Request $request)
     {
 
         $channel = \Model\Channel\ModelName::name('balastan')->first();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
-        $programId = $project;
-        $balastanLastVideo = \Model\Media\ModelName::where('program','=',$programId)->take(1)->orderBy('id','desc')->first();
-        $balastanProjects = \Model\Project\ModelName::where('balastan','=','1')->orderBy('id','desc')->get();
-        $balastanMedias = \Model\Media\ModelName::where('program','=',$programId->id)->take(8)->skip(0)->orderBy('id','desc')->get();
 
-        return view('Front::channel.balastan.video', [
+        $balastanProjects = \Model\Project\ModelName::where('balastan','=','1')->orderBy('id','desc')->get();
+        $balastanMedias = \Model\Media\ModelName::where('program','=', '1')->take(8)->skip(0)->orderBy('id','desc')->get();
+        return view('Front::channel.balastan.videos', [
             'channel' => $channel,
             'backgroundMain' => $backgroundMain,
-
-            'balastanLastVideo' => $balastanLastVideo,
             'balastanProjects' => $balastanProjects,
             'balastanMedias' => $balastanMedias,
             ]);
