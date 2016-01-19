@@ -81,9 +81,9 @@
                         @if($balastanProjects)
                         @foreach($balastanProjects as $project) 
                             <div class="col-md-3">
-                                <a href="#">
+                                <a href="{{ route('balastan.project.videos', $project) }}">
                                     <img src="@if(!($project->getFile())) {{ asset('images/project_default.png') }} @else {{ asset($project->getFile()) }} @endif" alt=""/>
-                                    <h3 class="programmcat"> {{ $project->getName() }}</h3>
+                                    <h3 class="programmcat"><a href="{{ route('balastan.project.videos', $project) }}">{{ $project->getName() }}</a></h3>
                                 </a>
                             </div>
                         @endforeach

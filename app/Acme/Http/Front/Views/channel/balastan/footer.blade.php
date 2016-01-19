@@ -38,6 +38,20 @@
 <script type="text/javascript" src="{{ asset('js/jquery-migrate-1.2.1.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('slick/slick.min.js') }}"></script>
 
+<!-- Search -->
+<script>
+  $(document).ready(function () {
+      $(".search-toggle").click(function () {
+          $(".logo-block").addClass("search-show");
+          $(".form-search").addClass("visible");
+      });
+      $(".close-search").click(function () {
+          $(".logo-block").removeClass("search-show");
+          $(".form-search").removeClass("visible");
+
+      });
+  });
+</script> 
 <!--Carousel-->
 <script>
     $('.carousel-slick').slick({

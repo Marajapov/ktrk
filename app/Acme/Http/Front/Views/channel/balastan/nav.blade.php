@@ -31,9 +31,20 @@
                 </a>
             </li>
             <li>
-                <a href="#">
-                    <i class="fa fa-search i6"></i>
-                </a>
+                  <div class="logo-block search-block">
+                     <a class="search-toggle"><i class="fa fa-search"></i></a>
+                     <form class="form-search" action="{{ route('front.search') }}" method="get">
+                        <div class="form-group pull-right">
+                           <input type="text" name="search" class="form-control" placeholder="Издөө"/>
+                        </div>
+                        <a class="btn close-search">
+                        <i class="fa fa-close"></i>
+                        </a>
+                        <button class="btn submit-search" type="submit">
+                        <i class="fa fa-search"></i>
+                        </button>
+                     </form>
+                  </div>
             </li>
         </ul>
     </div>

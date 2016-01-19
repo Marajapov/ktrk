@@ -5,13 +5,19 @@
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.2.6/css/lightgallery.min.css">
 @endsection
 @section('content')
-@include('Front::channel.balastan.nav')
-<div class="container maintitle">
-   <div class="row">
-      <div class="title col-md-12">
-         <h3>{{ $gallery->getName() }}</h3>
-      </div>
-   </div>
+<div class="container-fluid pages-header">
+    <div class="row">
+
+        @include('Front::channel.balastan.nav')
+
+        <div class="container pages-title">
+            <div class="row">
+                <div class="title col-md-12">
+                    <h3>{{ $gallery->getName() }}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <div class="container-fluid lightgallery">
   <div class="row">

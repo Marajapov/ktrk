@@ -17,22 +17,32 @@
       </div>
    </div>
 </div>
-<div class="container-fluid allvideos">
-   <div class="row">
+<div class="container-fluid allvideos">   
+  <div class="mainnav">
+      <div class="container">
+          <ul>
+            <li><a class="category @if(!$project) active @endif" href="{{ route('balastan.videos') }}">{{ trans('site.AllVideos') }}</a></li>
+            @if($balastanProjects)
+              @foreach($balastanProjects as $row)                   
+                 <li>
+                   <a class="category @if($project && $row->id == $project->id) active @endif" href="{{ route('balastan.project.videos', $row) }}">
+                    {{ $row->getName() }}
+                    </a> 
+                 </li>         
+              @endforeach                
+            @endif
+          </ul>
+          @if($project)
+            <p class="show-desc">
+              <span>{{ $project->getNameOne() }}</span>
+              {{ $project->getDescription() }}
+            </p>
+          @endif
+      </div>
+   </div>
+  <div class="row">
          <div class="container">
             <div class="row">
-
-               <div class="col-md-12">
-                  <a class="show-btn category" href="{{ route('balastan.videos') }}">{{ trans('site.AllVideos') }}</a>
-                  @if($balastanProjects)
-                  @foreach($balastanProjects as $row)                   
-                     <a class="show-btn category @if($project && $row->id == $project->id) active @endif" href="{{ route('balastan.project.videos', $row) }}">
-                        {{ $row->getName() }}
-                     </a>            
-                  @endforeach
-                  @endif
-               </div>
-
                 @if($balastanMedias)
                 @foreach($balastanMedias as $media)
                <div class="col-md-4 video-block">
