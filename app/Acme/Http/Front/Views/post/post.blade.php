@@ -338,7 +338,9 @@
                 var div=d.createElement("DIV");
                 var w=550;
                 if(w>b.clientWidth-10){w=b.clientWidth-10;}div.style.zIndex="10001";
-                div.innerHTML=""+"<div class=\"orphus clearfix\" style=\"width:"+w+"px; z-index:10001; \">"+"<a href=\"javascript:void(0)\" onclick=\"$(this).parent('.orphus').find('form .buttons input:first').click();\" class=\"sprite_close\"><i class=\"fa fa-close\"></i></a>"+"<div class=\"header\">"+_8.intextmsg+"</div>"+"<div class=\"item\">&laquo;&#133;"+_36.replace(_4,"<u style=\"color:red\">").replace(_5,"</u>")+"&#133;&raquo;</div>"+"<div class=\"message\">"+_8.ifsendmsg.replace(/\n/,"<br/>")+"</div>"+"<form action=\""+formAction+"\" id=\"orphus\" method=\"post\"><input name=\"comment\" placeholder=\"Комментарий для автора (необязательно)\" type=\"text\"/><input name=\"message\" value=\""+_36+"\" type=\"hidden\"/>"+"<div class=\"buttons\">"+"<input type=\"button\" value=\""+_8.cancel+"\" class=\"cancel\"><input name=\"submit\" type=\"submit\" value=\""+_8.send+"\"><input type=\"hidden\" name=\"_token\" value=\""+_token+"\"/><input type=\"hidden\" name=\"url\" value=\""+url+"\"/><input type=\"hidden\" name=\"postId\" value=\""+postId+"\"/>"+"</div>"+"</form>"+"</div>"+"";
+                div.innerHTML=""+"<div class=\"orphus clearfix\" style=\"width:"+w+"px; z-index:10001; \">"+"<a href=\"javascript:void(0)\" onclick=\"return closeForm();\" class=\"sprite_close\"><i class=\"fa fa-close\"></i></a>"+"<div class=\"header\">"+_8.intextmsg+"</div>"+"<div class=\"item\">&laquo;&#133;"+_36.replace(_4,"<u style=\"color:red\">").replace(_5,"</u>")+"&#133;&raquo;</div>"+"<div class=\"message\">"+_8.ifsendmsg.replace(/\n/,"<br/>")+"</div>"+"<form id=\"orphus\" method=\"post\" action=\""+formAction+"\"><input name=\"comment\" placeholder=\"Комментарий для автора (необязательно)\" type=\"text\"/><input name=\"message\" value=\""+_36+"\" type=\"hidden\"/>"+"<div class=\"buttons\">"+"<input name=\"submit\" type=\"submit\" value=\""+_8.send+"\">"+"<input type=\"button\" value=\""+_8.cancel+"\" class=\"cancel\"><input type=\"hidden\" name=\"_token\" value=\""+_token+"\"/><input type=\"hidden\" name=\"url\" value=\""+url+"\"/><input type=\"hidden\" name=\"postId\" value=\""+postId+"\"/>"+"</div>"+"</form>"+"</div>"+"";
+//
+//                div.innerHTML=""+"<div class=\"orphus clearfix\" style=\"width:"+w+"px; z-index:10001;\">"+"<div class=\"header\">"+_8.intextmsg+"</div>"+"<div class=\"item\">&laquo;&#133;"+_36.replace(_4,"<u style=\"color:red\">").replace(_5,"</u>")+"&#133;&raquo;</div>"+"<div class=\"message\">"+_8.ifsendmsg.replace(/\n/,"<br/>")+"</div>"+"<form action=\""+formAction+"\" id=\"orphus\" method=\"post\">"+"<input name=\"comment\" placeholder=\"Комментарий для автора (необязательно)\" type=\"text\"/>"+"<div class=\"buttons\">"+"<input name=\"submit\" type=\"submit\" value=\""+_8.send+"\">"+"<input class=\"cancel\" type=\"button\" value=\""+_8.cancel+"\">"+"<input name=\"message\" value=\""+_36+"\" type=\"hidden\"/>"+"<input type=\"hidden\" name=\"_token\" value=\""+_token+"\"/>"+"<input type=\"hidden\" name=\"url\" value=\""+url+"\"/>"+"<input type=\"hidden\" name=\"postId\" value=\""+postId+"\"/>"+"</div>"+"</form>"+"</div>";
                 _1b(div);
                 var _3a=div.getElementsByTagName("input");
                 var _3b=div.getElementsByTagName("form");
@@ -428,5 +430,9 @@
                 if(we){_67=we.keyCode==10||(we.keyCode==13&&we.ctrlKey);}else{if(e){_67=(e.which==10&&e.modifiers==2)||(e.keyCode==0&&e.charCode==106&&e.ctrlKey)||(e.keyCode==13&&e.ctrlKey);}}if(_67){_5d();
                     return false;}};
             _13();})();
+
+        function closeForm(){
+            $('.orphus').parent().hide();
+        }
     </script>
 @endsection

@@ -180,8 +180,22 @@
 .panel-article img.fr-dii.fr-fil{
     margin-right: 15px;
 }
-.news-block em{
-
+.panel-article .news-block em{
+    position: relative;
+    display: block;
+    padding: 10px 10px 10px 40px;
+    background: #F1F4F9;
+    font-size: 16px;
+    font-weight: bold;
+}
+.panel-article .news-block em::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 100%;
+    background: #48A6D8;
 }
 
 /*PANEL COMMENTS*/
@@ -438,7 +452,8 @@ h3#reply-title {
     border-radius: 2px;
 }
 .orphus .buttons .cancel {
-    display: none;
+    margin-left: 5px;
+    /*display: none;*/
 }
 
 .orphus-mistake h4{
