@@ -218,6 +218,22 @@
 		-webkit-transform: translateY(0%) scale(1) scaleY(1);
 	}
 }
+
+.logo-block{
+    position: relative;
+    top: -30px;
+    right: -5px;
+}
+.form-search.visible{
+    background: #FF9800;
+    border-radius: 3px !important;
+    padding: 2px;
+}
+
+.logo-block .fa-close{
+    position: relative;
+    top: -7px;
+}
 /* END Header*/
 
 /* BEGIN Programms slide*/
@@ -818,13 +834,84 @@
 /* BEGIN Allvideos*/
 
 .allvideos{
-    padding: 60px 0;
-	background: #ffa643;
+    padding: 0px 0 60px; 
+    background: #ffa643;
     background-image: url('../images/channels/balastan/bg-bubbles.png');
     background-size: cover;
 }
-.allvideos .category{
+.allvideos .mainnav{
+    background: #fff;
 }
+.mainnav ul{
+    border-bottom: 1px solid #d1d1d1;
+    display: block;
+    padding: 15px 0;
+    text-align: center;
+}
+.mainnav ul li{
+    display: inline-block;
+    vertical-align: middle;
+    margin: 5px;
+    padding: 20px 15px;
+}
+.mainnav li a{
+    position: relative;
+    display: block;
+    outline: none;
+    color: #00283d;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.mainnav li a::before,.mainnav li a::after{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 70px;
+    height: 70px;
+    border: 2px solid rgba(0,40,61,0.3);
+    border-radius: 50%;
+    content: '';
+    opacity: 0;
+    -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+    -moz-transition: -moz-transform 0.3s, opacity 0.3s;
+    transition: transform 0.3s, opacity 0.3s;
+    -webkit-transform: translateX(-50%) translateY(-50%) scale(0.2);
+    -moz-transform: translateX(-50%) translateY(-50%) scale(0.2);
+    transform: translateX(-50%) translateY(-50%) scale(0.2);
+}
+.mainnav li a::after{
+    width: 60px;
+    height: 60px;
+    border-width: 6px;
+    -webkit-transform: translateX(-50%) translateY(-50%) scale(0.8);
+    -moz-transform: translateX(-50%) translateY(-50%) scale(0.8);
+    transform: translateX(-50%) translateY(-50%) scale(0.8);
+}
+.mainnav li a:hover::before,.mainnav li a:hover::after, 
+.mainnav li a:focus::before,.mainnav li a:focus::after, 
+.mainnav li a.active::before,.mainnav li a.active::after
+{
+    opacity: 1;
+    -webkit-transform: translateX(-50%) translateY(-50%) scale(1);
+    -moz-transform: translateX(-50%) translateY(-50%) scale(1);
+    transform: translateX(-50%) translateY(-50%) scale(1);
+}
+.allvideos .show-desc{
+    margin: 0;
+    padding: 20px;
+    padding-bottom: 30px;
+    font-size: 14px;
+    text-align: justify;
+}
+.show-desc span{
+    display: block;
+    margin-bottom: 10px;
+    font-family: 'merge_probold', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 28px;
+}
+
+
 
 /* END Allvideos*/
 
