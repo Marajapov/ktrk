@@ -24,10 +24,14 @@
 
                <div class="col-md-12">
                   @if($balastanProjects)
-                  @foreach($balastanProjects as $project)
-                     <a class="show-btn category" href="{{ route('balastan.videos', $project) }}">
-                      {{ $project->getName() }}
-                     </a>
+                  @foreach($balastanProjects as $row)  
+                   
+                   
+                      <a class="show-btn category @if($project && $row->id == $project->id) active @endif" href="{{ route('balastan.videos', $row) }}">
+                      {{ $row->getName() }}
+                     </a>             
+
+
                   @endforeach
                   @endif
                </div>

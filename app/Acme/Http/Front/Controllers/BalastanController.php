@@ -130,7 +130,9 @@ class BalastanController extends Controller
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
         $programId = $project->id;
-     
+        
+
+
         $balastanProjects = \Model\Project\ModelName::where('balastan','=','1')->orderBy('id','desc')->get();
         $balastanMedias = \Model\Media\ModelName::where('program','=',$programId)->take(8)->skip(0)->orderBy('id','desc')->get();
 
@@ -139,6 +141,7 @@ class BalastanController extends Controller
             'backgroundMain' => $backgroundMain,
             'balastanProjects' => $balastanProjects,
             'balastanMedias' => $balastanMedias,
+            'project' => $project,
         ]);
     }
 
@@ -156,6 +159,8 @@ class BalastanController extends Controller
             'backgroundMain' => $backgroundMain,
             'balastanProjects' => $balastanProjects,
             'balastanMedias' => $balastanMedias,
+
+            'project' => '',
             ]);
     }
 
