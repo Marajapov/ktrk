@@ -25,6 +25,7 @@ return [
     'shortDescriptionRu' => 'Короткое описание на русском',
 
     'Comments' => 'Комментарии',
+    'LoadMore' => 'Загрузить еще',
 
 //    'Homepage' => '',
 

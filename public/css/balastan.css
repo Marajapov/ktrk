@@ -38,7 +38,7 @@
 #balastan {
     overflow-x: hidden;
     /*background: #2083c4;*/
-	font-family: 'merriweatherregular', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+	font-family: 'Open Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
 
     /*background-image: -o-linear-gradient(bottom, #FF0088 0%, #FF803C  100%);*/
     /*background-image: -moz-linear-gradient(bottom, #FF0088 0%, #FF803C  100%);*/
@@ -81,7 +81,7 @@
 	position: relative;
 	margin: 0 0 20px;
 	padding-bottom: 24px;
-    font-family: 'merriweatherbold', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    font-family: 'merge_probold', Arial, 'Helvetica Neue', Helvetica, sans-serif;
 	font-size: 40px;
     font-weight: bold;
 	color: #ffffff;
@@ -102,7 +102,7 @@
     top: 0;
     margin-top: 20px;
     color: #ffffff;
-    font-family: 'merriweatherbold', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    font-family: 'Open Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
     font-size: 14px;
     text-transform: uppercase;
 }
@@ -303,23 +303,6 @@
 	background-color:#ff6a2e;
     background-image: url('../images/channels/balastan/texture-leafs.png');
 }
-.title h3{
-	position: relative;
-	margin: 0 0 20px;
-	padding-bottom: 24px;
-	font-size: 40px;
-	color: #ffffff;
-}
-.title h3:after{
-    content: '';
-    background-image: url('../images/channels/balastan/wave-white.png');
-    background-repeat: repeat-x;
-    position: absolute;
-    bottom: 6px;
-    left: 0;
-    width: 100%;
-    height: 7px;
-}
 .adblock {
 	position: relative;
 	-webkit-transition: all 0.2s ease;
@@ -356,8 +339,9 @@
 	padding: 0 10px;
     width: 100%;
 	color: #00283d;
-    font-family: 'merriweatherbold', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    font-family: 'Open Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
 	font-size:16px;
+    font-weight: bold;
 	text-transform: uppercase;
 }
 .adblock .soon-btn{
@@ -480,8 +464,9 @@
 }
 .video-name{
     padding-right: 15px;
-    font-family: 'merge_probold',Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    font-family: 'Open Sans',Arial, 'Helvetica Neue', Helvetica, sans-serif;
     font-size: 18px;
+    font-weight: bold;
     margin: 0;
 }
 .video-icon{
@@ -588,7 +573,7 @@
 .show-info span{
     display: block;
     color: #ffffff;
-    font-family: 'merriweatherbold', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    font-family: 'Open Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
     text-transform: uppercase;
 }
 .show-info .show-time{
@@ -613,8 +598,9 @@
 
     background: #ffffff;
     color: #00283d;
-    font-family: 'merge_probold', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    font-family: 'Open Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
     font-size: 16px;
+    font-weight: bold;
     text-transform: uppercase;
 
     box-shadow: 0 6px 0 0 #c6c9cd;
@@ -734,30 +720,111 @@
 /* END About page*/
 
 /* BEGIN Video page*/
-.relatedvideos .title{
-	padding:20px 20px 0px 20px;
-}
-.videoheader .title h3{
-	float: left;
-}
-.fromcat{
+.relatedvideos{
     position: relative;
-    float: right;
-    margin-top: 10px;
-    color: #ffffff;
-    font-family: 'merge_probold', Arial, 'Helvetica Neue', Helvetica, sans-serif;
-    font-size: 14px;
-    text-transform: uppercase;
+    z-index: 100;
+    padding: 60px 0;
+    background: #ffa643;
+    background-image: url('../images/channels/balastan/bg-bubbles.png');
+}
+.relatedvideos .video-block{
+    display: none;
+}
+.relatedvideos .show-btn{
+    width: 100%;
+    margin: 0;
+    text-align: center;
+}
+.fullvideo{
+    position: relative;
+    z-index: 100;
+    padding: 40px;
+    background: #ffffff;
+}
+.fullvideo::before{
+    display: block;
+    content: '';
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+
+    background: url('../images/channels/balastan/texture3.jpg');
+    opacity: .1;
+}
+.video-page .title h3, .video-page .title .fromcat{
+    display: table-cell;
+    vertical-align: middle;
+}
+.video-page .title{
+    margin-bottom: 20px;
+}
+.video-page .title h3{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    height: 70px;
 }
 .fromcat p{
-	line-height: 0.7;
+    margin: 0;
+    width: 200px;
+    color: #ffffff;
+
+    font-family: 'Open Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1;
+    text-align: right;
 }
 .fromcat p>a{
 	color: #FFC107;
 }
+/*.episode-info{*/
+    /*background: #ffffff;*/
+/*}*/
+.episode-info p{
+    margin-top: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid #d1d1d1;
+    font-size: 18px;
+}
+.episode-info em{
+    margin-right: 20px;
+    color: #76b3d4;
+    font-size: 20px;
+    font-weight: bold;
+}
+.episode-info span{
+    float: right;
+    padding: 5px 0;
+    color: #999999;
+    font-size: 16px;
+}
 /* END Video page*/
 
 /*Prefooter*/
+.prefooter{
+    position: relative;
+    z-index: 100;
+    border: none;
+    background: #ff3767;
+}
+.prefooter::before{
+    display: block;
+    content: '';
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+
+    background: url('../images/channels/balastan/texture3.jpg');
+    opacity: .1;
+}
 .prefooter .media{
     padding: 30px 0;
 }

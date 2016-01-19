@@ -110,7 +110,9 @@
 
 
                                 <div class="col-md-12">
-                                    <button class="loadMore btn btn-default">Показать еще</button>
+                                    <button class="loadMore btn btn-default">
+                                        {{ trans('site.LoadMore') }}
+                                    </button>
                                 </div>
                             </div>
                         </div>

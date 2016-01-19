@@ -26,6 +26,7 @@ return [
     'shortDescriptionRu' => 'Короткое описание на русском',
 
     'Comments' => 'Комментарийлер',
+    'LoadMore' => 'Дагы жүктөө',
 
 
     //Header Footer titles
