@@ -113,7 +113,7 @@ class MediaController extends Controller
 
         $MediaCategories = \Model\MediaCategory\ModelName::get();
 
-        $projectList = \Model\Project\ModelName::get();
+        $projectList = \Model\Project\ModelName::where('extracolumn','=','1')->orderBy('id','desc')->get();
 
         $mediaAll = \Model\Media\ModelName::get();
 

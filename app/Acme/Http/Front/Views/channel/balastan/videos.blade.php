@@ -23,10 +23,10 @@
             <div class="row">
 
                <div class="col-md-12">
-                  <a class="show-btn category" href="{{ route('balastan.videos') }}">Все</a> 
+                  <a class="show-btn category" href="{{ route('balastan.videos') }}">{{ trans('site.AllVideos') }}</a>
                   @if($balastanProjects)
                   @foreach($balastanProjects as $row)                   
-                     <a class="show-btn category @if($project && $row->id == $project->id) active @endif" href="{{ route('balastan.videos', $row) }}">
+                     <a class="show-btn category @if($project && $row->id == $project->id) active @endif" href="{{ route('balastan.project.videos', $row) }}">
                         {{ $row->getName() }}
                      </a>            
                   @endforeach

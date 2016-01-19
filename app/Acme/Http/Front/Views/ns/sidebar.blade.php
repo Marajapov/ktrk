@@ -25,8 +25,8 @@
               </a>
               <div class="collapse" id="collapseExample">
                 <ul>
-                  <li><a href="{{ asset('static/files/ns/reglament_ot_17_01_13.docx') }}" target="_blank">{{ trans('site.BaikoochuKeneshReglament') }}</a></li>
-                  <li><a href="{{ asset('static/files/ns/polozhenie_o_poryadke_provedeniya.doc') }}" target="_blank">Положение о порядке проведения открытого конкурса на замещение должности Генерального Директора КТРК КР</a></li>
+                  <li><a href="{{ asset('static/files/ns/reglament_ot_17_01_13.pdf') }}" target="_blank">{{ trans('site.BaikoochuKeneshReglament') }}</a></li>
+                  <li><a href="{{ asset('static/files/ns/polozhenie_o_poryadke_provedeniya.pdf') }}" target="_blank">Положение о порядке проведения открытого конкурса на замещение должности Генерального Директора КТРК КР</a></li>
                 </ul>
               </div>
             </li>

@@ -167,12 +167,21 @@
 }
 
 /*FROALA STYLES*/
-.fr-strong{
+.panel-article .fr-strong{
     float: left;
 }
-.fr-video.fr-dvb iframe{
+.panel-article .fr-video.fr-dvb iframe{
     width: 100% !important;
     height: 470px !important;
+}
+.panel-article img.fr-dii.fr-fir{
+    margin-left: 15px;
+}
+.panel-article img.fr-dii.fr-fil{
+    margin-right: 15px;
+}
+.news-block em{
+
 }
 
 /*PANEL COMMENTS*/
