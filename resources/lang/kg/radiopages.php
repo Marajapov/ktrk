@@ -32,7 +32,7 @@ return [
 
 	    //Content slider
 	    'Mainnews' => 'Башкы жаңылыктар',
-		'Allphotos' => 'Баардык сүрөттөр',
+		'Allphotos' => 'Баардык галереялар',
 		'AllPereadachi' => 'Баардык уктуруулар',
 		'' => '',
 
@@ -81,6 +81,7 @@ return [
 		'Bworld' => 'Баластан дүйнөсүндө',
 		'BirgeRead' => 'Бирге окуйбуз',	
 		'Bperedachi' => 'Көрсөтүүлөр',	
+		'NewVideos' => 'Жаңы видеолор',	
 		'' => '',
 
 		//Madaniyat channel

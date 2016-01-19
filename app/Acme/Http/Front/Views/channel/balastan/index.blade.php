@@ -1,214 +1,241 @@
 @extends('Front::channel.balastan.default')
-@section('title', "Баластан")
+@section('title', "Vertex")
+
 @section('styles')
 @endsection
+
 @section('content')
-<body class="balastan">
-   <div class="switch">
-      <nav class="navbar">
-         <!-- Brand and toggle get grouped for better mobile display -->
-         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false">
-            <span class="sr-only">Меню</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">
-               <img src="{{ asset('images/channels/balastan_white_notext.png')}}">
-               <h4>Баластан</h4>
-            </a>
-         </div>
 
-         <!-- Collect the nav links, forms, and other content for toggling -->
-         <div class="collapse navbar-collapse" id="menu">
-            <ul class="nav navbar-nav channel_switch">
-               <li class="sitemenu" id="site-channel1">
-                  <a href="{{ route('front.home') }}">
-                     <img src="{{ asset('images/ktrk_last.svg')}}" style="height:40px;"><span>КТРК</span>
-                     <h4>КТРК</h4>
-                  </a>
-               </li>
-               <li class="sitemenu" id="site-channel1">
-                  <a href="{{ route('muzkanal.home') }}">
-                     <img src="{{ asset('images/channels/muz_white_notext.png')}}" ><span>Музыка</span>
-                     <h4>Музыка</h4>
-                  </a>
-               </li>
-               <li class="sitemenu" id="site-channel1">
-                  <a href="{{ route('madaniyat.home') }}">
-                     <img src="{{ asset('images/channels/madaniyat_white_notext.png')}}"><span>Маданият</span>
-                     <h4>Маданият</h4>
-                  </a>
-               </li>
-               <li class="sitemenu" id="site-channel1">
-                  <a class="active" href="{{ route('balastan.home') }}">
-                     <img src="{{ asset('images/channels/balastan_white_notext.png')}}"><span>Баластан</span>
-                     <h4>Баластан</h4>
-                  </a>
-               </li>
-            </ul>
-         </div>
-         <!-- /.navbar-collapse -->
-      </nav>
-   </div>
-   <div class="container">
-      <div class="row">
-         <div class="col-md-12  logocenter">
-            <div class="row">
-               <div class="col-md-12 col-sm-12 col-xs-12 clouds">
-                  <div class="sun">
-                     <img src="images/channels/balastan/sun-icon.png" alt=""/>
-                     <!--          <img class="balastanlogo" src="images/channels/balastan_white.png" alt=""/> -->
-                  </div>
-                  <div class="langs">
-                    <ul>
-                        <li @if(app()->getlocale() == 'kg') class="active" @endif><a href="/locale/kg">кырг <span></span></a></li>
-                        <li @if(app()->getlocale() == 'ru') class="active" @endif><a href="/locale/ru">рус <span></span></a></li>
-                    </ul>
+    <div class="container-fluid kidsmainbg">
+
+        @include('Front::channel.balastan.nav')
+
+        <div class="row">
+            <div class="shows-slider">
+                <div class="shows-carousel container">
+                    <div>
+                        <article>
+                            <div class="show-info">
+                                <h1 class="show-name">Баарын билгим келет</h1>
+                                <span class="show-day">{{ trans('site.Monday') }} - {{ trans('site.Friday') }}</span>
+                                <span class="show-time">19:30</span>
+
+
+                                <a class="show-btn" href="#">
+                                    Подробнее
+                                </a>
+                            </div>
+
+                            <div class="show-img">
+                                <img src="{{ asset('images/channels/balastan/slider/1.png') }}" alt="" draggable="false">
+                            </div>
+                        </article>
+                    </div>
+                    <div>
+                        <article>
+                            <div class="show-info">
+                                <h1 class="show-name">Баарын билгим келет</h1>
+                                <span class="show-day">{{ trans('site.Monday') }} - {{ trans('site.Friday') }}</span>
+                                <span class="show-time">19:30 / 21:30</span>
+
+
+                                <a class="show-btn" href="#">
+                                    Подробнее
+                                </a>
+                            </div>
+
+                            <div class="show-img">
+                                <img src="{{ asset('images/channels/balastan/slider/1.png') }}" alt="" draggable="false">
+                            </div>
+                        </article>
+                    </div>
+                    <div>
+                        <article>
+                            <div class="show-info">
+                                <h1 class="show-name">Баарын билгим келет</h1>
+                                <span class="show-day">{{ trans('site.Monday') }} - {{ trans('site.Friday') }}</span>
+                                <span class="show-time">19:30 / 21:30</span>
+
+
+                                <a class="show-btn" href="#">
+                                    Подробнее
+                                </a>
+                            </div>
+
+                            <div class="show-img">
+                                <img src="{{ asset('images/channels/balastan/slider/1.png') }}" alt="" draggable="false">
+                            </div>
+                        </article>
+                    </div>
                 </div>
-                  <img src="images/channels/balastan/clouds.png" alt=""/> 
-                  <nav class="cloudlinks">
-                     <ul>
-                        <li><a class="active" href="{{ route('balastan.home') }}">{{ trans('radiopages.Home') }}</a></li>
-                        <li><a href="{{ route('balastan.about') }}">{{ trans('radiopages.BAbout') }}</a></li>
-                        <li><a href="{{ route('balastan.world') }}">{{ trans('radiopages.Bworld') }}</a></li>
-                        <li><a href="{{ route('balastan.video') }}">Видео</a></li>
-                        <li><a href="{{ route('balastan.allphotos') }}">{{ trans('radiopages.Photos') }}</a></li>
-                     </ul>
-                  </nav>
-               </div>
             </div>
-         </div>
-      </div>
-      <div class="row tvblock">
-         <div class="col-md-2"> 
-            <img src="{{ asset('images/channels/balastan/taalim2.png')}}" alt="" class="leftcloud">
-            <img class="iconleft" src="{{ asset('images/channels/balastan/akylay.png')}}" alt="">                    
-         </div>
-         <div class="col-md-8" style="text-align:center;">
-            <img class="tvthree" src="{{ asset('images/channels/balastan/tv3.png')}}" alt="">
-            @if($firstMedia != null)
-            <div class="iconcenter">
-               <iframe width="495" height="360" src="https://www.youtube.com/embed/{{$firstMedia->getUrl()}}?rel=0&amp;controls=1&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>
-            </div>
-            <h3>{{ $firstMedia->getName() }}</h3>
-            @else
-            <div class="iconcenter">
-               <iframe width="495" height="360" src="https://www.youtube.com/embed/rYEDA3JcQqw?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>
-            </div>
-            @endif
-            <img class="tvtop" src="{{ asset('images/channels/balastan/tvtop.png')}}" alt="">
-            <img class="tvbottom" src="{{ asset('images/channels/balastan/tvbottom.png')}}" alt="">
-            <img class="tvleft" src="{{ asset('images/channels/balastan/tvleft.png')}}" alt="">
-            <img class="tvright" src="{{ asset('images/channels/balastan/tvright.png')}}" alt="">
-         </div>
-         <div class="col-md-2">
-            <img src="{{ asset('images/channels/balastan/taalim.png')}}" alt="" class="rightcloud">
-            <img class="iconright" src="{{ asset('images/channels/balastan/aktan.png')}}" alt="">
-         </div>
-      </div>
-      <div class="row">
-         <div class="col-md-12 kidsvblock text-center">
-            <div class="panel panel-default">
-               <div class="panel-heading">
-                  <h3 class="panel-title"><span>Видео</span></h3>
-               </div>
-               <div class="panel-body">
-                  <div class="row ">
+        </div>
+    </div>
 
+    <!-- BEGIN Programms category slider -->
+    <div id="kidsslider" class="container-fluid kidsslider">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 programs-slide">
+                    <div class="kids-slide">
+                        @if($balastanProjects)
+                        @foreach($balastanProjects as $project) 
+                            <div class="col-md-3">
+                                <a href="#">
+                                    <img src="@if(!($project->getFile())) {{ asset('images/project_default.png') }} @else {{ asset($project->getFile()) }} @endif" alt=""/>
+                                    <h3 class="programmcat"> {{ $project->getName() }}</h3>
+                                </a>
+                            </div>
+                        @endforeach
+                        @endif
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END Programms category slider -->
+
+    <!-- BEGIN Ad block -->
+    <div class="container-fluid preklams">
+        <div class="container">
+            <div class="row">
+
+                <div class="title col-md-12">
+                    <h3>Жакында</h3>
+                </div>
+
+                <div class="col-md-6 adblock">
+                    <a href="#">
+                        <img class="videomain" width="100%" height="340px" src="{{asset('images/channels/balastan/legends.jpg')}}" alt="" />
+                    </a>
+                    <div class="show-text">
+                        <h2>Түнкү сакчылардын уламышы</h2>
+
+                        <a class="soon-btn" href="#">
+                            <i class="fa fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6 adblock">
+                    <a href="#">
+                        <img class="videomain" width="100%" height="340px" src="{{asset('images/channels/balastan/po.jpg')}}" alt="" />
+                    </a>
+                    <div class="show-text">
+                        <h2>Кунг Фу Панда 3</h2>
+
+                        <a class="soon-btn" href="#">
+                            <i class="fa fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END Ad block -->
+    
+    <!-- BEGIN NEW Videos -->
+    <div class="container-fluid newtopvideos">
+        <div class="container">
+            <div class="newkidvideos">
+                <div class="title">
+                    <h3>{{ trans('radiopages.NewVideos') }}</h3>
+                    <a href="{{ route('balastan.videos') }}" class="more-link">{{ trans('radiopages.AllVideos') }}</a>
+                </div>
+                <div class="row">
                     @if($medias != null)
-                     @foreach($medias as $media)
-                     <div class="col-md-4 col-sm-6">
-                        <div class="kidsvideo kidsboard">
-                        <a href="{{ route('balastan.video', $media) }}">
-                                  <img width="100%" height="180px" src="http://img.youtube.com/vi/{{ $media->getUrl()}}/mqdefault.jpg" alt="" />                       
-                                </a>
+                    @foreach($medias as $media)
+                    <div class="col-md-4 video-block">
+                        <a href="{{ route('balastan.video', $media) }}" class="video-img">
+                            <img src="http://img.youtube.com/vi/{{ $media->getUrl()}}/mqdefault.jpg" alt="" />
+                            <span class="video-overlay"></span>
+                        </a>
+                        <div class="video-info">
+                            <div class="media">
+                                <div class="media-left media-middle">
+                                    <a href="{{ route('balastan.video', $media) }}">
+                                        <i class="fa fa-youtube-play video-icon"></i>
+                                    </a>
+                                </div>
+                                <div class="media-body media-middle">
+                                    <h4 class="media-heading video-name"><a href="{{ route('balastan.video', $media) }}">{{ $media->getName() }}</a></h4>
+                                </div>
+                            </div>
                         </div>
-                        <h3>{{ $media->getName() }}</h3>
-                     </div>
-                     @endforeach
-                   @else
-                   <div class="col-md-4 col-sm-6">
-                        <div class="kidsvideo kidsboard">
-                        <a href="#">
-                                  <img width="100%" height="180px" src="http://img.youtube.com/vi/rYEDA3JcQqw/mqdefault.jpg" alt="" />                  
-                                </a>
-                        </div>
-                        <h3>adele rolling in the deep</h3>
-                     </div>
-                   @endif
-
-                  </div>
-               </div>
+                    </div>
+                    @endforeach
+                    @endif
+                </div>
             </div>
-         </div>
-      </div>
-      <div class="row" style="margin-bottom: 40px;">
-         <div class="col-md-12 kidsvblock kidgallery">
-            <div class="panel panel-default panel-carousel ">
-               <div class="panel-heading">
-                  <h3 class="panel-title"><span>{{ trans('radiopages.Photos') }}</span></h3>
-               </div>
-               <div class="panel-body" style="margin-top:20px;">
-                  <div class="col-md-12 broadimages">
-                     <div class="carousel-slickkid">
+        </div>
+    </div>
+    <!-- END NEW videos -->
 
-                     @if($photoGalleries)
-
-                      @foreach($photoGalleries as $photoGallery)
-                        
-                        <div>
-                          <a href="{{ route('balastan.photos', $photoGallery) }}">
-                            <img src="{{ asset($photoGallery->status) }}" alt=""/>
-                          </a>
-                          <div class="desc">
-                            <a href="{{route('balastan.photos', $photoGallery)}}">{{ $photoGallery->getName() }}</a>
-                          </div>
+    <!-- BEGIN Photogalleries -->
+    <div class="container-fluid kidsgallery">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="title">
+                        <h3>{{ trans('radiopages.Photos') }}</h3>
+                        <a href="#" class="more-link">{{ trans('radiopages.Allphotos') }}</a>
+                    </div>
+                </div>
+                @if($photoGalleries)
+                @foreach($photoGalleries as $photoGallery)
+                <div class="col-md-4 video-block">
+                    <a href="{{ route('balastan.photos', $photoGallery) }}" class="video-img">
+                        <img src="{{ asset($photoGallery->status) }}" alt="" />
+                        <span class="video-overlay"></span>
+                    </a>                    
+                    <div class="video-info">
+                        <div class="media">
+                            <div class="media-left media-middle">
+                                <a href="{{ route('balastan.photos', $photoGallery) }}">
+                                    <i class="fa fa-camera video-icon"></i>
+                                </a>
+                            </div>
+                            <div class="media-body media-middle">
+                                <h4 class="media-heading video-name"><a href="{{route('balastan.photos', $photoGallery)}}">{{ $photoGallery->getName() }}</a></h4>
+                            </div>
                         </div>
-                  
-                      @endforeach
-                      @else
-                      <div class="col-md-4">
-                          <a href="#">
-                            <img src="" alt=""/><span>aba</span>
-                            <div class="overlay"></div>
-                            <i class="fa fa-camera"></i>
-                          </a>
-                        </div>
-                      @endif
-                        
-                     </div>
-                  </div>
-               </div>
+                    </div>                    
+                </div>
+                @endforeach
+                @endif
             </div>
-         </div>
-      </div>
-   </div>
-   @stop
-   @section('footerscript2')
-   <script src="js/jquery-1.11.2.min.js"></script>
-   <script src="js/bootstrap.min.js"></script>
-   <script type="text/javascript" src="slick/slick.min.js"></script>
-   <script>
-      if ($(window).width() > 768) {
-      
-          $('.carousel-slickkid').slick({
-              infinite: true,
-              slidesToShow: 4,
-              slidesToScroll: 1,
-      
-          });
-      }
-      
-      if ($(window).width() < 768) {
-          $('.carousel-slickkid').slick({
-              infinite: true,
-              slidesToShow: 2,
-              slidesToScroll: 1,
-      
-          });
-      }
-      
-   </script>
-   @stop
+        </div>
+    </div>
+    <!-- END Photogalleries -->
+
+@stop
+@section('footerScript')
+    <script>
+        if ($(window).width() > 768) {
+            $('.kids-slide').slick({
+                infinite: true,
+                slidesToShow: 4,
+                slidesToScroll: 1
+            });
+        }
+
+        if ($(window).width() < 768) {
+            $('.kids-slide').slick({
+                infinite: true,
+                slidesToShow: 2,
+                slidesToScroll: 1
+            });
+        }
+
+    </script>
+    <script>
+        $('.shows-carousel').slick({
+            autoplay: true,
+            autoplaySpeed: 2500,
+            arrows: false,
+            dots: true,
+            infinite: true,
+            slidesToShow: 1,
+            speed: 1000
+        });
+    </script>
+@stop

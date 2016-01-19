@@ -19,7 +19,7 @@
                 </a>
             </li>
             <li>
-                <a href="{{ route('balastan.video') }}">
+                <a href="{{ route('balastan.videos') }}">
                     <i class="fa fa-play i4 "></i>
                     <span>Видео</span>
                 </a>
