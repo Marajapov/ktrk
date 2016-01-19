@@ -29,7 +29,7 @@
                    
                       <a class="show-btn category @if($project && $row->id == $project->id) active @endif" href="{{ route('balastan.videos', $row) }}">
                       {{ $row->getName() }}
-                     </a>             
+                      </a>             
 
 
                   @endforeach
@@ -43,6 +43,9 @@
                       <img src="http://img.youtube.com/vi/{{ $media->getUrl()}}/0.jpg" alt="" />
                       <span class="video-overlay"></span>
                   </a>
+                      @if($media->hasProject()->first())
+                        <h5 class="video-category">{{ $media->hasProject()->first()->getNameOne() }}</h5>
+                      @endif
                   <div class="video-info">
                       <div class="media">
                           <div class="media-left media-middle">

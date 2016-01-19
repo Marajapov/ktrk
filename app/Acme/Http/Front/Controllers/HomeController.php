@@ -27,6 +27,7 @@ class HomeController extends Controller
     public function Home()
     {
         $lc = app()->getlocale();
+
         $channel = \Model\Channel\ModelName::general();
 
         $channels = \Model\Channel\ModelName::take(8)->skip(1)->get();
@@ -197,16 +198,36 @@ class HomeController extends Controller
 
     public function Post(\Model\Post\ModelName $post)
     {
-        $contentOriginal = $post->getContent();
-
         $lc = app()->getlocale();
 
-        // if (($lc == 'kg') && ($post->title != '')) {
-        // } elseif (($lc == 'ru') && ($post->titleRu != '')) {
-        // }else{
-        //     app()->setlocale('ru');
-        //     redirect()->route('front.post/l',$post);
-        // }
+        if($lc == 'kg')
+        {
+            if($post->title == '')
+            {
+                app()->setlocale('ru');
+                $lc = 'ru';
+                // redirect()->route('front.post',$post);
+            }
+            else
+            {
+                app()->setlocale('kg');
+                $lc = 'kg';
+            }
+        } 
+        elseif($lc == 'ru') 
+        {
+            if($post->titleRu == '')
+            {
+                app()->setlocale('kg');
+                $lc = 'kg';
+                // redirect()->route('front.post',$post);
+            }
+            else
+            {
+                app()->setlocale('ru');
+                $lc = 'ru';
+            }
+        }
         
         // if(($lc == 'kg') && ($post->title != '')){
         //     app()->setlocale('kg');
@@ -238,6 +259,7 @@ class HomeController extends Controller
         }
 
         if($lc == 'kg'){
+            $contentOriginal = $post->getContent();
 
             $relatedPosts = \Model\Post\ModelName::where('category_id','=',$post->category_id)->where('general','=','1')->languagekg()->take(6)->skip(0)->orderBy('id', 'desc')->get();
 
@@ -285,7 +307,15 @@ class HomeController extends Controller
                 }
             }
 
+            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->where('number','=','88')->orderBy('updated_at','desc')->take(6)->get();
+            if(count($topArticles) > 0){
+                $topArticles = $topArticles;   
+            }else{
+                $topArticles = null;
+            }
+
         }elseif($lc == 'ru'){
+            $contentOriginal = $post->getContent();
 
             $relatedPosts = \Model\Post\ModelName::where('category_id','=',$post->category_id)->where('general','=','1')->languageru()->take(6)->skip(0)->orderBy('id', 'desc')->get();
 
@@ -331,18 +361,7 @@ class HomeController extends Controller
                     $contentFinal = substr_replace($contentFinal, $post->relatedFunctionRight($post->relatedRu3), $post3Pos, 10);
                 }
             }
-        }
 
-        $comments = Comment::where('resourceType','=','post')->where('resourceId','=',$post->id)->where('approved','=','1')->orderBy('id','desc')->get();
-
-        if($lc == 'kg'){
-            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->where('number','=','88')->orderBy('updated_at','desc')->take(6)->get();
-            if(count($topArticles) > 0){
-                $topArticles = $topArticles;   
-            }else{
-                $topArticles = null;
-            } 
-        }elseif($lc == 'ru'){
             $topArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->where('numberRu','=','88')->orderBy('updated_at','desc')->take(6)->get();
             if(count($topArticles) > 0){
                 $topArticles = $topArticles;   
@@ -350,6 +369,8 @@ class HomeController extends Controller
                 $topArticles = null;
             } 
         }
+
+        $comments = Comment::where('resourceType','=','post')->where('resourceId','=',$post->id)->where('approved','=','1')->orderBy('id','desc')->get();
 
         return view('Front::post.post',[
             'lc' => $lc,
