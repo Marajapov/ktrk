@@ -357,7 +357,7 @@
     <!-- END Photogalleries -->
 
 @stop
-@section('footerscript')
+@section('footerScript')
     <script>
         if ($(window).width() > 768) {
             $('.kids-slide').slick({
