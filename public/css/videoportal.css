@@ -22,6 +22,7 @@
 .media-view, .media-date{
     position: absolute;
     top: 5px;
+    z-index: 2;
 
     padding: 2px 5px;
 
@@ -55,6 +56,17 @@
 /*PANEL ALL VIDEOS*/
 .panel-all-videos .block{
     display: block;
+}
+.panel-all-videos .video-thumb{
+    position: relative;
+    overflow: hidden;
+    display: block;
+    height: 150px;
+    box-shadow: 0 1px 9px 0 rgba(0, 0, 0, 0.9);
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 .panel-all-videos .media-box{
     display: table-cell;
