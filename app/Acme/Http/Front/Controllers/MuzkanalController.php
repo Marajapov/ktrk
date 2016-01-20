@@ -158,14 +158,15 @@ class MuzkanalController extends Controller
         $MediaNew = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->orderBy('id', 'desc')->take(12)->get();        
 
         //Top clips
-$MediaTop = \Model\Media\ModelName::where('muzkanal','=','1')->
-whereRaw('created_at BETWEEN DATE_SUB(NOW(), INTERVAL 10 DAY) AND NOW()')->
-where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')
-->where('muzkanalanons3','<>','1')->where('promo','<>','1')
-->orderBy('viewed','desc')->take(12)->get();
+        $MediaTop = \Model\Media\ModelName::where('muzkanal','=','1')->
+        whereRaw('created_at BETWEEN DATE_SUB(NOW(), INTERVAL 10 DAY) AND NOW()')->
+        where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')
+        ->where('muzkanalanons3','<>','1')->where('promo','<>','1')
+        ->orderBy('viewed','desc')->take(12)->get();
 
         //Exclusive 
         $MediaLive = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->where('exclusive','=', 1)->orderBy('id', 'desc')->take(12)->get();
+        $Concert = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->where('concert','=', 1)->orderBy('id', 'desc')->take(12)->get();
      
         $postAllNew = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->orderBy('id', 'desc')->paginate($perPage);
         $postAllTop = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->where('exclusive','<>','1')->orderBy('id', 'desc')->paginate($perPage);
@@ -177,6 +178,7 @@ where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')
             'MediaNew' => $MediaNew,
             'MediaTop' => $MediaTop,
             'MediaLive' => $MediaLive,
+            'Concert' => $Concert,
             'postAllNew' => $postAllNew,
             'postAllTop' => $postAllTop,
             'postAllLive' => $postAllLive,

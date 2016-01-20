@@ -306,6 +306,60 @@
                     </div>
                 </div>
             </div>
+            <div class="col-md-12">
+                <div class="row topvideos videostyle">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><span>Концерт</span></h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="col-md-12 videofix">
+                                <div class="row" style="margin:-11px;">
+                                    @if($Concert)
+                                        @foreach($Concert as $show)
+                                            <div class="col-md-3 muzvideomain col-sm-6 col-xs-12">
+                                                <div class="muzvideoall">
+                                                    <a href="{{ route('muzkanal.video', $show)}}">
+                                                        <img src="http://img.youtube.com/vi/{{ $show->getUrl()}}/mqdefault.jpg" alt=""/></a>
+                                                    <div class="item-desc">
+                                                        <ul>
+                                                            <a href="{{ route('muzkanal.video', $show)}}">
+                                                                <li class="item-artist">{{ $show->getName() }}</li>
+                                                            </a>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="views"><i class="fa fa-eye"></i>{{ $show->getViewed() }}</div>
+                                                </div>
+                                            </div>
+                                        @endforeach
+                                    @endif
+                                </div>
+                                <nav class="muzpaginate">
+                                    <ul class="pagination">
+                                        <li>
+                                            <a href="{{ route('muzkanal.videos', ['page' => 1]) }}" class="btn btn-default @if($postAllLive->currentPage() == 1) disabled @endif">{{ trans('site.Start') }}</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ $postAllLive->previousPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ $postAllLive->nextPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                                        </li>
+                                        @for($i = 0, $j = 1; $i < $postAllLive->total(); $i+=$perPage)
+                                            <li>
+                                                <a href="{{ route('muzkanal.videos', ['page' => $j]) }}" class="btn btn-default @if($postAllLive->currentPage() == $j) active @endif">{{ $j++ }}</a>
+                                            </li>
+                                        @endfor
+                                        <li>
+                                            <a href="{{ route('muzkanal.videos', ['page' => ceil($postAllLive->total()/$perPage)]) }}" class="btn btn-default @if($postAllLive->currentPage() == ceil($postAllLive->total()/$perPage)) disabled @endif">{{ trans('site.End') }}</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     @stop

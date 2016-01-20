@@ -281,6 +281,13 @@
                             Эксклюзив
                           </label>
                         </div>
+                        <div class="checkbox checkbox-primary " style="display:block;">
+                          {!! Form::hidden('concert', 0) !!}
+                          {!! Form::checkbox('concert', 1, null, ["id" => "concert", "class" => "form-control styled", "style" => "width: 34px; margin: 0; float:none !important;"]) !!}
+                          <label for="concert">
+                            Концерт
+                          </label>
+                        </div>
 
                         <div class="form-group">
                           <label for="channel_id" class="col-sm-2 control-label"></label>
