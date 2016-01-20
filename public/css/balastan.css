@@ -834,10 +834,21 @@
 /* BEGIN Allvideos*/
 
 .allvideos{
-    padding: 0px 0 60px; 
+    padding: 0 0 60px;
     background: #ffa643;
     background-image: url('../images/channels/balastan/bg-bubbles.png');
     background-size: cover;
+}
+#allVideos{
+    padding-top: 40px;
+}
+#allVideos .video-block{
+    display: none;
+}
+.allvideos .show-btn{
+    width: 100%;
+    margin: 0;
+    text-align: center;
 }
 .allvideos .mainnav{
     background: #fff;
@@ -901,7 +912,8 @@
     margin: 0;
     padding: 20px;
     padding-bottom: 30px;
-    font-size: 14px;
+    color: #ffffff;
+    font-size: 16px;
     text-align: justify;
 }
 .show-desc span{

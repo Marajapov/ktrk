@@ -27,6 +27,7 @@ return [
 
     'Comments' => 'Комментарийлер',
     'LoadMore' => 'Дагы жүктөө',
+    'All' => 'Бардыгы',
 
 
     //Header Footer titles
@@ -247,6 +248,7 @@ return [
     'AdminPostAddNew' => 'Жаңы макала жазуу',
     'AdminPostChange' => 'Макаланы өзгөртүү',
     'AdminPostTheme' => 'Темага материал',
+    'AdminPostMedia' => 'Темага медиа',
     'AdminPostThemaone' => 'Темага материал 1',
     'AdminPostThematwo' => 'Темага материал 2',
     'AdminPostThemathree' => 'Темага материал 3',

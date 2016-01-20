@@ -26,6 +26,7 @@ return [
 
     'Comments' => 'Комментарии',
     'LoadMore' => 'Загрузить еще',
+    'All' => 'Все',
 
 //    'Homepage' => '',
 
@@ -250,6 +251,7 @@ return [
     'AdminPostAddNew' => 'Создать новую статью',
     'AdminPostChange' => 'Изменить статью',
     'AdminPostTheme' => 'Материал к теме',
+    'AdminPostMedia' => 'Медиа к теме',
     'AdminPostThemaone' => 'Материал к теме 1',
     'AdminPostThematwo' => 'Материал к теме 2',
     'AdminPostThemathree' => 'Материал к теме 3',

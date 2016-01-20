@@ -35,6 +35,9 @@ class CreatePostsTable extends Migration
             $table->integer('relatedRu1')->nullable()->unsigned()->default(null);
             $table->integer('relatedRu2')->nullable()->unsigned()->default(null);
             $table->integer('relatedRu3')->nullable()->unsigned()->default(null);
+            $table->integer('relatedMedia1')->nullable()->unsigned()->default(null);
+            $table->integer('relatedMedia2')->nullable()->unsigned()->default(null);
+            $table->integer('relatedMedia3')->nullable()->unsigned()->default(null);
             $table->boolean('general')->nullable()->default(false);
             
             $table->string('director');
