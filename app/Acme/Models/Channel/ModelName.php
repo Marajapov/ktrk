@@ -35,6 +35,16 @@ class ModelName extends Model
         return $this->display;
     }
 
+    public function getNameOne()
+    {
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            return $this->name;
+        } else {
+            return $this->display;
+        }
+    }
+
     public function getPublished()
     {
         return $this->published;

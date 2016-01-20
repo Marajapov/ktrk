@@ -12,6 +12,7 @@
     <meta property="og:image"              content="{{ asset($post->thumbnail_big) }}" />
 
     <link rel="stylesheet" href="{{ asset('css/articles.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/pages.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/sweetalert.css') }}">
     <link href="{{ asset('froala/css/froala_style.min.css') }}" rel="stylesheet" type="text/css" />
 @endsection()
@@ -51,15 +52,27 @@
                                         <img class="left" src="@if(empty($post->thumbnail_big)) {{  asset($post->thumbnail) }} @else {{  asset($post->thumbnail_big) }} @endif" alt="image">
                                     </p>
                                     {!! $content !!}
-                                    <div class="carousel-post">
-                                        @if($images != null)
+                                    <div class="slider-for">
+                                        @if($images)
                                             @foreach($images as $image)
-                                                <div class="col-md-4">
+                                                <div>
                                                     <a href="#">
                                                         <img src="{{ asset('froala/uploads/'.$image->name) }}" alt=""/>
                                                     </a>
                                                 </div>
                                             @endforeach
+                                        @endif
+                                    </div>
+
+                                    <div class="slider-nav col-md-12">
+                                        @if($images)
+                                            @if($images)
+                                                @foreach($images as $image)
+                                                    <div>
+                                                        <img class="img" src="{{ asset('froala/uploads/'.$image->name) }}" alt=""/>
+                                                    </div>
+                                                @endforeach
+                                            @endif
                                         @endif
                                     </div>
                                 </div>
@@ -233,6 +246,24 @@
         @elseif(session('success') == 'false')
         swal("", "Где то произошла ошибка!", "error");
         @endif
+    </script>
+
+    <!--Carousel-->
+    <script>
+        $('.slider-for').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            fade: true,
+            asNavFor: '.slider-nav'
+        });
+        $('.slider-nav').slick({
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            asNavFor: '.slider-for',
+            centerMode: true,
+            focusOnSelect: true,
+            variableWidth: true
+        });
     </script>
 
     @if(session('send') == 'true')

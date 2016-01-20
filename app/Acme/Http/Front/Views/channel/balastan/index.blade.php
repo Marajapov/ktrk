@@ -98,41 +98,58 @@
     <!-- END Programms category slider -->
 
     <!-- BEGIN Ad block -->
+    @if($anons->first())
     <div class="container-fluid preklams">
         <div class="container">
             <div class="row">
 
                 <div class="title col-md-12">
-                    <h3>Жакында</h3>
+                    <h3>Анонс</h3>
                 </div>
 
-                <div class="col-md-6 adblock">
-                    <a href="#">
-                        <img class="videomain" width="100%" height="340px" src="{{asset('images/channels/balastan/legends.jpg')}}" alt="" />
-                    </a>
-                    <div class="show-text">
-                        <h2>Түнкү сакчылардын уламышы</h2>
-
-                        <a class="soon-btn" href="#">
-                            <i class="fa fa-chevron-right"></i>
+                @foreach($anons as $row)
+                    <div class="col-md-6 adblock">
+                        <a href="#">
+                            <img class="videomain" width="100%" height="340px" src="{{asset($row->thumbnail)}}" alt="" />
                         </a>
-                    </div>
-                </div>
-                <div class="col-md-6 adblock">
-                    <a href="#">
-                        <img class="videomain" width="100%" height="340px" src="{{asset('images/channels/balastan/po.jpg')}}" alt="" />
-                    </a>
-                    <div class="show-text">
-                        <h2>Кунг Фу Панда 3</h2>
+                        <div class="show-text">
+                            <h2>{{ $row->getNameOne() }}</h2>
 
-                        <a class="soon-btn" href="#">
-                            <i class="fa fa-chevron-right"></i>
-                        </a>
+                            <a class="soon-btn" href="#">
+                                <i class="fa fa-chevron-right"></i>
+                            </a>
+                        </div>
                     </div>
-                </div>
+                @endforeach
+
+                {{--<div class="col-md-6 adblock">--}}
+                    {{--<a href="#">--}}
+                        {{--<img class="videomain" width="100%" height="340px" src="{{asset('images/channels/balastan/legends.jpg')}}" alt="" />--}}
+                    {{--</a>--}}
+                    {{--<div class="show-text">--}}
+                        {{--<h2>Түнкү сакчылардын уламышы</h2>--}}
+
+                        {{--<a class="soon-btn" href="#">--}}
+                            {{--<i class="fa fa-chevron-right"></i>--}}
+                        {{--</a>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+                {{--<div class="col-md-6 adblock">--}}
+                    {{--<a href="#">--}}
+                        {{--<img class="videomain" width="100%" height="340px" src="{{asset('images/channels/balastan/po.jpg')}}" alt="" />--}}
+                    {{--</a>--}}
+                    {{--<div class="show-text">--}}
+                        {{--<h2>Кунг Фу Панда 3</h2>--}}
+
+                        {{--<a class="soon-btn" href="#">--}}
+                            {{--<i class="fa fa-chevron-right"></i>--}}
+                        {{--</a>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
             </div>
         </div>
     </div>
+    @endif
     <!-- END Ad block -->
     
     <!-- BEGIN NEW Videos -->
@@ -231,7 +248,7 @@
     </script>
     <script>
         $('.shows-carousel').slick({
-            autoplay: true,
+            autoplay: false,
             autoplaySpeed: 2500,
             arrows: false,
             dots: true,

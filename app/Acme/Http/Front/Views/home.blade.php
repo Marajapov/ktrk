@@ -504,7 +504,7 @@
                                             <div class="portfolio-wrapper">
                                                 <div class="media-image">
                                                     <a href="{{ route('front.media.video', $media) }}">
-                                                        <img src="@if($media->thumbnail_big) {{ $media->thumbnail_big}} @else http://img.youtube.com/vi/{{ $media->getUrl() }}/hqdefault.jpg @endif" alt="{{ $media->getName() }}" />
+                                                        <img src="@if($media->thumbnail_big) {{ asset($media->thumbnail_big)  }} @else http://img.youtube.com/vi/{{ $media->getUrl() }}/hqdefault.jpg @endif" alt="{{ $media->getName() }}" />
                                                         <i class="fa fa-youtube-play"></i>
                                                     </a>
                                                     @if(($media->getProgramName()))
@@ -537,7 +537,7 @@
                                                         <div class="portfolio-wrapper">
                                                             <div class="media-image">
                                                                 <a href="{{ route('front.media.video', $row) }}">
-                                                                    <img src="@if($row->thumbnail_big) {{ $row->thumbnail_big}} @else http://img.youtube.com/vi/{{ $row->getUrl() }}/hqdefault.jpg @endif" alt="{{ $row->getName() }}"/>
+                                                                    <img src="@if($row->thumbnail_big) {{ asset($row->thumbnail_big) }} @else http://img.youtube.com/vi/{{ $row->getUrl() }}/hqdefault.jpg @endif" alt="{{ $row->getName() }}"/>
 
                                                                     <i class="fa fa-youtube-play"></i>
                                                                 </a>

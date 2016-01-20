@@ -277,6 +277,12 @@ return [
     //    Comments
     'AdminCommentChange' => 'Изменить комментарий',
 
+    // Anons
+    'AdminAnonsNew' => 'Новый анонс',
+    'AdminAnonsWeekDay' => 'День недели на кыргызском',
+    'AdminAnonsWeekDayRu' => 'День недели на русском',
+    'AdminAnonsTime' => 'Время',
+
     //FRONT language
 
     //Home page

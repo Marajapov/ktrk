@@ -40,9 +40,9 @@
                                                 @foreach($images as $image)
                                                     <div>
                                                         <img class="img" src="{{ asset('froala/uploads/'.$image->name) }}" alt=""/>
-                                <span class="slide-caption hidden">
-                                  {{ $gallery->getName() }}
-                                </span>
+                                                        <span class="slide-caption hidden">
+                                                          {{ $gallery->getName() }}
+                                                        </span>
                                                     </div>
                                                 @endforeach
                                             @endif

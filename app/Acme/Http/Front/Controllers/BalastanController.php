@@ -30,8 +30,11 @@ class BalastanController extends Controller
         if(count($firstMedia)){ $firstMedia = $firstMedia;
         }else{ $firstMedia = null; }
 
+        $anons = \Model\Anons\ModelName::where('channel','=','4')->where('published','=','1')->orderBy('id','=','desc')->take(2)->get();
+
         return view('Front::channel.balastan.index', [
             'channel' => $channel,
+            'anons' => $anons,
             'backgroundMain' => $backgroundMain,
             
             'balastanProjects' => $balastanProjects,

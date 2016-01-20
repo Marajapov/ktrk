@@ -275,6 +275,12 @@ return [
 //    Comments
     'AdminCommentChange' => 'Комментарийди өзгөртүү',
 
+    // Anons
+    'AdminAnonsNew' => 'Жаңы анонс',
+    'AdminAnonsWeekDay' => 'Апта күнү кыргызча',
+    'AdminAnonsWeekDayRu' => 'Апта күнү орусча',
+    'AdminAnonsTime' => 'Убакыты',
+
     //FRONT languages
 
     //Home page

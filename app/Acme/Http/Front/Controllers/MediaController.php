@@ -48,8 +48,11 @@ class MediaController extends Controller
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
         $projectList = \Model\Project\ModelName::where('extracolumn','=','1')->orderBy('id','desc')->get();
 
+        $anons = \Model\Anons\ModelName::where('channel','=','2')->where('published','=','1')->get();
+
         return view('Front::media.index',[
             'mediaAll' => $mediaAll,
+            'anons' => $anons,
             'mediaLastVideos' => $mediaLastVideos,
             'MediaCategories' => $MediaCategories,
             'mainBanner'   => $mainBanner,
