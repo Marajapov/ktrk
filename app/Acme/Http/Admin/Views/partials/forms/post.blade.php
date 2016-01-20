@@ -466,21 +466,21 @@
         <div class="form-group">
             <label for="channel_id" class="col-sm-2 control-label">{{ trans('site.AdminPostMedia') }}</label>
             <div class="col-sm-10">
-                {!! Form::select('relatedMedia1', ['0'=>'-- Выберите --']+$relatedMedias, null, ["class" => "selectpicker", "data-live-search"=>"true", "title" => "-- Выберите --"]) !!}
+                {!! Form::select('relatedMediaRu1', ['0'=>'-- Выберите --']+$relatedMedias, null, ["class" => "selectpicker", "data-live-search"=>"true", "title" => "-- Выберите --"]) !!}
             </div>
         </div>
 
         <div class="form-group">
             <label for="channel_id" class="col-sm-2 control-label">{{ trans('site.AdminPostMedia') }}</label>
             <div class="col-sm-10">
-                {!! Form::select('relatedMedia2', ['0'=>'-- Выберите --']+$relatedMedias, null, ["class" => "selectpicker", "data-live-search"=>"true", "title" => "-- Выберите --"]) !!}
+                {!! Form::select('relatedMediaRu2', ['0'=>'-- Выберите --']+$relatedMedias, null, ["class" => "selectpicker", "data-live-search"=>"true", "title" => "-- Выберите --"]) !!}
             </div>
         </div>
 
         <div class="form-group">
             <label for="channel_id" class="col-sm-2 control-label">{{ trans('site.AdminPostMedia') }}</label>
             <div class="col-sm-10">
-                {!! Form::select('relatedMedia3', ['0'=>'-- Выберите --']+$relatedMedias, null, ["class" => "selectpicker", "data-live-search"=>"true", "title" => "-- Выберите --"]) !!}
+                {!! Form::select('relatedMediaRu3', ['0'=>'-- Выберите --']+$relatedMedias, null, ["class" => "selectpicker", "data-live-search"=>"true", "title" => "-- Выберите --"]) !!}
             </div>
         </div>
 

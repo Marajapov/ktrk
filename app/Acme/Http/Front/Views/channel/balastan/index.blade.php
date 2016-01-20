@@ -80,12 +80,14 @@
                     <div class="kids-slide">
                         @if($balastanProjects)
                         @foreach($balastanProjects as $project) 
-                            <div class="col-md-3">
-                                <a href="{{ route('balastan.project.videos', $project) }}">
-                                    <img src="@if(!($project->getFile())) {{ asset('images/project_default.png') }} @else {{ asset($project->getFile()) }} @endif" alt=""/>
-                                    <h3 class="programmcat"><a href="{{ route('balastan.project.videos', $project) }}">{{ $project->getName() }}</a></h3>
-                                </a>
-                            </div>
+                            @if($project->status != 1)
+                                <div class="col-md-3">
+                                    <a href="{{ route('balastan.project.videos', $project) }}">
+                                        <img src="@if(!($project->getFile())) {{ asset('images/project_default.png') }} @else {{ asset($project->getFile()) }} @endif" alt=""/>
+                                        <h3 class="programmcat"><a href="{{ route('balastan.project.videos', $project) }}">{{ $project->getName() }}</a></h3>
+                                    </a>
+                                </div>
+                            @endif
                         @endforeach
                         @endif
                     </div>

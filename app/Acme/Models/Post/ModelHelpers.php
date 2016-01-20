@@ -80,6 +80,79 @@ trait ModelHelpers
 
     }
 
+    public function relatedMediaFunctionLeft($media){
+
+        $relatedMedia = \Model\Media\ModelName::where('id','=',$media)->first();
+
+        if($relatedMedia->thumbnail_big){
+            return '
+                <span>
+                    <aside class="pull-left">
+                        <div class="topics-box">
+                            <div class="topics">
+                                <div class="topic clearfix">
+                                    <a class="t-thumb" href="'. route('front.media.video', $relatedMedia) .'">
+                                        <img alt="alt photo text" src="'. asset($relatedMedia->thumbnail_big) .'">
+                                    </a>
+                                    <div class="t-info">
+                                        <a class="js-dh" href="'. route('front.media.video', $relatedMedia) .'">'.$relatedMedia->getName() .'</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+                </span>
+            ';
+        } else {
+            return '
+                <span>
+                    <aside class="pull-left">
+                        <div class="topics-box">
+                            <div class="topics">
+                                <div class="topic clearfix">
+                                    <a class="t-thumb" href="'. route('front.media.video', $relatedMedia) .'">
+                                        <img src="http://img.youtube.com/vi/'.$relatedMedia->getUrl().'/mqdefault.jpg" alt="'.$relatedMedia->getName().'">
+                                    </a>
+                                    <div class="t-info">
+                                        <a class="js-dh" href="'. route('front.media.video', $relatedMedia) .'">'.$relatedMedia->getName() .'</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+                </span>
+            ';
+        }
+
+
+
+    }
+
+    public function relatedMediaFunctionRight($media){
+
+        $relatedMedia = \Model\Media\ModelName::where('id','=',$media)->first();
+
+        return '
+        <span>
+            <aside class="pull-right">
+                <div class="topics-box">
+                    <div class="topics">
+                        <div class="topic clearfix">
+                            <a class="t-thumb" href="'. route('front.media.video', $media) .'">
+                                <img alt="alt photo text" src="'. asset($relatedMedia->thumbnail_big) .'">
+                            </a>
+                            <div class="t-info">
+                                <a class="js-dh" href="'. route('front.media.video', $media) .'">'.$relatedMedia->getName() .'</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </span>
+        ';
+
+    }
+
     public function twoRelatedFunction($postId, $postId2){
 
         $relatedPost = \Model\Post\ModelName::where('id','=',$postId)->first();

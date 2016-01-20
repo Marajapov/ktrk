@@ -200,6 +200,7 @@ class PostController extends Controller
 
         $relatedPosts = \Model\Post\ModelName::where('title','<>','')->where('id','<>',$post->id)->lists('title', 'id')->toArray();
         $relatedPosts2 = \Model\Post\ModelName::where('titleRu','<>','')->where('id','<>',$post->id)->lists('titleRu', 'id')->toArray();
+        $relatedMedias = \Model\Media\ModelName::where('published','=','1')->orderBy('id','desc')->lists('name', 'id')->toArray();
 
         $dostukProgramList = \Model\Project\ModelName::where('dostuk','=','1')->lists('name', 'id')->toArray();
         $birinchiProgramList = \Model\Project\ModelName::where('birinchi','=','1')->lists('name', 'id')->toArray();
@@ -214,6 +215,7 @@ class PostController extends Controller
             'tags2' => $tags2,
             'relatedPosts' => $relatedPosts,
             'relatedPosts2' => $relatedPosts2,
+            'relatedMedias' => $relatedMedias,
             'channelList' => $channelList,
             'categoryList' => $categoryList,
             'PhotoParentList' => $PhotoParentList,
