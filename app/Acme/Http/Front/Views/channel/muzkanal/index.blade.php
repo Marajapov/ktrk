@@ -542,6 +542,43 @@
          </div>
       </div>
       <div class="row">
+         <div class="col-md-12">
+            <div class="row topvideos">
+               <div class="panel panel-default panel-carousel gallery">
+                  <div class="panel-heading">
+                     <h3 class="panel-title"><span>Концерт</span></h3>
+                  </div>
+                  <div class="panel-body">
+                     <div class="col-md-12">
+                        <div class="carousel-slick11">
+                           @if($Concert)
+                           @foreach($Concert as $show)
+                           <div class="col-md-4">
+                              <a href="{{ route('muzkanal.video', $show)}}">
+                              <img src="http://img.youtube.com/vi/{{ $show->getUrl() }}/mqdefault.jpg" alt=""/></a>
+                              <div class="item-desc">
+                                 <ul>
+                                    <a href="{{ route('muzkanal.video', $show)}}">
+                                       <li class="item-artist">{{ $show->getName() }}</li>
+                                    </a>
+                                 </ul>
+                              </div>
+                           </div>
+                           @endforeach
+                           @endif                           
+                        </div>
+                        <footer>
+                           <a href="{{ route('muzkanal.videos')}}">
+                           <span>{{ trans('radiopages.AllVideos') }} <i class="fa fa-arrow-circle-right"></i></span>
+                           </a>
+                        </footer>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="row">
          <div class="col-md-12 ">
             <div class="row imgmuz">
                <div class="panel panel-default">
