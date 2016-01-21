@@ -720,11 +720,14 @@
 /* BEGIN Allphotos and photos page*/
 .allphotos{
 	padding: 20px 0px;
-	background: #de6035;
+	background: #ffa643;
+    background-image: url('../images/channels/balastan/bg-bubbles.png');
 }
 .lightgallery{
 	padding: 20px 0px;
 	background: #F44336;
+    background-image: url('../images/channels/balastan/bg-bubbles.png');
+
 }
 /* END Allphotos page*/
 
@@ -980,3 +983,45 @@
 .prefooter .copyright{
     margin-top: 10px;
 }
+
+/* BEGIN Localization*/
+
+.langs{
+    position: relative;
+    right: 0;
+    top: 0;
+    z-index: 2;
+
+    -webkit-transition: bottom 0.3s;
+    -moz-transition: bottom 0.3s;
+    -ms-transition: bottom 0.3s;
+    -o-transition: bottom 0.3s;
+    transition: bottom 0.3s;
+
+}
+.langs ul{
+    text-align: center;
+}
+.langs li{
+    padding: 4px 6px;
+    float: left;
+    border-radius: 2px !important;
+}
+.langs li a{
+    position: relative;
+
+    color: #000;
+    font-weight: bold;
+
+    font-size: 14px;
+    text-transform: uppercase;
+}
+.langs li.active{
+    background: #FED953;
+}
+.langs li.active a{
+    color: #000000;
+    font-weight: bold;
+}
+
+/* END Localization*/

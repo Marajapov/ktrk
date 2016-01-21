@@ -4110,49 +4110,6 @@ ul.social-share li a:hover {
 
 /*Madaniayt page style*/
 
-/*LANGUAGE Landing radio pages*/
-.langs{
-    position: absolute;
-    left: 745px;
-    right: 0;
-    width: 100px;
-    margin: auto;
-    top: 0;
-    z-index: 2;
-
-    -webkit-transition: bottom 0.3s;
-    -moz-transition: bottom 0.3s;
-    -ms-transition: bottom 0.3s;
-    -o-transition: bottom 0.3s;
-    transition: bottom 0.3s;
-
-}
-.langs ul{
-    text-align: center;
-}
-.langs li{
-    padding: 0 7px;
-    float: left;
-
-    background: none;
-    border-radius: 3px !important;
-}
-.langs li a{
-    position: relative;
-
-    color: #000;
-    font-weight: bold;
-
-    font-size: 14px;
-    text-transform: uppercase;
-}
-.langs li.active{
-    background: #FED953;
-}
-.langs li.active a{
-    color: #000000;
-    font-weight: bold;
-}
 
 /*.balastan {
 background: url(../images/channels/balastan/1.jpg);

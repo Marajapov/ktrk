@@ -195,9 +195,9 @@
                            <div class="row">
                               <ul class="list-group">
                                  @foreach($categories as $category)
-                                     <li class="list-group-item"  style="margin-left: 10px;">
-                                        <a href="{{ route('front.category', $category) }}">{{ $category->getTitle() }}</a>
-                                     </li>
+                                 <li class="list-group-item"  style="margin-left: 10px;">
+                                    <a href="{{ route('front.category', $category) }}">{{ $category->getTitle() }}</a>
+                                 </li>
                                  @endforeach
                               </ul>
                            </div>
