@@ -47,7 +47,7 @@ trait ModelHelpers
                         <div class="topic clearfix">
 
                             <a class="t-thumb" href="'. route('front.post', $postId) .'">
-                                <img alt="alt photo text" src="'. asset($thumbnail) .'">
+                                <img alt="alt photo text" src="'. asset($thumbnail).'">
                             </a>
                             <div class="t-info">
                                 <a class="js-dh" href="'. route('front.post', $postId) .'">'.$relatedPost->getTitleRuOrKg() .'</a>
