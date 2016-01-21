@@ -3,7 +3,6 @@
 @section('styles')
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <meta property="fb:app_id"             content="564062523746973" />
     <meta property="og:url"                content="{{ Request::url()}}" />
     <meta property="og:site_name"          content="{{ trans('site.TradeMark') }}" />
     <meta property="og:type"               content="article" />

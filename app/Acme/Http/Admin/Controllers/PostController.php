@@ -19,11 +19,11 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::orderBy('number','asc')->orderBy('id', 'desc')->get();
+        $posts = Post::orderBy('id', 'desc')->where('fbpost','<>','1')->get();
         
         return view('Admin::post.index', [
             'posts' => $posts,
-            ]);
+        ]);
     }
 
     /**

@@ -2,16 +2,16 @@
 @section('title', $gallery->getName())
 @section('styles')
 
-    <meta property="fb:app_id"             content="564062523746973" />
     <meta property="og:url"                content="{{ Request::url()}}" />
     <meta property="og:site_name"          content="{{ trans('site.TradeMark') }}" />
     <meta property="og:type"               content="article" />
     <meta property="og:title"              content="{{ $gallery->getName() }}" />
-    <meta property="og:description"        content="$gallery->getDescription()" />
+    <meta property="og:description"        content="{{ $gallery->getDescription() }}" />
     <meta property="og:image"              content="http://img.youtube.com/vi/{{ $gallery->thumbnail_big }}" />
 
     <link rel="stylesheet" href="{{ asset('css/articles.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/pages.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/goodshare.css') }}"/>
 @stop
 
 @section('styles')
@@ -70,16 +70,29 @@
                                         </a>
                                     @endif
 
-                                    <script type="text/javascript">(function() {
-                                            if (window.pluso)if (typeof window.pluso.start == "function") return;
-                                            if (window.ifpluso==undefined) { window.ifpluso = 1;
-                                                var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
-                                                s.type = 'text/javascript'; s.charset='UTF-8'; s.async = true;
-                                                s.src = ('https:' == window.location.protocol ? 'https' : 'http')  + '://share.pluso.ru/pluso-like.js';
-                                                var h=d[g]('body')[0];
-                                                h.appendChild(s);
-                                            }})();</script>
-                                    <div class="pluso" data-background="transparent" data-options="medium,square,line,horizontal,nocounter,theme=04" data-services="vkontakte,odnoklassniki,facebook,twitter,google"></div>
+                                    <div class="pluso share-buttons">
+                                        <button class="goodshare btn-fb" data-type="fb">
+                                            <i class="fa fa-facebook"></i>
+                                            <span data-counter="fb"></span>
+                                        </button>
+                                        <!-- Button with share to Facebook & share counter -->
+                                        <button class="goodshare btn-vk" data-type="vk">
+                                            <i class="fa fa-vk"></i>
+                                            <span data-counter="vk"></span>
+                                        </button>
+                                        <button class="goodshare btn-ok" data-type="ok">
+                                            <i class="fa fa-odnoklassniki"></i>
+                                            <span data-counter="ok"></span>
+                                        </button>
+                                        <button class="goodshare btn-gp" data-type="gp">
+                                            <i class="fa fa-google-plus"></i>
+                                            <span data-counter="gp"></span>
+                                        </button>
+                                        <button class="goodshare btn-tw" data-type="tw">
+                                            <i class="fa fa-twitter"></i>
+                                            {{--<span data-counter="tw"></span>--}}
+                                        </button>
+                                    </div>
 
                                     <a href="{{ route('front.gallery.galleries') }}">
                                         <span>{{ trans('site.FrontGalleryAll') }}<i class="fa fa-arrow-circle-right"></i></span>
@@ -97,6 +110,20 @@
 
 @stop
 @section('footerScript')
+
+    {{--SHARE BUTTONS--}}
+    <script src="{{ asset('js/goodshare.js') }}"></script>
+    <script>
+        $(window).load(function(){
+            $('.goodshare').each(function(){
+                var span = $(this).children('span');
+                var counter = span.text();
+                if((counter==0) || (counter=='')){
+                    $(this).addClass('empty');
+                }
+            });
+        });
+    </script>
 
     <script>
         function getVote(int) {

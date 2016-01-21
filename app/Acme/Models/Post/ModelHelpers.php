@@ -45,10 +45,10 @@ trait ModelHelpers
                             </a>
                             <div class="t-info">
                                 <a class="js-dh" href="'. route('front.post', $postId) .'">'.$relatedPost->getTitleRuOrKg() .'</a>
-                            </div>
-                            <div class="t-extra">
-                                <div class="t-date">'.$relatedPost->getDay().' '.$relatedPost->getMonthRu().', '.$relatedPost->getYear().'</div>
-                                <div class="t-view">'.$relatedPost->getViewed().'</div>
+                                <div class="t-extra clearfix">
+                                    <div class="t-date">'.$relatedPost->getDay().' '.$relatedPost->getMonthRu().', '.$relatedPost->getYear().'</div>
+                                    <div class="t-view"><i class="fa fa-eye"></i>'.$relatedPost->getViewed().'</div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -102,8 +102,12 @@ trait ModelHelpers
                                     <a class="t-thumb" href="'. route('front.media.video', $relatedMedia) .'">
                                         <img alt="alt photo text" src="'. asset($relatedMedia->thumbnail_big) .'">
                                     </a>
-                                    <div class="t-info">
+                                    <div class="t-info clearfix">
                                         <a class="js-dh" href="'. route('front.media.video', $relatedMedia) .'">'.$relatedMedia->getName() .'</a>
+                                        <div class="t-extra clearfix">
+                                            <div class="t-date">'.$relatedMedia->getDay().' '.$relatedMedia->getMonthRu().', '.$relatedMedia->getYear().'</div>
+                                            <div class="t-view"><i class="fa fa-eye"></i>'.$relatedMedia->getViewed().'</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -121,8 +125,12 @@ trait ModelHelpers
                                     <a class="t-thumb" href="'. route('front.media.video', $relatedMedia) .'">
                                         <img src="http://img.youtube.com/vi/'.$relatedMedia->getUrl().'/mqdefault.jpg" alt="'.$relatedMedia->getName().'">
                                     </a>
-                                    <div class="t-info">
+                                    <div class="t-info clearfix">
                                         <a class="js-dh" href="'. route('front.media.video', $relatedMedia) .'">'.$relatedMedia->getName() .'</a>
+                                        <div class="t-extra clearfix">
+                                        <div class="t-date">'.$relatedMedia->getDay().' '.$relatedMedia->getMonthRu().', '.$relatedMedia->getYear().'</div>
+                                        <div class="t-view"><i class="fa fa-eye"></i>'.$relatedMedia->getViewed().'</div>
+                                    </div>
                                     </div>
                                 </div>
                             </div>
