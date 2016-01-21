@@ -571,16 +571,22 @@ h3#reply-title {
     margin-left: 5px;
     display: none;
 }
-
+.orphus-mistake{
+    border: 3px solid #f1f4f9;
+    border-bottom: 0;
+    padding: 0 20px;
+    width: 220px;
+}
 .orphus-mistake h4{
     margin: 0;
-    padding: 10px 0 20px;
+    padding: 15px 0;
     color: #9DA8B0;
     font-size: 13px;
-    text-align: left;
 }
-.orphus-mistake h4 i {
+.orphus-mistake span i {
     padding-right: 5px;
+    font-size: 32px;
+    color: #9DA8B0;
 }
 
 
@@ -627,4 +633,16 @@ h3#reply-title {
 .panel-top-articles .panel-title{
     border-color: #48A6D8;
     color: #ffffff;
+}
+
+
+/*PANEL SEARCH*/
+.search-title{
+    margin: 10px 0px 20px;
+
+    font-size: 20px;
+    font-weight: bold;
+}
+.search-title span{
+    color: #48A6D8;
 }
