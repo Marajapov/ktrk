@@ -376,7 +376,7 @@
       <div class="row">
          <div class="col-md-8">
             <div class="row newvideos">
-               <div class="panel panel-default panel-carousel gallery">
+               <div class="panel panel-default panel-carousel">
                   <div class="panel-heading">
                      <h3 class="panel-title"><span>{{ trans('radiopages.NewClips') }}</span></h3>
                   </div>
@@ -483,7 +483,7 @@
       <div class="row">
          <div class="col-md-12">
             <div class="row topvideos videostyle">
-               <div class="panel panel-default panel-carousel gallery">
+               <div class="panel panel-default panel-carousel">
                   <div class="panel-heading">
                      <h3 class="panel-title"><span>{{ trans('radiopages.TopCLips') }}</span></h3>
                   </div>
@@ -544,7 +544,7 @@
       <div class="row">
          <div class="col-md-12">
             <div class="row topvideos videostyle">
-               <div class="panel panel-default panel-carousel gallery">
+               <div class="panel panel-default panel-carousel">
                   <div class="panel-heading">
                      <h3 class="panel-title"><span>Концерт</span></h3>
                   </div>
