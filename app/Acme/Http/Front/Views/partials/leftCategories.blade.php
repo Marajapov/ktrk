@@ -32,7 +32,7 @@
         </div>
 
         <a target="_blank" href="#" class="text-center ads ads-300x250 middle-ad">
-            <img src="{{ asset('images/banner_250x250.png') }}" alt="phot1"/>
+            <img src="{{ asset('images/banner_240x400.png') }}" alt="phot1"/>
         </a>
 
     @endif
