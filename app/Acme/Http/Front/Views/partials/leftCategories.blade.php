@@ -17,7 +17,7 @@
                                     <div class="extra">
                                         <span class="e-datetime">{{ $post->getDay() }} {{ $post->getMonthRu() }}</span>
                                         <a class="e-cat text-uppercase" href="{{ route('front.category', $post->category) }}"><span>{{ $post->category('category_id')->first()->getTitle() }}</span></a>
-                                        {{-- <span class="e-views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span> --}}
+                                         <span class="e-views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
                                     </div>
                                     <a class="media-heading" href="{{ route('front.post', $post) }}">{{ $post->getTitleRuOrKg() }}</a>
                                 </div>
@@ -32,7 +32,7 @@
         </div>
 
         <a target="_blank" href="#" class="text-center ads ads-300x250 middle-ad">
-            <img src="{{ asset('images/banner_250x250.png') }}" alt="phot1"/>
+            <img src="{{ asset('images/banner_240x400.png') }}" alt="phot1"/>
         </a>
 
     @endif

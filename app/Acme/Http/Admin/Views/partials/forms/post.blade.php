@@ -69,6 +69,22 @@
 
         <!-- Audio -->
         <div class="form-group">
+            <label for="thumb_desc" class="col-sm-2 control-label">Миниатюра ({{ trans('site.Title') }})</label>
+            <div class="col-sm-10">
+                {!! Form::text('thumb_desc', null, ["class" => "form-control", "id" => "thumb_desc", "title" => ""]) !!}
+            </div>
+        </div>
+
+        <!-- Audio -->
+        <div class="form-group">
+            <label for="thumb_author" class="col-sm-2 control-label">Миниатюра (источник)</label>
+            <div class="col-sm-10">
+                {!! Form::text('thumb_author', null, ["class" => "form-control", "id" => "thumb_author", "title" => ""]) !!}
+            </div>
+        </div>
+
+        <!-- Audio -->
+        <div class="form-group">
             <label for="audio" class="col-sm-2 control-label">Аудио:(Из soundcloud.com)</label>
             <div class="col-sm-2">
                 {!! Form::text('audio', null, ["class" => "form-control", "id" => "audio", "title" => ""]) !!}

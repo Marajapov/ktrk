@@ -50,33 +50,39 @@
                                     </h4>
                                     <p class="post-thumb" href="{{ route('front.post', $post) }}">
                                         <img class="left" src="@if(empty($post->thumbnail_big)) {{  asset($post->thumbnail) }} @else {{  asset($post->thumbnail_big) }} @endif" alt="image">
+                                        @if($post->thumb_desc)<span class="thumb_desc">{{ $post->thumb_desc }}</span>@endif
+                                        @if($post->thumb_author)<span class="thumb_author"> Фото: {{ $post->thumb_author }}</span>@endif
                                     </p>
 
 
                                     {!! $content !!}
-                                    <div class="slider-for">
-                                        @if($images)
-                                            @foreach($images as $image)
-                                                <div>
-                                                    <a href="#">
-                                                        <img src="{{ asset('froala/uploads/'.$image->name) }}" alt=""/>
-                                                    </a>
-                                                </div>
-                                            @endforeach
-                                        @endif
-                                    </div>
 
-                                    <div class="slider-nav col-md-12">
-                                        @if($images)
+                                    @if($images)
+                                        <div class="slider-for">
                                             @if($images)
                                                 @foreach($images as $image)
                                                     <div>
-                                                        <img class="img" src="{{ asset('froala/uploads/'.$image->name) }}" alt=""/>
+                                                        <a href="#">
+                                                            <img src="{{ asset('froala/uploads/'.$image->name) }}" alt=""/>
+                                                        </a>
                                                     </div>
                                                 @endforeach
                                             @endif
-                                        @endif
-                                    </div>
+                                        </div>
+
+                                        <div class="slider-nav col-md-12">
+                                            @if($images)
+                                                @if($images)
+                                                    @foreach($images as $image)
+                                                        <div>
+                                                            <img class="img" src="{{ asset('froala/uploads/'.$image->name) }}" alt=""/>
+                                                        </div>
+                                                    @endforeach
+                                                @endif
+                                            @endif
+                                        </div>
+                                    @endif
+
                                 </div>
 
                                 <p>

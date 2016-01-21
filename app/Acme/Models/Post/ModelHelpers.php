@@ -33,6 +33,12 @@ trait ModelHelpers
 
         $relatedPost = \Model\Post\ModelName::where('id','=',$postId)->first();
 
+        if($relatedPost->thumbnail_big){
+            $thumbnail = $relatedPost->thumbnail_big;
+        } else{
+            $thumbnail = $relatedPost->thumbnail;
+        }
+
         return '
         <span>
             <aside class="pull-left">
@@ -41,7 +47,7 @@ trait ModelHelpers
                         <div class="topic clearfix">
 
                             <a class="t-thumb" href="'. route('front.post', $postId) .'">
-                                <img alt="alt photo text" src="'. asset($relatedPost->thumbnail_big) .'">
+                                <img alt="alt photo text" src="'. asset($thumbnail) .'">
                             </a>
                             <div class="t-info">
                                 <a class="js-dh" href="'. route('front.post', $postId) .'">'.$relatedPost->getTitleRuOrKg() .'</a>
@@ -62,6 +68,11 @@ trait ModelHelpers
     public function relatedFunctionRight($postId){
 
         $relatedPost = \Model\Post\ModelName::where('id','=',$postId)->first();
+        if($relatedPost->thumbnail_big){
+            $thumbnail = $relatedPost->thumbnail_big;
+        } else{
+            $thumbnail = $relatedPost->thumbnail;
+        }
 
         return '
         <span>
@@ -70,7 +81,7 @@ trait ModelHelpers
                     <div class="topics">
                         <div class="topic clearfix">
                             <a class="t-thumb" href="'. route('front.post', $postId) .'">
-                                <img alt="alt photo text" src="'. asset($relatedPost->thumbnail_big) .'">
+                                <img alt="alt photo text" src="'. asset($thumbnail) .'">
                             </a>
                             <div class="t-info">
                                 <a class="js-dh" href="'. route('front.post', $postId) .'">'.$relatedPost->getTitleRuOrKg() .'</a>

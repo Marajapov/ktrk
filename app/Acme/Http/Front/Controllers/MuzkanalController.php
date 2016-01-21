@@ -27,6 +27,8 @@ class MuzkanalController extends Controller
         $MediaTop1 = \Model\Media\ModelName::where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->orderBy('viewed','desc')-> take(6)->get();
         $MediaTop2 = \Model\Media\ModelName::where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->orderBy('viewed','desc')->skip(6)->take(6)->get();
 
+        // Concert
+        $Concert = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->where('concert','=', 1)->orderBy('id', 'desc')->take(4)->get();
 
         // Photo Gallery
         $photoGalleries = \Model\PhotoParent\ModelName::where('muzkanal','=','1')->where('published','=',true)->take('6')->orderBy('id','desc')->get();
@@ -67,6 +69,7 @@ class MuzkanalController extends Controller
 
             'MediaTop1' => $MediaTop1,
             'MediaTop2' => $MediaTop2,
+            'Concert' => $Concert,
 
             'photoGalleries' => $photoGalleries,
             'anons1' => $anons1,

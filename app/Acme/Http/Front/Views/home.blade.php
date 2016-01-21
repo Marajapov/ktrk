@@ -591,16 +591,21 @@
                                 </h3>
                             </div>
                             <div class="panel-body">
-                                <div class="col-md-12">
+                                <div class="">
                                     <div class="carousel-slick">
                                         @if($photoGalleries)
                                             @foreach($photoGalleries as $photoGallery)
 
                                                 <div class="col-md-4">
-                                                    <a href="{{ route('front.gallery', $photoGallery) }}">
-                                                        <img src="{{ asset($photoGallery->thumbnail_big) }}" alt=""/><span>{{ $photoGallery->getName() }}</span>
+                                                    <a class="gallery-thumb" href="{{ route('front.gallery', $photoGallery) }}">
+                                                        <img src="{{ asset($photoGallery->thumbnail_big) }}" alt=""/>
+                                                        {{--<span>{{ $photoGallery->getName() }}</span>--}}
                                                         <div class="overlay"></div>
-                                                        <i class="fa fa-camera"></i>
+                                                        {{--<i class="fa fa-camera"></i>--}}
+                                                        <i class="fa-gallery"></i>
+                                                    </a>
+                                                    <a class="gallery-desc" href="{{ route('front.gallery', $photoGallery) }}">
+                                                        {{ $photoGallery->getName() }}
                                                     </a>
                                                 </div>
 
