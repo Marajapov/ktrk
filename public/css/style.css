@@ -2507,7 +2507,7 @@ display: block;
 
 /*Video slider block*/
 @media screen and (max-width:35em) {
-    .newvideos .gallery .slick-prev:before, .gallery .slick-next:before {
+    .newvideos .slick-prev:before, .slick-next:before {
         display: none;
     }
 }
@@ -2525,11 +2525,11 @@ display: block;
 .newvideos .panel-carousel .slick-next {
     color: red;
 }
-.newvideos .gallery .slick-prev:before,.topvideos .gallery .slick-next:before {
+.newvideos .slick-prev:before,.topvideos .slick-next:before {
     color: #444;
     font-size: 15px;
 }
-.topvideos .gallery .slick-prev:before,.topvideos .gallery .slick-next:before {
+.topvideos .slick-prev:before,.topvideos .slick-next:before {
     color: #444;
     font-size: 15px;
 }
@@ -2551,7 +2551,7 @@ display: block;
 .topvideos .panel-carousel .slick-next {
     color: red;
 }
-.topvideos .gallery .slick-prev:before,.topvideos .gallery .slick-next:before {
+.topvideos .slick-prev:before,.topvideos .slick-next:before {
     color: #444;
 }
 .newvideos {
@@ -2733,10 +2733,10 @@ display: block;
 .newvideos .panel-default > .panel-heading {
     padding: 10px 15px;
 }
-.newvideos .gallery .slick-slide img {
+.newvideos .slick-slide img {
     height: 180px;
 }
-.newvideos .gallery .slick-slide {
+.newvideos .slick-slide {
     height: 130px;
 }
 .switch {
