@@ -138,12 +138,27 @@
 }
 .post-thumb{
     float: left;
-    margin-bottom: 15px;
+    /*margin-bottom: 15px;*/
     margin-right: 15px;
 }
 .post-thumb img{
     height: 200px;
     width: auto;
+}
+.post-thumb span{
+    display: block;
+    margin-top: 5px;
+    padding-left: 10px;
+    font-size: 12px;
+    line-height: 1;
+}
+.post-thumb .thumb_desc{
+    margin-top: 15px;
+    color: #444444;
+}
+.post-thumb .thumb_author{
+    margin-bottom: 15px;
+    color: #999999;
 }
 .related-title{
     display: table-cell;

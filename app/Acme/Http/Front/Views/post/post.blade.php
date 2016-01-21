@@ -50,6 +50,8 @@
                                     </h4>
                                     <p class="post-thumb" href="{{ route('front.post', $post) }}">
                                         <img class="left" src="@if(empty($post->thumbnail_big)) {{  asset($post->thumbnail) }} @else {{  asset($post->thumbnail_big) }} @endif" alt="image">
+                                        <span class="thumb_desc">{{ $post->thumb_desc }}</span>
+                                        @if($post->thumb_author)<span class="thumb_author"> Фото: {{ $post->thumb_author }}</span>@endif
                                     </p>
 
 
