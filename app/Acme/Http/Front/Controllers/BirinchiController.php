@@ -24,27 +24,14 @@ class BirinchiController extends Controller
         $categoryArray = array();
         $lc = app()->getlocale();
         if($lc == 'kg'){
-        
             $allPost = \Model\Post\ModelName::where('birinchi','=',1)->where('birinchiProgram','<>','1')->languagekg()->take(10)->skip(0)->published()->orderBy('id','desc')->get();    
-            foreach ($allPost as $key => $value) {
-                $category = \Model\Category\ModelName::where('id','=',$value->category_id)->where('title','<>','')->first();
-//                if(array_has($categoryArray, $category)){
-                    $categoryArray[] = $category;
-//                }
-            }
-            
         }else{
-        
             $allPost = \Model\Post\ModelName::where('birinchi','=',1)->where('birinchiProgram','<>','1')->languageru()->take(10)->skip(0)->published()->orderBy('id','desc')->get();
-            foreach ($allPost as $key => $value) {
-                $category = \Model\Category\ModelName::where('id','=',$value->category_id)->where('titleRu','<>','')->first();
-//                if(array_has($categoryArray, $category)){
-                    $categoryArray[] = $category;
-//                }
-            }
         }
 
-//        dd($categoryArray);
+        // Category list
+        $categoryArray = \Model\Category\ModelName::where('birinchi','=','1')->get();
+
         
   
         $lc = app()->getlocale();
