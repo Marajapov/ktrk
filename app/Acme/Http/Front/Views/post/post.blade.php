@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="{{ asset('css/pages.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/sweetalert.css') }}">
     <link href="{{ asset('froala/css/froala_style.min.css') }}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('css/goodshare.css') }}"/>
 @endsection()
 @section('content')
     <div class="container main-wrapper">
@@ -22,7 +23,7 @@
             <section class="content clearfix">
                 <div class="clearfix">
                     <div class="top-left-block col-md-9">
-                        <div class="panel panel-default panel-article">
+                        <div class="panel panel-default panel-article panel-kenesh">
                             <div class="panel-heading">
                                 <h3 class="panel-title">
                                     {{ trans('site.Top news') }} <span class="divider"><i class="fa fa-circle"></i></span>
@@ -51,6 +52,8 @@
                                     <p class="post-thumb" href="{{ route('front.post', $post) }}">
                                         <img class="left" src="@if(empty($post->thumbnail_big)) {{  asset($post->thumbnail) }} @else {{  asset($post->thumbnail_big) }} @endif" alt="image">
                                     </p>
+
+
                                     {!! $content !!}
                                     <div class="slider-for">
                                         @if($images)
@@ -93,21 +96,33 @@
                                 </div>
 
                                 <footer class="with-share">
-
                                     @if(auth()->user())
                                         <a class="post-edit" href="{{ route('admin.post.edit', $post) }}" target="_blank"><i class="fa fa-pencil"></i>{{ trans('site.AdminPostEdit') }}</a>
                                     @endif
 
-                                    <script type="text/javascript">(function() {
-                                            if (window.pluso)if (typeof window.pluso.start == "function") return;
-                                            if (window.ifpluso==undefined) { window.ifpluso = 1;
-                                                var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
-                                                s.type = 'text/javascript'; s.charset='UTF-8'; s.async = true;
-                                                s.src = ('https:' == window.location.protocol ? 'https' : 'http')  + '://share.pluso.ru/pluso-like.js';
-                                                var h=d[g]('body')[0];
-                                                h.appendChild(s);
-                                            }})();</script>
-                                    <div class="pluso" data-background="transparent" data-options="medium,square,line,horizontal,nocounter,theme=04" data-services="vkontakte,odnoklassniki,facebook,twitter,google"></div>
+                                    <div class="pluso share-buttons">
+                                        <button class="goodshare btn-fb" data-type="fb">
+                                            <i class="fa fa-facebook"></i>
+                                            <span data-counter="fb"></span>
+                                        </button>
+                                        <!-- Button with share to Facebook & share counter -->
+                                        <button class="goodshare btn-vk" data-type="vk">
+                                            <i class="fa fa-vk"></i>
+                                            <span data-counter="vk"></span>
+                                        </button>
+                                        <button class="goodshare btn-ok" data-type="ok">
+                                            <i class="fa fa-odnoklassniki"></i>
+                                            <span data-counter="ok"></span>
+                                        </button>
+                                        <button class="goodshare btn-gp" data-type="gp">
+                                            <i class="fa fa-google-plus"></i>
+                                            <span data-counter="gp"></span>
+                                        </button>
+                                        <button class="goodshare btn-tw" data-type="tw">
+                                            <i class="fa fa-twitter"></i>
+                                            {{--<span data-counter="tw"></span>--}}
+                                        </button>
+                                    </div>
 
                                     <a href="{{ route('front.general') }}">
                                         <span>{{ trans('site.PostAllNews') }}<i class="fa fa-arrow-circle-right"></i></span>
@@ -237,6 +252,20 @@
 @section('footerScript')
     {{-- Google reCaptcha --}}
     <script src='https://www.google.com/recaptcha/api.js'></script>
+
+    {{--SHARE BUTTONS--}}
+    <script src="{{ asset('js/goodshare.js') }}"></script>
+    <script>
+        $(window).load(function(){
+            $('.goodshare').each(function(){
+                var span = $(this).children('span');
+                var counter = span.text();
+                if((counter==0) || (counter=='')){
+                    $(this).addClass('empty');
+                }
+            });
+        });
+    </script>
 
     {{-- Sweet Alert --}}
     <script src="{{ asset('js/sweetalert.min.js') }}"></script>

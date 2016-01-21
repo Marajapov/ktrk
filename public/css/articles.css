@@ -121,7 +121,6 @@
 }
 .panel-article .panel-body footer{
     padding: 10px 0 5px;
-
     border-top: 3px solid #F1F4F9;
 }
 .panel-article .block{
@@ -571,6 +570,9 @@ h3#reply-title {
 
 
 /*SHARE LINKS*/
+.panel-article .panel-body footer.with-share{
+    padding: 10px 0;
+}
 .with-share a{
     display: inline-block;
     vertical-align: middle;
@@ -586,6 +588,7 @@ h3#reply-title {
     width: 59%;
     display: inline-block;
     vertical-align: middle;
+    text-align: center;
 }
 .pluso>div{
     text-align: center;

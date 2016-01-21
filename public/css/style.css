@@ -273,7 +273,7 @@ img {
 .panel-body footer a {
     font-size: 12px;
 }
-.panel-body footer i {
+.panel-body footer a i {
     padding-left: 5px;
 }
 .list-group-item {
