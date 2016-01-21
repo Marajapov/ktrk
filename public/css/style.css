@@ -2582,11 +2582,13 @@ display: block;
     box-shadow: 1px 1px 0 #000;
 }
 .newvideos .views {
-    left: 5px;
-    float: left;
+    top: 5px;
+    left: -5px;
     position: absolute;
     color: #fff;
-   font-size: 14px;
+    margin-left: 5px;
+    background: rgba(0, 0, 0, 0.63);
+    padding: 1px 3px
 }
 .newvideos .views i{
     position: initial;
@@ -2596,12 +2598,6 @@ display: block;
     float: right;
     margin-left: 3px;
     margin-top: 2px;
-}
-.newvideos .views i:hover {
-    color: #000;
-}
-.newvideos .views:hover {
-    color: #000;
 }
 .newvideos .item-desc {
     overflow: hidden;
@@ -2702,10 +2698,12 @@ display: block;
 }
 .topvideos .views {
     top: 5px;
-    float: left;
+    left: -5px;
     position: absolute;
     color: #fff;
     margin-left: 5px;
+    background: rgba(0, 0, 0, 0.63);
+    padding: 1px 3px
 }
 
 .topvideos .views i{
@@ -2715,12 +2713,6 @@ display: block;
     font-size: 20px;
     float: right;
     margin-left: 3px;
-}
-.topvideos .views i:hover {
-    color: #000;
-}
-.topvideos .views:hover {
-    color: #000;
 }
 .topvideos .item-desc {
     overflow: hidden;
