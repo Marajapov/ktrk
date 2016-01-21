@@ -3547,8 +3547,10 @@ display: block;
 }
 .music .muzvideoall img{
     width: 100%;
-    height: 180px;
     /* opacity: 1; */
+}
+.music .topvideos .panel-carousel .slick-slide img {
+    height: 180px;
 }
 .music .muzpaginate {
     margin: 15px 0px;
