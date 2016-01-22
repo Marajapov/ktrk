@@ -204,10 +204,13 @@
           $(".search-toggle").click(function () {
               $(".logo-block").addClass("search-show");
               $(".form-search").addClass("visible");
+              $(".clangs").addClass("hidden");
           });
           $(".close-search").click(function () {
               $(".logo-block").removeClass("search-show");
               $(".form-search").removeClass("visible");
+              $(".clangs").removeClass("hidden");
+
           });
       });
    </script>

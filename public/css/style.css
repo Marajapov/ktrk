@@ -4505,7 +4505,11 @@ background-size: cover;
 .madaniyat li.korsotuu{
     background: #710022;
     margin-top: 5px;
-    padding: 10px 0 10px 5px;
+    padding: 10px 0 10px 15px;
+    width: 255px;
+}
+.madaniyat .col-md-3 .panelRight{
+    padding-left: 0px;
 }
 .madaniyat .colormad a {
     color: #6D0120;
@@ -4513,4 +4517,10 @@ background-size: cover;
     font-family: 'Roboto Condensed', serif;
     text-transform: uppercase;  
     font-size: 16px;
+}
+.madaniyat .panelTitleCus h3{
+    margin-top: 0px;
+}
+.madaniyat li.korsotuu:hover {
+    background: #CF3529;
 }

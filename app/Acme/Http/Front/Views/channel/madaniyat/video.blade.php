@@ -143,11 +143,11 @@
          <div class="col-md-9" style="border-right: 1px solid #DEDEDE;">
             <div class="panel panel-default">
                <div class="panel-heading">
-                  <div class="panel-title">
+                  <div class="panel-title panelTitleCus">
                      <h3 class="madaniyatcolor colormad">
                         <a href="{{route ('madaniyat.videos')}}">Передача</a>
                         <i class="fa fa-caret-right"></i>
-                        <span></span>
+                        
                      </h3>
                   </div>
                </div>
@@ -158,14 +158,9 @@
                         <div class="row">
                            <article class="col-md-12" data-cat="all-videos">
                               <div class="extra">
-                     
-                                 <span class="art-edit"><i class="fa fa-pencil"></i>
-                                 {{--<span class="glyphicon glyphicon-pencil"></span>--}}  </a>
-                           
-                                 </span>
                               </div>
                               <div class="embed-responsive embed-responsive-16by9 show-video">
-                                 <iframe class="embed-responsive-item"></iframe>
+                                 <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/yCUCnanY9GM" frameborder="0" allowfullscreen></iframe>
                               </div>
                            </article>
                         </div>
@@ -185,14 +180,14 @@
                </div>
             </div>
          </div>
-         <div class="col-md-3">
+         <div class="col-md-3 panelRight">
             <div class="panel panel-default">
                <div class="panel-heading madaniyatcolor">
                      <h3 class="panel-title">
                         <span class="madaniyatcolor">{{ trans('radiopages.TopCLips') }}</span>
                      </h3>
                </div>
-               <div class="panel-body">
+               <div class="panel-body panelRight">
                   <div class="col-md-12">
                      <div class="righttopvideo">
                       
@@ -280,6 +275,21 @@
    <script src="{{ asset('js/jquery-1.11.2.min.js') }}"></script>
    <script src="{{ asset('js/bootstrap.min.js') }}"></script> 
    <script src="{{ asset('js/bootstrap-hover-dropdown.js') }}"></script>
+   <script>
+      $(document).ready(function () {
+          $(".search-toggle").click(function () {
+              $(".logo-block").addClass("search-show");
+              $(".form-search").addClass("visible");
+              $(".clangs").addClass("hidden");
+
+          });
+          $(".close-search").click(function () {
+              $(".logo-block").removeClass("search-show");
+              $(".form-search").removeClass("visible");
+              $(".clangs").removeClass("hidden");
+          });
+      });
+   </script>
    <!-- Fixed Sticky header -->
    <script type ="text/javascript" src ="{{ asset('js/script.js') }}"></script>   
    <!-- Fixed Sticky header -->

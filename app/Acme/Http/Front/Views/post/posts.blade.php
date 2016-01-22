@@ -1,4 +1,5 @@
 @extends('Front::layouts.default')
+@section('title', trans('site.PostAllNews'))
 
 @section('styles')
 
