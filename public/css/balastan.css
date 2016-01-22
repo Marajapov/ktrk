@@ -500,24 +500,7 @@
     font-family: 'merge_probold';
 }
 /* END New videos*/
-
-<<<<<<< HEAD
-.kidsgallery .name {
-	position: absolute;
-  bottom: -10px !important;
-	max-width: 90%;
-	padding: 5px;
-	border-radius: 0px 5px 5px 0px !important;
-
-	color: #FFEB3B;
-	background: #03A9F4;
-
-	font-size: 20px;
-	font-weight: 600;
-	text-shadow: 1px 0px 0px rgb(45, 45, 45), 0 0 1em rgba(255, 250, 250, 0.04);
-=======
 /* BEGIN Photo Gallery*/
->>>>>>> ff9c5947db677e92c20f04fc09edf08f01368dad
 
 .kidsgallery{
     position: relative;
