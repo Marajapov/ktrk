@@ -206,22 +206,18 @@
     backface-visibility: hidden;
 }
 .media-image img{
-    -webkit-transition: transform 0.2s linear;
-    -moz-transition: transform 0.2s linear;
-    -ms-transition: transform 0.2s linear;
-    -o-transition: transform 0.2s linear;
-    transition: transform 0.2s linear;
 
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    -ms-backface-visibility: hidden;
-    backface-visibility: hidden;
-
-    -webkit-transform: scale(1.35);
-    -moz-transform: scale(1.35);
-    -ms-transform: scale(1.35);
-    -o-transform: scale(1.35);
-    transform: scale(1.35);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    height: auto;
+    width: 240px;
+    opacity: 1;
+    -webkit-transform: translateY(-50%) translateX(-50%);
+    -moz-transform: translateY(-50%) translateX(-50%);
+    -ms-transform: translateY(-50%) translateX(-50%);
+    transform: translateY(-50%) translateX(-50%);
 }
 .media-image:hover img{
 }
@@ -231,6 +227,7 @@
     left: 0;
     right: 0;
     bottom: 0;
+    z-index: 2;
 
     margin: auto;
     height: 36px;

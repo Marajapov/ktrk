@@ -3,7 +3,6 @@
 @section('styles')
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <meta property="fb:app_id"             content="564062523746973" />
     <meta property="og:url"                content="{{ Request::url()}}" />
     <meta property="og:site_name"          content="{{ trans('site.TradeMark') }}" />
     <meta property="og:type"               content="article" />
@@ -12,8 +11,10 @@
     <meta property="og:image"              content="{{ asset($post->thumbnail_big) }}" />
 
     <link rel="stylesheet" href="{{ asset('css/articles.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/pages.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/sweetalert.css') }}">
     <link href="{{ asset('froala/css/froala_style.min.css') }}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('css/goodshare.css') }}"/>
 @endsection()
 @section('content')
     <div class="container main-wrapper">
@@ -21,7 +22,7 @@
             <section class="content clearfix">
                 <div class="clearfix">
                     <div class="top-left-block col-md-9">
-                        <div class="panel panel-default panel-article">
+                        <div class="panel panel-default panel-article panel-kenesh">
                             <div class="panel-heading">
                                 <h3 class="panel-title">
                                     {{ trans('site.Top news') }} <span class="divider"><i class="fa fa-circle"></i></span>
@@ -49,52 +50,100 @@
                                     </h4>
                                     <p class="post-thumb" href="{{ route('front.post', $post) }}">
                                         <img class="left" src="@if(empty($post->thumbnail_big)) {{  asset($post->thumbnail) }} @else {{  asset($post->thumbnail_big) }} @endif" alt="image">
+                                        @if($post->thumb_desc)<span class="thumb_desc">{{ $post->thumb_desc }}</span>@endif
+                                        @if($post->thumb_author)<span class="thumb_author"> Фото: {{ $post->thumb_author }}</span>@endif
                                     </p>
+
+
                                     {!! $content !!}
-                                    <div class="carousel-post">
-                                        @if($images != null)
-                                            @foreach($images as $image)
-                                                <div class="col-md-4">
-                                                    <a href="#">
-                                                        <img src="{{ asset('froala/uploads/'.$image->name) }}" alt=""/>
-                                                    </a>
-                                                </div>
-                                            @endforeach
-                                        @endif
-                                    </div>
+
+                                    @if($images)
+                                        <div class="slider-for">
+                                            @if($images)
+                                                @foreach($images as $image)
+                                                    <div>
+                                                        <a href="#">
+                                                            <img src="{{ asset('froala/uploads/'.$image->name) }}" alt=""/>
+                                                        </a>
+                                                    </div>
+                                                @endforeach
+                                            @endif
+                                        </div>
+
+                                        <div class="slider-nav col-md-12">
+                                            @if($images)
+                                                @if($images)
+                                                    @foreach($images as $image)
+                                                        <div>
+                                                            <img class="img" src="{{ asset('froala/uploads/'.$image->name) }}" alt=""/>
+                                                        </div>
+                                                    @endforeach
+                                                @endif
+                                            @endif
+                                        </div>
+                                    @endif
+
                                 </div>
 
                                 <p>
                                     <a href="http://orphus.ru" id="orphus" class="hidden" target="_blank"><img alt="Система Orphus" src="{{ asset('js/orphus.gif') }}" border="0" width="240" height="80" /></a>
                                 </p>
 
-                                <div class="orphus-mistake col-md-12">
-                                    <h4>
-                                        <i class="fa fa-exclamation-circle"></i>
-                                        @if($lc=='kg')
-                                            Эгерде ката тапсаңыз, текстти белгилеп Ctrl+Enter басыңыз
-                                        @elseif($lc == 'ru')
-                                            Если вы обнаружили ошибку, выделите текст и нажмите Ctrl+Enter
-                                        @endif
-                                    </h4>
+                                <div class="orphus-mistake pull-right">
+                                    <div class="media">
+                                        <div class="media-body media-middle">
+                                            <h4>
+                                                @if($lc=='kg')
+                                                    Эгерде ката тапсаңыз, текстти белгилеп Ctrl+Enter басыңыз
+                                                @elseif($lc == 'ru')
+                                                    Если вы обнаружили ошибку, выделите текст и нажмите Ctrl+Enter
+                                                @endif
+                                            </h4>
+                                        </div>
+                                        <div class="media-right media-middle">
+                                            <span class="media-object">
+                                                <i class="fa fa-exclamation-circle"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    {{--<h4>--}}
+                                        {{--<i class="fa fa-exclamation-circle"></i>--}}
+                                        {{--@if($lc=='kg')--}}
+                                            {{--Эгерде ката тапсаңыз, текстти белгилеп Ctrl+Enter басыңыз--}}
+                                        {{--@elseif($lc == 'ru')--}}
+                                            {{--Если вы обнаружили ошибку, выделите текст и нажмите Ctrl+Enter--}}
+                                        {{--@endif--}}
+                                    {{--</h4>--}}
                                 </div>
 
                                 <footer class="with-share">
-
                                     @if(auth()->user())
                                         <a class="post-edit" href="{{ route('admin.post.edit', $post) }}" target="_blank"><i class="fa fa-pencil"></i>{{ trans('site.AdminPostEdit') }}</a>
                                     @endif
 
-                                    <script type="text/javascript">(function() {
-                                            if (window.pluso)if (typeof window.pluso.start == "function") return;
-                                            if (window.ifpluso==undefined) { window.ifpluso = 1;
-                                                var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
-                                                s.type = 'text/javascript'; s.charset='UTF-8'; s.async = true;
-                                                s.src = ('https:' == window.location.protocol ? 'https' : 'http')  + '://share.pluso.ru/pluso-like.js';
-                                                var h=d[g]('body')[0];
-                                                h.appendChild(s);
-                                            }})();</script>
-                                    <div class="pluso" data-background="transparent" data-options="medium,square,line,horizontal,nocounter,theme=04" data-services="vkontakte,odnoklassniki,facebook,twitter,google"></div>
+                                    <div class="pluso share-buttons">
+                                        <button class="goodshare btn-fb" data-type="fb">
+                                            <i class="fa fa-facebook"></i>
+                                            <span data-counter="fb"></span>
+                                        </button>
+                                        <!-- Button with share to Facebook & share counter -->
+                                        <button class="goodshare btn-vk" data-type="vk">
+                                            <i class="fa fa-vk"></i>
+                                            <span data-counter="vk"></span>
+                                        </button>
+                                        <button class="goodshare btn-ok" data-type="ok">
+                                            <i class="fa fa-odnoklassniki"></i>
+                                            <span data-counter="ok"></span>
+                                        </button>
+                                        <button class="goodshare btn-gp" data-type="gp">
+                                            <i class="fa fa-google-plus"></i>
+                                            <span data-counter="gp"></span>
+                                        </button>
+                                        <button class="goodshare btn-tw" data-type="tw">
+                                            <i class="fa fa-twitter"></i>
+                                            {{--<span data-counter="tw"></span>--}}
+                                        </button>
+                                    </div>
 
                                     <a href="{{ route('front.general') }}">
                                         <span>{{ trans('site.PostAllNews') }}<i class="fa fa-arrow-circle-right"></i></span>
@@ -225,6 +274,20 @@
     {{-- Google reCaptcha --}}
     <script src='https://www.google.com/recaptcha/api.js'></script>
 
+    {{--SHARE BUTTONS--}}
+    <script src="{{ asset('js/goodshare.js') }}"></script>
+    <script>
+        $(window).load(function(){
+            $('.goodshare').each(function(){
+                var span = $(this).children('span');
+                var counter = span.text();
+                if((counter==0) || (counter=='')){
+                    $(this).addClass('empty');
+                }
+            });
+        });
+    </script>
+
     {{-- Sweet Alert --}}
     <script src="{{ asset('js/sweetalert.min.js') }}"></script>
     <script>
@@ -233,6 +296,24 @@
         @elseif(session('success') == 'false')
         swal("", "Где то произошла ошибка!", "error");
         @endif
+    </script>
+
+    <!--Carousel-->
+    <script>
+        $('.slider-for').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            fade: true,
+            asNavFor: '.slider-nav'
+        });
+        $('.slider-nav').slick({
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            asNavFor: '.slider-for',
+            centerMode: true,
+            focusOnSelect: true,
+            variableWidth: true
+        });
     </script>
 
     @if(session('send') == 'true')
@@ -338,7 +419,9 @@
                 var div=d.createElement("DIV");
                 var w=550;
                 if(w>b.clientWidth-10){w=b.clientWidth-10;}div.style.zIndex="10001";
-                div.innerHTML=""+"<div class=\"orphus clearfix\" style=\"width:"+w+"px; z-index:10001; \">"+"<a href=\"javascript:void(0)\" onclick=\"$(this).parent('.orphus').find('form .buttons input:first').click();\" class=\"sprite_close\"><i class=\"fa fa-close\"></i></a>"+"<div class=\"header\">"+_8.intextmsg+"</div>"+"<div class=\"item\">&laquo;&#133;"+_36.replace(_4,"<u style=\"color:red\">").replace(_5,"</u>")+"&#133;&raquo;</div>"+"<div class=\"message\">"+_8.ifsendmsg.replace(/\n/,"<br/>")+"</div>"+"<form action=\""+formAction+"\" id=\"orphus\" method=\"post\"><input name=\"comment\" placeholder=\"Комментарий для автора (необязательно)\" type=\"text\"/><input name=\"message\" value=\""+_36+"\" type=\"hidden\"/>"+"<div class=\"buttons\">"+"<input name=\"submit\" type=\"submit\" value=\""+_8.send+"\">"+"<input type=\"button\" value=\""+_8.cancel+"\" class=\"cancel\"><input type=\"hidden\" name=\"_token\" value=\""+_token+"\"/><input type=\"hidden\" name=\"url\" value=\""+url+"\"/><input type=\"hidden\" name=\"postId\" value=\""+postId+"\"/>"+"</div>"+"</form>"+"</div>"+"";
+                div.innerHTML=""+"<div class=\"orphus clearfix\" style=\"width:"+w+"px; z-index:10001; \">"+"<a href=\"javascript:void(0)\" onclick=\"return closeForm();\" class=\"sprite_close\"><i class=\"fa fa-close\"></i></a>"+"<div class=\"header\">"+_8.intextmsg+"</div>"+"<div class=\"item\">&laquo;&#133;"+_36.replace(_4,"<u style=\"color:red\">").replace(_5,"</u>")+"&#133;&raquo;</div>"+"<div class=\"message\">"+_8.ifsendmsg.replace(/\n/,"<br/>")+"</div>"+"<form id=\"orphus\" method=\"post\" action=\""+formAction+"\"><input name=\"comment\" placeholder=\"Комментарий для автора (необязательно)\" type=\"text\"/><input name=\"message\" value=\""+_36+"\" type=\"hidden\"/>"+"<div class=\"buttons\">"+"<input name=\"submit\" type=\"submit\" value=\""+_8.send+"\">"+"<input type=\"button\" value=\""+_8.cancel+"\" class=\"cancel\"><input type=\"hidden\" name=\"_token\" value=\""+_token+"\"/><input type=\"hidden\" name=\"url\" value=\""+url+"\"/><input type=\"hidden\" name=\"postId\" value=\""+postId+"\"/>"+"</div>"+"</form>"+"</div>"+"";
+//
+//                div.innerHTML=""+"<div class=\"orphus clearfix\" style=\"width:"+w+"px; z-index:10001;\">"+"<div class=\"header\">"+_8.intextmsg+"</div>"+"<div class=\"item\">&laquo;&#133;"+_36.replace(_4,"<u style=\"color:red\">").replace(_5,"</u>")+"&#133;&raquo;</div>"+"<div class=\"message\">"+_8.ifsendmsg.replace(/\n/,"<br/>")+"</div>"+"<form action=\""+formAction+"\" id=\"orphus\" method=\"post\">"+"<input name=\"comment\" placeholder=\"Комментарий для автора (необязательно)\" type=\"text\"/>"+"<div class=\"buttons\">"+"<input name=\"submit\" type=\"submit\" value=\""+_8.send+"\">"+"<input class=\"cancel\" type=\"button\" value=\""+_8.cancel+"\">"+"<input name=\"message\" value=\""+_36+"\" type=\"hidden\"/>"+"<input type=\"hidden\" name=\"_token\" value=\""+_token+"\"/>"+"<input type=\"hidden\" name=\"url\" value=\""+url+"\"/>"+"<input type=\"hidden\" name=\"postId\" value=\""+postId+"\"/>"+"</div>"+"</form>"+"</div>";
                 _1b(div);
                 var _3a=div.getElementsByTagName("input");
                 var _3b=div.getElementsByTagName("form");
@@ -428,5 +511,9 @@
                 if(we){_67=we.keyCode==10||(we.keyCode==13&&we.ctrlKey);}else{if(e){_67=(e.which==10&&e.modifiers==2)||(e.keyCode==0&&e.charCode==106&&e.ctrlKey)||(e.keyCode==13&&e.ctrlKey);}}if(_67){_5d();
                     return false;}};
             _13();})();
+
+        function closeForm(){
+            $('.orphus').parent().hide();
+        }
     </script>
 @endsection

@@ -19,11 +19,11 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::orderBy('number','asc')->orderBy('id', 'desc')->get();
+        $posts = Post::orderBy('id', 'desc')->where('fbpost','<>','1')->get();
         
         return view('Admin::post.index', [
             'posts' => $posts,
-            ]);
+        ]);
     }
 
     /**
@@ -42,8 +42,9 @@ class PostController extends Controller
         $categoryList = \Model\Category\ModelName::lists('titleRu', 'id')->toArray();
         $PhotoParentList = \Model\PhotoParent\ModelName::lists('name', 'id')->toArray();
 
-        $relatedPosts = \Model\Post\ModelName::where('title','<>','')->lists('title', 'id')->toArray();
-        $relatedPosts2 = \Model\Post\ModelName::where('titleRu','<>','')->lists('titleRu', 'id')->toArray();
+        $relatedPosts = \Model\Post\ModelName::where('published','=','1')->where('title','<>','')->orderBy('id','desc')->lists('title', 'id')->toArray();
+        $relatedPosts2 = \Model\Post\ModelName::where('published','=','1')->where('titleRu','<>','')->orderBy('id','desc')->lists('titleRu', 'id')->toArray();
+        $relatedMedias = \Model\Media\ModelName::where('published','=','1')->orderBy('id','desc')->lists('name', 'id')->toArray();
 
         $dostukProgramList = \Model\Project\ModelName::where('dostuk','=','1')->lists('name', 'id')->toArray();
         $birinchiProgramList = \Model\Project\ModelName::where('birinchi','=','1')->lists('name', 'id')->toArray();
@@ -58,6 +59,7 @@ class PostController extends Controller
             'PhotoParentList' => $PhotoParentList,
             'relatedPosts' => $relatedPosts,
             'relatedPosts2' => $relatedPosts2,
+            'relatedMedias' => $relatedMedias,
             'dostukProgramList' => $dostukProgramList,
             'birinchiProgramList' => $birinchiProgramList,
             'kyrgyzradioProgramList' => $kyrgyzradioProgramList,
@@ -198,6 +200,7 @@ class PostController extends Controller
 
         $relatedPosts = \Model\Post\ModelName::where('title','<>','')->where('id','<>',$post->id)->lists('title', 'id')->toArray();
         $relatedPosts2 = \Model\Post\ModelName::where('titleRu','<>','')->where('id','<>',$post->id)->lists('titleRu', 'id')->toArray();
+        $relatedMedias = \Model\Media\ModelName::where('published','=','1')->orderBy('id','desc')->lists('name', 'id')->toArray();
 
         $dostukProgramList = \Model\Project\ModelName::where('dostuk','=','1')->lists('name', 'id')->toArray();
         $birinchiProgramList = \Model\Project\ModelName::where('birinchi','=','1')->lists('name', 'id')->toArray();
@@ -212,6 +215,7 @@ class PostController extends Controller
             'tags2' => $tags2,
             'relatedPosts' => $relatedPosts,
             'relatedPosts2' => $relatedPosts2,
+            'relatedMedias' => $relatedMedias,
             'channelList' => $channelList,
             'categoryList' => $categoryList,
             'PhotoParentList' => $PhotoParentList,

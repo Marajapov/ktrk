@@ -40,7 +40,7 @@ return [
 
 	   	//Content slider
 	    'Mainnews' => 'Главные новости',
-	    'Allphotos' => 'Все фотографии',
+	    'Allphotos' => 'Все фотогалереи',
 	    'AllPereadachi' => 'Все новости',
 		'' => '',
 		'' => '',
@@ -92,7 +92,8 @@ return [
 		'BAbout' => 'О нас',
 		'Bworld' => 'В мире Баластана',
         'BirgeRead' => 'Читаем вместе',		
-		'Bperedachi' => 'Передачи',	
+		'Bperedachi' => 'Передачи',
+		'NewVideos' => 'Новые видео',	
 		'' => '',	
 		'' => '',	
 		'' => '',	

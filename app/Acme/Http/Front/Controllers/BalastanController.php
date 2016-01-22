@@ -14,6 +14,8 @@ class BalastanController extends Controller
         $channel = \Model\Channel\ModelName::name('balastan')->first();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
+        $balastanProjects = \Model\Project\ModelName::where('balastan','=','1')->orderBy('id','desc')->get();
+
         $firstMedia = \Model\Media\ModelName::where('balastan','=','1')->orderBy('id','desc')->first();
         $medias = \Model\Media\ModelName::where('balastan','=','1')->take(6)->orderBy('id','desc')->get();
 
@@ -28,9 +30,14 @@ class BalastanController extends Controller
         if(count($firstMedia)){ $firstMedia = $firstMedia;
         }else{ $firstMedia = null; }
 
+        $anons = \Model\Anons\ModelName::where('channel','=','4')->where('published','=','1')->orderBy('id','=','desc')->take(2)->get();
+
         return view('Front::channel.balastan.index', [
             'channel' => $channel,
+            'anons' => $anons,
             'backgroundMain' => $backgroundMain,
+            
+            'balastanProjects' => $balastanProjects,
 
             'firstMedia' => $firstMedia,
             'medias' => $medias,
@@ -75,41 +82,27 @@ class BalastanController extends Controller
             'backgroundMain' => $backgroundMain,
             ]);
     }   
-    public function video(Request $request, $media)
+    public function video($media)
     {
         $channel = \Model\Channel\ModelName::name('balastan')->first();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
-        if($media != '{video}'){
-            $mediaFull = \Model\Media\ModelName::where('id','=',$media)->first();    
-
-        }else{
-            $mediaFull = \Model\Media\ModelName::where('balastan','=','1')->where('program','<>','')->orderBy('id','desc')->skip(4)->first();
-            
-        }
+        $balastanLastVideo = \Model\Media\ModelName::where('id','=',$media)->take(1)->orderBy('id','desc')->first();
+        $balastanProjects = \Model\Project\ModelName::where('balastan','=','1')->orderBy('id','desc')->get();
         
-        
-
-        $balastanLastVideo = \Model\Media\ModelName::where('balastan','=','1')->take(1)->orderBy('id','desc')->first();
-        $balastaProjects = \Model\Project\ModelName::where('balastan','=','1')->orderBy('id','desc')->get();
-        
-        $balastanMedias = \Model\Media\ModelName::where('program','=',$mediaFull->program)->where('id', '<>', $media)->take(8)->skip(0)->orderBy('id','desc')->get();
-
-        if($media){
-            $balastanLastVideo = \Model\Media\ModelName::where('id','=',$media)->where('balastan','=','1')->take(1)->orderBy('id','desc')->first();
-        }
+        $balastanMedias = \Model\Media\ModelName::where('program','=',$balastanLastVideo->hasProject()->first()->id)->where('id', '<>', $media)->orderBy('id','desc')->get();
 
         return view('Front::channel.balastan.video', [
             'channel' => $channel,
             'backgroundMain' => $backgroundMain,
 
             'balastanLastVideo' => $balastanLastVideo,
-            'balastanProjects' => $balastaProjects,
+            'balastanProjects' => $balastanProjects,
             'balastanMedias' => $balastanMedias,
             ]);
     }
     // For photos page One gallery 
-     public function Gallery(Request $request, $galleryId)
+     public function Gallery($galleryId)
     {
         $lc = app()->getlocale();
 
@@ -126,24 +119,44 @@ class BalastanController extends Controller
             ]);
     }
 
-    public function projectVideos(Request $request, $project)
+    public function projectVideos($project)
+    {
+        $channel = \Model\Channel\ModelName::name('balastan')->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+        $programId = $project->id;
+        
+
+
+        $balastanProjects = \Model\Project\ModelName::where('balastan','=','1')->orderBy('id','desc')->get();
+        $balastanMedias = \Model\Media\ModelName::where('program','=',$programId)->take(8)->skip(0)->orderBy('id','desc')->get();
+
+        return view('Front::channel.balastan.videos', [
+            'channel' => $channel,
+            'backgroundMain' => $backgroundMain,
+            'balastanProjects' => $balastanProjects,
+            'balastanMedias' => $balastanMedias,
+            'project' => $project,
+        ]);
+    }
+
+    public function videos(Request $request)
     {
 
         $channel = \Model\Channel\ModelName::name('balastan')->first();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
-        $programId = $project;
-        $balastanLastVideo = \Model\Media\ModelName::where('program','=',$programId)->take(1)->orderBy('id','desc')->first();
-        $balastanProjects = \Model\Project\ModelName::where('balastan','=','1')->orderBy('id','desc')->get();
-        $balastanMedias = \Model\Media\ModelName::where('program','=',$programId->id)->take(8)->skip(0)->orderBy('id','desc')->get();
 
-        return view('Front::channel.balastan.video', [
+        $balastanProjects = \Model\Project\ModelName::where('balastan','=','1')->orderBy('id','desc')->get();
+        $balastanMedias = \Model\Media\ModelName::where('balastan','=','1')->orderBy('id','desc')->get();
+
+        return view('Front::channel.balastan.videos', [
             'channel' => $channel,
             'backgroundMain' => $backgroundMain,
-
-            'balastanLastVideo' => $balastanLastVideo,
             'balastanProjects' => $balastanProjects,
             'balastanMedias' => $balastanMedias,
+
+            'project' => '',
             ]);
     }
 

@@ -18,14 +18,18 @@ Route::group(['domain' => 'beta.ktrk.kg', 'prefix' => '/balastan', 'namespace' =
     Route::get('/world', ['as' => 'balastan.world',   'uses' => 'BalastanController@world']);
     Route::get('/about', ['as' => 'balastan.about',   'uses' => 'BalastanController@about']);
     //New page video
-    Route::get('/video',['as' => 'balastan.video','uses'=> 'BalastanController@video'] );
+    Route::get('/video',['as' => 'balastan.video','uses'=> 'BalastanController@video'] );    
+    Route::get('/videos',['as' => 'balastan.videos','uses'=> 'BalastanController@videos'] );
     Route::get('/video/{video}',['as' => 'balastan.video','uses'=> 'BalastanController@video'] );
-    Route::get('/projectVideos/{project}',['as' => 'balastan.projectVideos','uses'=> 'BalastanController@projectVideos'] );
+    Route::get('/videos/{project}',['as' => 'balastan.project.videos','uses'=> 'BalastanController@projectVideos'] );
     
     // Balastan photos one gallery page
     
     Route::get('/allphotos',['as' => 'balastan.allphotos','uses'=> 'BalastanController@allphotos'] );
     Route::get('/photos/{gallery}',['as' => 'balastan.photos','uses'=> 'BalastanController@Gallery'] );
+
+    //Redesign home page
+    Route::get('/vertex',['as' => 'balastan.vertex','uses'=> 'BalastanController@vertex'] );
 
 });
 

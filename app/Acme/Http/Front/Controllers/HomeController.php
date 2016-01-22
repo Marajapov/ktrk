@@ -27,6 +27,7 @@ class HomeController extends Controller
     public function Home()
     {
         $lc = app()->getlocale();
+
         $channel = \Model\Channel\ModelName::general();
 
         $channels = \Model\Channel\ModelName::take(8)->skip(1)->get();
@@ -34,34 +35,34 @@ class HomeController extends Controller
         if($lc == 'kg'){
             $generalPost1 = \Model\Post\ModelName::general($channel)->published()->having('number','=',1)->languagekg()->first();
             if($generalPost1 == null){
-                //$generalPost1 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(10)->first();    
+                $generalPost1 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(10)->first();    
             }
 
             $generalPost2 = \Model\Post\ModelName::general($channel)->published()->having('number','=',2)->languagekg()->first();
 
             if($generalPost2 == null){
-                //$generalPost2 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(15)->first();
+                $generalPost2 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(15)->first();
             }
 
             $generalPost3 = \Model\Post\ModelName::general($channel)->published()->having('number','=',3)->languagekg()->first();
             if($generalPost3 == null){
-                //$generalPost3 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(2)->first();
+                $generalPost3 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(2)->first();
             }
             
             $generalPost4 = \Model\Post\ModelName::general($channel)->published()->having('number','=',4)->languagekg()->first();
             if($generalPost4 == null){
-                //$generalPost4 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(30)->first();
+                $generalPost4 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(30)->first();
             }
             
             $generalPost5 = \Model\Post\ModelName::general($channel)->published()->having('number','=',5)->languagekg()->first();
             if($generalPost5 == null){
-               // $generalPost5 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(40)->first();    
+                $generalPost5 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(40)->first();    
             }
             
 
             $generalPost6 = \Model\Post\ModelName::general($channel)->published()->having('number','=',6)->languagekg()->first();
             if($generalPost6 == null){
-                //$generalPost6 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(50)->first();
+                $generalPost6 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(50)->first();
             }
 
             $projects = \Model\Project\ModelName::having('name','<>','')->get();
@@ -197,24 +198,33 @@ class HomeController extends Controller
 
     public function Post(\Model\Post\ModelName $post)
     {
-        $contentOriginal = $post->getContent();
-
         $lc = app()->getlocale();
-        
-        if(($lc == 'kg') && ($post->title != '')){
 
-        }
-
-        if($lc == 'kg' && ($post->titleRu != '')) {
-            app()->setlocale('ru');
-        }
-        
-        if($lc == 'ru' && ($post->titleRu != '')){
-
-        }
-
-        if($lc == 'ru' && ($post->title != '')){
-            app()->setlocale('kg');
+        if($lc == 'kg')
+        {
+            if($post->title == '')
+            {
+                app()->setlocale('ru');
+                $lc = 'ru';
+            }
+            else
+            {
+                app()->setlocale('kg');
+                $lc = 'kg';
+            }
+        } 
+        elseif($lc == 'ru') 
+        {
+            if($post->titleRu == '')
+            {
+                app()->setlocale('kg');
+                $lc = 'kg';
+            }
+            else
+            {
+                app()->setlocale('ru');
+                $lc = 'ru';
+            }
         }
 
         $post->incrementViewed();
@@ -231,6 +241,7 @@ class HomeController extends Controller
         }
 
         if($lc == 'kg'){
+            $contentOriginal = $post->getContent();
 
             $relatedPosts = \Model\Post\ModelName::where('category_id','=',$post->category_id)->where('general','=','1')->languagekg()->take(6)->skip(0)->orderBy('id', 'desc')->get();
 
@@ -278,7 +289,58 @@ class HomeController extends Controller
                 }
             }
 
+            if($post->relatedMedia1)
+            {
+                if(strpos($contentFinal, 'MEDIA1LEFT') != false)
+                {
+                    $media1Pos = strripos($contentFinal, 'MEDIA1LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionLeft($post->relatedMedia1), $media1Pos, 10);
+                }
+                elseif(strpos($contentFinal, 'MEDIA1RIGHT') != false)
+                {
+                    $media1Pos = strripos($contentFinal, 'MEDIA1RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionRight($post->relatedMedia1), $media1Pos, 11);
+                }
+            }
+
+            if($post->relatedMedia2)
+            {
+                if(strpos($contentFinal, 'MEDIA2LEFT') != false)
+                {
+                    $media2Pos = strripos($contentFinal, 'MEDIA2LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionLeft($post->relatedMedia2), $media2Pos, 10);
+                }
+                elseif(strpos($contentFinal, 'MEDIA2RIGHT') != false)
+                {
+                    $media2Pos = strripos($contentFinal, 'MEDIA2RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionRight($post->relatedMedia2), $media2Pos, 11);
+                }
+            }
+
+            if($post->relatedMedia3)
+            {
+                if(strpos($contentFinal, 'MEDIA3LEFT') != false)
+                {
+                    $media3Pos = strripos($contentFinal, 'MEDIA3LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionLeft($post->relatedMedia3), $media3Pos, 10);
+                }
+                elseif(strpos($contentFinal, 'MEDIA3RIGHT') != false)
+                {
+                    $media3Pos = strripos($contentFinal, 'MEDIA3RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionRight($post->relatedMedia3), $media3Pos, 11);
+                }
+            }
+
+            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->where('number','=','88')->orderBy('updated_at','desc')->take(6)->get();
+
+            if(count($topArticles) > 0){
+                $topArticles = $topArticles;   
+            }else{
+                $topArticles = null;
+            }
+
         }elseif($lc == 'ru'){
+            $contentOriginal = $post->getContent();
 
             $relatedPosts = \Model\Post\ModelName::where('category_id','=',$post->category_id)->where('general','=','1')->languageru()->take(6)->skip(0)->orderBy('id', 'desc')->get();
 
@@ -324,15 +386,58 @@ class HomeController extends Controller
                     $contentFinal = substr_replace($contentFinal, $post->relatedFunctionRight($post->relatedRu3), $post3Pos, 10);
                 }
             }
+
+            if($post->relatedMediaRu1)
+            {
+                if(strpos($contentFinal, 'MEDIA1LEFT') != false)
+                {
+                    $media1Pos = strripos($contentFinal, 'MEDIA1LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionLeft($post->relatedMediaRu1), $media1Pos, 10);
+                }
+                elseif(strpos($contentFinal, 'MEDIA1RIGHT') != false)
+                {
+                    $media1Pos = strripos($contentFinal, 'MEDIA1RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionRight($post->relatedMediaRu1), $media1Pos, 11);
+                }
+            }
+
+            if($post->relatedMediaRu2)
+            {
+                if(strpos($contentFinal, 'MEDIA2LEFT') != false)
+                {
+                    $media2Pos = strripos($contentFinal, 'MEDIA2LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionLeft($post->relatedMediaRu2), $media2Pos, 10);
+                }
+                elseif(strpos($contentFinal, 'MEDIA2RIGHT') != false)
+                {
+                    $media2Pos = strripos($contentFinal, 'MEDIA2RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionRight($post->relatedMediaRu2), $media2Pos, 11);
+                }
+            }
+
+            if($post->relatedMediaRu3)
+            {
+                if(strpos($contentFinal, 'MEDIA3LEFT') != false)
+                {
+                    $media3Pos = strripos($contentFinal, 'MEDIA3LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionLeft($post->relatedMediaRu3), $media3Pos, 10);
+                }
+                elseif(strpos($contentFinal, 'MEDIA3RIGHT') != false)
+                {
+                    $media3Pos = strripos($contentFinal, 'MEDIA3RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionRight($post->relatedMediaRu3), $media3Pos, 11);
+                }
+            }
+
+            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->where('numberRu','=','88')->orderBy('updated_at','desc')->take(6)->get();
+            if(count($topArticles) > 0){
+                $topArticles = $topArticles;   
+            }else{
+                $topArticles = null;
+            } 
         }
 
         $comments = Comment::where('resourceType','=','post')->where('resourceId','=',$post->id)->where('approved','=','1')->orderBy('id','desc')->get();
-
-        if($lc == 'kg'){
-            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->where('number','=','88')->orderBy('updated_at','desc')->take(6)->get();
-        }elseif($lc == 'ru'){
-            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->where('numberRu','=','88')->orderBy('updated_at','desc')->take(6)->get();
-        }
 
         return view('Front::post.post',[
             'lc' => $lc,
@@ -368,8 +473,18 @@ class HomeController extends Controller
 
         if($lc == 'kg'){
             $topArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->where('number','=','88')->orderBy('updated_at','desc')->take(6)->get();
+            if(count($topArticles) > 0){
+                $topArticles = $topArticles;   
+            }else{
+                $topArticles = null;
+            } 
         }elseif($lc == 'ru'){
             $topArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->where('numberRu','=','88')->orderBy('updated_at','desc')->take(6)->get();
+            if(count($topArticles) > 0){
+                $topArticles = $topArticles;   
+            }else{
+                $topArticles = null;
+            } 
         }
 
         $categories = \Model\Category\ModelName::where('general','=','1')->get();
@@ -425,18 +540,72 @@ class HomeController extends Controller
 
     public function searchResult(Request $request)
     {
-        $posts = \Model\Post\ModelName::search($request->input('search'))->get();
-        $pages = \Model\Page\ModelName::search($request->input('search'))->get();
+        $lc = app()->getlocale();
+        $key = $request->input('search');
+
+        $perPage = 15;
+
+        if($lc == 'kg'){
+//            dd('test');
+            $posts = \Model\Post\ModelName::search($request->input('search'))->orderBy('id','desc')->get();
+            foreach($posts as $key=>$resultPost){
+                if($resultPost['title'] == ''){
+                    unset($posts[$key]);
+                }
+            }
+            session(['post' => $posts]);
+//            $tags = \Model\Tag\Tag::where('name','like','%'.$key.'%')->get();
+//            $postTags = array();
+//
+//            foreach ($tags as $tag) {
+//                $tagPosts = $tags->posts();
+//                $postTags = array_collapse($postTags,$tagPosts);
+//            }
+
+//            dd($postTags);
+        }elseif($lc == 'ru'){
+            $posts = \Model\Post\ModelName::search($request->input('search'))->orderBy('id','desc')->get();
+
+            foreach($posts as $key=>$resultPost){
+                if($resultPost['titleRu'] == ''){
+                    unset($posts[$key]);
+                }
+            }
+            session(['posts' => $posts]);
+            //dd(session('posts'));
+        }
+//        $posts = \Model\Post\ModelName::search($request->input('search'))->paginate($perPage);
+//        $pages = \Model\Page\ModelName::search($request->input('search'))->get();
         $searchKey = $request->input('search');
 
         $categories = \Model\Category\ModelName::where('general','=','1')->get();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
+        if($lc == 'kg'){
+            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->where('number','=','88')->orderBy('updated_at','desc')->take(6)->get();
+
+            if(count($topArticles) > 0){
+                $topArticles = $topArticles;
+            }else{
+                $topArticles = null;
+            }
+        } else {
+            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->where('numberRu','=','88')->orderBy('updated_at','desc')->take(6)->get();
+
+            if(count($topArticles) > 0){
+                $topArticles = $topArticles;
+            }else{
+                $topArticles = null;
+            }
+        }
+
         return view('Front::result', [
             'posts' => $posts,
-            'pages' => $pages,
+            'perPage' => $perPage,
+//            'pages' => $pages,
             'searchKey'=>$searchKey,
 
+            'topArticles' =>$topArticles,
             'categories'=>$categories,
             'backgroundMain' => $backgroundMain,
             'positionTop'    => $this->positionTop,
@@ -462,8 +631,18 @@ class HomeController extends Controller
 
         if($lc == 'kg'){
             $topArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->where('number','=','88')->orderBy('updated_at','desc')->take(6)->get();
+            if(count($topArticles) > 0){
+                $topArticles = $topArticles;   
+            }else{
+                $topArticles = null;
+            } 
         }elseif($lc == 'ru'){
             $topArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->where('numberRu','=','88')->orderBy('updated_at','desc')->take(6)->get();
+            if(count($topArticles) > 0){
+                $topArticles = $topArticles;   
+            }else{
+                $topArticles = null;
+            } 
         }
 
         $categories = \Model\Category\ModelName::where('general','=','1')->get();
@@ -530,6 +709,22 @@ class HomeController extends Controller
 
         $categories = \Model\Category\ModelName::where('general','=','1')->get();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+        if($lc == 'kg'){
+            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->where('number','=','88')->orderBy('updated_at','desc')->take(6)->get();
+            if(count($topArticles) > 0){
+                $topArticles = $topArticles;   
+            }else{
+                $topArticles = null;
+            } 
+        }elseif($lc == 'ru'){
+            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->where('numberRu','=','88')->orderBy('updated_at','desc')->take(6)->get();
+            if(count($topArticles) > 0){
+                $topArticles = $topArticles;   
+            }else{
+                $topArticles = null;
+            } 
+        }
         
         if($lc == 'kg' AND $df != '' AND $dt != ''){
             $postAllFromTo = \Model\Post\ModelName::published()->datefromkg($df)->datetokg($dt)->orderBy('id', 'desc')->paginate($perPage);
@@ -550,6 +745,7 @@ class HomeController extends Controller
         return view('Front::post.posts',[
             'perPage'=> $perPage,
             'postAll' => $postAllFromTo,
+            'topArticles' => $topArticles,
             'categories'=>$categories,
             'backgroundMain' => $backgroundMain,
             'positionTop'    => $this->positionTop,
@@ -575,6 +771,22 @@ class HomeController extends Controller
         
         $categories = \Model\Category\ModelName::where('general','=','1')->get();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+        if($lc == 'kg'){
+            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->where('number','=','88')->orderBy('updated_at','desc')->take(6)->get();
+            if(count($topArticles) > 0){
+                $topArticles = $topArticles;   
+            }else{
+                $topArticles = null;
+            } 
+        }elseif($lc == 'ru'){
+            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->where('numberRu','=','88')->orderBy('updated_at','desc')->take(6)->get();
+            if(count($topArticles) > 0){
+                $topArticles = $topArticles;   
+            }else{
+                $topArticles = null;
+            } 
+        }
         
         if($lc == 'kg' AND $df != '' AND $dt != ''){
             $postAllFromTo = \Model\Post\ModelName::published()->where('category_id','=',$category_id)->datefromkg($df)->datetokg($dt)->orderBy('id', 'desc')->paginate($perPage);
@@ -596,6 +808,7 @@ class HomeController extends Controller
             'perPage'=> $perPage,
             'category'=> $category,
             'posts' => $postAllFromTo,
+            'topArticles' => $topArticles,
             'categories'=>$categories,
             'backgroundMain' => $backgroundMain,
             'positionTop'    => $this->positionTop,

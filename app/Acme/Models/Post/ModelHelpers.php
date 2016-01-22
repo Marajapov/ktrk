@@ -33,6 +33,12 @@ trait ModelHelpers
 
         $relatedPost = \Model\Post\ModelName::where('id','=',$postId)->first();
 
+        if($relatedPost->thumbnail_big){
+            $thumbnail = $relatedPost->thumbnail_big;
+        } else{
+            $thumbnail = $relatedPost->thumbnail;
+        }
+
         return '
         <span>
             <aside class="pull-left">
@@ -41,10 +47,14 @@ trait ModelHelpers
                         <div class="topic clearfix">
 
                             <a class="t-thumb" href="'. route('front.post', $postId) .'">
-                                <img alt="alt photo text" src="'. asset($relatedPost->thumbnail_big) .'">
+                                <img alt="alt photo text" src="'. asset($thumbnail).'">
                             </a>
                             <div class="t-info">
                                 <a class="js-dh" href="'. route('front.post', $postId) .'">'.$relatedPost->getTitleRuOrKg() .'</a>
+                                <div class="t-extra clearfix">
+                                    <div class="t-date">'.$relatedPost->getDay().' '.$relatedPost->getMonthRu().', '.$relatedPost->getYear().'</div>
+                                    <div class="t-view"><i class="fa fa-eye"></i>'.$relatedPost->getViewed().'</div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -58,6 +68,11 @@ trait ModelHelpers
     public function relatedFunctionRight($postId){
 
         $relatedPost = \Model\Post\ModelName::where('id','=',$postId)->first();
+        if($relatedPost->thumbnail_big){
+            $thumbnail = $relatedPost->thumbnail_big;
+        } else{
+            $thumbnail = $relatedPost->thumbnail;
+        }
 
         return '
         <span>
@@ -66,10 +81,95 @@ trait ModelHelpers
                     <div class="topics">
                         <div class="topic clearfix">
                             <a class="t-thumb" href="'. route('front.post', $postId) .'">
-                                <img alt="alt photo text" src="'. asset($relatedPost->thumbnail_big) .'">
+                                <img alt="alt photo text" src="'. asset($thumbnail) .'">
                             </a>
                             <div class="t-info">
                                 <a class="js-dh" href="'. route('front.post', $postId) .'">'.$relatedPost->getTitleRuOrKg() .'</a>
+                                <div class="t-extra clearfix">
+                                    <div class="t-date">'.$relatedPost->getDay().' '.$relatedPost->getMonthRu().', '.$relatedPost->getYear().'</div>
+                                    <div class="t-view"><i class="fa fa-eye"></i>'.$relatedPost->getViewed().'</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </span>
+        ';
+
+    }
+
+    public function relatedMediaFunctionLeft($media){
+
+        $relatedMedia = \Model\Media\ModelName::where('id','=',$media)->first();
+
+        if($relatedMedia->thumbnail_big){
+            return '
+                <span>
+                    <aside class="pull-left">
+                        <div class="topics-box">
+                            <div class="topics">
+                                <div class="topic clearfix">
+                                    <a class="t-thumb" href="'. route('front.media.video', $relatedMedia) .'">
+                                        <img alt="alt photo text" src="'. asset($relatedMedia->thumbnail_big) .'">
+                                    </a>
+                                    <div class="t-info clearfix">
+                                        <a class="js-dh" href="'. route('front.media.video', $relatedMedia) .'">'.$relatedMedia->getName() .'</a>
+                                        <div class="t-extra clearfix">
+                                            <div class="t-date">'.$relatedMedia->getDay().' '.$relatedMedia->getMonthRu().', '.$relatedMedia->getYear().'</div>
+                                            <div class="t-view"><i class="fa fa-eye"></i>'.$relatedMedia->getViewed().'</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+                </span>
+            ';
+        } else {
+            return '
+                <span>
+                    <aside class="pull-left">
+                        <div class="topics-box">
+                            <div class="topics">
+                                <div class="topic clearfix">
+                                    <a class="t-thumb" href="'. route('front.media.video', $relatedMedia) .'">
+                                        <img src="http://img.youtube.com/vi/'.$relatedMedia->getUrl().'/mqdefault.jpg" alt="'.$relatedMedia->getName().'">
+                                    </a>
+                                    <div class="t-info clearfix">
+                                        <a class="js-dh" href="'. route('front.media.video', $relatedMedia) .'">'.$relatedMedia->getName() .'</a>
+                                        <div class="t-extra clearfix">
+                                        <div class="t-date">'.$relatedMedia->getDay().' '.$relatedMedia->getMonthRu().', '.$relatedMedia->getYear().'</div>
+                                        <div class="t-view"><i class="fa fa-eye"></i>'.$relatedMedia->getViewed().'</div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+                </span>
+            ';
+        }
+
+
+
+    }
+
+    public function relatedMediaFunctionRight($media){
+
+        $relatedMedia = \Model\Media\ModelName::where('id','=',$media)->first();
+
+        return '
+        <span>
+            <aside class="pull-right">
+                <div class="topics-box">
+                    <div class="topics">
+                        <div class="topic clearfix">
+                            <a class="t-thumb" href="'. route('front.media.video', $media) .'">
+                                <img alt="alt photo text" src="'. asset($relatedMedia->thumbnail_big) .'">
+                            </a>
+                            <div class="t-info">
+                                <a class="js-dh" href="'. route('front.media.video', $media) .'">'.$relatedMedia->getName() .'</a>
                             </div>
                         </div>
                     </div>

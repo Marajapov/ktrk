@@ -10,39 +10,55 @@
     <div class="shows-slider">
         <div class="slider-overlay"></div>
         <div class="shows-carousel container">
-            <div>
-                <div class="overlay"></div>
-                <a href="#">
-                    <img src="{{ asset('images/projects/ala-too.jpg') }}" alt=""/>
-                </a>
-                <div class="show-info">
-                    <h4>Ала-Тоо</h4>
-                    <span class="show-day">{{ trans('site.Monday') }} - {{ trans('site.Friday') }}</span>
-                    <span class="show-time">19:30 / 21:30</span>
-                </div>
-            </div>
-            <div>
-                <div class="overlay"></div>
-                <a href="#">
-                    <img src="{{ asset('images/projects/zamana.jpg') }}" alt=""/>
-                </a>
-                <div class="show-info">
-                    <h4>Замана</h4>
-                    <span class="show-day">{{ trans('site.Monday') }} - {{ trans('site.Friday') }}</span>
-                    <span class="show-time">07:00</span>
-                </div>
-            </div>
-            <div>
-                <div class="overlay"></div>
-                <a href="#">
-                    <img src="{{ asset('images/projects/hit-parad.jpg') }}" alt=""/>
-                </a>
-                <div class="show-info">
-                    <h4>Хит-Парад</h4>
-                    <span class="show-day">{{ trans('site.Sunday') }}</span>
-                    <span class="show-time">22:00</span>
-                </div>
-            </div>
+            {{--<div>--}}
+                {{--<div class="overlay"></div>--}}
+                {{--<a href="#">--}}
+                    {{--<img src="{{ asset('images/projects/ala-too.jpg') }}" alt=""/>--}}
+                {{--</a>--}}
+                {{--<div class="show-info">--}}
+                    {{--<h4>Ала-Тоо</h4>--}}
+                    {{--<span class="show-day">{{ trans('site.Monday') }} - {{ trans('site.Friday') }}</span>--}}
+                    {{--<span class="show-time">19:30 / 21:30</span>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+            {{--<div>--}}
+                {{--<div class="overlay"></div>--}}
+                {{--<a href="#">--}}
+                    {{--<img src="{{ asset('images/projects/zamana.jpg') }}" alt=""/>--}}
+                {{--</a>--}}
+                {{--<div class="show-info">--}}
+                    {{--<h4>Замана</h4>--}}
+                    {{--<span class="show-day">{{ trans('site.Monday') }} - {{ trans('site.Friday') }}</span>--}}
+                    {{--<span class="show-time">07:00</span>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+            {{--<div>--}}
+                {{--<div class="overlay"></div>--}}
+                {{--<a href="#">--}}
+                    {{--<img src="{{ asset('images/projects/hit-parad.jpg') }}" alt=""/>--}}
+                {{--</a>--}}
+                {{--<div class="show-info">--}}
+                    {{--<h4>Хит-Парад</h4>--}}
+                    {{--<span class="show-day">{{ trans('site.Sunday') }}</span>--}}
+                    {{--<span class="show-time">22:00</span>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+            @if($anons)
+                @foreach($anons as $row)
+                    <div>
+                        <div class="overlay"></div>
+                        <a href="{{ $row->url }}">
+                            <img src="{{ asset($row->thumbnail) }}" alt=""/>
+                        </a>
+                        <div class="show-info">
+                            <h4>{{ $row->getNameOne() }}</h4>
+                            <span class="show-day">{{ $row->getWeekDayOne() }}</span>
+                            <span class="show-time">{{ $row->time }}</span>
+                        </div>
+                    </div>
+                @endforeach
+            @endif
+
         </div>
     </div>
 
@@ -94,7 +110,7 @@
                                                                     <a href="{{ route('front.media.video', $mediaLastVideo) }}">
                                                                         <span class="media-view"><i class="fa fa-eye"></i>{{ $mediaLastVideo->getViewed() }}</span>
                                                                         <span class="media-date">{{ $mediaLastVideo->getTime() }}, {{ $mediaLastVideo->getDay() }} {{ $mediaLastVideo->getMonthRu() }}</span>
-                                                                        <img src="@if($mediaLastVideo->thumbnail_big) {{ $mediaLastVideo->thumbnail_big}} @else http://img.youtube.com/vi/{{ $mediaLastVideo->getUrl() }}/mqdefault.jpg @endif" alt=""/>
+                                                                        <img src="@if($mediaLastVideo->thumbnail_big) {{ asset($mediaLastVideo->thumbnail_big) }} @else http://img.youtube.com/vi/{{ $mediaLastVideo->getUrl() }}/hqdefault.jpg @endif" alt=""/>
                                                                     </a>
                                                                     @if($mediaLastVideo->program)
                                                                         <h4>
@@ -109,12 +125,6 @@
                                                                 </div>
                                                             </article>
                                                         @endforeach
-
-                                                        <footer>
-                                                            <a href="{{ route('front.media.all') }}">
-                                                                <span>{{ trans('site.AllVideos') }}<i class="fa fa-arrow-circle-right"></i></span>
-                                                            </a>
-                                                        </footer>
 
                                                     </div>
 
@@ -131,7 +141,7 @@
                                                                         <a href="{{ route('front.media.video', $pop) }}">
                                                                             <span class="media-view"><i class="fa fa-eye"></i>{{ $pop->getViewed() }}</span>
                                                                             <span class="media-date">{{ $pop->getTime() }}, {{ $pop->getDay() }} {{ $pop->getMonthRu() }}</span>
-                                                                            <img src="http://img.youtube.com/vi/{{ $pop->getUrl() }}/mqdefault.jpg" alt=""/>
+                                                                            <img src="@if($pop->thumbnail_big) {{ asset($pop->thumbnail_big) }} @else http://img.youtube.com/vi/{{ $pop->getUrl() }}/hqdefault.jpg @endif" alt=""/>
                                                                         </a>
                                                                         @if($pop->program)
                                                                             <h4>
@@ -186,7 +196,7 @@
                                                                                 <a href="{{ route('front.media.video', $row) }}">
                                                                                     <span class="media-view"><i class="fa fa-eye"></i>{{ $row->getViewed() }}</span>
                                                                                     <span class="media-date">{{ $row->getTime() }}, {{ $row->getDay() }} {{ $row->getMonthRu() }}</span>
-                                                                                    <img src="http://img.youtube.com/vi/{{ $row->url }}/mqdefault.jpg" alt=""/>
+                                                                                    <img src="@if($row->thumbnail_big) {{ asset($row->thumbnail_big) }} @else http://img.youtube.com/vi/{{ $row->getUrl() }}/hqdefault.jpg @endif" alt=""/>
                                                                                 </a>
                                                                                 @if($row->program)
                                                                                     <h4>
@@ -227,7 +237,7 @@
                                                                                     <a href="{{ route('front.media.video', $row) }}">
                                                                                         <span class="media-view"><i class="fa fa-eye"></i>{{ $row->getViewed() }}</span>
                                                                                         <span class="media-date">{{ $row->getTime() }}, {{ $row->getDay() }} {{ $row->getMonthRu() }}</span>
-                                                                                        <img src="http://img.youtube.com/vi/{{ $row->url }}/mqdefault.jpg" alt=""/>
+                                                                                        <img src="@if($row->thumbnail_big) {{ asset($row->thumbnail_big)  }} @else http://img.youtube.com/vi/{{ $row->getUrl() }}/hqdefault.jpg @endif" alt=""/>
                                                                                     </a>
                                                                                     @if($row->program)
                                                                                         <h4>

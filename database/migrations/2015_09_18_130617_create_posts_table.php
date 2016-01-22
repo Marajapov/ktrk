@@ -26,6 +26,8 @@ class CreatePostsTable extends Migration
             $table->integer('parentId')->nullable();
             $table->string('thumbnail');
             $table->string('thumbnail_big');
+            $table->string('thumb_desc');
+            $table->string('thumb_author');
             $table->enum('type', ['page', 'post'])->nullable()->default('post');
             $table->boolean('published')->nullable()->default(false);
             $table->boolean('announcement')->nullable()->default(false);
@@ -35,6 +37,12 @@ class CreatePostsTable extends Migration
             $table->integer('relatedRu1')->nullable()->unsigned()->default(null);
             $table->integer('relatedRu2')->nullable()->unsigned()->default(null);
             $table->integer('relatedRu3')->nullable()->unsigned()->default(null);
+            $table->integer('relatedMedia1')->nullable()->unsigned()->default(null);
+            $table->integer('relatedMedia2')->nullable()->unsigned()->default(null);
+            $table->integer('relatedMedia3')->nullable()->unsigned()->default(null);
+            $table->integer('relatedMediaRu1')->nullable()->unsigned()->default(null);
+            $table->integer('relatedMediaRu2')->nullable()->unsigned()->default(null);
+            $table->integer('relatedMediaRu3')->nullable()->unsigned()->default(null);
             $table->boolean('general')->nullable()->default(false);
             
             $table->string('director');

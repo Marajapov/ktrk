@@ -1,146 +1,110 @@
 @extends('Front::channel.balastan.default')
-@section('title', "Баластан")
+@section('title', "Видео")
 @section('styles')
 @endsection
 @section('content')
-<body class="balastan">
-   <div class="switch">
-      <nav class="navbar">
-         <!-- Brand and toggle get grouped for better mobile display -->
-         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false">
-            <span class="sr-only">Меню</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">
-               <img src="{{ asset('images/channels/balastan_white_notext.png')}}">
-               <h4>Баластан</h4>
-            </a>
-         </div>
-         <!-- Collect the nav links, forms, and other content for toggling -->
-         <div class="collapse navbar-collapse" id="menu">
-            <ul class="nav navbar-nav channel_switch">
-               <li class="sitemenu" id="site-channel1">
-                  <a href="{{ route('front.home') }}">
-                     <img src="{{ asset('images/ktrk_last.svg')}}" style="height:40px;"><span>КТРК</span>
-                     <h4>КТРК</h4>
-                  </a>
-               </li>
-               <li class="sitemenu" id="site-channel1">
-                  <a href="{{ route('muzkanal.home') }}">
-                     <img src="{{ asset('images/channels/muz_white_notext.png')}}" ><span>Музыка</span>
-                     <h4>Музыка</h4>
-                  </a>
-               </li>
-               <li class="sitemenu" id="site-channel1">
-                  <a href="{{ route('madaniyat.home') }}">
-                     <img src="{{ asset('images/channels/madaniyat_white_notext.png')}}"><span>Маданият</span>
-                     <h4>Маданият</h4>
-                  </a>
-               </li>
-               <li class="sitemenu" id="site-channel1">
-                  <a class="active" href="{{ route('balastan.home') }}">
-                     <img src="{{ asset('images/channels/balastan_white_notext.png')}}"><span>Баластан</span>
-                     <h4>Баластан</h4>
-                  </a>
-               </li>
-            </ul>
-         </div>
-         <!-- /.navbar-collapse -->
-      </nav>
-   </div>
-   <div class="container" style="padding:0px;">
-      <div class="row">
-         <div class="col-md-12 logo-block logocenter">
+    <div class="container-fluid pages-header">
+        <div class="row">
+            @include('Front::channel.balastan.nav')
+            <div class="container pages-title video-page">
+                <div class="row">
+                    <div class="title col-md-12">
+                        @if($balastanLastVideo )
+                            <h3>{{ $balastanLastVideo->getName() }}</h3>
+                             <div class="fromcat">
+                                <p>
+                                    <a href="#">
+                                        {{ $balastanLastVideo->hasProject()->first()->getNameOne()}}
+                                    </a>
+                                </p>
+                             </div>
+                        @endif
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid fullvideo">
+        <div class="container">
             <div class="row">
-               <div class="col-md-12 col-sm-12 col-xs-12 clouds">
-                  <div class="sun">
-                     <img src="{{asset('images/channels/balastan/sun-icon.png')}}" alt=""/>
-                     <!--          <img class="balastanlogo" src="images/channels/balastan_white.png" alt=""/> -->
-                  </div>
-                  <div class="langs">
-                     <ul>
-                        <li @if(app()->getlocale() == 'kg') class="active" @endif><a href="/locale/kg">кырг <span></span></a></li>
-                        <li @if(app()->getlocale() == 'ru') class="active" @endif><a href="/locale/ru">рус <span></span></a></li>
-                     </ul>
-                  </div>
-                  <img src="{{asset('images/channels/balastan/clouds.png')}}" alt=""/> 
-                  <nav class="cloudlinks">
-                     <ul>
-                        <li><a href="{{ route('balastan.home') }}">{{ trans('radiopages.Home') }}</a></li>
-                        <li><a href="{{ route('balastan.about') }}">{{ trans('radiopages.BAbout') }}</a></li>
-                        <li><a href="{{ route('balastan.world') }}">{{ trans('radiopages.Bworld') }}</a></li>
-                        <li><a class="active" href="{{ route('balastan.video') }}">Видео</a></li>
-                        <li><a href="{{ route('balastan.allphotos') }}">{{ trans('radiopages.Photos') }}</a></li>
-                     </ul>
-                  </nav>
-               </div>
+                <div class="col-md-12">
+                    @if($balastanLastVideo)
+                        <!-- 16:9 aspect ratio -->
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{$balastanLastVideo->getUrl()}}?rel=0&amp;controls=1&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>
+                        </div>
+                        <div class="episode-info">
+                            <p>{{ $balastanLastVideo->description }}</p>
+                            <a href="#">
+                                <em>{{ $balastanLastVideo->hasProject()->first()->getNameOne()}}</em>
+                            </a>
+                            <span>{{ $balastanLastVideo->getDateFormatted() }}</span>
+                        </div>
+                    @endif
+                </div>
             </div>
-         </div>
-      </div>
-      <div class="row" style="margin-top: 50px;">
-         <div class="col-md-12 kidsvideoblock">
-            <div class="panel panel-default">
-               <div class="panel-body" style="padding:0px;">
-                  <div class="row">
-                     <div class="row">
-                        <div class="col-md-12 kidspered text-center">
-                           <h2>{{ trans('radiopages.Bperedachi') }}</h2>
-                           @if($balastanProjects)
-                           @foreach($balastanProjects as $project)                                                         
-                           <nav>
-                              <ul>
-                                 <li><a class="kid1" href="{{ route('balastan.projectVideos', $project) }}">{{ $project->getName() }}</a></li>
-                              </ul>
-                           </nav>
-                           @endforeach
-                           @endif
-                        </div>
-                     </div>
-                     <!-- col-md-offset-1 -->
-                     <div class="row">
-                        <div class="col-xs-12 child" >
-                           @if($balastanLastVideo)
-                           <div class="mainboardimg"> 
-                              <iframe width="854px" height="480px" src="https://www.youtube.com/embed/{{$balastanLastVideo->getUrl()}}?rel=0&amp;controls=1&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>                                           
-                           </div>
-                           <img class="mainboarddesc"  src="{{asset('images/channels/balastan/chalkboard.png')}}" alt="">
-                           <div class="item-desc2">
-                              <ul>
-                                 <li class="item-artist">{{ $balastanLastVideo->getName() }}</li>
-                              </ul>
-                           </div>
-                           @endif                         
-                        </div>
-                     </div>
-                     <div class="row">
-                     @if($balastanMedias)
-                     @foreach($balastanMedias as $media)
-                     <div class="col-md-3 col-sm-4 col-xs-6 boardaim">
-                        <div class="boardimg">                              
-                           <a href="{{ route('balastan.video', $media)}}">
-                           <img src="http://img.youtube.com/vi/{{ $media->getUrl()}}/mqdefault.jpg" alt=""/></a>                        
-                        </div>
-                        <img class="boarddesc"  src="{{asset('images/channels/balastan/chalkboard.png')}}" alt="">
-                        <div class="item-desc">
-                           <ul>
-                              <a href="{{ route('balastan.video', $media)}}">
-                                 <li class="item-artist">{{ $media->getName() }}</li>
-                              </a>
-                           </ul>
-                        </div>
-                     </div>
-                     @endforeach
-                     @endif
-                  </div>
-                  </div>
-               </div>
+        </div>
+    </div>
+    <div class="container-fluid relatedvideos">
+        <div class="container">
+            <div class="row">
+                <div class="title col-md-12">
+                    <h3>Байланышкан видеолор</h3>
+                </div>
             </div>
-         </div>
-      </div>
-   </div>
-   @stop
-   @section('footerscript2')
-   @stop
+            <div id="relatedVideos" class="row">
+                @if($balastanMedias)
+                    @foreach($balastanMedias as $media)
+                        <div class="col-md-4 video-block">
+                            <a href="{{ route('balastan.video', $media)}}" class="video-img">
+                                @if($media->thumbnail_big)
+                                    <img src="{{ asset($media->thumbnail_big) }}" alt="" />
+                                @else
+                                    <img src="http://img.youtube.com/vi/{{ $media->getUrl()}}/0.jpg" alt="" />
+                                @endif
+                                <span class="video-overlay"></span>
+                            </a>
+                            <div class="video-info">
+                                <div class="media">
+                                    <div class="media-left media-middle">
+                                        <a href="#">
+                                            <i class="fa fa-youtube-play video-icon"></i>
+                                        </a>
+                                    </div>
+                                    <div class="media-body media-middle">
+                                        <h4 class="media-heading video-name"><a href="{{ route('balastan.video', $media)}}">{{ $media->getName() }}</a></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+
+                    <div class="col-md-12">
+                        <a class="show-btn loadMore" href="#">
+                            {{ trans('site.LoadMore') }}
+                        </a>
+                    </div>
+
+                @endif
+            </div>
+        </div>
+    </div>
+@stop
+
+@section('footerScript')
+    <script>
+        $(function(){
+            $("#relatedVideos .video-block").slice(0, 6).show(); // select the first six
+            $("#relatedVideos .loadMore").click(function(e){ // click event for load more
+                e.preventDefault();
+                $("#relatedVideos .video-block:hidden").slice(0, 6).show(); // select next 6 hidden divs and show them
+                if($("#relatedVideos .video-block:hidden").length == 0){ // check if any hidden divs still exist
+                    $("#relatedVideos .loadMore").hide();
+                }
+            });
+            if($("#relatedVideos .video-block:hidden").length == 0){ // check if any hidden divs still exist
+                $("#relatedVideos .loadMore").hide();
+            }
+        });
+    </script>
+@stop
