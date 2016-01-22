@@ -3552,6 +3552,10 @@ display: block;
 .music .topvideos .panel-carousel .slick-slide img {
     height: 180px;
 }
+.music .topvideos .panel-carousel .slick-slide {
+    height: 150px;
+}
+
 .music .muzpaginate {
     margin: 15px 0px;
     padding-bottom: 25px;
