@@ -7,38 +7,51 @@
    @include('Front::channel.birinchi.nav')
    <div class="container homepage">
       <div class="row">
-         <div class="col-md-9">
+         <div class="col-md-7">
             <div class="row">
-               <div class="hometreble">               
-                     <div class="col-md-12">
-                        <h3 class="title">{{ trans('radiopages.Mainnews') }}</h3>
-                     </div>
-                     @if($generalPosts)
-                     @foreach($generalPosts as $post)
-                     <div class="blocks col-md-4 col-sm-4 col-xs-12">
-                        <article>
-                           <a href="{{ route('birinchi.news', $post) }}" class="image-link">
-                              <img src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif">
-                              <div class="card-info">                            
-                           <a class="category" href="{{ route('front.category', $post->category) }}">
-                           {{ $post->category('category_id')->first()->getTitle() }}
-                           </a>                           
-                           <span class="date ">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
+               <div class="hometreble">
+                  <div class="col-md-12">
+                     <h3 class="title">{{ trans('radiopages.Mainnews') }}</h3>
+                  </div>
+                     <div class="row">
+                        <div class="col-md-12 hoverslider">
+                           <div class="slider-for col-md-9">
+                              @if($generalPosts)
+                              @foreach($generalPosts as $post)
+                              <div>
+                              <div class="slide-info">
+                                 <img class="img" src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif" alt=""/>
+                                 
+                                    <span class="slide-category">
+                                    {{ $post->category('category_id')->first()->getTitle() }}
+                                    </span>
+                                    <span class="slide-date">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
+                                 </div>
+                              </div>
+                              @endforeach
+                              @endif
                            </div>
-                           </a>
-                           <h3 class="name headline">
-                              <a href="{{ route('birinchi.news', $post) }}" title="">
-                              {{ $post->getTitleRuOrKg() }}
-                              </a>
-                           </h3>
-                        </article>
-                     </div>
-                     @endforeach
-                     @endif              
+                           <div class="slider-nav col-md-3">
+                              @if($generalPosts)
+                              @foreach($generalPosts as $post)
+                              <div>
+                                 <div class="switcher">
+                                    <h3 class="name">
+                                       <a href="{{ route('birinchi.news', $post) }}" title="">
+                                       {{ $post->getTitleRuOrKg() }}
+                                       </a>
+                                    </h3>
+                                 </div>
+                              </div>
+                              @endforeach
+                              @endif
+                           </div>
+                        </div>
+                     </div>                
                </div>
             </div>
          </div>
-         <div class="col-md-3">
+         <div class="col-md-5">
             <div class="row">
                <div class="homeleftcategory">
                   <div class="col-md-12">
@@ -54,159 +67,151 @@
          </div>
       </div>
       <div class="row">
-               <div class="col-md-6 homenews"> 
-                  <div class="row">              
-                        <div class="col-md-12">
-                           <h3 class="title">Экономика</h3>
-                        </div>
-                        @if($allPost)
-                        @foreach($allPost as $post)
-                        <div class="blocknews col-md-4 col-sm-4 col-xs-12">
-                           <article>
-                              <a href="{{ route('birinchi.news', $post) }}" class="image-link">
-                                 <img src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif">
-                                 <div class="card-info"> 
-                                 <span class="date ">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>                           
-                                    <a class="category" href="{{ route('front.category', $post->category) }}">
-                                    {{ $post->category('category_id')->first()->getTitle() }}
-                                    </a>                           
-                                    
-                                 </div>
-                              </a>
-                              <h3 class="name headline">
-                                 <a href="{{ route('birinchi.news', $post) }}" title="">
-                                 {{ $post->getTitleRuOrKg() }}
-                                 </a>
-                              </h3>
-                           </article>
-                        </div>
-                        @endforeach
-                        @endif              
-                  </div>
+         <div class="col-md-6 homenews">
+            <div class="row">
+               <div class="col-md-12">
+                  <h3 class="title">Экономика</h3>
                </div>
-               <div class="col-md-6 homenews">
-                  <div class="row">               
-                        <div class="col-md-12">
-                           <h3 class="title">Илим жана билим</h3>
-                        </div>
-                        @if($allPost)
-                        @foreach($allPost as $post)
-                        <div class="blocknews col-md-4 col-sm-4 col-xs-12">
-                           <article>
-                              <a href="{{ route('birinchi.news', $post) }}" class="image-link">
-                                 <img src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif">
-                                 <div class="card-info"> 
-                                 <span class="date ">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>                           
-                                    <a class="category" href="{{ route('front.category', $post->category) }}">
-                                    {{ $post->category('category_id')->first()->getTitle() }}
-                                    </a>                           
-                                    
-                                 </div>
-                              </a>
-                              <h3 class="name headline">
-                                 <a href="{{ route('birinchi.news', $post) }}" title="">
-                                 {{ $post->getTitleRuOrKg() }}
-                                 </a>
-                              </h3>
-                           </article>
-                        </div>
-                        @endforeach
-                        @endif              
-                  </div>
+               @if($allPost)
+               @foreach($allPost as $post)
+               <div class="blocknews col-md-4 col-sm-4 col-xs-12">
+                  <article>
+                     <a href="{{ route('birinchi.news', $post) }}" class="image-link">
+                        <img src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif">
+                        <div class="card-info"> 
+                           <span class="date ">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>                           
+                     <a class="category" href="{{ route('front.category', $post->category) }}">
+                     {{ $post->category('category_id')->first()->getTitle() }}
+                     </a>                           
+                     </div>
+                     </a>
+                     <h3 class="name headline">
+                        <a href="{{ route('birinchi.news', $post) }}" title="">
+                        {{ $post->getTitleRuOrKg() }}
+                        </a>
+                     </h3>
+                  </article>
                </div>
-
-                <div class="col-md-12 test">
-                   <div class="row">               
-                        <div class="col-md-12">
-                           <h3 class="title">Передачи</h3>
-                        </div>
-                        @if($allPost)
-                        @foreach($allPost as $post)
-                        <div class="blocknews col-md-3 col-sm-4 col-xs-12">
-                           <article>
-                              <a href="{{ route('birinchi.news', $post) }}" class="image-link">
-                                 <img src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif">
-                                 <div class="card-info"> 
-                                 <span class="date ">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>                           
-                                    <a class="category" href="{{ route('front.category', $post->category) }}">
-                                    {{ $post->category('category_id')->first()->getTitle() }}
-                                    </a>                           
-                                    
-                                 </div>
-                              </a>
-                              <h3 class="name headline">
-                                 <a href="{{ route('birinchi.news', $post) }}" title="">
-                                 {{ $post->getTitleRuOrKg() }}
-                                 </a>
-                              </h3>
-                           </article>
-                        </div>
-                        @endforeach
-                        @endif              
-                  </div>
+               @endforeach
+               @endif              
+            </div>
+         </div>
+         <div class="col-md-6 homenews">
+            <div class="row">
+               <div class="col-md-12">
+                  <h3 class="title">Илим жана билим</h3>
                </div>
-
-               <div class="col-md-6 homenews"> 
-                  <div class="row">              
-                        <div class="col-md-12">
-                           <h3 class="title">Экономика</h3>
-                        </div>
-                        @if($allPost)
-                        @foreach($allPost as $post)
-                        <div class="blocknews col-md-4 col-sm-4 col-xs-12">
-                           <article>
-                              <a href="{{ route('birinchi.news', $post) }}" class="image-link">
-                                 <img src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif">
-                                 <div class="card-info"> 
-                                 <span class="date ">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>                           
-                                    <a class="category" href="{{ route('front.category', $post->category) }}">
-                                    {{ $post->category('category_id')->first()->getTitle() }}
-                                    </a>                           
-                                    
-                                 </div>
-                              </a>
-                              <h3 class="name headline">
-                                 <a href="{{ route('birinchi.news', $post) }}" title="">
-                                 {{ $post->getTitleRuOrKg() }}
-                                 </a>
-                              </h3>
-                           </article>
-                        </div>
-                        @endforeach
-                        @endif              
-                  </div>
+               @if($allPost)
+               @foreach($allPost as $post)
+               <div class="blocknews col-md-4 col-sm-4 col-xs-12">
+                  <article>
+                     <a href="{{ route('birinchi.news', $post) }}" class="image-link">
+                        <img src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif">
+                        <div class="card-info"> 
+                           <span class="date ">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>                           
+                     <a class="category" href="{{ route('front.category', $post->category) }}">
+                     {{ $post->category('category_id')->first()->getTitle() }}
+                     </a>                           
+                     </div>
+                     </a>
+                     <h3 class="name headline">
+                        <a href="{{ route('birinchi.news', $post) }}" title="">
+                        {{ $post->getTitleRuOrKg() }}
+                        </a>
+                     </h3>
+                  </article>
                </div>
-               <div class="col-md-6 homenews">
-                  <div class="row">               
-                        <div class="col-md-12">
-                           <h3 class="title">Илим жана билим</h3>
-                        </div>
-                        @if($allPost)
-                        @foreach($allPost as $post)
-                        <div class="blocknews col-md-4 col-sm-4 col-xs-12">
-                           <article>
-                              <a href="{{ route('birinchi.news', $post) }}" class="image-link">
-                                 <img src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif">
-                                 <div class="card-info"> 
-                                 <span class="date ">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>                           
-                                    <a class="category" href="{{ route('front.category', $post->category) }}">
-                                    {{ $post->category('category_id')->first()->getTitle() }}
-                                    </a>                           
-                                    
-                                 </div>
-                              </a>
-                              <h3 class="name headline">
-                                 <a href="{{ route('birinchi.news', $post) }}" title="">
-                                 {{ $post->getTitleRuOrKg() }}
-                                 </a>
-                              </h3>
-                           </article>
-                        </div>
-                        @endforeach
-                        @endif              
-                  </div>
+               @endforeach
+               @endif              
+            </div>
+         </div>
+         <div class="col-md-12 test">
+            <div class="row">
+               <div class="col-md-12">
+                  <h3 class="title">Передачи</h3>
                </div>
-
+               @if($allPost)
+               @foreach($allPost as $post)
+               <div class="blocknews col-md-3 col-sm-4 col-xs-12">
+                  <article>
+                     <a href="{{ route('birinchi.news', $post) }}" class="image-link">
+                        <img src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif">
+                        <div class="card-info"> 
+                           <span class="date ">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>                           
+                     <a class="category" href="{{ route('front.category', $post->category) }}">
+                     {{ $post->category('category_id')->first()->getTitle() }}
+                     </a>                           
+                     </div>
+                     </a>
+                     <h3 class="name headline">
+                        <a href="{{ route('birinchi.news', $post) }}" title="">
+                        {{ $post->getTitleRuOrKg() }}
+                        </a>
+                     </h3>
+                  </article>
+               </div>
+               @endforeach
+               @endif              
+            </div>
+         </div>
+         <div class="col-md-6 homenews">
+            <div class="row">
+               <div class="col-md-12">
+                  <h3 class="title">Экономика</h3>
+               </div>
+               @if($allPost)
+               @foreach($allPost as $post)
+               <div class="blocknews col-md-4 col-sm-4 col-xs-12">
+                  <article>
+                     <a href="{{ route('birinchi.news', $post) }}" class="image-link">
+                        <img src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif">
+                        <div class="card-info"> 
+                           <span class="date ">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>                           
+                     <a class="category" href="{{ route('front.category', $post->category) }}">
+                     {{ $post->category('category_id')->first()->getTitle() }}
+                     </a>                           
+                     </div>
+                     </a>
+                     <h3 class="name headline">
+                        <a href="{{ route('birinchi.news', $post) }}" title="">
+                        {{ $post->getTitleRuOrKg() }}
+                        </a>
+                     </h3>
+                  </article>
+               </div>
+               @endforeach
+               @endif              
+            </div>
+         </div>
+         <div class="col-md-6 homenews">
+            <div class="row">
+               <div class="col-md-12">
+                  <h3 class="title">Илим жана билим</h3>
+               </div>
+               @if($allPost)
+               @foreach($allPost as $post)
+               <div class="blocknews col-md-4 col-sm-4 col-xs-12">
+                  <article>
+                     <a href="{{ route('birinchi.news', $post) }}" class="image-link">
+                        <img src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif">
+                        <div class="card-info"> 
+                           <span class="date ">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>                           
+                     <a class="category" href="{{ route('front.category', $post->category) }}">
+                     {{ $post->category('category_id')->first()->getTitle() }}
+                     </a>                           
+                     </div>
+                     </a>
+                     <h3 class="name headline">
+                        <a href="{{ route('birinchi.news', $post) }}" title="">
+                        {{ $post->getTitleRuOrKg() }}
+                        </a>
+                     </h3>
+                  </article>
+               </div>
+               @endforeach
+               @endif              
+            </div>
+         </div>
       </div>
       <div class="row">
          <div class="col-md-12">
@@ -252,3 +257,41 @@
    </div>
 </div>
 @stop
+
+@section('footerscript2')
+    <script>
+       $('.slider-for').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        infinite: true,
+        speed: 500,
+        fade: true,
+        cssEase: 'linear',
+        asNavFor: '.slider-nav'
+      });
+      $('.slider-nav').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        asNavFor: '.slider-for',
+        dots: true,
+        focusOnSelect: true,
+        vertical:true,
+        arrows:false,
+      });
+    </script>
+
+    <script>
+
+      $('.slider-nav').on('mouseenter', '.slick-slide', function (e) {
+         var $currTarget = $(e.currentTarget), 
+         index = $currTarget.data('slick-index'),
+         slickObj = $('.slider-for').slick('getSlick');
+
+         slickObj.slickGoTo(index);
+
+      });
+    </script>
+
+
+@endsection

@@ -591,6 +591,63 @@
 }
 
 /* END Birinchi Home page*/
+
+/* BEGIN Home Slider */
+.hoverslider {
+    position: relative;
+}
+.hoverslider .slick-slider{
+    margin-bottom: 0;
+}
+.hoverslider .col-md-3{
+    position: absolute;
+
+    right: 22px;
+    width: 220px;
+    padding: 0;
+    margin: 0;
+    height: 289px;
+   
+    background: #2D596D;
+}
+.switcher.active{
+    background: red;
+}
+.switcher:hover{
+   background: red;
+}
+.switcher .name{
+    margin: 0px;
+    padding: 15px 10px;
+
+    font-size: 16px;
+}
+.switcher .name a{
+    color: #fff;
+    font-weight: bold;
+    line-height: 1.1;
+    letter-spacing: 0.3px;
+}
+
+.slide-info{
+    position: relative;
+}
+.slide-info .slide-category{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.slide-info .slide-date{
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    color: #fff;
+    font-weight: bold;
+}
+/* END Home Slider */
 .test {
     background: #CACACA;
     margin: 20px 0px;
