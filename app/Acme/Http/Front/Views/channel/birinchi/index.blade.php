@@ -7,7 +7,7 @@
    @include('Front::channel.birinchi.nav')
    <div class="container homepage">
       <div class="row">
-         <div class="col-md-7">
+         <div class="col-md-8">
             <div class="row">
                <div class="hometreble">
                   <div class="col-md-12">
@@ -15,7 +15,7 @@
                   </div>
                      <div class="row">
                         <div class="col-md-12 hoverslider">
-                           <div class="slider-for col-md-9">
+                           <div class="slider-for col-xs-9">
                               @if($generalPosts)
                               @foreach($generalPosts as $post)
                               <div>
@@ -31,7 +31,7 @@
                               @endforeach
                               @endif
                            </div>
-                           <div class="slider-nav col-md-3">
+                           <div class="slider-nav col-xs-3">
                               @if($generalPosts)
                               @foreach($generalPosts as $post)
                               <div>
@@ -51,16 +51,30 @@
                </div>
             </div>
          </div>
-         <div class="col-md-5">
+         <div class="col-md-4">
             <div class="row">
                <div class="homeleftcategory">
                   <div class="col-md-12">
-                     <h3 class="title">Баннер</h3>
+                     <h3 class="title">Лента новостей</h3>
                   </div>
-                  <div class="banner text-center">
-                     <a href="#" class="text-center">
-                     <img style="width: 90%; height: 250px;" src="{{ asset('images/banner_240x400.png') }}" alt=""/>
-                     </a>
+                  <div class="col-md-12 lenta">
+                     @if($generalPosts)
+                     @foreach($generalPosts as $post)
+                     <div class="lentanews">
+                        <span class="xdate">{{ $post->getTime()}}</span>
+                        <span class="xtitle">{{ $post->getTitleRuOrKg() }}</span>
+                     </div>
+                      <div class="lentanews">
+                        <span class="xdate">{{ $post->getTime()}}</span>
+                        <span class="xtitle">{{ $post->getTitleRuOrKg() }}</span>
+                     </div>
+                      <div class="lentanews">
+                        <span class="xdate">{{ $post->getTime()}}</span>
+                        <span class="xtitle">{{ $post->getTitleRuOrKg() }}</span>
+                     </div>
+
+                     @endforeach
+                     @endif
                   </div>
                </div>
             </div>
@@ -214,7 +228,7 @@
          </div>
       </div>
       <div class="row">
-         <div class="col-md-12">
+         <div class="col-md-12 birinchigallery">
             <div class="row">
                <div class="col-md-12">
                   <h3 class="title">{{ trans('radiopages.Photos') }}</h3>

@@ -36,7 +36,7 @@
       </div>
    </div>
    <div class="row">
-       <nav class="navbar">
+      <nav class="navbar">
             <div class="container">
                <!-- Brand and toggle get grouped for better mobile display -->
                <div class="navbar-header">
@@ -109,6 +109,6 @@
                <!-- /.navbar-collapse -->
             </div>
             <!-- /.container-fluid -->
-         </nav>
+      </nav>
    </div>
 </div>

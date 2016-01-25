@@ -395,6 +395,10 @@
 .birinchiradio .card-info {
     padding: 5px 0px;
 }
+.birinchiradio .card-info .category:hover{
+    color: #332f2e;
+}
+
 .birinchiradio .card-info .category{
     color: #2D596D;
     font-weight: 600;
@@ -589,6 +593,9 @@
     color: #332f2e;
     font-size: 15px;
 }
+.blocknews h3 a:hover{
+    color: #2D596D;
+}
 
 /* END Birinchi Home page*/
 
@@ -599,14 +606,17 @@
 .hoverslider .slick-slider{
     margin-bottom: 0;
 }
-.hoverslider .col-md-3{
+.hoverslider .slick-list{
+    height: 333px;
+}
+.hoverslider .slider-nav{
     position: absolute;
 
-    right: 22px;
+    right: 30px;
     width: 220px;
     padding: 0;
     margin: 0;
-    height: 289px;
+    height: 100%;
    
     background: #2D596D;
 }
@@ -617,16 +627,20 @@
    background: red;
 }
 .switcher .name{
+    position: relative;
+    height: 109px;
     margin: 0px;
-    padding: 15px 10px;
+    padding: 5px 10px 5px 10px;
 
     font-size: 16px;
+    border-bottom: 1px solid #2C5061;
 }
 .switcher .name a{
     color: #fff;
     font-weight: bold;
     line-height: 1.1;
     letter-spacing: 0.3px;
+    vertical-align: sub;
 }
 
 .slide-info{
@@ -648,6 +662,35 @@
     font-weight: bold;
 }
 /* END Home Slider */
+.lenta{
+    height: 333px;
+    overflow: hidden;
+}
+.lentanews {
+    border-bottom: 1px solid #F3E7E1;
+    padding: 0px 0px 5px 0px;
+}
+.lentanews .xdate{
+    color: #696767;
+    font-size: 14px;
+}
+
+.lentanews .xtitle{
+    font-family: Arial, sans-serif;
+    font-style: inherit;
+    line-height: 18px;
+    font-weight: inherit;
+    font-size: 15px;
+    color: #332f2e;
+    -webkit-transition: color 0.15s ease-in-out;
+    -moz-transition: color 0.15s ease-in-out;
+    -o-transition: color 0.15s ease-in-out;
+    transition: color 0.15s ease-in-out;
+    text-decoration: none;
+    padding: 2px 0;
+    display: inline;
+}
+
 .test {
     background: #CACACA;
     margin: 20px 0px;
@@ -655,3 +698,54 @@
 }
 
 
+/* BEGIN Gallery*/
+
+.birinchigallery{
+    position: relative;
+    margin: 20px 0px;
+    padding-bottom: 15px;
+    background: #CACACA;
+}
+.birinchigallery .media-middle {
+    padding: 10px 0;
+}
+.birinchigallery .extraone{
+    position: absolute;
+    top: 5px;
+    left: 25px;
+    color: #fff;
+    font-weight: bold;
+}
+.birinchigallery .photo-icon{
+    position: absolute;
+    top: 5px;
+    right: 25px;
+    color: #fff;
+    font-size: 20px;
+}
+
+.birinchigallery .photo-name{
+    margin: 0px;
+    line-height: 1;
+
+    font-size: 16px;
+    font-weight: bold;
+}
+.birinchigallery .photo-name a{
+    color: #332f2e;
+}
+.birinchigallery .photo-name a:hover{
+    color: #2D596D;
+}
+.birinchigallery footer{
+    float: right
+}
+.birinchigallery footer span{
+    font-size: 16px;
+    border-bottom: 1px dotted;
+}
+.birinchigallery footer span .fa-arrow-circle-right{
+    padding-left:10px; 
+}
+
+/* END Gallery*/
