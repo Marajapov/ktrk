@@ -17,7 +17,14 @@ class BirinchiController extends Controller
         }else{
             $generalPosts = \Model\Post\ModelName::where('birinchi','=',1)->where('general','=','1')->languageru()->take(3)->orderBy('id','desc')->get();
         }
-        
+
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            $lentaNews = \Model\Post\ModelName::where('birinchi','=',1)->languagekg()->take(7)->orderBy('id','desc')->get();    
+        }else{
+            $lentaNews = \Model\Post\ModelName::where('birinchi','=',1)->languageru()->take(7)->orderBy('id','desc')->get();
+        }
+
 
         $photoGalleries = \Model\PhotoParent\ModelName::where('birinchi','=','1')->where('published','=',true)->take('6')->orderBy('id','desc')->get();
 
@@ -56,10 +63,12 @@ class BirinchiController extends Controller
 
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
+
         return view('Front::channel.birinchi.index', [
             'channel' => $channel,
             'backgroundMain' => $backgroundMain,
             'generalPosts' => $generalPosts,
+            'lentaNews' => $lentaNews,
             'allPost' => $allPost,
             'birinchiProjects' => $birinchiProjects,
             'categories'=>$categoryArray,

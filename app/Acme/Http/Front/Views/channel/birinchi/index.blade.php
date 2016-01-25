@@ -58,23 +58,17 @@
                      <h3 class="title">Лента новостей</h3>
                   </div>
                   <div class="col-md-12 lenta">
-                     @if($generalPosts)
-                     @foreach($generalPosts as $post)
+                     @if($lentaNews)
+                     @foreach($lentaNews as $lenta)
                      <div class="lentanews">
-                        <span class="xdate">{{ $post->getTime()}}</span>
-                        <span class="xtitle">{{ $post->getTitleRuOrKg() }}</span>
-                     </div>
-                      <div class="lentanews">
-                        <span class="xdate">{{ $post->getTime()}}</span>
-                        <span class="xtitle">{{ $post->getTitleRuOrKg() }}</span>
-                     </div>
-                      <div class="lentanews">
-                        <span class="xdate">{{ $post->getTime()}}</span>
-                        <span class="xtitle">{{ $post->getTitleRuOrKg() }}</span>
-                     </div>
-
+                        <span class="xdate">{{ $lenta->getTime()}}</span>
+                        <span class="xtitle">{{ $lenta->getTitleRuOrKg() }}</span>
+                     </div>     
                      @endforeach
                      @endif
+                     <footer>
+                        <h3>Все новости</h3>
+                     </footer>
                   </div>
                </div>
             </div>
@@ -139,33 +133,36 @@
                @endif              
             </div>
          </div>
-         <div class="col-md-12 test">
+         <div class="col-md-12 shows">
             <div class="row">
                <div class="col-md-12">
-                  <h3 class="title">Передачи</h3>
+                  <h3 class="titleshows">Передачи</h3>
                </div>
-               @if($allPost)
-               @foreach($allPost as $post)
-               <div class="blocknews col-md-3 col-sm-4 col-xs-12">
-                  <article>
-                     <a href="{{ route('birinchi.news', $post) }}" class="image-link">
+
+               @if($birinchiProjects)
+                  @foreach($birinchiProjects as $project)
+                  @foreach($project->oneprogram()->get() as $post)
+                  <div class="blocknews col-md-3 col-sm-4 col-xs-12">
+                     <article>
+                        <a href="{{ route('birinchi.broadcast', $post) }}" class="image-link">
                         <img src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif">
                         <div class="card-info"> 
                            <span class="date ">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>                           
-                     <a class="category" href="{{ route('front.category', $post->category) }}">
-                     {{ $post->category('category_id')->first()->getTitle() }}
-                     </a>                           
-                     </div>
-                     </a>
-                     <h3 class="name headline">
-                        <a href="{{ route('birinchi.news', $post) }}" title="">
-                        {{ $post->getTitleRuOrKg() }}
+                           <a class="category" href="{{ route('front.category', $post->category) }}">
+                              {{ $post->category('category_id')->first()->getTitle() }}
+                           </a>                           
+                        </div>
                         </a>
-                     </h3>
-                  </article>
-               </div>
-               @endforeach
-               @endif              
+                        <h3 class="name headline">
+                           <a href="{{ route('birinchi.broadcast', $post) }}" title="">
+                           {{ $post->getTitleRuOrKg() }}
+                           </a>
+                        </h3>
+                     </article>
+                  </div>
+                  @endforeach
+                  @endforeach
+                  @endif              
             </div>
          </div>
          <div class="col-md-6 homenews">
