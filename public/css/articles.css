@@ -73,7 +73,7 @@
     transform: translateY(-50%) translateX(-50%);
 }
 .panel-articles .extra{
-    margin-bottom: 5px;
+    margin-bottom: -10px;
 
     color: #9DA8B0;
 
@@ -82,6 +82,7 @@
 .e-datetime, .e-cat{
     display: inline-block;
     vertical-align: middle;
+    margin-top: -11px;
 }
 .e-cat{
     margin-left: 10px;
@@ -103,6 +104,7 @@
 }
 .e-views{
     float: right;
+    margin-top: -6px;
 }
 .e-views i{
     margin-right: 5px;

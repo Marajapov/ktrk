@@ -7,17 +7,22 @@ Author URL: http://shapebootstrap.net
 
 /*************************
 *******Typography******
-**************************/
+**************************
+*/
 body {
   padding-top: 0px;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   color: #64686d;
   line-height: 26px;
+  /*background: url(../images/channels/minkback.jpg);*/
+  background: url(/images/channels/minkback.jpg);
+  background-attachment: fixed;
+  background-size: cover;
 }
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   color: #272727;
 }
 a {
@@ -44,7 +49,8 @@ header {
   margin-left: -15px;
 }
 .homepage .switch {
-  background: rgba(152, 150, 150, 0.61) !important;
+  /*background: rgba(152, 150, 150, 0.61) !important;*/
+  background-color: rgba(33, 218, 138, 0.1) !important;
   !important;
 }
 #about img {
@@ -171,7 +177,7 @@ header {
   width: 640px;
   bottom: 0;
   height: 1px;
-  background: #ebebeb;
+  background: #F44336;
   left: 0;
   right: 0;
   margin: auto;
@@ -283,16 +289,17 @@ ul.nostyle i {
   margin-top: 5px;
 }
 .navbar-brand {
-  color: #005197 !important;
+  color: #fff !important;
   font-size: 30px;
   font-weight: bold;
+  font-family: 'Roboto Condensed';
   line-height: 2;
   text-transform: uppercase;
   text-transform: uppercase;
 }
 @media only screen and (min-width:768px) {
   #main-menu.navbar-default {
-    background: #CDDC39;
+    background: #3D9970;
     -webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.6);
     box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.6);
     z-index: 1000;
@@ -301,8 +308,9 @@ ul.nostyle i {
     padding-top: 20px;
     padding-bottom: 20px;
     font-size: 19px;
-    color: #005197;
+    color: #C4157A;
     font-weight: bold;
+    font-family: 'Roboto Condensed';
   }
   #main-menu.navbar-default .navbar-nav > li.active > a, #main-menu.navbar-default .navbar-nav > li.open > a, #main-menu.navbar-default .navbar-nav > li:hover > a {
     background: #C4157A;
@@ -451,7 +459,7 @@ ul.nostyle i {
   text-align: center;
 }
 #cta2 h2 > span {
-  color: #CDDC39;
+  color: #C4157A;
 }
 #features {
   padding: 100px 0;
@@ -814,7 +822,7 @@ ul.nostyle i {
 }
 #animated-number {
   padding: 100px 0 70px;
-  background: #132125 url(../images/animated-number/bg.jpg) no-repeat 0 0;
+ 
   background-size: cover;
   color: #fff;
 }
@@ -1068,4 +1076,11 @@ ul.nostyle i {
 .form-control {
   box-shadow: none;
   -webkit-box-shadow: none;
+}
+.navbar-nav ul li.scroll a{
+  color: #fff;
+}
+.container .back{
+  background: #000;
+   /*background: url(../img/background/pexels-photo.jpg) no-repeat 0 0;*/
 }
