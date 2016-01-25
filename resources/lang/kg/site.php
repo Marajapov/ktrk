@@ -327,4 +327,6 @@ return [
 
 //    Post
     'PostAktualno'=>'Маанилүү',
+    'PostMain'=>'Маанилүү',
+    'PostPopular'=>'Көп окулууда',
 ];
