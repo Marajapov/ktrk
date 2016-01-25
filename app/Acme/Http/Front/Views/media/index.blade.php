@@ -83,7 +83,7 @@
                                     </li>
                                     @foreach($mediaCategories as $key=>$MediaCategory)
                                         <li>
-                                            <a href="#{{ $MediaCategory->getVideoType() }}" data-toggle="tab">{{ $MediaCategory->getName() }}</a>
+                                            <a href="#{{ $MediaCategory->getVideoType() }}" data-toggle="tab">{{ $MediaCategory->getGlobalName() }}</a>
                                         </li>
                                     @endforeach
                                 </ul>
@@ -183,7 +183,7 @@
                                                     <div class="row">
 
                                                         <div class="panel-heading">
-                                                            <h3>Акыркы видеолор</h3>
+                                                            <h3>{{ trans('site.LastVideos')}}</h3>
                                                         </div>
 
                                                         <div class="panel-body">
@@ -215,7 +215,7 @@
                                                             @endforeach
 
                                                             <footer>
-                                                                <a href="{{ route('front.media.all') }}">
+                                                                <a href="{{ route('front.media.category',$MediaCategory) }}">
                                                                     <span>{{ trans('site.AllVideos') }}<i class="fa fa-arrow-circle-right"></i></span>
                                                                 </a>
                                                             </footer>
@@ -223,7 +223,7 @@
                                                         </div>
 
                                                         <div class="panel-heading">
-                                                            <h3>Топ видеолор</h3>
+                                                            <h3>{{ trans('site.TopVideos') }}</h3>
                                                         </div>
 
                                                         <div class="panel-body">
@@ -257,7 +257,7 @@
                                                             @endif
 
                                                             <footer>
-                                                                <a href="{{ route('front.media.all') }}">
+                                                                <a href="{{ route('front.media.category',$MediaCategory) }}">
                                                                     <span>{{ trans('site.AllVideos') }}<i class="fa fa-arrow-circle-right"></i></span>
                                                                 </a>
                                                             </footer>

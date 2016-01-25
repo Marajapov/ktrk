@@ -1,5 +1,5 @@
 @extends('Front::layouts.default')
-@section('title', trans('site.AllVideos').' | Видеопортал | КТРК')
+@section('title', $mediaCategory->getGlobalName().' | Видеопортал | КТРК')
 
 @section('styles')
     <link rel="stylesheet" href="{{ asset('css/videoportal.css') }}"/>
@@ -20,7 +20,7 @@
                                 <h3 class="panel-title">
                                     <a href="{{ route('front.media.index') }}">Видеопортал</a>
                                     <span class="divider"><i class="fa fa-circle"></i></span>
-                                    <span>{{ trans('site.AllVideos') }}</span>
+                                    <span>{{ $mediaCategory->getGlobalName() }}</span>
                                 </h3>
                             </div>
 

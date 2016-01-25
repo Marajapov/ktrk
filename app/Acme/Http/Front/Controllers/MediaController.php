@@ -2,6 +2,7 @@
 namespace Front\Controllers;
 //use Illuminate\Http\Request;
 use Illuminate\Http\Request;
+use \Model\MediaCategory\ModelName as MediaCategory;
 
 class MediaController extends Controller
 {
@@ -84,6 +85,8 @@ class MediaController extends Controller
         $videoType = $video->videoType; // serials
         $videoName = $video->name;
 
+        $MediaCategory = \Model\MediaCategory\ModelName::where('videoType','=',$videoType)->first();
+
         if($lc == 'kg'){
             $result = \Model\Project\ModelName::where('id','=',$projectId)->first();
             if($result){
@@ -129,9 +132,6 @@ class MediaController extends Controller
         $mediaAll = \Model\Media\ModelName::get();
 
         $mainBanner = \Model\Background\ModelName::where('name','=','main')->first();
-        
-        $categories = \Model\Category\ModelName::all();
-
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
         return view('Front::media.video',[
@@ -143,10 +143,10 @@ class MediaController extends Controller
 
             'mediaAll' => $mediaAll,
             'MediaCategories' => $MediaCategories,
+            'MediaCategory' => $MediaCategory,
 
             'mainBanner'   => $mainBanner,
             'projectList' => $projectList,
-            'categories'=>$categories,
             'backgroundMain' => $backgroundMain,
 
             'positionTop'    => $this->positionTop,
@@ -164,7 +164,6 @@ class MediaController extends Controller
         $mediaAll = \Model\Media\ModelName::get();
 
         $mainBanner = \Model\Background\ModelName::where('name','=','main')->first();
-        $categories = \Model\Category\ModelName::all();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
         $relatedVideos = \Model\Media\ModelName::where('program','=',$project->id)->get();
@@ -175,7 +174,6 @@ class MediaController extends Controller
                 'project' => $project,
 
                 'mainBanner'   => $mainBanner,
-                'categories'=>$categories,
                 'projectList' => $projectList,
                 'backgroundMain' => $backgroundMain,
                 'relatedVideos' => $relatedVideos,
@@ -194,7 +192,6 @@ class MediaController extends Controller
     {
         $projectList = \Model\Project\ModelName::where('extracolumn','=','1')->orderBy('id','desc')->get();
         $mainBanner = \Model\Background\ModelName::where('name','=','main')->first();
-        $categories = \Model\Category\ModelName::all();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
         $perPage = 15;
 
@@ -203,10 +200,34 @@ class MediaController extends Controller
         return view('Front::media.all',[
             'perPage'=> $perPage,
             'mainBanner'   => $mainBanner,
-            'categories'=>$categories,
             'projectList' => $projectList,
             'backgroundMain' => $backgroundMain,
             'allVideos' => $allVideos,
+
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
+            'positionLeft' => $this->positionLeft,
+        ]);
+    }
+
+    public function categoryVideos($mediaCategory)
+    {
+        $projectList = \Model\Project\ModelName::where('extracolumn','=','1')->orderBy('id','desc')->get();
+        $mainBanner = \Model\Background\ModelName::where('name','=','main')->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        $perPage = 15;
+
+        $allVideos = \Model\Media\ModelName::where('published','=',true)->where('videoType','=',$mediaCategory->videoType)->orderBy('id','desc')->paginate($perPage);
+
+        return view('Front::media.category',[
+            'perPage'=> $perPage,
+            'mainBanner'   => $mainBanner,
+            'projectList' => $projectList,
+            'backgroundMain' => $backgroundMain,
+            'allVideos' => $allVideos,
+            'mediaCategory' => $mediaCategory,
 
             'positionTop'    => $this->positionTop,
             'positionRight'  => $this->positionRight,
