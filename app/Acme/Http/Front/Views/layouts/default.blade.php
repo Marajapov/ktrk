@@ -30,6 +30,7 @@
     <script src="{{ asset('js/jquery-1.11.2.min.js') }}"></script>
     <script src="{{ asset('js/jasny-bootstrap.js') }}"></script>
     <script src="{{ asset('js/fileinput.js') }}"></script>
+    <script src="{{ asset('js/modernizr-2.6.2.min.js') }}"></script>
     @yield('styles')
 
     <style>

@@ -96,7 +96,12 @@ class MediaController extends Controller
             $result1 = \Model\MediaCategory\ModelName::where('videoType','=',$videoType)->first();    
             $getVideoTypeName = $result1->getName();
 
-            $relatedVideos = \Model\Media\ModelName::where('name','<>','')->where('program','=',$projectId)->get();
+            if($projectId > 0){
+                $relatedVideos = \Model\Media\ModelName::where('id','<>',$video->id)->where('program','=',$projectId)->get();
+            } elseif($projectId  == 0) {
+                $relatedVideos = \Model\Media\ModelName::where('id','<>',$video->id)->where('videoType','=',$videoType)->get();
+            }
+
 
         }elseif($lc == 'ru'){
             $result = \Model\Project\ModelName::where('id','=',$projectId)->first();
@@ -109,8 +114,11 @@ class MediaController extends Controller
             $result = \Model\MediaCategory\ModelName::where('videoType','=',$videoType)->first();
             $getVideoTypeName = $result->getNameRu();
 
-
-            $relatedVideos = \Model\Media\ModelName::where('nameRu','<>','')->where('program','=',$projectId)->get();
+            if($projectId > 0){
+                $relatedVideos = \Model\Media\ModelName::where('id','<>',$video->id)->where('program','=',$projectId)->get();
+            } else {
+                $relatedVideos = \Model\Media\ModelName::where('id','<>',$video->id)->where('videoType','=',$videoType)->get();
+            }
 
         }
 
