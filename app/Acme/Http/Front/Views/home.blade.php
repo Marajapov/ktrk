@@ -21,6 +21,16 @@
                                             <a href="{{ route('front.post', $generalPost1) }}" class="main-img">
                                                 <img src="@if(!($generalPost1->getFile()))images/live_bg.png @else {{ asset($generalPost1->getFile()) }} @endif" alt="img26">
                                             </a>
+<!-- Birinchi Channel Icon -->
+                                            @if($generalPost1->birinchi != 0)
+                                            <div class="news-channel">
+                                                <a href="#">
+                                                    <img src="{{ $generalPost1->isChannelIcon(7) }}" alt=""/>
+                                                </a>
+                                            </div>
+                                            @endif
+<!-- end Birinchi Channel Icon -->
+
                                             <p class="description clearfix">
                                                 <a href="{{ route('front.category', $generalPost1->category) }}">
                                                     {{ $generalPost1->category('category_id')->first()->getTitle() }}
