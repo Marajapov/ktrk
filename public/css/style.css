@@ -1558,6 +1558,16 @@ header {
 .panel-videos .panel-body, .panel-video .panel-body, .panel-shows .panel-body, .panel-show .panel-body {
     padding: 15px 15px 0;
 }
+.videoportal .all-videos-link{
+    padding: 0;
+    font-family: 'Roboto Regular',Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 1;
+    text-transform: none;
+}
+.videoportal .all-videos-link i{
+    padding-left: 5px;
+}
 .videos-block {
     border: 0;
     padding: 15px 0;

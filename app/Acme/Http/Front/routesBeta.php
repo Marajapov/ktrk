@@ -102,6 +102,8 @@ Route::group(['domain' => 'beta.ktrk.kg', 'prefix' => '/birinchi', 'namespace' =
     Route::get('/allphotos',['as' => 'birinchi.allphotos','uses'=> 'BirinchiController@allphotos'] );
     Route::get('/broadcastsprogramm', ['as' => 'birinchi.broadcastsprogramm',   'uses' => 'BirinchiController@broadcastsprogramm']);
 
+    Route::get('/vertex',['as'=>'birinchi.vertex', 'uses'=>'BirinchiController@vertex']);
+
 });
 
 Route::group(['domain' => 'beta.ktrk.kg', 'prefix' => '/dostuk', 'namespace' => 'Front\Controllers'], function() {
