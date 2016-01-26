@@ -22,9 +22,9 @@
                                                     <div class="slide-info">
                                                         <img class="img" src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif" alt=""/>
 
-                                    <span class="slide-category">
-                                    {{ $post->category('category_id')->first()->getTitle() }}
-                                    </span>
+                                                        <span class="slide-category">
+                                                        {{ $post->category('category_id')->first()->getTitle() }}
+                                                        </span>
                                                         <span class="slide-date">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
                                                     </div>
                                                 </div>
