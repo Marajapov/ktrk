@@ -1157,7 +1157,9 @@
     margin: 0;
 }
 .panel-contacts form{
+    border: none;
     margin-top: 20px;
+
 }
 .panel-contacts textarea{
     width: 100%;
@@ -1349,4 +1351,16 @@ h3#reply-title {
     font-size: 14px;
     line-height: 20px;
     cursor: pointer;
+}
+
+/*GALLERIES*/
+.panel-gallery .all-videos-link{
+    padding: 0;
+    font-family: 'Roboto Regular',Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 1;
+    text-transform: none;
+}
+.panel-gallery .all-videos-link i{
+    padding-left: 5px;
 }

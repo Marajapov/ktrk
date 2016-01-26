@@ -522,8 +522,8 @@ class HomeController extends Controller
         $existCategories = array();
 
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
-        $leftcategories = array();
-        $rightcategories = array();
+        $leftCategories = array();
+        $rightCategories = array();
         $posts = array();
         $headerPosts = array();
 

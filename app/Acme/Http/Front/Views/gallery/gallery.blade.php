@@ -14,19 +14,20 @@
     <link rel="stylesheet" href="{{ asset('css/goodshare.css') }}"/>
 @stop
 
-@section('styles')
-    <link rel="stylesheet" href="{{ asset('css/articles.css') }}"/>
-@endsection()
-
 @section('content')
     <div class="container main-wrapper">
         <div class="row">
             <section class="content clearfix">
                 <div class="clearfix">
                     <div class="top-left-block col-xs-12 col-sm-12 col-md-12">
-                        <div class="panel panel-default panel-kenesh">
+                        <div class="panel panel-default panel-kenesh panel-gallery">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><span>{{ $gallery->getName() }}</span></h3>
+                                <h3 class="panel-title">
+                                    <span>{{ $gallery->getName() }}</span>
+                                    <a class="all-videos-link pull-right" href="{{ route('front.gallery.galleries') }}">
+                                        <span>{{ trans('site.FrontGalleryAll') }}<i class="fa fa-arrow-circle-right"></i></span>
+                                    </a>
+                                </h3>
                             </div>
                             <div class="panel-body">
 

@@ -33,11 +33,15 @@ class CategoryController extends Controller
         $birinchiProgramList = \Model\Project\ModelName::where('birinchi','=','1')->lists('name', 'id')->toArray();
         $kyrgyzradioProgramList = \Model\Project\ModelName::where('kyrgyzradio','=','1')->lists('name', 'id')->toArray();
 
+        $birinchiCategories = \Model\Category\ModelName::where('birinchi','=','1')->where('published','=','1')->get();
+
         return view('Admin::category.create', [
             'category' => new Category,
             'dostukProgramList' => $dostukProgramList,
             'birinchiProgramList' => $birinchiProgramList,
             'kyrgyzradioProgramList' => $kyrgyzradioProgramList,
+
+            'birinchiCategories' => $birinchiCategories,
             ]);
     }
 
@@ -73,7 +77,11 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        return view('Admin::category.edit', ['category' => $category]);
+        $birinchiCategories = \Model\Category\ModelName::where('birinchi','=','1')->where('published','=','1')->get();
+        return view('Admin::category.edit', [
+            'category' => $category,
+            'birinchiCategories' => $birinchiCategories,
+        ]);
     }
 
     /**

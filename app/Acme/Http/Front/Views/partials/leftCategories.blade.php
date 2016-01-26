@@ -59,6 +59,13 @@
 
                 </div>
 
+                <footer>
+
+                    <a href="{{ route('front.general') }}">
+                        <span>{{ trans('site.PostAllNews') }}<i class="fa fa-arrow-circle-right"></i></span>
+                    </a>
+                </footer>
+
             </div>
         </div>
 

@@ -312,26 +312,28 @@
                                 </tbody>
                             </table>
 
-                            <div class="col-md-4">
-                                <form role="form" style="border: 2px solid #F1F4F9; padding: 5px;">
-                                    <div class="form-group">
-                                        <label for="usr">Ваше имя *</label>
-                                        <input type="text" class="form-control" id="usr">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="email">Ваш email *</label>
-                                        <input type="email" class="form-control" id="email">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="subject">Тема *</label>
-                                        <input type="text" class="form-control" id="subject">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="subject">Сообщение *</label>
-                                        <textarea class="form-control" rows="5"></textarea>
-                                    </div>
-                                    <button type="submit" class="btn btn-success contact-form-button form-submit">Отправить сообщение</button>
-                                </form>
+                            <div class="col-md-4 hidden">
+                                <div class="row">
+                                    <form role="form">
+                                        <div class="form-group">
+                                            <label for="usr">Ваше имя *</label>
+                                            <input type="text" class="form-control" id="usr">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email">Ваш email *</label>
+                                            <input type="email" class="form-control" id="email">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="subject">Тема *</label>
+                                            <input type="text" class="form-control" id="subject">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="subject">Сообщение *</label>
+                                            <textarea class="form-control" rows="5"></textarea>
+                                        </div>
+                                        <button type="submit" class="btn btn-success contact-form-button form-submit">Отправить сообщение</button>
+                                    </form>
+                                </div>
                             </div>
 
                         @else
@@ -603,11 +605,7 @@
                                 </tbody>
                             </table>
 
-                            <div class="col-md-5">
-
-                            </div>
-
-                            <form role="form" class="form-horizontal">
+                            <form role="form" class="form-horizontal hidden">
 
                                 <div class="form-group">
                                     <label for="inputEmail3" class="col-sm-2 control-label">Ваше имя *</label>
@@ -637,7 +635,7 @@
                                 <button type="submit" class="btn btn-success contact-form-button form-submit">Отправить сообщение</button>
                             </form>
 
-                            <div class="col-md-12">
+                            <div class="col-md-12 hidden">
                                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d93562.9560656737!2d74.52124808491362!3d42.87617095636211!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x389ec813fddfb971%3A0x1178ee6d2c03f66b!2z0JrQotCg0Jo!5e0!3m2!1sru!2skg!4v1451472617850" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
                             </div>
                         @endif

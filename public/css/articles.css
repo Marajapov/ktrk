@@ -73,16 +73,15 @@
     transform: translateY(-50%) translateX(-50%);
 }
 .panel-articles .extra{
-    margin-bottom: -10px;
-
+    /*margin-bottom: -10px;*/
+    margin-bottom: 5px;
     color: #9DA8B0;
-
     font-size: 12px;
 }
 .e-datetime, .e-cat{
     display: inline-block;
     vertical-align: middle;
-    margin-top: -11px;
+    /*margin-top: -11px;*/
 }
 .e-cat{
     margin-left: 10px;
@@ -104,7 +103,7 @@
 }
 .e-views{
     float: right;
-    margin-top: -6px;
+    /*margin-top: -6px;*/
 }
 .e-views i{
     margin-right: 5px;
@@ -648,6 +647,7 @@ h3#reply-title {
 }
 .panel-top-articles .panel-body{
     padding-top: 0;
+    padding-bottom: 0;
 }
 .with-top-articles .ctg-panel{
     border-top: 3px solid #F1F4F9;

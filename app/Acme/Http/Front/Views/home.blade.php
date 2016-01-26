@@ -296,9 +296,6 @@
                                                 </div>
                                             @endforeach
                                         @endif
-
-
-
                                     </div>
                                 </div>
 
@@ -497,7 +494,12 @@
                     <div class="bottom-right-block col-md-8">
                         <div class="panel panel-default videoportal">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><a href="{{ route('front.media.index') }}"><span>Видеопортал</span></a></h3>
+                                <h3 class="panel-title">
+                                    <a href="{{ route('front.media.index') }}"><span>Видеопортал</span></a>
+                                    <a class="all-videos-link pull-right" href="{{ route('front.media.index') }}">
+                                        <span>{{ trans('site.FrontVideoAll') }} <i class="fa fa-arrow-circle-right"></i></span>
+                                    </a>
+                                </h3>
                             </div>
                             <div class="panel-body">
 
@@ -583,7 +585,6 @@
                                     <a href="{{ route('front.media.index') }}">
                                         <span>{{ trans('site.FrontVideoAll') }} <i class="fa fa-arrow-circle-right"></i></span>
                                     </a>
-
                                 </footer>
 
                             </div>

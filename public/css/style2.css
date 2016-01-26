@@ -481,7 +481,11 @@ header.top-menu,.logo-block{
     box-shadow: none;
 }
 .panel.latest-news .panel-body{
+    padding-top: 25px;
     padding-bottom: 10px;
+}
+.panel.latest-news .panel-body footer{
+    border-top-color: #ffffff;
 }
 
 /*PANEL DIRECTOR*/
