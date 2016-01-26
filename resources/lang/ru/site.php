@@ -316,6 +316,7 @@ return [
     'LastVideos' => 'Последние видео',
     'TopVideos' => 'Топ видео',
     'Episodes' => 'Выпуски',
+    'CategoryVideos' => 'Все видео из категории',
 
     // Data Tables
     'DataTableTotal' => 'всего',

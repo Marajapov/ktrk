@@ -315,6 +315,7 @@ return [
     'LastVideos' => 'Акыркы видеолор',
     'TopVideos' => 'Топ видеолор',
     'Episodes' => 'Чыгаруулар',
+    'CategoryVideos' => 'Категориядагы видеолор',
 
     'DataTableTotal' => 'жалпы',
     'DataTableSearch' => 'Издөө',

@@ -616,7 +616,7 @@ header.top-menu,.logo-block{
 /*SHOWS-SLIDER*/
 .shows-slider{
     z-index: 101;
-
+    margin-top: 20px;
     overflow: hidden;
 }
 .shows-carousel{

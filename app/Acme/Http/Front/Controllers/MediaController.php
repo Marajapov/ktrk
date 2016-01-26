@@ -32,17 +32,17 @@ class MediaController extends Controller
 
         foreach($MediaCategories as $MediaCategory){
 
-            $CategoryVideos = \Model\Media\ModelName::where('videoType','=',$MediaCategory->videoType)->orderBy('id','desc')->take(9)->get();
-            $TopCategoryVideos = \Model\Media\ModelName::where('videoType','=',$MediaCategory->videoType)->orderBy('viewed','desc')->take(9)->get();
+            $CategoryVideos = \Model\Media\ModelName::where('published','=','1')->where('videoType','=',$MediaCategory->videoType)->orderBy('id','desc')->take(9)->get();
+            $TopCategoryVideos = \Model\Media\ModelName::where('published','=','1')->where('videoType','=',$MediaCategory->videoType)->orderBy('viewed','desc')->take(9)->get();
 
             $categoriesVideos = array_add($categoriesVideos, $MediaCategory->videoType, $CategoryVideos);
             $topCategoriesVideos = array_add($topCategoriesVideos, $MediaCategory->videoType, $TopCategoryVideos);
         }
 //        dd($topCategoriesVideos);
 
-        $mediaLastVideos = \Model\Media\ModelName::orderBy('id','desc')->take(9)->get();
+        $mediaLastVideos = \Model\Media\ModelName::where('published','=','1')->orderBy('id','desc')->take(9)->get();
 
-        $mediaPops = \Model\Media\ModelName::orderBy('viewed','desc')->take(9)->get();
+        $mediaPops = \Model\Media\ModelName::where('published','=','1')->orderBy('viewed','desc')->take(9)->get();
 
         $mainBanner = \Model\Background\ModelName::where('name','=','main')->first();
         $categories = \Model\Category\ModelName::all();
@@ -100,9 +100,9 @@ class MediaController extends Controller
             $getVideoTypeName = $result1->getName();
 
             if($projectId > 0){
-                $relatedVideos = \Model\Media\ModelName::where('id','<>',$video->id)->where('program','=',$projectId)->get();
+                $relatedVideos = \Model\Media\ModelName::where('published','=','1')->where('id','<>',$video->id)->where('program','=',$projectId)->orderBy('id','desc')->get();
             } elseif($projectId  == 0) {
-                $relatedVideos = \Model\Media\ModelName::where('id','<>',$video->id)->where('videoType','=',$videoType)->get();
+                $relatedVideos = \Model\Media\ModelName::where('published','=','1')->where('id','<>',$video->id)->where('videoType','=',$videoType)->orderBy('id','desc')->get();
             }
 
 
@@ -118,9 +118,9 @@ class MediaController extends Controller
             $getVideoTypeName = $result->getNameRu();
 
             if($projectId > 0){
-                $relatedVideos = \Model\Media\ModelName::where('id','<>',$video->id)->where('program','=',$projectId)->get();
+                $relatedVideos = \Model\Media\ModelName::where('published','=','1')->where('id','<>',$video->id)->where('program','=',$projectId)->orderBy('id','desc')->get();
             } else {
-                $relatedVideos = \Model\Media\ModelName::where('id','<>',$video->id)->where('videoType','=',$videoType)->get();
+                $relatedVideos = \Model\Media\ModelName::where('published','=','1')->where('id','<>',$video->id)->where('videoType','=',$videoType)->orderBy('id','desc')->get();
             }
 
         }
@@ -129,7 +129,7 @@ class MediaController extends Controller
 
         $projectList = \Model\Project\ModelName::where('extracolumn','=','1')->orderBy('id','desc')->get();
 
-        $mediaAll = \Model\Media\ModelName::get();
+        $mediaAll = \Model\Media\ModelName::where('published','=','1')->orderBy('id','desc')->get();
 
         $mainBanner = \Model\Background\ModelName::where('name','=','main')->first();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
@@ -161,12 +161,12 @@ class MediaController extends Controller
     {
         $projectList = \Model\Project\ModelName::where('extracolumn','=','1')->orderBy('id','desc')->get();
 //        $MediaCategory = \Model\MediaCategory\ModelName::get();
-        $mediaAll = \Model\Media\ModelName::get();
+        $mediaAll = \Model\Media\ModelName::where('published','=','1')->orderBy('id','desc')->get();
 
         $mainBanner = \Model\Background\ModelName::where('name','=','main')->first();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
-        $relatedVideos = \Model\Media\ModelName::where('program','=',$project->id)->get();
+        $relatedVideos = \Model\Media\ModelName::where('published','=','1')->where('program','=',$project->id)->orderBy('id','desc')->get();
 
 
         return view('Front::media.project',[
@@ -195,7 +195,7 @@ class MediaController extends Controller
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
         $perPage = 15;
 
-        $allVideos = \Model\Media\ModelName::where('published','=',true)->orderBy('id','desc')->paginate($perPage);
+        $allVideos = \Model\Media\ModelName::where('published','=','1')->orderBy('id','desc')->paginate($perPage);
 
         return view('Front::media.all',[
             'perPage'=> $perPage,
@@ -219,7 +219,7 @@ class MediaController extends Controller
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
         $perPage = 15;
 
-        $allVideos = \Model\Media\ModelName::where('published','=',true)->where('videoType','=',$mediaCategory->videoType)->orderBy('id','desc')->paginate($perPage);
+        $allVideos = \Model\Media\ModelName::where('published','=','1')->where('videoType','=',$mediaCategory->videoType)->orderBy('id','desc')->paginate($perPage);
 
         return view('Front::media.category',[
             'perPage'=> $perPage,

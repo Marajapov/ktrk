@@ -150,11 +150,11 @@ class HomeController extends Controller
         $categoriesVideos = array();
 
         foreach($MediaCategories as $MediaCategory){
-            $CategoryVideos = \Model\Media\ModelName::where('videoType','=',$MediaCategory->videoType)->orderBy('id','desc')->take(9)->get();
+            $CategoryVideos = \Model\Media\ModelName::where('videoType','=',$MediaCategory->videoType)->where('published','=','1')->orderBy('id','desc')->take(9)->get();
             $categoriesVideos = array_add($categoriesVideos, $MediaCategory->videoType, $CategoryVideos);
         }
 
-        $mediaLastVideos = \Model\Media\ModelName::orderBy('id','desc')->take(9)->get();
+        $mediaLastVideos = \Model\Media\ModelName::where('published','=','1')->orderBy('id','desc')->take(9)->get();
 
         $defaultVideo = 'rjXSurFi8uQ';
 
