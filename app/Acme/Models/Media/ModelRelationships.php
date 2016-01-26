@@ -18,6 +18,11 @@ trait ModelRelationships
         return $this->belongsTo(\Model\User\ModelName::class, 'owner_id');
     }
 
+    public function mediaCategory()
+    {
+        return $this->belongsTo(\Model\MediaCategory\ModelName::class, 'videoType');
+    }
+
     public function videoType()
     {
         return $this->hasOne(\Model\MediaCategory\ModelName::class, 'videoType');

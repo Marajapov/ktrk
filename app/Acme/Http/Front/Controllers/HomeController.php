@@ -339,6 +339,13 @@ class HomeController extends Controller
                 $topArticles = null;
             }
 
+            $popArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->orderBy('viewed','desc')->take(6)->get();
+            if(count($popArticles) > 0){
+                $popArticles = $popArticles;
+            }else{
+                $popArticles = null;
+            }
+
         }elseif($lc == 'ru'){
             $contentOriginal = $post->getContent();
 
@@ -434,7 +441,14 @@ class HomeController extends Controller
                 $topArticles = $topArticles;   
             }else{
                 $topArticles = null;
-            } 
+            }
+
+            $popArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->orderBy('viewed','desc')->take(6)->get();
+            if(count($popArticles) > 0){
+                $popArticles = $popArticles;
+            }else{
+                $popArticles = null;
+            }
         }
 
         $comments = Comment::where('resourceType','=','post')->where('resourceId','=',$post->id)->where('approved','=','1')->orderBy('id','desc')->get();
@@ -443,6 +457,7 @@ class HomeController extends Controller
             'lc' => $lc,
             'post' => $post,
             'topArticles' => $topArticles,
+            'popArticles' => $popArticles,
 
             'relatedPosts' => $relatedPosts,
 
@@ -464,11 +479,11 @@ class HomeController extends Controller
      public function Posts()
     {        
         $lc = app()->getlocale();
-        $perPage = 10;
         if($lc == 'kg'){
-            $postAll = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->orderBy('id','desc')->paginate($perPage);    
+            $postAll = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->orderBy('id','desc')->get();
+
         }elseif($lc == 'ru'){
-            $postAll = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->orderBy('id','desc')->paginate($perPage);
+            $postAll = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->orderBy('id','desc')->get();
         }
 
         if($lc == 'kg'){
@@ -477,24 +492,95 @@ class HomeController extends Controller
                 $topArticles = $topArticles;   
             }else{
                 $topArticles = null;
-            } 
+            }
+
+            $popArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->orderBy('viewed','desc')->take(6)->get();
+            if(count($popArticles) > 0){
+                $popArticles = $popArticles;
+            }else{
+                $popArticles = null;
+            }
+
         }elseif($lc == 'ru'){
             $topArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->where('numberRu','=','88')->orderBy('updated_at','desc')->take(6)->get();
             if(count($topArticles) > 0){
                 $topArticles = $topArticles;   
             }else{
                 $topArticles = null;
-            } 
+            }
+
+            $popArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->orderBy('viewed','desc')->take(6)->get();
+            if(count($popArticles) > 0){
+                $popArticles = $popArticles;
+            }else{
+                $popArticles = null;
+            }
         }
 
-        $categories = \Model\Category\ModelName::where('general','=','1')->get();
+        $categories = \Model\Category\ModelName::where('general','=','1')->where('published','=','1')->where('order','>','0')->orderBy('order','asc')->get();
+
+        $existCategories = array();
+
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        $leftcategories = array();
+        $rightcategories = array();
+        $posts = array();
+        $headerPosts = array();
+
+        foreach($categories as $key=>$category){
+
+            if($lc == 'kg'){
+
+                $categoryHeaderPosts = \Model\Post\ModelName::where('general','=','1')->where('category_id','=',$category->id)->where('published','=','1')->where('title','<>','')->orderBy('id','desc')->take(1)->get();
+                foreach($categoryHeaderPosts as $categoryHeaderPost){
+                    $headerPosts[] = $categoryHeaderPost;
+                }
+                if(count($categoryHeaderPosts) == 0 ){
+                    unset($categories[$key]);
+                }
+
+                $categoryPosts = \Model\Post\ModelName::where('general','=','1')->where('category_id','=',$category->id)->where('published','=','1')->where('title','<>','')->orderBy('id','desc')->take(2)->skip(1)->get();
+                foreach($categoryPosts as $categoryPost){
+                    $posts[] = $categoryPost;
+                }
+
+            } elseif($lc == 'ru') {
+
+                $categoryHeaderPosts = \Model\Post\ModelName::where('general','=','1')->where('category_id','=',$category->id)->where('published','=','1')->where('titleRu','<>','')->orderBy('id','desc')->take(1)->get();
+                foreach($categoryHeaderPosts as $categoryHeaderPost){
+                    $headerPosts[] = $categoryHeaderPost;
+                }
+                if(count($categoryHeaderPosts) == 0 ){
+                    unset($categories[$key]);
+                }
+
+                $categoryPosts = \Model\Post\ModelName::where('general','=','1')->where('category_id','=',$category->id)->where('published','=','1')->where('titleRu','<>','')->orderBy('id','desc')->take(2)->skip(1)->get();
+                foreach($categoryPosts as $categoryPost){
+                    $posts[] = $categoryPost;
+                }
+
+            }
+        }
+
+        session(['categories'=>$categories]);
+
+        foreach ($categories as $category) {
+            if($category->order % 2 == 1){
+                $leftCategories[] = $category;
+            } else{
+                $rightCategories[] = $category;
+            }
+        }
 
         return view('Front::post.posts',[
-            'perPage'=> $perPage,
             'postAll' => $postAll,
+            'headerPosts' => $headerPosts,
+            'posts' => $posts,
             'topArticles' => $topArticles,
+            'popArticles' => $popArticles,
             'categories'=>$categories,
+            'leftCategories'=>$leftCategories,
+            'rightCategories'=>$rightCategories,
             'backgroundMain' => $backgroundMain,
             'positionTop'    => $this->positionTop,
             'positionRight'  => $this->positionRight,
@@ -540,18 +626,86 @@ class HomeController extends Controller
 
     public function searchResult(Request $request)
     {
-        $posts = \Model\Post\ModelName::search($request->input('search'))->get();
-        $pages = \Model\Page\ModelName::search($request->input('search'))->get();
+        $lc = app()->getlocale();
+        $key = $request->input('search');
+
+        $perPage = 15;
+
+        if($lc == 'kg'){
+//            dd('test');
+            $posts = \Model\Post\ModelName::search($request->input('search'))->orderBy('id','desc')->get();
+            foreach($posts as $key=>$resultPost){
+                if($resultPost['title'] == ''){
+                    unset($posts[$key]);
+                }
+            }
+            session(['posts' => $posts]);
+//            $tags = \Model\Tag\Tag::where('name','like','%'.$key.'%')->get();
+//            $postTags = array();
+//
+//            foreach ($tags as $tag) {
+//                $tagPosts = $tags->posts();
+//                $postTags = array_collapse($postTags,$tagPosts);
+//            }
+
+//            dd($postTags);
+        }elseif($lc == 'ru'){
+            $posts = \Model\Post\ModelName::search($request->input('search'))->orderBy('id','desc')->get();
+
+            foreach($posts as $key=>$resultPost){
+                if($resultPost['titleRu'] == ''){
+                    unset($posts[$key]);
+                }
+            }
+            session(['posts' => $posts]);
+            //dd(session('posts'));
+        }
+//        $posts = \Model\Post\ModelName::search($request->input('search'))->paginate($perPage);
+//        $pages = \Model\Page\ModelName::search($request->input('search'))->get();
         $searchKey = $request->input('search');
 
         $categories = \Model\Category\ModelName::where('general','=','1')->get();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
+        if($lc == 'kg'){
+            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->where('number','=','88')->orderBy('updated_at','desc')->take(6)->get();
+
+            if(count($topArticles) > 0){
+                $topArticles = $topArticles;
+            }else{
+                $topArticles = null;
+            }
+            $popArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->orderBy('viewed','desc')->take(6)->get();
+            if(count($popArticles) > 0){
+                $popArticles = $popArticles;
+            }else{
+                $popArticles = null;
+            }
+
+        } else {
+            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->where('numberRu','=','88')->orderBy('updated_at','desc')->take(6)->get();
+
+            if(count($topArticles) > 0){
+                $topArticles = $topArticles;
+            }else{
+                $topArticles = null;
+            }
+            $popArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->orderBy('viewed','desc')->take(6)->get();
+            if(count($popArticles) > 0){
+                $popArticles = $popArticles;
+            }else{
+                $popArticles = null;
+            }
+        }
+
         return view('Front::result', [
             'posts' => $posts,
-            'pages' => $pages,
+            'perPage' => $perPage,
+//            'pages' => $pages,
             'searchKey'=>$searchKey,
 
+            'topArticles' =>$topArticles,
+            'popArticles' =>$popArticles,
             'categories'=>$categories,
             'backgroundMain' => $backgroundMain,
             'positionTop'    => $this->positionTop,
@@ -570,9 +724,9 @@ class HomeController extends Controller
         $category_id = $category->id;
 
         if($lc == 'kg'){
-            $posts = \Model\Post\ModelName::where('category_id','=',$category_id)->where('title','<>','')->orderBy('id','desc')->paginate($perPage);
+            $posts = \Model\Post\ModelName::where('general','=','1')->where('published','=','1')->where('category_id','=',$category_id)->where('title','<>','')->orderBy('id','desc')->paginate($perPage);
         }else{
-            $posts = \Model\Post\ModelName::where('category_id','=',$category_id)->where('titleRu','<>','')->orderBy('id','desc')->paginate($perPage);
+            $posts = \Model\Post\ModelName::where('general','=','1')->where('published','=','1')->where('category_id','=',$category_id)->where('titleRu','<>','')->orderBy('id','desc')->paginate($perPage);
         }
 
         if($lc == 'kg'){
@@ -581,14 +735,26 @@ class HomeController extends Controller
                 $topArticles = $topArticles;   
             }else{
                 $topArticles = null;
-            } 
+            }
+            $popArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->orderBy('viewed','desc')->take(6)->get();
+            if(count($popArticles) > 0){
+                $popArticles = $popArticles;
+            }else{
+                $popArticles = null;
+            }
         }elseif($lc == 'ru'){
             $topArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->where('numberRu','=','88')->orderBy('updated_at','desc')->take(6)->get();
             if(count($topArticles) > 0){
                 $topArticles = $topArticles;   
             }else{
                 $topArticles = null;
-            } 
+            }
+            $popArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->orderBy('viewed','desc')->take(6)->get();
+            if(count($popArticles) > 0){
+                $popArticles = $popArticles;
+            }else{
+                $popArticles = null;
+            }
         }
 
         $categories = \Model\Category\ModelName::where('general','=','1')->get();
@@ -599,6 +765,7 @@ class HomeController extends Controller
             'posts' => $posts,
             'category' => $category,
             'topArticles' => $topArticles,
+            'popArticles' => $popArticles,
 
             'categories'=>$categories,
             'backgroundMain' => $backgroundMain,

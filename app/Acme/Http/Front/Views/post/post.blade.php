@@ -89,15 +89,31 @@
                                     <a href="http://orphus.ru" id="orphus" class="hidden" target="_blank"><img alt="Система Orphus" src="{{ asset('js/orphus.gif') }}" border="0" width="240" height="80" /></a>
                                 </p>
 
-                                <div class="orphus-mistake col-md-12">
-                                    <h4>
-                                        <i class="fa fa-exclamation-circle"></i>
-                                        @if($lc=='kg')
-                                            Эгерде ката тапсаңыз, текстти белгилеп Ctrl+Enter басыңыз
-                                        @elseif($lc == 'ru')
-                                            Если вы обнаружили ошибку, выделите текст и нажмите Ctrl+Enter
-                                        @endif
-                                    </h4>
+                                <div class="orphus-mistake pull-right">
+                                    <div class="media">
+                                        <div class="media-body media-middle">
+                                            <h4>
+                                                @if($lc=='kg')
+                                                    Эгерде ката тапсаңыз, текстти белгилеп Ctrl+Enter басыңыз
+                                                @elseif($lc == 'ru')
+                                                    Если вы обнаружили ошибку, выделите текст и нажмите Ctrl+Enter
+                                                @endif
+                                            </h4>
+                                        </div>
+                                        <div class="media-right media-middle">
+                                            <span class="media-object">
+                                                <i class="fa fa-exclamation-circle"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    {{--<h4>--}}
+                                        {{--<i class="fa fa-exclamation-circle"></i>--}}
+                                        {{--@if($lc=='kg')--}}
+                                            {{--Эгерде ката тапсаңыз, текстти белгилеп Ctrl+Enter басыңыз--}}
+                                        {{--@elseif($lc == 'ru')--}}
+                                            {{--Если вы обнаружили ошибку, выделите текст и нажмите Ctrl+Enter--}}
+                                        {{--@endif--}}
+                                    {{--</h4>--}}
                                 </div>
 
                                 <footer class="with-share">

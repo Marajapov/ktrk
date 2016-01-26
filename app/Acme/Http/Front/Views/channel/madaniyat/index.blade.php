@@ -329,13 +329,11 @@
               $(".logo-block").addClass("search-show");
               $(".form-search").addClass("visible");
               $(".clangs").addClass("hidden");
-              $(".soc").addClass("hidden");
           });
           $(".close-search").click(function () {
               $(".logo-block").removeClass("search-show");
               $(".form-search").removeClass("visible");
               $(".clangs").removeClass("hidden");
-              $(".soc").removeClass("hidden");
 
           });
       });
@@ -359,11 +357,10 @@
       
           });
       }
-      
-      if ($(window).width() < 768) {
-          $('.carousel-slick').slick({
+      if ($(window).width() < 400) {
+          $('.carousel-slick_peredachi').slick({
               infinite: true,
-              slidesToShow: 2,
+              slidesToShow: 1,
               slidesToScroll: 1,
       
           });
@@ -377,6 +374,16 @@
       
           });
       }
+      if ($(window).width() < 768) {
+          $('.carousel-slick').slick({
+              infinite: true,
+              slidesToShow: 2,
+              slidesToScroll: 1,
+      
+          });
+      }
+      
+
       
    </script>
    <script type="text/javascript">

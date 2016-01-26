@@ -195,7 +195,7 @@
       <div class="row">
          <div class="col-md-12" style="margin-bottom:15px;">
             <div class="row topvideos ">
-               <div class="panel panel-default panel-carousel gallery">
+               <div class="panel panel-default panel-carousel">
                   <div class="panel-heading">
                      <h3 class="panel-title"><span>{{ trans('radiopages.TopCLips') }}</span></h3>
                   </div>

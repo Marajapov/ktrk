@@ -86,51 +86,28 @@
 <div class="container" style="background: #fff;padding: 0px; margin: 20px auto;">
     <section id="main-slider">
         <div class="owl-carousel">
-            <div class="item">
-            <img src="{{asset('images/channels/kyrgyzradio/1.png')}}" height="358" width="1600" alt="">
-                <div class="slider-inner">
+          @if($anons->first())
+            <div class="owl-carousel">
+              @foreach($anons as $row)
+                <div class="item">
+                  <img src="{{asset($row->thumbnail)}}" height="358" width="1600" alt="">
+                  <div class="slider-inner">
                     <div class="container">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="carousel-content">
-                                    <h2><span>Залкар инсандар</span></h2>
-                                    <p>Биздин замандын баатырлары</p>
-                                </div>
-                            </div>
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <div class="carousel-content">
+                            <h2><span>{{ $row->getNameOne() }}</span></h2>
+                          </div>
                         </div>
+                      </div>
                     </div>
+                  </div>
                 </div>
-            </div><!--/.item-->
-             <div class="item">
-            <img src="{{asset('images/channels/kyrgyzradio/2.png')}}" height="358" width="1600" alt="">
-                <div class="slider-inner">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="carousel-content">
-                                    <h2><span>Биз билген Айтматов</span> </h2>
-                                    <p>Манас жана Айтматов</p>   
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><!--/.item-->
-            <div class="item">
-            <img src="{{asset('images/channels/kyrgyzradio/3.png')}}" height="358" width="1600" alt="">
-                <div class="slider-inner">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="carousel-content">
-                                    <h2><span>Улуу манасчылар</span></h2>
-                                    <p>Дүйнө аларга багынган</p>    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><!--/.item-->
+                <!--/.item-->
+              @endforeach
+            </div>
+            <!--/.owl-carousel-->
+          @endif
         </div><!--/.owl-carousel-->
     </section><!--/#main-slider-->
 

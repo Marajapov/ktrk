@@ -36,7 +36,7 @@
                                 <h3 class="panel-title">
                                     <a href="{{ route('front.media.index') }}">Видеопортал</a>
                                     <span class="divider"><i class="fa fa-circle"></i></span>
-                                    <a href="{{ route('front.media.index') }}"><span class="ctg">@if(!empty($getVideoTypeName)) {{ $getVideoTypeName }}@endif</span></a>
+                                    <a href="{{ route('front.media.category', $MediaCategory) }}"><span class="ctg">@if(!empty($getVideoTypeName)) {{ $getVideoTypeName }}@endif</span></a>
                                 </h3>
                             </div>
                             <div class="panel-body">

@@ -329,5 +329,7 @@ return [
 
 //    Post
     'PostAktualno'=>'Актуально',
+    'PostMain'=>'Главное',
+    'PostPopular'=>'Популярное',
 
 ];

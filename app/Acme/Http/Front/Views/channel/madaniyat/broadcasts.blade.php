@@ -321,18 +321,21 @@
    <script src="{{ asset('js/jquery-1.11.2.min.js') }}"></script>
    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
    <script src="{{ asset('js/bootstrap-hover-dropdown.js') }}"></script>
-   <script>
+    <script>
       $(document).ready(function () {
           $(".search-toggle").click(function () {
               $(".logo-block").addClass("search-show");
               $(".form-search").addClass("visible");
+              $(".clangs").addClass("hidden");
           });
           $(".close-search").click(function () {
               $(".logo-block").removeClass("search-show");
               $(".form-search").removeClass("visible");
+              $(".clangs").removeClass("hidden");
+
           });
       });
-   </script> 
+   </script>
    <script type="text/javascript" src="{{ asset('filter/js/jquery.easing.min.js') }}"></script>
    <script type="text/javascript" src="filter/js/jquery.mixitup.min.js') }}"></script>
    <script type="text/javascript" src="{{ asset('js/jquery-migrate-1.2.1.min.js') }}"></script>
@@ -444,18 +447,6 @@
           };
           // Run the show!
           filterList.init();
-      });
-   </script>
-   <script>
-      $(document).ready(function () {
-          $(".search-toggle").click(function () {
-              $(".logo-block").addClass("search-show");
-              $(".form-search").addClass("visible");
-          });
-          $(".close-search").click(function () {
-              $(".logo-block").removeClass("search-show");
-              $(".form-search").removeClass("visible");
-          });
       });
    </script>
    @stop
