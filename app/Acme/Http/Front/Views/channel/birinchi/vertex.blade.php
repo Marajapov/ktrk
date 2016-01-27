@@ -20,8 +20,9 @@
                                             @foreach($generalPosts as $post)
                                                 <div>
                                                     <div class="slide-info">
+                                                        <a href="{{ route('birinchi.news', $post) }}" title="">
                                                         <img class="img" src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif" alt=""/>
-
+                                                        </a>
                                                         <span class="slide-category">
                                                         {{ $post->category('category_id')->first()->getTitle() }}
                                                         </span>
