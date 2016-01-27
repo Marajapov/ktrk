@@ -164,7 +164,7 @@
     padding: 3px 5px 3px 15px !important;
 }
 .birinchiradio .oneheaderone .active {
-    background: #999999;
+    background: #4483A0;
 }
 .birinchiradio .navbar-brand {
     height: auto;
@@ -181,20 +181,20 @@
     padding: 10px 15px;
 }
 .birinchiradio .navbar-brand:hover{
-    background: none repeat scroll 0% 0% #999999;
+    background: none repeat scroll 0% 0% #4483A0;
 }
 
 .birinchiradio .navbar li .active{
     color: #fff;
-    background: none repeat scroll 0% 0% #999999;
+    background: none repeat scroll 0% 0% #4483A0;
 }
 .birinchiradio .navbar li>a:hover, .birinchiradio .navbar li>a:active, .birinchiradio .navbar li>a:focus {
     color: #fff;
-    background: none repeat scroll 0% 0% #999999;
+    background: #4483A0;
 
 }
 .birinchiradio .nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
-    background: none repeat scroll 0% 0% #999999;
+    background: none repeat scroll 0% 0% #4483A0;
 }
 .birinchiradio #site-channel1 a {
     display: block;
@@ -217,9 +217,9 @@
 }
 
 .birinchiradio .form-search .form-group input{
-    border-bottom: 1px solid #4a4a4a;
-    color: #4a4a4a;
-    background: none repeat scroll 0% 0% #999999;
+    border-bottom: none;
+    color: #fff;
+    background: #2D596D;
 }
 
 .onelogos {
@@ -606,6 +606,12 @@
     padding: 2px 0;
     display: inline;
 }
+.lentanews .xtitle a{
+    color: #332F2E;
+}
+.lentanews .xtitle a:hover{
+    color: #3E8CAF;
+}
 
 .test {
     background: #CACACA;
@@ -707,11 +713,11 @@
 
 /* BEGIN AllNews*/
 
-.oneallnews .ctg-panel .list-group-item, .broadcastpost .ctg-panel .list-group-item{
+.oneallnews .ctg-panel .list-group-item, .broadcastpost .ctg-panel .list-group-item, .onenews .ctg-panel .list-group-item{
     background: none;
 }
 
-.oneallnews .ctg-panel .list-group-item a, .broadcastpost .ctg-panel .list-group-item a {
+.oneallnews .ctg-panel .list-group-item a, .broadcastpost .ctg-panel .list-group-item a, .onenews .ctg-panel .list-group-item a  {
     padding: 5px 5px 5px 0px;
 }
 
@@ -813,13 +819,13 @@
     padding: 10px 0px;
     font-size: 22px;
 }
-.broadcastimg {
+.oneimg {
     width: 260px;
     float: left;
     margin-right: 10px;
     margin-bottom: 0px;
 }
-.broadcastimg img {
+.oneimg img {
     max-width: 100%;
     overflow: hidden;
     height: auto;
@@ -831,3 +837,11 @@
 }
 
 /*END Broadcast one news*/
+
+/* BEGIN NEWS page*/
+
+.onenews .panel{
+    background: none;
+}
+
+/* END NEWS page*/

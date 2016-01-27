@@ -28,9 +28,6 @@ Route::group(['domain' => 'ktrk.dev', 'prefix' => '/balastan', 'namespace' => 'F
     Route::get('/allphotos',['as' => 'balastan.allphotos','uses'=> 'BalastanController@allphotos'] );
     Route::get('/photos/{gallery}',['as' => 'balastan.photos','uses'=> 'BalastanController@Gallery'] );
 
-    //Redesign home page
-    Route::get('/vertex',['as' => 'balastan.vertex','uses'=> 'BalastanController@vertex'] );
-
 });
 
 
@@ -104,8 +101,6 @@ Route::group(['domain' => 'ktrk.dev', 'prefix' => '/birinchi', 'namespace' => 'F
     Route::get('/photos/{gallery}', ['as' => 'birinchi.photos',   'uses' => 'BirinchiController@Gallery']);
     Route::get('/allphotos',['as' => 'birinchi.allphotos','uses'=> 'BirinchiController@allphotos'] );
     Route::get('/broadcastsprogramm', ['as' => 'birinchi.broadcastsprogramm',   'uses' => 'BirinchiController@broadcastsprogramm']);
-
-    Route::get('/vertex',['as'=>'birinchi.vertex', 'uses'=>'BirinchiController@vertex']);
 
 });
 
