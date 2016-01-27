@@ -33,17 +33,17 @@
     <script src="{{ asset('js/modernizr-2.6.2.min.js') }}"></script>
     @yield('styles')
 
-    <style>
-        body{
+    {{--<style>--}}
+        {{--body{--}}
 
-        @if($backgroundMain != null) background: url('{{ asset($backgroundMain->getFile()) }}') no-repeat;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-position: center;
-            background-size: cover;
-        @endif
-    }
-    </style>
+        {{--@if($backgroundMain != null) background: url('{{ asset($backgroundMain->getFile()) }}') no-repeat;--}}
+            {{--background-repeat: no-repeat;--}}
+            {{--background-attachment: fixed;--}}
+            {{--background-position: center;--}}
+            {{--background-size: cover;--}}
+        {{--@endif--}}
+    {{--}--}}
+    {{--</style>--}}
 
     <script src="{{ asset('js/classie.js') }}"></script>
     <script>

@@ -2,10 +2,11 @@
 namespace Model\Media;
 
 use Illuminate\Database\Eloquent\Model;
+use Model\Post\ModelAttributes;
 
 class ModelName extends Model
 {
-    use ModelHelpers, ModelRelationships, ModelScopes;
+    use ModelHelpers, ModelRelationships, ModelScopes, ModelAttributes;
     /**
      * The database table used by the model.
      *
