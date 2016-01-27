@@ -48,6 +48,7 @@
                                             <i class="fa fa-circle"></i>
                                         @endif
                                         <span>{{ $videoName }}</span>
+                                        <span class="show-view"><i class="fa-view"></i>{{ $video->viewed }}</span>
                                     </h4>
                                     <div class="embed-responsive embed-responsive-16by9 show-video">
                                         <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ $video->getUrl()}}?rel=0&amp;showinfo=0"></iframe>
