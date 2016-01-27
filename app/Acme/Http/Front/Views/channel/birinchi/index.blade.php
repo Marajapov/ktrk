@@ -58,17 +58,19 @@
                             <div class="col-md-12">
                                 <h3 class="title">Лента новостей</h3>
                             </div>
-                            <div class="col-md-12 lenta">
-                                @if($lentaNews)
-                                    @foreach($lentaNews as $lenta)
-                                        <div class="lentanews">
-                                            <span class="xdate">{{ $lenta->getTime()}}</span>
-                                            <span class="xtitle"><a href="{{ route('birinchi.news', $post) }}">{{ $lenta->getTitleRuOrKg() }}</a></span>
-                                        </div>
-                                    @endforeach
-                                @endif
+                            <div class="col-md-12">
+                                <div class="lenta">
+                                    @if($lentaNews)
+                                        @foreach($lentaNews as $lenta)
+                                            <div class="lentanews">
+                                                <span class="xdate">{{ $lenta->getTime()}}</span>
+                                                <span class="xtitle"><a href="{{ route('birinchi.news', $post) }}">{{ $lenta->getTitleRuOrKg() }}</a></span>
+                                            </div>
+                                        @endforeach
+                                    @endif
+                                </div>
                                 <footer>
-                                    <h3>Все новости</h3>
+                                   <a href="{{ route('birinchi.allnews') }}">{{ trans('radiopages.Morenews') }}<i class="fa fa-arrow-circle-right"></i></a>
                                 </footer>
                             </div>
                         </div>
@@ -111,7 +113,8 @@
                 <div class="col-md-12 shows">
                     <div class="row">
                         <div class="col-md-12">
-                            <h3 class="titleshows">Передачи</h3>
+                            <h3 class="titleshows">{{ trans('radiopages.Peredachi') }}</h3>
+                            <h3 class="titleshowsright"><a href="{{ route('birinchi.allbroadcasts') }}">{{ trans('radiopages.AllPereadachi') }}<i class="fa fa-arrow-circle-right"></i></a></h3>
                         </div>
 
                         @if($birinchiProjects)
@@ -178,6 +181,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <h3 class="title">{{ trans('radiopages.Photos') }}</h3>
+                            <h3 class="titleshowsright"><a href="{{ route('birinchi.allphotos') }}">{{ trans('radiopages.Allphotos') }}<i class="fa fa-arrow-circle-right"></i></a></h3>
                         </div>
                         @if($photoGalleries)
                             @foreach($photoGalleries as $photoGallery)
@@ -204,13 +208,6 @@
                                 </div>
                             @endforeach
                         @endif
-                        <div class="col-md-12">
-                            <footer>
-                                <a href="{{ route('birinchi.allphotos') }}">
-                                    <span>{{ trans('radiopages.Allphotos') }}<i class="fa fa-arrow-circle-right"></i></span>
-                                </a>
-                            </footer>
-                        </div>
                     </div>
                 </div>
             </div>
