@@ -33,19 +33,17 @@
                                                 <div class="video-thumb">
                                                     <a href="{{ route('front.media.video',$video) }}">
                                                         <img src="@if($video->thumbnail_big) {{ asset($video->thumbnail_big) }} @else http://img.youtube.com/vi/{{ $video->getUrl() }}/hqdefault.jpg @endif" alt=""/>
+                                                        <div class="overlay">
+                                                            <i class="fa-view"></i>
+                                                            <span class="media-view">{{ $video->viewed }}</span>
+                                                            @if(($video->getProgramName()))
+                                                                <span class="media-project">
+                                                                    {{ $video->getProgramName() }}
+                                                                </span>
+                                                            @endif
+                                                        </div>
+                                                        <i class="fa-video"></i>
                                                     </a>
-                                                    @if($video->program)
-                                                        <a href="{{ route('front.media.project', $video->program) }}">
-                          <span>
-                          <i class="fa fa-play-circle-o"></i>
-
-                              {{ $video->getProgramName() }}
-
-                        </span>
-                                                        </a>
-                                                    @else
-                                                        <i class="fa fa-play-circle-o"></i>
-                                                    @endif
                                                 </div>
                                                 <div class="media-box video-title">
                                                     <a href="{{ route('front.media.video',$video) }}" class="">
@@ -61,23 +59,26 @@
                                     <ul class="pagination">
 
                                         <li>
-                                            <a href="{{ route('front.media.all', ['page' => 1]) }}" class="btn btn-default @if($allVideos->currentPage() == 1) disabled @endif">{{ trans('site.Start') }}</a>
+                                            <a href="{{ route('front.media.category', [$mediaCategory,'page' => 1]) }}" class="btn btn-default @if($allVideos->currentPage() == 1) disabled @endif">{{ trans('site.Start') }}</a>
                                         </li>
                                         <li>
                                             <a href="{{ $allVideos->previousPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span></a>
                                         </li>
-                                        <li>
-                                            <a href="{{ $allVideos->nextPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-right"></span></a>
-                                        </li>
 
                                         @for($i = 0, $j = 1; $i < $allVideos->total(); $i+=$perPage)
-                                            <li>
-                                                <a href="{{ route('front.media.all', ['page' => $j]) }}" class="btn btn-default @if($allVideos->currentPage() == $j) active @endif">{{ $j++ }}</a>
+                                            <li class="@if(($j > $allVideos->currentPage()+3) || ($j < $allVideos->currentPage()-3)) hidden @endif">
+                                                <a href="{{ route('front.media.category', [$mediaCategory,'page' => $j]) }}" class="btn btn-default @if($allVideos->currentPage() == $j) active @endif">
+                                                    {{ $j++ }}
+                                                </a>
                                             </li>
                                         @endfor
 
                                         <li>
-                                            <a href="{{ route('front.media.all', ['page' => ceil($allVideos->total()/$perPage)]) }}" class="btn btn-default @if($allVideos->currentPage() == ceil($allVideos->total()/$perPage)) disabled @endif">{{ trans('site.End') }}</a>
+                                            <a href="{{ $allVideos->nextPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                                        </li>
+
+                                        <li>
+                                            <a href="{{ route('front.media.category', [$mediaCategory,'page' => ceil($allVideos->total()/$perPage)]) }}" class="btn btn-default @if($allVideos->currentPage() == ceil($allVideos->total()/$perPage)) disabled @endif">{{ trans('site.End') }}</a>
                                         </li>
 
                                     </ul>

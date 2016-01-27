@@ -111,7 +111,16 @@
                                     <div class="col-md-4 block">
                                         <a href="{{ route('front.media.video', $relatedVideo) }}" class="video-thumb">
                                             <img src="http://img.youtube.com/vi/{{ $relatedVideo->getUrl() }}/mqdefault.jpg" alt=""/>
-                                            <i class="fa fa-play-circle-o"></i>
+                                            <div class="overlay">
+                                                <i class="fa-view"></i>
+                                                <span class="media-view">{{ $relatedVideo->viewed }}</span>
+                                                @if(($relatedVideo->getProgramName()))
+                                                    <span class="media-project">
+                                                        {{ $relatedVideo->getProgramName() }}
+                                                    </span>
+                                                @endif
+                                            </div>
+                                            <i class="fa-video"></i>
                                         </a>
                                         <div class="video-title">
                                             <a href="{{ route('front.media.video', $relatedVideo) }}">

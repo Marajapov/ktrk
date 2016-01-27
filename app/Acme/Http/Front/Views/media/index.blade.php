@@ -108,15 +108,18 @@
                                                             <article class="col-md-4" data-cat="all-videos">
                                                                 <div class="img">
                                                                     <a href="{{ route('front.media.video', $mediaLastVideo) }}">
-                                                                        <span class="media-view"><i class="fa fa-eye"></i>{{ $mediaLastVideo->getViewed() }}</span>
-                                                                        <span class="media-date">{{ $mediaLastVideo->getTime() }}, {{ $mediaLastVideo->getDay() }} {{ $mediaLastVideo->getMonthRu() }}</span>
-                                                                        <img src="@if($mediaLastVideo->thumbnail_big) {{ asset($mediaLastVideo->thumbnail_big) }} @else http://img.youtube.com/vi/{{ $mediaLastVideo->getUrl() }}/hqdefault.jpg @endif" alt=""/>
+                                                                        <img src="@if($mediaLastVideo->thumbnail_big) {{ asset($mediaLastVideo->thumbnail) }} @else http://img.youtube.com/vi/{{ $mediaLastVideo->getUrl() }}/hqdefault.jpg @endif" alt=""/>
+                                                                        <div class="overlay">
+                                                                            <i class="fa-view"></i>
+                                                                            <span class="media-view">{{ $mediaLastVideo->viewed }}</span>
+                                                                            @if(($mediaLastVideo->getProgramName()))
+                                                                                <span class="media-project">
+                                                                                {{ $mediaLastVideo->getProgramName() }}
+                                                                            </span>
+                                                                            @endif
+                                                                        </div>
+                                                                        <i class="fa-video"></i>
                                                                     </a>
-                                                                    @if($mediaLastVideo->program)
-                                                                        <h4>
-                                                                            <a class="media-project" href="{{ route('front.media.project', $mediaLastVideo->program) }}"><i class="fa fa-play-circle-o"></i>{{ $mediaLastVideo->getProgramName() }}</a>
-                                                                        </h4>
-                                                                    @endif
                                                                 </div>
                                                                 <div class="media-title">
                                                                     <a href="{{ route('front.media.video', $mediaLastVideo) }}">
@@ -139,15 +142,18 @@
                                                                 <article class="col-md-4" data-cat="all-videos">
                                                                     <div class="img">
                                                                         <a href="{{ route('front.media.video', $pop) }}">
-                                                                            <span class="media-view"><i class="fa fa-eye"></i>{{ $pop->getViewed() }}</span>
-                                                                            <span class="media-date">{{ $pop->getTime() }}, {{ $pop->getDay() }} {{ $pop->getMonthRu() }}</span>
-                                                                            <img src="@if($pop->thumbnail_big) {{ asset($pop->thumbnail_big) }} @else http://img.youtube.com/vi/{{ $pop->getUrl() }}/hqdefault.jpg @endif" alt=""/>
+                                                                            <img src="@if($pop->thumbnail_big) {{ asset($pop->thumbnail) }} @else http://img.youtube.com/vi/{{ $pop->getUrl() }}/hqdefault.jpg @endif" alt=""/>
+                                                                            <div class="overlay">
+                                                                                <i class="fa-view"></i>
+                                                                                <span class="media-view">{{ $pop->viewed }}</span>
+                                                                                @if(($pop->getProgramName()))
+                                                                                    <span class="media-project">
+                                                                                {{ $pop->getProgramName() }}
+                                                                            </span>
+                                                                                @endif
+                                                                            </div>
+                                                                            <i class="fa-video"></i>
                                                                         </a>
-                                                                        @if($pop->program)
-                                                                            <h4>
-                                                                                <a class="media-project" href="{{ route('front.media.project', $pop->program) }}"><i class="fa fa-play-circle-o"></i>{{ $pop->getProgramName() }}</a>
-                                                                            </h4>
-                                                                        @endif
                                                                     </div>
                                                                     <div class="media-title">
                                                                         <a href="{{ route('front.media.video', $pop) }}">
@@ -194,15 +200,18 @@
                                                                         <article class="col-md-4" data-cat="all-videos">
                                                                             <div class="img">
                                                                                 <a href="{{ route('front.media.video', $row) }}">
-                                                                                    <span class="media-view"><i class="fa fa-eye"></i>{{ $row->getViewed() }}</span>
-                                                                                    <span class="media-date">{{ $row->getTime() }}, {{ $row->getDay() }} {{ $row->getMonthRu() }}</span>
-                                                                                    <img src="@if($row->thumbnail_big) {{ asset($row->thumbnail_big) }} @else http://img.youtube.com/vi/{{ $row->getUrl() }}/hqdefault.jpg @endif" alt=""/>
+                                                                                    <img src="@if($row->thumbnail_big) {{ asset($row->thumbnail) }} @else http://img.youtube.com/vi/{{ $row->getUrl() }}/hqdefault.jpg @endif" alt=""/>
+                                                                                    <div class="overlay">
+                                                                                        <i class="fa-view"></i>
+                                                                                        <span class="media-view">{{ $row->viewed }}</span>
+                                                                                        @if(($row->getProgramName()))
+                                                                                            <span class="media-project">
+                                                                                                {{ $row->getProgramName() }}
+                                                                                            </span>
+                                                                                        @endif
+                                                                                    </div>
+                                                                                    <i class="fa-video"></i>
                                                                                 </a>
-                                                                                @if($row->program)
-                                                                                    <h4>
-                                                                                        <a class="media-project" href="{{ route('front.media.project', $row->program) }}"><i class="fa fa-play-circle-o"></i>{{ $row->getProgramName() }}</a>
-                                                                                    </h4>
-                                                                                @endif
                                                                             </div>
                                                                             <div class="media-title">
                                                                                 <a href="{{ route('front.media.video', $row) }}">
@@ -235,15 +244,18 @@
                                                                             <article class="col-md-4" data-cat="all-videos">
                                                                                 <div class="img">
                                                                                     <a href="{{ route('front.media.video', $row) }}">
-                                                                                        <span class="media-view"><i class="fa fa-eye"></i>{{ $row->getViewed() }}</span>
-                                                                                        <span class="media-date">{{ $row->getTime() }}, {{ $row->getDay() }} {{ $row->getMonthRu() }}</span>
-                                                                                        <img src="@if($row->thumbnail_big) {{ asset($row->thumbnail_big)  }} @else http://img.youtube.com/vi/{{ $row->getUrl() }}/hqdefault.jpg @endif" alt=""/>
+                                                                                        <img src="@if($row->thumbnail_big) {{ asset($row->thumbnail)  }} @else http://img.youtube.com/vi/{{ $row->getUrl() }}/hqdefault.jpg @endif" alt=""/>
+                                                                                        <div class="overlay">
+                                                                                            <i class="fa-view"></i>
+                                                                                            <span class="media-view">{{ $row->viewed }}</span>
+                                                                                            @if(($row->getProgramName()))
+                                                                                                <span class="media-project">
+                                                                                                {{ $row->getProgramName() }}
+                                                                                            </span>
+                                                                                            @endif
+                                                                                        </div>
+                                                                                        <i class="fa-video"></i>
                                                                                     </a>
-                                                                                    @if($row->program)
-                                                                                        <h4>
-                                                                                            <a class="media-project" href="{{ route('front.media.project', $row->program) }}"><i class="fa fa-play-circle-o"></i>{{ $row->getProgramName() }}</a>
-                                                                                        </h4>
-                                                                                    @endif
                                                                                 </div>
                                                                                 <div class="media-title">
                                                                                     <a href="{{ route('front.media.video', $row) }}">
