@@ -54,7 +54,7 @@
                                         <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ $video->getUrl()}}?rel=0&amp;showinfo=0"></iframe>
                                     </div>
                                     <p class="video-desc">
-                                        {{ $video->getContent()}}
+                                        {!! $video->getContent()!!}
                                     </p>
                                 </article>
 

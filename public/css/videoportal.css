@@ -116,7 +116,7 @@
     font-size: 14px;
     /*font-weight: bold;*/
     line-height: 1;
-    text-align: center;
+    text-align: right;
     text-transform: uppercase;
 }
 .video-thumb i.fa-video{
@@ -166,7 +166,7 @@
     margin: auto;
     width: 24px;
     height: 24px;
-    padding-right: 8px;
+    margin: 5px;
     background-image: url('img/view-icon-dark.png');
     background-repeat: no-repeat;
     background-position: center center;
