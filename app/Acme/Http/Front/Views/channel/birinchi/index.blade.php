@@ -15,7 +15,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-12 hoverslider">
-                                    <div class="slider-for col-xs-9">
+                                    <div class="slider-for col-md-9 col-sm-12">
                                         @if($generalPosts)
                                             @foreach($generalPosts as $post)
                                                 <div>
@@ -32,7 +32,7 @@
                                             @endforeach
                                         @endif
                                     </div>
-                                    <div class="slider-nav col-xs-3">
+                                    <div class="slider-nav col-md-3 col-sm-12">
                                         @if($generalPosts)
                                             @foreach($generalPosts as $post)
                                                 <div>
