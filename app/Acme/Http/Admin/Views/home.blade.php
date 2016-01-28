@@ -3,79 +3,50 @@
 
 @section('content')
 <div class="row modals">
-	<div class="col-md-12 col-sm-12 col-xs-12">
-		<div class="x_panel">
-			<div class="x_title">          
-            </div>
-
-            <!-- top tiles -->
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <section class="content">
             <div class="row">
-                <div class="col-md-2 col-sm-4 col-xs-4 tile_stats_count">
-                    <div class="left"></div>
-                    <div class="right">
-                        <span class="count_top"><i class="fa fa-user"></i> Колдонуучулар</span>
-                        <div class="count">2500</div>
-                        <span class="count_bottom"><i class="green"></i> Акыркы 24 сатта</span>
-                    </div>
+              <div class="col-lg-4 col-xs-6">
+                <div class="small-box bg-green">
+                  <div class="inner">
+                    <h3>1230</h3>
+                    <p>Түз эфир көрүлдү</p>
+                  </div>
+                  <div class="icons">
+                    <i class="fa fa-video-camera"></i>
+                  </div>
+                  <a href="#" class="small-box-footer"><span>Акыркы 24 сатта</span> <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
-                <div class="col-md-2 col-sm-4 col-xs-4 tile_stats_count">
-                    <div class="left"></div>
-                    <div class="right">
-                        <span class="count_top"><i class="fa fa-clock-o"></i> Сайтка киришти</span>
-                        <div class="count">4258</div>
-                        <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i></i> Акыркы 24 сатта</span>
-                    </div>
-                </div>
-                <div class="col-md-2 col-sm-4 col-xs-4 tile_stats_count">
-                    <div class="left"></div>
-                    <div class="right">
-                        <span class="count_top"><i class="fa fa-user"></i> Видео көрүлдү</span>
-                        <div class="count green">1230</div>
-                        <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i></i> Акыркы 24 сатта</span>
-                    </div>
-                </div>
-                <div class="col-md-2 col-sm-4 col-xs-4 tile_stats_count">
-                    <div class="left"></div>
-                    <div class="right">
-                        <span class="count_top"><i class="fa fa-user"></i> Макала окулду</span>
-                        <div class="count">4,567</div>
-                        <span class="count_bottom"><i class="red"><i class="fa fa-sort-desc"></i></i> Акыркы 24 сатта</span>
-                    </div>
-                </div>
-                <div class="col-md-2 col-sm-4 col-xs-4 tile_stats_count">
-                    <div class="left"></div>
-                    <div class="right">
-                        <span class="count_top"><i class="fa fa-user"></i> Пикир калтырышты</span>
-                        <div class="count">31</div>
-                        <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i> </i> Акыркы 24 сатта</span>
-                    </div>
-                </div>
-                <div class=" col-md-2 col-sm-4 col-xs-4 tile_stats_count">
-                    <div class="left"></div>
-                    <div class="right">
-                        <span class="count_top"><i class="fa fa-user"></i> Жаңы макалалар</span>
-                        <div class="count">25</div>
-                        <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i> </i> Акыркы 24 сатта</span>
-                    </div>
-                </div>
+              </div>
 
+              <div class="col-lg-4 col-xs-6">
+                <div class="small-box bg-blue">
+                  <div class="inner">
+                    <h3>4500</h3>
+                    <p>Сүрөт кошулду</p>
+                  </div>
+                  <div class="icons">
+                    <i class="fa fa-picture-o"></i>
+                  </div>
+                  <a href="#" class="small-box-footer"><span>Акыркы 24 сатта</span> <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-xs-6">
+                <div class="small-box bg-red">
+                  <div class="inner">
+                    <h3>5560</h3>
+                    <p>Макала окулду</p>
+                  </div>
+                  <div class="icons">
+                    <i class="fa fa-file-text"></i>
+                  </div>
+                  <a href="#" class="small-box-footer"><span>Акыркы 24 сатта</span> <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+              </div>
             </div>
-
-            <!-- /top tiles -->
-        </div>
-       
-    </div>    
-
-    <!-- left infobar -->
-    <div class="col-md-6 col-sm-6 col-xs-12">
-        <div class="x_panel">
-            <h2>Таск бар</h2>
-            <div class="row">     
-            </div>
-
-        </div>
+        </section>
     </div>
-    <!-- left infobar -->
     <!-- right infobar -->
     <div class="col-md-6 col-sm-6 col-xs-12">
         <div class="x_panel">
@@ -113,4 +84,4 @@
 	@include('Front::messages.flash')
 	@stop
 
-    </div><!-- end row-->
+</div><!-- end row-->
