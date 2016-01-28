@@ -28,13 +28,14 @@ class MediaController extends Controller
      */
     public function create()
     {
+        $tags = \Model\Tag\Tag::lists('name', 'id');
         $projectList = \Model\Project\ModelName::lists('name', 'id')->toArray();
         
 
         return view('Admin::media.create', [
             'media' => new Media,
             'projectList' => $projectList,
-        
+            'tags' => $tags,
             ]);
     }
 
@@ -47,7 +48,7 @@ class MediaController extends Controller
     public function store(Request $request)
     {
 
-        $media = Media::create($request->except('q', 'thumbnail','hitnumber'));
+        $media = Media::create($request->except('tag_kg','tag_ru','q', 'thumbnail','hitnumber'));
 
         if($request->input('hitnumber')){
             $hitnumber = $request->input('hitnumber');
@@ -59,6 +60,46 @@ class MediaController extends Controller
             $media->hitnumber = $hitnumber;
             $media->save();
         }
+
+        $tag_kg_string = $request->input('tag_kg');
+        $tags = explode("; ",$tag_kg_string);
+
+        $tag_ru_string = $request->input('tag_ru');
+        $tags2 = explode("; ",$tag_ru_string);
+
+        if(!empty($tags)){
+            foreach ($tags as $key => $name)
+            {
+                if(!is_numeric($name) && !empty($name))
+                {
+                    $tag = \Model\Tag\Tag::firstOrNew(['name' => $name]);
+                    $tag->name = $name;
+                    $tag->lang = 'kg';
+                    $tag->save();
+                    $tags[$key] = $tag->id();
+                }
+            }// end foreach
+
+            $media->tags()->attach($tags);
+
+        }// end if
+
+        if(!empty($tags2)){
+            foreach ($tags2 as $key => $name)
+            {
+                if(!is_numeric($name) && !empty($name))
+                {
+                    $tag = \Model\Tag\Tag::firstOrNew(['name' => $name]);
+                    $tag->name = $name;
+                    $tag->lang = 'ru';
+                    $tag->save();
+                    $tags2[$key] = $tag->id();
+                }
+            }// end foreach
+
+            $media->tags()->attach($tags2);
+
+        }// end if
 
         if($request->hasFile('thumbnail'))
         {
@@ -126,11 +167,13 @@ class MediaController extends Controller
      */
     public function edit(Media $media)
     {
+        $tags = \Model\Tag\Tag::lists('name', 'id');
         $projectList = \Model\Project\ModelName::lists('name', 'id')->toArray();
         
         return view('Admin::media.edit', [
             'media' => $media,
             'projectList' => $projectList,
+            'tags' => $tags,
             ]);
     }
 
@@ -143,7 +186,50 @@ class MediaController extends Controller
      */
     public function update(Request $request, Media $media)
     {
-        $media->update($request->except('q', 'thumbnail','hitnumber'));
+        $media->update($request->except('tag_kg','tag_ru','q', 'thumbnail','hitnumber'));
+
+        $tag_kg_string = $request->input('tag_kg');
+        $tags = explode("; ",$tag_kg_string);
+
+        $tag_ru_string = $request->input('tag_ru');
+        $tags2 = explode("; ",$tag_ru_string);
+
+        if(!empty($tags)){
+
+            foreach ($tags as $key => $name)
+            {
+                if(!is_numeric($name) && !empty($name))
+                {
+                    $tag = \Model\Tag\Tag::firstOrNew(['name' => $name]);
+                    $tag->name = $name;
+                    $tag->lang = 'kg';
+                    $tag->save();
+                    $tags[$key] = $tag->id();
+                }
+            }
+
+//            $post->tags()->sync($tags);
+        }// end if
+
+        if(!empty($tags2)){
+            foreach ($tags2 as $key => $name)
+            {
+                if(!is_numeric($name) && !empty($name))
+                {
+                    $tag = \Model\Tag\Tag::firstOrNew(['name' => $name]);
+                    $tag->name = $name;
+                    $tag->lang = 'ru';
+                    $tag->save();
+                    $tags2[$key] = $tag->id();
+                }
+            }
+
+//            $post->tags()->sync($tags2);
+
+        }// end if
+
+        $tagsCommon = array_collapse([$tags, $tags2]);
+        $media->tags()->sync($tagsCommon);
 
         if($request->input('hitnumber')){
             $hitnumber = $request->input('hitnumber');

@@ -284,16 +284,25 @@
     right: 0;
     margin: auto;
     z-index: 3;
-    opacity: 0.75;
+    opacity: 0.50;
 
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
     background: url('../../css/img/video.png') no-repeat center center;
     -webkit-background-size: 100%;
     background-size: 100%;
 }
 .media-image:hover i.fa-video{
     opacity: 0;
+}
+.media-image .media-date{
+    position: absolute;
+    z-index: 3;
+    bottom: 5px;
+    left: 5px;
+
+    color: #ffffff;
+    font-size: 12px;
 }
 .media-image .overlay, .media-image i.fa-video,.media-image i.fa-view,.media-image .media-view{
     -webkit-transition: opacity 0.4s ease;

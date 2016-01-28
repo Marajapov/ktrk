@@ -42,4 +42,9 @@ trait ModelRelationships
     {
         return $this->hasMany(\Model\MediaCategory\ModelName::class, 'videoType');
     }
+
+    public function tags()
+    {
+        return $this->morphToMany(\Model\Tag\Tag::class, 'taggable');
+    }
 }

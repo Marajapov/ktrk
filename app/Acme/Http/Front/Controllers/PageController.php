@@ -168,7 +168,7 @@ class PageController extends Controller
         $lc = app()->getlocale();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
-        $channels = \Model\Channel\ModelName::take(8)->skip(1)->get();
+        $channels = \Model\Channel\ModelName::where('published','=','1')->take(6)->skip(1)->get();
 
         date_default_timezone_set('Asia/Bishkek');
         $now = date("d-m-Y H:i");
@@ -202,7 +202,7 @@ class PageController extends Controller
         $lc = app()->getlocale();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
-        $channels = \Model\Channel\ModelName::take(8)->skip(1)->get();
+        $channels = \Model\Channel\ModelName::where('published','=','1')->take(6)->skip(1)->get();
         date_default_timezone_set('Asia/Bishkek');
         $now = date("d-m-Y H:i");
         $currentDate = date('d-m-Y');

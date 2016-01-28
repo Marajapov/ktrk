@@ -529,17 +529,10 @@
                                                                     {{ $media->getProgramName() }}
                                                                 </span>
                                                             @endif
+                                                            <span class="media-date">{{ $media->getDateFormatted() }}</span>
                                                         </div>
                                                         <i class="fa-video"></i>
                                                     </a>
-                                                    @if(($media->getProgramName()))
-                                                        <div class="label">
-                                                            <div class="label-text">
-                                                                <a href="{{ route('front.media.project', $media->program) }}" title="{{ $media->getProgramName() }}" class="text-title">{{ $media->getProgramName() }}</a>
-                                                            </div>
-                                                            <div class="label-bg"></div>
-                                                        </div>
-                                                    @endif
                                                 </div>
                                                 <div class="media-title">
                                                     <a href="{{ route('front.media.video', $media) }}">
@@ -571,17 +564,10 @@
                                                                                 {{ $row->getProgramName() }}
                                                                             </span>
                                                                         @endif
+                                                                        <span class="media-date">{{ $row->getDateFormatted() }}</span>
                                                                     </div>
                                                                     <i class="fa-video"></i>
                                                                 </a>
-                                                                @if(($row->getProgramName()))
-                                                                    <div class="label">
-                                                                        <div class="label-text">
-                                                                            <a href="{{ route('front.media.video', $row) }}" title="{{ $row->getProgramName() }}" class="text-title">{{ $row->getProgramName() }}</a>
-                                                                        </div>
-                                                                        <div class="label-bg"></div>
-                                                                    </div>
-                                                                @endif
                                                             </div>
                                                             <div class="media-title">
                                                                 <a href="{{ route('front.media.video', $row) }}">

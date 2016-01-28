@@ -106,9 +106,15 @@ class HomeController extends Controller
         }
 
         if($lc == 'kg'){
+<<<<<<< HEAD
             $latestPosts = \Model\Post\ModelName::general($channel)->published()->having('number','=','99')->where('general','=','1')->where('balastan','<>','1')->languagekg()->take(6)->skip(0)->orderBy('created_at','desc')->get();    
         }elseif($lc == 'ru'){
             $latestPosts = \Model\Post\ModelName::general($channel)->published()->having('numberRu','=','99')->where('general','=','1')->where('balastan','<>','1')->languageru()->take(6)->skip(0)->orderBy('created_at','desc')->get();    
+=======
+            $latestPosts = \Model\Post\ModelName::general($channel)->published()->having('number','=','99')->where('general','=','1')->languagekg()->take(6)->skip(0)->orderBy('created_at','desc')->get();
+        }elseif($lc == 'ru'){
+            $latestPosts = \Model\Post\ModelName::general($channel)->published()->having('numberRu','=','99')->where('general','=','1')->languageru()->take(6)->skip(0)->orderBy('created_at','desc')->get();
+>>>>>>> 6bfa4c0c2f1df516c80d6ab63d1e552866881c92
         }
 
         $dayVideo1 = \Model\Media\ModelName::where('dayVideo','=','1')->first();
@@ -519,10 +525,9 @@ class HomeController extends Controller
 
         $categories = \Model\Category\ModelName::where('general','=','1')->where('published','=','1')->where('order','>','0')->orderBy('order','asc')->get();
 
-        $existCategories = array();
-
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
         $leftCategories = array();
+        $middleCategories = array();
         $rightCategories = array();
         $posts = array();
         $headerPosts = array();
@@ -564,11 +569,14 @@ class HomeController extends Controller
 
         session(['categories'=>$categories]);
 
-        foreach ($categories as $category) {
-            if($category->order % 2 == 1){
-                $leftCategories[] = $category;
-            } else{
-                $rightCategories[] = $category;
+        foreach (session('categories') as $key1=>$category1) {
+            $key1 = $key1+1;
+            if($key1 % 3 == 1){
+                $leftCategories[] = $category1;
+            } else if($key1 % 3 == 2){
+                $middleCategories[] = $category1;
+            } else if($key1 % 3 == 0){
+                $rightCategories[] = $category1;
             }
         }
 
@@ -580,6 +588,7 @@ class HomeController extends Controller
             'popArticles' => $popArticles,
             'categories'=>$categories,
             'leftCategories'=>$leftCategories,
+            'middleCategories'=>$middleCategories,
             'rightCategories'=>$rightCategories,
             'backgroundMain' => $backgroundMain,
             'positionTop'    => $this->positionTop,

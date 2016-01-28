@@ -23,8 +23,8 @@
         <table id="example" class="table table-striped table-bordered" data-order='[[ 0, "desc" ]]' data-page-length='10'>
           <thead>
             <tr>
-              <th>ID</th>
-              <th>Миниатюра</th>
+              <th class="text-center">ID</th>
+              {{--<th>Миниатюра</th>--}}
               <th>{{ trans('site.TitleKG') }}</th>
               <th>{{ trans('site.TitleRU') }}</th>
               <th class="hidden-xs">Автор</th>
@@ -37,12 +37,12 @@
           <tbody>
             @foreach($posts as $key => $post)
               <tr>
-                <td class="table-title">
+                <td class="table-title text-center">
                   {{ $post->id }}
                 </td>
-                <td class="table-img">
-                  <img src="{{ asset($post->thumbnail) }}" alt=""/>
-                </td>
+                {{--<td class="table-img">--}}
+                  {{--<img src="{{ asset($post->thumbnail) }}" alt=""/>--}}
+                {{--</td>--}}
                 <td class="table-title">
                   <a href="{{ route('admin.post.show', $post) }}">
                     {{ $post->getTitle() }}
@@ -144,7 +144,7 @@
           }
         },
         "columnDefs": [
-          { "orderable": false, "targets": 1 },
+          { "orderable": false, "targets": 5 },
           { "orderable": false, "targets": 7 }
         ]
       });

@@ -35,9 +35,9 @@
                                                 <div class="form-group col-md-2">
                                                     <div class="input-group date" id="datetimepicker1">
                                                         <input type="text" class="form-control" name="dateFrom" />
-                            <span class="input-group-addon">
-                                <i class="fa fa-calendar"></i>
-                            </span>
+                                                        <span class="input-group-addon">
+                                                            <i class="fa fa-calendar"></i>
+                                                        </span>
                                                     </div>
                                                 </div>
 
@@ -48,9 +48,9 @@
                                                 <div class="form-group col-md-2">
                                                     <div class="input-group date" id="datetimepicker2">
                                                         <input type="text" class="form-control" name="dateTo" />
-                            <span class="input-group-addon">
-                                <i class="fa fa-calendar"></i>
-                            </span>
+                                                        <span class="input-group-addon">
+                                                            <i class="fa fa-calendar"></i>
+                                                        </span>
                                                     </div>
                                                 </div>
 
@@ -66,7 +66,7 @@
 
                                     <div class="row">
 
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             @foreach($leftCategories as $leftCategory)
                                                 <div class="category">
 
@@ -108,7 +108,49 @@
 
                                         </div>
 
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
+                                            @foreach($middleCategories as $middleCategory)
+                                                <div class="category">
+
+                                                    <a href="{{ route('front.category', $middleCategory) }}" class="cat-title">
+                                                        {{ $middleCategory->getTitle() }}
+                                                    </a>
+
+                                                    <div class="cat-posts">
+                                                        @foreach($headerPosts as $headerPost)
+                                                            @if($headerPost->category_id == $middleCategory->id)
+                                                                <div class="cat-post last-post">
+                                                                    <div class="extra">
+                                                                        <span class="e-datetime">{{ $headerPost->getDay() }} {{ $headerPost->getMonthRu() }} , {{ $headerPost->getTime() }}</span>
+                                                                        <span class="e-views"><i class="fa fa-eye"></i>{{ $headerPost->getViewed() }}</span>
+                                                                    </div>
+                                                                    <a href="{{ route('front.post', $headerPost) }}">
+                                                                        <img src="@if($headerPost->thumbnail_big) {{ asset($headerPost->thumbnail_big) }} @else {{ asset($headerPost->thumbnail) }}  @endif" alt=""/>
+                                                                        <h4 class="media-heading">{{ $headerPost->getTitleRuOrKg() }}</h4>
+                                                                    </a>
+                                                                </div>
+                                                            @endif
+                                                        @endforeach
+                                                        @foreach($posts as $post)
+                                                            @if($post->category_id == $middleCategory->id)
+                                                                <div class="cat-post">
+                                                                    <div class="extra">
+                                                                        <span class="e-datetime">{{ $post->getDay() }} {{ $post->getMonthRu() }} , {{ $post->getTime() }}</span>
+                                                                        <span class="e-views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
+                                                                    </div>
+                                                                    <a href="{{ route('front.post', $post) }}">
+                                                                        <h4 class="media-heading">{{ $post->getTitleRuOrKg() }}</h4>
+                                                                    </a>
+                                                                </div>
+                                                            @endif
+                                                        @endforeach
+                                                    </div>
+                                                </div>
+                                            @endforeach
+
+                                        </div>
+
+                                        <div class="col-md-4">
                                             @foreach($rightCategories as $rightCategory)
                                                 <div class="category">
 

@@ -250,6 +250,7 @@ class PostController extends Controller
                 {
                     $tag = \Model\Tag\Tag::firstOrNew(['name' => $name]);
                     $tag->name = $name;
+                    $tag->lang = 'kg';
                     $tag->save();
                     $tags[$key] = $tag->id();
                 }
@@ -265,6 +266,7 @@ class PostController extends Controller
                 {
                     $tag = \Model\Tag\Tag::firstOrNew(['name' => $name]);
                     $tag->name = $name;
+                    $tag->lang = 'ru';
                     $tag->save();
                     $tags2[$key] = $tag->id();
                 }

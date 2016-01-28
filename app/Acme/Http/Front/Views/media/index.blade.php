@@ -114,9 +114,10 @@
                                                                             <span class="media-view">{{ $mediaLastVideo->viewed }}</span>
                                                                             @if(($mediaLastVideo->getProgramName()))
                                                                                 <span class="media-project">
-                                                                                {{ $mediaLastVideo->getProgramName() }}
-                                                                            </span>
+                                                                                    {{ $mediaLastVideo->getProgramName() }}
+                                                                                </span>
                                                                             @endif
+                                                                            <span class="media-date">{{ $mediaLastVideo->getDateFormatted() }}</span>
                                                                         </div>
                                                                         <i class="fa-video"></i>
                                                                     </a>
@@ -148,9 +149,10 @@
                                                                                 <span class="media-view">{{ $pop->viewed }}</span>
                                                                                 @if(($pop->getProgramName()))
                                                                                     <span class="media-project">
-                                                                                {{ $pop->getProgramName() }}
-                                                                            </span>
+                                                                                        {{ $pop->getProgramName() }}
+                                                                                    </span>
                                                                                 @endif
+                                                                                <span class="media-date">{{ $pop->getDateFormatted() }}</span>
                                                                             </div>
                                                                             <i class="fa-video"></i>
                                                                         </a>
@@ -209,6 +211,7 @@
                                                                                                 {{ $row->getProgramName() }}
                                                                                             </span>
                                                                                         @endif
+                                                                                        <span class="media-date">{{ $row->getDateFormatted() }}</span>
                                                                                     </div>
                                                                                     <i class="fa-video"></i>
                                                                                 </a>
@@ -250,9 +253,10 @@
                                                                                             <span class="media-view">{{ $row->viewed }}</span>
                                                                                             @if(($row->getProgramName()))
                                                                                                 <span class="media-project">
-                                                                                                {{ $row->getProgramName() }}
-                                                                                            </span>
+                                                                                                    {{ $row->getProgramName() }}
+                                                                                                </span>
                                                                                             @endif
+                                                                                            <span class="media-date">{{ $row->getDateFormatted() }}</span>
                                                                                         </div>
                                                                                         <i class="fa-video"></i>
                                                                                     </a>
