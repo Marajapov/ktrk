@@ -113,14 +113,25 @@
                 <div class="col-md-12 shows">
                     <div class="row">
                         <div class="col-md-12">
-                            <h3 class="titleshows">{{ trans('radiopages.Peredachi') }}</h3>
-                            <h3 class="titleshowsright"><a href="{{ route('birinchi.allbroadcasts') }}">{{ trans('radiopages.AllPereadachi') }}<i class="fa fa-arrow-circle-right"></i></a></h3>
+                            <h3 class="titleshows">{{ trans('radiopages.Peredachi') }}<span class="label label-danger">АНОНС!</span></h3>
+                            <!-- <h3 class="titleshowsright"><a href="{{ route('birinchi.allbroadcasts') }}">{{ trans('radiopages.AllPereadachi') }}<i class="fa fa-arrow-circle-right"></i></a></h3> -->
                         </div>
 
                         @if($birinchiProjects)
                             @foreach($birinchiProjects as $project)
                                 @foreach($project->oneprogram()->get() as $post)
-                                    <div class="blocknews col-md-3 col-sm-4 col-xs-12">
+                                    <div class="blocknews2 col-md-4 col-sm-6 col-xs-12">
+                                        <article>                                                             
+                                            <a href="#" class="hovertext">
+                                                <img class="blockimg" src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif">
+                                                <div class="desc"><span>{!! mb_substr($post->getContent(), 0, 190, "UTF-8") !!}</span></div>
+                                            </a>
+                                            <h3 class="name headline">                                               
+                                               {{ $post->getTitleRuOrKg() }}                                             
+                                           </h3>
+                                        </article>
+                                    </div>
+<!--                                     <div class="blocknews col-md-4 col-sm-6 col-xs-12">
                                         <article>
                                             <a href="{{ route('birinchi.broadcast', $post) }}" class="image-link">
                                                 <img src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif">
@@ -137,7 +148,7 @@
                                                 </a>
                                             </h3>
                                         </article>
-                                    </div>
+                                    </div> -->
                                 @endforeach
                             @endforeach
                         @endif

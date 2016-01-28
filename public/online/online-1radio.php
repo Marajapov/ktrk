@@ -1,4 +1,5 @@
-<div style="width:100%; text-align:center">
+<link rel="stylesheet" href="../css/radios.css">
+<div class="onlineone">
 	<p>Биринчи радио</p>
 	<object id="videoplayer367" width="200" height="100" data="http://ktrk.kg/sites/all/themes/sevenmag/js/player/uppod.swf">
 		<param name="bgcolor" value="#ffffff" />
