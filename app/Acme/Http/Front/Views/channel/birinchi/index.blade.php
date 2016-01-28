@@ -123,10 +123,10 @@
                     
                                     <div class="blocknews2 col-md-4 col-sm-6 col-xs-12">
                                         <article>                                                             
-                                            <a href="#" class="hovertext">
+                                            <div class="hovertext">
                                                 <img class="blockimg" src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif">
                                                 <div class="desc"><span>{!! $post->getContent() !!}</span></div>
-                                            </a>
+                                            </div>
                                             <h3 class="name headline">                                               
                                                {{ $post->getTitleRuOrKg() }}                                             
                                            </h3>

@@ -11,10 +11,8 @@ class BirinchiController extends Controller
     public function Home()
     {
         $channel = \Model\Channel\ModelName::name('birinchi')->first();
-        $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->get();
         $lc = app()->getlocale();
         $posts = array();
-
 
         $categories = \Model\Category\ModelName::where('birinchi','=','1')->where('published','=','1')->where('orderBirinchi','<>','0')->orderBy('orderBirinchi','asc')->get();
 
@@ -28,7 +26,8 @@ class BirinchiController extends Controller
                     $posts[] = $categoryPost;
                 }
             }
-            
+
+            $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('name','<>','' )->get();
 
         }else{
             $generalPosts = \Model\Post\ModelName::where('birinchi','=',1)->where('general','=','1')->languageru()->take(3)->orderBy('id','desc')->get();
@@ -41,7 +40,8 @@ class BirinchiController extends Controller
                     $posts[] = $categoryPost;
                 }
             }
-                        
+
+            $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('nameRu','<>','' )->get();
         }
 
         $topCategories = \Model\Category\ModelName::where('birinchi','=','1')->where('published','=','1')->where('orderBirinchi','<>','0')->orderBy('orderBirinchi','asc')->take(4)->get();
