@@ -387,7 +387,7 @@
                            @foreach($MediaPop1 as $pop1)
                            <div class="col-md-4 col-xs-12">
                               <a href="{{ route('muzkanal.video', $pop1)}}">
-                              <img src="http://img.youtube.com/vi/{{ $pop1->getUrl()}}/mqdefault.jpg" alt=""/></a>
+                              <img src="http://img.youtube.com/vi/{{ $pop1->getUrl()}}/hqdefault.jpg" alt=""/></a>
                               <div class="item-desc">
                                  <ul>
                                     <a href="{{ route('muzkanal.video', $pop1)}}">
@@ -407,7 +407,7 @@
                            @if($MediaPop2)
                            @foreach($MediaPop2 as $pop2)
                            <div class="col-md-4">
-                              <a href="{{ route('muzkanal.video', $pop2)}}"><img src="http://img.youtube.com/vi/{{ $pop2->getUrl()}}/mqdefault.jpg" alt=""/></a> 
+                              <a href="{{ route('muzkanal.video', $pop2)}}"><img src="http://img.youtube.com/vi/{{ $pop2->getUrl()}}/hqdefault.jpg" alt=""/></a>
                               <div class="item-desc">
                                  <ul>
                                     <a href="{{ route('muzkanal.video', $pop2)}}">
@@ -427,7 +427,7 @@
                            @if($MediaPop3)
                            @foreach($MediaPop3 as $pop3)                        
                            <div class="col-md-4">
-                              <a href="{{ route('muzkanal.video', $pop3)}}"><img src="http://img.youtube.com/vi/{{ $pop3->getUrl()}}/mqdefault.jpg" alt=""/></a> 
+                              <a href="{{ route('muzkanal.video', $pop3)}}"><img src="http://img.youtube.com/vi/{{ $pop3->getUrl()}}/hqdefault.jpg" alt=""/></a>
                               <div class="item-desc">
                                  <ul>
                                     <a href="{{ route('muzkanal.video', $pop3)}}">
@@ -464,7 +464,7 @@
                      @foreach($hitNumbers as $hit)
                      <li class="list-group-item clearfix">
                         <!--  <a href="#" class="pull-right"> <i class="glyphicon glyphicon-play"></i> </a> -->
-                        <a href="{{ route('muzkanal.video', $hit)}}" class="pull-left"> <img src="http://img.youtube.com/vi/{{ $hit->getUrl()}}/mqdefault.jpg" class="hitimg"> </a>
+                        <a href="{{ route('muzkanal.video', $hit)}}" class="pull-left"> <img src="http://img.youtube.com/vi/{{ $hit->getUrl()}}/hqdefault.jpg" class="hitimg"> </a>
                         <a class="clear" href="{{ route('muzkanal.video', $hit)}}">
                         <span>{{ $hit->getName() }}</span>
                         </a>
@@ -494,7 +494,7 @@
                            @foreach($MediaTop1 as $top1)
                            <div class="col-md-4">
                               <a href="{{ route('muzkanal.video', $top1)}}">
-                              <img src="http://img.youtube.com/vi/{{ $top1->getUrl() }}/mqdefault.jpg" alt=""/></a>
+                              <img src="http://img.youtube.com/vi/{{ $top1->getUrl() }}/hqdefault.jpg" alt=""/></a>
                               <div class="item-desc">
                                  <ul>
                                     <a href="{{ route('muzkanal.video', $top1)}}">
@@ -514,7 +514,7 @@
                            @if($MediaTop2)
                            @foreach($MediaTop2 as $top2)                        
                            <div class="col-md-4">
-                              <a href="{{ route('muzkanal.video', $top2)}}"><img src="http://img.youtube.com/vi/{{ $top2->getUrl() }}/mqdefault.jpg" alt=""/></a> 
+                              <a href="{{ route('muzkanal.video', $top2)}}"><img src="http://img.youtube.com/vi/{{ $top2->getUrl() }}/hqdefault.jpg" alt=""/></a>
                               <div class="item-desc">
                                  <ul>
                                     <a href="{{ route('muzkanal.video', $top2)}}">
