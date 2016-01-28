@@ -514,7 +514,7 @@
 
 .blocknews2 h3 {
     width: 100%;
-    height: 53px;
+    height: 60px;
     padding: 10px;
     margin: 0;
     color: #2D596D;
@@ -557,7 +557,7 @@
     border-radius: 3px !important;
 }
 
-.blocknews2 a.hovertext {
+.blocknews2 div.hovertext {
     display:block;
     position: relative;
     overflow:hidden;
@@ -567,7 +567,7 @@
     transition: all .4s;
     cursor:pointer;
 }
-.blocknews2 a.hovertext .desc {
+.blocknews2 div.hovertext .desc {
     background-color:rgba(0, 160, 150, 0);
     width:100%;
     height:100%;
@@ -581,25 +581,29 @@
     transition:all 1s;
 }
 
-.blocknews2 a.hovertext span {
-    background: rgb(78, 116, 134);
-    width: 100%;
-    height: 0px; 
-    text-transform: uppercase;
-    font-size: 16px;
-    line-height: 1.3; 
+.blocknews2 div.hovertext span {
     position: absolute;
     display: block;
+    
     bottom: 0px;
     left: 0;
+    width: 100%;
+    height: 0px; 
+    padding: 10px;
+    bottom:-20px;
+    
+    text-transform: uppercase;
+    font-size: 15px;
+    line-height: 1.3; 
+    
+    background: rgba(0, 0, 0, 0.5);
     z-index: 2;
     -moz-transition: all .4s;
     -webkit-transition: all .4s;
     -o-transition: all .4s;
     transition: all .4s;
-    padding: 10px;
 }
-.blocknews2 a.hovertext:hover span {
+.blocknews2 div.hovertext:hover span {
     bottom:0;
     height:100%;
     color: #ffffff;
