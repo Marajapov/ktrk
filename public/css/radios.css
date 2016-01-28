@@ -164,7 +164,7 @@
     padding: 3px 5px 3px 15px !important;
 }
 .birinchiradio .oneheaderone .active {
-    background: #999999;
+    background: #4483A0;
 }
 .birinchiradio .navbar-brand {
     height: auto;
@@ -181,20 +181,20 @@
     padding: 10px 15px;
 }
 .birinchiradio .navbar-brand:hover{
-    background: none repeat scroll 0% 0% #999999;
+    background: none repeat scroll 0% 0% #4483A0;
 }
 
 .birinchiradio .navbar li .active{
     color: #fff;
-    background: none repeat scroll 0% 0% #999999;
+    background: none repeat scroll 0% 0% #4483A0;
 }
 .birinchiradio .navbar li>a:hover, .birinchiradio .navbar li>a:active, .birinchiradio .navbar li>a:focus {
     color: #fff;
-    background: none repeat scroll 0% 0% #999999;
+    background: #4483A0;
 
 }
 .birinchiradio .nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
-    background: none repeat scroll 0% 0% #999999;
+    background: none repeat scroll 0% 0% #4483A0;
 }
 .birinchiradio #site-channel1 a {
     display: block;
@@ -217,9 +217,9 @@
 }
 
 .birinchiradio .form-search .form-group input{
-    border-bottom: 1px solid #4a4a4a;
-    color: #4a4a4a;
-    background: none repeat scroll 0% 0% #999999;
+    border-bottom: none;
+    color: #fff;
+    background: #2D596D;
 }
 
 .onelogos {
@@ -369,143 +369,6 @@
 }
 
 
-/*Spec reportag*/
-
-.specnews .panel-body{
-    padding: 10px 10px 10px 7px;
-}
-.specnews .specpad{
-    padding: 0px 5px;
-}
-.specpad {
-    padding: 5px 15px 0px;
-}
-.specpad .onepadding, .music .allphotospace .onepadding{
-    padding: 5px;
-}
-.birinchiradio .blocks{
-    z-index: 1;
-
-}
-.birinchiradio .cart-title{
-    position: absolute;
-    top: 0;
-    line-height: 25px;
-    font-size: 12px;
-    text-transform: uppercase;
-    padding: 0 10px;
-    display: block;
-    z-index: 1;
-}
-.birinchiradio .cart-title .category a{
-    color: white;
-}
-.birinchiradio .card-info {
-    padding: 5px 0px;
-}
-.birinchiradio .card-info .category:hover{
-    color: #332f2e;
-}
-
-.birinchiradio .card-info .category{
-    float: right;
-    margin-top: -2px;
-    color: #2D596D;
-    font-weight: 600;
-}
-
-.birinchiradio .blocks article{
-    position: relative;
-}
-
-.birinchiradio .blocks .date{
-    float: right;
-    color: #949494;
-
-    font-size: 12px
-    text-transform: lowercase;
-}
-.birinchiradio .blocks h2:before {
-    content: " ";
-    display: block;
-    float: left;
-    position: absolute;
-    left: 0;
-    height: 18px;
-
-}
-.birinchiradio .blocks h2{
-    color: #19232d;
-    font-size: 16px;
-    line-height: 1.3;
-    padding-left: 14px;
-    margin: 0px;
-    padding: 5px 10px;
-    background: #f2f2f2;
-    border-left: 3px solid #E54E53
-}
-
-.birinchiradio .blocks h3{
-    font-size: 16px;
-    margin: 0px;
-    line-height: 1;
-    font-weight: bold;
-}
-
-.birinchiradio .blocks h3 a:hover{
-    color: #237dac;
-}
-.birinchiradio .blocks h3 a{
-    color: #332f2e;
-    font-size: 18px;
-}
-.birinchiradio .blocks h2 a:hover{
-    color: #237dac;
-}
-.birinchiradio .blocks h2 a{
-    color: #19232d
-}
-.birinchiradio .blocks .description{
-    font-size: 15px;
-    line-height: 1.615;
-    color: #646465;
-    padding-bottom: 10px;
-}
-.birinchiradio .blocks .description p{
-    margin-bottom: 0;
-}
-
-
-.muzimg {
-    width: 260px;
-    float: left;
-    margin-right: 10px;
-    margin-bottom: 0px;
-}
-.muzimg img {
-    max-width: 100%;
-    overflow: hidden;
-    height: auto;
-    width: auto;
-    display: inline-block;
-    text-align: center;
-    vertical-align: middle;
-    position: relative;
-}
-@media screen and (max-width:35em) {
-    .muzimg {
-        width: 100% !important;
-    }
-}
-@media screen and (max-width:24em) {
-    .muzimg {
-        width: 80% !important;
-    }
-}
-
-
-
-
 /* BEGIN Birinchi Home page*/
 
 
@@ -574,6 +437,21 @@
     text-transform: none;
 
 }
+.titleshowsright{
+    position: absolute;
+    top: 5px;
+    right: 15px;
+
+    color: #2D596D;
+
+    font-size: 21px;
+    font-family: 'Roboto condensed';
+    text-transform: none;
+}
+.titleshowsright i{
+    padding-left: 10px;
+    font-size: 18px;
+}
 .homeleftcategory ul li{
     list-style: initial;
     margin-left: 20px;
@@ -599,6 +477,16 @@
 .homeleftcategory ul li a:hover{
     background: #D0F1FF;
 }
+.homeleftcategory footer {
+    float: left;
+}
+.homeleftcategory footer a{
+    color: #2D596D;
+    font-size: 17px;
+}
+.homeleftcategory footer i{
+    padding-left: 5px;
+}
 
 .shows {
     background: #CACACA;
@@ -615,14 +503,27 @@
 .blocknews h3 {
     width: 100%;
     height: 91px;
-    margin: -4px 0px 0px 0px;
-    
+   
     line-height: 1;
     font-size: 15px;
     font-weight: bold;
     text-overflow: ellipsis;
     
     overflow: hidden;
+}
+
+.birinchiradio .card-info {
+    padding: 5px 0px;
+}
+.birinchiradio .card-info .category:hover{
+    color: #332f2e;
+}
+
+.birinchiradio .card-info .category{
+    float: right;
+    margin-top: -2px;
+    color: #2D596D;
+    font-weight: 600;
 }
 .blocknews h3 a{
     color: #332f2e;
@@ -677,7 +578,7 @@
 }
 .switcher .name a{
     color: #fff;
-    line-height: 1.1;
+    line-height: 0.4;
     letter-spacing: 0.3px;
     vertical-align: sub;
 }
@@ -702,7 +603,7 @@
 }
 /* END Home Slider */
 .lenta{
-    height: 333px;
+    height: 309px;
     overflow: hidden;
 }
 .lentanews {
@@ -728,6 +629,12 @@
     text-decoration: none;
     padding: 2px 0;
     display: inline;
+}
+.lentanews .xtitle a{
+    color: #332F2E;
+}
+.lentanews .xtitle a:hover{
+    color: #3E8CAF;
 }
 
 .test {
@@ -788,3 +695,177 @@
 }
 
 /* END Gallery*/
+
+/* BEGIN AllBroadcast page*/
+
+.allBroadcast {
+    
+}
+.allBroadcast .category{
+    position: absolute;
+    top: 5px;
+    left: 25px;
+}
+.allBroadcast .category a{
+    color: #fff;
+    font-weight: bold;
+}
+.allBroadcast .date{
+    position: absolute;
+    top: 5px;
+    right: 25px;
+
+    color: #fff;
+    font-weight: bold;
+}
+.allBroadcast .headline{
+    max-height: 100%;
+    height: 80px;
+
+    padding: 5px 0px;
+    margin: 5px 0 0;
+    
+    font-size: 20px;
+}
+.allBroadcast .headline a{
+    color: #332f2e;
+}
+.allBroadcast .headline a:hover{
+    color: #2D596D;
+}
+/* END AllBroadcast page*/
+
+/* BEGIN AllNews*/
+
+.oneallnews .ctg-panel .list-group-item, .broadcastpost .ctg-panel .list-group-item, .onenews .ctg-panel .list-group-item{
+    background: none;
+}
+
+.oneallnews .ctg-panel .list-group-item a, .broadcastpost .ctg-panel .list-group-item a, .onenews .ctg-panel .list-group-item a  {
+    padding: 5px 5px 5px 0px;
+}
+
+.blockallnews img{
+    height: 100px;
+    width: 120px;
+}
+.blockallnews .extra .datetime{
+    font-weight: bold;
+}
+.blockallnews .extra .views{
+    float: right;
+    font-weight: bold;
+}
+
+.blockallnews .extra .views i{
+    padding-right: 10px;
+}
+.blockallnews .media-body .mb_substr h2{
+    margin: 5px 0 0;
+    color: #444;
+    font-size: 14px;
+}
+.blockallnews .media-heading {
+
+    line-height: 1;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.allnewsfooter .pagination{
+    padding:10px 0px; 
+}
+.allnewsfooter .pagination li a{
+    font-size: 18px;
+    background: none;
+}
+.allnewsfooter .pagination li a:hover{
+    background: #4E7486;
+}
+
+.allnewsfooter .pagination .btn-default.active{
+    color: #fff;
+    background: #4E7486;
+}
+/* END AllNews*/
+
+/* BEGIN All Gallery page*/
+
+/* BEGIN Gallery*/
+    
+.allgallery .media-middle {
+    padding: 10px 0;
+}
+.allgallery .extraone{
+    position: absolute;
+    top: 5px;
+    left: 25px;
+    color: #fff;
+    font-weight: bold;
+}
+.allgallery .photo-icon{
+    position: absolute;
+    top: 5px;
+    right: 25px;
+    color: #fff;
+    font-size: 20px;
+}
+
+.allgallery .photo-name{
+    margin: 0px;
+    line-height: 1;
+
+    font-size: 16px;
+    font-weight: bold;
+}
+.allgallery .photo-name a{
+    color: #332f2e;
+}
+.allgallery .photo-name a:hover{
+    color: #2D596D;
+}
+.allgallery footer{
+    float: right
+}
+.allgallery footer span{
+    font-size: 16px;
+    border-bottom: 1px dotted;
+}
+.allgallery footer span .fa-arrow-circle-right{
+    padding-left:10px; 
+}
+
+/* END All Gallery page*/
+
+/*BEGIN Broadcast one news*/
+.broadcastpost .btitle{
+    margin: 0;
+    padding: 10px 0px;
+    font-size: 22px;
+}
+.oneimg {
+    width: 260px;
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 0px;
+}
+.oneimg img {
+    max-width: 100%;
+    overflow: hidden;
+    height: auto;
+    width: auto;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+}
+
+/*END Broadcast one news*/
+
+/* BEGIN NEWS page*/
+
+.onenews .panel{
+    background: none;
+}
+
+/* END NEWS page*/
