@@ -7,8 +7,9 @@
         <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="x_panel">
 
-                <div class="x_title">
-                    <h4>{{ trans('site.AdminMediaChanged') }}</h4>
+                <div class="x_title clearfix">
+                    <h4 class="pull-left">{{ trans('site.AdminMediaChanged') }}</h4>
+                    <h5 class="pull-right" style="text-transform: none;">{{ $media->owner()->first()->name }}</h5>
                 </div>
 
                 <div class="x_content">

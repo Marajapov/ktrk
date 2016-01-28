@@ -519,10 +519,9 @@ class HomeController extends Controller
 
         $categories = \Model\Category\ModelName::where('general','=','1')->where('published','=','1')->where('order','>','0')->orderBy('order','asc')->get();
 
-        $existCategories = array();
-
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
         $leftCategories = array();
+        $middleCategories = array();
         $rightCategories = array();
         $posts = array();
         $headerPosts = array();
@@ -564,11 +563,14 @@ class HomeController extends Controller
 
         session(['categories'=>$categories]);
 
-        foreach ($categories as $category) {
-            if($category->order % 2 == 1){
-                $leftCategories[] = $category;
-            } else{
-                $rightCategories[] = $category;
+        foreach (session('categories') as $key1=>$category1) {
+            $key1 = $key1+1;
+            if($key1 % 3 == 1){
+                $leftCategories[] = $category1;
+            } else if($key1 % 3 == 2){
+                $middleCategories[] = $category1;
+            } else if($key1 % 3 == 0){
+                $rightCategories[] = $category1;
             }
         }
 
@@ -580,6 +582,7 @@ class HomeController extends Controller
             'popArticles' => $popArticles,
             'categories'=>$categories,
             'leftCategories'=>$leftCategories,
+            'middleCategories'=>$middleCategories,
             'rightCategories'=>$rightCategories,
             'backgroundMain' => $backgroundMain,
             'positionTop'    => $this->positionTop,

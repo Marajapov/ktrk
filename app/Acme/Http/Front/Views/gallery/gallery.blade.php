@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{ asset('css/articles.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/pages.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/goodshare.css') }}"/>
+    <link href="{{ asset('froala/css/froala_style.min.css') }}" rel="stylesheet" type="text/css" />
 @stop
 
 @section('content')
@@ -23,15 +24,18 @@
                         <div class="panel panel-default panel-kenesh panel-gallery">
                             <div class="panel-heading">
                                 <h3 class="panel-title">
+                                    <a href="{{ route('front.gallery.galleries') }}">ФОТОГАЛЕРЕЯ</a>
+                                    <span class="divider"><i class="fa fa-circle"></i></span>
                                     <span>{{ $gallery->getName() }}</span>
-                                    <a class="all-videos-link pull-right" href="{{ route('front.gallery.galleries') }}">
-                                        <span>{{ trans('site.FrontGalleryAll') }}<i class="fa fa-arrow-circle-right"></i></span>
-                                    </a>
                                 </h3>
                             </div>
                             <div class="panel-body">
 
-                                <p style="margin: 20px 0;">{{ $gallery->getDescription() }}</p>
+                                <h4 style="margin: 20px 0 10px;" class="gallery-title text-uppercase">
+                                    {{ $gallery->getName() }}
+                                </h4>
+
+                                <div style="margin: 20px 0;">{!! $gallery->getDescription() !!}</div>
 
                                 <div class="col-md-12" style="margin-bottom: 15px;">
 

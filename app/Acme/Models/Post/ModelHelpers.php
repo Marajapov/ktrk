@@ -112,6 +112,9 @@ trait ModelHelpers
                                 <div class="topic clearfix">
                                     <a class="t-thumb" href="'. route('front.media.video', $relatedMedia) .'">
                                         <img alt="alt photo text" src="'. asset($relatedMedia->thumbnail_big) .'">
+                                        <div class="overlay">
+                                        </div>
+                                        <i class="fa-video"></i>
                                     </a>
                                     <div class="t-info clearfix">
                                         <a class="js-dh" href="'. route('front.media.video', $relatedMedia) .'">'.$relatedMedia->getName() .'</a>
@@ -135,6 +138,9 @@ trait ModelHelpers
                                 <div class="topic clearfix">
                                     <a class="t-thumb" href="'. route('front.media.video', $relatedMedia) .'">
                                         <img src="http://img.youtube.com/vi/'.$relatedMedia->getUrl().'/mqdefault.jpg" alt="'.$relatedMedia->getName().'">
+                                        <div class="overlay">
+                                        </div>
+                                        <i class="fa-video"></i>
                                     </a>
                                     <div class="t-info clearfix">
                                         <a class="js-dh" href="'. route('front.media.video', $relatedMedia) .'">'.$relatedMedia->getName() .'</a>
@@ -159,24 +165,59 @@ trait ModelHelpers
 
         $relatedMedia = \Model\Media\ModelName::where('id','=',$media)->first();
 
-        return '
-        <span>
-            <aside class="pull-right">
-                <div class="topics-box">
-                    <div class="topics">
-                        <div class="topic clearfix">
-                            <a class="t-thumb" href="'. route('front.media.video', $media) .'">
-                                <img alt="alt photo text" src="'. asset($relatedMedia->thumbnail_big) .'">
-                            </a>
-                            <div class="t-info">
-                                <a class="js-dh" href="'. route('front.media.video', $media) .'">'.$relatedMedia->getName() .'</a>
+        if($relatedMedia->thumbnail_big){
+            return '
+                <span>
+                    <aside class="pull-right">
+                        <div class="topics-box">
+                            <div class="topics">
+                                <div class="topic clearfix">
+                                    <a class="t-thumb" href="'. route('front.media.video', $relatedMedia) .'">
+                                        <img alt="alt photo text" src="'. asset($relatedMedia->thumbnail_big) .'">
+                                        <div class="overlay">
+                                        </div>
+                                        <i class="fa-video"></i>
+                                    </a>
+                                    <div class="t-info clearfix">
+                                        <a class="js-dh" href="'. route('front.media.video', $relatedMedia) .'">'.$relatedMedia->getName() .'</a>
+                                        <div class="t-extra clearfix">
+                                            <div class="t-date">'.$relatedMedia->getDay().' '.$relatedMedia->getMonthRu().', '.$relatedMedia->getYear().'</div>
+                                            <div class="t-view"><i class="fa fa-eye"></i>'.$relatedMedia->getViewed().'</div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </aside>
-        </span>
-        ';
+                    </aside>
+                </span>
+            ';
+        } else {
+            return '
+                <span>
+                    <aside class="pull-right">
+                        <div class="topics-box">
+                            <div class="topics">
+                                <div class="topic clearfix">
+                                    <a class="t-thumb" href="'. route('front.media.video', $relatedMedia) .'">
+                                        <img src="http://img.youtube.com/vi/'.$relatedMedia->getUrl().'/mqdefault.jpg" alt="'.$relatedMedia->getName().'">
+                                        <div class="overlay">
+                                        </div>
+                                        <i class="fa-video"></i>
+                                    </a>
+                                    <div class="t-info clearfix">
+                                        <a class="js-dh" href="'. route('front.media.video', $relatedMedia) .'">'.$relatedMedia->getName() .'</a>
+                                        <div class="t-extra clearfix">
+                                        <div class="t-date">'.$relatedMedia->getDay().' '.$relatedMedia->getMonthRu().', '.$relatedMedia->getYear().'</div>
+                                        <div class="t-view"><i class="fa fa-eye"></i>'.$relatedMedia->getViewed().'</div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+                </span>
+            ';
+        }
 
     }
 

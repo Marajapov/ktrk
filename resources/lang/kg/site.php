@@ -238,7 +238,7 @@ return [
 
     //PhotoParent menu
     'AdminPhotoParentAddNew' => 'Жаңы сүрөт галереясын түзүү',
-    'AdminPhotoParentChange' => 'Сүрөт галересяын өзгөртүү',
+    'AdminPhotoParentChange' => 'Сүрөт галереясын өзгөртүү',
     'AdminPhotoParentNewGal' => 'Жаңы сүрөт галереясы',
     'AdminPhotoParents' => 'Сүрөт галереялары',
     'AdminPhotoParentLocation' => 'Жайгашкан жери',
