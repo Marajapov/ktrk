@@ -224,7 +224,7 @@
                             <div class="form-group">
                                 <label for="kyrgyzradioProgram" class="col-sm-3 control-label" style="float: left !important;">Передачи</label>
                                 <div class="col-sm-9">
-                                    {!! Form::select('kyrgyzradioProgram', $kyrgyzradioProgramList, null, ["class" => "selectpicker", "data-live-search"=>"true", "title" => "-- Выберите --"]) !!}
+                                    {!! Form::select('kyrgyzradioProgram', ['0'=>'-- Выберите --']+$kyrgyzradioProgramList, null, ["class" => "selectpicker", "data-live-search"=>"true", "title" => "-- Выберите --"]) !!}
                                 </div>
                             </div>
                         </div>
@@ -244,7 +244,7 @@
                             <div class="form-group">
                                 <label for="birinchiProgram" class="col-sm-3 control-label" style="float: left !important;">Передачи</label>
                                 <div class="col-sm-9">
-                                    {!! Form::select('birinchiProgram', $birinchiProgramList, null, ["class" => "selectpicker", "data-live-search"=>"true", "title" => "-- Выберите --"]) !!}
+                                    {!! Form::select('birinchiProgram', ['0'=>'-- Выберите --']+$birinchiProgramList, null, ["class" => "selectpicker", "data-live-search"=>"true", "title" => "-- Выберите --"]) !!}
                                 </div>
                             </div>
                         </div>
@@ -277,7 +277,7 @@
                             <div class="form-group">
                                 <label for="dostukProgram" class="col-sm-3 control-label" style="float: left !important;">Передачи</label>
                                 <div class="col-sm-9">
-                                    {!! Form::select('dostukProgram', $dostukProgramList, null, ["class" => "selectpicker", "data-live-search"=>"true", "title" => "-- Выберите --"]) !!}
+                                    {!! Form::select('dostukProgram', ['0'=>'-- Выберите --']+$dostukProgramList, null, ["class" => "selectpicker", "data-live-search"=>"true", "title" => "-- Выберите --"]) !!}
                                 </div>
                             </div>
 

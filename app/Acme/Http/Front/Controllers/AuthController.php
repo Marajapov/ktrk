@@ -36,6 +36,16 @@ class AuthController extends Controller
             }else{
                 return redirect()->route('front.home');
             }
+            
+
+            App::after(function($request, $response)
+            {
+              if ( Auth::check()){
+                  $ckname=Auth::getRecallerName(); //Get the name of the cookie, where remember me expiration time is stored
+                  $ckval=Cookie::get($ckname); //Get the value of the cookie
+                  return $response->withCookie(Cookie::make($ckname,$ckval,360)); //change the expiration time
+              }
+            });
 
         }
 
