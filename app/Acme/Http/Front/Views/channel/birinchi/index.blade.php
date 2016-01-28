@@ -120,7 +120,7 @@
                         @if($birinchiProjects)
                             @foreach($birinchiProjects as $project)
                                 @foreach($project->oneprogram()->take(6)->get() as $post)                    
-                                    <div class="blocknews2 col-md-3 col-sm-4 col-xs-12">
+                                    <div class="blocknews2 col-md-4 col-sm-4 col-xs-12">
                                         <article>                                                             
                                             <div class="hovertext">
                                                 <img class="blockimg" src="@if(!($project->getFile())) {{ asset('images/project_default.png') }} @else {{ asset($project->getFile()) }} @endif" alt="{{ $project->getNameOne() }}">
