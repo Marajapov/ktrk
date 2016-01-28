@@ -64,7 +64,7 @@
                                         @foreach($lentaNews as $lenta)
                                             <div class="lentanews">
                                                 <span class="xdate">{{ $lenta->getTime()}}</span>
-                                                <span class="xtitle"><a href="{{ route('birinchi.news', $post) }}">{{ $lenta->getTitleRuOrKg() }}</a></span>
+                                                <span class="xtitle"><a href="{{ route('birinchi.news', $lenta) }}">{{ $lenta->getTitleRuOrKg() }}</a></span>
                                             </div>
                                         @endforeach
                                     @endif

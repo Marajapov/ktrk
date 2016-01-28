@@ -100,7 +100,7 @@
    </div>
 </div>
 @stop
-@section('footerScript2')
+@section('footerscript2')
 <script type="text/javascript">
    jQuery(document).ready(function ($) {
      $('#tabs').tab();
