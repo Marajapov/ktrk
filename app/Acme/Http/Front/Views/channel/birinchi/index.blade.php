@@ -119,38 +119,18 @@
 
                         @if($birinchiProjects)
                             @foreach($birinchiProjects as $project)
-                                @foreach($project->oneprogram()->take(6)->get() as $post)
-                    
-                                    <div class="blocknews2 col-md-4 col-sm-6 col-xs-12">
+                                @foreach($project->oneprogram()->take(6)->get() as $post)                    
+                                    <div class="blocknews2 col-md-3 col-sm-4 col-xs-12">
                                         <article>                                                             
                                             <div class="hovertext">
-                                                <img class="blockimg" src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif">
-                                                <div class="desc"><span>{!! $post->getContent() !!}</span></div>
+                                                <img class="blockimg" src="@if(!($project->getFile())) {{ asset('images/project_default.png') }} @else {{ asset($project->getFile()) }} @endif" alt="{{ $project->getNameOne() }}">
+                                                <div class="desc"><span>{{ $project->getDescription() }}</span></div>
                                             </div>
                                             <h3 class="name headline">                                               
-                                               {{ $post->getTitleRuOrKg() }}                                             
+                                               {{ $project->getName() }}                                             
                                            </h3>
                                         </article>
-                                    </div>
-                  
-<!--                                     <div class="blocknews col-md-4 col-sm-6 col-xs-12">
-                                        <article>
-                                            <a href="{{ route('birinchi.broadcast', $post) }}" class="image-link">
-                                                <img src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif">
-                                                <div class="card-info">
-                                                    <span class="date ">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
-                                                    <a class="category" href="{{ route('front.category', $post->category) }}">
-                                                        {{ $post->category('category_id')->first()->getTitle() }}
-                                                    </a>
-                                                </div>
-                                            </a>
-                                            <h3 class="name headline">
-                                                <a href="{{ route('birinchi.broadcast', $post) }}" title="">
-                                                    {{ $post->getTitleRuOrKg() }}
-                                                </a>
-                                            </h3>
-                                        </article>
-                                    </div> -->
+                                    </div>                
                                 @endforeach
                             @endforeach
                         @endif
