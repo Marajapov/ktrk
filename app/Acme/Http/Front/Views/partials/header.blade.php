@@ -1,3 +1,15 @@
+<div class="main-header-xs visible-xs">
+    <a href="{{ route('front.home') }}">
+        <img src="{{ asset('images/logo.png') }}" alt="Logo"/>
+    </a>
+</div>
+
+<button type="button" class="hamburger is-closed visible-xs" data-toggle="offcanvas">
+    <span class="hamb-top"></span>
+    <span class="hamb-middle"></span>
+    <span class="hamb-bottom"></span>
+</button>
+
 <div class="bottom-bg"></div>
 
 <div class="container-fluid main-header hidden-xs">

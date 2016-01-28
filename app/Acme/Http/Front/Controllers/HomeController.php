@@ -159,7 +159,8 @@ class HomeController extends Controller
         $defaultVideo = 'rjXSurFi8uQ';
 
         return view('Front::home', [
-            
+//        return view('Front::test', [
+
             'generalPost1'   => $generalPost1,
             'generalPost2'   => $generalPost2,
             'generalPost3'   => $generalPost3,
