@@ -25,8 +25,8 @@
 
 <div class="panel panel-success">
 
-    <div class="panel-heading">
-        <h3 class="panel-title">Общая информация</h3>
+    <div class="panel-heading clearfix">
+        <h3 class="panel-title pull-left">Общая информация</h3>
     </div>
 
     <div class="panel-body">

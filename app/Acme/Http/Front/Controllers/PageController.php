@@ -168,7 +168,7 @@ class PageController extends Controller
         $lc = app()->getlocale();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
-        $channels = \Model\Channel\ModelName::take(8)->skip(1)->get();
+        $channels = \Model\Channel\ModelName::where('published','=','1')->take(6)->skip(1)->get();
 
         date_default_timezone_set('Asia/Bishkek');
         $now = date("d-m-Y H:i");
@@ -202,7 +202,7 @@ class PageController extends Controller
         $lc = app()->getlocale();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
-        $channels = \Model\Channel\ModelName::take(8)->skip(1)->get();
+        $channels = \Model\Channel\ModelName::where('published','=','1')->take(6)->skip(1)->get();
         date_default_timezone_set('Asia/Bishkek');
         $now = date("d-m-Y H:i");
         $currentDate = date('d-m-Y');
@@ -340,6 +340,36 @@ class PageController extends Controller
             $relatedPosts = \Model\Post\ModelName::where('category_id','=',$post->category_id)->languageru()->take(6)->skip(0)->orderBy('id', 'desc')->get();
         }
 
+        if($lc == 'kg'){
+            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->where('number','=','88')->orderBy('updated_at','desc')->take(6)->get();
+            if(count($topArticles) > 0){
+                $topArticles = $topArticles;
+            }else{
+                $topArticles = null;
+            }
+
+            $popArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->orderBy('viewed','desc')->take(6)->get();
+            if(count($popArticles) > 0){
+                $popArticles = $popArticles;
+            }else{
+                $popArticles = null;
+            }
+
+        }elseif($lc == 'ru'){
+            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->where('numberRu','=','88')->orderBy('updated_at','desc')->take(6)->get();
+            if(count($topArticles) > 0){
+                $topArticles = $topArticles;
+            }else{
+                $topArticles = null;
+            }
+
+            $popArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->orderBy('viewed','desc')->take(6)->get();
+            if(count($popArticles) > 0){
+                $popArticles = $popArticles;
+            }else{
+                $popArticles = null;
+            }
+        }
 
         return view('Front::pages.directorPost',[
             'post' => $post,
@@ -349,6 +379,8 @@ class PageController extends Controller
             'related3Post' => $related3Post,
 
             'relatedPosts' => $relatedPosts,
+            'topArticles' => $topArticles,
+            'popArticles' => $popArticles,
 
             'parentId'=> $parentId,
             'photoChilds'=> $photoChilds,

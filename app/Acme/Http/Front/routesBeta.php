@@ -102,6 +102,8 @@ Route::group(['domain' => 'beta.ktrk.kg', 'prefix' => '/birinchi', 'namespace' =
     Route::get('/allphotos',['as' => 'birinchi.allphotos','uses'=> 'BirinchiController@allphotos'] );
     Route::get('/broadcastsprogramm', ['as' => 'birinchi.broadcastsprogramm',   'uses' => 'BirinchiController@broadcastsprogramm']);
 
+    Route::get('/vertex',['as'=>'birinchi.vertex', 'uses'=>'BirinchiController@vertex']);
+
 });
 
 Route::group(['domain' => 'beta.ktrk.kg', 'prefix' => '/dostuk', 'namespace' => 'Front\Controllers'], function() {
@@ -151,8 +153,7 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
     Route::get('media/project/{project}', ['as' => 'front.media.project', 'uses' => 'MediaController@project']); // Show Page
     Route::get('media/video/{video}', ['as' => 'front.media.video', 'uses' => 'MediaController@video']); // Show Video
     Route::get('media/all', ['as' => 'front.media.all', 'uses' => 'MediaController@allVideos']); // All Videos
-
-
+    Route::get('media/category/{mediaCategory}', ['as' => 'front.media.category', 'uses' => 'MediaController@categoryVideos']); // All Videos
 
     Route::get('history', ['as' => 'front.history', 'uses' => 'PageController@historyPage']);
 //  Director routes

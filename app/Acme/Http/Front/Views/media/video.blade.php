@@ -36,7 +36,7 @@
                                 <h3 class="panel-title">
                                     <a href="{{ route('front.media.index') }}">Видеопортал</a>
                                     <span class="divider"><i class="fa fa-circle"></i></span>
-                                    <a href="{{ route('front.media.index') }}"><span class="ctg">@if(!empty($getVideoTypeName)) {{ $getVideoTypeName }}@endif</span></a>
+                                    <a href="{{ route('front.media.category', $MediaCategory) }}"><span class="ctg">@if(!empty($getVideoTypeName)) {{ $getVideoTypeName }}@endif</span></a>
                                 </h3>
                             </div>
                             <div class="panel-body">
@@ -48,12 +48,13 @@
                                             <i class="fa fa-circle"></i>
                                         @endif
                                         <span>{{ $videoName }}</span>
+                                        <span class="show-view"><i class="fa-view"></i>{{ $video->viewed }}</span>
                                     </h4>
                                     <div class="embed-responsive embed-responsive-16by9 show-video">
                                         <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ $video->getUrl()}}?rel=0&amp;showinfo=0"></iframe>
                                     </div>
                                     <p class="video-desc">
-                                        {{ $video->getContent()}}
+                                        {!! $video->getContent()!!}
                                     </p>
                                 </article>
 
@@ -111,7 +112,17 @@
                                     <div class="col-md-4 block">
                                         <a href="{{ route('front.media.video', $relatedVideo) }}" class="video-thumb">
                                             <img src="http://img.youtube.com/vi/{{ $relatedVideo->getUrl() }}/mqdefault.jpg" alt=""/>
-                                            <i class="fa fa-play-circle-o"></i>
+                                            <div class="overlay">
+                                                <i class="fa-view"></i>
+                                                <span class="media-view">{{ $relatedVideo->viewed }}</span>
+                                                @if(($relatedVideo->getProgramName()))
+                                                    <span class="media-project">
+                                                        {{ $relatedVideo->getProgramName() }}
+                                                    </span>
+                                                @endif
+                                                <span class="media-date">{{ $relatedVideo->getDateFormatted() }}</span>
+                                            </div>
+                                            <i class="fa-video"></i>
                                         </a>
                                         <div class="video-title">
                                             <a href="{{ route('front.media.video', $relatedVideo) }}">

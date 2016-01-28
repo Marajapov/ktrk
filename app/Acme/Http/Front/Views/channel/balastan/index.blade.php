@@ -106,7 +106,6 @@
                 <div class="title col-md-12">
                     <h3>Анонс</h3>
                 </div>
-
                 @foreach($anons as $row)
                     <div class="col-md-6 adblock">
                         <a href="#">
@@ -121,31 +120,6 @@
                         </div>
                     </div>
                 @endforeach
-
-                {{--<div class="col-md-6 adblock">--}}
-                    {{--<a href="#">--}}
-                        {{--<img class="videomain" width="100%" height="340px" src="{{asset('images/channels/balastan/legends.jpg')}}" alt="" />--}}
-                    {{--</a>--}}
-                    {{--<div class="show-text">--}}
-                        {{--<h2>Түнкү сакчылардын уламышы</h2>--}}
-
-                        {{--<a class="soon-btn" href="#">--}}
-                            {{--<i class="fa fa-chevron-right"></i>--}}
-                        {{--</a>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-                {{--<div class="col-md-6 adblock">--}}
-                    {{--<a href="#">--}}
-                        {{--<img class="videomain" width="100%" height="340px" src="{{asset('images/channels/balastan/po.jpg')}}" alt="" />--}}
-                    {{--</a>--}}
-                    {{--<div class="show-text">--}}
-                        {{--<h2>Кунг Фу Панда 3</h2>--}}
-
-                        {{--<a class="soon-btn" href="#">--}}
-                            {{--<i class="fa fa-chevron-right"></i>--}}
-                        {{--</a>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
             </div>
         </div>
     </div>

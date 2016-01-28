@@ -18,6 +18,11 @@ trait ModelRelationships
         return $this->belongsTo(\Model\User\ModelName::class, 'owner_id');
     }
 
+    public function mediaCategory()
+    {
+        return $this->belongsTo(\Model\MediaCategory\ModelName::class, 'videoType');
+    }
+
     public function videoType()
     {
         return $this->hasOne(\Model\MediaCategory\ModelName::class, 'videoType');
@@ -36,5 +41,10 @@ trait ModelRelationships
     public function mediaHasCategory()
     {
         return $this->hasMany(\Model\MediaCategory\ModelName::class, 'videoType');
+    }
+
+    public function tags()
+    {
+        return $this->morphToMany(\Model\Tag\Tag::class, 'taggable');
     }
 }

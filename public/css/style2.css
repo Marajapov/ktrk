@@ -1,20 +1,16 @@
 body{
     background: #eff3fa;
-    /*background: url("../images/bg/ny_bg.png") repeat;*/
-    background: url("../images/bg/bg3.jpg") no-repeat;
-    /*background-repeat: repeat;*/
-    -webkit-background-size: cover;
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
+    background: url("../images/bg/ny_bg.png") repeat;
+    /*-webkit-background-size: cover;*/
+    /*background-size: cover;*/
+    /*background-position: center center;*/
+    /*background-attachment: fixed;*/
 
     -webkit-font-smoothing: subpixel-antialiased !important;
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility:    hidden;
     -ms-backface-visibility:     hidden;
-}/*body::-webkit-scrollbar {*/
-    /*display: none;*/
-/*}*/
+}
 body::after{
     position: absolute;
     top: 0;
@@ -481,7 +477,11 @@ header.top-menu,.logo-block{
     box-shadow: none;
 }
 .panel.latest-news .panel-body{
+    padding-top: 25px;
     padding-bottom: 10px;
+}
+.panel.latest-news .panel-body footer{
+    border-top-color: #ffffff;
 }
 
 /*PANEL DIRECTOR*/
@@ -612,7 +612,7 @@ header.top-menu,.logo-block{
 /*SHOWS-SLIDER*/
 .shows-slider{
     z-index: 101;
-
+    margin: 0;
     overflow: hidden;
 }
 .shows-carousel{

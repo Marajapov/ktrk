@@ -238,7 +238,7 @@ return [
 
     //PhotoParent menu
     'AdminPhotoParentAddNew' => 'Жаңы сүрөт галереясын түзүү',
-    'AdminPhotoParentChange' => 'Сүрөт галересяын өзгөртүү',
+    'AdminPhotoParentChange' => 'Сүрөт галереясын өзгөртүү',
     'AdminPhotoParentNewGal' => 'Жаңы сүрөт галереясы',
     'AdminPhotoParents' => 'Сүрөт галереялары',
     'AdminPhotoParentLocation' => 'Жайгашкан жери',
@@ -315,6 +315,7 @@ return [
     'LastVideos' => 'Акыркы видеолор',
     'TopVideos' => 'Топ видеолор',
     'Episodes' => 'Чыгаруулар',
+    'CategoryVideos' => 'Категориядагы видеолор',
 
     'DataTableTotal' => 'жалпы',
     'DataTableSearch' => 'Издөө',
@@ -327,4 +328,6 @@ return [
 
 //    Post
     'PostAktualno'=>'Маанилүү',
+    'PostMain'=>'Маанилүү',
+    'PostPopular'=>'Көп окулууда',
 ];

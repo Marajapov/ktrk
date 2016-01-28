@@ -12,11 +12,8 @@
     <link rel="stylesheet" href="{{ asset('css/articles.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/pages.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/goodshare.css') }}"/>
+    <link href="{{ asset('froala/css/froala_style.min.css') }}" rel="stylesheet" type="text/css" />
 @stop
-
-@section('styles')
-    <link rel="stylesheet" href="{{ asset('css/articles.css') }}"/>
-@endsection()
 
 @section('content')
     <div class="container main-wrapper">
@@ -24,13 +21,21 @@
             <section class="content clearfix">
                 <div class="clearfix">
                     <div class="top-left-block col-xs-12 col-sm-12 col-md-12">
-                        <div class="panel panel-default panel-kenesh">
+                        <div class="panel panel-default panel-kenesh panel-gallery">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><span>{{ $gallery->getName() }}</span></h3>
+                                <h3 class="panel-title">
+                                    <a href="{{ route('front.gallery.galleries') }}">ФОТОГАЛЕРЕЯ</a>
+                                    <span class="divider"><i class="fa fa-circle"></i></span>
+                                    <span>{{ $gallery->getName() }}</span>
+                                </h3>
                             </div>
                             <div class="panel-body">
 
-                                <p style="margin: 20px 0;">{{ $gallery->getDescription() }}</p>
+                                <h4 style="margin: 20px 0 10px;" class="gallery-title text-uppercase">
+                                    {{ $gallery->getName() }}
+                                </h4>
+
+                                <div style="margin: 20px 0;">{!! $gallery->getDescription() !!}</div>
 
                                 <div class="col-md-12" style="margin-bottom: 15px;">
 
@@ -109,6 +114,7 @@
     </div><!-- end container main-wrapper -->
 
 @stop
+
 @section('footerScript')
 
     {{--SHARE BUTTONS--}}

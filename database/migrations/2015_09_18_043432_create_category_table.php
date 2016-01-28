@@ -31,6 +31,7 @@ class CreateCategoryTable extends Migration
             $table->string('description', 500);
             $table->string('descriptionRu', 500);
             $table->smallInteger('order')->nullable()->default(0);
+            $table->integer('orderBirinchi');
             $table->boolean('published')->nullable()->default(false);
             $table->timestamps();
         });

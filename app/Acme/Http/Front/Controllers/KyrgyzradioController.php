@@ -11,7 +11,9 @@ class KyrgyzradioController extends Controller
     public function Home()
     {
 
-//        return view('Front::channel.kyrgyzradio.comingsoon',[]);
+
+//      return view('Front::channel.kyrgyzradio.comingsoon',[]);
+
         $channel = \Model\Channel\ModelName::name('kyrgyzradio')->first();
 
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
