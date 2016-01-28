@@ -42,6 +42,7 @@
                                                                 {{ $video->getProgramName() }}
                                                             </span>
                                                         @endif
+                                                        <span class="media-date">{{ $video->getDateFormatted() }}</span>
                                                     </div>
                                                     <i class="fa-video"></i>
                                                 </div>

@@ -295,6 +295,15 @@
 .media-image:hover i.fa-video{
     opacity: 0;
 }
+.media-image .media-date{
+    position: absolute;
+    z-index: 3;
+    bottom: 5px;
+    left: 5px;
+
+    color: #ffffff;
+    font-size: 12px;
+}
 .media-image .overlay, .media-image i.fa-video,.media-image i.fa-view,.media-image .media-view{
     -webkit-transition: opacity 0.4s ease;
     -moz-transition: opacity 0.4s ease;

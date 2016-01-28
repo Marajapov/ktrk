@@ -1682,6 +1682,15 @@ header {
     font-size: 14px;
     text-transform: uppercase;
 }
+.tab-content article .img .media-date{
+    position: absolute;
+    z-index: 3;
+    bottom: 5px;
+    left: 5px;
+
+    color: #ffffff;
+    font-size: 12px;
+}
 .tab-content article .img h4 i {
     padding-right: 10px;
     vertical-align: middle;
