@@ -119,18 +119,20 @@
 
                         @if($birinchiProjects)
                             @foreach($birinchiProjects as $project)
-                                @foreach($project->oneprogram()->get() as $post)
+                                @foreach($project->oneprogram()->take(6)->get() as $post)
+                    
                                     <div class="blocknews2 col-md-4 col-sm-6 col-xs-12">
                                         <article>                                                             
                                             <a href="#" class="hovertext">
                                                 <img class="blockimg" src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif">
-                                                <div class="desc"><span>{!! mb_substr($post->getContent(), 0, 190, "UTF-8") !!}</span></div>
+                                                <div class="desc"><span>{!! $post->getContent() !!}</span></div>
                                             </a>
                                             <h3 class="name headline">                                               
                                                {{ $post->getTitleRuOrKg() }}                                             
                                            </h3>
                                         </article>
                                     </div>
+                  
 <!--                                     <div class="blocknews col-md-4 col-sm-6 col-xs-12">
                                         <article>
                                             <a href="{{ route('birinchi.broadcast', $post) }}" class="image-link">
