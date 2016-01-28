@@ -1,6 +1,10 @@
 @extends('Admin::layouts.default')
 @section('title', $photoParent->getName())
 
+@section('styles')
+    <link href="{{ asset('froala/css/froala_style.min.css') }}" rel="stylesheet" type="text/css" />
+@endsection
+
 @section('content')
 
     <div class="row modals">
@@ -49,21 +53,9 @@
                             </p>
                         </li>
                         <li class="list-group-item">
-                            <p class="header">{{ trans('site.DescKG') }}</p>
-                            <p class="body">
-                                {{ $photoParent->description }}
-                            </p>
-                        </li>
-                        <li class="list-group-item">
                             <p class="header">{{ trans('site.TitleRU') }}</p>
                             <p class="body">
-                                {{ $photoParent->getNameRu() }}
-                            </p>
-                        </li>
-                        <li class="list-group-item">
-                            <p class="header">{{ trans('site.DescRU') }}</p>
-                            <p class="body">
-                                {{ $photoParent->descriptionRu }}
+                                {!! $photoParent->getNameRu() !!}
                             </p>
                         </li>
                         <li class="list-group-item">
