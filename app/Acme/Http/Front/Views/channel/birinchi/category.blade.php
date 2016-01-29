@@ -15,7 +15,7 @@
                         <h3 class="title"> {{ $category->getTitle()}}</h3>
                      </div>
                     
-                     @foreach($posts as $post)
+                     @foreach($posts as $post)       
                 
                      <div class="blocknews col-md-4 col-sm-6 col-xs-12">
                           <article>
@@ -41,7 +41,7 @@
                         <ul class="pagination">
 
                             <li>
-                                <a href="{{ route('front.category', ['category' => $category, 'page' => 1]) }}" class="btn btn-default @if($posts->currentPage() == 1) disabled @endif">{{ trans('site.Start') }}</a>
+                                <a href="{{ route('birinchi.category', ['category' => $category, 'page' => 1]) }}" class="btn btn-default @if($posts->currentPage() == 1) disabled @endif">{{ trans('site.Start') }}</a>
                             </li>
                             <li>
                                 <a href="{{ $posts->previousPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span></a>
@@ -49,7 +49,7 @@
 
                             @for($i = 0, $j = 1; $i < $posts->total(); $i+=$perPage)
                                 <li class="@if(($j > $posts->currentPage()+3) || ($j < $posts->currentPage()-3)) hidden @endif">
-                                    <a href="{{ route('front.category', ['category' => $category, 'page' => $j]) }}" class="btn btn-default @if($posts->currentPage() == $j) active @endif">
+                                    <a href="{{ route('birinchi.category', ['category' => $category, 'page' => $j]) }}" class="btn btn-default @if($posts->currentPage() == $j) active @endif">
                                         {{ $j++ }}
                                     </a>
                                 </li>
@@ -60,7 +60,7 @@
                             </li>
 
                             <li>
-                                <a href="{{ route('front.category', ['category' => $category, 'page' => ceil($posts->total()/$perPage)]) }}" class="btn btn-default @if($posts->currentPage() == ceil($posts->total()/$perPage)) disabled @endif">{{ trans('site.End') }}</a>
+                                <a href="{{ route('birinchi.category', ['category' => $category, 'page' => ceil($posts->total()/$perPage)]) }}" class="btn btn-default @if($posts->currentPage() == ceil($posts->total()/$perPage)) disabled @endif">{{ trans('site.End') }}</a>
                             </li>
 
                         </ul>
