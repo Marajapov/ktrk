@@ -1,4 +1,4 @@
-@extends('Front::layouts.default')
+@extends('Front::layouts.defaultnew')
 @section('title', $post->getTitleRuOrKg())
 @section('styles')
     <meta name="csrf-token" content="{{ csrf_token() }}">

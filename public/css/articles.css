@@ -1,7 +1,3 @@
-.panel-articles{
-    border-right: 2px solid #F1F4F9;
-    border-bottom: 1px solid #F1F4F9;
-}
 .panel-articles .panel-body{
     padding: 15px;
 }
@@ -112,14 +108,8 @@
     margin-right: 5px;
 }
 
-.ctg-panel{
-    border-left: 1px solid #F1F4F9;
-    border-bottom: 1px solid #F1F4F9;
-}
-
-.panel-article, .panel-related{
-    border-right: 2px solid #F1F4F9;
-    border-bottom: 1px solid #F1F4F9;
+.panel-articles ,.panel-article, .panel-related{
+    border-right: 4px solid #F1F4F9;
 }
 
 .panel-related .extrarel{
@@ -683,17 +673,20 @@ h3#reply-title {
 }
 
 /*Panel TOP ARTICLES*/
+.with-top-articles{
+    /*position: relative;*/
+}
 .panel-top-articles{
-    border-right: 0;
-    border-left: 1px solid #F1F4F9;
-    border-bottom: 3px solid #F1F4F9;
+    border: none;
 }
 .panel-top-articles .panel-body{
     padding-top: 0;
     padding-bottom: 0;
 }
-.with-top-articles .ctg-panel{
-    border-top: 3px solid #F1F4F9;
+.with-top-articles .ads{
+    background: #f1f4f9;
+    margin: 0;
+    padding: 25px 0;
 }
 .panel-top-articles .panel-heading{
     background: #48A6D8;
@@ -818,4 +811,12 @@ h3#reply-title {
     font-size: 16px;
     background: #f1f4f9;
     font-weight: bold;
+}
+
+
+/*POST BANNER*/
+.top-left-block .post-ads{
+    margin: 0;
+    padding: 10px 0;
+    background: #f1f4f9;
 }
