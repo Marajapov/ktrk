@@ -516,8 +516,7 @@
 
 .blocknews2 h3 {
     width: 100%;
-    height: 60px;
-    padding: 10px;
+    padding: 15px;
     margin: 0;
     color: #2D596D;
     line-height: 1;
@@ -695,7 +694,7 @@
 .lentanews .xdate{
     padding: 0 10px 0 0;
     font-weight: bold;
-    color: #556b7a;
+    color: #2D596D;
     display: table-cell;
     float: left;
 }
@@ -862,7 +861,7 @@
     padding:10px 0px; 
 }
 .allnewsfooter .pagination li a{
-    font-size: 18px;
+    font-size: 14px;
     background: none;
 }
 .allnewsfooter .pagination li a:hover{
