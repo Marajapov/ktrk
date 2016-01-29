@@ -76,6 +76,7 @@ class PostController extends Controller
     {
 
         $post = Post::create($request->except('tag_kg','tag_ru','thumbnail','q','channel_id','created_at','number','time'));
+        $thumb_author = ($request->input('thumb_author'));
 
         $post->number = 99;
         $post->numberRu = 99;
@@ -135,8 +136,8 @@ class PostController extends Controller
             $storage = \Storage::disk('public');
             $storage->makeDirectory($dir);
 
-            Image::make($_FILES['thumbnail']['tmp_name'])->fit(250, 150)->save($dir.'/'.$name);
-            Image::make($_FILES['thumbnail']['tmp_name'])->fit(500, 300)->save($dir.'/'.$name2);
+            $thumbnail = Image::make($_FILES['thumbnail']['tmp_name'])->fit(250, 150)->insert('http://beta.ktrk.kg/stringtoimg.php?string='.urlencode(base64_encode($thumb_author)).'&font_size=4&R=FF&G=FF&B=FF', 'bottom-right', 0, 0)->save($dir.'/'.$name);
+            $thumbnail_big = Image::make($_FILES['thumbnail']['tmp_name'])->fit(500, 300)->insert('http://beta.ktrk.kg/stringtoimg.php?string='.urlencode(base64_encode($thumb_author)).'&font_size=4&R=FF&G=FF&B=FF', 'bottom-right', 0, 0)->save($dir.'/'.$name2);
 
             $post->thumbnail = $dir.'/'.$name;
             $post->thumbnail_big = $dir.'/'.$name2;

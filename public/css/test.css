@@ -56,8 +56,10 @@
     overflow: hidden;
 }
 
+
+/*TOP BLOCK*/
 .panel-top-news,.panel-promo,.peoplereporter{
-    /*border: none;*/
+    border: none;
 }
 .panel-top-news,.panel-promo{
     border-bottom: 3px solid #f1f4f9;
@@ -69,6 +71,7 @@
 /*PANEL TOP NEWS*/
 .panel-top-news{
     /*background: #007ac3;*/
+    border-right: 4px solid #f1f4f9;
 }
 .panel-top-news .panel-heading h3{
     /*color: #ffffff;*/

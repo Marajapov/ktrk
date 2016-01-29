@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ру">
+<html lang="ru">
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,19 +31,8 @@
     <script src="{{ asset('js/jasny-bootstrap.js') }}"></script>
     <script src="{{ asset('js/fileinput.js') }}"></script>
     <script src="{{ asset('js/modernizr-2.6.2.min.js') }}"></script>
+
     @yield('styles')
-
-    {{--<style>--}}
-        {{--body{--}}
-
-        {{--@if($backgroundMain != null) background: url('{{ asset($backgroundMain->getFile()) }}') no-repeat;--}}
-            {{--background-repeat: no-repeat;--}}
-            {{--background-attachment: fixed;--}}
-            {{--background-position: center;--}}
-            {{--background-size: cover;--}}
-        {{--@endif--}}
-    {{--}--}}
-    {{--</style>--}}
 
     <script src="{{ asset('js/classie.js') }}"></script>
     <script>
