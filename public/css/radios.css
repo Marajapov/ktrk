@@ -569,6 +569,7 @@
     border-radius: 3px !important;
 }
 
+
 .blocknews2 div.hovertext {
     display:block;
     position: relative;
@@ -619,6 +620,10 @@
     bottom:0;
     height:100%;
     color: #ffffff;
+}
+
+.blocknews article img {
+    border-radius: 1px !important;
 }
 
 /* END Birinchi Home page*/
