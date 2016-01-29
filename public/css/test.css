@@ -67,7 +67,7 @@ body{
     background-position: center center;
     background-attachment: fixed;
 }
-.panel-top-news,.panel-promo{
+.panel-top-news,.panel-promo,.peoplereporter{
     border: none;
 }
 .panel-top-news{
@@ -82,5 +82,28 @@ body{
 }
 
 .middle-block{
+    height: 280px;
+    overflow: hidden;
     background: #f3f4f6;
+}
+.peoplereporter{
+    padding: 5px 0 15px;
+    background: none;
+}
+.peoplereporter .panel-body{
+    padding: 15px 0;
+}
+.reporter-logo{
+    text-align: center;
+}
+.reporter-logo img{
+    height: 130px;
+    width: auto;
+}
+.middle-right-block{
+    padding: 15px;
+}
+.carousel-reporter .slick-prev:before,
+.carousel-reporter .slick-next:before{
+    color: #1e2730 !important;
 }
