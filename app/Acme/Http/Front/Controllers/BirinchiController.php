@@ -114,15 +114,15 @@ class BirinchiController extends Controller
         }
         if($lc == 'kg'){
             $allPost = \Model\Post\ModelName::where('birinchi','=',1)->where('birinchiProgram','<>','1')->languagekg()->take(10)->skip(0)->published()->orderBy('id','desc')->get();    
-
+            $relatedNews = \Model\Post\ModelName::where('published','=',true)->where('birinchi','=','1')->languagekg()->where('category_id','=',$post->category_id)->take(8)->get();
             
         }else{
             $allPost = \Model\Post\ModelName::where('birinchi','=',1)->where('birinchiProgram','<>','1')->languageru()->take(10)->skip(0)->published()->orderBy('id','desc')->get();
-
+            $relatedNews = \Model\Post\ModelName::where('published','=',true)->where('birinchi','=','1')->languageru()->where('category_id','=',$post->category_id)->take(8)->get();
         }
         $categories = \Model\Category\ModelName::where('birinchi','=','1')->get();            
 
-        $relatedNews = \Model\Post\ModelName::where('published','=',true)->where('birinchi','=','1')->where('category_id','=',$post->category_id)->get();
+        
            return view('Front::channel.birinchi.news', [
             'channel' => $channel,
             'post' => $post,
