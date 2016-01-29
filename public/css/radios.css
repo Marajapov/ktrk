@@ -563,8 +563,9 @@
     font-weight: 600;
 }
 .shows .label {
-    top: -5px;
     position: relative;
+    top: -5px;
+    right: -10px
     border-radius: 3px !important;
 }
 

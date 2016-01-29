@@ -36,7 +36,7 @@
                <div class="col-md-12">
                   <div class="row">
                      <div class="col-md-12">
-                        <h3 class="title">{{ trans('radiopages.RelatedNews') }}</h3>
+                        <h3 class="title">{{ trans('site.MatpoTeme') }}</h3>
                      </div>
                     
                      @foreach($relatedNews as $post)
