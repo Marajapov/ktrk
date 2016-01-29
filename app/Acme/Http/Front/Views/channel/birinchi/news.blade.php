@@ -1,6 +1,18 @@
 @extends('Front::channel.birinchi.default')
 @section('title', "About")
 @section('styles')
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <meta property="og:url"                content="{{ Request::url()}}" />
+    <meta property="og:site_name"          content="{{ trans('site.TradeMark') }}" />
+    <meta property="og:type"               content="article" />
+    <meta property="og:title"              content="{{ $post->getTitleRuOrKg()}}" />
+    <meta property="og:description"        content="{{ $post->getShortDescription() }}" />
+    <meta property="og:image"              content="{{ asset($post->thumbnail_big) }}" />
+
+<link rel="stylesheet" href="{{asset('css/goodshare.css')}}">
+<link rel="stylesheet" href="{{asset('css/articles.css')}}">
+
 @endsection
 @section('content')
 <div class="birinchiradio">
@@ -29,6 +41,41 @@
                               {!! $post->getContent() !!}
                            </article>
                         </div>
+                     </div>
+                     <div class="col-md-12">
+                       <footer class="with-share">
+                           @if(auth()->user())
+                               <a class="post-edit" href="{{ route('admin.post.edit', $post) }}" target="_blank"><i class="fa fa-pencil"></i>{{ trans('site.AdminPostEdit') }}</a>
+                           @endif
+
+                           <div class="pluso share-buttons">
+                               <button class="goodshare btn-fb" data-type="fb">
+                                   <i class="fa fa-facebook"></i>
+                                   <span data-counter="fb"></span>
+                               </button>
+                               <!-- Button with share to Facebook & share counter -->
+                               <button class="goodshare btn-vk" data-type="vk">
+                                   <i class="fa fa-vk"></i>
+                                   <span data-counter="vk"></span>
+                               </button>
+                               <button class="goodshare btn-ok" data-type="ok">
+                                   <i class="fa fa-odnoklassniki"></i>
+                                   <span data-counter="ok"></span>
+                               </button>
+                               <button class="goodshare btn-gp" data-type="gp">
+                                   <i class="fa fa-google-plus"></i>
+                                   <span data-counter="gp"></span>
+                               </button>
+                               <button class="goodshare btn-tw" data-type="tw">
+                                   <i class="fa fa-twitter"></i>
+                                   {{--<span data-counter="tw"></span>--}}
+                               </button>
+                           </div>
+
+                           <a href="{{ route('birinchi.allnews') }}">
+                               <span>{{ trans('site.PostAllNews') }}<i class="fa fa-arrow-circle-right"></i></span>
+                           </a>
+                       </footer>
                      </div>
                   </div>
                </div>
@@ -60,6 +107,7 @@
                      </div>  
            
                      @endforeach
+
                           
                   </div>
                </div>
@@ -90,3 +138,17 @@
    </div>
 </div>
 @stop
+@section('footerscript2')
+<script src="{{asset('js/goodshare.js')}}"></script>
+    <script>
+        $(window).load(function(){
+            $('.goodshare').each(function(){
+                var span = $(this).children('span');
+                var counter = span.text();
+                if((counter==0) || (counter=='')){
+                    $(this).addClass('empty');
+                }
+            });
+        });
+    </script>
+@endsection
