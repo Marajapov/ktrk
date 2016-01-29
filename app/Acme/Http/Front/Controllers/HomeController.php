@@ -110,7 +110,6 @@ class HomeController extends Controller
             $latestPosts = \Model\Post\ModelName::general($channel)->published()->having('number','=','99')->where('general','=','1')->languagekg()->take(6)->skip(0)->orderBy('created_at','desc')->get();
         }elseif($lc == 'ru'){
             $latestPosts = \Model\Post\ModelName::general($channel)->published()->having('numberRu','=','99')->where('general','=','1')->languageru()->take(6)->skip(0)->orderBy('created_at','desc')->get();
-
         }
 
         $dayVideo1 = \Model\Media\ModelName::where('dayVideo','=','1')->first();
@@ -161,7 +160,8 @@ class HomeController extends Controller
         $defaultVideo = 'rjXSurFi8uQ';
 
         return view('Front::home', [
-            
+//        return view('Front::test', [
+
             'generalPost1'   => $generalPost1,
             'generalPost2'   => $generalPost2,
             'generalPost3'   => $generalPost3,
@@ -196,7 +196,176 @@ class HomeController extends Controller
             ]);
     }
 
+    public function Test()
+    {
+        $lc = app()->getlocale();
 
+        $channel = \Model\Channel\ModelName::general();
+
+        $channels = \Model\Channel\ModelName::take(8)->skip(1)->get();
+
+        if($lc == 'kg'){
+            $generalPost1 = \Model\Post\ModelName::general($channel)->published()->having('number','=',1)->languagekg()->first();
+            if($generalPost1 == null){
+                $generalPost1 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(10)->first();
+            }
+
+            $generalPost2 = \Model\Post\ModelName::general($channel)->published()->having('number','=',2)->languagekg()->first();
+
+            if($generalPost2 == null){
+                $generalPost2 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(15)->first();
+            }
+
+            $generalPost3 = \Model\Post\ModelName::general($channel)->published()->having('number','=',3)->languagekg()->first();
+            if($generalPost3 == null){
+                $generalPost3 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(2)->first();
+            }
+
+            $generalPost4 = \Model\Post\ModelName::general($channel)->published()->having('number','=',4)->languagekg()->first();
+            if($generalPost4 == null){
+                $generalPost4 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(30)->first();
+            }
+
+            $generalPost5 = \Model\Post\ModelName::general($channel)->published()->having('number','=',5)->languagekg()->first();
+            if($generalPost5 == null){
+                $generalPost5 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(40)->first();
+            }
+
+
+            $generalPost6 = \Model\Post\ModelName::general($channel)->published()->having('number','=',6)->languagekg()->first();
+            if($generalPost6 == null){
+                $generalPost6 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(50)->first();
+            }
+
+            $projects = \Model\Project\ModelName::having('name','<>','')->get();
+            $directorPosts = \Model\Post\ModelName::where('director','=','1')->orderBy('id','desc')->take(3)->languagekg()->get();
+            $reporterPosts = \Model\Post\ModelName::where('reporter','=','1')->orderBy('id','desc')->take(15)->languagekg()->get();
+
+        }elseif($lc == 'ru'){
+            $generalPost1 = \Model\Post\ModelName::general($channel)->published()->having('numberRu','=',1)->languageru()->first();
+            if($generalPost1 == null){
+                $generalPost1 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languageru()->orderBy('id','desc')->take(1)->skip(32)->first();
+            }
+
+            $generalPost2 = \Model\Post\ModelName::general($channel)->published()->having('numberRu','=',2)->languageru()->first();
+            if($generalPost2 == null){
+                $generalPost2 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languageru()->orderBy('id','desc')->take(1)->skip(17)->first();
+            }
+
+            $generalPost3 = \Model\Post\ModelName::general($channel)->published()->having('numberRu','=',3)->languageru()->first();
+            if($generalPost3 == null){
+                $generalPost3 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languageru()->orderBy('id','desc')->take(1)->skip(22)->first();
+            }
+
+            $generalPost4 = \Model\Post\ModelName::general($channel)->published()->having('numberRu','=',4)->languageru()->first();
+            if($generalPost4 == null){
+                $generalPost4 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languageru()->orderBy('id','desc')->take(1)->skip(33)->first();
+            }
+
+            $generalPost5 = \Model\Post\ModelName::general($channel)->published()->having('numberRu','=',5)->languageru()->first();
+            if($generalPost5 == null){
+                $generalPost5 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languageru()->orderBy('id','desc')->take(1)->skip(44)->first();
+            }
+
+            $generalPost6 = \Model\Post\ModelName::general($channel)->published()->having('numberRu','=',6)->languageru()->first();
+            if($generalPost6 == null){
+                $generalPost6 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languageru()->orderBy('id','desc')->take(1)->skip(51)->first();
+            }
+
+            $projects = \Model\Project\ModelName::where('nameRu','<>','')->get();
+            $directorPosts = \Model\Post\ModelName::where('director','=','1')->orderBy('id','desc')->take(3)->languageru()->get();
+            $reporterPosts = \Model\Post\ModelName::where('reporter','=','1')->orderBy('id','desc')->take(15)->languageru()->get();
+        }
+
+        if($lc == 'kg'){
+            $latestPosts = \Model\Post\ModelName::general($channel)->published()->having('number','=','99')->where('general','=','1')->languagekg()->take(6)->skip(0)->orderBy('created_at','desc')->get();
+        }elseif($lc == 'ru'){
+            $latestPosts = \Model\Post\ModelName::general($channel)->published()->having('numberRu','=','99')->where('general','=','1')->languageru()->take(6)->skip(0)->orderBy('created_at','desc')->get();
+        }
+
+        $dayVideo1 = \Model\Media\ModelName::where('dayVideo','=','1')->first();
+        $dayVideo2 = \Model\Media\ModelName::where('dayVideo','=','2')->first();
+        $dayVideo3 = \Model\Media\ModelName::where('dayVideo','=','3')->first();
+        $dayVideo4 = \Model\Media\ModelName::where('dayVideo','=','4')->first();
+        $dayVideo5 = \Model\Media\ModelName::where('dayVideo','=','5')->first();
+
+        if($dayVideo1){
+            $dayVideo1 = $dayVideo1;
+        } else {
+            $dayVideo1 = '';
+        }
+        if($dayVideo2){
+            $dayVideo2 = $dayVideo2;
+        } else {
+            $dayVideo2 = '';
+        }
+        if($dayVideo3){
+            $dayVideo3 = $dayVideo3;
+        } else {
+            $dayVideo3 = '';
+        }
+        if($dayVideo4){
+            $dayVideo4 = $dayVideo4;
+        } else {
+            $dayVideo4 = '';
+        }
+
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        $peopleReporters = \Model\PeopleReporter\ModelName::where('published','=',true)->get();
+
+        // Photo Gallery
+        $photoGalleries = \Model\PhotoParent\ModelName::where('extracolumn','=','1')->where('published','=',true)->take('10')->orderBy('id','desc')->get();
+
+        $MediaCategories = \Model\MediaCategory\ModelName::orderBy('id','asc')->get();
+        $mediaPosts = \Model\Media\ModelName::orderBy('id','desc')->get();
+
+        $categoriesVideos = array();
+
+        foreach($MediaCategories as $MediaCategory){
+            $CategoryVideos = \Model\Media\ModelName::where('videoType','=',$MediaCategory->videoType)->where('published','=','1')->orderBy('id','desc')->take(9)->get();
+            $categoriesVideos = array_add($categoriesVideos, $MediaCategory->videoType, $CategoryVideos);
+        }
+
+        $mediaLastVideos = \Model\Media\ModelName::where('published','=','1')->orderBy('id','desc')->take(9)->get();
+
+        $defaultVideo = 'rjXSurFi8uQ';
+
+//        return view('Front::home', [
+        return view('Front::test', [
+
+            'generalPost1'   => $generalPost1,
+            'generalPost2'   => $generalPost2,
+            'generalPost3'   => $generalPost3,
+            'generalPost4'   => $generalPost4,
+            'generalPost5'   => $generalPost5,
+            'generalPost6'   => $generalPost6,
+
+            'dayVideo1'      => $dayVideo1,
+            'dayVideo2'      => $dayVideo2,
+            'dayVideo3'      => $dayVideo3,
+            'dayVideo4'      => $dayVideo4,
+            'defaultVideo'   => $defaultVideo,
+
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionLeft'  => $this->positionLeft,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
+            'peopleReporters' => $peopleReporters,
+            'photoGalleries' => $photoGalleries,
+
+            'backgroundMain' => $backgroundMain,
+            'MediaCategories' => $MediaCategories,
+            'categoriesVideos' => $categoriesVideos,
+            'mediaLastVideos' => $mediaLastVideos,
+            'projects' => $projects,
+            'directorPosts' => $directorPosts,
+            'reporterPosts' => $reporterPosts,
+            'latestPosts' => $latestPosts,
+
+            'channels' => $channels,
+        ]);
+    }
 
     public function Post(\Model\Post\ModelName $post)
     {

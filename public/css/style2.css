@@ -547,7 +547,10 @@ header.top-menu,.logo-block{
     padding-bottom: 10px;
     padding-top: 10px;
 }
-
+.reporter-logo img{
+    height: 120px;
+    width: auto;
+}
 /*VIDEOPORTAL*/
 .videoportal{
     border-left: 2px solid #F1F4F9;
