@@ -136,7 +136,7 @@ class BirinchiController extends Controller
     public function categoryPage(\Model\Category\ModelName $category)
     {
         $lc = app()->getlocale();
-        $perPage = 10;
+        $perPage = 12;
         $category_id = $category->id;
 
         if($lc == 'kg'){
