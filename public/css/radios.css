@@ -437,16 +437,18 @@
     text-transform: none;
 
 }
+
 .titleshowsright{
     position: absolute;
     top: 5px;
-    right: 15px;
-
-    color: #2D596D;
+    right: 15px;  
 
     font-size: 21px;
     font-family: 'Roboto condensed';
     text-transform: none;
+}
+.titleshowsright a{
+    color: #2D596D;
 }
 .titleshowsright i{
     padding-left: 10px;
@@ -679,20 +681,27 @@
 }
 /* END Home Slider */
 .lenta{
-    height: 309px;
+    height: 310px;
     overflow: hidden;
 }
 .lentanews {
     border-bottom: 1px dotted #CAB8AF;
-    padding: 0px 0px 5px 0px;
+    padding: 3px 0px;
+}
+
+.lentanews:first-child {
+    padding-top:0px; 
 }
 .lentanews .xdate{
-    color: #696767;
-    font-size: 14px;
+    padding: 0 10px 0 0;
+    font-weight: bold;
+    color: #556b7a;
+    display: table-cell;
+    float: left;
 }
 
 .lentanews .xtitle{
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto Regular';
     font-style: inherit;
     line-height: 18px;
     font-weight: inherit;
@@ -704,10 +713,11 @@
     transition: color 0.15s ease-in-out;
     text-decoration: none;
     padding: 2px 0;
-    display: inline;
+    display: table-cell;
 }
 .lentanews .xtitle a{
     color: #332F2E;
+
 }
 .lentanews .xtitle a:hover{
     color: #3E8CAF;
