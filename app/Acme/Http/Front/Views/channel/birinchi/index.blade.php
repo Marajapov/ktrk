@@ -70,7 +70,7 @@
                                     @endif
                                 </div>
                                 <footer>
-                                   <a href="{{ route('birinchi.allnews') }}">{{ trans('radiopages.Morenews') }}<i class="fa fa-arrow-circle-right"></i></a>
+                                   <a href="{{ route('birinchi.allnews') }}">{{ trans('radiopages.Morenews') }}<i class="fa fa-arrow-right"></i></a>
                                 </footer>
                             </div>
                         </div>
@@ -114,12 +114,12 @@
                     <div class="row">
                         <div class="col-md-12">
                             <h3 class="titleshows">{{ trans('radiopages.Peredachi') }}<span class="label label-danger">АНОНС!</span></h3>
-                            <!-- <h3 class="titleshowsright"><a href="{{ route('birinchi.allbroadcasts') }}">{{ trans('radiopages.AllPereadachi') }}<i class="fa fa-arrow-circle-right"></i></a></h3> -->
+                            <!-- <h3 class="titleshowsright"><a href="{{ route('birinchi.allbroadcasts') }}">{{ trans('radiopages.AllPereadachi') }}<i class="fa fa-arrow-right"></i></a></h3> -->
                         </div>
 
                         @if($birinchiProjects)
                             @foreach($birinchiProjects as $project)
-                                @foreach($project->oneprogram()->take(6)->get() as $post)                    
+                                                   
                                     <div class="blocknews2 col-md-4 col-sm-4 col-xs-12">
                                         <article>                                                             
                                             <div class="hovertext">
@@ -131,7 +131,7 @@
                                            </h3>
                                         </article>
                                     </div>                
-                                @endforeach
+                             
                             @endforeach
                         @endif
                     </div>
@@ -174,7 +174,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <h3 class="title">{{ trans('radiopages.Photos') }}</h3>
-                            <h3 class="titleshowsright"><a href="{{ route('birinchi.allphotos') }}">{{ trans('radiopages.Allphotos') }}<i class="fa fa-arrow-circle-right"></i></a></h3>
+                            <h3 class="titleshowsright"><a href="{{ route('birinchi.allphotos') }}">{{ trans('radiopages.Allphotos') }}<i class="fa fa-arrow-right"></i></a></h3>
                         </div>
                         @if($photoGalleries)
                             @foreach($photoGalleries as $photoGallery)
