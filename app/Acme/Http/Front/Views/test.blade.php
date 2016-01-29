@@ -299,28 +299,27 @@
                             <div class="panel-body">
 
                                 <div class="col-md-3 reporter-logo">
-                                    <img src="{{ asset('images/reporter.png') }}" alt=""/>
+                                    <a href="#">
+                                        <img src="{{ asset('images/reporter.png') }}" alt=""/>
+                                    </a>
                                 </div>
 
                                 <div class="col-md-9">
                                     <div class="row">
                                         <div class="carousel carousel-reporter">
-                                            @if($photoGalleries)
-                                                @foreach($photoGalleries as $photoGallery)
-
-                                                    <div class="col-md-4">
-                                                        <a class="gallery-thumb" href="{{ route('front.gallery', $photoGallery) }}">
-                                                            <img src="{{ asset($photoGallery->thumbnail_big) }}" alt=""/>
-                                                            {{--<span>{{ $photoGallery->getName() }}</span>--}}
-                                                            <div class="overlay"></div>
-                                                            {{--<i class="fa fa-camera"></i>--}}
-                                                            <i class="fa-gallery"></i>
-                                                        </a>
-                                                        <a class="gallery-desc" href="{{ route('front.gallery', $photoGallery) }}">
-                                                            {{ $photoGallery->getName() }}
+                                            @if($reporterPosts)
+                                                @foreach($reporterPosts as $post)
+                                                    <div class="col-md-4 rep-post">
+                                                        <a class="rep-thumb" href="{{ route('front.post', $post) }}">
+                                                            <img src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif" alt=""/>
+                                                            <div class="overlay">
+                                                                <span class="rep-name">{{ $post->getTitleRuOrKg() }}</span>
+                                                                <span class="rep-date">{{ $post->getDay() }} {{ $post->getMonthRu() }}, {{ $post->getYear() }}</span>
+                                                                <span class="rep-view">{{ $post->getViewed() }}</span>
+                                                                <i class="fa-view"></i>
+                                                            </div>
                                                         </a>
                                                     </div>
-
                                                 @endforeach
                                             @endif
                                         </div>
@@ -479,8 +478,8 @@
                                                         <span class="media-view">{{ $media->viewed }}</span>
                                                         @if(($media->getProgramName()))
                                                             <span class="media-project">
-                                                                    {{ $media->getProgramName() }}
-                                                                </span>
+                                                                {{ $media->getProgramName() }}
+                                                            </span>
                                                         @endif
                                                         <span class="media-date">{{ $media->getDateFormatted() }}</span>
                                                     </div>
@@ -550,7 +549,7 @@
                         </div>
                     </div>
 
-                    <a href="#" class="text-center ads">
+                    <a target="_blank" href="@if(!empty($positionCenter)) {{ $positionCenter->linkTo }} @else # @endif" class="text-center ads">
                         <img src="@if(!empty($positionCenter->file)) {{ asset($positionCenter->file) }} @else {{ asset('images/banner_default_728x90.png') }} @endif" alt=""/>
                     </a>
 

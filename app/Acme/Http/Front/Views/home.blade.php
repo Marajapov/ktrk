@@ -204,7 +204,6 @@
 
                                 <div class="col-md-3 reporter-logo">
                                     <img src="{{ asset('images/reporter.png') }}" alt=""/>
-
                                 </div>
 
                                 <div class="col-md-9">
@@ -522,7 +521,7 @@
                             </div>
                         </div>
 
-                        <a href="#" class="text-center ads">
+                        <a target="_blank" href="@if(!empty($positionCenter)) {{ $positionCenter->linkTo }} @else # @endif" class="text-center ads">
                             <img src="@if(!empty($positionCenter->file)) {{ asset($positionCenter->file) }} @else {{ asset('images/banner_default_728x90.png') }} @endif" alt=""/>
                         </a>
 
