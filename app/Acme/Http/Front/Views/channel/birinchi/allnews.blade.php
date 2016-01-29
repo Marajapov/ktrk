@@ -71,7 +71,7 @@
                         <ul class="list-group">
                            @foreach($categories as $category)
                            <li class="list-group-item">
-                              <a href="{{ route('front.category', $category) }}">{{ $category->getTitle() }}</a>
+                              <a href="{{ route('birinchi.category', $category) }}">{{ $category->getTitle() }}</a>
                            </li>
                            @endforeach
                         </ul>                          

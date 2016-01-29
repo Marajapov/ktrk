@@ -1,5 +1,5 @@
 @extends('Front::channel.birinchi.default')
-@section('title', "About")
+@section('title', $category->getTitle())
 @section('styles')
 @endsection
 @section('content')
@@ -12,32 +12,12 @@
                <div class="col-md-12">
                   <div class="row">
                      <div class="col-md-12">
-                        <h3 class="title">{{ $post->category('category_id')->first()->getTitle() }}</h3>
-                     </div>
-                     <div class="panel">
-                        <div class="panel-body">
-                           <h3>{{ $post->getTitleRuOrKg() }}</h3>
-                           <div class="oneimg">
-                              <img src="@if(empty($post->getFile()))images/2.jpg @else {{  asset($post->getFile()) }} @endif" alt="" data-toggle="tooltip" data-placement="top" title="Бул жөн гана сүрөт эмес">
-                           </div>
-                           <article>
-                              {!! $post->getContent() !!}
-                           </article>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-
-               <div class="col-md-12">
-                  <div class="row">
-                     <div class="col-md-12">
-                        <h3 class="title">Связанные новости</h3>
+                        <h3 class="title"> {{ $category->getTitle()}}</h3>
                      </div>
                     
-                     @foreach($relatedNews as $post)
-
+                     @foreach($posts as $post)
                 
-                     <div class="blocknews col-md-3 col-sm-4 col-xs-12">
+                     <div class="blocknews col-md-4 col-sm-6 col-xs-12">
                           <article>
                               <a href="{{ route('birinchi.news', $post) }}" class="image-link">
                                   <img src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif">
@@ -56,6 +36,37 @@
                      @endforeach
                           
                   </div>
+                  <footer class="allnewsfooter">
+         			<nav>
+                        <ul class="pagination">
+
+                            <li>
+                                <a href="{{ route('front.category', ['category' => $category, 'page' => 1]) }}" class="btn btn-default @if($posts->currentPage() == 1) disabled @endif">{{ trans('site.Start') }}</a>
+                            </li>
+                            <li>
+                                <a href="{{ $posts->previousPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                            </li>
+
+                            @for($i = 0, $j = 1; $i < $posts->total(); $i+=$perPage)
+                                <li class="@if(($j > $posts->currentPage()+3) || ($j < $posts->currentPage()-3)) hidden @endif">
+                                    <a href="{{ route('front.category', ['category' => $category, 'page' => $j]) }}" class="btn btn-default @if($posts->currentPage() == $j) active @endif">
+                                        {{ $j++ }}
+                                    </a>
+                                </li>
+                            @endfor
+
+                            <li>
+                                <a href="{{ $posts->nextPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                            </li>
+
+                            <li>
+                                <a href="{{ route('front.category', ['category' => $category, 'page' => ceil($posts->total()/$perPage)]) }}" class="btn btn-default @if($posts->currentPage() == ceil($posts->total()/$perPage)) disabled @endif">{{ trans('site.End') }}</a>
+                            </li>
+
+                        </ul>
+                    </nav>
+                  </footer>
+
                </div>
 
             </div>
