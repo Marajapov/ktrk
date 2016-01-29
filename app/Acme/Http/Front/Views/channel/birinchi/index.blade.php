@@ -23,9 +23,9 @@
                                                         <a href="{{ route('birinchi.news', $post) }}" title="">
                                                         <img class="img" src="@if(!($post->getFileBig()))images/live_bg.png @else {{ asset($post->getFileBig()) }} @endif" alt=""/>
                                                         </a>
-                                                        <span class="slide-category">
+         <!--                                                <span class="slide-category">
                                                         {{ $post->category('category_id')->first()->getTitle() }}
-                                                        </span>
+                                                        </span> -->
                                                         <span class="slide-date">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
                                                     </div>
                                                 </div>
