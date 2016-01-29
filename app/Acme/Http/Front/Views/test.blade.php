@@ -4,8 +4,6 @@
 
 @section('styles')
     <link rel="stylesheet" href="{{ asset('filter/css/layout.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick.css') }}"/>
-    <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick-theme.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/jasny-bootstrap.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/fileinput.css') }}"/>
 @endsection
@@ -305,25 +303,27 @@
                                 </div>
 
                                 <div class="col-md-9">
-                                    <div class="carousel carousel-reporter">
-                                        @if($photoGalleries)
-                                            @foreach($photoGalleries as $photoGallery)
+                                    <div class="row">
+                                        <div class="carousel carousel-reporter">
+                                            @if($photoGalleries)
+                                                @foreach($photoGalleries as $photoGallery)
 
-                                                <div class="col-md-4">
-                                                    <a class="gallery-thumb" href="{{ route('front.gallery', $photoGallery) }}">
-                                                        <img src="{{ asset($photoGallery->thumbnail_big) }}" alt=""/>
-                                                        {{--<span>{{ $photoGallery->getName() }}</span>--}}
-                                                        <div class="overlay"></div>
-                                                        {{--<i class="fa fa-camera"></i>--}}
-                                                        <i class="fa-gallery"></i>
-                                                    </a>
-                                                    <a class="gallery-desc" href="{{ route('front.gallery', $photoGallery) }}">
-                                                        {{ $photoGallery->getName() }}
-                                                    </a>
-                                                </div>
+                                                    <div class="col-md-4">
+                                                        <a class="gallery-thumb" href="{{ route('front.gallery', $photoGallery) }}">
+                                                            <img src="{{ asset($photoGallery->thumbnail_big) }}" alt=""/>
+                                                            {{--<span>{{ $photoGallery->getName() }}</span>--}}
+                                                            <div class="overlay"></div>
+                                                            {{--<i class="fa fa-camera"></i>--}}
+                                                            <i class="fa-gallery"></i>
+                                                        </a>
+                                                        <a class="gallery-desc" href="{{ route('front.gallery', $photoGallery) }}">
+                                                            {{ $photoGallery->getName() }}
+                                                        </a>
+                                                    </div>
 
-                                            @endforeach
-                                        @endif
+                                                @endforeach
+                                            @endif
+                                        </div>
                                     </div>
                                 </div>
 
@@ -334,11 +334,266 @@
 
                 </div>
 
-                <div class="middle-right-block">
+                <div class="middle-right-block col-md-4">
 
                     <a target="_blank" href="@if($positionRight) {{ $positionRight->linkTo }} @else # @endif" class="text-center ads ads-300x250 middle-ad">
                         <img src="@if(!empty($positionRight->file)) {{ asset($positionRight->file) }} @else {{ asset('images/banner_300x250.png') }} @endif" alt="phot1"/>
                     </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-block">
+        <div class="container main-wrapper">
+            <div class="row">
+                <div class="bottom-left-block col-md-4">
+
+                    <div class="panel panel-default latest-news">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><span>{{ trans('site.FrontPostLastNews') }}</span></h3>
+                        </div>
+                        <div class="panel-body">
+                            <ul class="list-group">
+                                @if($latestPosts)
+                                    @foreach($latestPosts as $post)
+                                        <li class="list-group-item news-item">
+                                            <div class="news-body clearfix">
+                                                <a href="{{ route('front.post', $post) }}">
+                                                    <p class="news-title">{{ $post->getTitleRuOrKg() }}</p>
+                                                    {{--<span class="ctg"><img src="@if($post->channel_id){{ $post->isChannelIcon($post->channel_id)}}@else {{ asset('images/logo_notext.png') }} @endif" alt=""/></span>--}}
+                                                </a>
+                                            </div>
+                                            <div class="news-adds clearfix">
+                                                <a href="{{ route('front.category', $post->category) }}" class="">{{ $post->category('category_id')->first()->getTitle() }}</a>
+
+                                                    <span class="news-file">
+                                                      @if($post->getIsVideo() == 'yes')<i class="fa fa-video-camera"></i> @endif
+                                                        @if($post->getIsPhoto() == 'yes')<i class="fa fa-camera"></i> @endif
+                                                    </span>
+                                                <span class="news-time pull-right"> {{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
+                                                <span class="news-timer pull-right"><i class="fa fa-eye"></i>&nbsp;{{ $post->getViewed() }}</span>
+
+
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </li>
+                                    @endforeach
+                                @endif
+
+                            </ul>
+
+                            <footer>
+                                <a href="{{ route('front.general') }}">
+                                    <span>{{ trans('site.FrontPostAll') }} <i class="fa fa-arrow-circle-right"></i></span>
+                                </a>
+                            </footer>
+
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default panel-director">
+                        <div class="panel-heading">
+                            <h3 class="panel-title director-title">
+                                <a class="director-img" href="{{ route('front.pages.director') }}">
+                                    <img src="{{ asset('images/manager.png') }}" alt="директор"/>
+                                </a>
+                                <a class="director-text" href="{{ route('front.pages.director') }}">{{ trans('site.FrontDirectorPage') }}</a>
+                            </h3>
+                        </div>
+                        <div class="panel-body">
+
+                            <div class="">
+                                <div class="carousel carousel-director">
+
+                                    @if($directorPosts)
+                                        @foreach($directorPosts as $post)
+                                            <div>
+
+                                                <a href="{{ route('front.post', $post) }}">
+                                                    <img src="@if(!($post->thumbnail_big))images/live_bg.png @else {{ asset($post->thumbnail_big) }} @endif" alt=""/>
+                                                </a>
+                                                <a href="{{ route('front.post', $post) }}">
+                                                    {{ $post->getTitleRuOrKg() }}
+                                                </a>
+                                            </div>
+                                        @endforeach
+                                    @else
+                                        <div>
+                                            <a href="#">
+                                                <img src="{{ asset('images/gallery/001.jpg') }}" alt=""/>
+                                            </a>
+                                            <a href="#">
+                                                Мы разворачиваем масштабную работу по реализации проекта «Ухта — Торжок-2». Задачи поставлены, сроки определены. До конца 2019 года газопровод будет построен и готов к эксплуатации.
+                                            </a>
+                                        </div>
+                                    @endif
+
+                                </div>
+                            </div>
+
+                            <footer>
+                                <a href="{{ route('front.pages.director') }}">
+                                    <span>{{ trans('site.FrontToDirectorPage') }} <i class="fa fa-arrow-circle-right"></i></span>
+                                </a>
+                            </footer>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="bottom-right-block col-md-8">
+
+                    <div class="panel panel-default videoportal">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                <a href="{{ route('front.media.index') }}"><span>Видеопортал</span></a>
+                                <a class="all-videos-link pull-right" href="{{ route('front.media.index') }}">
+                                    <span>{{ trans('site.FrontVideoAll') }} <i class="fa fa-arrow-circle-right"></i></span>
+                                </a>
+                            </h3>
+                        </div>
+                        <div class="panel-body">
+
+                            <ul id="filters" class="clearfix">
+                                <li>
+                                    <span class="filter active" data-id="0" data-filter="total">{{ trans('site.AllVideos') }}</span>
+                                </li>
+                                @foreach($MediaCategories as $key => $MediaCategory)
+                                    <li>
+                                        <span class="filter" data-id="{{ $MediaCategory->id }}" data-filter="{{ $MediaCategory->getVideoType() }}">{{ $MediaCategory->getGlobalName() }}</span>
+                                    </li>
+                                @endforeach
+                            </ul>
+
+                            <div id="portfoliolist">
+                                @foreach($mediaLastVideos as $key=>$media)
+                                    <div class="portfolio total" data-cat="total">
+                                        <div class="portfolio-wrapper">
+                                            <div class="media-image">
+                                                <a href="{{ route('front.media.video', $media) }}">
+                                                    <img src="@if($media->thumbnail_big) {{ asset($media->thumbnail_big)  }} @else http://img.youtube.com/vi/{{ $media->getUrl() }}/hqdefault.jpg @endif" alt="{{ $media->getName() }}" />
+                                                    <div class="overlay">
+                                                        <i class="fa-view"></i>
+                                                        <span class="media-view">{{ $media->viewed }}</span>
+                                                        @if(($media->getProgramName()))
+                                                            <span class="media-project">
+                                                                    {{ $media->getProgramName() }}
+                                                                </span>
+                                                        @endif
+                                                        <span class="media-date">{{ $media->getDateFormatted() }}</span>
+                                                    </div>
+                                                    <i class="fa-video"></i>
+                                                </a>
+                                            </div>
+                                            <div class="media-title">
+                                                <a href="{{ route('front.media.video', $media) }}">
+                                                    <h4>{{ $media->getName() }}</h4>
+                                                </a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                @endforeach
+
+                                @foreach($MediaCategories as $key=>$MediaCategory)
+
+                                    @foreach($categoriesVideos as $key => $media)
+
+                                        @foreach($media as $row)
+
+                                            @if($row->videoType == $MediaCategory->videoType)
+                                                <div class="portfolio {{ $row->getVideoType() }}" data-cat="{{ $row->getVideoType() }}">
+                                                    <div class="portfolio-wrapper">
+                                                        <div class="media-image">
+                                                            <a href="{{ route('front.media.video', $row) }}">
+                                                                <img src="@if($row->thumbnail_big) {{ asset($row->thumbnail_big) }} @else http://img.youtube.com/vi/{{ $row->getUrl() }}/hqdefault.jpg @endif" alt="{{ $row->getName() }}"/>
+                                                                <div class="overlay">
+                                                                    <i class="fa-view"></i>
+                                                                    <span class="media-view">{{ $row->viewed }}</span>
+                                                                    @if(($row->getProgramName()))
+                                                                        <span class="media-project">
+                                                                                {{ $row->getProgramName() }}
+                                                                            </span>
+                                                                    @endif
+                                                                    <span class="media-date">{{ $row->getDateFormatted() }}</span>
+                                                                </div>
+                                                                <i class="fa-video"></i>
+                                                            </a>
+                                                        </div>
+                                                        <div class="media-title">
+                                                            <a href="{{ route('front.media.video', $row) }}">
+                                                                <h4>{{ $row->getName() }}</h4>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            @endif
+
+                                        @endforeach
+
+                                    @endforeach
+
+                                @endforeach
+
+                            </div>
+
+                            <div class="clearfix"></div>
+
+                            <footer>
+                                <a id="videoFooter" href="{{ route('front.media.all') }}">
+                                    <span>{{ trans('site.CategoryVideos') }} <i class="fa fa-arrow-circle-right"></i></span>
+                                </a>
+                            </footer>
+
+                        </div>
+                    </div>
+
+                    <a href="#" class="text-center ads">
+                        <img src="@if(!empty($positionCenter->file)) {{ asset($positionCenter->file) }} @else {{ asset('images/banner_default_728x90.png') }} @endif" alt=""/>
+                    </a>
+
+                    <div class="panel panel-default panel-carousel gallery">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                <a href="{{ route('front.gallery.galleries') }}"><span>Фотогалерея</span></a>
+                                {{--<a class="all" href="{{ route('front.gallery.galleries') }}">{{ trans('site.FrontGalleryAll') }} <i class="fa fa-arrow-circle-right"></i></a>--}}
+                            </h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="">
+                                <div class="carousel-slick">
+                                    @if($photoGalleries)
+                                        @foreach($photoGalleries as $photoGallery)
+
+                                            <div class="col-md-4">
+                                                <a class="gallery-thumb" href="{{ route('front.gallery', $photoGallery) }}">
+                                                    <img src="{{ asset($photoGallery->thumbnail_big) }}" alt=""/>
+                                                    {{--<span>{{ $photoGallery->getName() }}</span>--}}
+                                                    <div class="overlay"></div>
+                                                    {{--<i class="fa fa-camera"></i>--}}
+                                                    <i class="fa-gallery"></i>
+                                                </a>
+                                                <a class="gallery-desc" href="{{ route('front.gallery', $photoGallery) }}">
+                                                    {{ $photoGallery->getName() }}
+                                                </a>
+                                            </div>
+
+                                        @endforeach
+                                    @endif
+                                </div>
+                            </div>
+
+                            <footer>
+                                <a href="{{ route('front.gallery.galleries') }}">
+                                    <span>{{ trans('site.FrontGalleryAll') }} <i class="fa fa-arrow-circle-right"></i></span>
+                                </a>
+
+                            </footer>
+
+                        </div>
+                    </div>
 
                 </div>
             </div>
@@ -350,250 +605,9 @@
             <section class="content clearfix">
                 <div class="clearfix">
 
-                    <div class="bottom-left-block col-md-4">
-                        <div class="panel panel-default latest-news">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><span>{{ trans('site.FrontPostLastNews') }}</span></h3>
-                            </div>
-                            <div class="panel-body">
-                                <ul class="list-group">
-                                    @if($latestPosts)
-                                        @foreach($latestPosts as $post)
-                                            <li class="list-group-item news-item">
-                                                <div class="news-body clearfix">
-                                                    <a href="{{ route('front.post', $post) }}">
-                                                        <p class="news-title">{{ $post->getTitleRuOrKg() }}</p>
-                                                        {{--<span class="ctg"><img src="@if($post->channel_id){{ $post->isChannelIcon($post->channel_id)}}@else {{ asset('images/logo_notext.png') }} @endif" alt=""/></span>--}}
-                                                    </a>
-                                                </div>
-                                                <div class="news-adds clearfix">
-                                                    <a href="{{ route('front.category', $post->category) }}" class="">{{ $post->category('category_id')->first()->getTitle() }}</a>
-
-                                                    <span class="news-file">
-                                                      @if($post->getIsVideo() == 'yes')<i class="fa fa-video-camera"></i> @endif
-                                                        @if($post->getIsPhoto() == 'yes')<i class="fa fa-camera"></i> @endif
-                                                    </span>
-                                                    <span class="news-time pull-right"> {{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
-                                                    <span class="news-timer pull-right"><i class="fa fa-eye"></i>&nbsp;{{ $post->getViewed() }}</span>
-
-
-                                                </div>
-                                                <div class="clearfix"></div>
-                                            </li>
-                                        @endforeach
-                                    @endif
-
-                                </ul>
-
-                                <footer>
-                                    <a href="{{ route('front.general') }}">
-                                        <span>{{ trans('site.FrontPostAll') }} <i class="fa fa-arrow-circle-right"></i></span>
-                                    </a>
-                                </footer>
-
-                            </div>
-                        </div>
-
-                        <div class="panel panel-default panel-director">
-                            <div class="panel-heading">
-                                <h3 class="panel-title director-title">
-                                    <a class="director-img" href="{{ route('front.pages.director') }}">
-                                        <img src="{{ asset('images/manager.png') }}" alt="директор"/>
-                                    </a>
-                                    <a class="director-text" href="{{ route('front.pages.director') }}">{{ trans('site.FrontDirectorPage') }}</a>
-                                </h3>
-                            </div>
-                            <div class="panel-body">
-
-                                <div class="">
-                                    <div class="carousel carousel-director">
-
-                                        @if($directorPosts)
-                                            @foreach($directorPosts as $post)
-                                                <div>
-
-                                                    <a href="{{ route('front.post', $post) }}">
-                                                        <img src="@if(!($post->thumbnail_big))images/live_bg.png @else {{ asset($post->thumbnail_big) }} @endif" alt=""/>
-                                                    </a>
-                                                    <a href="{{ route('front.post', $post) }}">
-                                                        {{ $post->getTitleRuOrKg() }}
-                                                    </a>
-                                                </div>
-                                            @endforeach
-                                        @else
-                                            <div>
-                                                <a href="#">
-                                                    <img src="{{ asset('images/gallery/001.jpg') }}" alt=""/>
-                                                </a>
-                                                <a href="#">
-                                                    Мы разворачиваем масштабную работу по реализации проекта «Ухта — Торжок-2». Задачи поставлены, сроки определены. До конца 2019 года газопровод будет построен и готов к эксплуатации.
-                                                </a>
-                                            </div>
-                                        @endif
-
-                                    </div>
-                                </div>
-
-                                <footer>
-                                    <a href="{{ route('front.pages.director') }}">
-                                        <span>{{ trans('site.FrontToDirectorPage') }} <i class="fa fa-arrow-circle-right"></i></span>
-                                    </a>
-                                </footer>
-                            </div>
-                        </div>
-
-                    </div>
-
                     <div class="bottom-right-block col-md-8">
-                        <div class="panel panel-default videoportal">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">
-                                    <a href="{{ route('front.media.index') }}"><span>Видеопортал</span></a>
-                                    <a class="all-videos-link pull-right" href="{{ route('front.media.index') }}">
-                                        <span>{{ trans('site.FrontVideoAll') }} <i class="fa fa-arrow-circle-right"></i></span>
-                                    </a>
-                                </h3>
-                            </div>
-                            <div class="panel-body">
 
-                                <ul id="filters" class="clearfix">
-                                    <li>
-                                        <span class="filter active" data-id="0" data-filter="total">{{ trans('site.AllVideos') }}</span>
-                                    </li>
-                                    @foreach($MediaCategories as $key => $MediaCategory)
-                                        <li>
-                                            <span class="filter" data-id="{{ $MediaCategory->id }}" data-filter="{{ $MediaCategory->getVideoType() }}">{{ $MediaCategory->getGlobalName() }}</span>
-                                        </li>
-                                    @endforeach
-                                </ul>
 
-                                <div id="portfoliolist">
-                                    @foreach($mediaLastVideos as $key=>$media)
-                                        <div class="portfolio total" data-cat="total">
-                                            <div class="portfolio-wrapper">
-                                                <div class="media-image">
-                                                    <a href="{{ route('front.media.video', $media) }}">
-                                                        <img src="@if($media->thumbnail_big) {{ asset($media->thumbnail_big)  }} @else http://img.youtube.com/vi/{{ $media->getUrl() }}/hqdefault.jpg @endif" alt="{{ $media->getName() }}" />
-                                                        <div class="overlay">
-                                                            <i class="fa-view"></i>
-                                                            <span class="media-view">{{ $media->viewed }}</span>
-                                                            @if(($media->getProgramName()))
-                                                                <span class="media-project">
-                                                                    {{ $media->getProgramName() }}
-                                                                </span>
-                                                            @endif
-                                                            <span class="media-date">{{ $media->getDateFormatted() }}</span>
-                                                        </div>
-                                                        <i class="fa-video"></i>
-                                                    </a>
-                                                </div>
-                                                <div class="media-title">
-                                                    <a href="{{ route('front.media.video', $media) }}">
-                                                        <h4>{{ $media->getName() }}</h4>
-                                                    </a>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    @endforeach
-
-                                    @foreach($MediaCategories as $key=>$MediaCategory)
-
-                                        @foreach($categoriesVideos as $key => $media)
-
-                                            @foreach($media as $row)
-
-                                                @if($row->videoType == $MediaCategory->videoType)
-                                                    <div class="portfolio {{ $row->getVideoType() }}" data-cat="{{ $row->getVideoType() }}">
-                                                        <div class="portfolio-wrapper">
-                                                            <div class="media-image">
-                                                                <a href="{{ route('front.media.video', $row) }}">
-                                                                    <img src="@if($row->thumbnail_big) {{ asset($row->thumbnail_big) }} @else http://img.youtube.com/vi/{{ $row->getUrl() }}/hqdefault.jpg @endif" alt="{{ $row->getName() }}"/>
-                                                                    <div class="overlay">
-                                                                        <i class="fa-view"></i>
-                                                                        <span class="media-view">{{ $row->viewed }}</span>
-                                                                        @if(($row->getProgramName()))
-                                                                            <span class="media-project">
-                                                                                {{ $row->getProgramName() }}
-                                                                            </span>
-                                                                        @endif
-                                                                        <span class="media-date">{{ $row->getDateFormatted() }}</span>
-                                                                    </div>
-                                                                    <i class="fa-video"></i>
-                                                                </a>
-                                                            </div>
-                                                            <div class="media-title">
-                                                                <a href="{{ route('front.media.video', $row) }}">
-                                                                    <h4>{{ $row->getName() }}</h4>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                @endif
-
-                                            @endforeach
-
-                                        @endforeach
-
-                                    @endforeach
-
-                                </div>
-
-                                <div class="clearfix"></div>
-
-                                <footer>
-                                    <a id="videoFooter" href="{{ route('front.media.all') }}">
-                                        <span>{{ trans('site.CategoryVideos') }} <i class="fa fa-arrow-circle-right"></i></span>
-                                    </a>
-                                </footer>
-
-                            </div>
-                        </div>
-
-                        <a href="#" class="text-center ads">
-                            <img src="@if(!empty($positionCenter->file)) {{ asset($positionCenter->file) }} @else {{ asset('images/banner_default_728x90.png') }} @endif" alt=""/>
-                        </a>
-
-                        <div class="panel panel-default panel-carousel gallery">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">
-                                    <a href="{{ route('front.gallery.galleries') }}"><span>Фотогалерея</span></a>
-                                    {{--<a class="all" href="{{ route('front.gallery.galleries') }}">{{ trans('site.FrontGalleryAll') }} <i class="fa fa-arrow-circle-right"></i></a>--}}
-                                </h3>
-                            </div>
-                            <div class="panel-body">
-                                <div class="">
-                                    <div class="carousel-slick">
-                                        @if($photoGalleries)
-                                            @foreach($photoGalleries as $photoGallery)
-
-                                                <div class="col-md-4">
-                                                    <a class="gallery-thumb" href="{{ route('front.gallery', $photoGallery) }}">
-                                                        <img src="{{ asset($photoGallery->thumbnail_big) }}" alt=""/>
-                                                        {{--<span>{{ $photoGallery->getName() }}</span>--}}
-                                                        <div class="overlay"></div>
-                                                        {{--<i class="fa fa-camera"></i>--}}
-                                                        <i class="fa-gallery"></i>
-                                                    </a>
-                                                    <a class="gallery-desc" href="{{ route('front.gallery', $photoGallery) }}">
-                                                        {{ $photoGallery->getName() }}
-                                                    </a>
-                                                </div>
-
-                                            @endforeach
-                                        @endif
-                                    </div>
-                                </div>
-
-                                <footer>
-                                    <a href="{{ route('front.gallery.galleries') }}">
-                                        <span>{{ trans('site.FrontGalleryAll') }} <i class="fa fa-arrow-circle-right"></i></span>
-                                    </a>
-
-                                </footer>
-
-                            </div>
-                        </div>
 
                     </div>
                 </div>

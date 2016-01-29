@@ -213,7 +213,7 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
     Route::post('/orphus', ['as'=>'front.orphus', 'uses'=>'CommentController@orphus']);
 
 //    Test
-    Route::get('/test',['as'=>'front.test', 'uses'=>"HomeController@Home"]);
+    Route::get('/test',['as'=>'front.test', 'uses'=>"HomeController@Test"]);
 
 Route::get('locale/{locale?}',   ['as' => 'locale',   'uses' => 'CommonController@setLocale']);
 

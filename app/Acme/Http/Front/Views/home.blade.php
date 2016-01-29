@@ -204,6 +204,7 @@
 
                                 <div class="col-md-3 reporter-logo">
                                     <img src="{{ asset('images/reporter.png') }}" alt=""/>
+
                                 </div>
 
                                 <div class="col-md-9">
