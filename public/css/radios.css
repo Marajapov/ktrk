@@ -371,7 +371,6 @@
 
 /* BEGIN Birinchi Home page*/
 
-
 .homepage .panel-articles {
     background: none !important;
     border: none !important;
@@ -424,7 +423,10 @@
     text-transform: none;
 
 }
-
+ .homenews a.cat-link h3:hover{
+    color: #163442;
+    border-bottom: 1px dotted;
+}
 .titleshows{
     border-bottom: 1px solid #2D596D;
 
@@ -541,6 +543,15 @@
 
 .birinchiradio .card-info {
     padding: 5px 0px;
+}
+
+.birinchiradio .card-info .view{
+    float: right;
+    color: #949494;
+    font-size: 12px;
+}
+.birinchiradio .card-info .view .fa{
+    padding-right: 5px;
 }
 .birinchiradio .card-info .category:hover{
     color: #332f2e;
@@ -822,6 +833,23 @@
 
 /* BEGIN AllNews*/
 
+.news-info{
+    float: right;
+    margin-top: 5px;
+    color: #4E5E6A;
+    font-size: 12px;
+    font-weight: bold;
+}
+.news-info .date .fa, .news-info .view .fa{
+    padding-right: 5px;
+} 
+.news-info .date{
+    padding-right: 10px;
+}
+.news-info .view{
+
+}
+
 .oneallnews .ctg-panel .list-group-item, .broadcastpost .ctg-panel .list-group-item, .onenews .ctg-panel .list-group-item{
     background: none;
 }
@@ -925,14 +953,12 @@
 /*BEGIN Broadcast one news*/
 .broadcastpost .btitle{
     margin: 0;
-    padding: 10px 0px;
+    padding: 0px 0px 10px 0px;
     font-size: 22px;
 }
 .oneimg {
-    width: 260px;
     float: left;
-    margin-right: 10px;
-    margin-bottom: 0px;
+    margin: 0px 10px 0px 0px; 
 }
 .oneimg img {
     max-width: 100%;

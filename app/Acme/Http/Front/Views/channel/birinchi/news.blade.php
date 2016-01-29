@@ -15,10 +15,15 @@
                         <h3 class="title">{{ $post->category('category_id')->first()->getTitle() }}</h3>
                      </div>
                      <div class="panel">
+
                         <div class="panel-body">
+                           <div class="news-info">
+                              <span class="date"><i class="fa fa-calendar"></i>{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
+                              <span class="view"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
+                           </div>
                            <h3>{{ $post->getTitleRuOrKg() }}</h3>
                            <div class="oneimg">
-                              <img src="@if(empty($post->getFile()))images/2.jpg @else {{  asset($post->getFile()) }} @endif" alt="" data-toggle="tooltip" data-placement="top" title="Бул жөн гана сүрөт эмес">
+                              <img src="@if(empty($post->getFile()))images/2.jpg @else {{  asset($post->getFile()) }} @endif" title="{{ $post->getTitleRuOrKg() }}">
                            </div>
                            <article>
                               {!! $post->getContent() !!}
@@ -40,9 +45,10 @@
                      <div class="blocknews col-md-3 col-sm-4 col-xs-12">
                           <article>
                               <a href="{{ route('birinchi.news', $post) }}" class="image-link">
-                                  <img src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif">
+                                  <img src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif" title="{{ $post->getTitleRuOrKg() }}">
                                   <div class="card-info">
-                                      <span class="date ">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
+                                       <span class="date ">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
+                                       <span class="view"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
                                   </div>
                               </a>
                               <h3 class="name headline">

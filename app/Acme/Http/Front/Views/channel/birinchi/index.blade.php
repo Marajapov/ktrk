@@ -83,7 +83,9 @@
                     <div class="col-md-6 homenews">
                         <div class="row">
                             <div class="col-md-12">
-                                <h3 class="title">{{ $topCategory->getTitle() }}</h3>
+                            <a class="cat-link" href="{{ route('birinchi.category', $topCategory) }}">
+                                    <h3 class="title">{{ $topCategory->getTitle() }}</h3>
+                                </a>
                             </div>
                             @if($posts)
                                 @foreach($posts as $post)
@@ -94,6 +96,7 @@
                                                     <img src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif">
                                                     <div class="card-info">
                                                         <span class="date ">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
+                                                        <span class="view"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
                                                     </div>
                                                 </a>
                                                 <h3 class="name headline">
@@ -141,7 +144,9 @@
                     <div class="col-md-6 homenews">
                         <div class="row">
                             <div class="col-md-12">
-                                <h3 class="title">{{ $bottomCategory->getTitle() }}</h3>
+                                <a class="cat-link" href="{{ route('birinchi.category', $topCategory) }}">
+                                    <h3 class="title">{{ $bottomCategory->getTitle() }}</h3>
+                                </a>
                             </div>
                             @if($posts)
                                 @foreach($posts as $post)
@@ -152,6 +157,7 @@
                                                     <img src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif">
                                                     <div class="card-info">
                                                         <span class="date ">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
+                                                        <span class="view"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
                                                     </div>
                                                 </a>
                                                 <h3 class="name headline">

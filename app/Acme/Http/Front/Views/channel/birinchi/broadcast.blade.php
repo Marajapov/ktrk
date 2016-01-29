@@ -19,7 +19,12 @@
                         <h3 class="title">{{ $birinchiProject->getName() }}</h3>
                      </div>
                      <div class="col-md-12">
+                        <div class="news-info">
+                           <span class="date"><i class="fa fa-calendar"></i>{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
+                           <span class="view"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
+                        </div>
                         <h2 class="btitle">{{ $post->getTitleRuOrKg() }}</h2>
+
                         <div class="oneimg">
                            <img src="@if(empty($post->getFile()))images/2.jpg @else {{  asset($post->getFile()) }} @endif" alt="" data-toggle="tooltip" data-placement="top" title="Бул жөн гана сүрөт эмес">
                         </div>
