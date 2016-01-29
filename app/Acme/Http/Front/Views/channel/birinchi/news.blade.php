@@ -21,7 +21,7 @@
                               <span class="date"><i class="fa fa-calendar"></i>{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
                               <span class="view"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
                            </div>
-                           <h3>{{ $post->getTitleRuOrKg() }}</h3>
+                           <h3 class="newstitle">{{ $post->getTitleRuOrKg() }}</h3>
                            <div class="oneimg">
                               <img src="@if(empty($post->getFile()))images/2.jpg @else {{  asset($post->getFile()) }} @endif" title="{{ $post->getTitleRuOrKg() }}">
                            </div>

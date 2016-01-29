@@ -498,7 +498,6 @@
     padding-bottom: 15px;
 }
 
-
 .blocknews .date {
     float: left;
     color: #949494;
@@ -663,6 +662,9 @@
 
     font-size: 16px;
     border-bottom: 1px solid #2C5061;
+
+    vertical-align: middle;
+    display: table-cell;
 }
 .switcher .name a{
     color: #fff;
@@ -703,14 +705,19 @@
     padding-top:0px; 
 }
 .lentanews .xdate{
+    float: left;
+    width: 100%;
+    max-width: 45px;
     padding: 0 10px 0 0;
+   
     font-weight: bold;
     color: #2D596D;
     display: table-cell;
-    float: left;
 }
 
 .lentanews .xtitle{
+    padding: 2px 0;
+
     font-family: 'Roboto Regular';
     font-style: inherit;
     line-height: 18px;
@@ -722,7 +729,6 @@
     -o-transition: color 0.15s ease-in-out;
     transition: color 0.15s ease-in-out;
     text-decoration: none;
-    padding: 2px 0;
     display: table-cell;
 }
 .lentanews .xtitle a{
@@ -954,7 +960,8 @@
 .broadcastpost .btitle{
     margin: 0;
     padding: 0px 0px 10px 0px;
-    font-size: 22px;
+    font-size: 20px;
+    font-weight: bold;
 }
 .oneimg {
     float: left;
@@ -975,6 +982,10 @@
 
 /* BEGIN NEWS page*/
 
+.onenews .newstitle{
+    font-size: 20px;
+    font-weight: bold;
+}
 .onenews .panel{
     background: none;
 }
