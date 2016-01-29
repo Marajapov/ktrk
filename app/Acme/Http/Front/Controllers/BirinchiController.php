@@ -121,7 +121,6 @@ class BirinchiController extends Controller
             $relatedNews = \Model\Post\ModelName::where('id','<>',$post->id)->where('published','=',true)->where('birinchi','=','1')->languageru()->where('category_id','=',$post->category_id)->orderBy('id','desc')->take(8)->get();
         }
 
-
         $categories = \Model\Category\ModelName::where('birinchi','=','1')->get();            
 
            return view('Front::channel.birinchi.news', [
