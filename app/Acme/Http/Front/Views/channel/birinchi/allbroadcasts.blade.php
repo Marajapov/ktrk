@@ -12,29 +12,26 @@
          <div class="col-md-12">
             <h3 class="title">{{ trans('radiopages.Peredachi') }}</h3>
          </div>
-         @if($birinchiProjects) 
-         @foreach($birinchiProjects as $project)
-         @foreach($project->oneprogram()->get() as $post)
-         <div class="allBroadcast col-md-4 col-sm-6 col-xs-12">
-            <span class="category">
-               <a href="#">{{ $project->getName() }}</a>
-            </span>
-            <span class="date">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
-            <article>
-               <a href="{{ route('birinchi.broadcast', $post) }}" class="image-link">
-                  <img src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif">       
-               </a>
-               <h2 class="headline">
-                  <a href="{{ route('birinchi.broadcast', $post) }}" title="">
-                  {{ $post->getTitleRuOrKg() }}
-                  </a>
-               </h2>
-            </article>
-         </div>
-         @endforeach
-         @endforeach
+         @if($birinchiProjects)
+             @foreach($birinchiProjects as $project)
+                                    
+                     <div class="blocknews3 col-md-12">
+                         <div class="row">
+                              <div class="col-sm-4 hovertext">
+                                 <img class="blockimg" src="@if(!($project->getFile())) {{ asset('images/project_default.png') }} @else {{ asset($project->getFile()) }} @endif" alt="{{ $project->getNameOne() }}">
+                              </div>                          
+                              <div class="col-sm-8">
+                               <h3 class="name headline">                                               
+                                  {{ $project->getName() }}                                             
+                               </h3>
+                               <div class="desc"><span>{{ $project->getDescription() }}</span></div>
+                            </div>                                                          
+                         </div>
+                     </div>                
+              
+             @endforeach
          @endif
       </div>
-   </div>
+   </div> 
 </div>
 @stop

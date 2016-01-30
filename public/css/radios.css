@@ -625,6 +625,53 @@
 .blocknews article img {
     border-radius: 1px !important;
 }
+.blocknews3 {
+    margin: 10px 0px;
+}
+.blocknews3 h3{
+    margin: 0px 0px 10px 0px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.popular .datetime {
+    float: left;
+}
+.popular .cat{
+    padding-left: 10px;
+    font-size: 13px;
+    color: #2D596D;
+}
+.popular .cat span{
+    position: relative;
+    top: -1px;
+}
+.popular .views{
+    float: right;
+
+}
+.popular .views i{
+    padding-right: 5px;
+}
+
+.popular .extra{
+    color: #4E5E6A;
+    font-size: 12px;
+    font-weight: bold;
+}
+.popular .media-heading{
+    display: block;
+    font-weight: bold;
+    color: #333333;
+    line-height: 15px;
+}
+.popular .media-heading:hover{
+    color: #2D3E4A;
+    text-decoration: underline;
+}
+.popular .media{
+    margin-top: 5px;
+    border-bottom: 1px dotted #E3D1C7;
+}
 
 /* END Birinchi Home page*/
 

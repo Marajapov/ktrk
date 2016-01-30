@@ -107,18 +107,29 @@ class BirinchiController extends Controller
         $channel = \Model\Channel\ModelName::name('birinchi')->first();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
         $lc = app()->getlocale();
+
         if($lc == 'kg'){
             $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('name','<>','' )->get();    
-        }else{
-            $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('nameRu','<>','' )->get();
-        }
-        if($lc == 'kg'){
             $allPost = \Model\Post\ModelName::where('birinchi','=',1)->where('birinchiProgram','<>','1')->languagekg()->take(10)->skip(0)->published()->orderBy('id','desc')->get();    
             $relatedNews = \Model\Post\ModelName::where('id','<>',$post->id)->where('published','=',true)->where('birinchi','=','1')->languagekg()->where('category_id','=',$post->category_id)->orderBy('id','desc')->take(8)->get();
             
+            $popArticles = \Model\Post\ModelName::where('birinchi','=','1')->languagekg()->orderBy('viewed','desc')->take(6)->get();
+            if(count($popArticles) > 0){
+                $popArticles = $popArticles;
+            }else{
+                $popArticles = null;
+            }
         }else{
+            $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('nameRu','<>','' )->get();
             $allPost = \Model\Post\ModelName::where('birinchi','=',1)->where('birinchiProgram','<>','1')->languageru()->take(10)->skip(0)->published()->orderBy('id','desc')->get();
             $relatedNews = \Model\Post\ModelName::where('id','<>',$post->id)->where('published','=',true)->where('birinchi','=','1')->languageru()->where('category_id','=',$post->category_id)->orderBy('id','desc')->take(8)->get();
+
+            $popArticles = \Model\Post\ModelName::where('birinchi','=','1')->languageru()->orderBy('viewed','desc')->take(6)->get();
+            if(count($popArticles) > 0){
+                $popArticles = $popArticles;
+            }else{
+                $popArticles = null;
+            }
         }
 
 
@@ -131,6 +142,7 @@ class BirinchiController extends Controller
             'birinchiProjects' => $birinchiProjects,
             'categories'=>$categories,
             'relatedNews' => $relatedNews,            
+            'popArticles' => $popArticles,            
             ]);
     }
 

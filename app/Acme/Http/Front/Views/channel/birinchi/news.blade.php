@@ -115,6 +115,35 @@
             </div>
          </div>
          <div class="col-md-3">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="row popular">
+                     <div class="col-md-12">
+                        <h3 class="title">Популярные</h3>
+                     </div>                     
+                     <div class="col-md-12"> 
+                           @if($popArticles) 
+                           @foreach($popArticles as $post)
+                          <div class="media">
+
+                              <div class="media-body">
+                                  <div class="extra">
+                                      <span class="datetime">{{ $post->getDay() }} {{ $post->getMonthRu() }}</span>
+                                      <a class="cat" href="{{ route('front.category', $post->category) }}"><span>{{ $post->category('category_id')->first()->getTitle() }}</span></a>
+                                      <span class="views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
+                                  </div>
+                                  <a class="media-heading" href="{{ route('front.post', $post) }}">{{ $post->getTitleRuOrKg() }}</a>
+                              </div>
+
+                          </div>
+                          @endforeach 
+                          @endif                                                
+                     </div>                    
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-3">
             <div class="row onenews">
                <div class="col-md-12">
                   <div class="row">
