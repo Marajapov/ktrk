@@ -1650,10 +1650,10 @@ header {
     right: 0;
     margin: auto;
     z-index: 3;
-    opacity: 0.75;
+    opacity: 0.50;
 
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
     background: url('img/video.png') no-repeat center center;
     -webkit-background-size: 100%;
     background-size: 100%;

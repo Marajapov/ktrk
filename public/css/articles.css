@@ -152,7 +152,7 @@
 }
 .post-thumb{
     float: left;
-    /*margin-bottom: 15px;*/
+    margin-bottom: 15px;
     margin-right: 15px;
 }
 .post-thumb img{
@@ -162,13 +162,12 @@
 .post-thumb span{
     display: block;
     margin-top: 5px;
-    padding-left: 10px;
+    padding-left: 0px;
     font-size: 12px;
     line-height: 1;
 }
 .post-thumb .thumb_desc{
-    margin-top: 15px;
-    color: #444444;
+    color: #999999;
 }
 .post-thumb .thumb_author{
     margin-bottom: 15px;
@@ -310,7 +309,7 @@
     right: 0;
     margin: auto;
     z-index: 3;
-    opacity: 0.6;
+    opacity: 0.50;
 
     width: 40px;
     height: 40px;

@@ -132,7 +132,6 @@ class BirinchiController extends Controller
             }
         }
 
-
         $categories = \Model\Category\ModelName::where('birinchi','=','1')->get();            
 
            return view('Front::channel.birinchi.news', [
