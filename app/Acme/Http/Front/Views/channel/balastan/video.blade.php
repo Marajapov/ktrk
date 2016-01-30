@@ -13,9 +13,13 @@
                             <h3>{{ $balastanLastVideo->getName() }}</h3>
                              <div class="fromcat">
                                 <p>
-                                    <a href="#">
-                                        {{ $balastanLastVideo->hasProject()->first()->getNameOne()}}
-                                    </a>
+                                    @if($balastanProjects)
+                                    @foreach($balastanProjects as $row)
+                                        <a href="{{ route('balastan.project.videos', $row) }}">
+                                            {{ $balastanLastVideo->hasProject()->first()->getNameOne()}}
+                                        </a>
+                                    @endforeach
+                                    @endif
                                 </p>
                              </div>
                         @endif
@@ -35,9 +39,13 @@
                         </div>
                         <div class="episode-info">
                             <div class="episode-desc">{!! $balastanLastVideo->description !!}</div>
-                            <a href="#">
-                                <em>{{ $balastanLastVideo->hasProject()->first()->getNameOne()}}</em>
-                            </a>
+                                @if($balastanProjects)
+                                @foreach($balastanProjects as $row)
+                                    <a href="{{ route('balastan.project.videos', $row) }}">
+                                        <em>{{ $balastanLastVideo->hasProject()->first()->getNameOne()}}</em>
+                                    </a>
+                                @endforeach
+                                @endif    
                             <span>{{ $balastanLastVideo->getDateFormatted() }}</span>
                         </div>
                     @endif
@@ -49,7 +57,7 @@
         <div class="container">
             <div class="row">
                 <div class="title col-md-12">
-                    <h3>Байланышкан видеолор</h3>
+                    <h3>{{ trans('site.CategoryVideos') }}</h3>
                 </div>
             </div>
             <div id="relatedVideos" class="row">

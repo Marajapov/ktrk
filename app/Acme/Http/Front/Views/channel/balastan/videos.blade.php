@@ -1,5 +1,5 @@
 @extends('Front::channel.balastan.default')
-@section('title', "Видеоло")
+@section('title', trans('site.AllVideos'))
 @section('styles')
 @endsection
 @section('content')
