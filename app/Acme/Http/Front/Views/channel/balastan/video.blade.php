@@ -1,5 +1,5 @@
 @extends('Front::channel.balastan.default')
-@section('title', "Видео")
+@section('title', $balastanLastVideo->hasProject()->first()->getNameOne())
 @section('styles')
 @endsection
 @section('content')

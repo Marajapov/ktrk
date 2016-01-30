@@ -1,5 +1,5 @@
 @extends('Front::channel.balastan.default')
-@section('title', "Vertex")
+@section('title', trans('radiopages.BAbout'))
 @section('styles')
 @endsection
 @section('content')

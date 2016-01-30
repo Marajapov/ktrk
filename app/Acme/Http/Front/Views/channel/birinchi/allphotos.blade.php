@@ -1,5 +1,5 @@
 @extends('Front::channel.birinchi.default')
-@section('title', "Все фото")
+@section('title', trans('radiopages.Photos'))
 @section('styles')
 @endsection
 @section('content')
