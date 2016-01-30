@@ -9,7 +9,13 @@ header ("Content-type: image/png");
 
 //Get string info
 $font_size = isset($_GET['font_size']) ? $_GET['font_size'] : 3;
-$string = urldecode(base64_decode($_GET['string']));
+$string = $_GET['string'];
+$string = urldecode(($_GET['string']));
+
+//if (!preg_match('//u', $string)) {
+//    $result = iconv("UTF-8","UTF-8",$string);
+//}
+//$string = iconv("Windows-1250", "Latin2", $string);
 
 //Get the size of the string
 $width = imagefontwidth($font_size) * strlen($string);
@@ -33,7 +39,7 @@ $text_color = isset($_GET['R'], $_GET['G'], $_GET['B']) ?
 
 //Draw the string
 imagestring($img, $font_size, 10, 0,  $string, $text_color);
-
+//imagettftext($img, 9, 0, 10, 0, $text_color, 'css/fonts/roboto/roboto-regular.ttf', "Hello");
 //Output the image
 imagepng($img);
 imagedestroy($img);
