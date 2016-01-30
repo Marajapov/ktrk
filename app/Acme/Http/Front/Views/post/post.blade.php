@@ -1,4 +1,4 @@
-@extends('Front::layouts.default')
+@extends('Front::layouts.defaultnew')
 @section('title', $post->getTitleRuOrKg())
 @section('styles')
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -51,7 +51,7 @@
                                     <p class="post-thumb" href="{{ route('front.post', $post) }}">
                                         <img class="left" src="@if(empty($post->thumbnail_big)) {{  asset($post->thumbnail) }} @else {{  asset($post->thumbnail_big) }} @endif" alt="image">
                                         @if($post->thumb_desc)<span class="thumb_desc">{{ $post->thumb_desc }}</span>@endif
-                                        @if($post->thumb_author)<span class="thumb_author"> Фото: {{ $post->thumb_author }}</span>@endif
+                                        {{--@if($post->thumb_author)<span class="thumb_author"> Фото: {{ $post->thumb_author }}</span>@endif--}}
                                     </p>
 
 

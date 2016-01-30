@@ -9,16 +9,6 @@
                 <div class="row">
                     <div class="col-md-12 modal-block">
                       <div id="player"></div>
-                      <!--<div data-live="true"
-                           data-ratio="0.5625"
-                           class="flowplayer fixed-controls">
-
-                        <video data-title="Live stream">
-                          <source type="application/x-mpegurl"
-                                  src="http://wms.shared.streamshow.it/canale8/canale8/playlist.m3u8">
-                        </video>
-
-                      </div>-->
                     </div>
                 </div>
             </div>

@@ -371,7 +371,6 @@
 
 /* BEGIN Birinchi Home page*/
 
-
 .homepage .panel-articles {
     background: none !important;
     border: none !important;
@@ -424,7 +423,10 @@
     text-transform: none;
 
 }
-
+ .homenews a.cat-link h3:hover{
+    color: #163442;
+    border-bottom: 1px dotted;
+}
 .titleshows{
     border-bottom: 1px solid #2D596D;
 
@@ -437,16 +439,18 @@
     text-transform: none;
 
 }
+
 .titleshowsright{
     position: absolute;
     top: 5px;
-    right: 15px;
-
-    color: #2D596D;
+    right: 15px;  
 
     font-size: 21px;
     font-family: 'Roboto condensed';
     text-transform: none;
+}
+.titleshowsright a{
+    color: #2D596D;
 }
 .titleshowsright i{
     padding-left: 10px;
@@ -494,7 +498,6 @@
     padding-bottom: 15px;
 }
 
-
 .blocknews .date {
     float: left;
     color: #949494;
@@ -514,8 +517,7 @@
 
 .blocknews2 h3 {
     width: 100%;
-    height: 53px;
-    padding: 10px;
+    padding: 15px;
     margin: 0;
     color: #2D596D;
     line-height: 1;
@@ -541,6 +543,15 @@
 .birinchiradio .card-info {
     padding: 5px 0px;
 }
+
+.birinchiradio .card-info .view{
+    float: right;
+    color: #949494;
+    font-size: 12px;
+}
+.birinchiradio .card-info .view .fa{
+    padding-right: 5px;
+}
 .birinchiradio .card-info .category:hover{
     color: #332f2e;
 }
@@ -552,12 +563,14 @@
     font-weight: 600;
 }
 .shows .label {
-    top: -5px;
     position: relative;
+    top: -5px;
+    right: -10px
     border-radius: 3px !important;
 }
 
-.blocknews2 a.hovertext {
+
+.blocknews2 div.hovertext {
     display:block;
     position: relative;
     overflow:hidden;
@@ -567,7 +580,7 @@
     transition: all .4s;
     cursor:pointer;
 }
-.blocknews2 a.hovertext .desc {
+.blocknews2 div.hovertext .desc {
     background-color:rgba(0, 160, 150, 0);
     width:100%;
     height:100%;
@@ -581,7 +594,7 @@
     transition:all 1s;
 }
 
-.blocknews2 a.hovertext span {
+.blocknews2 div.hovertext span {
     position: absolute;
     display: block;
     
@@ -603,10 +616,61 @@
     -o-transition: all .4s;
     transition: all .4s;
 }
-.blocknews2 a.hovertext:hover span {
+.blocknews2 div.hovertext:hover span {
     bottom:0;
     height:100%;
     color: #ffffff;
+}
+
+.blocknews article img {
+    border-radius: 1px !important;
+}
+.blocknews3 {
+    margin: 10px 0px;
+}
+.blocknews3 h3{
+    margin: 0px 0px 10px 0px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.popular .datetime {
+    float: left;
+}
+.popular .cat{
+    padding-left: 10px;
+    font-size: 13px;
+    color: #2D596D;
+}
+.popular .cat span{
+    position: relative;
+    top: -1px;
+}
+.popular .views{
+    float: right;
+
+}
+.popular .views i{
+    padding-right: 5px;
+}
+
+.popular .extra{
+    color: #4E5E6A;
+    font-size: 12px;
+    font-weight: bold;
+}
+.popular .media-heading{
+    display: block;
+    font-weight: bold;
+    color: #444242;
+    line-height: 16px;
+}
+.popular .media-heading:hover{
+    color: #2D3E4A;
+    text-decoration: underline;
+}
+.popular .media{
+    margin-top: 5px;
+    border-bottom: 1px dotted #E3D1C7;
 }
 
 /* END Birinchi Home page*/
@@ -651,6 +715,9 @@
 
     font-size: 16px;
     border-bottom: 1px solid #2C5061;
+
+    vertical-align: middle;
+    display: table-cell;
 }
 .switcher .name a{
     color: #fff;
@@ -679,20 +746,32 @@
 }
 /* END Home Slider */
 .lenta{
-    height: 309px;
+    height: 310px;
     overflow: hidden;
 }
 .lentanews {
     border-bottom: 1px dotted #CAB8AF;
-    padding: 0px 0px 5px 0px;
+    padding: 3px 0px;
+}
+
+.lentanews:first-child {
+    padding-top:0px; 
 }
 .lentanews .xdate{
-    color: #696767;
-    font-size: 14px;
+    float: left;
+    width: 100%;
+    max-width: 45px;
+    padding: 0 10px 0 0;
+   
+    font-weight: bold;
+    color: #2D596D;
+    display: table-cell;
 }
 
 .lentanews .xtitle{
-    font-family: Arial, sans-serif;
+    padding: 2px 0;
+
+    font-family: 'Roboto Regular';
     font-style: inherit;
     line-height: 18px;
     font-weight: inherit;
@@ -703,11 +782,11 @@
     -o-transition: color 0.15s ease-in-out;
     transition: color 0.15s ease-in-out;
     text-decoration: none;
-    padding: 2px 0;
-    display: inline;
+    display: table-cell;
 }
 .lentanews .xtitle a{
     color: #332F2E;
+
 }
 .lentanews .xtitle a:hover{
     color: #3E8CAF;
@@ -813,6 +892,23 @@
 
 /* BEGIN AllNews*/
 
+.news-info{
+    float: right;
+    margin-top: 5px;
+    color: #4E5E6A;
+    font-size: 12px;
+    font-weight: bold;
+}
+.news-info .date .fa, .news-info .view .fa{
+    padding-right: 5px;
+} 
+.news-info .date{
+    padding-right: 10px;
+}
+.news-info .view{
+
+}
+
 .oneallnews .ctg-panel .list-group-item, .broadcastpost .ctg-panel .list-group-item, .onenews .ctg-panel .list-group-item{
     background: none;
 }
@@ -852,7 +948,7 @@
     padding:10px 0px; 
 }
 .allnewsfooter .pagination li a{
-    font-size: 18px;
+    font-size: 14px;
     background: none;
 }
 .allnewsfooter .pagination li a:hover{
@@ -916,14 +1012,13 @@
 /*BEGIN Broadcast one news*/
 .broadcastpost .btitle{
     margin: 0;
-    padding: 10px 0px;
-    font-size: 22px;
+    padding: 0px 0px 10px 0px;
+    font-size: 20px;
+    font-weight: bold;
 }
 .oneimg {
-    width: 260px;
     float: left;
-    margin-right: 10px;
-    margin-bottom: 0px;
+    margin: 0px 10px 0px 0px; 
 }
 .oneimg img {
     max-width: 100%;
@@ -940,6 +1035,10 @@
 
 /* BEGIN NEWS page*/
 
+.onenews .newstitle{
+    font-size: 20px;
+    font-weight: bold;
+}
 .onenews .panel{
     background: none;
 }

@@ -147,7 +147,7 @@
               </div>
               <div class="panel-body">
                   <div class="row" style="margin: 20px;">
-                   <p style="text-align:center;color: #272727;font-size: 18px;">{{ $gallery->getDescription() }}</p>
+                   <p style="text-align:center;color: #272727;font-size: 18px;">{!! $gallery->getDescription() !!}</p>
                      <ul id="imageGallery">
                      @if($images != null)
                      @foreach($images as $image)

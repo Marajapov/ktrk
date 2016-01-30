@@ -101,8 +101,7 @@ Route::group(['domain' => 'beta.ktrk.kg', 'prefix' => '/birinchi', 'namespace' =
     Route::get('/photos/{gallery}', ['as' => 'birinchi.photos',   'uses' => 'BirinchiController@Gallery']);
     Route::get('/allphotos',['as' => 'birinchi.allphotos','uses'=> 'BirinchiController@allphotos'] );
     Route::get('/broadcastsprogramm', ['as' => 'birinchi.broadcastsprogramm',   'uses' => 'BirinchiController@broadcastsprogramm']);
-
-    Route::get('/vertex',['as'=>'birinchi.vertex', 'uses'=>'BirinchiController@vertex']);
+    Route::get('/category/{category}', ['as' => 'birinchi.category',   'uses' => 'BirinchiController@categoryPage']);
 
 });
 
@@ -214,6 +213,9 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
 
 //    Orphus
     Route::post('/orphus', ['as'=>'front.orphus', 'uses'=>'CommentController@orphus']);
+
+    //    Test
+    Route::get('/test',['as'=>'front.test', 'uses'=>"HomeController@Test"]);
 
 Route::get('locale/{locale?}',   ['as' => 'locale',   'uses' => 'CommonController@setLocale']);
 

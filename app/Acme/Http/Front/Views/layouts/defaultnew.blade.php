@@ -7,33 +7,27 @@
         @yield('title')
     </title>
 
+    <!-- FAVICON -->
     <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon">
     <link rel="icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon">
 
+    <!-- GLOBAL STYLES -->
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('css/bootstrap-datetimepicker.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('filter/css/layout.css') }}">
+
     <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick-theme.css') }}"/>
+
     <link rel="stylesheet" href="{{ asset('css/style.css') }}"/>
-
-    <link rel="stylesheet" href="{{ asset('css/date-filter.css') }}"/>
-
-    <link rel="stylesheet" href="{{ asset('css/jasny-bootstrap.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('css/fileinput.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/style2.css') }}"/>
-
     <link rel="stylesheet" href="{{ asset('css/reveal-menu.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/test.css') }}"/>
 
-
+    <!-- GLOBAL SCRIPTS -->
     <script src="{{ asset('js/jquery-1.11.2.min.js') }}"></script>
     <script src="{{ asset('js/jasny-bootstrap.js') }}"></script>
     <script src="{{ asset('js/fileinput.js') }}"></script>
     <script src="{{ asset('js/modernizr-2.6.2.min.js') }}"></script>
-
-    @yield('styles')
-
     <script src="{{ asset('js/classie.js') }}"></script>
     <script>
         function init() {
@@ -53,10 +47,12 @@
         window.onload = init();
     </script>
 
+    @yield('styles')
+
 </head>
 <body>
 
-{{--Facebook SDK--}}
+<!-- Facebook SDK -->
 <script>
     window.fbAsyncInit = function() {
         FB.init({
@@ -79,69 +75,14 @@
 
     <div id="overlay"></div>
 
-    <!-- Sidebar -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
-        <ul class="nav sidebar-nav">
-            <li class="sidebar-brand">
-                <a href="#">
-                    Меню
-                </a>
-            </li>
-            <li>
-                <a href="#">Home</a>
-            </li>
-            <li>
-                <a href="#">About</a>
-            </li>
-            <li>
-                <a href="#">Events</a>
-            </li>
-            <li>
-                <a href="#">Team</a>
-            </li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Works <span class="caret"></span></a>
-                <ul class="dropdown-menu" role="menu">
-                    <li class="dropdown-header">Dropdown heading</li>
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li><a href="#">Separated link</a></li>
-                    <li><a href="#">One more separated link</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">Services</a>
-            </li>
-            <li>
-                <a href="#">Contact</a>
-            </li>
-            <li>
-                <a href="https://twitter.com/maridlcrmn">Follow me</a>
-            </li>
-        </ul>
-    </nav>
-    <!-- /#sidebar-wrapper -->
-
+    @include('Front::partials.sidebar')
+    @include('Front::partials.modal')
 
     <!-- Page Content -->
     <div id="page-content-wrapper">
 
-        <div class="main-header-xs visible-xs">
-            <a href="{{ route('front.home') }}">
-                <img src="{{ asset('images/logo.png') }}" alt="Logo"/>
-            </a>
-        </div>
-
-        <button type="button" class="hamburger is-closed visible-xs" data-toggle="offcanvas">
-            <span class="hamb-top"></span>
-            <span class="hamb-middle"></span>
-            <span class="hamb-bottom"></span>
-        </button>
-
-        @include('Front::partials.modal')
         @include('Front::partials.header')
         @include('Front::partials.banner')
         @yield('content')
 
-@include('Front::partials.footer')
+        @include('Front::partials.footer')

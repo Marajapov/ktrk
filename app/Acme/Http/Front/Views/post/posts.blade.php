@@ -1,4 +1,4 @@
-@extends('Front::layouts.default')
+@extends('Front::layouts.defaultnew')
 @section('title', trans('site.PostAllNews'))
 
 @section('styles')
@@ -192,76 +192,11 @@
 
                                         </div>
 
-                                        {{--<div class="col-md-6">--}}
-                                            {{--@foreach($leftCategories as $leftCategory)--}}
-                                                {{--<div class="category">--}}
-                                                    {{--<h4>{{ $leftCategory->getTitle() }}</h4>--}}
-
-                                                    {{--<div class="cat-posts">--}}
-                                                        {{--@foreach($postAll as $key=>$post)--}}
-
-                                                        {{--@endforeach--}}
-                                                    {{--</div>--}}
-                                                {{--</div>--}}
-                                            {{--@endforeach--}}
-                                        {{--</div>--}}
-
-                                        {{--@foreach($posts as $post)--}}
-
-                                            {{--<div class="media">--}}
-
-                                                {{--<div class="media-left">--}}
-                                                    {{--<a href="{{ route('front.post', $post) }}">--}}
-                                                        {{--<img class="media-object thumb" src="@if($post->getFile()) {{ asset($post->getFile()) }} @else {{ asset('images/ktrk_last.svg') }}  @endif" alt="image">--}}
-                                                    {{--</a>--}}
-                                                {{--</div>--}}
-
-                                                {{--<div class="media-body">--}}
-                                                    {{--<div class="extra">--}}
-                                                        {{--<span class="e-datetime">{{ $post->getDay() }} {{ $post->getMonthRu() }} , {{ $post->getTime() }}</span>--}}
-                                                        {{--<a class="e-cat text-uppercase" href="{{ route('front.category', $post->category) }}"><span>{{ $post->category('category_id')->first()->getTitle() }}</span></a>--}}
-                                                        {{--<span class="e-views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>--}}
-                                                    {{--</div>--}}
-                                                    {{--<a class="media-heading" href="{{ route('front.post', $post) }}">{{ $post->getTitleRuOrKg() }}</a>--}}
-                                                {{--</div>--}}
-
-                                            {{--</div>--}}
-
-                                        {{--@endforeach--}}
-
                                     </div>
-
-                                    {{--<nav>--}}
-                                    {{--<ul class="pagination">--}}
-
-                                    {{--<li>--}}
-                                    {{--<a href="{{ route('front.general', ['page' => 1]) }}" class="btn btn-default @if($postAll->currentPage() == 1) disabled @endif">{{ trans('site.Start') }}</a>--}}
-                                    {{--</li>--}}
-                                    {{--<li>--}}
-                                    {{--<a href="{{ $postAll->previousPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span></a>--}}
-                                    {{--</li>--}}
-                                    {{--<li>--}}
-                                    {{--<a href="{{ $postAll->nextPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-right"></span></a>--}}
-                                    {{--</li>--}}
-
-                                    {{--@for($i = 0, $j = 1; $i < $postAll->total(); $i+=$perPage)--}}
-                                    {{--<li>--}}
-                                    {{--<a href="{{ route('front.general', ['page' => $j]) }}" class="btn btn-default @if($postAll->currentPage() == $j) active @endif">{{ $j++ }}</a>--}}
-                                    {{--</li>--}}
-                                    {{--@endfor--}}
-
-                                    {{--<li>--}}
-                                    {{--<a href="{{ route('front.general', ['page' => ceil($postAll->total()/$perPage)]) }}" class="btn btn-default @if($postAll->currentPage() == ceil($postAll->total()/$perPage)) disabled @endif">{{ trans('site.End') }}</a>--}}
-                                    {{--</li>--}}
-
-                                    {{--</ul>--}}
-                                    {{--</nav>--}}
 
                                 </div>
                             </div>
                         </div>
-
-                        @include('Front::partials.postBanner')
 
                     </div>
 

@@ -21,6 +21,16 @@
                                             <a href="{{ route('front.post', $generalPost1) }}" class="main-img">
                                                 <img src="@if(!($generalPost1->getFile()))images/live_bg.png @else {{ asset($generalPost1->getFile()) }} @endif" alt="img26">
                                             </a>
+<!-- Birinchi Channel Icon -->
+                                            @if($generalPost1->birinchi != 0)
+                                            <div class="news-channel">
+                                                <a href="#">
+                                                    <img src="{{ $generalPost1->isChannelIcon(7) }}" alt=""/>
+                                                </a>
+                                            </div>
+                                            @endif
+<!-- end Birinchi Channel Icon -->
+
                                             <p class="description clearfix">
                                                 <a href="{{ route('front.category', $generalPost1->category) }}">
                                                     {{ $generalPost1->category('category_id')->first()->getTitle() }}
@@ -192,84 +202,8 @@
 
                             <div class="panel-body">
 
-                                <div class="col-md-3 heading">
-
-                                    <img src="{{ asset('images/locationcameramini2.png') }}">
-
-                                    <div class="panel-heading">
-                                        <h3 class="panel-title">
-                                            <span>Элдик репортер</span>
-                                        </h3>
-                                        <p>Народный репортер</p>
-
-                                    </div>
-
-                                    <div class="panel-heading2">
-                                        <h3 class="panel-title">
-                                            <a href="{{ route('front.reporter') }}"><span>Жаңылык кошуу</span><span class="prrus">Добавить новость</span><i class="fa fa-file-text-o"></i></a>
-                                        </h3>
-
-                                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
-                                            <div class="modal-dialog modal-lg" role="document">
-
-                                                <div class="modal-content">
-
-                                                    <div class="modal-header">
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                        <h3 class="modal-title" id="exampleModalLabel">Жаңылык жөнөтүү / Отправить новость</h3>
-                                                    </div>
-
-                                                    <div class="modal-body">
-                                                        {!! Form::open(array('route' => 'admin.peopleReporter.store', 'enctype' => 'multipart/form-data', 'multiple'=>true, 'id'=>'addNews')) !!}
-
-                                                        <div class="form-group">
-                                                            <div class="row">
-                                                                <div class="col-md-6">
-                                                                    <label for="recipient-name" class="control-label">Аты жөнүңүз / Ваше имя </label>
-                                                                    <input name="name" type="text" class="form-control" placeholder="Сизди ким деп тааныштырабыз / Как вас познакомить" id="recipient-name">
-                                                                </div>
-                                                                <div class="col-md-6">
-                                                                    <label for="recipient-name" class="control-label">Телефонуңуз же Email / Телефон или Email</label>
-                                                                    <input name="info" type="text" class="form-control" placeholder="Байланыш телефонуңуз же Email / Ваш контактный телефон или Email" id="recipient-name">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="form-group">
-                                                            <div class="row">
-                                                                <div class="col-md-12 textforma">
-                                                                    <label for="message-text" class="control-label">Жаңылыктын мазмуну / Описание содержания:</label>
-                                                                    <textarea name="question" class="form-control" placeholder="Жаңылыктын мазмуну, сүрөт жана видеолор боюнча маалымат / Содержание, информация по снимкам или видео" id="message-text"></textarea>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="form-group">
-                                                            <label for="file" class="control-label">Фото</label>
-                                                            <div class="form-group">
-                                                                <input name="photo" class="file" type="file">
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="form-group">
-                                                            <label for="video" class="control-label">Видео</label>
-                                                            <div class="form-group">
-                                                                <input name="video" class="file" type="file">
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Жабуу / Закрыть</button>
-                                                            <input type="submit" name="submit" class="btn btn-primary" value="Кабарды жөнөтүү / Отправить новость">
-                                                        </div>
-                                                        {!! Form::close() !!}
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </div>
-
-                                    </div>
+                                <div class="col-md-3 reporter-logo">
+                                    <img src="{{ asset('images/reporter.png') }}" alt=""/>
                                 </div>
 
                                 <div class="col-md-9">
@@ -587,7 +521,7 @@
                             </div>
                         </div>
 
-                        <a href="#" class="text-center ads">
+                        <a target="_blank" href="@if(!empty($positionCenter)) {{ $positionCenter->linkTo }} @else # @endif" class="text-center ads">
                             <img src="@if(!empty($positionCenter->file)) {{ asset($positionCenter->file) }} @else {{ asset('images/banner_default_728x90.png') }} @endif" alt=""/>
                         </a>
 
