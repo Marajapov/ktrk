@@ -103,10 +103,10 @@ class BirinchiController extends Controller
     public function news(\Model\Post\ModelName $post)
     {
         $post->incrementViewed();
+        $lc = app()->getlocale();
 
         $channel = \Model\Channel\ModelName::name('birinchi')->first();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
-        $lc = app()->getlocale();
 
         if($lc == 'kg'){
             $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('name','<>','' )->get();    

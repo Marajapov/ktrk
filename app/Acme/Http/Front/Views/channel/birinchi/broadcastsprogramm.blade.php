@@ -1,5 +1,5 @@
 @extends('Front::channel.birinchi.default')
-@section('title', "Биринчи Радио")
+@section('title', trans('radiopages.Teleperedachi'))
 @section('styles')
 <link rel="stylesheet" href="{{ asset('css/pages.css')}}">
 @endsection

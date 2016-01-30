@@ -1,5 +1,5 @@
 @extends('Front::channel.birinchi.default')
-@section('title', "About")
+@section('title', trans('radiopages.About'))
 @section('styles')
 @endsection
 @section('content')
