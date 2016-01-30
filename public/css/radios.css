@@ -950,10 +950,52 @@
 
 .onlineone{
     width:100%; 
-    text-align:center
+    text-align:center;
 }
 .onlineone p{
     background:url('../images/channels/1-radio-notext.png');
 }
 
 /* BEGIN Online player*/
+.box {
+  position: relative;
+  border-radius: 3px;
+  background: #ffffff;
+  border-top: 3px solid #d2d6de;
+  margin-bottom: 20px;
+  width: 38.6%;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+.box-widget {
+  border: none;
+  position: relative;
+}
+.widget-radio .widget-radio-header {
+  padding: 10px;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+  background: #CCCCCC;
+}
+.widget-radio .widget-radio-name {
+  margin-top: -4px;
+  margin-bottom: 5px;
+  font-size: 25px;
+  font-weight: 300;
+  color: #005197;
+  font-family: 'Source Sans Pro',sans-serif;
+}
+.widget-radio .widget-radio-desc {
+  margin-top: 0;
+  color: #000000;
+  font-family: 'Source Sans Pro',sans-serif;
+  font-size: 11px;
+}
+.widget-radio-name,
+.widget-radio .widget-radio-desc {
+  margin-left: 75px;
+}
+.widget-radio-image > img {
+  width: 65px;
+  height: auto;
+  float: left;
+}
