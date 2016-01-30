@@ -34,7 +34,7 @@
                             <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{$balastanLastVideo->getUrl()}}?rel=0&amp;controls=1&amp;showinfo=0" frameborder="0" controls=0 allowfullscreen></iframe>
                         </div>
                         <div class="episode-info">
-                            <p>{{ $balastanLastVideo->description }}</p>
+                            <div class="episode-desc">{!! $balastanLastVideo->description !!}</div>
                             <a href="#">
                                 <em>{{ $balastanLastVideo->hasProject()->first()->getNameOne()}}</em>
                             </a>

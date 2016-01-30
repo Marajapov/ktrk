@@ -136,13 +136,12 @@ class PostController extends Controller
             $storage = \Storage::disk('public');
             $storage->makeDirectory($dir);
 
-//            if($request->input('thumb_author')){
-//                $thumbnail = Image::make($_FILES['thumbnail']['tmp_name'])->fit(250, 150)->insert('http://beta.ktrk.kg/stringtoimg.php?string='.urlencode(base64_encode($thumb_author)).'&font_size=4&R=FF&G=FF&B=FF', 'bottom-right', 0, 0)->save($dir.'/'.$name);
-//                $thumbnail_big = Image::make($_FILES['thumbnail']['tmp_name'])->fit(500, 300)->insert('http://beta.ktrk.kg/stringtoimg.php?string='.urlencode(base64_encode($thumb_author)).'&font_size=4&R=FF&G=FF&B=FF', 'bottom-right', 0, 0)->save($dir.'/'.$name2);
-//            } else {
-                $thumbnail = Image::make($_FILES['thumbnail']['tmp_name'])->fit(250, 150)->save($dir.'/'.$name);
-                $thumbnail_big = Image::make($_FILES['thumbnail']['tmp_name'])->fit(500, 300)->save($dir.'/'.$name2);
-//            }
+            Image::make($_FILES['thumbnail']['tmp_name'])->fit(250, 150)->save($dir.'/'.$name);
+            if($request->input('thumb_author')){
+                Image::make($_FILES['thumbnail']['tmp_name'])->fit(500, 300)->insert('http://beta.ktrk.kg/stringtoimg.php?string='.urlencode($thumb_author).'&font_size=4&R=FF&G=FF&B=FF', 'bottom-right', 0, 0)->save($dir.'/'.$name2);
+            } else {
+                Image::make($_FILES['thumbnail']['tmp_name'])->fit(500, 300)->save($dir.'/'.$name2);
+            }
 
             $post->thumbnail = $dir.'/'.$name;
             $post->thumbnail_big = $dir.'/'.$name2;
@@ -241,6 +240,7 @@ class PostController extends Controller
     public function update(Request $request, Post $post)
     {
         $post->update($request->except('tag_kg','tag_ru','thumbnail','q','channel_id','created_at','time'));
+        $thumb_author = ($request->input('thumb_author'));
 
         $tag_kg_string = $request->input('tag_kg');
         $tags = explode("; ",$tag_kg_string);
@@ -298,7 +298,11 @@ class PostController extends Controller
             $storage->makeDirectory($dir);
 
             Image::make($_FILES['thumbnail']['tmp_name'])->fit(250, 150)->save($dir.'/'.$name);
-            Image::make($_FILES['thumbnail']['tmp_name'])->fit(500, 300)->save($dir.'/'.$name2);
+            if($request->input('thumb_author')){
+                Image::make($_FILES['thumbnail']['tmp_name'])->fit(500, 300)->insert('http://beta.ktrk.kg/stringtoimg.php?string='.urlencode($thumb_author).'&font_size=4&R=FF&G=FF&B=FF', 'bottom-right', 0, 0)->save($dir.'/'.$name2);
+            } else {
+                Image::make($_FILES['thumbnail']['tmp_name'])->fit(500, 300)->save($dir.'/'.$name2);
+            }
 
             $post->thumbnail = $dir.'/'.$name;
             $post->thumbnail_big = $dir.'/'.$name2;

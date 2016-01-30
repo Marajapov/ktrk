@@ -53,7 +53,7 @@
                     @if($project && ($project->status !=1))
                         <p class="show-desc">
                             <span>{{ $project->getNameOne() }}</span>
-                            {{ $project->getDescription() }}
+                            {!! $project->getDescription() !!}
                         </p>
                     @endif
 

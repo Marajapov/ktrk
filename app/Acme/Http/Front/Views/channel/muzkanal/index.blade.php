@@ -555,7 +555,7 @@
                            @foreach($Concert as $show)
                            <div class="col-md-4">
                               <a href="{{ route('muzkanal.video', $show)}}">
-                              <img src="http://img.youtube.com/vi/{{ $show->getUrl() }}/mqdefault.jpg" alt=""/></a>
+                              <img src="http://img.youtube.com/vi/{{ $show->getUrl() }}/hqdefault.jpg" alt=""/></a>
                               <div class="item-desc">
                                  <ul>
                                     <a href="{{ route('muzkanal.video', $show)}}">
@@ -676,7 +676,7 @@
       //    });
       
       playerInstance.setup({
-          autostart: false,
+          autostart: true,
           playlist: [{
                   image: "{{ asset('images/channels/muzkanal/online.jpg') }} ",
                   sources: [{
@@ -687,9 +687,9 @@
           height: "100%",
           aspectratio: "16:9",
           primary: "flash",
-          skin: {
-              name: "bekle"
-          },
+//          skin: {
+//              name: "bekle"
+//          },
           stretching: "exactfit"
       });
    </script>
