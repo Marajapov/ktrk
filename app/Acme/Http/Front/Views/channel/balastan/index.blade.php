@@ -1,5 +1,5 @@
 @extends('Front::channel.balastan.default')
-@section('title', "Vertex")
+@section('title', "Баластан")
 
 @section('styles')
 @endsection
