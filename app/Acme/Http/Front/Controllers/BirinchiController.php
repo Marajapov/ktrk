@@ -188,17 +188,27 @@ class BirinchiController extends Controller
 
         $perPage = 10;
         $lc = app()->getlocale();
-        if($lc == 'kg'){
-            $postAll = \Model\Post\ModelName::where('birinchi','=',1)->where('title','<>','')->published()->orderBy('id','desc')->paginate($perPage);    
-        }else{
-            $postAll = \Model\Post\ModelName::where('birinchi','=',1)->where('titleRu','<>','')->published()->orderBy('id','desc')->paginate($perPage);
-        }
 
         $lc = app()->getlocale();
         if($lc == 'kg'){
-            $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('name','<>','' )->get();    
+            $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('name','<>','' )->get();
+            $postAll = \Model\Post\ModelName::where('birinchi','=',1)->where('title','<>','')->published()->orderBy('id','desc')->paginate($perPage);      
+            $popArticles = \Model\Post\ModelName::where('birinchi','=','1')->languagekg()->orderBy('viewed','desc')->take(6)->get();
+            if(count($popArticles) > 0){
+                $popArticles = $popArticles;
+            }else{
+                $popArticles = null;
+            }  
         }else{
             $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('nameRu','<>','' )->get();
+            $postAll = \Model\Post\ModelName::where('birinchi','=',1)->where('titleRu','<>','')->published()->orderBy('id','desc')->paginate($perPage);
+
+            $popArticles = \Model\Post\ModelName::where('birinchi','=','1')->languageru()->orderBy('viewed','desc')->take(6)->get();
+            if(count($popArticles) > 0){
+                $popArticles = $popArticles;
+            }else{
+                $popArticles = null;
+            }
         }
         $categories = \Model\Category\ModelName::where('birinchi','=','1')->get();
 
@@ -209,6 +219,7 @@ class BirinchiController extends Controller
             'postAll' => $postAll,
             'birinchiProjects' => $birinchiProjects,
             'categories'=>$categories,
+            'popArticles'=>$popArticles,
 
 
             ]);

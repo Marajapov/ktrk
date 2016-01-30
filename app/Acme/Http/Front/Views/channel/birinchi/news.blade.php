@@ -119,7 +119,7 @@
                <div class="col-md-12">
                   <div class="row popular">
                      <div class="col-md-12">
-                        <h3 class="title">Популярные</h3>
+                        <h3 class="title">{{ trans('site.PostPopular') }}</h3>
                      </div>                     
                      <div class="col-md-12"> 
                            @if($popArticles) 
