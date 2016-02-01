@@ -1,4 +1,4 @@
-topvideos@extends('Front::channel.muzkanal.default')
+@extends('Front::channel.muzkanal.default')
 @section('title', trans('radiopages.Homepage'))
 @section('styles')
 <link rel="stylesheet" href="css/audio/muzslider.css">
@@ -550,7 +550,7 @@ topvideos@extends('Front::channel.muzkanal.default')
                   </div>
                   <div class="panel-body">
                      <div class="col-md-12">
-                        <div class="carousel-slick12">
+                        <div class="carousel-slick11">
                            @if($Concert)
                            @foreach($Concert as $show)
                            <div class="col-md-4">
@@ -703,13 +703,6 @@ topvideos@extends('Front::channel.muzkanal.default')
               autoplay: false,
               autoplaySpeed: 4500
           });
-          $('.carousel-slick12').slick({
-              infinite: true,
-              slidesToShow: 4,
-              slidesToScroll: 1,
-              autoplay: false,
-              autoplaySpeed: 4500
-          });
           $('.carousel-slick10').slick({
               infinite: true,
               slidesToShow: 3,
@@ -717,20 +710,25 @@ topvideos@extends('Front::channel.muzkanal.default')
               autoplay: false,
               autoplaySpeed: 4500
           });
-      }
-      
-      if ($(window).width() < 768) {
-          $('.carousel-slick10').slick({
+          $('.carousel-slick12').slick({
               infinite: true,
-              slidesToShow: 2,
+              slidesToShow: 4,
               slidesToScroll: 1,
               autoplay: false,
               autoplaySpeed: 4500
           });
       }
       
+      
       if ($(window).width() < 768) {
           $('.carousel-slick11').slick({
+              infinite: true,
+              slidesToShow: 2,
+              slidesToScroll: 1,
+              autoplay: false,
+              autoplaySpeed: 4500
+          });
+         $('.carousel-slick10').slick({
               infinite: true,
               slidesToShow: 2,
               slidesToScroll: 1,
