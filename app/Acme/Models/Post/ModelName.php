@@ -260,4 +260,13 @@ class ModelName extends Model
         }
         
     }
+    public function getThumbnailDesc()
+    {
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            return $this->thumb_desc;
+        }else{
+            return $this->thumb_desc_ru;
+        }
+    }
 }

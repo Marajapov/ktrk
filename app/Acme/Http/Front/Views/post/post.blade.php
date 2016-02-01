@@ -15,6 +15,67 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/sweetalert.css') }}">
     <link href="{{ asset('froala/css/froala_style.min.css') }}" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="{{ asset('css/goodshare.css') }}"/>
+
+    <link rel="stylesheet" href="{{ asset('css/magnific-popup.css')}}"/>
+    <style>
+        .mfp-ready .mfp-figure {
+            opacity: 0;
+        }
+
+        .mfp-zoom-in {
+            /* start state */
+            /* animate in */
+            /* animate out */
+        }
+        .mfp-zoom-in .mfp-figure {
+            opacity: 0;
+            transition: all 0.3s ease-out;
+            transform: scale(0.9);
+        }
+        .mfp-zoom-in.mfp-bg,
+        .mfp-zoom-in .mfp-preloader {
+            opacity: 0;
+            transition: all 0.3s ease-out;
+        }
+        .mfp-zoom-in.mfp-image-loaded .mfp-figure {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .mfp-zoom-in.mfp-ready.mfp-bg,
+        .mfp-zoom-in.mfp-ready .mfp-preloader {
+            opacity: 0.8;
+        }
+        .mfp-zoom-in.mfp-removing .mfp-figure {
+            transform: scale(0.9);
+            opacity: 0;
+        }
+        .mfp-zoom-in.mfp-removing.mfp-bg,
+        .mfp-zoom-in.mfp-removing .mfp-preloader {
+            opacity: 0;
+        }
+
+        /* CSS-based preloader */
+        .mfp-preloader {
+            width: 30px;
+            height: 30px;
+            background-color: #FFF;
+            opacity: 0.65;
+            margin: 0 auto;
+            animation: rotateplane 1.2s infinite ease-in-out;
+        }
+
+        @keyframes rotateplane {
+            0% {
+                transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+            }
+            50% {
+                transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+            }
+            100% {
+                transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+            }
+        }
+    </style>
 @endsection()
 @section('content')
     <div class="container main-wrapper">
@@ -49,8 +110,10 @@
                                         </div>
                                     </h4>
                                     <p class="post-thumb" href="{{ route('front.post', $post) }}">
-                                        <img class="left" src="@if(empty($post->thumbnail_big)) {{  asset($post->thumbnail) }} @else {{  asset($post->thumbnail_big) }} @endif" alt="image">
-                                        @if($post->thumb_desc)<span class="thumb_desc">{{ $post->thumb_desc }}</span>@endif
+                                        <a id="post-thumb" href="@if(empty($post->thumbnail_big)){{  asset($post->thumbnail) }}@else{{ asset($post->thumbnail_big) }}@endif">
+                                            <img class="left" src="@if(empty($post->thumbnail_big)) {{  asset($post->thumbnail) }} @else {{  asset($post->thumbnail_big) }} @endif" alt="image">
+                                        </a>
+                                        @if($post->thumb_desc || $post->thumb_desc_ru)<span class="thumb_desc">{{ $post->getThumbnailDesc() }}</span>@endif
                                         {{--@if($post->thumb_author)<span class="thumb_author"> Фото: {{ $post->thumb_author }}</span>@endif--}}
                                     </p>
 
@@ -106,14 +169,6 @@
                                             </span>
                                         </div>
                                     </div>
-                                    {{--<h4>--}}
-                                        {{--<i class="fa fa-exclamation-circle"></i>--}}
-                                        {{--@if($lc=='kg')--}}
-                                            {{--Эгерде ката тапсаңыз, текстти белгилеп Ctrl+Enter басыңыз--}}
-                                        {{--@elseif($lc == 'ru')--}}
-                                            {{--Если вы обнаружили ошибку, выделите текст и нажмите Ctrl+Enter--}}
-                                        {{--@endif--}}
-                                    {{--</h4>--}}
                                 </div>
 
                                 <footer class="with-share">
@@ -273,6 +328,41 @@
 @section('footerScript')
     {{-- Google reCaptcha --}}
     <script src='https://www.google.com/recaptcha/api.js'></script>
+
+    {{--MAGNIFIC POPUP--}}
+    <script src="{{ asset('js/jquery.magnific-popup.js') }}"></script>
+    <script>
+        $('#post-thumb').magnificPopup({
+            type: 'image',
+            mainClass: 'mfp-zoom-in',
+            tLoading: '',
+            removalDelay: 500, //delay removal by X to allow out-animation
+            callbacks: {
+
+                imageLoadComplete: function() {
+                    var self = this;
+                    setTimeout(function() {
+                        self.wrap.addClass('mfp-image-loaded');
+                    }, 16);
+                },
+                close: function() {
+                    this.wrap.removeClass('mfp-image-loaded');
+                },
+
+
+
+
+                // don't add this part, it's just to avoid caching of image
+                beforeChange: function() {
+                    this.items[0].src = this.items[0].src + '?=' + Math.random();
+                }
+            },
+
+            closeBtnInside: false,
+            closeOnContentClick: true,
+            midClick: true
+        });
+    </script>
 
     {{--SHARE BUTTONS--}}
     <script src="{{ asset('js/goodshare.js') }}"></script>
