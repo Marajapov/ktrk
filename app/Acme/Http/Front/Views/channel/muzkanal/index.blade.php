@@ -1,4 +1,4 @@
-topvideos@extends('Front::channel.muzkanal.default')
+@extends('Front::channel.muzkanal.default')
 @section('title', trans('radiopages.Homepage'))
 @section('styles')
 <link rel="stylesheet" href="css/audio/muzslider.css">
