@@ -67,15 +67,21 @@
             </div>
         </div>
 
-        <!-- Audio -->
+        <!-- Thumb Desc -->
         <div class="form-group">
-            <label for="thumb_desc" class="col-sm-2 control-label">Миниатюра ({{ trans('site.Title') }})</label>
+            <label for="thumb_desc" class="col-sm-2 control-label">Миниатюра ({{ trans('site.TitleKG') }})</label>
             <div class="col-sm-10">
                 {!! Form::text('thumb_desc', null, ["class" => "form-control", "id" => "thumb_desc", "title" => ""]) !!}
             </div>
         </div>
+        <div class="form-group">
+            <label for="thumb_desc" class="col-sm-2 control-label">Миниатюра ({{ trans('site.TitleRU') }})</label>
+            <div class="col-sm-10">
+                {!! Form::text('thumb_desc_ru', null, ["class" => "form-control", "id" => "thumb_desc", "title" => ""]) !!}
+            </div>
+        </div>
 
-        <!-- Audio -->
+        <!-- Thumb Author -->
         <div class="form-group">
             <label for="thumb_author" class="col-sm-2 control-label">Миниатюра (источник)</label>
             <div class="col-sm-10">
