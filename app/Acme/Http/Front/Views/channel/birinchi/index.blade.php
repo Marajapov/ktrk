@@ -63,7 +63,10 @@
                                     @if($lentaNews)
                                         @foreach($lentaNews as $lenta)
                                             <div class="lentanews">
-                                                <span class="xdate">{{ $lenta->getTime()}}</span>
+                                                <span class="xdate">{{ $lenta->getTime()}}
+                                                    <p>{{$lenta->getDay() }} , {{ $lenta->getMonthRu() }}</p>        
+
+                                                </span>
                                                 <span class="xtitle"><a href="{{ route('birinchi.news', $lenta) }}">{{ $lenta->getTitleRuOrKg() }}</a></span>
                                             </div>
                                         @endforeach
