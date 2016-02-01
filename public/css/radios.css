@@ -662,7 +662,6 @@
     display: block;
     font-weight: bold;
     color: #444242;
-    line-height: 16px;
 }
 .popular .media-heading:hover{
     color: #2D3E4A;
@@ -1048,6 +1047,10 @@
     background: none;
 }
 
+.with-share {
+    text-align: right;
+}
+
 /* END NEWS page*/
 
 /* END Online player*/
@@ -1103,3 +1106,4 @@
   height: auto;
   float: left;
 }
+
