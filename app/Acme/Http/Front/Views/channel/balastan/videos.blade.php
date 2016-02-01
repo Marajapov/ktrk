@@ -1,5 +1,5 @@
 @extends('Front::channel.balastan.default')
-@section('title', "Видеоло")
+@section('title', trans('site.AllVideos'))
 @section('styles')
 @endsection
 @section('content')
@@ -53,7 +53,7 @@
                     @if($project && ($project->status !=1))
                         <p class="show-desc">
                             <span>{{ $project->getNameOne() }}</span>
-                            {{ $project->getDescription() }}
+                            {!! $project->getDescription() !!}
                         </p>
                     @endif
 

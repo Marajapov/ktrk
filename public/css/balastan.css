@@ -74,6 +74,9 @@
 	color: #00283d;
 	font-size: 20px;
 }
+.nav{
+    position: relative;
+}
 .title{
     position: relative;
 }
@@ -105,6 +108,11 @@
     font-family: 'Open Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
     font-size: 14px;
     text-transform: uppercase;
+}
+
+.title a.more-link:hover{
+    color: #353535;
+    border-bottom: 1px dotted #fff;
 }
 
 /*BEGIN Background images sor sections*/
@@ -733,9 +741,22 @@
 /* BEGIN About page*/
 
 .aboutbtn{
-	padding:60px 0px; 
-	background-color: #fff;
-	background-image: url('../images/channels/balastan/bg-bubbles.png');
+    position: relative;
+    z-index: 100;
+    padding: 40px;
+    background: #ffffff;
+}
+.aboutbtn:before{
+display: block;
+    content: '';
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+    background: url('../images/channels/balastan/texture3.jpg');
+    opacity: .1;
 }
 .aboutbtn p{
     font-size: 18px;
@@ -813,7 +834,7 @@
 /*.episode-info{*/
     /*background: #ffffff;*/
 /*}*/
-.episode-info p{
+.episode-desc{
     margin-top: 10px;
     padding: 10px 0;
     border-bottom: 1px solid #d1d1d1;
@@ -986,9 +1007,9 @@
 /* BEGIN Localization*/
 
 .langs{
-    position: relative;
+    position: absolute;
     right: 0;
-    top: 0;
+    top: -25px;
     z-index: 2;
 
     -webkit-transition: bottom 0.3s;
@@ -1002,9 +1023,8 @@
     text-align: center;
 }
 .langs li{
-    padding: 4px 6px;
+    padding: 2px 6px;
     float: left;
-    border-radius: 2px !important;
 }
 .langs li a{
     position: relative;
@@ -1016,7 +1036,7 @@
     text-transform: uppercase;
 }
 .langs li.active{
-    background: #FED953;
+    background: #FB327D;
 }
 .langs li.active a{
     color: #000000;

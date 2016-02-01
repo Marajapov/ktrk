@@ -1,4 +1,4 @@
-@extends('Front::layouts.default')
+@extends('Front::layouts.defaultnew')
 @if($videoProject)
     @section('title', $videoName.' | '.  $videoProject.' | Телеберүүлөр | КТРК')
 @else
@@ -48,7 +48,13 @@
                                             <i class="fa fa-circle"></i>
                                         @endif
                                         <span>{{ $videoName }}</span>
-                                        <span class="show-view"><i class="fa-view"></i>{{ $video->viewed }}</span>
+
+                                        <span class="show-extra">
+                                            <span class="show-date">{{ $video->getDay() }} {{ $video->getMonthRu() }}, {{ $video->getYear() }}</span>
+                                            <span class="show-view">
+                                                <i class="fa-view"></i>{{ $video->viewed }}
+                                            </span>
+                                        </span>
                                     </h4>
                                     <div class="embed-responsive embed-responsive-16by9 show-video">
                                         <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ $video->getUrl()}}?rel=0&amp;showinfo=0"></iframe>
@@ -120,7 +126,7 @@
                                                         {{ $relatedVideo->getProgramName() }}
                                                     </span>
                                                 @endif
-                                                <span class="media-date">{{ $relatedVideo->getDateFormatted() }}</span>
+                                                <span class="media-date">{{ $relatedVideo->getDay() }} {{ $relatedVideo->getMonthRu() }}, {{ $relatedVideo->getYear() }}</span>
                                             </div>
                                             <i class="fa-video"></i>
                                         </a>

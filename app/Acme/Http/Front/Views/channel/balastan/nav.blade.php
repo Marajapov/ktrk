@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="row clearfix">
+    <div class="row clearfix nav">
         <div class="bl-logo">
             <a href="{{ route('balastan.home') }}">
                 <img src="{{ asset('images/channels/balastan_white_notext.png') }}" alt="Balastan Logo"/>

@@ -63,7 +63,10 @@
                                     @if($lentaNews)
                                         @foreach($lentaNews as $lenta)
                                             <div class="lentanews">
-                                                <span class="xdate">{{ $lenta->getTime()}}</span>
+                                                <span class="xdate">{{ $lenta->getTime()}}
+                                                    <p>{{$lenta->getDay() }} , {{ $lenta->getMonthRu() }}</p>        
+
+                                                </span>
                                                 <span class="xtitle"><a href="{{ route('birinchi.news', $lenta) }}">{{ $lenta->getTitleRuOrKg() }}</a></span>
                                             </div>
                                         @endforeach
@@ -186,7 +189,7 @@
                             @foreach($photoGalleries as $photoGallery)
                                 <div class="col-md-4">
                                     <a href="{{ route('birinchi.photos', $photoGallery) }}" class="photo-img">
-                                        <img src="{{ asset($photoGallery->status) }}" alt="" />
+                                        <img src="{{ asset($photoGallery->thumbnail_big) }}" alt="" />
                                         <span class="photo-overlay"></span>
                                     </a>
                                     <div class="photo-info">

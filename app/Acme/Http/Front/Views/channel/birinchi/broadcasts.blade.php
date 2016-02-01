@@ -1,5 +1,5 @@
 @extends('Front::channel.birinchi.default')
-@section('title', "About")
+@section('title',  $project->getNameOne())
 @section('styles')
 @endsection
 @section('content')

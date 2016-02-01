@@ -229,7 +229,7 @@
                                 <nav class="muzpaginate">
                                     <ul class="pagination">
                                         <li>
-                                            <a href="{{ route('muzkanal.videos', ['page' => 1]) }}" class="btn btn-default @if($postAllTop->currentPage() == 1) disabled @endif">{{ trans('site.Start') }}</a>
+                                            <a href="{{ route('muzkanal.videos', ['topPage' => 1]) }}" class="btn btn-default @if($postAllTop->currentPage() == 1) disabled @endif">{{ trans('site.Start') }}</a>
                                         </li>
                                         <li>
                                             <a href="{{ $postAllTop->previousPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span></a>
@@ -239,11 +239,11 @@
                                         </li>
                                         @for($i = 0, $j = 1; $i < $postAllTop->total(); $i+=$perPage)
                                             <li>
-                                                <a href="{{ route('muzkanal.videos', ['page' => $j]) }}" class="btn btn-default @if($postAllTop->currentPage() == $j) active @endif">{{ $j++ }}</a>
+                                                <a href="{{ route('muzkanal.videos', ['topPage' => $j]) }}" class="btn btn-default @if($postAllTop->currentPage() == $j) active @endif">{{ $j++ }}</a>
                                             </li>
                                         @endfor
                                         <li>
-                                            <a href="{{ route('muzkanal.videos', ['page' => ceil($postAllTop->total()/$perPage)]) }}" class="btn btn-default @if($postAllTop->currentPage() == ceil($postAllTop->total()/$perPage)) disabled @endif">{{ trans('site.End') }}</a>
+                                            <a href="{{ route('muzkanal.videos', ['topPage' => ceil($postAllTop->total()/$perPage)]) }}" class="btn btn-default @if($postAllTop->currentPage() == ceil($postAllTop->total()/$perPage)) disabled @endif">{{ trans('site.End') }}</a>
                                         </li>
                                     </ul>
                                 </nav>
@@ -337,7 +337,7 @@
                                 <nav class="muzpaginate">
                                     <ul class="pagination">
                                         <li>
-                                            <a href="{{ route('muzkanal.videos', ['page' => 1]) }}" class="btn btn-default @if($postAllLive->currentPage() == 1) disabled @endif">{{ trans('site.Start') }}</a>
+                                            <a href="{{ route('muzkanal.videos', ['concert' => 1]) }}" class="btn btn-default @if($postAllLive->currentPage() == 1) disabled @endif">{{ trans('site.Start') }}</a>
                                         </li>
                                         <li>
                                             <a href="{{ $postAllLive->previousPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span></a>
@@ -347,11 +347,11 @@
                                         </li>
                                         @for($i = 0, $j = 1; $i < $postAllLive->total(); $i+=$perPage)
                                             <li>
-                                                <a href="{{ route('muzkanal.videos', ['page' => $j]) }}" class="btn btn-default @if($postAllLive->currentPage() == $j) active @endif">{{ $j++ }}</a>
+                                                <a href="{{ route('muzkanal.videos', ['concert' => $j]) }}" class="btn btn-default @if($postAllLive->currentPage() == $j) active @endif">{{ $j++ }}</a>
                                             </li>
                                         @endfor
                                         <li>
-                                            <a href="{{ route('muzkanal.videos', ['page' => ceil($postAllLive->total()/$perPage)]) }}" class="btn btn-default @if($postAllLive->currentPage() == ceil($postAllLive->total()/$perPage)) disabled @endif">{{ trans('site.End') }}</a>
+                                            <a href="{{ route('muzkanal.videos', ['concert' => ceil($postAllLive->total()/$perPage)]) }}" class="btn btn-default @if($postAllLive->currentPage() == ceil($postAllLive->total()/$perPage)) disabled @endif">{{ trans('site.End') }}</a>
                                         </li>
                                     </ul>
                                 </nav>

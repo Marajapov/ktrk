@@ -483,13 +483,19 @@
 }
 .homeleftcategory footer {
     float: left;
+    padding-left: 50px;
 }
 .homeleftcategory footer a{
     color: #2D596D;
     font-size: 17px;
+    font-weight: bold;
 }
 .homeleftcategory footer i{
     padding-left: 5px;
+}
+.homeleftcategory footer a:hover {
+    color: #213944;
+    border-bottom: 1px dotted;
 }
 
 .shows {
@@ -662,7 +668,6 @@
     display: block;
     font-weight: bold;
     color: #444242;
-    line-height: 16px;
 }
 .popular .media-heading:hover{
     color: #2D3E4A;
@@ -758,14 +763,19 @@
     padding-top:0px; 
 }
 .lentanews .xdate{
-    float: left;
-    width: 100%;
-    max-width: 45px;
+    max-width: 50px;
     padding: 0 10px 0 0;
    
+   font-size: 16px;
     font-weight: bold;
     color: #2D596D;
     display: table-cell;
+}
+.lentanews .xdate p{
+    margin: 0 0 3px;
+    font-size: 11px;
+    font-weight: normal;
+    white-space: nowrap;
 }
 
 .lentanews .xtitle{
@@ -894,7 +904,7 @@
 
 .news-info{
     float: right;
-    margin-top: 5px;
+    margin-top: 4px;
     color: #4E5E6A;
     font-size: 12px;
     font-weight: bold;
@@ -1043,6 +1053,10 @@
     background: none;
 }
 
+.with-share {
+    text-align: right;
+}
+
 /* END NEWS page*/
 
 /* END Online player*/
@@ -1098,3 +1112,4 @@
   height: auto;
   float: left;
 }
+

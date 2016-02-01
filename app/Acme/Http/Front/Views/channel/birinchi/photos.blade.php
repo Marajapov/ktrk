@@ -1,5 +1,5 @@
 @extends('Front::channel.birinchi.default')
-@section('title', "About")
+@section('title', $gallery->getName())
 @section('styles')
 <link rel="stylesheet" type="text/css" href="{{ asset('css/lightslider.css') }}">
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.2.6/css/lightgallery.min.css">

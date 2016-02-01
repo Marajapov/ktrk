@@ -482,7 +482,7 @@
       </div>
       <div class="row">
          <div class="col-md-12">
-            <div class="row topvideos videostyle">
+            <div class="row topvideos">
                <div class="panel panel-default panel-carousel">
                   <div class="panel-heading">
                      <h3 class="panel-title"><span>{{ trans('radiopages.TopCLips') }}</span></h3>
@@ -543,19 +543,19 @@
       </div>
       <div class="row">
          <div class="col-md-12">
-            <div class="row topvideos videostyle">
+            <div class="row topvideos">
                <div class="panel panel-default panel-carousel">
                   <div class="panel-heading">
                      <h3 class="panel-title"><span>Концерт</span></h3>
                   </div>
                   <div class="panel-body">
                      <div class="col-md-12">
-                        <div class="carousel-slick12">
+                        <div class="carousel-slick11">
                            @if($Concert)
                            @foreach($Concert as $show)
                            <div class="col-md-4">
                               <a href="{{ route('muzkanal.video', $show)}}">
-                              <img src="http://img.youtube.com/vi/{{ $show->getUrl() }}/mqdefault.jpg" alt=""/></a>
+                              <img src="http://img.youtube.com/vi/{{ $show->getUrl() }}/hqdefault.jpg" alt=""/></a>
                               <div class="item-desc">
                                  <ul>
                                     <a href="{{ route('muzkanal.video', $show)}}">
@@ -676,7 +676,7 @@
       //    });
       
       playerInstance.setup({
-          autostart: false,
+          autostart: true,
           playlist: [{
                   image: "{{ asset('images/channels/muzkanal/online.jpg') }} ",
                   sources: [{
@@ -687,9 +687,9 @@
           height: "100%",
           aspectratio: "16:9",
           primary: "flash",
-          skin: {
-              name: "bekle"
-          },
+//          skin: {
+//              name: "bekle"
+//          },
           stretching: "exactfit"
       });
    </script>
@@ -703,13 +703,6 @@
               autoplay: false,
               autoplaySpeed: 4500
           });
-          $('.carousel-slick12').slick({
-              infinite: true,
-              slidesToShow: 4,
-              slidesToScroll: 1,
-              autoplay: false,
-              autoplaySpeed: 4500
-          });
           $('.carousel-slick10').slick({
               infinite: true,
               slidesToShow: 3,
@@ -717,20 +710,25 @@
               autoplay: false,
               autoplaySpeed: 4500
           });
-      }
-      
-      if ($(window).width() < 768) {
-          $('.carousel-slick10').slick({
+          $('.carousel-slick12').slick({
               infinite: true,
-              slidesToShow: 2,
+              slidesToShow: 4,
               slidesToScroll: 1,
               autoplay: false,
               autoplaySpeed: 4500
           });
       }
       
+      
       if ($(window).width() < 768) {
           $('.carousel-slick11').slick({
+              infinite: true,
+              slidesToShow: 2,
+              slidesToScroll: 1,
+              autoplay: false,
+              autoplaySpeed: 4500
+          });
+         $('.carousel-slick10').slick({
               infinite: true,
               slidesToShow: 2,
               slidesToScroll: 1,

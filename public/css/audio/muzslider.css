@@ -267,14 +267,15 @@
 }
 .dkp-big-3now .rowfix{
     padding: 0 5px;
-
+}
+.dkp-big-3now .rowfix > a{
     -webkit-transition: all 0.2s ease;
     -moz-transition: all 0.2s ease;
     -ms-transition: all 0.2s ease;
     -o-transition: all 0.2s ease;
     transition: all 0.2s ease;
 }
-.dkp-big-3now .rowfix:hover{
+.dkp-big-3now .rowfix > a:hover{
     -webkit-transform: scale(1.075);
     -moz-transform: scale(1.075);
     -ms-transform: scale(1.075);
@@ -302,10 +303,10 @@
     -o-transition: all 0.2s ease;
     transition: all 0.2s ease;
 }
-.dkp-big-3now .rowfix:hover .dkp-3now-item-wrapper{
+.dkp-big-3now .rowfix > a:hover .dkp-3now-item-wrapper{
     opacity: 0;
 }
-.dkp-big-3now .dkp-3now-item-wrapper .dkp-3now-item-time {
+.dkp-big-3now .dkp-3now-item-wrapper > .dkp-3now-item-time {
     position: absolute;
     box-sizing: border-box;
     padding: 0;
@@ -365,6 +366,7 @@
     font-weight: normal;
     line-height: 18px;
     color: #ffffff;
+    text-decoration: underline;
 }
 .dkp-big-3now .now .dkp-3now-item-wrapper .dkp-3now-item-time {
     font-size: 16px;

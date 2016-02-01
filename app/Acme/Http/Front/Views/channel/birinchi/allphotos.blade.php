@@ -1,5 +1,5 @@
 @extends('Front::channel.birinchi.default')
-@section('title', "Все фото")
+@section('title', trans('radiopages.Photos'))
 @section('styles')
 @endsection
 @section('content')
@@ -16,7 +16,7 @@
                       @foreach($photoGalleries as $photoGallery)
                           <div class="col-md-4">
                               <a href="{{ route('birinchi.photos', $photoGallery) }}" class="photo-img">
-                                  <img src="{{ asset($photoGallery->status) }}" alt="" />
+                                  <img src="{{ asset($photoGallery->thumbnail_big) }}" alt="" />
                                   <span class="photo-overlay"></span>
                               </a>
                               <div class="photo-info">
