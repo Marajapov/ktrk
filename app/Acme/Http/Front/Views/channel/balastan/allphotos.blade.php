@@ -27,7 +27,7 @@
                         @foreach($photoGalleries as $photoGallery)
                             <div class="col-md-4 video-block">
                                 <a href="{{ route('balastan.photos', $photoGallery) }}" class="video-img">
-                                    <img src="{{ asset($photoGallery->status) }}" alt="" />
+                                    <img src="{{ asset($photoGallery->thumbnail_big) }}" alt="" />
                                     <span class="video-overlay"></span>
                                 </a>
                                 <div class="video-info">
