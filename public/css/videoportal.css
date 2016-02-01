@@ -1,14 +1,10 @@
 .panel-video,.panel-show{
-    border-right: 2px solid #F1F4F9;
-    border-bottom: 2px solid #F1F4F9;
+    border-right: 4px solid #F1F4F9;
 }
 .top-right-block .media-ctg-panel{
-    border-left: 2px solid #F1F4F9;
-    border-bottom: 2px solid #F1F4F9;
 }
 .panel-related-videos{
-    border-right: 2px solid #F1F4F9;
-    border-top: 2px solid #F1F4F9;
+    border-right: 4px solid #F1F4F9;
 }
 .panel-related-videos .panel-body{
     padding: 15px;
@@ -158,24 +154,42 @@
 /*PANEL VIDEO*/
 .panel-video .show-title{
     position: relative;
-    padding-right: 100px;
+    padding-right: 150px;
 }
-.show-title .show-view{
+.show-title .show-date{
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+    color: #999999;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: normal;
+}
+.show-title .show-extra{
     position: absolute;
     top: 0;
     right: 0;
-    width: 100px;
-
+    width: 150px;
+    height: 24px;
+    overflow: hidden;
+    text-align: right;
+}
+.show-title .show-view{
+    display: inline-block;
+    vertical-align: middle;
     font-size: 14px;
     font-weight: normal;
     line-height: 24px;
     text-align: right;
 }
 .show-title .fa-view{
+    display: inline-block;
+    vertical-align: middle;
     margin: auto;
-    width: 24px;
-    height: 24px;
-    margin: 5px;
+    margin-right: 2px;
+    margin-bottom: 2px;
+    width: 20px;
+    height: 20px;
     background-image: url('img/view-icon-dark.png');
     background-repeat: no-repeat;
     background-position: center center;

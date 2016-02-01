@@ -14,14 +14,15 @@ header ("Content-type: image/png");
 //Get string info
 $font_size = isset($_GET['font_size']) ? $_GET['font_size'] : 3;
 $string = urldecode($_GET['string']);
-//$string = urldecode(base64_decode($_GET['string']));
+//$string2 = urldecode(base64_decode($_GET['string']));
+$string2 = iconv('UTF-8', 'cp1251', $string);
 
 //Get the size of the string
-$width = strlen($string)*3;
+$width = strlen($string2)*8;
 $height = 15;
 
 //Create the image
-$img = @imagecreatetruecolor($width+20, $height)
+$img = @imagecreatetruecolor($width, $height)
 or die("Cannot Initialize new GD image stream");
 
 //Make it transparent
