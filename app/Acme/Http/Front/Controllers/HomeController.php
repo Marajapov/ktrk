@@ -369,6 +369,8 @@ class HomeController extends Controller
 
     public function Post(\Model\Post\ModelName $post)
     {
+        $post->incrementViewed();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
         $lc = app()->getlocale();
 
         if($lc == 'kg')
@@ -398,11 +400,7 @@ class HomeController extends Controller
             }
         }
 
-        $post->incrementViewed();
-
         $categories = \Model\Category\ModelName::where('general','=','1')->get();
-        
-        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
         $parent = \Model\PhotoParent\ModelName::where('id','=',$post->parentId)->first();
         if($parent){
@@ -412,6 +410,7 @@ class HomeController extends Controller
         }
 
         if($lc == 'kg'){
+
             $contentOriginal = $post->getContent();
 
             $relatedPosts = \Model\Post\ModelName::where('category_id','=',$post->category_id)->where('general','=','1')->languagekg()->take(6)->skip(0)->orderBy('id', 'desc')->get();
@@ -510,7 +509,8 @@ class HomeController extends Controller
                 $topArticles = null;
             }
 
-            $popArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->orderBy('viewed','desc')->take(6)->get();
+            $weekFromNow = date('Y-m-d', strtotime('-7 days'));
+            $popArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->where('created_at','>',$weekFromNow)->orderBy('viewed','desc')->take(6)->get();
             if(count($popArticles) > 0){
                 $popArticles = $popArticles;
             }else{
@@ -614,7 +614,8 @@ class HomeController extends Controller
                 $topArticles = null;
             }
 
-            $popArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->orderBy('viewed','desc')->take(6)->get();
+            $weekFromNow = date('Y-m-d', strtotime('-7 days'));
+            $popArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->where('created_at','>',$weekFromNow)->orderBy('viewed','desc')->take(6)->get();
             if(count($popArticles) > 0){
                 $popArticles = $popArticles;
             }else{

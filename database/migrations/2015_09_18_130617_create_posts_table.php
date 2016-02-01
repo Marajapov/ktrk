@@ -27,6 +27,7 @@ class CreatePostsTable extends Migration
             $table->string('thumbnail');
             $table->string('thumbnail_big');
             $table->string('thumb_desc');
+            $table->string('thumb_desc_ru');
             $table->string('thumb_author');
             $table->enum('type', ['page', 'post'])->nullable()->default('post');
             $table->boolean('published')->nullable()->default(false);

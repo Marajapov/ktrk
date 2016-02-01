@@ -81,6 +81,7 @@ return [
 
 //    Reklama
     'Reklama' => 'Рекламно-коммерческий отдел',
+    'ReklamaRent' => 'АРЕНДА ТЕХНИКИ',
 
     //Post page
     'MatpoTeme' => 'Материалы по теме',

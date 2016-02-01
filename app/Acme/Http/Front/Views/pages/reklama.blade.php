@@ -106,7 +106,7 @@
               </table>
 
               <div class="price">
-                <p>Жарнамалык маалыматты эфирге берүү боюнча баалар</p>
+                <p>Прайс – лист на размещение Рекламно Информационных Материалов на 2015-г.</p>
                 <a target="_blank" href="{{ asset('static/files/reklama/prays-list-prays-2015g_0.pdf') }}">
                   <i class="fa fa-file-pdf-o"></i>
                   <span>
