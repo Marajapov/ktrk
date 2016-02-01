@@ -3484,7 +3484,7 @@ display: block;
     /* opacity: 1; */
 }
 .music .topvideos .panel-carousel .slick-slide img {
-    height: 180px;
+    height: initial;
 }
 .music .topvideos .panel-carousel .slick-slide {
     height: 150px;

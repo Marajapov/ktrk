@@ -1,4 +1,4 @@
-@extends('Front::channel.muzkanal.default')
+topvideos@extends('Front::channel.muzkanal.default')
 @section('title', trans('radiopages.Homepage'))
 @section('styles')
 <link rel="stylesheet" href="css/audio/muzslider.css">
@@ -482,7 +482,7 @@
       </div>
       <div class="row">
          <div class="col-md-12">
-            <div class="row topvideos videostyle">
+            <div class="row topvideos">
                <div class="panel panel-default panel-carousel">
                   <div class="panel-heading">
                      <h3 class="panel-title"><span>{{ trans('radiopages.TopCLips') }}</span></h3>
@@ -543,7 +543,7 @@
       </div>
       <div class="row">
          <div class="col-md-12">
-            <div class="row topvideos videostyle">
+            <div class="row topvideos">
                <div class="panel panel-default panel-carousel">
                   <div class="panel-heading">
                      <h3 class="panel-title"><span>Концерт</span></h3>
