@@ -483,13 +483,19 @@
 }
 .homeleftcategory footer {
     float: left;
+    padding-left: 50px;
 }
 .homeleftcategory footer a{
     color: #2D596D;
     font-size: 17px;
+    font-weight: bold;
 }
 .homeleftcategory footer i{
     padding-left: 5px;
+}
+.homeleftcategory footer a:hover {
+    color: #213944;
+    border-bottom: 1px dotted;
 }
 
 .shows {
