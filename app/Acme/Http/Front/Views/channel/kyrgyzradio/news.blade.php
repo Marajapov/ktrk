@@ -2,7 +2,7 @@
 @section('title', $post->getTitleRuOrKg())
 @section('content')
 @include('Front::channel.kyrgyzradio.nav')
-<div class="news">
+<div id="news">
    <div class="container">
       <div class="row">
          <div class="col-md-9">
@@ -18,8 +18,12 @@
                      </a>
                   </h3>
                </div>
-               <div class="col-md-12">
-                  <h2 style="margin: 0px 0px 10px 0px;font-size: 21px;">{{ $post->getTitleRuOrKg() }}</h2>
+               <div class="panel-body post">
+                  <div class="news-info">
+                     <span class="date"><i class="fa fa-calendar"></i>{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
+                     <span class="view"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
+                  </div>
+                  <h2>{{ $post->getTitleRuOrKg() }}</h2>
                   <div class="muzimg">
                      <img src="@if(empty($post->getFile()))images/2.jpg @else {{  asset($post->getFile()) }} @endif" alt="" data-toggle="tooltip" data-placement="top" title="Бул жөн гана сүрөт эмес">
                   </div>

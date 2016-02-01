@@ -1223,5 +1223,33 @@ ul.nostyle i {
 
 /* BEGIN ALL NEWS*/
 
+#news .news-info{
+    float: right;
+    margin-top: -15px;
+    color: #4E5E6A;
+    font-size: 12px;
+    font-weight: bold;
+}
+#news .news-info .date .fa, .news-info .view .fa{
+    padding-right: 5px;
+} 
+#news .news-info .date{
+    padding-right: 10px;
+}
+#news .news-info .view{
+
+}
+#news .post h2{
+    margin: -15px 0px 15px 0px;
+    font-size: 18px;
+}
+.ctg-panel .list-group {
+    margin-top: -15px;
+}
 /* END ALL NEWS*/
 
+/* PROJECT NEWS*/
+#pojects{
+
+}
+/* PROJECT NEWS*/
