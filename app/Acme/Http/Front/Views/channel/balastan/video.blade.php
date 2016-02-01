@@ -14,11 +14,13 @@
                              <div class="fromcat">
                                 <p>
                                     @if($balastanProjects)
-                                    @foreach($balastanProjects as $row)
-                                        <a href="{{ route('balastan.project.videos', $row) }}">
-                                            {{ $balastanLastVideo->hasProject()->first()->getNameOne()}}
-                                        </a>
-                                    @endforeach
+                                        @foreach($balastanProjects as $row)
+                                            @if($balastanLastVideo->program == $row->id)
+                                                <a href="{{ route('balastan.project.videos', $row) }}">
+                                                    {{ $balastanLastVideo->hasProject()->first()->getNameOne()}}
+                                                </a>
+                                            @endif
+                                        @endforeach
                                     @endif
                                 </p>
                              </div>
@@ -41,9 +43,11 @@
                             <div class="episode-desc">{!! $balastanLastVideo->description !!}</div>
                                 @if($balastanProjects)
                                 @foreach($balastanProjects as $row)
-                                    <a href="{{ route('balastan.project.videos', $row) }}">
-                                        <em>{{ $balastanLastVideo->hasProject()->first()->getNameOne()}}</em>
-                                    </a>
+                                    @if($balastanLastVideo->program == $row->id)
+                                        <a href="{{ route('balastan.project.videos', $row) }}">
+                                            <em>{{ $balastanLastVideo->hasProject()->first()->getNameOne()}}</em>
+                                        </a>
+                                    @endif
                                 @endforeach
                                 @endif    
                             <span>{{ $balastanLastVideo->getDateFormatted() }}</span>

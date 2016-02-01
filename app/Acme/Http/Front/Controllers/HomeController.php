@@ -614,7 +614,7 @@ class HomeController extends Controller
                 $topArticles = null;
             }
 
-            $weekFromNow = date('Y-m-d', strtotime('-7 days'));
+            $weekFromNow = date('Y-m-d H:i', strtotime('-7 days'));
             $popArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->where('created_at','>',$weekFromNow)->orderBy('viewed','desc')->take(6)->get();
             if(count($popArticles) > 0){
                 $popArticles = $popArticles;
@@ -666,7 +666,8 @@ class HomeController extends Controller
                 $topArticles = null;
             }
 
-            $popArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->orderBy('viewed','desc')->take(6)->get();
+            $weekFromNow = date('Y-m-d H:i', strtotime('-7 days'));
+            $popArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->where('created_at','>',$weekFromNow)->orderBy('viewed','desc')->take(6)->get();
             if(count($popArticles) > 0){
                 $popArticles = $popArticles;
             }else{
@@ -681,7 +682,8 @@ class HomeController extends Controller
                 $topArticles = null;
             }
 
-            $popArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->orderBy('viewed','desc')->take(6)->get();
+            $weekFromNow = date('Y-m-d H:i', strtotime('-7 days'));
+            $popArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->where('created_at','>',$weekFromNow)->orderBy('viewed','desc')->take(6)->get();
             if(count($popArticles) > 0){
                 $popArticles = $popArticles;
             }else{
@@ -850,7 +852,8 @@ class HomeController extends Controller
             }else{
                 $topArticles = null;
             }
-            $popArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->orderBy('viewed','desc')->take(6)->get();
+            $weekFromNow = date('Y-m-d H:i', strtotime('-7 days'));
+            $popArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->where('created_at','>',$weekFromNow)->orderBy('viewed','desc')->take(6)->get();
             if(count($popArticles) > 0){
                 $popArticles = $popArticles;
             }else{
@@ -865,7 +868,8 @@ class HomeController extends Controller
             }else{
                 $topArticles = null;
             }
-            $popArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->orderBy('viewed','desc')->take(6)->get();
+            $weekFromNow = date('Y-m-d H:i', strtotime('-7 days'));
+            $popArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->where('created_at','>',$weekFromNow)->orderBy('viewed','desc')->take(6)->get();
             if(count($popArticles) > 0){
                 $popArticles = $popArticles;
             }else{
@@ -911,7 +915,8 @@ class HomeController extends Controller
             }else{
                 $topArticles = null;
             }
-            $popArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->orderBy('viewed','desc')->take(6)->get();
+            $weekFromNow = date('Y-m-d H:i', strtotime('-7 days'));
+            $popArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->where('created_at','>',$weekFromNow)->orderBy('viewed','desc')->take(6)->get();
             if(count($popArticles) > 0){
                 $popArticles = $popArticles;
             }else{
@@ -924,7 +929,8 @@ class HomeController extends Controller
             }else{
                 $topArticles = null;
             }
-            $popArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->orderBy('viewed','desc')->take(6)->get();
+            $weekFromNow = date('Y-m-d H:i', strtotime('-7 days'));
+            $popArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->where('created_at','>',$weekFromNow)->orderBy('viewed','desc')->take(6)->get();
             if(count($popArticles) > 0){
                 $popArticles = $popArticles;
             }else{
@@ -1004,14 +1010,30 @@ class HomeController extends Controller
                 $topArticles = $topArticles;   
             }else{
                 $topArticles = null;
-            } 
+            }
+
+            $weekFromNow = date('Y-m-d H:i', strtotime('-7 days'));
+            $popArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->where('created_at','>',$weekFromNow)->orderBy('viewed','desc')->take(6)->get();
+            if(count($popArticles) > 0){
+                $popArticles = $popArticles;
+            }else{
+                $popArticles = null;
+            }
         }elseif($lc == 'ru'){
             $topArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->where('numberRu','=','88')->orderBy('updated_at','desc')->take(6)->get();
             if(count($topArticles) > 0){
                 $topArticles = $topArticles;   
             }else{
                 $topArticles = null;
-            } 
+            }
+
+            $weekFromNow = date('Y-m-d H:i', strtotime('-7 days'));
+            $popArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->where('created_at','>',$weekFromNow)->orderBy('viewed','desc')->take(6)->get();
+            if(count($popArticles) > 0){
+                $popArticles = $popArticles;
+            }else{
+                $popArticles = null;
+            }
         }
         
         if($lc == 'kg' AND $df != '' AND $dt != ''){
@@ -1034,6 +1056,7 @@ class HomeController extends Controller
             'perPage'=> $perPage,
             'postAll' => $postAllFromTo,
             'topArticles' => $topArticles,
+            'popArticles' => $popArticles,
             'categories'=>$categories,
             'backgroundMain' => $backgroundMain,
             'positionTop'    => $this->positionTop,
@@ -1066,14 +1089,30 @@ class HomeController extends Controller
                 $topArticles = $topArticles;   
             }else{
                 $topArticles = null;
-            } 
+            }
+
+            $weekFromNow = date('Y-m-d H:i', strtotime('-7 days'));
+            $popArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->where('created_at','>',$weekFromNow)->orderBy('viewed','desc')->take(6)->get();
+            if(count($popArticles) > 0){
+                $popArticles = $popArticles;
+            }else{
+                $popArticles = null;
+            }
         }elseif($lc == 'ru'){
             $topArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->where('numberRu','=','88')->orderBy('updated_at','desc')->take(6)->get();
             if(count($topArticles) > 0){
                 $topArticles = $topArticles;   
             }else{
                 $topArticles = null;
-            } 
+            }
+
+            $weekFromNow = date('Y-m-d H:i', strtotime('-7 days'));
+            $popArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->where('created_at','>',$weekFromNow)->orderBy('viewed','desc')->take(6)->get();
+            if(count($popArticles) > 0){
+                $popArticles = $popArticles;
+            }else{
+                $popArticles = null;
+            }
         }
         
         if($lc == 'kg' AND $df != '' AND $dt != ''){
@@ -1097,6 +1136,7 @@ class HomeController extends Controller
             'category'=> $category,
             'posts' => $postAllFromTo,
             'topArticles' => $topArticles,
+            'popArticles' => $popArticles,
             'categories'=>$categories,
             'backgroundMain' => $backgroundMain,
             'positionTop'    => $this->positionTop,
