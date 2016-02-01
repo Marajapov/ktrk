@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="../css/radios.css">
 
-<div style="margin-left: 545px;">
+<div>
   <div class="box box-widget widget-radio">
     <div class="widget-radio-header">
       <div class="widget-radio-image">
