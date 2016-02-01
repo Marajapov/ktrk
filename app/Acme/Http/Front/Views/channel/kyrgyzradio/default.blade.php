@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="{{asset('css/font-awesome.css')}}"/>
     <link rel="stylesheet" href="{{asset('css/style.css')}}"/>
     
+    <link rel="stylesheet" href="{{ asset('css/radios2.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/landing/main.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/articles.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/pages.css') }}"/>
 
     <link rel="stylesheet" href="{{asset('css/landing/animate.min.css')}}"/>
     <link rel="stylesheet" href="{{asset('css/landing/owl.carousel.css')}}"/>
@@ -20,7 +24,6 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/custombox.css') }}"/>
     <link rel="stylesheet"  href="{{ asset('css/lightslider.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/gallery.css') }}"/>
-
 
 
     @yield('styles')
@@ -37,13 +40,7 @@
         }
     </style>
 
-    <script src="{{ asset('js/jquery-1.11.2.min.js') }}"></script>
 
-  <!-- 1. skin -->
-  <link rel="stylesheet" href="{{ asset('flowplayer/skin/functional.css') }}">
-
-  <!-- 3. flowplayer -->
-  <script src="{{ asset('flowplayer/flowplayer.min.js') }}"></script>
 
 </head>
 <body>
@@ -65,6 +62,6 @@
 <script src="{{ asset('js/landing/main.js') }}"></script>
 <script src="{{ asset('js/landing/jquery.js') }}"></script>
 <script src="{{ asset('js/landing/fixed.js') }}"></script>
-    @include('Front::partials.footer')
+    @include('Front::channel.kyrgyzradio.footer')
 
     

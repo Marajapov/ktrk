@@ -12,7 +12,7 @@ class KyrgyzradioController extends Controller
     {
 
 
-     return view('Front::channel.kyrgyzradio.comingsoon',[]);
+     // return view('Front::channel.kyrgyzradio.comingsoon',[]);
 
         $channel = \Model\Channel\ModelName::name('kyrgyzradio')->first();
 
@@ -31,7 +31,7 @@ class KyrgyzradioController extends Controller
         $kyrgyzradioProjects = \Model\Project\ModelName::where('published','=',true)->where('kyrgyzradio', '=', 1)->get();
 
         $anons = \Model\Anons\ModelName::where('channel','=','6')->where('published','=','1')->orderBy('id','=','desc')->take(2)->get();
-
+       
         return view('Front::channel.kyrgyzradio.index', [
             'channel' => $channel,
             'anons' => $anons,
