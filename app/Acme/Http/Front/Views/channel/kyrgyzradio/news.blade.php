@@ -41,10 +41,11 @@
                         @endif
                      </div>
                   </article>
+                  <footer>
+                     <a class="pull-right" href="{{ route('kyrgyzradio.allnews') }}">Башка жаңылыктар <i class="fa fa-arrow-right"></i></a>
+                  </footer>
                </div>
-               <footer>
-                  <a class="pull-right" href="{{ route('kyrgyzradio.allnews') }}">Башка жаңылыктар</a>
-               </footer>
+
             </div>
          </div>
          <div class="col-md-3">
