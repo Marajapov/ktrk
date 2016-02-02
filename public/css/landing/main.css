@@ -277,6 +277,7 @@ ul.nostyle i {
 .navbar.navbar-default .navbar-brand {
   height: auto;
   padding: 0px !important;
+  margin-left: 0;
   font-family: 'Roboto condensed';
 }
 .navbar-brand>img {
@@ -1191,7 +1192,26 @@ ul.nostyle i {
   border: none !important; 
 }
 #services .panel-body{
-  padding: 0px 15px;
+  padding: 0px;
+}
+#services .panel-articles .extra{
+  margin:-9px 0px -5px 0px;
+}
+
+#services .panel-articles .media-heading{
+  line-height: 20px;
+  display: block;
+}
+
+#services .panel-body footer{
+  padding: 0;
+  border: none;
+}
+#services .panel-body footer a{
+  color: #04549C;
+}
+#services .panel-body footer a:hover{
+  border-bottom: 1px dotted;
 }
 
 #services .panel-heading h3{
@@ -1200,3 +1220,36 @@ ul.nostyle i {
 #services .ctg-panel .list-group{
   margin-bottom: 10px; 
 }
+
+/* BEGIN ALL NEWS*/
+
+#news .news-info{
+    float: right;
+    margin-top: -15px;
+    color: #4E5E6A;
+    font-size: 12px;
+    font-weight: bold;
+}
+#news .news-info .date .fa, .news-info .view .fa{
+    padding-right: 5px;
+} 
+#news .news-info .date{
+    padding-right: 10px;
+}
+#news .news-info .view{
+
+}
+#news .post h2{
+    margin: -15px 0px 15px 0px;
+    font-size: 18px;
+}
+.ctg-panel .list-group {
+    margin-top: -15px;
+}
+/* END ALL NEWS*/
+
+/* PROJECT NEWS*/
+#pojects{
+
+}
+/* PROJECT NEWS*/

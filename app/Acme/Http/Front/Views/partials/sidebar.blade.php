@@ -6,38 +6,36 @@
                 Меню
             </a>
         </li>
-        <li>
-            <a href="#">Home</a>
-        </li>
-        <li>
-            <a href="#">About</a>
-        </li>
-        <li>
-            <a href="#">Events</a>
-        </li>
-        <li>
-            <a href="#">Team</a>
-        </li>
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Works <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-                <li class="dropdown-header">Dropdown heading</li>
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="#">Services</a>
-        </li>
-        <li>
-            <a href="#">Contact</a>
-        </li>
-        <li>
-            <a href="https://twitter.com/maridlcrmn">Follow me</a>
-        </li>
+
+        @foreach(\Model\Menu\ModelName::code('main')->parent()->get() as $menu)
+            @if(count($menu->submenus) > 0)
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        @if(app()->getlocale() == 'kg')
+                            {{ $menu->getName() }}
+                        @else
+                            {{ $menu->getNameRu() }}
+                        @endif
+
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                        @foreach($menu->submenus as $submenu)
+                            <li><a href="{{ $submenu->getUrl() }}">@if(app()->getlocale() == 'kg'){{ $submenu->getName() }} @else {{ $submenu->getNameRu() }} @endif</a></li>
+                        @endforeach
+                    </ul>
+                </li>
+
+            @else
+                <li><a href="{{ $menu->getUrl() }}">
+                        @if(app()->getlocale() == 'kg')
+                            {{ $menu->getName() }}
+                        @else
+                            {{ $menu->getNameRu() }}
+                        @endif
+                    </a></li>
+            @endif
+        @endforeach
     </ul>
 </nav>
 <!-- /#sidebar-wrapper -->

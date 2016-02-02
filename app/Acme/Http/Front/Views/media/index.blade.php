@@ -1,4 +1,4 @@
-@extends('Front::layouts.default')
+@extends('Front::layouts.defaultnew')
 @section('title', 'Видеопортал | КТРК')
 
 @section('styles')

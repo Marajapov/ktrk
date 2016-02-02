@@ -106,10 +106,9 @@ class HomeController extends Controller
         }
 
         if($lc == 'kg'){
-
-            $latestPosts = \Model\Post\ModelName::general($channel)->published()->having('number','=','99')->where('general','=','1')->languagekg()->take(6)->skip(0)->orderBy('created_at','desc')->get();
+            $latestPosts = \Model\Post\ModelName::general($channel)->published()->having('number','=','99')->where('general','=','1')->where('fbpost','<>','1')->languagekg()->take(6)->skip(0)->orderBy('created_at','desc')->get();
         }elseif($lc == 'ru'){
-            $latestPosts = \Model\Post\ModelName::general($channel)->published()->having('numberRu','=','99')->where('general','=','1')->languageru()->take(6)->skip(0)->orderBy('created_at','desc')->get();
+            $latestPosts = \Model\Post\ModelName::general($channel)->published()->having('numberRu','=','99')->where('general','=','1')->where('fbpost','<>','1')->languageru()->take(6)->skip(0)->orderBy('created_at','desc')->get();
         }
 
         $dayVideo1 = \Model\Media\ModelName::where('dayVideo','=','1')->first();

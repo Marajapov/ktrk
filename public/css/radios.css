@@ -763,7 +763,7 @@
     padding-top:0px; 
 }
 .lentanews .xdate{
-    max-width: 50px;
+    width: 50px;
     padding: 0 10px 0 0;
    
    font-size: 16px;
@@ -1070,46 +1070,23 @@
 }
 
 /* BEGIN Online player*/
-.box {
-  position: relative;
-  border-radius: 3px;
-  background: #ffffff;
-  border-top: 3px solid #d2d6de;
-  margin-bottom: 20px;
-  width: 38.6%;
-  box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+.widget-radio {
+  padding: 10px 15px;
+  text-align: center;
+  width: 400px;
 }
-.box-widget {
-  border: none;
-  position: relative;
+.widget-radio-image{
+  width: 100px;
+  vertical-align: middle;
 }
-.widget-radio .widget-radio-header {
-  padding: 10px;
-  border-top-right-radius: 3px;
-  border-top-left-radius: 3px;
-  background: #CCCCCC;
-}
-.widget-radio .widget-radio-name {
-  margin-top: -4px;
-  margin-bottom: 5px;
+.widget-radio-name {
   font-size: 25px;
-  font-weight: 300;
   color: #005197;
-  font-family: 'Source Sans Pro',sans-serif;
 }
-.widget-radio .widget-radio-desc {
-  margin-top: 0;
+.widget-radio-desc {
   color: #000000;
-  font-family: 'Source Sans Pro',sans-serif;
-  font-size: 11px;
+  font-size: 12px;
+  line-height: 16px;
 }
-.widget-radio-name,
-.widget-radio .widget-radio-desc {
-  margin-left: 75px;
-}
-.widget-radio-image > img {
-  width: 65px;
-  height: auto;
-  float: left;
-}
+
 
