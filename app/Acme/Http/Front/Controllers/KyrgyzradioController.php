@@ -12,7 +12,7 @@ class KyrgyzradioController extends Controller
     {
 
 
-     // return view('Front::channel.kyrgyzradio.comingsoon',[]);
+      return view('Front::channel.kyrgyzradio.comingsoon',[]);
 
         $channel = \Model\Channel\ModelName::name('kyrgyzradio')->first();
 
