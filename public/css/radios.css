@@ -418,7 +418,7 @@
 
     color: #2D596D;
 
-    font-size: 24px;
+    font-size: 22px;
     font-family: 'Roboto condensed';
     text-transform: none;
 
@@ -456,16 +456,27 @@
     padding-left: 10px;
     font-size: 18px;
 }
+.homeleftcategory .pull-right{
+    position: absolute;
+    top: 26px;
+    right: 18px;
+    color: #2D596D;
+    cursor: pointer;
+}
+.homeleftcategory .pull-right .fa-arrow-up:hover{
+    color: #F44336;
+}
+.homeleftcategory .pull-right .fa-arrow-down:hover{
+    color: #E91E63;
+}
 .homeleftcategory ul li{
-    list-style: initial;
-    margin-left: 20px;
+    list-style: none;
 }
 .homeleftcategory ul li a{
     display: block;
     color: #544b48;
 
     padding-left: 5px;
-    border-bottom: 1px solid #E3D1C7;
 
     line-height: 28px;
     font-size: 16px;
@@ -478,16 +489,13 @@
     transition: background 0.15s ease-in-out;
 }
 
-.homeleftcategory ul li a:hover{
-    background: #D0F1FF;
-}
 .homeleftcategory footer {
-    float: left;
-    padding-left: 50px;
+    float: right;
+    padding-top: 10px;
 }
 .homeleftcategory footer a{
     color: #2D596D;
-    font-size: 17px;
+    font-size: 14px;
     font-weight: bold;
 }
 .homeleftcategory footer i{
@@ -752,24 +760,28 @@
 /* END Home Slider */
 .lenta{
     height: 310px;
+    padding: 10px;
     overflow: hidden;
+    -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.2);
+    box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.2);
 }
 .lentanews {
     border-bottom: 1px dotted #CAB8AF;
     padding: 3px 0px;
+    height: 50px;
+    overflow: hidden;
 }
 
-.lentanews:first-child {
-    padding-top:0px; 
-}
 .lentanews .xdate{
-    width: 50px;
-    padding: 0 10px 0 0;
+    width: 40px;
+    padding: 0 5px 0 0;
    
    font-size: 16px;
     font-weight: bold;
     color: #2D596D;
     display: table-cell;
+    vertical-align: middle;
 }
 .lentanews .xdate p{
     margin: 0 0 3px;
@@ -779,23 +791,21 @@
 }
 
 .lentanews .xtitle{
-    padding: 2px 0;
-
-    font-family: 'Roboto Regular';
-    font-style: inherit;
-    line-height: 18px;
-    font-weight: inherit;
-    font-size: 16px;
-    color: #332f2e;
     -webkit-transition: color 0.15s ease-in-out;
     -moz-transition: color 0.15s ease-in-out;
     -o-transition: color 0.15s ease-in-out;
     transition: color 0.15s ease-in-out;
     text-decoration: none;
     display: table-cell;
+    vertical-align: middle;
 }
 .lentanews .xtitle a{
     color: #332F2E;
+    font-family: 'Roboto Regular';
+    font-style: inherit;
+    line-height: 1;
+    font-weight: bold;
+    font-size: 14px;
 
 }
 .lentanews .xtitle a:hover{
