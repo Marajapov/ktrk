@@ -464,10 +464,10 @@
     cursor: pointer;
 }
 .homeleftcategory .pull-right .fa-arrow-up:hover{
-    color: #F44336;
+    color: #49AAD6;
 }
 .homeleftcategory .pull-right .fa-arrow-down:hover{
-    color: #E91E63;
+    color: #49AAD6;
 }
 .homeleftcategory ul li{
     list-style: none;
