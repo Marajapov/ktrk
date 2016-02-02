@@ -23,9 +23,7 @@
                                                         <a href="{{ route('birinchi.news', $post) }}" title="">
                                                         <img class="img" src="@if(!($post->getFileBig()))images/live_bg.png @else {{ asset($post->getFileBig()) }} @endif" alt=""/>
                                                         </a>
-         <!--                                                <span class="slide-category">
-                                                        {{ $post->category('category_id')->first()->getTitle() }}
-                                                        </span> -->
+                                                         <!-- <span class="slide-category"></span> -->
                                                         <span class="slide-date">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
                                                     </div>
                                                 </div>
@@ -57,19 +55,31 @@
                         <div class="homeleftcategory">
                             <div class="col-md-12">
                                 <h3 class="title">{{ trans('radiopages.Newslenta') }}</h3>
+                                <div class="pull-right">
+                                    <i class="fa fa-arrow-up" id="newsticker-prev"></i>
+                                    <i class="fa fa-arrow-down" id="newsticker-next"></i>
+                                </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="lenta">
                                     @if($lentaNews)
-                                        @foreach($lentaNews as $lenta)
-                                            <div class="lentanews">
+                                    <div id="newsticker-container">                        
+
+                                        <ul id="newsticker">
+                                            @foreach($lentaNews as $lenta)
+                                            <li class="lentanews">                                    
                                                 <span class="xdate">{{ $lenta->getTime()}}
                                                     <p>{{$lenta->getDay() }} , {{ $lenta->getMonthRu() }}</p>        
 
                                                 </span>
                                                 <span class="xtitle"><a href="{{ route('birinchi.news', $lenta) }}">{{ $lenta->getTitleRuOrKg() }}</a></span>
-                                            </div>
-                                        @endforeach
+
+                                            </li>
+                                            @endforeach
+                                        </ul>
+
+
+                                    </div>
                                     @endif
                                 </div>
                                 <footer>
@@ -237,6 +247,18 @@
             focusOnSelect: true,
             vertical:true,
             arrows:false
+        });
+    </script>
+    <script src="{{ asset('js/audio/jquery.newsTicker.js')}}"></script> 
+    <script>
+        var nt_example1 = $('#newsticker').newsTicker({
+            row_height: 50,
+            max_rows:6,
+            duration: 2500,
+            pauseOnHover: 1,
+            autostart: 1,
+            prevButton: $('#newsticker-prev'),
+            nextButton: $('#newsticker-next')
         });
     </script>
 

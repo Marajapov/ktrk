@@ -18,7 +18,7 @@ class BirinchiController extends Controller
 
         if($lc == 'kg'){
             $generalPosts = \Model\Post\ModelName::where('birinchi','=',1)->where('general','=','1')->languagekg()->take(3)->orderBy('id','desc')->get();
-            $lentaNews = \Model\Post\ModelName::where('birinchi','=',1)->languagekg()->take(7)->orderBy('id','desc')->get();
+            $lentaNews = \Model\Post\ModelName::where('birinchi','=',1)->languagekg()->take(20)->orderBy('id','desc')->get();
 
             foreach($categories as $category){
                 $categoryPosts = \Model\Post\ModelName::where('birinchi','=','1')->where('category_id','=',$category->id)->where('published','=','1')->where('title','<>','')->orderBy('id','desc')->take(3)->get();
@@ -31,7 +31,7 @@ class BirinchiController extends Controller
 
         }else{
             $generalPosts = \Model\Post\ModelName::where('birinchi','=',1)->where('general','=','1')->languageru()->take(3)->orderBy('id','desc')->get();
-            $lentaNews = \Model\Post\ModelName::where('birinchi','=',1)->languageru()->take(7)->orderBy('id','desc')->get();
+            $lentaNews = \Model\Post\ModelName::where('birinchi','=',1)->languageru()->take(20)->orderBy('id','desc')->get();
 
 
             foreach($categories as $category){
