@@ -1,51 +1,8 @@
 <?php
 
-/**
- * Laravel - A PHP Framework For Web Artisans
- *
- * @package  Laravel
- * @author   Taylor Otwell <taylorotwell@gmail.com>
- */
-
-/*
-|--------------------------------------------------------------------------
-| Register The Auto Loader
-|--------------------------------------------------------------------------
-|
-| Composer provides a convenient, automatically generated class loader for
-| our application. We just need to utilize it! We'll simply require it
-| into the script here so that we don't have to worry about manual
-| loading any of our classes later on. It feels nice to relax.
-|
-*/
-
 require __DIR__.'/../bootstrap/autoload.php';
 
-/*
-|--------------------------------------------------------------------------
-| Turn On The Lights
-|--------------------------------------------------------------------------
-|
-| We need to illuminate PHP development, so let us turn on the lights.
-| This bootstraps the framework and gets it ready for use, then it
-| will load up this application so that we can run it and send
-| the responses back to the browser and delight our users.
-|
-*/
-
 $app = require_once __DIR__.'/../bootstrap/app.php';
-
-/*
-|--------------------------------------------------------------------------
-| Run The Application
-|--------------------------------------------------------------------------
-|
-| Once we have the application, we can handle the incoming request
-| through the kernel, and send the associated response back to
-| the client's browser allowing them to enjoy the creative
-| and wonderful application we have prepared for them.
-|
-*/
 
 $kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
 
@@ -56,3 +13,90 @@ $response = $kernel->handle(
 $response->send();
 
 $kernel->terminate($request, $response);
+
+?>
+
+<!--<!doctype html>-->
+<!--<html lang="ru">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Технические работы на сайте</title>-->
+<!--    <link rel="stylesheet" href="css/bootstrap.css"/>-->
+<!---->
+<!--    <style>-->
+<!--        body{-->
+<!---->
+<!--        }-->
+<!--        .container{-->
+<!--            position: absolute;-->
+<!--            margin: auto;-->
+<!--            top: 0;-->
+<!--            right: 0;-->
+<!--            bottom: 0;-->
+<!--            left: 0;-->
+<!--            height: 250px;-->
+<!--            border-radius: 3px;-->
+<!---->
+<!--            text-align: center;-->
+<!--        }-->
+<!--        .container .media{-->
+<!--        }-->
+<!--        .media-left{-->
+<!--            width: 40%;-->
+<!--            padding-right: 100px;-->
+<!--        }-->
+<!--        .media-body h4{-->
+<!--            padding: 0;-->
+<!--            margin: 0;-->
+<!--            margin-bottom: 10px;-->
+<!--            color: #237dac;-->
+<!--            font-size: 36px;-->
+<!--            font-weight: bold;-->
+<!--            text-transform: uppercase;-->
+<!--        }-->
+<!--        .btn{-->
+<!--            margin: 75px auto 0;-->
+<!--            padding: 10px 30px;-->
+<!--            background: #ffffff;-->
+<!--            color: #b60038;-->
+<!--            font-size: 24px;-->
+<!--            font-weight: bold;-->
+<!--            text-transform: uppercase;-->
+<!---->
+<!--            -webkit-transition: all 0.2s ease;-->
+<!--            -moz-transition: all 0.2s ease;-->
+<!--            -ms-transition: all 0.2s ease;-->
+<!--            -o-transition: all 0.2s ease;-->
+<!--            transition: all 0.2s ease;-->
+<!--        }-->
+<!--        .btn:hover{-->
+<!--            opacity: 0.88;-->
+<!--            color: #b60038;-->
+<!--        }-->
+<!--    </style>-->
+<!---->
+<!--</head>-->
+<!--<body>-->
+<!---->
+<!--<div class="container">-->
+<!---->
+<!--    <div class="media">-->
+<!--        <div class="media-left media-middle">-->
+<!--            <a href="#">-->
+<!--                <img class="media-object" src="images/ktrk_last.svg" alt="">-->
+<!--            </a>-->
+<!--        </div>-->
+<!--        <div class="media-body media-middle">-->
+<!--            <h4 class="media-heading">-->
+<!--                Ведутся профилактические работы на сайте-->
+<!--            </h4>-->
+<!--            <h4>-->
+<!--                Скоро будем онлайн-->
+<!--            </h4>-->
+<!--        </div>-->
+<!--    </div>-->
+<!---->
+<!--</div>-->
+<!---->
+<!--</body>-->
+<!--</html>-->

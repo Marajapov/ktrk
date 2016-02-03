@@ -239,7 +239,13 @@
 
                                     <div> <!-- video1 -->
                                         <div class="embed-youtube embed-responsive embed-responsive-16by9 slider-text">
-                                            <iframe class="embed-responsive-item" src="//www.youtube.com/embed/@if($dayVideo1){{$dayVideo1->getUrl()}}@else{{$defaultVideo}}@endif?enablejsapi=1&version=3&playerapiid=ytplayer&rel=0&showinfo=0" allowfullscreen=""></iframe>
+                                            <div onclick="thevid=document.getElementById('thevideo'); thevid.style.display='block'; this.style.display='none'">
+                                                <img src="@if($dayVideo1->thumbnail_big) {{ asset($dayVideo1->thumbnail_big) }} @else http://img.youtube.com/vi/{{ $dayVideo1->getUrl() }}/hqdefault.jpg @endif" alt="{{ $dayVideo1->getName() }}"/>
+                                            </div>
+                                            <div id="thevideo" style="display:none">
+                                                <iframe class="embed-responsive-item" src="//www.youtube.com/embed/@if($dayVideo1){{$dayVideo1->getUrl()}}@else{{$defaultVideo}}@endif?enablejsapi=1&version=3&playerapiid=ytplayer&rel=0&showinfo=0" allowfullscreen=""></iframe>
+                                            </div>
+
                                         </div>
                                         <div class="slick-text">
                                             <a href="{{ route('front.media.video', $dayVideo1) }}">

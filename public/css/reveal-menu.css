@@ -78,13 +78,15 @@ html { height: 100%;}
 }
 .sidebar-nav li a {
     display: block;
-    color: #ddd;
+    color: #333333;
     text-decoration: none;
+    text-transform: uppercase;
     padding: 10px 15px 10px 30px;
 }
 
 .sidebar-nav > .sidebar-brand {
     border-bottom: 2px solid #8493A3;
+    margin-bottom: 10px;
     height: 72px;
     font-size: 20px;
     line-height: 50px;
@@ -105,6 +107,11 @@ html { height: 100%;}
     border: none;
     background-color: #F1F4F9;
     box-shadow: none;
+}
+.sidebar-nav .dropdown-menu li a{
+    padding: 10px 15px 10px 50px;
+    text-transform: none;
+    white-space: normal;
 }
 .sidebar-nav li a:hover,
 .sidebar-nav li a:focus,
