@@ -498,7 +498,7 @@ ul.nostyle i {
   padding: 100px 0px 0px 0px;
 }
 .media.service-box {
-  margin: 25px 0;
+  margin: 15px 0;
 }
 .media.service-box .pull-left {
   margin-right: 20px;
@@ -1109,11 +1109,18 @@ ul.nostyle i {
   box-shadow: none;
   -webkit-box-shadow: none;
 }
+.onenews {
+    margin-top: 15px;
+    padding: 0px 0px 15px;
+}
 .onenews .panel-body {
   padding: 0px;
 }
 .onenews article {
   text-align: justify;
+}
+.onenews .panel-articles{
+  border: none;
 }
 .onenews .panel-articles .media-left a {
   position: relative;
@@ -1140,6 +1147,17 @@ ul.nostyle i {
 }
 .onenews .panel-articles .media-desc {
   text-align: justify;
+}
+
+.onenews footer{
+  float: right;
+  padding: 5px 0px;
+}
+.onenews footer a{
+  color: #04549C;
+}
+.onenews footer a:hover{
+  color: #344B61;
 }
 
 /* For Main menu in Ukturrrular part*/
@@ -1172,6 +1190,7 @@ ul.nostyle i {
 }
 #services .panel-body {
   padding: 0px;
+height: 325px;
 }
 #services .panel-articles .extra, #allnews .panel-articles .extra {
   margin: -9px 0px -4px 0px;
@@ -1263,6 +1282,22 @@ ul.nostyle i {
 #pojects .panel-body footer {
   padding: 5px 0;
   margin: 10px 0px 0px 0px;
+}
+.radioimg {
+    width: 260px;
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 0px;
+}
+.radioimg img {
+    max-width: 100%;
+    overflow: hidden;
+    height: auto;
+    width: auto;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
 }
 
 /* PROJECT NEWS*/

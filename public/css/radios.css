@@ -457,11 +457,10 @@
     font-size: 18px;
 }
 .homeleftcategory .pull-right{
-    position: absolute;
-    top: 26px;
-    right: 18px;
     color: #2D596D;
     cursor: pointer;
+    font-size: 16px;
+    margin-top: 7px;
 }
 .homeleftcategory .pull-right .fa-arrow-up:hover{
     color: #49AAD6;

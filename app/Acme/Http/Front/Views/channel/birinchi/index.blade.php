@@ -14,8 +14,8 @@
                                 <h3 class="title">{{ trans('radiopages.Mainnews') }}</h3>
                             </div>
                             <div class="row">
-                                <div class="col-md-12 hoverslider">
-                                    <div class="slider-for col-md-9 col-sm-12">
+                                <div class="col-xs-12 hoverslider">
+                                    <div class="slider-for col-xs-9">
                                         @if($generalPosts)
                                             @foreach($generalPosts as $post)
                                                 <div>
@@ -30,7 +30,7 @@
                                             @endforeach
                                         @endif
                                     </div>
-                                    <div class="slider-nav col-md-3 col-sm-12">
+                                    <div class="slider-nav col-xs-3">
                                         @if($generalPosts)
                                             @foreach($generalPosts as $post)
                                                 <div>
@@ -54,11 +54,12 @@
                     <div class="row">
                         <div class="homeleftcategory">
                             <div class="col-md-12">
-                                <h3 class="title">{{ trans('radiopages.Newslenta') }}</h3>
-                                <div class="pull-right">
+                                <h3 class="title">{{ trans('radiopages.Newslenta') }}
+                                  <div class="pull-right">
                                     <i class="fa fa-arrow-up" id="newsticker-prev"></i>
                                     <i class="fa fa-arrow-down" id="newsticker-next"></i>
                                 </div>
+                                </h3>                          
                             </div>
                             <div class="col-md-12">
                                 <div class="lenta">

@@ -111,10 +111,10 @@
                                           </div>
                                           @endforeach
                                           @endif
-                                          <footer style="padding: 0;border: none;">
-                                             <a href="{{ route('kyrgyzradio.allnews') }}">{{ trans('site.FrontPostAll') }}</a>
-                                          </footer>
                                        </div>
+                                       <footer>
+                                          <a href="{{ route('kyrgyzradio.allnews') }}">{{ trans('site.FrontPostAll') }} <i class="fa fa-arrow-right"></i></a>
+                                       </footer>
                                     </div>
                                  </div>
                               </div>

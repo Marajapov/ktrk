@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}"/>
     <link rel="stylesheet" href="{{asset('css/font-awesome.css')}}"/>
     <link rel="stylesheet" href="{{asset('css/style.css')}}"/>
-    
-    <link rel="stylesheet" href="{{ asset('css/radios2.css')}}">
+<!--     
+    <link rel="stylesheet" href="{{ asset('css/radios2.css')}}"> -->
     <link rel="stylesheet" href="{{ asset('css/landing/main.css')}}">
     <link rel="stylesheet" href="{{ asset('css/articles.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/pages.css') }}"/>
