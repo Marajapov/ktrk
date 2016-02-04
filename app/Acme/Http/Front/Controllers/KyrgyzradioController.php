@@ -88,6 +88,28 @@ class KyrgyzradioController extends Controller
         }else{
             $images = null;
         }
+
+        $lc = app()->getlocale();
+
+        if($lc == 'kg'){
+            $weekFromNow = date('Y-m-d', strtotime('-17 days'));
+            $popArticles = \Model\Post\ModelName::where('kyrgyzradio','=','1')->where('created_at','>',$weekFromNow)->languagekg()->orderBy('viewed','desc')->take(6)->get();
+            if(count($popArticles) > 0){
+                $popArticles = $popArticles;
+            }else{
+                $popArticles = null;
+            }
+        }else{
+
+            $weekFromNow = date('Y-m-d', strtotime('-17 days'));
+            $popArticles = \Model\Post\ModelName::where('kyrgyzradio','=','1')->where('created_at','>',$weekFromNow)->languageru()->orderBy('viewed','desc')->take(6)->get();
+            if(count($popArticles) > 0){
+                $popArticles = $popArticles;
+            }else{
+                $popArticles = null;
+            }
+
+        }
         
 
            return view('Front::channel.kyrgyzradio.news', [
@@ -96,6 +118,7 @@ class KyrgyzradioController extends Controller
             'backgroundMain' => $backgroundMain,
             'kyrgyzradioProjects' => $kyrgyzradioProjects,
             'images' => $images,
+            'popArticles' => $popArticles,  
             ]);
     }
 

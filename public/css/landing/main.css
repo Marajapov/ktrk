@@ -1304,6 +1304,46 @@ height: 325px;
     position: relative;
 }
 
+.popular .datetime {
+    float: left;
+}
+.popular .cat{
+    padding-left: 10px;
+    font-size: 13px;
+    color: #04549C;
+}
+.popular .cat span{
+    position: relative;
+    top: -1px;
+}
+.popular .views{
+    float: right;
+
+}
+.popular .views i{
+    padding-right: 5px;
+}
+
+.popular .extra{
+    color: #4E5E6A;
+    font-size: 12px;
+    font-weight: bold;
+}
+.popular .media-heading{
+    display: block;
+    color: #444242;
+    line-height: 1;
+    font-size: 15px;
+}
+.popular .media-heading:hover{
+    color: #2D3E4A;
+    text-decoration: underline;
+}
+.popular .media{
+    margin-top: 5px;
+    border-bottom: 1px dotted #E3D1C7;
+}
+
 /* PROJECT NEWS*/
 
 /* ALL PHOTOS*/

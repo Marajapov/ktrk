@@ -14,21 +14,11 @@
                              <div class="fromcat">
                                 <p>
                                     @if($balastanProjects)
-<<<<<<< HEAD
-                                        @foreach($balastanProjects as $row)
-                                            @if($balastanLastVideo->program == $row->id)
-                                                <a href="{{ route('balastan.project.videos', $row) }}">
-                                                    {{ $balastanLastVideo->hasProject()->first()->getNameOne()}}
-                                                </a>
-                                            @endif
-                                        @endforeach
-=======
                                     @foreach($balastanProjects->take(1) as $row)
                                         <a href="{{ route('balastan.project.videos', $row) }}">
                                             {{ $balastanLastVideo->hasProject()->first()->getNameOne()}}
                                         </a>
                                     @endforeach
->>>>>>> bd2f21e91b8745592528423791fb13b48f423499
                                     @endif
                                 </p>
                              </div>
