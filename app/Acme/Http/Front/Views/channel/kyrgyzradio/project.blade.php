@@ -55,7 +55,7 @@
                               <span class="e-datetime">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
                               <span class="e-views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
                            </div>
-                           <a class="media-heading" href="{{ route('kyrgyzradio.news', $post) }}">{{ $post->getTitleRuOrKg() }}</a>
+                           <a class="media-heading" href="{{ route('kyrgyzradio.news', $post) }}">{{ $post->getTitle() }}</a>
                         </div>
                      </div>
                      @endforeach

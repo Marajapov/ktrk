@@ -106,14 +106,14 @@
                                                    <span class="e-datetime">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
                                                    <span class="e-views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
                                                 </div>
-                                                <a class="media-heading" href="{{ route('kyrgyzradio.news', $post) }}">{{ $post->getTitleRuOrKg() }}</a>
+                                                <a class="media-heading" href="{{ route('kyrgyzradio.news', $post) }}">{{ $post->getTitle() }}</a>
                                              </div>
                                           </div>
                                           @endforeach
                                           @endif
                                        </div>
                                        <footer>
-                                          <a href="{{ route('kyrgyzradio.allnews') }}">{{ trans('site.FrontPostAll') }} <i class="fa fa-arrow-right"></i></a>
+                                          <a href="{{ route('kyrgyzradio.allnews') }}">Баардык жаңылыктар<i class="fa fa-arrow-right"></i></a>
                                        </footer>
                                     </div>
                                  </div>

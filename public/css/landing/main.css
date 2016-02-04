@@ -1156,8 +1156,12 @@ ul.nostyle i {
 .onenews footer a{
   color: #04549C;
 }
+.onenews footer a i{
+  padding-left: 10px;
+}
 .onenews footer a:hover{
   color: #344B61;
+  border-bottom: 1px dotted;
 }
 
 /* For Main menu in Ukturrrular part*/

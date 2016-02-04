@@ -14,8 +14,8 @@
                      <h3 class="panel-title"><span>{{ trans('site.FrontPostAll') }}</span></h3>
                   </div>
                   <div class="panel-body">
-                     @if($allPost)
-                     @foreach($allPost as $post)
+                     @if($postAll)
+                     @foreach($postAll as $post)
                      <div class="media">
                         <div class="media-left">
                            <a href="{{ route('kyrgyzradio.news', $post) }}">
@@ -27,12 +27,12 @@
                               <span class="e-datetime">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
                               <span class="e-views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
                            </div>
-                           <a class="media-heading" href="{{ route('kyrgyzradio.news', $post) }}">{{ $post->getTitleRuOrKg() }}</a>
+                           <a class="media-heading" href="{{ route('kyrgyzradio.news', $post) }}">{{ $post->getTitle() }}</a>
                         </div>
                      </div>
                      @endforeach
                      @endif
-                  <footer class="allnewsfooter">
+                     <footer class="allnewsfooter">
                         <nav>
                            <ul class="pagination">
                               <li>

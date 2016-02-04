@@ -79,7 +79,16 @@ class ModelName extends Model
             return $this->contentRu;
         }
     }
-
+    // Connexxification
+    public function getContentKG()
+    {
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            return $this->content;
+        }else{
+            return $this->content;
+        }
+    }
     public function getIsPhoto() // at least one photo
     {
         $lc = app()->getlocale();

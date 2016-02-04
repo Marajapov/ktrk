@@ -69,8 +69,9 @@
                                         <ul id="newsticker">
                                             @foreach($lentaNews as $lenta)
                                             <li class="lentanews">                                    
-                                                <span class="xdate">{{ $lenta->getTime()}}
-                                                    <p>{{$lenta->getDay() }} , {{ $lenta->getMonthRu() }}</p>        
+                                                <span class="xdate">{{$lenta->getDay() }} 
+                                                    <p>{{ $lenta->getMonthRu() }}</p>
+                                                    <p>{{ $lenta->getTime()}}</p>        
 
                                                 </span>
                                                 <span class="xtitle"><a href="{{ route('birinchi.news', $lenta) }}">{{ $lenta->getTitleRuOrKg() }}</a></span>
@@ -257,7 +258,7 @@
             max_rows:6,
             duration: 2500,
             pauseOnHover: 1,
-            autostart: 1,
+            autostart: 0,
             prevButton: $('#newsticker-prev'),
             nextButton: $('#newsticker-next')
         });

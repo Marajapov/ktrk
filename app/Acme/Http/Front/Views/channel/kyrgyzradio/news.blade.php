@@ -36,12 +36,12 @@
                      <span class="date"><i class="fa fa-calendar"></i>{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
                      <span class="view"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
                   </div>
-                  <h2>{{ $post->getTitleRuOrKg() }}</h2>
+                  <h2>{{ $post->getTitle() }}</h2>
                   <div class="radioimg">
                      <img src="@if(empty($post->getFile()))images/2.jpg @else {{  asset($post->getFile()) }} @endif" alt="" data-toggle="tooltip" data-placement="top" title="Бул жөн гана сүрөт эмес">
                   </div>
                   <article>
-                     {!! $post->getContent() !!}
+                     {!! $post->getContentKG() !!}
                      <div class="carousel-post whitefix">
                         @if($images)
                         @foreach($images as $image)
@@ -61,12 +61,8 @@
                           <div class="orphus-mistake pull-right">
                               <div class="media">
                                   <div class="media-body media-middle">
-                                      <h4>
-                                          @if(app()->getlocale()=='kg')
-                                              Эгерде ката тапсаңыз, текстти белгилеп Ctrl+Enter басыңыз
-                                          @elseif(app()->getlocale() == 'ru')
-                                              Если вы обнаружили ошибку, выделите текст и нажмите Ctrl+Enter
-                                          @endif
+                                      <h4>                                         
+                                          Эгерде ката тапсаңыз, текстти белгилеп Ctrl+Enter басыңыз                                       
                                       </h4>
                                   </div>
                                   <div class="media-right media-middle">
@@ -78,7 +74,7 @@
                           </div>
                                 <footer class="with-share">
                                     @if(auth()->user())
-                                        <a class="post-edit" href="{{ route('admin.post.edit', $post) }}" target="_blank"><i class="fa fa-pencil"></i>{{ trans('site.AdminPostEdit') }}</a>
+                                        <a class="post-edit" href="{{ route('admin.post.edit', $post) }}" target="_blank"><i class="fa fa-pencil"></i>Өзгөртүү</a>
                                     @endif
 
                                     <div class="pluso share-buttons">
@@ -105,8 +101,8 @@
                                         </button>
                                     </div>
 
-                                    <a href="{{ route('front.general') }}">
-                                        <span>{{ trans('site.PostAllNews') }}<i class="fa fa-arrow-circle-right"></i></span>
+                                    <a href="{{ route('kyrgyzradio.allnews') }}">
+                                        <span>Баардык жаңылыктар<i class="fa fa-arrow-circle-right"></i></span>
                                     </a>
                                 </footer>
                </div>
