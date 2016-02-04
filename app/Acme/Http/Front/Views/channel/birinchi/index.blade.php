@@ -258,7 +258,7 @@
             max_rows:6,
             duration: 2500,
             pauseOnHover: 1,
-            autostart: 0,
+            autostart: 1,
             prevButton: $('#newsticker-prev'),
             nextButton: $('#newsticker-next')
         });

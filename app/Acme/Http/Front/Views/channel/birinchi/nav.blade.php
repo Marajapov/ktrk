@@ -6,21 +6,21 @@
                <header class="top-menu">                
                      <nav class="top-nav">
                         <ul>
-                           <li><a href="front.home">
+                           <li><a href="{{ route('front.home') }}">
                                <img src="{{ asset('images/ktrk_last.svg')}}" height="20px" alt="">
                                <h4>КТРК</h4>
                               </a></li>
-                           <li><a href="front.home">
+                           <li><a href="{{ route('kyrgyzradio.home') }}">
                               <img src="{{ asset('images/channels/kg-radio.png')}}" alt="">
                               <h4>Кыргыз Радиосу</h4>  
                               </a>
                            </li>
-                           <li><a href="front.home">
+                           <li><a href="{{ route('minkiyal.home') }}">
                               <img src="{{ asset('images/channels/min-kiyal.png')}}" alt="">
                               <h4>Миң Кыял FM</h4>
                               </a>
                            </li>
-                           <li><a href="front.home">
+                           <li><a href="{{ route('dostuk.home') }}">
                               <img src="{{ asset('images/channels/dostuk.png')}}" alt="">
                               <h4>Достук</h4>
                               </a>

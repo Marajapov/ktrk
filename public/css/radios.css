@@ -121,6 +121,9 @@
     float: none;
 
 }
+.birinchiradio .main-header{
+    background: rgba(0, 0, 0, 0.1);
+}
 .birinchiradio .top-nav ul{
     text-align: center;
     display: block;
@@ -366,28 +369,14 @@
 }
 .chastota li{
     padding: 0px 5px;
-    box-shadow: -1px 0 0 0 rgb(42, 75, 90);
+    box-shadow: 1px 0 0 0 rgb(42, 75, 90);
     font-size: 14px;
     float: left;
 }
+.chastota li:last-child{
+    box-shadow: none;
+}
 
-@media (max-width:1200px) {
-    .chastota {
-        margin: 0px;
-        bottom: 0px;
-        width: inherit;
-    }
-    .onelogos {
-        position: absolute;
-        right: 0;
-    }
-}
-@media (max-width:992px) {
-    .onelogos {
-        position: initial;
-        right: 0;
-    }
-}
 
 .btn-one {
     padding: 10px;
