@@ -23,8 +23,6 @@
 
 @include('Front::partials.prefooter')
 
-
-
 </div>
 
 </div>

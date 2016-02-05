@@ -238,8 +238,6 @@ class PageController extends Controller
                         }
                     }
                 }
-//                dd($programs);
-//                $programs = array_reverse($programs);
             }
         }
 

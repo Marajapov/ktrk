@@ -17,6 +17,9 @@
     <script src="{{ asset('js/gallery/modernizr.custom.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('css/balastan.css') }}"/>
 
+    <link rel="shortcut icon" href="{{ asset('images/balastan-favicon.ico') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('images/balastan-favicon.ico') }}" type="image/x-icon">
+
 
     @yield('styles')
 
