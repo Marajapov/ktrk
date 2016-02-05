@@ -161,6 +161,8 @@ class HomeController extends Controller
 //        return view('Front::home', [
         return view('Front::test', [
 
+            'lc' =>$lc,
+
             'generalPost1'   => $generalPost1,
             'generalPost2'   => $generalPost2,
             'generalPost3'   => $generalPost3,

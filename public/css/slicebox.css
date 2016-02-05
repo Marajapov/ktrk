@@ -1,6 +1,7 @@
 /* Slicebox Style */
 .sb-slider {
-	margin: 10px auto;
+	/*margin: 10px auto;*/
+    margin-top: 10px;
 	position: relative;
 	overflow: hidden;
 	width: 100%;
@@ -118,7 +119,7 @@
 .wrapper {
 	position: relative;
 	width: 100%;
-	padding: 40px 50px;
+	/*padding: 40px 50px;*/
 	margin: 0 auto;
 }
 
@@ -240,21 +241,21 @@ p.info {
 .nav-arrows a {
 	width: 42px;
 	height: 42px;
-	background: #4A1366  url(../images/nav.png) no-repeat top left;
+	background: rgba(71,19,102,0.6)  url(../images/nav.png) no-repeat top left;
 	position: absolute;
 	top: 50%;
-	left: 2px;
+	left: 10px;
 	text-indent: -9000px;
 	cursor: pointer;
 	margin-top: -21px;
-	opacity: 0.9;
+	opacity: 1;
 	border-radius: 50% !important;
 	box-shadow: 0 1px 1px #4A1366;
 }
 
 .nav-arrows a:first-child{
 	left: auto;
-	right: 2px;
+	right: 10px;
 	background-position: top right;
 }
 

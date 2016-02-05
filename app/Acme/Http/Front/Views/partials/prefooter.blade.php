@@ -78,7 +78,7 @@
             </ul>
 
             <h4 class="copyright"><i class="fa fa-copyright"></i><?php echo date("Y"); ?> {{ trans('site.TradeMark') }}</h4>
-            <p class="text-center" style="margin: 0; font-size: 13px;">Powered by <a href="http://ulut.kg/" target="_blank">Ulut Soft</a></p>
+            <p class="text-center" style="margin: 0; font-size: 13px;">{{ trans('site.Developed') }} <a href="http://ulut.kg/" target="_blank">Улут Софт</a></p>
 
         </div>
     </div>

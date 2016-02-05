@@ -3,7 +3,6 @@
 @section('styles')
     <link rel="stylesheet" href="css/audio/muzslider.css">
     <link rel="stylesheet" href="css/slicebox.css">
-    <script src="{{ asset('js/modernizr.custom.46884.js') }}"></script>
 @endsection
 @section('content')
 
@@ -148,7 +147,10 @@
                 {{--</div>--}}
               </li>
               <li>
-                <a href="#" target="_blank"><img src="{{ asset('images/channels/muzkanal/hit-parad.jpg')}}" alt="image2"/></a>
+                <a href="#" target="_blank"><img src="{{ asset('images/anons/hit-parad.jpg')}}" alt="image2"/></a>
+              </li>
+              <li>
+                <a href="#" target="_blank"><img src="{{ asset('images/anons/muz_ru.png')}}" alt="image3"/></a>
               </li>
             </ul>
 
@@ -569,11 +571,12 @@
     </div>
     @stop
     @section('footerScript')
-        <script>
-            var serverTZoffset = 360;
-        </script>
-        <script src="{{ asset('js/audio/dkp.min.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('js/jquery.roundabout.js') }}"></script>
+
+        {{--<script>--}}
+            {{--var serverTZoffset = 360;--}}
+        {{--</script>--}}
+        {{--<script src="{{ asset('js/audio/dkp.min.js') }}"></script>--}}
+        {{--<script type="text/javascript" src="{{ asset('js/jquery.roundabout.js') }}"></script>--}}
         <script type="text/javascript" src="{{ asset('js/jquery.slicebox.js') }}"></script>
 
         <!-- Fixed Sticky header -->
@@ -733,7 +736,7 @@
                   orientation : 'r',
                   cuboidsRandom : true,
                   disperseFactor : 30,
-                  autoplay : true,
+                  autoplay : true
                 } ),
                 init = function() {
                   initEvents();
