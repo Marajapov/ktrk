@@ -22,7 +22,7 @@
     <tbody>
     <tr>
         <td style="background: black;">
-            <object id="videoplayer367" width="400" height="70" data="http://beta.ktrk.kg/sites/all/themes/sevenmag/js/player/uppod.swf">
+            <object id="videoplayer367" width="400" height="70" data="http://ktrk.kg/online/uppod.swf">
                 <param name="bgcolor" value="#ffffff" />
                 <param name="allowFullScreen" value="true" />
                 <param name="allowScriptAccess" value="always" />
