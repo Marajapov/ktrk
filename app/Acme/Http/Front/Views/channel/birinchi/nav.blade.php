@@ -61,7 +61,7 @@
             </ul>
             <ul class="nav navbar-nav oneline">
                <!--                             <li><a class="time" href="#"><time>11:15</time></a></li> -->
-               <li class="onetime"><a href="{{ asset('online/online-1radio.php')}}" onclick="window.open(this.href, '', 'scrollbars=1,height='+Math.min(220, screen.availHeight)+',width='+Math.min(400, screen.availWidth)); return false;"><button class="btn"><i class="fa fa-microphone blink"></i><span>{{ trans('radiopages.Live') }}</span></button></a></li>
+               <li class="onetime"><a href="{{ asset('online/online-1radio.php')}}" onclick="window.open(this.href, '', 'scrollbars=1,height='+Math.min(222, screen.availHeight)+',width='+Math.min(400, screen.availWidth)); return false;"><button class="btn"><i class="fa fa-microphone blink"></i><span>{{ trans('radiopages.Live') }}</span></button></a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right onesoc">
                <li class="onepost"><a href=""><i class="fa fa-facebook"></i><span>facebook</span></a></li>
