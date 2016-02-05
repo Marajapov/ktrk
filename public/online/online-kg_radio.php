@@ -1,6 +1,13 @@
-<link rel="stylesheet" href="../css/radios.css">
-<link rel="stylesheet" href="../css/bootstrap.css">
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Кыргыз радиосу</title>
 
+  <link rel="stylesheet" href="../css/radios.css">
+  <link rel="stylesheet" href="../css/bootstrap.css">
+</head>
+<body>
 <div class="media widget-radio">
   <div class="media-left">
     <img class="media-object widget-radio-image" src="../images/channels/kg-radio.png" alt="Radio">
@@ -14,7 +21,7 @@
   <tbody>
   <tr>
     <td style="background: black;">
-      <object id="videoplayer367" width="400" height="70" data="http://ktrk.kg/sites/all/themes/sevenmag/js/player/uppod.swf">
+      <object id="videoplayer367" width="400" height="70" data="http://ktrk.kg/online/uppod.swf">
         <param name="bgcolor" value="#ffffff" />
         <param name="allowFullScreen" value="true" />
         <param name="allowScriptAccess" value="always" />
@@ -29,6 +36,10 @@
 
 <script src="../js/jquery-1.11.2.min.js"></script>
 <script src="../js/bootstrap.js"></script>
+</body>
+</html>
+
+
 
 
 
