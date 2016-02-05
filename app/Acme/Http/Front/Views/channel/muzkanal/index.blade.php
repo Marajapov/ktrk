@@ -2,6 +2,8 @@
 @section('title', trans('radiopages.Homepage') .' | Музыка')
 @section('styles')
     <link rel="stylesheet" href="css/audio/muzslider.css">
+    <link rel="stylesheet" href="css/slicebox.css">
+    <script src="{{ asset('js/modernizr.custom.46884.js') }}"></script>
 @endsection
 @section('content')
 
@@ -136,68 +138,33 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-sm-12 dkp-slideshow dkp-moving-right">
-                <div id="dkp-slideshow-right"></div>
-                <div id="dkp-slideshow-left"></div>
-                <div class="row dkp-slide">
-                    <a href="#">
-                        <div class="col-sm-12 dkp-anonce dkp-anonce-big" style="background-image: url('{{ asset('images/anons/muz.png') }}'); height:400px; width:100%;">
-                            <div class="dkp-anonce-time hidden">
-                                <span>21:00</span>
-                            </div>
-                            <div class="dkp-anonce-title hidden">
-                                Хит-Парад ТОП-10
-                            </div>
-                            <div class="dkp-anonce-when hidden">
-                        <span>
-                        <span>
-                        Ар Жекшемби
-                        </span>
-                        </span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="row dkp-slide">
-                    <a href="#">
-                        <div class="col-sm-12 dkp-anonce dkp-anonce-big" style="background-image: url('{{ asset('images/channels/muzkanal/hit-parad.jpg') }}'); height:400px; width:100%;">
-                            <div class="dkp-anonce-time">
-                                <span>21:00</span>
-                            </div>
-                            <div class="dkp-anonce-title">
-                                Хит-Парад ТОП-10
-                            </div>
-                            <div class="dkp-anonce-when">
-                        <span>
-                        <span>
-                        Ар Жекшемби
-                        </span>
-                        </span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="row dkp-slide">
-                    <a href="#">
-                        <div class="col-sm-12 dkp-anonce dkp-anonce-big" style="background-image: url('{{ asset('images/anons/muz_ru.png') }}'); height:400px; width:100%;">
-                            <div class="dkp-anonce-time hidden">
-                                <span>21:00</span>
-                            </div>
-                            <div class="dkp-anonce-title hidden">
-                                Хит-Парад ТОП-10
-                            </div>
-                            <div class="dkp-anonce-when hidden">
-                        <span>
-                        <span>
-                        Ар Жекшемби
-                        </span>
-                        </span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+          <div class="wrapper">
+
+            <ul id="sb-slider" class="sb-slider">
+              <li>
+                <a href="#" target="_blank"><img src="{{ asset('images/anons/muz.png')}}" alt="image1"/></a>
+                {{--<div class="sb-description">--}}
+                  {{--<h3>Creative Lifesaver</h3>--}}
+                {{--</div>--}}
+              </li>
+              <li>
+                <a href="#" target="_blank"><img src="{{ asset('images/channels/muzkanal/hit-parad.jpg')}}" alt="image2"/></a>
+              </li>
+            </ul>
+
+            <div id="nav-arrows" class="nav-arrows">
+              <a href="#">Next</a>
+              <a href="#">Previous</a>
             </div>
+
+          </div><!-- /wrapper -->
         </div>
+
+
+
+
+
+
         <div class="row dkp-big-3now ">
             @if($anons1)
                 <div class="col-xs-4 rowfix" >
@@ -607,6 +574,7 @@
         </script>
         <script src="{{ asset('js/audio/dkp.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('js/jquery.roundabout.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/jquery.slicebox.js') }}"></script>
 
         <!-- Fixed Sticky header -->
         <script>
@@ -750,5 +718,40 @@
                 });
             }
 
+        </script>
+
+        <script type="text/javascript">
+          $(function() {
+            var Page = (function() {
+              var $navArrows = $( '#nav-arrows' ).hide(),
+                $shadow = $( '#shadow' ).hide(),
+                slicebox = $( '#sb-slider' ).slicebox( {
+                  onReady : function() {
+                    $navArrows.show();
+                    $shadow.show();
+                  },
+                  orientation : 'r',
+                  cuboidsRandom : true,
+                  disperseFactor : 30,
+                  autoplay : true,
+                } ),
+                init = function() {
+                  initEvents();
+                },
+                initEvents = function() {
+                  // add navigation events
+                  $navArrows.children( ':first' ).on( 'click', function() {
+                    slicebox.next();
+                    return false;
+                  } );
+                  $navArrows.children( ':last' ).on( 'click', function() {
+                    slicebox.previous();
+                    return false;
+                  } );
+                };
+              return { init : init };
+            })();
+            Page.init();
+          });
         </script>
 @stop
