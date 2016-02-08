@@ -289,7 +289,7 @@ return [
 
     //Home page
     'FrontPostAll' => 'Все новости',    
-    'FrontPostLastNews' => 'Последние новости',
+    'FrontPostLastNews' => 'Лента новостей',
     'FrontPostDaysVideo' => 'Видео дня',    
     'FrontPostDaysNews' => 'Выпуск новостей',
     'FrontPostDaysEpisode' => 'Телепроект',

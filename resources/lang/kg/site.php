@@ -286,7 +286,7 @@ return [
 
     //Home page
     'FrontPostAll' => 'Бардык жаңылыктар',
-    'FrontPostLastNews' => 'Акыркы жаңылыктар',
+    'FrontPostLastNews' => 'Жаңылыктар түрмөгү',
     'FrontPostDaysVideo' => 'Күндүн видеосу',
     'FrontPostDaysNews' => 'Жаңылыктар чыгарылышы',
     'FrontPostDaysEpisode' => 'Телеберүү',
