@@ -23,5 +23,9 @@ trait ModelRelationships
         return $this->morphToMany(\Model\Tag\Tag::class, 'taggable');
     }
 
+    public function kyrgyzradioProjects() // FromPost
+    {
+        return $this->belongsTo(\Model\Project\ModelName::class, 'kyrgyzradioProgram');
+    }
     
 }

@@ -1,5 +1,5 @@
 @extends('Front::channel.kyrgyzradio.default')
-@section('title', $post->getTitleRuOrKg())
+@section('title', $post->getTitle())
 @section('styles')
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <meta property="og:url"                content="{{ Request::url()}}" />
@@ -110,16 +110,22 @@
                         <h3 class="panel-title"><span>Көп окулууда</span></h3>
                      </div>
                      <div class="col-md-12">
+
+                   
                         @if($popArticles) 
                         @foreach($popArticles as $post)
+
                         <div class="media">
                            <div class="media-body">
                               <div class="extra">
-                                <span class="datetime">{{ $post->getDay() }} {{ $post->getMonthRu() }}</span>                        
-                        <a class="cat" href="{{ route('kyrgyzradio.project', $project) }}"><span>{{ $project->getName() }}</span></a>
+                                <span class="datetime">{{ $post->getDay() }} {{ $post->getMonthRu() }}</span>                     
+                         
+                                <a class="cat" href="{{ route('kyrgyzradio.project', $post->kyrgyzradioProgram) }}"><span>
+                                  @if($post->kyrgyzradioProjects()) {{ $post->kyrgyzradioProjects()->first()->getName()}} @endif
+                                </span></a>                       
                                 <span class="views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
                               </div>
-                              <a class="media-heading" href="{{ route('kyrgyzradio.news', $post) }}">{{ $post->getTitleRuOrKg() }}</a>
+                              <a class="media-heading" href="{{ route('kyrgyzradio.news', $post) }}">{{ $post->getTitle() }}</a>
                            </div>
                         </div>                      
                         @endforeach 
