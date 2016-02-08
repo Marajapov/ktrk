@@ -1,14 +1,5 @@
 <?php
 
-function win_uni ($in) {
-    $in = convert_cyr_string($in ,"w","i");
-    $out = "";
-    for ($i=0; $i < strlen($in); $i++) {
-        $char = ord($in[$i]);
-        $out .= ($char > 175)?"&#".(1040+($char-176)).";":$in[$i]; }
-    return $out;
-}
-
 header ("Content-type: image/png");
 
 //Get string info

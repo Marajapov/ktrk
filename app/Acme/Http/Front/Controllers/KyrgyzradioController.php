@@ -12,7 +12,7 @@ class KyrgyzradioController extends Controller
     {
 
 
-     return view('Front::channel.kyrgyzradio.comingsoon',[]);
+     // return view('Front::channel.kyrgyzradio.comingsoon',[]);
 
         $channel = \Model\Channel\ModelName::name('kyrgyzradio')->first();
 
@@ -21,23 +21,15 @@ class KyrgyzradioController extends Controller
          // Photo Gallery
         $photoGalleries = \Model\PhotoParent\ModelName::where('kyrgyzradio','=','1')->where('published','=',true)->take('6')->orderBy('id','desc')->get();
 
-        $lc = app()->getlocale();
-        if($lc == 'kg'){
-            $allPost = \Model\Post\ModelName::where('kyrgyzradio','=',1)->languagekg()->published()->orderBy('id','desc')->get();    
-        }else{
-            $allPost = \Model\Post\ModelName::where('kyrgyzradio','=',1)->languageru()->published()->orderBy('id','desc')->get();
-        }
-
-        $kyrgyzradioProjects = \Model\Project\ModelName::where('published','=',true)->where('kyrgyzradio', '=', 1)->get();
+        $kyrgyzradioProjects = \Model\Project\ModelName::where('published','=',true)->where('kyrgyzradio', '=', 1)->take('4')->orderBy('id','desc')->get();
 
         $anons = \Model\Anons\ModelName::where('channel','=','6')->where('published','=','1')->orderBy('id','=','desc')->take(2)->get();
-
+       
         return view('Front::channel.kyrgyzradio.index', [
             'channel' => $channel,
             'anons' => $anons,
             'backgroundMain' => $backgroundMain,
             'photoGalleries' => $photoGalleries,
-            'allPost' => $allPost,
             'kyrgyzradioProjects' => $kyrgyzradioProjects,
 
             ]);
@@ -74,8 +66,7 @@ class KyrgyzradioController extends Controller
             'projectList' => $projectList,
             'backgroundMain' => $backgroundMain,
             'relatedNews' => $relatedNews,
-            'kyrgyzradioProjects' => $kyrgyzradioProjects,                
-
+            'kyrgyzradioProjects' => $kyrgyzradioProjects,
             ]
         );
     }
@@ -86,7 +77,7 @@ class KyrgyzradioController extends Controller
 
         $channel = \Model\Channel\ModelName::name('kyrgyzradio')->first();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
-
+        
         $kyrgyzradioProjects = \Model\Project\ModelName::where('published','=',true)->where('kyrgyzradio', '=', 1)->get();
 
         $parent = \Model\PhotoParent\ModelName::where('id','=',$post->parentId)->first();
@@ -95,15 +86,24 @@ class KyrgyzradioController extends Controller
             $images = json_decode($parent->images);    
         }else{
             $images = null;
-        }
-        
+        }   
 
-           return view('Front::channel.kyrgyzradio.news', [
+        $weekFromNow = date('Y-m-d', strtotime('-17 days'));
+        $popArticles = \Model\Post\ModelName::where('kyrgyzradio','=','1')->where('created_at','>',$weekFromNow)->languagekg()->orderBy('viewed','desc')->take(6)->get();
+        if(count($popArticles) > 0){
+            $popArticles = $popArticles;
+        }else{
+            $popArticles = null;
+        }
+
+
+        return view('Front::channel.kyrgyzradio.news', [
             'channel' => $channel,
             'post' => $post,
             'backgroundMain' => $backgroundMain,
             'kyrgyzradioProjects' => $kyrgyzradioProjects,
             'images' => $images,
+            'popArticles' => $popArticles,  
             ]);
     }
 
@@ -111,22 +111,19 @@ class KyrgyzradioController extends Controller
     {
         
         $channel = \Model\Channel\ModelName::name('kyrgyzradio')->first();
-
-        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
-
-        $lc = app()->getlocale();
-        if($lc == 'kg'){
-            $allPost = \Model\Post\ModelName::where('kyrgyzradio','=',1)->languagekg()->published()->orderBy('id','desc')->get();    
-        }else{
-            $allPost = \Model\Post\ModelName::where('kyrgyzradio','=',1)->languageru()->published()->orderBy('id','desc')->get();
-        }
-
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();       
+        
+        $perPage = 10;  
+        
+        $postAll = \Model\Post\ModelName::where('kyrgyzradio','=',1)->published()->orderBy('id','desc')->paginate($perPage);         
+        
         $kyrgyzradioProjects = \Model\Project\ModelName::where('published','=',true)->where('kyrgyzradio', '=', 1)->get();
 
         return view('Front::channel.kyrgyzradio.allnews', [
             'channel' => $channel,
             'backgroundMain' => $backgroundMain,
-            'allPost' => $allPost,
+            'perPage' => $perPage,
+            'postAll' => $postAll,
             'kyrgyzradioProjects' => $kyrgyzradioProjects,
             ]);
     }

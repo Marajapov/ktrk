@@ -17,4 +17,3 @@ tests/_output/*
 /config/debugbar.php
 /config/laravel-localization-helpers.php
 /public/froala/uploads
-/public/images/anons

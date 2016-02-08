@@ -128,8 +128,8 @@
 }
 .lSSlideOuter .lSPager.lSGallery li {
     overflow: hidden;
-    -webkit-transition: border-radius 0.12s linear 0s 0.35s linear 0s;
-    transition: border-radius 0.12s linear 0s 0.35s linear 0s;
+    -webkit-transition: border-radius 0.12s linear, 0s 0.35s linear, 0s;
+    transition: border-radius 0.12s linear, 0s 0.35s linear, 0s;
 }
 .lSSlideOuter .lSPager.lSGallery li.active, .lSSlideOuter .lSPager.lSGallery li:hover {
     border-radius: 5px;
@@ -156,11 +156,12 @@
 
 /* slider actions */
 .lSAction > a {
-    width: 32px;
+    width: 30px;
     display: block;
     top: 50%;
-    height: 32px;
+    height: 30px;
     background-image: url('./img/controls.png');
+    background-repeat: no-repeat;
     cursor: pointer;
     position: absolute;
     z-index: 99;
@@ -177,7 +178,7 @@
     left: 10px;
 }
 .lSAction > .lSNext {
-    background-position: -32px 0;
+    background-position: -34px 0;
     right: 10px;
 }
 .lSAction > a.disabled {

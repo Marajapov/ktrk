@@ -217,15 +217,15 @@
     font-size: 16px;
     font-weight: bold;
 }
-/*.panel-article .news-block em::before{*/
-    /*content: '';*/
-    /*position: absolute;*/
-    /*left: 0;*/
-    /*top: 0;*/
-    /*width: 10px;*/
-    /*height: 100%;*/
-    /*background: #48A6D8;*/
-/*}*/
+.panel-article .news-block em::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 10px;
+    height: 100%;
+    background: #48A6D8;
+}
 
 /*Материалы по теме*/
 .panel-article aside {

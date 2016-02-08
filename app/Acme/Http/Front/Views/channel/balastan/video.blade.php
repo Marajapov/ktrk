@@ -14,7 +14,7 @@
                              <div class="fromcat">
                                 <p>
                                     @if($balastanProjects)
-                                    @foreach($balastanProjects as $row)
+                                    @foreach($balastanProjects->take(1) as $row)
                                         <a href="{{ route('balastan.project.videos', $row) }}">
                                             {{ $balastanLastVideo->hasProject()->first()->getNameOne()}}
                                         </a>
@@ -40,10 +40,19 @@
                         <div class="episode-info">
                             <div class="episode-desc">{!! $balastanLastVideo->description !!}</div>
                                 @if($balastanProjects)
+<<<<<<< HEAD
                                 @foreach($balastanProjects as $row)
+                                    @if($balastanLastVideo->program == $row->id)
+                                        <a href="{{ route('balastan.project.videos', $row) }}">
+                                            <em>{{ $balastanLastVideo->hasProject()->first()->getNameOne()}}</em>
+                                        </a>
+                                    @endif
+=======
+                                @foreach($balastanProjects->take(1) as $row)
                                     <a href="{{ route('balastan.project.videos', $row) }}">
                                         <em>{{ $balastanLastVideo->hasProject()->first()->getNameOne()}}</em>
                                     </a>
+>>>>>>> bd2f21e91b8745592528423791fb13b48f423499
                                 @endforeach
                                 @endif    
                             <span>{{ $balastanLastVideo->getDateFormatted() }}</span>

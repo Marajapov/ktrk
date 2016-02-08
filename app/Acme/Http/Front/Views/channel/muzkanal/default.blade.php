@@ -6,6 +6,9 @@
         @yield('title')
     </title>
 
+    <link rel="shortcut icon" href="{{ asset('images/muz-favicon.ico') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('images/muz-favicon.ico') }}" type="image/x-icon">
+
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/bootstrap-datetimepicker.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}"/>
@@ -19,46 +22,47 @@
     <link rel="stylesheet"  href="{{ asset('css/lightslider.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/gallery.css') }}"/>
 
-   <script src="js/jquery-1.11.2.min.js"></script>
-    
+    <script src="{{ asset('js/jquery-1.11.2.min.js') }}"></script>
+    <script src="{{ asset('js/modernizr-2.6.2.min.js') }}"></script>
+
 
     @yield('styles')
 
     <style>
         body{
 
-            @if($backgroundMain != null) background: url('{{ asset($backgroundMain->getFile()) }}') no-repeat;
+        @if($backgroundMain != null) background: url('{{ asset($backgroundMain->getFile()) }}') no-repeat;
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-position: center;
             background-size: cover;
-            @endif
-        }
+        @endif
+    }
     </style>
 
+    <script>
+        $(document).ready(function () {
+            $(".search-toggle").click(function () {
+                $(".logo-block").addClass("search-show");
+                $(".form-search").addClass("visible");
+                $(".soc").addClass("hidden");
+                $(".clangs").addClass("hidden");
+
+            });
+            $(".close-search").click(function () {
+                $(".logo-block").removeClass("search-show");
+                $(".form-search").removeClass("visible");
+                $(".soc").removeClass("hidden");
+                $(".clangs").removeClass("hidden");
+
+            });
+        });
+    </script>
+
 </head>
-<body>
+<body class="music">
 
 
-    @yield('content')
+@yield('content')
 
-    @include('Front::partials.footer')
-
-       <script>
-      $(document).ready(function () {
-          $(".search-toggle").click(function () {
-              $(".logo-block").addClass("search-show");
-              $(".form-search").addClass("visible");
-              $(".soc").addClass("hidden");
-              $(".clangs").addClass("hidden");
-
-          });
-          $(".close-search").click(function () {
-              $(".logo-block").removeClass("search-show");
-              $(".form-search").removeClass("visible");
-              $(".soc").removeClass("hidden");
-              $(".clangs").removeClass("hidden");
-             
-          });
-      });
-   </script> 
+@include('Front::channel.muzkanal.footer')

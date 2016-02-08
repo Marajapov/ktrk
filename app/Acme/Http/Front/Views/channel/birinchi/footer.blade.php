@@ -1,29 +1,4 @@
-<footer class="footer hidden">
-    <div class="panel panel-default">
-        <div class="panel-body">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="row">
-                            <ul>
-                                <li><a href="#">{{ trans('site.Homepage') }}</a></li>
-                                <li><a href="#">КТРК</a></li>
-                                <li><a href="#">Видеопортал</a></li>
-                                <li><a href="#">Программа передач</a></li>
-                                <li><a href="#">{{ trans('site.BaikoochuKenesh') }}</a></li>
-                                <li><a href="#">{{ trans('site.RedKenesh') }}</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
-
 @include('Front::partials.prefooter')
-
-
 
 </div>
 

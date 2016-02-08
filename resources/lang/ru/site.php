@@ -20,6 +20,7 @@ return [
 
     'Ktrk' => 'Общественная телерадиовещательная корпорация',
     'KtrkApp' => 'Мобильное приложение КТРК',
+    'Developed' => 'Разработка сайта',
     
     'shortDescriptionKg' => 'Короткое описание на кыргызском',
     'shortDescriptionRu' => 'Короткое описание на русском',
@@ -288,7 +289,7 @@ return [
 
     //Home page
     'FrontPostAll' => 'Все новости',    
-    'FrontPostLastNews' => 'Последние новости',
+    'FrontPostLastNews' => 'Лента новостей',
     'FrontPostDaysVideo' => 'Видео дня',    
     'FrontPostDaysNews' => 'Выпуск новостей',
     'FrontPostDaysEpisode' => 'Телепроект',

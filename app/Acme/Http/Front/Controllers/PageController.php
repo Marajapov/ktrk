@@ -238,8 +238,6 @@ class PageController extends Controller
                         }
                     }
                 }
-//                dd($programs);
-//                $programs = array_reverse($programs);
             }
         }
 
@@ -348,7 +346,8 @@ class PageController extends Controller
                 $topArticles = null;
             }
 
-            $popArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->orderBy('viewed','desc')->take(6)->get();
+            $weekFromNow = date('Y-m-d H:i', strtotime('-7 days'));
+            $popArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->where('created_at','>',$weekFromNow)->orderBy('viewed','desc')->take(6)->get();
             if(count($popArticles) > 0){
                 $popArticles = $popArticles;
             }else{
@@ -363,7 +362,8 @@ class PageController extends Controller
                 $topArticles = null;
             }
 
-            $popArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->orderBy('viewed','desc')->take(6)->get();
+            $weekFromNow = date('Y-m-d H:i', strtotime('-7 days'));
+            $popArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->where('created_at','>',$weekFromNow)->orderBy('viewed','desc')->take(6)->get();
             if(count($popArticles) > 0){
                 $popArticles = $popArticles;
             }else{

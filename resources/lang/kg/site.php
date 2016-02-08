@@ -21,6 +21,7 @@ return [
 
     'Ktrk' => 'Коомдук телерадиоберүү корпорациясы',
     'KtrkApp' => 'КТРК Мобилдик Тиркемеси',
+    'Developed' => 'Иштеп чыгарган',
 
     'shortDescriptionKg' => 'Короткое описание на кыргызском',
     'shortDescriptionRu' => 'Короткое описание на русском',
@@ -285,7 +286,7 @@ return [
 
     //Home page
     'FrontPostAll' => 'Бардык жаңылыктар',
-    'FrontPostLastNews' => 'Акыркы жаңылыктар',
+    'FrontPostLastNews' => 'Жаңылыктар түрмөгү',
     'FrontPostDaysVideo' => 'Күндүн видеосу',
     'FrontPostDaysNews' => 'Жаңылыктар чыгарылышы',
     'FrontPostDaysEpisode' => 'Телеберүү',
