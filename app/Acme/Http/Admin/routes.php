@@ -26,7 +26,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'access:admin', 'namespace' =
     Route::get('media.dayVideo2',['as' => 'admin.media.dayVideo2', 'uses' => 'MediaController@dayVideo2']);
     Route::get('media.dayVideo3',['as' => 'admin.media.dayVideo3', 'uses' => 'MediaController@dayVideo3']);
     Route::get('media.dayVideo4',['as' => 'admin.media.dayVideo4', 'uses' => 'MediaController@dayVideo4']);
-    Route::get('media.dayVideo5',['as' => 'admin.media.dayVideo5', 'uses' => 'MediaController@dayVideo5']);
+    Route::get('media.dayVideoRu1',['as' => 'admin.media.dayVideoRu1', 'uses' => 'MediaController@dayVideoRu1']);
     
     Route::resource('banner', 'BannerController');
     Route::resource('page', 'PageController');
