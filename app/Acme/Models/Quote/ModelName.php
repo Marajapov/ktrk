@@ -42,6 +42,16 @@ class ModelName extends Model
         return $this->authorRu;
     }
 
+    public function getAuthorOne()
+    {
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            return $this->author;
+        } else {
+            return $this->authorRu;
+        }
+    }
+
     public function getFile()
     {
         return $this->file;
@@ -55,5 +65,15 @@ class ModelName extends Model
     public function getDescRu()
     {
         return $this->descriptionRu;
+    }
+
+    public function getDescOne()
+    {
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            return $this->description;
+        } else {
+            return $this->descriptionRu;
+        }
     }
 }
