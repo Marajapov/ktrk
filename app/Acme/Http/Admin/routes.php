@@ -74,5 +74,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'access:admin', 'namespace' =
     Route::get('comment.deny', ['as' => 'admin.comment.deny', 'uses' => 'CommentController@deny']); // deny comment
 
     //Anons
-    Route::resource('anons','AnonsController');
+    Route::resource('anons','AnonsController');    
+
+    //Quote
+    Route::resource('quote','QuotesController');
 });

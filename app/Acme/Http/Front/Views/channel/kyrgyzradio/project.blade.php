@@ -25,7 +25,7 @@
                                  </a>
                               </div>
                               <div class="media-body">
-                                 <h4 class="show-title media-heading">{{ $project->getName() }}</h4>
+                                 <h4 class="show-title media-heading">{{ $project->getName() }}</h4>                                  
                                  <p class="show-desc">
                                     {{ $project->description }}
                                  </p>

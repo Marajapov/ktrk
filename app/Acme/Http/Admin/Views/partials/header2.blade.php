@@ -23,6 +23,7 @@
                 </ul>
             </li>
             <li><a href="{{ route('admin.anons.index') }}"><i class="fa fa-info-circle"></i>Анонс</a></li>
+            <li><a href="{{ route('admin.quote.index') }}"><i class="fa fa-quote-right"></i>Цитата</a></li>
             <li><a href="{{ route('admin.banner.index') }}"><i class="fa fa-diamond"></i>Баннер</a></li>
             <li><a href="{{ route('admin.schedule.index') }}"><i class="fa fa-caret-square-o-right"></i>Телепрограмма</a></li>
             <li><a href="{{ route('admin.page.index') }}"><i class="fa fa-columns"></i>{{ trans('site.AdminPagesTitle') }}</a></li>

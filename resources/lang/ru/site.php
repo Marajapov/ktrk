@@ -285,6 +285,15 @@ return [
     'AdminAnonsWeekDayRu' => 'День недели на русском',
     'AdminAnonsTime' => 'Время',
 
+    //Quotes
+    'AdminQuoteNew' => 'Новая цитата',
+    'AdminQuoteAuthor' => 'Автор на кыргызском',
+    'AdminQuoteAuthorRU' => 'Автор на русском',
+    'AdminQuoteDesc' => 'Цитата на кыргызском',
+    'AdminQuoteDescRU' => 'Цитата на русском',
+
+    'AdminQuoteEdit' => 'Изменить цитату',
+
     //FRONT language
 
     //Home page

@@ -41,27 +41,25 @@
    <section id="cta" class="wow fadeIn">
       <div class="container">
          <div class="row">
+            @if($quoteTop)
+
+            @foreach($quoteTop as $top)
             <div class="col-md-6 col-xs-12">
+         
                <div class="col-xs-9">
-                  <h2>Чынгыз Айтматов</h2>
-                  <p><span></span>Дос, кыйынчылыкта билинет дешет. Менимче, бактылуу кезиңде да билинет.. 
+                  <h2>{{ $top->getAuthor() }}</h2>
+                  <p><span></span>{{ $top->getDesc() }}
                   </p>
                </div>
+          
+
                <div class="righter"><i class="fa fa-play"></i></div>
                <div class="col-xs-3">
-                  <img class="img-responsive" src="{{asset('images/channels/kyrgyzradio/aitmatov.jpg')}}" height="100" width="100" alt="">
+                  <img class="img-responsive" src="{{asset($top->file)}}" alt="">
                </div>
             </div>
-            <div class="col-md-6 col-xs-12">
-               <div class="col-xs-9">
-                  <h2>Чынгыз Айтматов</h2>
-                  <p><span></span>«Человек не умирает до тех пор, пока живут знавшие его». </p>
-               </div>
-               <div class="righter"><i class="fa fa-play"></i></div>
-               <div class="col-xs-3">
-                  <img class="img-responsive" src="{{asset('images/channels/kyrgyzradio/aitmatov.jpg')}}" height="100" width="100" alt="">
-               </div>
-            </div>
+              @endforeach
+            @endif
          </div>
       </div>
    </section>
@@ -140,27 +138,21 @@
    <section id="cta" class="wow fadeIn">
       <div class="container">
          <div class="row">
-            <div class="col-md-6 col-xs-12">
+            @if($quoteMiddle)
+            @foreach($quoteMiddle as $middle)
+            <div class="col-md-6 col-xs-12">         
                <div class="col-xs-9">
-                  <h2>Чынгыз Айтматов</h2>
-                  <p><span></span>Дос, кыйынчылыкта билинет дешет. Менимче, бактылуу кезиңде да билинет.. 
+                  <h2>{{ $middle->getAuthor() }}</h2>
+                  <p><span></span>{{ $middle->getDesc() }}
                   </p>
-               </div>
+               </div>        
                <div class="righter"><i class="fa fa-play"></i></div>
                <div class="col-xs-3">
-                  <img class="img-responsive" src="{{asset('images/channels/kyrgyzradio/aitmatov.jpg')}}" height="100" width="100" alt="">
+                  <img class="img-responsive" src="{{asset($middle->file)}}" alt="">
                </div>
             </div>
-            <div class="col-md-6 col-xs-12">
-               <div class="col-xs-9">
-                  <h2>Чынгыз Айтматов</h2>
-                  <p><span></span>«Человек не умирает до тех пор, пока живут знавшие его». </p>
-               </div>
-               <div class="righter"><i class="fa fa-play"></i></div>
-               <div class="col-xs-3">
-                  <img class="img-responsive" src="{{asset('images/channels/kyrgyzradio/aitmatov.jpg')}}" height="100" width="100" alt="">
-               </div>
-            </div>
+              @endforeach
+            @endif
          </div>
       </div>
    </section>
@@ -203,29 +195,21 @@
    <!--/#portfolio-->
    <section id="cta" class="wow fadeIn">
       <div class="container">
-         <div class="row">
-            <div class="col-md-6 col-xs-12">
+            @if($quoteBottom)
+            @foreach($quoteBottom as $bottom)
+            <div class="col-md-6 col-xs-12">         
                <div class="col-xs-9">
-                  <h2>Чынгыз Айтматов</h2>
-                  <p><span></span>Дос, кыйынчылыкта билинет дешет. Менимче, бактылуу кезиңде да билинет.. 
+                  <h2>{{ $bottom->getAuthor() }}</h2>
+                  <p><span></span>{{ $bottom->getDesc() }}
                   </p>
-               </div>
+               </div>        
                <div class="righter"><i class="fa fa-play"></i></div>
                <div class="col-xs-3">
-                  <img class="img-responsive" src="{{asset('images/channels/kyrgyzradio/aitmatov.jpg')}}" height="100" width="100" alt="">
+                  <img class="img-responsive" src="{{asset($bottom->file)}}" alt="">
                </div>
             </div>
-            <div class="col-md-6 col-xs-12">
-               <div class="col-xs-9">
-                  <h2>Чынгыз Айтматов</h2>
-                  <p><span></span>«Человек не умирает до тех пор, пока живут знавшие его». </p>
-               </div>
-               <div class="righter"><i class="fa fa-play"></i></div>
-               <div class="col-xs-3">
-                  <img class="img-responsive" src="{{asset('images/channels/kyrgyzradio/aitmatov.jpg')}}" height="100" width="100" alt="">
-               </div>
-            </div>
-         </div>
+              @endforeach
+            @endif
       </div>
    </section>
    <!--/#cta-->

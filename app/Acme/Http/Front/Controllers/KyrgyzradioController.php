@@ -25,13 +25,19 @@ class KyrgyzradioController extends Controller
 
         $anons = \Model\Anons\ModelName::where('channel','=','6')->where('published','=','1')->orderBy('id','=','desc')->take(2)->get();
        
+        $quoteTop = \Model\Quote\ModelName::where('published','=','1')->where('channel', '=', '6')->orderBy('id','=','desc')->take(2)->get();
+        $quoteMiddle = \Model\Quote\ModelName::where('published','=','1')->where('channel', '=', '6')->orderBy('id','=','desc')->take(2)->skip(2)->get();
+        $quoteBottom = \Model\Quote\ModelName::where('published','=','1')->where('channel', '=', '6')->orderBy('id','=','desc')->take(2)->skip(4)->get();
+//        dd($quote);
         return view('Front::channel.kyrgyzradio.index', [
             'channel' => $channel,
             'anons' => $anons,
             'backgroundMain' => $backgroundMain,
             'photoGalleries' => $photoGalleries,
             'kyrgyzradioProjects' => $kyrgyzradioProjects,
-
+            'quoteTop' => $quoteTop,
+            'quoteMiddle' => $quoteMiddle,
+            'quoteBottom' => $quoteBottom,
             ]);
     }
 
@@ -66,8 +72,7 @@ class KyrgyzradioController extends Controller
             'projectList' => $projectList,
             'backgroundMain' => $backgroundMain,
             'relatedNews' => $relatedNews,
-            'kyrgyzradioProjects' => $kyrgyzradioProjects,                
-
+            'kyrgyzradioProjects' => $kyrgyzradioProjects,
             ]
         );
     }
@@ -78,7 +83,7 @@ class KyrgyzradioController extends Controller
 
         $channel = \Model\Channel\ModelName::name('kyrgyzradio')->first();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
-
+        
         $kyrgyzradioProjects = \Model\Project\ModelName::where('published','=',true)->where('kyrgyzradio', '=', 1)->get();
 
         $parent = \Model\PhotoParent\ModelName::where('id','=',$post->parentId)->first();
@@ -87,32 +92,18 @@ class KyrgyzradioController extends Controller
             $images = json_decode($parent->images);    
         }else{
             $images = null;
-        }
+        }   
 
-        $lc = app()->getlocale();
-
-        if($lc == 'kg'){
-            $weekFromNow = date('Y-m-d', strtotime('-17 days'));
-            $popArticles = \Model\Post\ModelName::where('kyrgyzradio','=','1')->where('created_at','>',$weekFromNow)->languagekg()->orderBy('viewed','desc')->take(6)->get();
-            if(count($popArticles) > 0){
-                $popArticles = $popArticles;
-            }else{
-                $popArticles = null;
-            }
+        $weekFromNow = date('Y-m-d', strtotime('-17 days'));
+        $popArticles = \Model\Post\ModelName::where('kyrgyzradio','=','1')->where('created_at','>',$weekFromNow)->languagekg()->orderBy('viewed','desc')->take(6)->get();
+        if(count($popArticles) > 0){
+            $popArticles = $popArticles;
         }else{
-
-            $weekFromNow = date('Y-m-d', strtotime('-17 days'));
-            $popArticles = \Model\Post\ModelName::where('kyrgyzradio','=','1')->where('created_at','>',$weekFromNow)->languageru()->orderBy('viewed','desc')->take(6)->get();
-            if(count($popArticles) > 0){
-                $popArticles = $popArticles;
-            }else{
-                $popArticles = null;
-            }
-
+            $popArticles = null;
         }
-        
 
-           return view('Front::channel.kyrgyzradio.news', [
+
+        return view('Front::channel.kyrgyzradio.news', [
             'channel' => $channel,
             'post' => $post,
             'backgroundMain' => $backgroundMain,

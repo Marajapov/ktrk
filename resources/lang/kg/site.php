@@ -282,6 +282,15 @@ return [
     'AdminAnonsWeekDayRu' => 'Апта күнү орусча',
     'AdminAnonsTime' => 'Убакыты',
 
+    //Quotes
+    'AdminQuoteNew' => 'Жаңы цитата',
+    'AdminQuoteAuthor' => 'Автор кыргызча',
+    'AdminQuoteAuthorRU' => 'Автор орусча',
+    'AdminQuoteDesc' => 'Цитата кыргызча',
+    'AdminQuoteDescRU' => 'Цитата орусча',
+
+    'AdminQuoteEdit' => 'Цитататаны өзгөртүү',
+
     //FRONT languages
 
     //Home page
