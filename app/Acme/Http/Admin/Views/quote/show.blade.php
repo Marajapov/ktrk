@@ -1,5 +1,5 @@
 @extends('Admin::layouts.default')
-@section('title')
+@section('title', trans('site.Info'))
 
 
 @section('content')

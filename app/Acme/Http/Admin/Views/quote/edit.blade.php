@@ -1,5 +1,5 @@
 @extends('Admin::layouts.default')
-@section('title', 'Цитата')
+@section('title', trans('site.AdminQuoteEdit') )
 
 @section('content')
 

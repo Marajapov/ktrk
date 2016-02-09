@@ -289,6 +289,8 @@ return [
     'AdminQuoteDesc' => 'Цитата кыргызча',
     'AdminQuoteDescRU' => 'Цитата орусча',
 
+    'AdminQuoteEdit' => 'Цитататаны өзгөртүү',
+
     //FRONT languages
 
     //Home page

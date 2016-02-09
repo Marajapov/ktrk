@@ -29,7 +29,7 @@
                             <th>{{ trans('site.AdminQuoteAuthor') }}</th>
                             <th>{{ trans('site.AdminQuoteAuthorRU') }}</th>                            
                             <th>{{ trans('site.AdminQuoteDesc') }}</th>
-                            <th>{{ trans('site.TitleRU') }}</th>
+                            <th>{{ trans('site.AdminQuoteDescRU') }}</th>
                             <th>Канал</th>
                             <th>Действия</th>
                         </tr>
@@ -41,7 +41,7 @@
                                 <tr>
                                     <td>{{ $row->id }}</td>
                                     <td class="table-img text-center">
-                                        <img style="height: 80px;" src="{{ asset($row->file) }}" alt=""/>
+                                        <img style="height: 105px;" src="{{ asset($row->file) }}" alt=""/>
                                     </td>
                                     <td class="table-title">
                                         <a href="{{ route('admin.quote.show', $row) }}">
