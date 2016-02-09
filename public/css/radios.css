@@ -846,6 +846,8 @@
 }
 .birinchigallery .media-middle {
     padding: 10px 0;
+    height: 65px;
+    max-height: 100%;
 }
 .birinchigallery .extraone{
     position: absolute;
@@ -1004,6 +1006,8 @@
     
 .allgallery .media-middle {
     padding: 10px 0;
+    height: 65px;
+    max-height: 100%;
 }
 .allgallery .extraone{
     position: absolute;
