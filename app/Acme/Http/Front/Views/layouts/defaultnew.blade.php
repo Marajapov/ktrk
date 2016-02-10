@@ -55,6 +55,8 @@
 
     @yield('styles')
 
+    <script src="{{ asset('js/jquery.scrollspeed.js') }}"></script>
+
 </head>
 <body>
 
@@ -77,7 +79,7 @@
     }(document, 'script', 'facebook-jssdk'));
 </script>
 
-<script src="{{ asset('js/jquery.scrollspeed.js') }}"></script>
+
 <script>
     // $fn.scrollSpeed(step, speed, easing);
     jQuery.scrollSpeed(100, 800);

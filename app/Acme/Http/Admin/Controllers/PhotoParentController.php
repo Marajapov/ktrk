@@ -70,17 +70,20 @@ class PhotoParentController extends Controller
                 Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->insert('http://ktrk.kg/images/wm_ktrk.png', 'bottom-right', 10, 10)->save($dir.'/'.$name);
                 Image::make($_FILES['status']['tmp_name'])->fit(500, 300)->insert('http://ktrk.kg/images/wm_ktrk.png', 'bottom-right', 10, 10)->save($dir.'/'.$name2);
             }
-            if($request->birinchi == 1){
+            elseif($request->birinchi == 1){
                 Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->insert('http://ktrk.kg/images/wm_1radio.png', 'bottom-right', 10, 10)->save($dir.'/'.$name);
                 Image::make($_FILES['status']['tmp_name'])->fit(500, 300)->insert('http://ktrk.kg/images/wm_1radio.png', 'bottom-right', 10, 10)->save($dir.'/'.$name2);
             }
-            if($request->muzkanal == 1){
+            elseif($request->muzkanal == 1){
                 Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->insert('http://ktrk.kg/images/wm_music.png', 'bottom-right', 10, 10)->save($dir.'/'.$name);
                 Image::make($_FILES['status']['tmp_name'])->fit(500, 300)->insert('http://ktrk.kg/images/wm_music.png', 'bottom-right', 10, 10)->save($dir.'/'.$name2);
             }
-            if($request->balastan == 1){
+            elseif($request->balastan == 1){
                 Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->insert('http://ktrk.kg/images/wm_balastan.png', 'bottom-right', 10, 10)->save($dir.'/'.$name);
                 Image::make($_FILES['status']['tmp_name'])->fit(500, 300)->insert('http://ktrk.kg/images/wm_balastan.png', 'bottom-right', 10, 10)->save($dir.'/'.$name2);
+            } else {
+                Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->save($dir.'/'.$name);
+                Image::make($_FILES['status']['tmp_name'])->fit(500, 300)->save($dir.'/'.$name2);
             }
 
             $photoParent->status = $dir.'/'.$name;
@@ -102,12 +105,14 @@ class PhotoParentController extends Controller
 
                 if($request->extracolumn == 1)
                     Image::make($_FILES['images']['tmp_name'][$key])->heighten(600)->insert('http://ktrk.kg/images/wm_ktrk.png', 'bottom-right', 10, 10)->save($destinationPath.'/'.$filename);
-                if($request->birinchi == 1)
+                elseif($request->birinchi == 1)
                     Image::make($_FILES['images']['tmp_name'][$key])->heighten(600)->insert('http://ktrk.kg/images/wm_1radio.png', 'bottom-right', 10, 10)->save($destinationPath.'/'.$filename);
-                if($request->muzkanal == 1)
+                elseif($request->muzkanal == 1)
                     Image::make($_FILES['images']['tmp_name'][$key])->heighten(600)->insert('http://ktrk.kg/images/wm_music.png', 'bottom-right', 10, 10)->save($destinationPath.'/'.$filename);
-                if($request->balastan == 1)
+                elseif($request->balastan == 1)
                     Image::make($_FILES['images']['tmp_name'][$key])->heighten(600)->insert('http://ktrk.kg/images/wm_balastan.png', 'bottom-right', 10, 10)->save($destinationPath.'/'.$filename);
+                else
+                    Image::make($_FILES['images']['tmp_name'][$key])->heighten(600)->save($destinationPath.'/'.$filename);
 
                 $file_array = array();
                 $file_array = array_collapse([$file_array, [
@@ -195,12 +200,14 @@ class PhotoParentController extends Controller
 
                 if($request->extracolumn == 1)
                     Image::make($_FILES['images']['tmp_name'][$key])->heighten(600)->insert('http://ktrk.kg/images/wm_ktrk.png', 'bottom-right', 10, 10)->save($destinationPath.'/'.$filename);
-                if($request->birinchi == 1)
+                elseif($request->birinchi == 1)
                     Image::make($_FILES['images']['tmp_name'][$key])->heighten(600)->insert('http://ktrk.kg/images/wm_1radio.png', 'bottom-right', 10, 10)->save($destinationPath.'/'.$filename);
-                if($request->muzkanal == 1)
+                elseif($request->muzkanal == 1)
                     Image::make($_FILES['images']['tmp_name'][$key])->heighten(600)->insert('http://ktrk.kg/images/wm_music.png', 'bottom-right', 10, 10)->save($destinationPath.'/'.$filename);
-                if($request->balastan == 1)
+                elseif($request->balastan == 1)
                     Image::make($_FILES['images']['tmp_name'][$key])->heighten(600)->insert('http://ktrk.kg/images/wm_balastan.png', 'bottom-right', 10, 10)->save($destinationPath.'/'.$filename);
+                else
+                    Image::make($_FILES['images']['tmp_name'][$key])->heighten(600)->save($destinationPath.'/'.$filename);
 
                 $file_array = array();
                 $file_array = array_collapse([$file_array, [
@@ -241,17 +248,21 @@ class PhotoParentController extends Controller
                 Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->insert('http://ktrk.kg/images/wm_ktrk.png', 'bottom-right', 10, 10)->save($dir.'/'.$name);
                 Image::make($_FILES['status']['tmp_name'])->fit(500, 300)->insert('http://ktrk.kg/images/wm_ktrk.png', 'bottom-right', 10, 10)->save($dir.'/'.$name2);
             }
-            if($request->birinchi == 1){
+            elseif($request->birinchi == 1){
                 Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->insert('http://ktrk.kg/images/wm_1radio.png', 'bottom-right', 10, 10)->save($dir.'/'.$name);
                 Image::make($_FILES['status']['tmp_name'])->fit(500, 300)->insert('http://ktrk.kg/images/wm_1radio.png', 'bottom-right', 10, 10)->save($dir.'/'.$name2);
             }
-            if($request->muzkanal == 1){
+            elseif($request->muzkanal == 1){
                 Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->insert('http://ktrk.kg/images/wm_music.png', 'bottom-right', 10, 10)->save($dir.'/'.$name);
                 Image::make($_FILES['status']['tmp_name'])->fit(500, 300)->insert('http://ktrk.kg/images/wm_music.png', 'bottom-right', 10, 10)->save($dir.'/'.$name2);
             }
-            if($request->balastan == 1){
+            elseif($request->balastan == 1){
                 Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->insert('http://ktrk.kg/images/wm_balastan.png', 'bottom-right', 10, 10)->save($dir.'/'.$name);
                 Image::make($_FILES['status']['tmp_name'])->fit(500, 300)->insert('http://ktrk.kg/images/wm_balastan.png', 'bottom-right', 10, 10)->save($dir.'/'.$name2);
+            }
+            else {
+                Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->save($dir.'/'.$name);
+                Image::make($_FILES['status']['tmp_name'])->fit(500, 300)->save($dir.'/'.$name2);
             }
 
             $photoParent->status = $dir.'/'.$name;
