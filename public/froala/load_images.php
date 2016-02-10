@@ -26,8 +26,8 @@ if ($fnames) {
             if (in_array(mime_content_type(getcwd() . "/uploads/" . $name), $image_types)) {
                 // Build the image.
                 $img = new StdClass;
-                $img->url = "http://1000.ktrk.kg/froala/uploads/" . $name;
-                $img->thumb = "http://1000.ktrk.kg/froala/uploads/" . $name;
+                $img->url = "http://ktrk.kg/froala/uploads/" . $name;
+                $img->thumb = "http://ktrk.kg/froala/uploads/" . $name;
                 $img->name = $name;
 
                 // Add to the array of image.

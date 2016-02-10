@@ -433,11 +433,17 @@
     height: 100%;
     padding:30px 45px 0;
 }
+.channels > div a.sport{
+    padding: 20px 30px 0;
+}
 .channels > div.active a{
     padding: 30px 30px 0;
 
     font-weight: bold;
     font-size: 20px;
+}
+.channels > div.active a.sport{
+    padding: 10px 20px 0;
 }
 .channels > div.active a:hover{
     color: #237dac;

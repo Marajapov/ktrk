@@ -29,8 +29,8 @@
 
             <div class="channels @if($channel)channel-selected @endif clearfix">
               @foreach($channels as $key=>$channel_one)
-                <div class="col-md-2 @if($key==0 || $key == 3) col-md-offset-3 @endif @if($channel && ($channel_one->id == $channel->id))active @endif">
-                  <a href="{{ route('front.pages.teleprogram', $channel_one->id) }}">
+                <div class="col-md-2 @if($key==0) col-md-offset-3 @elseif($key == 3) col-md-offset-2 @endif @if($channel && ($channel_one->id == $channel->id))active @endif">
+                  <a href="{{ route('front.pages.teleprogram', $channel_one->id) }}" class="{{ $channel_one->name }}">
                     <img src="{{ asset($channel_one->file) }}" alt=""/>
                     <span class="channel-name">{{ $channel_one->display }}</span>
                   </a>
