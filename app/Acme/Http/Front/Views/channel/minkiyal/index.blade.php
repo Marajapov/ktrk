@@ -43,21 +43,23 @@
          <div class="col-md-12">
             <div id="allposts" class=" row">
                @if($photoGalleries)
-               @foreach($photoGalleries as $photoGallery)
-               <div class="col-md-4 sm-12 postshow">
-                  <img src="{{ asset($photoGallery->thumbnail_big) }}" class="img-responsive" alt="">
-                  <a href="{{ route('minkiyal.post', $photoGallery) }}"><h3>{{ $photoGallery->getName() }}</h3></a>  
-               </div>
-               @endforeach
+                   @foreach($photoGalleries as $photoGallery)
+                       <div class="col-md-4 col-sm-12 postshow">
+                          <img src="{{ asset($photoGallery->thumbnail_big) }}" class="img-responsive" alt="">
+                          <a href="{{ route('minkiyal.post', $photoGallery) }}"><h3>{{ $photoGallery->getName() }}</h3></a>
+                       </div>
+                   @endforeach
                @endif
+
+               <div class="col-md-12">
+                   <a class="show-btn loadMore" href="#">
+                       дагы жүктөө
+                   </a>
+               </div>
+
             </div>
    
-              <div class="col-md-12 more">
-                  <a class="show-btn loadMore" href="#">
-                      дагы жүктөө
-                  </a>
-              </div>
-    
+
          </div>
    </div>
 </div>
