@@ -13,13 +13,42 @@
          <h3 class="slideRight">Миң Кыял ФМ</h3>
          <div class="overlay slideRight"></div>
          <h5 class="slideRight">Сонун радио</h5>
-            <footer>
-               Бишкек FM 103.7, Ош, Жалал-Абад FM 106.3, Баткен FM 102.2, Ысык-Көл FM 100.6, Талас FM 105.7, Нарын FM 107.7
-            </footer>
+         <div class="container others">
+            <div class="jyshtyktar">
+               <ul>
+                  <li>
+                     <span class="num">103.7</span>
+                     <span class="name">Бишкек FM</span>
+                  </li>                  
+                  <li>
+                     <span class="num">106.3</span>
+                     <span class="name">Ош, Жалал-Абад FM</span>
+                  </li>                  
+                  <li>
+                     <span class="num">102.2</span>
+                     <span class="name">Баткен FM</span>
+                  </li>                  
+                  <li>
+                     <span class="num">100.6</span>
+                     <span class="name">Ысык-Көл FM</span>
+                  </li>                  
+                  <li>
+                     <span class="num">105.7</span>
+                     <span class="name">Талас FM</span>
+                  </li>                  
+                  <li>
+                     <span class="num">107.7</span>
+                     <span class="name">Нарын FM</span>
+                  </li>
+               </ul>
+            </div>
+         </div>
       </div>
+
       <div class="innerimg">
          <img src="{{ asset('images/channels/min-kiyal.png')}}" class="img-responsive slideLeft" alt="">
       </div>
+
       <div class="online">
 
          <h3><i class="fa fa-microphone"></i>Түз эфир</h3>
@@ -28,9 +57,10 @@
            <param name="allowFullScreen" value="false" />
            <param name="allowScriptAccess" value="false" />
            <param name="audio" value="http://ktrk.kg/online/uppod.swf" />
-           <param name="flashvars" value="comment=KTRK&amp;st=03AEEZykN3Q3Q3QH3zkOk1mwXRWNvz3b1XAxYTtj1mzC5kA2uyb1kOk1mwXRWNvhzdwf9vwjzC5k=jQZi6jNf1kOk1mwXRWHNXzBGDY31X=jOkZ2sN6HsQfzC5kev0kttj1vL2NXzC5k1sQE3Q2GkTCGfFdGJTCHwXpvQXeWNhHm0X1hsNkTWwWTSUhTd0kNtj1JTWwf9vwnY31DX1CYLex5W=jaktjR1i6W0kbSal1C0V9Rv1XAuaTtj1tzC5kb42Qi63Gktj1ozfUrd&amp;file=http://212.112.96.232:8081&amp;auto=play" />
+           <param name="flashvars" value="comment=KTRK&amp;st=03AEEZykN3Q3Q3QH3zkOk1mwXRWNvz3b1XAxYTtj1mzC5kA2uyb1kOk1mwXRWNvhzdwf9vwjzC5k=jQZi6jNf1kOk1mwXRWHNXzBGDY31X=jOkZ2sN6HsQfzC5kev0kttj1vL2NXzC5k1sQE3Q2GkTCGfFdGJTCHwXpvQXeWNhHm0X1hsNkTWwWTSUhTd0kNtj1JTWwf9vwnY31DX1CYLex5W=jaktjR1i6W0kbSal1C0V9Rv1XAuaTtj1tzC5kb42Qi63Gktj1ozfUrd&amp;file=http://212.112.96.232:8081" />
          </object>
       </div>
+
 
    </div>
 </div>
@@ -62,6 +92,35 @@
 
          </div>
    </div>
+</div>
+
+<div class="container contacts">
+   <div class="col-md-12">
+      <div class="row">
+         <div class="col-md-12 xcontact">
+            <i class="fa fa-hashtag"></i>
+            <h2>КТРК  “Миң Кыял FM” радиосу </h2>
+         </div>
+         <div class="col-md-4">
+         <h3>Дареги</h3>
+         <span>Кыргызстан
+           Бишкек  шаары
+           Жаш Гвардия бульвары, 59</span>
+         </div>
+         <div class="col-md-4">
+            <h3>Байланыш телефон:</h3>
+            <span>Түз эфир: 0312 65 37 14
+                  sms-портал: 10 00
+            </span>
+         </div>
+         <div class="col-md-4">
+            <h3>E-mail:</h3>
+            <span>mkfmradio@gmail.com
+                  www.facebook.com/MinKyalFm</span>
+         </div>
+      </div>
+   </div>
+   
 </div>
 
 @stop
