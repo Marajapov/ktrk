@@ -1119,5 +1119,101 @@
   font-size: 12px;
   line-height: 16px;
 }
+/*-----------------------*/
+/*---MINKIAL FM RADIO----*/
+/*-----------------------*/
+/*  BEGIN HOME  */
+#minkiyal {
+    position: relative;
+    font-family: 'Roboto Condensed';
+}
+#minkiyal .switch{
+    position: absolute;
+    top: 0;
+}
 
+#minkiyal .container-fluid{
+    padding: 0;
+}
+#minkiyal .main {
+    position: relative;
+}
+#minkiyal .main .innerfix{
+    position: fixed;
+}
+#minkiyal .main .container{
+    width: 70%;
+}
+#minkiyal .main .inner{
+    position: relative;
+    height: 650px;
+}
+#minkiyal .main .innerimg{
+    position: absolute;
+    right: 0;
+    padding: 15% 0;
+}
+#minkiyal .main .innerimg img{
+    max-height: 400px;
+    width: auto;
+}
 
+#minkiyal .main .innermain{
+    position: absolute;
+    padding: 25% 0;
+    font-family: 'Roboto Condensed';
+}
+#minkiyal .main .innermain h3{
+    margin: 0;
+    font-weight: bold;
+    font-size: 80px;
+    color: #DC0D7C;
+    text-shadow: 1px 0px 0px #3C3C3C, 0 0 1em rgba(0, 0, 0, 0);
+}
+#minkiyal .main .innermain .overlay{
+    height: 1px;
+    background: #C67F5E;
+    margin-top: 5px;
+    max-width: 476px;
+}
+#minkiyal .main .innermain h4{
+    margin: 0;
+    font-size: 75px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 1px 0px 0px #3C3C3C, 0 0 1em rgba(0, 0, 0, 0);
+}
+#minkiyal .main .innermain h5{
+    font-size: 50px;
+    color: #BE1377;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+#minkiyal .main .innermain footer{
+    padding-top: 150px;
+    font-size: 20px;
+    max-width: 1000px;
+    text-align: center;
+    color: #BE1377;
+
+}
+
+#minkiyal .info{
+    padding: 120px 0px;
+}
+
+#minkiyal .info .postshow h3{
+    color: #BE1377;
+}
+#minkiyal .info .more{
+    text-align: center;
+}
+#minkiyal .info .more a h3{
+    padding: 5px;
+    width: 250px;
+    margin: 10px auto;
+    font-size: 18px;
+    color: #333333;
+    border-bottom: 1px solid;
+}
+/*  END HOME  */
