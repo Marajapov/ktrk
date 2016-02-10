@@ -1,6 +1,6 @@
 <?php
 namespace Front\Controllers;
-//use Illuminate\Http\Request;
+use Illuminate\Http\Request;
 class MinkiyalController extends Controller
 {
     public function __construct()

@@ -1293,4 +1293,11 @@
     margin-left: 10px;
     margin-top: 5px;
 }
+
+#minkiyal .mingallery{
+    padding: 80px 0; 
+}
+#minkiyal .mingallery .panel{
+    background: none; 
+}
 /*  END HOME  */
