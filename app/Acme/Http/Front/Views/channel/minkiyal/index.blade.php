@@ -22,7 +22,7 @@
       </div>
       <div class="online">
 
-         <h3><i class="fa fa-microphone"></i>Онлайн</h3>
+         <h3><i class="fa fa-microphone"></i>Түз эфир</h3>
          <object width="65" height="40" data="http://ktrk.kg/online/uppod.swf">
            <param name="bgcolor" value="#ffffff" />
            <param name="allowFullScreen" value="false" />
@@ -41,35 +41,43 @@
    
    <div class="container info">
          <div class="col-md-12">
-            <div class="row">
+            <div id="allposts" class=" row">
                @if($photoGalleries)
                @foreach($photoGalleries as $photoGallery)
-               <div class="col-md-4 sm-12 postshow slideUp">
+               <div class="col-md-4 sm-12 postshow">
                   <img src="{{ asset($photoGallery->thumbnail_big) }}" class="img-responsive" alt="">
                   <a href="{{ route('minkiyal.post', $photoGallery) }}"><h3>{{ $photoGallery->getName() }}</h3></a>  
                </div>
                @endforeach
                @endif
-               <div class="col-md-4 sm-12 postshow">
-                  <img src="{{asset('images/channels/minkiyal/kalykov.jpg')}}" class="img-responsive" alt="">
-                  <span class="cat">Баш Бармак</span>
-                  <a href="#"><h3>Гүлжигит Калыков Нарын жергесине концерт койду. </h3></a>
-               </div>
-               <div class="col-md-4 sm-12 postshow">
-                  <img src="{{asset('images/channels/minkiyal/ayana.jpg')}}" class="img-responsive" alt="">
-                  <span class="cat">Патефон</span>
-                  <a href="#"><h3>Аяна Касымова интернетти дагы дүңгүрөттү.</h3></a>
-               </div>
             </div>
-            <div class="row">
+   
               <div class="col-md-12 more">
-                  <a class="show-btn" href="#">
+                  <a class="show-btn loadMore" href="#">
                       дагы жүктөө
                   </a>
               </div>
-            </div>
+    
          </div>
    </div>
 </div>
 
+@stop
+
+@section('footerScript')
+    <script>
+        $(function(){
+            $("#allposts .postshow").slice(0, 6).show(); // select the first six
+            $("#allposts .loadMore").click(function(e){ // click event for load more
+                e.preventDefault();
+                $("#allposts .postshow:hidden").slice(0, 6).show(); // select next 6 hidden divs and show them
+                if($("#allposts .postshow:hidden").length == 0){ // check if any hidden divs still exist
+                    $("#allposts .loadMore").hide();
+                }
+            });
+            if($("#allposts .postshow:hidden").length == 0){ // check if any hidden divs still exist
+                $("#allposts .loadMore").hide();
+            }
+        });
+    </script>
 @stop
