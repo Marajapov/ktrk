@@ -1241,6 +1241,10 @@
     text-transform: uppercase;
 }
 
+#minkiyal .info .postshow {
+    margin-bottom: 25px;
+}
+
 #minkiyal .info .postshow h3{
     position: relative;
 
@@ -1258,13 +1262,22 @@
     letter-spacing: 1px;
 
     color: #FFFFFF;
-    background: #F44336;
+    background: #1D6486;
     
     border-radius: 0px 0px 5px 5px !important;
     overflow: hidden;
 }
+#minkiyal .info .postshow h3:hover{
+    background: #F44336;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
 #minkiyal .info .postshow img{
     border-radius: 5px 5px 0px 0px !important;
+    height: 205px;
 }
 #minkiyal .info .more{
     padding:20px 0px; 

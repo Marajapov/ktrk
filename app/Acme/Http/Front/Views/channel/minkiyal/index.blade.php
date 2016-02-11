@@ -74,23 +74,46 @@
          <div class="col-md-12">
                <h2>Фоторепортаждар</h2>
             <div id="allposts" class=" row">
-               @if($photoGalleries)
+<!--                @if($photoGalleries)
                    @foreach($photoGalleries as $photoGallery)
                        <div class="col-md-4 col-sm-12 postshow">
                           <img src="{{ asset($photoGallery->thumbnail_big) }}" class="img-responsive" alt="">
                           <a href="{{ route('minkiyal.post', $photoGallery) }}"><h3>{{ $photoGallery->getName() }}</h3></a>
                        </div>
                    @endforeach
-               @endif
+               @endif -->
+                       <div class="col-md-4 col-sm-12 postshow">
+                          <img src="{{asset('images/channels/minkiyal/anjelika.png')}}" class="img-responsive" alt="">
+                          <a href="{{ route('minkiyal.post', $photoGallery) }}"><h3>Анжелика жаны ырын тартуулады</h3></a>
+                       </div>
+                       <div class="col-md-4 col-sm-12 postshow">
+                          <img src="{{asset('images/channels/minkiyal/ayana.jpg')}}" class="img-responsive" alt="">
+                          <a href="{{ route('minkiyal.post', $photoGallery) }}"><h3>Аяна Касымова Интернетти кайра дүңгүрөттү</h3></a>
+                       </div>
+                       <div class="col-md-4 col-sm-12 postshow">
+                          <img src="{{asset('images/channels/minkiyal/kalykov.jpg')}}" class="img-responsive" alt="">
+                          <a href="{{ route('minkiyal.post', $photoGallery) }}"><h3>Гүлжигит Калыков биздин студияда</h3></a>
+                       </div>
+                       <div class="col-md-4 col-sm-12 postshow">
+                          <img src="{{asset('images/channels/minkiyal/winter.jpg')}}" class="img-responsive" alt="">
+                          <a href="{{ route('minkiyal.post', $photoGallery) }}"><h3>Анжелика жаны ырын тартуулады</h3></a>
+                       </div>
+                       <div class="col-md-4 col-sm-12 postshow">
+                          <img src="{{asset('images/channels/minkiyal/red.jpg')}}" class="img-responsive" alt="">
+                          <a href="{{ route('minkiyal.post', $photoGallery) }}"><h3>Аяна Касымова Интернетти кайра дүңгүрөттү</h3></a>
+                       </div>
+                       <div class="col-md-4 col-sm-12 postshow">
+                          <img src="{{asset('images/channels/minkiyal/nonred.jpg')}}" class="img-responsive" alt="">
+                          <a href="{{ route('minkiyal.post', $photoGallery) }}"><h3>Гүлжигит Калыков биздин студияда</h3></a>
+                       </div>
 
                <div class="col-md-12">
                    <a class="show-btn loadMore" href="#">
                        дагы жүктөө
                    </a>
-               </div>
+               </div>   
 
             </div>
-   
 
          </div>
    </div>
