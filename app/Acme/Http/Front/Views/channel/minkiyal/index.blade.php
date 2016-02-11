@@ -1,11 +1,12 @@
 @extends('Front::channel.minkiyal.default')
 @section('title', "Миң Кыял Фм")
 @section('styles')
+<link rel="stylesheet" type="text/css" href="{{ asset('css/style2.css') }}">
 @endsection
 @section('content')
 
 <div class="container-fluid main">
-   <img src="{{ asset('images/channels/minkiyal/main.png')}}" alt="" class="img-responsive innerfix">
+   <img src="{{ asset('images/channels/minkiyal/main2.jpg')}}" alt="" class="img-responsive innerfix">
    <div class="container inner">
 
       <div class="innermain">         
@@ -69,7 +70,45 @@
 
 @include('Front::channel.minkiyal.nav')
 <div class="contaner-fluid ">
-   
+
+    <div class="shows-slider slidermin">
+        <div class="slider-overlay"></div>
+        <div class="shows-carousel container">
+            <div>
+                <div class="overlay"></div>
+                <a href="#">
+                    <img src="{{ asset('images/channels/minkiyal/2.jpg') }}" alt=""/>
+                </a>
+                <div class="show-info">
+                    <h4>Ала-Тоо</h4>
+                    <span class="show-day">{{ trans('site.Monday') }} - {{ trans('site.Friday') }}</span>
+                    <span class="show-time">19:30 / 21:30</span>
+                </div>
+            </div>
+            <div>
+                <div class="overlay"></div>
+                <a href="#">
+                    <img src="{{ asset('images/channels/minkiyal/RAdio.jpg') }}" alt=""/>
+                </a>
+                <div class="show-info">
+                    <h4>Замана</h4>
+                    <span class="show-day">{{ trans('site.Monday') }} - {{ trans('site.Friday') }}</span>
+                    <span class="show-time">07:00</span>
+                </div>
+            </div>
+            <div>
+                <div class="overlay"></div>
+                <a href="#">
+                    <img src="{{ asset('images/channels/minkiyal/winter.jpg') }}" alt=""/>
+                </a>
+                <div class="show-info">
+                    <h4>Хит-Парад</h4>
+                    <span class="show-day">{{ trans('site.Sunday') }}</span>
+                    <span class="show-time">22:00</span>
+                </div>
+            </div>
+        </div>
+    </div>   
    <div class="container info">
          <div class="col-md-12">
                <h2>Фоторепортаждар</h2>
@@ -167,6 +206,20 @@
             if($("#allposts .postshow:hidden").length == 0){ // check if any hidden divs still exist
                 $("#allposts .loadMore").hide();
             }
+        });
+    </script>
+    <script>
+
+        //    var current = $('.shows-carousel').slick('slickCurrentSlide');
+
+        $('.shows-carousel').slick({
+//        autoplay: true,
+//        autoplaySpeed: 2000,
+            centerPadding: '0',
+            dots: true,
+            infinite: true,
+            slidesToShow: 1,
+            speed: 600
         });
     </script>
 @stop
