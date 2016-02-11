@@ -1264,6 +1264,7 @@
     color: #FFFFFF;
     background: #1D6486;
     
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
     border-radius: 0px 0px 5px 5px !important;
     overflow: hidden;
 }
@@ -1276,8 +1277,9 @@
     transition: all 0.5s ease;
 }
 #minkiyal .info .postshow img{
-    border-radius: 5px 5px 0px 0px !important;
     height: 205px;
+    border-radius: 5px 5px 0px 0px !important;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 #minkiyal .info .more{
     padding:20px 0px; 
