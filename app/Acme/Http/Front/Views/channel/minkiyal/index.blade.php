@@ -71,6 +71,7 @@
    
    <div class="container info">
          <div class="col-md-12">
+               <h2>Фоторепортаждар</h2>
             <div id="allposts" class=" row">
                @if($photoGalleries)
                    @foreach($photoGalleries as $photoGallery)
@@ -95,31 +96,34 @@
 </div>
 
 <div class="container contacts">
-   <div class="col-md-12">
+
       <div class="row">
          <div class="col-md-12 xcontact">
-            <i class="fa fa-hashtag"></i>
-            <h2>КТРК  “Миң Кыял FM” радиосу </h2>
+            <h2>- КТРК  “Миң Кыял FM” радиосу -</h2>
          </div>
-         <div class="col-md-4">
-         <h3>Дареги</h3>
-         <span>Кыргызстан
-           Бишкек  шаары
-           Жаш Гвардия бульвары, 59</span>
+         <div class="col-md-4 address">
+            <h3><i class="fa fa-map-marker"></i> Дареги</h3>
+            <ul>
+               <li>Кыргызстан, Бишкек  шаары</li>      
+               <li>Жаш Гвардия бульвары, 59</li>
+            </ul>
          </div>
-         <div class="col-md-4">
-            <h3>Байланыш телефон:</h3>
-            <span>Түз эфир: 0312 65 37 14
-                  sms-портал: 10 00
-            </span>
+         <div class="col-md-4 address">
+            <h3><i class="fa fa-phone"></i> Байланыш телефон:</h3>
+            <ul>
+               <li>Түз эфир: 0312 65 37 14</li>               
+               <li>sms-портал: 10 00</li>
+            </ul>
          </div>
-         <div class="col-md-4">
-            <h3>E-mail:</h3>
-            <span>mkfmradio@gmail.com
-                  www.facebook.com/MinKyalFm</span>
+         <div class="col-md-4 address">
+            <h3><i class="fa fa-envelope-o"></i>E-mail:</h3>
+            <ul>
+               <li>mkfmradio@gmail.com</li>               
+               <li>www.facebook.com/MinKyalFm</li>
+            </ul>
          </div>
       </div>
-   </div>
+
    
 </div>
 

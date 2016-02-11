@@ -1191,15 +1191,16 @@
 }
 #minkiyal .main .innermain .others {
     width: 1170px;
-    margin: 120px 0px;
+    margin: 150px 0px;
+    padding: 0px; 
 }
-#minkiyal .main .innermain .jyshtyktar ul li:first-child {
+#minkiyal .main .innermain .jyshtyktar ul li span.num:first-child {
     border-radius: 5px 0px 0px 5px !important;
     -webkit-border-radius: 5px 0px 0px 5px !important;
     -moz-border-radius: 5px 0px 0px 5px !important;
     -o-border-radius: 5px 0px 0px 5px !important;
 }
-#minkiyal .main .innermain .jyshtyktar ul li:last-child {}
+
 #minkiyal .main .innermain .jyshtyktar ul li .num{
     background: #1a4e95;
     float: left;
@@ -1213,10 +1214,16 @@
     text-transform: uppercase;
     padding: 10px;
     background: #BD1778;
+        margin-right: 10px;
 }
 
 #minkiyal .info{
     padding: 150px 0px;
+}
+#minkiyal .info h2{
+   text-align: center;
+   font-weight: bold;
+   padding: 15px 0px;
 }
 #minkiyal .info .cat{
     position: absolute;
@@ -1230,12 +1237,26 @@
 }
 
 #minkiyal .info .postshow h3{
-    color: #BE1377;
-    height: 60px;
+    position: relative;
+    display: table-cell;
+ 
+    height: 70px;
+    margin: 0;
+    padding: 10px;
+ 
+    color: #FFFFFF;
     line-height: 1;
+    font-size: 1.3em;
+    font-family: 'Roboto Regular';
+    vertical-align: middle;
+    text-align: center;
+ 
+    border-radius: 0px 0px 5px 5px !important;
+    overflow: hidden;
+    background: #B01977;
 }
 #minkiyal .info .postshow img{
-    border-radius: 5px !important;
+    border-radius: 5px 5px 0px 0px !important;
 }
 #minkiyal .info .more{
     padding:20px 0px; 
@@ -1319,9 +1340,57 @@
 }
 #minkiyal .contacts {
     position: relative;
+    padding: 40px 0px;
 }
 #minkiyal .xcontact {
     text-align: center;
+}
+#minkiyal .xcontact h2{
+    padding: 15px 0px;
+    font-weight: bold;    
+}
+#minkiyal .address {
+    border-radius: 10px 10px 5px 5px !important;
+    -webkit-border-radius: 10px 10px 5px 5px !important;
+    -moz-border-radius: 10px 10px 5px 5px !important;
+    -o-border-radius: 10px 10px 5px 5px !important;
+}
+#minkiyal .address  h3{
+    color: #FFF;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    padding: 20px 0;
+    margin: 0px;
+    text-align: center;
+    background: #F44336;
+    border-radius: 5px 5px 0 0 !important;
+    -webkit-border-radius: 5px 5px 0 0 !important;
+    -moz-border-radius: 5px 5px 0 0 !important;
+    -o-border-radius: 5px 5px 0 0 !important;
+    font-weight: bold;
+}
+#minkiyal .address  h3 i{
+    padding-right: 10px;
+}
+#minkiyal .address li{
+    display: block;
+    color: #FFF;
+    font-size: 1.2em;
+    padding: 15px 30px 10px 30px;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    background: #1D6486;
+    font-family: 'Roboto Regular';
+}
+#minkiyal .address li:last-child{
+    border-radius: 0px 0px 5px 5px !important;
+    -webkit-border-radius: 0px 0px 5px 5px !important;
+    -moz-border-radius: 0px 0px 5px 5px !important;
+    -o-border-radius: 0px 0px 5px 5px !important;
+    padding: 15px 30px 10px 30px;
+    border-top: 1px solid #688EA0;
 }
 
 /*  END HOME  */
