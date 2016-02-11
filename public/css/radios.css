@@ -1218,7 +1218,7 @@
 }
 
 #minkiyal .info{
-    padding: 150px 0px 40px 0px;
+    padding: 60px 0px 40px 0px;
 }
 #minkiyal .info h2{
     padding: 30px 0px;
@@ -1385,18 +1385,22 @@
     -o-border-radius: 10px 10px 5px 5px !important;
 }
 #minkiyal .address  h3{
-    color: #FFF;
-    font-size: 1.5em;
-    text-transform: uppercase;
     padding: 20px 0;
     margin: 0px;
+  
+    font-size: 1.5em;
     text-align: center;
-    background: #F44336;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  
     border-radius: 5px 5px 0 0 !important;
     -webkit-border-radius: 5px 5px 0 0 !important;
     -moz-border-radius: 5px 5px 0 0 !important;
     -o-border-radius: 5px 5px 0 0 !important;
-    font-weight: bold;
+
+    color: #FFF;
+    background: #F44336;
 }
 #minkiyal .address  h3 i, #minkiyal .address li i{
     padding-right: 10px;
@@ -1422,5 +1426,17 @@
     padding: 15px 30px 10px 30px;
     border-top: 1px solid #688EA0;
 }
-
+#minkiyal .slidermin{
+    padding: 120px 0px 0px 0px; 
+}
+#minkiyal .slidermin .slick-slide .overlay{
+    background: none;
+}
+#minkiyal .shows-carousel .slick-prev, #minkiyal .shows-carousel .slick-next {
+    background: rgba(184, 23, 119, 0.87);
+    border-radius: 50% !important;
+}
+#minkiyal .shows-carousel .slick-prev::before, #minkiyal .shows-carousel .slick-next::before {
+    color: #fff !important;
+}
 /*  END HOME  */
