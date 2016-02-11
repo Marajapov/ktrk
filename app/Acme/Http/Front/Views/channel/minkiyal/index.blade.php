@@ -77,33 +77,18 @@
                     <a href="#">
                         <img src="{{ asset('images/channels/minkiyal/2.jpg') }}" alt=""/>
                     </a>
-                    <div class="show-info">
-                        <h4>Ала-Тоо</h4>
-                        <span class="show-day">{{ trans('site.Monday') }} - {{ trans('site.Friday') }}</span>
-                        <span class="show-time">19:30 / 21:30</span>
-                    </div>
                 </div>
                 <div>
                     <div class="overlay"></div>
                     <a href="#">
                         <img src="{{ asset('images/channels/minkiyal/radio.jpg') }}" alt=""/>
                     </a>
-                    <div class="show-info">
-                        <h4>Замана</h4>
-                        <span class="show-day">{{ trans('site.Monday') }} - {{ trans('site.Friday') }}</span>
-                        <span class="show-time">07:00</span>
-                    </div>
                 </div>
                 <div>
                     <div class="overlay"></div>
                     <a href="#">
                         <img src="{{ asset('images/channels/minkiyal/winter.jpg') }}" alt=""/>
                     </a>
-                    <div class="show-info">
-                        <h4>Хит-Парад</h4>
-                        <span class="show-day">{{ trans('site.Sunday') }}</span>
-                        <span class="show-time">22:00</span>
-                    </div>
                 </div>
             </div>
         </div>

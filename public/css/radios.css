@@ -1185,13 +1185,14 @@
 }
 #minkiyal .main .innermain h5{
     font-size: 50px;
-    color: #BE1377;
+    color: #232323;
     text-transform: uppercase;
     font-weight: bold;
+    text-shadow:1px 0px 0px #3C3C3C, 0 0 1em rgba(0, 0, 0, 0);
 }
 #minkiyal .main .innermain .others {
     width: 1170px;
-    margin: 150px 0px;
+    margin: 180px 0px 0px 0px;
     padding: 0px; 
 }
 #minkiyal .main .innermain .jyshtyktar ul li span.num:first-child {
@@ -1202,19 +1203,27 @@
 }
 
 #minkiyal .main .innermain .jyshtyktar ul li .num{
-    background: #1a4e95;
     float: left;
     padding: 10px;
+    
+    text-shadow:1px 0px 0px #3C3C3C, 0 0 1em rgba(0, 0, 0, 0);
 
     color: #fff;
+    background: #009688;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 #minkiyal .main .innermain .jyshtyktar ul li .name{
     float: left;
-    color: #FFF;
-    text-transform: uppercase;
     padding: 10px;
-    background: #BD1778;
-        margin-right: 10px;
+    margin-right: 10px;
+    
+    text-transform: uppercase;
+    text-shadow:1px 0px 0px #3C3C3C, 0 0 1em rgba(0, 0, 0, 0);
+    border-radius: 0px 5px 5px 0px !important;
+    
+    color: #FFF;
+    background: #4CAF50;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
 #minkiyal .info{
