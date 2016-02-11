@@ -137,29 +137,29 @@
 
     <div class="container">
         <div class="row">
-          <div class="wrapper">
+            <div class="wrapper">
 
-            <ul id="sb-slider" class="sb-slider">
-              <li>
-                <a href="#" target="_blank"><img src="{{ asset('images/anons/muz.png')}}" alt="image1"/></a>
-                {{--<div class="sb-description">--}}
-                  {{--<h3>Creative Lifesaver</h3>--}}
-                {{--</div>--}}
-              </li>
-              <li>
-                <a href="#" target="_blank"><img src="{{ asset('images/anons/hit-parad.jpg')}}" alt="image2"/></a>
-              </li>
-              <li>
-                <a href="#" target="_blank"><img src="{{ asset('images/anons/muz_ru.png')}}" alt="image3"/></a>
-              </li>
-            </ul>
+                <ul id="sb-slider" class="sb-slider">
+                    <li>
+                        <a href="#" target="_blank"><img src="{{ asset('images/anons/muz.png')}}" alt="image1"/></a>
+                        {{--<div class="sb-description">--}}
+                        {{--<h3>Creative Lifesaver</h3>--}}
+                        {{--</div>--}}
+                    </li>
+                    <li>
+                        <a href="#" target="_blank"><img src="{{ asset('images/anons/hit-parad.jpg')}}" alt="image2"/></a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank"><img src="{{ asset('images/anons/muz_ru.png')}}" alt="image3"/></a>
+                    </li>
+                </ul>
 
-            <div id="nav-arrows" class="nav-arrows">
-              <a href="#">Next</a>
-              <a href="#">Previous</a>
-            </div>
+                <div id="nav-arrows" class="nav-arrows">
+                    <a href="#">Next</a>
+                    <a href="#">Previous</a>
+                </div>
 
-          </div><!-- /wrapper -->
+            </div><!-- /wrapper -->
         </div>
 
 
@@ -569,192 +569,193 @@
             </div>
         </div>
     </div>
-    @stop
-    @section('footerScript')
+@stop
+@section('footerScript')
 
-        {{--<script>--}}
-            {{--var serverTZoffset = 360;--}}
-        {{--</script>--}}
-        {{--<script src="{{ asset('js/audio/dkp.min.js') }}"></script>--}}
-        {{--<script type="text/javascript" src="{{ asset('js/jquery.roundabout.js') }}"></script>--}}
-        <script type="text/javascript" src="{{ asset('js/jquery.slicebox.js') }}"></script>
+    {{--<script>--}}
+    {{--var serverTZoffset = 360;--}}
+    {{--</script>--}}
+    {{--<script src="{{ asset('js/audio/dkp.min.js') }}"></script>--}}
+    {{--<script type="text/javascript" src="{{ asset('js/jquery.roundabout.js') }}"></script>--}}
+    <script type="text/javascript" src="{{ asset('js/jquery.slicebox.js') }}"></script>
 
-        <!-- Fixed Sticky header -->
-        <script>
-            $(function(){
-                var url = $('#myModal iframe').attr('src');
-                $('.modal').click(function() {
-                    $('#myModal iframe').show();
-                    $('#myModal iframe').attr('src', url);
-                });
-                $('button.close').click(function() {
-                    $('#myModal').hide();
-                    $('#myModal').attr('src', '');
-                });
+    <!-- Fixed Sticky header -->
+    <script>
+        $(function(){
+            var url = $('#myModal iframe').attr('src');
+            $('.modal').click(function() {
+                $('#myModal iframe').show();
+                $('#myModal iframe').attr('src', url);
             });
-
-            $(function(){
-                var url = $('#myModal2 iframe').attr('src');
-                $('.modal').click(function() {
-                    $('#myModal2 iframe').show();
-                    $('#myModal2 iframe').attr('src', url);
-                });
-                $('button.close').click(function() {
-                    $('#myModal2').hide();
-                    $('#myModal2').attr('src', '');
-                });
+            $('button.close').click(function() {
+                $('#myModal').hide();
+                $('#myModal').attr('src', '');
             });
+        });
 
-            $(function(){
-                var url = $('#myModal3 iframe').attr('src');
-                $('.modal').click(function() {
-                    $('#myModal3 iframe').show();
-                    $('#myModal3 iframe').attr('src', url);
-                });
-                $('button.close').click(function() {
-                    $('#myModal3').hide();
-                    $('#myModal3').attr('src', '');
-                });
+        $(function(){
+            var url = $('#myModal2 iframe').attr('src');
+            $('.modal').click(function() {
+                $('#myModal2 iframe').show();
+                $('#myModal2 iframe').attr('src', url);
             });
-        </script>
-        <script type ="text/javascript" src ="{{ asset('js/script.js') }}"></script>
-        <!-- Fixed Sticky header -->
-
-        <!-- Programm title Anima -->
-        <script src="{{ asset('js/audio/jquery.newsTicker.js') }}"></script>
-        <script>
-            var nt_title = $('#nt-title').newsTicker({
-                row_height: 30,
-                max_rows: 1,
-                duration: 3000,
-                pauseOnHover: 1
+            $('button.close').click(function() {
+                $('#myModal2').hide();
+                $('#myModal2').attr('src', '');
             });
-            var nt_example1 = $('#nt-example1').newsTicker({
-                row_height: 30,
-                max_rows: 3,
-                duration: 4000,
-                prevButton: $('#nt-example1-prev'),
-                nextButton: $('#nt-example1-next')
+        });
+
+        $(function(){
+            var url = $('#myModal3 iframe').attr('src');
+            $('.modal').click(function() {
+                $('#myModal3 iframe').show();
+                $('#myModal3 iframe').attr('src', url);
             });
+            $('button.close').click(function() {
+                $('#myModal3').hide();
+                $('#myModal3').attr('src', '');
+            });
+        });
+    </script>
+    <script type ="text/javascript" src ="{{ asset('js/script.js') }}"></script>
+    <!-- Fixed Sticky header -->
 
-            var state = 'stopped';
-            var speed;
-            var add;
+    <!-- Programm title Anima -->
+    <script src="{{ asset('js/audio/jquery.newsTicker.js') }}"></script>
+    <script>
+        var nt_title = $('#nt-title').newsTicker({
+            row_height: 30,
+            max_rows: 1,
+            duration: 3000,
+            pauseOnHover: 1
+        });
+        var nt_example1 = $('#nt-example1').newsTicker({
+            row_height: 30,
+            max_rows: 3,
+            duration: 4000,
+            prevButton: $('#nt-example1-prev'),
+            nextButton: $('#nt-example1-next')
+        });
 
-        </script>
+        var state = 'stopped';
+        var speed;
+        var add;
+
+    </script>
 
 
-        <script type="text/javascript">
-            var playerInstance = jwplayer("player");
+    <script type="text/javascript">
+        var playerInstance = jwplayer("player");
 
-            //    $('#playerPlay').click(function(){
-            //        playerInstance.play();
-            //    });
+        //    $('#playerPlay').click(function(){
+        //        playerInstance.play();
+        //    });
 
-            playerInstance.setup({
-                autostart: true,
-                playlist: [{
-                    image: "{{ asset('images/channels/muzkanal/online.jpg') }} ",
-                    sources: [{
-                        file: "http://212.112.97.18:80/live/4002.flv"
-                    }]
-                }],
-                width: "100%",
-                height: "100%",
-                aspectratio: "16:9",
-                primary: "flash",
+        playerInstance.setup({
+            autostart: true,
+            playlist: [{
+                image: "{{ asset('images/channels/muzkanal/online.jpg') }} ",
+                sources: [{
+                    file: "http://212.112.97.18:80/live/4002.flv"
+                }]
+            }],
+            width: "100%",
+            height: "100%",
+            aspectratio: "16:9",
+            primary: "flash",
 //          skin: {
 //              name: "bekle"
 //          },
-                stretching: "exactfit"
+            stretching: "exactfit"
+        });
+    </script>
+
+    <!--Carousel-->
+    <script>
+        if ($(window).width() > 768) {
+            $('.carousel-slick11').slick({
+                infinite: true,
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                autoplay: false,
+                autoplaySpeed: 4500
             });
-        </script>
-
-        <!--Carousel-->
-        <script>
-            if ($(window).width() > 768) {
-                $('.carousel-slick11').slick({
-                    infinite: true,
-                    slidesToShow: 4,
-                    slidesToScroll: 1,
-                    autoplay: false,
-                    autoplaySpeed: 4500
-                });
-                $('.carousel-slick10').slick({
-                    infinite: true,
-                    slidesToShow: 3,
-                    slidesToScroll: 1,
-                    autoplay: false,
-                    autoplaySpeed: 4500
-                });
-                $('.carousel-slick12').slick({
-                    infinite: true,
-                    slidesToShow: 4,
-                    slidesToScroll: 1,
-                    autoplay: false,
-                    autoplaySpeed: 4500
-                });
-            }
+            $('.carousel-slick10').slick({
+                infinite: true,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                autoplay: false,
+                autoplaySpeed: 4500
+            });
+            $('.carousel-slick12').slick({
+                infinite: true,
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                autoplay: false,
+                autoplaySpeed: 4500
+            });
+        }
 
 
-            if ($(window).width() < 768) {
-                $('.carousel-slick11').slick({
-                    infinite: true,
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                    autoplay: false,
-                    autoplaySpeed: 4500
-                });
-                $('.carousel-slick10').slick({
-                    infinite: true,
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                    autoplay: false,
-                    autoplaySpeed: 4500
-                });
-                $('.carousel-slick12').slick({
-                    infinite: true,
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                    autoplay: false,
-                    autoplaySpeed: 4500
-                });
-            }
+        if ($(window).width() < 768) {
+            $('.carousel-slick11').slick({
+                infinite: true,
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                autoplay: false,
+                autoplaySpeed: 4500
+            });
+            $('.carousel-slick10').slick({
+                infinite: true,
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                autoplay: false,
+                autoplaySpeed: 4500
+            });
+            $('.carousel-slick12').slick({
+                infinite: true,
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                autoplay: false,
+                autoplaySpeed: 4500
+            });
+        }
 
-        </script>
+    </script>
 
-        <script type="text/javascript">
-          $(function() {
+    <script type="text/javascript">
+        $(function() {
             var Page = (function() {
-              var $navArrows = $( '#nav-arrows' ).hide(),
-                $shadow = $( '#shadow' ).hide(),
-                slicebox = $( '#sb-slider' ).slicebox( {
-                  onReady : function() {
-                    $navArrows.show();
-                    $shadow.show();
-                  },
-                  orientation : 'r',
-                  cuboidsRandom : true,
-                  disperseFactor : 30,
-                  autoplay : true
-                } ),
-                init = function() {
-                  initEvents();
-                },
-                initEvents = function() {
-                  // add navigation events
-                  $navArrows.children( ':first' ).on( 'click', function() {
-                    slicebox.next();
-                    return false;
-                  } );
-                  $navArrows.children( ':last' ).on( 'click', function() {
-                    slicebox.previous();
-                    return false;
-                  } );
-                };
-              return { init : init };
+                var $navArrows = $( '#nav-arrows' ).hide(),
+                    $shadow = $( '#shadow' ).hide(),
+                    slicebox = $( '#sb-slider' ).slicebox( {
+                        onReady : function() {
+                            $navArrows.show();
+                            $shadow.show();
+                        },
+                        orientation : 'r',
+                        cuboidsRandom : true,
+                        disperseFactor : 30,
+                        autoplay : true,
+                        interval: 5000,
+                    } ),
+                    init = function() {
+                        initEvents();
+                    },
+                    initEvents = function() {
+                        // add navigation events
+                        $navArrows.children( ':first' ).on( 'click', function() {
+                            slicebox.next();
+                            return false;
+                        } );
+                        $navArrows.children( ':last' ).on( 'click', function() {
+                            slicebox.previous();
+                            return false;
+                        } );
+                    };
+                return { init : init };
             })();
             Page.init();
-          });
-        </script>
+        });
+    </script>
 @stop
