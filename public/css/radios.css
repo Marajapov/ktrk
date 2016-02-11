@@ -1242,6 +1242,7 @@
 }
 
 #minkiyal .info .postshow {
+    display: none;
     margin-bottom: 25px;
 }
 
@@ -1321,7 +1322,7 @@
     top: 2px;
     background: #AA1975;
     box-shadow: 0 4px 0 0 #D43A9C;
-    color: #9BFF00;
+    color: #ffffff;
 }
 #minkiyal .show-btn:active{
     top:6px;
@@ -1427,7 +1428,7 @@
     border-top: 1px solid #688EA0;
 }
 #minkiyal .slidermin{
-    padding: 120px 0px 0px 0px; 
+    margin: 200px 0px 0px 0px;
 }
 #minkiyal .slidermin .slick-slide .overlay{
     background: none;
@@ -1438,5 +1439,9 @@
 }
 #minkiyal .shows-carousel .slick-prev::before, #minkiyal .shows-carousel .slick-next::before {
     color: #fff !important;
+}
+#minkiyal .copyright,#minkiyal .footer-menu{
+    color: #ffffff;
+    font-size: 16px;
 }
 /*  END HOME  */

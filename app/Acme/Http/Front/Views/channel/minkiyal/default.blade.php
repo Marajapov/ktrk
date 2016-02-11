@@ -20,19 +20,15 @@
     <link rel="stylesheet"  href="{{ asset('css/lightslider.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/gallery.css') }}"/>
 
+    <script src="{{ asset('js/jquery-1.11.2.min.js') }}"></script>
 
     @yield('styles')
 
 </head>
 <body id="minkiyal">
 
-
     @yield('content')
 
-
-<script src="{{ asset('js/jquery-1.11.2.min.js') }}"></script>
-<script src="{{ asset('js/bootstrap.min.js') }}"></script>
-
-    @include('Front::channel.kyrgyzradio.footer')
+    @include('Front::channel.minkiyal.footer')
 
     
