@@ -10,6 +10,7 @@
 
       <div class="innermain">         
          <h4 class="slideRight">FM 103.7</h4>
+         <div class="overlay slideRight"></div>
          <h3 class="slideRight">Миң Кыял ФМ</h3>
          <div class="overlay slideRight"></div>
          <h5 class="slideRight">Сонун радио</h5>
@@ -104,22 +105,22 @@
          <div class="col-md-4 address">
             <h3><i class="fa fa-map-marker"></i> Дареги</h3>
             <ul>
-               <li>Кыргызстан, Бишкек  шаары</li>      
-               <li>Жаш Гвардия бульвары, 59</li>
+               <li><i class="fa fa-location-arrow"></i> Кыргызстан, Бишкек  шаары</li>      
+               <li><i class="fa fa-home"></i> Жаш Гвардия бульвары, 59</li>
             </ul>
          </div>
          <div class="col-md-4 address">
             <h3><i class="fa fa-phone"></i> Байланыш телефон:</h3>
             <ul>
-               <li>Түз эфир: 0312 65 37 14</li>               
-               <li>sms-портал: 10 00</li>
+               <li><i class="fa fa-microphone"></i> Түз эфир: 0312 65 37 14</li>               
+               <li><i class="fa fa-commenting-o"></i> sms-портал: 10 00</li>
             </ul>
          </div>
          <div class="col-md-4 address">
             <h3><i class="fa fa-envelope-o"></i>E-mail:</h3>
             <ul>
-               <li>mkfmradio@gmail.com</li>               
-               <li>www.facebook.com/MinKyalFm</li>
+               <li><i class="fa fa-envelope"></i> mkfmradio@gmail.com</li>               
+               <li><i class="fa fa-facebook-official"></i> www.facebook.com/MinKyalFm</li>
             </ul>
          </div>
       </div>

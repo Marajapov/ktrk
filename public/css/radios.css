@@ -1221,9 +1221,14 @@
     padding: 150px 0px;
 }
 #minkiyal .info h2{
-   text-align: center;
-   font-weight: bold;
-   padding: 15px 0px;
+    padding: 15px 0px;
+
+    text-align: center;
+    font-weight: bold;
+    font-size: 3em;
+    text-shadow: 1px 0px 0px #3C3C3C, 0 0 1em rgba(0, 0, 0, 0);
+    
+    color: #DC0D7C;
 }
 #minkiyal .info .cat{
     position: absolute;
@@ -1238,22 +1243,25 @@
 
 #minkiyal .info .postshow h3{
     position: relative;
-    display: table-cell;
- 
+
     height: 70px;
     margin: 0;
     padding: 10px;
- 
-    color: #FFFFFF;
+
+    width: 100%;
     line-height: 1;
-    font-size: 1.3em;
+    font-size: 1.1em;
     font-family: 'Roboto Regular';
+    font-weight: bold;
     vertical-align: middle;
     text-align: center;
- 
+    letter-spacing: 1px;
+
+    color: #FFFFFF;
+    background: #F44336;
+    
     border-radius: 0px 0px 5px 5px !important;
     overflow: hidden;
-    background: #B01977;
 }
 #minkiyal .info .postshow img{
     border-radius: 5px 5px 0px 0px !important;
@@ -1346,8 +1354,14 @@
     text-align: center;
 }
 #minkiyal .xcontact h2{
-    padding: 15px 0px;
-    font-weight: bold;    
+    padding: 15px 0px; 
+
+    text-align: center;
+    font-weight: bold;
+    font-size: 3em;
+    text-shadow: 1px 0px 0px #3C3C3C, 0 0 1em rgba(0, 0, 0, 0);
+    
+    color: #DC0D7C;   
 }
 #minkiyal .address {
     border-radius: 10px 10px 5px 5px !important;
@@ -1369,7 +1383,7 @@
     -o-border-radius: 5px 5px 0 0 !important;
     font-weight: bold;
 }
-#minkiyal .address  h3 i{
+#minkiyal .address  h3 i, #minkiyal .address li i{
     padding-right: 10px;
 }
 #minkiyal .address li{
@@ -1384,6 +1398,7 @@
     background: #1D6486;
     font-family: 'Roboto Regular';
 }
+
 #minkiyal .address li:last-child{
     border-radius: 0px 0px 5px 5px !important;
     -webkit-border-radius: 0px 0px 5px 5px !important;
