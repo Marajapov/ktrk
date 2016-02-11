@@ -88,7 +88,7 @@
             <div>
                 <div class="overlay"></div>
                 <a href="#">
-                    <img src="{{ asset('images/channels/minkiyal/RAdio.jpg') }}" alt=""/>
+                    <img src="{{ asset('images/channels/minkiyal/radio.jpg') }}" alt=""/>
                 </a>
                 <div class="show-info">
                     <h4>Замана</h4>
@@ -99,7 +99,7 @@
             <div>
                 <div class="overlay"></div>
                 <a href="#">
-                    <img src="{{ asset('images/channels/minkiyal/winter.JPG') }}" alt=""/>
+                    <img src="{{ asset('images/channels/minkiyal/winter.jpg') }}" alt=""/>
                 </a>
                 <div class="show-info">
                     <h4>Хит-Парад</h4>
