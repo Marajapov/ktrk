@@ -99,7 +99,7 @@
             <div>
                 <div class="overlay"></div>
                 <a href="#">
-                    <img src="{{ asset('images/channels/minkiyal/winter.jpg') }}" alt=""/>
+                    <img src="{{ asset('images/channels/minkiyal/winter.JPG') }}" alt=""/>
                 </a>
                 <div class="show-info">
                     <h4>Хит-Парад</h4>
