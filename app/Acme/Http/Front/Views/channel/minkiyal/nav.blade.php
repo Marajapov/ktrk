@@ -2,7 +2,7 @@
          <nav class="navbar">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false">
+               <button type="button" class="minkiyal_nav navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false">
                <span class="sr-only">Меню</span>
                <span class="icon-bar"></span>
                <span class="icon-bar"></span>
@@ -10,7 +10,7 @@
                </button>
                <a class="navbar-brand" href="#">
                   <img src="{{ asset('images/channels/min-kiyal.png')}}">
-                  <h4>Миң кыял</h4>
+                  <h4 class="minkiyal_brand">Миң кыял</h4>
                </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->

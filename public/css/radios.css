@@ -1134,7 +1134,10 @@
     background:#FEFEFE;
 }
 #minkiyal .sitemenu h4{
-    color: #E91E63;
+    color: #E91E63 !important;
+}
+#minkiyal .sitemenu a>span{
+  color: #E91E63 !important;
 }
 #minkiyal .container-fluid{
     padding: 0;
@@ -1274,8 +1277,8 @@
 
 #minkiyal .online{
     position: absolute;
-    top: 70px;
-    left: 45%;
+    top: 21px;
+    left: 7%;
     right: 50%;
     width: 210px;
 
@@ -1397,11 +1400,11 @@
     font-size: 16px;
 }
 #minkiyal .middleblock{
-    margin-top: -30px;
+    margin-top: -70px;
     background: #fff;
 }
 #minkiyal .infobar{
-    margin-top: -40px;
+    margin-top: -70px;
     background: #009688;
 }
 #minkiyal .prefooter {
@@ -1412,5 +1415,44 @@
 #minkiyal .prefooter .footer-info{
     background: #1D6486;
     border-radius: 5px 5px 0px 0px !important;
+}
+.minkiyal_nav{
+  position: relative;
+  float: right;
+  padding: 9px 10px;
+  margin-top: 8px;
+  margin-right: 15px;
+  margin-bottom: 8px;
+  background-color: #E51279 !important;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+.minkiyal_brand{
+  color: #DD1470 !important;
+}
+.minkiyal_footer{
+  margin: 0;
+  font-size: 13px;
+}
+.minkiyal_footer a:hover{
+  color: #E8A5E0;
+}
+
+@media  screen and (max-width: 980px) {
+  #minkiyal .online h3 {
+    display: none;
+  }
+  #minkiyal .online{
+    position: absolute;
+    top: 0px;
+    left: -10%;
+    right: 50%;
+    width: 210px;
+    padding: 0px 0px 0px 10px;
+    text-align: center;
+    border-radius: 5px !important;
+    background: none;
+  }
 }
 /*  END HOME  */
