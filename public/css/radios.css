@@ -1126,10 +1126,12 @@
 #minkiyal {
     position: relative;
     font-family: 'Roboto Condensed';
+    background: #009688;
 }
 #minkiyal .switch{
     position: absolute;
     top: 0;
+    background: #E91E63;
 }
 
 #minkiyal .container-fluid{
@@ -1142,95 +1144,17 @@
     position: fixed;
 }
 #minkiyal .main .container{
-    width: 70%;
-}
-#minkiyal .main .inner{
-    position: relative;
-    height: 650px;
-}
-#minkiyal .main .innerimg{
-    position: absolute;
-    right: 0;
-    padding: 15% 0;
-}
-#minkiyal .main .innerimg img{
-    max-height: 400px;
-    width: auto;
-}
 
-#minkiyal .main .innermain{
-    position: absolute;
-    padding: 25% 0;
-    font-family: 'Roboto Condensed';
-}
-#minkiyal .main .innermain h3{
-    margin: 0;
-    font-weight: bold;
-    font-size: 80px;
-    color: #DC0D7C;
-    text-shadow: 1px 0px 0px #3C3C3C, 0 0 1em rgba(0, 0, 0, 0);
-}
-#minkiyal .main .innermain .overlay{
-    height: 1px;
-    background: #C67F5E;
-    margin-top: 5px;
-    max-width: 476px;
-}
-#minkiyal .main .innermain h4{
-    margin: 0;
-    font-size: 75px;
-    font-weight: bold;
-    color: #fff;
-    text-shadow: 1px 0px 0px #3C3C3C, 0 0 1em rgba(0, 0, 0, 0);
-}
-#minkiyal .main .innermain h5{
-    font-size: 50px;
-    color: #232323;
-    text-transform: uppercase;
-    font-weight: bold;
-    text-shadow:1px 0px 0px #3C3C3C, 0 0 1em rgba(0, 0, 0, 0);
-}
-#minkiyal .main .innermain .others {
-    width: 1170px;
-    margin: 180px 0px 0px 0px;
-    padding: 0px; 
-}
-#minkiyal .main .innermain .jyshtyktar ul li span.num:first-child {
-    border-radius: 5px 0px 0px 5px !important;
-    -webkit-border-radius: 5px 0px 0px 5px !important;
-    -moz-border-radius: 5px 0px 0px 5px !important;
-    -o-border-radius: 5px 0px 0px 5px !important;
-}
-
-#minkiyal .main .innermain .jyshtyktar ul li .num{
-    float: left;
-    padding: 10px;
-    
-    text-shadow:1px 0px 0px #3C3C3C, 0 0 1em rgba(0, 0, 0, 0);
-
-    color: #fff;
-    background: #009688;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-}
-#minkiyal .main .innermain .jyshtyktar ul li .name{
-    float: left;
-    padding: 10px;
-    margin-right: 10px;
-    
-    text-transform: uppercase;
-    text-shadow:1px 0px 0px #3C3C3C, 0 0 1em rgba(0, 0, 0, 0);
-    border-radius: 0px 5px 5px 0px !important;
-    
-    color: #FFF;
-    background: #4CAF50;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
 #minkiyal .info{
-    padding: 60px 0px 40px 0px;
+    position: relative;
+    margin-top: -30px;
+    border-radius: 5px !important;
+    background: #fff;
 }
 #minkiyal .info h2{
-    padding: 30px 0px;
+    padding: 0px 0px 30px 0px;
 
     text-align: center;
     font-weight: bold;
@@ -1272,14 +1196,14 @@
     letter-spacing: 1px;
 
     color: #FFFFFF;
-    background: #1D6486;
+    background: #009688;
     
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
     border-radius: 0px 0px 5px 5px !important;
     overflow: hidden;
 }
 #minkiyal .info .postshow h3:hover{
-    background: #F44336;
+    background: #4CAF50;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -ms-transition: all 0.5s ease;
@@ -1292,7 +1216,7 @@
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 #minkiyal .info .more{
-    padding:20px 0px; 
+    padding: 0px 0px 30px 0px; 
 }
 
 #minkiyal .show-btn {
@@ -1344,12 +1268,19 @@
 }
 
 #minkiyal .online{
-    position: relative;
-    top: 20%;
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    right: 50%;
     width: 210px;
-    background: #000000;
+
     padding: 0px 0px 0px 10px;
+
+    text-align: center;
+
     border-radius: 5px !important;
+    background: #909F23;
+    
 }
 #minkiyal .online h3{
     float: left;
@@ -1437,7 +1368,7 @@
     border-top: 1px solid #688EA0;
 }
 #minkiyal .slidermin{
-    margin: 200px 0px 0px 0px;
+    margin: 60px 0px 0px 0px;
 }
 #minkiyal .slidermin .slick-slide .overlay{
     background: none;
@@ -1449,8 +1380,28 @@
 #minkiyal .shows-carousel .slick-prev::before, #minkiyal .shows-carousel .slick-next::before {
     color: #fff !important;
 }
+#minkiyal .shows-carousel .slick-slide {
+    height: 510px;
+}
 #minkiyal .copyright,#minkiyal .footer-menu{
     color: #ffffff;
     font-size: 16px;
+}
+#minkiyal .middleblock{
+    margin-top: -30px;
+    background: #C51781;
+}
+#minkiyal .infobar{
+    margin-top: -40px;
+    background: #009688;
+}
+#minkiyal .prefooter {
+    border: none;
+    background: #1D6486;
+    border-radius: 5px 5px 0px 0px !important;
+}
+#minkiyal .prefooter .footer-info{
+    background: #1D6486;
+    border-radius: 5px 5px 0px 0px !important;
 }
 /*  END HOME  */

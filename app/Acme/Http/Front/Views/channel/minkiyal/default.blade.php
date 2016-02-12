@@ -14,6 +14,7 @@
     
     <link rel="stylesheet" href="{{ asset('css/radios.css')}}">
     <link rel="stylesheet" href="{{ asset('css/animation.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/animate.css')}}">
 
 
     <link rel="stylesheet" type="text/css" href="{{ asset('css/custombox.css') }}"/>
