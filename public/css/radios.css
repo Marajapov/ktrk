@@ -1131,9 +1131,11 @@
 #minkiyal .switch{
     position: absolute;
     top: 0;
-    background: #E91E63;
+    background:#FEFEFE;
 }
-
+#minkiyal .sitemenu h4{
+    color: #E91E63;
+}
 #minkiyal .container-fluid{
     padding: 0;
 }
@@ -1152,6 +1154,9 @@
     margin-top: -30px;
     border-radius: 5px !important;
     background: #fff;
+    -webkit-box-shadow: 0px 0px 15px 3px rgba(0,0,0,0.17);
+    -moz-box-shadow: 0px 0px 15px 3px rgba(0,0,0,0.17);
+    box-shadow: 0px 0px 15px 3px rgba(0,0,0,0.17);
 }
 #minkiyal .info h2{
     padding: 0px 0px 30px 0px;
@@ -1270,7 +1275,7 @@
 #minkiyal .online{
     position: absolute;
     top: 70px;
-    left: 50%;
+    left: 45%;
     right: 50%;
     width: 210px;
 
@@ -1279,7 +1284,7 @@
     text-align: center;
 
     border-radius: 5px !important;
-    background: #909F23;
+    background: #181818;
     
 }
 #minkiyal .online h3{
@@ -1370,11 +1375,15 @@
 #minkiyal .slidermin{
     margin: 60px 0px 0px 0px;
 }
+
+#minkiyal .slidermin .shows-carousel .slick-slide img{
+    height: 510px;
+}
 #minkiyal .slidermin .slick-slide .overlay{
     background: none;
 }
 #minkiyal .shows-carousel .slick-prev, #minkiyal .shows-carousel .slick-next {
-    background: rgba(184, 23, 119, 0.87);
+    background: none;
     border-radius: 50% !important;
 }
 #minkiyal .shows-carousel .slick-prev::before, #minkiyal .shows-carousel .slick-next::before {
@@ -1389,7 +1398,7 @@
 }
 #minkiyal .middleblock{
     margin-top: -30px;
-    background: #C51781;
+    background: #fff;
 }
 #minkiyal .infobar{
     margin-top: -40px;

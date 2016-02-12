@@ -12,7 +12,7 @@
                 <div>
                     <div class="overlay"></div>
                     <a href="#">
-                        <img src="{{ asset('images/channels/minkiyal/2.jpg') }}" alt=""/>
+                        <img src="{{ asset('images/channels/minkiyal/nonred.jpg') }}" alt=""/>
                     </a>
                 </div>
                 <div>
@@ -24,7 +24,7 @@
                 <div>
                     <div class="overlay"></div>
                     <a href="#">
-                        <img src="{{ asset('images/channels/minkiyal/winter.jpg') }}" alt=""/>
+                        <img src="{{ asset('images/channels/minkiyal/red.jpg') }}" alt=""/>
                     </a>
                 </div>
             </div>
