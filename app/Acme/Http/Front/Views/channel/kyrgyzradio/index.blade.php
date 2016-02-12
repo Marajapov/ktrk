@@ -4,6 +4,7 @@
 @endsection
 @section('content')
 @include('Front::channel.kyrgyzradio.nav')
+
 <div id="kyrgyzhome" class="container">
    <section id="main-slider">
       @if($anons->first())
@@ -40,27 +41,45 @@
    </section>
    <section id="cta" class="wow fadeIn">
       <div class="container">
-         <div class="row">
+      <div class="col-md-6">
+
             @if($quoteTop)
-
-            @foreach($quoteTop as $top)
-            <div class="col-md-6 col-xs-12">
-         
-               <div class="col-xs-9">
-                  <h2>{{ $top->getAuthor() }}</h2>
-                  <p><span></span>{{ $top->getDesc() }}
-                  </p>
-               </div>
           
-
-               <div class="righter"><i class="fa fa-play"></i></div>
-               <div class="col-xs-3">
-                  <img class="img-responsive" src="{{asset($top->file)}}" alt="">
-               </div>
+            <div id="nt-example2-container">
+                 
+                   <ul id="nt-example2">
+                     @foreach($quoteTop as $top)
+                       <li data-infos="{{ $top->getDesc() }} ">
+                       <i class="fa fa-quote-left"></i>
+                        <i class="fa fa-fw fa-play state"></i>
+                        <span class="author"><img src="{{asset($top->file)}}" alt=""></span>
+                        <span class="name">{{ $top->getAuthor() }}</span>
+                       </li>
+                     @endforeach
+                   </ul>
+                   <div id="nt-example2-infos-container">
+                      <div id="nt-example2-infos-triangle"></div>
+                      <div id="nt-example2-infos" class="row">
+                        <div class="col-xs-4">
+                           <div class="infos-author">                                            
+                              <img src="{{asset($quoteTop->first()->file)}}" alt=""> 
+                           </div>
+                           <i class="fa fa-arrow-left" id="nt-example2-prev"></i>
+                           <i class="fa fa-arrow-right" id="nt-example2-next"></i>
+                        </div>
+                        <div class="col-xs-8"> 
+                           <span class="name">{{ $top->getAuthor() }}</span>                             
+                           <div class="infos-text">{{ $top->getDesc() }}</div>                       
+                        </div>
+                      </div>
+                   </div>
+                
             </div>
-              @endforeach
-            @endif
-         </div>
+           
+            @endif 
+      </div>   
+      <div class="col-md-6"></div>   
+        
       </div>
    </section>
    <!--/#cta-->
@@ -221,7 +240,7 @@
          </div>
          <div class="row">
             <div class="col-sm-3 wow fadeInLeft">
-               <h3 class="column-title">Логотип</h3>
+               <h3 class="column-title">.</h3>
                <!-- 16:9 aspect ratio -->               
                <div class="img-responsive">
                   <img src="{{asset('images/channels/kg-radio.png')}}" alt="">
@@ -240,4 +259,7 @@
       </div>
    </section>
 </div>
+@stop
+@section('footerscript2')
+
 @stop

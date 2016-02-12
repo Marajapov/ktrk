@@ -431,10 +431,9 @@ ul.nostyle i {
   margin-top: 8px;
 }
 #cta img {
-  max-height: 105px;
+  max-height: 110px;
   width: auto;
   margin-top: -14px;
-  margin-left: -3p
 }
 #cta .righter {
   right: 0;
@@ -1372,3 +1371,128 @@ height: 325px;
 }
 
 /* END PAGE*/
+
+/* BEGIN QuoteTickers*/
+.quot{
+  background: url('./../../images/channels/kyrgyzradio/blockquote.png') no-repeat;
+  display: block;
+  float: left;
+  width: 47px;
+  height: 45px;
+  margin-top: 8px;
+}
+.quot img{
+    position: relative;
+    left: 45px;
+    float: left;
+}
+.quot .author{
+    position: absolute;
+    margin-left: 100px;
+}
+.quot .desc{
+    position: absolute;
+    left: 410px;
+}
+
+/* nt-example2 */
+
+#nt-example2 {
+  max-width: 620px;
+  margin: auto;
+}
+
+#nt-example2-container {
+  text-align: center;
+  height: 300px;
+}
+
+#nt-example2-container i {
+  font-size: 36px;
+  margin: 8px;
+  cursor: pointer;
+  -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -ms-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+}
+
+#nt-example2-container i:hover {
+  color: #333;
+}
+
+#nt-example2 li {
+  color: #f2f2f2;
+  background: #2B5E8C;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 40px;
+  padding: 1px 5px 0px 10px;
+  line-height: 40px;
+  list-style: none;
+  font-size: 24px;
+  text-align: left;
+}
+
+#nt-example2 li .state {
+  font-size: inherit;
+    float: right;
+}
+
+#nt-example2 span.author {
+  font-weight: 700;
+}
+#nt-example2 span.author img{
+  display: none;
+}
+
+#nt-example2-infos-triangle {
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 0 15px 16px 15px;
+  border-color: transparent transparent #2B5E8C transparent;
+  margin: 6px auto 0;
+}
+
+#nt-example2-infos {
+  max-width: 620px;
+  margin: auto;
+  padding: 12px;
+  color: #f2f2f2;
+  background: #2B5E8C;
+}
+
+#nt-example2-infos .infos-author {
+  font-size: 50px;
+  font-weight: 700;
+  margin-top: 20px;
+}
+#nt-example2-infos .name {
+  line-height: 40px;
+  font-size: 24px;
+  display: table-row;
+}
+
+#nt-example2-infos h4 {
+  color: #F2F2F2;
+  font-weight: 500;
+}
+
+#nt-example2-infos .infos-text {
+  text-align: left;
+}
+#nt-example2 .name{
+  position: relative;
+  top: -5px;
+}
+
+#nt-example2-container .fa-quote-left{
+  margin-top: 5px;
+  margin: 4px 5px 0px 0px;
+  padding: 0; 
+}
+
+/* END QuoteTickers*/
