@@ -8,7 +8,7 @@
     <script>
   	$(document).ready(function(){
       	var nt_example2 = $('#nt-example2').newsTicker({
-         	row_height: 40,
+         	row_height: 0,
          	max_rows: 1,
          	speed: 300,
          	duration: 6000,
@@ -36,6 +36,39 @@
          	nt_example2.newsTicker('unpause');
       	});
   	});
+    </script>
+
+     <script>
+	  	$(document).ready(function(){
+	      	var nt_example21 = $('#nt-example21').newsTicker({
+	         	row_height: 0,
+	         	max_rows: 1,
+	         	speed: 300,
+	         	duration: 6000,
+	         	autostart:0,
+	         	prevButton: $('#nt-example21-prev'),
+	         	nextButton: $('#nt-example21-next'),
+				hasMoved: function() {
+	            	$('#nt-example21-infos-container').fadeOut(0, function(){
+	           			$('#nt-example21-infos .infos-author').html($('#nt-example21 li:first span').html());
+	           			$('#nt-example21-infos .name').text($('#nt-example21 li:first span').text());
+	               		$('#nt-example21-infos .infos-text').text($('#nt-example21 li:first').data('infos'));
+	               		$(this).fadeIn(0);
+	            	});
+	     		},
+		    	pause: function() {
+		            $('#nt-example21 li i').removeClass('fa-play').addClass('fa-pause');
+		        },
+		        unpause: function() {
+		    	   	$('#nt-example21 li i').removeClass('fa-pause').addClass('fa-play');
+		     	}
+	  		});
+	      	$('#nt-example21-infos').hover(function() {
+	         	nt_example21.newsTicker('pause');
+	      	}, function() {
+	         	nt_example21.newsTicker('unpause');
+	      	});
+	  	});
     </script>
 
 <script src="{{ asset('js/landing/owl.carousel.min.js') }}"></script>

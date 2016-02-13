@@ -1397,18 +1397,17 @@ height: 325px;
 
 /* nt-example2 */
 
-#nt-example2 {
+#nt-example2, #nt-example21 {
   max-width: 620px;
   margin: auto;
 }
 
-#nt-example2-container {
+#nt-example2-container, #nt-example21-container {
   text-align: center;
-  height: 300px;
 }
 
-#nt-example2-container i {
-  font-size: 36px;
+#nt-example2-container i, #nt-example21-container i  {
+  font-size: 24px;
   margin: 8px;
   cursor: pointer;
   -webkit-transition: all 0.1s ease-in-out;
@@ -1418,11 +1417,11 @@ height: 325px;
     transition: all 0.1s ease-in-out;
 }
 
-#nt-example2-container i:hover {
+#nt-example2-container i:hover, #nt-example21-container i:hover {
   color: #333;
 }
 
-#nt-example2 li {
+#nt-example2 li, #nt-example21 li {
   color: #f2f2f2;
   background: #2B5E8C;
   white-space: nowrap;
@@ -1434,62 +1433,79 @@ height: 325px;
   list-style: none;
   font-size: 24px;
   text-align: left;
+  display: none;
 }
 
-#nt-example2 li .state {
+ #nt-example2 li .state, #nt-example21 li .state{
   font-size: inherit;
     float: right;
 }
 
-#nt-example2 span.author {
+#nt-example2 span.author, #nt-example21 span.author {
   font-weight: 700;
 }
-#nt-example2 span.author img{
+#nt-example2 span.author img, #nt-example21 span.author img{
   display: none;
 }
 
-#nt-example2-infos-triangle {
+#nt-example2-infos-triangle, #nt-example21-infos-triangle {
   width: 0px;
   height: 0px;
   border-style: solid;
   border-width: 0 15px 16px 15px;
   border-color: transparent transparent #2B5E8C transparent;
   margin: 6px auto 0;
+  display: none;
 }
 
-#nt-example2-infos {
+#nt-example2-infos, #nt-example21-infos {
   max-width: 620px;
   margin: auto;
-  padding: 12px;
-  color: #f2f2f2;
-  background: #2B5E8C;
+  padding: 12px 0px;
+  color: #444444;
+    -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.2);
+    box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.2);
+    background: #ECECEC;
+        border-radius: 2px !important;
+}
+#nt-example2-infos .col-xs-8, #nt-example21-infos .col-xs-8{
+  padding: 0;
+}
+#nt-example2-infos .qicon, #nt-example21-infos .qicon{
+    background: url('./../../images/channels/kyrgyzradio/blockquote.png') no-repeat;
+    display: block;
+    float: left;
+    width: 47px;
+    height: 45px;
+    margin-top: 8px;
 }
 
-#nt-example2-infos .infos-author {
+#nt-example2-infos .infos-author, #nt-example21-infos .infos-author {
   font-size: 50px;
   font-weight: 700;
   margin-top: 20px;
 }
-#nt-example2-infos .name {
+#nt-example2-infos .name, #nt-example21-infos .name {
   line-height: 40px;
   font-size: 24px;
   display: table-row;
 }
 
-#nt-example2-infos h4 {
+#nt-example2-infos h4, #nt-example21-infos h4 {
   color: #F2F2F2;
   font-weight: 500;
 }
 
-#nt-example2-infos .infos-text {
+#nt-example2-infos .infos-text, #nt-example21-infos .infos-text {
   text-align: left;
 }
-#nt-example2 .name{
+#nt-example2 .name, #nt-example21 .name{
   position: relative;
   top: -5px;
 }
 
-#nt-example2-container .fa-quote-left{
+#nt-example2-container .fa-quote-left, #nt-example21-container .fa-quote-left{
   margin-top: 5px;
   margin: 4px 5px 0px 0px;
   padding: 0; 
