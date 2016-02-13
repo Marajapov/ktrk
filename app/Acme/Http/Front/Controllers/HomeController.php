@@ -158,8 +158,8 @@ class HomeController extends Controller
 
         $defaultVideo = 'rjXSurFi8uQ';
 
-//        return view('Front::home', [
-        return view('Front::test', [
+        return view('Front::home', [
+//        return view('Front::test', [
 
             'lc' =>$lc,
 
@@ -368,39 +368,14 @@ class HomeController extends Controller
         ]);
     }
 
-    public function Post(\Model\Post\ModelName $post)
+    public function Post(\Model\Post\ModelName $post, $locale = "kg", $title = "")
     {
         $post->incrementViewed();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
-        $lc = app()->getlocale();
-
-        if($lc == 'kg')
-        {
-            if($post->title == '')
-            {
-                app()->setlocale('ru');
-                $lc = 'ru';
-            }
-            else
-            {
-                app()->setlocale('kg');
-                $lc = 'kg';
-            }
-        } 
-        elseif($lc == 'ru') 
-        {
-            if($post->titleRu == '')
-            {
-                app()->setlocale('kg');
-                $lc = 'kg';
-            }
-            else
-            {
-                app()->setlocale('ru');
-                $lc = 'ru';
-            }
-        }
-
+        $lc = in_array($locale, ['kg', 'ru'])? $locale : 'kg';
+        
+        app()->setlocale($lc);
+        
         $categories = \Model\Category\ModelName::where('general','=','1')->get();
 
         $parent = \Model\PhotoParent\ModelName::where('id','=',$post->parentId)->first();
@@ -809,35 +784,9 @@ class HomeController extends Controller
 
         $perPage = 15;
 
-        if($lc == 'kg'){
-//            dd('test');
-            $posts = \Model\Post\ModelName::search($request->input('search'))->orderBy('id','desc')->get();
-            foreach($posts as $key=>$resultPost){
-                if($resultPost['title'] == ''){
-                    unset($posts[$key]);
-                }
-            }
-            session(['posts' => $posts]);
-//            $tags = \Model\Tag\Tag::where('name','like','%'.$key.'%')->get();
-//            $postTags = array();
-//
-//            foreach ($tags as $tag) {
-//                $tagPosts = $tags->posts();
-//                $postTags = array_collapse($postTags,$tagPosts);
-//            }
-
-//            dd($postTags);
-        }elseif($lc == 'ru'){
-            $posts = \Model\Post\ModelName::search($request->input('search'))->orderBy('id','desc')->get();
-
-            foreach($posts as $key=>$resultPost){
-                if($resultPost['titleRu'] == ''){
-                    unset($posts[$key]);
-                }
-            }
-            session(['posts' => $posts]);
-            //dd(session('posts'));
-        }
+        $tag = \Model\Tag\Tag::where('name', '=', $key)->first();
+        $posts = \Model\Post\ModelName::search($key)->orderBy('id','desc')->get();
+         
 //        $posts = \Model\Post\ModelName::search($request->input('search'))->paginate($perPage);
 //        $pages = \Model\Page\ModelName::search($request->input('search'))->get();
         $searchKey = $request->input('search');
@@ -880,6 +829,7 @@ class HomeController extends Controller
 
         return view('Front::result', [
             'posts' => $posts,
+            'tag' => $tag,
             'perPage' => $perPage,
 //            'pages' => $pages,
             'searchKey'=>$searchKey,

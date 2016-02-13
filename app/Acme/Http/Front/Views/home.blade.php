@@ -18,7 +18,7 @@
                                 @if($generalPost1)
                                     <div class="col-md-4 block">
                                         <figure class="effect-zoe">
-                                            <a href="{{ route('front.post', $generalPost1) }}" class="main-img">
+                                            <a href="{{ route('front.post', [$generalPost1, $lc, $generalPost1->getLocaleTitle($lc)]) }}" class="main-img">
                                                 <img src="@if(!($generalPost1->getFile()))images/live_bg.png @else {{ asset($generalPost1->getFile()) }} @endif" alt="img26">
                                             </a>
 <!-- Birinchi Channel Icon -->
@@ -42,7 +42,7 @@
                                               </span>
                                             </p>
                                             <div class="news-title">
-                                                <a href="{{ route('front.post', $generalPost1) }}">
+                                                <a href="{{ route('front.post', [$generalPost1, $lc, $generalPost1->getLocaleTitle($lc)]) }}">
                                                     {{ $generalPost1->getTitleRuOrKg() }}
                                                 </a>
                                             </div>
@@ -55,7 +55,7 @@
                                     @if($generalPost2)
                                         <div class="col-md-4 block">
                                             <figure class="effect-zoe">
-                                                <a href="{{ route('front.post', $generalPost2) }}" class="main-img">
+                                                <a href="{{ route('front.post', [$generalPost2, $lc, $generalPost2->getLocaleTitle($lc)]) }}" class="main-img">
                                                     <img src="@if(!($generalPost2->getFile()))images/live_bg.png @else {{ asset($generalPost2->getFile()) }} @endif" alt="img26">
                                                 </a>
                                                 <p class="description clearfix">
@@ -69,7 +69,7 @@
                                                 </span>
                                                 </p>
                                                 <div class="news-title">
-                                                    <a href="{{ route('front.post', $generalPost2) }}">
+                                                    <a href="{{ route('front.post', [$generalPost2, $lc, $generalPost2->getLocaleTitle($lc)]) }}">
                                                         {{ $generalPost2->getTitleRuOrKg() }}
                                                     </a>
                                                 </div>
@@ -82,7 +82,7 @@
                                         @if($generalPost3)
                                             <div class="col-md-4 block">
                                                 <figure class="effect-zoe">
-                                                    <a href="{{ route('front.post', $generalPost3) }}" class="main-img">
+                                                    <a href="{{ route('front.post', [$generalPost3, $lc, $generalPost3->getLocaleTitle($lc)]) }}" class="main-img">
                                                         <img src="@if(!($generalPost3->getFile()))images/live_bg.png @else {{ asset($generalPost3->getFile()) }} @endif" alt="img26">
                                                     </a>
                                                     <p class="description clearfix">
@@ -96,7 +96,7 @@
                                                 </span>
                                                     </p>
                                                     <div class="news-title">
-                                                        <a href="{{ route('front.post', $generalPost3) }}">
+                                                        <a href="{{ route('front.post', [$generalPost3, $lc, $generalPost3->getLocaleTitle($lc)]) }}">
                                                             {{ $generalPost3->getTitleRuOrKg() }}
                                                         </a>
                                                     </div>
@@ -109,7 +109,7 @@
                                             @if($generalPost4)
                                                 <div class="col-md-4 block">
                                                     <figure class="effect-zoe">
-                                                        <a href="{{ route('front.post', $generalPost4) }}" class="main-img">
+                                                        <a href="{{ route('front.post', [$generalPost4, $lc, $generalPost4->getLocaleTitle($lc)]) }}" class="main-img">
                                                             <img src="@if(!($generalPost4->getFile()))images/live_bg.png @else {{ asset($generalPost4->getFile()) }} @endif" alt="img26">
                                                         </a>
                                                         <p class="description clearfix">
@@ -123,7 +123,7 @@
                                                 </span>
                                                         </p>
                                                         <div class="news-title">
-                                                            <a href="{{ route('front.post', $generalPost4) }}">
+                                                            <a href="{{ route('front.post', [$generalPost4, $lc, $generalPost4->getLocaleTitle($lc)]) }}">
                                                                 {{ $generalPost4->getTitleRuOrKg() }}
                                                             </a>
                                                         </div>
@@ -136,7 +136,7 @@
                                                 @if($generalPost5)
                                                     <div class="col-md-4 block">
                                                         <figure class="effect-zoe">
-                                                            <a href="{{ route('front.post', $generalPost5) }}" class="main-img">
+                                                            <a href="{{ route('front.post', [$generalPost5, $lc, $generalPost5->getLocaleTitle($lc)]) }}" class="main-img">
                                                                 <img src="@if(!($generalPost5->getFile()))images/live_bg.png @else {{ asset($generalPost5->getFile()) }} @endif" alt="img26">
                                                             </a>
                                                             <p class="description clearfix">
@@ -150,7 +150,7 @@
                                                 </span>
                                                             </p>
                                                             <div class="news-title">
-                                                                <a href="{{ route('front.post', $generalPost5) }}">
+                                                                <a href="{{ route('front.post', [$generalPost5, $lc, $generalPost5->getLocaleTitle($lc)]) }}">
                                                                     {{ $generalPost5->getTitleRuOrKg() }}
                                                                 </a>
                                                             </div>
@@ -163,7 +163,7 @@
                                                     @if($generalPost6)
                                                         <div class="col-md-4 block">
                                                             <figure class="effect-zoe">
-                                                                <a href="{{ route('front.post', $generalPost6) }}" class="main-img">
+                                                                <a href="{{ route('front.post', [$generalPost6, $lc, $generalPost6->getLocaleTitle($lc)]) }}" class="main-img">
                                                                     <img src="@if(!($generalPost6->getFile()))images/live_bg.png @else {{ asset($generalPost6->getFile()) }} @endif" alt="img26">
                                                                 </a>
                                                                 <p class="description clearfix">
@@ -176,7 +176,7 @@
                                                 </span>
                                                                 </p>
                                                                 <div class="news-title">
-                                                                    <a href="{{ route('front.post', $generalPost6) }}">
+                                                                    <a href="{{ route('front.post', [$generalPost6, $lc, $generalPost6->getLocaleTitle($lc)]) }}">
                                                                         {{ $generalPost6->getTitleRuOrKg() }}
                                                                     </a>
                                                                 </div>
@@ -338,7 +338,7 @@
                                         @foreach($latestPosts as $post)
                                             <li class="list-group-item news-item">
                                                 <div class="news-body clearfix">
-                                                    <a href="{{ route('front.post', $post) }}">
+                                                    <a href="{{ route('front.post', [$post, $lc, $post->getLocaleTitle($lc)]) }}">
                                                         <p class="news-title">{{ $post->getTitleRuOrKg() }}</p>
                                                         {{--<span class="ctg"><img src="@if($post->channel_id){{ $post->isChannelIcon($post->channel_id)}}@else {{ asset('images/logo_notext.png') }} @endif" alt=""/></span>--}}
                                                     </a>
@@ -389,7 +389,7 @@
                                             @foreach($directorPosts as $post)
                                                 <div>
 
-                                                    <a href="{{ route('front.post', $post) }}">
+                                                    <a href="{{ route('front.post', [$post, $lc, $post->getLocaleTitle($lc)]) }}">
                                                         <img src="@if(!($post->thumbnail_big))images/live_bg.png @else {{ asset($post->thumbnail_big) }} @endif" alt=""/>
                                                     </a>
                                                     <a href="{{ route('front.post', $post) }}">

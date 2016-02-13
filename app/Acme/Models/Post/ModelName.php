@@ -29,7 +29,9 @@ class ModelName extends Model
     protected $searchable = [
         'columns' => [
             'title'   => 10, // order of search, title will be first in listing
+            'titleRu'   => 10, // order of search, title will be first in listing
             'content' => 9,
+            'contentRu' => 9,
         ],
     ];
 
@@ -53,6 +55,14 @@ class ModelName extends Model
     public function getTitleRu()
     {
         return $this->titleRu;
+    }
+
+    public function getLocaleTitle($locale = 'kg')
+    {
+        if($locale == 'ru')
+            return $this->titleRu;
+        else
+            return $this->title;
     }
 
     public function getTitleRuOrKg()
