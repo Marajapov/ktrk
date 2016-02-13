@@ -70,6 +70,71 @@
 	      	});
 	  	});
     </script>
+         <script>
+	  	$(document).ready(function(){
+	      	var nt_example22 = $('#nt-example22').newsTicker({
+	         	row_height: 0,
+	         	max_rows: 1,
+	         	speed: 300,
+	         	duration: 6000,
+	         	autostart:0,
+	         	prevButton: $('#nt-example22-prev'),
+	         	nextButton: $('#nt-example22-next'),
+				hasMoved: function() {
+	            	$('#nt-example22-infos-container').fadeOut(0, function(){
+	           			$('#nt-example22-infos .infos-author').html($('#nt-example22 li:first span').html());
+	           			$('#nt-example22-infos .name').text($('#nt-example22 li:first span').text());
+	               		$('#nt-example22-infos .infos-text').text($('#nt-example22 li:first').data('infos'));
+	               		$(this).fadeIn(0);
+	            	});
+	     		},
+		    	pause: function() {
+		            $('#nt-example22 li i').removeClass('fa-play').addClass('fa-pause');
+		        },
+		        unpause: function() {
+		    	   	$('#nt-example22 li i').removeClass('fa-pause').addClass('fa-play');
+		     	}
+	  		});
+	      	$('#nt-example22-infos').hover(function() {
+	         	nt_example22.newsTicker('pause');
+	      	}, function() {
+	         	nt_example22.newsTicker('unpause');
+	      	});
+	  	});
+    </script>
+
+     <script>
+	  	$(document).ready(function(){
+	      	var nt_example23 = $('#nt-example23').newsTicker({
+	         	row_height: 0,
+	         	max_rows: 1,
+	         	speed: 300,
+	         	duration: 6000,
+	         	autostart:0,
+	         	prevButton: $('#nt-example23-prev'),
+	         	nextButton: $('#nt-example23-next'),
+				hasMoved: function() {
+	            	$('#nt-example23-infos-container').fadeOut(0, function(){
+	           			$('#nt-example23-infos .infos-author').html($('#nt-example23 li:first span').html());
+	           			$('#nt-example23-infos .name').text($('#nt-example23 li:first span').text());
+	               		$('#nt-example23-infos .infos-text').text($('#nt-example23 li:first').data('infos'));
+	               		$(this).fadeIn(0);
+	            	});
+	     		},
+		    	pause: function() {
+		            $('#nt-example23 li i').removeClass('fa-play').addClass('fa-pause');
+		        },
+		        unpause: function() {
+		    	   	$('#nt-example23 li i').removeClass('fa-pause').addClass('fa-play');
+		     	}
+	  		});
+	      	$('#nt-example23-infos').hover(function() {
+	         	nt_example23.newsTicker('pause');
+	      	}, function() {
+	         	nt_example23.newsTicker('unpause');
+	      	});
+	  	});
+    </script>
 
 <script src="{{ asset('js/landing/owl.carousel.min.js') }}"></script>
 <script src="{{ asset('js/landing/mousescroll.js') }}"></script>

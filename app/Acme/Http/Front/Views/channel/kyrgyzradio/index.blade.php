@@ -76,7 +76,7 @@
                </div>           
                @endif 
          </div>   
-      <div class="col-md-6"> 
+         <div class="col-md-6"> 
               @if($quoteTopRight)          
             <div id="nt-example21-container">                 
                 <ul id="nt-example21">
@@ -188,23 +188,79 @@
    <!--/#services-->
    <section id="cta" class="wow fadeIn">
       <div class="container">
-         <div class="row">
-            @if($quoteMiddleLeft)
-            @foreach($quoteMiddleLeft as $middle)
-            <div class="col-md-6 col-xs-12">         
-               <div class="col-xs-9">
-                  <h2>{{ $middle->getAuthor() }}</h2>
-                  <p><span></span>{{ $middle->getDesc() }}
-                  </p>
-               </div>        
-               <div class="righter"><i class="fa fa-play"></i></div>
-               <div class="col-xs-3">
-                  <img class="img-responsive" src="{{asset($middle->file)}}" alt="">
-               </div>
-            </div>
-              @endforeach
-            @endif
+      <div class="row">
+         <div class="col-md-6">
+               @if($quoteMiddleLeft)          
+               <div id="nt-example22-container">                 
+                   <ul id="nt-example22">
+                     @foreach($quoteMiddleLeft as $top)
+                       <li data-infos="{{ $top->getDesc() }} ">
+                       <i class="fa fa-quote-left"></i>
+                        <i class="fa fa-fw fa-play state"></i>
+                        <span class="author"><img src="{{asset($top->file)}}" alt=""></span>
+                        <span class="name">                           
+                           {{ $top->getAuthor() }}
+                        </span>
+                       </li>
+                     @endforeach
+                   </ul>
+                   <div id="nt-example22-infos-container">
+                      <div id="nt-example22-infos-triangle"></div>
+                      <div id="nt-example22-infos" class="row">
+                        <div class="col-xs-4">
+                           <div class="infos-author">                                            
+                              <img src="{{asset($quoteMiddleLeft->first()->file)}}" alt=""> 
+                           </div>
+                           <i class="fa fa-arrow-left" id="nt-example22-prev"></i>
+                           <i class="fa fa-arrow-right" id="nt-example22-next"></i>
+                        </div>
+                        <div class="col-xs-8"> 
+                           <span class="name">{{ $top->getAuthor() }}</span>                             
+                           <span class="qicon"></span>   
+                           <div class="infos-text"></i> {{ $top->getDesc() }}</div>                        
+                        </div>
+                      </div>
+                   </div>                
+               </div>           
+               @endif 
+         </div>   
+         <div class="col-md-6"> 
+              @if($quoteMiddleRight)          
+            <div id="nt-example23-container">                 
+                <ul id="nt-example23">
+                  @foreach($quoteMiddleRight as $top)
+                    <li data-infos="{{ $top->getDesc() }} ">
+                    <i class="fa fa-quote-left"></i>
+                     <i class="fa fa-fw fa-play state"></i>
+                     <span class="author"><img src="{{asset($top->file)}}" alt=""></span>
+                     <span class="name">                           
+                        {{ $top->getAuthor() }}
+                     </span>
+                    </li>
+                  @endforeach
+                </ul>
+                <div id="nt-example23-infos-container">
+                   <div id="nt-example23-infos-triangle"></div>
+                   <div id="nt-example23-infos" class="row">
+                     <div class="col-xs-4">
+                        <div class="infos-author">                                            
+                           <img src="{{asset($quoteMiddleRight->first()->file)}}" alt=""> 
+                        </div>
+                        <i class="fa fa-arrow-left" id="nt-example23-prev"></i>
+                        <i class="fa fa-arrow-right" id="nt-example23-next"></i>
+                     </div>
+                     <div class="col-xs-8"> 
+                        <span class="name">{{ $top->getAuthor() }}</span>                             
+                        <span class="qicon"></span>   
+                        <div class="infos-text"></i> {{ $top->getDesc() }}</div>                        
+                     </div>
+                   </div>
+                </div>                
+            </div>           
+            @endif 
+        
          </div>
+      </div>
       </div>
    </section>
    <!--/#cta-->
@@ -243,26 +299,7 @@
       </div>
       <!--/.container-->
    </section>
-   <!--/#portfolio-->
-   <section id="cta" class="wow fadeIn">
-      <div class="container">
-            @if($quoteMiddleRight)
-            @foreach($quoteMiddleRight as $bottom)
-            <div class="col-md-6 col-xs-12">         
-               <div class="col-xs-9">
-                  <h2>{{ $bottom->getAuthor() }}</h2>
-                  <p><span></span>{{ $bottom->getDesc() }}
-                  </p>
-               </div>        
-               <div class="righter"><i class="fa fa-play"></i></div>
-               <div class="col-xs-3">
-                  <img class="img-responsive" src="{{asset($bottom->file)}}" alt="">
-               </div>
-            </div>
-              @endforeach
-            @endif
-      </div>
-   </section>
+
    <!--/#cta-->
    <section id="about">
       <div class="container">

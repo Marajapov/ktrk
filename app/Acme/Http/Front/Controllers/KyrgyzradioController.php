@@ -25,10 +25,10 @@ class KyrgyzradioController extends Controller
 
         $anons = \Model\Anons\ModelName::where('channel','=','6')->where('published','=','1')->orderBy('id','=','desc')->take(2)->get();
        
-        $quoteTopLeft = \Model\Quote\ModelName::where('published','=','1')->where('channel', '=', '6')->orderBy('id','=','desc')->take(4)->get();
+        $quoteTopLeft = \Model\Quote\ModelName::where('published','=','1')->where('channel', '=', '6')->orderBy('id','=','desc')->take(2)->skip(0)->get();
         $quoteTopRight = \Model\Quote\ModelName::where('published','=','1')->where('channel', '=', '6')->orderBy('id','=','desc')->take(2)->skip(2)->get();
-        $quoteMiddleLeft = \Model\Quote\ModelName::where('published','=','1')->where('channel', '=', '6')->orderBy('id','=','desc')->take(2)->skip(4)->get();
-        $quoteMiddleRight = \Model\Quote\ModelName::where('published','=','1')->where('channel', '=', '6')->orderBy('id','=','desc')->take(2)->skip(4)->get();
+        $quoteMiddleLeft = \Model\Quote\ModelName::where('published','=','1')->where('channel', '=', '6')->orderBy('id','=','desc')->take(2)->skip(2)->get();
+        $quoteMiddleRight = \Model\Quote\ModelName::where('published','=','1')->where('channel', '=', '6')->orderBy('id','=','desc')->take(2)->skip(2)->get();
 //        dd($quote);
         return view('Front::channel.kyrgyzradio.index', [
             'channel' => $channel,
