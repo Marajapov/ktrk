@@ -92,7 +92,7 @@
                             </div>
                         </li>
 
-                        <li class="list-group-item photos">
+                        <li class="list-group-item photos hidden">
                             <p class="header">{{ trans('site.Images') }}</p>
                             <div class="body images">
                                 @if($photoChildren)

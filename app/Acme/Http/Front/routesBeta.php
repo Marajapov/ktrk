@@ -62,9 +62,12 @@ Route::group(['domain' => 'dostuk.ktrk.kg', 'prefix' => '/madaniyat', 'namespace
     Route::get('/', ['as' => 'madaniyat.home',   'uses' => 'MadaniyatController@Home']);
     Route::get('/posts', ['as' => 'madaniyat.posts',   'uses' => 'MadaniyatController@posts']);
     Route::get('/about', ['as' => 'madaniyat.about',   'uses' => 'MadaniyatController@about']);
-    Route::get('/photos', ['as' => 'madaniyat.photos',   'uses' => 'MadaniyatController@photos']);
+    Route::get('/photos/{gallery}', ['as' => 'madaniyat.photos',   'uses' => 'MadaniyatController@Gallery']);
     Route::get('/broadcasts', ['as' => 'madaniyat.broadcasts',   'uses' => 'MadaniyatController@broadcasts']);
     Route::get('/comingsoon', ['as' => 'madaniyat.comingsoon',   'uses' => 'MadaniyatController@ComingSoon']);
+    Route::get('/allphotos', ['as' => 'madaniyat.allphotos',   'uses' => 'MadaniyatController@allphotos']);
+    Route::get('/videos', ['as' => 'madaniyat.videos',   'uses' => 'MadaniyatController@videos']);
+    Route::get('/video', ['as' => 'madaniyat.video',   'uses' => 'MadaniyatController@video']);
 
 });
 

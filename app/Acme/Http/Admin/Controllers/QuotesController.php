@@ -58,7 +58,7 @@ class QuotesController extends Controller
             // $storage->put($dir.'/'.$name, $file);
 
             if($request->channel == 6){
-                Image::make($_FILES['file']['tmp_name'])->fit(93, 105)->save($dir.'/'.$name);
+                Image::make($_FILES['file']['tmp_name'])->fit(150, 110)->save($dir.'/'.$name);
             } 
 
             $quote->file = $dir.'/'.$name;
@@ -98,7 +98,7 @@ class QuotesController extends Controller
             $storage->makeDirectory($dir);
 
             if($request->channel == 6){
-                Image::make($_FILES['file']['tmp_name'])->fit(93, 105)->save($dir.'/'.$name);
+                Image::make($_FILES['file']['tmp_name'])->fit(150, 110)->save($dir.'/'.$name);
             } 
 
             $quote->file = $dir.'/'.$name;

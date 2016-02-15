@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="{{ asset('css/landing/main.css')}}">
     <link rel="stylesheet" href="{{ asset('css/articles.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/pages.css') }}"/>
-
     <link rel="stylesheet" href="{{asset('css/landing/animate.min.css')}}"/>
     <link rel="stylesheet" href="{{asset('css/landing/owl.carousel.css')}}"/>
     <link rel="stylesheet" href="{{asset('css/landing/owl.transitions.css')}}"/>
@@ -49,19 +48,8 @@
     @yield('content')
 
 
-<script src="{{ asset('js/jquery-1.11.2.min.js') }}"></script>
-<script src="{{ asset('js/bootstrap.min.js') }}"></script>
 
-<script src="{{ asset('js/landing/owl.carousel.min.js') }}"></script>
-<script src="{{ asset('js/landing/mousescroll.js') }}"></script>
-<script src="{{ asset('js/landing/smoothscroll.js') }}"></script>
-<script src="{{ asset('js/landing/jquery.prettyPhoto.js') }}"></script>
-<script src="{{ asset('js/landing/jquery.isotope.min.js') }}"></script>
-<script src="{{ asset('js/landing/jquery.inview.min.js') }}"></script>
-<script src="{{ asset('js/landing/wow.min.js') }}"></script>
-<script src="{{ asset('js/landing/main.js') }}"></script>
-<script src="{{ asset('js/landing/jquery.js') }}"></script>
-<script src="{{ asset('js/landing/fixed.js') }}"></script>
-    @include('Front::channel.kyrgyzradio.footer')
+
+@include('Front::channel.kyrgyzradio.footer')
 
     
