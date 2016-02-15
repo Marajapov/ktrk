@@ -156,6 +156,14 @@
                            <a href="#">
                            <img src="images/anons/3.jpg" alt="" class="slide" />
                            </a>
+
+                           <a href="#">
+                           <img src="images/anons/3.jpg" alt="" class="slide" />
+                           </a>
+                           
+                           <a href="#">
+                           <img src="images/anons/3.jpg" alt="" class="slide" />
+                           </a>
                         </div>
                      </div>
                   </div>
