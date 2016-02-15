@@ -121,7 +121,7 @@
                      </div>
                      <div class="col-md-12">
                         <h2 style="margin: 0px 0px 10px 0px;font-size: 21px;">{{ $post->getTitleRuOrKg() }}</h2>
-                        <div class="muzimg">
+                        <div class="radioimg">
                            <img src="@if(empty($post->getFile()))images/2.jpg @else {{  asset($post->getFile()) }} @endif" alt="" data-toggle="tooltip" data-placement="top" title="Бул жөн гана сүрөт эмес">
                         </div>
                         <article>
