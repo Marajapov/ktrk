@@ -129,7 +129,7 @@
                            <div class="carousel-post whitefix">
                               @if($images)
                               @foreach($images as $image)
-                              <div class="col-md-4">
+                              <div class="col-md-4"> 
                                  <a href="#">
                                  <img src="{{ asset('froala/uploads/'.$image->name) }}" alt=""/>
                                  </a>

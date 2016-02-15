@@ -726,6 +726,38 @@
     background: #2D596D;
 }
 
+.shows-carousel .slick-slide.slick-current .show-info{
+    opacity: 1;
+}
+.shows-carousel .slick-prev, .shows-carousel .slick-next{
+    z-index: 101;
+    width: 80px;
+    height: 80px;
+
+    background: rgba(255, 255, 255, 0.35);
+
+    text-align: center;
+
+    -webkit-transform: translateY(-25px);
+    -moz-transform: translateY(-25px);
+    -ms-transform: translateY(-25px);
+    -o-transform: translateY(-25px);
+    transform: translateY(-25px);
+}
+.shows-carousel .slick-prev::before, .shows-carousel .slick-next::before{
+    color: #333 !important;
+    font-size: 40px;
+}
+.shows-carousel .slick-prev{
+    left: 0px;
+}
+.shows-carousel .slick-next{
+    right: 0px;
+}
+.shows-carousel .slick-prev:hover, .shows-carousel .slick-prev:focus, .shows-carousel .slick-next:hover, .shows-carousel .slick-next:focus{
+    background: rgba(255, 255, 255, 0.5);
+}
+
 .hoverslider .slick-current{
     background: #4E7486;
     border-bottom: 0px solid #4E7486 !important;
@@ -1129,9 +1161,8 @@
     background: #009688;
 }
 #minkiyal .switch{
-    position: absolute;
-    top: 0;
     background:#FEFEFE;
+    z-index: 3;
 }
 #minkiyal .sitemenu h4{
     color: #E91E63 !important;
@@ -1144,6 +1175,7 @@
 }
 #minkiyal .main {
     position: relative;
+    margin-top:-60px; 
 }
 #minkiyal .main .innerfix{
     position: fixed;
@@ -1311,7 +1343,6 @@
     background: none; 
 }
 #minkiyal .contacts {
-    position: relative;
     padding: 40px 0px;
 }
 #minkiyal .xcontact {
@@ -1323,10 +1354,10 @@
     text-align: center;
     font-weight: bold;
     font-size: 3em;
-    text-shadow: 1px 0px 0px #3C3C3C, 0 0 1em rgba(0, 0, 0, 0);
-    
-    color: #DC0D7C;   
+   
+    color: #fff;   
 }
+
 #minkiyal .address {
     border-radius: 10px 10px 5px 5px !important;
     -webkit-border-radius: 10px 10px 5px 5px !important;
@@ -1380,7 +1411,7 @@
 }
 
 #minkiyal .slidermin .shows-carousel .slick-slide img{
-    height: 510px;
+    height: 500px;
 }
 #minkiyal .slidermin .slick-slide .overlay{
     background: none;
@@ -1400,7 +1431,7 @@
     font-size: 16px;
 }
 #minkiyal .middleblock{
-    margin-top: -70px;
+    margin-top: -90px;
     background: #fff;
 }
 #minkiyal .infobar{
@@ -1456,3 +1487,43 @@
   }
 }
 /*  END HOME  */
+
+/* MENU */
+#minkiyal .fixed {
+    margin: -1px auto 0px auto;
+    background: none;
+}
+#minkiyal .headermin{
+    position: absolute;
+    margin-top: -1px;
+    width: 100%;
+    z-index: 3;
+}
+#minkiyal .menu{
+    display: inline-block;
+    background: #FEFEFE;
+    border-radius: 0px 0px 5px 5px !important;
+        -webkit-box-shadow: 0px 0px 15px 3px rgba(0,0,0,0.17);
+    -moz-box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.17);
+    box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.17);
+}
+#minkiyal .menu ul li{
+    border-right: 1px solid #EAEAEA;
+}
+#minkiyal .menu ul li:last-child{
+    border-right: none;
+}
+#minkiyal .menu ul>li a:first-child{
+    border-radius: 0px 0px 0px 5px !important;
+}
+#minkiyal .menu ul>li a:last-child{
+    border-radius: 0px 0px 5px 0px !important;
+}
+#minkiyal .menu ul>li a{
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1;
+    color: #DC0D7C;
+}
+
+/* MENU */

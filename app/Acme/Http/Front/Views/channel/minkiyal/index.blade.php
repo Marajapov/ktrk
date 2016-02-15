@@ -1,44 +1,37 @@
 @extends('Front::channel.minkiyal.default')
 @section('title', "Миң Кыял Фм")
 @section('styles')
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/style2.css') }}">
+
 @endsection
 @section('content')
-  <body id="home" class="homepage">
-
-  <header id="header">
-    <nav id="main-menu" class="navbar navbar-default fixedheader2" role="banner">
-      <div class="container" style="padding: 0px; position:relative;">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Меню</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
-
-        <div class="collapse navbar-collapse navbar-right">
-          <ul class="nav navbar-nav">
-            <li class="scroll active"><a href="#home">Home</a></li>
-            <li class="scroll"><a href="#features">Features</a></li>
-            <li class="scroll"><a href="#services">Services</a></li>
-          </ul>
-        </div>
-      </div><!--/.container-->
-    </nav><!--/nav-->
-  </header><!--/header-->
-
+  @include('Front::channel.minkiyal.nav')
+  <div class="container headermin">
+      <div id="main-menu" class="navbar" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div class="navbar-collapse collapse text-center">
+          <div class="menu">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Главная</a></li>
+              <li><a href="#report">Фоторепортаж</a></li>
+              <li><a href="#contacts">Байланыш</a></li>
+            </ul>
+          </div>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+  </div>
   <div class="container-fluid main">
     <div class="shows-slider slidermin">
       <div class="slider-overlay"></div>
       <div class="shows-carousel">
-        <div>
-          <div class="overlay"></div>
-          <a href="#">
-            <img src="{{ asset('images/channels/minkiyal/nonred.jpg') }}" alt=""/>
-          </a>
-        </div>
         <div>
           <div class="overlay"></div>
           <a href="#">
@@ -56,8 +49,7 @@
 
   </div>
 
-  @include('Front::channel.minkiyal.nav')
-  <section id="features">
+  <section id="report">
     <div class="contaner-fluid middleblock">
       <div class="container info">
         <div class="col-md-12">
@@ -121,8 +113,7 @@
     </div>
   </section>
 
-
-  <section id="services" >
+  <section id="contacts" >
     <div class="container-fluid infobar">
       <div class="container contacts">
 
