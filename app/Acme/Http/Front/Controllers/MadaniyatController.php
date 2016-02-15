@@ -11,7 +11,7 @@ class MadaniyatController extends Controller
     public function Home()
     {
 
-         return view('Front::channel.madaniyat.comingsoon',[]);
+//         return view('Front::channel.madaniyat.comingsoon',[]);
        
         $channel = \Model\Channel\ModelName::name('madaniyat')->first();
 
