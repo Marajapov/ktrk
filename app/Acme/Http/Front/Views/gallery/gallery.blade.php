@@ -6,8 +6,8 @@
     <meta property="og:site_name"          content="{{ trans('site.TradeMark') }}" />
     <meta property="og:type"               content="article" />
     <meta property="og:title"              content="{{ $gallery->getName() }}" />
-    <meta property="og:description"        content="{{ $gallery->getDescription() }}" />
-    <meta property="og:image"              content="http://img.youtube.com/vi/{{ $gallery->thumbnail_big }}" />
+    <meta property="og:description"        content="" />
+    <meta property="og:image"              content="{{ asset($gallery->thumbnail_big) }}" />
 
     <link rel="stylesheet" href="{{ asset('css/articles.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/pages.css') }}"/>

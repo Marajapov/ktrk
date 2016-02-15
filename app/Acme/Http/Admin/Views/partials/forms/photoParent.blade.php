@@ -86,6 +86,19 @@
             </div>
         </div>
 
+        <!-- watermark -->
+        <div class="form-group">
+            <label for="watermark" class="col-sm-2 control-label"></label>
+            <div class="col-sm-10">
+                <div class="checkbox checkbox-primary ">
+                    {!! Form::checkbox('watermark', 1, null, ["id" => "watermark", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
+                    <label for="watermark">
+                        Водяной знак
+                    </label>
+                </div>
+            </div>
+        </div>
+
         <div class="form-group">
             <label for="parentId" class="col-sm-2 control-label">{{ trans('site.Images') }}</label>
             <div class="col-sm-10">
