@@ -299,6 +299,22 @@ class MediaController extends Controller
         return redirect()->route('admin.media.index');
     }
 
+    public function dayVideoRu1(Request $request)
+    {
+        $id = $request->media;
+        $mediaStars = \Model\Media\ModelName::where('dayVideo','=','11')->get();
+        foreach($mediaStars as $mediaStar)
+        {
+            $mediaStar->dayVideo = 0;
+            $mediaStar->save();
+        }
+
+        $row = \Model\Media\ModelName::where('id','=',$id)->first();
+        $row->dayVideo = 11;
+        $row->save();
+        return redirect()->route('admin.media.index');
+    }
+
     // video2
     public function dayVideo2(Request $request)
     {

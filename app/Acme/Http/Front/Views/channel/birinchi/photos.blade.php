@@ -17,7 +17,7 @@
                <div class="col-md-12">   
                   <div class="panel-body">
                      <div class="row">
-                        <p>{{ $gallery->getDescription() }}</p>
+                        <p>{!! $gallery->getDescription() !!}</p>
                         <ul id="imageGallery">
                            @if($images != null)
                            @foreach($images as $image)

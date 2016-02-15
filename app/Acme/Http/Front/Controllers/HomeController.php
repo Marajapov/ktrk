@@ -112,13 +112,15 @@ class HomeController extends Controller
         }
 
         $dayVideo1 = \Model\Media\ModelName::where('dayVideo','=','1')->first();
+        $dayVideoRu1 = \Model\Media\ModelName::where('dayVideo','=','11')->first();
         $dayVideo2 = \Model\Media\ModelName::where('dayVideo','=','2')->first();
         $dayVideo3 = \Model\Media\ModelName::where('dayVideo','=','3')->first();
         $dayVideo4 = \Model\Media\ModelName::where('dayVideo','=','4')->first();
-        $dayVideo5 = \Model\Media\ModelName::where('dayVideo','=','5')->first();
 
-        if($dayVideo1){
+        if($dayVideo1 && $lc=='kg'){
             $dayVideo1 = $dayVideo1;
+        } elseif($dayVideoRu1 && $lc=='ru') {
+            $dayVideo1 = $dayVideoRu1;
         } else {
             $dayVideo1 = '';
         }

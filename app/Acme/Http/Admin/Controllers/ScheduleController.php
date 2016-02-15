@@ -16,7 +16,7 @@ class ScheduleController extends Controller
      */
     public function index()
     {
-        $channels = Channel::take(8)->skip(1)->get();
+        $channels = Channel::where('published','=','1')->get();
 
         setlocale(LC_TIME, 'ru_RU.CP1251', 'rus_RUS.CP1251', 'Russian_Russia.1251');
 
@@ -51,7 +51,7 @@ class ScheduleController extends Controller
      */
     public function create()
     {
-        $channels = \Model\Channel\ModelName::take(8)->skip(1)->lists('display', 'id')->toArray();
+        $channels = \Model\Channel\ModelName::where('published','=','1')->lists('display', 'id')->toArray();
         return view('Admin::schedule.create', [
             'schedule' => new Schedule,
             'channels' => $channels
@@ -138,7 +138,7 @@ class ScheduleController extends Controller
      */
     public function edit(Schedule $schedule)
     {
-        $channels = \Model\Channel\ModelName::take(8)->skip(1)->lists('display', 'id')->toArray();
+        $channels = \Model\Channel\ModelName::where('published','=','1')->lists('display', 'id')->toArray();
         $date = $schedule->date;
 //        $program = json_decode($schedule->program);
         $extra = $schedule->extra;
