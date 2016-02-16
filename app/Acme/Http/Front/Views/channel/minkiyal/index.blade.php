@@ -10,7 +10,7 @@
         <div class="container">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
+              <span class="sr-only">Меню</span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
@@ -19,7 +19,7 @@
           <div class="navbar-collapse collapse text-center">
           <div class="menu">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Главная</a></li>
+              <li class="active"><a href="#">Башкы</a></li>
               <li><a href="#report">Фоторепортаж</a></li>
               <li><a href="#contacts">Байланыш</a></li>
             </ul>
@@ -31,20 +31,18 @@
   <div class="container-fluid main">
     <div class="shows-slider slidermin">
       <div class="slider-overlay"></div>
-      <div class="shows-carousel">
+      @if($anons->first())
+      <div class="shows-carousel">     
+        @foreach($anons as $row)
         <div>
           <div class="overlay"></div>
           <a href="#">
-            <img src="{{ asset('images/channels/minkiyal/radio.jpg') }}" alt=""/>
+            <img src="{{asset($row->thumbnail)}}" alt=""/>
           </a>
         </div>
-        <div>
-          <div class="overlay"></div>
-          <a href="#">
-            <img src="{{ asset('images/channels/minkiyal/red.jpg') }}" alt=""/>
-          </a>
-        </div>
+        @endforeach
       </div>
+      @endif
     </div>
 
   </div>
@@ -65,41 +63,14 @@
           </div>
           <h2>Фоторепортаждар</h2>
           <div id="allposts" class="row">
-
-            <div class="col-md-4 col-sm-12 postshow">
-              <img src="{{asset('images/channels/minkiyal/anjelika.png')}}" class="img-responsive" alt="">
-              <a href="#"><h3>Анжелика жаны ырын тартуулады</h3></a>
-            </div>
-            <div class="col-md-4 col-sm-12 postshow">
-              <img src="{{asset('images/channels/minkiyal/ayana.jpg')}}" class="img-responsive" alt="">
-              <a href="#"><h3>Аяна Касымова Интернетти кайра дүңгүрөттү</h3></a>
-            </div>
-            <div class="col-md-4 col-sm-12 postshow">
-              <img src="{{asset('images/channels/minkiyal/kalykov.jpg')}}" class="img-responsive" alt="">
-              <a href="#"><h3>Гүлжигит Калыков биздин студияда</h3></a>
-            </div>
-            <div class="col-md-4 col-sm-12 postshow">
-              <img src="{{asset('images/channels/minkiyal/winter.jpg')}}" class="img-responsive" alt="">
-              <a href="#"><h3>Анжелика жаны ырын тартуулады</h3></a>
-            </div>
-            <div class="col-md-4 col-sm-12 postshow">
-              <img src="{{asset('images/channels/minkiyal/red.jpg')}}" class="img-responsive" alt="">
-              <a href="#"><h3>Аяна Касымова Интернетти кайра дүңгүрөттү</h3></a>
-            </div>
-            <div class="col-md-4 col-sm-12 postshow">
-              <img src="{{asset('images/channels/minkiyal/nonred.jpg')}}" class="img-responsive" alt="">
-              <a href="#"><h3>Гүлжигит Калыков биздин студияда</h3></a>
-            </div>
-
-            <div class="col-md-4 col-sm-12 postshow">
-              <img src="{{asset('images/channels/minkiyal/red.jpg')}}" class="img-responsive" alt="">
-              <a href="#"><h3>Аяна Касымова Интернетти кайра дүңгүрөттү</h3></a>
-            </div>
-            <div class="col-md-4 col-sm-12 postshow">
-              <img src="{{asset('images/channels/minkiyal/nonred.jpg')}}" class="img-responsive" alt="">
-              <a href="#"><h3>Гүлжигит Калыков биздин студияда</h3></a>
-            </div>
-
+              @if($photoGalleries)
+               @foreach($photoGalleries as $photoGallery)
+               <div class="col-md-4 sm-12 postshow">
+                  <img src="{{ asset($photoGallery->thumbnail_big) }}" class="img-responsive" alt="">
+                  <a href="{{ route('minkiyal.post', $photoGallery) }}"><h3>{{ $photoGallery->getName() }}</h3></a>  
+               </div>
+               @endforeach
+               @endif
             <div class="col-md-12 more">
               <a class="show-btn loadMore" href="#">
                 дагы жүктөө
