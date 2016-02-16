@@ -194,8 +194,8 @@
                 <div class="col-md-12 birinchigallery">
                     <div class="row">
                         <div class="col-md-12">
-                            <h3 class="title">{{ trans('radiopages.Photos') }}</h3>
-                            <h3 class="titleshowsright"><a href="{{ route('birinchi.allphotos') }}">{{ trans('radiopages.Allphotos') }}<i class="fa fa-arrow-right"></i></a></h3>
+                            <h3 class="title">{{ trans('radiopages.PhotoReports') }}</h3>
+                            <h3 class="titleshowsright"><a href="{{ route('birinchi.allphotos') }}">{{ trans('radiopages.AllPhotoReports') }}<i class="fa fa-arrow-right"></i></a></h3>
                         </div>
                         @if($photoGalleries)
                             @foreach($photoGalleries as $photoGallery)
