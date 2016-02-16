@@ -28,22 +28,7 @@
     <link rel="stylesheet"  href="{{ asset('css/lightslider.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/gallery.css') }}"/>
 
-
     @yield('styles')
-
-    <style>
-        body{
-
-            @if($backgroundMain != null) background: url('{{ asset($backgroundMain->getFile()) }}') no-repeat;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-position: center;
-            background-size: cover;
-            @endif
-        }
-    </style>
-
-
 
 </head>
 <body>

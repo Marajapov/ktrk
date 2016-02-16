@@ -170,7 +170,7 @@
         <div class="row dkp-big-3now ">
             @if($anons1)
                 <div class="col-xs-4 rowfix" >
-                    <a href="#" data-toggle="modal" data-target="#myModal" class="dkp-anonce dkp-anonce-small  dkp-border" style="background-image: url('{{ $anons1->thumbnail_big }}');" >
+                    <a href="#" data-toggle="modal" data-target="#myModal" class="dkp-anonce dkp-anonce-small  dkp-border" style="background-image: url('{{ $anons1->thumbnail_big }}'); background-position: center center;" >
                         <div class="dkp-3now-item-wrapper">
                             <div class="dkp-3now-item-time">
                      <span>
@@ -737,7 +737,7 @@
                         cuboidsRandom : true,
                         disperseFactor : 30,
                         autoplay : true,
-                        interval: 5000,
+                        interval: 5000
                     } ),
                     init = function() {
                         initEvents();
