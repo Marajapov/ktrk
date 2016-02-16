@@ -1274,13 +1274,13 @@
     display: inline-block;
     margin-bottom: 50px;
     padding: 15px 25px;
-    background: #AA1975;
+    background: #009688;
     color: #fff;
     font-family: 'Open Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
     font-size: 16px;
     font-weight: bold;
     text-transform: uppercase;
-    box-shadow: 0 6px 0 0 #D43A9C;
+    box-shadow: 0 6px 0 0 #0A4E48;
     border-radius: 3px !important;
     cursor: pointer;
     -webkit-backface-visibility: hidden;
@@ -1295,13 +1295,13 @@
 }
 #minkiyal .show-btn:hover{
     top: 2px;
-    background: #AA1975;
-    box-shadow: 0 4px 0 0 #D43A9C;
+    background: #009688;
+    box-shadow: 0 4px 0 0 #0A4E48;
     color: #ffffff;
 }
 #minkiyal .show-btn:active{
     top:6px;
-    box-shadow:0 1px 0 0 #D43A9C;
+    box-shadow:0 1px 0 0 #0A4E48;
 }
 
 #minkiyal .footer-channels a:hover img {
@@ -1460,7 +1460,7 @@
 }
 #minkiyal .shows-carousel .slick-slide {
     /*height: 510px;*/
-    padding:20px 0px; 
+    padding:0px 0px 20px 0px; 
 }
 #minkiyal .copyright,#minkiyal .footer-menu{
     color: #ffffff;

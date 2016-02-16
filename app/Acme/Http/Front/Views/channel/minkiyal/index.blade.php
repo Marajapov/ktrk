@@ -32,18 +32,30 @@
     <div class="row">
       <div class="shows-slider slidermin">
         <div class="slider-overlay"></div>
-        @if($anons->first())
+ <!--        @if($anons->first()) -->
         <div class="shows-carousel">     
-          @foreach($anons as $row)
+<!--           @foreach($anons as $row)
           <div>
             <div class="overlay"></div>
             <a href="#">
               <img src="{{asset($row->thumbnail)}}" alt=""/>
             </a>
           </div>
-          @endforeach
+          @endforeach -->
+          <div>
+          <div class="overlay"></div>
+          <a href="#">
+            <img src="{{ asset('images/channels/minkiyal/radio.jpg') }}" alt=""/>
+          </a>
         </div>
-        @endif
+        <div>
+          <div class="overlay"></div>
+          <a href="#">
+            <img src="{{ asset('images/channels/minkiyal/red.jpg') }}" alt=""/>
+          </a>
+        </div>
+        </div>
+    <!--     @endif -->
       </div> 
     </div>
   </div>
@@ -63,14 +75,47 @@
           </div>
           <h2>Фоторепортаждар</h2>
           <div id="allposts" class="row">
-              @if($photoGalleries)
+<!--               @if($photoGalleries)
                @foreach($photoGalleries as $photoGallery)
                <div class="col-md-4 sm-12 postshow">
                   <img src="{{ asset($photoGallery->thumbnail_big) }}" class="img-responsive" alt="">
                   <a href="{{ route('minkiyal.post', $photoGallery) }}"><h3>{{ $photoGallery->getName() }}</h3></a>  
                </div>
                @endforeach
-               @endif
+               @endif -->
+         <div class="col-md-4 col-sm-12 postshow">
+              <img src="{{asset('images/channels/minkiyal/anjelika.png')}}" class="img-responsive" alt="">
+              <a href="#"><h3>Анжелика жаны ырын тартуулады</h3></a>
+            </div>
+            <div class="col-md-4 col-sm-12 postshow">
+              <img src="{{asset('images/channels/minkiyal/ayana.jpg')}}" class="img-responsive" alt="">
+              <a href="#"><h3>Аяна Касымова Интернетти кайра дүңгүрөттү</h3></a>
+            </div>
+            <div class="col-md-4 col-sm-12 postshow">
+              <img src="{{asset('images/channels/minkiyal/kalykov.jpg')}}" class="img-responsive" alt="">
+              <a href="#"><h3>Гүлжигит Калыков биздин студияда</h3></a>
+            </div>
+            <div class="col-md-4 col-sm-12 postshow">
+              <img src="{{asset('images/channels/minkiyal/winter.jpg')}}" class="img-responsive" alt="">
+              <a href="#"><h3>Анжелика жаны ырын тартуулады</h3></a>
+            </div>
+            <div class="col-md-4 col-sm-12 postshow">
+              <img src="{{asset('images/channels/minkiyal/red.jpg')}}" class="img-responsive" alt="">
+              <a href="#"><h3>Аяна Касымова Интернетти кайра дүңгүрөттү</h3></a>
+            </div>
+            <div class="col-md-4 col-sm-12 postshow">
+              <img src="{{asset('images/channels/minkiyal/nonred.jpg')}}" class="img-responsive" alt="">
+              <a href="#"><h3>Гүлжигит Калыков биздин студияда</h3></a>
+            </div>
+
+            <div class="col-md-4 col-sm-12 postshow">
+              <img src="{{asset('images/channels/minkiyal/red.jpg')}}" class="img-responsive" alt="">
+              <a href="#"><h3>Аяна Касымова Интернетти кайра дүңгүрөттү</h3></a>
+            </div>
+            <div class="col-md-4 col-sm-12 postshow">
+              <img src="{{asset('images/channels/minkiyal/nonred.jpg')}}" class="img-responsive" alt="">
+              <a href="#"><h3>Гүлжигит Калыков биздин студияда</h3></a>
+            </div>
             <div class="col-md-12 more">
               <a class="show-btn loadMore" href="#">
                 дагы жүктөө
