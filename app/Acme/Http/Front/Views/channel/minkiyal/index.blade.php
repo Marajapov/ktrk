@@ -32,16 +32,8 @@
     <div class="row">
       <div class="shows-slider slidermin">
         <div class="slider-overlay"></div>
- <!--        @if($anons->first()) -->
+
         <div class="shows-carousel">     
-<!--           @foreach($anons as $row)
-          <div>
-            <div class="overlay"></div>
-            <a href="#">
-              <img src="{{asset($row->thumbnail)}}" alt=""/>
-            </a>
-          </div>
-          @endforeach -->
           <div>
           <div class="overlay"></div>
           <a href="#">
@@ -55,7 +47,7 @@
           </a>
         </div>
         </div>
-    <!--     @endif -->
+
       </div> 
     </div>
   </div>
