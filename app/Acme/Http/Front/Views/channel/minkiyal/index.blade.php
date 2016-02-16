@@ -5,29 +5,6 @@
 @endsection
 @section('content')
   @include('Front::channel.minkiyal.nav')
-  <div class="container headermin">
-      <div id="main-menu" class="navbar" role="navigation">
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-              <span class="sr-only">Меню</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-          </div>
-          <div class="navbar-collapse collapse text-center">
-          <div class="menu">
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Башкы</a></li>
-              <li><a href="#report">Фоторепортаж</a></li>
-              <li><a href="#contacts">Байланыш</a></li>
-            </ul>
-          </div>
-        </div><!--/.nav-collapse -->
-      </div>
-    </div>
-  </div>
   <div class="container">
 
       <div class="shows-slider slidermin">
@@ -116,34 +93,53 @@
         </div>
       </div>
   </div>
-  <div class="container allgallery">
-    <div class="title">
-      <h3>Сүрөтбаяндар</h3>
-    </div>
-      <div class="row">
-        <div class="withpad">
-          <div class="col-md-4 second">
-              <a href="#">
-                <img src="{{asset('images/channels/birinchiradio/olivia.jpg')}}" class="img-responsive" alt="">
-                <h3>Бактылуу Оливия биздин кечки конокто</h3>
-              </a>
-          </div>
-          <div class="col-md-4 second">
-              <a href="#">
-                <img src="{{asset('images/channels/muzkanal/mirbek.jpg')}}" class="img-responsive" alt="">
-                <h3>Мирбек Атабеков чоң гастролго аттанаарда</h3>
-              </a>
-          </div>
-          <div class="col-md-4 second">
-              <a href="#">
-                <img src="{{asset('images/channels/minkiyal/kalykov.jpg')}}" class="img-responsive" alt="">
-                <h3>Гүлжигит Калыков биздин студияда</h3>
-              </a>
+  <div class="container-fluid allgallery">
+    <div class="container ">
+      <div class="title">
+        <h3>Сүрөтбаяндар</h3>
+      </div>
+        <div class="row">
+          <div class="withpad">
+            <div class="col-md-4 second">
+                <a href="#">
+                  <img src="{{asset('images/channels/birinchiradio/olivia.jpg')}}" class="img-responsive" alt="">
+                  <h3>Бактылуу Оливия биздин кечки конокто</h3>
+                </a>
+            </div>
+            <div class="col-md-4 second">
+                <a href="#">
+                  <img src="{{asset('images/channels/muzkanal/mirbek.jpg')}}" class="img-responsive" alt="">
+                  <h3>Мирбек Атабеков чоң гастролго аттанаарда</h3>
+                </a>
+            </div>
+            <div class="col-md-4 second">
+                <a href="#">
+                  <img src="{{asset('images/channels/minkiyal/kalykov.jpg')}}" class="img-responsive" alt="">
+                  <h3>Гүлжигит Калыков биздин студияда</h3>
+                </a>
+            </div>
           </div>
         </div>
-      </div>
+    </div>
   </div>
   </section>
+
+  <section id="network" >
+      <div class="container network">
+          <div class="title">
+            <h3>Биз социалдык тармактарда </h3>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <h3><i class="fa fa-map-marker"></i> Дареги</h3>
+              <ul>
+                <li><i class="fa fa-location-arrow"></i> Кыргызстан, Бишкек  шаары</li>
+                <li><i class="fa fa-home"></i> Жаш Гвардия бульвары, 59</li>
+              </ul>
+            </div>
+          </div>
+      </div>
+  </section><!--/#services-->
 
   <section id="contacts" >
     <div class="container-fluid infobar">
@@ -176,23 +172,6 @@
           </div>
       </div>
     </div>
-  </section><!--/#services-->
-
-    <section id="network" >
-      <div class="container network infobar">
-          <div class="col-md-12 ">
-            <h2>Биз социалдык тармактарда </h2>
-          </div>
-          <div class="row">
-            <div class="col-md-3">
-              <h3><i class="fa fa-map-marker"></i> Дареги</h3>
-              <ul>
-                <li><i class="fa fa-location-arrow"></i> Кыргызстан, Бишкек  шаары</li>
-                <li><i class="fa fa-home"></i> Жаш Гвардия бульвары, 59</li>
-              </ul>
-            </div>
-          </div>
-      </div>
   </section><!--/#services-->
 
 </body>
