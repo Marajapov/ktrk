@@ -28,27 +28,27 @@
       </div>
     </div>
   </div>
-  <div class="container-fluid main">
-    <div class="shows-slider slidermin">
-      <div class="slider-overlay"></div>
-      @if($anons->first())
-      <div class="shows-carousel">     
-        @foreach($anons as $row)
-        <div>
-          <div class="overlay"></div>
-          <a href="#">
-            <img src="{{asset($row->thumbnail)}}" alt=""/>
-          </a>
+  <div class="container">
+    <div class="row">
+      <div class="shows-slider slidermin">
+        <div class="slider-overlay"></div>
+        @if($anons->first())
+        <div class="shows-carousel">     
+          @foreach($anons as $row)
+          <div>
+            <div class="overlay"></div>
+            <a href="#">
+              <img src="{{asset($row->thumbnail)}}" alt=""/>
+            </a>
+          </div>
+          @endforeach
         </div>
-        @endforeach
-      </div>
-      @endif
+        @endif
+      </div> 
     </div>
-
   </div>
 
   <section id="report">
-    <div class="contaner-fluid middleblock">
       <div class="container info">
         <div class="col-md-12">
           <div class="online">
@@ -81,14 +81,11 @@
 
         </div>
       </div>
-    </div>
   </section>
 
   <section id="contacts" >
     <div class="container-fluid infobar">
       <div class="container contacts">
-
-        <div class="row">
           <div class="col-md-12 xcontact">
             <h2>- КТРК  “Миң Кыял FM” радиосу -</h2>
           </div>
@@ -113,9 +110,6 @@
               <li><i class="fa fa-facebook-official"></i> www.facebook.com/MinKyalFm</li>
             </ul>
           </div>
-        </div>
-
-
       </div>
     </div>
   </section><!--/#services-->

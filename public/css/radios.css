@@ -1158,7 +1158,10 @@
 #minkiyal {
     position: relative;
     font-family: 'Roboto Condensed';
-    background: #009688;
+    background: url('../images/channels/minkiyal/main2.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
 }
 #minkiyal .switch{
     background:#FEFEFE;
@@ -1175,7 +1178,7 @@
 }
 #minkiyal .main {
     position: relative;
-    margin-top:-70px; 
+    margin-top: -70px;
 }
 #minkiyal .main .innerfix{
     position: fixed;
@@ -1188,7 +1191,6 @@
     position: relative;
     margin-top: -30px;
     border-radius: 5px !important;
-    background: #fff;
     -webkit-box-shadow: 0px 0px 15px 3px rgba(0,0,0,0.17);
     -moz-box-shadow: 0px 0px 15px 3px rgba(0,0,0,0.17);
     box-shadow: 0px 0px 15px 3px rgba(0,0,0,0.17);
@@ -1367,23 +1369,30 @@
 #minkiyal .mingallery .allreport i{
     padding-left: 5px;
 }
-#minkiyal .contacts {
-    padding: 40px 0px;
+
+#minkiyal .infobar .contacts {
+    position: relative;
+    -webkit-box-shadow: 0px 0px 15px 3px rgba(0,0,0,0.17);
+    -moz-box-shadow: 0px 0px 15px 3px rgba(0,0,0,0.17);
+    box-shadow: 0px 0px 15px 3px rgba(0,0,0,0.17);
+    border-radius: 5px !important;
 }
 #minkiyal .xcontact {
     text-align: center;
 }
 #minkiyal .xcontact h2{
-    padding: 30px 0px; 
+    padding: 30px 0px;
+    margin: 0px; 
 
     text-align: center;
     font-weight: bold;
     font-size: 3em;
    
-    color: #fff;   
+    color: #06243C;   
 }
 
 #minkiyal .address {
+    margin-bottom: 15px;
     border-radius: 10px 10px 5px 5px !important;
     -webkit-border-radius: 10px 10px 5px 5px !important;
     -moz-border-radius: 10px 10px 5px 5px !important;
@@ -1436,7 +1445,8 @@
 }
 
 #minkiyal .slidermin .shows-carousel .slick-slide img{
-    height: 500px;
+    /*height: 500px;*/
+    border-radius: 5px !important;
 }
 #minkiyal .slidermin .slick-slide .overlay{
     background: none;
@@ -1449,27 +1459,26 @@
     color: #fff !important;
 }
 #minkiyal .shows-carousel .slick-slide {
-    height: 510px;
+    /*height: 510px;*/
+    padding:20px 0px; 
 }
 #minkiyal .copyright,#minkiyal .footer-menu{
     color: #ffffff;
     font-size: 16px;
 }
 #minkiyal .middleblock{
-    margin-top: -90px;
     background: #fff;
 }
 #minkiyal .infobar{
-    margin-top: -70px;
-    background: #009688;
+    padding:40px 0px; 
 }
 #minkiyal .prefooter {
     border: none;
-    background: #1D6486;
+    background: none;
     border-radius: 5px 5px 0px 0px !important;
 }
 #minkiyal .prefooter .footer-info{
-    background: #1D6486;
+    background: none;
     border-radius: 5px 5px 0px 0px !important;
 }
 .minkiyal_nav{

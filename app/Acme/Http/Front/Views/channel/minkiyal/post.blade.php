@@ -41,7 +41,7 @@
     </div>
   </div>
   <div class="container-fluid main">
-     <img src="{{ asset('images/channels/minkiyal/main.png')}}" alt="" class="img-responsive innerfix">
+     <img src="{{ asset('images/channels/minkiyal/main2.jpg')}}" alt="" class="img-responsive innerfix">
   </div>
     <div class="container mingallery">
       <div class="col-md-12">
