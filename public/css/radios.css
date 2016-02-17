@@ -1226,7 +1226,7 @@
     background-position: center center;  */                
 }
 #minkiyal .switch{
-    background:#4C2657;
+    background:#4CAF50;
     z-index: 3;
 }
 #minkiyal .sitemenu h4{
@@ -1481,7 +1481,7 @@
     border-bottom: 3px solid;
   
     color: #FFF;
-    background: #F44336;
+    background: #4CAF50;
 
     -webkit-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.60),0 6px 20px 0 rgba(0,0,0,0.19);
     -moz-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.62),0 6px 20px 0 rgba(0,0,0,0.19);
@@ -1499,7 +1499,7 @@
     -moz-transition: all 0.5s ease-in-out;
     -o-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
-    background: #1D6486;
+    background: #4C2657;
     font-family: 'Roboto Regular';
 
     -webkit-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.60),0 6px 20px 0 rgba(0,0,0,0.19);
@@ -1541,7 +1541,7 @@
     font-size: 16px;
 }
 #minkiyal .copyright,#minkiyal .footer-menu{
-    color: #ffffff;
+    color: #383838;
     font-size: 16px;
 }
 #minkiyal .middleblock{
@@ -1643,7 +1643,7 @@
     padding-bottom: 20px;
 }
 #minkiyal .allgallery{
-    background: #F44336;
+    background: #4CAF50;
     margin-top: 40px;
     margin-bottom: 40px;
     padding-top: 20px;
@@ -1698,7 +1698,7 @@
     font-weight: bold;
     color: #fff;
     width: 400px;
-    background: #F44336;
+    background: #4C2657;
     height: 70px;
         -webkit-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     -moz-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
@@ -1713,9 +1713,14 @@
 }
 #minkiyal .allgallery .second h3:hover{
     color: #fff;
-    background: #F44336;
+    background: #4CAF50;
 }
 #minkiyal .withpad{
     padding: 0px 5px;
+}
+
+#minkiyal .logoon .logo img{
+    margin-left: 15px;
+    margin-top: 25px;
 }
 /* MENU */
