@@ -28,7 +28,7 @@
                         <ul class="nav navbar-nav">
                            <li class="active"><a href="#">Башкы</a></li>
                            <li><a href="#report">Сүрөтбаяндар</a></li>
-                           <li><a href="#contacts">Байланыш</a></li>
+                           <li><a href="#contacts">Биз жөнүндө</a></li>
                            <li><a href="#contacts">Ди-Джейлер</a></li>
                         </ul>
                      </div>

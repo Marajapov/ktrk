@@ -1219,9 +1219,12 @@
 #minkiyal {
     position: relative;
     font-family: 'Roboto Condensed';
-    /*background: url('../images/channels/minkiyal/main2.jpg');*/
-    background: #f1edea;
-/*    background-size: cover;
+    /*background: url('../images/channels/minkiyal/bg.jpg');*/
+    /*background: #f1edea;*/
+    background-image: -moz-linear-gradient(90deg, #4CAF50 0%, #8BC34A 100%);
+    background-image: -webkit-linear-gradient(90deg, #4CAF50 0%, #8BC34A 100%);
+    background-image: -ms-linear-gradient(90deg, #4CAF50 0%, #8BC34A 100%);
+  /*  background-size: cover;
     background-attachment: fixed;
     background-position: center center;  */                
 }
@@ -1636,7 +1639,7 @@
     font-weight: bold;
     white-space: nowrap;
     color: #D5107B;
-    border-bottom: 1px solid #D5107B;
+    border-bottom: 1px solid #4CAF50;
 }
 #minkiyal .logoon .logomin img{
     height: 90px;
