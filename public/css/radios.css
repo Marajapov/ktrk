@@ -1226,7 +1226,7 @@
     background-position: center center;  */                
 }
 #minkiyal .switch{
-    background:#4CAF50;
+    background:#161414;
     z-index: 3;
 }
 #minkiyal .sitemenu h4{
@@ -1276,7 +1276,6 @@
 
 #minkiyal .info .postshow {
     position: relative;
-    display: none;
     margin-bottom: 25px;
     padding:0px 5px; 
     cursor: pointer;
@@ -1337,52 +1336,6 @@
 }
 #minkiyal .info .postshow:hover h3{
     opacity: 0;
-}
-#minkiyal .info .more{
-    padding: 0px 0px 30px 0px; 
-}
-
-#minkiyal .show-btn {
-    width: 300px;
-    text-align: center;
-    margin: 0 auto;
-    display: block
-}
- .show-btn {
-    position: relative;
-    top: 0;
-    border: 0;
-    display: inline-block;
-    margin-bottom: 50px;
-    padding: 15px 25px;
-    background: #009688;
-    color: #fff;
-    font-family: 'Open Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
-    font-size: 16px;
-    font-weight: bold;
-    text-transform: uppercase;
-    box-shadow: 0 6px 0 0 #0A4E48;
-    border-radius: 3px !important;
-    cursor: pointer;
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    -ms-backface-visibility: hidden;
-    backface-visibility: hidden;
-    -webkit-transition: all 0.2s ease;
-    -moz-transition: all 0.2s ease;
-    -ms-transition: all 0.2s ease;
-    -o-transition: all 0.2s ease;
-    transition: all 0.2s ease;
-}
-#minkiyal .show-btn:hover{
-    top: 2px;
-    background: #009688;
-    box-shadow: 0 4px 0 0 #0A4E48;
-    color: #ffffff;
-}
-#minkiyal .show-btn:active{
-    top:6px;
-    box-shadow:0 1px 0 0 #0A4E48;
 }
 
 #minkiyal .footer-channels a:hover img {
@@ -1554,61 +1507,7 @@
   color: #E8A5E0;
 }
 
-@media  screen and (max-width: 980px) {
-  #minkiyal .online h3 {
-    display: none;
-  }
-  #minkiyal .online{
-    position: absolute;
-    top: 0px;
-    left: -10%;
-    right: 50%;
-    width: 210px;
-    padding: 0px 0px 0px 10px;
-    text-align: center;
-    border-radius: 5px !important;
-    background: none;
-  }
-}
-/*  END HOME  */
 
-/* MENU */
-#minkiyal .fixed {
-    margin: -1px auto 0px auto;
-    background: none;
-}
-#minkiyal .headermin{
-    position: absolute;
-    margin-top: -1px;
-    width: 100%;
-    z-index: 3;
-}
-#minkiyal .menu{
-    display: inline-block;
-    background: #FEFEFE;
-    border-radius: 0px 0px 5px 5px !important;
-        -webkit-box-shadow: 0px 0px 15px 3px rgba(0,0,0,0.17);
-    -moz-box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.17);
-    box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.17);
-}
-#minkiyal .menu ul li{
-    border-right: 1px solid #EAEAEA;
-}
-#minkiyal .menu ul li:last-child{
-    border-right: none;
-}
-#minkiyal .menu ul>li a:first-child{
-    border-radius: 0px 0px 0px 5px !important;
-}
-#minkiyal .menu ul>li a:last-child{
-    border-radius: 0px 0px 5px 0px !important;
-}
-#minkiyal .menu ul>li a{
-    font-size: 18px;
-    font-weight: bold;
-    line-height: 1;
-    color: #DC0D7C;
-}
 #minkiyal .imagereports{
     margin: 90px 0px 40px 0px;
 }
@@ -1695,23 +1594,61 @@
 #minkiyal .anons-carousel .col-md-9 span{
     padding:5px; 
 }
+/*  END HOME  */
+
+/* MENU */
+#minkiyal .headermin{
+    position: absolute;
+    margin: 10px 0px 0px 0px;
+}
+#minkiyal .menu{
+    display: inline-block;
+    margin:15px 0px; 
+    background: #FEFEFE;
+}
+#minkiyal .menu ul li{
+    border-right: 2px solid #F1EDEA;
+}
+#minkiyal .menu ul li:last-child{
+    border-right: none;
+}
+
+#minkiyal .menu ul>li a{
+    padding: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1;
+    color: #DC0D7C;
+}
+
 #minkiyal .logoon {
     position: relative;
 }
 #minkiyal .logoon .logomin {
-    position: relative;
+    position: absolute;
     display: inline-block;
     left: 0;
 }
+#minkiyal .logoon .logomin span{
+    position: absolute;
+    margin: 30px 0px 0px 15px;
+    font-size: 2.5em;
+    font-weight: bold;
+    white-space: nowrap;
+    color: #D5107B;
+    border-bottom: 1px solid #D5107B;
+}
 #minkiyal .logoon .logomin img{
+    height: 90px;
+    width: inherit;
     margin-top: 10px;
+    float: left;
 }
 
 #minkiyal .online{
     float: right;
     padding: 0px 0px 0px 10px;
-    margin: 35px 5px;  
-    text-align: center;
+    margin: 30px -10px 15px 0px;
     background: #181818;
 }
 #minkiyal .online h3{
