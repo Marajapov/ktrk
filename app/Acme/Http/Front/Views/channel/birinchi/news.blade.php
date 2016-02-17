@@ -12,7 +12,7 @@
 
 <link rel="stylesheet" href="{{asset('css/goodshare.css')}}">
 <link rel="stylesheet" href="{{asset('css/articles.css')}}">
-
+<link rel="stylesheet" href="{{ asset('css/magnific-popup.css')}}"/>
 @endsection
 @section('content')
 <div class="birinchiradio">
@@ -34,9 +34,13 @@
                               <span class="view"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
                            </div>
                            <h3 class="newstitle">{{ $post->getTitleRuOrKg() }}</h3>
-                           <div class="oneimg">
-                              <img src="@if(empty($post->getFile()))images/2.jpg @else {{  asset($post->getFile()) }} @endif" title="{{ $post->getTitleRuOrKg() }}">
-                           </div>
+                             <p class="post-thumb" href="{{ route('front.post', $post) }}">
+                              <a id="post-thumb" href="@if(empty($post->thumbnail_big)){{  asset($post->thumbnail) }}@else{{ asset($post->thumbnail_big) }}@endif">
+                                <img class="left" src="@if(empty($post->thumbnail_big)) {{  asset($post->thumbnail) }} @else {{  asset($post->thumbnail_big) }} @endif" alt="image">
+                              </a>
+                              @if($post->thumb_desc || $post->thumb_desc_ru)<span class="thumb_desc">{{ $post->getThumbnailDesc() }}</span>@endif
+                              {{--@if($post->thumb_author)<span class="thumb_author"> Фото: {{ $post->thumb_author }}</span>@endif--}}
+                            </p>
                            <article>
                               {!! $post->getContent() !!}
                            </article>
@@ -207,6 +211,38 @@
         swal("Спасибо!", "В ближайшее время ошибка будет устранена!", "success");
         </script>
     @endif
+        {{--MAGNIFIC POPUP--}}
+    <script src="{{ asset('js/jquery.magnific-popup.js') }}"></script>
+    <script>
+        $('#post-thumb').magnificPopup({
+            type: 'image',
+            mainClass: 'mfp-zoom-in',
+            tLoading: '',
+            removalDelay: 500, //delay removal by X to allow out-animation
+            callbacks: {
+
+                imageLoadComplete: function() {
+                    var self = this;
+                    setTimeout(function() {
+                        self.wrap.addClass('mfp-image-loaded');
+                    }, 16);
+                },
+                close: function() {
+                    this.wrap.removeClass('mfp-image-loaded');
+                },
+
+
+                // don't add this part, it's just to avoid caching of image
+                beforeChange: function() {
+                    this.items[0].src = this.items[0].src + '?=' + Math.random();
+                }
+            },
+
+            closeBtnInside: false,
+            closeOnContentClick: true,
+            midClick: true
+        });
+    </script>
 
     {{--Orphus--}}
     <script>

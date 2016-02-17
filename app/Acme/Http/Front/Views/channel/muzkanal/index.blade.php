@@ -170,7 +170,7 @@
         <div class="row dkp-big-3now ">
             @if($anons1)
                 <div class="col-xs-4 rowfix" >
-                    <a href="#" data-toggle="modal" data-target="#myModal" class="dkp-anonce dkp-anonce-small  dkp-border" style="background-image: url('{{ $anons1->thumbnail_big }}');" >
+                    <a href="#" data-toggle="modal" data-target="#myModal" class="dkp-anonce dkp-anonce-small  dkp-border" style="background-image: url('{{ $anons1->thumbnail_big }}'); background-position: center center; background-size: 100% 100%;" >
                         <div class="dkp-3now-item-wrapper">
                             <div class="dkp-3now-item-time">
                      <span>
@@ -206,7 +206,7 @@
             @endif
             @if($anons2)
                 <div class="col-xs-4 rowfix" >
-                    <a href="#" data-toggle="modal" data-target="#myModal2" class="dkp-anonce dkp-anonce-small  dkp-border" style="background-image: url('{{ $anons2->thumbnail_big }}');" data-id="12269">
+                    <a href="#" data-toggle="modal" data-target="#myModal2" class="dkp-anonce dkp-anonce-small  dkp-border" style="background-image: url('{{ $anons2->thumbnail_big }}');background-size: 100% 100%;" data-id="12269">
                         <div class="dkp-3now-item-wrapper">
                             <div class="dkp-3now-item-time">
                      <span>
@@ -242,7 +242,7 @@
             @endif
             @if($anons3)
                 <div class="col-xs-4 rowfix" >
-                    <a href="#" data-toggle="modal" data-target="#myModal3" class="dkp-anonce dkp-anonce-small  dkp-border" style="background-image: url('{{ $anons3->thumbnail_big }}');" data-id="12269">
+                    <a href="#" data-toggle="modal" data-target="#myModal3" class="dkp-anonce dkp-anonce-small  dkp-border" style="background-image: url('{{ $anons3->thumbnail_big }}');background-size: 100% 100%;" data-id="12269">
                         <div class="dkp-3now-item-wrapper">
                             <div class="dkp-3now-item-time">
                      <span>
@@ -737,7 +737,7 @@
                         cuboidsRandom : true,
                         disperseFactor : 30,
                         autoplay : true,
-                        interval: 5000,
+                        interval: 5000
                     } ),
                     init = function() {
                         initEvents();

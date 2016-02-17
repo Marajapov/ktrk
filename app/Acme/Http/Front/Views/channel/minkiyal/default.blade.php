@@ -26,7 +26,7 @@
     @yield('styles')
 
 </head>
-<body id="minkiyal">
+<body id="minkiyal" class="home">
 
     @yield('content')
 
