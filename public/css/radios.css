@@ -1469,28 +1469,23 @@
 
 #minkiyal .address {
     margin-bottom: 15px;
-    border-radius: 10px 10px 5px 5px !important;
-    -webkit-border-radius: 10px 10px 5px 5px !important;
-    -moz-border-radius: 10px 10px 5px 5px !important;
-    -o-border-radius: 10px 10px 5px 5px !important;
 }
 #minkiyal .address  h3{
-    padding: 20px 0;
+    padding: 15px 0;
     margin: 0px;
   
-    font-size: 1.5em;
+    font-size: 1.2em;
     text-align: center;
-    font-weight: bold;
-    letter-spacing: 1.5px;
+    letter-spacing: 0.5px;
     text-transform: uppercase;
+    border-bottom: 3px solid;
   
-    border-radius: 5px 5px 0 0 !important;
-    -webkit-border-radius: 5px 5px 0 0 !important;
-    -moz-border-radius: 5px 5px 0 0 !important;
-    -o-border-radius: 5px 5px 0 0 !important;
-
     color: #FFF;
     background: #F44336;
+
+    -webkit-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.60),0 6px 20px 0 rgba(0,0,0,0.19);
+    -moz-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.62),0 6px 20px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 8px 17px 0 rgba(0,0,0,0.60),0 6px 20px 0 rgba(0,0,0,0.19);
 }
 #minkiyal .address  h3 i, #minkiyal .address li i{
     padding-right: 10px;
@@ -1506,13 +1501,13 @@
     transition: all 0.5s ease-in-out;
     background: #1D6486;
     font-family: 'Roboto Regular';
+
+    -webkit-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.60),0 6px 20px 0 rgba(0,0,0,0.19);
+    -moz-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.62),0 6px 20px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 8px 17px 0 rgba(0,0,0,0.60),0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 #minkiyal .address li:last-child{
-    border-radius: 0px 0px 5px 5px !important;
-    -webkit-border-radius: 0px 0px 5px 5px !important;
-    -moz-border-radius: 0px 0px 5px 5px !important;
-    -o-border-radius: 0px 0px 5px 5px !important;
     padding: 15px 30px 10px 30px;
     border-top: 1px solid #688EA0;
 }
@@ -1703,7 +1698,7 @@
     font-weight: bold;
     color: #fff;
     width: 400px;
-/*    background: #fff;*/
+    background: #F44336;
     height: 70px;
         -webkit-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     -moz-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);

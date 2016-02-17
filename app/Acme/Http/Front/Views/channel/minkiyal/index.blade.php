@@ -131,11 +131,6 @@
           </div>
           <div class="row">
             <div class="col-md-3">
-              <h3><i class="fa fa-map-marker"></i> Дареги</h3>
-              <ul>
-                <li><i class="fa fa-location-arrow"></i> Кыргызстан, Бишкек  шаары</li>
-                <li><i class="fa fa-home"></i> Жаш Гвардия бульвары, 59</li>
-              </ul>
             </div>
           </div>
       </div>
