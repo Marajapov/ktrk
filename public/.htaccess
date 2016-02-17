@@ -1,6 +1,5 @@
 Options -MultiViews
 RewriteEngine On
-RewriteBase /
 
 RewriteCond %{HTTP_HOST} ^\.ktrk\.kg$ [NC,OR]
 RewriteCond %{HTTP_HOST} ^(www\.)?ktrk\.kg$ [NC]
