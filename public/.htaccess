@@ -1,6 +1,27 @@
+<<<<<<< HEAD
 Options -MultiViews
 RewriteEngine On
+=======
+Order allow,deny
+Allow from all
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews
+    </IfModule>
+>>>>>>> a93c9b2998e9698b1a9575614148f1a02bd88bbc
 
-RewriteCond %{HTTP_HOST} ^\.ktrk\.kg$ [NC,OR]
-RewriteCond %{HTTP_HOST} ^(www\.)?ktrk\.kg$ [NC]
-RewriteRule ^(.*)$ http://www.ktrk.kg/$1 [R=301,L]
+    RewriteEngine On
+
+
+    # Redirect Trailing Slashes...
+    RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+    # Handle Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+
+    # Disallow access to following directories
+    #RewriteRule ^vendor($|/|/.*|./*) – [L,R=404]
+    #RewriteRule ^app($|/|/*|/.*) – [L,R=404]
+</IfModule>
