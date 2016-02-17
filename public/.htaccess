@@ -1,14 +1,9 @@
-<<<<<<< HEAD
-Options -MultiViews
-RewriteEngine On
-=======
 Order allow,deny
 Allow from all
 <IfModule mod_rewrite.c>
     <IfModule mod_negotiation.c>
         Options -MultiViews
     </IfModule>
->>>>>>> a93c9b2998e9698b1a9575614148f1a02bd88bbc
 
     RewriteEngine On
 
