@@ -9,7 +9,16 @@
     <div class="logo">
       <img src="{{asset('images/channels/min-kiyal-min.png')}}" alt="">
     </div>
-    <div class="online"></div>
+    <div class="online">
+        <h3><i class="fa fa-microphone"></i>Түз эфир</h3>
+        <object width="65" height="40" data="http://ktrk.kg/online/uppod.swf">
+          <param name="bgcolor" value="#ffffff" />
+          <param name="allowFullScreen" value="false" />
+          <param name="allowScriptAccess" value="false" />
+          <param name="audio" value="http://ktrk.kg/online/uppod.swf" />
+          <param name="flashvars" value="comment=KTRK&amp;st=03AEEZykN3Q3Q3QH3zkOk1mwXRWNvz3b1XAxYTtj1mzC5kA2uyb1kOk1mwXRWNvhzdwf9vwjzC5k=jQZi6jNf1kOk1mwXRWHNXzBGDY31X=jOkZ2sN6HsQfzC5kev0kttj1vL2NXzC5k1sQE3Q2GkTCGfFdGJTCHwXpvQXeWNhHm0X1hsNkTWwWTSUhTd0kNtj1JTWwf9vwnY31DX1CYLex5W=jaktjR1i6W0kbSal1C0V9Rv1XAuaTtj1tzC5kb42Qi63Gktj1ozfUrd&amp;file=http://212.112.96.232:8081" />
+        </object>
+    </div>
   </div>
    <div class="shows-slider slidermin">
       <div class="slider-overlay"></div>
@@ -66,32 +75,39 @@
    </div>
 </div>
 <section id="report">
-   <div class="container konoktor">
+   <div class="container anons">
       <div class="title">
-         <h3>Эфирдин коногу</h3>
+         <h3>Анонс</h3>
       </div>
-      <div class="row">
-         <div class="withpad">
-            <div class="col-md-4 first">
-               <a href="#">
-                  <img src="{{asset('images/channels/muzkanal/14.png')}}" class="img-responsive" alt="">
-                  <h3>Биздин эфирге ким келди?</h3>
-               </a>
-            </div>
-            <div class="col-md-4 first">
-               <a href="#">
-                  <img src="{{asset('images/channels/muzkanal/minura.jpg')}}" class="img-responsive" alt="">
-                  <h3>Минюра Рахимжанова өзүнүн жигити жөнүндө кеп салып берди</h3>
-               </a>
-            </div>
-            <div class="col-md-4 first">
-               <a href="#">
-                  <img src="{{asset('images/channels/minkiyal/ayana.jpg')}}" class="img-responsive" alt="">
-                  <h3>Аяна Касымова Интернетти кайра дүңгүрөттү</h3>
-               </a>
-            </div>
-         </div>
-      </div>
+       <div class="anons-slider slidermin">
+          <div class="slider-overlay"></div>
+          <div class="anons-carousel">
+             <div>
+               <div class="row">
+                 <div class="col-md-3">
+                   <img src="{{ asset('images/channels/minkiyal/ayana.jpg') }}" alt=""/>
+                 </div>
+                 <div class="col-md-9">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora dolorum adipisci natus autem, ipsa saepe praesentium eius laudantium expedita necessitatibus, placeat minima, repudiandae pariatur vitae beatae. Aut ipsam qui cum!</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam doloribus magnam, nobis non vel aut beatae assumenda eveniet rerum, incidunt perspiciatis est ipsa quia dicta illum velit consequuntur fugit molestias.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam doloribus magnam, nobis non vel aut beatae assumenda eveniet rerum, incidunt perspiciatis est ipsa quia dicta illum velit consequuntur fugit molestias.</p>
+                 </div> 
+                </div>      
+             </div>             
+             <div>
+               <div class="row">
+                 <div class="col-md-3">
+                   <img src="{{ asset('images/channels/minkiyal/ayana.jpg') }}" alt=""/>
+                 </div>
+                 <div class="col-md-9">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora dolorum adipisci natus autem, ipsa saepe praesentium eius laudantium expedita necessitatibus, placeat minima, repudiandae pariatur vitae beatae. Aut ipsam qui cum!</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam doloribus magnam, nobis non vel aut beatae assumenda eveniet rerum, incidunt perspiciatis est ipsa quia dicta illum velit consequuntur fugit molestias.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam doloribus magnam, nobis non vel aut beatae assumenda eveniet rerum, incidunt perspiciatis est ipsa quia dicta illum velit consequuntur fugit molestias.</p>
+                 </div> 
+                </div>      
+             </div>
+          </div>
+       </div>
    </div>
    <div class="container-fluid allgallery">
       <div class="container ">
@@ -204,6 +220,17 @@
        speed: 500,
        fade: true,
        cssEase: 'linear',
+   });
+    $('.anons-carousel').slick({
+   //        autoplay: true,
+   //        autoplaySpeed: 2000,
+       centerPadding: '0',
+       dots: true,
+       arrows: false,
+       infinite: true,
+       slidesToShow: 1,
+       speed: 600,
+       speed: 500,
    });
 </script>
 <div id="fb-root"></div>
