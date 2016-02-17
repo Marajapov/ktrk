@@ -6,7 +6,7 @@
 @include('Front::channel.minkiyal.nav')
 <div class="container">
   <div class="logoon">
-    <div class="logo">
+    <div class="logomin">
       <img src="{{asset('images/channels/min-kiyal-min.png')}}" alt="">
     </div>
     <div class="online">
@@ -24,15 +24,18 @@
       <div class="slider-overlay"></div>
       <div class="shows-carousel">
          <div>
-            <div class="overlay"></div>
             <a href="#">
             <img src="{{ asset('images/channels/minkiyal/radio.jpg') }}" alt=""/>
             </a>
          </div>
          <div>
-            <div class="overlay"></div>
             <a href="#">
             <img src="{{ asset('images/channels/minkiyal/red.jpg') }}" alt=""/>
+            </a>
+         </div>         
+         <div>
+            <a href="#">
+            <img src="{{ asset('images/channels/minkiyal/nonred.png') }}" alt=""/>
             </a>
          </div>
       </div>
@@ -75,10 +78,7 @@
    </div>
 </div>
 <section id="report">
-   <div class="container anons">
-      <div class="title">
-         <h3>Анонс</h3>
-      </div>
+   <div class="container anonses">
        <div class="anons-slider slidermin">
           <div class="slider-overlay"></div>
           <div class="anons-carousel">
@@ -88,9 +88,11 @@
                    <img src="{{ asset('images/channels/minkiyal/ayana.jpg') }}" alt=""/>
                  </div>
                  <div class="col-md-9">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora dolorum adipisci natus autem, ipsa saepe praesentium eius laudantium expedita necessitatibus, placeat minima, repudiandae pariatur vitae beatae. Aut ipsam qui cum!</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam doloribus magnam, nobis non vel aut beatae assumenda eveniet rerum, incidunt perspiciatis est ipsa quia dicta illum velit consequuntur fugit molestias.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam doloribus magnam, nobis non vel aut beatae assumenda eveniet rerum, incidunt perspiciatis est ipsa quia dicta illum velit consequuntur fugit molestias.</p>
+                  <span>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem expedita doloribus itaque vero sequi nisi. Deserunt laboriosam, beatae tenetur suscipit accusantium recusandae adipisci illum, fuga quos. Mollitia ad repellendus sint.</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem expedita doloribus itaque vero sequi nisi. Deserunt laboriosam, beatae tenetur suscipit accusantium recusandae adipisci illum, fuga quos. Mollitia ad repellendus sint.</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem expedita doloribus itaque vero sequi nisi. Deserunt laboriosam, beatae tenetur suscipit accusantium recusandae adipisci illum, fuga quos. Mollitia ad repellendus sint.</p>
+                  </span>
                  </div> 
                 </div>      
              </div>             
@@ -146,11 +148,34 @@
       </div>
       <div class="row">
          <div class="col-md-3">
-            <div class="fb-page" data-href="https://www.facebook.com/MinKyalFm/?ref=hl" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+            <div class="fb-page" data-href="https://www.facebook.com/MinKyalFm/?ref=hl" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
                <div class="fb-xfbml-parse-ignore">
                   <blockquote cite="https://www.facebook.com/MinKyalFm/?ref=hl"><a href="https://www.facebook.com/MinKyalFm/?ref=hl">МИҢ КЫЯЛ  FM радиосу</a></blockquote>
                </div>
             </div>
+         </div>
+         <div class="col-md-3">
+        <a class="twitter-timeline" href="https://twitter.com/mk1000radio" data-widget-id="699897862478548992">Твиты от @mk1000radio</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+         </div>
+         <div class="col-md-3">
+<div id="ok_group_widget"></div>
+<script>
+!function (d, id, did, st) {
+  var js = d.createElement("script");
+  js.src = "https://connect.ok.ru/connect.js";
+  js.onload = js.onreadystatechange = function () {
+  if (!this.readyState || this.readyState == "loaded" || this.readyState == "complete") {
+    if (!this.executed) {
+      this.executed = true;
+      setTimeout(function () {
+        OK.CONNECT.insertGroupWidget(id,did,st);
+      }, 0);
+    }
+  }}
+  d.documentElement.appendChild(js);
+}(document,"ok_group_widget","50582132228315","{width:263,height:500}");
+</script>
          </div>
       </div>
    </div>

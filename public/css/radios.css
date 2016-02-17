@@ -1220,7 +1220,7 @@
     position: relative;
     font-family: 'Roboto Condensed';
     /*background: url('../images/channels/minkiyal/main2.jpg');*/
-    background: #fff;
+    background: #f1edea;
 /*    background-size: cover;
     background-attachment: fixed;
     background-position: center center;  */                
@@ -1300,6 +1300,7 @@
 
     color: #FFFFFF;
     overflow: hidden;
+    opacity: 1;
 
     background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0,0,0,0)), color-stop(100%, rgba(0,0,0,1)));
@@ -1307,6 +1308,10 @@
     background: -o-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0, 0.66) 100%);
     background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0, 0.66) 100%);
     background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0, 0, 0, 0.66) 100%);
+
+    -webkit-transition: opacity 0.2s ease;
+    -o-transition: opacity 0.2s ease;
+    transition: opacity 0.2s ease;
 }
 
 #minkiyal .info .postshow img{
@@ -1322,7 +1327,7 @@
     transition: all 0.2s ease;
 
 }
-#minkiyal .info .postshow img:hover{
+#minkiyal .info .postshow:hover img{
     -webkit-transform: scale(1.075);
     -moz-transform: scale(1.075);
     -ms-transform: scale(1.075);
@@ -1330,7 +1335,7 @@
     transform: scale(1.075);
     z-index: 11;
 }
-#minkiyal .info .postshow img:hover h3{
+#minkiyal .info .postshow:hover h3{
     opacity: 0;
 }
 #minkiyal .info .more{
@@ -1385,29 +1390,7 @@
     position: relative;
 }
 
-#minkiyal .online{
-    position: absolute;
-    top: 20px;
-    right: 15px;
-    width: 210px;
-    padding: 0px 0px 0px 10px;
-    text-align: center;
-    background: #E91E63;
-    z-index: 3;    
-}
-#minkiyal .online h3{
-    float: left;
-    color: #fff;
-    margin: 10px 0px 0px;
-}
-#minkiyal .online i{
-    padding-right: 5px;
-}
 
-#minkiyal .online object{
-    margin-left: 10px;
-    margin-top: 5px;
-}
 
 #minkiyal .mingallery{
     padding: 110px 0 0px 0;
@@ -1496,10 +1479,6 @@
     transition: all 0.5s ease-in-out;
     background: #4C2657;
     font-family: 'Roboto Regular';
-
-    -webkit-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.60),0 6px 20px 0 rgba(0,0,0,0.19);
-    -moz-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.62),0 6px 20px 0 rgba(0,0,0,0.19);
-    box-shadow: 0 8px 17px 0 rgba(0,0,0,0.60),0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 #minkiyal .address li:last-child{
@@ -1651,9 +1630,12 @@
 }
 #minkiyal .title {
     margin: 0px 5px 20px 5px;
-    color: #4C2657;
+    color: #292929;
     border-bottom: 2px dashed;
-
+    text-transform: uppercase;
+}
+#minkiyal .title  h3{
+    font-size: 18px;
 }
 #minkiyal .allgallery  .second a{
     position: relative;
@@ -1676,7 +1658,7 @@
     font-weight: bold;
     color: #fff;
     width: 400px;
-    background: #4C2657;
+    /*background: #4CAF50;*/
     height: 70px;
         -webkit-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     -moz-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
@@ -1693,7 +1675,7 @@
     color: #fff;
     background: #4CAF50;
 }
-#minkiyal .anonses, #minkiyal .withpad{
+#minkiyal .withpad{
     padding: 0px 5px;
 }
 
@@ -1706,11 +1688,43 @@
 #minkiyal .anons-carousel .col-md-3 img{
     height: 170px;
 }
+#minkiyal .anons-carousel .col-md-9{
+    background: #fff;
+    height: 170px;
+}
+#minkiyal .anons-carousel .col-md-9 span{
+    padding:5px; 
+}
 #minkiyal .logoon {
     position: relative;
 }
-#minkiyal .logoon .logo img{
-    margin-left: 15px;
-    margin-top: 25px;
+#minkiyal .logoon .logomin {
+    position: relative;
+    display: inline-block;
+    left: 0;
+}
+#minkiyal .logoon .logomin img{
+    margin-top: 10px;
+}
+
+#minkiyal .online{
+    float: right;
+    padding: 0px 0px 0px 10px;
+    margin: 35px 5px;  
+    text-align: center;
+    background: #181818;
+}
+#minkiyal .online h3{
+    float: left;
+    color: #fff;
+    margin: 10px 0px 0px;
+}
+#minkiyal .online i{
+    padding-right: 5px;
+}
+
+#minkiyal .online object{
+    margin-left: 10px;
+    margin-top: 5px;
 }
 /* MENU */
