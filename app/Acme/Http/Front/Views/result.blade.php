@@ -81,6 +81,7 @@
 
                                 </div>
 
+
                                 {{--<nav>--}}
                                     {{--<ul class="pagination">--}}
 
@@ -145,9 +146,7 @@
                         </div>
                     </div>
 
-                    <a href="#" class="text-center ads">
-                        <img src="images/ads_1.jpg" alt=""/>
-                    </a>
+                
 
                 </div>
 

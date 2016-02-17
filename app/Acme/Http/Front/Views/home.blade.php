@@ -233,7 +233,7 @@
                             <div class="panel-body main-video">
 
                                 <div class="slider slider-for">
-
+                                <!-- start of videos -->
                                     <div> <!-- video1 -->
                                         <div class="embed-youtube embed-responsive embed-responsive-16by9 slider-text">
                                             <div onclick="thevid=document.getElementById('thevideo'); thevid.style.display='block'; this.style.display='none'">
@@ -283,6 +283,7 @@
                                             </a>
                                         </div>
                                     </div>
+                                    <!-- end of videos -->
 
                                 </div>
                                 <div class="slider slider-nav">
@@ -323,7 +324,6 @@
                         </a>
 
                     </div>
-
                     <div class="bottom-left-block col-md-4">
                         <div class="panel panel-default latest-news">
                             <div class="panel-heading">
