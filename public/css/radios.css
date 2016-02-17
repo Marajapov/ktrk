@@ -1220,10 +1220,10 @@
     position: relative;
     font-family: 'Roboto Condensed';
     /*background: url('../images/channels/minkiyal/bg.jpg');*/
-    /*background: #f1edea;*/
-    background-image: -moz-linear-gradient(90deg, #4CAF50 0%, #8BC34A 100%);
+    background: #f1edea;
+/*    background-image: -moz-linear-gradient(90deg, #4CAF50 0%, #8BC34A 100%);
     background-image: -webkit-linear-gradient(90deg, #4CAF50 0%, #8BC34A 100%);
-    background-image: -ms-linear-gradient(90deg, #4CAF50 0%, #8BC34A 100%);
+    background-image: -ms-linear-gradient(90deg, #4CAF50 0%, #8BC34A 100%);*/
   /*  background-size: cover;
     background-attachment: fixed;
     background-position: center center;  */                
