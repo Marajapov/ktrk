@@ -207,6 +207,9 @@
                }(document,"ok_group_widget","57764507942972","{width:263,height:500}");
             </script>
          </div>
+         <div class="col-md-3">
+            <iframe src="{{asset('images/channels/minkiyal/inwidget/index.php?height=600&inline=3')}}" scrolling='no' frameborder='no' style='border:none;width:263px;height:600px;overflow:hidden;'></iframe>
+         </div>
       </div>
    </div>
 </section>
