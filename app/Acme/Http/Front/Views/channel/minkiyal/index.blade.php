@@ -24,8 +24,8 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li><a href="#">Башкы</a></li>
-          <li><a href="#">Сүрөтбаяндар</a></li>
-          <li><a href="#">Биз жөнүндө</a></li>
+          <li><a href="#report">Сүрөтбаяндар</a></li>
+          <li><a href="#contacts">Биз жөнүндө</a></li>
           <li><a href="#">Ди-Джейлер</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
@@ -46,61 +46,32 @@
 </nav>
 <div class="container">
    <div class="shows-slider slidermin">
-      <div class="slider-overlay"></div>
+      @if($anons)
       <div class="shows-carousel">
+       @foreach($anons as $banners)
          <div>
             <a href="#">
-            <img src="{{ asset('images/channels/minkiyal/radio.jpg') }}" alt=""/>
+            <img src="{{asset($banners->thumbnail)}}" alt=""/>
             </a>
          </div>
-         <div>
-            <a href="#">
-            <img src="{{ asset('images/channels/minkiyal/red.jpg') }}" alt=""/>
-            </a>
-         </div>
-         <div>
-            <a href="#">
-            <img src="{{ asset('images/channels/minkiyal/nonred.png') }}" alt=""/>
-            </a>
-         </div>
+        @endforeach 
       </div>
+      @endif
    </div>
 </div>
 <div class="container info">
+  @if(@anonstop)
    <div id="allposts">
-      <!--               @if($photoGalleries)
-         @foreach($photoGalleries as $photoGallery)
-         <div class="col-md-4 sm-12 postshow">
-            <img src="{{ asset($photoGallery->thumbnail_big) }}" class="img-responsive" alt="">
-            <a href="{{ route('minkiyal.post', $photoGallery) }}"><h3>{{ $photoGallery->getName() }}</h3></a>  
-         </div>
-         @endforeach
-         @endif -->
+      @foreach($anonstop as $row)
       <div class="col-md-3 col-sm-12 postshow">
          <a href="#">
-            <img src="{{asset('images/channels/minkiyal/anjelika.png')}}" class="img-responsive" alt="">
-            <h3>Анжелика жаны ырын тартуулады</h3>
+            <img src="{{asset($row->thumbnail)}}" class="img-responsive" alt="">
+            <h3>{{$row->getNameOne()}}</h3>
          </a>
       </div>
-      <div class="col-md-3 col-sm-12 postshow">
-         <a href="#">
-            <img src="{{asset('images/channels/minkiyal/ayana.jpg')}}" class="img-responsive" alt="">
-            <h3>Аяна Касымова Интернетти кайра дүңгүрөттү</h3>
-         </a>
-      </div>
-      <div class="col-md-3 col-sm-12 postshow">
-         <a href="#">
-            <img src="{{asset('images/channels/minkiyal/kalykov.jpg')}}" class="img-responsive" alt="">
-            <h3>Гүлжигит Калыков биздин студияда</h3>
-         </a>
-      </div>
-      <div class="col-md-3 col-sm-12 postshow">
-         <a href="#">
-            <img src="{{asset('images/channels/minkiyal/winter.jpg')}}" class="img-responsive" alt="">
-            <h3>Анжелика жаны ырын тартуулады</h3>
-         </a>
-      </div>
+      @endforeach 
    </div>
+   @endif
 </div>
 <section id="report">
    <div class="container anonses">
@@ -114,9 +85,8 @@
                   </div>
                   <div class="col-md-9">
                      <span>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem expedita doloribus itaque vero sequi nisi. Deserunt laboriosam, beatae tenetur suscipit accusantium recusandae adipisci illum, fuga quos. Mollitia ad repellendus sint.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem expedita doloribus itaque vero sequi nisi. Deserunt laboriosam, beatae tenetur suscipit accusantium recusandae adipisci illum, fuga quos. Mollitia ad repellendus sint.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem expedita doloribus itaque vero sequi nisi. Deserunt laboriosam, beatae tenetur suscipit accusantium recusandae adipisci illum, fuga quos. Mollitia ad repellendus sint.</p>
+                      <p>Норвегиянын Лиллехаммер шаарында өтүп жаткан жаштар арасындагы кышкы олимпиада оюндарында казакстандык фигурист Элизабет Турсынбаева коло медаль алды.</p>
+                      <p>Негизги программаны аткаргандыгы үчүн ал 108,77 упай топтоду.Буга чейинкыска мөөнөттүк программада 59,11 упайга ээ болгон. Жалпы жыйынтыктар 167,88 упайды түздү.</p>
                      </span>
                   </div>
                </div>
@@ -127,9 +97,10 @@
                      <img src="{{ asset('images/channels/minkiyal/ayana.jpg') }}" alt=""/>
                   </div>
                   <div class="col-md-9">
-                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora dolorum adipisci natus autem, ipsa saepe praesentium eius laudantium expedita necessitatibus, placeat minima, repudiandae pariatur vitae beatae. Aut ipsam qui cum!</p>
-                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam doloribus magnam, nobis non vel aut beatae assumenda eveniet rerum, incidunt perspiciatis est ipsa quia dicta illum velit consequuntur fugit molestias.</p>
-                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam doloribus magnam, nobis non vel aut beatae assumenda eveniet rerum, incidunt perspiciatis est ipsa quia dicta illum velit consequuntur fugit molestias.</p>
+                     <span>
+                      <p>Норвегиянын Лиллехаммер шаарында өтүп жаткан жаштар арасындагы кышкы олимпиада оюндарында казакстандык фигурист Элизабет Турсынбаева коло медаль алды.</p>
+                      <p>Негизги программаны аткаргандыгы үчүн ал 108,77 упай топтоду.Буга чейинкыска мөөнөттүк программада 59,11 упайга ээ болгон. Жалпы жыйынтыктар 167,88 упайды түздү.</p>
+                     </span> 
                   </div>
                </div>
             </div>
@@ -199,7 +170,7 @@
                    }
                  }}
                  d.documentElement.appendChild(js);
-               }(document,"ok_group_widget","57764507942972","{width:263,height:455}");
+               }(document,"ok_group_widget","57765907202108","{width:263,height:455}");
             </script>
          </div>
          <div class="col-md-3">
@@ -247,28 +218,26 @@
 @section('footerScript')
 <script>
    $('.shows-carousel').slick({
-   //        autoplay: true,
-   //        autoplaySpeed: 2000,
+       autoplay: true,
+       autoplaySpeed: 5000,
        centerPadding: '0',
        dots: true,
        arrows: false,
        infinite: true,
+       interval: 3500,
+       autoplay:true,
        slidesToShow: 1,
        speed: 600,
-       speed: 500,
-       fade: true,
-       cssEase: 'linear',
    });
     $('.anons-carousel').slick({
-   //        autoplay: true,
-   //        autoplaySpeed: 2000,
+       autoplay: true,
+       autoplaySpeed: 6500,
        centerPadding: '0',
        dots: true,
        arrows: false,
        infinite: true,
        slidesToShow: 1,
-       speed: 600,
-       speed: 500,
+       speed: 400,
    });
 </script>
 <div id="fb-root"></div>
