@@ -122,7 +122,13 @@
             <div class="col-md-4 video-block">
                <a href="{{ route('balastan.video', $media) }}" class="video-img">
                <img src="http://img.youtube.com/vi/{{ $media->getUrl()}}/mqdefault.jpg" alt="" />
-               <span class="video-overlay"></span>
+               <span class="video-overlay">
+                   <span class="show-extra">
+                      <i class="fa-view"></i>
+                      <span class="show-view">{{ $media->getViewed()}}</span>
+                      <span class="show-date">{{ $media->getDay() }} {{ $media->getMonthRu() }}, {{ $media->getYear() }}</span>
+                  </span>
+               </span>
                </a>
                <div class="video-info">
                   <div class="media">
@@ -159,7 +165,9 @@
          <div class="col-md-4 video-block">
             <a href="{{ route('balastan.photos', $photoGallery) }}" class="video-img">
             <img src="{{ asset($photoGallery->thumbnail_big) }}" alt="" />
-            <span class="video-overlay"></span>
+            <span class="video-overlay">
+              <div class="overlay"></div>
+            </span>
             </a>                    
             <div class="video-info">
                <div class="media">

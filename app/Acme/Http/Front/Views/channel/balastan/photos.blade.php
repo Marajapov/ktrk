@@ -3,6 +3,7 @@
 @section('styles')
 <link rel="stylesheet" type="text/css" href="{{ asset('css/lightslider.css') }}">
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.2.6/css/lightgallery.min.css">
+<link rel="stylesheet" href="{{ asset('css/goodshare.css') }}"/>
 @endsection
 @section('content')
 <div class="container-fluid pages-header">
@@ -37,6 +38,31 @@
                </div>
             </div>
          </div>
+        <footer style="text-align: center;">
+          <div class="pluso share-buttons">
+            <button class="goodshare btn-fb" data-type="fb">
+              <i class="fa fa-facebook"></i>
+              <span data-counter="fb"></span>
+            </button>
+            <!-- Button with share to Facebook & share counter -->
+            <button class="goodshare btn-vk" data-type="vk">
+              <i class="fa fa-vk"></i>
+              <span data-counter="vk"></span>
+            </button>
+            <button class="goodshare btn-ok" data-type="ok">
+              <i class="fa fa-odnoklassniki"></i>
+              <span data-counter="ok"></span>
+            </button>
+            <button class="goodshare btn-gp" data-type="gp">
+              <i class="fa fa-google-plus"></i>
+              <span data-counter="gp"></span>
+            </button>
+            <button class="goodshare btn-tw" data-type="tw">
+              <i class="fa fa-twitter"></i>
+              {{--<span data-counter="tw"></span>--}}
+            </button>
+          </div>
+        </footer>
       </div>
     </div>
   </div>
@@ -57,6 +83,18 @@
 <script src="{{ asset('js/lightgallery/lg-hash.js') }}"></script>
 <script src="{{ asset('js/lightgallery/lg-pager.js') }}"></script>
 <script src="{{ asset('jslightgallery/jquery.mousewheel.min.js') }}"></script>
+<script src="{{ asset('js/goodshare.js') }}"></script>
+<script>
+  $(window).load(function(){
+    $('.goodshare').each(function(){
+      var span = $(this).children('span');
+      var counter = span.text();
+      if((counter==0) || (counter=='')){
+        $(this).addClass('empty');
+      }
+    });
+  });
+</script>
 <script type="text/javascript">
    $(document).ready(function() {
    $('#imageGallery').lightSlider({

@@ -40,22 +40,16 @@
                         <div class="episode-info">
                             <div class="episode-desc">{!! $balastanLastVideo->description !!}</div>
                                 @if($balastanProjects)
-<<<<<<< HEAD
-                                @foreach($balastanProjects as $row)
-                                    @if($balastanLastVideo->program == $row->id)
-                                        <a href="{{ route('balastan.project.videos', $row) }}">
-                                            <em>{{ $balastanLastVideo->hasProject()->first()->getNameOne()}}</em>
-                                        </a>
-                                    @endif
-=======
                                 @foreach($balastanProjects->take(1) as $row)
                                     <a href="{{ route('balastan.project.videos', $row) }}">
                                         <em>{{ $balastanLastVideo->hasProject()->first()->getNameOne()}}</em>
                                     </a>
->>>>>>> bd2f21e91b8745592528423791fb13b48f423499
                                 @endforeach
-                                @endif    
-                            <span>{{ $balastanLastVideo->getDateFormatted() }}</span>
+                                @endif
+                            <span class="show-view1">
+                                <i class="fa-view1"></i>{{ $balastanLastVideo->getViewed()}}
+                            </span>
+                            <span class="show-date1">{{ $balastanLastVideo->getDateFormatted() }}</span>
                         </div>
                     @endif
                 </div>

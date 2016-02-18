@@ -91,6 +91,7 @@ class BalastanController extends Controller
         $balastanProjects = \Model\Project\ModelName::where('balastan','=','1')->orderBy('id','desc')->get();
         
         $balastanMedias = \Model\Media\ModelName::where('program','=',$balastanLastVideo->hasProject()->first()->id)->where('id', '<>', $media)->orderBy('id','desc')->get();
+        $balastanLastVideo->incrementViewed();
 
         return view('Front::channel.balastan.video', [
             'channel' => $channel,
@@ -209,6 +210,8 @@ class BalastanController extends Controller
             'medias' => $medias,
             'photoGalleries' => $photoGalleries,
             ]);
-    }    
+    }
+
+
 
 }
