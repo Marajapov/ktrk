@@ -1229,14 +1229,14 @@
     background-position: center center;  */                
 }
 #minkiyal .switch{
-    background:#161414;
+    background:#F1EDEA;
     z-index: 3;
 }
 #minkiyal .sitemenu h4{
-    color: #fff !important;
+    color: #D4117C !important;
 }
 #minkiyal .sitemenu a>span{
-  color: #fff !important;
+  color: #D4117C !important;
 }
 #minkiyal .container-fluid{
     padding: 0;
@@ -1600,25 +1600,61 @@
 /*  END HOME  */
 
 /* MENU */
+#minkiyal .fixed {
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    top: 0 !important;
+    max-width: inherit; 
+    margin: 0px auto;
+    background-color: #F44336;
+    z-index: 9999;
+}
 #minkiyal .navbar-minheader .navbar-brand img{
+    position: relative;
     height: 90px;
     width: inherit;
     float: left;
+    margin-top: -10px;
+    margin-left: 10px;
+    z-index: 1;
 }
-#minkiyal .navbar-minheader .navbar-brand span{
-
+#minkiyal .navbar-minheader {
+    background: #4CAF50;
+    margin-bottom: inherit;
+}
+#minkiyal .navbar-minheader .navbar-text{
+    font-size: 1.8em;
+    margin: 5px;
+}
+#minkiyal .navbar-minheader .collapse {
+    background: #368A3A;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+#minkiyal .navbar-minheader .collapse .navbar-nav>li>a{
+    color: white;
+    font-size: 16px;
+    border-right: 1px solid #2F7932;
+    text-transform: uppercase;
+}
+#minkiyal .navbar-minheader .collapse .navbar-nav>li>a:hover,
+#minkiyal .navbar-minheader .collapse .navbar-nav>li>a:active,
+#minkiyal .navbar-minheader .collapse .navbar-nav>li>a:focus {
+    background: #4CAF50;
 }
 
 #minkiyal .online{
-    float: right;
     padding: 0px 0px 0px 10px;
-    margin: 30px -10px 15px 0px;
-    background: #181818;
+    margin-right: 5px;
+    background: #368A3A;
 }
 #minkiyal .online h3{
     float: left;
     color: #fff;
-    margin: 10px 0px 0px;
+    font-size: 16px;
+    margin: 15px 0px 0px;
+    text-transform: uppercase;
 }
 #minkiyal .online i{
     padding-right: 5px;
@@ -1627,5 +1663,6 @@
 #minkiyal .online object{
     margin-left: 10px;
     margin-top: 5px;
+    margin-right: 5px;
 }
 /* MENU */
