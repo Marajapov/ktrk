@@ -1600,52 +1600,13 @@
 /*  END HOME  */
 
 /* MENU */
-#minkiyal .headermin{
-    position: absolute;
-    margin: 10px 0px 0px 0px;
-}
-#minkiyal .menu{
-    display: inline-block;
-    margin:15px 0px; 
-    background: #FEFEFE;
-}
-#minkiyal .menu ul li{
-    border-right: 2px solid #F1EDEA;
-}
-#minkiyal .menu ul li:last-child{
-    border-right: none;
-}
-
-#minkiyal .menu ul>li a{
-    padding: 20px;
-    font-size: 18px;
-    font-weight: bold;
-    line-height: 1;
-    color: #DC0D7C;
-}
-
-#minkiyal .logoon {
-    position: relative;
-}
-#minkiyal .logoon .logomin {
-    position: absolute;
-    display: inline-block;
-    left: 0;
-}
-#minkiyal .logoon .logomin span{
-    position: absolute;
-    margin: 30px 0px 0px 15px;
-    font-size: 2.5em;
-    font-weight: bold;
-    white-space: nowrap;
-    color: #D5107B;
-    border-bottom: 1px solid #4CAF50;
-}
-#minkiyal .logoon .logomin img{
+#minkiyal .navbar-minheader .navbar-brand img{
     height: 90px;
     width: inherit;
-    margin-top: 10px;
     float: left;
+}
+#minkiyal .navbar-minheader .navbar-brand span{
+
 }
 
 #minkiyal .online{

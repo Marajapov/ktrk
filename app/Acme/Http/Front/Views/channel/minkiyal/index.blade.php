@@ -5,7 +5,7 @@
 @section('content')
 @include('Front::channel.minkiyal.nav')
 <div class="container">
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-minheader">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -15,82 +15,22 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Brand</a>
+      <a class="navbar-brand" href="#">
+        <img src="{{asset('images/channels/min-kiyal-min.png')}}" alt="">
+        <span>Кыялдар орундалат</span>
+      </a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>
+        <li><a href="#">Башкы</a></li>
+        <li><a href="#">Сүрөтбаяндар</a></li>
+        <li><a href="#">Биз жөнүндө</a></li>
+        <li><a href="#">Ди-Джейлер</a></li>
       </ul>
-      <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-   <div class="logoon">
-      <div class="col-md-4">
-         <div class="logomin">
-            <img src="{{asset('images/channels/min-kiyal-min.png')}}" alt="">
-            <span>Кыялдар орундалат</span>
-         </div>
-      </div>
-      <div class="col-md-8">
-         <div class="headermin">
-
-            <div id="main-menu" class="navbar" role="navigation">
-                  <div class="navbar-header">
-                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                     <span class="sr-only">Toggle navigation</span>
-                     <span class="icon-bar"></span>
-                     <span class="icon-bar"></span>
-                     <span class="icon-bar"></span>
-                     </button>
-                  </div>
-                  <div class="navbar-collapse collapse text-center">
-                     <div class="menu">
-                        <ul class="nav navbar-nav">
-                           <li class="active"><a href="#">Башкы</a></li>
-                           <li><a href="#report">Сүрөтбаяндар</a></li>
-                           <li><a href="#contacts">Биз жөнүндө</a></li>
-                           <li><a href="#contacts">Ди-Джейлер</a></li>
-                        </ul>
-                     </div>
-                  </div>
-                  <!--/.nav-collapse -->
-            </div>
-         </div>
-        <div class="online">
+              <div class="online">
             <h3><i class="fa fa-microphone"></i>Түз эфир</h3>
             <object width="65" height="40" data="http://ktrk.kg/online/uppod.swf">
                <param name="bgcolor" value="#ffffff" />
@@ -100,8 +40,10 @@
                <param name="flashvars" value="comment=KTRK&amp;st=03AEEZykN3Q3Q3QH3zkOk1mwXRWNvz3b1XAxYTtj1mzC5kA2uyb1kOk1mwXRWNvhzdwf9vwjzC5k=jQZi6jNf1kOk1mwXRWHNXzBGDY31X=jOkZ2sN6HsQfzC5kev0kttj1vL2NXzC5k1sQE3Q2GkTCGfFdGJTCHwXpvQXeWNhHm0X1hsNkTWwWTSUhTd0kNtj1JTWwf9vwnY31DX1CYLex5W=jaktjR1i6W0kbSal1C0V9Rv1XAuaTtj1tzC5kb42Qi63Gktj1ozfUrd&amp;file=http://212.112.96.232:8081" />
             </object>
          </div>
-      </div>
-   </div>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
 </div>
 <div class="container">
    <div class="shows-slider slidermin">
@@ -232,14 +174,14 @@
       </div>
       <div class="row">
          <div class="col-md-3">
-            <div class="fb-page" data-href="https://www.facebook.com/MinKyalFm/?ref=hl" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+            <div class="fb-page" style="height: 455px;overflow: hidden;" data-href="https://www.facebook.com/MinKyalFm/?ref=hl" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
                <div class="fb-xfbml-parse-ignore">
                   <blockquote cite="https://www.facebook.com/MinKyalFm/?ref=hl"><a href="https://www.facebook.com/MinKyalFm/?ref=hl">МИҢ КЫЯЛ  FM радиосу</a></blockquote>
                </div>
             </div>
          </div>
-         <div class="col-md-3">
-            <a class="twitter-timeline" href="https://twitter.com/mk1000radio" data-widget-id="699897862478548992">Твиты от @mk1000radio</a>
+         <div class="col-md-3" style="background: #E6E6E6;padding: 0px;border-radius: 3px !important;">            
+            <a class="twitter-timeline" href="https://twitter.com/mk1000radio" data-widget-id="700201477931925504">Твиты от @mk1000radio</a>
             <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
          </div>
          <div class="col-md-3">
@@ -258,11 +200,11 @@
                    }
                  }}
                  d.documentElement.appendChild(js);
-               }(document,"ok_group_widget","57764507942972","{width:263,height:500}");
+               }(document,"ok_group_widget","57764507942972","{width:263,height:455}");
             </script>
          </div>
          <div class="col-md-3">
-            <iframe src="{{asset('images/channels/minkiyal/inwidget/index.php?height=500&inline=3')}}" scrolling='no' frameborder='no' style='border:none;width:263px;height:500px;overflow:hidden;'></iframe>
+            <iframe src="{{asset('images/channels/minkiyal/inwidget/index.php?height=455&inline=3')}}" scrolling='no' frameborder='no' style='border:none;width:263px;height:455px;overflow:hidden;'></iframe>
          </div>
       </div>
    </div>
