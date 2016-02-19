@@ -25,6 +25,7 @@ class KyrgyzradioController extends Controller
 
         $anons = \Model\Anons\ModelName::where('channel','=','6')->where('published','=','1')->orderBy('id','=','desc')->take(2)->get();
        
+        $quote = \Model\Quote\ModelName::where('published','=','1')->where('channel', '=', '6')->orderBy('id','=','desc')->orderBy('id','desc')->get();
         $quoteTopLeft = \Model\Quote\ModelName::where('published','=','1')->where('channel', '=', '6')->orderBy('id','=','desc')->take(2)->skip(0)->get();
         $quoteTopRight = \Model\Quote\ModelName::where('published','=','1')->where('channel', '=', '6')->orderBy('id','=','desc')->take(2)->skip(2)->get();
         $quoteMiddleLeft = \Model\Quote\ModelName::where('published','=','1')->where('channel', '=', '6')->orderBy('id','=','desc')->take(2)->skip(2)->get();
@@ -36,6 +37,7 @@ class KyrgyzradioController extends Controller
             'backgroundMain' => $backgroundMain,
             'photoGalleries' => $photoGalleries,
             'kyrgyzradioProjects' => $kyrgyzradioProjects,
+            'quote' => $quote,
             'quoteTopLeft' => $quoteTopLeft,
             'quoteTopRight' => $quoteTopRight,
             'quoteMiddleLeft' => $quoteMiddleLeft,

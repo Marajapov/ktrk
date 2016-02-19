@@ -1,4 +1,4 @@
-      <div class="container-fluid switch">
+      <div id="header" class="container-fluid switch">
          <nav class="navbar">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">

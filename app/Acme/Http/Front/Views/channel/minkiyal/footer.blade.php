@@ -4,7 +4,7 @@
         <div class="col-md-12 footer-menu">
 
             <h4 class="copyright"><i class="fa fa-copyright"></i><?php echo date("Y"); ?> {{ trans('site.TradeMark') }}</h4>
-            <p class="text-center minkiyal_footer">{{ trans('site.Developed') }} <a style="color: #E7EFF2;" href="http://ulut.kg/" target="_blank">Улут Софт</a></p>
+            <p class="text-center minkiyal_footer">{{ trans('site.Developed') }} <a style="color: #00A8FF;" href="http://ulut.kg/" target="_blank">Улут Софт</a></p>
 
         </div>
     </div>
@@ -16,9 +16,7 @@
 <script type="text/javascript" src="{{ asset('js/bootstrap-hover-dropdown.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/jquery-migrate-1.2.1.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('slick/slick.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/mousescroll.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/smoothscroll.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
+<script src="{{ asset('js/landing/fixed.js') }}"></script>
 
 @yield('footerScript')
 

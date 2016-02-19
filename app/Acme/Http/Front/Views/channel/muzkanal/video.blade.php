@@ -163,7 +163,7 @@
                                  </span>
                               </div>
                               <div class="embed-responsive embed-responsive-16by9 show-video">
-                                 <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ $muzkanalvideo->getUrl()}}"></iframe>
+                                 <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ $muzkanalvideo->getUrl()}}?rel=0&amp;showinfo=0" allowfullscreen></iframe>
                               </div>
                            </article>
                         </div>
