@@ -1720,3 +1720,25 @@
     margin-right: 5px;
 }
 /* MENU */
+
+/* BEGIN Modal */
+
+#minkiyal .modal{
+    z-index: 9999;
+    font-family: 'Roboto regular';
+  
+}
+#minkiyal .modal-header{
+    background: #4CAF50;
+}
+
+#minkiyal .modal-title{
+    border-bottom: 3px solid #FFFFFF;
+    color: white;
+}
+#minkiyal .modal-header .close {
+    margin-top: -2px;
+    background: none;
+    color: #fff;
+
+/* END Modal */
