@@ -1257,7 +1257,7 @@
     margin-top: -30px;
 }
 #minkiyal .info h2{
-    padding: 0px 0px 30px 0px;
+    padding: 30px 0px;
 
     text-align: center;
     font-weight: bold;
@@ -1319,7 +1319,7 @@
 #minkiyal .info .postshow img{
     height: 170px;
     pointer: cursor;
--webkit-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     -moz-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     -webkit-transition: all 0.2s ease;
@@ -1341,16 +1341,64 @@
     opacity: 0;
 }
 
+#minkiyal .info .imageshow img{
+    height: 220px;
+    pointer: cursor;
+    -webkit-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -moz-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+
+}
+#minkiyal .info .imageshow a{
+    position: relative;
+    display: block;
+}
+#minkiyal .info .imageshow h3{
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+    margin: 0;
+
+    line-height: 1;
+    font-size: 1.1em;
+    font-family: 'Roboto Regular';
+    font-weight: bold;
+    letter-spacing: 1px;
+    width: 100%;
+
+    color: #FFFFFF;
+    overflow: hidden;
+    opacity: 1;
+
+    background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0,0,0,0)), color-stop(100%, rgba(0,0,0,1)));
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0, 0.66) 100%);
+    background: -o-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0, 0.66) 100%);
+    background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0, 0.66) 100%);
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0, 0, 0, 0.66) 100%);
+
+    -webkit-transition: opacity 0.2s ease;
+    -o-transition: opacity 0.2s ease;
+    transition: opacity 0.2s ease;
+}
 #minkiyal .footer-channels a:hover img {
     opacity: 1;
     position: relative;
 }
 
-
-
 #minkiyal .mingallery{
-    padding: 110px 0 0px 0;
+    padding: 30px 5px;
 }
+
+#minkiyal .mingallery .with-share{
+    text-align: center;
+}
+
 #minkiyal .mingallery .panel-title h3{
     color: black;
 }
@@ -1415,7 +1463,7 @@
     border-bottom: 3px solid;
   
     color: #FFF;
-    background: #4CAF50;
+    background: #0D9D2C;
 
     -webkit-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.60),0 6px 20px 0 rgba(0,0,0,0.19);
     -moz-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.62),0 6px 20px 0 rgba(0,0,0,0.19);
@@ -1433,7 +1481,7 @@
     -moz-transition: all 0.5s ease-in-out;
     -o-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
-    background: #4C2657;
+    background: #B01778;
     font-family: 'Roboto Regular';
 }
 
@@ -1594,8 +1642,15 @@
     background: #fff;
     height: 170px;
 }
+#minkiyal .anons-carousel .slick-dots li button:before{
+    font-size: 12px;
+
+}
+
 #minkiyal .anons-carousel .col-md-9 span{
     padding:5px; 
+    font-size: 18px;
+    font-family: 'Roboto regular';
 }
 /*  END HOME  */
 
@@ -1612,11 +1667,11 @@
 }
 #minkiyal .navbar-minheader .navbar-brand img{
     position: relative;
-    height: 90px;
+    height: 80px;
     width: inherit;
     float: left;
     margin-top: -10px;
-    margin-left: 10px;
+    margin-left: 25px;
     z-index: 1;
 }
 #minkiyal .navbar-minheader {
@@ -1628,7 +1683,7 @@
     margin: 5px;
 }
 #minkiyal .navbar-minheader .collapse {
-    background: #368A3A;
+    background: #0D9D2C;
     margin-right: 5px;
     margin-left: 5px;
 }
@@ -1646,8 +1701,7 @@
 
 #minkiyal .online{
     padding: 0px 0px 0px 10px;
-    margin-right: 5px;
-    background: #368A3A;
+    background: #158C2F;
 }
 #minkiyal .online h3{
     float: left;
@@ -1666,3 +1720,25 @@
     margin-right: 5px;
 }
 /* MENU */
+
+/* BEGIN Modal */
+
+#minkiyal .modal{
+    z-index: 9999;
+    font-family: 'Roboto regular';
+  
+}
+#minkiyal .modal-header{
+    background: #4CAF50;
+}
+
+#minkiyal .modal-title{
+    border-bottom: 3px solid #FFFFFF;
+    color: white;
+}
+#minkiyal .modal-header .close {
+    margin-top: -2px;
+    background: none;
+    color: #fff;
+
+/* END Modal */

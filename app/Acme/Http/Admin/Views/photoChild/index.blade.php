@@ -52,7 +52,7 @@
                                     </a>
                                 </td>
                                 <td class="table-title">
-                                    @if($photoChild->parentId != 0)
+                                    @if($photoChild->parent()->first())
                                         <a href="{{ route('admin.photoParent.show', $photoChild->parentId) }}">
                                             {{ $photoChild->parent()->first()->getName() }}
                                         </a>
