@@ -60,7 +60,7 @@
    </div>
 </div>
 <div class="container info">
-  @if(@anonstop)
+  @if($anonstop)
    <div id="allposts">
       @foreach($anonstop as $row)
       <div class="col-md-3 col-sm-12 postshow">
@@ -78,32 +78,22 @@
       <div class="anons-slider slidermin">
          <div class="slider-overlay"></div>
          <div class="anons-carousel">
+           @if($anonsbottom)
             <div>
+              @foreach($anonsbottom as $anonsbot)
                <div class="row">
                   <div class="col-md-3">
-                     <img src="{{ asset('images/channels/minkiyal/ayana.jpg') }}" alt=""/>
+                     <img src="{{asset($anonsbot->thumbnail)}}" alt=""/>
                   </div>
                   <div class="col-md-9">
                      <span>
-                      <p>Норвегиянын Лиллехаммер шаарында өтүп жаткан жаштар арасындагы кышкы олимпиада оюндарында казакстандык фигурист Элизабет Турсынбаева коло медаль алды.</p>
-                      <p>Негизги программаны аткаргандыгы үчүн ал 108,77 упай топтоду.Буга чейинкыска мөөнөттүк программада 59,11 упайга ээ болгон. Жалпы жыйынтыктар 167,88 упайды түздү.</p>
+                        {!! $anonsbot->getDesc() !!}
                      </span>
                   </div>
                </div>
+               @endforeach 
             </div>
-            <div>
-               <div class="row">
-                  <div class="col-md-3">
-                     <img src="{{ asset('images/channels/minkiyal/ayana.jpg') }}" alt=""/>
-                  </div>
-                  <div class="col-md-9">
-                     <span>
-                      <p>Норвегиянын Лиллехаммер шаарында өтүп жаткан жаштар арасындагы кышкы олимпиада оюндарында казакстандык фигурист Элизабет Турсынбаева коло медаль алды.</p>
-                      <p>Негизги программаны аткаргандыгы үчүн ал 108,77 упай топтоду.Буга чейинкыска мөөнөттүк программада 59,11 упайга ээ болгон. Жалпы жыйынтыктар 167,88 упайды түздү.</p>
-                     </span> 
-                  </div>
-               </div>
-            </div>
+            @endif
          </div>
       </div>
    </div>
@@ -113,26 +103,18 @@
             <h3>Сүрөтбаяндар</h3>
          </div>
          <div class="row">
-            <div class="withpad">
-               <div class="col-md-4 second">
-                  <a href="#">
-                     <img src="{{asset('images/channels/birinchiradio/olivia.jpg')}}" class="img-responsive" alt="">
-                     <h3>Бактылуу Оливия биздин кечки конокто</h3>
-                  </a>
-               </div>
-               <div class="col-md-4 second">
-                  <a href="#">
-                     <img src="{{asset('images/channels/muzkanal/mirbek.jpg')}}" class="img-responsive" alt="">
-                     <h3>Мирбек Атабеков чоң гастролго аттанаарда</h3>
-                  </a>
-               </div>
-               <div class="col-md-4 second">
-                  <a href="#">
-                     <img src="{{asset('images/channels/minkiyal/kalykov.jpg')}}" class="img-responsive" alt="">
-                     <h3>Гүлжигит Калыков биздин студияда</h3>
-                  </a>
-               </div>
+          @if($photoGalleries)
+            <div class="withpad">         
+                @foreach($photoGalleries as $photoGallery)
+                  <div class="col-md-4 second">
+                    <a href="{{ route('minkiyal.post', $photoGallery) }}">
+                      <img src="{{ asset($photoGallery->thumbnail_big) }}" class="img-responsive" alt="">
+                      <h3>{{ $photoGallery->getName() }}</h3>
+                    </a>
+                  </div>
+                @endforeach
             </div>
+          @endif
          </div>
       </div>
    </div>

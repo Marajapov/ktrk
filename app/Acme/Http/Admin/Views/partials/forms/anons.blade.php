@@ -80,35 +80,35 @@
             </div>
         </div>
 
-        <div class="form-group display-none">
+        <div id="editorTextArea" class="form-group display-none">
             <label for="channel_id" class="col-sm-2 control-label">{{ trans('site.Content') }}</label>
             <div class="col-sm-10">
                 {!! Form::textarea('description', null, ["class" => "form-control", "title" => "","id" => "editKg"]) !!}
             </div>
         </div>
 
-        <div class="form-group display-none">
+        <div id="linkArea" class="form-group display-none">
             <label class="col-sm-2 control-label">Ссылка</label>
             <div class="col-sm-10">
                 {!! Form::text('url', null, ["class" => "form-control", "title" => ""]) !!}
             </div>
         </div>
 
-        <div class="form-group display-none">
+        <div id="weekDayKg" class="form-group display-none">
             <label class="col-sm-2 control-label">{{ trans('site.AdminAnonsWeekDay') }}</label>
             <div class="col-sm-10">
                 {!! Form::text('weekday', null, ["class" => "form-control", "title" => ""]) !!}
             </div>
         </div>
 
-        <div class="form-group display-none">
+        <div id="weekDayRu" class="form-group display-none">
             <label class="col-sm-2 control-label">{{ trans('site.AdminAnonsWeekDayRu') }}</label>
             <div class="col-sm-10">
                 {!! Form::text('weekdayRu', null, ["class" => "form-control", "title" => ""]) !!}
             </div>
         </div>
 
-        <div class="form-group display-none">
+        <div id="timeArea" class="form-group display-none">
             <label class="col-sm-2 control-label">{{ trans('site.AdminAnonsTime') }}</label>
             <div class="col-sm-10">
                 {!! Form::text('time', null, ["class" => "form-control", "title" => ""]) !!}
@@ -116,7 +116,7 @@
         </div>
 
         <!-- Thumb -->
-        <div class="form-group display-none">
+        <div id="thumbForm" class="form-group display-none">
             <label for="parentId" class="col-sm-2 control-label">Файл</label>
             <div class="col-sm-10">
                 <div class="fileinput fileinput-new" data-provides="fileinput">
@@ -135,7 +135,7 @@
             </div>
         </div>
 
-        <div class="row col-md-12 display-none">
+        <div id="publish" class="row col-md-12 display-none">
             <label for="parentId" class="col-sm-2 control-label">&nbsp;</label>
             <div class="form-group col-md-2">
                 <div class="col-sm-10">
