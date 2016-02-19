@@ -1219,24 +1219,24 @@
 #minkiyal {
     position: relative;
     font-family: 'Roboto Condensed';
-    /*background: url('../images/channels/minkiyal/bg.jpg');*/
-    background: #f1edea;
+    background: url('../images/channels/minkiyal/main.jpg');
+    /*background: #f1edea;*/
 /*    background-image: -moz-linear-gradient(90deg, #4CAF50 0%, #8BC34A 100%);
     background-image: -webkit-linear-gradient(90deg, #4CAF50 0%, #8BC34A 100%);
     background-image: -ms-linear-gradient(90deg, #4CAF50 0%, #8BC34A 100%);*/
-  /*  background-size: cover;
+    background-size: cover;
     background-attachment: fixed;
-    background-position: center center;  */                
+    background-position: center center;               
 }
 #minkiyal .switch{
-    background:#F1EDEA;
+    /*background:#F1EDEA;*/
     z-index: 3;
 }
 #minkiyal .sitemenu h4{
-    color: #D4117C !important;
+    color: #fff !important;
 }
 #minkiyal .sitemenu a>span{
-  color: #D4117C !important;
+  color: #fff !important;
 }
 #minkiyal .container-fluid{
     padding: 0;
@@ -1459,9 +1459,7 @@
     font-size: 1.2em;
     text-align: center;
     letter-spacing: 0.5px;
-    text-transform: uppercase;
-    border-bottom: 3px solid;
-  
+    text-transform: uppercase;  
     color: #FFF;
     background: #0D9D2C;
 
@@ -1469,19 +1467,25 @@
     -moz-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.62),0 6px 20px 0 rgba(0,0,0,0.19);
     box-shadow: 0 8px 17px 0 rgba(0,0,0,0.60),0 6px 20px 0 rgba(0,0,0,0.19);
 }
+#minkiyal .address  ul{
+    border-top: 3px solid #FFF;
+    -webkit-box-shadow: 0 -3px 14px 0 rgba(0,0,0,0.60),0 6px 20px 0 rgba(0,0,0,0.1);
+    -moz-box-shadow: 0 -3px 14px 0 rgba(0,0,0,0.60),0 6px 20px 0 rgba(0,0,0,0.1);
+    box-shadow: 0 -3px 14px 0 rgba(0,0,0,0.60),0 6px 20px 0 rgba(0,0,0,0.1);
+}
 #minkiyal .address  h3 i, #minkiyal .address li i{
     padding-right: 10px;
 }
 #minkiyal .address li{
     display: block;
-    color: #FFF;
+    color: #272626;
     font-size: 1.2em;
     padding: 15px 30px 10px 30px;
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
     -o-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
-    background: #B01778;
+    background: rgba(228, 222, 210, 0.34);
     font-family: 'Roboto Regular';
 }
 
@@ -1494,7 +1498,7 @@
 }
 
 #minkiyal .copyright,#minkiyal .footer-menu{
-    color: #383838;
+    color: #fff;
     font-size: 16px;
 }
 #minkiyal .middleblock{
@@ -1555,7 +1559,7 @@
 }
 #minkiyal .title {
     margin: 0px 5px 20px 5px;
-    color: #292929;
+    color: #fff;
     border-bottom: 2px dashed;
     text-transform: uppercase;
 }
