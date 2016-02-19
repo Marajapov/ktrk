@@ -66,7 +66,7 @@
       <div class="col-md-3 col-sm-12 postshow">
          <a href="#">
             <img src="{{asset($row->thumbnail)}}" class="img-responsive" alt="">
-            <h3>{{$row->getNameOne()}}</h3>
+            <h3>{{$row->name}}</h3>
          </a>
       </div>
       @endforeach 

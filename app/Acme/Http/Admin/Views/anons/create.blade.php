@@ -5,11 +5,9 @@
     <meta name="_token" content="{!! csrf_token() !!}"/>
 
     <link rel="stylesheet" href="{{ asset('css/bootstrap-select.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('css/build.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('css/admin/tokenfield-typeahead.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('css/admin/bootstrap-tokenfield.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/build.css') }}"/>   
 
-        <!-- Include Editor style. -->
+    <!-- Include Editor style. -->
     <link href="{{ asset('froala/css/froala_editor.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('froala/css/froala_style.min.css') }}" rel="stylesheet" type="text/css" />
     <!-- Include Editor Plugins style. -->
@@ -100,13 +98,6 @@
         $.FroalaEditor.DEFAULTS.key = 'Xf1onF2phouE4kf==';
     </script>
     <script type="text/javascript" src="{{ asset('js/bootstrap-select.js') }}"></script>
-    <script>
-         @if(session('success') == 'true')
-            $(document).ready(function () {
-                $('#minkiyalAnons').removeClass('hidden');
-            });
-         @endif
-    </script>
 
     <script>
     $(document).ready(function(){
