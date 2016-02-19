@@ -47,18 +47,22 @@
     <!-- /.container-fluid -->
   </nav>
   <div class="container">
-    <div class="shows-slider slidermin">
-      @if($anons)
-        <div class="shows-carousel">
-          @foreach($anons as $banners)
-            <div>
-              <a href="#">
-                <img src="{{asset($banners->thumbnail)}}" alt=""/>
-              </a>
+    <div class="slidermin">
+        <div class="wrapper">
+            @if($anons)
+            <ul id="sb-slider" class="sb-slider">
+              @foreach($anons as $banners)
+              <li>
+                <img src="{{asset($banners->thumbnail)}}" alt="image2"/>
+              </li>
+              @endforeach
+            </ul>
+            <div id="nav-arrows" class="nav-arrows">
+              <a href="#">Next</a>
+              <a href="#">Previous</a>
             </div>
-          @endforeach
+            @endif
         </div>
-      @endif
     </div>
   </div>
   <div class="container info">
@@ -219,19 +223,43 @@
   </body>
 @stop
 @section('footerScript')
+<script type="text/javascript" src="{{ asset('js/jquery.slicebox.js') }}"></script>
+      <script type="text/javascript">
+        $(function() {
+            var Page = (function() {
+                var $navArrows = $( '#nav-arrows' ).hide(),
+                    $shadow = $( '#shadow' ).hide(),
+                    slicebox = $( '#sb-slider' ).slicebox( {
+                        onReady : function() {
+                            $navArrows.show();
+                            $shadow.show();
+                        },
+                        orientation : 'r',
+                        cuboidsRandom : true,
+                        disperseFactor : 30,
+                        autoplay : true,
+                        interval: 5000
+                    } ),
+                    init = function() {
+                        initEvents();
+                    },
+                    initEvents = function() {
+                        // add navigation events
+                        $navArrows.children( ':first' ).on( 'click', function() {
+                            slicebox.next();
+                            return false;
+                        } );
+                        $navArrows.children( ':last' ).on( 'click', function() {
+                            slicebox.previous();
+                            return false;
+                        } );
+                    };
+                return { init : init };
+            })();
+            Page.init();
+        });
+    </script>
   <script>
-    $('.shows-carousel').slick({
-      autoplay: true,
-      autoplaySpeed: 5000,
-      centerPadding: '0',
-      dots: true,
-      arrows: false,
-      infinite: true,
-      interval: 3500,
-      autoplay:true,
-      slidesToShow: 1,
-      speed: 600,
-    });
     $('.anons-carousel').slick({
       autoplay: true,
       autoplaySpeed: 6500,
@@ -252,4 +280,5 @@
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
   </script>
+
 @stop

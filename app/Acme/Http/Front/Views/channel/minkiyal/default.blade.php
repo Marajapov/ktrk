@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}"/>
     <link rel="stylesheet" href="{{asset('css/font-awesome.css')}}"/>
     <link rel="stylesheet" href="{{asset('css/style.css')}}"/>
+    <link rel="stylesheet" href="{{asset('css/slicebox.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick-theme.css') }}"/>
     
@@ -22,7 +23,7 @@
     <link rel="stylesheet" href="{{ asset('css/gallery.css') }}"/>
 
     <script src="{{ asset('js/jquery-1.11.2.min.js') }}"></script>
-
+    <script src="{{ asset('js/modernizr-2.6.2.min.js') }}"></script>
     @yield('styles')
 
 </head>
