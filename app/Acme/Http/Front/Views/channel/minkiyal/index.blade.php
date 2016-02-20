@@ -127,6 +127,7 @@
       <div class="container ">
         <div class="title">
           <h3>Сүрөтбаяндар</h3>
+          <h3 class="allright"><a href="{{ route('minkiyal.posts')}}">Баардыгы</a></h3>
         </div>
         <div class="row">
           @if($photoGalleries)
@@ -137,6 +138,9 @@
                     <img src="{{ asset($photoGallery->thumbnail_big) }}" class="img-responsive" alt="">
                     <h3>{{ $photoGallery->getName() }}</h3>
                   </a>
+                  <div class="extra">
+                    <span class="e-datetime">{{ $photoGallery->getDay() }} {{ $photoGallery->getMonthRu() }}</span>
+                  </div>
                 </div>
               @endforeach
             </div>

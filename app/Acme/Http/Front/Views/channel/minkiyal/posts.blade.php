@@ -48,13 +48,16 @@
 <div class="contaner-fluid imagereports">
   <div class="container info">
     <div id="allposts" class="col-md-12">
-      <h2>Фоторепортаждар</h2>
+      <h2>Сүрөт баяндар</h2>
       <div class="row">
           @if($photoGalleries)
            @foreach($photoGalleries as $photoGallery)
            <div class="col-md-4 sm-12 imageshow">
               <img src="{{ asset($photoGallery->thumbnail_big) }}" class="img-responsive" alt="">
               <a href="{{ route('minkiyal.post', $photoGallery) }}"><h3>{{ $photoGallery->getName() }}</h3></a>  
+              <div class="extra">
+                <span class="e-datetime">{{ $photoGallery->getDay() }} {{ $photoGallery->getMonthRu() }}</span>
+              </div>
            </div>
            @endforeach
            @endif

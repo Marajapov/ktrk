@@ -1,25 +1,5 @@
 @extends('Admin::layouts.default')
 @section('title', $anons->getNameOne())
-@section('styles')
-	<link rel="stylesheet" href="{{ asset('css/bootstrap-select.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('css/build.css') }}"/>   
-
-    <!-- Include Editor style. -->
-    <link href="{{ asset('froala/css/froala_editor.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('froala/css/froala_style.min.css') }}" rel="stylesheet" type="text/css" />
-    <!-- Include Editor Plugins style. -->
-    <link rel="stylesheet" href="{{ asset('froala/css/plugins/char_counter.css')}}">
-    <link rel="stylesheet" href="{{ asset('froala/css/plugins/code_view.css')}}">
-    <link rel="stylesheet" href="{{ asset('froala/css/plugins/colors.css')}}">
-    <link rel="stylesheet" href="{{ asset('froala/css/plugins/emoticons.css')}}">
-    <link rel="stylesheet" href="{{ asset('froala/css/plugins/file.css')}}">
-    <link rel="stylesheet" href="{{ asset('froala/css/plugins/fullscreen.css')}}">
-    <link rel="stylesheet" href="{{ asset('froala/css/plugins/image.css')}}">
-    <link rel="stylesheet" href="{{ asset('froala/css/plugins/image_manager.css')}}">
-    <link rel="stylesheet" href="{{ asset('froala/css/plugins/line_breaker.css')}}">
-    <link rel="stylesheet" href="{{ asset('froala/css/plugins/table.css')}}">
-    <link rel="stylesheet" href="{{ asset('froala/css/plugins/video.css')}}">
-@endsection
 @section('content')
 
 <div class="row modals">
@@ -43,7 +23,7 @@
 @stop
 
 @section('scripts')
-   <!-- Include JS files. -->
+    <!-- Include JS files. -->
     <script src="{{ asset('froala/js/froala_editor.min.js') }}"></script>
 
     <!-- Include Plugins. -->

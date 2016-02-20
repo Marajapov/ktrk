@@ -1096,7 +1096,9 @@
 /* BEGIN All Gallery page*/
 
 /* BEGIN Gallery*/
-    
+.allgallery{
+    position: relative;
+}
 .allgallery .media-middle {
     padding: 10px 0;
     height: 65px;
@@ -1139,6 +1141,15 @@
 }
 .allgallery footer span .fa-arrow-circle-right{
     padding-left:10px; 
+}
+.allgallery .allright{
+    float: right;
+}
+.allgallery .allright a{
+    color: #043A35;
+}
+.allgallery .allright a:hover{
+    color: #fff;
 }
 
 /* END All Gallery page*/
@@ -1262,7 +1273,6 @@
     text-align: center;
     font-weight: bold;
     font-size: 3em;
-    text-shadow: 1px 0px 0px #3C3C3C, 0 0 1em rgba(0, 0, 0, 0);
     
     color: #DC0D7C;
 }
@@ -1561,6 +1571,7 @@
 }
 #minkiyal .title  h3{
     font-size: 18px;
+    display: inline-block;
 }
 #minkiyal .allgallery  .second a{
     position: relative;
@@ -1599,6 +1610,17 @@
 #minkiyal .allgallery .second h3:hover{
     color: #fff;
     background: #4CAF50;
+}
+
+#minkiyal .allgallery .second .extra, #minkiyal .info .imageshow .extra{
+    position: absolute;
+    top: 5px;
+    left: 20px;
+    padding: 0px 5px;
+    background: #4CAF50;
+}
+#minkiyal .allgallery .second .extra span, #minkiyal .info .imageshow .extra span{
+    color: #fff;
 }
 #minkiyal .withpad{
     padding: 0px 5px;
@@ -1652,6 +1674,7 @@
 #minkiyal .navbar-minheader {
     background: #4CAF50;
     margin-bottom: inherit;
+    border: none;
 }
 #minkiyal .navbar-minheader .navbar-text{
     font-size: 1.8em;
@@ -1665,7 +1688,7 @@
 #minkiyal .navbar-minheader .collapse .navbar-nav>li>a{
     color: white;
     font-size: 16px;
-    border-right: 1px solid #2F7932;
+    border-right: 1px solid #4CAF50;
     text-transform: uppercase;
 }
 #minkiyal .navbar-minheader .collapse .navbar-nav>li>a:hover,

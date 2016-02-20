@@ -1,5 +1,26 @@
 @include('Front::messages.flash')
+@section('styles')
+    <link rel="stylesheet" href="{{ asset('css/bootstrap-select.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/build.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/admin/tokenfield-typeahead.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/admin/bootstrap-tokenfield.css') }}"/>
 
+    <!-- Include Editor style. -->
+    <link href="{{ asset('froala/css/froala_editor.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('froala/css/froala_style.min.css') }}" rel="stylesheet" type="text/css" />
+    <!-- Include Editor Plugins style. -->
+    <link rel="stylesheet" href="{{ asset('froala/css/plugins/char_counter.css')}}">
+    <link rel="stylesheet" href="{{ asset('froala/css/plugins/code_view.css')}}">
+    <link rel="stylesheet" href="{{ asset('froala/css/plugins/colors.css')}}">
+    <link rel="stylesheet" href="{{ asset('froala/css/plugins/emoticons.css')}}">
+    <link rel="stylesheet" href="{{ asset('froala/css/plugins/file.css')}}">
+    <link rel="stylesheet" href="{{ asset('froala/css/plugins/fullscreen.css')}}">
+    <link rel="stylesheet" href="{{ asset('froala/css/plugins/image.css')}}">
+    <link rel="stylesheet" href="{{ asset('froala/css/plugins/image_manager.css')}}">
+    <link rel="stylesheet" href="{{ asset('froala/css/plugins/line_breaker.css')}}">
+    <link rel="stylesheet" href="{{ asset('froala/css/plugins/table.css')}}">
+    <link rel="stylesheet" href="{{ asset('froala/css/plugins/video.css')}}">
+@endsection
 <div class="panel panel-success">
     <div class="panel-body">
         <div class="form-group">
