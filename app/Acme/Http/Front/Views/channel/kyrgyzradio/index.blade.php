@@ -117,7 +117,7 @@
             <div class="col-md-3 col-sm-12">
               <div class="panel panel-default programtitle">
                 <div class="panel-heading" style="padding: 5px;">
-                  <h3 class="panel-title"><span> - ПРОГРАММА ПЕРЕДАЧ  - </span></h3>
+                  <h3 class="panel-title"><span> - ПРОГРАММА ПЕРЕДАЧ - </span></h3>
                 </div>
                 <div class="centered">
                   <div id="nt-example1-container" >
