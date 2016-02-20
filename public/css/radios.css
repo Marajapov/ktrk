@@ -1462,16 +1462,12 @@
     text-transform: uppercase;  
     color: #FFF;
     background: #0D9D2C;
-
-    -webkit-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.60),0 6px 20px 0 rgba(0,0,0,0.19);
-    -moz-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.62),0 6px 20px 0 rgba(0,0,0,0.19);
-    box-shadow: 0 8px 17px 0 rgba(0,0,0,0.60),0 6px 20px 0 rgba(0,0,0,0.19);
 }
 #minkiyal .address  ul{
     border-top: 3px solid #FFF;
-    -webkit-box-shadow: 0 -3px 14px 0 rgba(0,0,0,0.60),0 6px 20px 0 rgba(0,0,0,0.1);
-    -moz-box-shadow: 0 -3px 14px 0 rgba(0,0,0,0.60),0 6px 20px 0 rgba(0,0,0,0.1);
-    box-shadow: 0 -3px 14px 0 rgba(0,0,0,0.60),0 6px 20px 0 rgba(0,0,0,0.1);
+    -webkit-box-shadow: 0px 5px 200px #000000;
+    -moz-box-shadow: 0px 5px 200px #000000;
+    box-shadow: 0px 5px 200px #000000;
 }
 #minkiyal .address  h3 i, #minkiyal .address li i{
     padding-right: 10px;
@@ -1491,14 +1487,14 @@
 
 #minkiyal .address li:last-child{
     padding: 15px 30px 10px 30px;
-    border-top: 1px solid #688EA0;
+    border-top: 1px solid #C1B38E;
 }
 #minkiyal .slidermin{
     margin: 15px 5px 50px 5px;
 }
 
 #minkiyal .copyright,#minkiyal .footer-menu{
-    color: #fff;
+    color: #1D1C1C;
     font-size: 16px;
 }
 #minkiyal .middleblock{
@@ -1559,7 +1555,7 @@
 }
 #minkiyal .title {
     margin: 0px 5px 20px 5px;
-    color: #fff;
+    color: #095A0C;
     border-bottom: 2px dashed;
     text-transform: uppercase;
 }
@@ -1697,6 +1693,16 @@
     margin-left: 10px;
     margin-top: 5px;
     margin-right: 5px;
+}
+
+#minkiyal .nav-arrows a {
+    background: rgb(76, 175, 80) url(../images/nav.png) no-repeat top left;
+    box-shadow: none;
+}
+#minkiyal .nav-arrows a:first-child {
+    left: auto;
+    right: 10px;
+    background-position: top right;
 }
 /* MENU */
 

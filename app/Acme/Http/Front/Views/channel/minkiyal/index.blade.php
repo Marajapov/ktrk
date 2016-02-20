@@ -237,7 +237,7 @@
                         orientation : 'r',
                         cuboidsRandom : true,
                         disperseFactor : 30,
-                        autoplay : true,
+                        autoplay : false,
                         interval: 5000
                     } ),
                     init = function() {

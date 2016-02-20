@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="ру">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8"/>
     <title>
         @yield('title')
     </title>
