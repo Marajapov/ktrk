@@ -507,6 +507,34 @@
     padding: 5px;
     font-family: 'merge_probold';
 }
+.video-view{
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    z-index: 3;
+    background: #fff;
+    padding: 5px;
+    font-family: 'merge_probold';
+    font-size: 12px;
+}
+
+.video-view .fa-eye{
+    padding-right: 5px;
+}
+
+.video-date{
+    position: absolute;
+    top: 0px;
+    right: 25px;
+    z-index: 3;
+    background: #fff;
+    padding: 5px;
+    font-family: 'merge_probold';
+    font-size: 12px;
+}
+.video-date .fa-calendar{
+    padding-right: 5px;
+}
 /* END New videos*/
 /* BEGIN Photo Gallery*/
 

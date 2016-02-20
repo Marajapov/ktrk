@@ -1,6 +1,7 @@
 @extends('Front::channel.minkiyal.default')
 @section('title', "Миң Кыял Фм")
 @section('styles')
+    <link rel="stylesheet" href="{{asset('css/slicebox.css')}}">
 @endsection
 @section('content')
   @include('Front::channel.minkiyal.nav')
