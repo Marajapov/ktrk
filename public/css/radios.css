@@ -1737,8 +1737,9 @@
     color: white;
 }
 #minkiyal .modal-header .close {
-    margin-top: -2px;
-    background: none;
-    color: #fff;
+  margin-top: -2px;
+  background: none;
+  color: #fff;
+}
 
 /* END Modal */
