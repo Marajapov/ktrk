@@ -1,6 +1,6 @@
 body {
   padding-top: 0px;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto regular', sans-serif;
   font-weight: 400;
   color: #64686d;
   line-height: 26px;
@@ -45,10 +45,7 @@ header {
   margin-right: -15px;
   margin-left: -15px;
 }
-#about img {
-  height: 320px;
-  width: auto;
-}
+
 .fixed {
   position: fixed;
   max-width: 100% !important;
@@ -1616,9 +1613,9 @@ height: 325px;
   position: absolute;
   bottom: 10px;
   padding: 5px 10px;
-  background: #FFEB3B;
+  background: #FF5722;
   left: 50%;
-  color: #333333;
+  color: #000;
   font-size: 14px;
   font-weight: bold;
   line-height: 1;
@@ -1773,3 +1770,50 @@ height: 325px;
 }
 
 /*  END ANONS*/
+/* BEGIN ABOUT*/
+
+#about {
+  position: relative;
+  padding-bottom: 40px;
+}
+
+#about img {
+  height: 320px;
+  width: auto;
+  padding: 0px 10px;
+}
+#about .abouttext p{
+  font-size: 18px;
+}
+
+#about .show-btn{
+
+    margin: 0px auto;
+    text-align: center;
+}
+
+.show-btn{
+    position: relative;
+    top: 0;
+    border: 0;
+    display: inline-block;
+    margin-bottom: 50px;
+    padding: 5px 15px;
+    background: #c6c9cd;
+    color: #00283d;
+    font-family: 'Open Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 3px !important;
+    cursor: pointer;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+/* END ABOUT*/

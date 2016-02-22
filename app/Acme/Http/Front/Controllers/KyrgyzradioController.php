@@ -52,6 +52,17 @@ class KyrgyzradioController extends Controller
         $channel = \Model\Channel\ModelName::name('kyrgyzradio')->first();
 
         return view('Front::channel.kyrgyzradio.posts', ['channel' => $channel]);
+    }    
+
+    public function about()
+    {
+        $channel = \Model\Channel\ModelName::name('kyrgyzradio')->first();
+        $kyrgyzradioProjects = \Model\Project\ModelName::where('published','=',true)->where('kyrgyzradio', '=', 1)->get();
+
+        return view('Front::channel.kyrgyzradio.about', [
+            'channel' => $channel,
+            'kyrgyzradioProjects' => $kyrgyzradioProjects,
+            ]);
     }
 
     public function project(\Model\Project\ModelName $project)
