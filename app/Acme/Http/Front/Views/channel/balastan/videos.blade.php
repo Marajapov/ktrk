@@ -67,6 +67,9 @@
                                 @if(!$project && $media->hasProject()->first())
                                     <h5 class="video-category">{{ $media->hasProject()->first()->getNameOne() }}</h5>
                                 @endif
+                                <h5 class="video-view"><i class="fa fa-eye"></i>{{ $media->getViewed()}}</h5>
+                                <h5 class="video-date"><i class="fa fa-calendar"></i>{{ $media->getDateFormatted() }}</h5>
+
                                 <div class="video-info">
                                     <div class="media">
                                         <div class="media-left media-middle">

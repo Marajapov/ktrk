@@ -16,6 +16,7 @@
 <script type="text/javascript" src="{{ asset('js/bootstrap-hover-dropdown.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/jquery-migrate-1.2.1.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('slick/slick.min.js') }}"></script>
+<script src="{{ asset('js/landing/fixed.js') }}"></script>
 
 @yield('footerScript')
 

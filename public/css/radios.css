@@ -1096,7 +1096,9 @@
 /* BEGIN All Gallery page*/
 
 /* BEGIN Gallery*/
-    
+.allgallery{
+    position: relative;
+}
 .allgallery .media-middle {
     padding: 10px 0;
     height: 65px;
@@ -1139,6 +1141,15 @@
 }
 .allgallery footer span .fa-arrow-circle-right{
     padding-left:10px; 
+}
+.allgallery .allright{
+    float: right;
+}
+.allgallery .allright a{
+    color: #043A35;
+}
+.allgallery .allright a:hover{
+    color: #fff;
 }
 
 /* END All Gallery page*/
@@ -1219,17 +1230,17 @@
 #minkiyal {
     position: relative;
     font-family: 'Roboto Condensed';
-    /*background: url('../images/channels/minkiyal/bg.jpg');*/
-    background: #f1edea;
+    background: url('../images/channels/minkiyal/main.jpg');
+    /*background: #f1edea;*/
 /*    background-image: -moz-linear-gradient(90deg, #4CAF50 0%, #8BC34A 100%);
     background-image: -webkit-linear-gradient(90deg, #4CAF50 0%, #8BC34A 100%);
     background-image: -ms-linear-gradient(90deg, #4CAF50 0%, #8BC34A 100%);*/
-  /*  background-size: cover;
+    background-size: cover;
     background-attachment: fixed;
-    background-position: center center;  */                
+    background-position: center center;               
 }
 #minkiyal .switch{
-    background:#161414;
+    /*background:#F1EDEA;*/
     z-index: 3;
 }
 #minkiyal .sitemenu h4{
@@ -1257,12 +1268,11 @@
     margin-top: -30px;
 }
 #minkiyal .info h2{
-    padding: 0px 0px 30px 0px;
+    padding: 30px 0px;
 
     text-align: center;
     font-weight: bold;
     font-size: 3em;
-    text-shadow: 1px 0px 0px #3C3C3C, 0 0 1em rgba(0, 0, 0, 0);
     
     color: #DC0D7C;
 }
@@ -1319,7 +1329,7 @@
 #minkiyal .info .postshow img{
     height: 170px;
     pointer: cursor;
--webkit-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     -moz-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     -webkit-transition: all 0.2s ease;
@@ -1341,16 +1351,64 @@
     opacity: 0;
 }
 
+#minkiyal .info .imageshow img{
+    height: 220px;
+    pointer: cursor;
+    -webkit-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -moz-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+
+}
+#minkiyal .info .imageshow a{
+    position: relative;
+    display: block;
+}
+#minkiyal .info .imageshow h3{
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+    margin: 0;
+
+    line-height: 1;
+    font-size: 1.1em;
+    font-family: 'Roboto Regular';
+    font-weight: bold;
+    letter-spacing: 1px;
+    width: 100%;
+
+    color: #FFFFFF;
+    overflow: hidden;
+    opacity: 1;
+
+    background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0,0,0,0)), color-stop(100%, rgba(0,0,0,1)));
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0, 0.66) 100%);
+    background: -o-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0, 0.66) 100%);
+    background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0, 0.66) 100%);
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0, 0, 0, 0.66) 100%);
+
+    -webkit-transition: opacity 0.2s ease;
+    -o-transition: opacity 0.2s ease;
+    transition: opacity 0.2s ease;
+}
 #minkiyal .footer-channels a:hover img {
     opacity: 1;
     position: relative;
 }
 
-
-
 #minkiyal .mingallery{
-    padding: 110px 0 0px 0;
+    padding: 30px 5px;
 }
+
+#minkiyal .mingallery .with-share{
+    text-align: center;
+}
+
 #minkiyal .mingallery .panel-title h3{
     color: black;
 }
@@ -1411,67 +1469,42 @@
     font-size: 1.2em;
     text-align: center;
     letter-spacing: 0.5px;
-    text-transform: uppercase;
-    border-bottom: 3px solid;
-  
+    text-transform: uppercase;  
     color: #FFF;
-    background: #4CAF50;
-
-    -webkit-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.60),0 6px 20px 0 rgba(0,0,0,0.19);
-    -moz-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.62),0 6px 20px 0 rgba(0,0,0,0.19);
-    box-shadow: 0 8px 17px 0 rgba(0,0,0,0.60),0 6px 20px 0 rgba(0,0,0,0.19);
+    background: #0D9D2C;
+}
+#minkiyal .address  ul{
+    border-top: 3px solid #FFF;
+    -webkit-box-shadow: 0px 5px 200px #000000;
+    -moz-box-shadow: 0px 5px 200px #000000;
+    box-shadow: 0px 5px 200px #000000;
 }
 #minkiyal .address  h3 i, #minkiyal .address li i{
     padding-right: 10px;
 }
 #minkiyal .address li{
     display: block;
-    color: #FFF;
+    color: #272626;
     font-size: 1.2em;
     padding: 15px 30px 10px 30px;
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
     -o-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
-    background: #4C2657;
+    background: rgba(228, 222, 210, 0.34);
     font-family: 'Roboto Regular';
 }
 
 #minkiyal .address li:last-child{
     padding: 15px 30px 10px 30px;
-    border-top: 1px solid #688EA0;
+    border-top: 1px solid #C1B38E;
 }
 #minkiyal .slidermin{
-    margin: 15px 5px 0px 5px;
+    margin: 15px 5px 50px 5px;
 }
 
-#minkiyal .slidermin .shows-carousel .slick-slide img{
-    /*height: 500px;*/
-}
-#minkiyal .slidermin .slick-slide .overlay{
-    background: none;
-}
-#minkiyal .shows-carousel .slick-prev, #minkiyal .shows-carousel .slick-next {
-    background: none;
-    border-radius: 50% !important;
-}
-#minkiyal .shows-carousel .slick-prev::before, #minkiyal .shows-carousel .slick-next::before {
-    color: #fff !important;
-}
-#minkiyal .shows-carousel .slick-slide {
-    /*height: 510px;*/
-    padding:0px 0px 20px 0px; 
-}
-#minkiyal .shows-carousel .slick-dots {
-    bottom: 30px;
-    right: 40px;
-    text-align: right;
-}
-#minkiyal .shows-carousel .slick-dots li button:before {
-    font-size: 16px;
-}
 #minkiyal .copyright,#minkiyal .footer-menu{
-    color: #383838;
+    color: #1D1C1C;
     font-size: 16px;
 }
 #minkiyal .middleblock{
@@ -1532,12 +1565,13 @@
 }
 #minkiyal .title {
     margin: 0px 5px 20px 5px;
-    color: #292929;
+    color: #095A0C;
     border-bottom: 2px dashed;
     text-transform: uppercase;
 }
 #minkiyal .title  h3{
     font-size: 18px;
+    display: inline-block;
 }
 #minkiyal .allgallery  .second a{
     position: relative;
@@ -1577,6 +1611,17 @@
     color: #fff;
     background: #4CAF50;
 }
+
+#minkiyal .allgallery .second .extra, #minkiyal .info .imageshow .extra{
+    position: absolute;
+    top: 5px;
+    left: 20px;
+    padding: 0px 5px;
+    background: #4CAF50;
+}
+#minkiyal .allgallery .second .extra span, #minkiyal .info .imageshow .extra span{
+    color: #fff;
+}
 #minkiyal .withpad{
     padding: 0px 5px;
 }
@@ -1594,70 +1639,74 @@
     background: #fff;
     height: 170px;
 }
+#minkiyal .anons-carousel .slick-dots li button:before{
+    font-size: 12px;
+
+}
+
 #minkiyal .anons-carousel .col-md-9 span{
     padding:5px; 
+    font-size: 18px;
+    font-family: 'Roboto regular';
 }
 /*  END HOME  */
 
 /* MENU */
-#minkiyal .headermin{
-    position: absolute;
-    margin: 10px 0px 0px 0px;
+#minkiyal .fixed {
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    top: 0 !important;
+    max-width: inherit; 
+    margin: 0px auto;
+    background-color: #F44336;
+    z-index: 9999;
 }
-#minkiyal .menu{
-    display: inline-block;
-    margin:15px 0px; 
-    background: #FEFEFE;
-}
-#minkiyal .menu ul li{
-    border-right: 2px solid #F1EDEA;
-}
-#minkiyal .menu ul li:last-child{
-    border-right: none;
-}
-
-#minkiyal .menu ul>li a{
-    padding: 20px;
-    font-size: 18px;
-    font-weight: bold;
-    line-height: 1;
-    color: #DC0D7C;
-}
-
-#minkiyal .logoon {
+#minkiyal .navbar-minheader .navbar-brand img{
     position: relative;
-}
-#minkiyal .logoon .logomin {
-    position: absolute;
-    display: inline-block;
-    left: 0;
-}
-#minkiyal .logoon .logomin span{
-    position: absolute;
-    margin: 30px 0px 0px 15px;
-    font-size: 2.5em;
-    font-weight: bold;
-    white-space: nowrap;
-    color: #D5107B;
-    border-bottom: 1px solid #4CAF50;
-}
-#minkiyal .logoon .logomin img{
-    height: 90px;
+    height: 80px;
     width: inherit;
-    margin-top: 10px;
     float: left;
+    margin-top: -10px;
+    margin-left: 25px;
+    z-index: 1;
+}
+#minkiyal .navbar-minheader {
+    background: #4CAF50;
+    margin-bottom: inherit;
+    border: none;
+}
+#minkiyal .navbar-minheader .navbar-text{
+    font-size: 1.8em;
+    margin: 5px;
+}
+#minkiyal .navbar-minheader .collapse {
+    background: #0D9D2C;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+#minkiyal .navbar-minheader .collapse .navbar-nav>li>a{
+    color: white;
+    font-size: 16px;
+    border-right: 1px solid #4CAF50;
+    text-transform: uppercase;
+}
+#minkiyal .navbar-minheader .collapse .navbar-nav>li>a:hover,
+#minkiyal .navbar-minheader .collapse .navbar-nav>li>a:active,
+#minkiyal .navbar-minheader .collapse .navbar-nav>li>a:focus {
+    background: #4CAF50;
 }
 
 #minkiyal .online{
-    float: right;
     padding: 0px 0px 0px 10px;
-    margin: 30px -10px 15px 0px;
-    background: #181818;
+    background: #158C2F;
 }
 #minkiyal .online h3{
     float: left;
     color: #fff;
-    margin: 10px 0px 0px;
+    font-size: 16px;
+    margin: 15px 0px 0px;
+    text-transform: uppercase;
 }
 #minkiyal .online i{
     padding-right: 5px;
@@ -1666,5 +1715,39 @@
 #minkiyal .online object{
     margin-left: 10px;
     margin-top: 5px;
+    margin-right: 5px;
+}
+
+#minkiyal .nav-arrows a {
+    background: rgb(76, 175, 80) url(../images/nav.png) no-repeat top left;
+    box-shadow: none;
+}
+#minkiyal .nav-arrows a:first-child {
+    left: auto;
+    right: 10px;
+    background-position: top right;
 }
 /* MENU */
+
+/* BEGIN Modal */
+
+#minkiyal .modal{
+    z-index: 9999;
+    font-family: 'Roboto regular';
+  
+}
+#minkiyal .modal-header{
+    background: #4CAF50;
+}
+
+#minkiyal .modal-title{
+    border-bottom: 3px solid #FFFFFF;
+    color: white;
+}
+#minkiyal .modal-header .close {
+  margin-top: -2px;
+  background: none;
+  color: #fff;
+}
+
+/* END Modal */

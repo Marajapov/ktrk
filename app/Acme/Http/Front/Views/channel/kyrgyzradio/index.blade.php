@@ -6,7 +6,7 @@
     @include('Front::channel.kyrgyzradio.nav')
 
     <div id="kyrgyzhome" class="container">
-        <section id="main-slider">
+        <section id="main-slider" style="margin-bottom: 30px;">
             @if($anons->first())
                 <div class="owl-carousel">
                     @foreach($anons as $row)
@@ -31,6 +31,114 @@
             @endif
         </section>
         <!--/#main-slider-->
+
+      <section>
+        <div class="container no-padding">
+          <div class="info">
+            <div class="col-md-3 col-sm-12 postshow">
+              <a href="#" data-toggle="modal" data-target="#myModal">
+                <img src="http://ktrk.dev/images/anons/61455876197.png" class="img-responsive" alt="">
+                <h3>test1</h3>
+              </a>
+            </div>
+          </div>
+
+          <!-- Modal -->
+          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                  ...
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Жабуу</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="info">
+            <div class="col-md-3 col-sm-12 postshow">
+              <a href="#" data-toggle="modal" data-target="#myModal">
+                <img src="http://ktrk.dev/images/anons/61455876197.png" class="img-responsive" alt="">
+                <h3>test1</h3>
+              </a>
+            </div>
+          </div>
+
+          <!-- Modal -->
+          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                  ...
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Жабуу</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="info">
+            <div class="col-md-3 col-sm-12 postshow">
+              <a href="#" data-toggle="modal" data-target="#myModal">
+                <img src="http://ktrk.dev/images/anons/61455876197.png" class="img-responsive" alt="">
+                <h3>test1</h3>
+              </a>
+            </div>
+          </div>
+
+          <!-- Modal -->
+          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                  ...
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Жабуу</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="info">
+            <div class="col-md-3 col-sm-12">
+              <div class="panel panel-default programtitle">
+                <div class="panel-heading" style="padding: 5px;">
+                  <h3 class="panel-title"><span> - ПРОГРАММА ПЕРЕДАЧ - </span></h3>
+                </div>
+                <div class="centered">
+                  <div id="nt-example1-container" >
+                    <i class="fa fa-arrow-up" id="nt-example1-prev"></i>
+                    <i class="fa fa-arrow-down" id="nt-example1-next" style="right:40px;"></i>
+                    <ul id="nt-example1" data-tabs="nt-example1">
+                      <li style="">
+                        <span>12:30</span>
+                        <h4>
+                          <p>NON STOP (KG CLIPS)</p>
+                        </h4>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
         <section id="cta2">
             <div class="container">
                 <div class="text-center">
@@ -190,14 +298,14 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-3 wow fadeInLeft">
-                        <h3 class="column-title">.</h3>
+                        <h3 class="column-title"  style="width: 112%;">.</h3>
                         <!-- 16:9 aspect ratio -->
                         <div class="img-responsive">
                             <img src="{{asset('images/channels/kg-radio.png')}}" alt="">
                         </div>
                     </div>
                     <div class="col-sm-9 wow fadeInRight">
-                        <h3 class="column-title">Тарыхы</h3>
+                        <h3 class="column-title" style="text-align: left;">Тарыхы</h3>
                         <p>Кыргыз радиосу мурдагы Улуттук мамлекеттик радионун курамынан 2009-жылы июнь айында өзүнчө адабий-музыкалык канал катары бөлүнүп чыккан. Кыргыз радиосу улуттук идеологияны жүргүзгөн, калкка рухий азык тараткан, элибиздин көркөм дөөлөттөрүн жайылткан, адабий-музыкалык багытта жан дүйнөнү тазарткан, адеп-ахлак, каада-салттын мектеби болгон уникалдуу радио. Кыргыз радиосунун концепциясы  - көркөм өнөрдүн таасири аркылуу жалпы угармандардын жан дүйнөсүн байытуу, тарбиялоо. </p>
                         <p>Ырасында эле “Адабият –элдин сезими, элдин рухий турмушунун жемиши” (В.Белинский) же болбосо музыканын тили көтөрүлбөй турган тил. Ал жандын тили (А.Ауэрбах) - деп таамай айтылгандай, адабият менен музыка бүтүндөй элди тазалыкка, адамгерчиликке тарбиялай турган курал. Кыргыз радиосу ушул улуу максатты аркалайт. </p>
                         <p>Күн сайын 12(он эки) саттык уктуруулар эфирге чыгат. Уктуруулар жалаң кыргыз тилинде даярдалат. Уктуруулардын сапатын жакшыртып, угармандардын катарын көбөйтүү максатында редакция жамааты ар убакта талкууларды, талдоолорду өткөрүп, өз кызматын өтөп бүткөн уктурууларды жаап, жаңы долбоорлордун үстүндө изденип, эфирге даярдап келишет. Ошол эле учурда Радионун жүзүн чагылдырып турган роликтер маал-маалы менен жаңыланып турат. Бүгүнкүдөй саясатташкан , күнүмдүк көйгөйлөр адамдын адамдын акыл-эсин чарчатып турган кымгуут заманда угармандардын жан дүйнөсүнө азык берип, эс алууга багыттап, жакшылыкка үндөп келаткан Кыргыз Радиосунун келечеги алдыда</p>
@@ -211,5 +319,27 @@
     </div>
 @stop
 @section('footerscript2')
+
+  <script src="{{ asset('js/audio/jquery.newsTicker.js') }}"></script>
+  <script>
+    var nt_title = $('#nt-title').newsTicker({
+      row_height: 30,
+      max_rows: 1,
+      duration: 3000,
+      pauseOnHover: 1
+    });
+    var nt_example1 = $('#nt-example1').newsTicker({
+      row_height: 30,
+      max_rows: 3,
+      duration: 4000,
+      prevButton: $('#nt-example1-prev'),
+      nextButton: $('#nt-example1-next')
+    });
+
+    var state = 'stopped';
+    var speed;
+    var add;
+
+  </script>
 
 @stop

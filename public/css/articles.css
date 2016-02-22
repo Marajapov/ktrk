@@ -819,3 +819,35 @@ h3#reply-title {
     padding: 10px 0;
     background: #f1f4f9;
 }
+.show-extra{
+  float: right;
+}
+.fa-view{
+  display: inline-block;
+  vertical-align: middle;
+  margin: auto;
+  width: 20px;
+  height: 20px;
+  background-image: url('img/view-icon-dark.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+.show-view{
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 24px;
+  text-align: right;
+}
+.show-date{
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+  color: #999999;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: normal
+}

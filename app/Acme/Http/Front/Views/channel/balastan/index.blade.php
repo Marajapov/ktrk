@@ -83,21 +83,21 @@
 </div>
 <!-- END Programms category slider -->
 <!-- BEGIN Ad block -->
-@if($anons->first())
+@if($anonssoon->first())
 <div class="container-fluid preklams">
    <div class="container">
       <div class="row">
          <div class="title col-md-12">
             <h3>Анонс</h3>
          </div>
-         @foreach($anons as $row)
+         @foreach($anonssoon as $row)
          <div class="col-md-6 adblock">
-            <a href="#">
+            <a href="{{ $row->url }}">
             <img class="videomain" width="100%" height="340px" src="{{asset($row->thumbnail)}}" alt="" />
             </a>
             <div class="show-text">
                <h2>{{ $row->getNameOne() }}</h2>
-               <a class="soon-btn" href="#">
+               <a class="soon-btn" href="{{ $row->url }}">
                <i class="fa fa-chevron-right"></i>
                </a>
             </div>
@@ -122,7 +122,13 @@
             <div class="col-md-4 video-block">
                <a href="{{ route('balastan.video', $media) }}" class="video-img">
                <img src="http://img.youtube.com/vi/{{ $media->getUrl()}}/mqdefault.jpg" alt="" />
-               <span class="video-overlay"></span>
+               <span class="video-overlay">
+                   <span class="show-extra">
+                      <i class="fa-view"></i>
+                      <span class="show-view">{{ $media->getViewed()}}</span>
+                      <span class="show-date">{{ $media->getDay() }} {{ $media->getMonthRu() }}, {{ $media->getYear() }}</span>
+                  </span>
+               </span>
                </a>
                <div class="video-info">
                   <div class="media">
@@ -159,7 +165,9 @@
          <div class="col-md-4 video-block">
             <a href="{{ route('balastan.photos', $photoGallery) }}" class="video-img">
             <img src="{{ asset($photoGallery->thumbnail_big) }}" alt="" />
-            <span class="video-overlay"></span>
+            <span class="video-overlay">
+              <div class="overlay"></div>
+            </span>
             </a>                    
             <div class="video-info">
                <div class="media">

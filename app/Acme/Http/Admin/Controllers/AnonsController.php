@@ -3,17 +3,13 @@
 namespace Admin\Controllers;
 
 use Illuminate\Http\Request;
+use Input;
 use App\Http\Requests;
 use \Model\Anons\ModelName as Anons;
 use Intervention\Image\ImageManagerStatic as Image;
 
 class AnonsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $anons = Anons::get();
@@ -23,11 +19,17 @@ class AnonsController extends Controller
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    // AJAX CALL
+    public function selectChange()
+    {
+        if(Request::ajax()) {
+            $data = Input::all();
+            if($data['id'] == 9){
+                return 9;
+            }
+        }
+    }
+
     public function create()
     {
         $channels = \Model\Channel\ModelName::lists('display', 'id')->toArray();
@@ -37,12 +39,6 @@ class AnonsController extends Controller
         ]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $anons = Anons::create($request->except('thumbnail','owner_id','q'));
@@ -63,13 +59,24 @@ class AnonsController extends Controller
             } elseif($request->channel == 3) {
                 Image::make($_FILES['thumbnail']['tmp_name'])->fit(1170, 360)->save($dir.'/'.$name);
             } elseif($request->channel == 4) {
-                Image::make($_FILES['thumbnail']['tmp_name'])->fit(1110, 680)->save($dir.'/'.$name);
+                if($request->balastansoon == 1){
+                    Image::make($_FILES['thumbnail']['tmp_name'])->fit(555, 340)->save($dir.'/'.$name);
+                }else{
+                    Image::make($_FILES['thumbnail']['tmp_name'])->fit(1110, 680)->save($dir.'/'.$name);
+                }
+                
             } elseif($request->channel == 6) {
               Image::make($_FILES['thumbnail']['tmp_name'])->fit(1600, 358)->save($dir.'/'.$name);
             } elseif($request->channel == 8) {
               Image::make($_FILES['thumbnail']['tmp_name'])->fit(1600, 358)->save($dir.'/'.$name);
-            } elseif($request->channel == 9) {
-              Image::make($_FILES['thumbnail']['tmp_name'])->fit(1573, 500)->save($dir.'/'.$name);
+            } elseif($request->channel == 9) { 
+                if($request->minkiyaltop == 1){
+                    Image::make($_FILES['thumbnail']['tmp_name'])->fit(275, 170)->save($dir.'/'.$name);
+                }elseif($request->minkiyalbottom == 1){
+                    Image::make($_FILES['thumbnail']['tmp_name'])->fit(285, 170)->save($dir.'/'.$name);
+                }else{
+                    Image::make($_FILES['thumbnail']['tmp_name'])->fit(1573, 500)->save($dir.'/'.$name);
+                }
             }
 
             $anons->thumbnail = $dir.'/'.$name;
@@ -134,13 +141,23 @@ class AnonsController extends Controller
             } elseif($request->channel == 3) {
                 Image::make($_FILES['thumbnail']['tmp_name'])->fit(1170, 360)->save($dir.'/'.$name);
             } elseif($request->channel == 4) {
-                Image::make($_FILES['thumbnail']['tmp_name'])->fit(1110, 680)->save($dir.'/'.$name);
+                if($request->balastansoon == 1){
+                    Image::make($_FILES['thumbnail']['tmp_name'])->fit(555, 340)->save($dir.'/'.$name);
+                }else{
+                    Image::make($_FILES['thumbnail']['tmp_name'])->fit(1110, 680)->save($dir.'/'.$name);
+                }
             }elseif($request->channel == 6) {
               Image::make($_FILES['thumbnail']['tmp_name'])->fit(1600, 358)->save($dir.'/'.$name);
             }elseif($request->channel == 8) {
               Image::make($_FILES['thumbnail']['tmp_name'])->fit(1600, 358)->save($dir.'/'.$name);
-            } elseif($request->channel == 9) {
-              Image::make($_FILES['thumbnail']['tmp_name'])->fit(1573, 500)->save($dir.'/'.$name);
+            } elseif($request->channel == 9) { 
+                if($request->minkiyaltop == 1){
+                    Image::make($_FILES['thumbnail']['tmp_name'])->fit(275, 170)->save($dir.'/'.$name);
+                }elseif($request->minkiyalbottom == 1){
+                    Image::make($_FILES['thumbnail']['tmp_name'])->fit(285, 170)->save($dir.'/'.$name);
+                }else{
+                    Image::make($_FILES['thumbnail']['tmp_name'])->fit(1573, 500)->save($dir.'/'.$name);
+                }
             }
 
             $anons->thumbnail = $dir.'/'.$name;

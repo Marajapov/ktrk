@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="ру">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8"/>
     <title>
         @yield('title')
     </title>
@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="{{ asset('css/gallery.css') }}"/>
 
     <script src="{{ asset('js/jquery-1.11.2.min.js') }}"></script>
-
+    <script src="{{ asset('js/modernizr-2.6.2.min.js') }}"></script>
     @yield('styles')
 
 </head>

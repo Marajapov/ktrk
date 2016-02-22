@@ -41,6 +41,11 @@ class ModelName extends Model
         } else {
             return $this->nameRu;
         }
+    }    
+
+    public function getDesc()
+    {
+        return $this->description;
     }
 
     public function getWeekDayOne()

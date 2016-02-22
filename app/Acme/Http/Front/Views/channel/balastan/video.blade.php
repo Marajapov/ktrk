@@ -45,8 +45,11 @@
                                         <em>{{ $balastanLastVideo->hasProject()->first()->getNameOne()}}</em>
                                     </a>
                                 @endforeach
-                                @endif    
-                            <span>{{ $balastanLastVideo->getDateFormatted() }}<i class="fa fa-eye" style="padding:5px"></i>{{ $balastanLastVideo->getViewed() }}</span>
+                                @endif
+                            <span class="show-view1">
+                                <i class="fa-view1"></i>{{ $balastanLastVideo->getViewed()}}
+                            </span>
+                            <span class="show-date1">{{ $balastanLastVideo->getDateFormatted() }}</span>
                         </div>
                     @endif
                 </div>
