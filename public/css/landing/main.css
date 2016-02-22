@@ -5,6 +5,18 @@ body {
   color: #64686d;
   line-height: 26px;
 }
+#kyrgyzradio{
+    position: relative;
+    /*background: url('../kyrgyzhome../images/channels/minkiyal/main.jpg');*/
+    /*background: #f1edea;*/
+/*    background-image: -moz-linear-gradient(90deg, #04549C 0%, #57ACF5 100%);
+    background-image: -webkit-linear-gradient(90deg, #04549C 0%, #57ACF5 100%);
+    background-image: -ms-linear-gradient(90deg, #04549C 0%, #57ACF5 100%);*/
+/*    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;  */ 
+
+}
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   font-family: 'Roboto', sans-serif;
@@ -30,7 +42,7 @@ header {
   height: 50px;
 }
 .container>.navbar-collapse {
-  margin-right: -30px;
+  margin-right: -15px;
   margin-left: -15px;
 }
 #about img {
@@ -138,28 +150,15 @@ header {
   background: #FF5722;
 }
 .section-header2 {
-  margin-bottom: 50px;
+/*  margin-bottom: 50px;*/
 }
 .section-header2 .section-title, .section-header2 .section-title2 {
-  font-size: 44px;
-  color: #fff;
-  text-transform: initial;
-  position: relative;
-  padding-bottom: 20px;
-  margin: 0 0 20px;
-  font-family: 'Roboto condensed';
+    position: relative;
+    color: #fff;
+    margin: 0px;
+    font-family: 'Roboto condensed';
 }
-.section-header2 .section-title:before, .section-header2 .section-title2:before {
-  content: "";
-  position: absolute;
-  width: 640px;
-  bottom: 0;
-  height: 2px;
-  background: #fff;
-  left: 0;
-  right: 0;
-  margin: auto;
-}
+
 .section-header2 .section-title:after, .section-header2 .section-title2:after {
   content: "";
   position: absolute;
@@ -330,6 +329,7 @@ ul.nostyle i {
 }
 #main-slider {
   overflow: hidden;
+  margin:30px 0px 40px 0px;
 }
 #main-slider .item {
   height: 358px;
@@ -405,7 +405,11 @@ ul.nostyle i {
   display: none;
 }
 #cta {
-  margin: 50px 0px 70px 0px;
+  display: flex;
+  margin:40px 0px 0px 0px;
+}
+#cta .col-md-12{
+  margin-bottom: 50px;
 }
 #cta p>span {
   background: url('./../../images/channels/kyrgyzradio/blockquote.png') no-repeat;
@@ -444,8 +448,7 @@ ul.nostyle i {
 #cta2 {
   background: #444;
   color: #fff;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding: 20px 0px;
 }
 #cta2 .btn {
   margin-top: 10px;
@@ -516,8 +519,14 @@ ul.nostyle i {
   -webkit-box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.8);
 }
 #portfolio {
-  padding: 100px 0;
-  background: #607D8B;
+  padding: 50px 0;
+    background-image: -moz-linear-gradient(90deg, #04549C 0%, #57ACF5 100%);
+    background-image: -webkit-linear-gradient(90deg, #04549C 0%, #57ACF5 100%);
+    background-image: -ms-linear-gradient(90deg, #04549C 0%, #57ACF5 100%);
+  border-radius: 3px !important;
+    -webkit-box-shadow: inset 0px 0px 10px 1px rgba(51,51,51,0.5);
+    -moz-box-shadow: inset 0px 0px 10px 1px rgba(51,51,51,0.5);
+    box-shadow: inset 0px 0px 10px 1px rgba(51,51,51,0.5);
 }
 #portfolio .portfolio-filter {
   list-style: none;
@@ -610,6 +619,63 @@ ul.nostyle i {
 }
 #portfolio .portfolio-item:hover .portfolio-info {
   opacity: 1;
+}
+#portfolio  .panel-body footer {
+    padding: 15px 0;
+    border-top: none;
+    clear: both;
+    text-align: center;
+}
+#portfolio  .panel-body footer span{
+    font-size: 18px;
+    color: #fff;
+    border-bottom: 1px dotted;
+    font-family: 'Roboto condensed';
+}
+#portfolio  .panel-body footer span:hover{
+    color: #00274A;
+}
+
+#portfolio .extra{
+    display: block;
+    padding-top: 0;
+    background: rgba(0, 0, 0, .5);
+    min-height: 70px;
+    width: 100%;
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    overflow: hidden;
+}
+#portfolio .extra .datetime{
+  color: #fff;
+  padding: 0px 10px;
+}
+
+#portfolio .gallery-item{
+  position: relative;
+  display: block;
+}
+
+#portfolio .gallery-item .thumb{
+    margin-bottom: inherit;
+}
+#portfolio .gallery-item h2{
+  margin-top: inherit;
+
+}
+#portfolio .gallery-item h2 a{
+    font-weight: normal;
+    padding: 0px 10px;
+    font-size: 16px;
+    color: #fff;
+    height: inherit;
+    line-height: inherit;
+    text-align: left;
+}
+#portfolio .gallery-item h2 a:hover{
+  color: #fff;
+  text-decoration:underline; 
 }
 
 /* Start: Recommended Isotope styles */
@@ -1339,14 +1405,12 @@ height: 325px;
 /* BEGIN HOME PAGE*/
 
 #kyrgyzhome{
-  margin: 20px auto; 
-  background: #fff;
-}
-#kyrgyzhome #portfolio .extra{
-  position: absolute; 
-  bottom: 0px; 
-  left: 10px;
-  color: #fff;
+    margin: 0px auto 20px auto;
+    background: #fff;
+    border-radius: 3px !important;
+    -webkit-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -moz-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 /* END PAGE*/
@@ -1532,7 +1596,7 @@ height: 325px;
 #cta .slick-slide i{
   position: absolute;
   font-size: 24px;
-  color: #FFEB3B;
+  color: #FF5722;
   top: 10px;
   left: 10px;
 }
@@ -1575,7 +1639,7 @@ height: 325px;
 }
 .info .postshow {
   position: relative;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
   padding: 0px 5px;
   cursor: pointer;
 }

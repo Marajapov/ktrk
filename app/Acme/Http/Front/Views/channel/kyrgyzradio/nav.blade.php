@@ -79,7 +79,7 @@
                         @endif
                      </ul>
                   </li>
-                  <li><a href="{{route('kyrgyzradio.allphotos')}}">Фотогалерея</a></li>
+                  <li><a href="{{route('kyrgyzradio.allphotos')}}">Сүрөтбаяндар</a></li>
                   <li><a href="{{route('kyrgyzradio.home')}}#about">Радио жөнүндө</a></li>
                </ul>
             </div>
