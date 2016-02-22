@@ -127,7 +127,7 @@
       <div class="container ">
         <div class="title">
           <h3>Сүрөтбаяндар</h3>
-          <h3 class="allright"><a href="{{ route('minkiyal.posts')}}">Баардыгы</a></h3>
+          <h3 class="allright"><a href="{{ route('minkiyal.posts')}}">Баардыгы <i class="fa fa-arrow-right"></i></a></h3>
         </div>
         <div class="row">
           @if($photoGalleries)
@@ -242,7 +242,7 @@
                         orientation : 'r',
                         cuboidsRandom : true,
                         disperseFactor : 30,
-                        autoplay : false,
+                        autoplay : true,
                         interval: 5000
                     } ),
                     init = function() {

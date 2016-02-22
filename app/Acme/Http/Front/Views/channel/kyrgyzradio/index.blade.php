@@ -33,109 +33,63 @@
         <!--/#main-slider-->
 
       <section>
-        <div class="container no-padding">
-          <div class="info">
-            <div class="col-md-3 col-sm-12 postshow">
-              <a href="#" data-toggle="modal" data-target="#myModal">
-                <img src="http://ktrk.dev/images/anons/61455876197.png" class="img-responsive" alt="">
-                <h3>test1</h3>
-              </a>
-            </div>
-          </div>
-
-          <!-- Modal -->
-          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-                </div>
-                <div class="modal-body">
-                  ...
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Жабуу</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="info">
-            <div class="col-md-3 col-sm-12 postshow">
-              <a href="#" data-toggle="modal" data-target="#myModal">
-                <img src="http://ktrk.dev/images/anons/61455876197.png" class="img-responsive" alt="">
-                <h3>test1</h3>
-              </a>
-            </div>
-          </div>
-
-          <!-- Modal -->
-          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-                </div>
-                <div class="modal-body">
-                  ...
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Жабуу</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="info">
-            <div class="col-md-3 col-sm-12 postshow">
-              <a href="#" data-toggle="modal" data-target="#myModal">
-                <img src="http://ktrk.dev/images/anons/61455876197.png" class="img-responsive" alt="">
-                <h3>test1</h3>
-              </a>
-            </div>
-          </div>
-
-          <!-- Modal -->
-          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-                </div>
-                <div class="modal-body">
-                  ...
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Жабуу</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="info">
-            <div class="col-md-3 col-sm-12">
-              <div class="panel panel-default programtitle">
-                <div class="panel-heading" style="padding: 5px;">
-                  <h3 class="panel-title"><span> - ПРОГРАММА ПЕРЕДАЧ - </span></h3>
-                </div>
-                <div class="centered">
-                  <div id="nt-example1-container" >
-                    <i class="fa fa-arrow-up" id="nt-example1-prev"></i>
-                    <i class="fa fa-arrow-down" id="nt-example1-next" style="right:40px;"></i>
-                    <ul id="nt-example1" data-tabs="nt-example1">
-                      <li style="">
-                        <span>12:30</span>
-                        <h4>
-                          <p>NON STOP (KG CLIPS)</p>
-                        </h4>
-                      </li>
-                    </ul>
+        <div class="container row">
+            @if($kyrgyzradiotop)
+              <div class="info">
+                @foreach($kyrgyzradiotop as $key=> $row)
+                  <div class="col-md-3 col-sm-12 postshow">
+                    <a href="#" data-toggle="modal" data-target="#{{ $key+99 }}">
+                      <img src="{{asset($row->thumbnail)}}" class="img-responsive" alt="">
+                      <h3>{{$row->name}}</h3>
+                    </a>
                   </div>
-                </div>
+                  <!-- Modal -->
+                  <div id="{{ $key+99 }}" class="modal fade" role="dialog">
+                    <div class="modal-dialog modal-lg">
+                      <!-- Modal content-->
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
+
+                          <h4 class="modal-title">{{$row->name}}</h4>
+                        </div>
+                        <div class="modal-body">
+                          {!! $row->getDesc() !!}
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Жабуу</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                @endforeach
+                    <div class="col-md-3 col-sm-12 pull-right programtitle">
+                      <div class="panel panel-default">
+                        <div class="panel-heading">
+                          <h3 class="panel-title"><span>Уктуруулар программасы</span></h3>
+                        </div>
+                        <div class="centered">
+                          <div id="nt-example1-container" >
+                            <i class="fa fa-arrow-up" id="nt-example1-prev"></i>
+                            <i class="fa fa-arrow-down" id="nt-example1-next" style="right:40px;"></i>
+                            <ul id="nt-example1" data-tabs="nt-example1">
+                              <li style="">
+                                <span>12:30</span>
+                                <h4>
+                                  <p>NON STOP (KG CLIPS)</p>
+                                </h4>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
               </div>
-            </div>
-          </div>
+            @endif
+
+
+
+
         </div>
       </section>
 

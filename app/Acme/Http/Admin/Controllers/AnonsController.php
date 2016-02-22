@@ -63,10 +63,13 @@ class AnonsController extends Controller
                     Image::make($_FILES['thumbnail']['tmp_name'])->fit(555, 340)->save($dir.'/'.$name);
                 }else{
                     Image::make($_FILES['thumbnail']['tmp_name'])->fit(1110, 680)->save($dir.'/'.$name);
-                }
-                
+                }                
             } elseif($request->channel == 6) {
-              Image::make($_FILES['thumbnail']['tmp_name'])->fit(1600, 358)->save($dir.'/'.$name);
+                if($request->kyrgyzradiotop == 1){
+                    Image::make($_FILES['thumbnail']['tmp_name'])->fit(555, 340)->save($dir.'/'.$name);
+                }else{
+                    Image::make($_FILES['thumbnail']['tmp_name'])->fit(1600, 358)->save($dir.'/'.$name);
+                }
             } elseif($request->channel == 8) {
               Image::make($_FILES['thumbnail']['tmp_name'])->fit(1600, 358)->save($dir.'/'.$name);
             } elseif($request->channel == 9) { 
@@ -147,7 +150,11 @@ class AnonsController extends Controller
                     Image::make($_FILES['thumbnail']['tmp_name'])->fit(1110, 680)->save($dir.'/'.$name);
                 }
             }elseif($request->channel == 6) {
-              Image::make($_FILES['thumbnail']['tmp_name'])->fit(1600, 358)->save($dir.'/'.$name);
+                if($request->kyrgyzradiotop == 1){
+                    Image::make($_FILES['thumbnail']['tmp_name'])->fit(555, 340)->save($dir.'/'.$name);
+                }else{
+                    Image::make($_FILES['thumbnail']['tmp_name'])->fit(1600, 358)->save($dir.'/'.$name);
+                }
             }elseif($request->channel == 8) {
               Image::make($_FILES['thumbnail']['tmp_name'])->fit(1600, 358)->save($dir.'/'.$name);
             } elseif($request->channel == 9) { 

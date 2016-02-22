@@ -27,6 +27,7 @@ class CreateAnonsTable extends Migration
             $table->string('balastansoon');
             $table->string('minkiyaltop');
             $table->string('minkiyalbottom');
+            $table->string('kyrgyzradiotop');
             $table->integer('media');
             $table->integer('published');
             $table->integer('owner_id');

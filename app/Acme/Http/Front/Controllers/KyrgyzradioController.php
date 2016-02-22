@@ -23,7 +23,8 @@ class KyrgyzradioController extends Controller
 
         $kyrgyzradioProjects = \Model\Project\ModelName::where('published','=',true)->where('kyrgyzradio', '=', 1)->take('4')->orderBy('id','desc')->get();
 
-        $anons = \Model\Anons\ModelName::where('channel','=','6')->where('published','=','1')->orderBy('id','=','desc')->take(2)->get();
+        $anons = \Model\Anons\ModelName::where('channel','=','6')->where('kyrgyzradiotop','<>','1')->where('published','=','1')->orderBy('id','=','desc')->take(2)->get();
+        $kyrgyzradiotop = \Model\Anons\ModelName::where('channel','=','6')->where('kyrgyzradiotop','=','1')->where('published','=','1')->orderBy('id','=','desc')->take(3)->get();
        
         $quote = \Model\Quote\ModelName::where('published','=','1')->where('channel', '=', '6')->orderBy('id','=','desc')->orderBy('id','desc')->get();
         $quoteTopLeft = \Model\Quote\ModelName::where('published','=','1')->where('channel', '=', '6')->orderBy('id','=','desc')->take(2)->skip(0)->get();
@@ -34,6 +35,7 @@ class KyrgyzradioController extends Controller
         return view('Front::channel.kyrgyzradio.index', [
             'channel' => $channel,
             'anons' => $anons,
+            'kyrgyzradiotop' => $kyrgyzradiotop,
             'backgroundMain' => $backgroundMain,
             'photoGalleries' => $photoGalleries,
             'kyrgyzradioProjects' => $kyrgyzradioProjects,

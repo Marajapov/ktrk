@@ -1146,10 +1146,10 @@
     float: right;
 }
 .allgallery .allright a{
-    color: #043A35;
+    color: #fff;
 }
 .allgallery .allright a:hover{
-    color: #fff;
+    color: #043A35;
 }
 
 /* END All Gallery page*/
@@ -1265,7 +1265,6 @@
 
 #minkiyal .info{
     position: relative;
-    margin-top: -30px;
 }
 #minkiyal .info h2{
     padding: 30px 0px;
@@ -1289,7 +1288,7 @@
 
 #minkiyal .info .postshow {
     position: relative;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
     padding:0px 5px; 
     cursor: pointer;
 }
@@ -1350,7 +1349,9 @@
 #minkiyal .info .postshow:hover h3{
     opacity: 0;
 }
-
+#minkiyal .info .imageshow {
+    margin-bottom: 15px;
+}
 #minkiyal .info .imageshow img{
     height: 220px;
     pointer: cursor;
@@ -1410,7 +1411,7 @@
 }
 
 #minkiyal .mingallery .panel-title h3{
-    color: black;
+    color: #403F3E;
 }
 #minkiyal .mingallery .panel-body{
     padding: 0px 15px 0; 
@@ -1457,6 +1458,7 @@
 
 #minkiyal .network {
     position: relative;
+    margin-top: 20px;
 }
 
 #minkiyal .address {
@@ -1500,7 +1502,10 @@
     border-top: 1px solid #C1B38E;
 }
 #minkiyal .slidermin{
-    margin: 15px 5px 50px 5px;
+    margin: 15px 5px 20px 5px;
+}
+#minkiyal .slidermin .slick-dots{
+    bottom: -25px;
 }
 
 #minkiyal .copyright,#minkiyal .footer-menu{
@@ -1553,7 +1558,6 @@
 }
 #minkiyal .allgallery{
     background: #4CAF50;
-    margin-top: 40px;
     margin-bottom: 40px;
     padding-top: 20px;
     padding-bottom: 50px;
