@@ -192,7 +192,7 @@
                         $('#kyrgyzradioanons').show();
                         $('#nameKg').show();
                         $('#nameRu').hide();
-                        $('#editorTextArea').hide();
+                        $('#editorTextArea').show();
                         $('#linkArea').hide();
                         $('#weekDayKg').hide();
                         $('#weekDayRu').hide();

@@ -30,8 +30,8 @@
       @endif
    </section>
    <!--/#main-slider-->
-   <section>
-      <div class="container row">
+   <section id="anonses">
+      <div class="row">
          @if($kyrgyzradiotop)
          <div class="info">
             @foreach($kyrgyzradiotop as $key=> $row)

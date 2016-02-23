@@ -7,8 +7,8 @@ body {
 }
 #kyrgyzradio{
     position: relative;
-    /*background: url('../kyrgyzhome../images/channels/minkiyal/main.jpg');*/
-    /*background: #f1edea;*/
+    /*background: url('../../images/channels/minkiyal/main.jpg');*/
+    background: #f1edea;
 /*    background-image: -moz-linear-gradient(90deg, #04549C 0%, #57ACF5 100%);
     background-image: -webkit-linear-gradient(90deg, #04549C 0%, #57ACF5 100%);
     background-image: -ms-linear-gradient(90deg, #04549C 0%, #57ACF5 100%);*/
@@ -16,6 +16,11 @@ body {
     background-attachment: fixed;
     background-position: center center;  */ 
 
+}
+#header {
+      -webkit-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -moz-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
 }
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
@@ -96,7 +101,10 @@ header {
 }
 .navbar-default .navbar-nav>li>a {
   color: #2F2F2F;
-  font-size: 20px;
+  font-size: 16px;
+}
+.navbar-default .navbar-nav>li>a i {
+  padding-right: 5px;
 }
 .navbar-default .navbar-toggle .icon-bar {
   background-color: #005197;
@@ -147,7 +155,7 @@ header {
   background: #FF5722;
 }
 .section-header2 {
-/*  margin-bottom: 50px;*/
+  padding:15px 0px;
 }
 .section-header2 .section-title, .section-header2 .section-title2 {
     position: relative;
@@ -238,8 +246,6 @@ ul.nostyle i {
   background: #fff;
   padding: 0px 10px 0px 10px;
   z-index: 9999;
-  -webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.6);
-  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.6);
 }
 .navbar.navbar-default .navbar-toggle {
   border: 1px solid #005197;
@@ -247,10 +253,9 @@ ul.nostyle i {
   padding: 5px
 }
 .navbar.navbar-default .navbar-brand {
-  height: auto;
-  padding: 0px !important;
-  margin-left: 0;
-  font-family: 'Roboto condensed';
+    padding: 0px !important;
+    font-family: 'Roboto condensed';
+    font-weight: bold;
 }
 .navbar-brand>img {
   display: block;
@@ -261,24 +266,23 @@ ul.nostyle i {
   margin-right: 10px;
 }
 .navbar-brand {
-  color: #005197 !important;
+  color: #fff !important;
   font-size: 30px;
   line-height: 2;
-  text-transform: uppercase;
-  text-transform: uppercase;
 }
 @media only screen and (min-width:768px) {
   #main-menu.navbar-default {
-    background: #fff;
-    -webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.6);
-    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.6);
+    background: #04549C;
     z-index: 1000;
+    border-radius: 3px 3px 0px 0px !important;  
   }
   #main-menu.navbar-default .navbar-nav > li > a {
     padding-top: 20px;
     padding-bottom: 20px;
-    color: #005197;
-    font-family: 'Roboto condensed';
+    color: #fff;
+    font-weight: 700;
+    line-height: inherit;
+    text-rendering: auto;
   }
   @media (max-width:1170px) {
     #main-menu.navbar-default .navbar-nav > li > a {
@@ -326,7 +330,7 @@ ul.nostyle i {
 }
 #main-slider {
   overflow: hidden;
-  margin:30px 0px 40px 0px;
+  margin:1px 0px 0px 0px;
 }
 #main-slider .item {
   height: 358px;
@@ -362,7 +366,7 @@ ul.nostyle i {
 #main-slider .owl-prev, #main-slider .owl-next {
   position: absolute;
   top: 50%;
-  background-color: rgba(0, 0, 0, 0.2);
+  /*background-color: rgba(0, 0, 0, 0.2);*/
   color: #fff;
   font-size: 30px;
   display: inline-block;
@@ -404,6 +408,7 @@ ul.nostyle i {
 #cta {
   display: flex;
   margin:40px 0px 0px 0px;
+  padding: 0px 10px;
 }
 #cta .col-md-12{
   margin-bottom: 50px;
@@ -524,6 +529,7 @@ ul.nostyle i {
     -webkit-box-shadow: inset 0px 0px 10px 1px rgba(51,51,51,0.5);
     -moz-box-shadow: inset 0px 0px 10px 1px rgba(51,51,51,0.5);
     box-shadow: inset 0px 0px 10px 1px rgba(51,51,51,0.5);
+    margin: 0px 10px;
 }
 #portfolio .portfolio-filter {
   list-style: none;
@@ -747,7 +753,7 @@ ul.nostyle i {
   margin-top: 10px;
 }
 #about {
-  padding: 100px 0 0px 0;
+  padding: 50px 0 0px 0;
   text-align: justify;
 }
 #about .text-center {
@@ -1304,7 +1310,7 @@ height: 325px;
 
 /* PROJECT NEWS*/
 
-#pojects, #news, #allnews, #allphotos, #photos {
+#pojects, #news, #allnews {
   padding: 20px 0px;
 }
 #pojects .panel {
@@ -1390,6 +1396,16 @@ height: 325px;
 
 /* ALL PHOTOS*/
 
+#allphotos .section-header2 .section-title, #photos .section-header2 .section-title{
+  color: #04549C;
+}
+
+#allphotos .container, #photos .container{
+  background: #fff;
+    -webkit-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -moz-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
 #allphotos .extra{
   position: absolute; 
   bottom: 0px; 
@@ -1408,6 +1424,21 @@ height: 325px;
     -webkit-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     -moz-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    padding: 0;
+}
+#kyrgyzradio .switch {
+  margin: 0 auto 10px auto;
+  background: none;
+}
+#kyrgyzradio .channel_switch {
+  margin: 5px;
+}
+#kyrgyzradio .channel_switch li{
+  padding: 0;
+}
+#kyrgyzradio .sitemenu a h4{
+  font-size: 20px;
+  color: #04549C;
 }
 
 /* END PAGE*/
@@ -1633,6 +1664,7 @@ height: 325px;
 .info {
   position: relative;
   margin: 0px -5px;
+  padding: 0px 50px;
 }
 .info .postshow {
   position: relative;
@@ -1645,11 +1677,7 @@ height: 325px;
   display: block;
 }
 .info .postshow img{
-  height: 170px;
   pointer: cursor;
-  -webkit-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-  -moz-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-  box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
   -ms-transition: all 0.2s ease;
@@ -1698,7 +1726,7 @@ height: 325px;
 
 }
 .modal-header{
-  background: #91BBE0;
+  background: #04549C;
 }
 
 .modal-title{
@@ -1724,7 +1752,7 @@ height: 325px;
   color: #fff;
 }
 #nt-example1 {
-  box-shadow: 0 8px 17px 0 rgba(224, 217, 217, 0.2),0 6px 20px 0 rgba(123, 120, 120, 0.19);
+  /*box-shadow: 0 8px 17px 0 rgba(224, 217, 217, 0.2),0 6px 20px 0 rgba(123, 120, 120, 0.19);*/
 }
 #nt-example1 li{
   padding: 7px 0px 0px 0px;
@@ -1775,19 +1803,34 @@ height: 325px;
 #about {
   position: relative;
   padding-bottom: 40px;
+  margin: 0px 10px;
 }
 
 #about img {
-  height: 320px;
+  height: 230px;
   width: auto;
   padding: 0px 10px;
+  float: right;
+}
+#about .abouttext{
+    font-size: 18px;
+    color: #383636;
+}
+#about .abouttext span{
+  font-size: 20px;
+  color: #00305A;
 }
 #about .abouttext p{
   font-size: 18px;
+  color: #383636;
+}
+#about .abouttext ul>li{
+  list-style-type: circle;
+  margin-left: 20px;
 }
 
 #about .show-btn{
-
+    display: table;
     margin: 0px auto;
     text-align: center;
 }
@@ -1817,3 +1860,8 @@ height: 325px;
     transition: all 0.2s ease;
 }
 /* END ABOUT*/
+
+#anonses {
+    background: #F1EDEA;
+    padding: 30px 0px 0px 0px;
+}
