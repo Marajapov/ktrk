@@ -1,3 +1,46 @@
+</div>
+</div>
+<div class="container prefooter clearfix">
+
+    <div class="footer-info clearfix">
+        <div class="col-md-4 apps-logo">
+            <p>
+                {{ trans('site.KtrkApp') }}
+            </p>
+            <ul>
+                <li>
+                    <a href="https://play.google.com/store/apps/details?id=ktrk.kg.app">
+                        <img src="{{ asset('images/android.png') }}" alt="ktrk_adnroid"/>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://itunes.apple.com/kg/app/ktrk-official/id1004194204">
+                        <img src="{{ asset('images/ios.png') }}" alt="ktrk_ios"/>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-md-8 footer-menu">
+
+            <ul>
+                <li><a href="{{ route('front.home') }}">{{ trans('site.Homepage') }}</a></li>
+                <li>/</li>
+                <li><a href="{{ route('front.media.index') }}">Видеопортал</a></li><li>/</li>
+                <li><a href="{{ route('front.pages.program') }}">Программа</a></li><li>/</li>
+                {{--<li><a href="#">{{ trans('site.Ads') }}</a></li><li>/</li>--}}
+                <li><a href="{{ route('front.pages.reklama') }}">{{ trans('site.Ads') }}</a></li><li>/</li>
+                {{--<li><a href="#">{{ trans('site.Contacts') }}</a></li>--}}
+                <li><a href="{{ route('front.pages.contacts') }}">{{ trans('site.Contacts') }}</a></li>
+            </ul>
+
+            <h4 class="copyright"><i class="fa fa-copyright"></i><?php echo date("Y"); ?> {{ trans('site.TradeMark') }}</h4>
+            <p class="text-center" style="margin: 0; font-size: 13px;">{{ trans('site.Developed') }} <a href="http://ulut.kg/" target="_blank">Улут Софт</a></p>
+
+        </div>
+    </div>
+
+</div>
 <script type="text/javascript" src="{{ asset('js/bootstrap.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/bootstrap-hover-dropdown.js') }}"></script>
 

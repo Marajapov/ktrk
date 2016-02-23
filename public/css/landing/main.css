@@ -1424,6 +1424,9 @@ height: 325px;
   margin: 0 auto 10px auto;
   background: none;
 }
+#kyrgyzradio .channel_switch .sitemenu a{
+  /*opacity: 0.5;*/
+}
 #kyrgyzradio .channel_switch {
   margin: 5px;
 }
