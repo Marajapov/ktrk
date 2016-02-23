@@ -7,14 +7,14 @@ body {
 }
 #kyrgyzradio{
     position: relative;
-    /*background: url('../../images/channels/minkiyal/main.jpg');*/
-    background: #f1edea;
+    background: url('../../images/channels/kyrgyzradio/6.jpg');
+    /*background: #f1edea;*/
 /*    background-image: -moz-linear-gradient(90deg, #04549C 0%, #57ACF5 100%);
     background-image: -webkit-linear-gradient(90deg, #04549C 0%, #57ACF5 100%);
     background-image: -ms-linear-gradient(90deg, #04549C 0%, #57ACF5 100%);*/
-/*    background-size: cover;
+    background-size: cover;
     background-attachment: fixed;
-    background-position: center center;  */ 
+    background-position: center center;   
 
 }
 #header {
@@ -123,10 +123,6 @@ header {
   margin-bottom: 50px;
 }
 .section-header .section-title {
-  font-size: 44px;
-  color: #272727;
-  text-transform: uppercase;
-  position: relative;
   padding-bottom: 20px;
   margin: 0 0 20px;
   font-family: 'Roboto condensed'
@@ -138,7 +134,7 @@ header {
   bottom: 0px;
   margin: auto;
   height: 2px;
-  background: #EBEBEB none repeat scroll 0% 0%;
+  background: #E2E2E2 none repeat scroll 0% 0%;
   left: 0;
   right: 0;
 }
@@ -150,7 +146,7 @@ header {
   bottom: -11px;
   left: 50%;
   margin-left: -12px;
-  border: 5px solid #fff;
+  border: 5px solid #E2E2E2;
   border-radius: 20px;
   background: #FF5722;
 }
@@ -159,7 +155,6 @@ header {
 }
 .section-header2 .section-title, .section-header2 .section-title2 {
     position: relative;
-    color: #fff;
     margin: 0px;
     font-family: 'Roboto condensed';
 }
@@ -274,7 +269,7 @@ ul.nostyle i {
   #main-menu.navbar-default {
     background: #04549C;
     z-index: 1000;
-    border-radius: 3px 3px 0px 0px !important;  
+    border-radius: 5px 5px 0px 0px !important;  
   }
   #main-menu.navbar-default .navbar-nav > li > a {
     padding-top: 20px;
@@ -408,7 +403,7 @@ ul.nostyle i {
 #cta {
   display: flex;
   margin:40px 0px 0px 0px;
-  padding: 0px 10px;
+  padding: 0px 15px;
 }
 #cta .col-md-12{
   margin-bottom: 50px;
@@ -448,8 +443,8 @@ ul.nostyle i {
   margin-top: 40px;
 }
 #cta2 {
-  background: #444;
-  color: #fff;
+  background: #fff;
+  color: #04549C;
   padding: 20px 0px;
 }
 #cta2 .btn {
@@ -464,13 +459,13 @@ ul.nostyle i {
   font-family: 'Roboto condensed'
 }
 #cta2 h2 {
-  color: #fff;
+  color: #214261;
   font-size: 44px;
   line-height: 1;
   font-family: 'Roboto condensed';
 }
 #cta2 h2 > span {
-  color: #45aed6;
+  color: #04549C;
 }
 #features {
   padding: 100px 0;
@@ -479,7 +474,9 @@ ul.nostyle i {
   margin-top: 80px;
 }
 #services {
-/*  padding: 100px 0px 0px 0px;*/
+  padding: 30px 0px 0px 0px;
+    background: #F1EDEA;
+    margin-bottom: 30px;
 }
 .media.service-box {
   margin: 15px 0;
@@ -521,15 +518,7 @@ ul.nostyle i {
   -webkit-box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.8);
 }
 #portfolio {
-  padding: 50px 0;
-    background-image: -moz-linear-gradient(90deg, #04549C 0%, #57ACF5 100%);
-    background-image: -webkit-linear-gradient(90deg, #04549C 0%, #57ACF5 100%);
-    background-image: -ms-linear-gradient(90deg, #04549C 0%, #57ACF5 100%);
-  border-radius: 3px !important;
-    -webkit-box-shadow: inset 0px 0px 10px 1px rgba(51,51,51,0.5);
-    -moz-box-shadow: inset 0px 0px 10px 1px rgba(51,51,51,0.5);
-    box-shadow: inset 0px 0px 10px 1px rgba(51,51,51,0.5);
-    margin: 0px 10px;
+  margin: 0px 10px;
 }
 #portfolio .portfolio-filter {
   list-style: none;
@@ -638,7 +627,9 @@ ul.nostyle i {
 #portfolio  .panel-body footer span:hover{
     color: #00274A;
 }
-
+#portfolio .col-md-4{
+  margin-bottom: 15px;
+}
 #portfolio .extra{
     display: block;
     padding-top: 0;
@@ -646,9 +637,10 @@ ul.nostyle i {
     min-height: 70px;
     width: 100%;
     position: absolute;
-    bottom: 20px;
+    bottom: 0px;
     left: 0;
     overflow: hidden;
+    margin-bottom: inherit;
 }
 #portfolio .extra .datetime{
   color: #fff;
@@ -658,6 +650,8 @@ ul.nostyle i {
 #portfolio .gallery-item{
   position: relative;
   display: block;
+    padding: initial;
+    min-height: inherit;
 }
 
 #portfolio .gallery-item .thumb{
@@ -1664,7 +1658,7 @@ height: 325px;
 .info {
   position: relative;
   margin: 0px -5px;
-  padding: 0px 50px;
+  padding: 0px 45px;
 }
 .info .postshow {
   position: relative;
@@ -1803,7 +1797,7 @@ height: 325px;
 #about {
   position: relative;
   padding-bottom: 40px;
-  margin: 0px 10px;
+  margin: 0px 20px;
 }
 
 #about img {

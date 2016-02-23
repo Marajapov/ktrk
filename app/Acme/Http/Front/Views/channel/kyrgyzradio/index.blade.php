@@ -60,29 +60,34 @@
                </div>
             </div>
             @endforeach
+            @endif
             <div class="col-md-3 col-xs-12 pull-right programtitle">
                <div class="panel panel-default">
                   <div class="panel-heading">
                      <h3 class="panel-title"><span>Уктуруулар программасы</span></h3>
                   </div>
+                  @if($program)
                   <div class="centered">
                      <div id="nt-example1-container" >
                         <i class="fa fa-arrow-up" id="nt-example1-prev"></i>
                         <i class="fa fa-arrow-down" id="nt-example1-next" style="right:40px;"></i>
                         <ul id="nt-example1" data-tabs="nt-example1">
+                           @foreach($program as $row)
                            <li style="">
-                              <span>12:30</span>
+                              <span>{{ $row->time }}</span>
                               <h4>
-                                 <p>NON STOP (KG CLIPS)</p>
+                                 <p>{{ $row->name }}</p>
                               </h4>
                            </li>
+                           @endforeach
                         </ul>
                      </div>
                   </div>
+                  @endif
                </div>
             </div>
          </div>
-         @endif
+         
       </div>
    </section>
    <section id="cta2">
@@ -246,26 +251,27 @@
    </section>
 </div>
 @stop
-@section('footerscript2')
-<script src="{{ asset('js/audio/jquery.newsTicker.js') }}"></script>
-<script>
-   var nt_title = $('#nt-title').newsTicker({
-     row_height: 30,
-     max_rows: 1,
-     duration: 3000,
-     pauseOnHover: 1
-   });
-   var nt_example1 = $('#nt-example1').newsTicker({
-     row_height: 30,
-     max_rows: 3,
-     duration: 4000,
-     prevButton: $('#nt-example1-prev'),
-     nextButton: $('#nt-example1-next')
-   });
-   
-   var state = 'stopped';
-   var speed;
-   var add;
-   
-</script>
+@section('footerScript')
+    <!-- Programm title Anima -->
+    <script src="{{ asset('js/audio/jquery.newsTicker.js') }}"></script>
+    <script>
+        var nt_title = $('#nt-title').newsTicker({
+            row_height: 30,
+            max_rows: 1,
+            duration: 3000,
+            pauseOnHover: 1
+        });
+        var nt_example1 = $('#nt-example1').newsTicker({
+            row_height: 30,
+            max_rows: 3,
+            duration: 4000,
+            prevButton: $('#nt-example1-prev'),
+            nextButton: $('#nt-example1-next')
+        });
+
+        var state = 'stopped';
+        var speed;
+        var add;
+
+    </script>
 @stop
