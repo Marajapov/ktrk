@@ -120,7 +120,7 @@ header {
   background-image: -ms-linear-gradient(4deg, #2caab3 0%, #2c8cb3 100%);
 }
 .section-header {
-  margin-bottom: 50px;
+  /*margin-bottom: 50px;*/
 }
 .section-header .section-title {
   padding-bottom: 20px;
@@ -151,7 +151,7 @@ header {
   background: #FF5722;
 }
 .section-header2 {
-  padding:15px 0px;
+  margin-top: 30px;
 }
 .section-header2 .section-title, .section-header2 .section-title2 {
     position: relative;
@@ -518,7 +518,12 @@ ul.nostyle i {
   -webkit-box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.8);
 }
 #portfolio {
-  margin: 0px 10px;
+    margin: 0px 10px;
+    -webkit-box-shadow: inset 0px 0px 10px 1px rgba(51,51,51,0.5);
+    -moz-box-shadow: inset 0px 0px 10px 1px rgba(51,51,51,0.5);
+    box-shadow: inset 0px 0px 10px 1px rgba(51,51,51,0.5);
+    border-radius: 5px !important;
+    padding: 25px 0px;
 }
 #portfolio .portfolio-filter {
   list-style: none;
@@ -620,7 +625,7 @@ ul.nostyle i {
 }
 #portfolio  .panel-body footer span{
     font-size: 18px;
-    color: #fff;
+    color: #272727;
     border-bottom: 1px dotted;
     font-family: 'Roboto condensed';
 }
@@ -628,7 +633,7 @@ ul.nostyle i {
     color: #00274A;
 }
 #portfolio .col-md-4{
-  margin-bottom: 15px;
+  padding: 1px;
 }
 #portfolio .extra{
     display: block;
@@ -652,6 +657,34 @@ ul.nostyle i {
   display: block;
     padding: initial;
     min-height: inherit;
+    overflow: hidden;
+}
+
+#portfolio .gallery-item img{
+  position: relative;
+  display: block;
+  padding: initial;
+  min-height: inherit;
+-webkit-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -moz-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    overflow: hidden;
+        -webkit-transition: all 1.5s ease; 
+    -moz-transition: all 1.5s ease; 
+    -ms-transition: all 1.5s ease; 
+    transition: all 1.5s ease;
+}
+#portfolio .gallery-item:hover img{
+  -webkit-transform: scale(1.085);
+    -moz-transform: scale(1.085);
+    -ms-transform: scale(1.085);
+    -o-transform: scale(1.085);
+    transform: scale(1.085);
+
+    -webkit-transition: all 1.5s ease; 
+    -moz-transition: all 1.5s ease; 
+    -ms-transition: all 1.5s ease; 
+    transition: all 1.5s ease;
 }
 
 #portfolio .gallery-item .thumb{
@@ -1861,4 +1894,35 @@ height: 325px;
 #anonses {
     background: #F1EDEA;
     padding: 30px 0px 0px 0px;
+}
+
+#contacts{
+  position: relative;
+  display: block;
+  background: #04549C;
+  padding:50px; 
+  font-family: 'Roboto regular';
+}
+#contacts .section-header .section-title{
+  color: #fff;
+}
+
+#contacts .infoadress{
+  display: flex;
+}
+#contacts .infoadress h3{
+  color: #fff;
+}
+#contacts .infoadress h3 i{
+  padding-right: 10px;
+}
+#contacts .infoadress .address{
+  padding: 0;
+}
+#contacts .infoadress .address ul>li{
+  color: #fff;
+  font-size: 16px;
+}
+#contacts .infoadress .address ul>li i{
+  padding-right: 5px;
 }

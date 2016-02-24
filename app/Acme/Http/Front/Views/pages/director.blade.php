@@ -461,6 +461,63 @@
           </div>
         </div>
         <div id="right-sidebar" class="top-right-block col-md-4">
+          <div class="panel panel-default panel-otchet">
+            <div class="panel-heading">
+              <h3 class="panel-title"><span>Отчет</span></h3>
+            </div>
+            @if($lc == 'kg')
+            <div class="panel-body">                              
+                <ul class="list-group second-level">
+                  <li class="list-group-item">
+                    <div class="media">
+                      <div class="media-body">
+                        <a target="_blank" href="{{ asset('static/files/report/2015_ru.pdf') }}">КТРКнын 2015-жылдык ишинин отчету</a>
+                      </div>
+                      <div class="media-right">
+                        <a target="_blank" href="{{ asset('static/files/report/2015_ru.pdf') }}" class="btn btn-default"><i class="fa fa-file-pdf-o"></i></a>
+                      </div>
+                    </div>
+                  </li>                  
+                  <li class="list-group-item">
+                    <div class="media">
+                      <div class="media-body">
+                        <a target="_blank" href="{{ asset('static/files/report/presentation_2015.pdf') }}">КТРКнын 2015-жылдык отчетунун презентациясы</a>
+                      </div>
+                      <div class="media-right">
+                        <a target="_blank" href="{{ asset('static/files/report/presentation_2015.pdf') }}" class="btn btn-default"><i class="fa fa-file-pdf-o"></i></a>
+                      </div>
+                    </div>
+                  </li>
+                </ul>           
+            </div>
+            @else
+            <div class="panel-body">                              
+                <ul class="list-group second-level">
+                  <li class="list-group-item">
+                    <div class="media">
+                      <div class="media-body">
+                        <a target="_blank" href="{{ asset('static/files/report/2015_ru.pdf') }}">Годовой отчет КТРК за 2015 год</a>
+                      </div>
+                      <div class="media-right">
+                        <a target="_blank" href="{{ asset('static/files/report/2015_ru.pdf') }}" class="btn btn-default"><i class="fa fa-file-pdf-o"></i></a>
+                      </div>
+                    </div>
+                  </li>                  
+                  <li class="list-group-item">
+                    <div class="media">
+                      <div class="media-body">
+                        <a target="_blank" href="{{ asset('static/files/report/presentation_2015.pdf') }}">Презентация годового отчета КТРК за 2015 год</a>
+                      </div>
+                      <div class="media-right">
+                        <a target="_blank" href="{{ asset('static/files/report/presentation_2015.pdf') }}" class="btn btn-default"><i class="fa fa-file-pdf-o"></i></a>
+                      </div>
+                    </div>
+                  </li>
+                </ul>           
+            </div>
+            @endif
+
+          </div>
           <div class="panel panel-default panel-page-sidebar">
             <div class="panel-heading">
               <h3 class="panel-title"><span>Твиттер</span></h3>

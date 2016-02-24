@@ -127,7 +127,7 @@
          </div>
    </section>
    <!--/#cta-->
-   <section id="services">
+   <section id="services" class="hidden">
          <div class="section-header">
             <h2 class="section-title text-center wow fadeInDown">Уктуруулар</h2>
          </div>
@@ -197,7 +197,7 @@
    <!--/#services-->
    <!--/#cta-->
    <section id="portfolio">
-         <div class="section-header2">
+         <div class="section-header">
             <h2 class="section-title text-center wow fadeInDown">Сүрөтбаяндар</h2>
          </div>
          <div class="panel-body">
@@ -207,7 +207,7 @@
                <div class="col-md-4">
                   <div class="gallery-item">
                      <a href="{{ route('kyrgyzradio.photos', $photoGallery) }}" >
-                        <img src="{{ asset($photoGallery->status) }}" alt="...">
+                        <img src="{{ asset($photoGallery->thumbnail_big) }}" alt="...">
                         <div class="extra">
                            <span class="datetime">{{ $photoGallery->getDay() }} {{ $photoGallery->getMonthRu() }}, {{ $photoGallery->getTime() }}</span>
                            <h2>
@@ -248,6 +248,34 @@
             </div>
 
          </div>
+   </section>
+   <section id="contacts" >
+      <div class="section-header">
+         <h2 class="section-title text-center wow fadeInDown">Байланыш</h2>
+      </div>
+        <div class="infoadress">
+          <div class="col-md-4 address">
+            <h3><i class="fa fa-map-marker"></i> Дареги</h3>
+            <ul>
+              <li><i class="fa fa-location-arrow"></i> Кыргызстан, Бишкек  шаары</li>
+              <li><i class="fa fa-home"></i> Жаш Гвардия бульвары, 59</li>
+            </ul>
+          </div>
+          <div class="col-md-4 address">
+            <h3><i class="fa fa-phone"></i> Байланыш телефон:</h3>
+            <ul>
+              <li><i class="fa fa-microphone"></i> Түз эфирге чыгуу: (0312) 65-66-10, 65-67-04</li>
+              <li><i class="fa fa-commenting-o"></i>Редакциянын номери: (0312) 39-15-54</li>
+            </ul>
+          </div>
+          <div class="col-md-4 address">
+            <h3><i class="fa fa-envelope-o"></i>Сайт:</h3>
+            <ul>
+              <li><i class="fa fa-envelope"></i>www.ktrk.kg/ kyrgyzradio</li>
+              <li><i class="fa fa-facebook-official"></i>www.facebook.com/kyrgyzradiosu</li>
+            </ul>
+          </div>
+        </div>
    </section>
 </div>
 @stop
