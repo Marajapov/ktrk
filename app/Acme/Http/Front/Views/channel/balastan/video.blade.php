@@ -45,8 +45,11 @@
                                         <em>{{ $balastanLastVideo->hasProject()->first()->getNameOne()}}</em>
                                     </a>
                                 @endforeach
-                                @endif    
-                            <span>{{ $balastanLastVideo->getDateFormatted() }}<i class="fa fa-eye" style="padding:5px"></i>{{ $balastanLastVideo->getViewed() }}</span>
+                                @endif
+                            <span class="show-view1">
+                                <i class="fa-view1"></i>{{ $balastanLastVideo->getViewed()}}
+                            </span>
+                            <span class="show-date1">{{ $balastanLastVideo->getDateFormatted() }}</span>
                         </div>
                     @endif
                 </div>
@@ -71,6 +74,8 @@
                                     <img src="http://img.youtube.com/vi/{{ $media->getUrl()}}/0.jpg" alt="" />
                                 @endif
                                 <span class="video-overlay"></span>
+                                 <h5 class="video-view"><i class="fa fa-eye"></i>{{ $media->getViewed()}}</h5>
+                                <h5 class="video-date"><i class="fa fa-calendar"></i>{{ $media->getDateFormatted() }}</h5>
                             </a>
                             <div class="video-info">
                                 <div class="media">

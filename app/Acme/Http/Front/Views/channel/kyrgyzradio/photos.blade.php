@@ -9,11 +9,11 @@
 <div id="photos">
    <div class="container">
       <div class="section-header2">
-         <h2 class="section-title text-center wow fadeInDown">{{ $gallery->getName() }}</h2>
+         <h4 class="section-title text-center wow fadeInDown">{{ $gallery->getName() }}</h4>
       </div>
       <div class="panel-body">
          <div class="row">
-            <p>{{ $gallery->getDescription() }}</p>
+            <p>{!! $gallery->getDescription() !!}</p>
             <ul id="imageGallery">
                @foreach($images as $image)
                <li data-thumb="{{ asset('froala/uploads/'.$image->name) }}" data-src="{{ asset('froala/uploads/'.$image->name) }}">
@@ -26,7 +26,7 @@
    </div>
 </div>
 @stop
-@section('footerscript2')
+@section('footerScript')
 <script src="{{ asset('js/lightslider.js') }}"></script>
 <script src="{{ asset('js/lightgallery/picturefill.min.js') }}"></script>
 <script src="{{ asset('js/lightgallery/lightgallery.js') }}"></script>

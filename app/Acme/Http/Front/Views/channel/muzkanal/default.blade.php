@@ -28,18 +28,6 @@
 
     @yield('styles')
 
-    <style>
-        body{
-
-        @if($backgroundMain != null) background: url('{{ asset($backgroundMain->getFile()) }}') no-repeat;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-position: center;
-            background-size: cover;
-        @endif
-    }
-    </style>
-
     <script>
         $(document).ready(function () {
             $(".search-toggle").click(function () {
@@ -61,7 +49,6 @@
 
 </head>
 <body class="music">
-
 
 @yield('content')
 

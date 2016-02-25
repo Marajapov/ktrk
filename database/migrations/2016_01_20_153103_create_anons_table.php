@@ -17,12 +17,17 @@ class CreateAnonsTable extends Migration
             $table->integer('channel');
             $table->string('name');
             $table->string('nameRu');
+            $table->text('description');
             $table->string('thumbnail');
             $table->string('weekday');
             $table->string('weekdayRu');
             $table->string('time');
             $table->string('url');
             $table->integer('project');
+            $table->string('balastansoon');
+            $table->string('minkiyaltop');
+            $table->string('minkiyalbottom');
+            $table->string('kyrgyzradiotop');
             $table->integer('media');
             $table->integer('published');
             $table->integer('owner_id');

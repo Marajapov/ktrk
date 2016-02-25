@@ -31,7 +31,7 @@
     @yield('styles')
 
 </head>
-<body>
+<body id="kyrgyzradio">
 
 
     @yield('content')

@@ -32,9 +32,12 @@ class BalastanController extends Controller
 
         $anons = \Model\Anons\ModelName::where('channel','=','4')->where('published','=','1')->orderBy('id','=','desc')->take(2)->get();
 
+        $anonssoon= \Model\Anons\ModelName::where('channel','=','4')->where('balastansoon','=','1')->where('published','=','1')->orderBy('id','=','desc')->take(2)->get();
+
         return view('Front::channel.balastan.index', [
             'channel' => $channel,
             'anons' => $anons,
+            'anonssoon' => $anonssoon,
             'backgroundMain' => $backgroundMain,
             
             'balastanProjects' => $balastanProjects,
@@ -91,6 +94,7 @@ class BalastanController extends Controller
         $balastanProjects = \Model\Project\ModelName::where('balastan','=','1')->orderBy('id','desc')->get();
         
         $balastanMedias = \Model\Media\ModelName::where('program','=',$balastanLastVideo->hasProject()->first()->id)->where('id', '<>', $media)->orderBy('id','desc')->get();
+        $balastanLastVideo->incrementViewed();
 
         return view('Front::channel.balastan.video', [
             'channel' => $channel,
@@ -209,6 +213,8 @@ class BalastanController extends Controller
             'medias' => $medias,
             'photoGalleries' => $photoGalleries,
             ]);
-    }    
+    }
+
+
 
 }
