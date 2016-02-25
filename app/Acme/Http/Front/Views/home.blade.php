@@ -191,7 +191,7 @@
                             </div>
                         </div>
 
-                        <a href="#" class="text-center ads middle-ad">
+                        <a href="@if($positionLeft) {{ $positionLeft->linkTo }} @else # @endif" class="text-center ads middle-ad">
                             <img src="@if(!empty($positionLeft->file)) {{ asset($positionLeft->file) }} @else {{ asset('images/banner_default_728x90.png') }} @endif" alt=""/>
                         </a>
 

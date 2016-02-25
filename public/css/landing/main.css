@@ -1072,6 +1072,9 @@ ul.nostyle i {
   background-image: -ms-linear-gradient(90deg, #04549C 0%, #2c8cb3 100%);
   color: #fff;
 }
+#get-in-touch .col-md-4, #get-in-touch .col-xs-12 {
+  margin-bottom: 10px;
+}
 #get-in-touch h1, #get-in-touch h2 {
   color: #fff;
 }
