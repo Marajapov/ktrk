@@ -17,7 +17,7 @@
                <div class="col-md-4 col-sm-6 col-xs-12">
                   <div class="gallery-item">
                      <a href="{{ route('kyrgyzradio.photos', $photoGallery) }}" class="thumb">
-                        <img src="{{ asset($photoGallery->status) }}" alt="{{ $photoGallery->getName() }}<">
+                        <img src="{{ asset($photoGallery->thumbnail_big) }}" alt="{{ $photoGallery->getName() }}<">
                         <i class="fa fa-camera"></i>
                         <div class="extra">
                            <span class="e-datetime">{{ $photoGallery->getDay() }} {{ $photoGallery->getMonthRu() }}, {{ $photoGallery->getTime() }}</span>
