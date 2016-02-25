@@ -1371,6 +1371,20 @@
 }
 #minkiyal .info .imageshow h3{
     position: absolute;
+<<<<<<< HEAD
+    top: 20px;
+    right: 15px;
+    width: 210px;
+    padding: 0px 0px 0px 10px;
+    text-align: center;
+    background: #E91E63;
+    z-index: 3;    
+}
+#minkiyal .online h3{
+    float: left;
+    color: #fff;
+    margin: 10px 0px 0px;
+=======
     bottom: 0;
     padding: 10px;
     margin: 0;
@@ -1396,6 +1410,7 @@
     -webkit-transition: opacity 0.2s ease;
     -o-transition: opacity 0.2s ease;
     transition: opacity 0.2s ease;
+>>>>>>> 1fd5566d252b0976f796f19baf09524ebab07ce0
 }
 #minkiyal .footer-channels a:hover img {
     opacity: 1;
@@ -1615,6 +1630,9 @@
     color: #fff;
     background: #4CAF50;
 }
+<<<<<<< HEAD
+#minkiyal .anonses, #minkiyal .withpad{
+=======
 
 #minkiyal .allgallery .second .extra, #minkiyal .info .imageshow .extra{
     position: absolute;
@@ -1627,6 +1645,7 @@
     color: #fff;
 }
 #minkiyal .withpad{
+>>>>>>> 1fd5566d252b0976f796f19baf09524ebab07ce0
     padding: 0px 5px;
 }
 
@@ -1635,6 +1654,19 @@
 }
 #minkiyal .anons-carousel .slick-slide {
     overflow: hidden;
+<<<<<<< HEAD
+}
+#minkiyal .anons-carousel .col-md-3 img{
+    height: 170px;
+}
+#minkiyal .logoon {
+    position: relative;
+}
+#minkiyal .logoon .logo img{
+    margin-left: 15px;
+    margin-top: 25px;
+=======
+>>>>>>> 1fd5566d252b0976f796f19baf09524ebab07ce0
 }
 #minkiyal .anons-carousel .col-md-3 img{
     height: 170px;

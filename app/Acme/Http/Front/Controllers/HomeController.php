@@ -160,8 +160,8 @@ class HomeController extends Controller
 
         $defaultVideo = 'rjXSurFi8uQ';
 
-//        return view('Front::home', [
-        return view('Front::test', [
+        return view('Front::home', [
+        //return view('Front::test', [
 
             'lc' =>$lc,
 

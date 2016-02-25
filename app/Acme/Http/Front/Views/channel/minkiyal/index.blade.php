@@ -75,6 +75,7 @@
               <img src="{{asset($row->thumbnail)}}" class="img-responsive" alt="">
               <h3>{{$row->name}}</h3>
             </a>
+
           </div>
           <!-- Modal -->
           <div id="{{ $key+99 }}" class="modal fade" role="dialog">
@@ -228,6 +229,58 @@
   </body>
 @stop
 @section('footerScript')
+<<<<<<< HEAD
+<script>
+   $(function(){
+       $("#allposts .postshow").slice(0, 6).show(); // select the first six
+       $("#allposts .loadMore").click(function(e){ // click event for load more
+           e.preventDefault();
+           $("#allposts .postshow:hidden").slice(0, 6).show(); // select next 6 hidden divs and show them
+           if($("#allposts .postshow:hidden").length == 0){ // check if any hidden divs still exist
+               $("#allposts .loadMore").hide();
+           }
+       });
+       if($("#allposts .postshow:hidden").length == 0){ // check if any hidden divs still exist
+           $("#allposts .loadMore").hide();
+       }
+   });
+</script>
+<script>
+   $('.shows-carousel').slick({
+   //        autoplay: true,
+   //        autoplaySpeed: 2000,
+       centerPadding: '0',
+       dots: true,
+       arrows: false,
+       infinite: true,
+       slidesToShow: 1,
+       speed: 600,
+       speed: 500,
+       fade: true,
+       cssEase: 'linear',
+   });
+    $('.anons-carousel').slick({
+   //        autoplay: true,
+   //        autoplaySpeed: 2000,
+       centerPadding: '0',
+       dots: true,
+       arrows: false,
+       infinite: true,
+       slidesToShow: 1,
+       speed: 600,
+       speed: 500,
+   });
+</script>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+   var js, fjs = d.getElementsByTagName(s)[0];
+   if (d.getElementById(id)) return;
+   js = d.createElement(s); js.id = id;
+   js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.5";
+   fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+=======
 <script type="text/javascript" src="{{ asset('js/jquery.slicebox.js') }}"></script>
       <script type="text/javascript">
         $(function() {
@@ -286,4 +339,5 @@
     }(document, 'script', 'facebook-jssdk'));
   </script>
 
+>>>>>>> 1fd5566d252b0976f796f19baf09524ebab07ce0
 @stop
