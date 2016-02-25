@@ -27,7 +27,7 @@
                         <h3 class="panel-title text-center"><span> {{ $gallery->getName() }}</span></h3>
                     </div>
                     <div class="panel-body">
-                        <div class="row" style="margin: 20px;">
+                        <div class="row" style="margin: 0px 10px; font-size: 16px; font-family: 'Roboto regular';">
                             <p style="text-align:center;color: #272727;font-size: 18px;">{!! $gallery->getDescription() !!}</p>
                             <ul id="imageGallery">
                                 @if($images != null)

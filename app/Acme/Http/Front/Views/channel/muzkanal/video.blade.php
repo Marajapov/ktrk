@@ -1,6 +1,21 @@
 @extends('Front::channel.muzkanal.default')
 @section('title', $muzkanalvideo->getName())
 @section('styles')
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <meta property="og:url"                content="{{ Request::url()}}" />
+    <meta property="og:site_name"          content="{{ trans('site.TradeMark') }}" />
+    <meta property="og:type"               content="article" />
+    <meta property="og:title"              content="{{ $muzkanalvideo->getName()}}" />
+    <meta property="og:description"        content="{{ $muzkanalvideo->getContent() }}" />
+    @if($muzkanalvideo->thumbnail_big)
+        <meta property="og:image"              content="{{ asset($muzkanalvideo->thumbnail_big) }}" />
+    @else
+        <meta property="og:image"              content="http://img.youtube.com/vi/{{ $muzkanalvideo->getUrl() }}" />
+    @endif
+
+    <link rel="stylesheet" href="{{asset('css/goodshare.css')}}">
+    
 <link rel="stylesheet" href="{{ asset('css/audio/muzslider.css') }}"/>
 @endsection
 @section('content')
@@ -33,10 +48,36 @@
                            </div>
                         </article>
                      </div>
-                     <div class="video-desc" style="margin-top: 10px;">
+                     <div class="video-desc" style="margin: 20px 10px 10px 6px;">
                        <p>
                           {!! $muzkanalvideo->getContent() !!}
                        </p>
+                     </div>
+                     <div class="col-md-12">
+                       <footer class="with-share" style="text-align: left; margin: 0px -10px;">
+                         <div class="pluso share-buttons">
+                           <button class="goodshare btn-fb" data-type="fb">
+                             <i class="fa fa-facebook"></i>
+                             <span data-counter="fb"></span>
+                           </button>
+                           <!-- Button with share to Facebook & share counter -->
+                           <button class="goodshare btn-vk" data-type="vk">
+                             <i class="fa fa-vk"></i>
+                             <span data-counter="vk"></span>
+                           </button>
+                           <button class="goodshare btn-ok" data-type="ok">
+                             <i class="fa fa-odnoklassniki"></i>
+                             <span data-counter="ok"></span>
+                           </button>
+                           <button class="goodshare btn-gp" data-type="gp">
+                             <i class="fa fa-google-plus"></i>
+                             <span data-counter="gp"></span>
+                           </button>
+                           <button class="goodshare btn-tw" data-type="tw">
+                             <i class="fa fa-twitter"></i>
+                           </button>
+                         </div>
+                       </footer>
                      </div>
 
             </div>
@@ -124,8 +165,18 @@
 </div>
 @stop
 @section('footerScript')
-<script src="{{ asset('js/jquery-1.11.2.min.js') }}"></script>
-<script src="{{ asset('js/bootstrap.min.js') }}"></script> 
+    <script src="{{asset('js/goodshare.js')}}"></script>
+        <script>
+            $(window).load(function(){
+                $('.goodshare').each(function(){
+                    var span = $(this).children('span');
+                    var counter = span.text();
+                    if((counter==0) || (counter=='')){
+                        $(this).addClass('empty');
+                    }
+                });
+            });
+        </script>
 <script>
    $(document).ready(function () {
        $(".search-toggle").click(function () {
