@@ -249,34 +249,49 @@
 
          </div>
    </section>
-   <section id="contacts" >
-      <div class="section-header">
+   <section id="get-in-touch">
+      <div class="section-footer">
          <h2 class="section-title text-center wow fadeInDown">Байланыш</h2>
       </div>
-        <div class="infoadress">
-          <div class="col-md-4 address">
-            <h3><i class="fa fa-map-marker"></i> Дареги</h3>
-            <ul>
-              <li><i class="fa fa-location-arrow"></i> Кыргызстан, Бишкек  шаары</li>
-              <li><i class="fa fa-home"></i> Жаш Гвардия бульвары, 59</li>
-            </ul>
-          </div>
-          <div class="col-md-4 address">
-            <h3><i class="fa fa-phone"></i> Байланыш телефон:</h3>
-            <ul>
-              <li><i class="fa fa-microphone"></i> Түз эфирге чыгуу: (0312) 65-66-10, 65-67-04</li>
-              <li><i class="fa fa-commenting-o"></i>Редакциянын номери: (0312) 39-15-54</li>
-            </ul>
-          </div>
-          <div class="col-md-4 address">
-            <h3><i class="fa fa-envelope-o"></i>Сайт:</h3>
-            <ul>
-              <li><i class="fa fa-envelope"></i>www.ktrk.kg/ kyrgyzradio</li>
-              <li><i class="fa fa-facebook-official"></i>www.facebook.com/kyrgyzradiosu</li>
-            </ul>
-          </div>
-        </div>
-   </section>
+      <div class="container">
+         <div class="row">
+            <div class="col-md-4 col-xs-12">
+                  <div class="section-header3">            
+                      <h2 class="section-title text-center wow fadeInDown">Дареги</h2>
+                      <p class="text-center wow fadeInDown">Кыргызстан, Бишкек  шаары.</p>
+                      <p class="text-center wow fadeInDown">Жаш Гвардия бульвары, 59</p>
+                  </div>
+            </div>
+            <div class="col-md-4 col-xs-12">
+               <div class="section-header3">            
+                   <h2 class="section-title text-center wow fadeInDown">Байланыш телефон:</h2>
+                   <p class="text-center wow fadeInDown">Түз эфирге чыгуу: (0312) 65-66-10, 65-67-04</p>
+                   <p class="text-center wow fadeInDown">Редакциянын номери: (0312) 39-15-54</p>
+               </div>
+            </div>            
+            <div class="col-md-4 col-xs-12">
+               <div class="section-header3">            
+                   <h2 class="section-title text-center wow fadeInDown">Сайт:</h2>
+                   <p class="text-center wow fadeInDown">www.ktrk.kg/kyrgyzradio</p>
+                   <p class="text-center wow fadeInDown">www.facebook.com/kyrgyzradiosu</p>
+               </div> 
+            </div>
+         </div> 
+      </div>
+      <div class="section-footer chastoty">
+         <h2 class="section-title text-center wow fadeInDown">Жыштыктар</h2>
+         <ol class=" text-center wow breadcrumb">
+            <li>Чүй 106.9</li>
+            <li>Жалад-Абад 105.9</li>
+            <li>Талас 107.6</li>
+            <li>Ысык-Көл 106.0</li>
+            <li>Нарын 103.2</li>
+            <li>Ош УКВ 71.69 жана 71.81</li>
+            <li>Ош УКВ 71.69 жана 71.81</li>
+            <li>Баткен УКВ 70.88 жана 68.48</li>
+         </ol>
+      </div>
+   </section><!--/#get-in-touch-->
 </div>
 @stop
 @section('footerScript')

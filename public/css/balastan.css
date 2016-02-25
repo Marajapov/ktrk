@@ -1100,15 +1100,15 @@ display: block;
   text-align: center;
 }
 .show-date{
-  position: absolute;
-  z-index: 3;
-  left: 276px;
-  top: 5px;
-  color: #ffffff;
-  font-size: 12px;
-  background-color: #333333;
-  opacity: 0.75;
-  padding: 5px;
+    position: absolute;
+    z-index: 3;
+    right: 5px;
+    top: 5px;
+    color: #0D85C3;
+    font-size: 12px;
+    background-color: #FFFFFF;
+    padding: 5px;
+    font-weight: bold;
 }
 .fa-view1{
   display: inline-block;

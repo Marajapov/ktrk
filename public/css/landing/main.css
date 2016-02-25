@@ -150,6 +150,40 @@ header {
   border-radius: 20px;
   background: #FF5722;
 }
+
+.section-footer {
+  /*margin-bottom: 50px;*/
+}
+.section-footer .section-title {
+  padding-bottom: 20px;
+  margin: 0 0 20px;
+  font-family: 'Roboto condensed'
+}
+.section-footer .section-title:before {
+  content: "";
+  position: absolute;
+  width: 85%;
+  bottom: 0px;
+  margin: auto;
+  height: 1px;
+  border-bottom: 1px dashed white;
+  left: 0;
+  right: 0;
+}
+.section-header3 {
+    background: #1870A7;
+    padding: 1px 10px 15px 10px;
+    -webkit-box-shadow: inset 0px 0px 10px 1px rgba(14, 91, 125);
+    -moz-box-shadow: inset 0px 0px 10px 1px rgba(14, 91, 125);
+    box-shadow: inset 0px 0px 10px 1px rgb(14, 91, 125);
+    border-radius: 5px !important;
+}
+.chastoty {
+  margin-top: 20px;
+}
+.chastoty .breadcrumb{
+  background: none;
+}
 .section-header2 {
   margin-top: 30px;
 }
@@ -279,6 +313,7 @@ ul.nostyle i {
     line-height: inherit;
     text-rendering: auto;
   }
+
   @media (max-width:1170px) {
     #main-menu.navbar-default .navbar-nav > li > a {
       padding: 20px 5px;
@@ -293,6 +328,10 @@ ul.nostyle i {
     background: #04549C;
     color: #fff;
   }
+  #main-menu.navbar-default .navbar-nav > li:hover > a{
+   color: #FF6A3A;
+  }
+
   #main-menu.navbar-default .dropdown-menu {
     padding: 0px;
     min-width: 220px;
@@ -1021,10 +1060,10 @@ ul.nostyle i {
   color: #fff;
 }
 #get-in-touch {
-  padding: 100px 0 50px;
-  background-image: -moz-linear-gradient(90deg, #2caab3 0%, #2c8cb3 100%);
-  background-image: -webkit-linear-gradient(90deg, #2caab3 0%, #2c8cb3 100%);
-  background-image: -ms-linear-gradient(90deg, #2caab3 0%, #2c8cb3 100%);
+  padding: 50px 0 50px;
+  background-image: -moz-linear-gradient(90deg, #04549C 0%, #2c8cb3 100%);
+  background-image: -webkit-linear-gradient(90deg, #04549C 0%, #2c8cb3 100%);
+  background-image: -ms-linear-gradient(90deg, #04549C 0%, #2c8cb3 100%);
   color: #fff;
 }
 #get-in-touch h1, #get-in-touch h2 {
@@ -1908,6 +1947,10 @@ height: 325px;
 }
 
 #contacts .infoadress{
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
   display: flex;
 }
 #contacts .infoadress h3{
