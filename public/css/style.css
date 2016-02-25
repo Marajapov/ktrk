@@ -3727,7 +3727,49 @@ display: block;
 .photosmuz .topchart {
     padding: 0px;
 }
+.photosmuz .onepadding{
+    position: relative;
+    display: block;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+.photosmuz .photo-title{
+    position: relative;
+    background: #EFEEEE;
+    height: 70px;
+    width: inherit;
+    overflow: hidden;
+    font-size: 16px;
+    vertical-align: middle;
+    display: table-cell;
+}
+.photosmuz .photo-title a{
+    color: #2D3E4A;
+    font-weight: bold;
+}
+.photosmuz .photo-title a:hover{
+    color: #237dac;
+}
+.photosmuz .photo-info{
+    position: relative;
+}
+.photosmuz .photo-info .extra{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: #fff;
+    padding: 0px 5px;
+    font-size: 16px;
+}
+.photosmuz .photo-info .type{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    padding: 0px 5px;
+    color: #fff;
+    font-size: 20px;
 
+}
 /*Image Gallery*/
 
 /* Director blog page*/

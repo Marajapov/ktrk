@@ -21,26 +21,24 @@
                   </div>
                </div>
                <div class="panel-body">
-               <div class="featured_4 allphotospace clearfix">
+               <div class="allphotospace clearfix">
                   @if($photoGalleries != null)
                   @foreach($photoGalleries as $photoGallery)
                   <div class="col-md-3 col-sm-4 col-xs-6 onepadding">
-                     <div class="featured_element">
-                        <div class="featured_item">
-                           <img src="{{ asset($photoGallery->thumbnail_big) }}">                           
-                           <i class="fa fa-camera"></i>
-                           <div class="extra" style="position: absolute; bottom: 0px; left: 10px;color: #fff;">
-                              <span class="e-datetime">{{ $photoGallery->getDay() }} {{ $photoGallery->getMonthRu() }}, {{ $photoGallery->getTime() }}</span>
+                        <div class="photo-info">
+                           <img src="{{ asset($photoGallery->thumbnail_big) }}">
+                           <div class="extra">
+                              <span class="datetime">{{ $photoGallery->getDay() }} {{ $photoGallery->getMonthRu() }}</span>
                            </div>
-                        </div>
-                        <a href="{{ route('muzkanal.photos', $photoGallery) }}" class="f_overlay"></a>
-                        
-                           <div class="featured_title_over text-center"> 
-                              <a href="{{ route('muzkanal.photos', $photoGallery) }}">                                                
-                              {{ $photoGallery->getName() }}
-                              </a>                                                
-                           </div>                        
-                     </div>
+                           <div class="type">
+                             <i class="fa fa-camera"></i>
+                           </div>
+                        </div>                        
+                       <div class="photo-title text-center"> 
+                          <a href="{{ route('muzkanal.photos', $photoGallery) }}">                                                
+                          {{ $photoGallery->getName() }}
+                          </a>                                                
+                       </div>                        
                   </div>
                   @endforeach
                   @endif
