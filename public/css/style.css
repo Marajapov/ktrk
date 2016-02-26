@@ -4513,3 +4513,51 @@ background-size: cover;
 .madaniyat li.korsotuu:hover {
     background: #CF3529;
 }
+
+/*MUZKANAL*/
+.show-date{
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+  color: #999999;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: normal;
+}
+.show-extra{
+  position: absolute;
+  top: 0;
+  right: 16px;
+  width: 150px;
+  height: 24px;
+  overflow: hidden;
+  text-align: right;
+}
+.show-view{
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 24px;
+  text-align: right;
+}
+.fa-view{
+  display: inline-block;
+  vertical-align: middle;
+  margin: auto;
+  margin-right: 2px;
+  margin-bottom: 2px;
+  width: 20px;
+  height: 20px;
+  background-image: url('img/view-icon-dark.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+.content{
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 18px;
+  margin-top: 15px;
+}
