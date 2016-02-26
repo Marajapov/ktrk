@@ -293,6 +293,19 @@
    <!-- Fixed Sticky header -->
    <script type ="text/javascript" src ="{{ asset('js/script.js') }}"></script>   
    <!-- Fixed Sticky header -->
+   <script src="{{ asset('js/goodshare.js') }}"></script>
+   <script>
+     $(window).load(function(){
+       $('.goodshare').each(function(){
+         var span = $(this).children('span');
+         var counter = span.text();
+         if((counter==0) || (counter=='')){
+           $(this).addClass('empty');
+         }
+       });
+     });
+   </script>
+
    <!--Carousel-->
    <script>
       if ($(window).width() > 768) {
