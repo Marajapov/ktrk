@@ -8,13 +8,13 @@ class KyrgyzradioController extends Controller
     }
 
 
-    public function Home()
+    public function Home(Request $request)
     {
 
 
      // return view('Front::channel.kyrgyzradio.comingsoon',[]);
 
-        $channel = \Model\Channel\ModelName::name('kyrgyzradio')->first();
+        $channel = \Model\Channel\ModelName::where('name','=','kyrgyzradio')->first();
 
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
         
@@ -23,25 +23,41 @@ class KyrgyzradioController extends Controller
 
         $kyrgyzradioProjects = \Model\Project\ModelName::where('published','=',true)->where('kyrgyzradio', '=', 1)->take('4')->orderBy('id','desc')->get();
 
-        $anons = \Model\Anons\ModelName::where('channel','=','6')->where('published','=','1')->orderBy('id','=','desc')->take(2)->get();
+        $anons = \Model\Anons\ModelName::where('channel','=','6')->where('kyrgyzradiotop','<>','1')->where('published','=','1')->orderBy('id','=','desc')->take(2)->get();
+        $kyrgyzradiotop = \Model\Anons\ModelName::where('channel','=','6')->where('kyrgyzradiotop','=','1')->where('published','=','1')->orderBy('id','=','desc')->take(3)->get();
        
         $quote = \Model\Quote\ModelName::where('published','=','1')->where('channel', '=', '6')->orderBy('id','=','desc')->orderBy('id','desc')->get();
-        $quoteTopLeft = \Model\Quote\ModelName::where('published','=','1')->where('channel', '=', '6')->orderBy('id','=','desc')->take(2)->skip(0)->get();
-        $quoteTopRight = \Model\Quote\ModelName::where('published','=','1')->where('channel', '=', '6')->orderBy('id','=','desc')->take(2)->skip(2)->get();
-        $quoteMiddleLeft = \Model\Quote\ModelName::where('published','=','1')->where('channel', '=', '6')->orderBy('id','=','desc')->take(2)->skip(2)->get();
-        $quoteMiddleRight = \Model\Quote\ModelName::where('published','=','1')->where('channel', '=', '6')->orderBy('id','=','desc')->take(2)->skip(2)->get();
-//        dd($quote);
+
+        date_default_timezone_set('Asia/Bishkek');
+        $now = date("d-m-Y H:i");
+        $currentDate = date('d-m-Y');
+        $currentTime = date('H:i');
+        $weekDay = date('N', strtotime($now));
+
+        if($channel){
+            $schedule = \Model\Schedule\ModelName::where('channel_id','=',$channel->id)->where('date','=',$currentDate)->first();
+
+            if(!empty($schedule)){
+                $program = json_decode($schedule->program);
+                // dd($program);
+                $programNew = array_add($program, 'date', $schedule->date);
+            }else{
+                $program = '';
+            }
+        }
+
+     // dd($program);
         return view('Front::channel.kyrgyzradio.index', [
             'channel' => $channel,
             'anons' => $anons,
+            'kyrgyzradiotop' => $kyrgyzradiotop,
             'backgroundMain' => $backgroundMain,
             'photoGalleries' => $photoGalleries,
             'kyrgyzradioProjects' => $kyrgyzradioProjects,
             'quote' => $quote,
-            'quoteTopLeft' => $quoteTopLeft,
-            'quoteTopRight' => $quoteTopRight,
-            'quoteMiddleLeft' => $quoteMiddleLeft,
-            'quoteMiddleRight' => $quoteMiddleRight,
+            'currentDate' => $currentDate,
+            'currentTime' => $currentTime,
+            'program' => $program,
             ]);
     }
 
@@ -50,6 +66,17 @@ class KyrgyzradioController extends Controller
         $channel = \Model\Channel\ModelName::name('kyrgyzradio')->first();
 
         return view('Front::channel.kyrgyzradio.posts', ['channel' => $channel]);
+    }    
+
+    public function about()
+    {
+        $channel = \Model\Channel\ModelName::name('kyrgyzradio')->first();
+        $kyrgyzradioProjects = \Model\Project\ModelName::where('published','=',true)->where('kyrgyzradio', '=', 1)->get();
+
+        return view('Front::channel.kyrgyzradio.about', [
+            'channel' => $channel,
+            'kyrgyzradioProjects' => $kyrgyzradioProjects,
+            ]);
     }
 
     public function project(\Model\Project\ModelName $project)

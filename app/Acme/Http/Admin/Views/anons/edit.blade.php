@@ -1,25 +1,5 @@
 @extends('Admin::layouts.default')
 @section('title', $anons->getNameOne())
-@section('styles')
-	<link rel="stylesheet" href="{{ asset('css/bootstrap-select.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('css/build.css') }}"/>   
-
-    <!-- Include Editor style. -->
-    <link href="{{ asset('froala/css/froala_editor.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('froala/css/froala_style.min.css') }}" rel="stylesheet" type="text/css" />
-    <!-- Include Editor Plugins style. -->
-    <link rel="stylesheet" href="{{ asset('froala/css/plugins/char_counter.css')}}">
-    <link rel="stylesheet" href="{{ asset('froala/css/plugins/code_view.css')}}">
-    <link rel="stylesheet" href="{{ asset('froala/css/plugins/colors.css')}}">
-    <link rel="stylesheet" href="{{ asset('froala/css/plugins/emoticons.css')}}">
-    <link rel="stylesheet" href="{{ asset('froala/css/plugins/file.css')}}">
-    <link rel="stylesheet" href="{{ asset('froala/css/plugins/fullscreen.css')}}">
-    <link rel="stylesheet" href="{{ asset('froala/css/plugins/image.css')}}">
-    <link rel="stylesheet" href="{{ asset('froala/css/plugins/image_manager.css')}}">
-    <link rel="stylesheet" href="{{ asset('froala/css/plugins/line_breaker.css')}}">
-    <link rel="stylesheet" href="{{ asset('froala/css/plugins/table.css')}}">
-    <link rel="stylesheet" href="{{ asset('froala/css/plugins/video.css')}}">
-@endsection
 @section('content')
 
 <div class="row modals">
@@ -43,7 +23,7 @@
 @stop
 
 @section('scripts')
-   <!-- Include JS files. -->
+    <!-- Include JS files. -->
     <script src="{{ asset('froala/js/froala_editor.min.js') }}"></script>
 
     <!-- Include Plugins. -->
@@ -101,108 +81,117 @@
 
     	var data = $('#category').val();
 
-    	if(data == 4) {
-            $('#balastanAnons').show();                        
-            $('#minkiyalAnons').hide();
-            $('#nameKg').show();
-            $('#nameRu').show();
-            $('#editorTextArea').hide();
-            $('#linkArea').show();
-            $('#weekDayKg').show();
-            $('#weekDayRu').show();
-            $('#timeArea').show();
-            $('#thumbForm').show();
-            $('#publish').show();
-        } 
+    	           // balastan
+                    if(data == 4) {
+                        $('#balastanAnons').show();                        
+                        $('#minkiyalAnons').hide();
+                        $('#kyrgyzradioanons').hide();
+                        $('#nameKg').show();
+                        $('#nameRu').show();
+                        $('#editorTextArea').hide();
+                        $('#linkArea').show();
+                        $('#weekDayKg').show();
+                        $('#weekDayRu').show();
+                        $('#timeArea').show();
+                        $('#thumbForm').show();
+                        $('#publish').show();
+                    } 
 
-        // minkiyal
-        else if(data == 9){
-            $('#balastanAnons').hide();                        
-            $('#minkiyalAnons').show();
-            $('#nameKg').show();
-            $('#nameRu').hide();
-            $('#editorTextArea').show();
-            $('#linkArea').hide();
-            $('#weekDayKg').hide();
-            $('#weekDayRu').hide();
-            $('#timeArea').hide();
-            $('#thumbForm').show();
-            $('#publish').show();
-        }            
+                    // minkiyal
+                    else if(data == 9){
+                        $('#balastanAnons').hide();                        
+                        $('#minkiyalAnons').show();
+                        $('#kyrgyzradioanons').hide();
+                        $('#nameKg').show();
+                        $('#nameRu').hide();
+                        $('#editorTextArea').show();
+                        $('#linkArea').hide();
+                        $('#weekDayKg').hide();
+                        $('#weekDayRu').hide();
+                        $('#timeArea').hide();
+                        $('#thumbForm').show();
+                        $('#publish').show();
+                    }            
 
-        // ktrk videoportal
-        else if(data == 2){
-            $('#balastanAnons').hide();                        
-            $('#minkiyalAnons').hide();
-            $('#nameKg').show();
-            $('#nameRu').show();
-            $('#editorTextArea').hide();
-            $('#linkArea').show();
-            $('#weekDayKg').show();
-            $('#weekDayRu').show();
-            $('#timeArea').show();
-            $('#thumbForm').show();
-            $('#publish').show();
-        }                     
+                    // ktrk videoportal
+                    else if(data == 2){
+                        $('#balastanAnons').hide();                        
+                        $('#minkiyalAnons').hide();
+                        $('#kyrgyzradioanons').hide();
+                        $('#nameKg').show();
+                        $('#nameRu').show();
+                        $('#editorTextArea').hide();
+                        $('#linkArea').show();
+                        $('#weekDayKg').show();
+                        $('#weekDayRu').show();
+                        $('#timeArea').show();
+                        $('#thumbForm').show();
+                        $('#publish').show();
+                    }                     
 
-        // music
-        else if(data == 3){
-            $('#balastanAnons').hide();                        
-            $('#minkiyalAnons').hide();
-            $('#nameKg').show();
-            $('#nameRu').show();
-            $('#editorTextArea').hide();
-            $('#linkArea').show();
-            $('#weekDayKg').show();
-            $('#weekDayRu').show();
-            $('#timeArea').hide();
-            $('#thumbForm').show();
-            $('#publish').show();
-        }                     
+                    // music
+                    else if(data == 3){
+                        $('#balastanAnons').hide();                        
+                        $('#minkiyalAnons').hide();
+                        $('#kyrgyzradioanons').hide();
+                        $('#nameKg').show();
+                        $('#nameRu').show();
+                        $('#editorTextArea').hide();
+                        $('#linkArea').show();
+                        $('#weekDayKg').show();
+                        $('#weekDayRu').show();
+                        $('#timeArea').hide();
+                        $('#thumbForm').show();
+                        $('#publish').show();
+                    }                     
 
-        // kyrgyzradio
-        else if(data == 6){
-            $('#balastanAnons').hide();                        
-            $('#minkiyalAnons').hide();
-            $('#nameKg').show();
-            $('#nameRu').hide();
-            $('#editorTextArea').hide();
-            $('#linkArea').hide();
-            $('#weekDayKg').hide();
-            $('#weekDayRu').hide();
-            $('#timeArea').hide();
-            $('#thumbForm').show();
-            $('#publish').show();
-        }                     
+                    // kyrgyzradio
+                    else if(data == 6){
+                        $('#balastanAnons').hide();                        
+                        $('#minkiyalAnons').hide();
+                        $('#kyrgyzradioanons').show();
+                        $('#nameKg').show();
+                        $('#nameRu').hide();
+                        $('#editorTextArea').show();
+                        $('#linkArea').hide();
+                        $('#weekDayKg').hide();
+                        $('#weekDayRu').hide();
+                        $('#timeArea').hide();
+                        $('#thumbForm').show();
+                        $('#publish').show();
+                    }                     
 
-        // dostuk
-        else if(data == 8){
-            $('#balastanAnons').hide();                        
-            $('#minkiyalAnons').hide();
-            $('#nameKg').show();
-            $('#nameRu').hide();
-            $('#editorTextArea').hide();
-            $('#linkArea').hide();
-            $('#weekDayKg').hide();
-            $('#weekDayRu').hide();
-            $('#timeArea').hide();
-            $('#thumbForm').show();
-            $('#publish').show();
-        } 
+                    // dostuk
+                    else if(data == 8){
+                        $('#balastanAnons').hide();                        
+                        $('#minkiyalAnons').hide();
+                        $('#kyrgyzradioanons').hide();
+                        $('#nameKg').show();
+                        $('#nameRu').hide();
+                        $('#editorTextArea').hide();
+                        $('#linkArea').hide();
+                        $('#weekDayKg').hide();
+                        $('#weekDayRu').hide();
+                        $('#timeArea').hide();
+                        $('#thumbForm').show();
+                        $('#publish').show();
+                    } 
 
-        else {
-            $('#balastanAnons').hide();                        
-            $('#minkiyalAnons').hide();
-            $('#nameKg').hide();
-            $('#nameRu').hide();
-            $('#editorTextArea').hide();
-            $('#linkArea').hide();
-            $('#weekDayKg').hide();
-            $('#weekDayRu').hide();
-            $('#timeArea').hide();
-            $('#thumbForm').hide();
-            $('#publish').hide();
-        }
+                    else {
+                        $('#balastanAnons').hide();                        
+                        $('#minkiyalAnons').hide();
+                        $('#kyrgyzradioanons').hide();
+                        $('#nameKg').hide();
+                        $('#nameRu').hide();
+                        $('#editorTextArea').hide();
+                        $('#linkArea').hide();
+                        $('#weekDayKg').hide();
+                        $('#weekDayRu').hide();
+                        $('#timeArea').hide();
+                        $('#thumbForm').hide();
+                        $('#publish').hide();
+                    }
+
 
     });
     </script>

@@ -1,141 +1,22 @@
 @extends('Front::channel.muzkanal.default')
 @section('title', trans('radiopages.Photos'))
 @section('styles')
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <meta property="og:url"                content="{{ Request::url()}}" />
+    <meta property="og:site_name"          content="{{ trans('site.TradeMark') }}" />
+    <meta property="og:type"               content="article" />
+    <meta property="og:title"              content="{{ $gallery->getName()}}" />
+    <meta property="og:description"        content="{{ $gallery->getDescription() }}" />
+    <meta property="og:image"              content="{{ asset($gallery->thumbnail_big) }}" />
+
+    <link rel="stylesheet" href="{{asset('css/goodshare.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/articles.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/lightslider.css') }}">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.2.6/css/lightgallery.min.css">
 @endsection
 @section('content')
-    <body class="music">
-    <div class="switch">
-        <nav class="navbar">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false">
-                    <span class="sr-only">Меню</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">
-                    <img src="{{ asset('images/channels/muz_white_notext.png')}}">
-                    <h4>Музыка</h4>
-                </a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="menu">
-                <ul class="nav navbar-nav channel_switch">
-                    <li class="sitemenu" id="site-channel1">
-                        <a href="{{ route('front.home') }}">
-                            <img src="{{ asset('images/ktrk_last.svg')}}" style="height:40px;"><span>КТРК</span>
-                            <h4>КТРК</h4>
-                        </a>
-                    </li>
-                    <li class="sitemenu" id="site-channel1">
-                        <a class="active" href="{{ route('muzkanal.home') }}">
-                            <img src="{{ asset('images/channels/muz_white_notext.png')}}" ><span>Музыка</span>
-                            <h4>Музыка</h4>
-                        </a>
-                    </li>
-                    <li class="sitemenu" id="site-channel1">
-                        <a href="{{ route('madaniyat.home') }}">
-                            <img src="{{ asset('images/channels/madaniyat_white_notext.png')}}"><span>Маданият</span>
-                            <h4>Маданият</h4>
-                        </a>
-                    </li>
-                    <li class="sitemenu" id="site-channel1">
-                        <a href="{{ route('balastan.home') }}">
-                            <img src="{{ asset('images/channels/balastan_white_notext.png')}}"><span>Баластан</span>
-                            <h4>Баластан</h4>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </nav>
-    </div>
-    <div class="container main-header">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="row fixedheader">
-                    <nav class="navbar">
-                        <div class="container-fluid">
-                            <!-- Brand and toggle get grouped for better mobile display -->
-                            <div class="navbar-header">
-                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                                    <span class="sr-only">Меню</span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                </button>
-                                <div class="logo-block search-block">
-                                    <a class="search-toggle"><i class="fa fa-search"></i></a>
-                                    <form class="form-search" action="{{ route('front.search') }}" method="get">
-                                        <div class="form-group pull-right">
-                                            <input type="text" name="search" class="form-control" placeholder="Издөө"/>
-                                        </div>
-                                        <a class="btn close-search">
-                                            <i class="fa fa-close"></i>
-                                        </a>
-                                        <button class="btn submit-search" type="submit">
-                                            <i class="fa fa-search"></i>
-                                        </button>
-                                    </form>
-                                </div>
-                                <a class="navbar-brand" href="{{ route('muzkanal.home') }}"> <i class="fa fa-home"></i><span>{{ trans('radiopages.Home') }}</span></a>
-                            </div>
-                            <!-- Collect the nav links, forms, and other content for toggling -->
-                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                                <ul class="nav navbar-nav">
-                                    <li><a href="{{ route('muzkanal.about') }}"></i>{{ trans('radiopages.Mabout') }}</a></li>
-                                    <li>
-                                        <a href="{{ route('muzkanal.hitparad') }}">
-                                            <i class="fa fa-microphone"></i>Хит-Парад <!-- <span class="caret"></span> -->
-                                        </a>
-                                    </li>
-                                    <li><a class="active" href="{{ route('muzkanal.allphotos') }}"><i class="fa fa-picture-o"></i>{{ trans('radiopages.Photos') }}</a></li>
-                                    <li><a href="{{ route('muzkanal.videos') }}"><i class="fa fa-youtube-play"></i>{{ trans('radiopages.Clips') }}</a></li>
-                                    <li><a href="{{ route('muzkanal.teleprogram') }}"><i class="fa fa-television"></i>{{ trans('site.Teleprogram') }}</a></li>
-                                </ul>
-                                <ul class="nav navbar-nav navbar-right logo-block">
-                                    <ul class="soc socmuz">
-                                        <li class="tw"><a href="https://twitter.com/TelekanalMuzyka" title="Twitter"><i class="fa fa-twitter"></i> </a>  </li>
-                                        <li class="fb"><a href="https://www.facebook.com/muzykaotrk/" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-                                        <li class="ok"><a href="http://ok.ru/group/52901559140520" title="Odnoklassniki"><i class="fa fa-odnoklassniki"></i></a></li>
-                                        <li class="yt"><a href="https://www.youtube.com/channel/UCPYuDx0G3WgGH3SR86VUnlA" title="YouTube"><i class="fa fa-youtube"></i></a></li>
-                                        <li class="in"><a href="https://www.instagram.com/muzyka.otrk/" title="Instagram"><i class="fa fa-instagram"></i></a></li>
-                                    </ul>
-                                    <a class="search-toggle"><i class="fa fa-search"></i></a>
-                                    <form class="form-search" action="{{ route('front.search') }}" method="get">
-                                        <div class="form-group pull-right">
-                                            <input type="text" name="search" class="form-control" placeholder="Издөө"/>
-                                        </div>
-                                        <a class="btn close-search">
-                                            <i class="fa fa-close"></i>
-                                        </a>
-                                        <button class="btn submit-search" type="submit">
-                                            <i class="fa fa-search"></i>
-                                        </button>
-                                    </form>
-                                    <div class="clangs">
-                                        <ul>
-                                            <li @if(app()->getlocale() == 'kg') class="active" @endif><a href="/locale/kg">кырг <span></span></a></li>
-                                            <li @if(app()->getlocale() == 'ru') class="active" @endif><a href="/locale/ru">рус <span></span></a></li>
-                                        </ul>
-                                    </div>
-                                    <!--                                         <button class="btn btn-danger btn-live" data-toggle="modal" data-target="#liveModal">
-                                       <i class="fa fa-dot-circle-o"></i>
-                                       түз эфир
-                                       </button> -->
-                                </ul>
-                            </div>
-                            <!-- /.navbar-collapse -->
-                        </div>
-                        <!-- /.container-fluid -->
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </div>
+@include('Front::channel.muzkanal.nav')
 
     <!-- Main slider -->
     <div class="container">
@@ -146,7 +27,7 @@
                         <h3 class="panel-title text-center"><span> {{ $gallery->getName() }}</span></h3>
                     </div>
                     <div class="panel-body">
-                        <div class="row" style="margin: 20px;">
+                        <div class="row" style="margin: 0px 10px; font-size: 16px; font-family: 'Roboto regular';">
                             <p style="text-align:center;color: #272727;font-size: 18px;">{!! $gallery->getDescription() !!}</p>
                             <ul id="imageGallery">
                                 @if($images != null)
@@ -157,8 +38,38 @@
                                         </li>
                                     @endforeach
                                 @endif
-
                             </ul>
+                           <div class="col-md-12">
+                             <footer class="with-share">
+                                 <div class="pluso share-buttons">
+                                     <button class="goodshare btn-fb" data-type="fb">
+                                         <i class="fa fa-facebook"></i>
+                                         <span data-counter="fb"></span>
+                                     </button>
+                                     <!-- Button with share to Facebook & share counter -->
+                                     <button class="goodshare btn-vk" data-type="vk">
+                                         <i class="fa fa-vk"></i>
+                                         <span data-counter="vk"></span>
+                                     </button>
+                                     <button class="goodshare btn-ok" data-type="ok">
+                                         <i class="fa fa-odnoklassniki"></i>
+                                         <span data-counter="ok"></span>
+                                     </button>
+                                     <button class="goodshare btn-gp" data-type="gp">
+                                         <i class="fa fa-google-plus"></i>
+                                         <span data-counter="gp"></span>
+                                     </button>
+                                     <button class="goodshare btn-tw" data-type="tw">
+                                         <i class="fa fa-twitter"></i>
+                                         {{--<span data-counter="tw"></span>--}}
+                                     </button>
+                                 </div>
+
+                                 <a href="{{ route('muzkanal.allphotos') }}">
+                                     <span>Баардык сүрөтбаяндар<i class="fa fa-arrow-circle-right"></i></span>
+                                 </a>
+                             </footer>
+                           </div>
                         </div>
 
                     </div>
@@ -169,6 +80,18 @@
     </div>
     @stop
     @section('footerScript')
+    <script src="{{asset('js/goodshare.js')}}"></script>
+        <script>
+            $(window).load(function(){
+                $('.goodshare').each(function(){
+                    var span = $(this).children('span');
+                    var counter = span.text();
+                    if((counter==0) || (counter=='')){
+                        $(this).addClass('empty');
+                    }
+                });
+            });
+        </script>
         <script src="{{ asset('js/lightslider.js') }}"></script>
         <script src="{{ asset('js/lightgallery/picturefill.min.js') }}"></script>
         <script src="{{ asset('js/lightgallery/lightgallery.js') }}"></script>

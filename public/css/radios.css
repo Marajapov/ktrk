@@ -1096,7 +1096,9 @@
 /* BEGIN All Gallery page*/
 
 /* BEGIN Gallery*/
-    
+.allgallery{
+    position: relative;
+}
 .allgallery .media-middle {
     padding: 10px 0;
     height: 65px;
@@ -1139,6 +1141,15 @@
 }
 .allgallery footer span .fa-arrow-circle-right{
     padding-left:10px; 
+}
+.allgallery .allright{
+    float: right;
+}
+.allgallery .allright a{
+    color: #fff;
+}
+.allgallery .allright a:hover{
+    color: #043A35;
 }
 
 /* END All Gallery page*/
@@ -1254,7 +1265,6 @@
 
 #minkiyal .info{
     position: relative;
-    margin-top: -30px;
 }
 #minkiyal .info h2{
     padding: 30px 0px;
@@ -1262,7 +1272,6 @@
     text-align: center;
     font-weight: bold;
     font-size: 3em;
-    text-shadow: 1px 0px 0px #3C3C3C, 0 0 1em rgba(0, 0, 0, 0);
     
     color: #DC0D7C;
 }
@@ -1279,7 +1288,7 @@
 
 #minkiyal .info .postshow {
     position: relative;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
     padding:0px 5px; 
     cursor: pointer;
 }
@@ -1340,7 +1349,9 @@
 #minkiyal .info .postshow:hover h3{
     opacity: 0;
 }
-
+#minkiyal .info .imageshow {
+    margin-bottom: 15px;
+}
 #minkiyal .info .imageshow img{
     height: 220px;
     pointer: cursor;
@@ -1360,6 +1371,20 @@
 }
 #minkiyal .info .imageshow h3{
     position: absolute;
+<<<<<<< HEAD
+    top: 20px;
+    right: 15px;
+    width: 210px;
+    padding: 0px 0px 0px 10px;
+    text-align: center;
+    background: #E91E63;
+    z-index: 3;    
+}
+#minkiyal .online h3{
+    float: left;
+    color: #fff;
+    margin: 10px 0px 0px;
+=======
     bottom: 0;
     padding: 10px;
     margin: 0;
@@ -1385,6 +1410,7 @@
     -webkit-transition: opacity 0.2s ease;
     -o-transition: opacity 0.2s ease;
     transition: opacity 0.2s ease;
+>>>>>>> 1fd5566d252b0976f796f19baf09524ebab07ce0
 }
 #minkiyal .footer-channels a:hover img {
     opacity: 1;
@@ -1400,7 +1426,7 @@
 }
 
 #minkiyal .mingallery .panel-title h3{
-    color: black;
+    color: #403F3E;
 }
 #minkiyal .mingallery .panel-body{
     padding: 0px 15px 0; 
@@ -1447,6 +1473,7 @@
 
 #minkiyal .network {
     position: relative;
+    margin-top: 20px;
 }
 
 #minkiyal .address {
@@ -1490,7 +1517,10 @@
     border-top: 1px solid #C1B38E;
 }
 #minkiyal .slidermin{
-    margin: 15px 5px 50px 5px;
+    margin: 15px 5px 20px 5px;
+}
+#minkiyal .slidermin .slick-dots{
+    bottom: -25px;
 }
 
 #minkiyal .copyright,#minkiyal .footer-menu{
@@ -1543,7 +1573,6 @@
 }
 #minkiyal .allgallery{
     background: #4CAF50;
-    margin-top: 40px;
     margin-bottom: 40px;
     padding-top: 20px;
     padding-bottom: 50px;
@@ -1561,6 +1590,7 @@
 }
 #minkiyal .title  h3{
     font-size: 18px;
+    display: inline-block;
 }
 #minkiyal .allgallery  .second a{
     position: relative;
@@ -1600,7 +1630,22 @@
     color: #fff;
     background: #4CAF50;
 }
+<<<<<<< HEAD
+#minkiyal .anonses, #minkiyal .withpad{
+=======
+
+#minkiyal .allgallery .second .extra, #minkiyal .info .imageshow .extra{
+    position: absolute;
+    top: 5px;
+    left: 20px;
+    padding: 0px 5px;
+    background: #4CAF50;
+}
+#minkiyal .allgallery .second .extra span, #minkiyal .info .imageshow .extra span{
+    color: #fff;
+}
 #minkiyal .withpad{
+>>>>>>> 1fd5566d252b0976f796f19baf09524ebab07ce0
     padding: 0px 5px;
 }
 
@@ -1609,6 +1654,19 @@
 }
 #minkiyal .anons-carousel .slick-slide {
     overflow: hidden;
+<<<<<<< HEAD
+}
+#minkiyal .anons-carousel .col-md-3 img{
+    height: 170px;
+}
+#minkiyal .logoon {
+    position: relative;
+}
+#minkiyal .logoon .logo img{
+    margin-left: 15px;
+    margin-top: 25px;
+=======
+>>>>>>> 1fd5566d252b0976f796f19baf09524ebab07ce0
 }
 #minkiyal .anons-carousel .col-md-3 img{
     height: 170px;
@@ -1652,6 +1710,7 @@
 #minkiyal .navbar-minheader {
     background: #4CAF50;
     margin-bottom: inherit;
+    border: none;
 }
 #minkiyal .navbar-minheader .navbar-text{
     font-size: 1.8em;
@@ -1665,7 +1724,7 @@
 #minkiyal .navbar-minheader .collapse .navbar-nav>li>a{
     color: white;
     font-size: 16px;
-    border-right: 1px solid #2F7932;
+    border-right: 1px solid #4CAF50;
     text-transform: uppercase;
 }
 #minkiyal .navbar-minheader .collapse .navbar-nav>li>a:hover,

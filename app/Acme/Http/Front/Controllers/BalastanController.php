@@ -32,9 +32,12 @@ class BalastanController extends Controller
 
         $anons = \Model\Anons\ModelName::where('channel','=','4')->where('published','=','1')->orderBy('id','=','desc')->take(2)->get();
 
+        $anonssoon= \Model\Anons\ModelName::where('channel','=','4')->where('balastansoon','=','1')->where('published','=','1')->orderBy('id','=','desc')->take(2)->get();
+
         return view('Front::channel.balastan.index', [
             'channel' => $channel,
             'anons' => $anons,
+            'anonssoon' => $anonssoon,
             'backgroundMain' => $backgroundMain,
             
             'balastanProjects' => $balastanProjects,

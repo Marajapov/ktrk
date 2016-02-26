@@ -125,6 +125,7 @@
                     if(data == 4) {
                         $('#balastanAnons').show();                        
                         $('#minkiyalAnons').hide();
+                        $('#kyrgyzradioanons').hide();
                         $('#nameKg').show();
                         $('#nameRu').show();
                         $('#editorTextArea').hide();
@@ -140,6 +141,7 @@
                     else if(data == 9){
                         $('#balastanAnons').hide();                        
                         $('#minkiyalAnons').show();
+                        $('#kyrgyzradioanons').hide();
                         $('#nameKg').show();
                         $('#nameRu').hide();
                         $('#editorTextArea').show();
@@ -155,6 +157,7 @@
                     else if(data == 2){
                         $('#balastanAnons').hide();                        
                         $('#minkiyalAnons').hide();
+                        $('#kyrgyzradioanons').hide();
                         $('#nameKg').show();
                         $('#nameRu').show();
                         $('#editorTextArea').hide();
@@ -170,6 +173,7 @@
                     else if(data == 3){
                         $('#balastanAnons').hide();                        
                         $('#minkiyalAnons').hide();
+                        $('#kyrgyzradioanons').hide();
                         $('#nameKg').show();
                         $('#nameRu').show();
                         $('#editorTextArea').hide();
@@ -185,9 +189,10 @@
                     else if(data == 6){
                         $('#balastanAnons').hide();                        
                         $('#minkiyalAnons').hide();
+                        $('#kyrgyzradioanons').show();
                         $('#nameKg').show();
                         $('#nameRu').hide();
-                        $('#editorTextArea').hide();
+                        $('#editorTextArea').show();
                         $('#linkArea').hide();
                         $('#weekDayKg').hide();
                         $('#weekDayRu').hide();
@@ -200,6 +205,7 @@
                     else if(data == 8){
                         $('#balastanAnons').hide();                        
                         $('#minkiyalAnons').hide();
+                        $('#kyrgyzradioanons').hide();
                         $('#nameKg').show();
                         $('#nameRu').hide();
                         $('#editorTextArea').hide();
@@ -214,6 +220,7 @@
                     else {
                         $('#balastanAnons').hide();                        
                         $('#minkiyalAnons').hide();
+                        $('#kyrgyzradioanons').hide();
                         $('#nameKg').hide();
                         $('#nameRu').hide();
                         $('#editorTextArea').hide();

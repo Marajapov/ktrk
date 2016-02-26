@@ -1,4 +1,4 @@
-@extends('Front::channel.kyrgyzradio.default')
+@extends('Front::channel.dostuk.default')
 @section('title', trans('radiopages.Allphotos'))
 @section('styles')
 <link rel="stylesheet" href="{{ asset('css/radios.css')}}">

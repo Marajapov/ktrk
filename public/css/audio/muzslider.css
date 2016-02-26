@@ -1488,3 +1488,7 @@ font-weight: bold;
     background: none;
     color: #fff;
 }
+
+.rowfix .modal{
+    z-index: 9999 !important;
+}
