@@ -71,7 +71,7 @@ class AnonsController extends Controller
                     Image::make($_FILES['thumbnail']['tmp_name'])->fit(1170, 358)->save($dir.'/'.$name);
                 }
             } elseif($request->channel == 8) {
-              Image::make($_FILES['thumbnail']['tmp_name'])->fit(1600, 358)->save($dir.'/'.$name);
+              Image::make($_FILES['thumbnail']['tmp_name'])->fit(1170, 358)->save($dir.'/'.$name);
             } elseif($request->channel == 9) { 
                 if($request->minkiyaltop == 1){
                     Image::make($_FILES['thumbnail']['tmp_name'])->fit(275, 170)->save($dir.'/'.$name);
@@ -156,7 +156,7 @@ class AnonsController extends Controller
                     Image::make($_FILES['thumbnail']['tmp_name'])->fit(1170, 358)->save($dir.'/'.$name);
                 }
             }elseif($request->channel == 8) {
-              Image::make($_FILES['thumbnail']['tmp_name'])->fit(1600, 358)->save($dir.'/'.$name);
+              Image::make($_FILES['thumbnail']['tmp_name'])->fit(1170, 358)->save($dir.'/'.$name);
             } elseif($request->channel == 9) { 
                 if($request->minkiyaltop == 1){
                     Image::make($_FILES['thumbnail']['tmp_name'])->fit(275, 170)->save($dir.'/'.$name);

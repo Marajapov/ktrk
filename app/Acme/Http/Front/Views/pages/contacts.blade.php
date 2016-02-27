@@ -22,7 +22,7 @@
                             <table class="table table-bordered col-md-7">
                                 <thead>
                                 <tr>
-                                    <th>Аталышы</th>
+                                    <th>Бөлүм</th>
                                     <th>Байланыш маалымат/E-mail</th>
                                     <th>Социалдык тармактар</th>
                                 </tr>
@@ -37,19 +37,19 @@
                                     <td>
                                         <ul>
                                             <li class="fb">
-                                                <a href="#">
+                                                <a href="https://www.facebook.com/KTRKkg" target="_blank">
                                                     <i class="fa fa-facebook-square"></i>
                                                     KTRKkg
                                                 </a>
                                             </li>
                                             <li class="tw">
-                                                <a href="#">
+                                                <a href="https://twitter.com/KTRK_kg" target="_blank">
                                                     <i class="fa fa-twitter-square"></i>
                                                     @KTRK_kg
                                                 </a>
                                             </li>
                                             <li class="yt">
-                                                <a href="#">
+                                                <a href="https://www.youtube.com/user/KTRKkg" target="_blank">
                                                     <i class="fa fa-youtube-square"></i>
                                                     KTRKkg
                                                 </a>
@@ -65,15 +65,15 @@
                                     <td></td>
                                 </tr>
                                 <tr>
-                                    <td>КТРК башкы директорунун теле боюнча орун басары</td>
-                                    <td>Кабылдама: +996 0312 39 22 30
+                                    <td>Телеберүү боюнча Башкы директорунун орун басары </td>
+                                    <td>Кабылдама: +996 0312 39 20 59
                                         <p>Е-mail: <a href="mailto:public@ktrk.kg">public@ktrk.kg</a></p>
                                     </td>
                                     <td></td>
                                 </tr>
                                 <tr>
-                                    <td>КТРК башкы директорунун радио боюнча орун басары</td>
-                                    <td>Кабылдама: +996 312 65 66 39
+                                    <td>Радио боюнча Башкы директорунун орун басары </td>
+                                    <td>Кабылдама: +996 312 39 20 59 
                                         <p>Е-mail: <a href="mailto:public@ktrk.kg">public@ktrk.kg</a></p>
                                     </td>
                                     <td></td>
@@ -91,70 +91,132 @@
                                         <p>Е-mail: <a href="mailto:sovetotv@gmail.com">sovetotv@gmail.com</a></p>
                                     </td>
                                     <td>
-                                        <ul>
-                                            <li class="fb">
-                                                <a href="https://www.facebook.com/OTRKg?fref=ts">
-                                                    <i class="fa fa-facebook-square"></i>
-                                                    https://www.facebook.com/OTRKg?fref=ts
-                                                </a>
-                                            </li>
-                                        </ul>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>КТРК Редакциялык кеңешчи</td>
-                                    <td>Кабылдама: +996 312 ­65 67 21
+                                    <td>Кабылдама: +996 312 65 67 21
                                         <p>Е-mail: <a href="mailto:redsovetnik@ktrk.kg">redsovetnik@ktrk.kg</a></p>
                                     </td>
-                                    <td>
-                                        <ul>
-                                            <li class="fb">
-                                                <a href="https://www.facebook.com/sovetnik.otrk?fref=ts">
-                                                    <i class="fa fa-facebook-square"></i>
-                                                    https://www.facebook.com/sovetnik.otrk?fref=ts
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr>
+                                    <td></td>
+                                </tr>                                
                                 <tr>
-                                    <td>"Ала-Тоо" маалымат программасы</td>
-                                    <td>Кабылдама: +996 312 39 20 71
-                                        <p>Е-mail: <a href="mailto:alatoo@ntrk.kg">alatoo@ntrk.kg</a></p>
+                                    <td>Коомдук кабылдама</td>
+                                    <td>Кабылдама: +996 312 65 66 08
+                                    <p>КТРКнын административдик имараты, 1-кабат.</p>
+                                    </td>
+                                    <td></td>
+                                </tr>                                
+                                <tr>
+                                    <td>КТРКнын расмий сайтын колдоо бөлүмү </td>
+                                    <td>Телефон:+996 312 39 22 38
+                                        <p>Е-mail: <a href="mailto:ktrksite@gmail.com">ktrksite@gmail.com</a></p>
                                     </td>
                                     <td></td>
                                 </tr>
                                 <tr>
                                     <td>Жарнак-комерция бөлүмү</td>
                                     <td>Кабылдама: +996 312 39 15 80
-                                        <p>Е-mail: <a href="mailto:reklama.otrk@gmail.com">reklama.otrk@gmail.com</a></p>
+                                        <p>Е-mail: <a href="mailto:public@ktrk.kg">public@ktrk.kg</a></p>
                                     </td>
                                     <td></td>
                                 </tr>
                                 <tr>
-                                    <td>Коомдук кабылдама</td>
-                                    <td>Байланыш телефону: +996 312 65 66 08
-                                        <p>КТРКнын административдик имараты, 1-­кабат</p>
+                                    <td>"Ала-Тоо" маалымат программасы</td>
+                                    <td>Телефон:+996 312 39 15 56
+                                    <p>Факс:+996 312 39 20 71</p>
+                                        <p>Е-mail: <a href="mailto:alatoo@ntrk.kg">alatoo@ntrk.kg</a></p>
                                     </td>
                                     <td></td>
+                                </tr>
+                                <tr>
+                                    <td>"Музыка" телеканалы</td>
+                                    <td>Байланыш телефону: +996 312 65 66 48
+                                        <p>Е-mail: <a href="mailto:public@ktrk.kg">public@ktrk.kg</a></p>
+                                    </td>
+                                    <td>
+                                        <ul>
+                                            <li class="yt">
+                                                <a href="https://www.youtube.com/user/muzykaktrk" target="_blank">
+                                                    <i class="fa fa-youtube-square"></i>
+                                                    muzykaktrk
+                                                </a>
+                                            </li>
+                                            <li class="fb">
+                                                <a href="https://www.facebook.com/muzykaotrk" target="_blank">
+                                                    <i class="fa fa-facebook-square"></i>
+                                                    muzykaotrk
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>"Баластан" телеканалы</td>
+                                    <td>Байланыш телефону: +996 312 65 67 14; +996 312 65 66 44
+                                        <p>Е-mail: <a href="mailto:public@ktrk.kg">public@ktrk.kg</a></p>
+                                    </td>
+                                    <td>
+                                        <ul>
+                                            <li class="fb">
+                                                <a href="https://www.facebook.com/BaldarFmRadiosu" target="_blank">
+                                                    <i class="fa fa-facebook-square"></i>
+                                                    BaldarFmRadiosu
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>                                
+                                <tr>
+                                    <td>«КТРК Спорт» телеканалы</td>
+                                    <td>Телефон: +996 312 652100
+                                        <p>Е-mail: <a href="mailto:public@ktrk.kg">public@ktrk.kg</a></p>
+                                    </td>
+                                    <td>
+                                        <ul>
+                                            <li class="fb">
+                                                <a href="https://www.facebook.com/KTRKfootball" target="_blank">
+                                                    <i class="fa fa-facebook-square"></i>
+                                                    KTRKfootball
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>“Достук” радиосу</td>
+                                    <td>Телефон:
+                                        <p>+996 312 65 85 05</p>
+                                        <p>+996 312 65 66 10</p>
+                                    </td>
+                                    <td>
+                                        <ul>
+                                            <li class="fb">
+                                                <a href="https://www.facebook.com/DostukRadiosu" target="_blank">
+                                                    <i class="fa fa-facebook-square"></i>
+                                                    DostukRadiosu
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>"Биринчи радио"</td>
-                                    <td>Байланыш телефону: +996 312 65 84 99
+                                    <td>Телефон: +996 312 65 84 99
                                         <p>Е-mail: <a href="mailto:kabarlar@ntrk.kg">kabarlar@ntrk.kg</a></p>
                                     </td>
                                     <td>
                                         <ul>
                                             <li class="fb">
-                                                <a href="www.facebook.com/1radiokg">
+                                                <a href="https://www.facebook.com/1Radiokg" target="_blank">
                                                     <i class="fa fa-facebook-square"></i>
-                                                    www.facebook.com/1radiokg
+                                                    1Radiokg
                                                 </a>
                                             </li>
                                             <li class="tw">
-                                                <a href="https://twitter.com/BirinchiRadio">
+                                                <a href="https://twitter.com/BirinchiRadio" target="_blank">
                                                     <i class="fa fa-twitter-square"></i>
-                                                    www.twitter.com/BirinchiRadio
+                                                    @BirinchiRadio
                                                 </a>
                                             </li>
                                         </ul>
@@ -169,15 +231,9 @@
                                     <td>
                                         <ul>
                                             <li class="fb">
-                                                <a href="www.facebook.com/kyrgyzrаdiosu">
+                                                <a href="https://www.facebook.com/kyrgyzrаdiosu" target="_blank">
                                                     <i class="fa fa-facebook-square"></i>
-                                                    www.facebook.com/kyrgyzrаdiosu
-                                                </a>
-                                            </li>
-                                            <li class="tw">
-                                                <a href="www.twitter.com/kyrgyzrаdiosu">
-                                                    <i class="fa fa-twitter-square"></i>
-                                                    www.twitter.com/kyrgyzrаdiosu
+                                                    kyrgyzrаdiosu
                                                 </a>
                                             </li>
                                         </ul>
@@ -191,30 +247,15 @@
                                     <td>
                                         <ul>
                                             <li class="fb">
-                                                <a href="www.facebook.com/Minkiyalfm">
+                                                <a href="https://www.facebook.com/Minkiyalfm" target="_blank">
                                                     <i class="fa fa-facebook-square"></i>
-                                                    www.facebook.com/Minkiyalfm
+                                                    MinKyalFm
                                                 </a>
                                             </li>
                                         </ul>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>“Достук” радиосу</td>
-                                    <td>Байланыш телефондору:
-                                        <p>+996 312 65 66 10</p>
-                                    </td>
-                                    <td>
-                                        <ul>
-                                            <li class="fb">
-                                                <a href="https://www.facebook.com/DostukRadiosu?fref=ts">
-                                                    <i class="fa fa-facebook-square"></i>
-                                                    https://www.facebook.com/DostukRadiosu?fref=ts
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr>
+
                                 <tr>
                                     <td>"Балдар FM" радиосу</td>
                                     <td>Байланыш телефону:
@@ -223,92 +264,54 @@
                                     <td>
                                         <ul>
                                             <li class="fb">
-                                                <a href="https://www.facebook.com/BaldarFmRadiosu?fref=ts">
+                                                <a href="https://www.facebook.com/BaldarFmRadiosu">
                                                     <i class="fa fa-facebook-square"></i>
-                                                    https://www.facebook.com/BaldarFmRadiosu?fref=ts
+                                                    BaldarFmRadiosu
                                                 </a>
                                             </li>
                                         </ul>
                                     </td>
-                                </tr>
-                                <tr>
-                                    <td>Коомдук телерадиоберүү корпорациясынын интернет сайтын колдоо бөлүмү</td>
-                                    <td>Байланыш телефону:
-                                        <p>+996 312 39 22 38</p>
-                                        <p>Е-mail: <a href="mailto:ktrksite@gmail.com">ktrksite@gmail.com</a></p>
-                                    </td>
-                                    <td>
-                                        <ul>
-                                            <li class="fb">
-                                                <a href="https://www.facebook.com/KTRKkg?ref=hl">
-                                                    <i class="fa fa-facebook-square"></i>
-                                                    https://www.facebook.com/KTRKkg?ref=hl
-                                                </a>
-                                            </li>
-                                            <li class="tw">
-                                                <a href="https://twitter.com/KTRK_kg">
-                                                    <i class="fa fa-twitter-square"></i>
-                                                    https://twitter.com/KTRK_kg
-                                                </a>
-                                            </li>
-                                            <li class="yt">
-                                                <a href="http://www.youtube.com/KTRKkg">
-                                                    <i class="fa fa-youtube-square"></i>
-                                                    http://www.youtube.com/KTRKkg
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr>
+                                </tr>                                
                                 <tr>
                                     <td>"ЗАМАНА" студиясы</td>
                                     <td>Байланыш телефону: +996  312 67 01 87
                                         <p>Е-mail: <a href="mailto:zamana2020@mail.ru">zamana2020@mail.ru</a></p>
                                         <p>Дареги: Эркиндик бульвары, 122</p>
                                     </td>
-                                    <td></td>
+                                    <td>
+                                        <ul>
+                                            <li class="fb">
+                                                <a href="https://www.facebook.com/Zamanakg" target="_blank">
+                                                    <i class="fa fa-facebook-square"></i>
+                                                    Zamanakg
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td>Социалдык-экономикалык жана инновациялык программаларыны редакциясы </td>
-                                    <td>Байланыш телефону: +996 312 65 67 05
-                                        <p>Е-mail: <a href="mailto:aripova.otrk@gmail.com">aripova.otrk@gmail.com</a></p>
+                                    <td>Социалдык, экономикалык жана инновациялык  көрсөтүүлөрдүн редакциясы</td>
+                                    <td>Телефон: +996 312 65 67 05
+                                        <p>Е-mail: <a href="mailto:public@ktrk.kg">public@ktrk.kg</a></p>
                                     </td>
                                     <td></td>
                                 </tr>
                                 <tr>
-                                    <td>"Ибарат" маданий-таанып билүү телеберүүлөрүн даярдоо редакциясы </td>
-                                    <td>Байланыш телефону: +996 312 39 20 72
-                                        <p>Е-mail: <a href="mailto:nazira_aaly_kyzy@mail.ru">nazira_aaly_kyzy@mail.ru </a></p>
+                                    <td>"Ибарат"маданий студисы </td>
+                                    <td>Телефон: +996 312 39 20 72;
+                                        <p>+996 312 65 97 34</p>
+                                        <p>Е-mail: <a href="mailto:public@ktrk.kg">public@ktrk.kg</a></p>
                                     </td>
                                     <td></td>
                                 </tr>
                                 <tr>
                                     <td>"Жаштар" студиясы</td>
-                                    <td>Байланыш телефону: +996 312 65 21 00; +996 312 65 92 43
-                                        <p>Е-mail: <a href="mailto:sh-arapov@mail.ru">sh-arapov@mail.ru</a></p>
+                                    <td>Байланыш телефону: +996 312 65 21 00
+                                        <p>+996 312 65 92 43</p> 
+                                        <p>Е-mail: <a href="mailto:public@ktrk.kg">public@ktrk.kg</a></p>
                                     </td>
                                     <td></td>
                                 </tr>
-                                <tr>
-                                    <td>"Баластан" телеканалы</td>
-                                    <td>Байланыш телефону: +996 312 65 67 14; +996 312 65 66 44
-                                        <p>Е-mail: <a href="mailto:kunduzkan@mail.ru">kunduzkan@mail.ru</a></p>
-                                    </td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>"Музыка" телеканалы</td>
-                                    <td>Байланыш телефону: +996 312 65 66 48
-                                        <p>Е-mail: <a href="mailto:dinaraesengulova.muz@gmail.com">dinaraesengulova.muz@gmail.com</a></p>
-                                    </td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>"Арноо концерти"</td>
-                                    <td>Телефон: +996 312 39 20 49 </td>
-                                    <td></td>
-                                </tr>
-
                                 </tbody>
                             </table>
 
@@ -393,7 +396,7 @@
                                 </tr>
                                 <tr>
                                     <td>Заместитель генерального директора КТРК по радио</td>
-                                    <td>Приемная: +996 312 65 66 39
+                                    <td>Приемная: +996 312 39 20 59
                                         <p>Е-mail: <a href="mailto:public@ktrk.kg">public@ktrk.kg</a></p>
                                     </td>
                                     <td></td>
@@ -407,100 +410,107 @@
                                 </tr>
                                 <tr>
                                     <td>Наблюдательный совет КТРК</td>
-                                    <td>Приемная: +996 312 ­65 67 21
+                                    <td>Приемная: +996 312 65 67 21
                                         <p>Е-mail: <a href="mailto:sovetotv@gmail.com">sovetotv@gmail.com</a></p>
                                     </td>
-                                    <td>
-                                        <ul>
-                                            <li class="fb">
-                                                <a href="https://www.facebook.com/OTRKg" target="_blank">
-                                                    <i class="fa fa-facebook-square"></i>
-                                                    OTRKg
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </td>
+                                    <td></td>
                                 </tr>
                                 <tr>
                                     <td>Редакционный советник КТРК</td>
-                                    <td>Приемная: +996 312 ­65 67 21
+                                    <td>Приемная: +996 312 65 67 21
                                         <p>Е-mail: <a href="mailto:redsovetnik@ktrk.kg">redsovetnik@ktrk.kg</a></p>
                                     </td>
-                                    <td>
-                                        <ul>
-                                            <li class="fb">
-                                                <a href="https://www.facebook.com/sovetnik.otrk" target="_blank">
-                                                    <i class="fa fa-facebook-square"></i>
-                                                    Sovetnik.otrk
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Информационная программа "Ала-Тоо"</td>
-                                    <td>Приемная: +996 312 39 20 71
-                                        <p>Е-mail: <a href="mailto:alatoo@ntrk.kg">alatoo@ntrk.kg</a></p>
-                                    </td>
                                     <td></td>
-                                </tr>
-                                <tr>
-                                    <td>Рекламно-коммерческий отдел</td>
-                                    <td>Приемная: +996 312 39 15 80
-                                        <p>Е-mail: <a href="mailto:reklama.otrk@gmail.com">reklama.otrk@gmail.com</a></p>
-                                    </td>
-                                    <td></td>
-                                </tr>
+                                </tr>                                
                                 <tr>
                                     <td>Общественная приемная</td>
                                     <td>Телефон: +996 312 65 66 08
                                         <p>Административное здание КТРК, 1-этаж</p>
                                     </td>
                                     <td></td>
+                                </tr>                                
+                                <tr>
+                                    <td>Отдел по поддержке официального сайта КТРК</td>
+                                    <td>Телефон:
+                                        <p>+996 312 39 22 38</p>
+                                        <p>Е-mail: <a href="mailto:Е-mail:ktrksite@gmail.com">ktrksite@gmail.com</a></p>
+                                    </td>
+                                    <td></td>
                                 </tr>
                                 <tr>
-                                    <td>"Биринчи радио"</td>
-                                    <td>Телефон редакции: +996 312 65 84 99
-                                        <p>Е-mail: <a href="mailto:kabarlar@ntrk.kg">kabarlar@ntrk.kg</a></p>
+                                    <td>Рекламно-коммерческий отдел</td>
+                                    <td>Приемная: +996 312 39 15 80
+                                        <p>Е-mail: <a href="mailto:public@ktrk.kg">public@ktrk.kg</a></p>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Информационная программа "Ала-Тоо"</td>
+                                    <td>Телефон: +996 312 39 20 71
+                                        <p>Факс+996 312 39 20 71</p>
+                                        <p>Е-mail: <a href="mailto:alatoo@ntrk.kg">alatoo@ntrk.kg</a></p>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Телеканал "Музыка"</td>
+                                    <td>Телефон: +996 312 65 66 48
+                                        <p>Е-mail: <a href="mailto:dinaraesengulova.muz@gmail.com">dinaraesengulova.muz@gmail.com</a></p>
                                     </td>
                                     <td>
                                         <ul>
-                                            <li class="fb">
-                                                <a href="http://www.facebook.com/1radiokg" target="_blank">
-                                                    <i class="fa fa-facebook-square"></i>
-                                                    1Radiokg
+                                            <li class="yt">
+                                                <a href="https://www.youtube.com/user/muzykaktrk" target="_blank">
+                                                    <i class="fa fa-youtube-square"></i>
+                                                    muzykaktrk
                                                 </a>
                                             </li>
-                                            <li class="tw">
-                                                <a href="https://twitter.com/BirinchiRadio" target="_blank">
-                                                    <i class="fa fa-twitter-square"></i>
-                                                    BirinchiRadio
+                                            <li class="fb">
+                                                <a href="https://www.facebook.com/muzykaotrk" target="_blank">
+                                                    <i class="fa fa-facebook-square"></i>
+                                                    muzykaotrk
                                                 </a>
                                             </li>
                                         </ul>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>“Кыргыз радиосу”</td>
-                                    <td>Телефон редакции:
-                                        <p>+996 312 65 66 39</p>
-                                        <p>+996 312 65 67 19</p>
+                                    <td>Телеканал "Баластан"</td>
+                                    <td>Телефон: +996 312 65 67 14
+                                        <p>+996 312 65 66 44</p>
+                                        <p>Е-mail: <a href="mailto:public@ktrk.kg">public@ktrk.kg</a></p>
                                     </td>
                                     <td>
-
+                                        <ul>
+                                            <li class="fb">
+                                                <a href="https://www.facebook.com/BaldarFmRadiosu" target="_blank">
+                                                    <i class="fa fa-facebook-square"></i>
+                                                    BaldarFmRadiosu
+                                                </a>
+                                            </li>
+                                        </ul>
                                     </td>
-                                </tr>
+                                </tr>                                
                                 <tr>
-                                    <td>Радио "Миң кыял FM"</td>
-                                    <td>Телефон редакции:
-                                        <p>+996 312 65 10 26</p>
+                                    <td>Телеканал «КТРК Спорт»</td>
+                                    <td>Телефон: +996 312 65 21 00
+                                        <p>Е-mail: <a href="mailto:public@ktrk.kg">public@ktrk.kg</a></p>
                                     </td>
                                     <td>
+                                        <ul>
+                                            <li class="fb">
+                                                <a href="https://www.facebook.com/KTRKfootball" target="_blank">
+                                                    <i class="fa fa-facebook-square"></i>
+                                                    KTRKfootball
+                                                </a>
+                                            </li>
+                                        </ul>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Радио “Достук”</td>
-                                    <td>Телефон редакции:
+                                    <td>Телефон:
+                                        <p>+996 312 65 85 05</p>
                                         <p>+996 312 65 66 10</p>
                                     </td>
                                     <td>
@@ -515,8 +525,63 @@
                                     </td>
                                 </tr>
                                 <tr>
+                                    <td>"Биринчи радио"</td>
+                                    <td>Телефон: +996 312 65 84 99
+                                        <p>Е-mail: <a href="mailto:kabarlar@ntrk.kg">kabarlar@ntrk.kg</a></p>
+                                    </td>
+                                    <td>
+                                        <ul>
+                                            <li class="fb">
+                                                <a href="http://www.facebook.com/1radiokg" target="_blank">
+                                                    <i class="fa fa-facebook-square"></i>
+                                                    1Radiokg
+                                                </a>
+                                            </li>
+                                            <li class="tw">
+                                                <a href="https://twitter.com/BirinchiRadio" target="_blank">
+                                                    <i class="fa fa-twitter-square"></i>
+                                                    @BirinchiRadio
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>“Кыргыз радиосу”</td>
+                                    <td>Телефон:
+                                        <p>+996 312 65 66 39</p>
+                                        <p>+996 312 65 67 19</p>
+                                    </td>
+                                    <td>
+                                        <ul>
+                                            <li class="fb">
+                                                <a href="http://www.facebook.com/Kyrgyzradiosu" target="_blank">
+                                                    <i class="fa fa-facebook-square"></i>
+                                                    Kyrgyzradiosu
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Радио "Миң кыял FM"</td>
+                                    <td>Телефон:
+                                        <p>+996 312 65 10 26</p>
+                                    </td>
+                                    <td>
+                                        <ul>
+                                            <li class="fb">
+                                                <a href="http://www.facebook.com/MinKyalFm" target="_blank">
+                                                    <i class="fa fa-facebook-square"></i>
+                                                    MinKyalFm
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
                                     <td>Радио "Балдар FM"</td>
-                                    <td>Телефон редакции:
+                                    <td>Телефон:
                                         <p>+996 312 65 66 44</p>
                                     </td>
                                     <td>
@@ -531,77 +596,46 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>Отдел по поддержке официального сайта КТРК</td>
-                                    <td>Телефон редакции:
-                                        <p>+996 312 39 22 38</p>
-                                        <p>Е-mail: <a href="mailto:ktrksite@gmail.com">ktrksite@gmail.com</a></p>
+                                    <td>Студия "ЗАМАНА"</td>
+                                    <td>Телефон редакции: +996  312 67 01 87
+                                        <p>Е-mail: <a href="mailto:zamana2020@mail.ru">zamana2020@mail.ru</a></p>
+                                        <p>Адрес: Бульвар Эркиндик, 122</p>
                                     </td>
                                     <td>
                                         <ul>
                                             <li class="fb">
-                                                <a href="https://www.facebook.com/KTRKkg" target="_blank">
+                                                <a href="https://www.facebook.com/Zamanakg" target="_blank">
                                                     <i class="fa fa-facebook-square"></i>
-                                                    KTRKkg
-                                                </a>
-                                            </li>
-                                            <li class="tw">
-                                                <a href="https://twitter.com/KTRK_kg" target="_blank">
-                                                    <i class="fa fa-twitter-square"></i>
-                                                    @KTRK_kg
-                                                </a>
-                                            </li>
-                                            <li class="yt">
-                                                <a href="https://www.youtube.com/KTRKkg" target="_blank">
-                                                    <i class="fa fa-youtube-square"></i>
-                                                    KTRKkg
+                                                    Zamanakg
                                                 </a>
                                             </li>
                                         </ul>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>Студия "ЗАМАНА"</td>
-                                    <td>Телефон редакции: +996  312 67 01 87
-                                        <p>Е-mail: <a href="mailto:zamana2020@mail.ru">zamana2020@mail.ru</a></p>
-                                        <p>Адрес: Бульвар Эркиндик, 122</p>
-                                    </td>
-                                    <td></td>
-                                </tr>
-                                <tr>
                                     <td>Редакция социально-экономических и инновационных программ</td>
                                     <td>Телефон: +996 312 65 67 05
-                                        <p>Е-mail: <a href="mailto:aripova.otrk@gmail.com">aripova.otrk@gmail.com</a></p>
+                                        <p>Е-mail: <a href="mailto:public@ktrk.kg">public@ktrk.kg</a></p>
                                     </td>
                                     <td></td>
                                 </tr>
                                 <tr>
                                     <td>Редакция культурно-познавательных программ "Ибарат"</td>
                                     <td>Телефон: +996 312 39 20 72
-                                        <p>Е-mail: <a href="mailto:nazira_aaly_kyzy@mail.ru">nazira_aaly_kyzy@mail.ru </a></p>
+                                        <p>+996 312 65 97 34</p>
+                                        <p>Е-mail: <a href="mailto:public@ktrk.kg">public@ktrk.kg</a></p>
                                     </td>
                                     <td></td>
                                 </tr>
                                 <tr>
                                     <td>Студия "Жаштар"</td>
-                                    <td>Телефон: +996 312 65 21 00; +996 312 65 92 43
-                                        <p>Е-mail: <a href="mailto:sh-arapov@mail.ru">sh-arapov@mail.ru</a></p>
+                                    <td>Телефон: +996 312 65 21 00
+                                        <p>+996 312 65 92 43</p>
+                                        <p>Е-mail: <a href="mailto:public@ktrk.kg">public@ktrk.kg</a></p>
                                     </td>
                                     <td></td>
                                 </tr>
-                                <tr>
-                                    <td>Телеканал "Баластан"</td>
-                                    <td>Телефон: +996 312 65 67 14; +996 312 65 66 44
-                                        <p>Е-mail: <a href="mailto:kunduzkan@mail.ru">kunduzkan@mail.ru</a></p>
-                                    </td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>Телеканал "Музыка"</td>
-                                    <td>Телефон: +996 312 65 66 48
-                                        <p>Е-mail: <a href="mailto:dinaraesengulova.muz@gmail.com">dinaraesengulova.muz@gmail.com</a></p>
-                                    </td>
-                                    <td></td>
-                                </tr>
+
                                 </tbody>
                             </table>
 

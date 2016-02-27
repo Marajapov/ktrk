@@ -92,7 +92,7 @@
 <script src="{{ asset('js/lightgallery/lg-zoom.js') }}"></script>
 <script src="{{ asset('js/lightgallery/lg-hash.js') }}"></script>
 <script src="{{ asset('js/lightgallery/lg-pager.js') }}"></script>
-<script src="{{ asset('jslightgallery/jquery.mousewheel.min.js') }}"></script>
+<script src="{{ asset('js/lightgallery/jquery.mousewheel.min.js') }}"></script>
 <script type="text/javascript">
    $(document).ready(function() {
    $('#imageGallery').lightSlider({

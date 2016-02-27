@@ -193,6 +193,9 @@ header {
 .section-header2 {
   margin-top: 30px;
 }
+#photos .container .panel-body{
+ color: #292828;
+}
 .section-header2 .section-title, .section-header2 .section-title2 {
     position: relative;
     margin: 0px;
@@ -1707,16 +1710,17 @@ height: 325px;
   left: 10px;
 }
 #cta .slick-slide p{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  font-size: 18px;
-  line-height: 20px;
-  color: #ffffff;  
-  -webkit-transform:translateY(-50%) translateX(-50%);
-  -ms-transform:translateY(-50%) translateX(-50%);
-  -o-transform:translateY(-50%) translateX(-50%);
-  transform:translateY(-50%) translateX(-50%);
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    right: 10%;
+    font-size: 18px;
+    line-height: 20px;
+    color: #ffffff;
+    /* -webkit-transform: translateY(-50%) translateX(-50%); */
+    -ms-transform: translateY(-50%) translateX(-50%);
+    -o-transform: translateY(-50%) translateX(-50%);
+    /* transform: translateY(-30%) translateX(-30%); */
 }
 #cta .slick-slide span{
   position: absolute;

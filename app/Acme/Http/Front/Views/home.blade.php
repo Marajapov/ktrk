@@ -38,9 +38,17 @@
                                               </span>
                                         </p>
                                         <div class="news-title">
-                                            <a href="{{ route('front.post', [$generalPost1, $lc, $generalPost1->getLocaleTitle($lc)]) }}">
-                                                {{ $generalPost1->getTitleRuOrKg() }}
-                                            </a>
+                                            @if($generalPost1->birinchi == 1)
+
+                                                <a href="{{ route('birinchi.news', $generalPost1) }}">
+                                                    {{ $generalPost1->getTitleRuOrKg() }}
+                                                </a>
+                                                  
+                                            @else
+                                                <a href="{{ route('front.post', [$generalPost1, $lc, $generalPost1->getLocaleTitle($lc)]) }}">
+                                                    {{ $generalPost1->getTitleRuOrKg() }}
+                                                </a>
+                                            @endif
                                         </div>
                                     </figure>
                                 </div>
@@ -65,9 +73,17 @@
                                                 </span>
                                             </p>
                                             <div class="news-title">
-                                                <a href="{{ route('front.post', $generalPost2) }}">
-                                                    {{ $generalPost2->getTitleRuOrKg() }}
-                                                </a>
+                                                @if($generalPost2->birinchi == 1)
+
+                                                    <a href="{{ route('birinchi.news', $generalPost2) }}">
+                                                        {{ $generalPost2->getTitleRuOrKg() }}
+                                                    </a>
+                                                      
+                                                @else
+                                                    <a href="{{ route('front.post', [$generalPost2, $lc, $generalPost2->getLocaleTitle($lc)]) }}">
+                                                        {{ $generalPost2->getTitleRuOrKg() }}
+                                                    </a>
+                                                @endif
                                             </div>
                                         </figure>
                                     </div>
@@ -92,9 +108,17 @@
                                                 </span>
                                                 </p>
                                                 <div class="news-title">
-                                                    <a href="{{ route('front.post', $generalPost3) }}">
-                                                        {{ $generalPost3->getTitleRuOrKg() }}
-                                                    </a>
+                                                    @if($generalPost3->birinchi == 1)
+
+                                                        <a href="{{ route('birinchi.news', $generalPost3) }}">
+                                                            {{ $generalPost3->getTitleRuOrKg() }}
+                                                        </a>
+                                                          
+                                                    @else
+                                                        <a href="{{ route('front.post', [$generalPost3, $lc, $generalPost3->getLocaleTitle($lc)]) }}">
+                                                            {{ $generalPost3->getTitleRuOrKg() }}
+                                                        </a>
+                                                    @endif
                                                 </div>
                                             </figure>
                                         </div>
@@ -119,9 +143,17 @@
                                                 </span>
                                                     </p>
                                                     <div class="news-title">
-                                                        <a href="{{ route('front.post', $generalPost4) }}">
-                                                            {{ $generalPost4->getTitleRuOrKg() }}
-                                                        </a>
+                                                        @if($generalPost4->birinchi == 1)
+
+                                                            <a href="{{ route('birinchi.news', $generalPost4) }}">
+                                                                {{ $generalPost4->getTitleRuOrKg() }}
+                                                            </a>
+                                                              
+                                                        @else
+                                                            <a href="{{ route('front.post', [$generalPost4, $lc, $generalPost4->getLocaleTitle($lc)]) }}">
+                                                                {{ $generalPost4->getTitleRuOrKg() }}
+                                                            </a>
+                                                        @endif
                                                     </div>
                                                 </figure>
                                             </div>
@@ -146,9 +178,17 @@
                                                 </span>
                                                         </p>
                                                         <div class="news-title">
-                                                            <a href="{{ route('front.post', $generalPost5) }}">
-                                                                {{ $generalPost5->getTitleRuOrKg() }}
-                                                            </a>
+                                                            @if($generalPost5->birinchi == 1)
+
+                                                                <a href="{{ route('birinchi.news', $generalPost5) }}">
+                                                                    {{ $generalPost5->getTitleRuOrKg() }}
+                                                                </a>
+                                                                  
+                                                            @else
+                                                                <a href="{{ route('front.post', [$generalPost5, $lc, $generalPost5->getLocaleTitle($lc)]) }}">
+                                                                    {{ $generalPost5->getTitleRuOrKg() }}
+                                                                </a>
+                                                            @endif
                                                         </div>
                                                     </figure>
                                                 </div>
@@ -172,9 +212,17 @@
                                                 </span>
                                                             </p>
                                                             <div class="news-title">
-                                                                <a href="{{ route('front.post', $generalPost6) }}">
-                                                                    {{ $generalPost6->getTitleRuOrKg() }}
-                                                                </a>
+                                                                @if($generalPost6->birinchi == 1)
+
+                                                                    <a href="{{ route('birinchi.news', $generalPost6) }}">
+                                                                        {{ $generalPost6->getTitleRuOrKg() }}
+                                                                    </a>
+                                                                      
+                                                                @else
+                                                                    <a href="{{ route('front.post', [$generalPost6, $lc, $generalPost6->getLocaleTitle($lc)]) }}">
+                                                                        {{ $generalPost6->getTitleRuOrKg() }}
+                                                                    </a>
+                                                                @endif
                                                             </div>
                                                         </figure>
                                                     </div>
