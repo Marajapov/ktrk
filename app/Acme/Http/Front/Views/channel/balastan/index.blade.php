@@ -27,8 +27,8 @@
                <article>
                   <div class="show-info">
                      <h1 class="show-name">Таалимтай</h1>
-                    <span class="show-day">{{ trans('site.Saturday') }} - 9:45</span>
-                    <span class="show-time">{{ trans('site.Sunday') }} - 10:35</span>
+                     <span class="show-day">{{ trans('site.Saturday') }} - {{ trans('site.Sunday') }}</span>
+                     <span class="show-time">9:45 / 10:35</span>                    
                   </div>
                   <div class="show-img">
                      <img src="{{ asset('images/channels/balastan/slider/taalim.png') }}" alt="" draggable="false">

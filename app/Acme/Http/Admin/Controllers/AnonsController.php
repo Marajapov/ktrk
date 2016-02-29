@@ -74,7 +74,7 @@ class AnonsController extends Controller
                 if($request->dostuktop == 1){
                     Image::make($_FILES['thumbnail']['tmp_name'])->fit(555, 340)->save($dir.'/'.$name);
                 }else{
-                     Image::make($_FILES['thumbnail']['tmp_name'])->fit(1600, 600)->save($dir.'/'.$name);
+                     Image::make($_FILES['thumbnail']['tmp_name'])->fit(1600, 700)->save($dir.'/'.$name);
                 }             
             } elseif($request->channel == 9) { 
                 if($request->minkiyaltop == 1){
@@ -163,7 +163,7 @@ class AnonsController extends Controller
                 if($request->dostuktop == 1){
                     Image::make($_FILES['thumbnail']['tmp_name'])->fit(555, 340)->save($dir.'/'.$name);
                 }else{
-                     Image::make($_FILES['thumbnail']['tmp_name'])->fit(1600, 600)->save($dir.'/'.$name);
+                     Image::make($_FILES['thumbnail']['tmp_name'])->fit(1600, 700)->save($dir.'/'.$name);
                 }
             } elseif($request->channel == 9) { 
                 if($request->minkiyaltop == 1){

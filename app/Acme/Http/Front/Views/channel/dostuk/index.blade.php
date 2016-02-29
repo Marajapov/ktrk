@@ -11,7 +11,7 @@
          <div class="owl-carousel">
             @foreach($anons as $row)
             <div class="item">
-               <img src="{{asset($row->thumbnail)}}" height="600" width="1366" alt="">
+               <img src="{{asset($row->thumbnail)}}" width="1366" alt="">
                <div class="slider-inner">
                   <div class="container">
                      <div class="row">

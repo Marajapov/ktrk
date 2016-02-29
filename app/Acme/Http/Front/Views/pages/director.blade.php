@@ -474,7 +474,7 @@
                         <a target="_blank" href="{{ asset('static/files/report/2015_ru.pdf') }}">КТРКнын 2015-жылдык ишинин отчету</a>
                       </div>
                       <div class="media-right">
-                        <a target="_blank" href="{{ asset('static/files/report/2015_ru.pdf') }}" class="btn btn-default"><i class="fa fa-file-pdf-o"></i></a>
+                        <a target="_blank" href="{{ asset('static/files/report/2015_kg.pdf') }}" class="btn btn-default"><i class="fa fa-file-pdf-o"></i></a>
                       </div>
                     </div>
                   </li>                  

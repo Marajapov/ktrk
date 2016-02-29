@@ -456,7 +456,7 @@ ul.nostyle i {
     overflow: hidden;
 }
 #main-slider .item {
-  height: 600px;
+  height: auto;
   width: auto;
   background-repeat: no-repeat;
   background-position: 100% 0;

@@ -10,7 +10,7 @@ class DostukController extends Controller
 
     public function Home()
     {
-         return view('Front::channel.dostuk.comingsoon',[]);
+        // return view('Front::channel.dostuk.comingsoon',[]);
 
         $channel = \Model\Channel\ModelName::name('dostuk')->first();
 
