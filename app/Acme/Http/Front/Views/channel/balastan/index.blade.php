@@ -13,43 +13,40 @@
                   <div class="show-info">
                      <h1 class="show-name">Баарын билгим келет</h1>
                      <span class="show-day">{{ trans('site.Monday') }} - {{ trans('site.Friday') }}</span>
-                     <span class="show-time">19:30</span>
-                     <a class="show-btn" href="#">
+                     <span class="show-time">19:30 / 21:30</span>
+<!--                      <a class="show-btn" href="#">
                      Подробнее
-                     </a>
+                     </a> -->
                   </div>
                   <div class="show-img">
-                     <img src="{{ asset('images/channels/balastan/slider/1.png') }}" alt="" draggable="false">
+                     <img src="{{ asset('images/channels/balastan/slider/1.png') }}" alt="" draggable="false" style="width: 80%;">
                   </div>
                </article>
             </div>
             <div>
                <article>
                   <div class="show-info">
-                     <h1 class="show-name">Баарын билгим келет</h1>
-                     <span class="show-day">{{ trans('site.Monday') }} - {{ trans('site.Friday') }}</span>
-                     <span class="show-time">19:30 / 21:30</span>
-                     <a class="show-btn" href="#">
-                     Подробнее
-                     </a>
+                     <h1 class="show-name">Таалимтай</h1>
+                    <span class="show-day">{{ trans('site.Saturday') }} - 9:45</span>
+                    <span class="show-time">{{ trans('site.Sunday') }} - 10:35</span>
                   </div>
                   <div class="show-img">
-                     <img src="{{ asset('images/channels/balastan/slider/1.png') }}" alt="" draggable="false">
+                     <img src="{{ asset('images/channels/balastan/slider/taalim.png') }}" alt="" draggable="false">
                   </div>
                </article>
             </div>
             <div>
                <article>
                   <div class="show-info">
-                     <h1 class="show-name">Баарын билгим келет</h1>
-                     <span class="show-day">{{ trans('site.Monday') }} - {{ trans('site.Friday') }}</span>
-                     <span class="show-time">19:30 / 21:30</span>
-                     <a class="show-btn" href="#">
+                     <h1 class="show-name">Бирге окуйбуз</h1>
+                     <span class="show-day">{{ trans('site.Wednesday') }}</span>
+                     <span class="show-time">17:30</span>
+ <!--                     <a class="show-btn" href="#">
                      Подробнее
-                     </a>
+                     </a> -->
                   </div>
                   <div class="show-img">
-                     <img src="{{ asset('images/channels/balastan/slider/1.png') }}" alt="" draggable="false">
+                     <img src="{{ asset('images/channels/balastan/slider/birge.png') }}" alt="" draggable="false"style="height: 80%;width: initial;">
                   </div>
                </article>
             </div>

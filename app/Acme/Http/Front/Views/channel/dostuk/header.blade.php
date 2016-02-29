@@ -1,6 +1,6 @@
 <header id="header">
 
-   <nav id="main-menu" class="container navbar navbar-default fixedheader2 ">
+   <nav id="main-menu" class="container navbar navbar-default ">
          <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="sr-only">Меню</span>
@@ -28,12 +28,6 @@
                </li>
                <li><a href="{{route('dostuk.allphotos')}}"><i class="fa fa-picture-o"></i> Сүрөтбаяндар</a></li>
                <li><a href="{{route('dostuk.home')}}#about"><i class="fa fa-info"></i>Радио жөнүндө</a></li>
-            </ul>
-         </div>
-         <div class="languages">
-            <ul>
-               <li @if(app()->getlocale() == 'kg') class="active" @endif><a href="/locale/kg">кырг <span></span></a></li>
-               <li @if(app()->getlocale() == 'ru') class="active" @endif><a href="/locale/ru">рус <span></span></a></li>
             </ul>
          </div>
    </nav>

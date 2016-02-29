@@ -50,4 +50,11 @@
       </div>
       <!-- /.navbar-collapse -->
    </nav>
+         <div class="languages">
+            <ul>
+               <li @if(app()->getlocale() == 'kg') class="active" @endif><a href="/locale/kg">кырг <span></span></a></li>
+               <li @if(app()->getlocale() == 'ru') class="active" @endif><a href="/locale/ru">рус <span></span></a></li>
+            </ul>
+         </div>
 </div>
+

@@ -691,7 +691,7 @@
     vertical-align: bottom;
 }
 .show-img img{
-    width: 80%;
+/*    width: 80%;*/
 }
 .shows-carousel .slick-dots{
     bottom: 50px;

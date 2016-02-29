@@ -109,7 +109,7 @@
 
    </div>
    @stop
-   @section('footerscript2')
+   @section('footerScript')
    <script src="{{ asset('js/jquery-migrate-1.2.1.min.js') }}"></script>
    <script src="{{ asset('slick/slick.min.js') }}"></script>
    <script src="{{ asset('js/lightslider.js') }}"></script>

@@ -333,9 +333,9 @@ class PageController extends Controller
             $related3Post = null;
         }
         if($lc == 'kg'){
-            $relatedPosts = \Model\Post\ModelName::where('category_id','=',$post->category_id)->languagekg()->take(6)->skip(0)->orderBy('id', 'desc')->get();
+            $relatedPosts = \Model\Post\ModelName::where('category_id','=',$post->category_id)->where('fbpost','<>','1')->languagekg()->take(7)->skip(0)->orderBy('id', 'desc')->get();
         }elseif($lc == 'ru'){
-            $relatedPosts = \Model\Post\ModelName::where('category_id','=',$post->category_id)->languageru()->take(6)->skip(0)->orderBy('id', 'desc')->get();
+            $relatedPosts = \Model\Post\ModelName::where('category_id','=',$post->category_id)->where('fbpost','<>','1')->languageru()->take(7)->skip(0)->orderBy('id', 'desc')->get();
         }
 
         if($lc == 'kg'){

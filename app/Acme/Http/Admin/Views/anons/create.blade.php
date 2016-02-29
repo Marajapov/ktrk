@@ -126,6 +126,7 @@
                         $('#balastanAnons').show();                        
                         $('#minkiyalAnons').hide();
                         $('#kyrgyzradioanons').hide();
+                        $('#dostukAnons').hide();
                         $('#nameKg').show();
                         $('#nameRu').show();
                         $('#editorTextArea').hide();
@@ -142,6 +143,7 @@
                         $('#balastanAnons').hide();                        
                         $('#minkiyalAnons').show();
                         $('#kyrgyzradioanons').hide();
+                        $('#dostukAnons').hide();
                         $('#nameKg').show();
                         $('#nameRu').hide();
                         $('#editorTextArea').show();
@@ -158,6 +160,7 @@
                         $('#balastanAnons').hide();                        
                         $('#minkiyalAnons').hide();
                         $('#kyrgyzradioanons').hide();
+                        $('#dostukAnons').hide();
                         $('#nameKg').show();
                         $('#nameRu').show();
                         $('#editorTextArea').hide();
@@ -174,6 +177,7 @@
                         $('#balastanAnons').hide();                        
                         $('#minkiyalAnons').hide();
                         $('#kyrgyzradioanons').hide();
+                        $('#dostukAnons').hide();
                         $('#nameKg').show();
                         $('#nameRu').show();
                         $('#editorTextArea').hide();
@@ -190,6 +194,7 @@
                         $('#balastanAnons').hide();                        
                         $('#minkiyalAnons').hide();
                         $('#kyrgyzradioanons').show();
+                        $('#dostukAnons').hide();
                         $('#nameKg').show();
                         $('#nameRu').hide();
                         $('#editorTextArea').show();
@@ -206,6 +211,7 @@
                         $('#balastanAnons').hide();                        
                         $('#minkiyalAnons').hide();
                         $('#kyrgyzradioanons').hide();
+                        $('#dostukAnons').show();
                         $('#nameKg').show();
                         $('#nameRu').hide();
                         $('#editorTextArea').hide();
@@ -221,6 +227,7 @@
                         $('#balastanAnons').hide();                        
                         $('#minkiyalAnons').hide();
                         $('#kyrgyzradioanons').hide();
+                        $('#dostukAnons').hide();
                         $('#nameKg').hide();
                         $('#nameRu').hide();
                         $('#editorTextArea').hide();

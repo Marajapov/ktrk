@@ -4,8 +4,6 @@
 @endsection
 @section('content')
 @include('Front::channel.dostuk.nav')
-<div class="main-container">
-@include('Front::channel.dostuk.header')
 
    <section id="main-slider">
       <div class="owl-carousel">
@@ -13,7 +11,7 @@
          <div class="owl-carousel">
             @foreach($anons as $row)
             <div class="item">
-               <img src="{{asset($row->thumbnail)}}" height="358" width="1170" alt="">
+               <img src="{{asset($row->thumbnail)}}" height="600" width="1366" alt="">
                <div class="slider-inner">
                   <div class="container">
                      <div class="row">
@@ -34,19 +32,54 @@
       </div>
       <!--/.owl-carousel-->
    </section>
+@include('Front::channel.dostuk.header')
+<div class="main-container">
    <!--/#main-slider-->
-
-
-   <div id="homepage" class="container">
-      <section id="cta2">
-         <div class="container">
-            <div class="section-header3">
-               <h2 class="section-title text-center wow fadeInDown"></h2>
-               <h2 data-wow-duration="300ms" data-wow-delay="0ms"><span>{{ trans('radiopages.DostukSlogan') }}</span></h2>
-               <h2 class="section-title text-center wow fadeInDown"></h2>
+   <div id="homepage">
+<!--       <section id="cta2">
+            <div class="container">
+               <div class="section-header3">
+                  <h2 class="section-title text-center wow fadeInDown"></h2>
+                  <h2 data-wow-duration="300ms" data-wow-delay="0ms"><span>{{ trans('radiopages.DostukSlogan') }}</span></h2>
+                  <h2 class="section-title text-center wow fadeInDown"></h2>
+               </div>
             </div>
+      </section> -->
+   <section id="anonses">
+      <div class="row">
+         @if($dostuktop)
+         <div class="info">
+            @foreach($dostuktop as $key=> $row)
+            <div class="col-md-4 col-sm-12 postshow">
+               <a href="#" data-toggle="modal" data-target="#{{ $key+99 }}">
+                  <img src="{{asset($row->thumbnail)}}" class="img-responsive" alt="">
+                  <h3>{{$row->name}}</h3>
+               </a>
+            </div>
+            <!-- Modal -->
+            <div id="{{ $key+99 }}" class="modal fade" role="dialog">
+               <div class="modal-dialog modal-lg">
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                     <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
+                        <h4 class="modal-title">{{$row->name}}</h4>
+                     </div>
+                     <div class="modal-body">
+                        {!! $row->getDesc() !!}
+                     </div>
+                     <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Жабуу</button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            @endforeach
+            @endif
          </div>
-      </section>
+         
+      </div>
+   </section>
       <section id="services" >
          <div class="container">
             <div class="section-header">
@@ -206,4 +239,7 @@
    </div>
 
 </div>
+@stop
+@section('footerScript')
+
 @stop

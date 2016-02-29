@@ -10,7 +10,7 @@ class DostukController extends Controller
 
     public function Home()
     {
-        // return view('Front::channel.dostuk.comingsoon',[]);
+         return view('Front::channel.dostuk.comingsoon',[]);
 
         $channel = \Model\Channel\ModelName::name('dostuk')->first();
 
@@ -27,7 +27,8 @@ class DostukController extends Controller
         }
 
         $dostukProjects = \Model\Project\ModelName::where('published','=',true)->where('dostuk', '=', 1)->get();
-        $anons = \Model\Anons\ModelName::where('channel','=','8')->where('published','=','1')->orderBy('id','=','desc')->take(2)->get();
+        $anons = \Model\Anons\ModelName::where('channel','=','8')->where('published','=','1')->where('dostuktop','<>','1')->orderBy('id','=','desc')->take(2)->get();
+        $dostuktop = \Model\Anons\ModelName::where('channel','=','8')->where('dostuktop','=','1')->where('published','=','1')->orderBy('id','=','desc')->take(3)->get();
 
         return view('Front::channel.dostuk.index', [
             'channel' => $channel,
@@ -36,6 +37,7 @@ class DostukController extends Controller
             'photoGalleries' => $photoGalleries,
             'allPost' => $allPost,
             'dostukProjects' => $dostukProjects,
+            'dostuktop' => $dostuktop,
 
             ]);
     }
