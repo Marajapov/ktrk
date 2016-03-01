@@ -4419,7 +4419,8 @@ background-size: cover;
 }
 
 .copyright{
-    padding: 12px 0 11px;
+    position: relative;
+    padding: 0px 0 5px;
     margin: 0;
     font-size: 13px;
     line-height: 1;

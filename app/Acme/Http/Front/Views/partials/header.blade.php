@@ -61,7 +61,7 @@
                                 <li class="fb"><a href="https://www.facebook.com/KTRKkg"><i class="fa fa-facebook"></i></a></li>
                                 <li class="ok"><a href="http://ok.ru/ktrkkg"><i class="fa fa-odnoklassniki"></i></a></li>
                                 <li class="yt"><a href="https://www.youtube.com/channel/UCOD3MESjXSvqYZcWWnZkdMQ"><i class="fa fa-youtube"></i></a></li>
-                                <li class="in"><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                <li class="in"><a href="https://www.instagram.com/ktrk_live/"><i class="fa fa-instagram"></i></a></li>
                             </ul>
 
                             <a class="search-toggle"><i class="fa fa-search"></i></a>
