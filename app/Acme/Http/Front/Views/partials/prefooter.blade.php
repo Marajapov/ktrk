@@ -77,10 +77,13 @@
                 <li><a href="{{ route('front.pages.contacts') }}">{{ trans('site.Contacts') }}</a></li>
             </ul>
 
-            <h4 class="copyright"><i class="fa fa-copyright"></i><?php echo date("Y"); ?> {{ trans('site.TradeMark') }}</h4>
-            <p class="text-center" style="margin: 0; font-size: 13px;">{{ trans('site.Developed') }} <a href="http://ulut.kg/" target="_blank">Улут Софт</a></p>
-
+            <h4 class="copyright"><i class="fa fa-copyright"></i>{{ trans('site.TradeMark') }}, 2010-<?php echo date("Y"); ?>. {{ trans('site.TradeMarkAll') }} </h4>
+            <h4 class="copyright">{{ trans('site.TradeMarkRegulations') }} </h4>            
         </div>
+            <h4 class="copyright">{{ trans('site.TradeMarkAddress') }} / {{ trans('site.TradeMarkTel') }} / {{ trans('site.TradeMarkEmail') }} / {{ trans('site.TradeMarkPart') }}</h4>
+            <h4 class="copyright">{{ trans('site.TradeMarkKtrk') }} </h4>
+
+            <p class="text-center" style="margin: 5px 0 0; font-size: 13px;">{{ trans('site.Developed') }} <a href="http://ulut.kg/" target="_blank">Улут Софт</a></p>
     </div>
 
 </div>

@@ -141,7 +141,7 @@
       <!--/#services-->
       <section id="portfolio">
          <div class="container">
-            <div class="section-header2">
+            <div class="section-header">
                <h2 class="section-title text-center wow fadeInDown">{{ trans('radiopages.PhotoReports') }}</h2>
             </div>
             <div class="panel-body">
@@ -182,11 +182,13 @@
                <p class="text-center wow fadeInDown">{{ trans('radiopages.AboutDostukup') }}</p>
             </div>
             <div class="row">
-            <h3 class="column-title">{{ trans('radiopages.AboutAim') }}</h3>
-               <div class="col-sm-4 wow fadeInLeft">
-                  <p>{{ trans('radiopages.AboutPromo') }}</p>
+               <div class="container">
+                   <h3 class="column-title">{{ trans('radiopages.AboutAim') }}</h3>
+               </div>   
+               <div class="col-sm-12 wow fadeInLeft">
+                  <p class="text-center wow fadeInDown">{{ trans('radiopages.AboutPromo') }}</p>
                </div>
-               <div class="col-sm-8 wow fadeInRight">                  
+               <div class="col-sm-12 wow fadeInRight">                  
                   <p>{{ trans('radiopages.DostukText1') }}</p>
                   <p>{{ trans('radiopages.DostukText2') }}</p>
                   <p>{{ trans('radiopages.DostukText3') }}</p>
