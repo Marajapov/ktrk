@@ -105,7 +105,7 @@
                     <a href="{{ route('muzkanal.video', $top1)}}">
                       <img src="http://img.youtube.com/vi/{{ $top1->getUrl() }}/mqdefault.jpg" alt=""/></a>
                     @if($top1->exclusive == 1)
-                      <div class="ishit">Экслюзив!</div>
+                      <div class="ishit">Эксклюзив!</div>
                     @endif
                     <div class="views"><i class="fa fa-eye"></i>{{ $top1->getViewed() }}</div>
                     <div class="item-desc">
@@ -151,7 +151,7 @@
                         </ul>
                       </div>
                       @if($relatedmuzkanalVideo->exclusive == 1)
-                        <div class="ishit">Экслюзив!</div>
+                        <div class="ishit">Эксклюзив!</div>
                       @endif
                       <div class="views"><i class="fa fa-eye"></i>{{ $relatedmuzkanalVideo->getViewed() }}</div>
                     </div>
