@@ -203,10 +203,11 @@ header {
 }
 .section-header p {
   font-size: 17px;
+  color: #444343;
 }
 .section-header .section-title {
   font-size: 44px;
-  color: #01937F;
+  color: #F44336;
   text-transform: uppercase;
   position: relative;
   padding-bottom: 20px;
@@ -219,7 +220,7 @@ header {
   width: 640px;
   bottom: 0;
   height: 2px;
-  background: #0CB2AB;
+  background: #009688;
   left: 0;
   right: 0;
   margin: auto;
@@ -236,9 +237,7 @@ header {
   border-radius: 20px;
   background: #607D8B;
 }
-.section-header2 {
-  margin-bottom: 50px;
-}
+
 .section-header2 .section-title, .section-header2 .section-title2 {
   font-size: 44px;
   color: #00937F;
@@ -248,17 +247,7 @@ header {
   margin: 0 0 20px;
   font-family: 'Roboto condensed';
 }
-.section-header2 .section-title:before, .section-header2 .section-title2:before {
-  content: "";
-  position: absolute;
-  width: 640px;
-  bottom: 0;
-  height: 2px;
-  background: #0CB2AB;
-  left: 0;
-  right: 0;
-  margin: auto;
-}
+
 .section-header2 .section-title:after, .section-header2 .section-title2:after {
   content: "";
   position: absolute;
@@ -452,82 +441,6 @@ ul.nostyle i {
     background-color: transparent;
   }
 }
-#main-slider {
-    overflow: hidden;
-}
-#main-slider .item {
-  height: auto;
-  width: auto;
-  background-repeat: no-repeat;
-  background-position: 100% 0;
-  background-size: cover;
-}
-#main-slider .slider-inner {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  color: #fff;
-}
-#main-slider .slider-inner h2 {
-  margin-top: 250px;
-  font-size: 36px;
-  line-height: 1;
-  text-transform: uppercase;
-  color: #fff;
-}
-#main-slider .slider-inner p {
-  font-size: 24px;
-}
-#main-slider .slider-inner h2 > span {
-  color: #FFFFFF;
-  font-family: 'Roboto regular';
-}
-#main-slider .slider-inner .btn {
-  margin-top: 10px;
-}
-#main-slider .owl-prev, #main-slider .owl-next {
-  position: absolute;
-  top: 50%;
-  color: #fff;
-  font-size: 30px;
-  display: inline-block;
-  margin-top: -35px;
-  height: 70px;
-  width: 70px;
-  line-height: 70px;
-  text-align: center;
-  border-radius: 100px !important;
-  z-index: 5;
-  -webkit-transition: background-color 400ms;
-  transition: background-color 400ms;
-}
-#main-slider .owl-prev:hover, #main-slider .owl-next:hover {
-  background-color: #2196F3;
-}
-#main-slider .owl-prev {
-  left: -35px;
-  text-indent: 14px;
-}
-#main-slider .owl-next {
-  right: -35px;
-  text-indent: -14px;
-}
-#bar {
-  width: 0%;
-  max-width: 100%;
-  height: 4px;
-  background: #45aed6;
-}
-#progressBar {
-  margin-top: -4px;
-  position: relative;
-  z-index: 999;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.1);
-  display: none;
-}
 #cta {
   padding: 5px 0;
   background-color: #eeeeee;
@@ -571,7 +484,7 @@ ul.nostyle i {
   margin-top: 80px;
 }
 #services {
-  padding: 100px 0 75px;
+  padding: 20px 0 75px;
 }
 .media.service-box {
   margin: 25px 0;
@@ -618,7 +531,7 @@ ul.nostyle i {
 }
 
 #portfolio2 {
-  padding: 100px 0;
+  padding: 50px 0;
   background: #FF5722;
 }
 #portfolio .section-header2 .section-title, #portfolio2 .section-header2 .section-title {
@@ -629,9 +542,6 @@ ul.nostyle i {
   color: #607D8B;
 }
 
-#portfolio .section-header2 .section-title:before, #portfolio2 .section-header2 .section-title:before  {
-  background: #fff;
-}
 #portfolio .portfolio-filter, #portfolio2 .portfolio-filter {
   list-style: none;
   padding: 0;
@@ -1350,7 +1260,7 @@ ul.nostyle i {
 
 }
 .modal-header{
-  background: #04549C;
+  background: #F44336;
 }
 
 .modal-title{
@@ -1380,3 +1290,31 @@ ul.nostyle i {
 }
 
 /*  END ANONS*/
+
+/* BEGIN Slider*/
+
+#main-slider .banners{
+  position: relative;
+}
+#main-slider .banners .slick-next {
+    right: 25px;
+
+}
+#main-slider .banners .slick-next:before{
+    color: #fff !important;
+}
+#main-slider .banners .slick-prev{
+  left: 25px;
+  z-index: 1;
+}
+#main-slider .banners .banners-content{
+  position: absolute;
+  bottom: 20%;
+}
+#main-slider .banners .banners-content h2{
+  font-size: 40px;
+  font-weight: bold;
+  font-family: 'Roboto regular';
+  color: #fff;
+}
+/* END Slider*/

@@ -4,105 +4,69 @@
 @endsection
 @section('content')
 @include('Front::channel.dostuk.nav')
-
-   <section id="main-slider">
-
-<!--     <div class="shows-slider">
-        <div class="slider-overlay"></div>
-        <div class="shows-carousel container">
-            @if($anons)
-                @foreach($anons as $row)
-                    <div>
-                        <div class="overlay"></div>
-                        <a href="{{ $row->url }}">
-                            <img src="{{ asset($row->thumbnail) }}" alt=""/>
-                        </a>
-                        <div class="show-info">
-                            <h4>{{ $row->getNameOne() }}</h4>
-                            <span class="show-day">{{ $row->getWeekDayOne() }}</span>
-                            <span class="show-time">{{ $row->time }}</span>
-                        </div>
-                    </div>
-                @endforeach
-            @endif
-
-        </div>
-    </div> -->
-
-      <div class="owl-carousel">
-         @if($anons->first())
-         <div class="owl-carousel">
-            @foreach($anons as $row)
-            <div class="item">
-               <img src="{{asset($row->thumbnail)}}" width="1366" alt="">
-               <div class="slider-inner">
-                  <div class="container">
-                     <div class="row">
-                        <div class="col-sm-6">
-                           <div class="carousel-content">
-                              <h2><span>{{ $row->getNameOne() }}</span></h2>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
+<section id="main-slider">
+   <div class="banners">
+      @if($anons->first())
+      @foreach($anons as $row)
+      <div>
+         <img src="{{asset($row->thumbnail)}}" width="1366" alt="">
+         <div class="container">
+            <div class="banners-content">
+               <h2><span>{{ $row->getNameOne() }}</span></h2>
             </div>
-            <!--/.item-->
-            @endforeach
          </div>
-         <!--/.owl-carousel-->
-         @endif
       </div>
-      <!--/.owl-carousel-->
-   </section>
+      @endforeach
+      @endif
+   </div>
+</section>
 @include('Front::channel.dostuk.header')
 <div class="main-container">
    <!--/#main-slider-->
    <div id="homepage">
-<!--       <section id="cta2">
-            <div class="container">
-               <div class="section-header3">
-                  <h2 class="section-title text-center wow fadeInDown"></h2>
-                  <h2 data-wow-duration="300ms" data-wow-delay="0ms"><span>{{ trans('radiopages.DostukSlogan') }}</span></h2>
-                  <h2 class="section-title text-center wow fadeInDown"></h2>
+      <!--       <section id="cta2">
+         <div class="container">
+            <div class="section-header3">
+               <h2 class="section-title text-center wow fadeInDown"></h2>
+               <h2 data-wow-duration="300ms" data-wow-delay="0ms"><span>{{ trans('radiopages.DostukSlogan') }}</span></h2>
+               <h2 class="section-title text-center wow fadeInDown"></h2>
+            </div>
+         </div>
+         </section> -->
+      <section id="anonses">
+         <div class="row">
+            @if($dostuktop)
+            <div class="info">
+               @foreach($dostuktop as $key=> $row)
+               <div class="col-md-4 col-sm-12 postshow">
+                  <a href="#" data-toggle="modal" data-target="#{{ $key+99 }}">
+                     <img src="{{asset($row->thumbnail)}}" class="img-responsive" alt="">
+                     <h3>{{$row->name}}</h3>
+                  </a>
                </div>
-            </div>
-      </section> -->
-   <section id="anonses">
-      <div class="row">
-         @if($dostuktop)
-         <div class="info">
-            @foreach($dostuktop as $key=> $row)
-            <div class="col-md-4 col-sm-12 postshow">
-               <a href="#" data-toggle="modal" data-target="#{{ $key+99 }}">
-                  <img src="{{asset($row->thumbnail)}}" class="img-responsive" alt="">
-                  <h3>{{$row->name}}</h3>
-               </a>
-            </div>
-            <!-- Modal -->
-            <div id="{{ $key+99 }}" class="modal fade" role="dialog">
-               <div class="modal-dialog modal-lg">
-                  <!-- Modal content-->
-                  <div class="modal-content">
-                     <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
-                        <h4 class="modal-title">{{$row->name}}</h4>
-                     </div>
-                     <div class="modal-body">
-                        {!! $row->getDesc() !!}
-                     </div>
-                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Жабуу</button>
+               <!-- Modal -->
+               <div id="{{ $key+99 }}" class="modal fade" role="dialog">
+                  <div class="modal-dialog modal-lg">
+                     <!-- Modal content-->
+                     <div class="modal-content">
+                        <div class="modal-header">
+                           <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
+                           <h4 class="modal-title">{{$row->name}}</h4>
+                        </div>
+                        <div class="modal-body">
+                           {!! $row->getDesc() !!}
+                        </div>
+                        <div class="modal-footer">
+                           <button type="button" class="btn btn-default" data-dismiss="modal">Жабуу</button>
+                        </div>
                      </div>
                   </div>
                </div>
+               @endforeach
+               @endif
             </div>
-            @endforeach
-            @endif
          </div>
-         
-      </div>
-   </section>
+      </section>
       <section id="services" >
          <div class="container">
             <div class="section-header">
@@ -178,7 +142,7 @@
       <section id="portfolio">
          <div class="container">
             <div class="section-header2">
-               <h2 class="section-title text-center wow fadeInDown">{{ trans('radiopages.Photos') }}</h2>
+               <h2 class="section-title text-center wow fadeInDown">{{ trans('radiopages.PhotoReports') }}</h2>
             </div>
             <div class="panel-body">
                <section>
@@ -218,15 +182,11 @@
                <p class="text-center wow fadeInDown">{{ trans('radiopages.AboutDostukup') }}</p>
             </div>
             <div class="row">
+            <h3 class="column-title">{{ trans('radiopages.AboutAim') }}</h3>
                <div class="col-sm-4 wow fadeInLeft">
-                  <h3 class="column-title">Логотип</h3>
-                  <div class="img-responsive">
-                     <img src="{{asset('images/channels/dostuk.png')}}" alt="">
-                  </div>
                   <p>{{ trans('radiopages.AboutPromo') }}</p>
                </div>
-               <div class="col-sm-8 wow fadeInRight">
-                  <h3 class="column-title">{{ trans('radiopages.AboutAim') }}</h3>
+               <div class="col-sm-8 wow fadeInRight">                  
                   <p>{{ trans('radiopages.DostukText1') }}</p>
                   <p>{{ trans('radiopages.DostukText2') }}</p>
                   <p>{{ trans('radiopages.DostukText3') }}</p>
@@ -260,9 +220,18 @@
       </section>
       <!--/#get-in-touch-->
    </div>
-
 </div>
 @stop
 @section('footerScript')
-
+<script>
+   $('.banners').slick({
+     dots: false,
+     infinite: true,
+     arrows: true,
+     speed: 300,
+     slidesToShow: 1,
+     fade: true,
+     cssEase: 'linear'
+   });
+</script>
 @stop
