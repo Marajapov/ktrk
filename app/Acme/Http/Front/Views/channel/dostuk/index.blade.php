@@ -6,6 +6,29 @@
 @include('Front::channel.dostuk.nav')
 
    <section id="main-slider">
+
+<!--     <div class="shows-slider">
+        <div class="slider-overlay"></div>
+        <div class="shows-carousel container">
+            @if($anons)
+                @foreach($anons as $row)
+                    <div>
+                        <div class="overlay"></div>
+                        <a href="{{ $row->url }}">
+                            <img src="{{ asset($row->thumbnail) }}" alt=""/>
+                        </a>
+                        <div class="show-info">
+                            <h4>{{ $row->getNameOne() }}</h4>
+                            <span class="show-day">{{ $row->getWeekDayOne() }}</span>
+                            <span class="show-time">{{ $row->time }}</span>
+                        </div>
+                    </div>
+                @endforeach
+            @endif
+
+        </div>
+    </div> -->
+
       <div class="owl-carousel">
          @if($anons->first())
          <div class="owl-carousel">

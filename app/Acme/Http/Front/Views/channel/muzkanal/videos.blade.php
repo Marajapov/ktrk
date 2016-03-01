@@ -32,7 +32,7 @@
                                                         </ul>
                                                     </div>
                                                     @if($newVideo->exclusive == 1)
-                                                        <div class="ishit">Экслюзив!</div>
+                                                        <div class="ishit">Эксклюзив!</div>
                                                     @endif
                                                     <div class="views"><i class="fa fa-eye"></i>{{ $newVideo->getViewed() }}</div>
                                                 </div>
@@ -89,7 +89,7 @@
                                                         </ul>
                                                     </div>
                                                     @if($topVideo->exclusive == 1)
-                                                        <div class="ishit">Экслюзив!</div>
+                                                        <div class="ishit">Эксклюзив!</div>
                                                     @endif
                                                     <div class="views"><i class="fa fa-eye"></i>{{ $topVideo->getViewed() }}</div>
                                                 </div>
@@ -127,7 +127,7 @@
                 <div class="row topvideos videostyle">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><span>Экслюзив</span></h3>
+                            <h3 class="panel-title"><span>Эксклюзив</span></h3>
                         </div>
                         <div class="panel-body">
                             <div class="col-md-12 videofix">

@@ -402,7 +402,7 @@ ul.nostyle i {
   margin-right: 10px;
 }
 .navbar-brand {
-  color: #fff !important;
+  color: #01292F !important;
   font-size: 30px;
   font-weight: bold;
   line-height: 2;
@@ -416,7 +416,7 @@ ul.nostyle i {
   #main-menu.navbar-default .navbar-nav > li > a {
     padding-top: 20px;
     padding-bottom: 20px;
-    color: #fff;
+    color: #000B0C;
     font-family: 'Roboto regular';
     font-weight: bold;
   }

@@ -213,7 +213,7 @@
                               </ul>
                            </div>
                            @if($pop1->exclusive == 1)
-                           <div class="ishit">Экслюзив!</div>
+                           <div class="ishit">Эксклюзив!</div>
                            @endif
                            <div class="views"><i class="fa fa-eye"></i>{{ $pop1->getViewed() }}</div>
                         </div>
@@ -233,7 +233,7 @@
                               </ul>
                            </div>
                            @if($pop2->exclusive == 1)
-                           <div class="ishit">Экслюзив!</div>
+                           <div class="ishit">Эксклюзив!</div>
                            @endif
                            <div class="views"><i class="fa fa-eye"></i>{{ $pop2->getViewed() }}</div>
                         </div>
@@ -253,7 +253,7 @@
                               </ul>
                            </div>
                            @if($pop3->exclusive == 1)
-                           <div class="ishit">Экслюзив!</div>
+                           <div class="ishit">Эксклюзив!</div>
                            @endif
                            <div class="views"><i class="fa fa-eye"></i>{{ $pop3->getViewed() }}</div>
                         </div>
@@ -319,7 +319,7 @@
                               </ul>
                            </div>
                            @if($top1->exclusive == 1)
-                           <div class="ishit">Экслюзив!</div>
+                           <div class="ishit">Эксклюзив!</div>
                            @endif
                            <div class="views"><i class="fa fa-eye"></i>{{ $top1->getViewed() }}</div>
                         </div>
@@ -339,7 +339,7 @@
                               </ul>
                            </div>
                            @if($top2->exclusive == 1)
-                           <div class="ishit">Экслюзив!</div>
+                           <div class="ishit">Эксклюзив!</div>
                            @endif
                            <div class="views"><i class="fa fa-eye"></i>{{ $top2->getViewed() }}</div>
                         </div>
