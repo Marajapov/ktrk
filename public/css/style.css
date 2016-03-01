@@ -4429,6 +4429,32 @@ background-size: cover;
 .copyright i{
     padding-right: 5px;
 }
+.footer-trademark{
+    position: relative;
+    display: table-footer-group;
+    background: #E0E3E8;
+    padding: 10px;
+    font-family: 'Roboto condensed';
+}
+.footer-trademark .footer-top{
+    padding: 15px 10px 5px 10px;
+}
+.footer-trademark .footer-top .copyright{
+    font-size: 14px;
+}
+.footer-trademark .footer-bottom{
+    padding: 0px 5px 10px 5px;
+}
+.footer-trademark .copyright{
+    text-align: left;
+}
+.footer-trademark .copyrightSide{
+    padding: 5px 0 0px;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1;
+    text-align: right;
+}
 
 /*FOOTER MENU Balastan unigue style*/
 .balastan .prefooter{
@@ -4555,10 +4581,4 @@ background-size: cover;
   background-position: center center;
   -webkit-background-size: 100%;
   background-size: 100%;
-}
-.content{
-  display: inline-block;
-  vertical-align: middle;
-  font-size: 18px;
-  margin-top: 15px;
 }
