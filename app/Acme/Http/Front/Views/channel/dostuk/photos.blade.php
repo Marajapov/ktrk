@@ -9,19 +9,18 @@
    <div class="main-container">
 
 
-    <section id="portfolio2 " style="padding:20px 0px;">
+    <section id="portfolio">
         <div class="container">
-            <div class="section-header2" style="margin:0px">
-                <h2 class="section-title2 text-center wow fadeInDown" style="margin:0px;">{{ $gallery->getName() }}</h2>
+            <div class="panel-heading">
+                <h2 class="panel-title">{{ $gallery->getName() }}</h2>
 
             </div>
 
                <div class="panel-body">
                   <div class="row">
-                   <p style="text-align:center;color: #272727;font-size: 18px;">{{ $gallery->getDescription() }}</p>
+                   <span>{!! $gallery->getDescription() !!}</span>
                      <ul id="imageGallery">
                      @foreach($images as $image)
-
                         <li data-thumb="{{ asset('froala/uploads/'.$image->name) }}" data-src="{{ asset('froala/uploads/'.$image->name) }}">
                            <img class="resizegallery" src="{{ asset('froala/uploads/'.$image->name) }}" />
                         </li>

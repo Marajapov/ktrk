@@ -8,11 +8,10 @@
 @include('Front::channel.dostuk.navs')
    <div class="main-container">
 
-
-    <section id="portfolio" style="padding:20px 0px;background:#fff;" >
+    <section id="portfolio">
         <div class="container">
             <div class="section-header2">
-                <h2 class="section-title2 text-center wow fadeInDown">{{ trans('radiopages.Photos') }}</h2>
+                <h2 class="section-title2 text-center wow fadeInDown">{{ trans('radiopages.PhotoReports') }}</h2>
             </div>
 
                <div class="panel-body imagegrid">

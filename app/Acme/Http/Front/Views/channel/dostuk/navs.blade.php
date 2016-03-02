@@ -1,13 +1,16 @@
 <style>
    #header{
-      margin-top:inherit !important; 
+      margin-top:10px !important; 
       height: 60px;
    }
    #header #main-menu {
-      background: #F44336;
+      background: #009688;
    }   
    #header #main-menu.navbar-default .navbar-nav > li > a{
       color: #fff;
+   }
+   #header #main-menu.navbar-default .navbar-nav > li > a:hover{
+      color: #005386;
    }
    #header .navbar-brand{
       color: #fff !important;
@@ -42,7 +45,7 @@
                      @endif
                   </ul>
                </li>
-               <li><a href="{{route('dostuk.allphotos')}}"><i class="fa fa-picture-o"></i> Сүрөтбаяндар</a></li>
+               <li><a href="{{route('dostuk.allphotos')}}"><i class="fa fa-picture-o"></i> {{ trans('radiopages.PhotoReports') }}</a></li>
                <li><a href="{{route('dostuk.home')}}#about"><i class="fa fa-info"></i>Радио жөнүндө</a></li>
             </ul>
          </div>

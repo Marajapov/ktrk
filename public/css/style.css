@@ -4395,7 +4395,7 @@ background-size: cover;
 
 /*FOOTER MENU*/
 .footer-menu{
-    padding: 15px 0;
+    padding: 35px 0 0px 0;
 }
 .footer-menu ul{
     padding: 5px 0;
@@ -4441,6 +4441,7 @@ background-size: cover;
 }
 .footer-trademark .footer-top .copyright{
     font-size: 14px;
+    font-weight: normal;
 }
 .footer-trademark .footer-bottom{
     padding: 0px 5px 10px 5px;
@@ -4454,6 +4455,7 @@ background-size: cover;
     font-size: 14px;
     line-height: 1;
     text-align: right;
+    font-weight: normal;
 }
 
 /*FOOTER MENU Balastan unigue style*/

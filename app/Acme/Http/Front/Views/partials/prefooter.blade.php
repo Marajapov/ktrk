@@ -1,5 +1,9 @@
 <div class="container prefooter clearfix">
-
+    <div class="col-md-4" style="padding: 20px 0;text-align: center;">
+        <a href="http://ktrkdev.ktrk.kg/" target="_blank">
+            <img src="{{ asset('images/banner_320x70.gif') }}" style="width: auto;" alt=""/>
+        </a>
+    </div>
     <div class="footer-channels">
         <ul>
             <li>
