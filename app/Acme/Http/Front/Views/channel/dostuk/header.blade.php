@@ -8,12 +8,10 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ route('dostuk.home') }}"><img src="{{asset('images/channels/dostuk.png')}}" alt="logo">Достук радиосу</a>
-            <div class="onetime"><a href="{{ asset('online/online-kg_radio.php')}}" onclick="window.open(this.href, '', 'scrollbars=1,height='+Math.min(210, screen.availHeight)+',width='+Math.min(400, screen.availWidth)); return false;"><button class="btn"><i class="fa fa-microphone blink"></i><span>Түз эфир</span></button></a></div>
+            <a href="{{route('dostuk.home')}}"><i class="fa fa-home"></i> Башкы</a>
          </div>
-         <div class="collapse navbar-collapse navbar-right">
+         <div class="collapse navbar-collapse navbar-left">
             <ul class="nav navbar-nav">
-               <li class=""><a href="{{route('dostuk.home')}}"><i class="fa fa-home"></i> Башкы</a></li>
                <li class="dropdown">
                   <a class="dropdown-toggle" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-microphone"></i> Уктуруулар<i class="fa fa-angle-down"></i></a>
                   <ul class="dropdown-menu">

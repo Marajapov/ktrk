@@ -103,10 +103,38 @@
                            </div>
 
                            <a href="{{ route('dostuk.allnews') }}">
-                               <span>{{ trans('site.PostAllNews') }}<i class="fa fa-arrow-circle-right"></i></span>
+                               <span class="allnewslink">{{ trans('site.PostAllNews') }}<i class="fa fa-arrow-circle-right"></i></span>
                            </a>
                        </footer>
                      </div>
+                  </div>
+               </div>
+               <div class="col-md-12">
+                  <div class="row">
+                     <div class="col-md-12">
+                        <h3 class="title">{{ trans('site.MatpoTeme') }}</h3>
+                     </div>                   
+                     @if($relatedNews)
+                     @foreach($project->program()->get() as $post)                
+                     <div class="blocknews col-md-3 col-sm-4 col-xs-12">
+                          <article>
+                              <a href="{{ route('dostuk.news', $post) }}" class="image-link">
+                                  <img src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif" title="{{ $post->getTitleRuOrKg() }}">
+                                  <div class="card-info">
+                                       <span class="date ">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
+                                       <span class="view"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
+                                  </div>
+                              </a>
+                              <h3 class="name headline">
+                                  <a href="{{ route('dostuk.news', $post) }}" title="">
+                                      {{ $post->getTitleRuOrKg() }}
+                                  </a>
+                              </h3>
+                          </article>
+                     </div>             
+                     @endforeach
+                     @endif
+                          
                   </div>
                </div>
             </div>

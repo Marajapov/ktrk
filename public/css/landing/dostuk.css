@@ -38,7 +38,7 @@ hr {
 header {
   margin-top: -150px !important;
   height: 50px;
-margin-bottom: inherit;
+/*margin-bottom: inherit;*/
 }
 .main-container {
   box-shadow: 0px 0px 9px 8px rgba(0, 0, 0, 0.16), 0px 0px 3px 1px rgba(0, 0, 0, 0.12);
@@ -75,10 +75,19 @@ margin-bottom: inherit;
     background: none; 
     margin-top: 40px;
 }
-
+.brand .navbar-brand > img {
+    width: auto;
+    height: 70px;
+    margin: inherit; 
+}
+.brand .navbar-brand h4{
+  font-size: 34px;
+}
 /*LANGUAGE Landing radio pages*/
 .languages{
-    position: relative;
+    position: absolute;
+    right: 0;
+    top: -37px;
     z-index: 2;
 
     -webkit-transition: bottom 0.3s;
@@ -160,11 +169,11 @@ margin-bottom: inherit;
   margin: 0px auto;
 }
 .onetime {
-  display: inline;
-  position: relative;
-  top: 10px;
-  left: 20px;
-  z-index: 1;
+    display: block;
+    position: absolute;
+    top: 90px;
+    z-index: flo;
+    float: left;
 }
 @media (max-width:550px) {
   .onetime {
@@ -185,9 +194,11 @@ margin-bottom: inherit;
 }
 .onetime i {
   padding: 10px;
-  background: #2DA29E;
+  background: #FFC907;
   border-top-left-radius: 5px !important;
   border-bottom-left-radius: 5px !important;
+  animation: inherit !important;
+  color: #005F8E;
 }
 .onetime span {
   margin-left: 5px;
@@ -423,6 +434,15 @@ ul.nostyle i {
     color: #45aed6;
     background-color: transparent;
   }
+}
+#main-menu .navbar-header a{
+    padding-top: 17px;
+    padding-left: 5px;
+    color: #000B0C;
+    font-family: 'Roboto regular';
+    font-weight: bold;
+    font-size: 18px;
+    display: block;
 }
 #cta {
   padding: 5px 0;
@@ -1349,5 +1369,11 @@ ul.nostyle i {
     font-size: 18px;
     font-family: 'Roboto condensed';
     text-transform: none
+}
+.with-share .allnewslink, .with-share .post-edit{
+  color: #235275;
+}
+.with-share .allnewslink i{
+  padding-left: 5px;
 }
 /* END Project */

@@ -100,12 +100,14 @@ class DostukController extends Controller
     public function news(\Model\Post\ModelName $post)
     {
         $post->incrementViewed();
+        $project = \Model\Project\ModelName::where('dostuk','=', true)->first();
+
 
         $channel = \Model\Channel\ModelName::name('dostuk')->first();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
         $dostukProjects = \Model\Project\ModelName::where('published','=',true)->where('dostuk', '=', 1)->get();
-
+        $relatedNews = \Model\Project\ModelName::where('id','<>',$project->dostuk)->where('published','=',true)->where('dostuk','=',$project->id)->orderBy('id','desc')->take(8)->get();
         $parent = \Model\PhotoParent\ModelName::where('id','=',$post->parentId)->first();
         
         if($parent != null){
@@ -121,6 +123,8 @@ class DostukController extends Controller
             'backgroundMain' => $backgroundMain,
             'dostukProjects' => $dostukProjects,
             'images' => $images,
+            'project' => $project,
+            'relatedNews' => $relatedNews,
             ]);
     }
     
