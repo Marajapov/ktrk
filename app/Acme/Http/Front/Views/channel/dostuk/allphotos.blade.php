@@ -27,8 +27,8 @@
                                 <a href="{{ route('dostuk.photos', $photoGallery) }}" class="thumb">
                                   <img src="{{ asset($photoGallery->status) }}" alt="...">
                                   <i class="fa fa-camera"></i>
-                                  <div class="extra" style="position: absolute; bottom: 0px; left: 10px;color: #fff;">
-                                    <span class="e-datetime">{{ $photoGallery->getDay() }} {{ $photoGallery->getMonthRu() }}, {{ $photoGallery->getTime() }}</span>
+                                  <div class="extra">
+                                    <span class="date">{{ $photoGallery->getDay() }} {{ $photoGallery->getMonthRu() }}, {{ $photoGallery->getTime() }}</span>
                                  </div>
                                 </a>
                                 <h2>

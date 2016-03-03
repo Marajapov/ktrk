@@ -24,12 +24,8 @@
             <div class="row onenews">
                <div class="col-md-12">
                   <div class="row">
-                     <div class="col-md-12">                                           
-                      @if($dostukProjects) 
-                      @foreach($dostukProjects->take(1) as $dostukProject)   
-                      <h3 class="title">{{ $dostukProject->first()->getName() }}</h3>                 
-                      @endforeach
-                      @endif
+                     <div class="col-md-12">                                         
+                      <h3 class="title">{{ $project->getName() }}</h3>  
                      </div>
                      <div class="panel">
                         <div class="panel-body">
@@ -42,8 +38,8 @@
                               <a id="post-thumb" href="@if(empty($post->thumbnail_big)){{  asset($post->thumbnail) }}@else{{ asset($post->thumbnail_big) }}@endif">
                                 <img class="left" src="@if(empty($post->thumbnail_big)) {{  asset($post->thumbnail) }} @else {{  asset($post->thumbnail_big) }} @endif" alt="image">
                               </a>
-                              @if($post->thumb_desc || $post->thumb_desc_ru)<span class="thumb_desc">{{ $post->getThumbnailDesc() }}</span>@endif
-                              {{--@if($post->thumb_author)<span class="thumb_author"> Фото: {{ $post->thumb_author }}</span>@endif--}}
+                              @if($post->thumb_desc || $post->thumb_desc_ru)<span class="thumb_desc"></span>@endif
+                              
                             </p>
                            <article>
                               {!! $post->getContent() !!}

@@ -152,7 +152,6 @@
          <div class="container">
             <div class="section-header">
                <h2 class="section-title text-center wow fadeInDown">{{ trans('radiopages.AboutDostuk') }}</h2>
-               <p class="text-center wow fadeInDown">{{ trans('radiopages.AboutDostukup') }}</p>
             </div>
             <div class="row">
                <div class="container">

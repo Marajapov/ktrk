@@ -1149,6 +1149,11 @@ ul.nostyle i {
   padding: 0;
   border-radius: 3px !important;
 }
+#portfolio .gallery-item .thumb i{
+  position: absolute;
+  right: 10px !important;
+  left: inherit;
+}
 #portfolio .gallery-item h2 {
   margin: 0px;
   border-bottom-right-radius: 3px !important;
@@ -1491,7 +1496,7 @@ ul.nostyle i {
 .gallery-item .extra{
   position: absolute;
   top: 5px;
-  right: 5px;
+  left: 0;
   font-family: 'Roboto regular';
  background: rgba(0, 0, 0, 0.3);
     padding: 0px 5px;
