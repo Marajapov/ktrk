@@ -14,6 +14,33 @@ class BirinchiController extends Controller
         $lc = app()->getlocale();
         $posts = array();
 
+        if($lc == 'kg')
+        {
+            if($post->title == '')
+            {
+                app()->setlocale('ru');
+                $lc = 'ru';
+            }
+            else
+            {
+                app()->setlocale('kg');
+                $lc = 'kg';
+            }
+        } 
+        elseif($lc == 'ru') 
+        {
+            if($post->titleRu == '')
+            {
+                app()->setlocale('kg');
+                $lc = 'kg';
+            }
+            else
+            {
+                app()->setlocale('ru');
+                $lc = 'ru';
+            }
+        }
+
         $categories = \Model\Category\ModelName::where('birinchi','=','1')->where('published','=','1')->where('orderBirinchi','<>','0')->orderBy('orderBirinchi','asc')->get();
 
         if($lc == 'kg'){

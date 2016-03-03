@@ -2,6 +2,7 @@
    #header{
       margin-top:10px !important; 
       height: 60px;
+      margin-bottom: 0px;
    }
    #header #main-menu {
       background: #009688;
@@ -27,8 +28,8 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ route('dostuk.home') }}"><img src="{{asset('images/channels/dostuk.png')}}" alt="logo">Достук радиосу</a>
-            <div class="onetime"><a href="{{ asset('online/online-kg_radio.php')}}" onclick="window.open(this.href, '', 'scrollbars=1,height='+Math.min(210, screen.availHeight)+',width='+Math.min(400, screen.availWidth)); return false;"><button class="btn"><i class="fa fa-microphone blink"></i><span>Түз эфир</span></button></a></div>
+            <a class="navbar-brand d-brand" href="{{ route('dostuk.home') }}"><img src="{{asset('images/channels/dostuk.png')}}" alt="logo"><span>Достук радиосу</span></a>
+            <div class="onetime" style="display: none"><a href="{{ asset('online/online-kg_radio.php')}}" onclick="window.open(this.href, '', 'scrollbars=1,height='+Math.min(210, screen.availHeight)+',width='+Math.min(400, screen.availWidth)); return false;"><button class="btn"><i class="fa fa-microphone blink"></i><span>Түз эфир</span></button></a></div>
          </div>
          <div class="collapse navbar-collapse navbar-right">
             <ul class="nav navbar-nav">

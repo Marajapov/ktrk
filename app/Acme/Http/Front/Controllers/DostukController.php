@@ -11,8 +11,8 @@ class DostukController extends Controller
     public function Home()
     {
         // return view('Front::channel.dostuk.comingsoon',[]);
-
         $channel = \Model\Channel\ModelName::name('dostuk')->first();
+        
 
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
@@ -21,9 +21,9 @@ class DostukController extends Controller
 
         $lc = app()->getlocale();
         if($lc == 'kg'){
-            $allPost = \Model\Post\ModelName::where('dostuk','=',1)->languagekg()->published()->orderBy('id','desc')->get();    
+            $allPost = \Model\Post\ModelName::where('dostuk','=',1)->languagekg()->take(6)->orderBy('id','desc')->get();    
         }else{
-            $allPost = \Model\Post\ModelName::where('dostuk','=',1)->languageru()->published()->orderBy('id','desc')->get();
+            $allPost = \Model\Post\ModelName::where('dostuk','=',1)->languageru()->take(6)->orderBy('id','desc')->get();
         }
 
         $dostukProjects = \Model\Project\ModelName::where('published','=',true)->where('dostuk', '=', 1)->get();

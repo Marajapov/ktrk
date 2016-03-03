@@ -43,7 +43,7 @@
                      </div>                   
                      @if($relatedNews)
                      @foreach($project->program()->get() as $post)                
-                     <div class="blocknews col-md-3 col-sm-4 col-xs-12">
+                     <div class="blocknews col-md-4 col-sm-2 col-xs-12">
                           <article>
                               <a href="{{ route('dostuk.news', $post) }}" class="image-link">
                                   <img src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif" title="{{ $post->getTitleRuOrKg() }}">

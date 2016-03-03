@@ -173,7 +173,7 @@
                         $('#kyrgyzradioanons').hide();
                         $('#dostukAnons').show();
                         $('#nameKg').show();
-                        $('#nameRu').hide();
+                        $('#nameRu').show();
                         $('#editorTextArea').hide();
                         $('#linkArea').hide();
                         $('#weekDayKg').hide();

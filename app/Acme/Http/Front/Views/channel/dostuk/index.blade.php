@@ -71,67 +71,40 @@
          <div class="container">
             <div class="section-header">
                <h2 class="section-title text-center wow fadeInDown">{{ trans('radiopages.Peredachi') }}</h2>
-               <p class="text-center wow fadeInDown">{{ trans('radiopages.Dostuklangs') }}<br>{{ trans('radiopages.Dostuklangs2') }}</p>
             </div>
             <div class="row">
-               <div class="features">
-                  @if($dostukProjects) 
-                  @foreach($dostukProjects as $key=> $project)
-                  @if($project->program()->first())
-                  <div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="100ms">
-                     <div class="media service-box">
-                        <div class="media-body">
-                           <div role="tabpanel">
-                              <ul class="nav main-tab nav-justified" role="tablist">
-                                 <li role="presentation" class="active"> 
-                                    <a href="#{{ $project->id}}" role="tab" data-toggle="tab" aria-controls="{{ $project->id}}" aria-expanded="true">{{ $project->getName() }}</a>
-                                 </li>
-                                 <li role="presentation">
-                                    <a href="#{{ $key+99 }}" role="tab" data-toggle="tab" aria-controls="{{ $key+99 }}" aria-expanded="false">{{ trans('radiopages.OPeredachi') }}</a>
-                                 </li>
-                              </ul>
-                              <div id="tab-content" class="tab-content">
-                                 <div role="tabpanel" class="tab-pane fade active in" id="{{ $project->id}}" aria-labelledby="{{ $project->id}}">
-                                    <div class="onenews">
-                                       <div class="panel panel-articles">
-                                          <div class="panel-body" style="padding: 0px 15px;">
-                                             @if($project->program()->get())
-                                             @foreach($project->program()->get() as $post)
-                                             <div class="media">
-                                                <div class="media-left">
-                                                   <a href="{{ route('dostuk.news', $post) }}">
-                                                   <img class="media-object thumb" src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif" alt="image">
-                                                   </a>
-                                                </div>
-                                                <div class="media-body">
-                                                   <div class="extra">
-                                                      <span class="e-datetime">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
-                                                      <span class="e-views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
-                                                   </div>
-                                                   <a class="media-heading" href="{{ route('dostuk.news', $post) }}">{{ $post->getTitleRuOrKg() }}</a>
-                                                </div>
-                                             </div>
-                                             @endforeach
-                                             @endif
-                                             <footer style="padding: 0;border: none;">
-                                                <a href="{{ route('dostuk.allnews') }}">{{ trans('site.FrontPostAll') }}</a>
-                                             </footer>
-                                          </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                                 <div role="tabpanel" class="tab-pane fade" id="{{ $key+99 }}" aria-labelledby="{{ $key+99 }}">
-                                    <p>{{ $project->description }}</p>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
+               <div class="col-md-12">
+               @if($dostukProjects) 
+               @foreach($dostukProjects as $project)       
+               
+                  @if($project->program()->get())
+                  @foreach($project->program()->get() as $post)
+                  <div class="col-md-4 ukturuu">
+                     <div class="media-info">
+                           <img src="@if(empty($post->thumbnail_big)) {{  asset($post->thumbnail) }} @else {{  asset($post->thumbnail_big) }} @endif" alt="image">
+                           <span class="project">
+                              <a href="{{ route('dostuk.project',$project->id) }}"><i class="fa fa-list"></i>{{ $project->getName() }}</a>
+                           </span>
+                           <span class="date">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
+                           <span class="views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
+                     </div>
+                     <div class="media-name">
+                        <a class="media-heading" href="{{ route('dostuk.news', $post) }}">{{ $post->getTitleRuOrKg() }}</a>
                      </div>
                   </div>
-                  <!--/.col-md-4-->
-                  @endif
                   @endforeach
-                  @endif                             
+                  @endif
+            
+        
+               @endforeach
+               @endif 
+               </div>
+               <div class="col-md-12">
+               <footer class="morelink">
+                  <a href="{{ route('dostuk.allnews') }}">
+                  <span>{{ trans('radiopages.AllPereadachi') }} <i class="fa fa-arrow-circle-right"></i></span>
+                  </a>
+               </footer>
                </div>
             </div>
             <!--/.row-->    
@@ -153,8 +126,8 @@
                         <a href="{{ route('dostuk.photos', $photoGallery) }}" class="thumb">
                            <img src="{{ asset($photoGallery->status) }}" alt="...">
                            <i class="fa fa-camera"></i>
-                           <div class="extra" style="position: absolute; bottom: 0px; left: 10px;color: #fff;">
-                              <span class="e-datetime">{{ $photoGallery->getDay() }} {{ $photoGallery->getMonthRu() }}, {{ $photoGallery->getTime() }}</span>
+                           <div class="extra">
+                              <span class="date">{{ $photoGallery->getDay() }} {{ $photoGallery->getMonthRu() }}, {{ $photoGallery->getTime() }}</span>
                            </div>
                         </a>
                         <h2>                           
