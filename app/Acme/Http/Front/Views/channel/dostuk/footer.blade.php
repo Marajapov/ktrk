@@ -4,6 +4,8 @@
 
 <script src="{{ asset('js/jquery-1.11.2.min.js') }}"></script>
 <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+
+<script type="text/javascript" src="{{ asset('js/bootstrap-hover-dropdown.js') }}"></script>
 <script type="text/javascript" src="{{ asset('slick/slick.min.js') }}"></script>
 <script src="{{ asset('js/audio/jquery.newsTicker.js')}}"></script> 
 

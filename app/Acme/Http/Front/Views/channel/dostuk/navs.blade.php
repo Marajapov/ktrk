@@ -10,8 +10,15 @@
    #header #main-menu.navbar-default .navbar-nav > li > a{
       color: #fff;
    }
-   #header #main-menu.navbar-default .navbar-nav > li > a:hover{
+   .nav .open>a, .navbar-default .navbar-nav>.open>a,  .nav .open>a:focus, .nav .open>a:hover{
+      color: #fff;
+      background: #037D72;
+   }
+   #header #main-menu.navbar-default .navbar-nav > li > a:hover, 
+   #header #main-menu.navbar-default .navbar-nav > li > a:active,
+   #header #main-menu.navbar-default .navbar-nav > li > a:focus{
       color: #005386;
+      background: none;
    }
    #header .navbar-brand{
       color: #fff !important;

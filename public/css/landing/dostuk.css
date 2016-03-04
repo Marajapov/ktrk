@@ -413,6 +413,8 @@ ul.nostyle i {
   #main-menu.navbar-default .dropdown-menu {
      border: 0;
      padding: 0;
+    left: 0;
+    width: 100%;
   }
   #main-menu.navbar-default .dropdown-menu > li {
     border-left: 3px solid transparent;
@@ -436,6 +438,17 @@ ul.nostyle i {
     background-color: transparent;
   }
 }
+
+   .nav .open>a, .navbar-default .navbar-nav>.open>a,  .nav .open>a:focus, .nav .open>a:hover{
+      color: #fff;
+      background: rgba(8, 8, 8, 0.19);
+   }
+   #header #main-menu.navbar-default .navbar-nav > li > a:hover, 
+   #header #main-menu.navbar-default .navbar-nav > li > a:active,
+   #header #main-menu.navbar-default .navbar-nav > li > a:focus{
+      color: #005386;
+      background: none;
+   }
 #main-menu .navbar-header a{
     padding-top: 17px;
     padding-left: 5px;
@@ -1198,7 +1211,7 @@ ul.nostyle i {
 
 /* For Main menu in Ukturrrular part*/
 .dropdown-menu{
-  background: #607D8B !important; 
+  background: #12B5A6 !important; 
   min-width: inherit !important; 
 }
 .dropdown i{
@@ -1211,7 +1224,7 @@ ul.nostyle i {
     transition: all 0.2s linear !important;
 }
 .dropdown .dropdown-menu:hover {
-  background: #607D8B  !important;
+  background: #12B5A6 !important;
 }
 
 .dropdown .dropdown-menu li a {
@@ -1220,7 +1233,7 @@ ul.nostyle i {
   color: #fff !important;
 }
 .dropdown .dropdown-menu li:hover{
-  background: #5A5A5A !important;
+  background: #037D72  !important;
 }
 .dropdown .dropdown-menu li a:hover{
   border: none !important; 

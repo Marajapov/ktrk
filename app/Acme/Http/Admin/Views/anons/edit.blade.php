@@ -174,7 +174,7 @@
                         $('#dostukAnons').show();
                         $('#nameKg').show();
                         $('#nameRu').show();
-                        $('#editorTextArea').hide();
+                        $('#editorTextArea').show();
                         $('#linkArea').hide();
                         $('#weekDayKg').hide();
                         $('#weekDayRu').hide();
