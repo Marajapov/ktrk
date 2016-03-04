@@ -57,7 +57,7 @@
          <img src="{{ asset('images/channels/dostuk.png')}}">
          <h4>Достук радиосу</h4>
       </a>
-      <div class="onetime" style="display: none">
+      <div class="onetime">
       <a href="{{ asset('online/online-kg_radio.php')}}" onclick="window.open(this.href, '', 'scrollbars=1,height='+Math.min(210, screen.availHeight)+',width='+Math.min(400, screen.availWidth)); return false;">
          <button class="btn"><i class="fa fa-microphone"></i>
          <span>Түз эфир</span>

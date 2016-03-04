@@ -175,30 +175,23 @@ header {
     z-index: flo;
     float: left;
 }
-@media (max-width:550px) {
-  .onetime {
-    right: 70px !important;
-    position: absolute;
-    display: block;
-    left: inherit;
-    top: -42px;
-  }
-}
 .onetime .btn {
-  background: #0CB2AB;
-  color: #fff;
-  font-size: 16px;
-  border-radius: 5px !important;
-  padding: 0px 10px 0px 0px !important;
-  border-bottom-width: 0px !important;
+    color: #FFFFFF !important;
+    background: #00598A !important;
+    border: none !important;
+    font-size: 21px !important;
+    outline: none !important;
+    border-radius: 4px !important;
+    font-family: 'Roboto condensed';
+    padding: 0px 10px 0px 0px !important;
 }
 .onetime i {
   padding: 10px;
-  background: #FFC907;
-  border-top-left-radius: 5px !important;
-  border-bottom-left-radius: 5px !important;
+  background: #4CAF50;
+  border-radius: 5px 0px 0px 5px !important;
   animation: inherit !important;
-  color: #005F8E;
+  color: #fff;
+  font-size: 24px;
 }
 .onetime span {
   margin-left: 5px;

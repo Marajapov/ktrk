@@ -345,7 +345,7 @@
     border: none;
     padding: 5px 15px;
     font-size: 18px;
-    border-radius: 2px !important;
+    border-radius: 2px;
     outline: none;
 }
 
