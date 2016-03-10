@@ -297,12 +297,18 @@ class PageController extends Controller
     {
         $lc = app()->getlocale();
 
+        $fbpost = \Model\Post\ModelName::where('director','<>','1')->where('fbpost','=','1')->orderBy('id','desc')->get();
+        if($fbpost){
+          $fbpost = $fbpost;
+        }else {
+          $fbpost = null;
+        }
+
         $post->incrementViewed();
 
         $categories = \Model\Category\ModelName::all();
         $positionTop = \Model\Banner\ModelName::top()->first();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
-
 
         if(($post->parentId != '0') && ($post->parentId != null))
         {
@@ -373,6 +379,8 @@ class PageController extends Controller
 
         return view('Front::pages.directorPost',[
             'post' => $post,
+            'lc' => $lc,
+            'fbpost' => $fbpost,
 
             'related1Post' => $related1Post,
             'related2Post' => $related2Post,

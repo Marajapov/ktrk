@@ -60,7 +60,7 @@
                </div>
             </div>
          </div>
-         <div class="col-md-3">
+         <div class="col-md-3 no-padding">
             <div class="row">
                <div class="panel ctg-panel media-ctg-panel">
                   <div class="panel-heading">

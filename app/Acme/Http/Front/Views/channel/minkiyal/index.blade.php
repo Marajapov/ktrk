@@ -150,6 +150,42 @@
       </div>
     </div>
   </section>
+  <section>
+    <div class="container info">
+        <div id="allposts">
+            <div class="col-md-3 col-sm-12 postshow">
+              <a href="#" data-toggle="modal" data-target="#modal1">
+                <img src="http://dostuk.ktrk.kg/images/anons/161455946978.png" class="img-responsive" alt="">
+                <h3>Жаны</h3>
+              </a>
+
+            </div>
+            <!-- Modal -->
+            <div id="modal1" class="modal fade" role="dialog">
+              <div class="modal-dialog modal-lg">
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
+
+                    <h4 class="modal-title">Жаны</h4>
+                  </div>
+                  <div class="modal-body">
+                    “БАЛ КАЙМАК” –  мүнөзү боюнча куттуктоо программасы. Аталган программа күнүнө 3 жолу түз эфирде чыгат. “Бал каймак” аркылуу радионун угармандар менен тыгыз байланышы түзүлүп турат. Угармандар бул программанын алкагында түз эфирдеги телефон аркылуу байланышка чыгып, куттуктоо, салам жана каалоо-тилектерин айта алышат. Ошондой эле, 10 00 кыска номерине СМС-билдирүү жиберүү аркылуу да куттуктоолорун өз дарегине жеткире алышат.
+                    08:00-10:00
+                    13:00-14:00
+                    22:00-23:00
+
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Жабуу</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+  </section>
   <section id="network" >
     <div class="container network">
       <div class="title">

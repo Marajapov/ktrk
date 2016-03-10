@@ -35,7 +35,7 @@
             </ul>
 
             <h4 class="copyright"><i class="fa fa-copyright"></i>{{ trans('site.TradeMark') }}, 2010-<?php echo date("Y"); ?>. {{ trans('site.TradeMarkAll') }} </h4>
-            <h4 class="copyright">{{ trans('site.TradeMarkRegulations') }} </h4>            
+            <h4 class="copyright">{{ trans('site.TradeMarkRegulations') }} </h4>
         </div>
             <h4 class="copyright">{{ trans('site.TradeMarkAddress') }} / {{ trans('site.TradeMarkTel') }} / {{ trans('site.TradeMarkEmail') }} / {{ trans('site.TradeMarkPart') }}</h4>
             <h4 class="copyright">{{ trans('site.TradeMarkKtrk') }} </h4>

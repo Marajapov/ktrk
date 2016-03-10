@@ -3,8 +3,28 @@
     <div class="footer-info clearfix">
         <div class="col-md-12 footer-menu">
 
-            <h4 class="copyright"><i class="fa fa-copyright"></i><?php echo date("Y"); ?> {{ trans('site.TradeMark') }}</h4>
-            <p class="text-center minkiyal_footer">{{ trans('site.Developed') }} <a style="color: #00A8FF;" href="http://ulut.kg/" target="_blank">Улут Софт</a></p>
+          <div class="footer-trademark" style="background: none;">
+            <div class="container footer-top">
+              <div class="col-md-8">
+                <h4 class="copyright"><i class="fa fa-copyright"></i>{{ trans('site.TradeMark') }}, 2010-<?php echo date("Y"); ?>. {{ trans('site.TradeMarkAll') }} </h4>
+                <h4 class="copyright">{{ trans('site.TradeMarkRegulations') }} </h4>
+                <h4 class="copyright">{{ trans('site.TradeMarkRegulations2') }} </h4>
+                <h4 class="copyright">{{ trans('site.TradeMarkRegulations3') }} </h4>
+                <h4 class="copyright">{{ trans('site.TradeMarkRegulations4') }} </h4>
+              </div>
+              <div class="col-md-4">
+                <h4 class="copyrightSide">{{ trans('site.TradeMarkAddress') }}</h4>
+                <h4 class="copyrightSide">{{ trans('site.TradeMarkTel') }} </h4>
+                <h4 class="copyrightSide">{{ trans('site.TradeMarkPart') }} </h4>
+                <h4 class="copyrightSide">{{ trans('site.TradeMarkEmail') }} </h4>
+                <h4 class="copyrightSide">{{ trans('site.TradeMarkKtrk') }} </h4>
+                <h4 class="copyrightSide"><p class="text-right" style="margin: 5px 0 0; font-size: 14px;">{{ trans('site.Developed') }} <a href="http://ulut.kg/" target="_blank">Улут Софт</a></p> </h4>
+              </div>
+            </div>
+            <div class="container footer-bottom">
+
+            </div>
+          </div>
 
         </div>
     </div>
