@@ -122,6 +122,7 @@ Route::group(['domain' => 'ktrk.dev', 'prefix' => '/dostuk', 'namespace' => 'Fro
     Route::get('/photos/{gallery}',['as' => 'dostuk.photos','uses'=> 'DostukController@Gallery'] );
     Route::get('/news/{post}', ['as' => 'dostuk.news',   'uses' => 'DostukController@news']);
     Route::get('allnews', ['as' => 'dostuk.allnews',   'uses' => 'DostukController@allnews']);
+    Route::get('about', ['as' => 'dostuk.about',   'uses' => 'DostukController@about']);
     Route::get('/allphotos',['as' => 'dostuk.allphotos','uses'=> 'DostukController@allphotos'] );
     Route::get('/project/{project}',['as' => 'dostuk.project','uses'=> 'DostukController@project'] );
     Route::get('/comingsoon', ['as' => 'dostuk.comingsoon',   'uses' => 'DostukController@ComingSoon']);

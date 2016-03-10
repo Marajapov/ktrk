@@ -149,6 +149,10 @@ header {
   margin: auto;
   display: block;
 }
+#about span {
+    font-weight: bold;
+    font-size: 18px;
+}
 .whitefix .slick-prev:before, .slick-next:before {
   color: #202d3a;
 }
@@ -735,14 +739,52 @@ ul.nostyle i {
   margin-top: 10px;
 }
 #about {
-  padding: 50px 0 0px 0;
+  padding: 50px 0 50px 0;
 }
-#about p{
+#about h4{
     color: #444;
-    font-family: 'Roboto regular';
     font-size: 16px;
     line-height: initial;
+    text-align: justify;
+    text-indent: 1.5em
 }
+#about img {
+    height: 230px;
+    width: auto;
+    padding: 0px 10px;
+    float: right;
+}
+#about .show-btn{
+    display: table;
+    margin: 0px auto;
+    text-align: center;
+}
+
+.show-btn{
+    position: relative;
+    top: 0;
+    border: 0;
+    display: inline-block;
+    margin-bottom: 50px;
+    padding: 5px 15px;
+    background: #c6c9cd;
+    color: #00283d;
+    font-family: 'Open Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 3px !important;
+    cursor: pointer;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
 #work-process {
   padding: 100px 0 50px;
   background: #20222e url(../images/work-process/bg.jpg) no-repeat 0 0;
@@ -1277,9 +1319,9 @@ ul.nostyle i {
 .info .postshow h3 {
   position: absolute;
   bottom: 0;
-  padding: 10px;
+  padding: 20px 10px;
   margin: 0;
-  line-height: 1;
+  line-height: 18px;
   font-size: 1.1em;
   font-family: 'Roboto Regular';
   font-weight: bold;
