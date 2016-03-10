@@ -153,27 +153,44 @@
             <div class="section-header">
                <h2 class="section-title text-center wow fadeInDown">{{ trans('radiopages.AboutDostuk') }}</h2>
             </div>
+            @if(app()->getlocale() == 'kg')
             <div class="row">
                <div class="container">
-                   <h3 class="column-title">{{ trans('radiopages.AboutAim') }}</h3>
+                   <h3 class="column-title">Эл достугуна доо кетирбей ыр менен достукка көпүрө болууга ниет кылган радио - "Достук" радиосу</h3>
                </div>   
-               <div class="col-sm-12 wow fadeInLeft">
-                  <p class="text-center wow fadeInDown">{{ trans('radiopages.AboutPromo') }}</p>
-               </div>
-               <div class="col-sm-12 wow fadeInRight">                  
-                  <p>{{ trans('radiopages.DostukText1') }}</p>
-                  <p>{{ trans('radiopages.DostukText2') }}</p>
-                  <p>{{ trans('radiopages.DostukText3') }}</p>
-                  <p>{{ trans('radiopages.DostukText4') }}</p>
-                  <p>{{ trans('radiopages.DostukText5') }}</p>
-                  <p>{{ trans('radiopages.DostukText6') }}</p>
-                  <p>{{ trans('radiopages.DostukText7') }}</p>
-                  <p>{{ trans('radiopages.DostukText8') }}</p>
-                  <p>{{ trans('radiopages.DostukText9') }}</p>
-                  <p>{{ trans('radiopages.DostukText10') }}</p>
-                  <p>{{ trans('radiopages.DostukText11') }}</p>
+               <div class="col-sm-12 wow fadeInRight">
+                  <img src="{{asset('images/channels/dostuk.png')}}" alt="" class="img-responsive fadeInLeft" style="
+                  float: left;">                  
+                  <h4> Радио адегенде интернет аркылуу чыга баштаган, ал эми 2015-жылдан тарта аны  санариптик пакеттен табууга болот. «Радионун негизги максаты - өлкөбүздө жашаган этностор аралык достук мамилелердин өнүгүшүнө жана бекемделишине көмөк көрсөтүү эсептелет».</h4>
+                  <h4>Радио КТРКнын 2013-2015-жылдарга карата өнүгүү стратегиясына, ошондой эле мамлекет башчысынын жарлыгы менен кабыл алынган Кыргызстандагы этностор аралык мамилелер концепциясына ылайык ачылууда. Радионун берүүлөр сеткасы маданият, тарых, искусство жана адабиятка байланышкан темаларды камтыйт. Өлкөбүздө ушундай радионун ачылышы менен Кыргыз Республикасында жашап жатышкан этностордун өз маданий баалуулуктары менен алмашып турушу үчүн аянтча түзүүгө басым коюлат.Ошондой эле радиодо президенттин мамлекеттик тилди өнүктүрүү жөнүндө жарлыгынын аткарылышы үчүн кыргыз тилин окуп-үйрөнүү боюнча өз алдынча долбоор орун алмакчы. </h4>
+                  <a class="show-btn" href="{{ route('dostuk.about')}}">
+                     толук маалымат
+                  </a>
                </div>
             </div>
+            @elseif(app()->getlocale() == 'ru')
+            <div class="row">
+               <div class="container">
+                   <h3 class="column-title">Радио "ДОСТУК" вещает в онлайн-режиме на сайте www.ktrk.kg в познавательном, литературном и музыкальном формате. </h3>
+               </div>   
+               <div class="col-sm-12 wow fadeInRight">
+                  <img src="{{asset('images/channels/dostuk.png')}}" alt="" class="img-responsive fadeInLeft" style="
+                  float: left;">
+                  <h3>Цель радиостанции:</h3>                  
+                  <h4>• просвятить молодежь в таких важнейших сферах культуры, как музыка, литература, кино и театр.</h4>
+                  <h4>•  познакомить с классическими образцами и культовыми личностями в этих сферах, а также освещать последние достижения, достойные внимания. </h4>
+                  <h4>•  углубление и расширение диалога радио со слушателями;</h4>
+                  <h4>•  содействие развитию дружеских отношений между народами Кыргызстана;</h4>
+                  <h4>•  ориентация на музыку этнических народов Кыргызстана, поддержка отечественных исполнителей;</h4>
+                  <h4>•  познакомить слушателей с творчеством исполнителей, музыкантов, поэтов;</h4>
+                  <h4>•  проводить беседы в студии со специалистами разных областей, а так же в области музыки:</h4>
+
+                  <a class="show-btn" href="{{ route('dostuk.about')}}">
+                     подробнее
+                  </a>
+               </div>
+            </div>
+            @endif
          </div>
       </section>
       <!--/#about-->

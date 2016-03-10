@@ -102,21 +102,19 @@ class DostukController extends Controller
         $post->incrementViewed();
         $project = \Model\Project\ModelName::where('dostuk','=', true)->first();
 
-
         $channel = \Model\Channel\ModelName::name('dostuk')->first();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
-        $dostukProjects = \Model\Project\ModelName::where('published','=',true)->where('dostuk', '=', 1)->get();
-        $relatedNews = \Model\Project\ModelName::where('id','<>',$project->dostuk)->where('published','=',true)->where('dostuk','=',$project->id)->orderBy('id','desc')->take(8)->get();
-        $parent = \Model\PhotoParent\ModelName::where('id','=',$post->parentId)->first();
         
+        $dostukProjects = \Model\Project\ModelName::where('published','=',true)->where('dostuk', '=', 1)->get();
+        $relatedNews = \Model\Project\ModelName::where('id','<>',$project->id)->where('id','<>',$post->id)->where('published','=',true)->where('dostuk','=',$project->id)->orderBy('id','desc')->take(8)->get();
+        $parent = \Model\PhotoParent\ModelName::where('id','=',$post->parentId)->first();
         if($parent != null){
             $images = json_decode($parent->images);    
         }else{
             $images = null;
         }
         
-
            return view('Front::channel.dostuk.news', [
             'channel' => $channel,
             'post' => $post,
@@ -154,6 +152,19 @@ class DostukController extends Controller
             'relatedNews' => $relatedNews,
             'dostukProjects' => $dostukProjects,                
 
+            ]
+        );
+    }
+
+    public function about()
+    {
+        $lc = app()->getlocale();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        $dostukProjects = \Model\Project\ModelName::where('published','=',true)->where('dostuk', '=', 1)->get();
+        return view('Front::channel.dostuk.about',[                
+            'lc' => $lc,
+            'backgroundMain' => $backgroundMain,
+            'dostukProjects' => $dostukProjects,               
             ]
         );
     }

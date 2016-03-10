@@ -36,11 +36,30 @@
 
             <h4 class="copyright"><i class="fa fa-copyright"></i>{{ trans('site.TradeMark') }}, 2010-<?php echo date("Y"); ?>. {{ trans('site.TradeMarkAll') }} </h4>
             <h4 class="copyright">{{ trans('site.TradeMarkRegulations') }} </h4>
+            </ul>           
         </div>
-            <h4 class="copyright">{{ trans('site.TradeMarkAddress') }} / {{ trans('site.TradeMarkTel') }} / {{ trans('site.TradeMarkEmail') }} / {{ trans('site.TradeMarkPart') }}</h4>
-            <h4 class="copyright">{{ trans('site.TradeMarkKtrk') }} </h4>
-
-            <p class="text-center" style="margin: 5px 0 0; font-size: 13px;">{{ trans('site.Developed') }} <a href="http://ulut.kg/" target="_blank">Улут Софт</a></p>
+                <div class="footer-trademark">          
+            <div class="container footer-top">
+                <div class="col-md-8">
+                <h4 class="copyright"><i class="fa fa-copyright"></i>{{ trans('site.TradeMark') }}, 2010-<?php echo date("Y"); ?>. {{ trans('site.TradeMarkAll') }} </h4>
+                    <h4 class="copyright">{{ trans('site.TradeMarkRegulations') }} </h4>   
+                    <h4 class="copyright">{{ trans('site.TradeMarkRegulations2') }} </h4>   
+                    <h4 class="copyright">{{ trans('site.TradeMarkRegulations3') }} </h4>                    
+                    <h4 class="copyright">{{ trans('site.TradeMarkRegulations4') }} </h4>                    
+                </div>
+                <div class="col-md-4">
+                    <h4 class="copyrightSide">{{ trans('site.TradeMarkAddress') }}</h4>
+                    <h4 class="copyrightSide">{{ trans('site.TradeMarkTel') }} </h4>
+                    <h4 class="copyrightSide">{{ trans('site.TradeMarkPart') }} </h4>
+                    <h4 class="copyrightSide">{{ trans('site.TradeMarkEmail') }} </h4>            
+                    <h4 class="copyrightSide">{{ trans('site.TradeMarkKtrk') }} </h4>
+                    <h4 class="copyrightSide"><p class="text-right" style="margin: 5px 0 0; font-size: 14px;">{{ trans('site.Developed') }} <a href="http://ulut.kg/" target="_blank">Улут Софт</a></p> </h4>
+                </div>              
+            </div>
+            <div class="container footer-bottom">
+                 
+            </div>
+        </div>
 
         </div>
     </div>
