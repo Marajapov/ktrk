@@ -14,7 +14,7 @@ return [
 		'Phone' => 'Студиянын телефону',
 		'Volna' => '106.9 жыштыгында',
 		'RelatedNews' => 'Байланышкан жаңылыктар',
-		'PhotoReports' => 'Сүрөт баяндар',
+		'PhotoReports' => 'Сүрөтбаяндар',
 		'AllPhotoReports' => 'Баардык сүрөт баяндар',
 
 		//Header 
