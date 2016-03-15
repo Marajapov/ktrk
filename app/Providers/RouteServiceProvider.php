@@ -49,6 +49,7 @@ class RouteServiceProvider extends ServiceProvider
         $router->model('comment', \Model\Comment\ModelName::class);
         $router->model('anons', \Model\Anons\ModelName::class);
         $router->model('quote', \Model\Quote\ModelName::class);
+        $router->model('pollVote', \Model\PollVote\ModelName::class);
 
         $this->app['view']->addNamespace('Front', app_path().'/Acme/Http/Front/Views/');
         $this->app['view']->addNamespace('Admin', app_path().'/Acme/Http/Admin/Views/');

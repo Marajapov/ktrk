@@ -28,9 +28,12 @@
                                     Результаты по запросу - <span>&laquo;{{ $searchKey }}&raquo;</span>
                                 </h4>
                                 
+                              
+                                <h2>Результат по тегу новостей</h2>
                                 <div class="tags-search">
                                     @if(count($tag) > 0)
                                     @foreach($tag->posts as $post)
+                                    @if($post->getTitleRuOrKg() != '')
 
                                         <div class="media">
 
@@ -48,16 +51,17 @@
                                                 </div>
                                                 <a class="media-heading" href="{{ route('front.post', $post) }}">{{ $post->getTitleRuOrKg() }}</a>
                                             </div>
-
                                         </div>
-
+                                    @endif
                                     @endforeach
                                     @endif
                                 </div>
 
+
+                                <h2>Результат по названию новостей</h2>
                                 <div class="posts-search">
                                     @foreach($posts as $post)
-
+                                        @if($post->getTitleRuOrKg() != '')
                                         <div class="media">
 
                                             <div class="media-left">
@@ -76,9 +80,34 @@
                                             </div>
 
                                         </div>
-
+                                        @endif
                                     @endforeach
 
+                                </div>
+                                <hr/>
+                                <h2>Programs</h2>
+
+                                <div class="tags-search">
+
+                                    @if(count($programs) > 0)
+                                    @foreach($programs as $row)
+                                    @if($row->getNameOne() != '')
+                                        <div class="media">
+                                            <div class="media-left">
+                                                <a href="{{ route('front.media.project', $row) }}">
+                                                    <img class="media-object thumb" src="@if($row->getFile()) {{ asset($row->getFile()) }} @else {{ asset('images/ktrk_last.svg') }}  @endif" alt="image">
+                                                </a>
+                                            </div>
+                                            <div class="media-body">
+                                                <div class="extra">
+                                                    <span class="e-datetime"></span> 
+                                                </div>
+                                                <a class="media-heading" href="{{ route('front.media.project', $row) }}">{{ $row->getNameOne() }}</a>
+                                            </div>
+                                        </div>
+                                    @endif
+                                    @endforeach
+                                    @endif
                                 </div>
 
 

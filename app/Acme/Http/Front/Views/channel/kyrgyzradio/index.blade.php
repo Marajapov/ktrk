@@ -228,6 +228,48 @@
          </div>
    </section>
    <!--/#cta-->
+<section id="network" >
+   <div class="container network">
+      <div class="section-header">
+         <h2 class="section-title text-center wow fadeInDown">Биз социалдык тармактарда</h2>
+      </div>
+      <div class="row">
+         <div class="col-md-3">
+            <div class="fb-page" style="height: 455px;overflow: hidden;" data-href="https://www.facebook.com/Kyrgyzradiosu" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+               <div class="fb-xfbml-parse-ignore">
+                  <blockquote cite="https://www.facebook.com/Kyrgyzradiosu"><a href="https://www.facebook.com/Kyrgyzradiosu">Кыргыз радиосу</a></blockquote>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-3" style="background: #E6E6E6;padding: 0px;border-radius: 3px !important;border: 2px solid #E2E9ED;">
+            <a class="twitter-timeline" href="https://twitter.com/kyrgyzradiosu" data-widget-id="709260510542368768">Твиты от @kyrgyzradiosu</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+         </div>
+         <div class="col-md-3">
+            <div id="ok_group_widget"></div>
+            <script>
+               !function (d, id, did, st) {
+                 var js = d.createElement("script");
+                 js.src = "https://connect.ok.ru/connect.js";
+                 js.onload = js.onreadystatechange = function () {
+                   if (!this.readyState || this.readyState == "loaded" || this.readyState == "complete") {
+                     if (!this.executed) {
+                       this.executed = true;
+                       setTimeout(function () {
+                         OK.CONNECT.insertGroupWidget(id,did,st);
+                       }, 0);
+                     }
+                   }}
+                 d.documentElement.appendChild(js);
+               }(document,"ok_group_widget","57809916592165","{width:263,height:455}");
+            </script>
+         </div>
+         <div class="col-md-3">
+            <iframe src="{{asset('images/channels/dostuk/inwidget/index.php?height=455&inline=3')}}" scrolling='no' frameborder='no' style='border:none;width:263px;height:455px;overflow:hidden;'></iframe>
+         </div>
+      </div>
+   </div>
+</section>
    <section id="about">
          <div class="section-header">
             <h2 class="section-title text-center wow fadeInDown">Кыргыз Радиосу жөнүндө</h2>
@@ -237,11 +279,16 @@
              
             <div class="col-sm-12 abouttext wow fadeInRight">
             <h3 class="column-title text-center">Тарыхы</h3>
-               <img src="{{asset('images/channels/kg-radio.png')}}" alt="" class="img-responsive fadeInLeft" style="
-               float: left;">
-               <p>Кыргыз радиосу мындан 80 жыл мурун, тагыраак айтканда, 1931-жылы негизделген. Ал кездеги техникалык жана чыгармачылык мүмкүнчүлүк чектелүү болгондуктан уктурууларды берүү ыкмасы азыркыдан кыйла айырмаланып турган.</p>
-               <p>Мезгил өтүп радио кызматкерлеринин тажрыйбасы улам арта  берди.  Жергиликтүү кызматкерлерди ал кезде СССРдин курамындагы башка шаарларга кыска мөөнөттөгү окууларга жөнөтүп, алардын билим деңгээлин, тажрыйбасын өнүктүрүп турушкан. Ошентип 80 жылдын ичинде Кыргыз Радиосунун техникалык жана чыгармачылык мүмкүнчүлүктөрү кеңейип, улам жаңы бийиктиктерди багынтып олтуруп, бүгүнкү күндөгү деңгээлине келип жетти. </p>
-               <p>Кыргыз Радиосунда 80 жылдын ичинде радиодо кандай гана чыгармачыл адамдар иштеген жок. Алардын көбү азыр ардагер кызматкерлер. Угарман журтуна аты-жөнү белгилүү болуп, кадыр-сыйга ээ болгон кесиптештерибиз кыйла көп. </p>
+               <div class="col-md-5">
+                  <div class="embed-responsive embed-responsive-4by3 aboutvideo">
+                    <iframe class="embed-responsive-item" src="//www.youtube.com/embed/0PZ74wA5iy0?rel=0&amp;controls=0&amp;showinfo=0"></iframe>
+                  </div>
+               </div>
+               <div class="col-md-7">
+                  <p>Кыргыз радиосу мындан 80 жыл мурун, тагыраак айтканда, 1931-жылы негизделген. Ал кездеги техникалык жана чыгармачылык мүмкүнчүлүк чектелүү болгондуктан уктурууларды берүү ыкмасы азыркыдан кыйла айырмаланып турган.</p>
+                  <p>Мезгил өтүп радио кызматкерлеринин тажрыйбасы улам арта  берди.  Жергиликтүү кызматкерлерди ал кезде СССРдин курамындагы башка шаарларга кыска мөөнөттөгү окууларга жөнөтүп, алардын билим деңгээлин, тажрыйбасын өнүктүрүп турушкан. Ошентип 80 жылдын ичинде Кыргыз Радиосунун техникалык жана чыгармачылык мүмкүнчүлүктөрү кеңейип, улам жаңы бийиктиктерди багынтып олтуруп, бүгүнкү күндөгү деңгээлине келип жетти. </p>
+                  <p>Кыргыз Радиосунда 80 жылдын ичинде радиодо кандай гана чыгармачыл адамдар иштеген жок. Алардын көбү азыр ардагер кызматкерлер. Угарман журтуна аты-жөнү белгилүү болуп, кадыр-сыйга ээ болгон кесиптештерибиз кыйла көп. </p>
+               </div>
                <a class="show-btn" href="{{ route('kyrgyzradio.about')}}">
                   толук маалымат
                   </a>
@@ -317,4 +364,13 @@
         var add;
 
     </script>
+   <div id="fb-root"></div>
+<script>(function(d, s, id) {
+   var js, fjs = d.getElementsByTagName(s)[0];
+   if (d.getElementById(id)) return;
+   js = d.createElement(s); js.id = id;
+   js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.5";
+   fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
 @stop

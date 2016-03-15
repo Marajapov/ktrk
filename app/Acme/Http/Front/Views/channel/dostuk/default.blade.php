@@ -22,6 +22,7 @@
       <link rel="stylesheet" href="{{asset('css/landing/owl.transitions.css')}}"/>
       <link rel="stylesheet" href="{{asset('css/landing/prettyPhoto.css')}}"/>
       <link rel="stylesheet" href="{{asset('css/landing/responsive.css')}}"/>
+      
       @yield('styles')
    </head>
    <body id="dostuk">

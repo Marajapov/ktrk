@@ -115,7 +115,7 @@ Route::group(['domain' => 'ktrk.dev', 'prefix' => '/birinchi', 'namespace' => 'F
 
 });
 
-Route::group(['domain' => 'ktrk.dev', 'prefix' => '/dostuk', 'namespace' => 'Front\Controllers'], function() {
+    Route::group(['domain' => 'ktrk.dev', 'prefix' => '/dostuk', 'namespace' => 'Front\Controllers'], function() {
 
     Route::get('/', ['as' => 'dostuk.home',   'uses' => 'DostukController@Home']);
     Route::get('/posts', ['as' => 'dostuk.posts',   'uses' => 'DostukController@posts']);
@@ -130,7 +130,7 @@ Route::group(['domain' => 'ktrk.dev', 'prefix' => '/dostuk', 'namespace' => 'Fro
 
 });
 
-Route::group(['domain' => 'ktrk.dev', 'prefix' => '/minkiyal', 'namespace' => 'Front\Controllers'], function() {
+    Route::group(['domain' => 'ktrk.dev', 'prefix' => '/minkiyal', 'namespace' => 'Front\Controllers'], function() {
 
     Route::get('/', ['as' => 'minkiyal.home',   'uses' => 'MinkiyalController@Home']);
     Route::get('/posts', ['as' => 'minkiyal.posts',   'uses' => 'MinkiyalController@posts']);
@@ -140,7 +140,7 @@ Route::group(['domain' => 'ktrk.dev', 'prefix' => '/minkiyal', 'namespace' => 'F
 
 });
 
-Route::group(['domain' => 'ktrk.dev', 'prefix' => '/baldar', 'namespace' => 'Front\Controllers'], function() {
+    Route::group(['domain' => 'ktrk.dev', 'prefix' => '/baldar', 'namespace' => 'Front\Controllers'], function() {
 
     Route::get('/', ['as' => 'baldar.home',   'uses' => 'BaldarController@Home']);
     Route::get('/posts', ['as' => 'baldar.posts',   'uses' => 'BaldarController@posts']);
@@ -148,7 +148,7 @@ Route::group(['domain' => 'ktrk.dev', 'prefix' => '/baldar', 'namespace' => 'Fro
 });
 
 
-Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
+    Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
 
     Route::get('/post/{post}', ['as' => 'front.post',   'uses' => 'HomeController@Post']);
     Route::get('/page/{page}', ['as' => 'front.page',   'uses' => 'HomeController@Page']);
@@ -229,8 +229,9 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
 //    Test
     Route::get('/test',['as'=>'front.test', 'uses'=>"HomeController@Test"]);
 
+    // Poll Vote
+    Route::post('/poll_vote', ['as'=>'front.poll_vote', 'uses'=>'AjaxNsController@pollVote']);
+
 Route::get('locale/{locale?}',   ['as' => 'locale',   'uses' => 'CommonController@setLocale']);
 
 });
-
-

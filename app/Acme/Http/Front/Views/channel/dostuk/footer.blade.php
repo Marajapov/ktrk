@@ -18,7 +18,7 @@
 <script src="{{ asset('js/landing/jquery.inview.min.js') }}"></script>
 <script src="{{ asset('js/landing/wow.min.js') }}"></script>
 <script src="{{ asset('js/landing/main.js') }}"></script>
-<!-- <script src="{{ asset('js/landing/fixed.js') }}"></script> -->
+<script src="{{ asset('js/landing/fixed.js') }}"></script>
 
 @yield('footerScript')
 

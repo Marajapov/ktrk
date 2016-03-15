@@ -36,18 +36,31 @@ hr {
   border-bottom: 1px solid #fff;
 }
 header {
+  position: fixed;
   margin-top: -150px !important;
   height: 50px;
+  z-index: 9999;
 /*margin-bottom: inherit;*/
 }
 .main-container {
   box-shadow: 0px 0px 9px 8px rgba(0, 0, 0, 0.16), 0px 0px 3px 1px rgba(0, 0, 0, 0.12);
   max-width: 1170px;
-  margin: 0px auto;
+  margin: -90px auto 0px auto;
   border-radius: 3px !important;
 }
 .main-container .newscontent{
   padding: 0px 0px 20px 0px;
+}
+.fixed {
+  position: fixed;
+  max-width: 100% !important;
+  z-index: 99;
+  background-color: #F44336;
+  left: 0px;
+  right: 0px;
+  margin: 0px auto;
+  background: #FFFFFF !important;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.16), 0px 0px 4px 5px rgba(0, 0, 0, 0.12);
 }
 
 #dostuk {
@@ -156,22 +169,6 @@ header {
 .whitefix .slick-prev:before, .slick-next:before {
   color: #202d3a;
 }
-.fixed {
-  position: fixed;
-  max-width: 100% !important;
-  z-index: 99;
-  background-color: #F44336;
-  left: 0px;
-  right: 0px;
-  margin: 0px auto;
-}
-.fixedheader2 {
-  position: fixed;
-  max-width: 100%;
-  left: 0;
-  right: 0;
-  margin: 0px auto;
-}
 .onetime {
     display: block;
     position: absolute;
@@ -241,6 +238,17 @@ header {
   bottom: 0;
   height: 2px;
   background: #009688;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+#get-in-touch .section-header .section-title:before {
+  content: "";
+  position: absolute;
+  width: 640px;
+  bottom: 0;
+  height: 2px;
+  background: #fff;
   left: 0;
   right: 0;
   margin: auto;
@@ -547,7 +555,7 @@ ul.nostyle i {
   -webkit-box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.8);
 }
 #portfolio {
-  padding: 50px 0;
+  padding: 20px 0;
   background: #F1EDEA;
 }
 
@@ -658,7 +666,7 @@ ul.nostyle i {
   font-size: 24px;
   color: #00937F;
   text-transform: initial;
-  text-align: center;
+  text-align: left;
   position: relative;
   font-family: 'Roboto condensed';
 }
@@ -740,6 +748,7 @@ ul.nostyle i {
 }
 #about {
   padding: 50px 0 50px 0;
+  background: #F1EDEA
 }
 #about h4{
     color: #444;
@@ -756,8 +765,13 @@ ul.nostyle i {
 }
 #about .show-btn{
     display: table;
-    margin: 0px auto;
+    margin: 40px auto 0px auto;
     text-align: center;
+
+}
+
+#get-in-touch .section-header3 .center {
+
 }
 
 .show-btn{
@@ -1022,7 +1036,6 @@ ul.nostyle i {
   background-image: -webkit-linear-gradient(90deg, #F44336 0%, #03A9F4  100%);
   background-image: -ms-linear-gradient(90deg, #F44336 0%, #03A9F4  100%);
   color: #fff;
-  margin-top: 40px;
 }
 #get-in-touch h1, #get-in-touch h2 {
   color: #fff;
@@ -1030,6 +1043,50 @@ ul.nostyle i {
 #get-in-touch p {
   font-size: 26px;
   font-family: 'Roboto condensed';
+}
+
+#contacts {
+    padding: 20px 0px 50px 0px;
+}
+#contacts  .address {
+    margin-bottom: 15px;
+}
+#contacts  .address  h3{
+    position: inherit;
+    padding: 15px 0;
+    margin: 0px;
+  
+    font-size: 1.2em;
+    text-align: center;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;  
+    color: #FFF;
+    background: #EB463C;
+}
+#contacts  .address  ul{
+    border-top: 3px solid #FFF;
+    -webkit-box-shadow: 0px 0px 100px 0px #BBB5B5;
+    -moz-box-shadow: 0px 0px 100px 0px #BBB5B5;
+    box-shadow: 0px 0px 100px 0px #BBB5B5;
+}
+#contacts  .address  h3 i, #contacts  .address li i{
+    padding-right: 10px;
+}
+#contacts  .address li{
+    display: block;
+    color: #151515;
+    font-size: 1.2em;
+    padding: 15px 30px 10px 30px;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    font-family: 'Roboto Regular';
+}
+
+#contacts  .address li:last-child{
+    padding: 15px 30px 10px 30px;
+    border-top: 1px solid #C1B38E;
 }
 #blog {
   padding: 100px 0;
@@ -1244,6 +1301,9 @@ ul.nostyle i {
   color: #F44336;
 }
 
+#network{
+  padding: 20px 0;
+}
 /* For Main menu in Ukturrrular part*/
 .dropdown-menu{
   background: #12B5A6 !important; 
@@ -1263,6 +1323,7 @@ ul.nostyle i {
 }
 
 .dropdown .dropdown-menu li a {
+  white-space: normal;
   padding: 5px !important;
   margin: 0px !important;
   color: #fff !important;
@@ -1322,10 +1383,9 @@ ul.nostyle i {
   padding: 20px 10px;
   margin: 0;
   line-height: 18px;
-  font-size: 1.1em;
+  font-size: 18px;
   font-family: 'Roboto Regular';
-  font-weight: bold;
-  letter-spacing: 1px;
+  font-weight: 500;
   width: 100%;
   color: #FFFFFF;
   overflow: hidden;

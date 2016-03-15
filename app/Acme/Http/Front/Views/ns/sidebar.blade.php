@@ -47,21 +47,21 @@
       <h4><strong>Как Вы оцениваете работу НС КТРК?</strong></h4>
 
       <div id="poll" class="poll">
-        <form >
+        <form>
           <div class="radio">
-            <input type="radio" name="vote" id="radio1" value="1" onclick="getVote(this.value)">
+            <input type="radio" name="vote1" id="radio1" value="1" onclick="getVote(this.value)">
             <label for="radio1">
               Отлично
             </label>
           </div>
           <div class="radio">
-            <input type="radio" name="vote" id="radio2" value="2" onclick="getVote(this.value)">
+            <input type="radio" name="vote2" id="radio2" value="2" onclick="getVote(this.value)">
             <label for="radio2">
               Хорошо
             </label>
           </div>
           <div class="radio">
-            <input type="radio" name="vote" id="radio3" value="3" onclick="getVote(this.value)">
+            <input type="radio" name="vote3" id="radio3" value="3" onclick="getVote(this.value)">
             <label for="radio3">
               Удовлетворительно
             </label>

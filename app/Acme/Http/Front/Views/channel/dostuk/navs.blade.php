@@ -1,11 +1,12 @@
 <style>
    #header{
-      margin-top:10px !important; 
+      margin-top:0px !important; 
       height: 60px;
       margin-bottom: 0px;
+      position: inherit !important;
    }
    #header #main-menu {
-      background: #009688;
+      background: #009688 !important;
    }   
    #header #main-menu.navbar-default .navbar-nav > li > a{
       color: #fff;
