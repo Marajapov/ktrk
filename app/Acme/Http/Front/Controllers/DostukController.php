@@ -169,6 +169,19 @@ class DostukController extends Controller
         );
     }
 
+  public function anons()
+  {
+    $lc = app()->getlocale();
+    $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+    $dostukProjects = \Model\Project\ModelName::where('published','=',true)->where('dostuk', '=', 1)->get();
+    return view('Front::channel.dostuk.about',[
+        'lc' => $lc,
+        'backgroundMain' => $backgroundMain,
+        'dostukProjects' => $dostukProjects,
+      ]
+    );
+  }
+
    // For photos page Dostuk 
     public function Gallery(Request $request, $galleryId)
     {

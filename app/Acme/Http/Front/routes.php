@@ -126,6 +126,7 @@ Route::group(['domain' => 'ktrk.dev', 'prefix' => '/dostuk', 'namespace' => 'Fro
     Route::get('/allphotos',['as' => 'dostuk.allphotos','uses'=> 'DostukController@allphotos'] );
     Route::get('/project/{project}',['as' => 'dostuk.project','uses'=> 'DostukController@project'] );
     Route::get('/comingsoon', ['as' => 'dostuk.comingsoon',   'uses' => 'DostukController@ComingSoon']);
+  Route::get('anons', ['as' => 'dostuk.anons',   'uses' => 'DostukController@about']);
 
 });
 
@@ -134,6 +135,7 @@ Route::group(['domain' => 'ktrk.dev', 'prefix' => '/minkiyal', 'namespace' => 'F
     Route::get('/', ['as' => 'minkiyal.home',   'uses' => 'MinkiyalController@Home']);
     Route::get('/posts', ['as' => 'minkiyal.posts',   'uses' => 'MinkiyalController@posts']);
     Route::get('/post/{gallery}',['as' => 'minkiyal.post','uses'=> 'MinkiyalController@Gallery'] );
+    Route::get('/about', ['as' => 'minkiyal.about',   'uses' => 'MinkiyalController@about']);
 
 
 });

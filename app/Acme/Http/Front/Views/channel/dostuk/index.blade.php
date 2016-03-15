@@ -97,7 +97,7 @@
             
         
                @endforeach
-               @endif 
+               @endif
                </div>
                <div class="col-md-12">
                <footer class="morelink">
