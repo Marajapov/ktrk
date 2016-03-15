@@ -374,7 +374,8 @@ class HomeController extends Controller
     {
         $post->incrementViewed();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
-        $lc = app()->getlocale();
+        $lc = in_array($locale, ['kg', 'ru'])? $locale : 'kg';
+        app()->setlocale($lc);
 
         if($lc == 'kg')
         {
@@ -811,35 +812,11 @@ class HomeController extends Controller
 
         $perPage = 15;
 
-        if($lc == 'kg'){
-//            dd('test');
-            $posts = \Model\Post\ModelName::search($request->input('search'))->orderBy('id','desc')->get();
-            foreach($posts as $key=>$resultPost){
-                if($resultPost['title'] == ''){
-                    unset($posts[$key]);
-                }
-            }
-            session(['posts' => $posts]);
-//            $tags = \Model\Tag\Tag::where('name','like','%'.$key.'%')->get();
-//            $postTags = array();
-//
-//            foreach ($tags as $tag) {
-//                $tagPosts = $tags->posts();
-//                $postTags = array_collapse($postTags,$tagPosts);
-//            }
+        $tag = \Model\Tag\Tag::where('name', '=', $key)->first();
+        $posts = \Model\Post\ModelName::search($key)->orderBy('id','desc')->get();
+        $programs = \Model\Project\ModelName::search($key)->orderBy('id','desc')->get();
 
-//            dd($postTags);
-        }elseif($lc == 'ru'){
-            $posts = \Model\Post\ModelName::search($request->input('search'))->orderBy('id','desc')->get();
-
-            foreach($posts as $key=>$resultPost){
-                if($resultPost['titleRu'] == ''){
-                    unset($posts[$key]);
-                }
-            }
-            session(['posts' => $posts]);
-            //dd(session('posts'));
-        }
+         
 //        $posts = \Model\Post\ModelName::search($request->input('search'))->paginate($perPage);
 //        $pages = \Model\Page\ModelName::search($request->input('search'))->get();
         $searchKey = $request->input('search');
@@ -881,7 +858,9 @@ class HomeController extends Controller
         }
 
         return view('Front::result', [
+            'tag' => $tag,
             'posts' => $posts,
+            'programs' => $programs,
             'perPage' => $perPage,
 //            'pages' => $pages,
             'searchKey'=>$searchKey,

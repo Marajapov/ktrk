@@ -831,6 +831,9 @@ ul.nostyle i {
   padding: 50px 0 0px 0;
   text-align: justify;
 }
+#about .aboutvideo{
+
+}
 #about .text-center {
   font-size: 22px;
 }
@@ -1918,6 +1921,7 @@ height: 325px;
     display: table;
     margin: 0px auto;
     text-align: center;
+    top: 10px;
 }
 
 .show-btn{
@@ -1984,4 +1988,8 @@ height: 325px;
 }
 #contacts .infoadress .address ul>li i{
   padding-right: 5px;
+}
+
+#network {
+  padding: 25px 0px;
 }

@@ -36,18 +36,31 @@ hr {
   border-bottom: 1px solid #fff;
 }
 header {
+  position: fixed;
   margin-top: -150px !important;
   height: 50px;
+  z-index: 9999;
 /*margin-bottom: inherit;*/
 }
 .main-container {
   box-shadow: 0px 0px 9px 8px rgba(0, 0, 0, 0.16), 0px 0px 3px 1px rgba(0, 0, 0, 0.12);
   max-width: 1170px;
-  margin: 0px auto;
+  margin: -90px auto 0px auto;
   border-radius: 3px !important;
 }
 .main-container .newscontent{
   padding: 0px 0px 20px 0px;
+}
+.fixed {
+  position: fixed;
+  max-width: 100% !important;
+  z-index: 99;
+  background-color: #F44336;
+  left: 0px;
+  right: 0px;
+  margin: 0px auto;
+  background: #FFFFFF !important;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.16), 0px 0px 4px 5px rgba(0, 0, 0, 0.12);
 }
 
 #dostuk {
@@ -155,22 +168,6 @@ header {
 }
 .whitefix .slick-prev:before, .slick-next:before {
   color: #202d3a;
-}
-.fixed {
-  position: fixed;
-  max-width: 100% !important;
-  z-index: 99;
-  background-color: #F44336;
-  left: 0px;
-  right: 0px;
-  margin: 0px auto;
-}
-.fixedheader2 {
-  position: fixed;
-  max-width: 100%;
-  left: 0;
-  right: 0;
-  margin: 0px auto;
 }
 .onetime {
     display: block;
@@ -1326,6 +1323,7 @@ ul.nostyle i {
 }
 
 .dropdown .dropdown-menu li a {
+  white-space: normal;
   padding: 5px !important;
   margin: 0px !important;
   color: #fff !important;

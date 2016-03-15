@@ -1,6 +1,6 @@
 <header id="header">
 
-   <nav id="main-menu" class="container navbar navbar-default ">
+   <nav id="main-menu" class="container navbar navbar-default">
          <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="sr-only">Меню</span>

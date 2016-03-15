@@ -22,17 +22,7 @@
 </section>
 @include('Front::channel.dostuk.header')
 <div class="main-container">
-<!--/#main-slider-->
 <div id="homepage">
-   <!--       <section id="cta2">
-      <div class="container">
-         <div class="section-header3">
-            <h2 class="section-title text-center wow fadeInDown"></h2>
-            <h2 data-wow-duration="300ms" data-wow-delay="0ms"><span>{{ trans('radiopages.DostukSlogan') }}</span></h2>
-            <h2 class="section-title text-center wow fadeInDown"></h2>
-         </div>
-      </div>
-      </section> -->
    <section id="anonses">
       <div class="row">
          @if($dostuktop)
@@ -242,20 +232,33 @@
             <div class="center">
                <div class="center">
                   <div class="col-md-12">
+                 
                      <div class="col-md-6" style="text-align: right;">
                         <p>8.00-11.00</p>
                         <p>11.00-17.00</p>
                      </div>
+                  @if(app()->getlocale() == 'kg')
                      <div class="col-md-6">
                         <p>Дүйнөлүк  музыка</p>
                         <p>Классика-инструменталдык  композициялар</p>
                      </div>
+                  @elseif(app()->getlocale() == 'ru')
+                     <div class="col-md-6">
+                        <p>Современные хиты 2015-2016</p>
+                        <p>Классические инструментальные композиции</p>
+                     </div>
+                  @endif
                   </div>
                </div>
             </div>
             <div class="section-header3">
+            @if(app()->getlocale() == 'kg')
                <h2 class="section-title text-center wow fadeInDown">“Биринчи” радионун толкунундагы иш күндөр:</h2>
                <p class="text-center wow fadeInDown">Ишемби саат 10.00-18.00<br> Жекшемби саат 17.00-20.30</p>
+            @elseif(app()->getlocale() == 'ru')
+               <h2 class="section-title text-center wow fadeInDown">Часы работы на волне 104.1 Биринчи радио:</h2>
+               <p class="text-center wow fadeInDown">10.00-18.00 в субботу<br> 17:00-20:30 воскресенье</p>
+            @endif
             </div>
          </div>
    </section>
@@ -263,9 +266,10 @@
    <section id="contacts">
 <div class="container">
       <div class="section-header">
-         <h2 class="section-title text-center wow fadeInDown">Байланыш</h2>
+         <h2 class="section-title text-center wow fadeInDown">{{ trans('site.BaikoochuKeneshContacts')}}</h2>
       </div>
-               <div class="row">
+            @if(app()->getlocale() == 'kg')
+            <div class="row">
                <div class="col-md-4 address">
                   <h3><i class="fa fa-map-marker"></i> {{ trans('radiopages.Address') }}</h3>
                   <ul>
@@ -288,6 +292,31 @@
                   </ul>
                </div>
             </div>
+            @elseif(app()->getlocale() == 'ru')
+            <div class="row">
+               <div class="col-md-4 address">
+                  <h3><i class="fa fa-map-marker"></i> {{ trans('radiopages.Address') }}</h3>
+                  <ul>
+                     <li><i class="fa fa-location-arrow"></i> Кыргызстан г. Бишкек</li>
+                     <li><i class="fa fa-home"></i>блв.Молодой Гвардии, 599</li>
+                  </ul>
+               </div>
+               <div class="col-md-4 address">
+                  <h3><i class="fa fa-phone"></i>Контактный телефон:</h3>
+                  <ul>
+                     <li><i class="fa fa-microphone"></i> Редакция: 0312 65 85 05</li>
+                     <li><i class="fa fa-commenting-o"></i> Студия: 0312 65 66 04</li>
+                  </ul>
+               </div>
+               <div class="col-md-4 address">
+                  <h3><i class="fa fa-envelope-o"></i>Сайт:</h3>
+                  <ul>
+                     <li><i class="fa fa-home"></i>Сайт: ktrk.kg/dostuk</li>
+                     <li><i class="fa fa-microphone"></i>Онлайн: ktrk.kg/online/dostuk.php</li>
+                  </ul>
+               </div>
+            </div>
+            @endif
 </div>
    </section>
    </div>
