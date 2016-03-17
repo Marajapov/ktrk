@@ -233,6 +233,6 @@ Route::group(['domain' => 'ktrk.dev', 'prefix' => '/birinchi', 'namespace' => 'F
     // Poll Vote
     Route::post('/poll_vote', ['as'=>'front.poll_vote', 'uses'=>'AjaxNsController@pollVote']);
 
-Route::get('locale/{locale?}',   ['as' => 'locale',   'uses' => 'CommonController@setLocale']);
+    Route::get('locale/{locale?}',   ['as' => 'locale',   'uses' => 'CommonController@setLocale']);
 
 });

@@ -25,11 +25,19 @@
                             <div class="col-md-12 block news-block">
 
                                 <h4 class="search-title">
-                                    Результаты по запросу - <span>&laquo;{{ $searchKey }}&raquo;</span>
-                                </h4>
-                                
-                              
-                                <h2>Результат по тегу новостей</h2>
+                                    @if(app()->getlocale() == 'kg')
+                                    <span>&laquo;{{ $searchKey }}&raquo;</span> - боюнча издөөнүн жыйынтыгы
+                                    @elseif(app()->getlocale() == 'ru')
+                                        Результаты по запросу - <span>&laquo;{{ $searchKey }}&raquo;</span>
+                                    @endif
+                                </h4>                            
+                                <div class="row">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">
+                                            {{ trans('site.DataResultTag') }}
+                                        </h3>
+                                    </div>
+                                </div>
                                 <div class="tags-search">
                                     @if(count($tag) > 0)
                                     @foreach($tag->posts as $post)
@@ -56,9 +64,13 @@
                                     @endforeach
                                     @endif
                                 </div>
-
-
-                                <h2>Результат по названию новостей</h2>
+                                <div class="row">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">
+                                            {{ trans('site.DataResultPost') }}
+                                        </h3>
+                                    </div>
+                                </div>
                                 <div class="posts-search">
                                     @foreach($posts as $post)
                                         @if($post->getTitleRuOrKg() != '')
@@ -85,8 +97,13 @@
 
                                 </div>
                                 <hr/>
-                                <h2>Programs</h2>
-
+                                <div class="row">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">
+                                            {{ trans('site.DataResultShows') }}
+                                        </h3>
+                                    </div>
+                                </div>
                                 <div class="tags-search">
 
                                     @if(count($programs) > 0)

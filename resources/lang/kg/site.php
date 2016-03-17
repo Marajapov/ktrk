@@ -347,6 +347,11 @@ return [
     'DataTableNextPage' => 'Кийинки',
     'DataTablePreviousPage' => 'Мурунку',
 
+    //Search page
+    'DataResult' => 'боюнча издөөнүн жыйынтыгы',
+    'DataResultTag' => 'Тэг боюнча издөөнүн жыйынтыгы',
+    'DataResultPost' => 'Макаланын аталышы боюнча издөөнүн жыйынтыгы',
+    'DataResultShows' => 'Телеберүүлөр боюнча издөөнүн жыйынтыгы',
 
 //    Post
     'PostAktualno'=>'Маанилүү',

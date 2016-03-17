@@ -57,7 +57,7 @@
               <div class="col-md-12">
                 <footer class="allanons">
                   <a href="{{ route('dostuk.anons') }}">
-                    <span>Все анонсы <i class="fa fa-arrow-circle-right"></i></span>
+                    <span>{{ trans('radiopages.AllAnons') }} <i class="fa fa-arrow-circle-right"></i></span>
                   </a>
                 </footer>
               </div>
@@ -235,7 +235,7 @@
    <section id="get-in-touch">
       <div class="container">
          <div class="section-header">
-            <h2 class="section-title text-center wow fadeInDown">{{ trans('radiopages.Volna') }}</h2>
+            <h2 class="section-title text-center wow fadeInDown">{{ trans('radiopages.Volna2') }}</h2>
          </div>
          <div class="section-header3">
             <div class="center">
@@ -262,11 +262,11 @@
             </div>
             <div class="section-header3">
             @if(app()->getlocale() == 'kg')
-               <h2 class="section-title text-center wow fadeInDown">“Биринчи” радионун толкунундагы иш күндөр:</h2>
-               <p class="text-center wow fadeInDown">Ишемби саат 10.00-18.00<br> Жекшемби саат 17.00-20.30</p>
+               <h2 class="section-title text-center wow fadeInDown">“Биринчи” радионун толкунунда:</h2>
+               <p class="text-center wow fadeInDown">Ишемби саат 10.00-18.00<br> Жекшемби саат 17.00-21.00</p>
             @elseif(app()->getlocale() == 'ru')
-               <h2 class="section-title text-center wow fadeInDown">Часы работы на волне 104.1 Биринчи радио:</h2>
-               <p class="text-center wow fadeInDown">10.00-18.00 в субботу<br> 17:00-20:30 воскресенье</p>
+               <h2 class="section-title text-center wow fadeInDown">На волне Биринчи радио:</h2>
+               <p class="text-center wow fadeInDown">10.00-18.00 в субботу<br> 17:00-21:00 воскресенье</p>
             @endif
             </div>
          </div>
@@ -290,7 +290,7 @@
                   <h3><i class="fa fa-phone"></i> Байланыш телефон:</h3>
                   <ul>
                      <li><i class="fa fa-microphone"></i> Редакция: 0312 65 85 05</li>
-                     <li><i class="fa fa-commenting-o"></i> Студия: 0312 65 66 04</li>
+                     <li><i class="fa fa-commenting-o"></i> Студия: 0312 65 66 04 <span style="  display: inherit; text-align: center;">0312 39 21 90</span></li>
                   </ul>
                </div>
                <div class="col-md-4 address">
