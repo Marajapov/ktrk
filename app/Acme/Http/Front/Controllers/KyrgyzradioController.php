@@ -72,11 +72,22 @@ class KyrgyzradioController extends Controller
     {
         $channel = \Model\Channel\ModelName::name('kyrgyzradio')->first();
         $kyrgyzradioProjects = \Model\Project\ModelName::where('published','=',true)->where('kyrgyzradio', '=', 1)->get();
-
         return view('Front::channel.kyrgyzradio.about', [
             'channel' => $channel,
             'kyrgyzradioProjects' => $kyrgyzradioProjects,
             ]);
+    }
+
+    public function citations()
+    {
+      $channel = \Model\Channel\ModelName::name('kyrgyzradio')->first();
+      $kyrgyzradioProjects = \Model\Project\ModelName::where('published','=',true)->where('kyrgyzradio', '=', 1)->get();
+      $quote = \Model\Quote\ModelName::where('published','=','1')->where('channel', '=', '6')->orderBy('id','=','desc')->orderBy('id','desc')->get();
+      return view('Front::channel.kyrgyzradio.citations', [
+        'channel' => $channel,
+        'kyrgyzradioProjects' => $kyrgyzradioProjects,
+        'quote' => $quote,
+      ]);
     }
 
     public function project(\Model\Project\ModelName $project)

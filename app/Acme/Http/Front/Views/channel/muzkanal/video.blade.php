@@ -35,7 +35,22 @@
           </div>
           <div class="panel-body">
             <div class="row">
+              <article class="col-md-12" data-cat="all-videos">
+                <div class="embed-responsive embed-responsive-16by9 show-video">
+                  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ $muzkanalvideo->getUrl()}}?rel=0&amp;showinfo=0" allowfullscreen></iframe>
+                </div>
+              </article>
+            </div>
+            <div class="col-md-12 no-padding" style="margin-top: 15px;">
+              <span class="content">{!! $muzkanalvideo->getContent() !!}</span>
+
               <div class="col-md-12 no-padding" style="margin-bottom: 30px">
+
+                @if(auth()->user())
+                  <span class="art-edit"><a href="{{ route('admin.media.edit', $muzkanalvideo) }}" target="_blank"><i class="fa fa-pencil"></i>{{ trans('site.AdminPostEdit') }}
+                      {{--<span class="glyphicon glyphicon-pencil"></span>--}}  </a>
+                    @endif
+                  </span>
 
                 <span class="show-extra">
                   <span class="show-date">{{ $muzkanalvideo->getDay() }} {{ $muzkanalvideo->getMonthRu() }}, {{ $muzkanalvideo->getYear() }}</span>
@@ -43,21 +58,6 @@
                       <i class="fa-view"></i>{{ $muzkanalvideo->viewed }}
                   </span>
                 </span>
-              </div>
-              <article class="col-md-12" data-cat="all-videos">
-                <div class="embed-responsive embed-responsive-16by9 show-video">
-                  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ $muzkanalvideo->getUrl()}}?rel=0&amp;showinfo=0" allowfullscreen></iframe>
-                </div>
-              </article>
-            </div>
-            <div class="col-md-12 no-padding">
-              <span class="content">{!! $muzkanalvideo->getContent() !!}</span>
-              <div style="margin-top: 5px">
-                @if(auth()->user())
-                  <span class="art-edit"><a href="{{ route('admin.media.edit', $muzkanalvideo) }}" target="_blank"><i class="fa fa-pencil"></i>{{ trans('site.AdminPostEdit') }}
-                      {{--<span class="glyphicon glyphicon-pencil"></span>--}}  </a>
-                    @endif
-                  </span>
               </div>
 
               <footer style="text-align: center">

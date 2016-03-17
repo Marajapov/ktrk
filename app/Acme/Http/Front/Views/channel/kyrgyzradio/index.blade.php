@@ -124,6 +124,11 @@
                @endforeach
             </div>
             @endif
+              <footer class="citation">
+                <a href="{{ route('kyrgyzradio.citations') }}">
+                  <span>Баардык цитаталар <i class="fa fa-arrow-circle-right"></i></span>
+                </a>
+              </footer>
          </div>
    </section>
    <!--/#cta-->
