@@ -47,6 +47,8 @@ header {
   max-width: 1170px;
   margin: -90px auto 0px auto;
   border-radius: 3px !important;
+  position: relative;
+  display: block
 }
 .main-container .newscontent{
   padding: 0px 0px 20px 0px;
