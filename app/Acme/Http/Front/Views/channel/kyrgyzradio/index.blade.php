@@ -265,7 +265,7 @@
             </script>
          </div>
          <div class="col-md-3">
-            <iframe src="{{asset('images/channels/dostuk/inwidget/index.php?height=455&inline=3')}}" scrolling='no' frameborder='no' style='border:none;width:263px;height:455px;overflow:hidden;'></iframe>
+            <iframe src="{{asset('images/channels/kyrgyzradio/inwidget/index.php?height=455&inline=3')}}" scrolling='no' frameborder='no' style='border:none;width:263px;height:455px;overflow:hidden;'></iframe>
          </div>
       </div>
    </div>

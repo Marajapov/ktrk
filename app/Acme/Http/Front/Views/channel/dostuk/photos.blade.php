@@ -5,9 +5,13 @@
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.2.6/css/lightgallery.min.css">
 @endsection
 @section('content')
+<style>
+  .main-container{
+    margin:0px auto 0px auto !important; 
+  }
+</style>
 @include('Front::channel.dostuk.navs')
    <div class="main-container">
-
 
     <section id="portfolio">
         <div class="container">
