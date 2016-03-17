@@ -42,21 +42,21 @@
                 <nav class="muzpaginate">
                   <ul class="pagination">
                     <li>
-                      <a href="{{ route('muzkanal.videos.popular', ['page' => 1]) }}" class="btn btn-default @if($MediaLive->currentPage() == 1) disabled @endif">{{ trans('site.Start') }}</a>
+                      <a href="{{ route('muzkanal.videos.popular', ['page' => 1]) }}" class="btn btn-default @if($MediaTop->currentPage() == 1) disabled @endif">{{ trans('site.Start') }}</a>
                     </li>
                     <li>
-                      <a href="{{ $MediaLive->previousPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                      <a href="{{ $MediaTop->previousPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span></a>
                     </li>
                     <li>
-                      <a href="{{ $MediaLive->nextPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                      <a href="{{ $MediaTop->nextPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-right"></span></a>
                     </li>
-                    @for($i = 0, $j = 1; $i < $MediaLive->total(); $i+=$perPage)
+                    @for($i = 0, $j = 1; $i < $MediaTop->total(); $i+=$perPage)
                       <li>
-                        <a href="{{ route('muzkanal.videos.popular', ['page' => $j]) }}" class="btn btn-default @if($MediaLive->currentPage() == $j) active @endif">{{ $j++ }}</a>
+                        <a href="{{ route('muzkanal.videos.popular', ['page' => $j]) }}" class="btn btn-default @if($MediaTop->currentPage() == $j) active @endif">{{ $j++ }}</a>
                       </li>
                     @endfor
                     <li>
-                      <a href="{{ route('muzkanal.videos.popular', ['page' => ceil($MediaLive->total()/$perPage)]) }}" class="btn btn-default @if($MediaLive->currentPage() == ceil($MediaLive->total()/$perPage)) disabled @endif">{{ trans('site.End') }}</a>
+                      <a href="{{ route('muzkanal.videos.popular', ['page' => ceil($MediaTop->total()/$perPage)]) }}" class="btn btn-default @if($MediaTop->currentPage() == ceil($MediaTop->total()/$perPage)) disabled @endif">{{ trans('site.End') }}</a>
                     </li>
                   </ul>
                 </nav>
