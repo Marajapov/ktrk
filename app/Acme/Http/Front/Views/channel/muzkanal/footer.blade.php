@@ -32,6 +32,10 @@
                 <li><a href="{{ route('front.pages.reklama') }}">{{ trans('site.Ads') }}</a></li><li>/</li>
                 {{--<li><a href="#">{{ trans('site.Contacts') }}</a></li>--}}
                 <li><a href="{{ route('front.pages.contacts') }}">{{ trans('site.Contacts') }}</a></li>
+            </ul>
+
+            <h4 class="copyright"><i class="fa fa-copyright"></i>{{ trans('site.TradeMark') }}, 2010-<?php echo date("Y"); ?>. {{ trans('site.TradeMarkAll') }} </h4>
+            <h4 class="copyright">{{ trans('site.TradeMarkRegulations') }} </h4>
             </ul>           
         </div>
                 <div class="footer-trademark">          

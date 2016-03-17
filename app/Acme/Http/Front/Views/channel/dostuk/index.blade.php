@@ -54,6 +54,13 @@
             </div>
             @endforeach
             @endif
+              <div class="col-md-12">
+                <footer class="allanons">
+                  <a href="{{ route('dostuk.anons') }}">
+                    <span>Все анонсы <i class="fa fa-arrow-circle-right"></i></span>
+                  </a>
+                </footer>
+              </div>
          </div>
       </div>
    </section>
@@ -84,7 +91,9 @@
                @endforeach
                @endif
                @endforeach
-               @endif 
+               @endif
+               </div>
+               <div class="col-md-12">
             </div>
             <div class="col-md-12">
                <footer class="morelink">

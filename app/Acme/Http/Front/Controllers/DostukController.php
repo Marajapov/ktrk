@@ -169,6 +169,28 @@ class DostukController extends Controller
         );
     }
 
+    public function anons()
+    {
+      $lc = app()->getlocale();
+      $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+      $dostukProjects = \Model\Project\ModelName::where('published','=',true)->where('dostuk', '=', 1)->get();
+      $anons = \Model\Anons\ModelName::where('channel','=','8')->where('published','=','1')->where('dostuktop','<>','1')->orderBy('id','=','desc')->take(10)->get();
+      $dostuktop = \Model\Anons\ModelName::where('channel','=','8')->where('dostuktop','=','1')->where('published','=','1')->orderBy('id','=','desc')->take(3)->get();
+      $dostuk = \Model\Anons\ModelName::where('channel','=','8')->where('dostuktop','=','1')->where('published','=','1')->orderBy('id','=','desc')->get();
+      $perPage = 24;
+
+      return view('Front::channel.dostuk.anons',[
+          'lc' => $lc,
+          'perPage' => $perPage,
+          'anons' => $anons,
+          'backgroundMain' => $backgroundMain,
+          'dostukProjects' => $dostukProjects,
+          'dostuktop' => $dostuktop,
+          'dostuk' => $dostuk,
+        ]
+      );
+    }
+
    // For photos page Dostuk 
     public function Gallery(Request $request, $galleryId)
     {
