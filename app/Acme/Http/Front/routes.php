@@ -126,7 +126,7 @@ Route::group(['domain' => 'ktrk.dev', 'prefix' => '/birinchi', 'namespace' => 'F
     Route::get('/allphotos',['as' => 'dostuk.allphotos','uses'=> 'DostukController@allphotos'] );
     Route::get('/project/{project}',['as' => 'dostuk.project','uses'=> 'DostukController@project'] );
     Route::get('/comingsoon', ['as' => 'dostuk.comingsoon',   'uses' => 'DostukController@ComingSoon']);
-  Route::get('anons', ['as' => 'dostuk.anons',   'uses' => 'DostukController@about']);
+    Route::get('/anons', ['as' => 'dostuk.anons',   'uses' => 'DostukController@anons']);
 
 });
 

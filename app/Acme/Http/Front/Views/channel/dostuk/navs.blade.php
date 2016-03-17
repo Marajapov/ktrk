@@ -56,8 +56,21 @@
                </li>
                <li><a href="{{route('dostuk.allphotos')}}"><i class="fa fa-picture-o"></i> {{ trans('radiopages.PhotoReports') }}</a></li>
                <li><a href="{{route('dostuk.home')}}#about"><i class="fa fa-info"></i>Радио жөнүндө</a></li>
+              <div class="lang">
+                <ul>
+                  <li @if(app()->getlocale() == 'kg') class="active" @endif><a href="/locale/kg">кырг <span></span></a></li>
+                  <li @if(app()->getlocale() == 'ru') class="active" @endif><a href="/locale/ru">рус <span></span></a></li>
+                </ul>
+              </div>
             </ul>
+           <div class="languages">
+             <ul>
+               <li @if(app()->getlocale() == 'kg') class="active" @endif><a href="/locale/kg">кырг <span></span></a></li>
+               <li @if(app()->getlocale() == 'ru') class="active" @endif><a href="/locale/ru">рус <span></span></a></li>
+             </ul>
+           </div>
          </div>
+
    </nav>
    <!--/nav-->
 
