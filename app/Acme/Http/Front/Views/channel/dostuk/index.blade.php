@@ -57,7 +57,7 @@
               <div class="col-md-12">
                 <footer class="allanons">
                   <a href="{{ route('dostuk.anons') }}">
-                    <span>Все анонсы <i class="fa fa-arrow-circle-right"></i></span>
+                    <span>{{ trans('radiopages.AllAnons') }} <i class="fa fa-arrow-circle-right"></i></span>
                   </a>
                 </footer>
               </div>

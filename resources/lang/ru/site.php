@@ -351,6 +351,11 @@ return [
     'DataTableNextPage' => 'След.',
     'DataTablePreviousPage' => 'Пред.',
 
+    //Search page
+    'DataResult' => 'Результаты по запросу',
+    'DataResultTag' => 'Результат по тегу новостей',
+    'DataResultPost' => 'Результат по названию новостей',
+    'DataResultShows' => 'Результат по телепередачам',
 
 //    Post
     'PostAktualno'=>'Актуально',

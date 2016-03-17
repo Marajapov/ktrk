@@ -17,6 +17,7 @@ return [
 		'RelatedNews' => 'Связанные новости',
 		'PhotoReports' => 'Фоторепортажи',
 		'AllPhotoReports' => 'Все фоторепортажи',
+		'AllAnons' => 'Все анонсы',
 		'' => '',
 
 

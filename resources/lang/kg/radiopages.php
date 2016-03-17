@@ -17,6 +17,7 @@ return [
 		'RelatedNews' => 'Байланышкан жаңылыктар',
 		'PhotoReports' => 'Сүрөтбаяндар',
 		'AllPhotoReports' => 'Баардык сүрөт баяндар',
+		'AllAnons' => 'Баардык анонстор',
 
 		//Header 
 		'Live' => 'Түз эфир',
