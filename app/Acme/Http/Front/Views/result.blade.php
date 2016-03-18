@@ -26,7 +26,7 @@
 
                                 <h4 class="search-title">
                                     @if(app()->getlocale() == 'kg')
-                                    <span>&laquo;{{ $searchKey }}&raquo;</span> - боюнча издөөнүн жыйынтыгы
+                                        <span>&laquo;{{ $searchKey }}&raquo;</span> - боюнча издөөнүн жыйынтыгы
                                     @elseif(app()->getlocale() == 'ru')
                                         Результаты по запросу - <span>&laquo;{{ $searchKey }}&raquo;</span>
                                     @endif
