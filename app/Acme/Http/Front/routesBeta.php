@@ -96,10 +96,12 @@ Route::group(['domain' => 'dostuk.ktrk.kg', 'prefix' => '/kyrgyzradio', 'namespa
     Route::get('/project/{project}',['as' => 'kyrgyzradio.project','uses'=> 'KyrgyzradioController@project'] );
     Route::get('/comingsoon', ['as' => 'kyrgyzradio.comingsoon',   'uses' => 'KyrgyzradioController@ComingSoon']);
     Route::get('/about', ['as' => 'kyrgyzradio.about',   'uses' => 'KyrgyzradioController@about']);
+    Route::get('/citations', ['as' => 'kyrgyzradio.citations',   'uses' => 'KyrgyzradioController@citations']);
+    Route::get('/anons', ['as' => 'kyrgyzradio.anons',   'uses' => 'KyrgyzradioController@anons']);
 
 });
 
-Route::group(['domain' => 'dostuk.ktrk.kg', 'prefix' => '/birinchi', 'namespace' => 'Front\Controllers'], function() {
+    Route::group(['domain' => 'dostuk.ktrk.kg', 'prefix' => '/birinchi', 'namespace' => 'Front\Controllers'], function() {
 
     Route::get('/', ['as' => 'birinchi.home',   'uses' => 'BirinchiController@Home']);
     Route::get('/news/{post}', ['as' => 'birinchi.news',   'uses' => 'BirinchiController@news']);

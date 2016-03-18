@@ -454,7 +454,7 @@ ul.nostyle i {
   padding: 0px 15px;
 }
 #cta .col-md-12{
-  margin-bottom: 50px;
+  margin-bottom: 22px;
 }
 #cta p>span {
   background: url('./../../images/channels/kyrgyzradio/blockquote.png') no-repeat;
@@ -679,6 +679,21 @@ ul.nostyle i {
 }
 #portfolio  .panel-body footer span:hover{
     color: #00274A;
+}
+.citation {
+  padding: 15px 0;
+  border-top: none;
+  clear: both;
+  text-align: center;
+}
+.citation span{
+  font-size: 18px;
+  color: #272727;
+  border-bottom: 1px dotted;
+  font-family: 'Roboto condensed';
+}
+.citation span:hover{
+  color: #00274A;
 }
 #portfolio .col-md-4{
   padding: 1px;
@@ -2000,4 +2015,80 @@ height: 325px;
 
 #network {
   padding: 25px 0px;
+}
+
+.quote-item{
+  padding: 0;
+  overflow: hidden;
+  opacity: 1.0;
+  transform: scaleY(1.0);
+  text-align: center;
+
+
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+
+.quote-item img{
+
+  background: rgba(0,0,0,0.75);
+}
+.quote-image{
+  overflow: hidden;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.quote-image::before{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0,0,0,0.75);
+}
+
+.quote-item i{
+  position: absolute;
+  font-size: 24px;
+  color: #FF5722;
+  top: 25px;
+  left: 10px;
+}
+.quote-item p{
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  right: 10%;
+  font-size: 18px;
+  line-height: 20px;
+  color: #ffffff;
+  /* -webkit-transform: translateY(-50%) translateX(-50%); */
+  -ms-transform: translateY(-50%) translateX(-50%);
+  -o-transform: translateY(-50%) translateX(-50%);
+  /* transform: translateY(-30%) translateX(-30%); */
+}
+.quote-item span{
+  position: absolute;
+  bottom: 25px;
+  padding: 5px 10px;
+  background: #FF5722;
+  left: 50%;
+  color: #000;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.with-share{
+  text-align: center;
+  margin-bottom: 10px;
 }

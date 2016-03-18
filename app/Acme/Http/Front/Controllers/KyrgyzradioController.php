@@ -72,11 +72,25 @@ class KyrgyzradioController extends Controller
     {
         $channel = \Model\Channel\ModelName::name('kyrgyzradio')->first();
         $kyrgyzradioProjects = \Model\Project\ModelName::where('published','=',true)->where('kyrgyzradio', '=', 1)->get();
-
         return view('Front::channel.kyrgyzradio.about', [
             'channel' => $channel,
             'kyrgyzradioProjects' => $kyrgyzradioProjects,
             ]);
+    }
+
+    public function citations()
+    {
+      $channel = \Model\Channel\ModelName::name('kyrgyzradio')->first();
+
+      $kyrgyzradioProjects = \Model\Project\ModelName::where('published','=',true)->where('kyrgyzradio', '=', 1)->get();
+
+      $quote = \Model\Quote\ModelName::where('published','=','1')->where('channel', '=', '6')->orderBy('id','=','desc')->orderBy('id','desc')->get();
+
+      return view('Front::channel.kyrgyzradio.citations', [
+        'channel' => $channel,
+        'kyrgyzradioProjects' => $kyrgyzradioProjects,
+        'quote' => $quote,
+      ]);
     }
 
     public function project(\Model\Project\ModelName $project)
@@ -106,6 +120,24 @@ class KyrgyzradioController extends Controller
             'kyrgyzradioProjects' => $kyrgyzradioProjects,
             ]
         );
+    }
+
+    public function anons()
+    {
+      $lc = app()->getlocale();
+      $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+      $kyrgyzradioProjects = \Model\Project\ModelName::where('published','=',true)->where('kyrgyzradio', '=', 1)->get();
+      $kyrgyzradiotop = \Model\Anons\ModelName::where('channel','=','6')->where('kyrgyzradiotop','=','1')->where('published','=','1')->orderBy('id','=','desc')->get();
+      $perPage = 24;
+
+      return view('Front::channel.kyrgyzradio.anons',[
+          'lc' => $lc,
+          'perPage' => $perPage,
+          'backgroundMain' => $backgroundMain,
+          'kyrgyzradioProjects' => $kyrgyzradioProjects,
+          'kyrgyzradiotop' => $kyrgyzradiotop,
+        ]
+      );
     }
 
     public function news(\Model\Post\ModelName $post)

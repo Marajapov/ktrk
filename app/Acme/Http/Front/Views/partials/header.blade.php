@@ -68,7 +68,11 @@
 
                             <form class="form-search" action="{{ route('front.search') }}" method="get">
                                 <div class="form-group pull-right">
+                                  @if(app()->getlocale() == 'kg')
                                     <input type="text" name="search" class="form-control" placeholder="Издөө"/>
+                                  @elseif(app()->getlocale() == 'ru')
+                                    <input type="text" name="search" class="form-control" placeholder="Поиск"/>
+                                  @endif
                                 </div>
 
                                 <a class="btn close-search">

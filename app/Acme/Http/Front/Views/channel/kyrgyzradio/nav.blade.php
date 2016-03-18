@@ -79,6 +79,7 @@
                      @endif
                   </ul>
                </li>
+               <li><a href="{{route('kyrgyzradio.anons')}}"><i class="fa fa-picture-o"></i>Анонс</a></li>
                <li><a href="{{route('kyrgyzradio.allphotos')}}"><i class="fa fa-picture-o"></i> Сүрөтбаяндар</a></li>
                <li><a href="{{route('kyrgyzradio.home')}}#about"><i class="fa fa-info"></i>Радио жөнүндө</a></li>
             </ul>
