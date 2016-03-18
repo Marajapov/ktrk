@@ -5,79 +5,72 @@
 @section('content')
   @include('Front::channel.kyrgyzradio.nav')
   <div id="kyrgyzhome" class="container">
-    <section id="cta2">
-      <div class="text-center">
-        <h2 class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="0ms"><span>Кыргыз радиосу</span> - жан дүйнөнүн азыгы </h2>
-        <p class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="100ms">“Кыргыз радиосу көөнөрбөс мурастар казынасы</p>
-      </div>
-    </section>
-    <section id="cta" class="wow fadeIn">
-      <div class="col-md-12">
-        @if($quote)
-          <div class="quotes-hidden hidden">
-            @foreach($quote as $top)
-              <div>
-                <img src="{{asset($top->file)}}" alt="">
-                <i class="fa fa-quote-left"></i>
-                <p>{{ $top->getDesc() }}</p>
-                  <span class="name">
-                  {{ $top->getAuthor() }}
-                  </span>
-              </div>
-            @endforeach
+    <div class="container">
+      <div class="row">
+        <div class="section-header2">
+          <h2 class="section-title text-center wow fadeInDown" style="margin-bottom: 10px">Цитаталар</h2>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            @if($quote)
+              @foreach($quote as $top)
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                  <div class="quote-item">
+
+                      <div class="quote-image">
+                        <img src="{{asset($top->file)}}" alt="">
+                        <i class="fa fa-quote-left"></i>
+                        <p>{{ $top->getDesc() }}</p>
+                        <span class="name">
+                        {{ $top->getAuthor() }}
+                        </span>
+                      </div>
+                  </div>
+                  <footer class="with-share">
+                    <div class="pluso share-buttons">
+                      <button class="goodshare btn-fb" data-type="fb">
+                        <i class="fa fa-facebook"></i>
+                        <span data-counter="fb"></span>
+                      </button>
+                      <!-- Button with share to Facebook & share counter -->
+                      <button class="goodshare btn-vk" data-type="vk">
+                        <i class="fa fa-vk"></i>
+                        <span data-counter="vk"></span>
+                      </button>
+                      <button class="goodshare btn-ok" data-type="ok">
+                        <i class="fa fa-odnoklassniki"></i>
+                        <span data-counter="ok"></span>
+                      </button>
+                      <button class="goodshare btn-gp" data-type="gp">
+                        <i class="fa fa-google-plus"></i>
+                        <span data-counter="gp"></span>
+                      </button>
+                      <button class="goodshare btn-tw" data-type="tw">
+                        <i class="fa fa-twitter"></i>
+                        {{--<span data-counter="tw"></span>--}}
+                      </button>
+                    </div>
+                  </footer>
+                </div>
+              @endforeach
+            @endif
           </div>
-          <div class="quotes">
-            @foreach($quote as $top)
-              <div>
-                <img src="{{asset($top->file)}}" alt="">
-                <i class="fa fa-quote-left"></i>
-                <p>{{ $top->getDesc() }}</p>
-                  <span class="name">
-                  {{ $top->getAuthor() }}
-                  </span>
-              </div>
-            @endforeach
-          </div>
-        @endif
-        <footer class="citation">
-          <a href="{{ route('kyrgyzradio.citations') }}">
-            <span>Баардык цитаталар <i class="fa fa-arrow-circle-right"></i></span>
-          </a>
-        </footer>
+        </div>
       </div>
-    </section>
+    </div>
   </div>
 @stop
 @section('footerScript')
-  <!-- Programm title Anima -->
-  <script src="{{ asset('js/audio/jquery.newsTicker.js') }}"></script>
+  <script src="{{ asset('js/goodshare.js') }}"></script>
   <script>
-    var nt_title = $('#nt-title').newsTicker({
-      row_height: 30,
-      max_rows: 1,
-      duration: 3000,
-      pauseOnHover: 1
+    $(window).load(function(){
+      $('.goodshare').each(function(){
+        var span = $(this).children('span');
+        var counter = span.text();
+        if((counter==0) || (counter=='')){
+          $(this).addClass('empty');
+        }
+      });
     });
-    var nt_example1 = $('#nt-example1').newsTicker({
-      row_height: 30,
-      max_rows: 3,
-      duration: 4000,
-      prevButton: $('#nt-example1-prev'),
-      nextButton: $('#nt-example1-next')
-    });
-
-    var state = 'stopped';
-    var speed;
-    var add;
-
-  </script>
-  <div id="fb-root"></div>
-  <script>(function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.5";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
   </script>
 @stop
