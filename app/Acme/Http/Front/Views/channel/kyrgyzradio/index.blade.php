@@ -364,6 +364,25 @@
         var add;
 
     </script>
+
+   <script>
+
+    $('.quotes-hidden').slick({
+     slidesToShow: 1,
+     slidesToScroll: 1,
+     arrows: false,
+     fade: true,
+     asNavFor: '.quotes'
+   });
+   $('.quotes').slick({
+     slidesToShow: 3,
+     slidesToScroll: 1,
+     asNavFor: '.quotes-hidden',
+     dots: true,
+     centerMode: true,
+     focusOnSelect: true
+   });
+   </script>
    <div id="fb-root"></div>
 <script>(function(d, s, id) {
    var js, fjs = d.getElementsByTagName(s)[0];

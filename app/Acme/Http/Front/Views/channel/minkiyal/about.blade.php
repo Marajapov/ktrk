@@ -16,7 +16,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" href="./#">
             <img src="{{asset('images/channels/min-kiyal-min.png')}}" alt="">
           </a>
           <!-- <p class="navbar-text">Кыялдар орундалат</p> -->
@@ -24,10 +24,10 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li><a href="#">Башкы</a></li>
-            <li><a href="#report">Сүрөтбаяндар</a></li>
-            <li><a href="#contacts">Биз жөнүндө</a></li>
-            <li><a href="#">Ди-Джейлер</a></li>
+            <li><a href="./">Башкы</a></li>
+            <li><a href="./#report">Сүрөтбаяндар</a></li>
+            <li><a href="./#contacts">Биз жөнүндө</a></li>
+            <li><a href="./#">Ди-Джейлер</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <div class="online">

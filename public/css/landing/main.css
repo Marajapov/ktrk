@@ -1386,7 +1386,15 @@ height: 325px;
 #news .panel-body footer:hover a {
   color: #000;
 }
-
+#news .row{
+  background: #fff;
+}
+#news .post{
+  padding: 30px 15px 0px;
+}
+#news .popular {
+  padding-top: 10px;
+}
 /* END ALL NEWS*/
 
 /* PROJECT NEWS*/

@@ -1729,8 +1729,10 @@
   float: right;
 }
 #about .show-btn{
-  margin: 17px 230px;
-  text-align: center;
+    margin: 0px auto;
+    text-align: center;
+    display: inline-block;
+    position: relative;
 }
 
 .show-btn{

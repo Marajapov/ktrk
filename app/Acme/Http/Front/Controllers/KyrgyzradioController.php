@@ -21,9 +21,9 @@ class KyrgyzradioController extends Controller
          // Photo Gallery
         $photoGalleries = \Model\PhotoParent\ModelName::where('kyrgyzradio','=','1')->where('published','=',true)->take('6')->orderBy('id','desc')->get();
 
-        $kyrgyzradioProjects = \Model\Project\ModelName::where('published','=',true)->where('kyrgyzradio', '=', 1)->take('4')->orderBy('id','desc')->get();
+        $kyrgyzradioProjects = \Model\Project\ModelName::where('published','=',true)->where('kyrgyzradio', '=', 1)->orderBy('id','desc')->get();
 
-        $anons = \Model\Anons\ModelName::where('channel','=','6')->where('kyrgyzradiotop','<>','1')->where('published','=','1')->orderBy('id','=','desc')->take(2)->get();
+        $anons = \Model\Anons\ModelName::where('channel','=','6')->where('kyrgyzradiotop','<>','1')->where('published','=','1')->orderBy('id','=','desc')->take(4)->get();
         $kyrgyzradiotop = \Model\Anons\ModelName::where('channel','=','6')->where('kyrgyzradiotop','=','1')->where('published','=','1')->orderBy('id','=','desc')->take(3)->get();
        
         $quote = \Model\Quote\ModelName::where('published','=','1')->where('channel', '=', '6')->orderBy('id','=','desc')->orderBy('id','desc')->get();
