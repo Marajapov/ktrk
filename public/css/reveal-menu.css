@@ -274,3 +274,8 @@ html { height: 100%;}
     height: 50px;
     width: auto;
 }
+.main-header-xs .btn-right{
+    top: 0; 
+    right:0;
+    padding: 5px;
+}
