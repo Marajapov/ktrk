@@ -71,26 +71,23 @@
          </div>
          <div class="row">
             <div class="col-md-12">
+
                @if($dostukProjects) 
-               @foreach($dostukProjects as $project)       
-               @if($project->program()->get())
-               @foreach($project->program()->get() as $post)
-               <div class="col-md-4 ukturuu">
-                  <div class="media-info">
-                     <img src="@if(empty($post->thumbnail_big)) {{  asset($post->thumbnail) }} @else {{  asset($post->thumbnail_big) }} @endif" alt="image">
-                     <span class="project">
-                     <a href="{{ route('dostuk.project',$project->id) }}"><i class="fa fa-list"></i>{{ $project->getName() }}</a>
-                     </span>
-                     <span class="date">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
-                     <span class="views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
+               <div class="shows-dostuk">
+                  @foreach($dostukProjects as $key=> $project)
+                  <div>
+                  <div class="col-md-12 ukturuu">
+                        <div class="media-info">
+                           <img class="media-object" src="@if(!($project->getFile())) {{ asset('images/project_default.png') }} @else {{ asset($project->getFile()) }} @endif" alt="{{ $project->getNameOne() }}">
+
+                        </div>
+                        <div class="media-name">
+                           <a class="media-heading" href="{{ route('dostuk.project', $project) }}">{{ $project->getName() }}</a>
+                        </div>
+                     </div>
                   </div>
-                  <div class="media-name">
-                     <a class="media-heading" href="{{ route('dostuk.news', $post) }}">{{ $post->getTitleRuOrKg() }}</a>
-                  </div>
+                  @endforeach
                </div>
-               @endforeach
-               @endif
-               @endforeach
                @endif
                </div>
                <div class="col-md-12">
@@ -341,6 +338,12 @@
      slidesToShow: 1,
      fade: true,
      cssEase: 'linear'
+   });
+
+   $('.shows-dostuk').slick({
+     infinite: true,
+     slidesToShow: 3,
+     slidesToScroll: 3
    });
 </script>
 <div id="fb-root"></div>

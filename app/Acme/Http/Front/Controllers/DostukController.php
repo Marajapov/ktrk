@@ -30,6 +30,8 @@ class DostukController extends Controller
         $anons = \Model\Anons\ModelName::where('channel','=','8')->where('published','=','1')->where('dostuktop','<>','1')->orderBy('id','=','desc')->take(10)->get();
         $dostuktop = \Model\Anons\ModelName::where('channel','=','8')->where('dostuktop','=','1')->where('published','=','1')->orderBy('id','=','desc')->take(3)->get();
 
+        $project = \Model\Project\ModelName::where('dostuk','=', true)->first();
+
         return view('Front::channel.dostuk.index', [
             'channel' => $channel,
             'anons' => $anons,
@@ -38,6 +40,7 @@ class DostukController extends Controller
             'allPost' => $allPost,
             'dostukProjects' => $dostukProjects,
             'dostuktop' => $dostuktop,
+            'project' => $project,
 
             ]);
     }

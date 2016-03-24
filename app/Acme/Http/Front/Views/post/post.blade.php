@@ -117,12 +117,10 @@
                                         {{--@if($post->thumb_author)<span class="thumb_author"> Фото: {{ $post->thumb_author }}</span>@endif--}}
                                     </p>
 
-
                                     {!! $content !!}
-
-                                    @if($images)
+                                    @if($images)                                     
                                         <div class="slider-for">
-                                            @if($images)
+                                            @if($images)   
                                                 @foreach($images as $image)
                                                     <div>
                                                         <a href="#">
@@ -132,13 +130,41 @@
                                                 @endforeach
                                             @endif
                                         </div>
-
                                         <div class="slider-nav col-md-12">
                                             @if($images)
                                                 @if($images)
                                                     @foreach($images as $image)
                                                         <div>
                                                             <img class="img" src="{{ asset('froala/uploads/'.$image->name) }}" alt=""/>
+                                                        </div>
+                                                    @endforeach
+                                                @endif
+                                            @endif
+                                        </div>
+                                    @endif
+
+                                    @if($images2)
+                                        <div class="slider-for2">
+
+                                            @if($images2)
+
+                                                @foreach($images2 as $image2)
+
+                                                    <div>
+                                                        <a href="#">
+                                                            <img src="{{ asset('froala/uploads/'.$image2->name) }}" alt=""/>
+                                                        </a>
+                                                    </div>
+                                                @endforeach
+                                            @endif
+                                        </div>
+
+                                        <div class="slider-nav2 col-md-12">
+                                            @if($images2)
+                                                @if($images2)
+                                                    @foreach($images2 as $image2)
+                                                        <div>
+                                                            <img class="img" src="{{ asset('froala/uploads/'.$image2->name) }}" alt=""/>
                                                         </div>
                                                     @endforeach
                                                 @endif
@@ -400,6 +426,22 @@
             slidesToShow: 4,
             slidesToScroll: 1,
             asNavFor: '.slider-for',
+            centerMode: true,
+            focusOnSelect: true,
+            variableWidth: true
+        });
+    </script>
+    <script>
+        $('.slider-for2').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            fade: true,
+            asNavFor: '.slider-nav2'
+        });
+        $('.slider-nav2').slick({
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            asNavFor: '.slider-for2',
             centerMode: true,
             focusOnSelect: true,
             variableWidth: true

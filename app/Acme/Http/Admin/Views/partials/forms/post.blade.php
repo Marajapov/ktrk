@@ -45,6 +45,12 @@
             <div class="col-sm-10">
                 {!! Form::select('parentId', ['0'=>'-- Выберите --']+$PhotoParentList, null, ["class" => "selectpicker", "data-live-search"=>"true", "title" => "-- Выберите --"]) !!}
             </div>
+        </div>        
+        <div class="form-group">
+            <label for="parentId" class="col-sm-2 control-label">Фотогалерея</label>
+            <div class="col-sm-10">
+                {!! Form::select('parentId2', ['0'=>'-- Выберите --']+$PhotoParentList, null, ["class" => "selectpicker", "data-live-search"=>"true", "title" => "-- Выберите --"]) !!}
+            </div>
         </div>
 
         <!-- Thumb -->
