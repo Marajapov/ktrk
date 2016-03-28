@@ -161,7 +161,7 @@ class HomeController extends Controller
         $defaultVideo = 'rjXSurFi8uQ';
 
         return view('Front::home', [
-        //return view('Front::test', [
+//        return view('Front::test', [
 
             'lc' =>$lc,
 
@@ -370,47 +370,28 @@ class HomeController extends Controller
         ]);
     }
 
-    public function Post(\Model\Post\ModelName $post)
+    public function Post(\Model\Post\ModelName $post, $locale = "kg", $title = "")
     {
         $post->incrementViewed();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
         $lc = in_array($locale, ['kg', 'ru'])? $locale : 'kg';
+        
         app()->setlocale($lc);
-
-        if($lc == 'kg')
-        {
-            if($post->title == '')
-            {
-                app()->setlocale('ru');
-                $lc = 'ru';
-            }
-            else
-            {
-                app()->setlocale('kg');
-                $lc = 'kg';
-            }
-        } 
-        elseif($lc == 'ru') 
-        {
-            if($post->titleRu == '')
-            {
-                app()->setlocale('kg');
-                $lc = 'kg';
-            }
-            else
-            {
-                app()->setlocale('ru');
-                $lc = 'ru';
-            }
-        }
-
+        
         $categories = \Model\Category\ModelName::where('general','=','1')->get();
 
         $parent = \Model\PhotoParent\ModelName::where('id','=',$post->parentId)->first();
         if($parent){
-            $images = json_decode($parent->images);    
+            $images = json_decode($parent->images);   
         }else{
             $images = null;
+        }
+
+        $parent2 = \Model\PhotoParent\ModelName::where('id','=',$post->parentId2)->first();
+        if($parent2){
+            $images2 = json_decode($parent2->images);    
+        }else{
+            $images2 = null;
         }
 
         if($lc == 'kg'){
@@ -638,6 +619,7 @@ class HomeController extends Controller
             'relatedPosts' => $relatedPosts,
 
             'images' => $images,
+            'images2' => $images2,
             'content' => $contentFinal,
             'comments' => $comments,
 
@@ -814,8 +796,6 @@ class HomeController extends Controller
 
         $tag = \Model\Tag\Tag::where('name', '=', $key)->first();
         $posts = \Model\Post\ModelName::search($key)->orderBy('id','desc')->get();
-        $programs = \Model\Project\ModelName::search($key)->orderBy('id','desc')->get();
-
          
 //        $posts = \Model\Post\ModelName::search($request->input('search'))->paginate($perPage);
 //        $pages = \Model\Page\ModelName::search($request->input('search'))->get();
@@ -858,9 +838,8 @@ class HomeController extends Controller
         }
 
         return view('Front::result', [
-            'tag' => $tag,
             'posts' => $posts,
-            'programs' => $programs,
+            'tag' => $tag,
             'perPage' => $perPage,
 //            'pages' => $pages,
             'searchKey'=>$searchKey,

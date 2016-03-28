@@ -24,6 +24,7 @@ class CreatePostsTable extends Migration
             $table->integer('category_id')->nullable()->unsigned()->default(null);
             $table->integer('owner_id')->nullable()->unsigned()->default(null);
             $table->integer('parentId')->nullable();
+            $table->integer('parentId2')->nullable();
             $table->string('thumbnail');
             $table->string('thumbnail_big');
             $table->string('thumb_desc');

@@ -765,10 +765,9 @@ ul.nostyle i {
     float: right;
 }
 #about .show-btn{
-    display: table;
+    display: table !important;
     margin: 40px auto 0px auto;
     text-align: center;
-
 }
 
 #get-in-touch .section-header3 .center {
@@ -1515,6 +1514,7 @@ ul.nostyle i {
 .ukturuu{
   position: relative;
   display: block;
+  padding: 5px;
 }
 .ukturuu .media-info{
   position: relative;
@@ -1632,9 +1632,8 @@ ul.nostyle i {
   color: #F44336;
 }
 .lang{
-  margin-right: 56px;
-  position: fixed;
-  right: -14px;
+  position: relative;
+  right: -41px;
   top: 2px;
   z-index: 2;
 
@@ -1655,7 +1654,6 @@ ul.nostyle i {
   display: block;
   margin: -2px;
   background: #0CB2AB;
-  width: 48px;
 }
 .lang li a{
   position: relative;
@@ -1683,4 +1681,30 @@ ul.nostyle i {
     right: 50px;
     display: inline-block;
   }
+}
+
+.shows-dostuk{
+    background: #CACACA; 
+    padding: 15px 10px 15px 10px;
+    border-radius: 2px !important;
+}
+.shows-dostuk .slick-next, .shows-dostuk .slick-next:hover{
+    right: -10px;
+    z-index: 1;
+    margin: 0;
+    width: 40px;
+    height: 60px;
+    background: #ffffff;
+}
+
+.shows-dostuk .slick-prev, .shows-dostuk .slick-prev:hover{
+    left: -10px;
+    z-index: 1;
+    margin: 0;
+    width: 40px;
+    height: 60px;
+    background: #ffffff;
+}
+.shows-dostuk .slick-prev:before, .shows-dostuk .slick-next:before{
+    color: #525B63 !important;
 }

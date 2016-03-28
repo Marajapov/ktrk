@@ -25,7 +25,7 @@ $CONFIG = array(
 	'imgCount' => 12,
 
 	// Cache expiration time (hours)
-	'cacheExpiration' => 4,
+	'cacheExpiration' => 1,
 
 	// Default language [ ru / en ] or something else from lang directory.
 	'langDefault' => 'ru',
