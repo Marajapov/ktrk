@@ -100,3 +100,6 @@
         @yield('content')
 
         @include('Front::partials.footer')
+
+      </div>
+  </div>
