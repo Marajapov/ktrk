@@ -152,117 +152,149 @@
   </section>
 
   <section>
-    <div class="container info">
-        <div id="allposts">
+      <div class="container info">
+          <div id="allposts">
+              <div class="col-md-3 col-sm-12 postshow">
+                <a href="#" data-toggle="modal" data-target="#modal1">
+                  <img src="http://dostuk.ktrk.kg/images/anons/161455946978.png" class="img-responsive" alt="">
+                  <h3>БАЛ КАЙМАК</h3>
+                </a>
+              </div>
+              <!-- Modal -->
+              <div id="modal1" class="modal fade" role="dialog">
+                <div class="modal-dialog modal-lg">
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
+                      <h4 class="modal-title">БАЛ КАЙМАК</h4>
+                    </div>
+                    <div class="modal-body">
+                      “БАЛ КАЙМАК” –  мүнөзү боюнча куттуктоо программасы. Аталган программа күнүнө 3 жолу түз эфирде чыгат. “Бал каймак” аркылуу радионун угармандар менен тыгыз байланышы түзүлүп турат. Угармандар бул программанын алкагында түз эфирдеги телефон аркылуу байланышка чыгып, куттуктоо, салам жана каалоо-тилектерин айта алышат. Ошондой эле, 10 00 кыска номерине СМС-билдирүү жиберүү аркылуу да куттуктоолорун өз дарегине жеткире алышат.
+                      <br/>
+                      <span>08:00-10:00</span><br/>
+                      <span>13:00-14:00</span><br/>
+                      <span>22:00-23:00</span>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Жабуу</button>
+                    </div>
+                  </div>
+                </div>
+
+      </div>
+
             <div class="col-md-3 col-sm-12 postshow">
-              <a href="#" data-toggle="modal" data-target="#modal1">
+              <a href="#" data-toggle="modal" data-target="#modal2">
                 <img src="http://dostuk.ktrk.kg/images/anons/161455946978.png" class="img-responsive" alt="">
-                <h3>БАЛ КАЙМАК</h3>
+                <h3>СВЕТ ЖОК</h3>
               </a>
             </div>
             <!-- Modal -->
-            <div id="modal1" class="modal fade" role="dialog">
+            <div id="modal2" class="modal fade" role="dialog">
               <div class="modal-dialog modal-lg">
                 <!-- Modal content-->
                 <div class="modal-content">
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
-                    <h4 class="modal-title">БАЛ КАЙМАК</h4>
+                    <h4 class="modal-title">СВЕТ ЖОК</h4>
                   </div>
                   <div class="modal-body">
-                    “БАЛ КАЙМАК” –  мүнөзү боюнча куттуктоо программасы. Аталган программа күнүнө 3 жолу түз эфирде чыгат. “Бал каймак” аркылуу радионун угармандар менен тыгыз байланышы түзүлүп турат. Угармандар бул программанын алкагында түз эфирдеги телефон аркылуу байланышка чыгып, куттуктоо, салам жана каалоо-тилектерин айта алышат. Ошондой эле, 10 00 кыска номерине СМС-билдирүү жиберүү аркылуу да куттуктоолорун өз дарегине жеткире алышат.
+                    “СВЕТ ЖОК” –  мүнөзү боюнча таанышуу программасы. Жалгыздыктан тажаган угармандар үчүн жакшы мүмкүнчүлүк. Сүйүктүүсүн же жакшы дос, санаалаш, пикирлеш тапкысы келген угармандар түз эфирдеги телефон аркылуу байланышка чыгып, өзүнүн критерийлерин айтып, телефондорун таштайт. Ушул эле учурда бул программанын алкагында эң активдүү ролду 10 00 кыска номериндеги СМС-кызматы ойнойт.
                     <br/>
-                    <span>08:00-10:00</span><br/>
-                    <span>13:00-14:00</span><br/>
-                    <span>22:00-23:00</span>
+                    <span>Дүйшөмбү-Жума. 24:00-01:00</span>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Жабуу</button>
                   </div>
                 </div>
               </div>
+            </div>
 
-    </div>
+            <div class="col-md-3 col-sm-12 postshow">
+              <a href="#" data-toggle="modal" data-target="#modal4">
+                <img src="http://dostuk.ktrk.kg/images/anons/161455946978.png" class="img-responsive" alt="">
+                <h3>ПАТЕФОН</h3>
+              </a>
+            </div>
+            <!-- Modal -->
+            <div id="modal4" class="modal fade" role="dialog">
+              <div class="modal-dialog modal-lg">
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title">ПАТЕФОН</h4>
+                  </div>
+                  <div class="modal-body">
+                    “ПАТЕФОН” – мүнөзү боюнча көңүл ачуучу жана конкурстук программа. Уктурууга музыкалык аспаптардын биринде ойной алган 4 ырчы катышат. Булар эки-экиден командага бөлүнүп өз ара күч сынашат. Таймаштын талабына ылайык, катышуучулар музыкалык аспаптын коштоосунда жандуу үн менен бир куплеттен ырдап берүүлөрү керек. Тапшырма катары кайсыдыр бир тамга берилет, аткарыла турган чыгарманын биринчи куплети ушул тамгадан башталышы зарыл. Мисалы: к тамгасы берилсе, “кыргыз жери сүйөм сени”. Программанын жеңүүчүлөрү түз эфирдеги телефон аркылуу байланышка чыккан жети угармандын добушу менен аныкталат. Ошондой эле 1037 кыска номерине келген СМС-добуштар, студияга ырчыларга колдоо тобу катары келген 8 угармандардын добушу   да эсепке алынат. Программа негизинен кыргыз музыка дүйнөсү  жандуу үн менен ырдоого шыктуу таланттардан уучу кур эмес экендигин далилдөө.
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Жабуу</button>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-          <div class="col-md-3 col-sm-12 postshow">
-            <a href="#" data-toggle="modal" data-target="#modal2">
-              <img src="http://dostuk.ktrk.kg/images/anons/161455946978.png" class="img-responsive" alt="">
-              <h3>СВЕТ ЖОК</h3>
-            </a>
-          </div>
-          <!-- Modal -->
-          <div id="modal2" class="modal fade" role="dialog">
-            <div class="modal-dialog modal-lg">
-              <!-- Modal content-->
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
-                  <h4 class="modal-title">СВЕТ ЖОК</h4>
-                </div>
-                <div class="modal-body">
-                  “СВЕТ ЖОК” –  мүнөзү боюнча таанышуу программасы. Жалгыздыктан тажаган угармандар үчүн жакшы мүмкүнчүлүк. Сүйүктүүсүн же жакшы дос, санаалаш, пикирлеш тапкысы келген угармандар түз эфирдеги телефон аркылуу байланышка чыгып, өзүнүн критерийлерин айтып, телефондорун таштайт. Ушул эле учурда бул программанын алкагында эң активдүү ролду 10 00 кыска номериндеги СМС-кызматы ойнойт.
-                  <br/>
-                  <span>Дүйшөмбү-Жума. 24:00-01:00</span>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Жабуу</button>
+            <div class="col-md-3 col-sm-12 postshow">
+              <a href="#" data-toggle="modal" data-target="#modal3">
+                <img src="http://dostuk.ktrk.kg/images/anons/161455946978.png" class="img-responsive" alt="">
+                <h3>BashBarmak-show</h3>
+              </a>
+            </div>
+            <!-- Modal -->
+            <div id="modal3" class="modal fade" role="dialog">
+              <div class="modal-dialog modal-lg">
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title">BashBarmak-show</h4>
+                  </div>
+                  <div class="modal-body">
+                    “BashBarmak-show” –  мүнөзү боюнча көңүл ачуучу программа. Эфирдик классификациясы боюнча эки саатык кечки шоу. Бул программанын алкагында угармандар, эки саат бою бир катар шаттуу оюндарга катышып, керектүү кеңештерди, гороскопту угуп, программанын башталышында тандалып алынган күндүн темасы боюнча пикир алышат.
+                    <br/>
+                    <span>Дүйшөмбү-Жума. 17:00-19:00</span>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Жабуу</button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="col-md-3 col-sm-12 postshow">
-            <a href="#" data-toggle="modal" data-target="#modal4">
-              <img src="http://dostuk.ktrk.kg/images/anons/161455946978.png" class="img-responsive" alt="">
-              <h3>ПАТЕФОН</h3>
-            </a>
-          </div>
-          <!-- Modal -->
-          <div id="modal4" class="modal fade" role="dialog">
-            <div class="modal-dialog modal-lg">
-              <!-- Modal content-->
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
-                  <h4 class="modal-title">ПАТЕФОН</h4>
-                </div>
-                <div class="modal-body">
-                  “ПАТЕФОН” – мүнөзү боюнча көңүл ачуучу жана конкурстук программа. Уктурууга музыкалык аспаптардын биринде ойной алган 4 ырчы катышат. Булар эки-экиден командага бөлүнүп өз ара күч сынашат. Таймаштын талабына ылайык, катышуучулар музыкалык аспаптын коштоосунда жандуу үн менен бир куплеттен ырдап берүүлөрү керек. Тапшырма катары кайсыдыр бир тамга берилет, аткарыла турган чыгарманын биринчи куплети ушул тамгадан башталышы зарыл. Мисалы: к тамгасы берилсе, “кыргыз жери сүйөм сени”. Программанын жеңүүчүлөрү түз эфирдеги телефон аркылуу байланышка чыккан жети угармандын добушу менен аныкталат. Ошондой эле 1037 кыска номерине келген СМС-добуштар, студияга ырчыларга колдоо тобу катары келген 8 угармандардын добушу   да эсепке алынат. Программа негизинен кыргыз музыка дүйнөсү  жандуу үн менен ырдоого шыктуу таланттардан уучу кур эмес экендигин далилдөө.
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Жабуу</button>
-                </div>
+          <div id="templatemo_about" class="container_wapper">
+            <div class="container-fluid">
+              <div class="clearfix testimonial_top_bottom_spacer"></div>
+              <div class="col-xs-1 pre_next_wap" id="prev_testimonial">
+                <a href="#"><span class="glyphicon glyphicon-chevron-left pre_next"></span></a>
+              </div>
+              <div id="testimonial_text_wap" class="col-xs-9 col-sm-10">
+                <div class="testimonial_text no-padding">
+                  <div class="col-sm-3 no-padding">
+                    <img src="http://dostuk.ktrk.kg/images/anons/231456118012.jpg" class="img-responsive" style="width: 285px; height: 170px" alt="Business Development Manager" />
+                  </div>
+                  <div class="col-sm-9">
+                    <p>Кыргызстан быйыл үчүнчү ирет бүткүл дүйнөлүк шайлоолор күнү белгилеп жатат. Буга карата БШКнын имаратында окуучулар менен студенттердин катышуусунда майрамдык салтанат уюштурулду.</p>
+                  </div>
+                </div><!--.testimonial_text-->
+                <div class="testimonial_text">
+                  <div class="col-sm-3 no-padding">
+                    <img src="http://dostuk.ktrk.kg/images/anons/221456117670.jpg" class="img-responsive" style="width: 285px; height: 170px" alt="Chief Public Relation Officer" />
+                  </div>
+                  <div class="col-sm-9">
+                    <p>Ушул жумадан баштап бардык министрлик менен мамлекеттик мекемелердин  жетекчилери турак-жайларын камсыздандыра баштайт. Бул тууралуу  премьер-министр Темир Сариев  өкмөттүн 2015-жылдын социалдык-экономикалык өнүгүүсүнүн жыйынтыгы боюнча жыйында билдирди. Премьер жыйында элге үлгү болуу максатында  биринчилерден болуп өз турак-жайын камсыздандырганын маалымдады. Эске салсак 11-февралда турак-жайларды өрт жана жаратылыш кырсыктарынан милдетүү камсыздандыруу тууралуу мыйзам күчүнө кирди.</p>
+                  </div>
+                </div><!--.testimonial_text-->
+              </div><!--#testimonial_text_wap-->
+              <div class="col-xs-1 pre_next_wap" id="next_testimonial">
+                <a href="#"><span class="glyphicon glyphicon-chevron-right pre_next"></span></a>
               </div>
             </div>
-          </div>
+          </div><!--templatemo_about-->
 
-          <div class="col-md-3 col-sm-12 postshow">
-            <a href="#" data-toggle="modal" data-target="#modal3">
-              <img src="http://dostuk.ktrk.kg/images/anons/161455946978.png" class="img-responsive" alt="">
-              <h3>BashBarmak-show</h3>
-            </a>
-          </div>
-          <!-- Modal -->
-          <div id="modal3" class="modal fade" role="dialog">
-            <div class="modal-dialog modal-lg">
-              <!-- Modal content-->
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
-                  <h4 class="modal-title">BashBarmak-show</h4>
-                </div>
-                <div class="modal-body">
-                  “BashBarmak-show” –  мүнөзү боюнча көңүл ачуучу программа. Эфирдик классификациясы боюнча эки саатык кечки шоу. Бул программанын алкагында угармандар, эки саат бою бир катар шаттуу оюндарга катышып, керектүү кеңештерди, гороскопту угуп, программанын башталышында тандалып алынган күндүн темасы боюнча пикир алышат.
-                  <br/>
-                  <span>Дүйшөмбү-Жума. 17:00-19:00</span>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Жабуу</button>
-                </div>
-              </div>
-            </div>
-          </div>
-    </div>
+      </div>
   </section>
 
   <section id="network" >
@@ -368,7 +400,14 @@
   </body>
 @stop
 @section('footerScript')
-<script type="text/javascript" src="{{ asset('js/jquery.slicebox.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/minkiyal/jquery.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/minkiyal/bootstrap.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/minkiyal/jquery-ui.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/minkiyal/jquery.singlePageNav.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/minkiyal/unslider.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/minkiyal/templatemo_script.js') }}"></script>
+
+<script type="text/javascript" src="{{ asset('js/templatemo_script.js') }}"></script>
       <script type="text/javascript">
         $(function() {
             var Page = (function() {
