@@ -5,16 +5,15 @@
 @section('content')
   @include('Front::channel.dostuk.navs')
   <div class="main-container">
-    <section id="about">
-      <div class="container">
-
-      </div>
-    </section>
     <!--/#about-->
     <section id="anonses">
       <div class="row">
+
         @if($dostuk)
           <div class="info">
+         <div class="section-header" style="margin-top: 100px;">
+            <h2 class="section-title text-center wow fadeInDown">Анонс</h2>
+         </div>
             @foreach($dostuk as $key=> $row)
               <div class="col-md-4 col-sm-12 postshow">
                 <a href="#" data-toggle="modal" data-target="#{{ $key+99 }}">

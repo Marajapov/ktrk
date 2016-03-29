@@ -1155,6 +1155,11 @@
     font-size: 12px;
 }
 
+.panel-kenesh .fr-video.fr-dvb iframe {
+    width: 100% !important;
+    height: 470px !important;
+}
+
 /*PANEL RS*/
 .panel-rs .first-item>div{
     margin-bottom: 15px;

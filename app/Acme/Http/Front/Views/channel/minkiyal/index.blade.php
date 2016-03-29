@@ -72,8 +72,8 @@
         @foreach($anonstop as $key=> $row)
           <div class="col-md-3 col-sm-12 postshow">
             <a href="#" data-toggle="modal" data-target="#{{ $key+99 }}">
-              <img src="{{asset($row->thumbnail)}}" class="img-responsive" alt="">
-              <h3>{{$row->name}}</h3>
+              <img src="{{asset($row->thumbnail)}}" class="img-responsive" alt="">              
+              <span class="postshow-name"><h3>{{$row->name}}</h3></span>
             </a>
 
           </div>
