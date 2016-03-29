@@ -16,5 +16,5 @@ class AjaxController extends Controller
             $data = Input::all();
             return $data['id'];
         }
-    }
+    }     
 }

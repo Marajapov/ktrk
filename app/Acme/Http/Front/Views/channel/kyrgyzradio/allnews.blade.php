@@ -5,11 +5,11 @@
 @section('content')
 @include('Front::channel.kyrgyzradio.nav')
 <div id="allnews">
-   <div class="container">
+   <div class="container" style="background: white">
       <div class="row">
          <div class="col-md-9">
             <div class="row">
-               <div class="panel panel-articles">
+               <div class="panel panel-articles" style="border-right: 4px solid #FFFFFF">
                   <div class="panel-heading">
                      <h3 class="panel-title"><span>{{ trans('site.FrontPostAll') }}</span></h3>
                   </div>

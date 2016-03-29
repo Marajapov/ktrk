@@ -14,6 +14,33 @@ class BirinchiController extends Controller
         $lc = app()->getlocale();
         $posts = array();
 
+        if($lc == 'kg')
+        {
+            if($post->title == '')
+            {
+                app()->setlocale('ru');
+                $lc = 'ru';
+            }
+            else
+            {
+                app()->setlocale('kg');
+                $lc = 'kg';
+            }
+        } 
+        elseif($lc == 'ru') 
+        {
+            if($post->titleRu == '')
+            {
+                app()->setlocale('kg');
+                $lc = 'kg';
+            }
+            else
+            {
+                app()->setlocale('ru');
+                $lc = 'ru';
+            }
+        }
+
         $categories = \Model\Category\ModelName::where('birinchi','=','1')->where('published','=','1')->where('orderBirinchi','<>','0')->orderBy('orderBirinchi','asc')->get();
 
         if($lc == 'kg'){
@@ -324,7 +351,7 @@ class BirinchiController extends Controller
         if($lc == 'kg'){
             $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('name','<>','' )->get();    
             $allPost = \Model\Post\ModelName::where('birinchi','=',1)->where('birinchiProgram','<>','1')->languagekg()->take(10)->skip(0)->published()->orderBy('id','desc')->get();    
-            $relatedNews = \Model\Post\ModelName::where('id','<>',$post->id)->where('published','=',true)->where('birinchi','=','1')->languagekg()->where('category_id','=',$post->category_id)->orderBy('id','desc')->take(8)->get();
+            $relatedNews = \Model\Post\ModelName::where('published','=',true)->where('birinchi','=','1')->languagekg()->where('category_id','=',$post->category_id)->orderBy('id','desc')->take(8)->get();
             
             $weekFromNow = date('Y-m-d', strtotime('-7 days'));
             $popArticles = \Model\Post\ModelName::where('birinchi','=','1')->where('created_at','>',$weekFromNow)->languagekg()->orderBy('viewed','desc')->take(6)->get();
@@ -336,7 +363,7 @@ class BirinchiController extends Controller
         }else{
             $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('nameRu','<>','' )->get();
             $allPost = \Model\Post\ModelName::where('birinchi','=',1)->where('birinchiProgram','<>','1')->languageru()->take(10)->skip(0)->published()->orderBy('id','desc')->get();
-            $relatedNews = \Model\Post\ModelName::where('id','<>',$post->id)->where('published','=',true)->where('birinchi','=','1')->languageru()->where('category_id','=',$post->category_id)->orderBy('id','desc')->take(8)->get();
+            $relatedNews = \Model\Post\ModelName::where('published','=',true)->where('birinchi','=','1')->languageru()->where('category_id','=',$post->category_id)->orderBy('id','desc')->take(8)->get();
 
             $weekFromNow = date('Y-m-d', strtotime('-7 days'));
             $popArticles = \Model\Post\ModelName::where('birinchi','=','1')->where('created_at','>',$weekFromNow)->languageru()->orderBy('viewed','desc')->take(6)->get();
@@ -346,6 +373,7 @@ class BirinchiController extends Controller
                 $popArticles = null;
             }
         }
+                // dd($relatedNews);
 
         $categories = \Model\Category\ModelName::where('birinchi','=','1')->get();            
 

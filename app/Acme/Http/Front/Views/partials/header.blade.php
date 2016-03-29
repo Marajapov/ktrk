@@ -2,6 +2,10 @@
     <a href="{{ route('front.home') }}">
         <img src="{{ asset('images/ktrk_last.svg') }}" alt="Logo"/>
     </a>
+    <button class="btn btn-live btn-right" data-toggle="modal" data-target="#liveModal">
+        <i class="fa fa-dot-circle-o"></i>
+        {{ trans('site.Live') }}
+    </button>
 </div>
 
 <button type="button" class="hamburger is-closed visible-xs" data-toggle="offcanvas">
@@ -61,14 +65,18 @@
                                 <li class="fb"><a href="https://www.facebook.com/KTRKkg"><i class="fa fa-facebook"></i></a></li>
                                 <li class="ok"><a href="http://ok.ru/ktrkkg"><i class="fa fa-odnoklassniki"></i></a></li>
                                 <li class="yt"><a href="https://www.youtube.com/channel/UCOD3MESjXSvqYZcWWnZkdMQ"><i class="fa fa-youtube"></i></a></li>
-                                <li class="in"><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                <li class="in"><a href="https://www.instagram.com/ktrk_live/"><i class="fa fa-instagram"></i></a></li>
                             </ul>
 
                             <a class="search-toggle"><i class="fa fa-search"></i></a>
 
                             <form class="form-search" action="{{ route('front.search') }}" method="get">
                                 <div class="form-group pull-right">
+                                  @if(app()->getlocale() == 'kg')
                                     <input type="text" name="search" class="form-control" placeholder="Издөө"/>
+                                  @elseif(app()->getlocale() == 'ru')
+                                    <input type="text" name="search" class="form-control" placeholder="Поиск"/>
+                                  @endif
                                 </div>
 
                                 <a class="btn close-search">

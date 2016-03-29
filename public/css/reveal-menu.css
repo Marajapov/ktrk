@@ -174,7 +174,7 @@ html { height: 100%;}
 .hamburger.is-closed .hamb-top,
 .hamburger.is-closed .hamb-middle,
 .hamburger.is-closed .hamb-bottom {
-    background-color: #237dac;
+  background-color: #237dac;
 }
 .hamburger.is-closed .hamb-top {
     top: 5px;
@@ -200,7 +200,7 @@ html { height: 100%;}
 .hamburger.is-open .hamb-top,
 .hamburger.is-open .hamb-middle,
 .hamburger.is-open .hamb-bottom {
-    background-color: #237dac;
+  background-color: #004A8F;
 }
 .hamburger.is-open .hamb-top,
 .hamburger.is-open .hamb-bottom {
@@ -273,4 +273,9 @@ html { height: 100%;}
 .main-header-xs img{
     height: 50px;
     width: auto;
+}
+.main-header-xs .btn-right{
+    top: 0; 
+    right:0;
+    padding: 5px;
 }

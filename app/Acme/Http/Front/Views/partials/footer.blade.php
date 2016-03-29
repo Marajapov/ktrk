@@ -106,7 +106,7 @@
         playlist: [{
             image: "{{-- asset('images/live_bg.png') --}}",
             sources: [{
-                file: "rtmp://212.112.96.233:1936/live/ktrk.stream"
+                file: "rtmp://85.113.29.233:1936/live/ktrk.stream"
             }]
         }],
         width: "640",

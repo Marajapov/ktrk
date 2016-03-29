@@ -2,10 +2,11 @@
 namespace Model\Project;
 
 use Illuminate\Database\Eloquent\Model;
+use Nicolaslopezj\Searchable\SearchableTrait;
 
 class ModelName extends Model
 {
-    use ModelHelpers, ModelScopes, ModelRelationships;
+    use ModelHelpers, ModelScopes, ModelRelationships, SearchableTrait;
     /**
      * The database table used by the model.
      *
@@ -17,6 +18,15 @@ class ModelName extends Model
      *
      * @var array
      */
+
+     protected $searchable = [
+        'columns' => [
+            'name'   => 10, // order of search, title will be first in listing
+            'nameRu'   => 10, // order of search, title will be first in listing
+            'description' => 9,
+            'descriptionRu' => 9,
+        ],
+    ];
 
     protected $guarded = ['id'];
     // protected $fillable = [];

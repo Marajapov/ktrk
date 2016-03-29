@@ -1,284 +1,358 @@
-@extends('Front::channel.kyrgyzradio.default')
+@extends('Front::channel.dostuk.default')
 @section('title', "Достук Радиосу")
 @section('styles')
-<link rel="stylesheet" href="{{ asset('css/radios.css')}}">
-<link rel="stylesheet" href="{{ asset('css/landing/dostuk.css')}}">
-
-<link rel="stylesheet" href="{{ asset('css/articles.css') }}"/>
-<link rel="stylesheet" href="{{ asset('css/pages.css') }}"/>
-
 @endsection
 @section('content')
-<body id="home" class="homepage">
-    <div class="container-fluid switch">
-            <nav class="navbar">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false">
-                        <span class="sr-only">Меню</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#"><img src="{{ asset('images/channels/dostuk.png')}}"><h4>Достук</h4></a>
-                </div>
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="menu">
-                    <ul class="nav navbar-nav channel_switch">
-                        <li class="sitemenu" id="site-channel1">
-                            <a href="{{ route('front.home') }}"><img src="{{ asset('images/ktrk_last.svg')}}" style="height:40px;"><span>КТРК</span><h4>КТРК</h4></a></li>
-                        <li class="sitemenu" id="site-channel1">
-                            <a href="{{ route('birinchi.home') }}"><img src="{{ asset('images/channels/1-radio.png')}}" ><span>Биринчи радио</span><h4>Биринчи радио</h4></a></li>
-                        <li class="sitemenu" id="site-channel1">
-                            <a href="{{ route('kyrgyzradio.home') }}"><img src="{{ asset('images/channels/kg-radio.png')}}"><span>Кыргыз радиосу</span><h4>Кыргыз радиосу</h4></a></li>
-                        <li class="sitemenu" id="site-channel1">
-                            <a href="{{ route('minkiyal.home') }}"><img src="{{ asset('images/channels/min-kiyal.png')}}"><span>Миң кыял FM</span><h4>Миң кыял FM</h4></a></li>
-                        <li class="sitemenu" id="site-channel1">
-                            <a class="active" href="{{ route('dostuk.home') }}"><img src="{{ asset('images/channels/dostuk.png')}}"><span>Достук</span><h4>Достук</h4></a></li>    
-                    </ul>   
-                </div><!-- /.navbar-collapse -->
-            </nav>
-    </div>
-
-    <header id="header">
-        <nav id="main-menu" class="navbar navbar-default fixedheader2" role="banner">
-            <div class="container" style="padding: 0px; position:relative;">
-                <div class="languages">
-                    <ul>
-                        <li @if(app()->getlocale() == 'kg') class="active" @endif><a href="/locale/kg">кырг <span></span></a></li>
-                        <li @if(app()->getlocale() == 'ru') class="active" @endif><a href="/locale/ru">рус <span></span></a></li>
-                    </ul>
-                </div>
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Меню</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="{{ route('dostuk.home') }}"><img src="{{ asset('images/channels/dostuk.png')}}" alt="logo">Достук</a>
-                  <div class="onetime"><a href="{{ asset('online/online-dostuk.php')}}" onclick="window.open(this.href, '', 'scrollbars=1,height='+Math.min(194, screen.availHeight)+',width='+Math.min(400, screen.availWidth)); return false;"><button class="btn"><i class="fa fa-microphone blink"></i><span>Түз эфир</span></button></a></div>
-              
-                </div>
-                
-                <div class="collapse navbar-collapse navbar-right">
-                    <ul class="nav navbar-nav">
-                        <li class="scroll active"><a href="#home">{{ trans('radiopages.Home') }}</a></li>
-                         <li class="scroll dropdown">
-                            <a href="#services" class="dropdown-toggle" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ trans('radiopages.Peredachi') }}<i class="fa fa-angle-down"></i></a>
-                            <ul class="dropdown-menu">
-                             @if($dostukProjects) 
-                             @foreach($dostukProjects as $dostukProject)
-                             <li>
-                                <a href="{{ route('dostuk.project', $dostukProject) }}">{{ $dostukProject->getName() }}</a>
-                            </li>
-                            @endforeach
-                            @endif
-                            </ul>
-                        </li>                        
-                        <li class="scroll"><a href="#portfolio">{{ trans('radiopages.Photos') }}</a></li>  
-                        <li class="scroll"><a href="#about">{{ trans('radiopages.About') }}</a></li>                        
-                    </ul>
-                </div>
-            </div><!--/.container-->
-        </nav><!--/nav-->
-    </header><!--/header-->
-<div class="container" style="background: #fff;padding: 0px; margin: 20px auto;">
-    <section id="main-slider">
-        <div class="owl-carousel">
-          @if($anons->first())
-            <div class="owl-carousel">
-              @foreach($anons as $row)
-                <div class="item">
-                  <img src="{{asset($row->thumbnail)}}" height="358" width="1600" alt="">
-                  <div class="slider-inner">
-                    <div class="container">
-                      <div class="row">
-                        <div class="col-sm-6">
-                          <div class="carousel-content">
-                            <h2><span>{{ $row->getNameOne() }}</span></h2>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!--/.item-->
-              @endforeach
+@include('Front::channel.dostuk.nav')
+<section id="main-slider">
+   <div class="banners">
+      @if($anons->first())
+      @foreach($anons as $row)
+      <div>
+         <img src="{{asset($row->thumbnail)}}" width="1366" alt="">
+         <div class="container">
+            <div class="banners-content">
+               <h2><span>{{ $row->getNameOne() }}</span></h2>
             </div>
-            <!--/.owl-carousel-->
-          @endif
-        </div><!--/.owl-carousel-->
-    </section><!--/#main-slider-->
-
-    <section id="cta2">
-        <div class="container">
-            <div class="section-header3">
-                <h2 class="section-title text-center wow fadeInDown"></h2>
-                <h2 data-wow-duration="300ms" data-wow-delay="0ms"><span>{{ trans('radiopages.DostukSlogan') }}</span></h2>
-                <h2 class="section-title text-center wow fadeInDown"></h2>  
+         </div>
+      </div>
+      @endforeach
+      @endif
+   </div>
+</section>
+@include('Front::channel.dostuk.header')
+<div class="main-container">
+<div id="homepage">
+   <section id="anonses">
+      <div class="row">
+         @if($dostuktop)
+         <div class="info">
+            @foreach($dostuktop as $key=> $row)
+            <div class="col-md-4 col-sm-12 postshow">
+               <a href="#" data-toggle="modal" data-target="#{{ $key+99 }}">
+                  <img src="{{asset($row->thumbnail)}}" class="img-responsive" alt="">
+                  <h3>{{$row->name}}</h3>
+               </a>
             </div>
-        </div>
-    </section>
-
-    <section id="services" >
-        <div class="container">
-
-            <div class="section-header">
-                <h2 class="section-title text-center wow fadeInDown">{{ trans('radiopages.Peredachi') }}</h2>
-                <p class="text-center wow fadeInDown">{{ trans('radiopages.Dostuklangs') }}<br>{{ trans('radiopages.Dostuklangs2') }}</p>
-          </div>
-
-            <div class="row">
-               <div class="features">
-                  @if($dostukProjects) 
-                  @foreach($dostukProjects as $key=> $project)
-                  @if($project->program()->first())
-                  <div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="100ms">
-                     <div class="media service-box">
-                        <div class="media-body">
-                           <div role="tabpanel">
-                              <ul class="nav main-tab nav-justified" role="tablist">
-                                 <li role="presentation" class="active"> 
-                                    <a href="#{{ $project->id}}" role="tab" data-toggle="tab" aria-controls="{{ $project->id}}" aria-expanded="true">{{ $project->getName() }}</a>
-                                 </li>
-                                 <li role="presentation">
-                                    <a href="#{{ $key+99 }}" role="tab" data-toggle="tab" aria-controls="{{ $key+99 }}" aria-expanded="false">{{ trans('radiopages.OPeredachi') }}</a>
-                                 </li>
-                              </ul>
-                              <div id="tab-content" class="tab-content">
-                                 <div role="tabpanel" class="tab-pane fade active in" id="{{ $project->id}}" aria-labelledby="{{ $project->id}}">
-                                    <div class="onenews">
-                                       <div class="panel panel-articles">
-                                          <div class="panel-body" style="padding: 0px 15px;">
-                                             @if($project->program()->get())
-                                             @foreach($project->program()->get() as $post)
-                                             <div class="media">
-                                                <div class="media-left">
-                                                   <a href="{{ route('dostuk.news', $post) }}">
-                                                   <img class="media-object thumb" src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif" alt="image">
-                                                   </a>
-                                                </div>
-                                                <div class="media-body">
-                                                   <div class="extra">
-                                                      <span class="e-datetime">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
-                                                      <span class="e-views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
-                                                   </div>
-                                                   <a class="media-heading" href="{{ route('dostuk.news', $post) }}">{{ $post->getTitleRuOrKg() }}</a>
-                                                </div>
-                                             </div>
-                                             @endforeach
-                                             @endif
-                                             <footer style="padding: 0;border: none;">
-                                                <a href="{{ route('dostuk.allnews') }}">{{ trans('site.FrontPostAll') }}</a>
-                                             </footer>
-                                          </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                                 <div role="tabpanel" class="tab-pane fade" id="{{ $key+99 }}" aria-labelledby="{{ $key+99 }}">
-                                    <p>{{ $project->description }}</p>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
+            <!-- Modal -->
+            <div id="{{ $key+99 }}" class="modal fade" role="dialog">
+               <div class="modal-dialog modal-lg">
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                     <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
+                        <h4 class="modal-title">{{$row->name}}</h4>
+                     </div>
+                     <div class="modal-body">
+                        {!! $row->getDesc() !!}
+                     </div>
+                     <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Жабуу</button>
                      </div>
                   </div>
-                  <!--/.col-md-4-->
-                  @endif
-                  @endforeach
-                  @endif                             
                </div>
-            </div><!--/.row-->    
-        </div><!--/.container-->
-    </section><!--/#services-->
-
-    <section id="portfolio">
-        <div class="container">
-            <div class="section-header2">
-                <h2 class="section-title text-center wow fadeInDown">{{ trans('radiopages.Photos') }}</h2>
             </div>
-            <div class="panel-body">
-               <section>
-                  @if($photoGalleries != null)
-                  @foreach($photoGalleries as $photoGallery)
-                  <div class="col-md-4">
-                     <div class="gallery-item">
-                        <a href="{{ route('dostuk.photos', $photoGallery) }}" class="thumb">
-                           <img src="{{ asset($photoGallery->status) }}" alt="...">
-                           <i class="fa fa-camera"></i>
-                           <div class="extra" style="position: absolute; bottom: 0px; left: 10px;color: #fff;">
-                              <span class="e-datetime">{{ $photoGallery->getDay() }} {{ $photoGallery->getMonthRu() }}, {{ $photoGallery->getTime() }}</span>
-                           </div>
-                        </a>
-                        <h2>                           
-                           <a href="{{ route('dostuk.photos', $photoGallery) }}">{{ $photoGallery->getName() }}</a>
-                        </h2>
+            @endforeach
+            @endif
+              <div class="col-md-12">
+                <footer class="allanons">
+                  <a href="{{ route('dostuk.anons') }}">
+                    <span>{{ trans('radiopages.AllAnons') }} <i class="fa fa-arrow-circle-right"></i></span>
+                  </a>
+                </footer>
+              </div>
+         </div>
+      </div>
+   </section>
+   <section id="services" >
+      <div class="container">
+         <div class="section-header">
+            <h2 class="section-title text-center wow fadeInDown">{{ trans('radiopages.Peredachi') }}</h2>
+         </div>
+         <div class="row">
+            <div class="col-md-12">
+
+               @if($dostukProjects) 
+               <div class="shows-dostuk">
+                  @foreach($dostukProjects as $key=> $project)
+                  <div>
+                  <div class="col-md-12 ukturuu">
+                        <div class="media-info">
+                           <img class="media-object" src="@if(!($project->getFile())) {{ asset('images/project_default.png') }} @else {{ asset($project->getFile()) }} @endif" alt="{{ $project->getNameOne() }}">
+
+                        </div>
+                        <div class="media-name">
+                           <a class="media-heading" href="{{ route('dostuk.project', $project) }}">{{ $project->getName() }}</a>
+                        </div>
                      </div>
                   </div>
                   @endforeach
+               </div>
+               @endif
+               </div>
+               <div class="col-md-12">
+            </div>
+            <div class="col-md-12">
+               <footer class="morelink">
+                  <a href="{{ route('dostuk.allnews') }}">
+                  <span>{{ trans('radiopages.AllPereadachi') }} <i class="fa fa-arrow-circle-right"></i></span>
+                  </a>
+               </footer>
+            </div>
+         </div>
+         <!--/.row-->    
+      </div>
+      <!--/.container-->
+   </section>
+   <!--/#services-->
+   <section id="portfolio">
+      <div class="container">
+         <div class="section-header">
+            <h2 class="section-title text-center wow fadeInDown">{{ trans('radiopages.PhotoReports') }}</h2>
+         </div>
+         <div class="panel-body">
+            <section>
+               @if($photoGalleries != null)
+               @foreach($photoGalleries as $photoGallery)
+               <div class="col-md-4">
+                  <div class="gallery-item">
+                     <a href="{{ route('dostuk.photos', $photoGallery) }}" class="thumb">
+                        <img src="{{ asset($photoGallery->thumbnail_big) }}" alt="...">
+                        <i class="fa fa-camera"></i>
+                        <div class="extra">
+                           <span class="date">{{ $photoGallery->getDay() }} {{ $photoGallery->getMonthRu() }}, {{ $photoGallery->getTime() }}</span>
+                        </div>
+                     </a>
+                     <h2>                           
+                        <a href="{{ route('dostuk.photos', $photoGallery) }}">{{ $photoGallery->getName() }}</a>
+                     </h2>
+                  </div>
+               </div>
+               @endforeach
+               @endif
+            </section>
+            <footer>
+               <a href="{{ route('dostuk.allphotos') }}">
+               <span>{{ trans('radiopages.Allphotos') }} <i class="fa fa-arrow-circle-right"></i></span>
+               </a>
+            </footer>
+         </div>
+      </div>
+      <!--/.container-->
+   </section>
+<!--/#get-in-touch-->
+<section id="network" >
+   <div class="container network">
+      <div class="section-header">
+         <h2 class="section-title text-center wow fadeInDown">Биз социалдык тармактарда</h2>
+      </div>
+      <div class="row">
+         <div class="col-md-3">
+            <div class="fb-page" style="height: 455px;overflow: hidden;" data-href="https://www.facebook.com/DostukRadiosu" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+               <div class="fb-xfbml-parse-ignore">
+                  <blockquote cite="https://www.facebook.com/DostukRadiosu"><a href="https://www.facebook.com/DostukRadiosu">ДОСТУК  FM радиосу</a></blockquote>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-3" style="background: #E6E6E6;padding: 0px;border-radius: 3px !important;border: 2px solid #E2E9ED;">
+            <a class="twitter-timeline" href="https://twitter.com/DostukKtrk" data-widget-id="709249312098787329">Твиты от @DostukKtrk</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+         </div>
+         <div class="col-md-3">
+            <div id="ok_group_widget"></div>
+            <script>
+               !function (d, id, did, st) {
+                 var js = d.createElement("script");
+                 js.src = "https://connect.ok.ru/connect.js";
+                 js.onload = js.onreadystatechange = function () {
+                   if (!this.readyState || this.readyState == "loaded" || this.readyState == "complete") {
+                     if (!this.executed) {
+                       this.executed = true;
+                       setTimeout(function () {
+                         OK.CONNECT.insertGroupWidget(id,did,st);
+                       }, 0);
+                     }
+                   }}
+                 d.documentElement.appendChild(js);
+               }(document,"ok_group_widget","53948956410105","{width:263,height:455}");
+            </script>
+         </div>
+         <div class="col-md-3">
+            <iframe src="{{asset('images/channels/dostuk/inwidget/index.php?height=455&inline=3')}}" scrolling='no' frameborder='no' style='border:none;width:263px;height:455px;overflow:hidden;'></iframe>
+         </div>
+      </div>
+   </div>
+</section>
+   <!--/#portfolio-->
+   <section id="about">
+      <div class="container">
+         <div class="section-header">
+            <h2 class="section-title text-center wow fadeInDown">{{ trans('radiopages.AboutDostuk') }}</h2>
+         </div>
+         @if(app()->getlocale() == 'kg')
+         <div class="row">
+            <div class="container">
+               <h3 class="column-title">Эл достугуна доо кетирбей ыр менен достукка көпүрө болууга ниет кылган радио - "Достук" радиосу</h3>
+            </div>
+            <div class="col-sm-12 wow fadeInRight">
+               <img src="{{asset('images/channels/dostuk.png')}}" alt="" class="img-responsive fadeInLeft" style="
+                  float: left;">                  
+               <h4> Радио адегенде интернет аркылуу чыга баштаган, ал эми 2015-жылдан тарта аны  санариптик пакеттен табууга болот. «Радионун негизги максаты - өлкөбүздө жашаган этностор аралык достук мамилелердин өнүгүшүнө жана бекемделишине көмөк көрсөтүү эсептелет».</h4>
+               <h4>Радио КТРКнын 2013-2015-жылдарга карата өнүгүү стратегиясына, ошондой эле мамлекет башчысынын жарлыгы менен кабыл алынган Кыргызстандагы этностор аралык мамилелер концепциясына ылайык ачылууда. Радионун берүүлөр сеткасы маданият, тарых, искусство жана адабиятка байланышкан темаларды камтыйт. Өлкөбүздө ушундай радионун ачылышы менен Кыргыз Республикасында жашап жатышкан этностордун өз маданий баалуулуктары менен алмашып турушу үчүн аянтча түзүүгө басым коюлат.Ошондой эле радиодо президенттин мамлекеттик тилди өнүктүрүү жөнүндө жарлыгынын аткарылышы үчүн кыргыз тилин окуп-үйрөнүү боюнча өз алдынча долбоор орун алмакчы. </h4>
+               <a class="show-btn" href="{{ route('dostuk.about')}}">
+               толук маалымат
+               </a>
+            </div>
+         </div>
+         @elseif(app()->getlocale() == 'ru')
+         <div class="row">
+            <div class="container">
+               <h3 class="column-title">Радио "ДОСТУК" вещает в онлайн-режиме на сайте www.ktrk.kg в познавательном, литературном и музыкальном формате. </h3>
+            </div>
+            <div class="col-sm-12 wow fadeInRight">
+               <img src="{{asset('images/channels/dostuk.png')}}" alt="" class="img-responsive fadeInLeft" style="
+                  float: left;">
+               <h3>Цель радиостанции:</h3>
+               <h4>• просвятить молодежь в таких важнейших сферах культуры, как музыка, литература, кино и театр.</h4>
+               <h4>•  познакомить с классическими образцами и культовыми личностями в этих сферах, а также освещать последние достижения, достойные внимания. </h4>
+               <h4>•  углубление и расширение диалога радио со слушателями;</h4>
+               <h4>•  содействие развитию дружеских отношений между народами Кыргызстана;</h4>
+               <h4>•  ориентация на музыку этнических народов Кыргызстана, поддержка отечественных исполнителей;</h4>
+               <h4>•  познакомить слушателей с творчеством исполнителей, музыкантов, поэтов;</h4>
+               <h4>•  проводить беседы в студии со специалистами разных областей, а так же в области музыки:</h4>
+               <a class="show-btn" href="{{ route('dostuk.about')}}">
+               подробнее
+               </a>
+            </div>
+         </div>
+         @endif
+      </div>
+   </section>
+   <!--/#about-->
+   <section id="get-in-touch">
+      <div class="container">
+         <div class="section-header">
+            <h2 class="section-title text-center wow fadeInDown">{{ trans('radiopages.Volna2') }}</h2>
+         </div>
+         <div class="section-header3">
+            <div class="center">
+               <div class="center">
+                  <div class="col-md-12">
+                 
+                     <div class="col-md-6" style="text-align: right;">
+                        <p>8.00-11.00</p>
+                        <p>11.00-17.00</p>
+                     </div>
+                  @if(app()->getlocale() == 'kg')
+                     <div class="col-md-6">
+                        <p>Дүйнөлүк  музыка</p>
+                        <p>Классика-инструменталдык  композициялар</p>
+                     </div>
+                  @elseif(app()->getlocale() == 'ru')
+                     <div class="col-md-6">
+                        <p>Современные хиты 2015-2016</p>
+                        <p>Классические инструментальные композиции</p>
+                     </div>
                   @endif
-               </section>
-              <footer>
-              <a href="{{ route('dostuk.allphotos') }}">
-                     <span>{{ trans('radiopages.Allphotos') }} <i class="fa fa-arrow-circle-right"></i></span>
-                 </a>
-             </footer>
-              </div>
-        </div><!--/.container-->
-    </section><!--/#portfolio-->
-
-    <section id="about">
-        <div class="container">
-
-            <div class="section-header">
-                <h2 class="section-title text-center wow fadeInDown">{{ trans('radiopages.AboutDostuk') }}</h2>
-                <p class="text-center wow fadeInDown">{{ trans('radiopages.AboutDostukup') }}</p>
+                  </div>
+               </div>
             </div>
+            <div class="section-header3">
+            @if(app()->getlocale() == 'kg')
+               <h2 class="section-title text-center wow fadeInDown">“Биринчи” радионун толкунунда:</h2>
+               <p class="text-center wow fadeInDown">Ишемби саат 10.00-18.00<br> Жекшемби саат 17.00-21.00</p>
+            @elseif(app()->getlocale() == 'ru')
+               <h2 class="section-title text-center wow fadeInDown">На волне Биринчи радио:</h2>
+               <p class="text-center wow fadeInDown">10.00-18.00 в субботу<br> 17:00-21:00 воскресенье</p>
+            @endif
+            </div>
+         </div>
+   </section>
 
+   <section id="contacts">
+<div class="container">
+      <div class="section-header">
+         <h2 class="section-title text-center wow fadeInDown">{{ trans('site.BaikoochuKeneshContacts')}}</h2>
+      </div>
+            @if(app()->getlocale() == 'kg')
             <div class="row">
-                <div class="col-sm-4 wow fadeInLeft">
-                    <h3 class="column-title">Логотип</h3>
-               
-                    <div class="img-responsive">
-                      <img src="{{asset('images/channels/dostuk.png')}}" alt="">
-                    </div>
-                    <p>{{ trans('radiopages.AboutPromo') }}</p>   
-                </div>
-
-                <div class="col-sm-8 wow fadeInRight">
-                    <h3 class="column-title">{{ trans('radiopages.AboutAim') }}</h3>
-                    <p>{{ trans('radiopages.DostukText1') }}</p>
-                    <p>{{ trans('radiopages.DostukText2') }}</p>
-                    <p>{{ trans('radiopages.DostukText3') }}</p>
-                    <p>{{ trans('radiopages.DostukText4') }}</p>
-                    <p>{{ trans('radiopages.DostukText5') }}</p>
-                    <p>{{ trans('radiopages.DostukText6') }}</p>
-                    <p>{{ trans('radiopages.DostukText7') }}</p>
-                    <p>{{ trans('radiopages.DostukText8') }}</p>
-                    <p>{{ trans('radiopages.DostukText9') }}</p>
-                    <p>{{ trans('radiopages.DostukText10') }}</p>
-                    <p>{{ trans('radiopages.DostukText11') }}</p>
-                </div>
+               <div class="col-md-4 address">
+                  <h3><i class="fa fa-map-marker"></i> {{ trans('radiopages.Address') }}</h3>
+                  <ul>
+                     <li><i class="fa fa-location-arrow"></i> Кыргызстан, Бишкек  шаары</li>
+                     <li><i class="fa fa-home"></i> Жаш Гвардия бульвары, 59</li>
+                  </ul>
+               </div>
+               <div class="col-md-4 address">
+                  <h3><i class="fa fa-phone"></i> Байланыш телефон:</h3>
+                  <ul>
+                     <li><i class="fa fa-microphone"></i> Редакция: 0312 65 85 05</li>
+                     <li><i class="fa fa-commenting-o"></i> Студия: 0312 65 66 04 <span style="  display: inherit; text-align: center;">0312 39 21 90</span></li>
+                  </ul>
+               </div>
+               <div class="col-md-4 address">
+                  <h3><i class="fa fa-envelope-o"></i>Сайт:</h3>
+                  <ul>
+                     <li><i class="fa fa-home"></i>Сайт: ktrk.kg/dostuk</li>
+                     <li><i class="fa fa-microphone"></i>Онлайн: ktrk.kg/online/dostuk.php</li>
+                  </ul>
+               </div>
             </div>
-        </div>
-    </section><!--/#about-->
-        <section id="get-in-touch">
-        <div class="container">
-            <div class="section-header3">            
-                <h2 class="section-title text-center wow fadeInDown">{{ trans('radiopages.Address') }}</h2>
-                <p class="text-center wow fadeInDown">{{ trans('radiopages.AddressName') }}</p>
+            @elseif(app()->getlocale() == 'ru')
+            <div class="row">
+               <div class="col-md-4 address">
+                  <h3><i class="fa fa-map-marker"></i> {{ trans('radiopages.Address') }}</h3>
+                  <ul>
+                     <li><i class="fa fa-location-arrow"></i> Кыргызстан г. Бишкек</li>
+                     <li><i class="fa fa-home"></i>блв.Молодой Гвардии, 599</li>
+                  </ul>
+               </div>
+               <div class="col-md-4 address">
+                  <h3><i class="fa fa-phone"></i>Контактный телефон:</h3>
+                  <ul>
+                     <li><i class="fa fa-microphone"></i> Редакция: 0312 65 85 05</li>
+                     <li><i class="fa fa-commenting-o"></i> Студия: 0312 65 66 04</li>
+                  </ul>
+               </div>
+               <div class="col-md-4 address">
+                  <h3><i class="fa fa-envelope-o"></i>Сайт:</h3>
+                  <ul>
+                     <li><i class="fa fa-home"></i>Сайт: ktrk.kg/dostuk</li>
+                     <li><i class="fa fa-microphone"></i>Онлайн: ktrk.kg/online/dostuk.php</li>
+                  </ul>
+               </div>
             </div>
-            <div class="section-header3">            
-                <h2 class="section-title text-center wow fadeInDown">{{ trans('radiopages.Phone') }}</h2>
-                <p class="text-center wow fadeInDown">0312 65 67 04 <br> 0312 65 66 10</p>
-            </div>
-            <div class="section-header3">            
-                <h2 class="section-title text-center wow fadeInDown">{{ trans('radiopages.Volna') }}</h2>
-            </div>            
-        </div>
-    </section><!--/#get-in-touch-->
-
+            @endif
 </div>
+   </section>
+   </div>
+</div>
+@stop
+@section('footerScript')
+<script>
+   $('.banners').slick({
+     dots: false,
+     infinite: true,
+     arrows: true,
+     speed: 300,
+     slidesToShow: 1,
+     fade: true,
+     cssEase: 'linear'
+   });
 
+   $('.shows-dostuk').slick({
+     infinite: true,
+     slidesToShow: 3,
+     slidesToScroll: 3
+   });
+</script>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+   var js, fjs = d.getElementsByTagName(s)[0];
+   if (d.getElementById(id)) return;
+   js = d.createElement(s); js.id = id;
+   js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.5";
+   fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
 @stop

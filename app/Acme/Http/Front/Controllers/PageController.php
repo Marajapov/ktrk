@@ -297,12 +297,18 @@ class PageController extends Controller
     {
         $lc = app()->getlocale();
 
+        $fbpost = \Model\Post\ModelName::where('director','<>','1')->where('fbpost','=','1')->orderBy('id','desc')->get();
+        if($fbpost){
+          $fbpost = $fbpost;
+        }else {
+          $fbpost = null;
+        }
+
         $post->incrementViewed();
 
         $categories = \Model\Category\ModelName::all();
         $positionTop = \Model\Banner\ModelName::top()->first();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
-
 
         if(($post->parentId != '0') && ($post->parentId != null))
         {
@@ -333,9 +339,9 @@ class PageController extends Controller
             $related3Post = null;
         }
         if($lc == 'kg'){
-            $relatedPosts = \Model\Post\ModelName::where('category_id','=',$post->category_id)->languagekg()->take(6)->skip(0)->orderBy('id', 'desc')->get();
+            $relatedPosts = \Model\Post\ModelName::where('category_id','=',$post->category_id)->where('fbpost','<>','1')->languagekg()->take(7)->skip(0)->orderBy('id', 'desc')->get();
         }elseif($lc == 'ru'){
-            $relatedPosts = \Model\Post\ModelName::where('category_id','=',$post->category_id)->languageru()->take(6)->skip(0)->orderBy('id', 'desc')->get();
+            $relatedPosts = \Model\Post\ModelName::where('category_id','=',$post->category_id)->where('fbpost','<>','1')->languageru()->take(7)->skip(0)->orderBy('id', 'desc')->get();
         }
 
         if($lc == 'kg'){
@@ -373,6 +379,8 @@ class PageController extends Controller
 
         return view('Front::pages.directorPost',[
             'post' => $post,
+            'lc' => $lc,
+            'fbpost' => $fbpost,
 
             'related1Post' => $related1Post,
             'related2Post' => $related2Post,

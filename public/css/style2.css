@@ -920,6 +920,7 @@ header.top-menu,.logo-block{
 
 .footer-info{
     background: #ffffff;
+    position: relative;
 }
 
 /* Applications panel */
@@ -951,7 +952,7 @@ header.top-menu,.logo-block{
 
 /*FOOTER MENU*/
 .footer-menu{
-    padding: 15px 0;
+    padding: 35px 0 0px 0;
 }
 .footer-menu ul{
     padding: 5px 0;
@@ -975,7 +976,7 @@ header.top-menu,.logo-block{
 }
 
 .copyright{
-    padding: 12px 0 0px;
+    padding: 5px 0 0px;
     margin: 0;
     font-size: 13px;
     line-height: 1;

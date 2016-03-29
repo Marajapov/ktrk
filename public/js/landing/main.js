@@ -57,8 +57,8 @@ jQuery(function($) {'use strict';
 	 
 	    //Init the carousel
 	    $("#main-slider").find('.owl-carousel').owlCarousel({
-	      slideSpeed : 500,
-	      paginationSpeed : 500,
+	      slideSpeed : 0,
+	      paginationSpeed : 0,
 	      singleItem : true,
 	      navigation : true,
 			navigationText: [
@@ -97,7 +97,7 @@ jQuery(function($) {'use strict';
 	      percentTime = 0;
 	      isPause = false;
 	      //run interval every 0.01 second
-	      tick = setInterval(interval, 10);
+	      tick = setInterval(interval, 20);
 	    };
 	 
 	    function interval() {

@@ -11,8 +11,8 @@ class DostukController extends Controller
     public function Home()
     {
         // return view('Front::channel.dostuk.comingsoon',[]);
-
         $channel = \Model\Channel\ModelName::name('dostuk')->first();
+        
 
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
@@ -21,13 +21,16 @@ class DostukController extends Controller
 
         $lc = app()->getlocale();
         if($lc == 'kg'){
-            $allPost = \Model\Post\ModelName::where('dostuk','=',1)->languagekg()->published()->orderBy('id','desc')->get();    
+            $allPost = \Model\Post\ModelName::where('dostuk','=',1)->languagekg()->take(6)->orderBy('id','desc')->get();    
         }else{
-            $allPost = \Model\Post\ModelName::where('dostuk','=',1)->languageru()->published()->orderBy('id','desc')->get();
+            $allPost = \Model\Post\ModelName::where('dostuk','=',1)->languageru()->take(6)->orderBy('id','desc')->get();
         }
 
         $dostukProjects = \Model\Project\ModelName::where('published','=',true)->where('dostuk', '=', 1)->get();
-        $anons = \Model\Anons\ModelName::where('channel','=','8')->where('published','=','1')->orderBy('id','=','desc')->take(2)->get();
+        $anons = \Model\Anons\ModelName::where('channel','=','8')->where('published','=','1')->where('dostuktop','<>','1')->orderBy('id','=','desc')->take(10)->get();
+        $dostuktop = \Model\Anons\ModelName::where('channel','=','8')->where('dostuktop','=','1')->where('published','=','1')->orderBy('id','=','desc')->take(3)->get();
+
+        $project = \Model\Project\ModelName::where('dostuk','=', true)->first();
 
         return view('Front::channel.dostuk.index', [
             'channel' => $channel,
@@ -36,6 +39,8 @@ class DostukController extends Controller
             'photoGalleries' => $photoGalleries,
             'allPost' => $allPost,
             'dostukProjects' => $dostukProjects,
+            'dostuktop' => $dostuktop,
+            'project' => $project,
 
             ]);
     }
@@ -98,27 +103,29 @@ class DostukController extends Controller
     public function news(\Model\Post\ModelName $post)
     {
         $post->incrementViewed();
+        $project = \Model\Project\ModelName::where('dostuk','=', true)->first();
 
         $channel = \Model\Channel\ModelName::name('dostuk')->first();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
-        $dostukProjects = \Model\Project\ModelName::where('published','=',true)->where('dostuk', '=', 1)->get();
-
-        $parent = \Model\PhotoParent\ModelName::where('id','=',$post->parentId)->first();
         
+        $dostukProjects = \Model\Project\ModelName::where('published','=',true)->where('dostuk', '=', 1)->get();
+        $relatedNews = \Model\Project\ModelName::where('id','<>',$project->id)->where('id','<>',$post->id)->where('published','=',true)->where('dostuk','=',$project->id)->orderBy('id','desc')->take(8)->get();
+        $parent = \Model\PhotoParent\ModelName::where('id','=',$post->parentId)->first();
         if($parent != null){
             $images = json_decode($parent->images);    
         }else{
             $images = null;
         }
         
-
            return view('Front::channel.dostuk.news', [
             'channel' => $channel,
             'post' => $post,
             'backgroundMain' => $backgroundMain,
             'dostukProjects' => $dostukProjects,
             'images' => $images,
+            'project' => $project,
+            'relatedNews' => $relatedNews,
             ]);
     }
     
@@ -150,6 +157,41 @@ class DostukController extends Controller
 
             ]
         );
+    }
+
+    public function about()
+    {
+        $lc = app()->getlocale();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        $dostukProjects = \Model\Project\ModelName::where('published','=',true)->where('dostuk', '=', 1)->get();
+        return view('Front::channel.dostuk.about',[                
+            'lc' => $lc,
+            'backgroundMain' => $backgroundMain,
+            'dostukProjects' => $dostukProjects,               
+            ]
+        );
+    }
+
+    public function anons()
+    {
+      $lc = app()->getlocale();
+      $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+      $dostukProjects = \Model\Project\ModelName::where('published','=',true)->where('dostuk', '=', 1)->get();
+      $anons = \Model\Anons\ModelName::where('channel','=','8')->where('published','=','1')->where('dostuktop','<>','1')->orderBy('id','=','desc')->take(10)->get();
+      $dostuktop = \Model\Anons\ModelName::where('channel','=','8')->where('dostuktop','=','1')->where('published','=','1')->orderBy('id','=','desc')->take(3)->get();
+      $dostuk = \Model\Anons\ModelName::where('channel','=','8')->where('dostuktop','=','1')->where('published','=','1')->orderBy('id','=','desc')->get();
+      $perPage = 24;
+
+      return view('Front::channel.dostuk.anons',[
+          'lc' => $lc,
+          'perPage' => $perPage,
+          'anons' => $anons,
+          'backgroundMain' => $backgroundMain,
+          'dostukProjects' => $dostukProjects,
+          'dostuktop' => $dostuktop,
+          'dostuk' => $dostuk,
+        ]
+      );
     }
 
    // For photos page Dostuk 

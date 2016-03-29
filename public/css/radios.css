@@ -93,59 +93,6 @@
     color: rgba(255, 255, 255, 0.65);
 }
 
-
-/*LANGUAGE Landing radio pages*/
-.languages{
-    position: absolute;
-    z-index: 2;
-
-    right: 0;
-    margin-top: 60px;
-
-    -webkit-transition: bottom 0.3s;
-    -moz-transition: bottom 0.3s;
-    -ms-transition: bottom 0.3s;
-    -o-transition: bottom 0.3s;
-    transition: bottom 0.3s;
-
-    background: #0CB2AB;   
-}
-.languages ul{
-    text-align: center;
-}
-.languages li{
-    padding: 0 7px;
-
-    background: none;
-}
-.languages li a{
-    position: relative;
-
-    color: #000;
-
-    font-size: 14px;
-    text-transform: uppercase;
-    font-family: 'Roboto condensed';
-}
-.languages li.active{
-    background: #444;
-}
-.languages li:hover{
-    background: #0CB2AB;
-}
-.languages li.active a{
-    color: rgba(255, 255, 255, 0.65);
-}
-
-@media (max-width:770px) {
-    .languages {
-        position: absolute;
-        top: -55px;
-        right: 50px;
-        display: inline-block;
-    }
-}
-
 /* Birinchi Radio page styles*/
 .birinchiradio {
     font-family: 'Roboto Regular';
@@ -398,7 +345,7 @@
     border: none;
     padding: 5px 15px;
     font-size: 18px;
-    border-radius: 2px !important;
+    border-radius: 2px;
     outline: none;
 }
 
@@ -1146,10 +1093,10 @@
     float: right;
 }
 .allgallery .allright a{
-    color: #043A35;
+    color: #fff;
 }
 .allgallery .allright a:hover{
-    color: #fff;
+    color: #043A35;
 }
 
 /* END All Gallery page*/
@@ -1265,7 +1212,6 @@
 
 #minkiyal .info{
     position: relative;
-    margin-top: -30px;
 }
 #minkiyal .info h2{
     padding: 30px 0px;
@@ -1289,7 +1235,7 @@
 
 #minkiyal .info .postshow {
     position: relative;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
     padding:0px 5px; 
     cursor: pointer;
 }
@@ -1350,7 +1296,9 @@
 #minkiyal .info .postshow:hover h3{
     opacity: 0;
 }
-
+#minkiyal .info .imageshow {
+    margin-bottom: 15px;
+}
 #minkiyal .info .imageshow img{
     height: 220px;
     pointer: cursor;
@@ -1373,28 +1321,29 @@
     bottom: 0;
     padding: 10px;
     margin: 0;
-
     line-height: 1;
     font-size: 1.1em;
     font-family: 'Roboto Regular';
     font-weight: bold;
     letter-spacing: 1px;
     width: 100%;
-
     color: #FFFFFF;
     overflow: hidden;
     opacity: 1;
-
     background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0,0,0,0)), color-stop(100%, rgba(0,0,0,1)));
     background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0, 0.66) 100%);
     background: -o-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0, 0.66) 100%);
     background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0, 0.66) 100%);
     background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0, 0, 0, 0.66) 100%);
-
     -webkit-transition: opacity 0.2s ease;
     -o-transition: opacity 0.2s ease;
-    transition: opacity 0.2s ease;
+    transition: opacity 0.2s ease;   
+}
+#minkiyal .online h3{
+    float: left;
+    color: #fff;
+    margin: 10px 0px 0px;
 }
 #minkiyal .footer-channels a:hover img {
     opacity: 1;
@@ -1410,7 +1359,7 @@
 }
 
 #minkiyal .mingallery .panel-title h3{
-    color: black;
+    color: #403F3E;
 }
 #minkiyal .mingallery .panel-body{
     padding: 0px 15px 0; 
@@ -1457,6 +1406,7 @@
 
 #minkiyal .network {
     position: relative;
+    margin-top: 20px;
 }
 
 #minkiyal .address {
@@ -1500,7 +1450,10 @@
     border-top: 1px solid #C1B38E;
 }
 #minkiyal .slidermin{
-    margin: 15px 5px 50px 5px;
+    margin: 15px 5px 20px 5px;
+}
+#minkiyal .slidermin .slick-dots{
+    bottom: -25px;
 }
 
 #minkiyal .copyright,#minkiyal .footer-menu{
@@ -1553,7 +1506,6 @@
 }
 #minkiyal .allgallery{
     background: #4CAF50;
-    margin-top: 40px;
     margin-bottom: 40px;
     padding-top: 20px;
     padding-bottom: 50px;
@@ -1622,7 +1574,8 @@
 #minkiyal .allgallery .second .extra span, #minkiyal .info .imageshow .extra span{
     color: #fff;
 }
-#minkiyal .withpad{
+
+#minkiyal .anonses, #minkiyal .withpad{
     padding: 0px 5px;
 }
 
@@ -1631,6 +1584,16 @@
 }
 #minkiyal .anons-carousel .slick-slide {
     overflow: hidden;
+}
+#minkiyal .anons-carousel .col-md-3 img{
+    height: 170px;
+}
+#minkiyal .logoon {
+    position: relative;
+}
+#minkiyal .logoon .logo img{
+    margin-left: 15px;
+    margin-top: 25px;
 }
 #minkiyal .anons-carousel .col-md-3 img{
     height: 170px;
@@ -1749,5 +1712,100 @@
   background: none;
   color: #fff;
 }
+#about {
+  padding: 50px 0 50px 0;
+}
+#about h4{
+  color: #444;
+  font-size: 16px;
+  line-height: initial;
+  text-align: justify;
+  text-indent: 1.5em
+}
+#about img {
+  height: 200px;
+  width: auto;
+  padding: 0px 10px;
+  float: right;
+}
+#about .show-btn{
+    margin: 0px auto;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+}
+
+.show-btn{
+  position: relative;
+  top: 0;
+  border: 0;
+  display: inline-block;
+  margin-bottom: 50px;
+  padding: 5px 15px;
+  background: #5AB76E;
+  color: #00283d;
+  font-family: 'Open Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 3px !important;
+  cursor: pointer;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.minkiyal-header .section-title {
+  font-size: 35px;
+  color: #246F27;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 20px;
+  margin: 0 0 20px;
+  font-family: 'Roboto condensed';
+}
+.minkiyal-header .section-title:before {
+  content: "";
+  position: absolute;
+  width: 640px;
+  bottom: 0;
+  height: 2px;
+  background: #0D9D2C;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.minkiyal-header .section-title:after {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  bottom: -11px;
+  left: 50%;
+  margin-left: -12px;
+  border: 5px solid #fff;
+  border-radius: 20px;
+  background: #0D9D2C;
+}
+.column-title {
+  margin-top: 0;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 15px;
+  position: relative;
+  text-align: center;
+}
+.minkiyal_fm{
+  color: #000000;
+  font-weight: 200;
+  font-size: 15px;
+}
+
+
+
 
 /* END Modal */

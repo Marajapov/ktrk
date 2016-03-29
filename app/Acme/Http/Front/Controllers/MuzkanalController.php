@@ -28,7 +28,7 @@ class MuzkanalController extends Controller
         $MediaTop2 = \Model\Media\ModelName::where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->orderBy('viewed','desc')->skip(6)->take(6)->get();
 
         // Concert
-        $Concert = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->where('concert','=', 1)->orderBy('id', 'desc')->take(4)->get();
+        $Concert = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->where('concert','=', 1)->orderBy('id', 'desc')->take(8)->get();
 
          // Photo Gallery
         $photoGalleries = \Model\PhotoParent\ModelName::where('muzkanal','=','1')->where('published','=',true)->take('6')->orderBy('id','desc')->get();
@@ -153,28 +153,24 @@ class MuzkanalController extends Controller
   public function videos()
     {
         $channel = \Model\Channel\ModelName::name('muzkanal')->first();
-        $perPage = 24;
+        $perPage = 12;
 
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
         
         //New clips
-        $MediaNew = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->orderBy('id', 'desc')->take(12)->get();        
+        $MediaNew = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->orderBy('id', 'desc')->paginate($perPage);        
 
         //Top clips
         $MediaTop = \Model\Media\ModelName::where('muzkanal','=','1')->
         whereRaw('created_at BETWEEN DATE_SUB(NOW(), INTERVAL 10 DAY) AND NOW()')->
         where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')
         ->where('muzkanalanons3','<>','1')->where('promo','<>','1')
-        ->orderBy('viewed','desc')->take(12)->get();
+        ->orderBy('viewed','desc')->paginate($perPage);
 
         //Exclusive 
-        $MediaLive = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->where('exclusive','=', 1)->orderBy('id', 'desc')->take(12)->get();
-        $Concert = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->where('concert','=', 1)->orderBy('id', 'desc')->take(12)->get();
+        $MediaLive = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->where('exclusive','=', 1)->orderBy('id', 'desc')->paginate($perPage);  
+        $Concert = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->where('concert','=', 1)->orderBy('id', 'desc')->paginate($perPage);  
      
-        $postAllNew = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->orderBy('id', 'desc')->paginate($perPage);
-        $postAllTop = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->where('exclusive','<>','1')->orderBy('id', 'desc')->paginate($perPage);
-        $postAllLive = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->where('exclusive','=','1')->orderBy('id', 'desc')->paginate($perPage);
-
         return view('Front::channel.muzkanal.videos', [
             'channel' => $channel,
             'backgroundMain' => $backgroundMain,
@@ -182,9 +178,6 @@ class MuzkanalController extends Controller
             'MediaTop' => $MediaTop,
             'MediaLive' => $MediaLive,
             'Concert' => $Concert,
-            'postAllNew' => $postAllNew,
-            'postAllTop' => $postAllTop,
-            'postAllLive' => $postAllLive,
             'perPage' => $perPage,
             ]);
     }
@@ -309,5 +302,133 @@ class MuzkanalController extends Controller
             'week' => $week,
         ]);
     }
+
+  public function popular()
+  {
+    $channel = \Model\Channel\ModelName::name('muzkanal')->first();
+    $perPage = 16;
+
+    $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+    //New clips
+    $MediaNew = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->orderBy('id', 'desc')->paginate($perPage);
+
+    //Top clips
+    $MediaTop = \Model\Media\ModelName::where('muzkanal','=','1')->
+    whereRaw('created_at BETWEEN DATE_SUB(NOW(), INTERVAL 10 DAY) AND NOW()')->
+    where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')
+      ->where('muzkanalanons3','<>','1')->where('promo','<>','1')
+      ->orderBy('viewed','desc')->paginate($perPage);
+
+    //Exclusive
+    $MediaLive = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->where('exclusive','=', 1)->orderBy('id', 'desc')->paginate($perPage);
+    $Concert = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->where('concert','=', 1)->orderBy('id', 'desc')->paginate($perPage);
+
+    return view('Front::channel.muzkanal.popular', [
+      'channel' => $channel,
+      'backgroundMain' => $backgroundMain,
+      'MediaNew' => $MediaNew,
+      'MediaTop' => $MediaTop,
+      'MediaLive' => $MediaLive,
+      'Concert' => $Concert,
+      'perPage' => $perPage,
+    ]);
+  }
+
+  public function newvideos()
+  {
+    $channel = \Model\Channel\ModelName::name('muzkanal')->first();
+    $perPage = 16;
+
+    $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+    //New clips
+    $MediaNew = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->orderBy('id', 'desc')->paginate($perPage);
+
+    //Top clips
+    $MediaTop = \Model\Media\ModelName::where('muzkanal','=','1')->
+    whereRaw('created_at BETWEEN DATE_SUB(NOW(), INTERVAL 10 DAY) AND NOW()')->
+    where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')
+      ->where('muzkanalanons3','<>','1')->where('promo','<>','1')
+      ->orderBy('viewed','desc')->paginate($perPage);
+
+    //Exclusive
+    $MediaLive = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->where('exclusive','=', 1)->orderBy('id', 'desc')->paginate($perPage);
+    $Concert = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->where('concert','=', 1)->orderBy('id', 'desc')->paginate($perPage);
+
+    return view('Front::channel.muzkanal.newvideos', [
+      'channel' => $channel,
+      'backgroundMain' => $backgroundMain,
+      'MediaNew' => $MediaNew,
+      'MediaTop' => $MediaTop,
+      'MediaLive' => $MediaLive,
+      'Concert' => $Concert,
+      'perPage' => $perPage,
+    ]);
+  }
+
+  public function exclusive()
+  {
+    $channel = \Model\Channel\ModelName::name('muzkanal')->first();
+    $perPage = 16;
+
+    $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+    //New clips
+    $MediaNew = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->orderBy('id', 'desc')->paginate($perPage);
+
+    //Top clips
+    $MediaTop = \Model\Media\ModelName::where('muzkanal','=','1')->
+    whereRaw('created_at BETWEEN DATE_SUB(NOW(), INTERVAL 10 DAY) AND NOW()')->
+    where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')
+      ->where('muzkanalanons3','<>','1')->where('promo','<>','1')
+      ->orderBy('viewed','desc')->paginate($perPage);
+
+    //Exclusive
+    $MediaLive = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->where('exclusive','=', 1)->orderBy('id', 'desc')->paginate($perPage);
+    $Concert = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->where('concert','=', 1)->orderBy('id', 'desc')->paginate($perPage);
+
+    return view('Front::channel.muzkanal.exclusive', [
+      'channel' => $channel,
+      'backgroundMain' => $backgroundMain,
+      'MediaNew' => $MediaNew,
+      'MediaTop' => $MediaTop,
+      'MediaLive' => $MediaLive,
+      'Concert' => $Concert,
+      'perPage' => $perPage,
+    ]);
+  }
+
+  public function concert()
+  {
+    $channel = \Model\Channel\ModelName::name('muzkanal')->first();
+    $perPage = 16;
+
+    $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+    //New clips
+    $MediaNew = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->orderBy('id', 'desc')->paginate($perPage);
+
+    //Top clips
+    $MediaTop = \Model\Media\ModelName::where('muzkanal','=','1')->
+    whereRaw('created_at BETWEEN DATE_SUB(NOW(), INTERVAL 10 DAY) AND NOW()')->
+    where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')
+      ->where('muzkanalanons3','<>','1')->where('promo','<>','1')
+      ->orderBy('viewed','desc')->paginate($perPage);
+
+    //Exclusive
+    $MediaLive = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->where('exclusive','=', 1)->orderBy('id', 'desc')->paginate($perPage);
+    $Concert = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->where('concert','=', 1)->orderBy('id', 'desc')->paginate($perPage);
+
+    return view('Front::channel.muzkanal.concert', [
+      'channel' => $channel,
+      'backgroundMain' => $backgroundMain,
+      'MediaNew' => $MediaNew,
+      'MediaTop' => $MediaTop,
+      'MediaLive' => $MediaLive,
+      'Concert' => $Concert,
+      'perPage' => $perPage,
+    ]);
+  }
 
 }

@@ -34,13 +34,24 @@ class MinkiyalController extends Controller
     public function Posts()
     {
         $channel = \Model\Channel\ModelName::name('minkiyal')->first();
-        $photoGalleries = \Model\PhotoParent\ModelName::where('kyrgyzradio','=','1')->where('published','=',true)->take('10')->orderBy('id','desc')->get();        
+        $photoGalleries = \Model\PhotoParent\ModelName::where('minkiyal','=','1')->where('published','=',true)->take('10')->orderBy('id','desc')->get();        
 
         return view('Front::channel.minkiyal.posts', [
             'channel' => $channel,
             'photoGalleries' => $photoGalleries,
             ]);
     }
+
+  public function about()
+  {
+    $lc = app()->getlocale();
+    $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+    return view('Front::channel.minkiyal.about',[
+        'lc' => $lc,
+        'backgroundMain' => $backgroundMain,
+      ]);
+  }
 
     public function Gallery(Request $request, $galleryId)
     {

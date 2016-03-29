@@ -2,9 +2,11 @@
 @section('title', trans('site.BaikoochuKeneshTeamTitle').' | КТРК')
 @section('styles')
   {{--<link rel="stylesheet" type="text/css" href="{{ asset('/static/css/styles.css') }}">--}}
+  <meta name="_token" content="{!! csrf_token() !!}"/>
   <link rel="stylesheet" href="{{ asset('css/articles.css') }}"/>
   <link rel="stylesheet" href="{{ asset('css/pages.css') }}"/>
   <link rel="stylesheet" href="{{ asset('css/build.css') }}"/>
+  <link rel="stylesheet" type="text/css" href="{{ asset('css/sweetalert.css') }}">
 @stop
 @section('content')
 
@@ -389,49 +391,35 @@
 
 @section('footerScript')
 
+  <script src="{{ asset('js/sweetalert.min.js') }}"></script>
+
   <script>
-    function getVote(int) {
-      if (window.XMLHttpRequest) {
-        // code for IE7+, Firefox, Chrome, Opera, Safari
-        xmlhttp=new XMLHttpRequest();
-      } else {  // code for IE6, IE5
-        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-      }
-      xmlhttp.onreadystatechange=function() {
-        if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-          document.getElementById("poll").innerHTML=xmlhttp.responseText;
-        }
-      }
-      xmlhttp.open("GET","{{ asset('poll_vote.php') }}?vote="+int,true);
-      xmlhttp.send();
+    function getVote(vote){
+      $.ajaxSetup({
+        headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
+      });
+
+      var dataString = 'vote='+vote;
+      var url = "{{ route('front.poll_vote') }}";
+      var parent = $('#poll');
+
+      $.ajax({
+          type: "POST",
+          url: url,
+          data: dataString,
+          cache: false,
+          success: function(data)
+          {
+            if(data['status'] == false){
+              swal("", "С одного IP-адреса можно голосовать 1 РАЗ!", "error");
+            }
+            else{
+              swal("Спасибо!", "Ваш голос учтен!", "success");
+              parent.html(data['html']);
+            }
+          }
+      });
     }
-
-//    var count = $("div[class*='ns-team']").length;
-//
-////    for(var i=0; i<count/2; i++){
-//      $('.ns-team').each(function(i, el){
-//        if(i % 2 == 0){
-//          var currentElement = $(this);
-//          var nextElement = $(this).next();
-//          var currentElementHeight = currentElement.height();
-//          var nextElementHeight = nextElement.height();
-//
-//          if(currentElementHeight>nextElementHeight){
-//            nextElement.height(currentElementHeight);
-//          } else {
-//            currentElement.height(nextElementHeight);
-//          }
-//
-////          $(this).append('<span> '+currentElementHeight+'-'+nextElementHeight+'</span>');
-//        }
-//         else{
-//          var currentElementHeight = $(this).height();
-//
-////          $(this).append('<span> '+currentElementHeight+'</span>');
-//        }
-//      });
-////    }
-
   </script>
 
   <script src="{{ asset('js/readmore.js') }}"></script>

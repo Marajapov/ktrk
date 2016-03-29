@@ -21,6 +21,23 @@
                   @if($lc == 'kg')
 
                     <li class="list-group-item">
+                      Кыргыз Республикасынын Коомдук телерадиоберрүү корпорациясынын 2015-жылдык ишинин отчету
+                      <ul class="list-group second-level">
+                        <li class="list-group-item">
+                          <div class="media">
+
+                            <div class="media-body">
+                              <p>Отчетто Корпорациянын жетекчилиги жана каржылануусу тууралуу маалыматта, КТРКнын өнүгүү стратегиясын иш жүзүнө ашыруунун 2015-2016-жж каралган планына ылайык максаттарга жана милдеттерге жетишүү боюнча ишмердигин сыпаттоо, өткөн жылдын ичиндеги корпорация тарабынан жүзөгө ашырылган ишмердикти сүрөттөө, программалар сеткасы жана андагы пландаштырылып жаткан өзгөрүүлөр, аудитория менен кайтарым байланышты калыпка салуу боюнча иштердин жыйынтыктары, корпорациянын 2016-жылга карата алдын ала алынган пландары</p>
+                            </div>
+                            <div class="media-right">
+                              <a target="_blank" href="{{ asset('static/files/report/2015_kg.pdf') }}" class="btn btn-default"><i class="fa fa-file-pdf-o"></i></a>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </li>                   
+
+                    <li class="list-group-item">
                       Кыргыз Республикасынын Коомдук телерадиоберрүү корпорациясынын 2014-жылдык ишинин отчету
                       <ul class="list-group second-level">
                         <li class="list-group-item">
@@ -126,6 +143,24 @@
 
                   @elseif($lc == 'ru')
 
+                    <li class="list-group-item">
+                      Годовой отчет о деятельности  Общественной телерадиовещательной корпорации Кыргызской Республики за 2015 год
+                      <ul class="list-group second-level">
+                        <li class="list-group-item">
+                          <div class="media">
+
+                            <div class="media-body">
+                              <p>Документ включает в себя информацию о руководстве и финансировании корпорации, описание о деятельности КТРК в отчетный период по достижению целей и задач согласно плану реализации стратегии развития на 2015-2016 гг., о сетке программ и планируемых изменениях в ней, об итогах работы по налаживанию обратной связи с аудиторией, о предварительных планах корпорации на 2016 год..</p>
+                              <p style="float: left; font-weight: bold;padding: 10px;">Презентация годового отчета КТРК за 2015 год</p>
+                              <a target="_blank" href="{{ asset('static/files/report/presentation_2015.pdf') }}" class="btn btn-default"><i class="fa fa-file-pdf-o" style="font-size: 30px"></i></a>
+                            </div>
+                            <div class="media-right">
+                              <a target="_blank" href="{{ asset('static/files/report/2015_ru.pdf') }}" class="btn btn-default"><i class="fa fa-file-pdf-o"></i></a>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </li> 
                     <li class="list-group-item">
                       Годовой отчет о деятельности  Общественной телерадиовещательной корпорации Кыргызской Республики за 2014 год
                       <ul class="list-group second-level">

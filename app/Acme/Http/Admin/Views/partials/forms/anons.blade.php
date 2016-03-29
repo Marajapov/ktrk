@@ -48,6 +48,26 @@
                             </div>
                         </div>
                     </div>
+                </div>                
+
+                <div id="kyrgyzradioanons" class="col-sm-4 panel-success display-none">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Кыргыз Радио</h3>
+                    </div>
+
+                    <!-- skoro -->
+                    <div class="form-group">
+                        <label for="parentId" class="col-sm-2 control-label"></label>
+                        <div class="col-sm-12">
+                            <div class="checkbox checkbox-primary ">
+                                {!! Form::hidden('kyrgyzradiotop', 0) !!}
+                                {!! Form::checkbox('kyrgyzradiotop', 1, null, ["id" => "kyrgyzradiotop", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
+                                <label for="kyrgyzradiotop">
+                                    Уктуруулар Анонс
+                                </label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                
                 <div id="minkiyalAnons" class="col-sm-4 panel-success display-none">
@@ -81,6 +101,24 @@
                         </div>
                     </div>
 
+                </div>
+                <div id="dostukAnons" class="col-sm-4 panel-success display-none">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Достук</h3>
+                    </div>
+                    <!-- bir -->
+                    <div class="form-group">
+                        <label for="parentId" class="col-sm-2 control-label"></label>
+                        <div class="col-sm-12">
+                            <div class="checkbox checkbox-primary ">
+                                {!! Form::hidden('dostuktop', 0) !!}
+                                {!! Form::checkbox('dostuktop', 1, null, ["id" => "dostuktop", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
+                                <label for="dostuktop">
+                                    Анонс
+                                </label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 

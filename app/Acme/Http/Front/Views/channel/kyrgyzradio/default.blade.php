@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}"/>
     <link rel="stylesheet" href="{{asset('css/font-awesome.css')}}"/>
     <link rel="stylesheet" href="{{asset('css/style.css')}}"/>
-    <link rel="stylesheet" href="{{asset('css/kyrgyzradio.css')}}"/>
 <!--     
     <link rel="stylesheet" href="{{ asset('css/radios2.css')}}"> -->
     <link rel="stylesheet" href="{{ asset('css/landing/main.css')}}">
@@ -28,11 +27,15 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/custombox.css') }}"/>
     <link rel="stylesheet"  href="{{ asset('css/lightslider.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/gallery.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/magnific-popup.css')}}"/>
+    <link rel="stylesheet" href="{{asset('css/goodshare.css')}}">
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/sweetalert.css') }}">
 
     @yield('styles')
 
 </head>
-<body>
+<body id="kyrgyzradio">
 
 
     @yield('content')
