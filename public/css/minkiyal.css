@@ -1,0 +1,113 @@
+body {
+  font-family: 'Century Gothic', sans-serif;
+}
+a span{
+  color: #257D29;
+}
+h1 {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  text-align: center;
+  font: normal normal normal 34px/60px 'Century Gothic', sans-serif;
+  color: #3b3b3b;
+}
+/*#templatemo_about {*/
+  /*background-color: rgba(128, 130, 129, 0.109804);*/
+/*}*/
+#templatemo_about .about_icon img {
+  width: 100%;
+}
+#templatemo_about .about_icon h2 {
+  text-align: center;
+  font: normal normal normal 20px/25px 'Century Gothic', sans-serif;
+}
+#templatemo_about .about_icon .imgwap {
+  text-align: center;
+  border-radius: 75px;
+}
+#templatemo_about .about_icon p {
+  text-align: center;
+  font: normal normal normal 14px/23px 'Century Gothic', sans-serif;
+}
+#templatemo_about .mission {
+  background-color: #bd3e25;
+  color: #f5bd48;
+}
+#templatemo_about .product {
+  background-color: #334d5c;
+  color: #f5bd48;
+}
+#templatemo_about .testimonial {
+  background-color: #efc84a;
+  color: #ab4921;
+}
+#templatemo_about .statistic {
+  background-color: #334d5c;
+  color: #efc84a;
+}
+#templatemo_about #testimonial_text_wap {
+  overflow: hidden;
+}
+#templatemo_about #testimonial_text_wap h2 {
+  font-size: 24px;
+  margin: 0;
+  padding: 12px 0;
+}
+#templatemo_about #testimonial_text_wap h3 {
+  font-size: 20px;
+  margin: 0;
+  padding: 12px 0;
+}
+#templatemo_about #testimonial_text_wap p {
+  font-size: 14px;
+  line-height: 2em;
+}
+#templatemo_about .testimonial_text {
+  width: 100%;
+  float: left;
+
+  background-color: rgba(128, 130, 129, 0.109804);
+}
+#templatemo_about .pre_next {
+  font-size: 70px;
+  top: 40%;
+  margin-top: -35px;
+  position: absolute;
+}
+#templatemo_about .pre_next a {
+  color: #6698b5;
+  float: left;
+}
+#templatemo_about .pre_next a:hover {
+  color: #334d5c;
+}
+#templatemo_about #testimonial_text_wap h1 {
+  font-size: 70px;
+  top: 50%;
+  margin-top: -35px;
+}
+#templatemo_about .testimonial_top_bottom_spacer {
+  padding-bottom: 28px;
+}
+
+/*  Small devices (tablets, 768px and up)  */
+@media (max-width: 768px ) {
+  #templatemo_about .pre_next {
+    font-size: 15px;
+  }
+  #templatemo_timeline .right_timer {
+    background-position: center center;
+  }
+}
+/*  Medium devices (desktops, 992px and up)  */
+@media (max-width: 970px ) {
+  #templatemo_timeline .right_timer {
+    background-position: 100px 5px;
+  }
+  #templatemo_banner_menu #logo_text {
+    font: normal normal normal 30px/1em 'Century Gothic', sans-serif;
+  }
+  #templatemo_timeline .container-fluid {
+    background: url("../images/time_line_bg.jpg") repeat-y 28px 0;
+  }
+}

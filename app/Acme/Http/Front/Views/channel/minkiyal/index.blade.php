@@ -66,64 +66,152 @@
         </div>
     </div>
   </div>
-  <div class="container info">
-    @if($anonstop)
-      <div id="allposts">
-        @foreach($anonstop as $key=> $row)
-          <div class="col-md-3 col-sm-12 postshow">
-            <a href="#" data-toggle="modal" data-target="#{{ $key+99 }}">
-              <img src="{{asset($row->thumbnail)}}" class="img-responsive" alt="">              
-              <span class="postshow-name"><h3>{{$row->name}}</h3></span>
-            </a>
+  <div class="container">
+    <div class="col-md-12 main-min">
+    
+        <div class="info">
+          @if($anonstop)
+            <div id="allposts">
+              @foreach($anonstop as $key=> $row)
+                <div class="col-md-3 col-sm-12 postshow">
+                  <a href="#" data-toggle="modal" data-target="#{{ $key+99 }}">
+                    <img src="{{asset($row->thumbnail)}}" class="img-responsive" alt="">              
+                    <span class="postshow-name"><h3>{{$row->name}}</h3></span>
+                  </a>
 
-          </div>
-          <!-- Modal -->
-          <div id="{{ $key+99 }}" class="modal fade" role="dialog">
-            <div class="modal-dialog modal-lg">
-              <!-- Modal content-->
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
+                </div>
+                <!-- Modal -->
+                <div id="{{ $key+99 }}" class="modal fade" role="dialog">
+                  <div class="modal-dialog modal-lg">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
 
-                  <h4 class="modal-title">{{$row->name}}</h4>
+                        <h4 class="modal-title">{{$row->name}}</h4>
+                      </div>
+                      <div class="modal-body">
+                        {!! $row->getDesc() !!}
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Жабуу</button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div class="modal-body">
-                  {!! $row->getDesc() !!}
+              @endforeach
+              @foreach($anonstop as $key=> $row)
+                <div class="col-md-3 col-sm-12 postshow">
+                  <a href="#" data-toggle="modal" data-target="#{{ $key+99 }}">
+                    <img src="{{asset($row->thumbnail)}}" class="img-responsive" alt="">              
+                    <span class="postshow-name"><h3>{{$row->name}}</h3></span>
+                  </a>
+
                 </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Жабуу</button>
+                <!-- Modal -->
+                <div id="{{ $key+99 }}" class="modal fade" role="dialog">
+                  <div class="modal-dialog modal-lg">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
+
+                        <h4 class="modal-title">{{$row->name}}</h4>
+                      </div>
+                      <div class="modal-body">
+                        {!! $row->getDesc() !!}
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Жабуу</button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
+              @endforeach
+              @foreach($anonstop as $key=> $row)
+                <div class="col-md-3 col-sm-12 postshow">
+                  <a href="#" data-toggle="modal" data-target="#{{ $key+99 }}">
+                    <img src="{{asset($row->thumbnail)}}" class="img-responsive" alt="">              
+                    <span class="postshow-name"><h3>{{$row->name}}</h3></span>
+                  </a>
+
+                </div>
+                <!-- Modal -->
+                <div id="{{ $key+99 }}" class="modal fade" role="dialog">
+                  <div class="modal-dialog modal-lg">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
+
+                        <h4 class="modal-title">{{$row->name}}</h4>
+                      </div>
+                      <div class="modal-body">
+                        {!! $row->getDesc() !!}
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Жабуу</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              @endforeach
+              @foreach($anonstop as $key=> $row)
+                <div class="col-md-3 col-sm-12 postshow">
+                  <a href="#" data-toggle="modal" data-target="#{{ $key+99 }}">
+                    <img src="{{asset($row->thumbnail)}}" class="img-responsive" alt="">              
+                    <span class="postshow-name"><h3>{{$row->name}}</h3></span>
+                  </a>
+
+                </div>
+                <!-- Modal -->
+                <div id="{{ $key+99 }}" class="modal fade" role="dialog">
+                  <div class="modal-dialog modal-lg">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
+
+                        <h4 class="modal-title">{{$row->name}}</h4>
+                      </div>
+                      <div class="modal-body">
+                        {!! $row->getDesc() !!}
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Жабуу</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              @endforeach
             </div>
-          </div>
-        @endforeach
-      </div>
-    @endif
-  </div>
-  <section id="report">
-    <div class="container anonses">
-      <div class="anons-slider slidermin">
-        <div class="slider-overlay"></div>
-        @if($anonsbottom)
-          <div class="anons-carousel">
-            @foreach($anonsbottom as $anonsbot)
-              <div>
-                <div class="row">
-                  <div class="col-md-3">
-                    <img src="{{asset($anonsbot->thumbnail)}}" alt=""/>
+          @endif
+        </div>
+        <div class="anonses">
+          <div class="anons-slider slidermin">
+            <div class="slider-overlay"></div>
+            @if($anonsbottom)
+              <div class="anons-carousel">
+                @foreach($anonsbottom as $anonsbot)
+                  <div>
+                    <div class="row">
+                      <div class="col-md-3">
+                        <img src="{{asset($anonsbot->thumbnail)}}" alt=""/>
+                      </div>
+                      <div class="col-md-9">
+                         <span>
+                         {!! $anonsbot->getDesc() !!}
+                         </span>
+                      </div>
+                    </div>
                   </div>
-                  <div class="col-md-9">
-                     <span>
-                     {!! $anonsbot->getDesc() !!}
-                     </span>
-                  </div>
-                </div>
+                @endforeach
               </div>
-            @endforeach
+            @endif
           </div>
-        @endif
-      </div>
+        </div>
     </div>
+  </div>
     <div class="container-fluid allgallery">
       <div class="container ">
         <div class="title">
@@ -149,7 +237,7 @@
         </div>
       </div>
     </div>
-  </section>
+  
 
   <section>
     <div class="container info">
@@ -409,8 +497,7 @@
       autoplay: true,
       autoplaySpeed: 6500,
       centerPadding: '0',
-      dots: true,
-      arrows: false,
+      arrows: true,
       infinite: true,
       slidesToShow: 1,
       speed: 400,

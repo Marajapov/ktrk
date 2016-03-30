@@ -140,6 +140,45 @@ class KyrgyzradioController extends Controller
       );
     }
 
+    public function anonses()
+    {
+      $lc = app()->getlocale();
+      $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+      $kyrgyzradioProjects = \Model\Project\ModelName::where('published','=',true)->where('kyrgyzradio', '=', 1)->get();
+      $kyrgyzradiotop = \Model\Anons\ModelName::where('channel','=','6')->where('kyrgyzradiotop','=','1')->where('published','=','1')->orderBy('id','=','desc')->get();
+      $perPage = 24;
+      $channel = \Model\Channel\ModelName::where('name','=','kyrgyzradio')->first();
+      $currentDate = date('d-m-Y');
+      $currentTime = date('H:i');
+
+
+      if($channel){
+        $schedule = \Model\Schedule\ModelName::where('channel_id','=',$channel->id)->where('date','=',$currentDate)->first();
+
+        if(!empty($schedule)){
+          $program = json_decode($schedule->program);
+          // dd($program);
+          $programNew = array_add($program, 'date', $schedule->date);
+        }else{
+          $program = '';
+        }
+      }
+
+      return view('Front::channel.kyrgyzradio.anonses',[
+          'lc' => $lc,
+          'perPage' => $perPage,
+          'backgroundMain' => $backgroundMain,
+          'kyrgyzradioProjects' => $kyrgyzradioProjects,
+          'kyrgyzradiotop' => $kyrgyzradiotop,
+          'channel' => $channel,
+          'currentDate' => $currentDate,
+          'currentTime' => $currentTime,
+
+          'program' => $program,
+        ]
+      );
+    }
+
     public function news(\Model\Post\ModelName $post)
     {
         $post->incrementViewed();
