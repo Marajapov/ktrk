@@ -14,7 +14,7 @@
          <h4>Достук радиосу</h4>
       </a>
       <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="menu">
+      <div class="collapse navbar-collapse" id="menu" style="background: rgba(0, 0, 0, 0.16);">
          <ul class="nav navbar-nav channel_switch">
             <li class="sitemenu" id="site-channel1">
                <a href="{{ route('front.home') }}">

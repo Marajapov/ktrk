@@ -81,9 +81,6 @@
                            <img class="media-object" src="@if(!($project->getFile())) {{ asset('images/project_default.png') }} @else {{ asset($project->getFile()) }} @endif" alt="{{ $project->getNameOne() }}">
 
                         </div>
-                        <div class="media-name">
-                           <a class="media-heading" href="{{ route('dostuk.project', $project) }}">{{ $project->getName() }}</a>
-                        </div>
                      </div>
                   </div>
                   @endforeach
@@ -91,13 +88,6 @@
                @endif
                </div>
                <div class="col-md-12">
-            </div>
-            <div class="col-md-12">
-               <footer class="morelink">
-                  <a href="{{ route('dostuk.allnews') }}">
-                  <span>{{ trans('radiopages.AllPereadachi') }} <i class="fa fa-arrow-circle-right"></i></span>
-                  </a>
-               </footer>
             </div>
          </div>
          <!--/.row-->    
@@ -118,12 +108,12 @@
                   <div class="gallery-item">
                      <a href="{{ route('dostuk.photos', $photoGallery) }}" class="thumb">
                         <img src="{{ asset($photoGallery->thumbnail_big) }}" alt="...">
-                        <i class="fa fa-camera"></i>
-                        <div class="extra">
-                           <span class="date">{{ $photoGallery->getDay() }} {{ $photoGallery->getMonthRu() }}, {{ $photoGallery->getTime() }}</span>
-                        </div>
                      </a>
-                     <h2>                           
+                     <h2>
+                        <div class="extra">
+                           <span class="camera"> <i class="fa fa-camera"></i> </span>
+                           <span class="date">{{ $photoGallery->getDay() }} {{ $photoGallery->getMonthRu() }}, {{ $photoGallery->getTime() }}</span>
+                        </div>                                              
                         <a href="{{ route('dostuk.photos', $photoGallery) }}">{{ $photoGallery->getName() }}</a>
                      </h2>
                   </div>
@@ -240,18 +230,15 @@
                   <div class="col-md-12">
                  
                      <div class="col-md-6" style="text-align: right;">
-                        <p>8.00-11.00</p>
-                        <p>11.00-17.00</p>
+                        <p>8:00-17:00</p>
                      </div>
                   @if(app()->getlocale() == 'kg')
                      <div class="col-md-6">
-                        <p>Дүйнөлүк  музыка</p>
-                        <p>Классика-инструменталдык  композициялар</p>
+                        <p>Ар улуттун ырлары жана дүйнөлүк музыка</p>
                      </div>
                   @elseif(app()->getlocale() == 'ru')
                      <div class="col-md-6">
-                        <p>Современные хиты 2015-2016</p>
-                        <p>Классические инструментальные композиции</p>
+                        <p>Музыка народов мира</p>
                      </div>
                   @endif
                   </div>
@@ -263,7 +250,7 @@
                <p class="text-center wow fadeInDown">Ишемби саат 10.00-18.00<br> Жекшемби саат 17.00-21.00</p>
             @elseif(app()->getlocale() == 'ru')
                <h2 class="section-title text-center wow fadeInDown">На волне Биринчи радио:</h2>
-               <p class="text-center wow fadeInDown">10.00-18.00 в субботу<br> 17:00-21:00 воскресенье</p>
+               <p class="text-center wow fadeInDown">10.00-18.00 суббота<br> 17:00-21:00 воскресенье</p>
             @endif
             </div>
          </div>
@@ -311,7 +298,7 @@
                   <h3><i class="fa fa-phone"></i>Контактный телефон:</h3>
                   <ul>
                      <li><i class="fa fa-microphone"></i> Редакция: 0312 65 85 05</li>
-                     <li><i class="fa fa-commenting-o"></i> Студия: 0312 65 66 04</li>
+                     <li><i class="fa fa-commenting-o"></i> Студия: 0312 65 66 04 <span style="  display: inherit; text-align: center;">0312 39 21 90</span></li>
                   </ul>
                </div>
                <div class="col-md-4 address">
@@ -336,14 +323,17 @@
      arrows: true,
      speed: 300,
      slidesToShow: 1,
-     fade: true,
-     cssEase: 'linear'
+     slidesToScroll: 1,
+     autoplay: true,
+     autoplaySpeed: 3500
    });
 
    $('.shows-dostuk').slick({
      infinite: true,
      slidesToShow: 3,
-     slidesToScroll: 3
+     slidesToScroll: 1,
+     autoplay: true,
+     autoplaySpeed: 2500
    });
 </script>
 <div id="fb-root"></div>

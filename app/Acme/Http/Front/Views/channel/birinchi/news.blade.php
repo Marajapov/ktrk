@@ -15,6 +15,11 @@
 <link rel="stylesheet" href="{{ asset('css/magnific-popup.css')}}"/>
 @endsection
 @section('content')
+<style>
+  .t-info{
+    background: #4E7486 !important;
+  }
+</style>
 <div class="birinchiradio">
    @include('Front::channel.birinchi.nav')
    <div class="container">
@@ -26,7 +31,7 @@
                      <div class="col-md-12">
                         <h3 class="title">{{ $post->category('category_id')->first()->getTitle() }}</h3>
                      </div>
-                     <div class="panel">
+                     <div class="panel panel-article">
 
                         <div class="panel-body">
                            <div class="news-info">
@@ -42,7 +47,8 @@
                               {{--@if($post->thumb_author)<span class="thumb_author"> Фото: {{ $post->thumb_author }}</span>@endif--}}
                             </p>
                            <article>
-                              {!! $post->getContent() !!}
+                              <!-- {!! $post->getContent() !!} -->
+                              {!! $content !!}
                            </article>
                           <p>
                               <a href="http://orphus.ru" id="orphus" class="hidden" target="_blank"><img alt="Система Orphus" src="{{ asset('js/orphus.gif') }}" border="0" width="240" height="80" /></a>

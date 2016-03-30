@@ -66,6 +66,7 @@
             </div>
         </div>
     </div>
+
     <div class="container info">
         @if($anonstop)
             <div id="allposts">
@@ -123,6 +124,160 @@
                     </div>
                 @endif
             </div>
+
+  </div>
+  <div class="container">
+    <div class="col-md-12 main-min">
+    
+        <div class="info">
+          @if($anonstop)
+            <div id="allposts">
+              @foreach($anonstop as $key=> $row)
+                <div class="col-md-3 col-sm-12 postshow">
+                  <a href="#" data-toggle="modal" data-target="#{{ $key+99 }}">
+                    <img src="{{asset($row->thumbnail)}}" class="img-responsive" alt="">              
+                    <span class="postshow-name"><h3>{{$row->name}}</h3></span>
+                  </a>
+
+                </div>
+                <!-- Modal -->
+                <div id="{{ $key+99 }}" class="modal fade" role="dialog">
+                  <div class="modal-dialog modal-lg">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
+
+                        <h4 class="modal-title">{{$row->name}}</h4>
+                      </div>
+                      <div class="modal-body">
+                        {!! $row->getDesc() !!}
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Жабуу</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              @endforeach
+              @foreach($anonstop as $key=> $row)
+                <div class="col-md-3 col-sm-12 postshow">
+                  <a href="#" data-toggle="modal" data-target="#{{ $key+99 }}">
+                    <img src="{{asset($row->thumbnail)}}" class="img-responsive" alt="">              
+                    <span class="postshow-name"><h3>{{$row->name}}</h3></span>
+                  </a>
+
+                </div>
+                <!-- Modal -->
+                <div id="{{ $key+99 }}" class="modal fade" role="dialog">
+                  <div class="modal-dialog modal-lg">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
+
+                        <h4 class="modal-title">{{$row->name}}</h4>
+                      </div>
+                      <div class="modal-body">
+                        {!! $row->getDesc() !!}
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Жабуу</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              @endforeach
+              @foreach($anonstop as $key=> $row)
+                <div class="col-md-3 col-sm-12 postshow">
+                  <a href="#" data-toggle="modal" data-target="#{{ $key+99 }}">
+                    <img src="{{asset($row->thumbnail)}}" class="img-responsive" alt="">              
+                    <span class="postshow-name"><h3>{{$row->name}}</h3></span>
+                  </a>
+
+                </div>
+                <!-- Modal -->
+                <div id="{{ $key+99 }}" class="modal fade" role="dialog">
+                  <div class="modal-dialog modal-lg">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
+
+                        <h4 class="modal-title">{{$row->name}}</h4>
+                      </div>
+                      <div class="modal-body">
+                        {!! $row->getDesc() !!}
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Жабуу</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              @endforeach
+              @foreach($anonstop as $key=> $row)
+                <div class="col-md-3 col-sm-12 postshow">
+                  <a href="#" data-toggle="modal" data-target="#{{ $key+99 }}">
+                    <img src="{{asset($row->thumbnail)}}" class="img-responsive" alt="">              
+                    <span class="postshow-name"><h3>{{$row->name}}</h3></span>
+                  </a>
+
+                </div>
+                <!-- Modal -->
+                <div id="{{ $key+99 }}" class="modal fade" role="dialog">
+                  <div class="modal-dialog modal-lg">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
+
+                        <h4 class="modal-title">{{$row->name}}</h4>
+                      </div>
+                      <div class="modal-body">
+                        {!! $row->getDesc() !!}
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Жабуу</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              @endforeach
+            </div>
+          @endif
+        </div>
+        <div class="anonses">
+          <div class="anons-slider slidermin">
+            <div class="slider-overlay"></div>
+            @if($anonsbottom)
+              <div class="anons-carousel">
+                @foreach($anonsbottom as $anonsbot)
+                  <div>
+                    <div class="row">
+                      <div class="col-md-3">
+                        <img src="{{asset($anonsbot->thumbnail)}}" alt=""/>
+                      </div>
+                      <div class="col-md-9">
+                         <span>
+                         {!! $anonsbot->getDesc() !!}
+                         </span>
+                      </div>
+                    </div>
+                  </div>
+                @endforeach
+              </div>
+            @endif
+          </div>
+        </div>
+    </div>
+  </div>
+    <div class="container-fluid allgallery">
+      <div class="container ">
+        <div class="title">
+          <h3>Сүрөтбаяндар</h3>
+          <h3 class="allright"><a href="{{ route('minkiyal.posts')}}">Баардыгы <i class="fa fa-arrow-right"></i></a></h3>
+
         </div>
         <div class="container-fluid allgallery">
             <div class="container ">
@@ -149,7 +304,6 @@
                 </div>
             </div>
         </div>
-    </section>
 
     <section>
         <div class="container info">
@@ -261,6 +415,92 @@
                             </div>
                         </div>
                     </div>
+      </div>
+    </div>
+
+    </section>
+  
+
+  <section>
+    <div class="container info">
+        <div id="allposts">
+            <div class="col-md-3 col-sm-12 postshow">
+              <a href="#" data-toggle="modal" data-target="#modal1">
+                <img src="http://dostuk.ktrk.kg/images/anons/161455946978.png" class="img-responsive" alt="">
+                <h3>БАЛ КАЙМАК</h3>
+              </a>
+            </div>
+            <!-- Modal -->
+            <div id="modal1" class="modal fade" role="dialog">
+              <div class="modal-dialog modal-lg">
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title">БАЛ КАЙМАК</h4>
+                  </div>
+                  <div class="modal-body">
+                    “БАЛ КАЙМАК” –  мүнөзү боюнча куттуктоо программасы. Аталган программа күнүнө 3 жолу түз эфирде чыгат. “Бал каймак” аркылуу радионун угармандар менен тыгыз байланышы түзүлүп турат. Угармандар бул программанын алкагында түз эфирдеги телефон аркылуу байланышка чыгып, куттуктоо, салам жана каалоо-тилектерин айта алышат. Ошондой эле, 10 00 кыска номерине СМС-билдирүү жиберүү аркылуу да куттуктоолорун өз дарегине жеткире алышат.
+                    <br/>
+                    <span>08:00-10:00</span><br/>
+                    <span>13:00-14:00</span><br/>
+                    <span>22:00-23:00</span>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Жабуу</button>
+                  </div>
+                </div>
+              </div>
+
+    </div>
+
+          <div class="col-md-3 col-sm-12 postshow">
+            <a href="#" data-toggle="modal" data-target="#modal2">
+              <img src="http://dostuk.ktrk.kg/images/anons/161455946978.png" class="img-responsive" alt="">
+              <h3>СВЕТ ЖОК</h3>
+            </a>
+          </div>
+          <!-- Modal -->
+          <div id="modal2" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-lg">
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
+                  <h4 class="modal-title">СВЕТ ЖОК</h4>
+                </div>
+                <div class="modal-body">
+                  “СВЕТ ЖОК” –  мүнөзү боюнча таанышуу программасы. Жалгыздыктан тажаган угармандар үчүн жакшы мүмкүнчүлүк. Сүйүктүүсүн же жакшы дос, санаалаш, пикирлеш тапкысы келген угармандар түз эфирдеги телефон аркылуу байланышка чыгып, өзүнүн критерийлерин айтып, телефондорун таштайт. Ушул эле учурда бул программанын алкагында эң активдүү ролду 10 00 кыска номериндеги СМС-кызматы ойнойт.
+                  <br/>
+                  <span>Дүйшөмбү-Жума. 24:00-01:00</span>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Жабуу</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-sm-12 postshow">
+            <a href="#" data-toggle="modal" data-target="#modal4">
+              <img src="http://dostuk.ktrk.kg/images/anons/161455946978.png" class="img-responsive" alt="">
+              <h3>ПАТЕФОН</h3>
+            </a>
+          </div>
+          <!-- Modal -->
+          <div id="modal4" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-lg">
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
+                  <h4 class="modal-title">ПАТЕФОН</h4>
+                </div>
+                <div class="modal-body">
+                  “ПАТЕФОН” – мүнөзү боюнча көңүл ачуучу жана конкурстук программа. Уктурууга музыкалык аспаптардын биринде ойной алган 4 ырчы катышат. Булар эки-экиден командага бөлүнүп өз ара күч сынашат. Таймаштын талабына ылайык, катышуучулар музыкалык аспаптын коштоосунда жандуу үн менен бир куплеттен ырдап берүүлөрү керек. Тапшырма катары кайсыдыр бир тамга берилет, аткарыла турган чыгарманын биринчи куплети ушул тамгадан башталышы зарыл. Мисалы: к тамгасы берилсе, “кыргыз жери сүйөм сени”. Программанын жеңүүчүлөрү түз эфирдеги телефон аркылуу байланышка чыккан жети угармандын добушу менен аныкталат. Ошондой эле 1037 кыска номерине келген СМС-добуштар, студияга ырчыларга колдоо тобу катары келген 8 угармандардын добушу   да эсепке алынат. Программа негизинен кыргыз музыка дүйнөсү  жандуу үн менен ырдоого шыктуу таланттардан уучу кур эмес экендигин далилдөө.
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Жабуу</button>
                 </div>
             </div>
 
@@ -295,7 +535,34 @@
             </div><!--templatemo_about-->
 
         </div>
-    </section>
+          <div class="col-md-3 col-sm-12 postshow">
+            <a href="#" data-toggle="modal" data-target="#modal3">
+              <img src="http://dostuk.ktrk.kg/images/anons/161455946978.png" class="img-responsive" alt="">
+              <h3>BashBarmak-show</h3>
+            </a>
+          </div>
+          <!-- Modal -->
+          <div id="modal3" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-lg">
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
+                  <h4 class="modal-title">BashBarmak-show</h4>
+                </div>
+                <div class="modal-body">
+                  “BashBarmak-show” –  мүнөзү боюнча көңүл ачуучу программа. Эфирдик классификациясы боюнча эки саатык кечки шоу. Бул программанын алкагында угармандар, эки саат бою бир катар шаттуу оюндарга катышып, керектүү кеңештерди, гороскопту угуп, программанын башталышында тандалып алынган күндүн темасы боюнча пикир алышат.
+                  <br/>
+                  <span>Дүйшөмбү-Жума. 17:00-19:00</span>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Жабуу</button>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+  </section>
 
     <section id="network" >
         <div class="container network">
@@ -408,7 +675,10 @@
     <script type="text/javascript" src="{{ asset('js/minkiyal/templatemo_script.js') }}"></script>
 
     <script type="text/javascript" src="{{ asset('js/templatemo_script.js') }}"></script>
-    <script type="text/javascript">
+
+    <script type="text/javascript" src="{{ asset('js/jquery.slicebox.js') }}"></script>
+
+      <script type="text/javascript">
         $(function() {
             var Page = (function() {
                 var $navArrows = $( '#nav-arrows' ).hide(),
@@ -464,4 +734,24 @@
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     </script>
+  <script>
+    $('.anons-carousel').slick({
+      autoplay: true,
+      autoplaySpeed: 6500,
+      centerPadding: '0',
+      arrows: true,
+      infinite: true,
+      slidesToShow: 1,
+      speed: 400,
+    });
+  </script>
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.5";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
 @stop
