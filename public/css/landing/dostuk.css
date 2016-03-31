@@ -1667,9 +1667,9 @@ ul.nostyle i {
   text-align: center;
 }
 .lang li{
-  padding: 0 7px;
+  padding: 2px 7px 3px 7px;
   display: block;
-  margin: -2px;
+  margin: -2px 0px 0px 0px;
   background: #0CB2AB;
 }
 .lang li a{
@@ -1682,13 +1682,13 @@ ul.nostyle i {
   font-family: 'Roboto condensed';;
 }
 .lang li.active{
-  background: #F44336;
+  background: #07564F;
 }
 .lang li:hover{
   background: #F44336;
 }
 .lang li.active a{
-  color: #fff;
+  color: #FFEB3B;
 }
 
 @media (max-width:770px) {
