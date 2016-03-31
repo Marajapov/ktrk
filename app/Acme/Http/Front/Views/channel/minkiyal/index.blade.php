@@ -68,8 +68,12 @@
 </div>
 <div class="container main_back">
    <div class="info">
+
       @if($anonstop)
       <div id="allposts">
+         <div class="title_x">
+            <h3>Анонсы</h3>
+         </div>
          @foreach($anonstop as $key=> $row)
          <div class="col-md-3 col-sm-12 postshow">
             <a href="#" data-toggle="modal" data-target="#{{ $key+99 }}">
@@ -145,7 +149,7 @@
       </div>
       @endif
    </div>
-   <div class="info">
+   <div class="info_shows row">
       <div id="allposts">
          <div class="col-md-3 col-sm-12 postshow">
             <a href="#" data-toggle="modal" data-target="#modal1">
@@ -385,7 +389,8 @@
      autoplay: true,
      autoplaySpeed: 6500,
      centerPadding: '0',
-     arrows: true,
+     dots: true,
+     arrows: false,
      infinite: true,
      slidesToShow: 1,
      speed: 400,
