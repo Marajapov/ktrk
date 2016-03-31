@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="{{ asset('css/minkiyal.css')}}">
 
 
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/custombox.css') }}"/>
+
     <link rel="stylesheet"  href="{{ asset('css/lightslider.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/gallery.css') }}"/>
 

@@ -11,110 +11,19 @@ h1 {
   font: normal normal normal 34px/60px 'Century Gothic', sans-serif;
   color: #3b3b3b;
 }
-#templatemo_about {
-    /*background-color: rgba(237, 255, 236, 0.15);*/
-    margin-bottom: 40px;
-    margin-top: 40px;
+.prim-container {
+    box-shadow: 0px 0px 9px 8px rgba(0, 0, 0, 0.16), 0px 0px 3px 1px rgba(0, 0, 0, 0.12);
+    max-width: 1170px;
+    margin: -195px auto 0px auto;
+    border-radius: 3px !important;
+    position: relative;
+    display: block
 }
-#templatemo_about .about_icon img {
-  width: 100%;
-}
-#templatemo_about .about_icon h2 {
-  text-align: center;
-  font: normal normal normal 20px/25px 'Century Gothic', sans-serif;
-}
-#templatemo_about .about_icon .imgwap {
-  text-align: center;
-  border-radius: 75px;
-}
-#templatemo_about .about_icon p {
-  text-align: center;
-  font: normal normal normal 14px/23px 'Century Gothic', sans-serif;
-}
-#templatemo_about .mission {
-  background-color: #bd3e25;
-  color: #f5bd48;
-}
-#templatemo_about .product {
-  background-color: #334d5c;
-  color: #f5bd48;
-}
-#templatemo_about .testimonial {
-  background-color: #efc84a;
-  color: #ab4921;
-}
-#templatemo_about .statistic {
-  background-color: #334d5c;
-  color: #efc84a;
-}
-#templatemo_about #testimonial_text_wap {
-  overflow: hidden;
-}
-#templatemo_about #testimonial_text_wap h2 {
-  font-size: 24px;
-  margin: 0;
-  padding: 12px 0;
-}
-#templatemo_about #testimonial_text_wap h3 {
-  font-size: 20px;
-  margin: 0;
-  padding: 12px 0;
-}
-#templatemo_about #testimonial_text_wap p {
-  font-size: 14px;
-  line-height: 2em;
-}
-#templatemo_about .testimonial_text {
-  width: 100%;
-  float: left;
-    background-color: rgba(237, 255, 236, 0.25);
-    color: #EAE8E6;
-}
-#templatemo_about .pre_next {
-  font-size: 70px;
-  top: 52%;
-  margin-top: -35px;
-  position: absolute;
-}
-#templatemo_about .pre_next a {
-  color: #6698b5;
-  float: left;
-}
-#templatemo_about .pre_next a:hover {
-  color: #334d5c;
-}
-#templatemo_about #testimonial_text_wap h1 {
-  font-size: 70px;
-  top: 50%;
-  margin-top: -35px;
-}
-#templatemo_about .testimonial_top_bottom_spacer {
-  padding-bottom: 28px;
+.main_back{
+    padding-top: 10px;
 }
 
-/*  Small devices (tablets, 768px and up)  */
-@media (max-width: 768px ) {
-  #templatemo_about .pre_next {
-    font-size: 15px;
-  }
-  #templatemo_timeline .right_timer {
-    background-position: center center;
-  }
-}
-/*  Medium devices (desktops, 992px and up)  */
-@media (max-width: 970px ) {
-  #templatemo_timeline .right_timer {
-    background-position: 100px 5px;
-  }
-  #templatemo_banner_menu #logo_text {
-    font: normal normal normal 30px/1em 'Century Gothic', sans-serif;
-  }
-  #templatemo_timeline .container-fluid {
-    background: url("../images/time_line_bg.jpg") repeat-y 28px 0;
-  }
-}
-
-/*events*/
+/*DJS*/
 #templatemo_events {
     float: left;
     overflow: hidden;
@@ -152,9 +61,19 @@ h1 {
 }
 #templatemo_events .event_box_wap h1 {
     padding: 10px;
-    font-size: 24px;
+    font-size: 21px;
     line-height: 24px;
     text-align: center;
+}
+.small-box-footer{
+    position: relative;
+    text-align: center;
+    padding: 5px 0;
+    color: rgb(0, 0, 0);
+    display: block;
+    z-index: 10;
+    background: rgba(0,0,0,0.1);
+    text-decoration: none;
 }
 
 .show-djs{
@@ -176,3 +95,39 @@ h1 {
     -o-transition: all 0.2s ease;
     transition: all 0.2s ease;
 }
+/* END DJS*/
+
+/* BEGIN Slider*/
+
+#main-slider .banners{
+    position: relative;
+}
+#main-slider .banners .slick-next {
+    right: 25px;
+
+}
+#main-slider .banners .slick-next:before{
+    color: #fff !important;
+}
+#main-slider .banners .slick-prev{
+    left: 25px;
+    z-index: 1;
+}
+#main-slider .banners .banners-content{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 20%;
+    text-align: center;
+}
+#main-slider .banners .banners-content h2{
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'Roboto regular';
+    color: #fff;
+}
+#main-slider .banners .banners-content h2 span{
+    text-shadow: 1px 2px 1px #000, 0px 2px 5px #000;
+}
+/* END Slider*/
+

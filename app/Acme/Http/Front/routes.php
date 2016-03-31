@@ -142,6 +142,7 @@ Route::group(['domain' => 'ktrk.dev', 'prefix' => '/kyrgyzradio', 'namespace' =>
     Route::get('/post/{gallery}',['as' => 'minkiyal.post','uses'=> 'MinkiyalController@Gallery'] );
     Route::get('/about', ['as' => 'minkiyal.about',   'uses' => 'MinkiyalController@about']);
     Route::get('/djs', ['as' => 'minkiyal.djs',   'uses' => 'MinkiyalController@djs']);
+    Route::get('/dj_info', ['as' => 'minkiyal.dj_info',   'uses' => 'MinkiyalController@dj_info']);
 
 });
 
