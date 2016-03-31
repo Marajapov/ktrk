@@ -98,7 +98,7 @@ Route::group(['domain' => 'dostuk.ktrk.kg', 'prefix' => '/kyrgyzradio', 'namespa
     Route::get('/about', ['as' => 'kyrgyzradio.about',   'uses' => 'KyrgyzradioController@about']);
     Route::get('/citations', ['as' => 'kyrgyzradio.citations',   'uses' => 'KyrgyzradioController@citations']);
     Route::get('/anons', ['as' => 'kyrgyzradio.anons',   'uses' => 'KyrgyzradioController@anons']);
-
+    Route::get('/anonses', ['as' => 'kyrgyzradio.anonses',   'uses' => 'KyrgyzradioController@anonses']);
 });
 
     Route::group(['domain' => 'dostuk.ktrk.kg', 'prefix' => '/birinchi', 'namespace' => 'Front\Controllers'], function() {
@@ -138,7 +138,7 @@ Route::group(['domain' => 'dostuk.ktrk.kg', 'prefix' => '/kyrgyzradio', 'namespa
     Route::get('/posts', ['as' => 'minkiyal.posts',   'uses' => 'MinkiyalController@posts']);
     Route::get('/post/{gallery}',['as' => 'minkiyal.post','uses'=> 'MinkiyalController@Gallery'] );
     Route::get('/about', ['as' => 'minkiyal.about',   'uses' => 'MinkiyalController@about']);
-
+    Route::get('/djs', ['as' => 'minkiyal.djs',   'uses' => 'MinkiyalController@djs']);
 
 });
 

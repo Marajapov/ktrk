@@ -53,6 +53,17 @@ class MinkiyalController extends Controller
       ]);
   }
 
+    public function djs()
+    {
+        $lc = app()->getlocale();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+        return view('Front::channel.minkiyal.djs',[
+            'lc' => $lc,
+            'backgroundMain' => $backgroundMain,
+        ]);
+    }
+
     public function Gallery(Request $request, $galleryId)
     {
 

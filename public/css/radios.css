@@ -1502,15 +1502,16 @@
     padding-bottom: 20px;
 }
 #minkiyal .allgallery{
-    background: #4CAF50;
-    margin-bottom: 40px;
-    padding-top: 20px;
-    padding-bottom: 50px;
+/*    background: #4CAF50;*/
+    margin: 5px;
 }
- #minkiyal .allgallery .title{
-    margin: 0px 5px 20px 5px;
-    color: #fff;
+#minkiyal .allgallery .title{
+    color: #4CAF50;
     border-bottom: 2px dashed;
+}
+
+#minkiyal .allgallery .allright{
+    color: #4CAF50;
 }
 #minkiyal .title {
     margin: 0px 5px 20px 5px;
@@ -1543,7 +1544,7 @@
     font-weight: bold;
     color: #fff;
     width: 400px;
-    /*background: #4CAF50;*/
+    background: #4CAF50;
     height: 70px;
         -webkit-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     -moz-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
@@ -1593,7 +1594,7 @@
     margin-right: 5px;
 }
 #minkiyal .withpad{
-    padding: 0px 5px;
+    /*padding: 0px 5px;*/
 }
 
 #minkiyal .anons-carousel .col-md-3{
@@ -1841,6 +1842,7 @@
 
 /* END Modal */
 
-.main-min{
-    background: #fff;
+.main_back{
+  background: #fff;
+  border-radius: 3px !important;
 }
