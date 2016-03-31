@@ -5,6 +5,22 @@
 @endsection
 @section('content')
   @include('Front::channel.minkiyal.nav')
+  <section id="main-slider">
+      <div class="banners">
+          @if($anons)
+              @foreach($anons as $banners)
+                  <div>
+                      <img src="{{asset($banners->thumbnail)}}" width="1366" alt="">
+                      <div class="container">
+                          <div class="banners-content">
+                              <h2><span>{{ $banners->getNameOne() }}</span></h2>
+                          </div>
+                      </div>
+                  </div>
+              @endforeach
+          @endif
+      </div>
+  </section>
   <nav id="main-menu" class="navbar navbar-minheader">
     <div class="container-fluid">
       <div class="container">
@@ -47,25 +63,25 @@
     </div>
     <!-- /.container-fluid -->
   </nav>
-  <div class="container">
-    <div class="slidermin">
-        <div class="wrapper">
-            @if($anons)
-            <ul id="sb-slider" class="sb-slider">
-              @foreach($anons as $banners)
-              <li>
-                <img src="{{asset($banners->thumbnail)}}" alt="image2"/>
-              </li>
-              @endforeach
-            </ul>
-            <div id="nav-arrows" class="nav-arrows">
-              <a href="#">Next</a>
-              <a href="#">Previous</a>
-            </div>
-            @endif
-        </div>
-    </div>
-  </div>
+  {{--<div class="container">--}}
+    {{--<div class="slidermin">--}}
+        {{--<div class="wrapper">--}}
+            {{--@if($anons)--}}
+            {{--<ul id="sb-slider" class="sb-slider">--}}
+              {{--@foreach($anons as $banners)--}}
+              {{--<li>--}}
+                {{--<img src="{{asset($banners->thumbnail)}}" alt="image2"/>--}}
+              {{--</li>--}}
+              {{--@endforeach--}}
+            {{--</ul>--}}
+            {{--<div id="nav-arrows" class="nav-arrows">--}}
+              {{--<a href="#">Next</a>--}}
+              {{--<a href="#">Previous</a>--}}
+            {{--</div>--}}
+            {{--@endif--}}
+        {{--</div>--}}
+    {{--</div>--}}
+  {{--</div>--}}
 
   <div class="container">
       <div class="info">
@@ -413,7 +429,26 @@
 <script type="text/javascript" src="{{ asset('js/minkiyal/unslider.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/minkiyal/templatemo_script.js') }}"></script>
 
+<script>
+    $('.banners').slick({
+        dots: false,
+        infinite: true,
+        arrows: true,
+        speed: 300,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3500
+    });
 
+    $('.shows-dostuk').slick({
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2500
+    });
+</script>
       <script type="text/javascript">
         $(function() {
             var Page = (function() {
