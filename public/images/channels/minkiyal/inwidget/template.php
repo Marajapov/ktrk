@@ -90,7 +90,7 @@ if(!is_object($inWidget->data)) die('<b style="color:red;">Cache file contains p
 			}
 			.widget .profile .avatar {
 				width:1%;
-				padding:10px !important;
+				padding: 10px;
 				border-left:none !important;
 				line-height:0px;
 			}
@@ -98,7 +98,6 @@ if(!is_object($inWidget->data)) die('<b style="color:red;">Cache file contains p
 				width:60px;
 			}
 			.widget .profile .value {
-				width:33%;
 				height:30px;
 				font-size:14px;
 				font-weight:bold;
@@ -133,8 +132,8 @@ if(!is_object($inWidget->data)) die('<b style="color:red;">Cache file contains p
 			}
 			.widget .data {
 				text-align:left;
-				margin:10px 0 0 10px;
-				padding:0 0 5px 0;
+				margin:10px 0 0 0px;
+				padding:0px 0px 5px 10px;
 			}
 			.widget .data .image {
 				display:block;

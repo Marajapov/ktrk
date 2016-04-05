@@ -49,6 +49,9 @@ header {
   margin-right: -15px;
   margin-left: -15px;
 }
+#minkiyal .switch{
+  padding: 4px 0;
+}
 .homepage .switch {
   background: rgba(152, 150, 150, 0.61) !important;
 }
@@ -1087,3 +1090,4 @@ ul.nostyle i {
 .postshow .postshow-name{
   
 }
+

@@ -1,12 +1,10 @@
 @extends('Front::channel.minkiyal.default')
 @section('title', "Миң Кыял Фм")
 @section('styles')
-<link rel="stylesheet" href="{{asset('css/slicebox.css')}}">
 @endsection
 @section('content')
 @include('Front::channel.minkiyal.nav')
-<nav id="main-menu" class="navbar navbar-minheader">
-   <div class="container-fluid">
+<nav id="main-menu" class="navbar navbar-minheader container-fluid">
       <div class="container">
          <!-- Brand and toggle get grouped for better mobile display -->
          <div class="navbar-header">
@@ -18,16 +16,17 @@
             </button>
             <a class="navbar-brand" href="#">
             <img src="{{asset('images/channels/min-kiyal-min.png')}}" alt="">
+            <h4 class="minkiyal_brand">Миң кыял FM</h4>
             </a>
             <!-- <p class="navbar-text">Кыялдар орундалат</p> -->
          </div>
          <!-- Collect the nav links, forms, and other content for toggling -->
          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-               <li><a href="#">Башкы</a></li>
-               <li><a href="#report">Сүрөтбаяндар</a></li>
-               <li><a href="#about">Биз жөнүндө</a></li>
-               <li><a href="{{route('minkiyal.djs')}}">Ди-Джейлер</a></li>
+               <li><a href="#" data-toggle="tooltip" data-placement="bottom" title="Башкы барак" class="red-tooltip"><i class="fa fa-home"></i></a></li>
+               <li><a href="#report" data-toggle="tooltip" data-placement="bottom" title="Сүрөтбаяндар" class="red-tooltip"><i class="fa fa-picture-o"></i></a></li>
+               <li><a href="#about" data-toggle="tooltip" data-placement="bottom" title="Биз жөнүндө" class="red-tooltip"><i class="fa fa-info-circle"></i></a></li>
+               <li><a href="{{route('minkiyal.djs')}}" data-toggle="tooltip" data-placement="bottom" title="Диджейлер" class="red-tooltip"><i class="fa fa-microphone"></i></a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                <div class="online">
@@ -44,36 +43,42 @@
          </div>
          <!-- /.navbar-collapse -->
       </div>
-   </div>
-   <!-- /.container-fluid -->
 </nav>
-<div class="container">
-   <div class="slidermin">
-      <div class="wrapper">
-         @if($anons)
-         <ul id="sb-slider" class="sb-slider">
+<div id="main-slider">
+    <div class="banners">
+        @if($anons)
             @foreach($anons as $banners)
-            <li>
-               <img src="{{asset($banners->thumbnail)}}" alt="image2"/>
-            </li>
+                <div>
+                    <img src="{{asset($banners->thumbnail)}}" width="1366" height="550" alt="">
+                    <div class="container">
+                        <div class="banners-content">
+                            {{--<h2><span>{{ $row->getNameOne() }}</span></h2>--}}
+                        </div>
+                    </div>
+                </div>
             @endforeach
-         </ul>
-         <div id="nav-arrows" class="nav-arrows">
-            <a href="#">Next</a>
-            <a href="#">Previous</a>
-         </div>
-         @endif
-      </div>
-   </div>
+        @endif
+    </div>
 </div>
 <div class="container main_back">
+
+<!--    <div class="row">
+       <div class="mini-banner shadow-effect">
+           @if($anonstop)
+               @foreach($anonstop as $row)
+                   <div>
+                        <div class="overlay"></div>
+                       <img src="{{asset($row->thumbnail)}}" alt="">
+                   </div>
+               @endforeach
+           @endif
+       </div>
+   </div> -->
    <div class="info">
 
       @if($anonstop)
       <div id="allposts">
-         <div class="title_x">
-            <h3>Анонсы</h3>
-         </div>
+      <h3 class="title-left">Видео Live</h3>
          @foreach($anonstop as $key=> $row)
          <div class="col-md-3 col-sm-12 postshow">
             <a href="#" data-toggle="modal" data-target="#{{ $key+99 }}">
@@ -105,6 +110,7 @@
       </div>
       @endif
    </div>
+<!-- 
    <div class="anonses">
       <div class="anons-slider slidermin">
          <div class="slider-overlay"></div>
@@ -127,9 +133,76 @@
          </div>
          @endif
       </div>
+   </div> -->
+
+<!--    <div class="anonses">
+      <div class="anons-slider slidermin">
+      <h3 class="title-left">Жанылыктар</h3>
+         <div class="slider-overlay"></div>
+         @if($popArticles)
+         <div class="anons-carousel">
+            @foreach($popArticles as $post)
+            <div>
+              
+               <div class="col-md-12">
+                <div class="row">
+                  <div class="col-md-3">
+                        <img class="media-object thumb" src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif" alt="image">
+                  </div>
+                  <div class="col-md-9">
+                     <span>
+                     <a class="media-heading" href="{{ route('minkiyal.news', $post) }}">{{ $post->getTitle() }}</a>
+                     </span>
+                     <div class="extra">
+                        <span class="e-datetime">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
+                        <span class="e-views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
+                     </div>
+                     <span>{{$post->getShortDescription()}}</span>
+                  </div>
+                  </div>
+               </div>
+            </div>
+            @endforeach
+         </div>
+         @endif
+      </div>
+   </div> -->
+   <div class="newsstream">
+      <div class="col-md-7">
+         <div class="row">
+         <h3 class="title-left">Жанылыктар</h3>
+         @if($popArticles)
+            @foreach($popArticles as $post)
+            <div class="col-md-4 col-sm-12 postshow">
+               <a href="#" data-toggle="modal" data-target="#{{ $key+99 }}">
+                  <img class="media-object thumb" src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif" alt="image">
+                  <span class="postshow-name">
+                     <div class="extra">
+                        <span class="date">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
+                        <span class="views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
+                     </div>
+                     <a class="media-heading" href="{{ route('minkiyal.news', $post) }}">{{ $post->getTitle() }}</a>
+                  </span>
+               </a>
+            </div>
+            @endforeach
+         @endif
+         </div>
+      </div>
+      <div class="col-md-5">
+      <h3 class="title-left">YouTube</h3>
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/uVri5f7Y080?rel=0&amp;controls=0&amp;showinfo=0" style="height: 225px;"></iframe>
+      </div>
+      </div>
    </div>
+<!--    <div class="tester">
+      <div class="col-sm-6" style="background: #444; height: 250px;"></div>
+      <div class="col-sm-6" style="background: #666; height: 250px;"></div>
+   </div> -->
+
    <div class="allgallery">
-      <div class="title" style="margin-right: 35px;">
+      <div class="title">
          <h3>Сүрөтбаяндар</h3>
          <h3 class="allright"><a href="{{ route('minkiyal.posts')}}">Баардыгы <i class="fa fa-arrow-right"></i></a></h3>
       </div>
@@ -149,8 +222,9 @@
       </div>
       @endif
    </div>
-   <div class="info_shows row">
-      <div id="allposts">
+   <div class="info_shows">
+       <h3>Уктуруулар</h3>
+      <div class="row">
          <div class="col-md-3 col-sm-12 postshow">
             <a href="#" data-toggle="modal" data-target="#modal1">
                <img src="http://dostuk.ktrk.kg/images/anons/161455946978.png" class="img-responsive" alt="">
@@ -179,79 +253,79 @@
                </div>
             </div>
          </div>
-      </div>
-      <div class="col-md-3 col-sm-12 postshow">
-         <a href="#" data-toggle="modal" data-target="#modal2">
-            <img src="http://dostuk.ktrk.kg/images/anons/161455946978.png" class="img-responsive" alt="">
-            <h3>СВЕТ ЖОК</h3>
-         </a>
-      </div>
-      <!-- Modal -->
-      <div id="modal2" class="modal fade" role="dialog">
-         <div class="modal-dialog modal-lg">
-            <!-- Modal content-->
-            <div class="modal-content">
-               <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
-                  <h4 class="modal-title">СВЕТ ЖОК</h4>
-               </div>
-               <div class="modal-body">
-                  “СВЕТ ЖОК” –  мүнөзү боюнча таанышуу программасы. Жалгыздыктан тажаган угармандар үчүн жакшы мүмкүнчүлүк. Сүйүктүүсүн же жакшы дос, санаалаш, пикирлеш тапкысы келген угармандар түз эфирдеги телефон аркылуу байланышка чыгып, өзүнүн критерийлерин айтып, телефондорун таштайт. Ушул эле учурда бул программанын алкагында эң активдүү ролду 10 00 кыска номериндеги СМС-кызматы ойнойт.
-                  <br/>
-                  <span>Дүйшөмбү-Жума. 24:00-01:00</span>
-               </div>
-               <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Жабуу</button>
+         <div class="col-md-3 col-sm-12 postshow">
+            <a href="#" data-toggle="modal" data-target="#modal2">
+               <img src="http://dostuk.ktrk.kg/images/anons/161455946978.png" class="img-responsive" alt="">
+               <h3>СВЕТ ЖОК</h3>
+            </a>
+         </div>
+         <!-- Modal -->
+         <div id="modal2" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-lg">
+               <!-- Modal content-->
+               <div class="modal-content">
+                  <div class="modal-header">
+                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
+                     <h4 class="modal-title">СВЕТ ЖОК</h4>
+                  </div>
+                  <div class="modal-body">
+                     “СВЕТ ЖОК” –  мүнөзү боюнча таанышуу программасы. Жалгыздыктан тажаган угармандар үчүн жакшы мүмкүнчүлүк. Сүйүктүүсүн же жакшы дос, санаалаш, пикирлеш тапкысы келген угармандар түз эфирдеги телефон аркылуу байланышка чыгып, өзүнүн критерийлерин айтып, телефондорун таштайт. Ушул эле учурда бул программанын алкагында эң активдүү ролду 10 00 кыска номериндеги СМС-кызматы ойнойт.
+                     <br/>
+                     <span>Дүйшөмбү-Жума. 24:00-01:00</span>
+                  </div>
+                  <div class="modal-footer">
+                     <button type="button" class="btn btn-default" data-dismiss="modal">Жабуу</button>
+                  </div>
                </div>
             </div>
          </div>
-      </div>
-      <div class="col-md-3 col-sm-12 postshow">
-         <a href="#" data-toggle="modal" data-target="#modal4">
-            <img src="http://dostuk.ktrk.kg/images/anons/161455946978.png" class="img-responsive" alt="">
-            <h3>ПАТЕФОН</h3>
-         </a>
-      </div>
-      <!-- Modal -->
-      <div id="modal4" class="modal fade" role="dialog">
-         <div class="modal-dialog modal-lg">
-            <!-- Modal content-->
-            <div class="modal-content">
-               <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
-                  <h4 class="modal-title">ПАТЕФОН</h4>
-               </div>
-               <div class="modal-body">
-                  “ПАТЕФОН” – мүнөзү боюнча көңүл ачуучу жана конкурстук программа. Уктурууга музыкалык аспаптардын биринде ойной алган 4 ырчы катышат. Булар эки-экиден командага бөлүнүп өз ара күч сынашат. Таймаштын талабына ылайык, катышуучулар музыкалык аспаптын коштоосунда жандуу үн менен бир куплеттен ырдап берүүлөрү керек. Тапшырма катары кайсыдыр бир тамга берилет, аткарыла турган чыгарманын биринчи куплети ушул тамгадан башталышы зарыл. Мисалы: к тамгасы берилсе, “кыргыз жери сүйөм сени”. Программанын жеңүүчүлөрү түз эфирдеги телефон аркылуу байланышка чыккан жети угармандын добушу менен аныкталат. Ошондой эле 1037 кыска номерине келген СМС-добуштар, студияга ырчыларга колдоо тобу катары келген 8 угармандардын добушу   да эсепке алынат. Программа негизинен кыргыз музыка дүйнөсү  жандуу үн менен ырдоого шыктуу таланттардан уучу кур эмес экендигин далилдөө.
-               </div>
-               <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Жабуу</button>
+         <div class="col-md-3 col-sm-12 postshow">
+            <a href="#" data-toggle="modal" data-target="#modal4">
+               <img src="http://dostuk.ktrk.kg/images/anons/161455946978.png" class="img-responsive" alt="">
+               <h3>ПАТЕФОН</h3>
+            </a>
+         </div>
+         <!-- Modal -->
+         <div id="modal4" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-lg">
+               <!-- Modal content-->
+               <div class="modal-content">
+                  <div class="modal-header">
+                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
+                     <h4 class="modal-title">ПАТЕФОН</h4>
+                  </div>
+                  <div class="modal-body">
+                     “ПАТЕФОН” – мүнөзү боюнча көңүл ачуучу жана конкурстук программа. Уктурууга музыкалык аспаптардын биринде ойной алган 4 ырчы катышат. Булар эки-экиден командага бөлүнүп өз ара күч сынашат. Таймаштын талабына ылайык, катышуучулар музыкалык аспаптын коштоосунда жандуу үн менен бир куплеттен ырдап берүүлөрү керек. Тапшырма катары кайсыдыр бир тамга берилет, аткарыла турган чыгарманын биринчи куплети ушул тамгадан башталышы зарыл. Мисалы: к тамгасы берилсе, “кыргыз жери сүйөм сени”. Программанын жеңүүчүлөрү түз эфирдеги телефон аркылуу байланышка чыккан жети угармандын добушу менен аныкталат. Ошондой эле 1037 кыска номерине келген СМС-добуштар, студияга ырчыларга колдоо тобу катары келген 8 угармандардын добушу   да эсепке алынат. Программа негизинен кыргыз музыка дүйнөсү  жандуу үн менен ырдоого шыктуу таланттардан уучу кур эмес экендигин далилдөө.
+                  </div>
+                  <div class="modal-footer">
+                     <button type="button" class="btn btn-default" data-dismiss="modal">Жабуу</button>
+                  </div>
                </div>
             </div>
          </div>
-      </div>
-      <div class="col-md-3 col-sm-12 postshow">
-         <a href="#" data-toggle="modal" data-target="#modal3">
-            <img src="http://dostuk.ktrk.kg/images/anons/161455946978.png" class="img-responsive" alt="">
-            <h3>BashBarmak-show</h3>
-         </a>
-      </div>
-      <!-- Modal -->
-      <div id="modal3" class="modal fade" role="dialog">
-         <div class="modal-dialog modal-lg">
-            <!-- Modal content-->
-            <div class="modal-content">
-               <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
-                  <h4 class="modal-title">BashBarmak-show</h4>
-               </div>
-               <div class="modal-body">
-                  “BashBarmak-show” –  мүнөзү боюнча көңүл ачуучу программа. Эфирдик классификациясы боюнча эки саатык кечки шоу. Бул программанын алкагында угармандар, эки саат бою бир катар шаттуу оюндарга катышып, керектүү кеңештерди, гороскопту угуп, программанын башталышында тандалып алынган күндүн темасы боюнча пикир алышат.
-                  <br/>
-                  <span>Дүйшөмбү-Жума. 17:00-19:00</span>
-               </div>
-               <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Жабуу</button>
+         <div class="col-md-3 col-sm-12 postshow">
+            <a href="#" data-toggle="modal" data-target="#modal3">
+               <img src="http://dostuk.ktrk.kg/images/anons/161455946978.png" class="img-responsive" alt="">
+               <h3>BashBarmak-show</h3>
+            </a>
+         </div>
+         <!-- Modal -->
+         <div id="modal3" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-lg">
+               <!-- Modal content-->
+               <div class="modal-content">
+                  <div class="modal-header">
+                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
+                     <h4 class="modal-title">BashBarmak-show</h4>
+                  </div>
+                  <div class="modal-body">
+                     “BashBarmak-show” –  мүнөзү боюнча көңүл ачуучу программа. Эфирдик классификациясы боюнча эки саатык кечки шоу. Бул программанын алкагында угармандар, эки саат бою бир катар шаттуу оюндарга катышып, керектүү кеңештерди, гороскопту угуп, программанын башталышында тандалып алынган күндүн темасы боюнча пикир алышат.
+                     <br/>
+                     <span>Дүйшөмбү-Жума. 17:00-19:00</span>
+                  </div>
+                  <div class="modal-footer">
+                     <button type="button" class="btn btn-default" data-dismiss="modal">Жабуу</button>
+                  </div>
                </div>
             </div>
          </div>
@@ -289,11 +363,11 @@
                      }
                    }}
                  d.documentElement.appendChild(js);
-               }(document,"ok_group_widget","57765907202108","{width:263,height:455}");
+               }(document,"ok_group_widget","57765907202108","{width:253,height:455}");
             </script>
          </div>
          <div class="col-md-3">
-            <iframe src="{{asset('images/channels/minkiyal/inwidget/index.php?height=455&inline=3')}}" scrolling='no' frameborder='no' style='border:none;width:263px;height:455px;overflow:hidden;'></iframe>
+            <iframe src="{{asset('images/channels/minkiyal/inwidget/index.php?height=455&inline=3')}}" scrolling='no' frameborder='no' style='border:none;width:235px;height:455px;overflow:hidden;'></iframe>
          </div>
       </div>
    </div>
@@ -347,42 +421,22 @@
 </body>
 @stop
 @section('footerScript')
-<script type="text/javascript" src="{{ asset('js/jquery.slicebox.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/minkiyal/jquery.slicebox.js') }}"></script>
-<script type="text/javascript">
-   $(function() {
-       var Page = (function() {
-           var $navArrows = $( '#nav-arrows' ).hide(),
-               $shadow = $( '#shadow' ).hide(),
-               slicebox = $( '#sb-slider' ).slicebox( {
-                   onReady : function() {
-                       $navArrows.show();
-                       $shadow.show();
-                   },
-                   orientation : 'r',
-                   cuboidsRandom : true,
-                   disperseFactor : 30,
-                   autoplay : true,
-                   interval: 5000
-               } ),
-               init = function() {
-                   initEvents();
-               },
-               initEvents = function() {
-                   // add navigation events
-                   $navArrows.children( ':first' ).on( 'click', function() {
-                       slicebox.next();
-                       return false;
-                   } );
-                   $navArrows.children( ':last' ).on( 'click', function() {
-                       slicebox.previous();
-                       return false;
-                   } );
-               };
-           return { init : init };
-       })();
-       Page.init();
-   });
+<script>
+   $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
+<script>
+    $('.banners').slick({
+        dots: false,
+        infinite: true,
+        arrows: true,
+        speed: 300,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3500
+    });
 </script>
 <script>
    $('.anons-carousel').slick({
@@ -392,9 +446,36 @@
      dots: true,
      arrows: false,
      infinite: true,
-     slidesToShow: 1,
+     slidesToShow: 2,
      speed: 400,
    });
+</script>
+<script>
+   $('.mini-banner').slick({
+  centerMode: true,
+  centerPadding: '250px',
+  slidesToShow: 1,
+  responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        arrows: false,
+        centerMode: true,
+        centerPadding: '40px',
+        slidesToShow: 1
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        arrows: false,
+        centerMode: true,
+        centerPadding: '40px',
+        slidesToShow: 1
+      }
+    }
+  ]
+});
 </script>
 <div id="fb-root"></div>
 <script>(function(d, s, id) {

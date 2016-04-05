@@ -17,7 +17,7 @@
 class inWidget {
 	public $config = array();
 	public $data = array();
-	public $width = 260;
+	public $width = 232;
 	public $inline = 4;
 	public $view = 12;
 	public $toolbar = true;

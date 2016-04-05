@@ -98,6 +98,7 @@ Route::group(['domain' => 'www.ktrk.kg', 'prefix' => '/kyrgyzradio', 'namespace'
     Route::get('/about', ['as' => 'kyrgyzradio.about',   'uses' => 'KyrgyzradioController@about']);
     Route::get('/citations', ['as' => 'kyrgyzradio.citations',   'uses' => 'KyrgyzradioController@citations']);
     Route::get('/anons', ['as' => 'kyrgyzradio.anons',   'uses' => 'KyrgyzradioController@anons']);
+    Route::get('/anonses', ['as' => 'kyrgyzradio.anonses',   'uses' => 'KyrgyzradioController@anonses']);
 
 });
 
@@ -133,15 +134,19 @@ Route::group(['domain' => 'www.ktrk.kg', 'prefix' => '/birinchi', 'namespace' =>
 });
 
     Route::group(['domain' => 'www.ktrk.kg', 'prefix' => '/minkiyal', 'namespace' => 'Front\Controllers'], function() {
-
+    
     Route::get('/', ['as' => 'minkiyal.home',   'uses' => 'MinkiyalController@Home']);
     Route::get('/posts', ['as' => 'minkiyal.posts',   'uses' => 'MinkiyalController@posts']);
-    Route::get('/post/{gallery}',['as' => 'minkiyal.post','uses'=> 'MinkiyalController@Gallery'] );
+    Route::get('/post/{gallery}',['as' => 'minkiyal.post','uses'=> 'MinkiyalController@Gallery'] );    
+    Route::get('/news/{post}', ['as' => 'minkiyal.news',   'uses' => 'MinkiyalController@news']);
+    Route::get('allnews', ['as' => 'minkiyal.allnews',   'uses' => 'MinkiyalController@allnews']);
     Route::get('/about', ['as' => 'minkiyal.about',   'uses' => 'MinkiyalController@about']);
+    Route::get('/djs', ['as' => 'minkiyal.djs',   'uses' => 'MinkiyalController@djs']);
+    Route::get('/dj_info', ['as' => 'minkiyal.dj_info',   'uses' => 'MinkiyalController@dj_info']);
 
 });
 
-    Route::group(['domain' => 'www.ktrk.kg', 'prefix' => '/baldar', 'namespace' => 'Front\Controllers'], function() {
+Route::group(['domain' => 'www.ktrk.kg', 'prefix' => '/baldar', 'namespace' => 'Front\Controllers'], function() {
 
     Route::get('/', ['as' => 'baldar.home',   'uses' => 'BaldarController@Home']);
     Route::get('/posts', ['as' => 'baldar.posts',   'uses' => 'BaldarController@posts']);
@@ -229,10 +234,11 @@ Route::group(['domain' => 'www.ktrk.kg', 'prefix' => '/birinchi', 'namespace' =>
 
 //    Test
     Route::get('/test',['as'=>'front.test', 'uses'=>"HomeController@Test"]);
+    Route::get('/live',['as'=>'front.live', 'uses'=>"HomeController@Live"]);
 
 // Poll Vote
     Route::post('/poll_vote', ['as'=>'front.poll_vote', 'uses'=>'AjaxNsController@pollVote']);
 
-Route::get('locale/{locale?}',   ['as' => 'locale',   'uses' => 'CommonController@setLocale']);
+    Route::get('locale/{locale?}',   ['as' => 'locale',   'uses' => 'CommonController@setLocale']);
 
 });
