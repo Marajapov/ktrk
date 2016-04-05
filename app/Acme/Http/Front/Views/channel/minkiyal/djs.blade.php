@@ -52,8 +52,7 @@
     <div class="main-container">
         <section id="djs" class="container">
             <div id="templatemo_events" class="container_wapper">
-                <div class="container-fluid">
-                    <h1></h1>
+                <div class="container-fluid djs-body" >
                     <div class="col-sm-10 col-sm-offset-1 col-md-4 col-md-offset-0">
                         <div class="event_box_wap event_animate_left">
                             <div class="event_box_img">
