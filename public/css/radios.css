@@ -1093,7 +1093,7 @@
     float: right;
 }
 .allgallery .allright a{
-    color: #fff;
+    color: #444;
 }
 .allgallery .allright a:hover{
     color: #043A35;
@@ -1219,6 +1219,10 @@
 #minkiyal .info{
     position: relative;
     /*margin-top: 25px;*/
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
 }
 #minkiyal .info h2{
     padding: 30px 0px;
@@ -1244,6 +1248,9 @@
 }
 #minkiyal .title-left{
     padding-left: 5px;
+    margin: 0;
+    font-size: 20px;
+    color: #4B4B4B;
 }
 #minkiyal #allposts .title_x h3{
     text-transform: uppercase;
@@ -1440,7 +1447,7 @@ background: -o-linear-gradient(left, #F44336 20%, #E91E63 20%, #9C27B0 40%, #3F5
 
 #minkiyal .network {
     position: relative;
-    margin-top: 20px;
+    margin: -20px 5px 5px 5px;
 }
 
 #minkiyal .address {
@@ -1542,28 +1549,47 @@ background: -o-linear-gradient(left, #F44336 20%, #E91E63 20%, #9C27B0 40%, #3F5
 }
 #minkiyal .allgallery{
     font-family: "Roboto regular";
-    padding-bottom: 20px;
+    padding-top: 10px;
 }
 #minkiyal .allgallery{
 /*    background: #4CAF50;*/
     margin: 5px;
-    display: inline;
+    display: inherit;
+    padding-top: 5px;
+}
+#minkiyal .allgallery .allcol{
+    padding-left: 5px;
+    padding-right: 5px;
 }
 #minkiyal .allgallery .title{
-    color: #333;
-    border-bottom: 2px dashed;
+    position: relative;
+    display: block;
+    bottom: 15px;
+    color: #444;
+}
+#minkiyal .allgallery .title .link-title{
+
 }
 
 #minkiyal .allgallery .allright{
-    margin-top: -30px;
-    color: #333 !important;
+    margin-top: -35px;
+}
+#minkiyal .allgallery .allright a>i{
+    font-size: 14px;
 }
 #minkiyal .title {
-    margin: 0px 5px 20px 5px;
+    margin: 0px 0px -10px 0px;
     color: #095A0C;
-    border-bottom: 2px dashed;
 }
 #minkiyal .title  h3{
+    margin:0; 
+    font-size: 20px;
+    padding-top: 15px;
+
+}
+#minkiyal .allgallery  .second {
+    margin-bottom: 20px;
+    padding: 0px 10px;
 
 }
 #minkiyal .allgallery  .second a{
@@ -1571,7 +1597,7 @@ background: -o-linear-gradient(left, #F44336 20%, #E91E63 20%, #9C27B0 40%, #3F5
     display: block;
 }
 #minkiyal .allgallery  .second img{
-    height: 230px;
+    /*height: 230px;*/
     width: 100%;
     -webkit-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.60),0 6px 20px 0 rgba(0,0,0,0.19);
     -moz-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.62),0 6px 20px 0 rgba(0,0,0,0.19);
@@ -1687,7 +1713,7 @@ background: -o-linear-gradient(left, #F44336 20%, #E91E63 20%, #9C27B0 40%, #3F5
     max-width: inherit; 
     margin: 0px auto;
     background-color: #F44336;
-    z-index: 9999;
+    z-index: 3;
 }
 #minkiyal .navbar-minheader .navbar-brand img{
     position: relative;
@@ -1902,7 +1928,10 @@ background: -o-linear-gradient(left, #F44336 20%, #E91E63 20%, #9C27B0 40%, #3F5
   position: relative;
 }
 #minkiyal .info_shows {
-    /*padding: 5px;*/
+    padding: 5px;
+    position: relative;
+    display: block;
+    top: -30px;
 }
 
 #minkiyal .info_shows .col-md-3{
@@ -1947,8 +1976,16 @@ background: -o-linear-gradient(left, #F44336 20%, #E91E63 20%, #9C27B0 40%, #3F5
 
 #minkiyal .newsstream {
     position: relative;
-    /*display: inline-block;*/
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-top: 10px;
 }
+#minkiyal .newsstream .col-md-7 {
+    /*background: rgba(31, 51, 55, 0.1);*/
+}
+
 #minkiyal .newsstream .col-md-4{
     padding: 0px 5px
 }
@@ -1960,21 +1997,22 @@ background: -o-linear-gradient(left, #F44336 20%, #E91E63 20%, #9C27B0 40%, #3F5
     font-family: 'Roboto';
 }
 #minkiyal .newsstream .extra .date{
-    padding-left: 5px;
+    color: #696969;
 }
 #minkiyal .newsstream .extra .views{
     float: right;
-    padding-right: 5px;
+    color: #696969;
 }
 #minkiyal .newsstream .extra .views i{
     padding-right: 5px;
+    color: #696969;
 }
 #minkiyal .newsstream .media-heading{
-    margin-top: 10px;
+    margin-top: 5px;
     display: block;
     font-family: 'Roboto regular';
-    line-height: 18px;
-    font-size: 16px;
+    line-height: 15px;
+    font-size: 15px;
     font-weight: bold;
     color: #2D3E4A;
 }

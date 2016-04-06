@@ -117,10 +117,12 @@
                                         {{--@if($post->thumb_author)<span class="thumb_author"> Фото: {{ $post->thumb_author }}</span>@endif--}}
                                     </p>
 
+
                                     {!! $content !!}
-                                    @if($images)                                     
+
+                                    @if($images)
                                         <div class="slider-for">
-                                            @if($images)   
+                                            @if($images)
                                                 @foreach($images as $image)
                                                     <div>
                                                         <a href="#">
@@ -130,6 +132,7 @@
                                                 @endforeach
                                             @endif
                                         </div>
+
                                         <div class="slider-nav col-md-12">
                                             @if($images)
                                                 @if($images)
@@ -145,11 +148,8 @@
 
                                     @if($images2)
                                         <div class="slider-for2">
-
                                             @if($images2)
-
                                                 @foreach($images2 as $image2)
-
                                                     <div>
                                                         <a href="#">
                                                             <img src="{{ asset('froala/uploads/'.$image2->name) }}" alt=""/>
@@ -246,13 +246,13 @@
                                     @if($relatedPost->id == $post->id)
                                     @else
                                         <div class="col-md-4 block">
-                                            <a href="{{ route('front.post', [$relatedPost, $lc, $relatedPost->getLocaleTitle($lc)]) }}" class="news-thumb">
+                                            <a href="{{ route('front.post', $relatedPost) }}" class="news-thumb">
                                                 <img src="@if(($relatedPost->getFileBig())) {{ asset($relatedPost->getFileBig() )}} @else {{ asset($relatedPost->getFile()) }} @endif" alt=""/>
                                                 <div class="extrarel">
                                                     <span class="art-date"><i class="fa fa-calendar"></i>{{ $relatedPost->getDay() }} {{ $relatedPost->getMonthRu() }}, {{ $relatedPost->getYear() }}</span>
                                                 </div>
                                             </a>
-                                            <a class="related-title" href="{{ route('front.post', [$relatedPost, $lc, $relatedPost->getLocaleTitle($lc)]) }}">
+                                            <a class="related-title" href="{{ route('front.post', $relatedPost) }}">
                                                 {{ $relatedPost->getTitleRuOrKg() }}
                                             </a>
                                         </div>

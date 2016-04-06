@@ -6,7 +6,6 @@ use Input;
 use Intervention\Image\ImageManagerStatic as Image;
 use Illuminate\Support\Facades\Validator;
 use \Model\Comment\ModelName as Comment;
-use \Model\Post\ModelName as Post;
 
 class HomeController extends Controller
 {
@@ -25,38 +24,19 @@ class HomeController extends Controller
      *
      * @return Response
      */
-
-    public function Live(){
-        $lc = app()->getlocale();
-
-        $channel = \Model\Channel\ModelName::general();
-
-        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
-
-        return view('Front::live', [
-            'lc' =>$lc,
-
-            'positionTop'    => $this->positionTop,
-            'positionRight'  => $this->positionRight,
-            'positionLeft'  => $this->positionLeft,
-            'positionCenter' => $this->positionCenter,
-            'positionBottom' => $this->positionBottom,
-
-            'backgroundMain' => $backgroundMain,
-        ]);
-    }
-
     public function Home()
     {
         $lc = app()->getlocale();
+
         $channel = \Model\Channel\ModelName::general();
+
         $channels = \Model\Channel\ModelName::take(8)->skip(1)->get();
        
-if($lc == 'kg'){
-    $generalPost1 = \Model\Post\ModelName::general($channel)->published()->having('number','=',1)->languagekg()->first();
-    if($generalPost1 == null){
-        $generalPost1 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(10)->first();    
-    }
+        if($lc == 'kg'){
+            $generalPost1 = \Model\Post\ModelName::general($channel)->published()->having('number','=',1)->languagekg()->first();
+            if($generalPost1 == null){
+                $generalPost1 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(10)->first();    
+            }
 
             $generalPost2 = \Model\Post\ModelName::general($channel)->published()->having('number','=',2)->languagekg()->first();
 
@@ -191,7 +171,7 @@ if($lc == 'kg'){
             'generalPost4'   => $generalPost4,
             'generalPost5'   => $generalPost5,
             'generalPost6'   => $generalPost6,
-
+            
             'dayVideo1'      => $dayVideo1,
             'dayVideo2'      => $dayVideo2,
             'dayVideo3'      => $dayVideo3,
@@ -205,7 +185,7 @@ if($lc == 'kg'){
             'positionBottom' => $this->positionBottom,
             'peopleReporters' => $peopleReporters,
             'photoGalleries' => $photoGalleries,
-
+            
             'backgroundMain' => $backgroundMain,
             'MediaCategories' => $MediaCategories,
             'categoriesVideos' => $categoriesVideos,
@@ -390,15 +370,16 @@ if($lc == 'kg'){
         ]);
     }
 
-
-    public function Post(Post $post, $locale="kg", $title = "")
+    public function Post(\Model\Post\ModelName $post, $locale = "kg", $title = "")
     {
         $post->incrementViewed();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
         $lc = in_array($locale, ['kg', 'ru'])? $locale : 'kg';
         
         app()->setlocale($lc);
+        
         $categories = \Model\Category\ModelName::where('general','=','1')->get();
-        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
         $parent = \Model\PhotoParent\ModelName::where('id','=',$post->parentId)->first();
         if($parent){
             $images = json_decode($parent->images);   
@@ -414,9 +395,13 @@ if($lc == 'kg'){
         }
 
         if($lc == 'kg'){
+
             $contentOriginal = $post->getContent();
-            $relatedPosts = \Model\Post\ModelName::where('category_id','=',$post->category_id)->where('general','=','1')->languagekg()->take(7)->skip(0)->orderBy('id', 'desc')->get();
+
+            $relatedPosts = \Model\Post\ModelName::where('category_id','=',$post->category_id)->where('general','=','1')->languagekg()->take(6)->skip(0)->orderBy('id', 'desc')->get();
+
             $contentFinal = $contentOriginal;
+
             if($post->related1)
             {
                 if(strpos($contentFinal, 'POST1LEFT') != false)
@@ -519,7 +504,9 @@ if($lc == 'kg'){
 
         }elseif($lc == 'ru'){
             $contentOriginal = $post->getContent();
-            $relatedPosts = \Model\Post\ModelName::where('category_id','=',$post->category_id)->where('general','=','1')->languageru()->take(7)->skip(0)->orderBy('id', 'desc')->get();
+
+            $relatedPosts = \Model\Post\ModelName::where('category_id','=',$post->category_id)->where('general','=','1')->languageru()->take(6)->skip(0)->orderBy('id', 'desc')->get();
+
             $contentFinal = $contentOriginal;
             if($post->relatedRu1)
             {
@@ -763,7 +750,6 @@ if($lc == 'kg'){
             'positionCenter' => $this->positionCenter,
             'positionBottom' => $this->positionBottom,
             'positionLeft'  => $this->positionLeft,
-            'lc' => $lc,
             ]);
 
     }
@@ -867,7 +853,6 @@ if($lc == 'kg'){
             'positionCenter' => $this->positionCenter,
             'positionBottom' => $this->positionBottom,
             'positionLeft'  => $this->positionLeft,
-            'lc' => $lc,
             ]);
     }
 
@@ -931,7 +916,6 @@ if($lc == 'kg'){
             'positionCenter' => $this->positionCenter,
             'positionBottom' => $this->positionBottom,
             'positionLeft'  => $this->positionLeft,
-            'lc' => $lc,
         ]);
 
 
@@ -1041,7 +1025,6 @@ if($lc == 'kg'){
             'positionCenter' => $this->positionCenter,
             'positionBottom' => $this->positionBottom,
             'positionLeft'  => $this->positionLeft,
-            'lc' => $lc,
         ]);
     }
 
@@ -1122,7 +1105,6 @@ if($lc == 'kg'){
             'positionCenter' => $this->positionCenter,
             'positionBottom' => $this->positionBottom,
             'positionLeft'  => $this->positionLeft,
-            'lc' => $lc,
         ]);
     }
 

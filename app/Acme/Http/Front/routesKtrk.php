@@ -156,7 +156,7 @@ Route::group(['domain' => 'www.ktrk.kg', 'prefix' => '/baldar', 'namespace' => '
 
     Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
 
-    Route::get('/post/{post}', ['as' => 'front.post',   'uses' => 'HomeController@Post']);
+    Route::get('/post/{post}/{locale?}/{title?}', ['as' => 'front.post', 'uses' => 'HomeController@Post']);
     Route::get('/page/{page}', ['as' => 'front.page',   'uses' => 'HomeController@Page']);
     Route::get('login', ['as' => 'front.login',   'uses' => 'AuthController@Login']);
     Route::post('login', ['as' => 'front.login',   'uses' => 'AuthController@postLogin']);

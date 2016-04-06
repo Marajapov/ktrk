@@ -115,8 +115,17 @@
 <script type="text/javascript" src="{{ asset('js/bootstrap-hover-dropdown.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/jquery-migrate-1.2.1.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('slick/slick.min.js') }}"></script>
-<script src="{{ asset('js/landing/fixed.js') }}"></script>
+
+
+<script src="{{ asset('js/landing/owl.carousel.min.js') }}"></script>
+<script src="{{ asset('js/landing/mousescroll.js') }}"></script>
+<script src="{{ asset('js/landing/smoothscroll.js') }}"></script>
+<script src="{{ asset('js/landing/jquery.prettyPhoto.js') }}"></script>
+<script src="{{ asset('js/landing/jquery.isotope.min.js') }}"></script>
+<script src="{{ asset('js/landing/jquery.inview.min.js') }}"></script>
+<script src="{{ asset('js/landing/wow.min.js') }}"></script>
 <script src="{{ asset('js/landing/main.js') }}"></script>
+<script src="{{ asset('js/landing/fixed.js') }}"></script>
 
 @yield('footerScript')
 

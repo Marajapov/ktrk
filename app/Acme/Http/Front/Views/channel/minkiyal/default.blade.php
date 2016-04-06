@@ -18,10 +18,6 @@
     <link rel="stylesheet" href="{{ asset('css/minkiyal.css')}}">
 
 
-
-    <link rel="stylesheet"  href="{{ asset('css/lightslider.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('css/gallery.css') }}"/>
-
     <script src="{{ asset('js/jquery-1.11.2.min.js') }}"></script>
     <script src="{{ asset('js/modernizr-2.6.2.min.js') }}"></script>
     @yield('styles')

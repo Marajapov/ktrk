@@ -61,24 +61,11 @@
     </div>
 </div>
 <div class="container main_back">
-
-<!--    <div class="row">
-       <div class="mini-banner shadow-effect">
-           @if($anonstop)
-               @foreach($anonstop as $row)
-                   <div>
-                        <div class="overlay"></div>
-                       <img src="{{asset($row->thumbnail)}}" alt="">
-                   </div>
-               @endforeach
-           @endif
-       </div>
-   </div> -->
    <div class="info">
 
       @if($anonstop)
       <div id="allposts">
-      <h3 class="title-left">Видео Live</h3>
+      <h3 class="title-left" style="padding-bottom: 5px;">Видео Live</h3>
          @foreach($anonstop as $key=> $row)
          <div class="col-md-3 col-sm-12 postshow">
             <a href="#" data-toggle="modal" data-target="#{{ $key+99 }}">
@@ -110,67 +97,10 @@
       </div>
       @endif
    </div>
-<!-- 
-   <div class="anonses">
-      <div class="anons-slider slidermin">
-         <div class="slider-overlay"></div>
-         @if($anonsbottom)
-         <div class="anons-carousel">
-            @foreach($anonsbottom as $anonsbot)
-            <div>
-               <div class="row">
-                  <div class="col-md-3">
-                     <img src="{{asset($anonsbot->thumbnail)}}" alt=""/>
-                  </div>
-                  <div class="col-md-9">
-                     <span>
-                     {!! $anonsbot->getDesc() !!}
-                     </span>
-                  </div>
-               </div>
-            </div>
-            @endforeach
-         </div>
-         @endif
-      </div>
-   </div> -->
-
-<!--    <div class="anonses">
-      <div class="anons-slider slidermin">
-      <h3 class="title-left">Жанылыктар</h3>
-         <div class="slider-overlay"></div>
-         @if($popArticles)
-         <div class="anons-carousel">
-            @foreach($popArticles as $post)
-            <div>
-              
-               <div class="col-md-12">
-                <div class="row">
-                  <div class="col-md-3">
-                        <img class="media-object thumb" src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif" alt="image">
-                  </div>
-                  <div class="col-md-9">
-                     <span>
-                     <a class="media-heading" href="{{ route('minkiyal.news', $post) }}">{{ $post->getTitle() }}</a>
-                     </span>
-                     <div class="extra">
-                        <span class="e-datetime">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
-                        <span class="e-views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
-                     </div>
-                     <span>{{$post->getShortDescription()}}</span>
-                  </div>
-                  </div>
-               </div>
-            </div>
-            @endforeach
-         </div>
-         @endif
-      </div>
-   </div> -->
    <div class="newsstream">
       <div class="col-md-7">
          <div class="row">
-         <h3 class="title-left">Жанылыктар</h3>
+         <h3 class="title-left" style="padding-bottom: 5px;">Жанылыктар</h3>
          @if($popArticles)
             @foreach($popArticles as $post)
             <div class="col-md-4 col-sm-12 postshow">
@@ -178,7 +108,7 @@
                   <img class="media-object thumb" src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif" alt="image">
                   <span class="postshow-name">
                      <div class="extra">
-                        <span class="date">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
+                        <span class="date">{{ $post->getDay() }} , {{ $post->getMonthRu() }}</span>
                         <span class="views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
                      </div>
                      <a class="media-heading" href="{{ route('minkiyal.news', $post) }}">{{ $post->getTitle() }}</a>
@@ -190,9 +120,9 @@
          </div>
       </div>
       <div class="col-md-5">
-      <h3 class="title-left">YouTube</h3>
+      <!-- <h3 class="title-left">YouTube</h3> -->
       <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/uVri5f7Y080?rel=0&amp;controls=0&amp;showinfo=0" style="height: 225px;"></iframe>
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/uVri5f7Y080?rel=0&amp;controls=0&amp;showinfo=0" style="height: 235px;"></iframe>
       </div>
       </div>
    </div>
@@ -200,14 +130,13 @@
       <div class="col-sm-6" style="background: #444; height: 250px;"></div>
       <div class="col-sm-6" style="background: #666; height: 250px;"></div>
    </div> -->
-
-   <div class="allgallery">
+   <div class="allgallery clearfix">
       <div class="title">
          <h3>Сүрөтбаяндар</h3>
          <h3 class="allright"><a href="{{ route('minkiyal.posts')}}">Баардыгы <i class="fa fa-arrow-right"></i></a></h3>
       </div>
       @if($photoGalleries)
-      <div class="row">
+      <div class="row allcol">
          @foreach($photoGalleries as $photoGallery)
          <div class="col-md-4 second">
             <a href="{{ route('minkiyal.post', $photoGallery) }}">
