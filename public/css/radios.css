@@ -1177,14 +1177,23 @@
 #minkiyal {
     position: relative;
     font-family: 'Roboto Condensed';
-    background: url('../images/channels/minkiyal/bg.jpg');
+    /*background: url('../images/channels/minkiyal/bg.jpg');*/
     /*background: #f1edea;*/
 /*    background-image: -moz-linear-gradient(90deg, #4CAF50 0%, #8BC34A 100%);
     background-image: -webkit-linear-gradient(90deg, #4CAF50 0%, #8BC34A 100%);
     background-image: -ms-linear-gradient(90deg, #4CAF50 0%, #8BC34A 100%);*/
-    background-size: cover;
-    /*background-attachment: fixed;*/
-    background-position: center center;               
+    /*background-size: cover;*/
+    background-attachment: fixed;
+    /*background-position: center center;*/
+
+background: rgba(255,255,255,1);
+background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(47%, rgba(246,246,246,1)), color-stop(100%, rgba(237,237,237,1)));
+background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=0 );               
 }
 #minkiyal .switch{
     /*background:#F1EDEA;*/
@@ -1244,7 +1253,7 @@
     text-transform: uppercase;
 }
 #minkiyal #allposts{
-    margin-top: 10px;
+    margin-top: 15px;
 }
 #minkiyal .title-left{
     padding-left: 5px;
@@ -1392,7 +1401,10 @@ background: -o-linear-gradient(left, #F44336 20%, #E91E63 20%, #9C27B0 40%, #3F5
 }
 
 #minkiyal .mingallery{
-    padding: 30px 5px;
+    padding-bottom: 20px;
+    margin-top: 50px;
+    background: #fff;
+    border-radius: 3px !important;
 }
 
 #minkiyal .mingallery .with-share{
@@ -1428,8 +1440,15 @@ background: -o-linear-gradient(left, #F44336 20%, #E91E63 20%, #9C27B0 40%, #3F5
     padding-left: 5px;
 }
 
+#minkiyal .infobar {
+    padding-bottom: 20px;
+}
+
 #minkiyal .infobar .contacts {
     position: relative;
+}
+#minkiyal .infobar .contacts .title{
+    margin-bottom: 10px;
 }
 #minkiyal .xcontact {
     text-align: center;
@@ -1447,6 +1466,7 @@ background: -o-linear-gradient(left, #F44336 20%, #E91E63 20%, #9C27B0 40%, #3F5
 
 #minkiyal .network {
     position: relative;
+    top: -10px;
     margin: -20px 5px 5px 5px;
 }
 
@@ -1462,20 +1482,26 @@ background: -o-linear-gradient(left, #F44336 20%, #E91E63 20%, #9C27B0 40%, #3F5
     letter-spacing: 0.5px;
     text-transform: uppercase;  
     color: #FFF;
-    background: #0D9D2C;
+    background: #2196F3;
 }
 #minkiyal .address  ul{
     border-top: 3px solid #FFF;
-    -webkit-box-shadow: 0px 5px 200px #000000;
-    -moz-box-shadow: 0px 5px 200px #000000;
-    box-shadow: 0px 5px 200px #000000;
+   -webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+    -moz-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
 }
-#minkiyal .address  h3 i, #minkiyal .address li i{
+#minkiyal .address  h3 i{
+    padding-right: 10px;
+    font-size: 60px;
+    display: inherit;
+    padding-bottom: 10px;
+}
+#minkiyal .address li i{
     padding-right: 10px;
 }
 #minkiyal .address li{
     display: block;
-    color: #272626;
+    color: #0E2A40;
     font-size: 1.2em;
     padding: 15px 30px 10px 30px;
     -webkit-transition: all 0.5s ease-in-out;
@@ -1552,10 +1578,11 @@ background: -o-linear-gradient(left, #F44336 20%, #E91E63 20%, #9C27B0 40%, #3F5
     padding-top: 10px;
 }
 #minkiyal .allgallery{
-/*    background: #4CAF50;*/
+    background: #ECECEC;
     margin: 5px;
     display: inherit;
-    padding-top: 5px;
+    /*padding-top: 5px;*/
+    padding: 20px;
 }
 #minkiyal .allgallery .allcol{
     padding-left: 5px;
@@ -1585,7 +1612,7 @@ background: -o-linear-gradient(left, #F44336 20%, #E91E63 20%, #9C27B0 40%, #3F5
     margin:0; 
     font-size: 20px;
     padding-top: 15px;
-
+    color: #444;
 }
 #minkiyal .allgallery  .second {
     margin-bottom: 20px;
@@ -1611,13 +1638,10 @@ background: -o-linear-gradient(left, #F44336 20%, #E91E63 20%, #9C27B0 40%, #3F5
     margin: 0;
     font-size: 16px;
     font-weight: bold;
-    color: #fff;
+    color: #3F51B5;
     width: 400px;
-    background: #3F51B5;
+    background: #D6D6D6;
     height: 70px;
-        -webkit-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-    -moz-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-    box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     vertical-align: middle;
     text-align: center;
     display: table-cell;
@@ -1921,17 +1945,25 @@ background: -o-linear-gradient(left, #F44336 20%, #E91E63 20%, #9C27B0 40%, #3F5
     max-width: 1070px;
 }
 .main_back{
-  background: #fff;
-  border-radius: 3px !important;
-  margin-top: -250px;
-  display: block;
-  position: relative;
+    background: #fff;
+    border-radius: 3px !important;
+    margin-top: -250px;
+    display: block;
+    position: relative;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+        -webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+        -moz-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);  
+
 }
 #minkiyal .info_shows {
     padding: 5px;
     position: relative;
     display: block;
-    top: -30px;
+    top: -20px;
+}
+#minkiyal .info_shows h3{
+    font-size: 20px;
+    color: #444;
 }
 
 #minkiyal .info_shows .col-md-3{
@@ -2018,4 +2050,102 @@ background: -o-linear-gradient(left, #F44336 20%, #E91E63 20%, #9C27B0 40%, #3F5
 }
 #minkiyal .newsstream .media-heading:hover{
     color: #237dac;
+}
+#minkiyal .aboutfm {
+    position: relative;
+    display: inline-block;
+    font-family: 'Roboto';
+}
+
+#minkiyal .aboutfm .title{
+    font-size: 20px;
+    color: #444;
+    margin-bottom: 10px;
+}
+#minkiyal .aboutfm .show-btn{
+    display: table;
+    margin: 0px auto;
+    text-align: center;
+}
+
+        .mfp-ready .mfp-figure {
+            opacity: 0;
+        }
+
+        .mfp-zoom-in {
+            /* start state */
+            /* animate in */
+            /* animate out */
+        }
+        .mfp-zoom-in .mfp-figure {
+            opacity: 0;
+            transition: all 0.3s ease-out;
+            transform: scale(0.9);
+        }
+        .mfp-zoom-in.mfp-bg,
+        .mfp-zoom-in .mfp-preloader {
+            opacity: 0;
+            transition: all 0.3s ease-out;
+        }
+        .mfp-zoom-in.mfp-image-loaded .mfp-figure {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .mfp-zoom-in.mfp-ready.mfp-bg,
+        .mfp-zoom-in.mfp-ready .mfp-preloader {
+            opacity: 0.8;
+        }
+        .mfp-zoom-in.mfp-removing .mfp-figure {
+            transform: scale(0.9);
+            opacity: 0;
+        }
+        .mfp-zoom-in.mfp-removing.mfp-bg,
+        .mfp-zoom-in.mfp-removing .mfp-preloader {
+            opacity: 0;
+        }
+
+        /* CSS-based preloader */
+        .mfp-preloader {
+            width: 30px;
+            height: 30px;
+            background-color: #FFF;
+            opacity: 0.65;
+            margin: 0 auto;
+            animation: rotateplane 1.2s infinite ease-in-out;
+        }
+
+        @keyframes rotateplane {
+            0% {
+                transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+            }
+            50% {
+                transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+            }
+            100% {
+                transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+            }
+        }
+
+/* MINKIYAL NEWWS PAGE*/
+
+#minkiyal .minkiyal_news{
+    background: #fff;
+    margin-top: 50px;
+    border-radius: 3px !important;
+}
+#minkiyal .minkiyal_post{
+    padding: 10px 5px;
+}
+#minkiyal .minkiyal_post .title{
+    color: #444;
+    font-size: 16px;
+}
+#minkiyal .minkiyal_post .news-info{
+    margin-top: 20px !important;
+}
+#minkiyal .minkiyal_post .with-share a span{
+    color: #237DAC;
+}
+#minkiyal .minkiyal_post .with-share a span i{
+    padding-left: 5px;
 }

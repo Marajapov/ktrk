@@ -415,7 +415,7 @@ if($lc == 'kg'){
 
         if($lc == 'kg'){
             $contentOriginal = $post->getContent();
-            $relatedPosts = \Model\Post\ModelName::where('category_id','=',$post->category_id)->where('general','=','1')->languagekg()->take(7)->skip(0)->orderBy('id', 'desc')->get();
+            $relatedPosts = \Model\Post\ModelName::where('category_id','=',$post->category_id)->where('general','=','1')->languagekg()->take(6)->skip(0)->orderBy('id', 'desc')->get();
             $contentFinal = $contentOriginal;
             if($post->related1)
             {
@@ -519,7 +519,7 @@ if($lc == 'kg'){
 
         }elseif($lc == 'ru'){
             $contentOriginal = $post->getContent();
-            $relatedPosts = \Model\Post\ModelName::where('category_id','=',$post->category_id)->where('general','=','1')->languageru()->take(7)->skip(0)->orderBy('id', 'desc')->get();
+            $relatedPosts = \Model\Post\ModelName::where('category_id','=',$post->category_id)->where('general','=','1')->languageru()->take(6)->skip(0)->orderBy('id', 'desc')->get();
             $contentFinal = $contentOriginal;
             if($post->relatedRu1)
             {
