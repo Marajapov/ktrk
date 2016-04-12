@@ -31,13 +31,8 @@ trait ModelHelpers
 
     public function relatedFunctionLeft($postId){
 
-        $lc=app()->getlocale();
         $relatedPost = \Model\Post\ModelName::where('id','=',$postId)->first();
-        if($lc == 'ru'){
-            $title = $relatedPost->titleRu;
-        }else{
-            $title = $relatedPost->title;
-        }
+
         if($relatedPost->thumbnail_big){
             $thumbnail = $relatedPost->thumbnail_big;
         } else{
@@ -51,11 +46,11 @@ trait ModelHelpers
                     <div class="topics">
                         <div class="topic clearfix">
 
-                            <a class="t-thumb" href="'. route('front.post', [$postId, $lc, $title]) .'">
+                            <a class="t-thumb" href="'. route('front.post', $postId) .'">
                                 <img alt="alt photo text" src="'. asset($thumbnail).'">
                             </a>
                             <div class="t-info">
-                                <a class="js-dh" href="'. route('front.post', [$postId, $lc, $title]) .'">'.$relatedPost->getTitleRuOrKg() .'</a>
+                                <a class="js-dh" href="'. route('front.post', $postId) .'">'.$relatedPost->getTitleRuOrKg() .'</a>
                                 <div class="t-extra clearfix">
                                     <div class="t-date">'.$relatedPost->getDay().' '.$relatedPost->getMonthRu().', '.$relatedPost->getYear().'</div>
                                     <div class="t-view"><i class="fa fa-eye"></i>'.$relatedPost->getViewed().'</div>
@@ -72,13 +67,7 @@ trait ModelHelpers
 
     public function relatedFunctionRight($postId){
 
-        $lc=app()->getlocale();
         $relatedPost = \Model\Post\ModelName::where('id','=',$postId)->first();
-        if($lc == 'ru'){
-            $title = $relatedPost->titleRu;
-        }else{
-            $title = $relatedPost->title;
-        }
         if($relatedPost->thumbnail_big){
             $thumbnail = $relatedPost->thumbnail_big;
         } else{
@@ -91,11 +80,11 @@ trait ModelHelpers
                 <div class="topics-box">
                     <div class="topics">
                         <div class="topic clearfix">
-                            <a class="t-thumb" href="'. route('front.post', [$postId, $lc, $title]) .'">
+                            <a class="t-thumb" href="'. route('front.post', $postId) .'">
                                 <img alt="alt photo text" src="'. asset($thumbnail) .'">
                             </a>
                             <div class="t-info">
-                                <a class="js-dh" href="'. route('front.post', [$postId, $lc, $title]) .'">'.$relatedPost->getTitleRuOrKg() .'</a>
+                                <a class="js-dh" href="'. route('front.post', $postId) .'">'.$relatedPost->getTitleRuOrKg() .'</a>
                                 <div class="t-extra clearfix">
                                     <div class="t-date">'.$relatedPost->getDay().' '.$relatedPost->getMonthRu().', '.$relatedPost->getYear().'</div>
                                     <div class="t-view"><i class="fa fa-eye"></i>'.$relatedPost->getViewed().'</div>
@@ -234,12 +223,6 @@ trait ModelHelpers
 
     public function twoRelatedFunction($postId, $postId2){
 
-        $lc=app()->getlocale();
-        if($lc == 'ru'){
-            $title = $relatedPost->titleRu;
-        }else{
-            $title = $relatedPost->title;
-        }
         $relatedPost = \Model\Post\ModelName::where('id','=',$postId)->first();
         $relatedPost2 = \Model\Post\ModelName::where('id','=',$postId2)->first();
 
@@ -255,11 +238,11 @@ trait ModelHelpers
                                       '. $relatedPost->getDay().' '.$relatedPost->getMonthRu().', '.$relatedPost->getYear().'
                                     </span>
                           </div>
-                          <a class="t-thumb" href="'. route('front.post', [$postId, $lc, $title]) .'">
+                          <a class="t-thumb" href="'. route('front.post', $postId) .'">
                             <img alt="alt photo text" src="'. asset($relatedPost->getFile()) .'">
                           </a>
                           <div class="t-info">
-                              <a class="js-dh" href="'. route('front.post', [$postId, $lc, $title]).'">'.$relatedPost->getTitleRuOrKg().'</a>
+                              <a class="js-dh" href="'. route('front.post', $postId).'">'.$relatedPost->getTitleRuOrKg().'</a>
                           </div>
                         </div>
                         <div class="topic clearfix">
@@ -269,11 +252,11 @@ trait ModelHelpers
                                       '. $relatedPost2->getDay().' '.$relatedPost2->getMonthRu().', '.$relatedPost2->getYear().'
                                     </span>
                           </div>
-                          <a class="t-thumb" href="'. route('front.post', [$postId, $lc, $title]) .'">
+                          <a class="t-thumb" href="'. route('front.post', $postId) .'">
                             <img alt="alt photo text" src="'. asset($relatedPost2->getFile()) .'">
                           </a>
                           <div class="t-info">
-                              <a class="js-dh" href="'. route('front.post', [$postId, $lc, $title]).'">'.$relatedPost2->getTitleRuOrKg().'</a>
+                              <a class="js-dh" href="'. route('front.post', $postId).'">'.$relatedPost2->getTitleRuOrKg().'</a>
                           </div>
                         </div>
                       </div>

@@ -82,7 +82,7 @@
                                                                         <span class="e-datetime">{{ $headerPost->getDay() }} {{ $headerPost->getMonthRu() }} , {{ $headerPost->getTime() }}</span>
                                                                         <span class="e-views"><i class="fa fa-eye"></i>{{ $headerPost->getViewed() }}</span>
                                                                     </div>
-                                                                    <a href="{{ route('front.post', [$headerPost, $lc, $headerPost->getLocaleTitle($lc)]) }}">
+                                                                    <a href="{{ route('front.post', $headerPost) }}">
                                                                         <img src="@if($headerPost->thumbnail_big) {{ asset($headerPost->thumbnail_big) }} @else {{ asset($headerPost->thumbnail) }}  @endif" alt=""/>
                                                                         <h4 class="media-heading">{{ $headerPost->getTitleRuOrKg() }}</h4>
                                                                     </a>
@@ -96,7 +96,7 @@
                                                                         <span class="e-datetime">{{ $post->getDay() }} {{ $post->getMonthRu() }} , {{ $post->getTime() }}</span>
                                                                         <span class="e-views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
                                                                     </div>
-                                                                    <a href="{{ route('front.post', [$post, $lc, $post->getLocaleTitle($lc)]) }}">
+                                                                    <a href="{{ route('front.post', $post) }}">
                                                                         <h4 class="media-heading">{{ $post->getTitleRuOrKg() }}</h4>
                                                                     </a>
                                                                 </div>
@@ -124,7 +124,7 @@
                                                                         <span class="e-datetime">{{ $headerPost->getDay() }} {{ $headerPost->getMonthRu() }} , {{ $headerPost->getTime() }}</span>
                                                                         <span class="e-views"><i class="fa fa-eye"></i>{{ $headerPost->getViewed() }}</span>
                                                                     </div>
-                                                                    <a href="{{ route('front.post', [$headerPost, $lc, $headerPost->getLocaleTitle($lc)]) }}">
+                                                                    <a href="{{ route('front.post', $headerPost) }}">
                                                                         <img src="@if($headerPost->thumbnail_big) {{ asset($headerPost->thumbnail_big) }} @else {{ asset($headerPost->thumbnail) }}  @endif" alt=""/>
                                                                         <h4 class="media-heading">{{ $headerPost->getTitleRuOrKg() }}</h4>
                                                                     </a>
@@ -138,7 +138,7 @@
                                                                         <span class="e-datetime">{{ $post->getDay() }} {{ $post->getMonthRu() }} , {{ $post->getTime() }}</span>
                                                                         <span class="e-views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
                                                                     </div>
-                                                                    <a href="{{ route('front.post', [$post, $lc, $post->getLocaleTitle($lc)]) }}">
+                                                                    <a href="{{ route('front.post', $post) }}">
                                                                         <h4 class="media-heading">{{ $post->getTitleRuOrKg() }}</h4>
                                                                     </a>
                                                                 </div>
@@ -166,7 +166,7 @@
                                                                         <span class="e-datetime">{{ $headerPost->getDay() }} {{ $headerPost->getMonthRu() }} , {{ $headerPost->getTime() }}</span>
                                                                         <span class="e-views"><i class="fa fa-eye"></i>{{ $headerPost->getViewed() }}</span>
                                                                     </div>
-                                                                    <a href="{{ route('front.post', [$headerPost, $lc, $headerPost->getLocaleTitle($lc)]) }}">
+                                                                    <a href="{{ route('front.post', $headerPost) }}">
                                                                         <img src="@if($headerPost->thumbnail_big) {{ asset($headerPost->thumbnail_big) }} @else {{ asset($headerPost->thumbnail) }}  @endif" alt=""/>
                                                                         <h4 class="media-heading">{{ $headerPost->getTitleRuOrKg() }}</h4>
                                                                     </a>
@@ -180,7 +180,7 @@
                                                                         <span class="e-datetime">{{ $post->getDay() }} {{ $post->getMonthRu() }} , {{ $post->getTime() }}</span>
                                                                         <span class="e-views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
                                                                     </div>
-                                                                    <a href="{{ route('front.post', [$post, $lc, $post->getLocaleTitle($lc)]) }}">
+                                                                    <a href="{{ route('front.post', $post) }}">
                                                                         <h4 class="media-heading">{{ $post->getTitleRuOrKg() }}</h4>
                                                                     </a>
                                                                 </div>

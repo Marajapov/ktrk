@@ -81,9 +81,6 @@
                            <img class="media-object" src="@if(!($project->getFile())) {{ asset('images/project_default.png') }} @else {{ asset($project->getFile()) }} @endif" alt="{{ $project->getNameOne() }}">
 
                         </div>
-                        <div class="media-name">
-                           <a class="media-heading" href="{{ route('dostuk.project', $project) }}">{{ $project->getName() }}</a>
-                        </div>
                      </div>
                   </div>
                   @endforeach
@@ -91,13 +88,6 @@
                @endif
                </div>
                <div class="col-md-12">
-            </div>
-            <div class="col-md-12">
-               <footer class="morelink">
-                  <a href="{{ route('dostuk.allnews') }}">
-                  <span>{{ trans('radiopages.AllPereadachi') }} <i class="fa fa-arrow-circle-right"></i></span>
-                  </a>
-               </footer>
             </div>
          </div>
          <!--/.row-->    
@@ -118,12 +108,12 @@
                   <div class="gallery-item">
                      <a href="{{ route('dostuk.photos', $photoGallery) }}" class="thumb">
                         <img src="{{ asset($photoGallery->thumbnail_big) }}" alt="...">
-                        <i class="fa fa-camera"></i>
-                        <div class="extra">
-                           <span class="date">{{ $photoGallery->getDay() }} {{ $photoGallery->getMonthRu() }}, {{ $photoGallery->getTime() }}</span>
-                        </div>
                      </a>
-                     <h2>                           
+                     <h2>
+                        <div class="extra">
+                           <span class="camera"> <i class="fa fa-camera"></i> </span>
+                           <span class="date">{{ $photoGallery->getDay() }} {{ $photoGallery->getMonthRu() }}, {{ $photoGallery->getTime() }}</span>
+                        </div>                                              
                         <a href="{{ route('dostuk.photos', $photoGallery) }}">{{ $photoGallery->getName() }}</a>
                      </h2>
                   </div>
@@ -212,14 +202,12 @@
             <div class="col-sm-12 wow fadeInRight">
                <img src="{{asset('images/channels/dostuk.png')}}" alt="" class="img-responsive fadeInLeft" style="
                   float: left;">
-               <h3>Цель радиостанции:</h3>
-               <h4>• просвятить молодежь в таких важнейших сферах культуры, как музыка, литература, кино и театр.</h4>
-               <h4>•  познакомить с классическими образцами и культовыми личностями в этих сферах, а также освещать последние достижения, достойные внимания. </h4>
-               <h4>•  углубление и расширение диалога радио со слушателями;</h4>
-               <h4>•  содействие развитию дружеских отношений между народами Кыргызстана;</h4>
-               <h4>•  ориентация на музыку этнических народов Кыргызстана, поддержка отечественных исполнителей;</h4>
-               <h4>•  познакомить слушателей с творчеством исполнителей, музыкантов, поэтов;</h4>
-               <h4>•  проводить беседы в студии со специалистами разных областей, а так же в области музыки:</h4>
+               <h3>Основными целями радио "Достук" являются:</h3>
+               <h4>• прославление многоязычия и дружбы народов;</h4>
+               <h4>• создание высококачественных радиопрограмм в интересах удовлетворения культурно</h4>
+               <h4>• углубление и расширение диалога радио со слушателями;</h4>
+               <h4>• Цель нашей радиостанции заключается в том, чтобы просвещать молодежь в таких важнейших сферах культуры, как музыка, литература, кино и театр. Знакомить с классическими образцами и культовыми личностями в этих сферах, а также освещать последние достижения, достойные внимания. Тем самым мы хотим расширить кругозор молодежи, повысить ее образованность, помочь воспитать вкус на лучших достижениях литературы, музыки, кино и театра.</h4>
+               <h4>• Время   вещания составляет 9 часов в сутки. Программы  выходят в  эфир  на  кыргызском, русском, польском, украинском, дунганском, уйгурском, татарском, узбекском,турецком  языках </h4>
                <a class="show-btn" href="{{ route('dostuk.about')}}">
                подробнее
                </a>
@@ -240,18 +228,15 @@
                   <div class="col-md-12">
                  
                      <div class="col-md-6" style="text-align: right;">
-                        <p>8.00-11.00</p>
-                        <p>11.00-17.00</p>
+                        <p>8:00-17:00</p>
                      </div>
                   @if(app()->getlocale() == 'kg')
                      <div class="col-md-6">
-                        <p>Дүйнөлүк  музыка</p>
-                        <p>Классика-инструменталдык  композициялар</p>
+                        <p>Ар улуттун ырлары жана дүйнөлүк музыка</p>
                      </div>
                   @elseif(app()->getlocale() == 'ru')
                      <div class="col-md-6">
-                        <p>Современные хиты 2015-2016</p>
-                        <p>Классические инструментальные композиции</p>
+                        <p>Музыка народов мира</p>
                      </div>
                   @endif
                   </div>
@@ -260,11 +245,13 @@
             <div class="section-header3">
             @if(app()->getlocale() == 'kg')
                <h2 class="section-title text-center wow fadeInDown">“Биринчи” радионун толкунунда:</h2>
-               <p class="text-center wow fadeInDown">Ишемби саат 10.00-18.00<br> Жекшемби саат 17.00-21.00</p>
+               <p class="text-center wow fadeInDown">Ишемби саат 10.00-18.00<br> Жекшемби саат 17.00-21.00</p>               
             @elseif(app()->getlocale() == 'ru')
                <h2 class="section-title text-center wow fadeInDown">На волне Биринчи радио:</h2>
-               <p class="text-center wow fadeInDown">10.00-18.00 в субботу<br> 17:00-21:00 воскресенье</p>
+               <p class="text-center wow fadeInDown">10.00-18.00 суббота<br> 17:00-21:00 воскресенье</p>
             @endif
+            <h2 class="section-title text-center wow fadeInDown">Онлайн</h2>
+               <p class="text-center wow fadeInDown"><a href="http://www.ktrk.kg/online/online-dostuk.php" onclick="window.open(this.href, '', 'scrollbars=1,height='+Math.min(210, screen.availHeight)+',width='+Math.min(400, screen.availWidth)); return false;" style="color:#fff;">http://www.ktrk.kg/online/online-dostuk.php</a></p>
             </div>
          </div>
    </section>
@@ -311,7 +298,7 @@
                   <h3><i class="fa fa-phone"></i>Контактный телефон:</h3>
                   <ul>
                      <li><i class="fa fa-microphone"></i> Редакция: 0312 65 85 05</li>
-                     <li><i class="fa fa-commenting-o"></i> Студия: 0312 65 66 04</li>
+                     <li><i class="fa fa-commenting-o"></i> Студия: 0312 65 66 04 <span style="  display: inherit; text-align: center;">0312 39 21 90</span></li>
                   </ul>
                </div>
                <div class="col-md-4 address">
@@ -336,14 +323,17 @@
      arrows: true,
      speed: 300,
      slidesToShow: 1,
-     fade: true,
-     cssEase: 'linear'
+     slidesToScroll: 1,
+     autoplay: true,
+     autoplaySpeed: 3500
    });
 
    $('.shows-dostuk').slick({
      infinite: true,
      slidesToShow: 3,
-     slidesToScroll: 3
+     slidesToScroll: 1,
+     autoplay: true,
+     autoplaySpeed: 2500
    });
 </script>
 <div id="fb-root"></div>

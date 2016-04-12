@@ -263,6 +263,7 @@ class PageController extends Controller
 
     public function keneshPage()
     {
+        $lc = app()->getlocale();
         $categories = \Model\Category\ModelName::all();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
         return view('Front::pages.ns', [
@@ -273,11 +274,13 @@ class PageController extends Controller
             'positionCenter' => $this->positionCenter,
             'positionBottom' => $this->positionBottom,
             'positionLeft'  => $this->positionLeft,
+            'lc' => $lc,
         ]);
     }
 
     public function editionkeneshPage()
     {
+        $lc = app()->getlocale();
         $categories = \Model\Category\ModelName::all();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
         return view('Front::pages.editionkenesh', [
@@ -288,6 +291,7 @@ class PageController extends Controller
             'positionCenter' => $this->positionCenter,
             'positionBottom' => $this->positionBottom,
             'positionLeft'  => $this->positionLeft,
+            'lc' => $lc,
         ]);
     }
 

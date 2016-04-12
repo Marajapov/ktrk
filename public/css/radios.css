@@ -1093,7 +1093,7 @@
     float: right;
 }
 .allgallery .allright a{
-    color: #fff;
+    color: #444;
 }
 .allgallery .allright a:hover{
     color: #043A35;
@@ -1177,21 +1177,36 @@
 #minkiyal {
     position: relative;
     font-family: 'Roboto Condensed';
-    background: url('../images/channels/minkiyal/main.jpg');
+    /*background: url('../images/channels/minkiyal/bg.jpg');*/
     /*background: #f1edea;*/
 /*    background-image: -moz-linear-gradient(90deg, #4CAF50 0%, #8BC34A 100%);
     background-image: -webkit-linear-gradient(90deg, #4CAF50 0%, #8BC34A 100%);
     background-image: -ms-linear-gradient(90deg, #4CAF50 0%, #8BC34A 100%);*/
-    background-size: cover;
+    /*background-size: cover;*/
     background-attachment: fixed;
-    background-position: center center;               
+    /*background-position: center center;*/
+
+background: rgba(255,255,255,1);
+background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(47%, rgba(246,246,246,1)), color-stop(100%, rgba(237,237,237,1)));
+background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=0 );               
 }
 #minkiyal .switch{
     /*background:#F1EDEA;*/
+    background: none;
     z-index: 3;
 }
 #minkiyal .sitemenu h4{
     color: #fff !important;
+    font-size: 16px;
+    padding-top: 5px;
+}
+#minkiyal .channel_switch li{
+    padding: 0 !important;
 }
 #minkiyal .sitemenu a>span{
   color: #fff !important;
@@ -1212,6 +1227,11 @@
 
 #minkiyal .info{
     position: relative;
+    /*margin-top: 25px;*/
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
 }
 #minkiyal .info h2{
     padding: 30px 0px;
@@ -1232,69 +1252,99 @@
     font-weight: bold;
     text-transform: uppercase;
 }
-
+#minkiyal #allposts{
+    margin-top: 15px;
+}
+#minkiyal .title-left{
+    padding-left: 5px;
+    margin: 0;
+    font-size: 20px;
+    color: #4B4B4B;
+}
+#minkiyal #allposts .title_x h3{
+    text-transform: uppercase;
+    text-align: center;
+    margin: 5px;
+    background: #fff;
+    width: 10%;
+    margin: auto;
+    z-index: 2;
+    position: relative;
+}
+#minkiyal #allposts .title_x{
+    margin-left: 5px;
+    margin-right: 5px;
+    position: relative;
+    margin-bottom: 15px;
+}
+#minkiyal #allposts .title_x:after{
+    content: '';
+background: -webkit-linear-gradient(left, #F44336 20%, #E91E63 20%, #9C27B0 40%, #3F51B5 40%, #2196F3 60%, #FFC107 60%, #FF9800 80%, #FF5722 80%) 0 0 / 50% .4em no-repeat;
+background: -o-linear-gradient(left, #F44336 20%, #E91E63 20%, #9C27B0 40%, #3F51B5 40%, #2196F3 60%, #FFC107 60%, #FF9800 80%, #FF5722 80%) 0 0 / 50% .4em no-repeat;
+    background: linear-gradient(to right, #F44336 20%, #E91E63 20%, #9C27B0 40%, #3F51B5 40%, #2196F3 60%, #FFC107 60%, #FF9800 80%, #FF5722 80%) 0 0 / 50% .4em no-repeat;
+    background-repeat: repeat-x;
+    position: absolute;
+    bottom: 6px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+}
 #minkiyal .info .postshow {
     position: relative;
     margin-bottom: 10px;
     padding:0px 5px; 
     cursor: pointer;
 }
+
 #minkiyal .info .postshow a{
     position: relative;
     display: block;
 }
-#minkiyal .info .postshow h3{
-    position: absolute;
+
+#minkiyal .info .postshow .postshow-name {
+    position: relative;
     bottom: 0;
-    padding: 10px;
     margin: 0;
-
-    line-height: 1;
-    font-size: 1.1em;
-    font-family: 'Roboto Regular';
+    font-size: 16px;
     font-weight: bold;
-    letter-spacing: 1px;
     width: 100%;
+    display: inline-table;
 
-    color: #FFFFFF;
-    overflow: hidden;
-    opacity: 1;
-
-    background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0,0,0,0)), color-stop(100%, rgba(0,0,0,1)));
-    background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0, 0.66) 100%);
-    background: -o-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0, 0.66) 100%);
-    background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0, 0.66) 100%);
-    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0, 0, 0, 0.66) 100%);
-
-    -webkit-transition: opacity 0.2s ease;
-    -o-transition: opacity 0.2s ease;
-    transition: opacity 0.2s ease;
-}
-
-#minkiyal .info .postshow img{
-    height: 170px;
-    pointer: cursor;
     -webkit-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     -moz-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-    -webkit-transition: all 0.2s ease;
-    -moz-transition: all 0.2s ease;
-    -ms-transition: all 0.2s ease;
-    -o-transition: all 0.2s ease;
-    transition: all 0.2s ease;
+    text-align: center;
+    border-top: 2px solid white
+}
+#minkiyal .info .postshow h3{
+    position: relative;
+    bottom: 0;
+    padding: 10px;
+    margin: 0;
+    font-size: 1em;
+    font-family: 'Roboto';
+    width: 100%;
+    height: 100px;
+    color: #FFF;
+    overflow: hidden;
+    opacity: 1;
+    background: #3F51B5;
+    vertical-align: middle;
+    display: table-cell;
+}
+
+#minkiyal .info .postshow h3
+#minkiyal .info .postshow img{
+    height: 170px;
+    pointer: cursor;
+    border-radius: 3px 3px 0px 0px !important;
 
 }
 #minkiyal .info .postshow:hover img{
-    -webkit-transform: scale(1.075);
-    -moz-transform: scale(1.075);
-    -ms-transform: scale(1.075);
-    -o-transform: scale(1.075);
-    transform: scale(1.075);
     z-index: 11;
 }
 #minkiyal .info .postshow:hover h3{
-    opacity: 0;
+
 }
 #minkiyal .info .imageshow {
     margin-bottom: 15px;
@@ -1351,7 +1401,10 @@
 }
 
 #minkiyal .mingallery{
-    padding: 30px 5px;
+    padding-bottom: 20px;
+    margin-top: 50px;
+    background: #fff;
+    border-radius: 3px !important;
 }
 
 #minkiyal .mingallery .with-share{
@@ -1387,8 +1440,15 @@
     padding-left: 5px;
 }
 
+#minkiyal .infobar {
+    padding-bottom: 20px;
+}
+
 #minkiyal .infobar .contacts {
     position: relative;
+}
+#minkiyal .infobar .contacts .title{
+    margin-bottom: 10px;
 }
 #minkiyal .xcontact {
     text-align: center;
@@ -1406,7 +1466,8 @@
 
 #minkiyal .network {
     position: relative;
-    margin-top: 20px;
+    top: -10px;
+    margin: -20px 5px 5px 5px;
 }
 
 #minkiyal .address {
@@ -1421,20 +1482,26 @@
     letter-spacing: 0.5px;
     text-transform: uppercase;  
     color: #FFF;
-    background: #0D9D2C;
+    background: #2196F3;
 }
 #minkiyal .address  ul{
     border-top: 3px solid #FFF;
-    -webkit-box-shadow: 0px 5px 200px #000000;
-    -moz-box-shadow: 0px 5px 200px #000000;
-    box-shadow: 0px 5px 200px #000000;
+   -webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+    -moz-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
 }
-#minkiyal .address  h3 i, #minkiyal .address li i{
+#minkiyal .address  h3 i{
+    padding-right: 10px;
+    font-size: 60px;
+    display: inherit;
+    padding-bottom: 10px;
+}
+#minkiyal .address li i{
     padding-right: 10px;
 }
 #minkiyal .address li{
     display: block;
-    color: #272626;
+    color: #0E2A40;
     font-size: 1.2em;
     padding: 15px 30px 10px 30px;
     -webkit-transition: all 0.5s ease-in-out;
@@ -1450,7 +1517,7 @@
     border-top: 1px solid #C1B38E;
 }
 #minkiyal .slidermin{
-    margin: 15px 5px 20px 5px;
+    margin: 0px 5px 0px 5px;
 }
 #minkiyal .slidermin .slick-dots{
     bottom: -25px;
@@ -1486,7 +1553,13 @@
   border-radius: 4px;
 }
 .minkiyal_brand{
-  color: #DD1470 !important;
+    color: #FFFFFF !important;
+    margin-top: 0px;
+    font-family: 'Roboto Condensed';
+    padding-left: 5px;
+    display: inline-block;
+    border-right: 1px solid #fff;
+    padding-right: 20px;
 }
 .minkiyal_footer{
   margin: 0;
@@ -1502,35 +1575,56 @@
 }
 #minkiyal .allgallery{
     font-family: "Roboto regular";
-    padding-bottom: 20px;
+    padding-top: 10px;
 }
 #minkiyal .allgallery{
-    background: #4CAF50;
-    margin-bottom: 40px;
-    padding-top: 20px;
-    padding-bottom: 50px;
+    background: #ECECEC;
+    margin: 5px;
+    display: inherit;
+    /*padding-top: 5px;*/
+    padding: 20px;
 }
- #minkiyal .allgallery .title{
-    margin: 0px 5px 20px 5px;
-    color: #fff;
-    border-bottom: 2px dashed;
+#minkiyal .allgallery .allcol{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+#minkiyal .allgallery .title{
+    position: relative;
+    display: block;
+    bottom: 15px;
+    color: #444;
+}
+#minkiyal .allgallery .title .link-title{
+
+}
+
+#minkiyal .allgallery .allright{
+    margin-top: -35px;
+}
+#minkiyal .allgallery .allright a>i{
+    font-size: 14px;
 }
 #minkiyal .title {
-    margin: 0px 5px 20px 5px;
+    margin: 0px 0px -10px 0px;
     color: #095A0C;
-    border-bottom: 2px dashed;
-    text-transform: uppercase;
 }
 #minkiyal .title  h3{
-    font-size: 18px;
-    display: inline-block;
+    margin:0; 
+    font-size: 20px;
+    padding-top: 15px;
+    color: #444;
+}
+#minkiyal .allgallery  .second {
+    margin-bottom: 20px;
+    padding: 0px 10px;
+
 }
 #minkiyal .allgallery  .second a{
     position: relative;
     display: block;
 }
 #minkiyal .allgallery  .second img{
-    height: 230px;
+    /*height: 230px;*/
     width: 100%;
     -webkit-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.60),0 6px 20px 0 rgba(0,0,0,0.19);
     -moz-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.62),0 6px 20px 0 rgba(0,0,0,0.19);
@@ -1544,13 +1638,10 @@
     margin: 0;
     font-size: 16px;
     font-weight: bold;
-    color: #fff;
+    color: #3F51B5;
     width: 400px;
-    /*background: #4CAF50;*/
+    background: #D6D6D6;
     height: 70px;
-        -webkit-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-    -moz-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-    box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     vertical-align: middle;
     text-align: center;
     display: table-cell;
@@ -1569,16 +1660,40 @@
     top: 5px;
     left: 20px;
     padding: 0px 5px;
-    background: #4CAF50;
+    background: #3F51B5;
 }
 #minkiyal .allgallery .second .extra span, #minkiyal .info .imageshow .extra span{
     color: #fff;
 }
 
-#minkiyal .anonses, #minkiyal .withpad{
-    padding: 0px 5px;
+#minkiyal .anonses{
+    position: relative;
+    top: 10px;
+    display: inline;
+}
+#minkiyal .anonses .slick-prev{
+
+}
+#minkiyal .anonses .slick-prev:before{
+    font-size: 40px;
+    color: #fff;
+    margin-left: -15px;
+}
+#minkiyal .anonses .slick-next{
+
+}
+#minkiyal .anonses .slick-next:before{
+    font-size: 40px;
+    color: #fff !important;
+    margin-right: 5px;
+}
+#minkiyal .withpad{
+    /*padding: 0px 5px;*/
 }
 
+#minkiyal .anons-carousel .col-md-12{
+    padding: 0px;
+}
 #minkiyal .anons-carousel .col-md-3{
     padding: 0px 0px 0px 5px;
 }
@@ -1599,7 +1714,7 @@
     height: 170px;
 }
 #minkiyal .anons-carousel .col-md-9{
-    background: #fff;
+    background: #ECECEC;
     height: 170px;
 }
 #minkiyal .anons-carousel .slick-dots li button:before{
@@ -1613,7 +1728,6 @@
     font-family: 'Roboto regular';
 }
 /*  END HOME  */
-
 /* MENU */
 #minkiyal .fixed {
     position: fixed;
@@ -1623,7 +1737,7 @@
     max-width: inherit; 
     margin: 0px auto;
     background-color: #F44336;
-    z-index: 9999;
+    z-index: 3;
 }
 #minkiyal .navbar-minheader .navbar-brand img{
     position: relative;
@@ -1631,38 +1745,53 @@
     width: inherit;
     float: left;
     margin-top: -10px;
-    margin-left: 25px;
     z-index: 1;
 }
 #minkiyal .navbar-minheader {
     background: #4CAF50;
     margin-bottom: inherit;
     border: none;
+    background: #727272;
+    background: rgba(0, 0, 0, 0.22);
+    /*margin-bottom: 30px;*/
 }
 #minkiyal .navbar-minheader .navbar-text{
     font-size: 1.8em;
     margin: 5px;
 }
 #minkiyal .navbar-minheader .collapse {
-    background: #0D9D2C;
+    /*background: #0D9D2C;*/
     margin-right: 5px;
     margin-left: 5px;
 }
+
 #minkiyal .navbar-minheader .collapse .navbar-nav>li>a{
     color: white;
-    font-size: 16px;
-    border-right: 1px solid #4CAF50;
+    font-size: 18px;
+    /*border-right: 1px solid rgba(223, 227, 233, 0.2);*/
     text-transform: uppercase;
+    display: block;
+    margin: 10px 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+#minkiyal .navbar-minheader .collapse .navbar-nav>li:hover{
+    background: #203643;
+}
+#minkiyal .navbar-minheader .collapse .navbar-nav
+{
+    /*margin: 7.5px -15px;*/
 }
 #minkiyal .navbar-minheader .collapse .navbar-nav>li>a:hover,
 #minkiyal .navbar-minheader .collapse .navbar-nav>li>a:active,
 #minkiyal .navbar-minheader .collapse .navbar-nav>li>a:focus {
-    background: #4CAF50;
+    background: none;
 }
 
 #minkiyal .online{
     padding: 0px 0px 0px 10px;
-    background: #158C2F;
+    /*background: #158C2F;*/
+    background: none;
 }
 #minkiyal .online h3{
     float: left;
@@ -1805,7 +1934,218 @@
   font-size: 15px;
 }
 
+.wrapper {
 
+}
 
 
 /* END Modal */
+
+#minkiyal .container{
+    max-width: 1070px;
+}
+.main_back{
+    background: #fff;
+    border-radius: 3px !important;
+    margin-top: -250px;
+    display: block;
+    position: relative;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+        -webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+        -moz-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);  
+
+}
+#minkiyal .info_shows {
+    padding: 5px;
+    position: relative;
+    display: block;
+    top: -20px;
+}
+#minkiyal .info_shows h3{
+    font-size: 20px;
+    color: #444;
+}
+
+#minkiyal .info_shows .col-md-3{
+    /*padding: 0px 10px;*/
+}
+#minkiyal .info_shows .postshow a>h3{
+    font-size: 16px;
+    color: #305975;
+    font-family: 'Roboto regular';
+    font-weight: bold;
+    text-align: left;
+    margin-top: 10px;
+}
+
+#minkiyal .red-tooltip + .tooltip > .tooltip-inner {
+    background-color: #F44336;
+    margin-top: 7px;
+    white-space: pre;
+}
+#minkiyal .red-tooltip + .tooltip > .tooltip-arrow { 
+    border-bottom-color:#F44336; 
+    margin-top: 7px;
+    white-space: pre;
+}
+#minkiyal .mini-banner .slick-slide img{
+    height: 300px;
+}
+#minkiyal .mini-banner .slick-slide{
+}
+#minkiyal .mini-banner .slick-slide::before {
+    background: rgba(0,0,0,0.75);
+}
+#minkiyal .mini-banner .slick-current{
+    background: none;
+}
+#minkiyal .mini-banner .slick-slide.slick-active{
+
+}
+#minkiyal .mini-banner .overlay{
+    background: rgba(0,0,0,0.75)
+}
+
+#minkiyal .newsstream {
+    position: relative;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-top: 10px;
+}
+#minkiyal .newsstream .col-md-7 {
+    /*background: rgba(31, 51, 55, 0.1);*/
+}
+
+#minkiyal .newsstream .col-md-4{
+    padding: 0px 5px
+}
+#minkiyal .newsstream .col-md-5{
+    padding: 0px 5px
+}
+#minkiyal .newsstream .extra{
+    color: #676666;
+    font-family: 'Roboto';
+}
+#minkiyal .newsstream .extra .date{
+    color: #696969;
+}
+#minkiyal .newsstream .extra .views{
+    float: right;
+    color: #696969;
+}
+#minkiyal .newsstream .extra .views i{
+    padding-right: 5px;
+    color: #696969;
+}
+#minkiyal .newsstream .media-heading{
+    margin-top: 5px;
+    display: block;
+    font-family: 'Roboto regular';
+    line-height: 15px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #2D3E4A;
+}
+#minkiyal .newsstream .media-heading:hover{
+    color: #237dac;
+}
+#minkiyal .aboutfm {
+    position: relative;
+    display: inline-block;
+    font-family: 'Roboto';
+}
+
+#minkiyal .aboutfm .title{
+    font-size: 20px;
+    color: #444;
+    margin-bottom: 10px;
+}
+#minkiyal .aboutfm .show-btn{
+    display: table;
+    margin: 0px auto;
+    text-align: center;
+}
+
+        .mfp-ready .mfp-figure {
+            opacity: 0;
+        }
+
+        .mfp-zoom-in {
+            /* start state */
+            /* animate in */
+            /* animate out */
+        }
+        .mfp-zoom-in .mfp-figure {
+            opacity: 0;
+            transition: all 0.3s ease-out;
+            transform: scale(0.9);
+        }
+        .mfp-zoom-in.mfp-bg,
+        .mfp-zoom-in .mfp-preloader {
+            opacity: 0;
+            transition: all 0.3s ease-out;
+        }
+        .mfp-zoom-in.mfp-image-loaded .mfp-figure {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .mfp-zoom-in.mfp-ready.mfp-bg,
+        .mfp-zoom-in.mfp-ready .mfp-preloader {
+            opacity: 0.8;
+        }
+        .mfp-zoom-in.mfp-removing .mfp-figure {
+            transform: scale(0.9);
+            opacity: 0;
+        }
+        .mfp-zoom-in.mfp-removing.mfp-bg,
+        .mfp-zoom-in.mfp-removing .mfp-preloader {
+            opacity: 0;
+        }
+
+        /* CSS-based preloader */
+        .mfp-preloader {
+            width: 30px;
+            height: 30px;
+            background-color: #FFF;
+            opacity: 0.65;
+            margin: 0 auto;
+            animation: rotateplane 1.2s infinite ease-in-out;
+        }
+
+        @keyframes rotateplane {
+            0% {
+                transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+            }
+            50% {
+                transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+            }
+            100% {
+                transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+            }
+        }
+
+/* MINKIYAL NEWWS PAGE*/
+
+#minkiyal .minkiyal_news{
+    background: #fff;
+    margin-top: 50px;
+    border-radius: 3px !important;
+}
+#minkiyal .minkiyal_post{
+    padding: 10px 5px;
+}
+#minkiyal .minkiyal_post .title{
+    color: #444;
+    font-size: 16px;
+}
+#minkiyal .minkiyal_post .news-info{
+    margin-top: 20px !important;
+}
+#minkiyal .minkiyal_post .with-share a span{
+    color: #237DAC;
+}
+#minkiyal .minkiyal_post .with-share a span i{
+    padding-left: 5px;
+}
