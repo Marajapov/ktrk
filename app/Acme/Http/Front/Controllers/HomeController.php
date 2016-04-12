@@ -24,6 +24,27 @@ class HomeController extends Controller
      *
      * @return Response
      */
+
+    public function Live(){
+        $lc = app()->getlocale();
+
+        $channel = \Model\Channel\ModelName::general();
+
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+        return view('Front::live', [
+            'lc' =>$lc,
+
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionLeft'  => $this->positionLeft,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
+
+            'backgroundMain' => $backgroundMain,
+        ]);
+    }
+
     public function Home()
     {
         $lc = app()->getlocale();
@@ -171,7 +192,7 @@ class HomeController extends Controller
             'generalPost4'   => $generalPost4,
             'generalPost5'   => $generalPost5,
             'generalPost6'   => $generalPost6,
-            
+
             'dayVideo1'      => $dayVideo1,
             'dayVideo2'      => $dayVideo2,
             'dayVideo3'      => $dayVideo3,
@@ -185,7 +206,7 @@ class HomeController extends Controller
             'positionBottom' => $this->positionBottom,
             'peopleReporters' => $peopleReporters,
             'photoGalleries' => $photoGalleries,
-            
+
             'backgroundMain' => $backgroundMain,
             'MediaCategories' => $MediaCategories,
             'categoriesVideos' => $categoriesVideos,
@@ -370,12 +391,13 @@ class HomeController extends Controller
         ]);
     }
 
-    public function Post(\Model\Post\ModelName $post, $locale = "kg", $title = "")
+    public function Post(\Model\Post\ModelName $post)
     {
         $post->incrementViewed();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
-        $lc = in_array($locale, ['kg', 'ru'])? $locale : 'kg';
-        
+        //$lc = in_array($locale, ['kg', 'ru'])? $locale : 'kg';
+        $lc = app()->getLocale();
+
         app()->setlocale($lc);
         
         $categories = \Model\Category\ModelName::where('general','=','1')->get();

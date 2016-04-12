@@ -229,6 +229,7 @@ Route::group(['domain' => 'www.ktrk.kg', 'prefix' => '/birinchi', 'namespace' =>
 
 //    Test
     Route::get('/test',['as'=>'front.test', 'uses'=>"HomeController@Test"]);
+    Route::get('/live',['as'=>'front.live', 'uses'=>"HomeController@Live"]);
 
 // Poll Vote
     Route::post('/poll_vote', ['as'=>'front.poll_vote', 'uses'=>'AjaxNsController@pollVote']);

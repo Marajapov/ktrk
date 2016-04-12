@@ -2,10 +2,10 @@
     <a href="{{ route('front.home') }}">
         <img src="{{ asset('images/ktrk_last.svg') }}" alt="Logo"/>
     </a>
-    <button class="btn btn-live btn-right" data-toggle="modal" data-target="#liveModal">
+    <a href="{{ route('front.live') }}" class="mobile-btn-live">
         <i class="fa fa-dot-circle-o"></i>
         {{ trans('site.Live') }}
-    </button>
+    </a>
 </div>
 
 <button type="button" class="hamburger is-closed visible-xs" data-toggle="offcanvas">
