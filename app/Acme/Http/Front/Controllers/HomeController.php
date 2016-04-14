@@ -391,11 +391,12 @@ if($lc == 'kg'){
     }
 
 
+
     public function Post(Post $post, $locale="kg", $title = "")
     {
         $post->incrementViewed();
         $lc = in_array($locale, ['kg', 'ru'])? $locale : 'kg';
-        
+
         app()->setlocale($lc);
         $categories = \Model\Category\ModelName::where('general','=','1')->get();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
