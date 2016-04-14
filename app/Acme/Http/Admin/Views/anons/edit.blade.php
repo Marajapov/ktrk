@@ -107,7 +107,7 @@
                         $('#nameKg').show();
                         $('#nameRu').hide();
                         $('#editorTextArea').show();
-                        $('#linkArea').hide();
+                        $('#linkArea').show();
                         $('#weekDayKg').hide();
                         $('#weekDayRu').hide();
                         $('#timeArea').hide();

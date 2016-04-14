@@ -42,7 +42,6 @@
             </div>
         </div>
     </div>
-
 @stop
 
 @section('scripts')
@@ -97,153 +96,151 @@
     <script>
         $.FroalaEditor.DEFAULTS.key = 'Xf1onF2phouE4kf==';
     </script>
+
     <script type="text/javascript" src="{{ asset('js/bootstrap-select.js') }}"></script>
 
     <script>
-    $(document).ready(function(){
+        $(document).ready(function(){
 
-        $.ajaxSetup({
-            headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
-        });
+            $.ajaxSetup({
+                headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
+            });
 
-        $("#category").change(function()
-        {
-            var id=$(this).val();
-            var dataString = 'id='+ id;
-            var url = "create";
+            $("#category").change(function()
+            {
+                var id=$(this).val();
+                var dataString = 'id='+ id;
+                var url = "create";
 
-            $.ajax
-            ({
-                type: "POST",
-                url: url,
-                data: dataString,
-                cache: false,
-                success: function(data)
-                {
+                $.ajax
+                ({
+                    type: "POST",
+                    url: url,
+                    data: dataString,
+                    cache: false,
+                    success: function(data)
+                    {
+                        // balastan
+                        if(data == 4) {
+                            $('#balastanAnons').show();                        
+                            $('#minkiyalAnons').hide();
+                            $('#kyrgyzradioanons').hide();
+                            $('#dostukAnons').hide();
+                            $('#nameKg').show();
+                            $('#nameRu').show();
+                            $('#editorTextArea').hide();
+                            $('#linkArea').show();
+                            $('#weekDayKg').show();
+                            $('#weekDayRu').show();
+                            $('#timeArea').show();
+                            $('#thumbForm').show();
+                            $('#publish').show();
+                        } 
 
-                    // balastan
-                    if(data == 4) {
-                        $('#balastanAnons').show();                        
-                        $('#minkiyalAnons').hide();
-                        $('#kyrgyzradioanons').hide();
-                        $('#dostukAnons').hide();
-                        $('#nameKg').show();
-                        $('#nameRu').show();
-                        $('#editorTextArea').hide();
-                        $('#linkArea').show();
-                        $('#weekDayKg').show();
-                        $('#weekDayRu').show();
-                        $('#timeArea').show();
-                        $('#thumbForm').show();
-                        $('#publish').show();
-                    } 
+                        // minkiyal
+                        else if(data == 9){
+                            $('#balastanAnons').hide();                        
+                            $('#minkiyalAnons').show();
+                            $('#kyrgyzradioanons').hide();
+                            $('#dostukAnons').hide();
+                            $('#nameKg').show();
+                            $('#nameRu').hide();
+                            $('#editorTextArea').show();
+                            $('#linkArea').show();
+                            $('#weekDayKg').hide();
+                            $('#weekDayRu').hide();
+                            $('#timeArea').hide();
+                            $('#thumbForm').show();
+                            $('#publish').show();
+                        }            
 
-                    // minkiyal
-                    else if(data == 9){
-                        $('#balastanAnons').hide();                        
-                        $('#minkiyalAnons').show();
-                        $('#kyrgyzradioanons').hide();
-                        $('#dostukAnons').hide();
-                        $('#nameKg').show();
-                        $('#nameRu').hide();
-                        $('#editorTextArea').show();
-                        $('#linkArea').hide();
-                        $('#weekDayKg').hide();
-                        $('#weekDayRu').hide();
-                        $('#timeArea').hide();
-                        $('#thumbForm').show();
-                        $('#publish').show();
-                    }            
+                        // ktrk videoportal
+                        else if(data == 2){
+                            $('#balastanAnons').hide();                        
+                            $('#minkiyalAnons').hide();
+                            $('#kyrgyzradioanons').hide();
+                            $('#dostukAnons').hide();
+                            $('#nameKg').show();
+                            $('#nameRu').show();
+                            $('#editorTextArea').hide();
+                            $('#linkArea').show();
+                            $('#weekDayKg').show();
+                            $('#weekDayRu').show();
+                            $('#timeArea').show();
+                            $('#thumbForm').show();
+                            $('#publish').show();
+                        }                     
 
-                    // ktrk videoportal
-                    else if(data == 2){
-                        $('#balastanAnons').hide();                        
-                        $('#minkiyalAnons').hide();
-                        $('#kyrgyzradioanons').hide();
-                        $('#dostukAnons').hide();
-                        $('#nameKg').show();
-                        $('#nameRu').show();
-                        $('#editorTextArea').hide();
-                        $('#linkArea').show();
-                        $('#weekDayKg').show();
-                        $('#weekDayRu').show();
-                        $('#timeArea').show();
-                        $('#thumbForm').show();
-                        $('#publish').show();
-                    }                     
+                        // music
+                        else if(data == 3){
+                            $('#balastanAnons').hide();                        
+                            $('#minkiyalAnons').hide();
+                            $('#kyrgyzradioanons').hide();
+                            $('#dostukAnons').hide();
+                            $('#nameKg').show();
+                            $('#nameRu').show();
+                            $('#editorTextArea').hide();
+                            $('#linkArea').show();
+                            $('#weekDayKg').show();
+                            $('#weekDayRu').show();
+                            $('#timeArea').hide();
+                            $('#thumbForm').show();
+                            $('#publish').show();
+                        }                     
 
-                    // music
-                    else if(data == 3){
-                        $('#balastanAnons').hide();                        
-                        $('#minkiyalAnons').hide();
-                        $('#kyrgyzradioanons').hide();
-                        $('#dostukAnons').hide();
-                        $('#nameKg').show();
-                        $('#nameRu').show();
-                        $('#editorTextArea').hide();
-                        $('#linkArea').show();
-                        $('#weekDayKg').show();
-                        $('#weekDayRu').show();
-                        $('#timeArea').hide();
-                        $('#thumbForm').show();
-                        $('#publish').show();
-                    }                     
+                        // kyrgyzradio
+                        else if(data == 6){
+                            $('#balastanAnons').hide();                        
+                            $('#minkiyalAnons').hide();
+                            $('#kyrgyzradioanons').show();
+                            $('#dostukAnons').hide();
+                            $('#nameKg').show();
+                            $('#nameRu').hide();
+                            $('#editorTextArea').show();
+                            $('#linkArea').hide();
+                            $('#weekDayKg').hide();
+                            $('#weekDayRu').hide();
+                            $('#timeArea').hide();
+                            $('#thumbForm').show();
+                            $('#publish').show();
+                        }                     
 
-                    // kyrgyzradio
-                    else if(data == 6){
-                        $('#balastanAnons').hide();                        
-                        $('#minkiyalAnons').hide();
-                        $('#kyrgyzradioanons').show();
-                        $('#dostukAnons').hide();
-                        $('#nameKg').show();
-                        $('#nameRu').hide();
-                        $('#editorTextArea').show();
-                        $('#linkArea').hide();
-                        $('#weekDayKg').hide();
-                        $('#weekDayRu').hide();
-                        $('#timeArea').hide();
-                        $('#thumbForm').show();
-                        $('#publish').show();
-                    }                     
+                        // dostuk
+                        else if(data == 8){
+                            $('#balastanAnons').hide();                        
+                            $('#minkiyalAnons').hide();
+                            $('#kyrgyzradioanons').hide();
+                            $('#dostukAnons').show();
+                            $('#nameKg').show();
+                            $('#nameRu').show();
+                            $('#editorTextArea').show();
+                            $('#linkArea').hide();
+                            $('#weekDayKg').hide();
+                            $('#weekDayRu').hide();
+                            $('#timeArea').hide();
+                            $('#thumbForm').show();
+                            $('#publish').show();
+                        } 
 
-                    // dostuk
-                    else if(data == 8){
-                        $('#balastanAnons').hide();                        
-                        $('#minkiyalAnons').hide();
-                        $('#kyrgyzradioanons').hide();
-                        $('#dostukAnons').show();
-                        $('#nameKg').show();
-                        $('#nameRu').show();
-                        $('#editorTextArea').show();
-                        $('#linkArea').hide();
-                        $('#weekDayKg').hide();
-                        $('#weekDayRu').hide();
-                        $('#timeArea').hide();
-                        $('#thumbForm').show();
-                        $('#publish').show();
-                    } 
+                        else {
+                            $('#balastanAnons').hide();                        
+                            $('#minkiyalAnons').hide();
+                            $('#kyrgyzradioanons').hide();
+                            $('#dostukAnons').hide();
+                            $('#nameKg').hide();
+                            $('#nameRu').hide();
+                            $('#editorTextArea').hide();
+                            $('#linkArea').hide();
+                            $('#weekDayKg').hide();
+                            $('#weekDayRu').hide();
+                            $('#timeArea').hide();
+                            $('#thumbForm').hide();
+                            $('#publish').hide();
+                        }
 
-                    else {
-                        $('#balastanAnons').hide();                        
-                        $('#minkiyalAnons').hide();
-                        $('#kyrgyzradioanons').hide();
-                        $('#dostukAnons').hide();
-                        $('#nameKg').hide();
-                        $('#nameRu').hide();
-                        $('#editorTextArea').hide();
-                        $('#linkArea').hide();
-                        $('#weekDayKg').hide();
-                        $('#weekDayRu').hide();
-                        $('#timeArea').hide();
-                        $('#thumbForm').hide();
-                        $('#publish').hide();
                     }
-
-                }
+                });
             });
         });
-    });
     </script>
 @stop
-
-

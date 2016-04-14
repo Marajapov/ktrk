@@ -18,23 +18,28 @@ class MinkiyalController extends Controller
         $anonstop = \Model\Anons\ModelName::where('channel','=','9')->where('minkiyaltop','=','1')->where('published','=','1')->orderBy('id','=','desc')->take(4)->get();
         $anonsbottom = \Model\Anons\ModelName::where('channel','=','9')->where('minkiyalbottom','=','1')->where('published','=','1')->orderBy('id','=','desc')->take(4)->get();
 
-        $popArticles = \Model\Post\ModelName::where('minkiyal','=','1')->languagekg()->orderBy('id','desc')->take(4)->get();
+        $popArticles = \Model\Post\ModelName::where('minkiyal','=','1')->languagekg()->orderBy('id','desc')->take(3)->get();
         
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
         $photoGalleries = \Model\PhotoParent\ModelName::where('minkiyal','=','1')->where('published','=',true)->orderBy('id','desc')->get();
-    if((auth()->user()->id == 3) || (auth()->user()->id == 5) || (auth()->user()->id == 7)){
-        return view('Front::channel.minkiyal.index', [
-            'channel' => $channel,
-            'anons' => $anons,
-            'anonstop' => $anonstop,
-            'anonsbottom' => $anonsbottom,
-            'backgroundMain' => $backgroundMain,
-            'photoGalleries' => $photoGalleries,
-            'popArticles' => $popArticles,
-            ]);
-    }else{
-       return view('Front::channel.minkiyal.comingsoon',[]); 
-    }
+
+        $videoLive = \Model\Media\ModelName::where('published','=',true)->orderBy('id', 'desc')->take(4)->get();
+        
+
+        if((auth()->user()->id == 3) || (auth()->user()->id == 5) || (auth()->user()->id == 7)){
+            return view('Front::channel.minkiyal.index', [
+                'channel' => $channel,
+                'anons' => $anons,
+                'anonstop' => $anonstop,
+                'anonsbottom' => $anonsbottom,
+                'backgroundMain' => $backgroundMain,
+                'photoGalleries' => $photoGalleries,
+                'popArticles' => $popArticles,
+                'videoLive' => $videoLive,
+                ]);
+        }else{
+           return view('Front::channel.minkiyal.comingsoon',[]); 
+        }
     
       
     }

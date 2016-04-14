@@ -997,8 +997,8 @@
 }
 
 .blockallnews img{
-    height: 100px;
-    width: 120px;
+    /*height: 100px;*/
+    width: 160px;
 }
 .blockallnews .extra .datetime{
     font-weight: bold;
@@ -1196,8 +1196,8 @@ background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(246,246,246,
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=0 );               
 }
 #minkiyal .switch{
-    /*background:#F1EDEA;*/
-    background: none;
+    background:#E91E63;
+    /*background: none;*/
     z-index: 3;
 }
 #minkiyal .sitemenu h4{
@@ -1225,13 +1225,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
 }
 
+#minkiyal .navbar-brand h4:hover {
+    text-decoration: underline;
+}
 #minkiyal .info{
     position: relative;
-    /*margin-top: 25px;*/
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
+    display: inline-block;
+    margin-top: -20px;
+    width: 100%;
 }
 #minkiyal .info h2{
     padding: 30px 0px;
@@ -1751,8 +1752,8 @@ background: -o-linear-gradient(left, #F44336 20%, #E91E63 20%, #9C27B0 40%, #3F5
     background: #4CAF50;
     margin-bottom: inherit;
     border: none;
-    background: #727272;
-    background: rgba(0, 0, 0, 0.22);
+    /*background: #727272;*/
+    /*background: rgba(0, 0, 0, 0.22);*/
     /*margin-bottom: 30px;*/
 }
 #minkiyal .navbar-minheader .navbar-text{
@@ -2014,6 +2015,21 @@ background: -o-linear-gradient(left, #F44336 20%, #E91E63 20%, #9C27B0 40%, #3F5
     display: flex;
     padding-top: 10px;
 }
+#minkiyal .newsstream .allright{
+    float: right;
+    margin-top: -30px;
+    font-size: 20px;
+    margin-right: 5px;
+}
+#minkiyal .newsstream .allright a{
+    color: #4B4B4B;
+}
+#minkiyal .newsstream .allright i{
+    font-size: 18px;
+}
+#minkiyal .newsstream .allright a:hover{
+    color: #237dac;
+}
 #minkiyal .newsstream .col-md-7 {
     /*background: rgba(31, 51, 55, 0.1);*/
 }
@@ -2149,3 +2165,188 @@ background: -o-linear-gradient(left, #F44336 20%, #E91E63 20%, #9C27B0 40%, #3F5
 #minkiyal .minkiyal_post .with-share a span i{
     padding-left: 5px;
 }
+
+/* DJ s block*/
+
+#minkiyal .dijeys{
+    padding: 10px 0px;
+}
+#minkiyal .dijeys .d-img{
+    border-radius: 6px !important;
+    height: inherit;
+}
+
+#minkiyal .dijeys .d-img, #minkiyal .dijeys .d-info{
+
+}
+#minkiyal .dijeys .d-info{
+    text-align: center;
+    margin-top: 10px;
+}
+
+#minkiyal .dijeys .d-info .work{
+    position: relative;   
+    display: block;
+
+}
+#minkiyal .dijeys .d-info .work span{
+    position: relative;
+    padding: 0px 10px;
+    color: #4CAF50;
+    background: #fff;
+    z-index: 1;
+    font-weight: bold;
+    font-size: 20px;
+}
+#minkiyal .dijeys .title-left{
+    border-bottom: 1px solid #e3d1c7;
+    margin: 0px 5px 10px 5px;
+    padding-left: 0px;
+}
+
+#minkiyal .dijeys .d-info .work:after {
+    content: "";
+    display: block;
+    height: 1px;
+    background: #C7C7C7;
+    position: absolute;
+    top: 14px;
+    width: 80%;
+    margin: 0px auto;
+    left: 0;
+    right: 0;
+}
+.hexagon {
+    position: relative;
+
+    height: 233px;
+    overflow: hidden;
+    color: #fff;
+    display: inherit;
+    -webkit-box-shadow:0px 14px 18px -15px rgba(0,0,0,0.69);
+    box-shadow: 0px 14px 18px -15px rgba(0,0,0,0.69);
+}
+
+#minkiyal .dijeys .d-info .name{
+    font-size: 18px;
+    font-weight: bold;
+    color: #444;
+}
+
+#minkiyal .dijeys .radio-dj .slick-next{
+    right: 0px;
+    top: 60px;
+    z-index: 1;
+    margin: 0;
+    width: 40px;
+    height: 60px;
+    background: #E4E4E4;
+}
+
+#minkiyal .dijeys .radio-dj .slick-prev{
+    left: 0px;
+    top: 60px;
+    z-index: 1;
+    margin: 0;
+    width: 40px;
+    height: 60px;
+    background: #E4E4E4;
+}
+#minkiyal .dijeys .radio-dj .slick-prev:before, .slick-next:before {
+    color: #202d3a !important;
+}
+/* DJ s block*/
+
+/* Trouble slider block*/
+
+#minkiyal .trouble{
+    padding: 3px;
+    position: relative;
+    display: block;
+    margin: 0px -15px;
+    border-radius: 3px !important;
+}
+#minkiyal .t-block .slick-active .overlay{
+
+}
+
+.trouble .t-block {
+    background: #000;
+    padding: 0;
+    -webkit-box-shadow: 0px 14px 18px -15px rgba(0,0,0,0.69);
+    box-shadow: 0px 14px 18px -15px rgba(0,0,0,0.69);
+}
+.trouble .t-block .show-info{
+    position: absolute;
+    top: 43%;
+    padding: 10px;
+}
+.trouble .t-block .show-info h4{
+    color: #fff;
+    font-family: 'Roboto regular';
+    font-size: 24px;
+    font-weight: bold;
+}
+.trouble .t-block .show-info .show-day{
+    position: relative;
+    display: block;
+    color: #444;
+    font-weight: bold;
+    font-size: 22px;
+}
+.trouble .t-block .show-info .show-time{
+    color: #444;
+    font-weight: bold;
+    font-size: 22px;
+}
+.trouble .t-block img{
+    height: 300px;
+    /*width: inherit;*/
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+.trouble .t-block .slick-slide{
+    opacity: 0.2;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+.trouble .t-block .slick-slide:hover{
+    opacity: 1;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+.trouble .t-block .slick-center{
+    opacity: 1;
+}
+.trouble .t-block .slick-slide::before {
+
+}
+.trouble .t-block .slick-active img{
+    opacity: 0.3;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+.trouble .t-block .slick-center img{
+    opacity: 1;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.trouble .t-block .slick-next{
+    right: 120px;
+    z-index: 2;
+}
+.trouble .t-block .slick-prev{
+    left: 100px;
+    z-index: 2;
+}
+.trouble .t-block .slick-prev:before, .trouble .t-block .slick-next:before{
+    font-size: 60px;
+    color: white !important;
+}
+/* Trouble slider block*/

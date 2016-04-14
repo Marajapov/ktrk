@@ -31,11 +31,11 @@
             <ul class="nav navbar-nav navbar-right">
                <div class="online">
                   <h3><i class="fa fa-microphone"></i>Түз эфир</h3>
-                  <object width="65" height="40" data="http://ktrk.kg/online/uppod.swf">
+                  <object width="65" height="40" data="http://www.ktrk.kg/online/uppod.swf">
                      <param name="bgcolor" value="#ffffff" />
                      <param name="allowFullScreen" value="false" />
                      <param name="allowScriptAccess" value="false" />
-                     <param name="audio" value="http://ktrk.kg/online/uppod.swf" />
+                     <param name="audio" value="http://www.ktrk.kg/online/uppod.swf" />
                      <param name="flashvars" value="comment=KTRK&amp;st=03AEEZykN3Q3Q3QH3zkOk1mwXRWNvz3b1XAxYTtj1mzC5kA2uyb1kOk1mwXRWNvhzdwf9vwjzC5k=jQZi6jNf1kOk1mwXRWHNXzBGDY31X=jOkZ2sN6HsQfzC5kev0kttj1vL2NXzC5k1sQE3Q2GkTCGfFdGJTCHwXpvQXeWNhHm0X1hsNkTWwWTSUhTd0kNtj1JTWwf9vwnY31DX1CYLex5W=jaktjR1i6W0kbSal1C0V9Rv1XAuaTtj1tzC5kb42Qi63Gktj1ozfUrd&amp;file=http://85.113.29.232:8081" />
                   </object>
                </div>
@@ -61,17 +61,37 @@
     </div>
 </div>
 <div class="container main_back">
-   <div class="info">
+    <div class="trouble">
+        <div class="slider-overlay"></div>
+        @if($anonstop)
+           <div class="t-block">
+           @foreach($anonstop as $key=> $row)
+              <div>
+                  <div class="overlay"></div>
+                     <a href="{{ $row->url }}">
+                     <img src="{{asset($row->thumbnail)}}" alt=""/>
+                     </a>
+                  <div class="show-info">
+                    <!--  <h4>Аяна </h4>
+                     <span class="show-day">16-10-94</span>
+                     <span class="show-time">11:55</span> -->
+                  </div>
+              </div>
+              @endforeach
+           </div>
+         @endif
+    </div>
 
-      @if($anonstop)
+   <div class="info">
+      @if($videoLive)
       <div id="allposts">
-      <h3 class="title-left" style="padding-bottom: 5px;">Видео Live</h3>
-         @foreach($anonstop as $key=> $row)
+      <h3 class="title-left" style="padding-bottom: 20px;">Видео Live</h3>
+         @foreach($videoLive as $key=> $live)
          <div class="col-md-3 col-sm-12 postshow">
             <a href="#">
-               <img src="{{asset($row->thumbnail)}}" class="img-responsive" alt="">
+               <img src="{{asset($live->thumbnail)}}" class="img-responsive" alt="">
                <span class="postshow-name">
-                  <h3>{{$row->name}}</h3>
+                  <h3>{{$live->name}}</h3>
                </span>
             </a>
          </div>
@@ -83,6 +103,7 @@
       <div class="col-md-7">
          <div class="row">
          <h3 class="title-left" style="padding-bottom: 5px;">Жанылыктар</h3>
+         <h3 class="allright"><a href="{{ route('minkiyal.allnews')}}">Баардыгы <i class="fa fa-arrow-right"></i></a></h3>
          @if($popArticles)
             @foreach($popArticles as $post)
             <div class="col-md-4 col-sm-12 postshow">
@@ -108,10 +129,92 @@
       </div>
       </div>
    </div>
-<!--    <div class="tester">
-      <div class="col-sm-6" style="background: #444; height: 250px;"></div>
-      <div class="col-sm-6" style="background: #666; height: 250px;"></div>
-   </div> -->
+
+   <div class="dijeys">
+      <h3 class="title-left" style="padding-bottom: 5px;">Диджейлер</h3>
+      <div class="row">
+         <div class="radio-dj">
+           <div>
+               <div class="col-md-12">
+                  <div class="hexagon">
+                     <img class="d-img" src="{{asset('images/channels/minkiyal/vj/2.png')}}" alt="">            
+                  </div>
+                   <div class="d-info">
+<!--                      <div class="work">
+                        <span>DJ</span>
+                     </div> -->
+                     <span class="name">Расул Мырзатегин</span>
+                  </div>
+               </div> 
+           </div>
+           <div>
+               <div class="col-md-12">
+                  <div class="hexagon">
+                     <img class="d-img" src="{{asset('images/channels/minkiyal/vj/1.png')}}" alt="">            
+                  </div>
+                   <div class="d-info">
+<!--                      <div class="work">
+                        <span>DJ</span>
+                     </div> -->
+                     <span class="name">Жазгүл Жолдубай кызы</span>
+                  </div>
+               </div> 
+           </div>
+           <div>
+               <div class="col-md-12">
+                  <div class="hexagon">
+                     <img class="d-img" src="{{asset('images/channels/minkiyal/vj/3.png')}}" alt="">            
+                  </div>
+                   <div class="d-info">
+<!--                      <div class="work">
+                        <span>DJ</span>
+                     </div> -->
+                     <span class="name">Улан Улукболсун</span>
+                  </div>
+               </div>
+           </div>
+           <div>
+               <div class="col-md-12">
+                  <div class="hexagon">
+                     <img class="d-img" src="{{asset('images/channels/minkiyal/vj/4.png')}}" alt="">            
+                  </div>
+                   <div class="d-info">
+<!--                      <div class="work">
+                        <span>DJ</span>
+                     </div> -->
+                     <span class="name">Акыл Жеңишбек уулу</span>
+                  </div>
+               </div>
+           </div>
+           <div>
+               <div class="col-md-12">
+                  <div class="hexagon">
+                     <img class="d-img" src="{{asset('images/channels/minkiyal/vj/5.png')}}" alt="">            
+                  </div>
+                   <div class="d-info">
+<!--                      <div class="work">
+                        <span>DJ</span>
+                     </div> -->
+                     <span class="name">Канат Кадыржан</span>
+                  </div>
+               </div>
+           </div>
+           <div>
+               <div class="col-md-12">
+                  <div class="hexagon">
+                     <img class="d-img" src="{{asset('images/channels/minkiyal/vj/6.png')}}" alt="">            
+                  </div>
+                   <div class="d-info">
+<!--                      <div class="work">
+                        <span>DJ</span>
+                     </div> -->
+                     <span class="name">Бекзат Калыбек уулу</span>
+                  </div>
+               </div>
+           </div>
+         </div>
+      </div>
+   </div>
    <div class="allgallery clearfix">
       <div class="title">
          <h3>Сүрөтбаяндар</h3>
@@ -362,10 +465,12 @@
    });
 </script>
 <script>
-   $('.mini-banner').slick({
+
+$('.t-block').slick({
   centerMode: true,
-  centerPadding: '250px',
+  centerPadding: '180px',
   slidesToShow: 1,
+  focusOnSelect: true,
   responsive: [
     {
       breakpoint: 768,
@@ -373,7 +478,7 @@
         arrows: false,
         centerMode: true,
         centerPadding: '40px',
-        slidesToShow: 1
+        slidesToShow: 3
       }
     },
     {
@@ -387,6 +492,14 @@
     }
   ]
 });
+
+   $('.radio-dj').slick({
+     slidesToShow: 4,
+     slidesToScroll: 1,
+     autoplay: true,
+     autoplaySpeed: 3500,
+   });
+
 </script>
 <div id="fb-root"></div>
 <script>(function(d, s, id) {

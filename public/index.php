@@ -15,4 +15,3 @@ $response->send();
 $kernel->terminate($request, $response);
 
 ?>
-

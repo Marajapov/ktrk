@@ -44,11 +44,11 @@
          <ul class="nav navbar-nav navbar-right">
             <div class="online">
                <h3><i class="fa fa-microphone"></i>Түз эфир</h3>
-               <object width="65" height="40" data="http://ktrk.kg/online/uppod.swf">
+               <object width="65" height="40" data="http://www.ktrk.kg/online/uppod.swf">
                   <param name="bgcolor" value="#ffffff" />
                   <param name="allowFullScreen" value="false" />
                   <param name="allowScriptAccess" value="false" />
-                  <param name="audio" value="http://ktrk.kg/online/uppod.swf" />
+                  <param name="audio" value="http://www.ktrk.kg/online/uppod.swf" />
                   <param name="flashvars" value="comment=KTRK&amp;st=03AEEZykN3Q3Q3QH3zkOk1mwXRWNvz3b1XAxYTtj1mzC5kA2uyb1kOk1mwXRWNvhzdwf9vwjzC5k=jQZi6jNf1kOk1mwXRWHNXzBGDY31X=jOkZ2sN6HsQfzC5kev0kttj1vL2NXzC5k1sQE3Q2GkTCGfFdGJTCHwXpvQXeWNhHm0X1hsNkTWwWTSUhTd0kNtj1JTWwf9vwnY31DX1CYLex5W=jaktjR1i6W0kbSal1C0V9Rv1XAuaTtj1tzC5kb42Qi63Gktj1ozfUrd&amp;file=http://85.113.29.232:8081" />
                </object>
             </div>
@@ -62,7 +62,7 @@
       <div class="col-md-9">
          <div class="row minkiyal_post">
             <div class="col-md-12">
-               <h3 class="title">{{ $post->category('category_id')->first()->getTitle() }}</h3>
+               <h3 class="title">{{ $post->category('category_id')->first()->title }}</h3>
             </div>
             <div class="panel panel-article">
                <div class="panel-body">
@@ -70,7 +70,7 @@
                      <span class="date"><i class="fa fa-calendar"></i>{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
                      <span class="view"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
                   </div>
-                  <h3 class="newstitle">{{ $post->getTitleRuOrKg() }}</h3>
+                  <h3 class="newstitle">{{ $post->getTitle() }}</h3>
                   <p class="post-thumb" href="{{ route('front.post', $post) }}">
                      <a id="post-thumb" href="@if(empty($post->thumbnail_big)){{  asset($post->thumbnail) }}@else{{ asset($post->thumbnail_big) }}@endif">
                      <img class="left" src="@if(empty($post->thumbnail_big)) {{  asset($post->thumbnail) }} @else {{  asset($post->thumbnail_big) }} @endif" alt="image">
@@ -79,7 +79,7 @@
                      {{--@if($post->thumb_author)<span class="thumb_author"> Фото: {{ $post->thumb_author }}</span>@endif--}}
                   </p>
                   <article>
-                     {!! $post->getContent() !!}
+                     {!! $post->getContentKG() !!}
                   </article>
                   <p>
                      <a href="http://orphus.ru" id="orphus" class="hidden" target="_blank"><img alt="Система Orphus" src="{{ asset('js/orphus.gif') }}" border="0" width="240" height="80" /></a>
