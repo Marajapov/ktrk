@@ -139,7 +139,7 @@ class PostController extends Controller
             Image::make($_FILES['thumbnail']['tmp_name'])->fit(250, 150)->save($dir.'/'.$name);
 
             if($request->input('thumb_author')){
-                Image::make($_FILES['thumbnail']['tmp_name'])->fit(500, 300)->insert('http://ktrk.kg/stringtoimg.php?string='.urlencode($thumb_author).'&font_size=4&R=FF&G=FF&B=FF', 'bottom-right', 0, 0)->save($dir.'/'.$name2);
+                Image::make($_FILES['thumbnail']['tmp_name'])->fit(500, 300)->insert('http://www.ktrk.kg/stringtoimg.php?string='.urlencode($thumb_author).'&font_size=4&R=FF&G=FF&B=FF', 'bottom-right', 0, 0)->save($dir.'/'.$name2);
             } else {
                 Image::make($_FILES['thumbnail']['tmp_name'])->fit(500, 300)->save($dir.'/'.$name2);
             }
@@ -300,7 +300,7 @@ class PostController extends Controller
 
             Image::make($_FILES['thumbnail']['tmp_name'])->fit(250, 150)->save($dir.'/'.$name);
             if($request->input('thumb_author')){
-                Image::make($_FILES['thumbnail']['tmp_name'])->fit(500, 300)->insert('http://ktrk.kg/stringtoimg.php?string='.urlencode($thumb_author).'&font_size=4&R=FF&G=FF&B=FF', 'bottom-right', 0, 0)->save($dir.'/'.$name2);
+                Image::make($_FILES['thumbnail']['tmp_name'])->fit(500, 300)->insert('http://www.ktrk.kg/stringtoimg.php?string='.urlencode($thumb_author).'&font_size=4&R=FF&G=FF&B=FF', 'bottom-right', 0, 0)->save($dir.'/'.$name2);
             } else {
                 Image::make($_FILES['thumbnail']['tmp_name'])->fit(500, 300)->save($dir.'/'.$name2);
             }

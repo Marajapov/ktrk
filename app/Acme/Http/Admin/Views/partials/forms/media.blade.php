@@ -207,18 +207,7 @@
                                         Мин кыял
                                     </label>
                                 </div>
-                            </div>
-                            <nav class="noneliststyle">
-                                <ul>
-                                    <div class="checkbox checkbox-primary ">
-                                        {!! Form::hidden('videolive', 0) !!}
-                                        {!! Form::checkbox('videolive', 1, null, ["id" => "videolive", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
-                                        <label for="promo">
-                                            Видео Live
-                                        </label>
-                                    </div>
-                                </ul>
-                            </nav>
+                            </div>                            
                         </div>
 
                     </div>

@@ -142,7 +142,15 @@ Route::group(['domain' => 'ktrk.dev', 'prefix' => '/kyrgyzradio', 'namespace' =>
     Route::get('allnews', ['as' => 'minkiyal.allnews',   'uses' => 'MinkiyalController@allnews']);
     Route::get('/about', ['as' => 'minkiyal.about',   'uses' => 'MinkiyalController@about']);
     Route::get('/djs', ['as' => 'minkiyal.djs',   'uses' => 'MinkiyalController@djs']);
+    Route::get('/dj/rasul', ['as' => 'minkiyal.dj.rasul',   'uses' => 'MinkiyalController@djRasul']);
+    Route::get('/dj/akyl', ['as' => 'minkiyal.dj.akyl',   'uses' => 'MinkiyalController@djAkyl']);
+    Route::get('/dj/kanat', ['as' => 'minkiyal.dj.kanat',   'uses' => 'MinkiyalController@djKanat']);
+    Route::get('/dj/bekzat', ['as' => 'minkiyal.dj.bekzat',   'uses' => 'MinkiyalController@djBekzat']);
+    Route::get('/dj/ulan', ['as' => 'minkiyal.dj.ulan',   'uses' => 'MinkiyalController@djUlan']);
+    Route::get('/dj/jazgyl', ['as' => 'minkiyal.dj.jazgyl',   'uses' => 'MinkiyalController@djJazgyl']);
     Route::get('/dj_info', ['as' => 'minkiyal.dj_info',   'uses' => 'MinkiyalController@dj_info']);
+    Route::get('/lives', ['as' => 'minkiyal.lives',   'uses' => 'MinkiyalController@lives']);
+    Route::get('/live', ['as' => 'minkiyal.live',   'uses' => 'MinkiyalController@live']);
 
 });
 

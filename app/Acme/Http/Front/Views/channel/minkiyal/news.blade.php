@@ -17,48 +17,10 @@
 @endsection
 @section('content')
 @include('Front::channel.minkiyal.nav')
-<nav id="main-menu" class="navbar navbar-minheader container-fluid">
-   <div class="container">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-         <span class="sr-only">Toggle navigation</span>
-         <span class="icon-bar"></span>
-         <span class="icon-bar"></span>
-         <span class="icon-bar"></span>
-         </button>
-         <a class="navbar-brand" href="#">
-            <img src="{{asset('images/channels/min-kiyal-min.png')}}" alt="">
-            <h4 class="minkiyal_brand">Миң кыял FM</h4>
-         </a>
-         <!-- <p class="navbar-text">Кыялдар орундалат</p> -->
-      </div>
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-         <ul class="nav navbar-nav">
-            <li><a href="#" data-toggle="tooltip" data-placement="bottom" title="Башкы барак" class="red-tooltip"><i class="fa fa-home"></i></a></li>
-            <li><a href="#report" data-toggle="tooltip" data-placement="bottom" title="Сүрөтбаяндар" class="red-tooltip"><i class="fa fa-picture-o"></i></a></li>
-            <li><a href="#about" data-toggle="tooltip" data-placement="bottom" title="Биз жөнүндө" class="red-tooltip"><i class="fa fa-info-circle"></i></a></li>
-            <li><a href="{{route('minkiyal.djs')}}" data-toggle="tooltip" data-placement="bottom" title="Диджейлер" class="red-tooltip"><i class="fa fa-microphone"></i></a></li>
-         </ul>
-         <ul class="nav navbar-nav navbar-right">
-            <div class="online">
-               <h3><i class="fa fa-microphone"></i>Түз эфир</h3>
-               <object width="65" height="40" data="http://www.ktrk.kg/online/uppod.swf">
-                  <param name="bgcolor" value="#ffffff" />
-                  <param name="allowFullScreen" value="false" />
-                  <param name="allowScriptAccess" value="false" />
-                  <param name="audio" value="http://www.ktrk.kg/online/uppod.swf" />
-                  <param name="flashvars" value="comment=KTRK&amp;st=03AEEZykN3Q3Q3QH3zkOk1mwXRWNvz3b1XAxYTtj1mzC5kA2uyb1kOk1mwXRWNvhzdwf9vwjzC5k=jQZi6jNf1kOk1mwXRWHNXzBGDY31X=jOkZ2sN6HsQfzC5kev0kttj1vL2NXzC5k1sQE3Q2GkTCGfFdGJTCHwXpvQXeWNhHm0X1hsNkTWwWTSUhTd0kNtj1JTWwf9vwnY31DX1CYLex5W=jaktjR1i6W0kbSal1C0V9Rv1XAuaTtj1tzC5kb42Qi63Gktj1ozfUrd&amp;file=http://85.113.29.232:8081" />
-               </object>
-            </div>
-         </ul>
-      </div>
-      <!-- /.navbar-collapse -->
-   </div>
-</nav>
+@include('Front::channel.minkiyal.navs')
+
 <div class="container minkiyal_news">
-   <div class="row">
+
       <div class="col-md-9">
          <div class="row minkiyal_post">
             <div class="col-md-12">
@@ -128,8 +90,67 @@
             </div>
          </div>
       </div>
-      <div class="col-md-3"></div>
-   </div>
+      <div class="col-md-3">
+        <div class="row">
+           <div class="col-md-12">
+              <div class="row popular">
+                 <div class="col-md-12">
+                    <h3 class="title">Көп окумдуу</h3>
+                    </br>
+                 </div>                     
+                    <div class="col-md-12"> 
+                         @if($popArticles) 
+                         @foreach($popArticles as $post)
+                        <div class="media">
+
+                            <div class="media-body">
+                                <div class="extra" style="width: 100%; float: right;">
+                                    <span class="datetime">{{ $post->getDay() }} {{ $post->getMonthRu() }}</span>                          
+                                    <span class="views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
+                                </div>
+                                <a class="media-heading" href="{{ route('minkiyal.news', $post) }}">{{ $post->getTitle() }}</a>
+                            </div>
+
+                        </div>
+                        @endforeach 
+                        @endif                                                
+                   </div>                    
+              </div>
+           </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="row">
+           <div class="col-md-12">
+              <h3 class="title">Байлынышкан материалдар</h3>
+              </br>
+           </div>
+          
+           @foreach($relatedNews as $post)
+
+
+           <div class="blocknews col-md-3 col-sm-4 col-xs-12">
+                <article>
+                    <a href="{{ route('minkiyal.news', $post) }}" class="image-link">
+                        <img src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif" title="{{ $post->getTitle() }}">
+                        <div class="card-info">
+                             <span class="date ">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
+                             <span class="view"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
+                        </div>
+                    </a>
+                    <h3 class="name headline">
+                        <a href="{{ route('minkiyal.news', $post) }}" title="">
+                            {{ $post->getTitle() }}
+                        </a>
+                    </h3>
+                </article>
+           </div>  
+
+           @endforeach
+
+                
+        </div>
+      </div>
 </div>
 @stop
 @section('footerScript')

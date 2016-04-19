@@ -88,7 +88,6 @@
     }(document, 'script', 'facebook-jssdk'));
 </script>
 
-
 <script>
     // $fn.scrollSpeed(step, speed, easing);
     jQuery.scrollSpeed(100, 800);
@@ -109,6 +108,3 @@
         @yield('content')
 
         @include('Front::partials.footer')
-
-      </div>
-  </div>

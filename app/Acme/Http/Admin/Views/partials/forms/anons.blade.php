@@ -82,7 +82,7 @@
                                 {!! Form::hidden('minkiyaltop', 0) !!}
                                 {!! Form::checkbox('minkiyaltop', 1, null, ["id" => "minkiyaltop", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
                                 <label for="minkiyaltop">
-                                    Анонс 1
+                                    Верхний анонс
                                 </label>
                             </div>
                         </div>

@@ -23,7 +23,7 @@ class MinkiyalController extends Controller
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
         $photoGalleries = \Model\PhotoParent\ModelName::where('minkiyal','=','1')->where('published','=',true)->orderBy('id','desc')->get();
 
-        $videoLive = \Model\Media\ModelName::where('published','=',true)->orderBy('id', 'desc')->take(4)->get();
+        $videoLive = \Model\Media\ModelName::where('published','=',true)->where('minkiyal','=','1')->orderBy('id', 'desc')->take(4)->get();
         
 
         if((auth()->user()->id == 3) || (auth()->user()->id == 5) || (auth()->user()->id == 7)){
@@ -86,6 +86,8 @@ class MinkiyalController extends Controller
             $images = null;
         }   
 
+        $relatedNews = \Model\Post\ModelName::where('published','=',true)->where('minkiyal','=','1')->languagekg()->where('category_id','=',$post->category_id)->orderBy('id','desc')->take(8)->get();
+
         $weekFromNow = date('Y-m-d', strtotime('-17 days'));
         $popArticles = \Model\Post\ModelName::where('minkiyal','=','1')->where('created_at','>',$weekFromNow)->languagekg()->orderBy('viewed','desc')->take(6)->get();
         if(count($popArticles) > 0){
@@ -94,7 +96,6 @@ class MinkiyalController extends Controller
             $popArticles = null;
         }
 
-
         return view('Front::channel.minkiyal.news', [
             'channel' => $channel,
             'post' => $post,
@@ -102,6 +103,7 @@ class MinkiyalController extends Controller
             'minkiyalProjects' => $minkiyalProjects,
             'images' => $images,
             'popArticles' => $popArticles,  
+            'relatedNews' => $popArticles  
             ]);
     }
 
@@ -126,6 +128,66 @@ class MinkiyalController extends Controller
             ]);
     }
 
+    public function djRasul()
+    {
+        $lc = app()->getlocale();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+        return view('Front::channel.minkiyal.dj.rasul',[
+            'lc' => $lc,
+            'backgroundMain' => $backgroundMain,
+        ]);
+    }    
+    public function djAkyl()
+    {
+        $lc = app()->getlocale();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+        return view('Front::channel.minkiyal.dj.akyl',[
+            'lc' => $lc,
+            'backgroundMain' => $backgroundMain,
+        ]);
+    }
+    public function djKanat()
+    {
+        $lc = app()->getlocale();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+        return view('Front::channel.minkiyal.dj.kanat',[
+            'lc' => $lc,
+            'backgroundMain' => $backgroundMain,
+        ]);
+    }    
+    public function djBekzat()
+    {
+        $lc = app()->getlocale();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+        return view('Front::channel.minkiyal.dj.bekzat',[
+            'lc' => $lc,
+            'backgroundMain' => $backgroundMain,
+        ]);
+    }     
+    public function djUlan()
+    {
+        $lc = app()->getlocale();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+        return view('Front::channel.minkiyal.dj.ulan',[
+            'lc' => $lc,
+            'backgroundMain' => $backgroundMain,
+        ]);
+    }     
+    public function djJazgyl()
+    {
+        $lc = app()->getlocale();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+        return view('Front::channel.minkiyal.dj.jazgyl',[
+            'lc' => $lc,
+            'backgroundMain' => $backgroundMain,
+        ]);
+    } 
 
     public function djs()
     {
@@ -165,5 +227,15 @@ class MinkiyalController extends Controller
             ]);
     }
 
+  public function live()
+  {
+    $lc = app()->getlocale();
+    $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+    return view('Front::channel.minkiyal.live',[
+        'lc' => $lc,
+        'backgroundMain' => $backgroundMain,
+      ]);
+  }
 
 }
