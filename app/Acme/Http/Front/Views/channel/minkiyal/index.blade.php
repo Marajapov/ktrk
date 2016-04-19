@@ -29,7 +29,7 @@
            @foreach($anonstop as $key=> $row)
               <div>
                   <div class="overlay"></div>
-                     <a href="{{ $row->url }}">
+                     <a href="#" data-toggle="modal" data-target="#{{ $key+99 }}">
                      <img src="{{asset($row->thumbnail)}}" alt=""/>
                      </a>
                   <div class="show-info">
@@ -40,6 +40,26 @@
               </div>
               @endforeach
            </div>
+           @foreach($anonstop as $key=> $row)
+              <!-- Modal -->
+              <div id="{{ $key+99 }}" class="modal fade" role="dialog">
+                 <div class="modal-dialog modal-lg">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                       <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
+                          <h4 class="modal-title">{{$row->name}}</h4>
+                       </div>
+                       <div class="modal-body">
+                          {!! $row->getDesc() !!}
+                       </div>
+                       <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Жабуу</button>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+            @endforeach
          @endif
     </div>
 
@@ -64,17 +84,16 @@
    <div class="newsstream">
       <div class="col-md-12">
          <div class="row">
-      <div class="title" style="margin: 0px 5px 10px 5px;">
+      <div class="title" style="margin: 0px 5px 5px 5px;">
          <h3>Жанылыктар</h3>
-         <h3 class="allright" style="margin-top: -35px;"><a href="{{ route('minkiyal.posts')}}">Баардыгы <i class="fa fa-arrow-right"></i></a></h3>
+         <h3 class="allright"><a href="{{ route('minkiyal.allnews')}}">Баардыгы <i class="fa fa-arrow-right"></i></a></h3>
       </div>
          @if($popArticles)
             @foreach($popArticles as $post)
             <div class="col-md-4 col-sm-12 postshow">
                 <img class="media-object thumb" src="@if(!($post->getFileBig()))images/live_bg.png @else {{ asset($post->getFileBig()) }} @endif" alt="image">
                 <div class="postshow-name">
-                   <div class="extra">
-                      <span class="date">{{ $post->getDay() }} , {{ $post->getMonthRu() }}</span>
+                   <div class="extra">                      
                       <span class="views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
                    </div>
                    <a class="media-heading" href="{{ route('minkiyal.news', $post) }}">{{ $post->getTitle() }}</a>
@@ -88,7 +107,9 @@
 
    <section id="djs">
    <div class="dijeys">
-      <h3 class="title-left" style="padding-bottom: 5px;">Диджейлер</h3>
+      <div class="title" style="margin: 0px 5px 5px 5px;">
+         <h3>Диджейлер</h3>
+      </div>
       <div class="row">
          <div class="radio-dj">
            <div>
@@ -169,8 +190,8 @@
    </section>
    <div class="allgallery clearfix">
       <div class="title">
-         <h3>Сүрөтбаяндар</h3>
-         <h3 class="allright"><a href="{{ route('minkiyal.posts')}}">Баардыгы <i class="fa fa-arrow-right"></i></a></h3>
+         <h3 style="background: none">Сүрөтбаяндар</h3>
+         <h3 class="allright" style="margin-top: -20px; background: none;"><a href="{{ route('minkiyal.posts')}}">Баардыгы <i class="fa fa-arrow-right"></i></a></h3>
       </div>
       @if($photoGalleries)
       <div class="row allcol">
@@ -181,8 +202,7 @@
             </a>
 
             <div class="extra">
-              <span class="e-datetime">{{ $photoGallery->getDay() }} {{ $photoGallery->getMonthRu() }}</span>
-               <a href="{{ route('minkiyal.post', $photoGallery) }}"><h3>{{ $photoGallery->getName() }}</h3> </a>
+              <a href="{{ route('minkiyal.post', $photoGallery) }}"><h3>{{ $photoGallery->getName() }}</h3> </a>
             </div>
          </div>
          @endforeach
@@ -299,7 +319,7 @@
       </div>
    </div> -->
    <div class="network">
-      <div class="title" style="margin:0;margin-bottom: 10px; margin-top: 20px;">
+      <div class="title" style="margin:0;margin-bottom: 5px; margin-top: 40px;">
          <h3>Биз социалдык тармактарда </h3>
       </div>
       <div class="row">
@@ -339,8 +359,8 @@
       </div>
    </div>
    <div class="aboutfm">
-      <div class="title">
-         <h3>“МИҢ КЫЯЛ FM” РАДИОСУ ЖӨНҮНДӨ </h3>
+      <div class="title" style="margin-bottom: 0px;">
+         <h3>“Миң Кыял FM” радиосу жөнүндө </h3>
       </div>
       <div class="col-sm-12 wow fadeInRight">
    
@@ -366,7 +386,7 @@
    </div>
    <div class="infobar">
       <div class="contacts">
-         <div class="title">
+         <div class="title" style="margin-top: 10px;">
             <h3>Байланыш</h3>
          </div>
          <div class="row">
@@ -435,7 +455,7 @@ $('.t-block').slick({
   slidesToShow: 1,
   focusOnSelect: true,
   autoplay: true,
-  autoplaySpeed: 4000,
+  autoplaySpeed: 5000,
   responsive: [
     {
       breakpoint: 768,

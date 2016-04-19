@@ -21,18 +21,33 @@
                <li><a href="{{route('minkiyal.allnews')}}" data-toggle="tooltip" data-placement="bottom" title="Жаңылыктар" class="red-tooltip"><i class="fa fa-newspaper-o" aria-hidden="true"></i></a></li>
                <li><a href="{{route('minkiyal.posts')}}" data-toggle="tooltip" data-placement="bottom" title="Сүрөтбаяндар" class="red-tooltip"><i class="fa fa-picture-o"></i></a></li>
                <li><a href="{{route('minkiyal.about')}}" data-toggle="tooltip" data-placement="bottom" title="Биз жөнүндө" class="red-tooltip"><i class="fa fa-info-circle"></i></a></li>
-               <li><a href="{{route('minkiyal.home')}}#djs" data-toggle="tooltip" data-placement="bottom" title="Диджейлер" class="red-tooltip"><i class="fa fa-microphone"></i></a></li>
+               <li class="dropdown">
+                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="Диджейлер"> <i class="fa fa-microphone"></i></a>
+                     <ul class="dropdown-menu">
+                        <li><a href="{{route('minkiyal.dj.rasul')}}">Расул Мырзатегин</a></li>
+                        <li><a href="{{route('minkiyal.dj.jazgyl')}}">Жазгүл Жолдубай кызы</a></li>
+                        <li><a href="{{route('minkiyal.dj.ulan')}}">Улан Улукболсун</a></li>
+                        <li><a href="{{route('minkiyal.dj.akyl')}}">Акыл Жеңишбек уулу</a></li>
+                        <li><a href="{{route('minkiyal.dj.kanat')}}">Канат Кадыржан</a></li>
+                        <li><a href="{{route('minkiyal.dj.bekzat')}}">Бекзат Калыбек уулу</a></li>
+                     </ul>
+               </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
+               <ul class="soc">
+                  <li class="tw"><a href="https://twitter.com/mk1000radio" data-toggle="tooltip" data-placement="bottom" title="Twitter" class="red-tooltip"><i class="fa fa-twitter"></i> </a>  </li>
+                  <li class="fb"><a href="https://www.facebook.com/MinKyalFm/" data-toggle="tooltip" data-placement="bottom" title="Facebook" class="red-tooltip"><i class="fa fa-facebook"></i></a></li>
+                  <li class="ok"><a href="http://ok.ru/group/57765907202108" data-toggle="tooltip" data-placement="bottom" title="Odnoklassniki" class="red-tooltip"><i class="fa fa-odnoklassniki"></i></a></li>
+                  <li class="in"><a href="https://www.instagram.com/min_kyalfm/" data-toggle="tooltip" data-placement="bottom" title="Instagram" class="red-tooltip"><i class="fa fa-instagram"></i></a></li>
+               </ul>
                <div class="online">
-                  <h3><i class="fa fa-microphone"></i>Түз эфир</h3>
-                  <object width="65" height="40" data="http://www.ktrk.kg/online/uppod.swf">
-                     <param name="bgcolor" value="#ffffff" />
-                     <param name="allowFullScreen" value="false" />
-                     <param name="allowScriptAccess" value="false" />
-                     <param name="audio" value="http://www.ktrk.kg/online/uppod.swf" />
-                     <param name="flashvars" value="comment=KTRK&amp;st=03AEEZykN3Q3Q3QH3zkOk1mwXRWNvz3b1XAxYTtj1mzC5kA2uyb1kOk1mwXRWNvhzdwf9vwjzC5k=jQZi6jNf1kOk1mwXRWHNXzBGDY31X=jOkZ2sN6HsQfzC5kev0kttj1vL2NXzC5k1sQE3Q2GkTCGfFdGJTCHwXpvQXeWNhHm0X1hsNkTWwWTSUhTd0kNtj1JTWwf9vwnY31DX1CYLex5W=jaktjR1i6W0kbSal1C0V9Rv1XAuaTtj1tzC5kb42Qi63Gktj1ozfUrd&amp;file=http://85.113.29.232:8081" />
-                  </object>
+                  <div class="onetime">
+                  <a href="{{ asset('online/online-1000.php')}}" onclick="window.open(this.href, '', 'scrollbars=1,height='+Math.min(210, screen.availHeight)+',width='+Math.min(400, screen.availWidth)); return false;">
+                     <button class="btn"><i class="fa fa-microphone"></i>
+                     <span>Түз эфир</span>
+                     </button>
+                  </a>
+                  </div>
                </div>
             </ul>
          </div>

@@ -7,8 +7,8 @@
 @include('Front::channel.minkiyal.nav')
 @include('Front::channel.minkiyal.navs')
 
-<div class="contaner-fluid imagereports">
-  <div class="container info">
+<div class="contaner-fluid">
+  <div class="container info" style="display: inherit; margin-top: inherit;">
     <div id="allposts" class="col-md-12">
       <h2>Сүрөт баяндар</h2>
       <div class="row">
@@ -16,11 +16,12 @@
            @foreach($photoGalleries as $photoGallery)
            <div class="col-md-4 sm-12 imageshow">
               <a href="{{ route('minkiyal.post', $photoGallery) }}">
-                <img src="{{ asset($photoGallery->thumbnail_big) }}" class="img-responsive" alt="">
-                <h3>{{ $photoGallery->getName() }}</h3>
-              </a>  
-              <div class="extra">
+                <img src="{{ asset($photoGallery->thumbnail_big) }}" class="img-responsive" alt=""></a>  
+              <div class="extra" style="background: none; padding: 0; width: 91%;">                
+                <a href="{{ route('minkiyal.post', $photoGallery) }}">
+                <h3 style="padding: 20px 15px">{{ $photoGallery->getName() }}</h3> 
                 <span class="e-datetime">{{ $photoGallery->getDay() }} {{ $photoGallery->getMonthRu() }}</span>
+                </a> 
               </div>
            </div>
            @endforeach

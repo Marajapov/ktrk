@@ -72,25 +72,27 @@
                               <h3 class="title">Көп окумдуу</h3>
                               </br>
                            </div>                     
-                           <div class="col-md-12"> 
-                                                              
-                           </div>                    
+                             <div class="col-md-12"> 
+                                  @if($popArticles) 
+                                  @foreach($popArticles as $post)
+                                 <div class="media">
+
+                                     <div class="media-body">
+                                         <div class="extra" style="width: 100%; float: right;">
+                                             <span class="datetime">{{ $post->getDay() }} {{ $post->getMonthRu() }}</span>                          
+                                             <span class="views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
+                                         </div>
+                                         <a class="media-heading" href="{{ route('minkiyal.news', $post) }}">{{ $post->getTitle() }}</a>
+                                     </div>
+
+                                 </div>
+                                 @endforeach 
+                                 @endif                                                
+                            </div>                   
                         </div>
                      </div>
                   </div>
-               </div>
-               <div class="col-md-3">
-                  <div class="row">
-                     <div class="col-md-12">
-                        <h3 class="title">Уктуруулар</h3>
-                     </div>                     
-                     <div class="col-md-12 ctg-panel">                          
-                        <ul class="list-group">
-    
-                        </ul>                          
-                     </div>                    
-                  </div>
-               </div>   
+               </div>  
             </div>
     </div>
    </div>

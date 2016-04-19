@@ -23,8 +23,8 @@
 
       <div class="col-md-9">
          <div class="row minkiyal_post">
-            <div class="col-md-12">
-               <h3 class="title">{{ $post->category('category_id')->first()->title }}</h3>
+            <div class="col-md-12">              
+               <h3 class="title">Шоу-бизнес жанылыктары</h3>               
             </div>
             <div class="panel panel-article">
                <div class="panel-body">
@@ -46,8 +46,11 @@
                   <p>
                      <a href="http://orphus.ru" id="orphus" class="hidden" target="_blank"><img alt="Система Orphus" src="{{ asset('js/orphus.gif') }}" border="0" width="240" height="80" /></a>
                   </p>
-                  <div class="orphus-mistake pull-right">
-                     <div class="media">
+                  <div class="panel-body">
+                    <span style="top: 10px; position: relative;"><span style="color: #444242;font-weight: bold;">Категория:</span> {{ $post->category('category_id')->first()->title }}</span>
+                  </div>
+                  <div class="orphus-mistake pull-right" style="width: initial;">
+                      <div class="media">
                         <div class="media-body media-middle">
                            <h4>
                               @if(app()->getlocale()=='kg')
@@ -65,6 +68,7 @@
                      </div>
                   </div>
                </div>
+
             </div>
             <div class="col-md-12">
                <footer class="with-share">
@@ -122,14 +126,12 @@
       <div class="col-md-12">
         <div class="row">
            <div class="col-md-12">
-              <h3 class="title">Байлынышкан материалдар</h3>
+              <h3 class="title">Тектеш жанылыктар</h3>
               </br>
            </div>
           
            @foreach($relatedNews as $post)
-
-
-           <div class="blocknews col-md-3 col-sm-4 col-xs-12">
+            <div class="blocknews col-md-3 col-sm-4 col-xs-12">
                 <article>
                     <a href="{{ route('minkiyal.news', $post) }}" class="image-link">
                         <img src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif" title="{{ $post->getTitle() }}">
