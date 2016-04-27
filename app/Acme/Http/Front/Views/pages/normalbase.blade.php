@@ -36,25 +36,6 @@
                         </li>
                       </ul>
                     </li>
-
-                    <li class="list-group-item">
-                      Коомдук телерадиоберүү корпорациясынын Уставы
-                      <ul class="list-group second-level">
-                        <li class="list-group-item">
-                          <div class="media">
-
-                            <div class="media-body">
-                              <p>Корпорация өз ишмердүүлүгүндө КРнын Конститутциясы, КРнын массалык маалымат каражаттар чөйрөсүндөгү мыйзамы, "Телекөрсөтүү жана радиоберүү тууралуу" мыйзамы, "Кыргыз Республикасында Коомдук телерадиоберүүнү түзүү тууралуу" Убактылуу өкмөттүн Декрети, жана башка укуктук-нормативдик акт, Уставдын жобо менен жетектелет.</p>
-                            </div>
-                            <div class="media-right">
-                              <a target="_blank" href="{{ asset('static/files/ustav.pdf') }}" class="btn btn-default"><i class="fa fa-file-pdf-o"></i></a>
-                              {{--<a target="_blank" class="otchet" href="{{ asset('static/files/report/2014_kg.pdf') }}">Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясынын 2014-жылдык ишинин отчету</a>--}}
-                            </div>
-                          </div>
-                        </li>
-                      </ul>
-                    </li>
-
                     <li class="list-group-item">
                       Коомдук телерадиоберүү корпорациясынын Редакциялык саясаты
                       <ul class="list-group second-level">
@@ -88,21 +69,6 @@
                       </ul>
                     </li>
 
-                    <li class="list-group-item">
-                      Коомдук телерадиоберүү корпорациясынын эфирдик сеткасы
-                      <ul class="list-group second-level">
-                        <li class="list-group-item">
-                          <div class="media">
-
-                            <div class="media-body">
-                              <a target="_blank" href="{{ asset('static/files/setka.pdf') }}" class="btn btn-default"><i class="fa fa-file-pdf-o"></i></a>
-                              {{--<a target="_blank" class="otchet" href="{{ asset('static/files/report/2014_kg.pdf') }}">Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясынын 2014-жылдык ишинин отчету</a>--}}
-                            </div>
-                          </div>
-                        </li>
-                      </ul>
-                    </li>
-
                   @elseif($lc == 'ru')
 
                     <li class="list-group-item">
@@ -116,24 +82,6 @@
                             </div>
                             <div class="media-right">
                               <a target="_blank" href="{{ asset('static/files/zakon_ru.pdf') }}" class="btn btn-default"><i class="fa fa-file-pdf-o"></i></a>
-                              {{--<a target="_blank" class="otchet" href="{{ asset('static/files/report/2014_kg.pdf') }}">Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясынын 2014-жылдык ишинин отчету</a>--}}
-                            </div>
-                          </div>
-                        </li>
-                      </ul>
-                    </li>
-
-                    <li class="list-group-item">
-                      Устав Общественной телерадиовещательной корпорации Кыргызской Республики
-                      <ul class="list-group second-level">
-                        <li class="list-group-item">
-                          <div class="media">
-
-                            <div class="media-body">
-                              <p>Корпорация в своей деятельности руководствуется Конституцией Кыргызской Республики, законами Кыргызской Республики в области средств массовой информации, Законом Кыргызской Республики "О телевидении и радиовещании" и другими нормативными документами Кыргызской Республики, а также положениями настоящего УСТАВА.</p>
-                            </div>
-                            <div class="media-right">
-                              <a target="_blank" href="{{ asset('static/files/ustav.pdf') }}" class="btn btn-default"><i class="fa fa-file-pdf-o"></i></a>
                               {{--<a target="_blank" class="otchet" href="{{ asset('static/files/report/2014_kg.pdf') }}">Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясынын 2014-жылдык ишинин отчету</a>--}}
                             </div>
                           </div>
@@ -167,21 +115,6 @@
 
                             <div class="media-body">
                               <a target="_blank" href="{{ asset('static/files/struktura.jpg') }}" class="btn btn-default"><i class="fa fa-file-image-o"></i></a>
-                              {{--<a target="_blank" class="otchet" href="{{ asset('static/files/report/2014_kg.pdf') }}">Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясынын 2014-жылдык ишинин отчету</a>--}}
-                            </div>
-                          </div>
-                        </li>
-                      </ul>
-                    </li>
-
-                    <li class="list-group-item">
-                      Сетка вещания Общественной телерадиовещательной корпорации Кыргызской Республики
-                      <ul class="list-group second-level">
-                        <li class="list-group-item">
-                          <div class="media">
-
-                            <div class="media-body">
-                              <a target="_blank" href="{{ asset('static/files/setka.pdf') }}" class="btn btn-default"><i class="fa fa-file-pdf-o"></i></a>
                               {{--<a target="_blank" class="otchet" href="{{ asset('static/files/report/2014_kg.pdf') }}">Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясынын 2014-жылдык ишинин отчету</a>--}}
                             </div>
                           </div>
