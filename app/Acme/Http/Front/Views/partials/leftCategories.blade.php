@@ -30,7 +30,7 @@
                                             <a class="e-cat text-uppercase" href="{{ route('front.category', $post->category) }}"><span>{{ $post->category('category_id')->first()->getTitle() }}</span></a>
                                             <span class="e-views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
                                         </div>
-                                        <a class="media-heading" href="{{ route('front.post', [$post, $lc, $post->getLocaleTitle($lc)]) }}">
+                                        <a class="media-heading" href="{{ route('front.post', [$post, $lc]) }}">
                                             {{ $post->getTitleRuOrKg() }}
                                             @if($post->getIsVideo() == 'yes')<i class="fa fa-video-camera"></i> @endif
                                             @if($post->getIsPhoto() == 'yes')<i class="fa fa-camera"></i> @endif
@@ -43,20 +43,16 @@
                         </div>
                         <div role="tabpanel" class="tab-pane fade" id="popular">
                             @foreach($popArticles as $post)
-
                                 <div class="media">
-
                                     <div class="media-body">
                                         <div class="extra">
                                             <span class="e-datetime">{{ $post->getDay() }} {{ $post->getMonthRu() }}</span>
                                             <a class="e-cat text-uppercase" href="{{ route('front.category', $post->category) }}"><span>{{ $post->category('category_id')->first()->getTitle() }}</span></a>
                                             <span class="e-views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
                                         </div>
-                                        <a class="media-heading" href="{{ route('front.post', [$post, $lc, $post->getLocaleTitle($lc)]) }}">{{ $post->getTitleRuOrKg() }}</a>
+                                        <a class="media-heading" href="{{ route('front.post', [$post, $lc]) }}">{{ $post->getTitleRuOrKg() }}</a>
                                     </div>
-
                                 </div>
-
                             @endforeach
                         </div>
                     </div>

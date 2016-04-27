@@ -71,7 +71,7 @@
                                             <div class="media">
 
                                                 <div class="media-left">
-                                                    <a href="{{ route('front.post', [$post, $lc, $post->getLocaleTitle($lc)]) }}">
+                                                    <a href="{{ route('front.post', [$post, $lc]) }}">
                                                         <img class="media-object thumb" src="@if($post->getFile()) {{ asset($post->getFile()) }} @else {{ asset('images/ktrk_last.svg') }}  @endif" alt="image">
                                                     </a>
                                                 </div>
@@ -82,7 +82,7 @@
                                                         <span class="e-views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
                                                     </div>
 
-                                                    <a class="media-heading" href="{{ route('front.post', [$post, $lc, $post->getLocaleTitle($lc)]) }}">{{ $post->getTitleRuOrKg() }}</a>
+                                                    <a class="media-heading" href="{{ route('front.post', [$post, $lc]) }}">{{ $post->getTitleRuOrKg() }}</a>
                                                 </div>
 
                                             </div>
