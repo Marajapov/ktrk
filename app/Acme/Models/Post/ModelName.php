@@ -288,4 +288,9 @@ class ModelName extends Model
             return $this->thumb_desc_ru;
         }
     }
+    public function getAudio()
+    {
+        return $this->audio;
+    }
+
 }

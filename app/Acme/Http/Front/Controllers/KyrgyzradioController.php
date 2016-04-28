@@ -179,7 +179,7 @@ class KyrgyzradioController extends Controller
       );
     }
 
-    public function news(\Model\Post\ModelName $post)
+    public function show(\Model\Post\ModelName $post)
     {
         $post->incrementViewed();
 
@@ -188,8 +188,9 @@ class KyrgyzradioController extends Controller
         
         $kyrgyzradioProjects = \Model\Project\ModelName::where('published','=',true)->where('kyrgyzradio', '=', 1)->get();
 
+
         $parent = \Model\PhotoParent\ModelName::where('id','=',$post->parentId)->first();
-        
+
         if($parent != null){
             $images = json_decode($parent->images);    
         }else{
@@ -205,7 +206,7 @@ class KyrgyzradioController extends Controller
         }
 
 
-        return view('Front::channel.kyrgyzradio.news', [
+        return view('Front::channel.kyrgyzradio.show', [
             'channel' => $channel,
             'post' => $post,
             'backgroundMain' => $backgroundMain,
@@ -215,7 +216,7 @@ class KyrgyzradioController extends Controller
             ]);
     }
 
-    public function allnews()
+    public function projects()
     {
         
         $channel = \Model\Channel\ModelName::name('kyrgyzradio')->first();
@@ -227,7 +228,7 @@ class KyrgyzradioController extends Controller
         
         $kyrgyzradioProjects = \Model\Project\ModelName::where('published','=',true)->where('kyrgyzradio', '=', 1)->get();
 
-        return view('Front::channel.kyrgyzradio.allnews', [
+        return view('Front::channel.kyrgyzradio.projects', [
             'channel' => $channel,
             'backgroundMain' => $backgroundMain,
             'perPage' => $perPage,

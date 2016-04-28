@@ -1415,7 +1415,7 @@ height: 325px;
 /* PROJECT NEWS*/
 
 #pojects, #news, #allnews {
-  padding: 20px 0px;
+  /*padding: 20px 0px;*/
 }
 #pojects .panel {
   margin: 0;
@@ -1856,7 +1856,7 @@ height: 325px;
   overflow: visible;
 }
 .panel-heading {
-  padding: 5px;
+padding: 20px 10px 0px 15px;
 }
 .panel-heading h3 {
   border: none;

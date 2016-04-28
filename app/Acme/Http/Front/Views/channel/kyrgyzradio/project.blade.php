@@ -12,7 +12,7 @@
                <div class="panel panel-show">
                   <div class="panel-heading">
                      <h3 class="panel-title">
-                        <a href="{{ route('kyrgyzradio.allnews') }}">Уктуруу жөнүндө</a>
+                        <a href="{{ route('kyrgyzradio.projects') }}">Уктуруу жөнүндө</a>
                      </h3>
                   </div>
                   <div class="panel-body">
@@ -46,7 +46,7 @@
                      @foreach($project->kgprogram()->get() as $post)
                      <div class="media">
                         <div class="media-left">
-                           <a href="{{ route('kyrgyzradio.news', $post) }}">
+                           <a href="{{ route('kyrgyzradio.show', $post) }}">
                            <img class="media-object thumb" src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif" alt="image">
                            </a>
                         </div>
@@ -55,13 +55,13 @@
                               <span class="e-datetime">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
                               <span class="e-views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
                            </div>
-                           <a class="media-heading" href="{{ route('kyrgyzradio.news', $post) }}">{{ $post->getTitle() }}</a>
+                           <a class="media-heading" href="{{ route('kyrgyzradio.show', $post) }}">{{ $post->getTitle() }}</a>
                         </div>
                      </div>
                      @endforeach
                      @endif
                      <footer>
-                        <a href="{{ route('kyrgyzradio.allnews') }}">Башка жаңылыктар</a>
+                        <a href="{{ route('kyrgyzradio.projects') }}">Башка жаңылыктар</a>
                      </footer>
                   </div>
                </div>

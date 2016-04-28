@@ -80,6 +80,9 @@
       <div class="row">
          <div class="col-md-9">
             <div class="row">
+              <div class="panel-heading">
+                 <h3 class="panel-title"><span>{{ trans('site.FrontPostAll') }}</span></h3>
+              </div>
                <div class="panel-body post">
                   <div class="news-info">
                      <span class="date"><i class="fa fa-calendar"></i>{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
@@ -91,15 +94,18 @@
                    <a id="post-thumb" href="@if(empty($post->thumbnail_big)){{  asset($post->thumbnail) }}@else{{ asset($post->thumbnail_big) }}@endif">
                      <img class="left" src="@if(empty($post->thumbnail_big)) {{  asset($post->thumbnail) }} @else {{  asset($post->thumbnail_big) }} @endif" alt="image">
                    </a>
-                   {{--@if($post->thumb_desc || $post->thumb_desc_ru)<span class="thumb_desc">{{ $post->getThumbnailDesc() }}</span>@endif--}}
-                   {{--@if($post->thumb_author)<span class="thumb_author"> Фото: {{ $post->thumb_author }}</span>@endif--}}
+                   @if($post->thumb_desc || $post->thumb_desc_ru)<span class="thumb_desc">{{ $post->getThumbnailDesc() }}</span>@endif
+                   @if($post->thumb_author)<span class="thumb_author"> Фото: {{ $post->thumb_author }}</span>@endif
                  </div>
+                 <div class="sound-frame">
+                   <h2>{{ $post->getAudio() }}</h2>
+<span>https://soundcloud.com/ktrk-audio/ok74yrgno7t3</span>
 
-                  {{--<div class="radioimg post-thumb">--}}
-                     {{--<a id="post-thumb" href="@if(empty($post->thumbnail_big)){{  asset($post->thumbnail) }}@else{{ asset($post->thumbnail_big) }}@endif">--}}
-                       {{--<img src="@if(empty($post->getFile()))images/2.jpg @else {{  asset($post->getFile()) }} @endif" alt="" data-toggle="tooltip" data-placement="top" title="Бул жөн гана сүрөт эмес">--}}
-                     {{--</a>--}}
-                  {{--</div>--}}
+<iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/260929085&amp;color=0066cc&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+
+
+<iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/260929085&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+                 </div>
                   <article>
                      {!! $post->getContentKG() !!}
                      <div class="carousel-post whitefix">
@@ -158,7 +164,7 @@
                         {{--<span data-counter="tw"></span>--}}
                         </button>
                      </div>
-                     <a href="{{ route('kyrgyzradio.allnews') }}">
+                     <a href="{{ route('kyrgyzradio.projects') }}">
                      <span>Баардык жаңылыктар<i class="fa fa-arrow-circle-right"></i></span>
                      </a>
                   </footer>
@@ -188,7 +194,7 @@
                                 </span></a>                       
                                 <span class="views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
                               </div>
-                              <a class="media-heading" href="{{ route('kyrgyzradio.news', $post) }}">{{ $post->getTitle() }}</a>
+                              <a class="media-heading" href="{{ route('kyrgyzradio.show', $post) }}">{{ $post->getTitle() }}</a>
                            </div>
                         </div>                      
                         @endforeach 
@@ -208,7 +214,7 @@
                         <div class="row">
                            <ul class="list-group">
                               @if($kyrgyzradioProjects) 
-                              @foreach($kyrgyzradioProjects as $key=> $project)
+                              @foreach($kyrgyzradioProjects as $project)
                               <li class="list-group-item">
                                  <a href="{{ route('kyrgyzradio.project', $project) }}">{{ $project->getName() }}</a>
                               </li>

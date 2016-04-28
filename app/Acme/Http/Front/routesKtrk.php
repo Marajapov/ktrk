@@ -90,8 +90,8 @@ Route::group(['domain' => 'www.ktrk.kg', 'prefix' => '/kyrgyzradio', 'namespace'
     Route::get('/', ['as' => 'kyrgyzradio.home',   'uses' => 'KyrgyzradioController@Home']);
     Route::get('/posts', ['as' => 'kyrgyzradio.posts',   'uses' => 'KyrgyzradioController@posts']);
     Route::get('/photos/{gallery}',['as' => 'kyrgyzradio.photos','uses'=> 'KyrgyzradioController@Gallery'] );
-    Route::get('/news/{post}', ['as' => 'kyrgyzradio.news',   'uses' => 'KyrgyzradioController@news']);
-    Route::get('allnews', ['as' => 'kyrgyzradio.allnews',   'uses' => 'KyrgyzradioController@allnews']);
+    Route::get('/show/{post}', ['as' => 'kyrgyzradio.show',   'uses' => 'KyrgyzradioController@show']);
+    Route::get('projects', ['as' => 'kyrgyzradio.projects',   'uses' => 'KyrgyzradioController@projects']);
     Route::get('/allphotos',['as' => 'kyrgyzradio.allphotos','uses'=> 'KyrgyzradioController@allphotos'] );
     Route::get('/project/{project}',['as' => 'kyrgyzradio.project','uses'=> 'KyrgyzradioController@project'] );
     Route::get('/comingsoon', ['as' => 'kyrgyzradio.comingsoon',   'uses' => 'KyrgyzradioController@ComingSoon']);

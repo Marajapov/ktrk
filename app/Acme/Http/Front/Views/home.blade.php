@@ -150,7 +150,7 @@
                                                             </a>
                                                               
                                                         @else
-                                                            <a href="{{ route('front.post', [$generalPost4]) }}">
+                                                            <a href="{{ route('front.post', [$generalPost4, $lc]) }}">
                                                                 {{ $generalPost4->getTitleRuOrKg() }}
                                                             </a>
                                                         @endif

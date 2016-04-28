@@ -11,14 +11,14 @@
             <div class="row">
                <div class="panel panel-articles" style="border-right: 4px solid #FFFFFF">
                   <div class="panel-heading">
-                     <h3 class="panel-title"><span>{{ trans('site.FrontPostAll') }}</span></h3>
+                     <h3 class="panel-title"><span>Баардык уктуруулар</span></h3>
                   </div>
                   <div class="panel-body">
                      @if($postAll)
                      @foreach($postAll as $post)
                      <div class="media">
                         <div class="media-left">
-                           <a href="{{ route('kyrgyzradio.news', $post) }}">
+                           <a href="{{ route('kyrgyzradio.show', $post) }}">
                            <img class="media-object thumb" src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif" alt="image">
                            </a>
                         </div>
@@ -27,7 +27,7 @@
                               <span class="e-datetime">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
                               <span class="e-views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
                            </div>
-                           <a class="media-heading" href="{{ route('kyrgyzradio.news', $post) }}">{{ $post->getTitle() }}</a>
+                           <a class="media-heading" href="{{ route('kyrgyzradio.show', $post) }}">{{ $post->getTitle() }}</a>
                         </div>
                      </div>
                      @endforeach
@@ -36,7 +36,7 @@
                         <nav>
                            <ul class="pagination">
                               <li>
-                                 <a href="{{ route('kyrgyzradio.allnews', ['page' => 1]) }}" class="btn btn-default @if($postAll->currentPage() == 1) disabled @endif">{{ trans('site.Start') }}</a>
+                                 <a href="{{ route('kyrgyzradio.projects', ['page' => 1]) }}" class="btn btn-default @if($postAll->currentPage() == 1) disabled @endif">{{ trans('site.Start') }}</a>
                               </li>
                               <li>
                                  <a href="{{ $postAll->previousPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span></a>
@@ -46,11 +46,11 @@
                               </li>
                               @for($i = 0, $j = 1; $i < $postAll->total(); $i+=$perPage)
                               <li>
-                                 <a href="{{ route('kyrgyzradio.allnews', ['page' => $j]) }}" class="btn btn-default @if($postAll->currentPage() == $j) active @endif">{{ $j++ }}</a>
+                                 <a href="{{ route('kyrgyzradio.projects', ['page' => $j]) }}" class="btn btn-default @if($postAll->currentPage() == $j) active @endif">{{ $j++ }}</a>
                               </li>
                               @endfor
                               <li>
-                                 <a href="{{ route('kyrgyzradio.allnews', ['page' => ceil($postAll->total()/$perPage)]) }}" class="btn btn-default @if($postAll->currentPage() == ceil($postAll->total()/$perPage)) disabled @endif">{{ trans('site.End') }}</a>
+                                 <a href="{{ route('kyrgyzradio.projects', ['page' => ceil($postAll->total()/$perPage)]) }}" class="btn btn-default @if($postAll->currentPage() == ceil($postAll->total()/$perPage)) disabled @endif">{{ trans('site.End') }}</a>
                               </li>
                            </ul>
                         </nav>
