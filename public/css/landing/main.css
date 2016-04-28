@@ -1386,6 +1386,7 @@ height: 325px;
 }
 #news .post article {
   color: #1A1A1B;
+padding-top: 10px;
 }
 .ctg-panel .list-group {
   margin-top: -15px;
@@ -1408,7 +1409,7 @@ height: 325px;
   padding: 30px 15px 0px;
 }
 #news .popular {
-  padding-top: 10px;
+
 }
 /* END ALL NEWS*/
 
@@ -1425,6 +1426,7 @@ height: 325px;
 }
 #pojects .panel-articles{
   border: none;
+  padding: 0px 5px;
 }
 #pojects .panel-articles .extra {
   margin: 0;
@@ -1859,7 +1861,7 @@ height: 325px;
 padding: 20px 10px 0px 15px;
 }
 .panel-heading h3 {
-  border: none;
+  /*border: none;*/
   color: #fff;
 }
 #nt-example1 {
@@ -2091,4 +2093,78 @@ padding: 20px 10px 0px 15px;
 .with-share{
   text-align: center;
   margin-bottom: 10px;
+}
+.peredachi{
+  padding: 30px 0px;
+    position: relative;
+    display: flex;
+}
+.newsstream {
+    position: relative;
+    width: 100%;
+}
+.newsstream .allright{
+    float: right;
+    margin-top: -20px;
+    font-size: 20px;
+    margin-right: 5px;
+    background: none;
+}
+.newsstream .allright a{
+    color: #757373;
+    font-size: 15px;
+    text-transform: lowercase;
+}
+.newsstream .allright i{
+    font-size: 15px;
+}
+.newsstream .allright a:hover{
+    color: #4B4B4B;
+    text-decoration: underline;
+}
+.newsstream .col-md-7 {
+    /*background: rgba(31, 51, 55, 0.1);*/
+}
+
+.newsstream .postshow{
+    position: relative;
+    padding: 0;
+    margin: 10px;
+    display: block;
+}
+.newsstream .postshow-name{
+    position: absolute;
+    bottom: 0;
+    background: rgba(0,0,0,.5);
+    padding: 10px;
+    width: 100%;
+    height: 80px;
+}
+.newsstream .col-md-5{
+    padding: 0px 5px
+}
+.newsstream .extra{
+    color: #fff;
+    font-family: 'Roboto';
+}
+.newsstream .extra .date{
+
+}
+.newsstream .extra .views{
+    float: right;
+
+}
+.newsstream .extra .views i{
+    padding-right: 5px;
+ 
+}
+.newsstream .media-heading{
+    margin-top: 5px;
+    display: block;
+    line-height: 18px;
+    font-size: 18px;
+    color: #fff;
+}
+.newsstream .media-heading:hover{
+    color: #fff;
 }

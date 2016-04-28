@@ -64,7 +64,7 @@
             <div class="col-md-3 col-xs-12 pull-right programtitle">
                <div class="panel panel-default">
                   <div class="panel-heading">
-                     <h3 class="panel-title"><span>Уктуруулар программасы</span></h3>
+                     <h3 class="panel-title" style="border: none;"><span>Уктуруулар программасы</span></h3>
                   </div>
                   @if($program)
                   <div class="centered">
@@ -90,6 +90,39 @@
          
       </div>
    </section>
+
+   <section id="cta">
+      <div class="newsstream">
+         <div class="col-md-12">
+            <div class="row">
+               <div class="section-header">
+                  <h2 class="section-title text-center wow fadeInDown">Уктуруулар</h2>
+               </div>
+               <div class="peredachi">
+                  @if($peredachi)
+                  @foreach($peredachi as $post)
+                  <div class="col-md-4 col-sm-6 postshow">
+                         <img class="media-object thumb" src="@if(!($post->getFileBig()))images/live_bg.png @else {{ asset($post->getFileBig()) }} @endif" alt="image">
+                         <div class="postshow-name">
+                            <div class="extra">                      
+                               <span class="views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
+                            </div>
+                            <a class="media-heading" href="{{ route('kyrgyzradio.show', $post) }}">{{ $post->getTitle() }}</a>
+                         </div>       
+                  </div>
+                  @endforeach
+                  @endif
+               </div>
+            </div>
+              <footer class="citation">
+                <a href="{{ route('kyrgyzradio.projects') }}">
+                  <span>Баардык уктуруулар <i class="fa fa-arrow-circle-right"></i></span>
+                </a>
+              </footer>
+         </div>
+      </div>
+   </section>
+
    <section id="cta2">
          <div class="text-center">
             <h2 class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="0ms"><span>Кыргыз радиосу</span> - жан дүйнөнүн азыгы </h2>

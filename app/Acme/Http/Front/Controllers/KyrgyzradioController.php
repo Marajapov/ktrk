@@ -28,6 +28,8 @@ class KyrgyzradioController extends Controller
        
         $quote = \Model\Quote\ModelName::where('published','=','1')->where('channel', '=', '6')->orderBy('id','=','desc')->orderBy('id','desc')->get();
 
+        $peredachi = \Model\Post\ModelName::where('kyrgyzradio','=',1)->published()->orderBy('id','desc')->get(); 
+
         date_default_timezone_set('Asia/Bishkek');
         $now = date("d-m-Y H:i");
         $currentDate = date('d-m-Y');
@@ -58,6 +60,7 @@ class KyrgyzradioController extends Controller
             'currentDate' => $currentDate,
             'currentTime' => $currentTime,
             'program' => $program,
+            'peredachi' => $peredachi,
             ]);
     }
 
@@ -183,11 +186,39 @@ class KyrgyzradioController extends Controller
     {
         $post->incrementViewed();
 
+        $lc = app()->getlocale();
+
+        if($lc == 'kg')
+        {
+            if($post->title == '')
+            {
+                app()->setlocale('ru');
+                $lc = 'ru';
+            }
+            else
+            {
+                app()->setlocale('kg');
+                $lc = 'kg';
+            }
+        } 
+        elseif($lc == 'ru') 
+        {
+            if($post->titleRu == '')
+            {
+                app()->setlocale('kg');
+                $lc = 'kg';
+            }
+            else
+            {
+                app()->setlocale('ru');
+                $lc = 'ru';
+            }
+        }
+
         $channel = \Model\Channel\ModelName::name('kyrgyzradio')->first();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
         
         $kyrgyzradioProjects = \Model\Project\ModelName::where('published','=',true)->where('kyrgyzradio', '=', 1)->get();
-
 
         $parent = \Model\PhotoParent\ModelName::where('id','=',$post->parentId)->first();
 
@@ -197,6 +228,187 @@ class KyrgyzradioController extends Controller
             $images = null;
         }   
 
+        if($lc == 'kg'){
+
+            $contentOriginal = $post->getContent();
+            
+
+            $contentFinal = $contentOriginal;
+
+            if($post->related1)
+            {
+                if(strpos($contentFinal, 'POST1LEFT') != false)
+                {
+                    $post1Pos = strripos($contentFinal, 'POST1LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionLeft($post->related1), $post1Pos, 9);
+                }
+                elseif(strpos($contentFinal, 'POST1RIGHT') != false)
+                {
+                    $post1Pos = strripos($contentFinal, 'POST1RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionRight($post->related1), $post1Pos, 10);
+                }
+            }
+
+            if($post->related2)
+            {
+                if(strpos($contentFinal, 'POST2LEFT') != false)
+                {
+                    $post2Pos = strripos($contentFinal, 'POST2LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionLeft($post->related2), $post2Pos, 9);
+                }
+                elseif(strpos($contentFinal, 'POST2RIGHT') != false)
+                {
+                    $post2Pos = strripos($contentFinal, 'POST2RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionRight($post->related2), $post2Pos, 10);
+                }
+            }
+
+            if($post->related3)
+            {
+                if(strpos($contentFinal, 'POST3LEFT') != false)
+                {
+                    $post3Pos = strripos($contentFinal, 'POST3LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionLeft($post->related3), $post3Pos, 9);
+                }
+                elseif(strpos($contentFinal, 'POST3RIGHT') != false)
+                {
+                    $post3Pos = strripos($contentFinal, 'POST3RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionRight($post->related3), $post3Pos, 10);
+                }
+            }
+
+            if($post->relatedMedia1)
+            {
+                if(strpos($contentFinal, 'MEDIA1LEFT') != false)
+                {
+                    $media1Pos = strripos($contentFinal, 'MEDIA1LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionLeft($post->relatedMedia1), $media1Pos, 10);
+                }
+                elseif(strpos($contentFinal, 'MEDIA1RIGHT') != false)
+                {
+                    $media1Pos = strripos($contentFinal, 'MEDIA1RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionRight($post->relatedMedia1), $media1Pos, 11);
+                }
+            }
+
+            if($post->relatedMedia2)
+            {
+                if(strpos($contentFinal, 'MEDIA2LEFT') != false)
+                {
+                    $media2Pos = strripos($contentFinal, 'MEDIA2LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionLeft($post->relatedMedia2), $media2Pos, 10);
+                }
+                elseif(strpos($contentFinal, 'MEDIA2RIGHT') != false)
+                {
+                    $media2Pos = strripos($contentFinal, 'MEDIA2RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionRight($post->relatedMedia2), $media2Pos, 11);
+                }
+            }
+
+            if($post->relatedMedia3)
+            {
+                if(strpos($contentFinal, 'MEDIA3LEFT') != false)
+                {
+                    $media3Pos = strripos($contentFinal, 'MEDIA3LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionLeft($post->relatedMedia3), $media3Pos, 10);
+                }
+                elseif(strpos($contentFinal, 'MEDIA3RIGHT') != false)
+                {
+                    $media3Pos = strripos($contentFinal, 'MEDIA3RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionRight($post->relatedMedia3), $media3Pos, 11);
+                }
+            }
+
+        }elseif($lc == 'ru'){
+            $contentOriginal = $post->getContent();
+            
+            $contentFinal = $contentOriginal;
+            if($post->relatedRu1)
+            {
+                if(strpos($contentFinal, 'POST1LEFT') != false)
+                {
+                    $post1Pos = strripos($contentFinal, 'POST1LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionLeft($post->relatedRu1), $post1Pos, 9);
+                }
+                elseif(strpos($contentFinal, 'POST1RIGHT') != false)
+                {
+                    $post1Pos = strripos($contentFinal, 'POST1RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionRight($post->relatedRu1), $post1Pos, 10);
+                }
+            }
+
+            if($post->relatedRu2)
+            {
+                if(strpos($contentFinal, 'POST2LEFT') != false)
+                {
+                    $post2Pos = strripos($contentFinal, 'POST2LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionLeft($post->relatedRu2), $post2Pos, 9);
+                }
+                elseif(strpos($contentFinal, 'POST2RIGHT') != false)
+                {
+                    $post2Pos = strripos($contentFinal, 'POST2RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionRight($post->relatedRu2), $post2Pos, 10);
+                }
+            }
+
+            if($post->relatedRu3)
+            {
+                if(strpos($contentFinal, 'POST3LEFT') != false)
+                {
+                    $post3Pos = strripos($contentFinal, 'POST3LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionLeft($post->relatedRu3), $post3Pos, 9);
+                }
+                elseif(strpos($contentFinal, 'POST3RIGHT') != false)
+                {
+                    $post3Pos = strripos($contentFinal, 'POST3RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionRight($post->relatedRu3), $post3Pos, 10);
+                }
+            }
+
+            if($post->relatedMediaRu1)
+            {
+                if(strpos($contentFinal, 'MEDIA1LEFT') != false)
+                {
+                    $media1Pos = strripos($contentFinal, 'MEDIA1LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionLeft($post->relatedMediaRu1), $media1Pos, 10);
+                }
+                elseif(strpos($contentFinal, 'MEDIA1RIGHT') != false)
+                {
+                    $media1Pos = strripos($contentFinal, 'MEDIA1RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionRight($post->relatedMediaRu1), $media1Pos, 11);
+                }
+            }
+
+            if($post->relatedMediaRu2)
+            {
+                if(strpos($contentFinal, 'MEDIA2LEFT') != false)
+                {
+                    $media2Pos = strripos($contentFinal, 'MEDIA2LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionLeft($post->relatedMediaRu2), $media2Pos, 10);
+                }
+                elseif(strpos($contentFinal, 'MEDIA2RIGHT') != false)
+                {
+                    $media2Pos = strripos($contentFinal, 'MEDIA2RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionRight($post->relatedMediaRu2), $media2Pos, 11);
+                }
+            }
+
+            if($post->relatedMediaRu3)
+            {
+                if(strpos($contentFinal, 'MEDIA3LEFT') != false)
+                {
+                    $media3Pos = strripos($contentFinal, 'MEDIA3LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionLeft($post->relatedMediaRu3), $media3Pos, 10);
+                }
+                elseif(strpos($contentFinal, 'MEDIA3RIGHT') != false)
+                {
+                    $media3Pos = strripos($contentFinal, 'MEDIA3RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionRight($post->relatedMediaRu3), $media3Pos, 11);
+                }
+            }
+
+        }
+
         $weekFromNow = date('Y-m-d', strtotime('-17 days'));
         $popArticles = \Model\Post\ModelName::where('kyrgyzradio','=','1')->where('created_at','>',$weekFromNow)->languagekg()->orderBy('viewed','desc')->take(6)->get();
         if(count($popArticles) > 0){
@@ -205,10 +417,10 @@ class KyrgyzradioController extends Controller
             $popArticles = null;
         }
 
-
         return view('Front::channel.kyrgyzradio.show', [
             'channel' => $channel,
             'post' => $post,
+            'content' => $contentFinal,
             'backgroundMain' => $backgroundMain,
             'kyrgyzradioProjects' => $kyrgyzradioProjects,
             'images' => $images,

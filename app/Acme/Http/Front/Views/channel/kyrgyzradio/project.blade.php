@@ -5,7 +5,7 @@
 @section('content')
 @include('Front::channel.kyrgyzradio.nav')
 <div id="pojects">
-   <div class="container">
+   <div class="container" style="background: white">
       <div class="row">
          <div class="col-md-9">
             <div class="row">

@@ -19,10 +19,12 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::orderBy('id', 'desc')->where('fbpost','<>','1')->get();
+        $perPage = 10;
+        $posts = Post::orderBy('id', 'desc')->where('fbpost','<>','1')->paginate($perPage);
         
         return view('Admin::post.index', [
             'posts' => $posts,
+            'perPage' => $perPage,
         ]);
     }
 

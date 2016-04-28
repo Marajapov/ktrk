@@ -1,5 +1,5 @@
 @extends('Admin::layouts.default')
-@section('title', "Posts")
+@section('title', trans('site.RedKeneshNews'))
 
 @section('styles')
   <link rel="stylesheet" href="{{ asset('css/admin/dataTables.bootstrap.css') }}"/>
@@ -113,6 +113,34 @@
             @endforeach
           </tbody>
         </table>
+          <nav>
+              <ul class="pagination">
+
+                  <li>
+                      <a href="{{ route('admin.post.index', ['page' => 1]) }}" class="btn btn-default @if($posts->currentPage() == 1) disabled @endif">{{ trans('site.Start') }}</a>
+                  </li>
+                  <li>
+                      <a href="{{ $posts->previousPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                  </li>
+
+                  @for($i = 0, $j = 1; $i < $posts->total(); $i+=$perPage)
+                      <li class="@if(($j > $posts->currentPage()+10) || ($j < $posts->currentPage()-10)) hidden @endif">
+                          <a href="{{ route('admin.post.index', ['page' => $j]) }}" class="btn btn-default @if($posts->currentPage() == $j) active @endif">
+                              {{ $j++ }}
+                          </a>
+                      </li>
+                  @endfor
+
+                  <li>
+                      <a href="{{ $posts->nextPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                  </li>
+
+                  <li>
+                      <a href="{{ route('admin.post.index', ['page' => ceil($posts->total()/$perPage)]) }}" class="btn btn-default @if($posts->currentPage() == ceil($posts->total()/$perPage)) disabled @endif">{{ trans('site.End') }}</a>
+                  </li>
+
+              </ul>
+          </nav>
 
       </div>
 
@@ -122,7 +150,7 @@
 @stop
 
 @section('scripts')
-  <script src="{{ asset('js/admin/jquery.dataTables.js') }}"></script>
+<!--   <script src="{{ asset('js/admin/jquery.dataTables.js') }}"></script>
   <script src="{{ asset('js/admin/dataTables.bootstrap.js') }}"></script>
 
   <script>
@@ -149,6 +177,6 @@
         ]
       });
     } );
-  </script>
+  </script> -->
 @endsection
 

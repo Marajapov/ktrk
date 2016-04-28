@@ -103,10 +103,9 @@
                     </br>
                  </div>                     
                     <div class="col-md-12"> 
-                         @if($popArticles) 
-                         @foreach($popArticles as $post)
+                        @if($popArticles) 
+                        @foreach($popArticles as $post)
                         <div class="media">
-
                             <div class="media-body">
                                 <div class="extra" style="width: 100%; float: right;">
                                     <span class="datetime">{{ $post->getDay() }} {{ $post->getMonthRu() }}</span>                          
@@ -114,7 +113,6 @@
                                 </div>
                                 <a class="media-heading" href="{{ route('minkiyal.news', $post) }}">{{ $post->getTitle() }}</a>
                             </div>
-
                         </div>
                         @endforeach 
                         @endif                                                

@@ -81,7 +81,15 @@
          <div class="col-md-9">
             <div class="row">
               <div class="panel-heading">
-                 <h3 class="panel-title"><span>{{ trans('site.FrontPostAll') }}</span></h3>
+                 <h3 class="panel-title">
+                    <span> 
+                      @if($kyrgyzradioProjects) 
+                        @foreach($kyrgyzradioProjects->take(1) as $project)
+                          {{ $project->getName() }}
+                        @endforeach
+                      @endif
+                    </span>
+                  </h3>
               </div>
                <div class="panel-body post">
                   <div class="news-info">
@@ -90,35 +98,18 @@
                   </div>
                   <h2>{{ $post->getTitle() }}</h2>
 
-                 <div class="post-thumb radioimg">
+<!--                  <div class="post-thumb radioimg">
                    <a id="post-thumb" href="@if(empty($post->thumbnail_big)){{  asset($post->thumbnail) }}@else{{ asset($post->thumbnail_big) }}@endif">
                      <img class="left" src="@if(empty($post->thumbnail_big)) {{  asset($post->thumbnail) }} @else {{  asset($post->thumbnail_big) }} @endif" alt="image">
                    </a>
                    @if($post->thumb_desc || $post->thumb_desc_ru)<span class="thumb_desc">{{ $post->getThumbnailDesc() }}</span>@endif
                    @if($post->thumb_author)<span class="thumb_author"> Фото: {{ $post->thumb_author }}</span>@endif
-                 </div>
+                 </div> -->
                  <div class="sound-frame">
                    <h2>{{ $post->getAudio() }}</h2>
-<span>https://soundcloud.com/ktrk-audio/ok74yrgno7t3</span>
-
-<iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/260929085&amp;color=0066cc&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
-
-
-<iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/260929085&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
                  </div>
                   <article>
-                     {!! $post->getContentKG() !!}
-                     <div class="carousel-post whitefix">
-                        @if($images)
-                        @foreach($images as $image)
-                        <div class="col-md-4">
-                           <a href="#">
-                           <img src="{{ asset('froala/uploads/'.$image->name) }}" alt=""/>
-                           </a>
-                        </div>
-                        @endforeach
-                        @endif
-                     </div>
+                      {!! $content !!}
                   </article>
                   <p>
                      <a href="http://orphus.ru" id="orphus" class="hidden" target="_blank"><img alt="Система Orphus" src="{{ asset('js/orphus.gif') }}" border="0" width="240" height="80" /></a>
@@ -165,7 +156,7 @@
                         </button>
                      </div>
                      <a href="{{ route('kyrgyzradio.projects') }}">
-                     <span>Баардык жаңылыктар<i class="fa fa-arrow-circle-right"></i></span>
+                     <span>Баардык уктуруулар<i class="fa fa-arrow-circle-right"></i></span>
                      </a>
                   </footer>
                </div>
@@ -178,19 +169,19 @@
                      <div class="panel-heading">
                         <h3 class="panel-title"><span>Көп окулууда</span></h3>
                      </div>
-                     <div class="col-md-12">
-
-                   
+                     <div class="col-md-12">                   
                         @if($popArticles) 
                         @foreach($popArticles as $post)
 
                         <div class="media">
                            <div class="media-body">
                               <div class="extra">
-                                <span class="datetime">{{ $post->getDay() }} {{ $post->getMonthRu() }}</span>                     
-                         
-                                <a class="cat" href="{{ route('kyrgyzradio.project', $post->kyrgyzradioProgram) }}"><span>
-                                  @if($post->kyrgyzradioProjects()) {{ $post->kyrgyzradioProjects()->first()->getName()}} @endif
+                                <span class="datetime">{{ $post->getDay() }} {{ $post->getMonthRu() }}</span>  <a class="cat" href="{{ route('kyrgyzradio.project', $post->kyrgyzradioProgram) }}"><span>
+                                  @if($kyrgyzradioProjects) 
+                                  @foreach($kyrgyzradioProjects->take(1) as $project)
+                                  {{ $project->getName() }}
+                                  @endforeach
+                                  @endif
                                 </span></a>                       
                                 <span class="views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
                               </div>
