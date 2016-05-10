@@ -1,6 +1,7 @@
-@extends('Front::channel.kyrgyzradio.default')
-@section('title', $post->getTitle())
+@extends('Front::channel.birinchi.default')
+@section('title', $post->getTitleRuOrKg())
 @section('styles')
+
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <meta property="og:url"                content="{{ Request::url()}}" />
 <meta property="og:site_name"          content="{{ trans('site.TradeMark') }}" />
@@ -11,7 +12,7 @@
 
 <link rel="stylesheet" href="{{asset('css/goodshare.css')}}">
 <link rel="stylesheet" href="{{asset('css/articles.css')}}">
-<link rel="stylesheet" href="{{ asset('css/magnific-popup.css')}}"/>
+<link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}"/>
 <style>
   .mfp-ready .mfp-figure {
     opacity: 0;
@@ -74,148 +75,144 @@
 
 @endsection
 @section('content')
-@include('Front::channel.kyrgyzradio.nav')
-<div id="news">
+<div class="birinchiradio">
+   @include('Front::channel.birinchi.nav')
    <div class="container">
-      <div class="row">
-         <div class="col-md-9">
-            <div class="row panel-article">
-              <div class="panel-heading">
-                 <h3 class="panel-title">
-                    <span> 
-                     @if($kyrgyzradioProjects) 
-                       @foreach($kyrgyzradioProjects as $project)   
-                        @if($project->id == $post->kyrgyzradioProgram)
-                          {{ ($project->getName()) }}
-                        @endif
-                       @endforeach
-                     @endif
-                    </span>
-                  </h3>
-              </div>
-               <div class="panel-body post">
-                  <div class="news-info">
-                     <span class="date"><i class="fa fa-calendar"></i>{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
-                     <span class="view"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
-                  </div>
-                  <h2>{{ $post->getTitle() }}</h2>
-<!--                  <div class="post-thumb radioimg">
-                   <a id="post-thumb" href="@if(empty($post->thumbnail_big)){{  asset($post->thumbnail) }}@else{{ asset($post->thumbnail_big) }}@endif">
-                     <img class="left" src="@if(empty($post->thumbnail_big)) {{  asset($post->thumbnail) }} @else {{  asset($post->thumbnail_big) }} @endif" alt="image">
-                   </a>
-                   @if($post->thumb_desc || $post->thumb_desc_ru)<span class="thumb_desc">{{ $post->getThumbnailDesc() }}</span>@endif
-                   @if($post->thumb_author)<span class="thumb_author"> Фото: {{ $post->thumb_author }}</span>@endif
-                 </div> -->
-                 <div class="sound-frame">
-                   <h2>{{ $post->getAudio() }}</h2>
-                 </div>
-                  <article>
-                      {!! $content !!}
-                  </article>
-                  <p>
-                     <a href="http://orphus.ru" id="orphus" class="hidden" target="_blank"><img alt="Система Orphus" src="{{ asset('js/orphus.gif') }}" border="0" width="240" height="80" /></a>
-                  </p>
-                  <div class="orphus-mistake pull-right">
-                     <div class="media">
-                        <div class="media-body media-middle">
-                           <h4>                                         
-                              Эгерде ката тапсаңыз, текстти белгилеп Ctrl+Enter басыңыз                                       
-                           </h4>
-                        </div>
-                        <div class="media-right media-middle">
-                           <span class="media-object">
-                           <i class="fa fa-exclamation-circle"></i>
-                           </span>
-                        </div>
-                     </div>
-                  </div>
-                  <footer class="with-share">
-                     @if(auth()->user())
-                     <a class="post-edit" href="{{ route('admin.post.edit', $post) }}" target="_blank"><i class="fa fa-pencil"></i>Өзгөртүү</a>
-                     @endif
-                     <div class="pluso share-buttons">
-                        <button class="goodshare btn-fb" data-type="fb">
-                        <i class="fa fa-facebook"></i>
-                        <span data-counter="fb"></span>
-                        </button>
-                        <!-- Button with share to Facebook & share counter -->
-                        <button class="goodshare btn-vk" data-type="vk">
-                        <i class="fa fa-vk"></i>
-                        <span data-counter="vk"></span>
-                        </button>
-                        <button class="goodshare btn-ok" data-type="ok">
-                        <i class="fa fa-odnoklassniki"></i>
-                        <span data-counter="ok"></span>
-                        </button>
-                        <button class="goodshare btn-gp" data-type="gp">
-                        <i class="fa fa-google-plus"></i>
-                        <span data-counter="gp"></span>
-                        </button>
-                        <button class="goodshare btn-tw" data-type="tw">
-                        <i class="fa fa-twitter"></i>
-                        {{--<span data-counter="tw"></span>--}}
-                        </button>
-                     </div>
-                     <a href="{{ route('kyrgyzradio.projects') }}">
-                     <span>Баардык уктуруулар<i class="fa fa-arrow-circle-right"></i></span>
-                     </a>
-                  </footer>
-               </div>
-            </div>
-         </div>
-         <div class="col-md-3">
+      <div class="row broadcastpost">
+         <div class="col-md-12">
             <div class="row">
-               <div class="col-md-12">
-                  <div class="row popular">
-                     <div class="panel-heading">
-                        <h3 class="panel-title"><span>Көп окулууда</span></h3>
-                     </div>
-                     <div class="col-md-12">                   
-                        @if($popArticles) 
-                        @foreach($popArticles as $post)
-
-                        <div class="media">
-                           <div class="media-body">
-                              <div class="extra">
-                                <span class="datetime">{{ $post->getDay() }} {{ $post->getMonthRu() }}</span>  <a class="cat" href="{{ route('kyrgyzradio.project', $post->kyrgyzradioProgram) }}"><span>
-                                @if($kyrgyzradioProjects) 
-                                  @foreach($kyrgyzradioProjects as $project)   
-                                    @if($project->id == $post->kyrgyzradioProgram)
-                                      {{ ($project->getName()) }}
-                                    @endif
-                                  @endforeach
-                                @endif
-                                </span></a>                       
-                                <span class="views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
-                              </div>
-                              <a class="media-heading" href="{{ route('kyrgyzradio.show', $post) }}">{{ $post->getTitle() }}</a>
-                           </div>
-                        </div>                      
-                        @endforeach 
-                        @endif                                                
-                     </div>
-                  </div>
-               </div>
-            </div>
-
-            <div class="row">
-               <div class="panel ctg-panel media-ctg-panel">
-                  <div class="panel-heading">
-                     <h3 class="panel-title"><span>Уктуруулар</span></h3>
-                  </div>
-                  <div class="panel-body">
+               <div class="col-md-9">
+                  <div class="row panel-article">
                      <div class="col-md-12">
-                        <div class="row">
-                           <ul class="list-group">
-                              @if($kyrgyzradioProjects) 
-                              @foreach($kyrgyzradioProjects as $project)
-                              <li class="list-group-item">
-                                 <a href="{{ route('kyrgyzradio.project', $project) }}">{{ $project->getName() }}</a>
-                              </li>
-                              @endforeach
-                              @endif
-                           </ul>
+                        <h3 class="title">
+                         @if($birinchiProjects) 
+                           @foreach($birinchiProjects as $project)   
+                             @if($project->id == $post->birinchiProgram)
+                                {{ ($project->getName()) }}
+                             @endif
+                           @endforeach
+                         @endif
+                        </h3>
+                     </div>
+                     <div class="col-md-12">
+                        <div class="news-info">
+                           <span class="date"><i class="fa fa-calendar"></i>{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
+                           <span class="view"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
                         </div>
+                        <h2 class="btitle">{{ $post->getTitleRuOrKg() }}</h2>
+
+                        <div class="oneimg">
+                           <img src="@if(empty($post->getFile()))images/2.jpg @else {{  asset($post->getFile()) }} @endif" alt="" data-toggle="tooltip" data-placement="top" title="Бул жөн гана сүрөт эмес">
+                        </div>
+                        <article>
+                            {!! $content !!}
+                        </article>
+                        <p>
+                              <a href="http://orphus.ru" id="orphus" class="hidden" target="_blank"><img alt="Система Orphus" src="{{ asset('js/orphus.gif') }}" border="0" width="240" height="80" /></a>
+                           </p>
+                           <div class="orphus-mistake pull-right">
+                              <div class="media">
+                                 <div class="media-body media-middle">
+                                    <h4>                                         
+                                       Эгерде ката тапсаңыз, текстти белгилеп Ctrl+Enter басыңыз                                       
+                                    </h4>
+                                 </div>
+                                 <div class="media-right media-middle">
+                                    <span class="media-object">
+                                    <i class="fa fa-exclamation-circle"></i>
+                                    </span>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-12">
+                             <footer class="with-share">
+                                 @if(auth()->user())
+                                     <a class="post-edit" href="{{ route('admin.post.edit', $post) }}" target="_blank"><i class="fa fa-pencil"></i>{{ trans('site.AdminPostEdit') }}</a>
+                                 @endif
+
+                                 <div class="pluso share-buttons">
+                                     <button class="goodshare btn-fb" data-type="fb">
+                                         <i class="fa fa-facebook"></i>
+                                         <span data-counter="fb"></span>
+                                     </button>
+                                     <!-- Button with share to Facebook & share counter -->
+                                     <button class="goodshare btn-vk" data-type="vk">
+                                         <i class="fa fa-vk"></i>
+                                         <span data-counter="vk"></span>
+                                     </button>
+                                     <button class="goodshare btn-ok" data-type="ok">
+                                         <i class="fa fa-odnoklassniki"></i>
+                                         <span data-counter="ok"></span>
+                                     </button>
+                                     <button class="goodshare btn-gp" data-type="gp">
+                                         <i class="fa fa-google-plus"></i>
+                                         <span data-counter="gp"></span>
+                                     </button>
+                                     <button class="goodshare btn-tw" data-type="tw">
+                                         <i class="fa fa-twitter"></i>
+                                         {{--<span data-counter="tw"></span>--}}
+                                     </button>
+                                 </div>
+
+                                 <a href="{{ route('birinchi.projects') }}">
+                                     <span>{{ trans('site.PostAllNews') }}<i class="fa fa-arrow-circle-right"></i></span>
+                                 </a>
+                             </footer>
+                           </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-3">
+                  <div class="row">
+                     <div class="col-md-12">
+                        <div class="row popular">
+                           <div class="col-md-12">
+                              <h3 class="title">{{ trans('site.PostPopular') }}</h3>
+                           </div>                     
+                           <div class="col-md-12"> 
+                                 @if($popArticles) 
+                                 @foreach($popArticles as $post)
+                                <div class="media">
+
+                                    <div class="media-body">
+                                        <div class="extra">
+                                            <span class="datetime">{{ $post->getDay() }} {{ $post->getMonthRu() }}</span>
+                                            <a class="cat" href="{{ route('birinchi.category', $post->category) }}"><span> @if($birinchiProjects) 
+                                               @foreach($birinchiProjects as $project)   
+                                                 @if($project->id == $post->birinchiProgram)
+                                                  {{ ($project->getName()) }}
+                                                 @endif
+                                               @endforeach
+                                             @endif
+                                            </span></a>
+                                            <span class="views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
+                                        </div>
+                                        <a class="media-heading" href="{{ route('birinchi.news', $post) }}">{{ $post->getTitleRuOrKg() }}</a>
+                                    </div>
+
+                                </div>
+                                @endforeach 
+                                @endif                                                
+                           </div>                    
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-3">
+                  <div class="row">
+                     <div class="col-md-12">
+                        <h3 class="title">{{ trans('radiopages.Peredachi') }}</h3>
+                     </div>
+                     <div class="col-md-12 ctg-panel">
+                        <ul class="list-group">
+                           @if($birinchiProjects) 
+                           @foreach($birinchiProjects as $project_one)
+                           <li class="list-group-item">
+                              <a href="{{ route('birinchi.shows', $project_one) }}">{{ $project_one->getName() }}</a>
+                           </li>
+                           @endforeach
+                           @endif
+                        </ul>
                      </div>
                   </div>
                </div>
@@ -225,7 +222,7 @@
    </div>
 </div>
 @stop
-@section('footerScript')
+@section('footerscript2')
 <script src="{{asset('js/goodshare.js')}}"></script>
     <script>
         $(window).load(function(){

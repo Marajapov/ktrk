@@ -14,33 +14,6 @@ class BirinchiController extends Controller
         $lc = app()->getlocale();
         $posts = array();
 
-        // if($lc == 'kg')
-        // {
-        //     if($post->title == '')
-        //     {
-        //         app()->setlocale('ru');
-        //         $lc = 'ru';
-        //     }
-        //     else
-        //     {
-        //         app()->setlocale('kg');
-        //         $lc = 'kg';
-        //     }
-        // } 
-        // elseif($lc == 'ru') 
-        // {
-        //     if($post->titleRu == '')
-        //     {
-        //         app()->setlocale('kg');
-        //         $lc = 'kg';
-        //     }
-        //     else
-        //     {
-        //         app()->setlocale('ru');
-        //         $lc = 'ru';
-        //     }
-        // }
-
         $categories = \Model\Category\ModelName::where('birinchi','=','1')->where('published','=','1')->where('orderBirinchi','<>','0')->orderBy('orderBirinchi','asc')->get();
 
         if($lc == 'kg'){
@@ -92,27 +65,44 @@ class BirinchiController extends Controller
         ]);
     }
 
-    public function allbroadcasts()
+    public function projects()
     {
         $channel = \Model\Channel\ModelName::name('birinchi')->first();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        $perPage = 10; 
         $lc = app()->getlocale();
+        $weekFromNow = date('Y-m-d', strtotime('-10 days'));
         if($lc == 'kg'){
-            $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('name','<>','' )->get();    
+          
+            $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('name','<>','' )->get();
+            $postAll = \Model\Post\ModelName::where('published','=',true)->where('birinchi','=','1')->where('title','<>','')->where('birinchiProgram','>',0)->paginate($perPage);
+            $popArticles = \Model\Post\ModelName::where('birinchi','=','1')->where('created_at','>',$weekFromNow)->languagekg()->where('birinchiProgram','>',0)->orderBy('viewed','desc')->get();   
         }else{
+
             $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('nameRu','<>','' )->get();
+            $postAll = \Model\Post\ModelName::where('published','=',true)->where('birinchi','=','1')->where('title','<>','')->where('birinchiProgram','>',0)->paginate($perPage); 
+            $popArticles = \Model\Post\ModelName::where('birinchi','=','1')->where('created_at','>',$weekFromNow)->languageru()->where('birinchiProgram','>',0)->orderBy('viewed','desc')->get();    
         }
 
-           return view('Front::channel.birinchi.allbroadcasts', [
+        if(count($popArticles) > 0){
+            $popArticles = $popArticles;
+        }else{
+            $popArticles = null;
+        } 
+
+           return view('Front::channel.birinchi.projects', [
             'channel' => $channel,
             'backgroundMain' => $backgroundMain,
-            'birinchiProjects' => $birinchiProjects
+            'birinchiProjects' => $birinchiProjects,
+            'perPage' => $perPage,
+            'postAll' => $postAll,
+            'popArticles' => $popArticles,
             ]);
     }
     public function about()
     {
         $channel = \Model\Channel\ModelName::name('birinchi')->first();
-         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
         $lc = app()->getlocale();
         if($lc == 'kg'){
             $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('name','<>','' )->get();    
@@ -426,7 +416,6 @@ class BirinchiController extends Controller
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
         $perPage = 10;
-        $lc = app()->getlocale();
 
         $lc = app()->getlocale();
         if($lc == 'kg'){
@@ -465,33 +454,263 @@ class BirinchiController extends Controller
     }
 
 
-    public function broadcast(\Model\Post\ModelName $post)
+    public function show(\Model\Post\ModelName $post)
     {
+        $post->incrementViewed();    
+        
         $lc = app()->getlocale();
+
+        if($lc == 'kg')
+        {
+            if($post->title == '')
+            {
+                app()->setlocale('ru');
+                $lc = 'ru';
+            }
+            else
+            {
+                app()->setlocale('kg');
+                $lc = 'kg';
+            }
+        } 
+        elseif($lc == 'ru') 
+        {
+            if($post->titleRu == '')
+            {
+                app()->setlocale('kg');
+                $lc = 'kg';
+            }
+            else
+            {
+                app()->setlocale('ru');
+                $lc = 'ru';
+            }
+        }
+
         if($lc == 'kg' && ($post->title != '')){          
         }elseif($lc == 'ru' && ($post->titleRu != '')){        
         }else{
             return redirect()->route('birinchi.home');
         }
-        $post->incrementViewed();
 
         $channel = \Model\Channel\ModelName::name('birinchi')->first();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        $weekFromNow = date('Y-m-d', strtotime('-10 days'));
 
         if($lc == 'kg'){
-            $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('name','<>','' )->get();    
+            $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('name','<>','' )->get(); 
+            $popArticles = \Model\Post\ModelName::where('birinchi','=','1')->where('created_at','>',$weekFromNow)->languagekg()->where('birinchiProgram','>',0)->orderBy('viewed','desc')->get();   
         }else{
             $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('nameRu','<>','' )->get();
-        }        
+            $popArticles = \Model\Post\ModelName::where('birinchi','=','1')->where('created_at','>',$weekFromNow)->languageru()->where('birinchiProgram','>',0)->orderBy('viewed','desc')->get();
+        } 
 
-           return view('Front::channel.birinchi.broadcast', [
+       $parent = \Model\PhotoParent\ModelName::where('id','=',$post->parentId)->first();
+
+        if($parent != null){
+            $images = json_decode($parent->images);    
+        }else{
+            $images = null;
+        }   
+
+        if($lc == 'kg'){
+
+            $contentOriginal = $post->getContent();
+            
+
+            $contentFinal = $contentOriginal;
+
+            if($post->related1)
+            {
+                if(strpos($contentFinal, 'POST1LEFT') != false)
+                {
+                    $post1Pos = strripos($contentFinal, 'POST1LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionLeft($post->related1), $post1Pos, 9);
+                }
+                elseif(strpos($contentFinal, 'POST1RIGHT') != false)
+                {
+                    $post1Pos = strripos($contentFinal, 'POST1RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionRight($post->related1), $post1Pos, 10);
+                }
+            }
+
+            if($post->related2)
+            {
+                if(strpos($contentFinal, 'POST2LEFT') != false)
+                {
+                    $post2Pos = strripos($contentFinal, 'POST2LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionLeft($post->related2), $post2Pos, 9);
+                }
+                elseif(strpos($contentFinal, 'POST2RIGHT') != false)
+                {
+                    $post2Pos = strripos($contentFinal, 'POST2RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionRight($post->related2), $post2Pos, 10);
+                }
+            }
+
+            if($post->related3)
+            {
+                if(strpos($contentFinal, 'POST3LEFT') != false)
+                {
+                    $post3Pos = strripos($contentFinal, 'POST3LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionLeft($post->related3), $post3Pos, 9);
+                }
+                elseif(strpos($contentFinal, 'POST3RIGHT') != false)
+                {
+                    $post3Pos = strripos($contentFinal, 'POST3RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionRight($post->related3), $post3Pos, 10);
+                }
+            }
+
+            if($post->relatedMedia1)
+            {
+                if(strpos($contentFinal, 'MEDIA1LEFT') != false)
+                {
+                    $media1Pos = strripos($contentFinal, 'MEDIA1LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionLeft($post->relatedMedia1), $media1Pos, 10);
+                }
+                elseif(strpos($contentFinal, 'MEDIA1RIGHT') != false)
+                {
+                    $media1Pos = strripos($contentFinal, 'MEDIA1RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionRight($post->relatedMedia1), $media1Pos, 11);
+                }
+            }
+
+            if($post->relatedMedia2)
+            {
+                if(strpos($contentFinal, 'MEDIA2LEFT') != false)
+                {
+                    $media2Pos = strripos($contentFinal, 'MEDIA2LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionLeft($post->relatedMedia2), $media2Pos, 10);
+                }
+                elseif(strpos($contentFinal, 'MEDIA2RIGHT') != false)
+                {
+                    $media2Pos = strripos($contentFinal, 'MEDIA2RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionRight($post->relatedMedia2), $media2Pos, 11);
+                }
+            }
+
+            if($post->relatedMedia3)
+            {
+                if(strpos($contentFinal, 'MEDIA3LEFT') != false)
+                {
+                    $media3Pos = strripos($contentFinal, 'MEDIA3LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionLeft($post->relatedMedia3), $media3Pos, 10);
+                }
+                elseif(strpos($contentFinal, 'MEDIA3RIGHT') != false)
+                {
+                    $media3Pos = strripos($contentFinal, 'MEDIA3RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionRight($post->relatedMedia3), $media3Pos, 11);
+                }
+            }
+
+        }elseif($lc == 'ru'){
+            $contentOriginal = $post->getContent();
+            
+            $contentFinal = $contentOriginal;
+            if($post->relatedRu1)
+            {
+                if(strpos($contentFinal, 'POST1LEFT') != false)
+                {
+                    $post1Pos = strripos($contentFinal, 'POST1LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionLeft($post->relatedRu1), $post1Pos, 9);
+                }
+                elseif(strpos($contentFinal, 'POST1RIGHT') != false)
+                {
+                    $post1Pos = strripos($contentFinal, 'POST1RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionRight($post->relatedRu1), $post1Pos, 10);
+                }
+            }
+
+            if($post->relatedRu2)
+            {
+                if(strpos($contentFinal, 'POST2LEFT') != false)
+                {
+                    $post2Pos = strripos($contentFinal, 'POST2LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionLeft($post->relatedRu2), $post2Pos, 9);
+                }
+                elseif(strpos($contentFinal, 'POST2RIGHT') != false)
+                {
+                    $post2Pos = strripos($contentFinal, 'POST2RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionRight($post->relatedRu2), $post2Pos, 10);
+                }
+            }
+
+            if($post->relatedRu3)
+            {
+                if(strpos($contentFinal, 'POST3LEFT') != false)
+                {
+                    $post3Pos = strripos($contentFinal, 'POST3LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionLeft($post->relatedRu3), $post3Pos, 9);
+                }
+                elseif(strpos($contentFinal, 'POST3RIGHT') != false)
+                {
+                    $post3Pos = strripos($contentFinal, 'POST3RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionRight($post->relatedRu3), $post3Pos, 10);
+                }
+            }
+
+            if($post->relatedMediaRu1)
+            {
+                if(strpos($contentFinal, 'MEDIA1LEFT') != false)
+                {
+                    $media1Pos = strripos($contentFinal, 'MEDIA1LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionLeft($post->relatedMediaRu1), $media1Pos, 10);
+                }
+                elseif(strpos($contentFinal, 'MEDIA1RIGHT') != false)
+                {
+                    $media1Pos = strripos($contentFinal, 'MEDIA1RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionRight($post->relatedMediaRu1), $media1Pos, 11);
+                }
+            }
+
+            if($post->relatedMediaRu2)
+            {
+                if(strpos($contentFinal, 'MEDIA2LEFT') != false)
+                {
+                    $media2Pos = strripos($contentFinal, 'MEDIA2LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionLeft($post->relatedMediaRu2), $media2Pos, 10);
+                }
+                elseif(strpos($contentFinal, 'MEDIA2RIGHT') != false)
+                {
+                    $media2Pos = strripos($contentFinal, 'MEDIA2RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionRight($post->relatedMediaRu2), $media2Pos, 11);
+                }
+            }
+
+            if($post->relatedMediaRu3)
+            {
+                if(strpos($contentFinal, 'MEDIA3LEFT') != false)
+                {
+                    $media3Pos = strripos($contentFinal, 'MEDIA3LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionLeft($post->relatedMediaRu3), $media3Pos, 10);
+                }
+                elseif(strpos($contentFinal, 'MEDIA3RIGHT') != false)
+                {
+                    $media3Pos = strripos($contentFinal, 'MEDIA3RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionRight($post->relatedMediaRu3), $media3Pos, 11);
+                }
+            }
+
+        }
+
+        if(count($popArticles) > 0){
+            $popArticles = $popArticles;
+        }else{
+            $popArticles = null;
+        }       
+
+           return view('Front::channel.birinchi.show', [
             'channel' => $channel,
             'post' => $post,
             'backgroundMain' => $backgroundMain,
-            'birinchiProjects' => $birinchiProjects,        
+            'birinchiProjects' => $birinchiProjects,
+            'content' => $contentFinal,
+            'images' => $images,
+            'popArticles' => $popArticles,          
             ]);
     }
-    public function broadcasts(\Model\Project\ModelName $project)
+    public function shows(\Model\Project\ModelName $project)
     {
         $lc = app()->getlocale();
         if($lc == 'kg' && ($project->name != '')){         
@@ -521,7 +740,7 @@ class BirinchiController extends Controller
 
 
 
-        return view('Front::channel.birinchi.broadcasts',[
+        return view('Front::channel.birinchi.shows',[
                 
             'project' => $project,
     //      'MediaCategories'       => $MediaCategories,

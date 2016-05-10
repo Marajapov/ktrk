@@ -28,7 +28,7 @@ class KyrgyzradioController extends Controller
        
         $quote = \Model\Quote\ModelName::where('published','=','1')->where('channel', '=', '6')->orderBy('id','=','desc')->orderBy('id','desc')->get();
 
-        $peredachi = \Model\Post\ModelName::where('kyrgyzradio','=',1)->published()->orderBy('id','desc')->get(); 
+        $peredachi = \Model\Post\ModelName::where('kyrgyzradio','=',1)->published()->orderBy('id','desc')->take(3)->get(); 
 
         date_default_timezone_set('Asia/Bishkek');
         $now = date("d-m-Y H:i");
@@ -409,7 +409,7 @@ class KyrgyzradioController extends Controller
 
         }
 
-        $weekFromNow = date('Y-m-d', strtotime('-17 days'));
+        $weekFromNow = date('Y-m-d', strtotime('-10 days'));
         $popArticles = \Model\Post\ModelName::where('kyrgyzradio','=','1')->where('created_at','>',$weekFromNow)->languagekg()->orderBy('viewed','desc')->take(6)->get();
         if(count($popArticles) > 0){
             $popArticles = $popArticles;
