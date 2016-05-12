@@ -811,6 +811,7 @@ if($lc == 'kg'){
 
         $tag = \Model\Tag\Tag::where('name', '=', $key)->first();
         $posts = \Model\Post\ModelName::search($key)->orderBy('id','desc')->get();
+        $programs = \Model\Project\ModelName::search($key)->orderBy('id','desc')->get();
          
 //        $posts = \Model\Post\ModelName::search($request->input('search'))->paginate($perPage);
 //        $pages = \Model\Page\ModelName::search($request->input('search'))->get();
@@ -856,6 +857,7 @@ if($lc == 'kg'){
             'posts' => $posts,
             'tag' => $tag,
             'perPage' => $perPage,
+            'programs' => $programs,
 //            'pages' => $pages,
             'searchKey'=>$searchKey,
 
