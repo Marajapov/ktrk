@@ -131,21 +131,26 @@
                 <div class="col-md-12 shows">
                     <div class="row">
                         <div class="col-md-12">
-                            <h3 class="titleshows">{{ trans('radiopages.Peredachi') }}<span class="label label-primary">АНОНС!</span></h3>
+                            <h3 class="titleshows">{{ trans('radiopages.Peredachi') }}</h3>
                             <!-- <h3 class="titleshowsright"><a href="{{ route('birinchi.projects') }}">{{ trans('radiopages.AllPereadachi') }}<i class="fa fa-arrow-right"></i></a></h3> -->
                         </div>
 
-                        @if($birinchiProjects)
-                            @foreach($birinchiProjects as $project)
-                                                   
+                        @if($projectAll)
+                            @foreach($projectAll as $post)                                                   
                                     <div class="blocknews2 col-md-4 col-sm-4 col-xs-12">
                                         <article>                                                             
                                             <div class="hovertext">
-                                                <img class="blockimg" src="@if(!($project->getFile())) {{ asset('images/project_default.png') }} @else {{ asset($project->getFile()) }} @endif" alt="{{ $project->getNameOne() }}">
-                                                <div class="desc"><span>{{ $project->getDescription() }}</span></div>
+                                               <div class="extra">
+                                                  <span class="datetime">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
+                                                  <span class="views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
+                                               </div>
+                                               <a href="{{ route('birinchi.show', $post) }}">
+                                                  <img class="media-object" src="{{ asset($post->getFile()) }}" alt="...">
+                                                  <div class="desc"><span>{!! mb_substr($post->getContent(), 0, 290, "UTF-8") !!}</span></div>
+                                                </a>
                                             </div>
                                             <h3 class="name headline">                                               
-                                               {{ $project->getName() }}                                             
+                                                <a class="media-heading " href="{{ route('birinchi.show', $post) }}">{{ $post->getTitleRuOrKg() }}</a>                                         
                                            </h3>
                                         </article>
                                     </div>                

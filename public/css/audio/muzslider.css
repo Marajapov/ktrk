@@ -179,7 +179,7 @@
     display: block;
     content: "";
     width: 100%;
-    padding-top: 228px;
+    /*padding-top: 228px;*/
 }
 .dkp-anonce>.content {
     position: absolute;
@@ -287,6 +287,11 @@
 .dkp-big-3now .dkp-border {
 /*    border-right: 1px solid #0f0f0f*/
 }
+.modalpromo{
+    background-position: center center; 
+    background-size: 100% 100%;
+}
+
 .dkp-big-3now .dkp-3now-item-wrapper {
     position: absolute;
     left: 0;
@@ -351,7 +356,7 @@
 .dkp-big-3now .dkp-3now-item-wrapper .dkp-3now-item-title {
     position: absolute;
     box-sizing: border-box;
-    right: 81px;
+    /*right: 81px;*/
     bottom: 7px;
     padding: 0;
     font-size: 12px;

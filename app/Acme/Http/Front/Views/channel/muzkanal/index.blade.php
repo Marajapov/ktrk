@@ -34,7 +34,8 @@
    <div class="row dkp-big-3now ">
       @if($anons1)
       <div class="col-xs-4 rowfix" >
-         <a href="#" data-toggle="modal" data-target="#myModal" class="dkp-anonce dkp-anonce-small  dkp-border" style="background-image: url('{{ $anons1->thumbnail_big }}'); background-position: center center; background-size: 100% 100%;" >
+         <a href="#" data-toggle="modal" data-target="#myModal" class="dkp-anonce dkp-anonce-small  dkp-border">
+            <img class="modalpromo" src="{{asset($anons1->thumbnail_big)}}" alt="{{$anons1->getName()}}"/>        
             <div class="dkp-3now-item-wrapper">
                <div class="dkp-3now-item-time">
                   <span>
@@ -70,7 +71,8 @@
       @endif
       @if($anons2)
       <div class="col-xs-4 rowfix" >
-         <a href="#" data-toggle="modal" data-target="#myModal2" class="dkp-anonce dkp-anonce-small  dkp-border" style="background-image: url('{{ $anons2->thumbnail_big }}');background-size: 100% 100%;" data-id="12269">
+         <a href="#" data-toggle="modal" data-target="#myModal2" class="dkp-anonce dkp-anonce-small  dkp-border" data-id="12269">
+            <img class="modalpromo" src="{{asset($anons2->thumbnail_big)}}" alt="{{$anons2->getName()}}"/>
             <div class="dkp-3now-item-wrapper">
                <div class="dkp-3now-item-time">
                   <span>
@@ -106,11 +108,12 @@
       @endif
       @if($anons3)
       <div class="col-xs-4 rowfix" >
-         <a href="#" data-toggle="modal" data-target="#myModal3" class="dkp-anonce dkp-anonce-small  dkp-border" style="background-image: url('{{ $anons3->thumbnail_big }}');background-size: 100% 100%;" data-id="12269">
+         <a href="#" data-toggle="modal" data-target="#myModal2" class="dkp-anonce dkp-anonce-small  dkp-border" data-id="12269">
+            <img class="modalpromo" src="{{asset($anons3->thumbnail_big)}}" alt="{{$anons3->getName()}}"/>
             <div class="dkp-3now-item-wrapper">
                <div class="dkp-3now-item-time">
                   <span>
-                  <span>{{$anons3->getAnonsTime3()}}</span>
+                  <span>{{$anons3->getAnonsTime2()}}</span>
                   </span>
                </div>
                <div class="dkp-3now-item-title">
@@ -119,7 +122,7 @@
             </div>
          </a>
          <!-- Анонс Модал-->
-         <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+         <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
                <div class="modal-content">
                   <div class="modal-header">
@@ -285,6 +288,14 @@
                      <a class="clear" href="{{ route('muzkanal.video', $hit)}}">
                      <span>{{ $hit->getName() }}</span>
                      </a>
+                     <div>
+                        <div class="vote">
+                           <div class="dislike" data-dislikes="10"><i class="fa fa-thumbs-down"></i></div>
+                        </div>
+                        <div class="vote">
+                           <div class="like" data-likes="10"><i class="fa fa-thumbs-up"></i></div>
+                        </div>
+                     </div>
                      <span class="numeric">{{ $hit->hitnumber }}</span>
                   </li>
                   @endforeach
@@ -598,5 +609,37 @@
        })();
        Page.init();
    });
+</script>
+
+<script>
+    $(document).ready(function() {
+        var likes = 12;
+        var dislikes = 6;
+        $('.like').attr('data-likes', likes);
+        $('.dislike').attr('data-dislikes', dislikes);
+        $('.text').click(function() {
+            $('.like').toggleClass('like_active');
+            $('.dislike').toggleClass('dislike_active');
+            if ($('.text').text() == 'Vote') {
+                $('.text').text('Cancel');
+            } else {
+                $('.text').text('Vote');
+            }
+        })
+        $('.like').click(function() {
+            likes++;
+            $('.like').attr('data-likes', likes);
+            $('.like').removeClass('like_active');
+            $('.dislike').removeClass('dislike_active');
+            $('.text').text('Vote');
+        })
+        $('.dislike').click(function() {
+            dislikes++;
+            $('.dislike').attr('data-dislikes', dislikes);
+            $('.like').removeClass('like_active');
+            $('.dislike').removeClass('dislike_active');
+            $('.text').text('Vote');
+        })
+    })
 </script>
 @stop
