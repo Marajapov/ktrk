@@ -716,6 +716,12 @@ header {
 .panel-top-news .description span i {
     padding-left: 3px;
 }
+.panel-top-news .description span .linktopage{
+    height: 15px;
+    width: auto;
+    margin-top: -4px;
+}
+
 .top-left-block .ads {
     margin-top: 0;
 }

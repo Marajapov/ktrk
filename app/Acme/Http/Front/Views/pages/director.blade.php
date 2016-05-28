@@ -445,7 +445,7 @@
                               <span class="e-datetime">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
                               <span class="e-views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
                             </div>
-                            <a class="media-heading" href="{{ route('front.pages.directorPost', $post)}}">{{ $post->getTitleRuOrKg() }}</a>
+                            <a class="media-heading" href="{{ route('front.pages.directorPost', [$post, $lc])}}">{{ $post->getTitleRuOrKg() }}</a>
                             <h5 class="media-desc">
       <!--                         <p>Кабинет, как у бизнесмена средней руки. Нет ни мебели красного дерева, как в вотчинах других чиновников высокого ранга, ни канцелярского набора из бирюзы. Из роскоши — 6 плазменных телевизоров на стене. Под столом склад жестянок с безалкогольным энергетиком.
                               </p> -->

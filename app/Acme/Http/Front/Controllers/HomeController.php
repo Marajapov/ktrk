@@ -52,11 +52,11 @@ class HomeController extends Controller
         $channel = \Model\Channel\ModelName::general();
         $channels = \Model\Channel\ModelName::take(8)->skip(1)->get();
        
-if($lc == 'kg'){
-    $generalPost1 = \Model\Post\ModelName::general($channel)->published()->having('number','=',1)->languagekg()->first();
-    if($generalPost1 == null){
-        $generalPost1 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(10)->first();    
-    }
+        if($lc == 'kg'){
+            $generalPost1 = \Model\Post\ModelName::general($channel)->published()->having('number','=',1)->languagekg()->first();
+            if($generalPost1 == null){
+                $generalPost1 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(10)->first();    
+            }
 
             $generalPost2 = \Model\Post\ModelName::general($channel)->published()->having('number','=',2)->languagekg()->first();
 
