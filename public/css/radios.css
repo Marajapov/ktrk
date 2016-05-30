@@ -468,7 +468,7 @@
 
 .titleshowsright{
     position: absolute;
-    top: 5px;
+    top: 0px;
     right: 15px;  
 
     font-size: 21px;
@@ -564,12 +564,10 @@
     font-weight: bold;
 }
 
-
 .blocknews2 article{
     background: #FFF6F1;
     margin: 10px 0px;
 }
-
 
 .blocknews h3 a{
     color: #332f2e;
@@ -577,6 +575,20 @@
 }
 .blocknews h3 a:hover{
     color: #2D596D;
+}
+
+.blocknews .ukturuular{
+    background: #fff;
+}
+.blocknews .ukturuular h3{
+    padding: 0px 10px;
+    height: 70px;
+}
+.blocknews .ukturuular .card-info{
+    padding:10px 10px 5px 10px;
+}
+.birinchiradio .card-info, #minkiyal .card-info {
+    padding: 5px 0px;
 }
 
 .birinchiradio .card-info, #minkiyal .card-info {

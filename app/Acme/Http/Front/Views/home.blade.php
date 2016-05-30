@@ -14,7 +14,6 @@
         <div class="container main-wrapper">
             <div class="row">
                 <div class="top-left-block col-md-8">
-
                     <div class="panel panel-default panel-top-news">
                         <div class="panel-heading">
                             <h3 class="panel-title"><span>{{ trans('site.Top news') }}</span></h3>
@@ -33,18 +32,24 @@
                                             </a>
 
                                               <span>
-                                                    @if($generalPost1->getIsVideo() == 'yes')<i class="fa fa-video-camera"></i> @endif
-                                                  @if($generalPost1->getIsPhoto() == 'yes') <i class="fa fa-camera"></i> @endif
+                                                @if($generalPost1->getIsVideo() == 'yes')<i class="fa fa-video-camera"></i> @endif
+                                                @if($generalPost1->getIsPhoto() == 'yes') <i class="fa fa-camera"></i> @endif
+                                                @if($generalPost1->birinchi == 1)
+                                                <img class="linktopage" src="{{ asset('images/channels/1-radio-notext.png')}}">@endif
+                                                @if($generalPost1->director == 1)
+                                                <i class="fa fa-comment-o" aria-hidden="true"></i>@endif
                                               </span>
                                         </p>
                                         <div class="news-title">
                                             @if($generalPost1->birinchi == 1)
-
-                                                <a href="{{ route('birinchi.news', $generalPost1) }}">
+                                                <a href="{{ route('birinchi.news', [$generalPost1, $lc]) }}">
                                                     {{ $generalPost1->getTitleRuOrKg() }}
                                                 </a>
-                                                  
-                                            @else
+                                            @elseif($generalPost2->director == 1)
+                                                <a href="{{ route('front.pages.directorPost', [$generalPost1, $lc]) }}">
+                                                    {{ $generalPost2->getTitleRuOrKg() }}
+                                                </a>
+                                            @else                                                
                                                 <a href="{{ route('front.post', [$generalPost1, $lc]) }}">
                                                     {{ $generalPost1->getTitleRuOrKg() }}
                                                 </a>
@@ -52,192 +57,216 @@
                                         </div>
                                     </figure>
                                 </div>
-                                @endif
-                                    <!-- end generalPost1 -->
+                            @endif
+                            <!-- end generalPost1 -->
 
-                                <!-- generalPost2 -->
-                                @if($generalPost2)
-                                    <div class="col-md-4 block">
-                                        <figure class="effect-zoe">
-                                            <a href="{{ route('front.post', [$generalPost2, $lc]) }}" class="main-img">
-                                                <img src="@if(!($generalPost2->getFile()))images/live_bg.png @else {{ asset($generalPost2->getFile()) }} @endif" alt="img26">
+                            <!-- generalPost2 -->
+                            @if($generalPost2)
+                                <div class="col-md-4 block">
+                                    <figure class="effect-zoe">
+                                        <a href="{{ route('front.post', [$generalPost2, $lc]) }}" class="main-img">
+                                            <img src="@if(!($generalPost2->getFile()))images/live_bg.png @else {{ asset($generalPost2->getFile()) }} @endif" alt="img26">
+                                        </a>
+                                        <p class="description clearfix">
+                                            <a href="{{ route('front.category', $generalPost2->category) }}">
+                                                {{ $generalPost2->category('category_id')->first()->getTitle() }}
                                             </a>
-                                            <p class="description clearfix">
-                                                <a href="{{ route('front.category', $generalPost2->category) }}">
-                                                    {{ $generalPost2->category('category_id')->first()->getTitle() }}
-                                                </a>
 
-                                                <span>
-                                                    @if($generalPost2->getIsVideo() == 'yes')<i class="fa fa-video-camera"></i> @endif
-                                                    @if($generalPost2->getIsPhoto() == 'yes') <i class="fa fa-camera"></i> @endif
-                                                </span>
-                                            </p>
-                                            <div class="news-title">
+                                            <span>
+                                                @if($generalPost2->getIsVideo() == 'yes')<i class="fa fa-video-camera"></i> @endif
+                                                @if($generalPost2->getIsPhoto() == 'yes') <i class="fa fa-camera"></i> @endif
                                                 @if($generalPost2->birinchi == 1)
-
-                                                    <a href="{{ route('birinchi.news', $generalPost2) }}">
-                                                        {{ $generalPost2->getTitleRuOrKg() }}
-                                                    </a>
-                                                      
-                                                @else
-                                                    <a href="{{ route('front.post', [$generalPost2, $lc]) }}">
-                                                        {{ $generalPost2->getTitleRuOrKg() }}
-                                                    </a>
-                                                @endif
-                                            </div>
-                                        </figure>
-                                    </div>
-                                    @endif
-                                        <!-- end generalPost2 -->
-
-                                    <!-- generalPost3 -->
-                                    @if($generalPost3)
-                                        <div class="col-md-4 block">
-                                            <figure class="effect-zoe">
-                                                <a href="{{ route('front.post', [$generalPost3, $lc]) }}" class="main-img">
-                                                    <img src="@if(!($generalPost3->getFile()))images/live_bg.png @else {{ asset($generalPost3->getFile()) }} @endif" alt="img26">
+                                                <img class="linktopage" src="{{ asset('images/channels/1-radio-notext.png')}}">@endif
+                                                @if($generalPost2->director == 1)
+                                                <i class="fa fa-comment-o" aria-hidden="true"></i>@endif
+                                            </span>
+                                        </p>
+                                        <div class="news-title">
+                                            @if($generalPost2->birinchi == 1)
+                                                <a href="{{ route('birinchi.news', [$generalPost2, $lc]) }}">
+                                                    {{ $generalPost2->getTitleRuOrKg() }}
+                                                </a>                                                      
+                                            @elseif($generalPost2->director == 1)
+                                                <a href="{{ route('front.pages.directorPost', [$generalPost2, $lc]) }}">
+                                                    {{ $generalPost2->getTitleRuOrKg() }}
                                                 </a>
-                                                <p class="description clearfix">
-                                                    <a href="{{ route('front.category', $generalPost3->category) }}">
-                                                        {{ $generalPost3->category('category_id')->first()->getTitle() }}
-                                                    </a>
-
-                                                <span>
-                                                    @if($generalPost3->getIsVideo() == 'yes')<i class="fa fa-video-camera"></i> @endif
-                                                    @if($generalPost3->getIsPhoto() == 'yes') <i class="fa fa-camera"></i> @endif
-                                                </span>
-                                                </p>
-                                                <div class="news-title">
-                                                    @if($generalPost3->birinchi == 1)
-
-                                                        <a href="{{ route('birinchi.news', $generalPost3) }}">
-                                                            {{ $generalPost3->getTitleRuOrKg() }}
-                                                        </a>
-                                                          
-                                                    @else
-                                                        <a href="{{ route('front.post', [$generalPost3, $lc]) }}">
-                                                            {{ $generalPost3->getTitleRuOrKg() }}
-                                                        </a>
-                                                    @endif
-                                                </div>
-                                            </figure>
-                                        </div>
-                                        @endif
-                                            <!-- end generalPost3 -->
-
-                                        <!-- generalPost4 -->
-                                        @if($generalPost4)
-                                            <div class="col-md-4 block">
-                                                <figure class="effect-zoe">
-                                                    <a href="{{ route('front.post', [$generalPost4, $lc]) }}" class="main-img">
-                                                        <img src="@if(!($generalPost4->getFile()))images/live_bg.png @else {{ asset($generalPost4->getFile()) }} @endif" alt="img26">
-                                                    </a>
-                                                    <p class="description clearfix">
-                                                        <a href="{{ route('front.category', $generalPost4->category) }}">
-                                                            {{ $generalPost4->category('category_id')->first()->getTitle() }}
-                                                        </a>
-
-                                                <span>
-                                                    @if($generalPost4->getIsVideo() == 'yes')<i class="fa fa-video-camera"></i> @endif
-                                                    @if($generalPost4->getIsPhoto() == 'yes') <i class="fa fa-camera"></i> @endif
-                                                </span>
-                                                    </p>
-                                                    <div class="news-title">
-                                                        @if($generalPost4->birinchi == 1)
-
-                                                            <a href="{{ route('birinchi.news', $generalPost4) }}">
-                                                                {{ $generalPost4->getTitleRuOrKg() }}
-                                                            </a>
-                                                              
-                                                        @else
-                                                            <a href="{{ route('front.post', [$generalPost4, $lc]) }}">
-                                                                {{ $generalPost4->getTitleRuOrKg() }}
-                                                            </a>
-                                                        @endif
-                                                    </div>
-                                                </figure>
-                                            </div>
+                                            @else
+                                                <a href="{{ route('front.post', [$generalPost2, $lc]) }}">
+                                                    {{ $generalPost2->getTitleRuOrKg() }}
+                                                </a>
                                             @endif
-                                                <!-- end generalPost4 -->
+                                        </div>
+                                    </figure>
+                                </div>
+                            @endif
+                            <!-- end generalPost2 -->
 
-                                            <!-- generalPost5 -->
-                                            @if($generalPost5)
-                                                <div class="col-md-4 block">
-                                                    <figure class="effect-zoe">
-                                                        <a href="{{ route('front.post', [$generalPost5, $lc]) }}" class="main-img">
-                                                            <img src="@if(!($generalPost5->getFile()))images/live_bg.png @else {{ asset($generalPost5->getFile()) }} @endif" alt="img26">
-                                                        </a>
-                                                        <p class="description clearfix">
-                                                            <a href="{{ route('front.category', $generalPost5->category) }}">
-                                                                {{ $generalPost5->category('category_id')->first()->getTitle() }}
-                                                            </a>
+                            <!-- generalPost3 -->
+                            @if($generalPost3)
+                                <div class="col-md-4 block">
+                                    <figure class="effect-zoe">
+                                        <a href="{{ route('front.post', [$generalPost3, $lc]) }}" class="main-img">
+                                            <img src="@if(!($generalPost3->getFile()))images/live_bg.png @else {{ asset($generalPost3->getFile()) }} @endif" alt="img26">
+                                        </a>
+                                        <p class="description clearfix">
+                                            <a href="{{ route('front.category', $generalPost3->category) }}">
+                                                {{ $generalPost3->category('category_id')->first()->getTitle() }}
+                                            </a>
+                                        <span>
+                                            @if($generalPost3->getIsVideo() == 'yes')<i class="fa fa-video-camera"></i> @endif
+                                            @if($generalPost3->getIsPhoto() == 'yes') <i class="fa fa-camera"></i> @endif
+                                            @if($generalPost3->birinchi == 1)
+                                            <img class="linktopage" src="{{ asset('images/channels/1-radio-notext.png')}}">@endif
+                                            @if($generalPost3->director == 1)
+                                            <i class="fa fa-comment-o" aria-hidden="true"></i>@endif
+                                        </span>
+                                        </p>
+                                        <div class="news-title">
+                                            @if($generalPost3->birinchi == 1)
+                                                <a href="{{ route('birinchi.news', $generalPost3, $lc) }}">
+                                                    {{ $generalPost3->getTitleRuOrKg() }}
+                                                </a>
+                                            @elseif($generalPost3->director == 1)
+                                                <a href="{{ route('front.pages.directorPost', $generalPost3, $lc) }}">
+                                                    {{ $generalPost3->getTitleRuOrKg() }}
+                                                </a>                                                          
+                                            @else
+                                                <a href="{{ route('front.post', [$generalPost3, $lc]) }}">
+                                                    {{ $generalPost3->getTitleRuOrKg() }}
+                                                </a>
+                                            @endif
+                                        </div>
+                                    </figure>
+                                </div>
+                            @endif
+                            <!-- end generalPost3 -->
 
-                                                <span>
-                                                    @if($generalPost5->getIsVideo() == 'yes')<i class="fa fa-video-camera"></i> @endif
-                                                    @if($generalPost5->getIsPhoto() == 'yes') <i class="fa fa-camera"></i> @endif
-                                                </span>
-                                                        </p>
-                                                        <div class="news-title">
-                                                            @if($generalPost5->birinchi == 1)
+                            <!-- generalPost4 -->
+                            @if($generalPost4)
+                                <div class="col-md-4 block">
+                                    <figure class="effect-zoe">
+                                        <a href="{{ route('front.post', [$generalPost4, $lc]) }}" class="main-img">
+                                            <img src="@if(!($generalPost4->getFile()))images/live_bg.png @else {{ asset($generalPost4->getFile()) }} @endif" alt="img26">
+                                        </a>
+                                        <p class="description clearfix">
+                                            <a href="{{ route('front.category', $generalPost4->category) }}">
+                                                {{ $generalPost4->category('category_id')->first()->getTitle() }}
+                                            </a>
+                                    <span>
+                                        @if($generalPost4->getIsVideo() == 'yes')<i class="fa fa-video-camera"></i> @endif
+                                        @if($generalPost4->getIsPhoto() == 'yes') <i class="fa fa-camera"></i> @endif
+                                        @if($generalPost4->birinchi == 1)
+                                        <img class="linktopage" src="{{ asset('images/channels/1-radio-notext.png')}}">@endif
+                                        @if($generalPost4->director == 1)
+                                        <i class="fa fa-comment-o" aria-hidden="true"></i>@endif
+                                    </span>
+                                        </p>
+                                        <div class="news-title">
+                                            @if($generalPost4->birinchi == 1)
+                                                <a href="{{ route('birinchi.news', [$generalPost4, $lc]) }}">
+                                                    {{ $generalPost4->getTitleRuOrKg() }}
+                                                </a>
+                                            @elseif($generalPost4->director == 1)
+                                                <a href="{{ route('front.pages.directorPost', [$generalPost4, $lc]) }}">
+                                                    {{ $generalPost2->getTitleRuOrKg() }}
+                                                </a>
+                                            @else                                                
+                                                <a href="{{ route('front.post', [$generalPost4, $lc]) }}">
+                                                    {{ $generalPost4->getTitleRuOrKg() }}
+                                                </a>
+                                            @endif
+                                        </div>
+                                    </figure>
+                                </div>
+                            @endif
+                            <!-- end generalPost4 -->
 
-                                                                <a href="{{ route('birinchi.news', $generalPost5) }}">
-                                                                    {{ $generalPost5->getTitleRuOrKg() }}
-                                                                </a>
-                                                                  
-                                                            @else
-                                                                <a href="{{ route('front.post', [$generalPost5, $lc]) }}">
-                                                                    {{ $generalPost5->getTitleRuOrKg() }}
-                                                                </a>
-                                                            @endif
-                                                        </div>
-                                                    </figure>
-                                                </div>
-                                                @endif
-                                                    <!-- end generalPost5 -->
+                            <!-- generalPost5 -->
+                            @if($generalPost5)
+                                <div class="col-md-4 block">
+                                    <figure class="effect-zoe">
+                                        <a href="{{ route('front.post', [$generalPost5, $lc]) }}" class="main-img">
+                                            <img src="@if(!($generalPost5->getFile()))images/live_bg.png @else {{ asset($generalPost5->getFile()) }} @endif" alt="img26">
+                                        </a>
+                                        <p class="description clearfix">
+                                            <a href="{{ route('front.category', $generalPost5->category) }}">
+                                                {{ $generalPost5->category('category_id')->first()->getTitle() }}
+                                            </a>
+                                            <span>
+                                                @if($generalPost5->getIsVideo() == 'yes')<i class="fa fa-video-camera"></i> @endif
+                                                @if($generalPost5->getIsPhoto() == 'yes') <i class="fa fa-camera"></i> @endif
+                                                @if($generalPost5->birinchi == 1)
+                                                <img class="linktopage" src="{{ asset('images/channels/1-radio-notext.png')}}">@endif
+                                                @if($generalPost5->director == 1)
+                                                <i class="fa fa-comment-o" aria-hidden="true"></i>@endif
+                                            </span>
+                                        </p>
+                                        <div class="news-title">
+                                            @if($generalPost5->birinchi == 1)
+                                                <a href="{{ route('birinchi.news', [$generalPost5, $lc]) }}">
+                                                    {{ $generalPost5->getTitleRuOrKg() }}
+                                                </a>
+                                            @elseif($generalPost5->director == 1)
+                                                <a href="{{ route('front.pages.directorPost', [$generalPost5, $lc]) }}">
+                                                    {{ $generalPost2->getTitleRuOrKg() }}
+                                                </a>
+                                            @else                                                
+                                                <a href="{{ route('front.post', [$generalPost5, $lc]) }}">
+                                                    {{ $generalPost5->getTitleRuOrKg() }}
+                                                </a>
+                                            @endif
+                                        </div>
+                                    </figure>
+                                </div>
+                            @endif
+                            <!-- end generalPost5 -->
 
-                                                <!-- generalPost6 -->
-                                                @if($generalPost6)
-                                                    <div class="col-md-4 block">
-                                                        <figure class="effect-zoe">
-                                                            <a href="{{ route('front.post', [$generalPost6, $lc]) }}" class="main-img">
-                                                                <img src="@if(!($generalPost6->getFile()))images/live_bg.png @else {{ asset($generalPost6->getFile()) }} @endif" alt="img26">
-                                                            </a>
-                                                            <p class="description clearfix">
-                                                                <a href="{{ route('front.category', $generalPost6->category) }}">
-                                                                    {{ $generalPost6->category('category_id')->first()->getTitle() }}
-                                                                </a>
-                                                <span>
-                                                    @if($generalPost6->getIsVideo() == 'yes')<i class="fa fa-video-camera"></i> @endif
-                                                    @if($generalPost6->getIsPhoto() == 'yes') <i class="fa fa-camera"></i> @endif
-                                                </span>
-                                                            </p>
-                                                            <div class="news-title">
-                                                                @if($generalPost6->birinchi == 1)
-
-                                                                    <a href="{{ route('birinchi.news', $generalPost6) }}">
-                                                                        {{ $generalPost6->getTitleRuOrKg() }}
-                                                                    </a>
-                                                                      
-                                                                @else
-                                                                    <a href="{{ route('front.post', [$generalPost6, $lc]) }}">
-                                                                        {{ $generalPost6->getTitleRuOrKg() }}
-                                                                    </a>
-                                                                @endif
-                                                            </div>
-                                                        </figure>
-                                                    </div>
-                                                    @endif
-                                                        <!-- end generalPost6 -->
-
-
-                                                    <footer>
-                                                        <a href="{{ route('front.general') }}">
-                                                            <span>{{ trans('site.FrontPostAll') }} <i class="fa fa-arrow-circle-right"></i></span>
-                                                        </a>
-                                                    </footer>
+                            <!-- generalPost6 -->
+                            @if($generalPost6)
+                                <div class="col-md-4 block">
+                                    <figure class="effect-zoe">
+                                        <a href="{{ route('front.post', [$generalPost6, $lc]) }}" class="main-img">
+                                            <img src="@if(!($generalPost6->getFile()))images/live_bg.png @else {{ asset($generalPost6->getFile()) }} @endif" alt="img26">
+                                        </a>
+                                        <p class="description clearfix">
+                                            <a href="{{ route('front.category', $generalPost6->category) }}">
+                                                {{ $generalPost6->category('category_id')->first()->getTitle() }}
+                                            </a>
+                                            <span>
+                                                @if($generalPost6->getIsVideo() == 'yes')<i class="fa fa-video-camera"></i> @endif
+                                                @if($generalPost6->getIsPhoto() == 'yes') <i class="fa fa-camera"></i> @endif
+                                                @if($generalPost6->birinchi == 1)
+                                                <img class="linktopage" src="{{ asset('images/channels/1-radio-notext.png')}}">@endif
+                                                @if($generalPost6->director == 1)
+                                                <i class="fa fa-comment-o" aria-hidden="true"></i>@endif
+                                            </span>
+                                        </p>
+                                        <div class="news-title">
+                                            @if($generalPost6->birinchi == 1)
+                                                <a href="{{ route('birinchi.news', [$generalPost6, $lc]) }}">
+                                                    {{ $generalPost6->getTitleRuOrKg() }}
+                                                </a>
+                                            @elseif($generalPost6->director == 1)
+                                                <a href="{{ route('front.pages.directorPost', [$generalPost6, $lc]) }}">
+                                                    {{ $generalPost2->getTitleRuOrKg() }}
+                                                </a>
+                                            @else                                                
+                                                <a href="{{ route('front.post', [$generalPost6, $lc]) }}">
+                                                    {{ $generalPost6->getTitleRuOrKg() }}
+                                                </a>
+                                            @endif
+                                        </div>
+                                    </figure>
+                                </div>
+                            @endif
+                            <!-- end generalPost6 -->
+                            <footer>
+                                <a href="{{ route('front.general') }}">
+                                    <span>{{ trans('site.FrontPostAll') }} <i class="fa fa-arrow-circle-right"></i></span>
+                                </a>
+                            </footer>
                         </div>
                     </div>
-
                 </div>
                 <div class="top-right-block col-md-4">
                     <div class="panel panel-default panel-promo">
@@ -245,9 +274,7 @@
                             <h3 class="panel-title" id="videoTitle"><span>{{ trans('site.FrontPostDaysNews') }}</span></h3>
                         </div>
                         <div class="panel-body main-video">
-
                             <div class="slider slider-for">
-
                                 <div> <!-- video1 -->
                                     <div class="embed-youtube embed-responsive embed-responsive-16by9 slider-text">
                                         <iframe class="embed-responsive-item" src="//www.youtube.com/embed/@if($dayVideo1){{$dayVideo1->getUrl()}}@else{{$defaultVideo}}@endif?enablejsapi=1&version=3&playerapiid=ytplayer&rel=0&showinfo=0" allowfullscreen=""></iframe>
@@ -458,10 +485,10 @@
                                         @foreach($directorPosts as $post)
                                             <div>
 
-                                                <a href="{{ route('front.post', [$post, $lc]) }}">
+                                                <a href="{{ route('front.pages.directorPost', [$post, $lc]) }}">
                                                     <img src="@if(!($post->thumbnail_big))images/live_bg.png @else {{ asset($post->thumbnail_big) }} @endif" alt=""/>
                                                 </a>
-                                                <a href="{{ route('front.post', [$post, $lc]) }}">
+                                                <a href="{{ route('front.pages.directorPost', [$post, $lc]) }}">
                                                     {{ $post->getTitleRuOrKg() }}
                                                 </a>
                                             </div>

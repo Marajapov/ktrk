@@ -128,27 +128,32 @@
                     </div>
                 @endforeach
 
-                <div class="col-md-12 shows">
+                <div class="col-md-12 shows birinchigallery">
                     <div class="row">
                         <div class="col-md-12">
-                            <h3 class="titleshows">{{ trans('radiopages.Peredachi') }}<span class="label label-primary">АНОНС!</span></h3>
-                            <!-- <h3 class="titleshowsright"><a href="{{ route('birinchi.projects') }}">{{ trans('radiopages.AllPereadachi') }}<i class="fa fa-arrow-right"></i></a></h3> -->
+                            <h3 class="titleshows">{{ trans('radiopages.Peredachi') }}</h3>
+                            <h3 class="titleshowsright"><a href="{{ route('birinchi.projects') }}">{{ trans('radiopages.AllPereadachi') }}<i class="fa fa-arrow-right"></i></a></h3>
                         </div>
 
-                        @if($birinchiProjects)
-                            @foreach($birinchiProjects as $project)
-                                                   
-                                    <div class="blocknews2 col-md-4 col-sm-4 col-xs-12">
-                                        <article>                                                             
-                                            <div class="hovertext">
-                                                <img class="blockimg" src="@if(!($project->getFile())) {{ asset('images/project_default.png') }} @else {{ asset($project->getFile()) }} @endif" alt="{{ $project->getNameOne() }}">
-                                                <div class="desc"><span>{{ $project->getDescription() }}</span></div>
-                                            </div>
-                                            <h3 class="name headline">                                               
-                                               {{ $project->getName() }}                                             
-                                           </h3>
-                                        </article>
-                                    </div>                
+                        @if($projectAll)
+                            @foreach($projectAll as $post)                                                  
+        
+                                        <div class="blocknews col-md-4 col-sm-4 col-xs-12">
+                                            <article class="ukturuular">
+                                                <a href="{{ route('birinchi.show', $post) }}" class="image-link">
+                                                    <img src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif">
+                                                    <div class="card-info">
+                                                        <span class="date ">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
+                                                        <span class="view"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
+                                                    </div>
+                                                </a>
+                                                <h3 class="name headline">
+                                                    <a href="{{ route('birinchi.show', $post) }}" title="">
+                                                        {{ $post->getTitleRuOrKg() }}
+                                                    </a>
+                                                </h3>
+                                            </article>
+                                        </div>              
                              
                             @endforeach
                         @endif

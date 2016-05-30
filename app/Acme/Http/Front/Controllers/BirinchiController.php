@@ -28,6 +28,7 @@ class BirinchiController extends Controller
             }
 
             $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('name','<>','' )->take(6)->get();
+            $projectAll = \Model\Post\ModelName::where('published','=',true)->where('birinchi','=','1')->where('title','<>','')->where('birinchiProgram','>',0)->orderBy('id','desc')->take(6)->get();
 
         }else{
             $generalPosts = \Model\Post\ModelName::where('birinchi','=',1)->where('general','=','1')->languageru()->take(3)->orderBy('id','desc')->get();
@@ -42,6 +43,7 @@ class BirinchiController extends Controller
             }
 
             $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('nameRu','<>','' )->take(6)->get();
+            $projectAll = \Model\Post\ModelName::where('published','=',true)->where('birinchi','=','1')->where('titleRu','<>','')->where('birinchiProgram','>',0)->orderBy('id','desc')->take(6)->get();
         }
 
         $topCategories = \Model\Category\ModelName::where('birinchi','=','1')->where('published','=','1')->where('orderBirinchi','<>','0')->orderBy('orderBirinchi','asc')->take(4)->get();
@@ -58,10 +60,11 @@ class BirinchiController extends Controller
             'generalPosts' => $generalPosts,
             'lentaNews' => $lentaNews,
             'birinchiProjects' => $birinchiProjects,
+            'projectAll' => $projectAll,
 
             'posts' => $posts,
             'topCategories' => $topCategories,
-            'bottomCategories' => $bottomCategories
+            'bottomCategories' => $bottomCategories,
         ]);
     }
 
@@ -80,7 +83,7 @@ class BirinchiController extends Controller
         }else{
 
             $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('nameRu','<>','' )->get();
-            $postAll = \Model\Post\ModelName::where('published','=',true)->where('birinchi','=','1')->where('title','<>','')->where('birinchiProgram','>',0)->paginate($perPage); 
+            $postAll = \Model\Post\ModelName::where('published','=',true)->where('birinchi','=','1')->where('titleRu','<>','')->where('birinchiProgram','>',0)->paginate($perPage); 
             $popArticles = \Model\Post\ModelName::where('birinchi','=','1')->where('created_at','>',$weekFromNow)->languageru()->where('birinchiProgram','>',0)->orderBy('viewed','desc')->get();    
         }
 

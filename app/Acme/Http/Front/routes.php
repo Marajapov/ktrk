@@ -105,9 +105,10 @@ Route::group(['domain' => 'ktrk.dev', 'prefix' => '/kyrgyzradio', 'namespace' =>
     Route::group(['domain' => 'ktrk.dev', 'prefix' => '/birinchi', 'namespace' => 'Front\Controllers'], function() {
 
     Route::get('/', ['as' => 'birinchi.home',   'uses' => 'BirinchiController@Home']);
-    Route::get('/news/{post}', ['as' => 'birinchi.news',   'uses' => 'BirinchiController@news']);
+    Route::get('/news/{post}/{locale}', ['as' => 'birinchi.news',   'uses' => 'BirinchiController@news']);
     Route::get('/allnews', ['as' => 'birinchi.allnews',   'uses' => 'BirinchiController@allnews']);
     Route::get('/show/{post}', ['as' => 'birinchi.show',   'uses' => 'BirinchiController@show']);
+    Route::get('/shows/{post}', ['as' => 'birinchi.shows',   'uses' => 'BirinchiController@shows']);
     Route::get('/projects', ['as' => 'birinchi.projects',   'uses' => 'BirinchiController@projects']);
     Route::get('/project/{project}', ['as' => 'birinchi.project',   'uses' => 'BirinchiController@project']);
     Route::get('/about', ['as' => 'birinchi.about',   'uses' => 'BirinchiController@about']);
@@ -184,7 +185,7 @@ Route::group(['domain' => 'ktrk.dev', 'prefix' => '/kyrgyzradio', 'namespace' =>
     Route::get('history', ['as' => 'front.history', 'uses' => 'PageController@historyPage']);
 //  Director routes
     Route::get('director', ['as' => 'front.pages.director', 'uses' => 'PageController@directorPage']);
-    Route::get('director/post/{post}', ['as' => 'front.pages.directorPost', 'uses' => 'PageController@directorPost']);
+    Route::get('director/post/{post}/{locale}', ['as' => 'front.pages.directorPost', 'uses' => 'PageController@directorPost']);
 
     Route::get('leaders', ['as' => 'front.pages.leaders', 'uses' => 'PageController@leadersPage']);
 //    Route::get('leader/{leader}', ['as' => 'front.pages.leader', 'uses' => 'PageController@leaderPage']);
