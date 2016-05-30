@@ -1,4 +1,4 @@
-@extends('Front::layouts.default')
+@extends('Front::layouts.defaultnew')
 @section('title', $gallery->getName())
 @section('styles')
 
@@ -27,17 +27,19 @@
                                     <a href="{{ route('front.gallery.galleries') }}">ФОТОГАЛЕРЕЯ</a>
                                     <span class="divider"><i class="fa fa-circle"></i></span>
                                     <span>{{ $gallery->getName() }}</span>
+
+                                    <span class="show-extra">
+                                        <span class="show-date">{{ $gallery->getDay() }} {{ $gallery->getMonthRu() }}, {{ $gallery->getYear() }}</span>
+                                        <span class="show-view">
+                                            <i class="fa-view"></i>{{ $gallery->viewed }}
+                                        </span>
+                                    </span>
                                 </h3>
                             </div>
                             <div class="panel-body">
 
                                 <h4 style="margin: 20px 0 10px;" class="gallery-title text-uppercase">
                                     {{ $gallery->getName() }}
-                                  <span class="show-extra">
-                                    <span class="show-date">12.07.15</span>
-                                    <i class="fa-view"></i>
-                                    <span class="show-view">100</span>
-                              </span>
                                 </h4>
 
                                 <div style="margin: 20px 0;">{!! $gallery->getDescription() !!}</div>

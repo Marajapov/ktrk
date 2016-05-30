@@ -196,6 +196,10 @@ header {
 #photos .container .panel-body{
  color: #292828;
 }
+#photos .container .panel-body .row{
+    position: relative;
+    padding-top: 30px;
+}
 .section-header2 .section-title, .section-header2 .section-title2 {
     position: relative;
     margin: 0px;

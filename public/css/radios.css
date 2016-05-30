@@ -437,6 +437,7 @@
     width: 85px !important;
 }
 .title, .homenews .panel-title{
+    position: relative;
     border-bottom: 1px solid #e3d1c7;
 
     padding: 0px 0px 5px 0px;

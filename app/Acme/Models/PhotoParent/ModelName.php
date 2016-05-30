@@ -101,6 +101,13 @@ class ModelName extends Model
         return $day;
     }
 
+    public function getYear()
+    {
+        $fullDate = $this->created_at;
+        $year = date('Y', strtotime($fullDate));
+        return $year;
+    }
+
     public function getMonthRu()
     {
         $fullDate = $this->created_at;

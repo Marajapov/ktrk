@@ -213,6 +213,7 @@ img {
     background: none;
 }
 .panel-heading h3 {
+    position: relative;
     border-bottom: 3px solid #F1F4F9;
     padding: 5px 0 5px 2px;
     color: #8493A3;
