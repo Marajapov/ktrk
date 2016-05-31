@@ -37,7 +37,7 @@
                                                 @if($generalPost1->birinchi == 1)
                                                 <img class="linktopage" src="{{ asset('images/channels/1-radio-notext.png')}}">@endif
                                                 @if($generalPost1->director == 1)
-                                                <i class="fa fa-comment-o" aria-hidden="true"></i>@endif
+                                                <i class="directorlink fa fa-pencil-square-o" aria-hidden="true"></i>@endif
                                               </span>
                                         </p>
                                         <div class="news-title">
@@ -78,7 +78,7 @@
                                                 @if($generalPost2->birinchi == 1)
                                                 <img class="linktopage" src="{{ asset('images/channels/1-radio-notext.png')}}">@endif
                                                 @if($generalPost2->director == 1)
-                                                <i class="fa fa-comment-o" aria-hidden="true"></i>@endif
+                                                <i class="directorlink fa fa-pencil-square-o" aria-hidden="true"></i>@endif
                                             </span>
                                         </p>
                                         <div class="news-title">
@@ -118,7 +118,7 @@
                                             @if($generalPost3->birinchi == 1)
                                             <img class="linktopage" src="{{ asset('images/channels/1-radio-notext.png')}}">@endif
                                             @if($generalPost3->director == 1)
-                                            <i class="fa fa-comment-o" aria-hidden="true"></i>@endif
+                                            <i class="directorlink fa fa-pencil-square-o" aria-hidden="true"></i>@endif
                                         </span>
                                         </p>
                                         <div class="news-title">
@@ -158,7 +158,7 @@
                                         @if($generalPost4->birinchi == 1)
                                         <img class="linktopage" src="{{ asset('images/channels/1-radio-notext.png')}}">@endif
                                         @if($generalPost4->director == 1)
-                                        <i class="fa fa-comment-o" aria-hidden="true"></i>@endif
+                                        <i class="directorlink fa fa-pencil-square-o" aria-hidden="true"></i>@endif
                                     </span>
                                         </p>
                                         <div class="news-title">
@@ -198,7 +198,7 @@
                                                 @if($generalPost5->birinchi == 1)
                                                 <img class="linktopage" src="{{ asset('images/channels/1-radio-notext.png')}}">@endif
                                                 @if($generalPost5->director == 1)
-                                                <i class="fa fa-comment-o" aria-hidden="true"></i>@endif
+                                                <i class="directorlink fa fa-pencil-square-o" aria-hidden="true"></i>@endif
                                             </span>
                                         </p>
                                         <div class="news-title">
@@ -238,7 +238,7 @@
                                                 @if($generalPost6->birinchi == 1)
                                                 <img class="linktopage" src="{{ asset('images/channels/1-radio-notext.png')}}">@endif
                                                 @if($generalPost6->director == 1)
-                                                <i class="fa fa-comment-o" aria-hidden="true"></i>@endif
+                                                <i class="directorlink fa fa-pencil-square-o" aria-hidden="true"></i>@endif
                                             </span>
                                         </p>
                                         <div class="news-title">

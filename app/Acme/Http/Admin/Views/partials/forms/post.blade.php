@@ -96,12 +96,12 @@
         </div>
 
         <!-- Audio -->
-        <div class="form-group">
+<!--         <div class="form-group">
             <label for="audio" class="col-sm-2 control-label">Аудио:(Из soundcloud.com)</label>
             <div class="col-sm-2">
                 {!! Form::text('audio', null, ["class" => "form-control", "id" => "audio", "title" => ""]) !!}
             </div>
-        </div>
+        </div> -->
 
         <!-- Datepicker -->
         <div class="form-group">
