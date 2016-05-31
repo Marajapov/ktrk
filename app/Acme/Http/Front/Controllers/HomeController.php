@@ -1155,6 +1155,7 @@ class HomeController extends Controller
         $lc = app()->getlocale();
 
         $gallery = \Model\PhotoParent\ModelName::where('id','=',$galleryId)->first();
+        $gallery->incrementViewed();
         $images = json_decode($gallery->images);
 
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();

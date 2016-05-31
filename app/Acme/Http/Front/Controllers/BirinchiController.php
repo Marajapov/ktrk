@@ -905,6 +905,7 @@ class BirinchiController extends Controller
     {
 
         $gallery = \Model\PhotoParent\ModelName::where('birinchi','=','1')->where('id','=',$galleryId)->first();
+        $gallery->incrementViewed();
         if($gallery != null){
 
         $images = json_decode($gallery->images);

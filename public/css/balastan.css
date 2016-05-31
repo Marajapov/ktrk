@@ -596,7 +596,7 @@
 }
 .kidphotos .show-date{
     top: 0;
-    right: 20px;
+    right: 40px;
     padding: 0;
     background: none;
     color: #ffffff;
@@ -1128,7 +1128,7 @@ display: block;
   left: 5px;
   z-index: 3;
   display: block;
-  width: 20px;
+  width: 40px;
   color: #ffffff;
   font-size: 12px;
   line-height: 1;

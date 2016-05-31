@@ -851,3 +851,37 @@ h3#reply-title {
   line-height: 24px;
   font-weight: normal
 }
+
+/*MEDIA QUERIES*/
+@media screen and (max-width:768px){
+    .panel-articles, .panel-article, .panel-related{
+        border-right: none;
+    }
+    .post-thumb{
+        float: none;
+        margin: 0;
+    }
+    .top-left-block .news-block img{
+        width: 100%;
+        height: auto;
+    }
+    .post-thumb .thumb_desc{
+        margin-bottom: 10px;
+    }
+    .orphus-mistake{
+        width: auto;
+        float: none !important;
+    }
+    .with-share .post-edit{
+        display: none;
+    }
+    .with-share a{
+        display: block;
+        width: 100%;
+    }
+    .share-buttons{
+        display: block !important;
+        margin: 10px 0;
+        width: 100%;
+    }
+}

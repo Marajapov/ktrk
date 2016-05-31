@@ -1544,3 +1544,26 @@ h3#reply-title {
     opacity: 0;
 }
 
+
+/*MEDIA QUERIES*/
+@media screen and (max-width:768px){
+    .panel-kenesh .news-title{
+        padding: 25px 0 15px;
+    }
+    .panel-kenesh .news-title .extra{
+        right: 0;
+        left: 0;
+    }
+    .panel-article .news-title .extra i.fa-calendar{
+        display: none;
+    }
+    .panel-kenesh .news-title .extra span{
+        margin-left: 0;
+        font-weight: normal;
+    }
+    .panel-kenesh .news-title .extra span.art-view{
+        position: absolute;
+        right: 0;
+        left: auto;
+    }
+}
