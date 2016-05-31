@@ -236,6 +236,7 @@ class MuzkanalController extends Controller
     {
 
         $gallery = \Model\PhotoParent\ModelName::where('muzkanal','=','1')->where('id','=',$galleryId)->first();
+        $gallery->incrementViewed();
         $images = json_decode($gallery->images);
 
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
