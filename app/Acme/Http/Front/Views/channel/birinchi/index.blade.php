@@ -230,6 +230,49 @@
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-md-12 sociallinks">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3 class="title">Биз социалдык тармактарда</h3>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="fb-page" style="height: 455px;overflow: hidden;" data-href="https://www.facebook.com/1Radiokg" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                               <div class="fb-xfbml-parse-ignore">
+                                  <blockquote cite="https://www.facebook.com/1Radiokg"><a href="https://www.facebook.com/1Radiokg">Биринчи радио</a></blockquote>
+                               </div>
+                            </div>
+                        </div>  
+                        <div class="col-md-3">
+                            <a class="twitter-timeline" href="https://twitter.com/BirinchiRadio" data-widget-id="737557936038281217">Твиты от @BirinchiRadio</a>
+                            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                        </div>
+                        <div class="col-md-offset-4"></div> 
+                        <div class="col-md-3">
+                            <div id="ok_group_widget"></div>
+                            <script>
+                               !function (d, id, did, st) {
+                                 var js = d.createElement("script");
+                                 js.src = "https://connect.ok.ru/connect.js";
+                                 js.onload = js.onreadystatechange = function () {
+                                   if (!this.readyState || this.readyState == "loaded" || this.readyState == "complete") {
+                                     if (!this.executed) {
+                                       this.executed = true;
+                                       setTimeout(function () {
+                                         OK.CONNECT.insertGroupWidget(id,did,st);
+                                       }, 0);
+                                     }
+                                   }}
+                                 d.documentElement.appendChild(js);
+                               }(document,"ok_group_widget","52136546861265","{width:263,height:455}");
+                            </script>
+                        </div>
+                        <div class="col-md-3">
+                            <iframe width="100%" height="460" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/219403641&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+                        </div>
+                    </div>                
+                </div>
+            </div>
         </div>
     </div>
 @stop
@@ -276,6 +319,16 @@
                 slickObj = $('.slider-for').slick('getSlick');
             slickObj.slickGoTo(index);
         });
+    </script>
+    
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) return;
+       js = d.createElement(s); js.id = id;
+       js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.5";
+       fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
     </script>
 
 @endsection

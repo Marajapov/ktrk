@@ -446,6 +446,7 @@ class BirinchiController extends Controller
         $categories = \Model\Category\ModelName::where('birinchi','=','1')->get();
 
         return view('Front::channel.birinchi.allnews', [
+            'lc' =>$lc,
             'perPage' => $perPage,
             'channel' => $channel,
             'backgroundMain' => $backgroundMain,

@@ -91,9 +91,10 @@ class BalastanController extends Controller
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
         $balastanLastVideo = \Model\Media\ModelName::where('id','=',$media)->take(1)->orderBy('id','desc')->first();
-        $balastanProjects = \Model\Project\ModelName::where('balastan','=','1')->orderBy('id','desc')->get();
-        
+        $balastanProjects = \Model\Project\ModelName::where('balastan','=','1')->orderBy('id','desc')->get();        
+                   
         $balastanMedias = \Model\Media\ModelName::where('program','=',$balastanLastVideo->hasProject()->first()->id)->where('id', '<>', $media)->orderBy('id','desc')->get();
+              
         $balastanLastVideo->incrementViewed();
 
         return view('Front::channel.balastan.video', [
