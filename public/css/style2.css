@@ -34,7 +34,7 @@ body::after{
     height: 200px;
     width: 300px;
 
-    background: url("img/bottom-bg.png") no-repeat right top;
+    /*background: url("img/bottom-bg.png") no-repeat right top;*/
     -webkit-background-size: auto 100%;
     background-size: auto 100%;
 }

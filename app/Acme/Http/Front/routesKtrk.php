@@ -108,7 +108,7 @@ Route::group(['domain' => 'www.ktrk.kg', 'prefix' => '/birinchi', 'namespace' =>
     Route::get('/news/{post}/{locale}', ['as' => 'birinchi.news',   'uses' => 'BirinchiController@news']);
     Route::get('/allnews', ['as' => 'birinchi.allnews',   'uses' => 'BirinchiController@allnews']);
     Route::get('/show/{post}', ['as' => 'birinchi.show',   'uses' => 'BirinchiController@show']);
-    Route::get('/shows/{post}', ['as' => 'birinchi.shows',   'uses' => 'BirinchiController@shows']);
+    Route::get('/shows/{project}', ['as' => 'birinchi.shows',   'uses' => 'BirinchiController@shows']);
     Route::get('/projects', ['as' => 'birinchi.projects',   'uses' => 'BirinchiController@projects']);
     Route::get('/shows/{project}', ['as' => 'birinchi.shows',   'uses' => 'BirinchiController@shows']);
     Route::get('/about', ['as' => 'birinchi.about',   'uses' => 'BirinchiController@about']);

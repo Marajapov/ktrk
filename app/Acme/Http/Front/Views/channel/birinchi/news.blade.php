@@ -123,7 +123,7 @@
                 
                      <div class="blocknews col-md-3 col-sm-4 col-xs-12">
                           <article>
-                              <a href="{{ route('birinchi.news', $post) }}" class="image-link">
+                              <a href="{{ route('birinchi.news', [$post, $lc]) }}" class="image-link">
                                   <img src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif" title="{{ $post->getTitleRuOrKg() }}">
                                   <div class="card-info">
                                        <span class="date ">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
@@ -131,7 +131,7 @@
                                   </div>
                               </a>
                               <h3 class="name headline">
-                                  <a href="{{ route('birinchi.news', $post) }}" title="">
+                                  <a href="{{ route('birinchi.news', [$post, $lc]) }}" title="">
                                       {{ $post->getTitleRuOrKg() }}
                                   </a>
                               </h3>
@@ -164,7 +164,7 @@
                                       <a class="cat" href="{{ route('birinchi.category', $post->category) }}"><span>{{ $post->category('category_id')->first()->getTitle() }}</span></a>
                                       <span class="views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
                                   </div>
-                                  <a class="media-heading" href="{{ route('birinchi.news', $post) }}">{{ $post->getTitleRuOrKg() }}</a>
+                                  <a class="media-heading" href="{{ route('birinchi.news', [$post, $lc]) }}">{{ $post->getTitleRuOrKg() }}</a>
                               </div>
 
                           </div>

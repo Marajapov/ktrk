@@ -20,7 +20,7 @@
                                             @foreach($generalPosts as $post)
                                                 <div>
                                                     <div class="slide-info">
-                                                        <a href="{{ route('birinchi.news', $post) }}" title="">
+                                                        <a href="{{ route('birinchi.news', [$post, $lc]) }}" title="">
                                                         <img class="img" src="@if(!($post->getFileBig()))images/live_bg.png @else {{ asset($post->getFileBig()) }} @endif" alt=""/>
                                                         </a>
                                                          <!-- <span class="slide-category"></span> -->
@@ -36,7 +36,7 @@
                                                 <div>
                                                     <div class="switcher">
                                                         <h3 class="name">
-                                                            <a href="{{ route('birinchi.news', $post) }}" title="">
+                                                            <a href="{{ route('birinchi.news', [$post, $lc]) }}" title="">
                                                                 {{ $post->getTitleRuOrKg() }}
                                                             </a>
                                                         </h3>
@@ -74,7 +74,7 @@
                                                     <p>{{ $lenta->getTime()}}</p>        
 
                                                 </span>
-                                                <span class="xtitle"><a href="{{ route('birinchi.news', $lenta) }}">{{ $lenta->getTitleRuOrKg() }}</a></span>
+                                                <span class="xtitle"><a href="{{ route('birinchi.news', [$lenta, $lc]) }}">{{ $lenta->getTitleRuOrKg() }}</a></span>
 
                                             </li>
                                             @endforeach
@@ -107,7 +107,7 @@
                                     @if($post->category_id == $topCategory->id)
                                         <div class="blocknews col-md-4 col-sm-4 col-xs-12">
                                             <article>
-                                                <a href="{{ route('birinchi.news', $post) }}" class="image-link">
+                                                <a href="{{ route('birinchi.news', [$post, $lc]) }}" class="image-link">
                                                     <img src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif">
                                                     <div class="card-info">
                                                         <span class="date ">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
@@ -115,7 +115,7 @@
                                                     </div>
                                                 </a>
                                                 <h3 class="name headline">
-                                                    <a href="{{ route('birinchi.news', $post) }}" title="">
+                                                    <a href="{{ route('birinchi.news', [$post, $lc]) }}" title="">
                                                         {{ $post->getTitleRuOrKg() }}
                                                     </a>
                                                 </h3>
@@ -140,7 +140,7 @@
         
                                         <div class="blocknews col-md-4 col-sm-4 col-xs-12">
                                             <article class="ukturuular">
-                                                <a href="{{ route('birinchi.show', $post) }}" class="image-link">
+                                                <a href="{{ route('birinchi.show', [$post, $lc]) }}" class="image-link">
                                                     <img src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif">
                                                     <div class="card-info">
                                                         <span class="date ">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
@@ -148,7 +148,7 @@
                                                     </div>
                                                 </a>
                                                 <h3 class="name headline">
-                                                    <a href="{{ route('birinchi.show', $post) }}" title="">
+                                                    <a href="{{ route('birinchi.show', [$post, $lc]) }}" title="">
                                                         {{ $post->getTitleRuOrKg() }}
                                                     </a>
                                                 </h3>
@@ -173,7 +173,7 @@
                                     @if($post->category_id == $bottomCategory->id)
                                         <div class="blocknews col-md-4 col-sm-4 col-xs-12">
                                             <article>
-                                                <a href="{{ route('birinchi.news', $post) }}" class="image-link">
+                                                <a href="{{ route('birinchi.news', [$post, $lc]) }}" class="image-link">
                                                     <img src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif">
                                                     <div class="card-info">
                                                         <span class="date ">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
@@ -181,7 +181,7 @@
                                                     </div>
                                                 </a>
                                                 <h3 class="name headline">
-                                                    <a href="{{ route('birinchi.news', $post) }}" title="">
+                                                    <a href="{{ route('birinchi.news', [$post, $lc]) }}" title="">
                                                         {{ $post->getTitleRuOrKg() }}
                                                     </a>
                                                 </h3>

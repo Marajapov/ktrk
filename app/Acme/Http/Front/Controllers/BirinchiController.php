@@ -53,6 +53,7 @@ class BirinchiController extends Controller
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
         return view('Front::channel.birinchi.index', [
+            'lc' =>$lc,
             'channel' => $channel,
             'photoGalleries' => $photoGalleries,
             'backgroundMain' => $backgroundMain,
@@ -366,6 +367,7 @@ class BirinchiController extends Controller
         $categories = \Model\Category\ModelName::where('birinchi','=','1')->get();            
 
            return view('Front::channel.birinchi.news', [
+            'lc' =>$lc,
             'channel' => $channel,
             'post' => $post,
             'content' => $contentFinal,

@@ -716,6 +716,9 @@ header {
 .panel-top-news .description span i {
     padding-left: 3px;
 }
+.panel-top-news .description span .directorlink {
+    color: #004A8F;
+}
 .panel-top-news .description span .linktopage{
     height: 15px;
     width: auto;
