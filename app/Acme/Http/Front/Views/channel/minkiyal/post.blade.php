@@ -23,8 +23,16 @@
     <div class="container mingallery">
       <div class="col-md-12">
          <div class="panel" >
-          <div class="panel-title">
-             <h3>{{ $gallery->getName() }}</h3>
+          <div class="panel-heading">
+             <h3 class="panel-title">
+                 {{ $gallery->getName() }}
+                 <span class="show-extra">
+                    <span class="show-date">{{ $gallery->getDay() }} {{ $gallery->getMonthRu() }}, {{ $gallery->getYear() }}</span>
+                    <span class="show-view">
+                        <i class="fa-view"></i>{{ $gallery->viewed }}
+                    </span>
+                </span>
+             </h3>
           </div>
             <div class="panel-body">
                <div class="row">

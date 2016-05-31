@@ -7,9 +7,7 @@
     <meta name="description" content="Кыргыз Республикасынын Коомдук телерадиоберүү корпорациясынын расмий сайты | Официальный сайт Общественной Телерадиовещательной корпорации Кыргызской Республики">
     <meta name="keywords" content="КТРК,ОТРК,телевидение,радиовещание,общественная телерадиовещательная корпорация,телерадиоберүү корпорациясы,Кыргызская Республика,Кыргыз Республикасы,сайт,официальный сайт,расмий сайт,улут,народ,новости,жаңылыктар,видео,медиа,фото,сүрөт,онлайн ктрк,генеральный директор,Ulut Soft">
     <meta name="author" content="КТРК">
-    <title>
-        @yield('title')
-    </title>
+    <title>@yield('title')</title>
 
     <!-- FAVICON -->
     <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon">
@@ -51,9 +49,8 @@
         }
         window.onload = init();
     </script>
-
     @yield('styles')
-     <style>
+    <style>
        body{
          @if($backgroundMain != null) 
          background: rgba(0, 0, 0, 0) url('{{ asset($backgroundMain->getFile()) }}') 50% 50% no-repeat fixed;         
@@ -66,8 +63,8 @@
 </head>
 <body>
 
-<!-- Facebook SDK -->
-<script>
+    <!-- Facebook SDK -->
+    <script>
     window.fbAsyncInit = function() {
         FB.init({
             appId      : '564062523746973',
@@ -85,23 +82,21 @@
     }(document, 'script', 'facebook-jssdk'));
 </script>
 
-<script>
+    <script>
     // $fn.scrollSpeed(step, speed, easing);
     jQuery.scrollSpeed(100, 800);
 </script>
 
-<div id="wrapper">
+    <div id="wrapper">
 
-    <div id="overlay"></div>
-
-    @include('Front::partials.sidebar')
+        <div id="overlay"></div>
+        @include('Front::partials.sidebar')
     @include('Front::partials.modal')
-
-    <!-- Page Content -->
-    <div id="page-content-wrapper">
-
-        @include('Front::partials.header')
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            @include('Front::partials.header')
         @include('Front::partials.banner')
-        @yield('content')
 
-        @include('Front::partials.footer')
+@yield('content')
+
+@include('Front::partials.footer')

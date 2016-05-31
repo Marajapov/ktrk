@@ -27,15 +27,25 @@
                 </li>
 
             @else
-                <li><a href="{{ $menu->getUrl() }}">
+                <li>
+                    <a href="{{ $menu->getUrl() }}">
                         @if(app()->getlocale() == 'kg')
                             {{ $menu->getName() }}
                         @else
                             {{ $menu->getNameRu() }}
                         @endif
-                    </a></li>
+                    </a>
+                </li>
             @endif
         @endforeach
+
+        <li>
+            @if(app()->getlocale() == 'kg')
+                <a href="/locale/ru">Язык (Русский)</a>
+            @else
+                <a href="/locale/kg">Тил (Кыргызча)</a>
+            @endif
+        </li>
     </ul>
 </nav>
 <!-- /#sidebar-wrapper -->

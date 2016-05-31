@@ -24,9 +24,15 @@
   <div class="row">
     <div class="container">
       <div class="col-md-12">
-         <div class="panel balastanphoto" style="background:none">
-            <div class="panel-body kidphotos" style="padding: 0;margin-top: -10px;">
-               <div class="row" style="margin: 20px;">
+         <div class="panel balastanphoto">
+            <div class="panel-body kidphotos">
+               <div class="row">
+                   <span class="show-extra">
+                        <span class="show-date">{{ $gallery->getDay() }} {{ $gallery->getMonthRu() }}, {{ $gallery->getYear() }}</span>
+                        <span class="show-view">
+                            <i class="fa-view"></i>{{ $gallery->viewed }}
+                        </span>
+                    </span>
                   <p style="text-align:center; color: #fff; font-size: 18px;">{!! $gallery->getDescription() !!}</p>
                   <ul id="imageGallery">
                      @foreach($images as $image)

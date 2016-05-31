@@ -969,6 +969,18 @@
     font-size: 18px;
     font-weight: bold;
 }
+.panel-gallery .panel-title{
+    position: relative;
+}
+.panel-gallery .panel-title .show-extra {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 150px;
+    height: 24px;
+    overflow: hidden;
+    text-align: right;
+}
 .panel-kenesh .slider-for{
     padding: 0;
 }

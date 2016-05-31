@@ -24,10 +24,19 @@
             <div class="col-md-12 topchart">
                 <div class="panel">
                     <div class="panel-heading">
-                        <h3 class="panel-title text-center"><span> {{ $gallery->getName() }}</span></h3>
+                        <h3 class="panel-title text-center">
+                            <span> {{ $gallery->getName() }}</span>
+                        </h3>
                     </div>
                     <div class="panel-body">
-                        <div class="row" style="margin: 0px 10px; font-size: 16px; font-family: 'Roboto regular';">
+                        <div class="row" style="margin: 0px 10px; padding-top: 30px; font-size: 16px; font-family: 'Roboto regular'; position: relative">
+
+                            <span class="show-extra">
+                                <span class="show-date">{{ $gallery->getDay() }} {{ $gallery->getMonthRu() }}, {{ $gallery->getYear() }}</span>
+                                <span class="show-view">
+                                    <i class="fa-view"></i>{{ $gallery->viewed }}
+                                </span>
+                            </span>
                             <p style="text-align:center;color: #272727;font-size: 18px;">{!! $gallery->getDescription() !!}</p>
                             <ul id="imageGallery">
                                 @if($images != null)

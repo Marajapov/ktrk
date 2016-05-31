@@ -45,8 +45,8 @@
                                                         <li><a href="{{ $submenu->getUrl() }}">@if(app()->getlocale() == 'kg'){{ $submenu->getName() }} @else {{ $submenu->getNameRu() }} @endif</a></li>
                                                     @endforeach
                                                 </ul>
-                                            </li><li> / </li>
-
+                                            </li>
+                                            <li> / </li>
                                         @else
                                             <li><a href="{{ $menu->getUrl() }}">
                                                     @if(app()->getlocale() == 'kg')

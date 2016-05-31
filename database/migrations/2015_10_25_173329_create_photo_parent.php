@@ -37,6 +37,7 @@ class CreatePhotoParent extends Migration
             $table->boolean('published')->nullable()->default(false);;
             $table->string('status');
             $table->string('thumbnail_big');
+            $table->smallInteger('viewed')->default(0);
             $table->timestamps();
         });
     }

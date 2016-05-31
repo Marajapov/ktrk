@@ -582,6 +582,38 @@
 .gallery .slick-slider{
     padding-bottom: 15px;
 }
+.balastanphoto{
+    background: none;
+}
+.kidphotos{
+    padding: 0;
+    margin-top: -10px;
+}
+.kidphotos .row{
+    position: relative;
+    margin: 20px;
+    padding-top: 30px;
+}
+.kidphotos .show-date{
+    top: 0;
+    right: 20px;
+    padding: 0;
+    background: none;
+    color: #ffffff;
+    line-height: 20px;
+}
+.kidphotos .show-view{
+    top: 0;
+    right: 0;
+    left: auto;
+    padding: 0;
+    background: none;
+}
+.kidphotos .fa-view{
+    position: relative;
+    left: 0;
+    top: 0;
+}
 
 /*SHOWS-SLIDER*/
 .shows-slider{

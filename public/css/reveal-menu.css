@@ -83,6 +83,11 @@ html { height: 100%;}
     text-transform: uppercase;
     padding: 10px 15px 10px 30px;
 }
+.sidebar-nav li:last-child a{
+    font-size: 12px;
+    font-weight: bold;
+    color: #237dac;
+}
 
 .sidebar-nav > .sidebar-brand {
     border-bottom: 2px solid #8493A3;

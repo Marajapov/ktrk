@@ -16,7 +16,15 @@
     <section id="portfolio">
         <div class="container">
             <div class="panel-heading">
-                <h2 class="panel-title">{{ $gallery->getName() }}</h2>
+                <h3 class="panel-title">
+                    {{ $gallery->getName() }}
+                    <span class="show-extra">
+                        <span class="show-date">{{ $gallery->getDay() }} {{ $gallery->getMonthRu() }}, {{ $gallery->getYear() }}</span>
+                        <span class="show-view">
+                            <i class="fa-view"></i>{{ $gallery->viewed }}
+                        </span>
+                    </span>
+                </h3>
 
             </div>
 
