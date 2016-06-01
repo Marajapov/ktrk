@@ -11,11 +11,7 @@ use Intervention\Image\ImageManagerStatic as Image;
 
 class PhotoParentController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         $photoParents = PhotoParent::orderBy('id','desc')->get();
@@ -25,36 +21,26 @@ class PhotoParentController extends Controller
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        return view('Admin::photoParent.create', ['photoParent' => new PhotoParent]);
+        $channels = \Model\Channel\ModelName::take(8)->skip(1)->get();
+        $channels = $channels->lists('display','id')->toArray();
+        return view('Admin::photoParent.create', [
+            'photoParent' => new PhotoParent,
+            'channels' => $channels,
+        ]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-//        dd($request->watermark);
 
-        $photoParent = PhotoParent::create($request->except('images','q','status','watermark'));
+        $photoParent = PhotoParent::create($request->except('images','q','status'));
 
-        // getting all of the post data
-
-        $files = Input::file('images');
+        $files = $request->images;
 
         $result = array();
 
         $file_count = count($files);
-
 
         if($request->hasFile('status'))
         {
@@ -68,49 +54,22 @@ class PhotoParentController extends Controller
             $storage = \Storage::disk('public');
             $storage->makeDirectory($dir);
 
-            if($request->watermark == 1){
-                if($request->extracolumn == 1){
-                    Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->insert('http://ktrk.kg/images/wm_ktrk.png', 'bottom-right', 10, 10)->save($dir.'/'.$name);
-                    Image::make($_FILES['status']['tmp_name'])->fit(500, 300)->insert('http://ktrk.kg/images/wm_ktrk.png', 'bottom-right', 10, 10)->save($dir.'/'.$name2);
-                }
-                elseif($request->birinchi == 1){
-                    Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->insert('http://ktrk.kg/images/wm_1radio.png', 'bottom-right', 10, 10)->save($dir.'/'.$name);
-                    Image::make($_FILES['status']['tmp_name'])->fit(500, 300)->insert('http://ktrk.kg/images/wm_1radio.png', 'bottom-right', 10, 10)->save($dir.'/'.$name2);
-                }
-                elseif($request->muzkanal == 1){
-                    Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->insert('http://ktrk.kg/images/wm_music.png', 'bottom-right', 10, 10)->save($dir.'/'.$name);
-                    Image::make($_FILES['status']['tmp_name'])->fit(500, 300)->insert('http://ktrk.kg/images/wm_music.png', 'bottom-right', 10, 10)->save($dir.'/'.$name2);
-                }
-                elseif($request->balastan == 1){
-                    Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->insert('http://ktrk.kg/images/wm_balastan.png', 'bottom-right', 10, 10)->save($dir.'/'.$name);
-                    Image::make($_FILES['status']['tmp_name'])->fit(500, 300)->insert('http://ktrk.kg/images/wm_balastan.png', 'bottom-right', 10, 10)->save($dir.'/'.$name2);
-                } else {
-                    Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->save($dir.'/'.$name);
-                    Image::make($_FILES['status']['tmp_name'])->fit(500, 300)->save($dir.'/'.$name2);
-                }
-            } else {
-                if($request->extracolumn == 1){
-                    Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->save($dir.'/'.$name);
-                    Image::make($_FILES['status']['tmp_name'])->fit(500, 300)->save($dir.'/'.$name2);
-                }
-                elseif($request->birinchi == 1){
-                    Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->save($dir.'/'.$name);
-                    Image::make($_FILES['status']['tmp_name'])->fit(500, 300)->save($dir.'/'.$name2);
-                }
-                elseif($request->muzkanal == 1){
-                    Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->save($dir.'/'.$name);
-                    Image::make($_FILES['status']['tmp_name'])->fit(500, 300)->save($dir.'/'.$name2);
-                }
-                elseif($request->balastan == 1){
-                    Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->save($dir.'/'.$name);
-                    Image::make($_FILES['status']['tmp_name'])->fit(500, 300)->save($dir.'/'.$name2);
-                } else {
-                    Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->save($dir.'/'.$name);
-                    Image::make($_FILES['status']['tmp_name'])->fit(500, 300)->save($dir.'/'.$name2);
-                }
+            if($request->watermark == 2){
+                Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->insert('http://ktrk.kg/images/wm_ktrk.png', 'bottom-right', 10, 10)->save($dir.'/'.$name);
+                Image::make($_FILES['status']['tmp_name'])->fit(500, 300)->insert('http://ktrk.kg/images/wm_ktrk.png', 'bottom-right', 10, 10)->save($dir.'/'.$name2);
+            } elseif($request->watermark == 3){
+                Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->insert('http://ktrk.kg/images/wm_music.png', 'bottom-right', 10, 10)->save($dir.'/'.$name);
+                Image::make($_FILES['status']['tmp_name'])->fit(500, 300)->insert('http://ktrk.kg/images/wm_music.png', 'bottom-right', 10, 10)->save($dir.'/'.$name2);
+            } elseif($request->watermark == 4){
+                Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->insert('http://ktrk.kg/images/wm_balastan.png', 'bottom-right', 10, 10)->save($dir.'/'.$name);
+                Image::make($_FILES['status']['tmp_name'])->fit(500, 300)->insert('http://ktrk.kg/images/wm_balastan.png', 'bottom-right', 10, 10)->save($dir.'/'.$name2);
+            } elseif($request->watermark == 7){
+                Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->insert('http://ktrk.kg/images/wm_1radio.png', 'bottom-right', 10, 10)->save($dir.'/'.$name);
+                Image::make($_FILES['status']['tmp_name'])->fit(500, 300)->insert('http://ktrk.kg/images/wm_1radio.png', 'bottom-right', 10, 10)->save($dir.'/'.$name2);
+            } else{
+                Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->save($dir.'/'.$name);
+                Image::make($_FILES['status']['tmp_name'])->fit(500, 300)->save($dir.'/'.$name2);
             }
-
-
 
             $photoParent->status = $dir.'/'.$name;
             $photoParent->thumbnail_big = $dir.'/'.$name2;
@@ -119,46 +78,17 @@ class PhotoParentController extends Controller
 
         $uploadcount = 0;
 
-//        if($request->input('images'))
-//        {
+        if($files){
             foreach($files as $key=>$file) {
 
                 $storage = \Storage::disk('public');
                 $destinationPath = 'froala/uploads';
                 $storage->makeDirectory($destinationPath);
 
-                $filename = time().$key.'.'.$file->getClientOriginalExtension();
-
-                if($request->watermark == 1){
-                    if($request->extracolumn == 1)
-                        Image::make($_FILES['images']['tmp_name'][$key])->heighten(600)->insert('http://ktrk.kg/images/wm_ktrk.png', 'bottom-right', 0, 0)->save($destinationPath.'/'.$filename);
-                    elseif($request->birinchi == 1)
-                        Image::make($_FILES['images']['tmp_name'][$key])->heighten(600)->insert('http://ktrk.kg/images/wm_1radio.png', 'bottom-right', 10, 10)->save($destinationPath.'/'.$filename);
-                    elseif($request->muzkanal == 1)
-                        Image::make($_FILES['images']['tmp_name'][$key])->heighten(600)->insert('http://ktrk.kg/images/wm_music.png', 'bottom-right', 10, 10)->save($destinationPath.'/'.$filename);
-                    elseif($request->balastan == 1)
-                        Image::make($_FILES['images']['tmp_name'][$key])->heighten(600)->insert('http://ktrk.kg/images/wm_balastan.png', 'bottom-right', 10, 10)->save($destinationPath.'/'.$filename);
-                    else
-                        Image::make($_FILES['images']['tmp_name'][$key])->heighten(600)->save($destinationPath.'/'.$filename);
-                } else {
-                    if($request->extracolumn == 1)
-                        Image::make($_FILES['images']['tmp_name'][$key])->heighten(600)->save($destinationPath.'/'.$filename);
-                    elseif($request->birinchi == 1)
-                        Image::make($_FILES['images']['tmp_name'][$key])->heighten(600)->save($destinationPath.'/'.$filename);
-                    elseif($request->muzkanal == 1)
-                        Image::make($_FILES['images']['tmp_name'][$key])->heighten(600)->save($destinationPath.'/'.$filename);
-                    elseif($request->balastan == 1)
-                        Image::make($_FILES['images']['tmp_name'][$key])->heighten(600)->save($destinationPath.'/'.$filename);
-                    else
-                        Image::make($_FILES['images']['tmp_name'][$key])->heighten(600)->save($destinationPath.'/'.$filename);
-                }
-
-
-
                 $file_array = array();
                 $file_array = array_collapse([$file_array, [
                     'id' => $key+1,
-                    'name' => $filename
+                    'name' => $file
                 ]]);
 
                 $result = array_add($result, $key , $file_array);
@@ -166,7 +96,7 @@ class PhotoParentController extends Controller
                 $jsonresult = json_encode($result);
 
                 PhotoChild::create([
-                    'file'=> $destinationPath.'/'.$filename,
+                    'file'=> $destinationPath.'/'.$file,
                     'parentId' => $photoParent->id
                 ]);
 
@@ -175,17 +105,11 @@ class PhotoParentController extends Controller
 
                 $uploadcount ++;
             }
-//        }
+        }
 
         return redirect()->route('admin.photoParent.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show(PhotoParent $photoParent)
     {
         $images = json_decode($photoParent->images);
@@ -198,81 +122,46 @@ class PhotoParentController extends Controller
         ]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit(PhotoParent $photoParent)
     {
-        return view('Admin::photoParent.edit', ['photoParent' => $photoParent]);
+        $channels = \Model\Channel\ModelName::take(8)->skip(1)->get();
+        $channels = $channels->lists('display','id')->toArray();
+        return view('Admin::photoParent.edit', [
+            'photoParent' => $photoParent,
+            'channels' => $channels
+            ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, PhotoParent $photoParent)
     {
-        $photoParent->update($request->except('images','q','status','watermark'));
+        $photoParent->update($request->except('images','q','status'));
 
-//        dd($request->images);
+        $files = $request->images;
 
-//        dd($_FILES["images"]);
-
-        if($request->hasFile('images')){
-            $files = Input::file('images');
+        if($files){
 
             $result = array();
 
             $uploadcount = 0;
 
             foreach($files as $key=>$file) {
-//            if($key > 1)
-//            {
+
                 $storage = \Storage::disk('public');
                 $destinationPath = 'froala/uploads';
                 $storage->makeDirectory($destinationPath);
-                $filename = time().$key.'.'.$file->getClientOriginalExtension();
-
-                if($request->watermark == 1){
-                    if($request->extracolumn == 1)
-                        Image::make($_FILES['images']['tmp_name'][$key])->heighten(600)->insert('http://ktrk.kg/images/wm_ktrk.png', 'bottom-right', 0, 0)->save($destinationPath.'/'.$filename);
-                    elseif($request->birinchi == 1)
-                        Image::make($_FILES['images']['tmp_name'][$key])->heighten(600)->insert('http://ktrk.kg/images/wm_1radio.png', 'bottom-right', 10, 10)->save($destinationPath.'/'.$filename);
-                    elseif($request->muzkanal == 1)
-                        Image::make($_FILES['images']['tmp_name'][$key])->heighten(600)->insert('http://ktrk.kg/images/wm_music.png', 'bottom-right', 10, 10)->save($destinationPath.'/'.$filename);
-                    elseif($request->balastan == 1)
-                        Image::make($_FILES['images']['tmp_name'][$key])->heighten(600)->insert('http://ktrk.kg/images/wm_balastan.png', 'bottom-right', 10, 10)->save($destinationPath.'/'.$filename);
-                    else
-                        Image::make($_FILES['images']['tmp_name'][$key])->heighten(600)->save($destinationPath.'/'.$filename);
-                } else {
-                    if($request->extracolumn == 1)
-                        Image::make($_FILES['images']['tmp_name'][$key])->heighten(600)->save($destinationPath.'/'.$filename);
-                    elseif($request->birinchi == 1)
-                        Image::make($_FILES['images']['tmp_name'][$key])->heighten(600)->save($destinationPath.'/'.$filename);
-                    elseif($request->muzkanal == 1)
-                        Image::make($_FILES['images']['tmp_name'][$key])->heighten(600)->save($destinationPath.'/'.$filename);
-                    elseif($request->balastan == 1)
-                        Image::make($_FILES['images']['tmp_name'][$key])->heighten(600)->save($destinationPath.'/'.$filename);
-                    else
-                        Image::make($_FILES['images']['tmp_name'][$key])->heighten(600)->save($destinationPath.'/'.$filename);
-                }
 
                 $file_array = array();
                 $file_array = array_collapse([$file_array, [
                     'id' => $key+1,
-                    'name' => $filename
+                    'name' => $file
                 ]]);
+
                 $result = array_add($result, $key , $file_array);
+
                 $jsonresult = json_encode($result);
 
                 PhotoChild::create([
-                    'file'=> $destinationPath.'/'.$filename,
+                    'file'=> $destinationPath.'/'.$file,
                     'parentId' => $photoParent->id
                 ]);
 
@@ -280,11 +169,10 @@ class PhotoParentController extends Controller
                 $photoParent->save();
 
                 $uploadcount ++;
-//            } // end if
 
             }
+            
         }
-
 
         if($request->hasFile('status'))
         {
@@ -298,46 +186,21 @@ class PhotoParentController extends Controller
             $storage = \Storage::disk('public');
             $storage->makeDirectory($dir);
 
-            if($request->watermark == 1){
-                if($request->extracolumn == 1){
-                    Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->insert('http://ktrk.kg/images/wm_ktrk.png', 'bottom-right', 10, 10)->save($dir.'/'.$name);
-                    Image::make($_FILES['status']['tmp_name'])->fit(500, 300)->insert('http://ktrk.kg/images/wm_ktrk.png', 'bottom-right', 10, 10)->save($dir.'/'.$name2);
-                }
-                elseif($request->birinchi == 1){
-                    Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->insert('http://ktrk.kg/images/wm_1radio.png', 'bottom-right', 10, 10)->save($dir.'/'.$name);
-                    Image::make($_FILES['status']['tmp_name'])->fit(500, 300)->insert('http://ktrk.kg/images/wm_1radio.png', 'bottom-right', 10, 10)->save($dir.'/'.$name2);
-                }
-                elseif($request->muzkanal == 1){
-                    Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->insert('http://ktrk.kg/images/wm_music.png', 'bottom-right', 10, 10)->save($dir.'/'.$name);
-                    Image::make($_FILES['status']['tmp_name'])->fit(500, 300)->insert('http://ktrk.kg/images/wm_music.png', 'bottom-right', 10, 10)->save($dir.'/'.$name2);
-                }
-                elseif($request->balastan == 1){
-                    Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->insert('http://ktrk.kg/images/wm_balastan.png', 'bottom-right', 10, 10)->save($dir.'/'.$name);
-                    Image::make($_FILES['status']['tmp_name'])->fit(500, 300)->insert('http://ktrk.kg/images/wm_balastan.png', 'bottom-right', 10, 10)->save($dir.'/'.$name2);
-                } else {
-                    Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->save($dir.'/'.$name);
-                    Image::make($_FILES['status']['tmp_name'])->fit(500, 300)->save($dir.'/'.$name2);
-                }
-            } else {
-                if($request->extracolumn == 1){
-                    Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->save($dir.'/'.$name);
-                    Image::make($_FILES['status']['tmp_name'])->fit(500, 300)->save($dir.'/'.$name2);
-                }
-                elseif($request->birinchi == 1){
-                    Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->save($dir.'/'.$name);
-                    Image::make($_FILES['status']['tmp_name'])->fit(500, 300)->save($dir.'/'.$name2);
-                }
-                elseif($request->muzkanal == 1){
-                    Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->save($dir.'/'.$name);
-                    Image::make($_FILES['status']['tmp_name'])->fit(500, 300)->save($dir.'/'.$name2);
-                }
-                elseif($request->balastan == 1){
-                    Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->save($dir.'/'.$name);
-                    Image::make($_FILES['status']['tmp_name'])->fit(500, 300)->save($dir.'/'.$name2);
-                } else {
-                    Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->save($dir.'/'.$name);
-                    Image::make($_FILES['status']['tmp_name'])->fit(500, 300)->save($dir.'/'.$name2);
-                }
+            if($request->watermark == 2){
+                Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->insert('http://ktrk.kg/images/wm_ktrk.png', 'bottom-right', 10, 10)->save($dir.'/'.$name);
+                Image::make($_FILES['status']['tmp_name'])->fit(500, 300)->insert('http://ktrk.kg/images/wm_ktrk.png', 'bottom-right', 10, 10)->save($dir.'/'.$name2);
+            } elseif($request->watermark == 3){
+                Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->insert('http://ktrk.kg/images/wm_music.png', 'bottom-right', 10, 10)->save($dir.'/'.$name);
+                Image::make($_FILES['status']['tmp_name'])->fit(500, 300)->insert('http://ktrk.kg/images/wm_music.png', 'bottom-right', 10, 10)->save($dir.'/'.$name2);
+            } elseif($request->watermark == 4){
+                Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->insert('http://ktrk.kg/images/wm_balastan.png', 'bottom-right', 10, 10)->save($dir.'/'.$name);
+                Image::make($_FILES['status']['tmp_name'])->fit(500, 300)->insert('http://ktrk.kg/images/wm_balastan.png', 'bottom-right', 10, 10)->save($dir.'/'.$name2);
+            } elseif($request->watermark == 7){
+                Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->insert('http://ktrk.kg/images/wm_1radio.png', 'bottom-right', 10, 10)->save($dir.'/'.$name);
+                Image::make($_FILES['status']['tmp_name'])->fit(500, 300)->insert('http://ktrk.kg/images/wm_1radio.png', 'bottom-right', 10, 10)->save($dir.'/'.$name2);
+            } else{
+                Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->save($dir.'/'.$name);
+                Image::make($_FILES['status']['tmp_name'])->fit(500, 300)->save($dir.'/'.$name2);
             }
 
             $photoParent->status = $dir.'/'.$name;
@@ -345,17 +208,9 @@ class PhotoParentController extends Controller
             $photoParent->save();
         }
 
-        // start count how many uploaded
-
         return redirect()->route('admin.photoParent.show', $photoParent);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(PhotoParent $photoParent)
     {
         $photoParent->delete();
@@ -379,7 +234,7 @@ class PhotoParentController extends Controller
         $key = array_has($files, $photoDeleteId);
 
         if($key !== false) {
-            $storage = \Storage::delete('/froala/uploads/'.$name);
+            $storage = \Storage::delete('/img/gallery/'.$name);
         }
 
         unset($files[$photoDeleteId-1]);
@@ -393,7 +248,6 @@ class PhotoParentController extends Controller
         return redirect()->route('admin.photoParent.show', $photoParent);
     }
 
-    // Day video first
     public function publish(Request $request)
     {
         $id =$request->photoParentId;
@@ -412,7 +266,6 @@ class PhotoParentController extends Controller
         return redirect()->route('admin.photoParent.index');
     }
 
-//    Destroy Child
     public function destroyChild(Request $request)
     {
         $photoDeleteId = $request->photoDeleteId;

@@ -81,7 +81,7 @@
                                     @foreach($images as $row)
                                         <div class="photo-child">
                                             {!! Form::open(['route' => ['admin.photoParent.photodelete', $row->id], 'method' => 'get', 'onsubmit' => "return confirm('Вы уверены ?')"]) !!}
-                                            <img src="{{ asset('froala/uploads/'.$row->name) }} " alt="">
+                                            <img src="{{ asset('/froala/uploads/'.$row->name) }} " alt="">
                                             <input type="hidden" value="{{ $row->id }}" name="photoDeleteId">
                                             <input type="hidden" value="{{ $photoParent->id }}" name="photoParentId">
                                             <button type="submit"><i class="fa fa-times"></i></button>
