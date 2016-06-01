@@ -128,8 +128,8 @@
                     </div>
                 @endforeach
 
-                <div class="col-md-12 shows birinchigallery">
-                    <div class="row">
+                <div class="col-md-12 ">
+                    <div class="row shows">
                         <div class="col-md-12">
                             <h3 class="titleshows">{{ trans('radiopages.Peredachi') }}</h3>
                             <h3 class="titleshowsright"><a href="{{ route('birinchi.projects') }}">{{ trans('radiopages.AllPereadachi') }}<i class="fa fa-arrow-right"></i></a></h3>
@@ -159,6 +159,7 @@
                         @endif
                     </div>
                 </div>
+
 
                 @foreach($bottomCategories as $bottomCategory)
                     <div class="col-md-6 homenews">
@@ -268,7 +269,7 @@
                             </script>
                         </div>
                         <div class="col-md-3">
-                            <iframe width="100%" height="460" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/219403641&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+                            <iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/229824839&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
                         </div>
                     </div>                
                 </div>
@@ -305,6 +306,7 @@
             row_height: 50,
             max_rows:6,
             duration: 2500,
+            direction:'up',
             pauseOnHover: 1,
             autostart: 1,
             prevButton: $('#newsticker-prev'),
@@ -320,7 +322,7 @@
             slickObj.slickGoTo(index);
         });
     </script>
-    
+
     <div id="fb-root"></div>
     <script>(function(d, s, id) {
        var js, fjs = d.getElementsByTagName(s)[0];

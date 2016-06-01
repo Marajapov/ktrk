@@ -30,7 +30,7 @@
                            </div>
                            <a class="media-heading " href="{{ route('birinchi.show', $post) }}">{{ $post->getTitleRuOrKg() }}</a>
                            <span class="mb_substr">
-                              {!! mb_substr($post->getContent(), 0, 290, "UTF-8") !!}
+                              {{$post->getShortDescription()}}
                            </span>
                         </div>
                      </div>

@@ -5,6 +5,18 @@
                 <img src="{{ asset('images/channels/balastan_white_notext.png') }}" alt="Balastan Logo"/>
             </a>
         </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h2>You can edit this CSS if you want<br /> and if you need.</h2>
+                <div class="col-md-6 .col-md-offset-3">
+                   <ul class="social">
+                      <li class="facebook"><a href="http://facebook.com/alterowo"><i class="fa fa-facebook fa-3x"></i></a></li>
+                      <li class="twitter"><a href="http://twitter.com/Kyokushinowa"><i class="fa fa-twitter fa-3x"></i></a></li>
+                      <li class="behance2"><a href="https://www.behance.net/Kurnikowa"><i class="fa fa-behance fa-3x"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+         </div>
         <ul class="kidstopheader">
             <li>
                 <a href="{{ route('balastan.about') }}">
