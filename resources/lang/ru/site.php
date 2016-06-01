@@ -260,6 +260,11 @@ return [
     'AdminPhotoParentNewGal' => 'Новая фото галерея',
     'AdminPhotoParents' => 'Фото галереи',
     'AdminPhotoParentLocation' => 'Расположение',
+<<<<<<< HEAD
+=======
+    'AdminPhotoParentImages' => 'Добавить изображения',
+    'AdminPhotoParentImagesSelect' => 'Выберите изображения',
+>>>>>>> 9912446fe5daa1d87038e6c8810b71aa0e9850be
     '' => '',
 
     //Post Menu

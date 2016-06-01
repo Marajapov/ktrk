@@ -2,8 +2,11 @@
 namespace Admin\Controllers;
 use Input;
 use Illuminate\Http\Request;
+<<<<<<< HEAD
 use App\Http\Requests;
 use DB;
+=======
+>>>>>>> 9912446fe5daa1d87038e6c8810b71aa0e9850be
 
 use Model\Test\ModelName as Test;
 
@@ -24,6 +27,7 @@ class TestController extends Controller
 
     public function store(Request $request)
     {
+<<<<<<< HEAD
         $test = Test::create($request->except('images','q'));
         // getting all of the post data
         $files = Input::file('images');
@@ -66,6 +70,12 @@ class TestController extends Controller
         // dd($test);
 
         return redirect()->route('admin.show', $test);
+=======
+        if(Request::ajax()) {
+            $file = $request->file('photos');
+            die($file);
+        }        
+>>>>>>> 9912446fe5daa1d87038e6c8810b71aa0e9850be
     }
 
     public function show()

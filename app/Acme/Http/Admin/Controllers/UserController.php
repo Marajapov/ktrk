@@ -82,6 +82,7 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
+
         $user->update($request->except('q','password'));
 
         return redirect()->route('admin.user.show', $user);
@@ -99,6 +100,7 @@ class UserController extends Controller
 
         return redirect()->route('admin.user.index');
     }
+
 
     public function changePassword(Request $request, $id)
     {

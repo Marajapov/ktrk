@@ -11,11 +11,15 @@ use Intervention\Image\ImageManagerStatic as Image;
 
 class PhotoParentController extends Controller
 {
+<<<<<<< HEAD
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+=======
+
+>>>>>>> 9912446fe5daa1d87038e6c8810b71aa0e9850be
     public function index()
     {
         $photoParents = PhotoParent::orderBy('id','desc')->get();
@@ -25,6 +29,7 @@ class PhotoParentController extends Controller
         ]);
     }
 
+<<<<<<< HEAD
     /**
      * Show the form for creating a new resource.
      *
@@ -50,12 +55,33 @@ class PhotoParentController extends Controller
         // getting all of the post data
 
         $files = Input::file('images');
+=======
+    public function create()
+    {
+        $channels = \Model\Channel\ModelName::take(8)->skip(1)->get();
+        $channels = $channels->lists('display','id')->toArray();
+        return view('Admin::photoParent.create', [
+            'photoParent' => new PhotoParent,
+            'channels' => $channels,
+        ]);
+    }
+
+    public function store(Request $request)
+    {
+
+        $photoParent = PhotoParent::create($request->except('images','q','status'));
+
+        $files = $request->images;
+>>>>>>> 9912446fe5daa1d87038e6c8810b71aa0e9850be
 
         $result = array();
 
         $file_count = count($files);
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9912446fe5daa1d87038e6c8810b71aa0e9850be
         if($request->hasFile('status'))
         {
             $file = $request->file('status');
@@ -68,6 +94,7 @@ class PhotoParentController extends Controller
             $storage = \Storage::disk('public');
             $storage->makeDirectory($dir);
 
+<<<<<<< HEAD
             if($request->watermark == 1){
                 if($request->extracolumn == 1){
                     Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->insert('http://ktrk.kg/images/wm_ktrk.png', 'bottom-right', 10, 10)->save($dir.'/'.$name);
@@ -112,6 +139,25 @@ class PhotoParentController extends Controller
 
 
 
+=======
+            if($request->watermark == 2){
+                Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->insert('http://ktrk.kg/images/wm_ktrk.png', 'bottom-right', 10, 10)->save($dir.'/'.$name);
+                Image::make($_FILES['status']['tmp_name'])->fit(500, 300)->insert('http://ktrk.kg/images/wm_ktrk.png', 'bottom-right', 10, 10)->save($dir.'/'.$name2);
+            } elseif($request->watermark == 3){
+                Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->insert('http://ktrk.kg/images/wm_music.png', 'bottom-right', 10, 10)->save($dir.'/'.$name);
+                Image::make($_FILES['status']['tmp_name'])->fit(500, 300)->insert('http://ktrk.kg/images/wm_music.png', 'bottom-right', 10, 10)->save($dir.'/'.$name2);
+            } elseif($request->watermark == 4){
+                Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->insert('http://ktrk.kg/images/wm_balastan.png', 'bottom-right', 10, 10)->save($dir.'/'.$name);
+                Image::make($_FILES['status']['tmp_name'])->fit(500, 300)->insert('http://ktrk.kg/images/wm_balastan.png', 'bottom-right', 10, 10)->save($dir.'/'.$name2);
+            } elseif($request->watermark == 7){
+                Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->insert('http://ktrk.kg/images/wm_1radio.png', 'bottom-right', 10, 10)->save($dir.'/'.$name);
+                Image::make($_FILES['status']['tmp_name'])->fit(500, 300)->insert('http://ktrk.kg/images/wm_1radio.png', 'bottom-right', 10, 10)->save($dir.'/'.$name2);
+            } else{
+                Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->save($dir.'/'.$name);
+                Image::make($_FILES['status']['tmp_name'])->fit(500, 300)->save($dir.'/'.$name2);
+            }
+
+>>>>>>> 9912446fe5daa1d87038e6c8810b71aa0e9850be
             $photoParent->status = $dir.'/'.$name;
             $photoParent->thumbnail_big = $dir.'/'.$name2;
             $photoParent->save();
@@ -119,14 +165,19 @@ class PhotoParentController extends Controller
 
         $uploadcount = 0;
 
+<<<<<<< HEAD
 //        if($request->input('images'))
 //        {
+=======
+        if($files){
+>>>>>>> 9912446fe5daa1d87038e6c8810b71aa0e9850be
             foreach($files as $key=>$file) {
 
                 $storage = \Storage::disk('public');
                 $destinationPath = 'froala/uploads';
                 $storage->makeDirectory($destinationPath);
 
+<<<<<<< HEAD
                 $filename = time().$key.'.'.$file->getClientOriginalExtension();
 
                 if($request->watermark == 1){
@@ -159,6 +210,12 @@ class PhotoParentController extends Controller
                 $file_array = array_collapse([$file_array, [
                     'id' => $key+1,
                     'name' => $filename
+=======
+                $file_array = array();
+                $file_array = array_collapse([$file_array, [
+                    'id' => $key+1,
+                    'name' => $file
+>>>>>>> 9912446fe5daa1d87038e6c8810b71aa0e9850be
                 ]]);
 
                 $result = array_add($result, $key , $file_array);
@@ -166,7 +223,11 @@ class PhotoParentController extends Controller
                 $jsonresult = json_encode($result);
 
                 PhotoChild::create([
+<<<<<<< HEAD
                     'file'=> $destinationPath.'/'.$filename,
+=======
+                    'file'=> $destinationPath.'/'.$file,
+>>>>>>> 9912446fe5daa1d87038e6c8810b71aa0e9850be
                     'parentId' => $photoParent->id
                 ]);
 
@@ -175,17 +236,24 @@ class PhotoParentController extends Controller
 
                 $uploadcount ++;
             }
+<<<<<<< HEAD
 //        }
+=======
+        }
+>>>>>>> 9912446fe5daa1d87038e6c8810b71aa0e9850be
 
         return redirect()->route('admin.photoParent.index');
     }
 
+<<<<<<< HEAD
     /**
      * Display the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+=======
+>>>>>>> 9912446fe5daa1d87038e6c8810b71aa0e9850be
     public function show(PhotoParent $photoParent)
     {
         $images = json_decode($photoParent->images);
@@ -198,6 +266,7 @@ class PhotoParentController extends Controller
         ]);
     }
 
+<<<<<<< HEAD
     /**
      * Show the form for editing the specified resource.
      *
@@ -226,12 +295,32 @@ class PhotoParentController extends Controller
 
         if($request->hasFile('images')){
             $files = Input::file('images');
+=======
+    public function edit(PhotoParent $photoParent)
+    {
+        $channels = \Model\Channel\ModelName::take(8)->skip(1)->get();
+        $channels = $channels->lists('display','id')->toArray();
+        return view('Admin::photoParent.edit', [
+            'photoParent' => $photoParent,
+            'channels' => $channels
+            ]);
+    }
+
+    public function update(Request $request, PhotoParent $photoParent)
+    {
+        $photoParent->update($request->except('images','q','status'));
+
+        $files = $request->images;
+
+        if($files){
+>>>>>>> 9912446fe5daa1d87038e6c8810b71aa0e9850be
 
             $result = array();
 
             $uploadcount = 0;
 
             foreach($files as $key=>$file) {
+<<<<<<< HEAD
 //            if($key > 1)
 //            {
                 $storage = \Storage::disk('public');
@@ -262,10 +351,17 @@ class PhotoParentController extends Controller
                     else
                         Image::make($_FILES['images']['tmp_name'][$key])->heighten(600)->save($destinationPath.'/'.$filename);
                 }
+=======
+
+                $storage = \Storage::disk('public');
+                $destinationPath = 'froala/uploads';
+                $storage->makeDirectory($destinationPath);
+>>>>>>> 9912446fe5daa1d87038e6c8810b71aa0e9850be
 
                 $file_array = array();
                 $file_array = array_collapse([$file_array, [
                     'id' => $key+1,
+<<<<<<< HEAD
                     'name' => $filename
                 ]]);
                 $result = array_add($result, $key , $file_array);
@@ -273,6 +369,17 @@ class PhotoParentController extends Controller
 
                 PhotoChild::create([
                     'file'=> $destinationPath.'/'.$filename,
+=======
+                    'name' => $file
+                ]]);
+
+                $result = array_add($result, $key , $file_array);
+
+                $jsonresult = json_encode($result);
+
+                PhotoChild::create([
+                    'file'=> $destinationPath.'/'.$file,
+>>>>>>> 9912446fe5daa1d87038e6c8810b71aa0e9850be
                     'parentId' => $photoParent->id
                 ]);
 
@@ -280,12 +387,20 @@ class PhotoParentController extends Controller
                 $photoParent->save();
 
                 $uploadcount ++;
+<<<<<<< HEAD
 //            } // end if
 
             }
         }
 
 
+=======
+
+            }
+            
+        }
+
+>>>>>>> 9912446fe5daa1d87038e6c8810b71aa0e9850be
         if($request->hasFile('status'))
         {
             $file = $request->file('status');
@@ -298,6 +413,7 @@ class PhotoParentController extends Controller
             $storage = \Storage::disk('public');
             $storage->makeDirectory($dir);
 
+<<<<<<< HEAD
             if($request->watermark == 1){
                 if($request->extracolumn == 1){
                     Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->insert('http://ktrk.kg/images/wm_ktrk.png', 'bottom-right', 10, 10)->save($dir.'/'.$name);
@@ -338,6 +454,23 @@ class PhotoParentController extends Controller
                     Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->save($dir.'/'.$name);
                     Image::make($_FILES['status']['tmp_name'])->fit(500, 300)->save($dir.'/'.$name2);
                 }
+=======
+            if($request->watermark == 2){
+                Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->insert('http://ktrk.kg/images/wm_ktrk.png', 'bottom-right', 10, 10)->save($dir.'/'.$name);
+                Image::make($_FILES['status']['tmp_name'])->fit(500, 300)->insert('http://ktrk.kg/images/wm_ktrk.png', 'bottom-right', 10, 10)->save($dir.'/'.$name2);
+            } elseif($request->watermark == 3){
+                Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->insert('http://ktrk.kg/images/wm_music.png', 'bottom-right', 10, 10)->save($dir.'/'.$name);
+                Image::make($_FILES['status']['tmp_name'])->fit(500, 300)->insert('http://ktrk.kg/images/wm_music.png', 'bottom-right', 10, 10)->save($dir.'/'.$name2);
+            } elseif($request->watermark == 4){
+                Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->insert('http://ktrk.kg/images/wm_balastan.png', 'bottom-right', 10, 10)->save($dir.'/'.$name);
+                Image::make($_FILES['status']['tmp_name'])->fit(500, 300)->insert('http://ktrk.kg/images/wm_balastan.png', 'bottom-right', 10, 10)->save($dir.'/'.$name2);
+            } elseif($request->watermark == 7){
+                Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->insert('http://ktrk.kg/images/wm_1radio.png', 'bottom-right', 10, 10)->save($dir.'/'.$name);
+                Image::make($_FILES['status']['tmp_name'])->fit(500, 300)->insert('http://ktrk.kg/images/wm_1radio.png', 'bottom-right', 10, 10)->save($dir.'/'.$name2);
+            } else{
+                Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->save($dir.'/'.$name);
+                Image::make($_FILES['status']['tmp_name'])->fit(500, 300)->save($dir.'/'.$name2);
+>>>>>>> 9912446fe5daa1d87038e6c8810b71aa0e9850be
             }
 
             $photoParent->status = $dir.'/'.$name;
@@ -345,6 +478,7 @@ class PhotoParentController extends Controller
             $photoParent->save();
         }
 
+<<<<<<< HEAD
         // start count how many uploaded
 
         return redirect()->route('admin.photoParent.show', $photoParent);
@@ -356,6 +490,11 @@ class PhotoParentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+=======
+        return redirect()->route('admin.photoParent.show', $photoParent);
+    }
+
+>>>>>>> 9912446fe5daa1d87038e6c8810b71aa0e9850be
     public function destroy(PhotoParent $photoParent)
     {
         $photoParent->delete();
@@ -379,7 +518,11 @@ class PhotoParentController extends Controller
         $key = array_has($files, $photoDeleteId);
 
         if($key !== false) {
+<<<<<<< HEAD
             $storage = \Storage::delete('/froala/uploads/'.$name);
+=======
+            $storage = \Storage::delete('/img/gallery/'.$name);
+>>>>>>> 9912446fe5daa1d87038e6c8810b71aa0e9850be
         }
 
         unset($files[$photoDeleteId-1]);
@@ -393,7 +536,10 @@ class PhotoParentController extends Controller
         return redirect()->route('admin.photoParent.show', $photoParent);
     }
 
+<<<<<<< HEAD
     // Day video first
+=======
+>>>>>>> 9912446fe5daa1d87038e6c8810b71aa0e9850be
     public function publish(Request $request)
     {
         $id =$request->photoParentId;
@@ -412,7 +558,10 @@ class PhotoParentController extends Controller
         return redirect()->route('admin.photoParent.index');
     }
 
+<<<<<<< HEAD
 //    Destroy Child
+=======
+>>>>>>> 9912446fe5daa1d87038e6c8810b71aa0e9850be
     public function destroyChild(Request $request)
     {
         $photoDeleteId = $request->photoDeleteId;
