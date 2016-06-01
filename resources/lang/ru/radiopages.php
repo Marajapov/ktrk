@@ -45,7 +45,7 @@ return [
 	   	//Content slider
 	    'Mainnews' => 'Главные новости',
 	    'Allphotos' => 'Все фотогалереи',
-	    'AllPereadachi' => 'Все новости',
+	    'AllPereadachi' => 'Все передачи',
 		'' => '',
 		'' => '',
 

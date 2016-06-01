@@ -18,7 +18,7 @@ class BirinchiController extends Controller
 
         if($lc == 'kg'){
             $generalPosts = \Model\Post\ModelName::where('birinchi','=',1)->where('general','=','1')->languagekg()->take(3)->orderBy('id','desc')->get();
-            $lentaNews = \Model\Post\ModelName::where('birinchi','=',1)->languagekg()->take(20)->orderBy('id','desc')->get();
+            $lentaNews = \Model\Post\ModelName::where('birinchi','=',1)->where('birinchiProgram','<','0')->languagekg()->take(20)->orderBy('id','desc')->get();
 
             foreach($categories as $category){
                 $categoryPosts = \Model\Post\ModelName::where('birinchi','=','1')->where('category_id','=',$category->id)->where('published','=','1')->where('title','<>','')->orderBy('id','desc')->take(3)->get();
@@ -32,7 +32,7 @@ class BirinchiController extends Controller
 
         }else{
             $generalPosts = \Model\Post\ModelName::where('birinchi','=',1)->where('general','=','1')->languageru()->take(3)->orderBy('id','desc')->get();
-            $lentaNews = \Model\Post\ModelName::where('birinchi','=',1)->languageru()->take(20)->orderBy('id','desc')->get();
+            $lentaNews = \Model\Post\ModelName::where('birinchi','=',1)->where('birinchiProgram','<','0')->languageru()->take(20)->orderBy('id','desc')->get();
 
 
             foreach($categories as $category){
@@ -425,7 +425,7 @@ class BirinchiController extends Controller
         $lc = app()->getlocale();
         if($lc == 'kg'){
             $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('name','<>','' )->get();
-            $postAll = \Model\Post\ModelName::where('birinchi','=',1)->where('title','<>','')->published()->orderBy('id','desc')->paginate($perPage);      
+            $postAll = \Model\Post\ModelName::where('birinchi','=',1)->where('birinchiProgram','<','0')->where('title','<>','')->published()->orderBy('id','desc')->paginate($perPage);      
             $popArticles = \Model\Post\ModelName::where('birinchi','=','1')->languagekg()->orderBy('viewed','desc')->take(6)->get();
             if(count($popArticles) > 0){
                 $popArticles = $popArticles;
@@ -434,7 +434,7 @@ class BirinchiController extends Controller
             }  
         }else{
             $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('nameRu','<>','' )->get();
-            $postAll = \Model\Post\ModelName::where('birinchi','=',1)->where('titleRu','<>','')->published()->orderBy('id','desc')->paginate($perPage);
+            $postAll = \Model\Post\ModelName::where('birinchi','=',1)->where('birinchiProgram','<','0')->where('titleRu','<>','')->published()->orderBy('id','desc')->paginate($perPage);
 
             $popArticles = \Model\Post\ModelName::where('birinchi','=','1')->languageru()->orderBy('viewed','desc')->take(6)->get();
             if(count($popArticles) > 0){
@@ -446,6 +446,7 @@ class BirinchiController extends Controller
         $categories = \Model\Category\ModelName::where('birinchi','=','1')->get();
 
         return view('Front::channel.birinchi.allnews', [
+            'lc' =>$lc,
             'perPage' => $perPage,
             'channel' => $channel,
             'backgroundMain' => $backgroundMain,
