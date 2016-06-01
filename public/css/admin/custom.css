@@ -1724,10 +1724,7 @@ ul.msg_list li a .message {
 
 .dropdown-menu>li>a {
     color: #5A738E;
-<<<<<<< HEAD
-=======
     font-size: 14px;
->>>>>>> 9912446fe5daa1d87038e6c8810b71aa0e9850be
 }
 
 .navbar-nav .open .dropdown-menu {
@@ -2430,13 +2427,9 @@ legend {
     margin-right: 0;
     margin-left: 0;
 }
-<<<<<<< HEAD
-
-=======
 .form-horizontal #watermarkGroup .form-group:last-child{
     margin-bottom: 10px;
 }
->>>>>>> 9912446fe5daa1d87038e6c8810b71aa0e9850be
 .form-control-feedback {
     margin-top: 8px;
     height: 23px;
@@ -2568,19 +2561,6 @@ select.parsley-error {
     box-sizing: border-box;
 }
 
-<<<<<<< HEAD
-.dropzone {
-    min-height: 150px;
-    border: 2px solid rgba(0, 0, 0, 0.3);
-    background: white;
-    padding: 54px 54px;
-}
-
-.dropzone.dz-clickable {
-    cursor: pointer;
-}
-
-=======
 .form-group .dropzone,
 #dropzoneFileUpload.dropzone {
     float: left;
@@ -2621,7 +2601,6 @@ select.parsley-error {
 #dropzoneFileUpload.dropzone.dz-started{
     padding: 20px;
 }
->>>>>>> 9912446fe5daa1d87038e6c8810b71aa0e9850be
 .dropzone.dz-clickable * {
     cursor: default;
 }
@@ -2643,18 +2622,12 @@ select.parsley-error {
     opacity: 0.5;
 }
 
-<<<<<<< HEAD
-.dropzone .dz-message {
-    text-align: center;
-    margin: 2em 0;
-=======
 .form-group .dropzone .dz-message,
 #dropzoneFileUpload.dropzone .dz-message {
     text-align: center;
 
     /*display: none;*/
     margin: 0;
->>>>>>> 9912446fe5daa1d87038e6c8810b71aa0e9850be
 }
 
 .dropzone .dz-preview {
@@ -2664,13 +2637,10 @@ select.parsley-error {
     margin: 16px;
     min-height: 100px;
 }
-<<<<<<< HEAD
-=======
 .form-group .dropzone .dz-preview,
 #dropzoneFileUpload.dropzone .dz-preview{
     margin: 5px;
 }
->>>>>>> 9912446fe5daa1d87038e6c8810b71aa0e9850be
 
 .dropzone .dz-preview:hover {
     z-index: 1000;
@@ -2680,14 +2650,9 @@ select.parsley-error {
     opacity: 1;
 }
 
-<<<<<<< HEAD
-.dropzone .dz-preview.dz-file-preview .dz-image {
-    border-radius: 20px;
-=======
 .form-group .dropzone .dz-preview.dz-file-preview .dz-image,
 #dropzoneFileUpload.dropzone .dz-preview.dz-file-preview .dz-image {
     border-radius: 0;
->>>>>>> 9912446fe5daa1d87038e6c8810b71aa0e9850be
     background: #999;
     background: linear-gradient(to bottom, #eee, #ddd);
 }
@@ -2696,13 +2661,9 @@ select.parsley-error {
     opacity: 1;
 }
 
-<<<<<<< HEAD
-.dropzone .dz-preview.dz-image-preview {
-=======
 .dropzone .dz-preview.dz-image-preview,
 .dropzone .dz-preview.dz-image-preview .dz-image{
     border-radius: 0;
->>>>>>> 9912446fe5daa1d87038e6c8810b71aa0e9850be
     background: white;
 }
 

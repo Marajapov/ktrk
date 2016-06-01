@@ -1,18 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<<<<<<< HEAD
-  <meta charset="UTF-8">
-  <title>Document</title>
-</head>
-<body>
-  {!! Form::model($test, ['route' => 'admin.test.store', 'enctype' => 'multipart/form-data']) !!}
-    {!! Form::file('images[]', array('multiple'=>true)) !!}
-    {!! Form::submit('Submit', array('class'=>'send-btn')) !!}
-  {!! Form::close() !!}
-</body>
-</html>
-=======
+
 	<meta charset="UTF-8">
 	<meta name="_token" content="{!! csrf_token() !!}"/>
 	<title>Document</title>
@@ -46,4 +35,3 @@
 
 </body>
 </html>
->>>>>>> 9912446fe5daa1d87038e6c8810b71aa0e9850be
