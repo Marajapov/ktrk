@@ -255,11 +255,10 @@ return [
     'AdminPhotoParentNewGal' => 'Жаңы сүрөт галереясы',
     'AdminPhotoParents' => 'Сүрөт галереялары',
     'AdminPhotoParentLocation' => 'Жайгашкан жери',
-<<<<<<< HEAD
-=======
+
     'AdminPhotoParentImages' => 'Сүрөттөрдү кошуу',
     'AdminPhotoParentImagesSelect' => 'Сүрөттөрдү тандаңыз',
->>>>>>> 9912446fe5daa1d87038e6c8810b71aa0e9850be
+
     '' => '',
 
     //Post menu
