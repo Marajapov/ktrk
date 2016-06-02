@@ -187,7 +187,7 @@
                                             </span></a>
                                             <span class="views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
                                         </div>
-                                        <a class="media-heading" href="{{ route('birinchi.news', $post) }}">{{ $post->getTitleRuOrKg() }}</a>
+                                        <a class="media-heading" href="{{ route('birinchi.show', $post) }}">{{ $post->getTitleRuOrKg() }}</a>
                                     </div>
 
                                 </div>

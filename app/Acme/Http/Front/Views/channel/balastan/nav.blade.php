@@ -5,18 +5,6 @@
                 <img src="{{ asset('images/channels/balastan_white_notext.png') }}" alt="Balastan Logo"/>
             </a>
         </div>
-        <div class="row">
-            <div class="col-md-12">
-                <h2>You can edit this CSS if you want<br /> and if you need.</h2>
-                <div class="col-md-6 .col-md-offset-3">
-                   <ul class="social">
-                      <li class="facebook"><a href="http://facebook.com/alterowo"><i class="fa fa-facebook fa-3x"></i></a></li>
-                      <li class="twitter"><a href="http://twitter.com/Kyokushinowa"><i class="fa fa-twitter fa-3x"></i></a></li>
-                      <li class="behance2"><a href="https://www.behance.net/Kurnikowa"><i class="fa fa-behance fa-3x"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-         </div>
         <ul class="kidstopheader">
             <li>
                 <a href="{{ route('balastan.about') }}">
@@ -59,6 +47,14 @@
                   </div>
             </li>
         </ul>
+        <div class="social-icons">
+            <ul class="social-icons icon-circle icon-rotate list-unstyled list-inline">
+              <li> <a href="http://ok.ru/group/54083586949236/members" target="_blank"><i class="fa fa-odnoklassniki" aria-hidden="true"></i></a> </li> 
+              <li> <a href="https://www.youtube.com/channel/UCOD3MESjXSvqYZcWWnZkdMQ" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li> 
+              <li> <a href="https://www.instagram.com/balastan_ktrk/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li> 
+              <li> <a href="https://www.facebook.com/Balastan" target="_blank"><i class="fa fa-facebook"></i></a></li>   
+            </ul>
+        </div>
         <div class="langs">
             <ul>
                 <li @if(app()->getlocale() == 'kg') class="active" @endif><a href="/locale/kg">кырг <span></span></a></li>

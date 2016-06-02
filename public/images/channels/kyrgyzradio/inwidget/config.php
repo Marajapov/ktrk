@@ -11,7 +11,7 @@ $CONFIG = array(
 	// ACCESS TOKEN granted to you by some Instagram app.
 	// Follow this link: http://inwidget.ru/getAccessToken.php
 	// to get your own ACCESS TOKEN by inWidget app.
-	'ACCESS_TOKEN' => '3037591779.a7f6f15.32bd74843a27466ca9fd47072fe4ea4c',
+	'ACCESS_TOKEN' => '3037591779.7e25b74.175665edbf384990b4e71916d853181c',
 
 	// Get pictures from WORLDWIDE by tag name. 
 	// Use this options only if you want show pictures of other users. 

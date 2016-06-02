@@ -19,14 +19,14 @@
                 
                      <div class="blocknews col-md-4 col-sm-6 col-xs-12">
                           <article>
-                              <a href="{{ route('birinchi.news', $post) }}" class="image-link">
+                              <a href="{{ route('birinchi.news', [$post, $lc]) }}" class="image-link">
                                   <img src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif">
                                   <div class="card-info">
                                       <span class="date ">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
                                   </div>
                               </a>
                               <h3 class="name headline">
-                                  <a href="{{ route('birinchi.news', $post) }}" title="">
+                                  <a href="{{ route('birinchi.news', [$post, $lc]) }}" title="">
                                       {{ $post->getTitleRuOrKg() }}
                                   </a>
                               </h3>

@@ -30,6 +30,8 @@
                                     <img src="{{ asset($photoGallery->thumbnail_big) }}" alt="" />
                                     <span class="video-overlay"></span>
                                 </a>
+                                <h5 class="video-view"><i class="fa fa-eye"></i>{{ $photoGallery->viewed}}</h5>
+                                <h5 class="video-date"><i class="fa fa-calendar"></i>{{ $photoGallery->getDateFormatted() }}</h5>
                                 <div class="video-info">
                                     <div class="media">
                                         <div class="media-left media-middle">
@@ -45,28 +47,30 @@
                             </div>
                         @endforeach
                     @endif
-                    <div class="container">
-                        <nav class="kidspaginate">
-                            <ul class="pagination">
-                                <li>
-                                    <a href="{{ route('balastan.allphotos', ['page' => 1]) }}" class="btn btn-default @if($postAll->currentPage() == 1) disabled @endif">{{ trans('site.Start') }}</a>
-                                </li>
-                                <li>
-                                    <a href="{{ $postAll->previousPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span></a>
-                                </li>
-                                <li>
-                                    <a href="{{ $postAll->nextPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-right"></span></a>
-                                </li>
-                                @for($i = 0, $j = 1; $i < $postAll->total(); $i+=$perPage)
+                    <div class="col-md-12">
+                        <div class="container">
+                            <nav class="kidspaginate">
+                                <ul class="pagination">
                                     <li>
-                                        <a href="{{ route('balastan.allphotos', ['page' => $j]) }}" class="btn btn-default @if($postAll->currentPage() == $j) active @endif">{{ $j++ }}</a>
+                                        <a href="{{ route('balastan.allphotos', ['page' => 1]) }}" class="btn btn-default @if($photoGalleries->currentPage() == 1) disabled @endif">{{ trans('site.Start') }}</a>
                                     </li>
-                                @endfor
-                                <li>
-                                    <a href="{{ route('balastan.allphotos', ['page' => ceil($postAll->total()/$perPage)]) }}" class="btn btn-default @if($postAll->currentPage() == ceil($postAll->total()/$perPage)) disabled @endif">{{ trans('site.End') }}</a>
-                                </li>
-                            </ul>
-                        </nav>
+                                    <li>
+                                        <a href="{{ $photoGalleries->previousPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ $photoGalleries->nextPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                                    </li>
+                                    @for($i = 0, $j = 1; $i < $photoGalleries->total(); $i+=$perPage)
+                                        <li>
+                                            <a href="{{ route('balastan.allphotos', ['page' => $j]) }}" class="btn btn-default @if($photoGalleries->currentPage() == $j) active @endif">{{ $j++ }}</a>
+                                        </li>
+                                    @endfor
+                                    <li>
+                                        <a href="{{ route('balastan.allphotos', ['page' => ceil($photoGalleries->total()/$perPage)]) }}" class="btn btn-default @if($photoGalleries->currentPage() == ceil($photoGalleries->total()/$perPage)) disabled @endif">{{ trans('site.End') }}</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
                     </div>
                 </div>
             </div>

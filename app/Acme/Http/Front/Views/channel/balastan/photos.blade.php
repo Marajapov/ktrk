@@ -33,7 +33,9 @@
                             <i class="fa-view"></i>{{ $gallery->viewed }}
                         </span>
                     </span>
-                  <p style="text-align:center; color: #fff; font-size: 18px;">{!! $gallery->getDescription() !!}</p>
+                    <article>
+                      {!! $gallery->getDescription() !!}                      
+                    </article>
                   <ul id="imageGallery">
                      @foreach($images as $image)
                      <li data-thumb="{{ asset('froala/uploads/'.$image->name) }}" data-src="{{ asset('froala/uploads/'.$image->name) }}">

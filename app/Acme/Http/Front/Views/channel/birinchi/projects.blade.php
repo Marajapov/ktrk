@@ -29,7 +29,7 @@
                               <span class="views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
                            </div>
                            <a class="media-heading " href="{{ route('birinchi.show', $post) }}">{{ $post->getTitleRuOrKg() }}</a>
-                           <span class="mb_substr">
+                           <span class="mb_substr" style="display: block;">
                               {{$post->getShortDescription()}}
                            </span>
                         </div>
