@@ -7,7 +7,7 @@ use Input;
 use App\Http\Requests;
 use \Model\PollVote\ModelName as Vote;
 
-class AjaxNsController extends Controller
+class AjaxController extends Controller
 {
 
     // AJAX CALL
@@ -116,5 +116,12 @@ class AjaxNsController extends Controller
 
             
         }
-    }     
+    }
+
+  public function teleprogramChangeChannel(){
+    if(Request::ajax()) {
+      $data = Input::all();
+      return $data['id'];
+    }
+  }
 }

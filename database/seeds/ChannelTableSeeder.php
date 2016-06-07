@@ -18,7 +18,7 @@ class ChannelTableSeeder extends Seeder
             'name'      => 'general',
             'display'   => 'Общий',
             'file'       => 'images/logo_notext.png',
-            'published' => true,
+            'published' => false,
         ]);
 
         \Model\Channel\ModelName::create([
@@ -50,7 +50,7 @@ class ChannelTableSeeder extends Seeder
             'name'      => 'madaniyat',
             'display'   => 'Маданият',
             'file'       => 'img/icons/5.png',
-            'published' => true,
+            'published' => false,
         ]);
 
         \Model\Channel\ModelName::create([
@@ -82,13 +82,21 @@ class ChannelTableSeeder extends Seeder
             'name'      => 'minkiyal',
             'display'   => 'Мин Кыял',
             'file'       => 'img/icons/9.png',
-            'published' => true,
+            'published' => false,
         ]);
 
         \Model\Channel\ModelName::create([
             'id'        => 10,
             'name'      => 'baldar',
             'display'   => 'Балдар',
+            'published' => false,
+        ]);
+
+        \Model\Channel\ModelName::create([
+            'id'        => 11,
+            'name'      => 'sport',
+            'display'   => 'Спорт',
+            'file'      => 'img/icons/11.png',
             'published' => true,
         ]);
     }
