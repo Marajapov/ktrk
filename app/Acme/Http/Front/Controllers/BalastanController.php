@@ -20,7 +20,7 @@ class BalastanController extends Controller
         $medias = \Model\Media\ModelName::where('balastan','=','1')->take(6)->orderBy('id','desc')->get();
 
         // Photo Gallery
-        $photoGalleries = \Model\PhotoParent\ModelName::where('balastan','=','1')->where('published','=',true)->take('10')->orderBy('id','desc')->get();
+        $photoGalleries = \Model\PhotoParent\ModelName::where('balastan','=','1')->where('published','=',true)->take('6')->orderBy('id','desc')->get();
 
         if(count($medias) > 0){ $medias = $medias;
         }else{ $medias = null; }
@@ -169,20 +169,16 @@ class BalastanController extends Controller
       public function allphotos()
     {
         $channel = \Model\Channel\ModelName::name('balastan')->first();
-        $perPage = 24;
+        $perPage = 12;
 
-        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
-
-        $postAll = \Model\Media\ModelName::where('published','=',true)->where('balastan','=','1')->orderBy('id', 'desc')->paginate($perPage);        
-
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();  
 
         // Photo Gallery
-        $photoGalleries = \Model\PhotoParent\ModelName::where('balastan','=','1')->where('published','=',true)->take('10')->orderBy('id','desc')->get();        
+        $photoGalleries = \Model\PhotoParent\ModelName::where('balastan','=','1')->where('published','=',true)->orderBy('id','desc')->paginate($perPage);       
         return view('Front::channel.balastan.allphotos', [
             'channel' => $channel,
             'backgroundMain' => $backgroundMain,
             'photoGalleries' => $photoGalleries,
-            'postAll' => $postAll,
             'perPage' => $perPage,
 
             ]);

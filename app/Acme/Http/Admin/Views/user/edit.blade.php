@@ -16,7 +16,9 @@
 			</div>
 			<div class="x_content">
 				{!! Form::model($user, ['route' => ['admin.user.update', $user], 'method' => 'PUT', 'class'=>'form-horizontal']) !!}
-				@include('Admin::partials.forms.user', $user)
+
+				@include('Admin::user.formEdit', $user)
+
 				{!! Form::close() !!}
 
 			</div>

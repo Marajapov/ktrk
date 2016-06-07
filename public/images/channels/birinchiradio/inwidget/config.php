@@ -6,12 +6,12 @@
 $CONFIG = array(
 
 	// Instagram login
-	'LOGIN' => 'min_kyalfm',
+	'LOGIN' => 'birinchiradio',
 
 	// ACCESS TOKEN granted to you by some Instagram app.
 	// Follow this link: http://inwidget.ru/getAccessToken.php
 	// to get your own ACCESS TOKEN by inWidget app.
-	'ACCESS_TOKEN' => '2324734350.31715be.48ce99b627f741e6bad7b056239e9076',
+	'ACCESS_TOKEN' => '3293613599.751973f.71835a68c03140a49f230f11c9a73da9',
 
 	// Get pictures from WORLDWIDE by tag name. 
 	// Use this options only if you want show pictures of other users. 

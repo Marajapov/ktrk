@@ -402,6 +402,7 @@ class BirinchiController extends Controller
         }
         
         return view('Front::channel.birinchi.category',[
+            'lc' =>$lc,
             'perPage'=> $perPage,
             'posts' => $posts,
             'category' => $category,

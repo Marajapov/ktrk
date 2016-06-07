@@ -1,6 +1,7 @@
 @include('Front::messages.flash')
 
 @section('styles')
+
 <meta name="_token" content="{!! csrf_token() !!}"/>
 
 <link rel="stylesheet" href="{{ asset('css/bootstrap-select.css') }}"/>
@@ -75,6 +76,7 @@
             <div class="col-sm-10">
                 <div class="fileinput fileinput-new" data-provides="fileinput">
                     <div class="fileinput-new thumbnail" style="width: 250px; height: 150px;">
+
                         @if($photoParent->getThumbnail())
                         <img src="{{ asset($photoParent->getThumbnail()) }}" alt="..."> @endif</div>
                     <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
@@ -92,6 +94,7 @@
 
         <!-- watermark -->
         <div class="form-group">
+
             <label for="watermark" class="col-sm-2 control-label">Водяной знак</label>
             <div class="col-sm-10">
                 {!! Form::select('watermark', ['0'=>'Без водяного знака']+$channels, null, ["id"=>"watermark","class" => "selectpicker form-control", "data-live-search"=>"true", "required" => true, "title" => "-- Выбрать --"]) !!}
@@ -144,6 +147,7 @@
             <div class="col-sm-10">
                 <div class="checkbox checkbox-primary ">
                     {!! Form::hidden('director', 0) !!}
+
                         {!! Form::checkbox('director', 1, null, ["id" => "director", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
                     <label for="director">Ген.директор</label>
                 </div>
@@ -156,6 +160,7 @@
             <div class="col-sm-10">
                 <div class="checkbox checkbox-primary ">
                     {!! Form::hidden('muzkanal', 0) !!}
+
                         {!! Form::checkbox('muzkanal', 1, null, ["id" => "muzkanal", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
                     <label for="muzkanal">Муз канал</label>
                 </div>
@@ -180,6 +185,7 @@
             <div class="col-sm-10">
                 <div class="checkbox checkbox-primary ">
                     {!! Form::hidden('birinchi', 0) !!}
+
                         {!! Form::checkbox('birinchi', 1, null, ["id" => "birinchi", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
                     <label for="birinchi">Биринчи радио</label>
                 </div>

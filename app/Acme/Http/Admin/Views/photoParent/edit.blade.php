@@ -5,11 +5,9 @@
 <div class="row modals">
     <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
-
             <div class="x_title clearfix">
                 <h4 class="pull-left">{{ trans('site.AdminPhotoParentChange') }}</h4>
             </div>
-
             <div class="x_content">
                 {!! Form::model($photoParent, ['route' => ['admin.photoParent.update', $photoParent], 'method' => 'PUT', 'enctype' => 'multipart/form-data',  'class'=>'form-horizontal']) !!}
                 @include('Admin::partials.forms.photoParent', $photoParent)

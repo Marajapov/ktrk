@@ -20,6 +20,7 @@ class AjaxController extends Controller
             $data = Input::all();
             return $data['id'];
         }
+
     }
 
     public function uploadFiles() {
@@ -67,5 +68,4 @@ class AjaxController extends Controller
             return Response::json('error', 400);
         }
     }
-
 }

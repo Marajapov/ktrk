@@ -26,6 +26,7 @@ class TestController extends Controller
             $file = $request->file('photos');
             die($file);
         }        
+
     }
 
     public function show()

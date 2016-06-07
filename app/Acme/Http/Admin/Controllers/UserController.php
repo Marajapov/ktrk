@@ -43,7 +43,10 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        User::create($request->except('q'));
+        $user = User::create($request->except('q'));
+
+        $user->password = bcrypt($request->input('password'));
+        $user->save();
 
         return redirect()->route('admin.user.index');
     }
@@ -79,7 +82,8 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        $user->update($request->except('q'));
+
+        $user->update($request->except('q','password'));
 
         return redirect()->route('admin.user.show', $user);
     }
@@ -95,5 +99,33 @@ class UserController extends Controller
         $user->delete();
 
         return redirect()->route('admin.user.index');
+    }
+
+
+    public function changePassword(Request $request, $id)
+    {
+        $user = User::where('id','=',$id)->first();
+        return view('Admin::user.password', [
+            'user' => $user,
+            'userId' => $user->id,
+            ]);
+    }
+
+    public function newPassword(Request $request)
+    {
+        $pass1 = $request->input('password');
+        $pass2 = $request->input('password2');
+        $userId = $request->input('userId');
+
+        if($pass1 == $pass2)
+        {
+            $password = bcrypt($pass1);
+            $user = User::where('id','=',$userId)->first();
+            $user->password = $password;
+            $user->save();
+
+            return redirect()->route('admin.user.show', $user);
+
+        }
     }
 }

@@ -11,7 +11,6 @@ use Intervention\Image\ImageManagerStatic as Image;
 
 class PhotoParentController extends Controller
 {
-
     public function index()
     {
         $photoParents = PhotoParent::orderBy('id','desc')->get();
@@ -20,6 +19,7 @@ class PhotoParentController extends Controller
             'photoParents' => $photoParents,
         ]);
     }
+
 
     public function create()
     {
@@ -42,6 +42,7 @@ class PhotoParentController extends Controller
 
         $file_count = count($files);
 
+
         if($request->hasFile('status'))
         {
             $file = $request->file('status');
@@ -53,6 +54,7 @@ class PhotoParentController extends Controller
 
             $storage = \Storage::disk('public');
             $storage->makeDirectory($dir);
+
 
             if($request->watermark == 2){
                 Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->insert('http://ktrk.kg/images/wm_ktrk.png', 'bottom-right', 10, 10)->save($dir.'/'.$name);
@@ -78,17 +80,21 @@ class PhotoParentController extends Controller
 
         $uploadcount = 0;
 
+
         if($files){
+
             foreach($files as $key=>$file) {
 
                 $storage = \Storage::disk('public');
                 $destinationPath = 'froala/uploads';
                 $storage->makeDirectory($destinationPath);
 
+
                 $file_array = array();
                 $file_array = array_collapse([$file_array, [
                     'id' => $key+1,
                     'name' => $file
+
                 ]]);
 
                 $result = array_add($result, $key , $file_array);
@@ -96,6 +102,7 @@ class PhotoParentController extends Controller
                 $jsonresult = json_encode($result);
 
                 PhotoChild::create([
+
                     'file'=> $destinationPath.'/'.$file,
                     'parentId' => $photoParent->id
                 ]);
@@ -105,10 +112,12 @@ class PhotoParentController extends Controller
 
                 $uploadcount ++;
             }
+
         }
 
         return redirect()->route('admin.photoParent.index');
     }
+
 
     public function show(PhotoParent $photoParent)
     {
@@ -121,6 +130,7 @@ class PhotoParentController extends Controller
             'photoChildren' => $photoChildren,
         ]);
     }
+
 
     public function edit(PhotoParent $photoParent)
     {
@@ -145,6 +155,7 @@ class PhotoParentController extends Controller
             $uploadcount = 0;
 
             foreach($files as $key=>$file) {
+
 
                 $storage = \Storage::disk('public');
                 $destinationPath = 'froala/uploads';
@@ -185,6 +196,7 @@ class PhotoParentController extends Controller
 
             $storage = \Storage::disk('public');
             $storage->makeDirectory($dir);
+
 
             if($request->watermark == 2){
                 Image::make($_FILES['status']['tmp_name'])->fit(250, 150)->insert('http://ktrk.kg/images/wm_ktrk.png', 'bottom-right', 10, 10)->save($dir.'/'.$name);
@@ -234,6 +246,7 @@ class PhotoParentController extends Controller
         $key = array_has($files, $photoDeleteId);
 
         if($key !== false) {
+
             $storage = \Storage::delete('/img/gallery/'.$name);
         }
 

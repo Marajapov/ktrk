@@ -5,7 +5,6 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreatePhotoParent extends Migration
 {
-
     public function up()
     {
         Schema::create('photoParent', function (Blueprint $table) {
@@ -33,8 +32,8 @@ class CreatePhotoParent extends Migration
             $table->boolean('published')->nullable()->default(false);;
             $table->string('status');
             $table->string('thumbnail_big');
-            $table->integer('watermark');
 
+            $table->integer('watermark');
             $table->smallInteger('viewed')->default(0);
             $table->timestamps();
         });
@@ -45,5 +44,4 @@ class CreatePhotoParent extends Migration
         Schema::drop('photoParent');
     }
 }
-
 ?>

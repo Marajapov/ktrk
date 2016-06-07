@@ -154,7 +154,7 @@
          <div class="col-md-12">
             <div class="title">
                <h3>{{ trans('radiopages.Photos') }}</h3>
-               <a href="#" class="more-link">{{ trans('radiopages.Allphotos') }}</a>
+               <a href="{{ route('balastan.allphotos') }}" class="more-link">{{ trans('radiopages.Allphotos') }}</a>
             </div>
          </div>
          @if($photoGalleries)
@@ -165,7 +165,9 @@
             <span class="video-overlay">
               <div class="overlay"></div>
             </span>
-            </a>                    
+            </a>
+            <h5 class="video-view"><i class="fa fa-eye"></i>{{ $photoGallery->viewed}}</h5>
+                                <h5 class="video-date"><i class="fa fa-calendar"></i>{{ $photoGallery->getDateFormatted() }}</h5>                    
             <div class="video-info">
                <div class="media">
                   <div class="media-left media-middle">

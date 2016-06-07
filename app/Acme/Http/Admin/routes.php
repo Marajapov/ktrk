@@ -15,7 +15,12 @@
 Route::group(['prefix' => 'admin', 'middleware' => 'access:admin', 'namespace' => 'Admin\Controllers'], function(){
     Route::get('/',     ['as' => 'admin.home', 'uses' => 'HomeController@Home']);
 
+    // User routes
     Route::resource('user', 'UserController');
+    Route::get('user/changePassword/{id}', ['as'=>'admin.user.changePassword', 'uses'=>'UserController@changePassword']);
+    Route::post('user/newPassword', ['as'=>'admin.user.newPassword', 'uses'=>'UserController@newPassword']);
+
+    //
     Route::resource('post', 'PostController');
     Route::resource('category', 'CategoryController');
     Route::resource('channel', 'ChannelController');
@@ -39,6 +44,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'access:admin', 'namespace' =
     Route::get('photoParent.photodelete', ['as' => 'admin.photoParent.photodelete', 'uses' => 'PhotoParentController@photodelete']);
     Route::get('photoParent.publish', ['as' => 'admin.photoParent.publish', 'uses' => 'PhotoParentController@publish']); // publish the Gallery
     Route::get('photoParent.unpublish', ['as' => 'admin.photoParent.unpublish', 'uses' => 'PhotoParentController@unpublish']); // unpublish the Gallery
+
     Route::post('photoParent/uploadFiles', ['as' => 'admin.photoParent.uploadFiles', 'uses' => 'AjaxController@uploadFiles']);
     Route::post('photoParent/create', 'AjaxController@selectChange');
 
@@ -55,7 +61,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'access:admin', 'namespace' =
 
 
     Route::get('test', ['as' => 'admin.test', 'uses' => 'TestController@index']);
+
     Route::post('test/uploadFiles', ['as' => 'admin.test.uploadFiles', 'uses' => 'AjaxController@uploadFiles']);
+
     Route::post('test/store', ['as' => 'admin.test.store', 'uses' => 'TestController@store']);
     Route::get('test/show', ['as' => 'admin.show', 'uses' => 'TestController@show']);
 
