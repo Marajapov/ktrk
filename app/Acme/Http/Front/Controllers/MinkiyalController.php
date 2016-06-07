@@ -39,14 +39,15 @@ class MinkiyalController extends Controller
 
     public function Posts()
     {
+        $perPage = 12;
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
         $channel = \Model\Channel\ModelName::name('minkiyal')->first();
-        $photoGalleries = \Model\PhotoParent\ModelName::where('minkiyal','=','1')->where('published','=',true)->take('10')->orderBy('id','desc')->get();        
-
+        $photoGalleries = \Model\PhotoParent\ModelName::where('minkiyal','=','1')->where('published','=',true)->take('10')->orderBy('id','desc')->paginate($perPage);        
         return view('Front::channel.minkiyal.posts', [
             'channel' => $channel,
             'photoGalleries' => $photoGalleries,
             'backgroundMain' => $backgroundMain,
+            'perPage' => $perPage,
             ]);
     }
 
@@ -215,10 +216,9 @@ class MinkiyalController extends Controller
     public function Gallery(Request $request, $galleryId)
     {
 
-        $gallery = \Model\PhotoParent\ModelName::where('minkiyal','=','1')->where('id','=',$galleryId)->first();
+        $gallery = \Model\PhotoParent\ModelName::where('minkiyal','=','1')->where('published','=',true)->where('id','=',$galleryId)->first();
         $gallery->incrementViewed();
         $images = json_decode($gallery->images);
-
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
     
