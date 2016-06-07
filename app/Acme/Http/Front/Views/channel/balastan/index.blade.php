@@ -167,7 +167,7 @@
             </span>
             </a>
             <h5 class="video-view"><i class="fa fa-eye"></i>{{ $photoGallery->viewed}}</h5>
-                                <h5 class="video-date"><i class="fa fa-calendar"></i>{{ $photoGallery->getDateFormatted() }}</h5>                    
+            <h5 class="video-date"><i class="fa fa-calendar"></i>{{ $photoGallery->getDateFormatted() }}</h5>    
             <div class="video-info">
                <div class="media">
                   <div class="media-left media-middle">
