@@ -1624,3 +1624,50 @@ h3#reply-title {
     left: auto;
   }
 }
+
+.panel-logo{
+  
+}
+.panel-logo .orderby{
+  position: relative;
+  display: block;
+  margin: 15px 0px;
+}
+.panel-logo .orderby ul{
+
+}
+.panel-logo .orderby ul li{
+    list-style: initial;
+    line-height: 24px;
+    margin-left: 35px;
+    margin-top: 5px;
+    font-size: 16px;
+}
+.panel-logo .logorgb{
+    display: inline-table;
+    margin-left: 15px;
+    margin-top: 20px;
+    font-size: 16px;
+}
+.panel-logo .variants .first{
+  padding-bottom: 15px
+}
+.panel-logo .variants .col-md-2{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+.panel-logo .variants a img{
+    position: relative;
+    height: 120px;
+    width: auto;
+    text-align: center;
+    vertical-align: middle;
+}
+.panel-logo .variants a span{
+    position: relative;
+    display: block;
+    text-align: center;
+    color: #444;
+    font-weight: bold;
+}

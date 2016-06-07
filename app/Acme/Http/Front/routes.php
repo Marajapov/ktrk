@@ -198,6 +198,7 @@ Route::group(['domain' => 'ktrk.dev', 'prefix' => '/kyrgyzradio', 'namespace' =>
     Route::get('program', ['as' => 'front.pages.program', 'uses' => 'PageController@teleprogramPage']);
     Route::get('teleprogram/{channel}', ['as' => 'front.pages.teleprogram', 'uses' => 'PageController@ChannelTeleprogram']);
     Route::get('editionkenesh', ['as' => 'front.pages.editionkenesh', 'uses' => 'PageController@editionkeneshPage']);
+    Route::get('logo', ['as' => 'front.pages.logo', 'uses' => 'PageController@logoPage']);
 
 //    BaikoochuKenesh
     Route::get('ns', ['as' => 'front.ns.index', 'uses' => 'NsController@index']);

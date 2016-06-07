@@ -445,4 +445,20 @@ class PageController extends Controller
       'positionLeft'  => $this->positionLeft,
     ]);
   }
+  public function logoPage()
+  {
+    $lc = app()->getlocale();
+    $categories = \Model\Category\ModelName::all();
+    $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+    return view('Front::pages.logo', [
+      'backgroundMain' => $backgroundMain,
+      'categories' => $categories,
+      'positionTop'    => $this->positionTop,
+      'positionRight'  => $this->positionRight,
+      'positionCenter' => $this->positionCenter,
+      'positionBottom' => $this->positionBottom,
+      'positionLeft'  => $this->positionLeft,
+      'lc' => $lc,
+    ]);
+  }
 }
