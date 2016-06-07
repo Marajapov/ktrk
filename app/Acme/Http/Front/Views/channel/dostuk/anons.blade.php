@@ -41,8 +41,34 @@
               </div>
             @endforeach
             @endif
+              <div class="col-md-12" style="margin-bottom: 10px">
+                <nav>
+                    <ul class="pagination">
+                        <li>
+                            <a href="{{ route('dostuk.anons', ['page' => 1]) }}" class="btn btn-default @if($dostuk->currentPage() == 1) disabled @endif">{{ trans('site.Start') }}</a>
+                        </li>
+                        <li>
+                            <a href="{{ $dostuk->previousPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                        </li>
+                        @for($i = 0, $j = 1; $i < $dostuk->total(); $i+=$perPage)
+                            <li class="@if(($j > $dostuk->currentPage()+10) || ($j < $dostuk->currentPage()-10)) hidden @endif">
+                                <a href="{{ route('dostuk.anons', ['page' => $j]) }}" class="btn btn-default @if($dostuk->currentPage() == $j) active @endif">
+                                    {{ $j++ }}
+                                </a>
+                            </li>
+                        @endfor
+                        <li>
+                            <a href="{{ $dostuk->nextPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                        </li>
+                        <li>
+                            <a href="{{ route('dostuk.anons', ['page' => ceil($dostuk->total()/$perPage)]) }}" class="btn btn-default @if($dostuk->currentPage() == ceil($dostuk->total()/$perPage)) disabled @endif">{{ trans('site.End') }}</a>
+                        </li>
+
+                    </ul>
+                </nav>
+            </div>
           </div>
-      </div>
+      </div>      
     </section>
   </div>
 @stop

@@ -37,9 +37,35 @@
                           </div>
                       @endforeach
                   @endif
+                  <div class="col-md-12">
+                        <nav>
+                            <ul class="pagination">
+                                <li>
+                                    <a href="{{ route('birinchi.allphotos', ['page' => 1]) }}" class="btn btn-default @if($photoGalleries->currentPage() == 1) disabled @endif">{{ trans('site.Start') }}</a>
+                                </li>
+                                <li>
+                                    <a href="{{ $photoGalleries->previousPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                                </li>
+                                @for($i = 0, $j = 1; $i < $photoGalleries->total(); $i+=$perPage)
+                                    <li class="@if(($j > $photoGalleries->currentPage()+10) || ($j < $photoGalleries->currentPage()-10)) hidden @endif">
+                                        <a href="{{ route('birinchi.allphotos', ['page' => $j]) }}" class="btn btn-default @if($photoGalleries->currentPage() == $j) active @endif">
+                                            {{ $j++ }}
+                                        </a>
+                                    </li>
+                                @endfor
+                                <li>
+                                    <a href="{{ $photoGalleries->nextPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('birinchi.allphotos', ['page' => ceil($photoGalleries->total()/$perPage)]) }}" class="btn btn-default @if($photoGalleries->currentPage() == ceil($photoGalleries->total()/$perPage)) disabled @endif">{{ trans('site.End') }}</a>
+                                </li>
+
+                            </ul>
+                        </nav>
+                  </div>
               </div>
           </div>
-            </div>
+        </div>
    </div>
 </div>
 @stop

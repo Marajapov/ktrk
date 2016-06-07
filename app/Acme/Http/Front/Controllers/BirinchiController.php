@@ -101,6 +101,7 @@ class BirinchiController extends Controller
             'perPage' => $perPage,
             'postAll' => $postAll,
             'popArticles' => $popArticles,
+            'lc' => $lc
             ]);
     }
     public function about()
@@ -881,7 +882,7 @@ class BirinchiController extends Controller
     public function allphotos()
     {
         $channel = \Model\Channel\ModelName::name('birinchi')->first();
-        $perPage = 24;
+        $perPage = 12;
 
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
@@ -893,7 +894,7 @@ class BirinchiController extends Controller
             $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('nameRu','<>','' )->get();
         }
         // Photo Gallery
-        $photoGalleries = \Model\PhotoParent\ModelName::where('birinchi','=','1')->where('published','=',true)->take('10')->orderBy('id','desc')->get();        
+        $photoGalleries = \Model\PhotoParent\ModelName::where('birinchi','=','1')->where('published','=',true)->take('10')->orderBy('id','desc')->paginate($perPage);       
         return view('Front::channel.birinchi.allphotos', [
             'channel' => $channel,
             'backgroundMain' => $backgroundMain,
