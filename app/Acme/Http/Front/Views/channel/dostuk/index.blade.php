@@ -108,11 +108,12 @@
                      <a href="{{ route('dostuk.photos', $photoGallery) }}" class="thumb">
                         <img src="{{ asset($photoGallery->thumbnail_big) }}" alt="...">
                      </a>
-                     <h2>
-                        <div class="extra">
-                           <span class="camera"> <i class="fa fa-camera"></i> </span>
+                     <div class="extra" style="top:15px">
+                           <span class="camera"> <i class="fa fa-camera" style="color: #fff"></i> </span>
                            <span class="date">{{ $photoGallery->getDay() }} {{ $photoGallery->getMonthRu() }}, {{ $photoGallery->getTime() }}</span>
-                        </div>                                              
+                     </div>
+                     <h2>
+                                                                      
                         <a href="{{ route('dostuk.photos', $photoGallery) }}">{{ $photoGallery->getName() }}</a>
                      </h2>
                   </div>

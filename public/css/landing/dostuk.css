@@ -272,8 +272,6 @@ header {
   color: #00937F;
   text-transform: initial;
   position: relative;
-  padding-bottom: 20px;
-  margin: 0 0 20px;
   font-family: 'Roboto condensed';
 }
 
@@ -563,7 +561,7 @@ ul.nostyle i {
 }
 #portfolio {
   padding: 20px 0;
-  background: #F1EDEA;
+  /*background: #F1EDEA;*/
 }
 
 #portfolio2 {
@@ -576,6 +574,7 @@ ul.nostyle i {
 
 #portfolio .section-header2 .section-title2, #portfolio2 .section-header2 .section-title2 {
   color: #607D8B;
+  margin-top: 100px;
 }
 
 #portfolio .portfolio-filter, #portfolio2 .portfolio-filter {
@@ -680,6 +679,9 @@ ul.nostyle i {
 #portfolio .panel-body span{
     font-size: 18px;
     color: #444;
+}
+#portfolio .pagination .glyphicon{
+      font-size: 12px;
 }
 /* Start: Recommended Isotope styles */
 
@@ -1306,11 +1308,12 @@ ul.nostyle i {
 }
 
 .gallery-item .extra{
-  position: relative;
+  position: absolute;
+  top: 0;
+  margin-bottom: 4px !important;
+  padding: 5px 0px 5px 15px;
   display: block;
   font-family: 'Roboto regular';
-  padding: 5px 0px 5px 15px;
-  margin-bottom: 4px !important;
 }
 .gallery-item .extra .camera {
   font-size: 12px !important;
@@ -1318,8 +1321,9 @@ ul.nostyle i {
   padding-right: 5px;
 }
 .gallery-item .extra .date {
-  color: #6876C1 !important;
-  font-size: 12px !important;
+  color: #fff !important;
+  font-size: 14px !important;
+  font-weight: bold;
 }
 
 

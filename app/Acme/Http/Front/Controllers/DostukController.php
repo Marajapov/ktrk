@@ -80,7 +80,7 @@ class DostukController extends Controller
     public function allphotos()
     {
         $channel = \Model\Channel\ModelName::name('dostuk')->first();
-        $perPage = 24;
+        $perPage = 12;
 
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
         $dostukProjects = \Model\Project\ModelName::where('published','=',true)->where('dostuk', '=', 1)->get();
@@ -89,7 +89,7 @@ class DostukController extends Controller
 
 
         // Photo Gallery
-        $photoGalleries = \Model\PhotoParent\ModelName::where('dostuk','=','1')->where('published','=',true)->take('10')->orderBy('id','desc')->get();        
+        $photoGalleries = \Model\PhotoParent\ModelName::where('dostuk','=','1')->where('published','=',true)->take('10')->orderBy('id','desc')->paginate($perPage);        
         return view('Front::channel.dostuk.allphotos', [
             'channel' => $channel,
             'backgroundMain' => $backgroundMain,
@@ -175,12 +175,12 @@ class DostukController extends Controller
     public function anons()
     {
       $lc = app()->getlocale();
+      $perPage = 12;
       $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
       $dostukProjects = \Model\Project\ModelName::where('published','=',true)->where('dostuk', '=', 1)->get();
       $anons = \Model\Anons\ModelName::where('channel','=','8')->where('published','=','1')->where('dostuktop','<>','1')->orderBy('id','=','desc')->take(10)->get();
       $dostuktop = \Model\Anons\ModelName::where('channel','=','8')->where('dostuktop','=','1')->where('published','=','1')->orderBy('id','=','desc')->take(3)->get();
-      $dostuk = \Model\Anons\ModelName::where('channel','=','8')->where('dostuktop','=','1')->where('published','=','1')->orderBy('id','=','desc')->get();
-      $perPage = 24;
+      $dostuk = \Model\Anons\ModelName::where('channel','=','8')->where('dostuktop','=','1')->where('published','=','1')->orderBy('id','=','desc')->paginate($perPage); 
 
       return view('Front::channel.dostuk.anons',[
           'lc' => $lc,
