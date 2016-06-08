@@ -177,9 +177,41 @@ class PageController extends Controller
     $currentTime = date('H:i');
     $weekDay = date('N', strtotime($now));
 
-    $programs = array();
-    $schedules = array();
-    $channel = '';
+    $channel = \Model\Channel\ModelName::where('id','=',2)->first();
+
+    if($channel){
+      $schedules = \Model\Schedule\ModelName::where('channel_id','=',$channel->id)->orderBy('date', 'desc')->get();
+
+      for($i=1; $i<=7; $i++){
+        if($i < $weekDay){
+          $weekDayNew = date('d-m-Y', strtotime('-'.($weekDay - $i).' day'));
+          $week[] = $weekDayNew;
+        } elseif ($i > $weekDay) {
+          $weekDayNew = date('d-m-Y', strtotime('+'.($i - $weekDay).' day'));
+          $week[] = $weekDayNew;
+        } else {
+          $weekDayNew = date('d-m-Y', strtotime($now));
+          $week[] = $weekDayNew;
+        }
+      }
+
+      if(!empty($schedules)){
+        $programs = array();
+        for($j=0; $j<count($week);$j++){
+          foreach($schedules as $schedule){
+            if(strtotime($week[$j]) == strtotime($schedule->date)){
+              $program = json_decode($schedule->program);
+              $programNew = array_add($program, 'date', $schedule->date);
+              $programs[] =$programNew;
+            }
+          }
+        }
+      }
+    }
+
+//    $programs = array();
+//    $schedules = array();
+//    $channel = '';
 
     return view('Front::pages.teleprogram', [
       'lc' => $lc,
