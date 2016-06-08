@@ -148,21 +148,21 @@
               <div class="col-md-12 block">
                 <div id="carousel">
                   <a href="#">
-                    <img src="images/anons/1.jpg" alt="" class="slide" />
+                    <img src="{{ asset('images/anons/1.jpg') }}" alt="" class="slide" />
                   </a>
                   <a href="#">
-                    <img src="images/anons/2.jpg" alt="" class="slide" />
+                    <img src="{{ asset('images/anons/2.jpg') }}" alt="" class="slide" />
                   </a>
                   <a href="#">
-                    <img src="images/anons/3.jpg" alt="" class="slide" />
-                  </a>
-
-                  <a href="#">
-                    <img src="images/anons/3.jpg" alt="" class="slide" />
+                    <img src="{{asset('images/anons/3.jpg')}}" alt="" class="slide" />
                   </a>
 
                   <a href="#">
-                    <img src="images/anons/3.jpg" alt="" class="slide" />
+                    <img src="{{ asset('images/anons/3.jpg') }}" alt="" class="slide" />
+                  </a>
+
+                  <a href="#">
+                    <img src="{{ asset('images/anons/3.jpg') }}" alt="" class="slide" />
                   </a>
                 </div>
               </div>
@@ -328,7 +328,7 @@
   </div>
   @stop
   @section('footerscript2')
-    <script type="text/javascript" src="js/jquery.roundabout.js"></script>
+    <script type="text/javascript" src="{{asset('js/jquery.roundabout.js')}}"></script>
     <script>
       if ($(window).width() > 768) {
         $('.carousel-slick_peredachi').slick({
