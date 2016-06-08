@@ -25,7 +25,15 @@
                <div class="col-md-12">
                   <div class="row">
                      <div class="col-md-12">                                         
-                      <h3 class="title">{{ $project->getName() }}</h3>  
+                      <h3 class="title">
+                         @if($dostukProjects) 
+                           @foreach($dostukProjects as $project)   
+                             @if($project->id == $post->dostukProgram)
+                                {{ ($project->getName()) }}
+                             @endif
+                           @endforeach
+                         @endif
+                      </h3>  
                      </div>
                      <div class="panel">
                         <div class="panel-body">
@@ -42,9 +50,9 @@
                               
                             </p>
                            <article>
-                              {!! $post->getContent() !!}
-                           </article>
-                           <p>
+                              {!! $content !!}
+                           </article>                           
+                            <p>
                               <a href="http://orphus.ru" id="orphus" class="hidden" target="_blank"><img alt="Система Orphus" src="{{ asset('js/orphus.gif') }}" border="0" width="240" height="80" /></a>
                            </p>
 
@@ -114,7 +122,7 @@
                      @foreach($project->program()->get() as $post)                
                      <div class="blocknews col-md-3 col-sm-4 col-xs-12">
                           <article>
-                              <a href="{{ route('dostuk.news', $post) }}" class="image-link">
+                              <a href="{{ route('dostuk.news', [$post, $lc]) }}" class="image-link">
                                   <img src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif" title="{{ $post->getTitleRuOrKg() }}">
                                   <div class="card-info">
                                        <span class="date ">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
@@ -122,7 +130,7 @@
                                   </div>
                               </a>
                               <h3 class="name headline">
-                                  <a href="{{ route('dostuk.news', $post) }}" title="">
+                                  <a href="{{ route('dostuk.news', [$post, $lc]) }}" title="">
                                       {{ $post->getTitleRuOrKg() }}
                                   </a>
                               </h3>
@@ -131,6 +139,44 @@
                      @endforeach
                      @endif
                           
+                  </div>
+               </div>
+            </div>
+         </div>
+        <div class="col-md-3">
+            <div class="row onenews">
+               <div class="col-md-12">
+                  <div class="row popular">
+                     <div class="col-md-12">
+                        <h3 class="title">{{ trans('site.PostPopular') }}</h3>
+                     </div>                     
+                     <div class="col-md-12"> 
+                           @if($popArticles) 
+                           @foreach($popArticles as $post)
+                          <div class="media">
+
+                              <div class="media-body">
+                                  <div class="extra">
+                                      <span class="datetime">{{ $post->getDay() }} {{ $post->getMonthRu() }}</span>
+                                      <a class="cat" href="{{ route('dostuk.category', $post->category) }}">
+                                      <span>
+                                      @if($dostukProjects) 
+                                           @foreach($dostukProjects as $project)   
+                                             @if($project->id == $post->dostukProgram)
+                                              {{ ($project->getName()) }}
+                                             @endif
+                                           @endforeach
+                                         @endif
+                                      </span></a>
+                                      <span class="views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
+                                  </div>
+                                  <a class="media-heading" href="{{ route('dostuk.news', [$post, $lc]) }}">{{ $post->getTitleRuOrKg() }}</a>
+                              </div>
+
+                          </div>
+                          @endforeach 
+                          @endif                                                
+                     </div>                    
                   </div>
                </div>
             </div>

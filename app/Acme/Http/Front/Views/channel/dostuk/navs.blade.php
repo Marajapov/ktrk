@@ -43,7 +43,7 @@
             <ul class="nav navbar-nav">
                <li class=""><a href="{{route('dostuk.home')}}"><i class="fa fa-home"></i> Башкы</a></li>
                <li class="dropdown">
-                  <a class="dropdown-toggle" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-microphone"></i> Уктуруулар<i class="fa fa-angle-down"></i></a>
+                  <a class="dropdown-toggle" href="{{route('dostuk.projects')}}" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-microphone"></i> Уктуруулар<i class="fa fa-angle-down"></i></a>
                   <ul class="dropdown-menu">
                      @if($dostukProjects) 
                      @foreach($dostukProjects as $dostukProject)

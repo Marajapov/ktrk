@@ -116,11 +116,8 @@
                   <div class="row">
                      <div class="col-md-12">
                         <h3 class="title">{{ trans('site.MatpoTeme') }}</h3>
-                     </div>
-                    
-                     @foreach($relatedNews as $post)
-
-                
+                     </div>                    
+                     @foreach($relatedNews as $post)                
                      <div class="blocknews col-md-3 col-sm-4 col-xs-12">
                           <article>
                               <a href="{{ route('birinchi.news', [$post, $lc]) }}" class="image-link">
@@ -136,11 +133,8 @@
                                   </a>
                               </h3>
                           </article>
-                     </div>  
-           
-                     @endforeach
-
-                          
+                     </div>            
+                     @endforeach                          
                   </div>
                </div>
 

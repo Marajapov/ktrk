@@ -6,7 +6,7 @@
 @section('content')
 @include('Front::channel.dostuk.navs')
 <div class="main-container">
-   <div class="container">
+   <div class="container" style="padding-bottom: 50px;">
       <div class="row">
          <div class="col-md-9">
             <div class="row onenews">
@@ -45,7 +45,7 @@
                      @foreach($project->program()->get() as $post)                
                      <div class="blocknews col-md-4 col-sm-2 col-xs-12">
                           <article>
-                              <a href="{{ route('dostuk.news', $post) }}" class="image-link">
+                              <a href="{{ route('dostuk.news', [$post, $lc]) }}" class="image-link">
                                   <img src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif" title="{{ $post->getTitleRuOrKg() }}">
                                   <div class="card-info">
                                        <span class="date ">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
@@ -53,7 +53,7 @@
                                   </div>
                               </a>
                               <h3 class="name headline">
-                                  <a href="{{ route('dostuk.news', $post) }}" title="">
+                                  <a href="{{ route('dostuk.news', [$post, $lc]) }}" title="">
                                       {{ $post->getTitleRuOrKg() }}
                                   </a>
                               </h3>

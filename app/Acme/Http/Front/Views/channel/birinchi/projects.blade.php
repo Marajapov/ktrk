@@ -19,7 +19,7 @@
                      @foreach($postAll as $post)
                      <div class="media blockallnews">
                         <div class="media-left">
-                           <a href="{{ route('birinchi.show', $post) }}">
+                           <a href="{{ route('birinchi.news', $post) }}">
                               <img class="media-object" src="{{ asset($post->getFile()) }}" alt="...">
                            </a>
                         </div>
@@ -28,7 +28,7 @@
                               <span class="datetime">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
                               <span class="views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
                            </div>
-                           <a class="media-heading " href="{{ route('birinchi.show', $post) }}">{{ $post->getTitleRuOrKg() }}</a>
+                           <a class="media-heading " href="{{ route('birinchi.news', $post) }}">{{ $post->getTitleRuOrKg() }}</a>
                            <span class="mb_substr" style="display: block;">
                               {{$post->getShortDescription()}}
                            </span>

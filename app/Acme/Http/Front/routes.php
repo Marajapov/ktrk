@@ -124,13 +124,15 @@ Route::group(['domain' => 'ktrk.dev', 'prefix' => '/kyrgyzradio', 'namespace' =>
     Route::get('/', ['as' => 'dostuk.home',   'uses' => 'DostukController@Home']);
     Route::get('/posts', ['as' => 'dostuk.posts',   'uses' => 'DostukController@posts']);
     Route::get('/photos/{gallery}',['as' => 'dostuk.photos','uses'=> 'DostukController@Gallery'] );
-    Route::get('/news/{post}', ['as' => 'dostuk.news',   'uses' => 'DostukController@news']);
+    Route::get('/news/{post}/{locale}', ['as' => 'dostuk.news',   'uses' => 'DostukController@news']);
     Route::get('allnews', ['as' => 'dostuk.allnews',   'uses' => 'DostukController@allnews']);
     Route::get('about', ['as' => 'dostuk.about',   'uses' => 'DostukController@about']);
     Route::get('/allphotos',['as' => 'dostuk.allphotos','uses'=> 'DostukController@allphotos'] );
+    Route::get('/projects', ['as' => 'dostuk.projects',   'uses' => 'DostukController@projects']);
     Route::get('/project/{project}',['as' => 'dostuk.project','uses'=> 'DostukController@project'] );
     Route::get('/comingsoon', ['as' => 'dostuk.comingsoon',   'uses' => 'DostukController@ComingSoon']);
     Route::get('/anons', ['as' => 'dostuk.anons',   'uses' => 'DostukController@anons']);
+    Route::get('/category/{category}', ['as' => 'dostuk.category',   'uses' => 'DostukController@categoryPage']);
 
 });
 
