@@ -10,7 +10,7 @@
         @if($anons)
             @foreach($anons as $banners)
                 <div>
-                    <img src="{{asset($banners->thumbnail)}}" width="1366" height="550" alt="">
+                    <img src="{{asset($banners->thumbnail)}}" width="auto" height="550" alt="">
                     <div class="container">
                         <div class="banners-content">
                             {{--<h2><span>{{ $row->getNameOne() }}</span></h2>--}}

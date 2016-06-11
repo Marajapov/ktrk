@@ -8,7 +8,7 @@
     <div class="container main-wrapper">
 
             <div class="row">
-                <div class="top-left-block col-md-9">
+                <div class="top-left-block col-md-12">
                  @if($lc=='kg')
                     <div class="panel panel-default panel-logo">
                         <div class="panel-heading">
@@ -246,18 +246,6 @@
                         </div>
                     </div>
                 @endif
-                </div>
-                <div class="top-right-block col-md-3">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            @if($lc=='kg')
-                            <h3 class="panel-title"><span>Жаңылыктар</span></h3>
-                            @else
-                            <h3 class="panel-title"><span>Новости</span></h3>
-                            @endif
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </div>

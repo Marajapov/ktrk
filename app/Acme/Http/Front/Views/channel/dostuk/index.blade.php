@@ -85,8 +85,15 @@
                   @endforeach
                </div>
                @endif
+               
                </div>
                <div class="col-md-12">
+                <footer class="allanons">
+                  <a href="{{ route('dostuk.projects') }}">
+                    <span>{{ trans('radiopages.AllPereadachi') }} <i class="fa fa-arrow-circle-right"></i></span>
+                  </a>
+                </footer>
+              </div>
             </div>
          </div>
          <!--/.row-->    

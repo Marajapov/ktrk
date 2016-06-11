@@ -3,143 +3,10 @@
 @section('styles')
 @endsection
 @section('content')
-  <body class="madaniyat">
-  <div class="switch">
-    <nav class="navbar">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false">
-          <span class="sr-only">Меню</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">
-          <img src="{{ asset('images/channels/madaniyat_white_notext.png')}}">
-          <h4>Маданият</h4>
-        </a>
-      </div>
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="menu">
-        <ul class="nav navbar-nav channel_switch">
-          <li class="sitemenu" id="site-channel1">
-            <a href="{{ route('front.home') }}">
-              <img src="{{ asset('images/ktrk_last.svg')}}" style="height:40px;"><span>КТРК</span>
-              <h4>КТРК</h4>
-            </a>
-          </li>
-          <li class="sitemenu" id="site-channel1">
-            <a href="{{ route('muzkanal.home') }}">
-              <img src="{{ asset('images/channels/muz_white_notext.png')}}" ><span>Музыка</span>
-              <h4>Музыка</h4>
-            </a>
-          </li>
-          <li class="sitemenu" id="site-channel1">
-            <a class="active"  href="{{ route('madaniyat.home') }}">
-              <img src="{{ asset('images/channels/madaniyat_white_notext.png')}}"><span>Маданият</span>
-              <h4>Маданият</h4>
-            </a>
-          </li>
-          <li class="sitemenu" id="site-channel1">
-            <a href="{{ route('balastan.home') }}">
-              <img src="{{ asset('images/channels/balastan_white_notext.png')}}"><span>Баластан</span>
-              <h4>Баластан</h4>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <!-- /.navbar-collapse -->
-    </nav>
-  </div>
-  <div class="container ">
-    <div class="row fixedheader">
-      <nav class="navbar">
-        <div class="container-fluid">
-          <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-              <span class="sr-only">Меню</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <div class="logo-block search-block">
-              <a class="search-toggle"><i class="fa fa-search"></i></a>
-              <form class="form-search" action="{{ route('front.search') }}" method="get">
-                <div class="form-group pull-right">
-                  <input type="text" name="search" class="form-control" placeholder="Издөө"/>
-                </div>
-                <a class="btn close-search">
-                  <i class="fa fa-close"></i>
-                </a>
-                <button class="btn submit-search" type="submit">
-                  <i class="fa fa-search"></i>
-                </button>
-              </form>
-            </div>
-            <a class="navbar-brand" href="{{ route('madaniyat.home') }}"> <i class="fa fa-home"></i>{{ trans('radiopages.Home') }}</a>
-          </div>
-          <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-              <li><a href="{{ route('madaniyat.about') }}"></i>{{ trans('radiopages.Mabout') }}</a></li>
-              <li class="dropdown">
-                <a href="{{ route('madaniyat.broadcasts') }}" class="dropdown-toggle" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-television"></i>{{ trans('radiopages.Korsotuu') }}<span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="#"><i class="fa fa-minus"></i>Тоолуктардын ток-шоусу</a></li>
-                  <li><a href="#"><i class="fa fa-minus"></i>Улутман</a></li>
-                  <li><a href="#"><i class="fa fa-minus"></i>Кыз-жигит. Сармерден</a></li>
-                  <li><a href="#"><i class="fa fa-minus"></i>Өмүр сызыгы - Линия жизни</a></li>
-                  <li><a href="#"><i class="fa fa-minus"></i>Улуу мурас</a></li>
-                  <li><a href="#"><i class="fa fa-minus"></i>Сүрөттөр сүйлөйт</a></li>
-                  <li><a href="#"><i class="fa fa-minus"></i>Доор инсаны: Алай ханышасы <br>Доор инсаны: Алымбек датка </a></li>
-                  <li><a href="#"><i class="fa fa-minus"></i>Салт-санат</a></li>
-                  <li><a href="#"><i class="fa fa-minus"></i>Өкүт</a></li>
-                  <li><a href="#"><i class="fa fa-minus"></i>ТВнын  казынасынан</a></li>
-                </ul>
-              </li>
-              <li><a href="{{ route('madaniyat.allphotos') }}"><i class="fa fa-picture-o"></i>{{ trans('radiopages.Photos') }}</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right logo-block">
-              <ul class="soc socmuz">
-                <li class="fb"><a href="#" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-                <li class="ok"><a href="#" title="Odnoklassniki"><i class="fa fa-odnoklassniki"></i></a></li>
-                <li class="yt"><a href="#" title="YouTube"><i class="fa fa-youtube"></i></a></li>
-                <li class="in"><a href="#" title="Instagram"><i class="fa fa-instagram"></i></a></li>
-              </ul>
-              <a class="search-toggle"><i class="fa fa-search"></i></a>
-              <form class="form-search" action="{{ route('front.search') }}" method="get">
-                <div class="form-group pull-right">
-                  <input type="text" name="search" class="form-control" placeholder="Издөө"/>
-                </div>
-                <a class="btn close-search">
-                  <i class="fa fa-close"></i>
-                </a>
-                <button class="btn submit-search" type="submit">
-                  <i class="fa fa-search"></i>
-                </button>
-              </form>
-              <div class="clangs">
-                <ul>
-                  <li @if(app()->getlocale() == 'kg') class="active" @endif><a href="/locale/kg">кырг <span></span></a></li>
-                  <li @if(app()->getlocale() == 'ru') class="active" @endif><a href="/locale/ru">рус <span></span></a></li>
-                </ul>
-              </div>
-              <button class="btn btn-danger btn-live" data-toggle="modal" data-target="#liveModal">
-                <i class="fa fa-dot-circle-o"></i>
-                {{ trans('radiopages.Live') }}
-              </button>
-            </ul>
-          </div>
-          <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-      </nav>
-    </div>
-  </div>
-  <div class="container">
-    <div class="row">
-      <section class="content clearfix">
+<body class="madaniyat">
+   @include('Front::channel.madaniyat.nav')
+   <div class="container m-container">
+      <div class="row">
         <div class="col-md-12">
           <div class="panel panel-default" style="background-color: transparent">
             <div class="panel-heading">
@@ -169,178 +36,585 @@
             </div>
           </div>
         </div>
-        <div class="col-md-12" style="padding:0px;">
-          <div class="panel panel-default panel-carousel">
-            <div class="panel-heading madaniyatcolor">
-              <h3 class="panel-title"><span>{{ trans('radiopages.NewKorsotuu') }}</span></h3>
-            </div>
-            <div class="panel-body">
-              <div class="col-md-12">
-                <div class="carousel-slick_peredachi">
-                  <div class="col-md-4 peredacha">
-                    <div class="first">
-                      <div class="img">
-                        <a href="#"><img src="images/10.png" alt="" title=""></a>
-                        <div class="views"><i class="fa fa-eye"></i> 10 099 </div>
-                        <div class="time">4:52</div>
-                        <a class="play" href=""></a>
-                      </div>
-                      <div class="txt">
-                        <div class="date">11.11.15</div>
-                        <a href="#">Адыгейский сорfgfgf из избы. Самые драматичные моменты</a>
-                      </div>
+        <div class="col-md-12 panel-avi">
+          <div class="row">
+            <div class="panel panel-default panel-anons-video">
+              <div class="panel-body no-padding">
+                  <div class="col-md-6 no-padding">
+                    <div class="panel panel-default">
+                        <div class="panel-heading madaniyatcolor">
+                          <h3 class="panel-title"><span>Скоро в эфире</span></h3>
+                        </div>
+                        <div class="panel-body">
+                          <div class="slider-anons">
+                            <div>
+                                <img src="{{asset('images/channels/madaniyat/anons.jpg')}}" alt="">
+                            </div>
+                            <div>
+                                <img src="{{asset('images/channels/madaniyat/anons2.jpg')}}" alt="">
+                            </div>
+                            <div>
+                                <img src="{{asset('images/channels/madaniyat/anons3.jpg')}}" alt="">
+                            </div>
+                          </div>
+                          <div class="tele-programma">                          
+                              <div class="panel">
+                              <h2>Телепрограмма</h2>
+                                  <div class="panel-padding">                              
+                                    <div class="col-md-3 t-padding">
+                                        <div class="programm"></div>
+                                    </div>
+                                    <div class="col-md-3 t-padding">
+                                        <div class="programm"></div>
+                                    </div>
+                                    <div class="col-md-3 t-padding">
+                                        <div class="programm"></div>
+                                    </div>
+                                    <div class="col-md-3 t-padding">
+                                        <div class="programm"></div>
+                                    </div>
+                                  </div>
+                                  <footer>
+                                    <a href="#">
+                                        <span>Вся телепрограмма<i class="fa fa-arrow-circle-right"></i></span>
+                                    </a>
+                                </footer>                            
+                              </div>
+                          </div>
+                        </div>
                     </div>
                   </div>
-                  <div class="col-md-4 peredacha"><a href="#"><img src="images/gallery/002.jpg" alt=""/></a></div>
-                  <div class="col-md-4 peredacha"><a href="#"><img src="images/gallery/003.jpg" alt=""/></a></div>
-                  <div class="col-md-4 peredacha"><a href="#"><img src="images/gallery/004.jpg" alt=""/></a></div>
-                  <div class="col-md-4 peredacha"><a href="#"><img src="images/gallery/005.jpg" alt=""/></a></div>
-                  <div class="col-md-4 peredacha"><a href="#"><img src="images/gallery/006.jpg" alt=""/></a></div>
-                  <div class="col-md-4 peredacha"><a href="#"><img src="images/gallery/007.jpg" alt=""/></a></div>
-                  <div class="col-md-4 peredacha"><a href="#"><img src="images/gallery/008.jpg" alt=""/></a></div>
-                  <div class="col-md-4 peredacha"><a href="#"><img src="images/gallery/009.jpg" alt=""/></a></div>
-                  <div class="col-md-4 peredacha"><a href="#"><img src="images/gallery/010.jpg" alt=""/></a></div>
-                  <div class="col-md-4 peredacha"><a href="#"><img src="images/gallery/011.jpg" alt=""/></a></div>
-                  <div class="col-md-4 peredacha"><a href="#"><img src="images/gallery/012.jpg" alt=""/></a></div>
-                </div>
+                  <div class="col-md-6 no-padding">
+                      <div class="panel panel-default">
+                        <div class="panel-heading madaniyatcolor">
+                          <h3 class="panel-title"><span>Новые видео</span></h3>
+                        </div>
+                        <div class="panel-body panel-promo m-promo">                     
+                            <div class="main-video">
+                                <div class="slider slider-for">
+                                    <div> <!-- video1 -->
+                                        <div class="embed-youtube embed-responsive embed-responsive-16by9 slider-text">
+                                            <iframe class="embed-responsive-item" src="//www.youtube.com/embed/AlMUcmmZ_zE?enablejsapi=1&version=3&playerapiid=ytplayer&rel=0&showinfo=0"></iframe>
+                                        </div>
+                                        <div class="slick-text">
+                                            <a href="#">
+                                                <h2>Alicia Keys at Champions League final opening ceremony</h2>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div> <!-- video2 -->
+                                        <div class="embed-youtube embed-responsive embed-responsive-16by9 slider-text">
+                                            <iframe class="embed-responsive-item" src="//www.youtube.com/embed/AlMUcmmZ_zE?enablejsapi=1&version=3&playerapiid=ytplayer&rel=0&showinfo=0"></iframe>
+                                        </div>
+                                        <div class="slick-text">
+                                            <a href="#">
+                                                <h2>Alicia Keys at Champions League final opening ceremony</h2>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div> <!-- video3 -->
+                                        <div class="embed-youtube embed-responsive embed-responsive-16by9 slider-text">
+                                            <iframe class="embed-responsive-item" src="//www.youtube.com/embed/AlMUcmmZ_zE?enablejsapi=1&version=3&playerapiid=ytplayer&rel=0&showinfo=0"></iframe>
+                                        </div>
+                                        <div class="slick-text">
+                                            <a href="#">
+                                                <h2>Alicia Keys at Champions League final opening ceremony</h2>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div> <!-- video4 -->
+                                        <div class="embed-youtube embed-responsive embed-responsive-16by9 slider-text">
+                                            <iframe class="embed-responsive-item" src="//www.youtube.com/embed/AlMUcmmZ_zE?enablejsapi=1&version=3&playerapiid=ytplayer&rel=0&showinfo=0"></iframe>
+                                        </div>
+                                        <div class="slick-text">
+                                            <a href="#">
+                                                <h2>Alicia Keys at Champions League final opening ceremony</h2>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="slider slider-nav">
+                                    <div>
+                                        <span class="videoTitle hidden">{{ trans('site.FrontPostDaysNews') }}</span>
+                                        <img src="https://i.ytimg.com/vi/MPzYhb3O4Hc/hqdefault.jpg" alt="" />
+                                   
+                                    </div>
+                                    <div>
+                                        <span class="videoTitle hidden">{{ trans('site.FrontPostDaysEpisode') }}</span>
+                                        <img src="https://i.ytimg.com/vi/MPzYhb3O4Hc/hqdefault.jpg" alt="" />
+                                       
+                                    </div>
+                                    <div>
+                                        <span class="videoTitle hidden">{{ trans('site.FrontPostDaysAnons') }}</span>
+                                        <img src="https://i.ytimg.com/vi/MPzYhb3O4Hc/hqdefault.jpg" alt="" />
+                                    </div>
+
+                                    <div>
+                                        <span class="videoTitle hidden">{{ trans('site.FrontPostDaysMaanai') }}</span>
+                                        <img src="https://i.ytimg.com/vi/MPzYhb3O4Hc/hqdefault.jpg" alt="" />
+                                    </div>
+                                </div>
+
+                                <footer>
+                                    <a href="#">
+                                        <span>{{ trans('site.FrontVideoAll') }} <i class="fa fa-arrow-circle-right"></i></span>
+                                    </a>
+                                </footer>
+
+                            </div>                  
+                        </div>
+                      </div>
+                  </div>
               </div>
-              <footer>
-                <a href="{{ route('madaniyat.videos') }}">
-                  <span>{{ trans('radiopages.AllVideos') }}<i class="fa fa-arrow-circle-right"></i></span>
-                </a>
-              </footer>
             </div>
-            <div class="panel-heading madaniyatcolor madaniyatfix">
-              <h3 class="panel-title"><span>{{ trans('radiopages.TopKorsotuu') }}</span></h3>
-            </div>
-            <div class="panel-body">
-              <div class="col-md-12">
-                <div class="carousel-slick_peredachi">
-                  <div class="col-md-4 peredacha"><a href="#"><img src="images/gallery/001.jpg" alt=""/></a></div>
-                  <div class="col-md-4 peredacha"><a href="#"><img src="images/gallery/002.jpg" alt=""/></a></div>
-                  <div class="col-md-4 peredacha"><a href="#"><img src="images/gallery/003.jpg" alt=""/></a></div>
-                  <div class="col-md-4 peredacha"><a href="#"><img src="images/gallery/004.jpg" alt=""/></a></div>
-                  <div class="col-md-4 peredacha"><a href="#"><img src="images/gallery/005.jpg" alt=""/></a></div>
-                  <div class="col-md-4 peredacha"><a href="#"><img src="images/gallery/006.jpg" alt=""/></a></div>
-                  <div class="col-md-4 peredacha"><a href="#"><img src="images/gallery/007.jpg" alt=""/></a></div>
-                  <div class="col-md-4 peredacha"><a href="#"><img src="images/gallery/008.jpg" alt=""/></a></div>
-                  <div class="col-md-4 peredacha"><a href="#"><img src="images/gallery/009.jpg" alt=""/></a></div>
-                  <div class="col-md-4 peredacha"><a href="#"><img src="images/gallery/010.jpg" alt=""/></a></div>
-                  <div class="col-md-4 peredacha"><a href="#"><img src="images/gallery/011.jpg" alt=""/></a></div>
-                  <div class="col-md-4 peredacha"><a href="#"><img src="images/gallery/012.jpg" alt=""/></a></div>
-                </div>
-              </div>
-              <footer>
-                <a href="#">
-                  <span>{{ trans('radiopages.AllVideos') }}<i class="fa fa-arrow-circle-right"></i></span>
-                </a>
-              </footer>
-            </div>
-          </div>
+          </div>          
         </div>
-        <div class="col-md-12" style="padding: 10px 0px 0px 0px;">
-          <div class="panel panel-default panel-carousel ">
-            <div class="panel-heading madaniyatcolor">
-              <h3 class="panel-title"><span>{{ trans('radiopages.Photos') }}</span></h3>
+        <div class="col-md-12 no-padding">
+            <div class="panel panel-default">
+               <div class="panel-heading madaniyatcolor">
+                  <h3 class="panel-title"><span>Жаңылыктар</span></h3>
+               </div>
+               <div class="panel-body panel-news">
+                 <div class="row">
+                    <article class="col-md-3 no-padding">
+                      <div class="col-md-12">
+                        <img src="{{ asset('images/anons/1.jpg') }}" alt="">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <div class="more">
+                          <div class="dates"><i class="fa fa-calendar"></i>03.03.2016</div>
+                          <div class="view"><i class="fa fa-eye"></i>12</div>                        
+                        </div>
+                      </div>                    
+                    </article>
+                    <article class="col-md-3 no-padding">
+                      <div class="col-md-12">
+                        <img src="{{ asset('images/anons/1.jpg') }}" alt="">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <div class="more">
+                          <div class="dates"><i class="fa fa-calendar"></i>03.03.2016</div>
+                          <div class="view"><i class="fa fa-eye"></i>12</div>                        
+                        </div>
+                      </div>                    
+                    </article>
+                    <article class="col-md-3 no-padding">
+                      <div class="col-md-12">
+                        <img src="{{ asset('images/anons/1.jpg') }}" alt="">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <div class="more">
+                          <div class="dates"><i class="fa fa-calendar"></i>03.03.2016</div>
+                          <div class="view"><i class="fa fa-eye"></i>12</div>                        
+                        </div>
+                      </div>                    
+                    </article>
+                    <article class="col-md-3 no-padding">
+                      <div class="col-md-12">
+                        <img src="{{ asset('images/anons/1.jpg') }}" alt="">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <div class="more">
+                          <div class="dates"><i class="fa fa-calendar"></i>03.03.2016</div>
+                          <div class="view"><i class="fa fa-eye"></i>12</div>                        
+                        </div>
+                      </div>                    
+                    </article>
+                  </div>
+                  <footer>
+                     <a href="#">
+                     <span>Баардык жаңылыктар<i class="fa fa-arrow-circle-right"></i></span>
+                     </a>
+                  </footer>
+               </div>
             </div>
-            <div class="panel-body">
-              <div class="col-md-12 broadimages">
-                <div class="carousel-slick">
-                  <div class="col-md-4">
-                    <a href="#">
-                      <img src="images/gallery/001.jpg" alt=""/><span>Название</span>
-                      <div class="overlay"></div>
-                    </a>
-                  </div>
-                  <div class="col-md-4">
-                    <a href="#">
-                      <img src="images/gallery/002.jpg" alt=""/><span>Название</span>
-                      <div class="overlay"></div>
-                    </a>
-                  </div>
-                  <div class="col-md-4">
-                    <a href="#">
-                      <img src="images/gallery/003.jpg" alt=""/><span>Название</span>
-                      <div class="overlay"></div>
-                    </a>
-                  </div>
-                  <div class="col-md-4">
-                    <a href="#">
-                      <img src="images/gallery/004.jpg" alt=""/><span>Название</span>
-                      <div class="overlay"></div>
-                    </a>
-                  </div>
-                  <div class="col-md-4">
-                    <a href="#">
-                      <img src="images/gallery/005.jpg" alt=""/><span>Название</span>
-                      <div class="overlay"></div>
-                    </a>
-                  </div>
-                  <div class="col-md-4">
-                    <a href="#">
-                      <img src="images/gallery/006.jpg" alt=""/><span>Название</span>
-                      <div class="overlay"></div>
-                    </a>
-                  </div>
-                  <div class="col-md-4">
-                    <a href="#">
-                      <img src="images/gallery/007.jpg" alt=""/><span>Название</span>
-                      <div class="overlay"></div>
-                    </a>
-                  </div>
-                  <div class="col-md-4">
-                    <a href="#">
-                      <img src="images/gallery/008.jpg" alt=""/><span>Название</span>
-                      <div class="overlay"></div>
-                    </a>
-                  </div>
-                  <div class="col-md-4">
-                    <a href="#">
-                      <img src="images/gallery/009.jpg" alt=""/><span>Название</span>
-                      <div class="overlay"></div>
-                    </a>
-                  </div>
-                  <div class="col-md-4">
-                    <a href="#">
-                      <img src="images/gallery/010.jpg" alt=""/><span>Название</span>
-                      <div class="overlay"></div>
-                    </a>
-                  </div>
-                  <div class="col-md-4">
-                    <a href="#">
-                      <img src="images/gallery/011.jpg" alt=""/><span>Название</span>
-                      <div class="overlay"></div>
-                    </a>
-                  </div>
-                  <div class="col-md-4">
-                    <a href="#">
-                      <img src="images/gallery/012.jpg" alt=""/><span>Название</span>
-                      <div class="overlay"></div>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-      </section>
-    </div>
-  </div>
-  @stop
-  @section('footerscript2')
-    <script type="text/javascript" src="{{asset('js/jquery.roundabout.js')}}"></script>
+        <div class="col-md-12 video-block">          
+            <div class="panel panel-default ctg-panel">
+               <div class="panel-heading madaniyatcolor">
+                  <h3 class="panel-title"><span>{{ trans('radiopages.NewKorsotuu') }}</span></h3>
+               </div>
+               <div class="panel-body">
+                  <div class="col-md-3 no-padding">
+                      <ul class="list-group">
+                        <li class="list-group-item">
+                          <a href="#">Дебаты</a>
+                        </li>
+                        <li class="list-group-item">
+                          <a href="#">На крутых перевалах истории!</a>
+                        </li>
+                        <li class="list-group-item">
+                          <a href="#">Реновация</a>
+                        </li>
+                        <li class="list-group-item">
+                          <a href="#">Капкан</a>
+                        </li>
+                        <li class="list-group-item">
+                          <a href="#">Разговор в полдень </a>
+                        </li>
+                        <li class="list-group-item">
+                          <a href="#">Улуу Мурас </a>
+                        </li>
+                        <li class="list-group-item">
+                          <a href="#">«Кайрымдуу бол»</a>
+                        </li>
+                        <li class="list-group-item">
+                          <a href="#">Тарыхты тактайлы</a>
+                        </li>
+                        <li class="list-group-item">
+                          <a href="#">Кинобаян </a>
+                        </li>
+                        <li class="list-group-item">
+                          <a href="#">Чудесные напевы музыки</a>
+                        </li>
+                        <li class="list-group-item">
+                          <a href="#">Арт-Салон</a>
+                        </li>
+                        <li class="list-group-item">
+                          <a href="#">Чарбакер</a>
+                        </li>
+                        <li class="list-group-item">
+                          <a href="#">Мосты дружбы</a>
+                        </li>
+                        <li class="list-group-item">
+                          <a href="#">Линия жизни</a>
+                        </li>
+                        <li class="list-group-item">
+                          <a href="#">"Кыз-жигит" Сармерден</a>
+                        </li>
+                        <li class="list-group-item">
+                          <a href="#">Кылым күүлөрү</a>
+                        </li>
+                        <li class="list-group-item">
+                          <a href="#">Керемет көч</a>
+                        </li>
+                        <li class="list-group-item">
+                          <a href="#">Новости </a>
+                        </li>  
+                      </ul>
+                  </div>
+                  <div class="col-md-9 panel-videos no-padding">
+                      <article class="col-md-4" data-cat="all-videos">
+                        <div class="img">
+                          <a href="http://www.ktrk.kg/media/video/2997">
+                            <img src="http://www.ktrk.kg/img/thumbnail/29971465545302.png" alt="">
+                            <div class="overlay">
+                              <i class="fa-view"></i>
+                              <span class="media-view">0</span>
+                              <span class="media-project">
+                                Замана
+                              </span>
+                              <span class="media-date">10.06.2016</span>
+                            </div>
+                            <i class="fa-video"></i>
+                          </a>
+                        </div>
+                        <div class="media-title">
+                          <a href="http://www.ktrk.kg/media/video/2997">
+                            <h4>Телесабак: Терминологиялык комиссия тарабынан айрым сөздүк табылгалар</h4>
+                          </a>
+                        </div>
+                      </article>
+                      <article class="col-md-4" data-cat="all-videos">
+                        <div class="img">
+                          <a href="http://www.ktrk.kg/media/video/2998">
+                            <img src=" http://www.ktrk.kg/img/thumbnail/29981465545745.png " alt="">
+                            <div class="overlay">
+                              <i class="fa-view"></i>
+                              <span class="media-view">1</span>
+                              <span class="media-project">
+                                Замана
+                              </span>
+                              <span class="media-date">10.06.2016</span>
+                            </div>
+                            <i class="fa-video"></i>
+                          </a>
+                        </div>
+                        <div class="media-title">
+                          <a href="http://www.ktrk.kg/media/video/2998">
+                            <h4>“Үркүн” жана “Саякбай” тасмасы</h4>
+                          </a>
+                        </div>
+                      </article>
+                      <article class="col-md-4" data-cat="all-videos">
+                        <div class="img">
+                          <a href="http://www.ktrk.kg/media/video/2995">
+                            <img src=" http://www.ktrk.kg/img/thumbnail/29951465544904.jpg " alt="">
+                            <div class="overlay">
+                              <i class="fa-view"></i>
+                              <span class="media-view">1</span>
+                              <span class="media-project">
+                                Замана
+                              </span>
+                              <span class="media-date">10.06.2016</span>
+                            </div>
+                            <i class="fa-video"></i>
+                          </a>
+                        </div>
+                        <div class="media-title">
+                          <a href="http://www.ktrk.kg/media/video/2995">
+                            <h4>Бул күнү 2008-жылы Чыңгыз Айтматов каза болгон</h4>
+                          </a>
+                        </div>
+                      </article>
+                      <article class="col-md-4" data-cat="all-videos">
+                        <div class="img">
+                          <a href="http://www.ktrk.kg/media/video/2992">
+                            <img src=" http://www.ktrk.kg/img/thumbnail/29921465529192.png " alt="">
+                            <div class="overlay">
+                              <i class="fa-view"></i>
+                              <span class="media-view">161</span>
+                              <span class="media-project">
+                                На крутых перевалах истории!
+                              </span>
+                              <span class="media-date">10.06.2016</span>
+                            </div>
+                            <i class="fa-video"></i>
+                          </a>
+                        </div>
+                        <div class="media-title">
+                          <a href="http://www.ktrk.kg/media/video/2992">
+                            <h4>На крутых перевалах истории: Пик кризиса. Год 1993</h4>
+                          </a>
+                        </div>
+                      </article>
+                      <article class="col-md-4" data-cat="all-videos">
+                        <div class="img">
+                          <a href="http://www.ktrk.kg/media/video/2991">
+                            <img src=" http://www.ktrk.kg/img/thumbnail/29911465493142.png " alt="">
+                            <div class="overlay">
+                              <i class="fa-view"></i>
+                              <span class="media-view">141</span>
+                              <span class="media-project">
+                                Новости
+                              </span>
+                              <span class="media-date">09.06.2016</span>
+                            </div>
+                            <i class="fa-video"></i>
+                          </a>
+                        </div>
+                        <div class="media-title">
+                          <a href="http://www.ktrk.kg/media/video/2991">
+                            <h4>Ала-Тоо жаңылыктары: бейшемби 09.06.2016</h4>
+                          </a>
+                        </div>
+                      </article>
+                      <article class="col-md-4" data-cat="all-videos">
+                        <div class="img">
+                          <a href="http://www.ktrk.kg/media/video/2990">
+                            <img src=" http://www.ktrk.kg/img/thumbnail/29901465491766.png " alt="">
+                            <div class="overlay">
+                              <i class="fa-view"></i>
+                              <span class="media-view">57</span>
+                              <span class="media-project">
+                                Новости
+                              </span>
+                              <span class="media-date">09.06.2016</span>
+                            </div>
+                            <i class="fa-video"></i>
+                          </a>
+                        </div>
+                        <div class="media-title">
+                          <a href="http://www.ktrk.kg/media/video/2990">
+                            <h4>Көшөгө артындагы көп сөз</h4>
+                          </a>
+                        </div>
+                      </article>
+                      <article class="col-md-4" data-cat="all-videos">
+                        <div class="img">
+                          <a href="http://www.ktrk.kg/media/video/2914">
+                            <img src=" http://www.ktrk.kg/img/thumbnail/29141465191481.jpg " alt="">
+                            <div class="overlay">
+                              <i class="fa-view"></i>
+                              <span class="media-view">7110</span>
+                              <span class="media-project">
+                                Формула успеха
+                              </span>
+                              <span class="media-date">06.06.2016</span>
+                            </div>
+                            <i class="fa-video"></i>
+                          </a>
+                        </div>
+                        <div class="media-title">
+                          <a href="http://www.ktrk.kg/media/video/2914">
+                            <h4>Ийгилик сырлары: Жогорку Кеңештин депутаты Өмүрбек Текебаев </h4>
+                          </a>
+                        </div>
+                      </article>
+                      <article class="col-md-4" data-cat="all-videos">
+                        <div class="img">
+                          <a href="http://www.ktrk.kg/media/video/92">
+                            <img src=" http://img.youtube.com/vi/GvKxrkzU5LM/hqdefault.jpg " alt="">
+                            <div class="overlay">
+                              <i class="fa-view"></i>
+                              <span class="media-view">3804</span>
+                              <span class="media-date">20.12.2015</span>
+                            </div>
+                            <i class="fa-video"></i>
+                          </a>
+                        </div>
+                        <div class="media-title">
+                          <a href="http://www.ktrk.kg/media/video/92">
+                            <h4>Жаңы клип: Асел &amp; Элмурат "Комуз деми"</h4>
+                          </a>
+                        </div>
+                      </article>
+                      <article class="col-md-4" data-cat="all-videos">
+                        <div class="img">
+                          <a href="http://www.ktrk.kg/media/video/2925">
+                            <img src=" http://www.ktrk.kg/img/thumbnail/29251465212715.png " alt="">
+                            <div class="overlay">
+                              <i class="fa-view"></i>
+                              <span class="media-view">2985</span>
+                              <span class="media-project">
+                                Актуальный разговор
+                              </span>
+                              <span class="media-date">06.06.2016</span>
+                            </div>
+                            <i class="fa-video"></i>
+                          </a>
+                        </div>
+                        <div class="media-title">
+                          <a href="http://www.ktrk.kg/media/video/2925">
+                            <h4>Маанилүү маек: Орозо кармоонун туура эрежелери</h4>
+                          </a>
+                        </div>
+                      </article>
+                  </div>
+                  <footer>
+                     <a href="{{ route('madaniyat.videos') }}">
+                     <span>{{ trans('radiopages.AllVideos') }}<i class="fa fa-arrow-circle-right"></i></span>
+                     </a>
+                  </footer>
+               </div>
+            </div>    
+        </div>
+        <div class="col-md-12 mgallery">
+            <div class="panel panel-default panel-carousel">
+               <div class="panel-heading madaniyatcolor">
+                  <h3 class="panel-title"><span>{{ trans('radiopages.Photos') }}</span></h3>
+               </div>
+               <div class="panel-body">
+                  <div class="col-md-12 broadimages">
+                     <div class="carousel-slick">
+                        <div class="col-md-4">
+                           <a href="#">
+                              <img src="{{asset('images/anons/1.jpg')}}" alt=""/><span>Название</span>
+                              <div class="overlay"></div>
+                           </a>
+                        </div>
+                        <div class="col-md-4">
+                           <a href="#">
+                              <img src="{{asset('images/anons/1.jpg')}}" alt=""/><span>Название</span>
+                              <div class="overlay"></div>
+                           </a>
+                        </div>
+                        <div class="col-md-4">
+                           <a href="#">
+                              <img src="{{asset('images/anons/1.jpg')}}" alt=""/><span>Название</span>
+                              <div class="overlay"></div>
+                           </a>
+                        </div>
+                        <div class="col-md-4">
+                           <a href="#">
+                              <img src="{{asset('images/anons/1.jpg')}}" alt=""/><span>Название</span>
+                              <div class="overlay"></div>
+                           </a>
+                        </div>
+                        <div class="col-md-4">
+                           <a href="#">
+                              <img src="{{asset('images/anons/1.jpg')}}" alt=""/><span>Название</span>
+                              <div class="overlay"></div>
+                           </a>
+                        </div>
+                        <div class="col-md-4">
+                           <a href="#">
+                              <img src="{{asset('images/anons/1.jpg')}}" alt=""/><span>Название</span>
+                              <div class="overlay"></div>
+                           </a>
+                        </div>
+                        <div class="col-md-4">
+                           <a href="#">
+                              <img src="{{asset('images/anons/1.jpg')}}" alt=""/><span>Название</span>
+                              <div class="overlay"></div>
+                           </a>
+                        </div>
+                        <div class="col-md-4">
+                           <a href="#">
+                              <img src="{{asset('images/anons/1.jpg')}}" alt=""/><span>Название</span>
+                              <div class="overlay"></div>
+                           </a>
+                        </div>
+                        <div class="col-md-4">
+                           <a href="#">
+                              <img src="{{asset('images/anons/1.jpg')}}" alt=""/><span>Название</span>
+                              <div class="overlay"></div>
+                           </a>
+                        </div>
+                        <div class="col-md-4">
+                           <a href="#">
+                              <img src="{{asset('images/anons/1.jpg')}}" alt=""/><span>Название</span>
+                              <div class="overlay"></div>
+                           </a>
+                        </div>
+                        <div class="col-md-4">
+                           <a href="#">
+                              <img src="{{asset('images/anons/1.jpg')}}" alt=""/><span>Название</span>
+                              <div class="overlay"></div>
+                           </a>
+                        </div>
+                        <div class="col-md-4">
+                           <a href="#">
+                              <img src="{{asset('images/anons/1.jpg')}}" alt=""/><span>Название</span>
+                              <div class="overlay"></div>
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+                  <footer>
+                     <a href="#">
+                     <span>{{ trans('radiopages.AllPhotoReports') }}<i class="fa fa-arrow-circle-right"></i></span>
+                     </a>
+                  </footer>
+               </div>
+            </div>
+        </div>
+      </div>
+   </div>
+   @stop
+   @section('footerscript2')
+      <script type="text/javascript" src="{{asset('js/jquery.roundabout.js')}}"></script>
     <script>
+        $('.slider-for').slick({
+            slidesToShow: 1,
+            fade: true,
+            arrows: false,
+            autoplay:false
+        });
+        $('.slider-nav').slick({
+            slidesToShow: 4,
+            asNavFor: '.slider-for',
+            focusOnSelect: true
+        });
+        $('.m-promo .slider-nav .slick-slide').each(function () {
+            $(this).click(function (i, el) {
+                $('.m-promo .slider-for .embed-responsive-item').each(function () {
+                    $(this)[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+                });
+            });
+        });
+    </script> 
+   <script>
       if ($(window).width() > 768) {
         $('.carousel-slick_peredachi').slick({
           infinite: true,
-          slidesToShow: 4,
+          slidesToShow: 3,
           slidesToScroll: 1
         });
         $('.carousel-slick').slick({
           infinite: true,
-          slidesToShow: 6,
+          slidesToShow: 3,
           slidesToScroll: 1
-
+      
         });
       }
       if ($(window).width() < 400) {
@@ -348,16 +622,16 @@
           infinite: true,
           slidesToShow: 1,
           slidesToScroll: 1
-
+      
         });
       }
-
+      
       if ($(window).width() < 768) {
         $('.carousel-slick_peredachi').slick({
           infinite: true,
           slidesToShow: 2,
           slidesToScroll: 1
-
+      
         });
       }
       if ($(window).width() < 768) {
@@ -365,14 +639,22 @@
           infinite: true,
           slidesToShow: 2,
           slidesToScroll: 1
-
+      
         });
       }
 
+      $('.slider-anons').slick({
+        dots: false,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 1,
+        adaptiveHeight: true,
+        autoplay: true,
+        autoplaySpeed: 3500,
+      });
+   </script>
 
-
-    </script>
-    <script type="text/javascript">
+<script type="text/javascript">
       (function ($) {
 
         var $descriptions = $('#carousel-descriptions').children('li'),
@@ -446,4 +728,5 @@
         filterList.init();
       });
     </script>
-@stop
+  
+   @stop

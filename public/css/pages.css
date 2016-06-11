@@ -1671,3 +1671,14 @@ h3#reply-title {
     color: #444;
     font-weight: bold;
 }
+.banner-price p{
+    font-size: 16px;
+    font-weight: bold;
+}
+.banner-price span{
+    display: block;
+    font-size: 15px;
+}
+.banner-img h3{
+  font-weight: bold;
+}

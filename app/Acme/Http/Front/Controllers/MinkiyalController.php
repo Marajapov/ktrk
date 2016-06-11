@@ -21,7 +21,7 @@ class MinkiyalController extends Controller
         $popArticles = \Model\Post\ModelName::where('minkiyal','=','1')->languagekg()->orderBy('id','desc')->take(3)->get();
         
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
-        $photoGalleries = \Model\PhotoParent\ModelName::where('minkiyal','=','1')->where('published','=',true)->orderBy('id','desc')->get();
+        $photoGalleries = \Model\PhotoParent\ModelName::where('minkiyal','=','1')->where('published','=',true)->orderBy('id','desc')->take(6)->get();
 
         $videoLive = \Model\Media\ModelName::where('published','=',true)->where('minkiyal','=','1')->orderBy('id', 'desc')->take(4)->get();        
 
