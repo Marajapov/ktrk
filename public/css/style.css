@@ -277,12 +277,18 @@ header {
 
     /*box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);*/
 }
+/* BANNER SLICK SLIDER*/
+.banner-ads{
+    margin-bottom: inherit;
+}
+/* BANNER SLICK SLIDER*/
 .ads {
     display: block;
     margin: 10px 0;
 }
 .ads img {
     width: auto;
+    margin: 0px auto
 }
 .ads-300x250 {
     margin: 0;

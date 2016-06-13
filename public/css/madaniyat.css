@@ -298,7 +298,7 @@ ul.social-share li a:hover {
     height: 200px !important;
 }
 .m-container{
-    margin-bottom: 50px;
+    margin-bottom: 15px;
 }
 .mgallery .main-back{
     padding: 5px 10px 5px 10px;
@@ -689,6 +689,10 @@ ul.social-share li a:hover {
 }
 .panel-news article .pn-title{
     font-weight: bold;
+}
+.panel-news article .pn-substr{
+    padding-top: 10px;
+    color: #444;
 }
 .panel-news article .more .dates{
     float: left;

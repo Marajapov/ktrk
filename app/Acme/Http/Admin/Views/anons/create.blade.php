@@ -139,7 +139,7 @@
                         } 
 
                         // madaniyat
-                        if(data == 5) {
+                        else if(data == 5) {
                             $('#balastanAnons').hide(); 
                             $('#madaniyatAnons').show();                                                    
                             $('#minkiyalAnons').hide();

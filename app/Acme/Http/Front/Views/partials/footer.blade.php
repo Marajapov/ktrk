@@ -87,6 +87,19 @@
     });
 </script>
 
+    <script>
+        $('.banner-ads').slick({
+          dots: false,
+          infinite: true,
+          arrows: false,
+          speed: 500,
+          fade: true,
+          autoplay: true,
+          autoplaySpeed: 3500,
+          cssEase: 'linear'
+        });
+    </script>
+
 <script src="{{ asset('jwplayer/jwplayer.js') }}"></script>
 <script>jwplayer.key="tmEO2SU8NzqLBoHr2Vq6nV13XCyfo8xbdiCb/Q==";</script>
 
@@ -158,6 +171,17 @@
         });
     });
 </script>
+
+<script src="{{ asset('js/sweetalert.min.js') }}"></script>
+@if(session('flag') == 0)
+    <script>
+        $(document).ready(function(){
+            $('#btnLive').click(function(){
+                swal("", "Трансляция матчей Чемпионата Европы 2016 заблокирована в Вашей стране!", "error");
+            });
+        });
+    </script>
+@endif
 
 @yield('footerScript')
 

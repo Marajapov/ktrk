@@ -1,6 +1,7 @@
 <?php
 namespace Front\Controllers;
 use Illuminate\Http\Request;
+use \Model\MediaCategory\ModelName as MediaCategory;
 class MadaniyatController extends Controller
 {
   public function __construct()
@@ -32,22 +33,30 @@ class MadaniyatController extends Controller
     ]);
   }
 
-  public function Test()
+  public function Test(Request $request)
   {
 
 //    return view('Front::channel.madaniyat.comingsoon',[]);
 
+    $banner = \Model\Anons\ModelName::where('channel','=','5')->where('published','=','1')->where('madaniyatsoon','<>','1')->orderBy('id','=','desc')->take(3)->get();    
+
+    $anons = \Model\Anons\ModelName::where('channel','=','5')->where('published','=','1')->where('madaniyatsoon','=','1')->orderBy('id','=','desc')->take(5)->get();
     $channel = \Model\Channel\ModelName::name('madaniyat')->first();
 
     $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
     $lc = app()->getlocale();
     if($lc == 'kg'){
-         $postAll = \Model\Post\ModelName::where('published','=',true)->where('birinchi','=','1')->where('title','<>','')->where('birinchiProgram','>',0)->take(4)->get();
+        $postAll = \Model\Post\ModelName::where('published','=',true)->where('birinchi','=','1')->where('title','<>','')->where('birinchiProgram','>',0)->take(4)->get();
+        $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('name','<>','' )->get();    
     }else{
-         $postAll = \Model\Post\ModelName::where('published','=',true)->where('birinchi','=','1')->where('titleRu','<>','')->where('birinchiProgram','>',0)->take(4)->get();
+        $postAll = \Model\Post\ModelName::where('published','=',true)->where('birinchi','=','1')->where('titleRu','<>','')->where('birinchiProgram','>',0)->take(4)->get();
+        $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('nameRu','<>','' )->get();
     }
-    $photoGalleries = \Model\PhotoParent\ModelName::where('birinchi','=','1')->where('published','=',true)->take('10')->orderBy('id','desc')->take(6)->get();  
+    $photoGalleries = \Model\PhotoParent\ModelName::where('birinchi','=','1')->where('published','=',true)->take('10')->orderBy('id','desc')->take(6)->get(); 
+
+    $media = \Model\Media\ModelName::where('published','=','1')->where('madaniyat','=','1')->orderBy('viewed','desc')->take(9)->get();
+    $projectList = \Model\Project\ModelName::where('madaniyat','=','1')->orderBy('id','desc')->get(); 
 
     return view('Front::channel.madaniyat.test', [
       'channel' => $channel,
@@ -55,6 +64,11 @@ class MadaniyatController extends Controller
       'lc' => $lc,
       'postAll' => $postAll,
       'photoGalleries' => $photoGalleries,
+      'anons' => $anons,
+      'banner' => $banner,
+      'birinchiProjects' => $birinchiProjects,
+      'media' => $media,
+      'projectList' => $projectList,
     ]);
   }
 
@@ -82,11 +96,20 @@ class MadaniyatController extends Controller
 
     $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
     $madaniyatProjects = \Model\Project\ModelName::where('published','=',true)->where('madaniyat', '=', 1)->get();
+    
+    $lc = app()->getlocale();
+    if($lc == 'kg'){
+        $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('name','<>','' )->get();    
+    }else{
+        $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('nameRu','<>','' )->get();
+    }
 
-    return view('Front::channel.madaniyat.photos', [
+    return view('Front::channel.madaniyat.photos', [      
+      'lc' => $lc,
       'channel' => $channel,
       'backgroundMain' => $backgroundMain,
       'madaniyatProjects' => $madaniyatProjects,
+      'birinchiProjects' => $birinchiProjects,
     ]);
   }
   public function broadcasts()
@@ -170,19 +193,134 @@ class MadaniyatController extends Controller
     ]);
   }
 
-  public function video()
-  {
+  public function video($media)
+    {
+        $lc = app()->getlocale();
 
-    $channel = \Model\Channel\ModelName::where('name','=','madaniyat')->first();
+        $video = \Model\Media\ModelName::where('id','=',$media)->first(); // full video array
 
-    $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        $video->incrementViewed();
+
+        $projectId = $video->program; // 0
+
+        $videoType = $video->videoType; // serials
+        $videoName = $video->name;
+
+        $MediaCategory = \Model\MediaCategory\ModelName::where('videoType','=',$videoType)->first();
+        $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi', '=', 1)->get();
+
+        if($lc == 'kg'){
+            $result = \Model\Project\ModelName::where('id','=',$projectId)->first();
+            if($result){
+                $videoProject = $result->getName();
+            }else{
+                $videoProject = '';
+            }
+            
+            
+            $result1 = \Model\MediaCategory\ModelName::where('videoType','=',$videoType)->first();    
+            $getVideoTypeName = $result1->getName();
+
+            if($projectId > 0){
+                $relatedVideos = \Model\Media\ModelName::where('published','=','1')->where('madaniyat','=','1')->where('id','<>',$video->id)->where('program','=',$projectId)->orderBy('id','desc')->get();
+            } elseif($projectId  == 0) {
+                $relatedVideos = \Model\Media\ModelName::where('published','=','1')->where('madaniyat','=','1')->where('id','<>',$video->id)->where('videoType','=',$videoType)->orderBy('id','desc')->get();
+            }
 
 
-    return view('Front::channel.madaniyat.video', [
-      'channel' => $channel,
-      'backgroundMain' => $backgroundMain,
-    ]);
-  }
+        }elseif($lc == 'ru'){
+            $result = \Model\Project\ModelName::where('id','=',$projectId)->first();
+            if($result != null){
+                $videoProject = $result->getNameRu();    
+            }else{
+                $videoProject = '';
+            }
+
+            $result = \Model\MediaCategory\ModelName::where('videoType','=',$videoType)->first();
+            $getVideoTypeName = $result->getNameRu();
+
+            if($projectId > 0){
+                $relatedVideos = \Model\Media\ModelName::where('published','=','1')->where('madaniyat','=','1')->where('id','<>',$video->id)->where('program','=',$projectId)->orderBy('id','desc')->get();
+            } else {
+                $relatedVideos = \Model\Media\ModelName::where('published','=','1')->where('madaniyat','=','1')->where('id','<>',$video->id)->where('videoType','=',$videoType)->orderBy('id','desc')->get();
+            }
+
+        }
+
+        $MediaCategories = \Model\MediaCategory\ModelName::get();
+
+        $projectList = \Model\Project\ModelName::where('madaniyat','=','1')->orderBy('id','desc')->get();
+
+        $mediaAll = \Model\Media\ModelName::where('published','=','1')->orderBy('id','desc')->get();
+
+        $mainBanner = \Model\Background\ModelName::where('name','=','main')->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+        return view('Front::channel.madaniyat.video',[
+            'video' => $video,
+            'videoName' => $videoName,
+            'videoProject' => $videoProject,
+            'getVideoTypeName'=> $getVideoTypeName,
+            'relatedVideos' => $relatedVideos,
+
+            'mediaAll' => $mediaAll,
+            'MediaCategories' => $MediaCategories,
+            'MediaCategory' => $MediaCategory,
+
+            'mainBanner'   => $mainBanner,
+            'projectList' => $projectList,
+            'backgroundMain' => $backgroundMain,
+            'birinchiProjects' => $birinchiProjects
+        ]);
+    }
+
+
+    public function allVideos()
+    {
+        $projectList = \Model\Project\ModelName::where('madaniyat','=','1')->orderBy('id','desc')->get();
+        $mainBanner = \Model\Background\ModelName::where('name','=','main')->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        $perPage = 15;
+
+        $allVideos = \Model\Media\ModelName::where('published','=','1')->where('madaniyat','=','1')->orderBy('id','desc')->paginate($perPage);
+        $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi', '=', 1)->get();
+
+        return view('Front::channel.madaniyat.all',[
+            'perPage'=> $perPage,
+            'mainBanner'   => $mainBanner,
+            'projectList' => $projectList,
+            'backgroundMain' => $backgroundMain,
+            'allVideos' => $allVideos,
+            'birinchiProjects' => $birinchiProjects,
+        ]);
+    }
+
+    public function project(\Model\Project\ModelName $project)
+    {
+        $projectList = \Model\Project\ModelName::where('madaniyat','=','1')->orderBy('id','desc')->get();
+//        $MediaCategory = \Model\MediaCategory\ModelName::get();
+        $mediaAll = \Model\Media\ModelName::where('published','=','1')->orderBy('id','desc')->get();
+
+        $mainBanner = \Model\Background\ModelName::where('name','=','main')->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+
+        $relatedVideos = \Model\Media\ModelName::where('published','=','1')->where('program','=',$project->id)->orderBy('id','desc')->get();
+        $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi', '=', 1)->get();
+
+
+        return view('Front::channel.madaniyat.project',[
+                
+                'project' => $project,
+
+                'mainBanner'   => $mainBanner,
+                'projectList' => $projectList,
+                'backgroundMain' => $backgroundMain,
+                'relatedVideos' => $relatedVideos,
+                'birinchiProjects' => $birinchiProjects,
+
+            ]
+        );
+    }
 
     public function news(\Model\Post\ModelName $post)
     {

@@ -80,19 +80,17 @@
               <li class="dropdown">
                 <a href="{{ route('madaniyat.allnews') }}" class="dropdown-toggle" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-television"></i>{{ trans('radiopages.Korsotuu') }}<span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <li><a href="#"><i class="fa fa-minus"></i>Тоолуктардын ток-шоусу</a></li>
-                  <li><a href="#"><i class="fa fa-minus"></i>Улутман</a></li>
-                  <li><a href="#"><i class="fa fa-minus"></i>Кыз-жигит. Сармерден</a></li>
-                  <li><a href="#"><i class="fa fa-minus"></i>Өмүр сызыгы - Линия жизни</a></li>
-                  <li><a href="#"><i class="fa fa-minus"></i>Улуу мурас</a></li>
-                  <li><a href="#"><i class="fa fa-minus"></i>Сүрөттөр сүйлөйт</a></li>
-                  <li><a href="#"><i class="fa fa-minus"></i>Доор инсаны: Алай ханышасы <br>Доор инсаны: Алымбек датка </a></li>
-                  <li><a href="#"><i class="fa fa-minus"></i>Салт-санат</a></li>
-                  <li><a href="#"><i class="fa fa-minus"></i>Өкүт</a></li>
-                  <li><a href="#"><i class="fa fa-minus"></i>ТВнын  казынасынан</a></li>
+                  @if($birinchiProjects)
+                    @foreach($birinchiProjects as $key=> $project)
+                    <li>
+                      <a href="{{ route('madaniyat.projects', $project) }}"><i class="fa fa-minus"></i>{{ $project->getName() }}</a>
+                    </li>
+                    @endforeach
+                  @endif
                 </ul>
               </li>
-              <li><a href="{{ route('madaniyat.allphotos') }}"><i class="fa fa-picture-o"></i>{{ trans('radiopages.Photos') }}</a></li>
+              <li><a href="{{ route('madaniyat.allphotos') }}"><i class="fa fa-picture-o"></i>{{ trans('radiopages.Photos') }}</a></li>              
+              <li><a href="{{ route('madaniyat.media.all') }}"><i class="fa fa-play"></i>Видео</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right logo-block">
               <ul class="soc socmuz">

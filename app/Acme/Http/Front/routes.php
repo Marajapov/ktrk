@@ -71,14 +71,18 @@ Route::group(['domain' => 'ktrk.dev', 'prefix' => '/madaniyat', 'namespace' => '
     Route::get('/broadcasts', ['as' => 'madaniyat.broadcasts',   'uses' => 'MadaniyatController@broadcasts']);
     Route::get('/comingsoon', ['as' => 'madaniyat.comingsoon',   'uses' => 'MadaniyatController@ComingSoon']);
     Route::get('/allphotos', ['as' => 'madaniyat.allphotos',   'uses' => 'MadaniyatController@allphotos']);
-    Route::get('/videos', ['as' => 'madaniyat.videos',   'uses' => 'MadaniyatController@videos']);
-    Route::get('/video', ['as' => 'madaniyat.video',   'uses' => 'MadaniyatController@video']);
     Route::get('/news/{post}/{locale}', ['as' => 'madaniyat.news',   'uses' => 'MadaniyatController@news']);
     Route::get('/allnews', ['as' => 'madaniyat.allnews',   'uses' => 'MadaniyatController@allnews']);    
     Route::get('/projects/{project}', ['as' => 'madaniyat.projects',   'uses' => 'MadaniyatController@projects']);
 
 });
-
+Route::group(['domain' => 'ktrk.dev', 'prefix' => '/madaniyat/', 'namespace' => 'Front\Controllers'], function() {
+    Route::get('media', ['as' => 'madaniyat.media.index', 'uses' => 'MadaniyatController@mediaIndex']); // List of videos
+    Route::get('media/project/{project}', ['as' => 'madaniyat.media.project', 'uses' => 'MadaniyatController@project']); // Show Page
+    Route::get('media/video/{video}', ['as' => 'madaniyat.media.video', 'uses' => 'MadaniyatController@video']); // Show Video
+    Route::get('media/all', ['as' => 'madaniyat.media.all', 'uses' => 'MadaniyatController@allVideos']); // All Videos
+    Route::get('media/category/{mediaCategory}', ['as' => 'madaniyat.media.category', 'uses' => 'MadaniyatController@categoryVideos']); // All Videos
+});
 
 Route::group(['domain' => 'ktrk.dev', 'prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
 
