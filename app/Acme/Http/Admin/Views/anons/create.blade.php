@@ -122,7 +122,26 @@
                     {
                         // balastan
                         if(data == 4) {
-                            $('#balastanAnons').show();                        
+                            $('#balastanAnons').show();                            
+                            $('#madaniyatAnons').hide();                         
+                            $('#minkiyalAnons').hide();
+                            $('#kyrgyzradioanons').hide();
+                            $('#dostukAnons').hide();
+                            $('#nameKg').show();
+                            $('#nameRu').show();
+                            $('#editorTextArea').hide();
+                            $('#linkArea').show();
+                            $('#weekDayKg').show();
+                            $('#weekDayRu').show();
+                            $('#timeArea').show();
+                            $('#thumbForm').show();
+                            $('#publish').show();
+                        } 
+
+                        // madaniyat
+                        if(data == 5) {
+                            $('#balastanAnons').hide(); 
+                            $('#madaniyatAnons').show();                                                    
                             $('#minkiyalAnons').hide();
                             $('#kyrgyzradioanons').hide();
                             $('#dostukAnons').hide();
@@ -139,7 +158,8 @@
 
                         // minkiyal
                         else if(data == 9){
-                            $('#balastanAnons').hide();                        
+                            $('#balastanAnons').hide();  
+                            $('#madaniyatAnons').hide();                      
                             $('#minkiyalAnons').show();
                             $('#kyrgyzradioanons').hide();
                             $('#dostukAnons').hide();
@@ -156,7 +176,8 @@
 
                         // ktrk videoportal
                         else if(data == 2){
-                            $('#balastanAnons').hide();                        
+                            $('#balastanAnons').hide();
+                            $('#madaniyatAnons').hide();                        
                             $('#minkiyalAnons').hide();
                             $('#kyrgyzradioanons').hide();
                             $('#dostukAnons').hide();
@@ -173,7 +194,8 @@
 
                         // music
                         else if(data == 3){
-                            $('#balastanAnons').hide();                        
+                            $('#balastanAnons').hide(); 
+                            $('#madaniyatAnons').hide();                       
                             $('#minkiyalAnons').hide();
                             $('#kyrgyzradioanons').hide();
                             $('#dostukAnons').hide();
@@ -190,7 +212,8 @@
 
                         // kyrgyzradio
                         else if(data == 6){
-                            $('#balastanAnons').hide();                        
+                            $('#balastanAnons').hide();  
+                            $('#madaniyatAnons').hide();                      
                             $('#minkiyalAnons').hide();
                             $('#kyrgyzradioanons').show();
                             $('#dostukAnons').hide();
@@ -208,6 +231,7 @@
                         // dostuk
                         else if(data == 8){
                             $('#balastanAnons').hide();                        
+                            $('#madaniyatAnons').hide();
                             $('#minkiyalAnons').hide();
                             $('#kyrgyzradioanons').hide();
                             $('#dostukAnons').show();
@@ -223,7 +247,8 @@
                         } 
 
                         else {
-                            $('#balastanAnons').hide();                        
+                            $('#balastanAnons').hide();  
+                            $('#madaniyatAnons').hide();                      
                             $('#minkiyalAnons').hide();
                             $('#kyrgyzradioanons').hide();
                             $('#dostukAnons').hide();

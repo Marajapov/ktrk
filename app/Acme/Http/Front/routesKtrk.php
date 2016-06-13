@@ -72,7 +72,10 @@ Route::group(['domain' => 'www.ktrk.kg', 'prefix' => '/madaniyat', 'namespace' =
   Route::get('/comingsoon', ['as' => 'madaniyat.comingsoon',   'uses' => 'MadaniyatController@ComingSoon']);
   Route::get('/allphotos', ['as' => 'madaniyat.allphotos',   'uses' => 'MadaniyatController@allphotos']);
   Route::get('/videos', ['as' => 'madaniyat.videos',   'uses' => 'MadaniyatController@videos']);
-  Route::get('/video', ['as' => 'madaniyat.video',   'uses' => 'MadaniyatController@video']);
+  Route::get('/video', ['as' => 'madaniyat.video',   'uses' => 'MadaniyatController@video']);  
+  Route::get('/news/{post}/{locale}', ['as' => 'madaniyat.news',   'uses' => 'MadaniyatController@news']);
+  Route::get('/allnews', ['as' => 'madaniyat.allnews',   'uses' => 'MadaniyatController@allnews']);      
+  Route::get('/projects/{project}', ['as' => 'madaniyat.projects',   'uses' => 'MadaniyatController@projects']);
 
 });
 

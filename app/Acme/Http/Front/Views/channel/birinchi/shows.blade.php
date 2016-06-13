@@ -41,7 +41,7 @@
                            @foreach($relatedNews as $post)
                            <div class="media blockallnews">
                               <div class="media-left">
-                                 <a href="{{ route('birinchi.show', $post) }}">
+                                 <a href="{{ route('birinchi.show', [$post, $lc]) }}">
                                  <img class="media-object thumb" src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif" alt="image">
                                  </a>
                               </div>
@@ -50,7 +50,7 @@
                                     <span class="datetime">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
                                     <span class="views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
                                  </div>
-                                 <a class="media-heading" href="{{ route('birinchi.show', $post) }}">{{ $post->getTitleRuOrKg() }}</a>
+                                 <a class="media-heading" href="{{ route('birinchi.show', [$post, $lc]) }}">{{ $post->getTitleRuOrKg() }}</a>
                                  <span class="mb_substr">
                                     {!! mb_substr($post->getContent(), 0, 290, "UTF-8") !!}
                                  </span>

@@ -179,49 +179,26 @@
                </div>
                <div class="panel-body panel-news">
                  <div class="row">
+                    @if($postAll)
+                    @foreach($postAll as $post)
                     <article class="col-md-3 no-padding">
-                      <div class="col-md-12">
-                        <img src="{{ asset('images/anons/1.jpg') }}" alt="">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <div class="more">
-                          <div class="dates"><i class="fa fa-calendar"></i>03.03.2016</div>
-                          <div class="view"><i class="fa fa-eye"></i>12</div>                        
-                        </div>
+                      <div class="col-md-12">                
+                       <a href="{{ route('madaniyat.news', [$post, $lc]) }}">
+                          <img src="{{ asset($post->getFile()) }}" alt="">
+                          <div class="more">
+                          <div class="dates"><i class="fa fa-calendar"></i>
+                              {{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</div>
+                              <div class="view"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</div>                      
+                          </div>
+                          <span class="pn-title">{{ $post->getTitleRuOrKg() }}</span>
+                        </a>
                       </div>                    
-                    </article>
-                    <article class="col-md-3 no-padding">
-                      <div class="col-md-12">
-                        <img src="{{ asset('images/anons/1.jpg') }}" alt="">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <div class="more">
-                          <div class="dates"><i class="fa fa-calendar"></i>03.03.2016</div>
-                          <div class="view"><i class="fa fa-eye"></i>12</div>                        
-                        </div>
-                      </div>                    
-                    </article>
-                    <article class="col-md-3 no-padding">
-                      <div class="col-md-12">
-                        <img src="{{ asset('images/anons/1.jpg') }}" alt="">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <div class="more">
-                          <div class="dates"><i class="fa fa-calendar"></i>03.03.2016</div>
-                          <div class="view"><i class="fa fa-eye"></i>12</div>                        
-                        </div>
-                      </div>                    
-                    </article>
-                    <article class="col-md-3 no-padding">
-                      <div class="col-md-12">
-                        <img src="{{ asset('images/anons/1.jpg') }}" alt="">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <div class="more">
-                          <div class="dates"><i class="fa fa-calendar"></i>03.03.2016</div>
-                          <div class="view"><i class="fa fa-eye"></i>12</div>                        
-                        </div>
-                      </div>                    
-                    </article>
+                    </article>                    
+                    @endforeach
+                    @endif
                   </div>
                   <footer>
-                     <a href="#">
+                     <a href="{{ route('madaniyat.allnews') }}">
                      <span>Баардык жаңылыктар<i class="fa fa-arrow-circle-right"></i></span>
                      </a>
                   </footer>
@@ -489,89 +466,35 @@
             </div>    
         </div>
         <div class="col-md-12 mgallery">
-            <div class="panel panel-default panel-carousel">
+            <div class="panel panel-default">
                <div class="panel-heading madaniyatcolor">
                   <h3 class="panel-title"><span>{{ trans('radiopages.Photos') }}</span></h3>
                </div>
                <div class="panel-body">
-                  <div class="col-md-12 broadimages">
+                  <div class="col-md-12">
                      <div class="carousel-slick">
-                        <div class="col-md-4">
-                           <a href="#">
-                              <img src="{{asset('images/anons/1.jpg')}}" alt=""/><span>Название</span>
-                              <div class="overlay"></div>
-                           </a>
-                        </div>
-                        <div class="col-md-4">
-                           <a href="#">
-                              <img src="{{asset('images/anons/1.jpg')}}" alt=""/><span>Название</span>
-                              <div class="overlay"></div>
-                           </a>
-                        </div>
-                        <div class="col-md-4">
-                           <a href="#">
-                              <img src="{{asset('images/anons/1.jpg')}}" alt=""/><span>Название</span>
-                              <div class="overlay"></div>
-                           </a>
-                        </div>
-                        <div class="col-md-4">
-                           <a href="#">
-                              <img src="{{asset('images/anons/1.jpg')}}" alt=""/><span>Название</span>
-                              <div class="overlay"></div>
-                           </a>
-                        </div>
-                        <div class="col-md-4">
-                           <a href="#">
-                              <img src="{{asset('images/anons/1.jpg')}}" alt=""/><span>Название</span>
-                              <div class="overlay"></div>
-                           </a>
-                        </div>
-                        <div class="col-md-4">
-                           <a href="#">
-                              <img src="{{asset('images/anons/1.jpg')}}" alt=""/><span>Название</span>
-                              <div class="overlay"></div>
-                           </a>
-                        </div>
-                        <div class="col-md-4">
-                           <a href="#">
-                              <img src="{{asset('images/anons/1.jpg')}}" alt=""/><span>Название</span>
-                              <div class="overlay"></div>
-                           </a>
-                        </div>
-                        <div class="col-md-4">
-                           <a href="#">
-                              <img src="{{asset('images/anons/1.jpg')}}" alt=""/><span>Название</span>
-                              <div class="overlay"></div>
-                           </a>
-                        </div>
-                        <div class="col-md-4">
-                           <a href="#">
-                              <img src="{{asset('images/anons/1.jpg')}}" alt=""/><span>Название</span>
-                              <div class="overlay"></div>
-                           </a>
-                        </div>
-                        <div class="col-md-4">
-                           <a href="#">
-                              <img src="{{asset('images/anons/1.jpg')}}" alt=""/><span>Название</span>
-                              <div class="overlay"></div>
-                           </a>
-                        </div>
-                        <div class="col-md-4">
-                           <a href="#">
-                              <img src="{{asset('images/anons/1.jpg')}}" alt=""/><span>Название</span>
-                              <div class="overlay"></div>
-                           </a>
-                        </div>
-                        <div class="col-md-4">
-                           <a href="#">
-                              <img src="{{asset('images/anons/1.jpg')}}" alt=""/><span>Название</span>
-                              <div class="overlay"></div>
-                           </a>
-                        </div>
+                      @if($photoGalleries)
+                          @foreach($photoGalleries as $photoGallery)
+                            <div class="col-md-4">
+                               <a href="{{ route('madaniyat.photos', $photoGallery) }}">
+                                  <img src="{{ asset($photoGallery->thumbnail_big) }}" alt=""/>
+                                  <div class="main-back">
+                                    <div class="g-extra">
+                                        <span class="datetime"><i class="fa fa-calendar"></i> {{ $photoGallery->getDay() }} {{ $photoGallery->getMonthRu() }}, {{ $photoGallery->getTime() }}</span>
+                                        <span class="view"><i class="fa fa-eye"></i>{{ $photoGallery->viewed }}</span>
+                                     </div>
+                                    <div class="g-title">
+                                      {{ $photoGallery->getName() }}
+                                    </div>
+                                  </div>
+                               </a>
+                            </div>
+                          @endforeach
+                      @endif
                      </div>
                   </div>
-                  <footer>
-                     <a href="#">
+                  <footer class="m-footer">
+                     <a href="{{ route('madaniyat.allphotos') }}">
                      <span>{{ trans('radiopages.AllPhotoReports') }}<i class="fa fa-arrow-circle-right"></i></span>
                      </a>
                   </footer>

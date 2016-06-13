@@ -123,7 +123,7 @@
                                         </p>
                                         <div class="news-title">
                                             @if($generalPost3->birinchi == 1)
-                                                <a href="{{ route('birinchi.news', $generalPost3, $lc) }}">
+                                                <a href="{{ route('birinchi.news', [$generalPost3, $lc]) }}">
                                                     {{ $generalPost3->getTitleRuOrKg() }}
                                                 </a>
                                             @elseif($generalPost3->director == 1)

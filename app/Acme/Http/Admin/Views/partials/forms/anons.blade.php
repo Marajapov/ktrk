@@ -48,6 +48,26 @@
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div id="madaniyatAnons" class="col-sm-4 panel-success display-none">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Маданият</h3>
+                    </div>
+
+                    <!-- skoro -->
+                    <div class="form-group">
+                        <label for="parentId" class="col-sm-2 control-label"></label>
+                        <div class="col-sm-12">
+                            <div class="checkbox checkbox-primary ">
+                                {!! Form::hidden('madaniyatsoon', 0) !!}
+                                {!! Form::checkbox('madaniyatsoon', 1, null, ["id" => "madaniyatsoon", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
+                                <label for="madaniyatsoon">
+                                    Жакында
+                                </label>
+                            </div>
+                        </div>
+                    </div>
                 </div>                
 
                 <div id="kyrgyzradioanons" class="col-sm-4 panel-success display-none">

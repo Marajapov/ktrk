@@ -749,7 +749,7 @@ class BirinchiController extends Controller
 
 
         return view('Front::channel.birinchi.shows',[
-                
+            'lc' => $lc,                
             'project' => $project,
     //      'MediaCategories'       => $MediaCategories,
             'mainBanner'   => $mainBanner,
