@@ -83,7 +83,7 @@
                   @if($birinchiProjects)
                     @foreach($birinchiProjects as $key=> $project)
                     <li>
-                      <a href="{{ route('madaniyat.projects', $project) }}"><i class="fa fa-minus"></i>{{ $project->getName() }}</a>
+                      <a href="{{ route('madaniyat.projects', $project) }}">{{ $project->getName() }}</a>
                     </li>
                     @endforeach
                   @endif

@@ -305,13 +305,12 @@ class MadaniyatController extends Controller
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
         $relatedVideos = \Model\Media\ModelName::where('published','=','1')->where('program','=',$project->id)->orderBy('id','desc')->get();
-        $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi', '=', 1)->get();
+        $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('madaniyat', '=', 1)->get();
 
 
         return view('Front::channel.madaniyat.project',[
                 
                 'project' => $project,
-
                 'mainBanner'   => $mainBanner,
                 'projectList' => $projectList,
                 'backgroundMain' => $backgroundMain,

@@ -1,6 +1,7 @@
 @extends('Front::channel.madaniyat.default')
 @section('title', $project->getNameOne())
 @section('styles')
+    <link rel="stylesheet" href="{{ asset('css/videoportal.css') }}"/>
 @endsection
 @section('content')
 <body class="madaniyat">
@@ -54,7 +55,7 @@
                                 @if($relatedVideos)
                                     @foreach($relatedVideos as $relatedVideo)
                                         <div class="col-md-4 block">
-                                            <a href="{{ route('front.media.video',$relatedVideo) }}" class="video-thumb">
+                                            <a href="{{ route('madaniyat.media.video',$relatedVideo) }}" class="video-thumb">
                                                 <img src="http://img.youtube.com/vi/{{$relatedVideo->url}}/mqdefault.jpg" alt=""/>
                                                 <div class="overlay">
                                                     <i class="fa-view"></i>
@@ -68,7 +69,7 @@
                                                 </div>
                                                 <i class="fa-video"></i>
                                             </a>
-                                            <a href="{{ route('front.media.video',$relatedVideo) }}" class="video-title">
+                                            <a href="{{ route('madaniyat.media.video',$relatedVideo) }}" class="video-title">
                                                 {{$relatedVideo->getName()}}
                                             </a>
                                         </div>
@@ -113,4 +114,19 @@
    </div>
 @stop
 @section('footerscript2')
+    <script>
+        $(function(){
+            $("#relatedVideos .block").slice(0, 12).show(); // select the first ten
+            $("#relatedVideos .loadMore").click(function(e){ // click event for load more
+                e.preventDefault();
+                $("#relatedVideos .block:hidden").slice(0, 12).show(); // select next 10 hidden divs and show them
+                if($("#relatedVideos .block:hidden").length == 0){ // check if any hidden divs still exist
+                    $("#relatedVideos .loadMore").hide();
+                }
+            });
+            if($("#relatedVideos .block:hidden").length == 0){ // check if any hidden divs still exist
+                $("#relatedVideos .loadMore").hide();
+            }
+        });
+    </script>
 @stop
