@@ -27,7 +27,6 @@
                         <li><a href="{{route('minkiyal.dj.rasul')}}">Расул Мырзатегин</a></li>
                         <li><a href="{{route('minkiyal.dj.jazgyl')}}">Жазгүл Жолдубай кызы</a></li>
                         <li><a href="{{route('minkiyal.dj.ulan')}}">Улан Улукболсун</a></li>
-                        <li><a href="{{route('minkiyal.dj.akyl')}}">Акыл Жеңишбек уулу</a></li>
                         <li><a href="{{route('minkiyal.dj.kanat')}}">Канат Кадыржан</a></li>
                         <li><a href="{{route('minkiyal.dj.bekzat')}}">Бекзат Калыбек уулу</a></li>
                      </ul>

@@ -43,7 +43,7 @@
                               <nav>
                                 <ul class="pagination">
                                   <li>
-                                    <a href="{{ route('birinchi.allnews', ['page' => 1]) }}" class="btn btn-default @if($postAll->currentPage() == 1) disabled @endif">{{ trans('site.Start') }}</a>
+                                    <a href="{{ route('madaniyat.allnews', ['page' => 1]) }}" class="btn btn-default @if($postAll->currentPage() == 1) disabled @endif">{{ trans('site.Start') }}</a>
                                   </li>
                                   <li>
                                     <a href="{{ $postAll->previousPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span></a>
@@ -53,11 +53,11 @@
                                   </li>
                                   @for($i = 0, $j = 1; $i < $postAll->total(); $i+=$perPage)
                                   <li>
-                                    <a href="{{ route('birinchi.allnews', ['page' => $j]) }}" class="btn btn-default @if($postAll->currentPage() == $j) active @endif">{{ $j++ }}</a>
+                                    <a href="{{ route('madaniyat.allnews', ['page' => $j]) }}" class="btn btn-default @if($postAll->currentPage() == $j) active @endif">{{ $j++ }}</a>
                                   </li>
                                   @endfor
                                   <li>
-                                    <a href="{{ route('birinchi.allnews', ['page' => ceil($postAll->total()/$perPage)]) }}" class="btn btn-default @if($postAll->currentPage() == ceil($postAll->total()/$perPage)) disabled @endif">{{ trans('site.End') }}</a>
+                                    <a href="{{ route('madaniyat.allnews', ['page' => ceil($postAll->total()/$perPage)]) }}" class="btn btn-default @if($postAll->currentPage() == ceil($postAll->total()/$perPage)) disabled @endif">{{ trans('site.End') }}</a>
                                   </li>
                                 </ul>
                               </nav>
@@ -95,8 +95,8 @@
                         </div>
                         <div class="panel-body ctg-panel">
                           <ul class="list-group">
-                              @if($birinchiProjects) 
-                                @foreach($birinchiProjects as $key=> $project)
+                              @if($madaniyatProjects) 
+                                @foreach($madaniyatProjects as $key=> $project)
                                 <li class="list-group-item">
                                    <a href="{{ route('madaniyat.projects', $project) }}">{{ $project->getName() }}</a>
                                 </li>

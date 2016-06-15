@@ -43,7 +43,7 @@
                               @foreach($relatedNews as $post)
                               <div class="media blockallnews">
                                 <div class="media-left">
-                                  <a href="{{ route('birinchi.show', $post) }}">
+                                  <a href="{{ route('madaniyat.news', [$post, $lc]) }}">
                                     <img class="media-object thumb" src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif" alt="image">
                                   </a>
                                 </div>
@@ -52,7 +52,7 @@
                                     <span class="datetime">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
                                     <span class="views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
                                   </div>
-                                  <a class="media-heading" href="{{ route('birinchi.show', $post) }}">{{ $post->getTitleRuOrKg() }}</a>
+                                  <a class="media-heading" href="{{ route('madaniyat.news', [$post, $lc]) }}">{{ $post->getTitleRuOrKg() }}</a>
                                   <span class="mb_substr">
                                     {!! mb_substr($post->getContent(), 0, 250, "UTF-8") !!}
                                   </span>
@@ -61,7 +61,7 @@
                               @endforeach
                               @endif
                               <footer>
-                                <a href="{{ route('birinchi.projects') }}">{{ trans('radiopages.Morenews') }}</a>
+                                <a href="{{ route('madaniyat.projects') }}">{{ trans('radiopages.Morenews') }}</a>
                               </footer>
                             </div>
                           </div>
@@ -74,8 +74,8 @@
                         </div>
                         <div class="panel-body ctg-panel">
                           <ul class="list-group">
-                             @if($birinchiProjects) 
-                               @foreach($birinchiProjects as $project_one)
+                             @if($madaniyatProjects) 
+                               @foreach($madaniyatProjects as $project_one)
                                  <li class="list-group-item">
                                     <a href="{{ route('madaniyat.projects', $project_one) }}">{{ $project_one->getName() }}</a>
                                  </li>

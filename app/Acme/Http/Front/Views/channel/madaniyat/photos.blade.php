@@ -79,7 +79,7 @@
                                                 </button>
                                             </div>
 
-                                            <a href="{{ route('birinchi.allphotos') }}">
+                                            <a href="{{ route('madaniyat.allphotos') }}">
                                                 <span>Баардык сүрөтбаяндар<i class="fa fa-arrow-circle-right"></i></span>
                                             </a>
                                         </footer>

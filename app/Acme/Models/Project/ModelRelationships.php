@@ -17,4 +17,9 @@ trait ModelRelationships
         
         return $this->hasMany(\Model\Post\ModelName::class, 'kyrgyzradioProgram');
     }
+    public function mgprogram()
+    {
+        
+        return $this->hasMany(\Model\Post\ModelName::class, 'madaniyatProgram');
+    }
 }

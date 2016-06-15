@@ -29,9 +29,9 @@
                         <div class="panel-heading madaniyatcolor">
                           <h3 class="panel-title">
                             <span>
-                                @if($birinchiProjects)
-                                  @foreach($birinchiProjects as $project)
-                                    @if($project->id == $post->birinchiProgram)
+                                @if($madaniyatProjects)
+                                  @foreach($madaniyatProjects as $project)
+                                    @if($project->id == $post->madaniyatProgram)
                                       {{ ($project->getName()) }}
                                     @endif
                                   @endforeach
@@ -109,7 +109,7 @@
                                </button>
                            </div>
 
-                           <a href="{{ route('birinchi.allnews') }}">
+                           <a href="{{ route('madaniyat.allnews') }}">
                                <span>{{ trans('site.PostAllNews') }}<i class="fa fa-arrow-circle-right"></i></span>
                            </a>
                        </footer>
@@ -127,7 +127,17 @@
                                 <div class="media-body">
                                     <div class="extra">
                                         <span class="datetime">{{ $post->getDay() }} {{ $post->getMonthRu() }}</span>
-                                        <a class="cat" href="#"><span>{{ $post->category('category_id')->first()->getTitle() }}</span></a>
+                                        @if($madaniyatProjects)
+                                          @foreach($madaniyatProjects as $project)
+                                            <a class="cat" href="{{ route('madaniyat.projects', $project) }}">
+                                              <span>
+                                                @if($project->id == $post->madaniyatProgram)
+                                                  {{ ($project->getName()) }}
+                                                @endif
+                                              </span>
+                                            </a>
+                                          @endforeach
+                                        @endif
                                         <span class="views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
                                     </div>
                                     <a class="media-heading" href="{{ route('madaniyat.news', [$post, $lc]) }}">{{ $post->getTitleRuOrKg() }}</a>
@@ -145,8 +155,8 @@
                         </div>
                         <div class="panel-body ctg-panel">
                           <ul class="list-group">
-                              @if($birinchiProjects) 
-                                @foreach($birinchiProjects as $key=> $project)
+                              @if($madaniyatProjects) 
+                                @foreach($madaniyatProjects as $key=> $project)
                                 <li class="list-group-item">
                                    <a href="{{ route('madaniyat.projects', $project) }}">{{ $project->getName() }}</a>
                                 </li>

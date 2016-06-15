@@ -1,8 +1,8 @@
 @extends('Front::channel.madaniyat.default')
 @if($videoProject)
-    @section('title', $videoName.' | '.  $videoProject.' | Телеберүүлөр | КТРК')
+    @section('title', $videoName.' | '.  $videoProject.' | Телеберүүлөр | Маданият')
 @else
-@section('title', $videoName.' | '.$getVideoTypeName.' | КТРК')
+@section('title', $videoName.' | '.$getVideoTypeName.' | Маданият')
 @endif
 
 @section('styles')
@@ -26,7 +26,7 @@
 <body class="madaniyat">
    @include('Front::channel.madaniyat.nav')
 
-    <div class="container main-wrapper">
+    <div class="container main-wrapper m-footer">
 
         <div class="row">
 
@@ -140,10 +140,9 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
 
-                  <div class="col-md-3 no-padding">
+                    <div class="col-md-3 no-padding">
                       <div class="panel panel-default">
                         <div class="panel-heading madaniyatcolor">
                           <h3 class="panel-title"><span>{{ trans('radiopages.Peredachi') }}</span></h3>
@@ -158,7 +157,7 @@
                           </ul>                                
                         </div>
                       </div>
-                  </div>
+                    </div>
 
                 </div>
 

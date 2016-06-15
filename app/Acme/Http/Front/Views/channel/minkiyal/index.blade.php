@@ -148,19 +148,6 @@
            <div>
                <div class="col-md-12">
                   <div class="hexagon">
-                     <img class="d-img" src="{{asset('images/channels/minkiyal/vj/4.png')}}" alt="">            
-                  </div>
-                   <div class="d-info">
-<!--                      <div class="work">
-                        <span>DJ</span>
-                     </div> -->
-                     <span class="name"><a href="{{route('minkiyal.dj.akyl')}}">Акыл Жеңишбек уулу</a></span>
-                  </div>
-               </div>
-           </div>
-           <div>
-               <div class="col-md-12">
-                  <div class="hexagon">
                      <img class="d-img" src="{{asset('images/channels/minkiyal/vj/5.png')}}" alt="">            
                   </div>
                    <div class="d-info">

@@ -20,9 +20,9 @@ class MadaniyatController extends Controller
 
     $lc = app()->getlocale();
         if($lc == 'kg'){
-            $postAll = \Model\Post\ModelName::where('birinchi','=',1)->where('birinchiProgram','<','0')->where('title','<>','')->published()->orderBy('id','desc')->take(4)->get();
+            $postAll = \Model\Post\ModelName::where('madaniyat','=',1)->where('madaniyatProgram','<','0')->where('title','<>','')->published()->orderBy('id','desc')->take(4)->get();
         }else{
-            $postAll = \Model\Post\ModelName::where('birinchi','=',1)->where('birinchiProgram','<','0')->where('titleRu','<>','')->published()->orderBy('id','desc')->take(4)->get();
+            $postAll = \Model\Post\ModelName::where('madaniyat','=',1)->where('madaniyatProgram','<','0')->where('titleRu','<>','')->published()->orderBy('id','desc')->take(4)->get();
         }
 
     return view('Front::channel.madaniyat.test', [
@@ -47,13 +47,13 @@ class MadaniyatController extends Controller
 
     $lc = app()->getlocale();
     if($lc == 'kg'){
-        $postAll = \Model\Post\ModelName::where('published','=',true)->where('birinchi','=','1')->where('title','<>','')->where('birinchiProgram','>',0)->take(4)->get();
-        $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('name','<>','' )->get();    
+        $postAll = \Model\Post\ModelName::where('published','=',true)->where('madaniyat','=','1')->where('title','<>','')->take(4)->get();
+        $madaniyatProjects = \Model\Project\ModelName::where('published','=',true)->where('madaniyat','=',1)->where('name','<>','' )->get();    
     }else{
-        $postAll = \Model\Post\ModelName::where('published','=',true)->where('birinchi','=','1')->where('titleRu','<>','')->where('birinchiProgram','>',0)->take(4)->get();
-        $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('nameRu','<>','' )->get();
+        $postAll = \Model\Post\ModelName::where('published','=',true)->where('madaniyat','=','1')->where('titleRu','<>','')->take(4)->get();
+        $madaniyatProjects = \Model\Project\ModelName::where('published','=',true)->where('madaniyat','=',1)->where('nameRu','<>','' )->get();
     }
-    $photoGalleries = \Model\PhotoParent\ModelName::where('birinchi','=','1')->where('published','=',true)->take('10')->orderBy('id','desc')->take(6)->get(); 
+    $photoGalleries = \Model\PhotoParent\ModelName::where('madaniyat','=','1')->where('published','=',true)->take('10')->orderBy('id','desc')->take(6)->get(); 
 
     $media = \Model\Media\ModelName::where('published','=','1')->where('madaniyat','=','1')->orderBy('viewed','desc')->take(9)->get();
     $projectList = \Model\Project\ModelName::where('madaniyat','=','1')->orderBy('id','desc')->get(); 
@@ -66,7 +66,7 @@ class MadaniyatController extends Controller
       'photoGalleries' => $photoGalleries,
       'anons' => $anons,
       'banner' => $banner,
-      'birinchiProjects' => $birinchiProjects,
+      'madaniyatProjects' => $madaniyatProjects,
       'media' => $media,
       'projectList' => $projectList,
     ]);
@@ -95,21 +95,19 @@ class MadaniyatController extends Controller
     $channel = \Model\Channel\ModelName::name('madaniyat')->first();
 
     $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
-    $madaniyatProjects = \Model\Project\ModelName::where('published','=',true)->where('madaniyat', '=', 1)->get();
     
     $lc = app()->getlocale();
     if($lc == 'kg'){
-        $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('name','<>','' )->get();    
+        $madaniyatProjects = \Model\Project\ModelName::where('published','=',true)->where('madaniyat','=',1)->where('name','<>','' )->get();    
     }else{
-        $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('nameRu','<>','' )->get();
+        $madaniyatProjects = \Model\Project\ModelName::where('published','=',true)->where('madaniyat','=',1)->where('nameRu','<>','' )->get();
     }
 
     return view('Front::channel.madaniyat.photos', [      
       'lc' => $lc,
       'channel' => $channel,
       'backgroundMain' => $backgroundMain,
-      'madaniyatProjects' => $madaniyatProjects,
-      'birinchiProjects' => $birinchiProjects,
+      'madaniyatProjects' => $madaniyatProjects
     ]);
   }
   public function broadcasts()
@@ -134,27 +132,27 @@ class MadaniyatController extends Controller
 
   public function allphotos()
     {
-        $channel = \Model\Channel\ModelName::name('birinchi')->first();
+        $channel = \Model\Channel\ModelName::name('madaniyat')->first();
         $perPage = 12;
 
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
-        $postAll = \Model\Media\ModelName::where('published','=',true)->where('birinchi','=','1')->orderBy('id', 'desc')->paginate($perPage);        
+        $postAll = \Model\Media\ModelName::where('published','=',true)->where('madaniyat','=','1')->orderBy('id', 'desc')->paginate($perPage);        
         $lc = app()->getlocale();
         if($lc == 'kg'){
-            $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('name','<>','' )->get();    
+            $madaniyatProjects = \Model\Project\ModelName::where('published','=',true)->where('madaniyat','=',1)->where('name','<>','' )->get();    
         }else{
-            $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('nameRu','<>','' )->get();
+            $madaniyatProjects = \Model\Project\ModelName::where('published','=',true)->where('madaniyat','=',1)->where('nameRu','<>','' )->get();
         }
         // Photo Gallery
-        $photoGalleries = \Model\PhotoParent\ModelName::where('birinchi','=','1')->where('published','=',true)->take('10')->orderBy('id','desc')->paginate($perPage);       
+        $photoGalleries = \Model\PhotoParent\ModelName::where('madaniyat','=','1')->where('published','=',true)->take('10')->orderBy('id','desc')->paginate($perPage);       
         return view('Front::channel.madaniyat.allphotos', [
             'channel' => $channel,
             'backgroundMain' => $backgroundMain,
             'photoGalleries' => $photoGalleries,
             'postAll' => $postAll,
             'perPage' => $perPage,
-            'birinchiProjects' => $birinchiProjects,  
+            'madaniyatProjects' => $madaniyatProjects,  
 
             ]);
     }
@@ -162,7 +160,7 @@ class MadaniyatController extends Controller
     public function Gallery(Request $request, $galleryId)
     {
 
-        $gallery = \Model\PhotoParent\ModelName::where('birinchi','=','1')->where('id','=',$galleryId)->first();
+        $gallery = \Model\PhotoParent\ModelName::where('madaniyat','=','1')->where('id','=',$galleryId)->first();
         $gallery->incrementViewed();
         if($gallery != null){
 
@@ -170,14 +168,14 @@ class MadaniyatController extends Controller
     }else{
         $images = null;
     }
-        $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi', '=', 1)->get();
+        $madaniyatProjects = \Model\Project\ModelName::where('published','=',true)->where('madaniyat', '=', 1)->get();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
         return view('Front::channel.madaniyat.photos',[
             'images' => $images,
             'backgroundMain' => $backgroundMain,
             'gallery' => $gallery,
-            'birinchiProjects' => $birinchiProjects,
+            'madaniyatProjects' => $madaniyatProjects,
             ]);
     }
 
@@ -207,7 +205,7 @@ class MadaniyatController extends Controller
         $videoName = $video->name;
 
         $MediaCategory = \Model\MediaCategory\ModelName::where('videoType','=',$videoType)->first();
-        $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi', '=', 1)->get();
+        $madaniyatProjects = \Model\Project\ModelName::where('published','=',true)->where('madaniyat', '=', 1)->get();
 
         if($lc == 'kg'){
             $result = \Model\Project\ModelName::where('id','=',$projectId)->first();
@@ -270,7 +268,7 @@ class MadaniyatController extends Controller
             'mainBanner'   => $mainBanner,
             'projectList' => $projectList,
             'backgroundMain' => $backgroundMain,
-            'birinchiProjects' => $birinchiProjects
+            'madaniyatProjects' => $madaniyatProjects
         ]);
     }
 
@@ -283,7 +281,7 @@ class MadaniyatController extends Controller
         $perPage = 15;
 
         $allVideos = \Model\Media\ModelName::where('published','=','1')->where('madaniyat','=','1')->orderBy('id','desc')->paginate($perPage);
-        $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi', '=', 1)->get();
+        $madaniyatProjects = \Model\Project\ModelName::where('published','=',true)->where('madaniyat', '=', 1)->get();
 
         return view('Front::channel.madaniyat.all',[
             'perPage'=> $perPage,
@@ -291,7 +289,7 @@ class MadaniyatController extends Controller
             'projectList' => $projectList,
             'backgroundMain' => $backgroundMain,
             'allVideos' => $allVideos,
-            'birinchiProjects' => $birinchiProjects,
+            'madaniyatProjects' => $madaniyatProjects,
         ]);
     }
 
@@ -305,7 +303,7 @@ class MadaniyatController extends Controller
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
         $relatedVideos = \Model\Media\ModelName::where('published','=','1')->where('program','=',$project->id)->orderBy('id','desc')->get();
-        $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('madaniyat', '=', 1)->get();
+        $madaniyatProjects = \Model\Project\ModelName::where('published','=',true)->where('madaniyat', '=', 1)->get();
 
 
         return view('Front::channel.madaniyat.project',[
@@ -315,7 +313,7 @@ class MadaniyatController extends Controller
                 'projectList' => $projectList,
                 'backgroundMain' => $backgroundMain,
                 'relatedVideos' => $relatedVideos,
-                'birinchiProjects' => $birinchiProjects,
+                'madaniyatProjects' => $madaniyatProjects,
 
             ]
         );
@@ -357,19 +355,19 @@ class MadaniyatController extends Controller
         if($lc == 'kg' && ($post->title != '')){          
         }elseif($lc == 'ru' && ($post->titleRu != '')){        
         }else{
-            return redirect()->route('birinchi.home');
+            return redirect()->route('madaniyat.home');
         }
 
-        $channel = \Model\Channel\ModelName::name('birinchi')->first();
+        $channel = \Model\Channel\ModelName::name('madaniyat')->first();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
         $weekFromNow = date('Y-m-d', strtotime('-10 days'));
 
         if($lc == 'kg'){
-            $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('name','<>','' )->get(); 
-            $popArticles = \Model\Post\ModelName::where('birinchi','=','1')->where('created_at','>',$weekFromNow)->languagekg()->where('birinchiProgram','>',0)->orderBy('viewed','desc')->get();   
+            $madaniyatProjects = \Model\Project\ModelName::where('published','=',true)->where('madaniyat','=',1)->where('name','<>','' )->get(); 
+            $popArticles = \Model\Post\ModelName::where('madaniyat','=','1')->where('created_at','>',$weekFromNow)->languagekg()->where('madaniyatProgram','>',0)->orderBy('viewed','desc')->get();   
         }else{
-            $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('nameRu','<>','' )->get();
-            $popArticles = \Model\Post\ModelName::where('birinchi','=','1')->where('created_at','>',$weekFromNow)->languageru()->where('birinchiProgram','>',0)->orderBy('viewed','desc')->get();
+            $madaniyatProjects = \Model\Project\ModelName::where('published','=',true)->where('madaniyat','=',1)->where('nameRu','<>','' )->get();
+            $popArticles = \Model\Post\ModelName::where('madaniyat','=','1')->where('created_at','>',$weekFromNow)->languageru()->where('madaniyatProgram','>',0)->orderBy('viewed','desc')->get();
         } 
 
        $parent = \Model\PhotoParent\ModelName::where('id','=',$post->parentId)->first();
@@ -571,7 +569,7 @@ class MadaniyatController extends Controller
             'channel' => $channel,
             'post' => $post,
             'backgroundMain' => $backgroundMain,
-            'birinchiProjects' => $birinchiProjects,
+            'madaniyatProjects' => $madaniyatProjects,
             'content' => $contentFinal,
             'images' => $images,
             'popArticles' => $popArticles,              
@@ -581,21 +579,21 @@ class MadaniyatController extends Controller
 
     public function allnews()
     {
-        $channel = \Model\Channel\ModelName::name('birinchi')->first();
+        $channel = \Model\Channel\ModelName::name('madaniyat')->first();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
         $perPage = 10; 
         $lc = app()->getlocale();
         $weekFromNow = date('Y-m-d', strtotime('-10 days'));
         if($lc == 'kg'){
           
-            $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('name','<>','' )->get();
-            $postAll = \Model\Post\ModelName::where('published','=',true)->where('birinchi','=','1')->where('title','<>','')->where('birinchiProgram','>',0)->paginate($perPage);
-            $popArticles = \Model\Post\ModelName::where('birinchi','=','1')->where('created_at','>',$weekFromNow)->languagekg()->where('birinchiProgram','>',0)->orderBy('viewed','desc')->get();   
+            $madaniyatProjects = \Model\Project\ModelName::where('published','=',true)->where('madaniyat','=',1)->where('name','<>','' )->get();
+            $postAll = \Model\Post\ModelName::where('published','=',true)->where('madaniyat','=','1')->where('title','<>','')->where('madaniyatProgram','>',0)->paginate($perPage);
+            $popArticles = \Model\Post\ModelName::where('madaniyat','=','1')->where('created_at','>',$weekFromNow)->languagekg()->where('madaniyatProgram','>',0)->orderBy('viewed','desc')->get();   
         }else{
 
-            $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('nameRu','<>','' )->get();
-            $postAll = \Model\Post\ModelName::where('published','=',true)->where('birinchi','=','1')->where('titleRu','<>','')->where('birinchiProgram','>',0)->paginate($perPage); 
-            $popArticles = \Model\Post\ModelName::where('birinchi','=','1')->where('created_at','>',$weekFromNow)->languageru()->where('birinchiProgram','>',0)->orderBy('viewed','desc')->get();    
+            $madaniyatProjects = \Model\Project\ModelName::where('published','=',true)->where('madaniyat','=',1)->where('nameRu','<>','' )->get();
+            $postAll = \Model\Post\ModelName::where('published','=',true)->where('madaniyat','=','1')->where('titleRu','<>','')->where('madaniyatProgram','>',0)->paginate($perPage); 
+            $popArticles = \Model\Post\ModelName::where('madaniyat','=','1')->where('created_at','>',$weekFromNow)->languageru()->where('madaniyatProgram','>',0)->orderBy('viewed','desc')->get();    
         }
 
         if(count($popArticles) > 0){
@@ -607,7 +605,7 @@ class MadaniyatController extends Controller
            return view('Front::channel.madaniyat.allnews', [
             'channel' => $channel,
             'backgroundMain' => $backgroundMain,
-            'birinchiProjects' => $birinchiProjects,
+            'madaniyatProjects' => $madaniyatProjects,
             'perPage' => $perPage,
             'postAll' => $postAll,
             'popArticles' => $popArticles,
@@ -621,7 +619,7 @@ class MadaniyatController extends Controller
         if($lc == 'kg' && ($project->name != '')){         
         }elseif($lc == 'ru' && ($project->nameRu != '')){           
         }else{
-            return redirect()->route('birinchi.home');
+            return redirect()->route('madaniyat.home');
         }
 
         $projectList = \Model\Project\ModelName::get();
@@ -632,15 +630,15 @@ class MadaniyatController extends Controller
         $categories = \Model\Category\ModelName::all();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
-        $relatedNews = \Model\Post\ModelName::where('published','=',true)->where('birinchi','=','1')->where('birinchiProgram','=',$project->id)->get();
+        $relatedNews = \Model\Post\ModelName::where('published','=',true)->where('madaniyat','=','1')->where('madaniyatProgram','=',$project->id)->get();
 
         // dd($relatedNews);
 
         $lc = app()->getlocale();
         if($lc == 'kg'){
-            $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('name','<>','' )->get();    
+            $madaniyatProjects = \Model\Project\ModelName::where('published','=',true)->where('madaniyat','=',1)->where('name','<>','' )->get();    
         }else{
-            $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('nameRu','<>','' )->get();
+            $madaniyatProjects = \Model\Project\ModelName::where('published','=',true)->where('madaniyat','=',1)->where('nameRu','<>','' )->get();
         }
 
 
@@ -654,7 +652,8 @@ class MadaniyatController extends Controller
             'projectList' => $projectList,
             'backgroundMain' => $backgroundMain,
             'relatedNews' => $relatedNews,
-            'birinchiProjects' => $birinchiProjects,                
+            'madaniyatProjects' => $madaniyatProjects,  
+            'lc' => $lc              
 
             ]
         );

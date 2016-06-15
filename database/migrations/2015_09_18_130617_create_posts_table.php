@@ -59,6 +59,7 @@ class CreatePostsTable extends Migration
             $table->string('birinchiProgram');
             $table->string('balastan');
             $table->string('madaniyat');
+            $table->string('madaniyatProgram');
             $table->string('minkiyal');
             $table->string('dostuk');
             $table->string('dostukProgram');

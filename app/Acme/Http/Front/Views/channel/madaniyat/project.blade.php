@@ -6,7 +6,7 @@
 @section('content')
 <body class="madaniyat">
    @include('Front::channel.madaniyat.nav')
-   <div class="container m-container">
+   <div class="container m-container m-footer">
       <div class="row">         
             <div class="panel panel-default">
                <div class="panel-body no-padding">

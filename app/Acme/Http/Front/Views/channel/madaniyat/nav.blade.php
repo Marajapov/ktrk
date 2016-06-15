@@ -80,8 +80,8 @@
               <li class="dropdown">
                 <a href="{{ route('madaniyat.allnews') }}" class="dropdown-toggle" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-television"></i>{{ trans('radiopages.Korsotuu') }}<span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  @if($birinchiProjects)
-                    @foreach($birinchiProjects as $key=> $project)
+                  @if($madaniyatProjects)
+                    @foreach($madaniyatProjects as $key=> $project)
                     <li>
                       <a href="{{ route('madaniyat.projects', $project) }}">{{ $project->getName() }}</a>
                     </li>
