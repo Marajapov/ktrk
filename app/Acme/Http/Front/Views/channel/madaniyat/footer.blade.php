@@ -1,6 +1,7 @@
 @include('Front::partials.prefooter')
 
 </div>
+</div>
 
 </div>
 
@@ -30,6 +31,50 @@
 <script type="text/javascript" src="{{ asset('slick/slick.min.js') }}"></script>
 
 
+  <script>
+    $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+  </script>
+
+  <script>
+    var toggleSlide = function(){
+        $(".main-nav ul.active").removeClass('active')
+                .next().add(".main-nav ul:first").last().addClass("active");
+    }
+    setInterval(toggleSlide, 5000);
+</script>
+
+<script>
+    $(document).ready(function () {
+        var trigger = $('.hamburger'),
+            overlay = $('.overlay'),
+            isClosed = false;
+
+        trigger.click(function () {
+            hamburger_cross();
+        });
+
+        function hamburger_cross() {
+
+            if (isClosed == true) {
+                overlay.hide();
+                trigger.removeClass('is-open');
+                trigger.addClass('is-closed');
+                isClosed = false;
+            } else {
+                overlay.show();
+                trigger.removeClass('is-closed');
+                trigger.addClass('is-open');
+                isClosed = true;
+            }
+        }
+
+        $('[data-toggle="offcanvas"]').click(function () {
+            $('#wrapper').toggleClass('toggled');
+        });
+    });
+</script>
 
 @yield('footerscript2')
 

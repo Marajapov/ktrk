@@ -1,13 +1,14 @@
 @extends('Front::channel.madaniyat.default')
 @section('title', trans('radiopages.Homepage'))
 @section('styles')
+<link rel="stylesheet" href="{{asset('css/articles.css')}}">
 @endsection
 @section('content')
 <body class="madaniyat">
    @include('Front::channel.madaniyat.nav')
    <div class="container m-container">
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12" style="margin-top: 120px;">
           <div class="panel panel-default" style="background-color: transparent">
             <div class="panel-heading">
             </div>
@@ -16,7 +17,7 @@
                 <div id="carousel">
                  @if($banner->first())
                     @foreach($banner as $banner)
-                    <a href="#">
+                    <a href="{{ $banner->url }}">
                       <img src="{{asset($banner->thumbnail)}}" alt="{{ $banner->getNameOne() }}" class="slide" />
                     </a>
                     @endforeach
@@ -30,17 +31,177 @@
           <div class="row">
             <div class="panel panel-default panel-anons-video">
               <div class="panel-body no-padding">
+                  <div class="col-md-8 no-padding">
+                    <div class="panel panel-default">
+                       <div class="panel-heading madaniyatcolor" style="margin-top: 10px;">
+                          <h3 class="panel-title"><span>{{ trans('site.BaikoochuKeneshNews') }}</span></h3>
+                       </div>
+                       <div class="panel-body panel-news">
+                         <div class="row">
+                            @if($postAll)
+                            @foreach($postAll as $post)
+                            <article class="col-md-6 no-padding">
+                              <div class="col-md-12 news-top">                
+                               <a href="{{ route('madaniyat.news', [$post, $lc]) }}">
+                                  <div class="box">
+                                    <div class="carousel-caption">{{ $post->getTitleRuOrKg() }}</div>
+                                      <img class="img-responsive" src="{{ asset($post->getFileBig()) }}" alt="">
+                                    <div class="overlay"></div>
+                                    <div class="overlay-info">
+                                      <div class="cat">
+                                        <p class="cat-data"><span class="ion-model-s"></span>Test</p>
+                                      </div>
+                                      <div class="info">
+                                        <p><span class="ion-android-data"></span>{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}   <span class="news-eye">
+                                          <i class="fa fa-eye"></i>{{ $post->getViewed() }}
+                                        </span>
+                                        <div class="title-name">
+                                         {{ $post->getTitleRuOrKg() }}
+                                        </div>
+                                        <div class="desc-name">
+                                          {{$post->getShortDescription()}}
+                                        </div>
+                                        </p>                                     
+                                      </div>
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>                    
+                            </article>                    
+                            @endforeach
+                            @endif
+                          </div>
+                       </div>
+                    </div>   
+                  </div>
+                  <div class="col-md-4 no-padding">
+                    <div class="panel panel-default">
+                       <div class="panel-body panel-news">
+                         <div class="row">
+
+                              @if($topArticles)
+
+                                  <div class="panel panel-default panel-articles panel-top-articles">
+                                      <div class="panel-heading hidden">
+                                          <h3 class="panel-title"><span>{{ trans('site.PostAktualno') }}</span></h3>
+                                      </div>
+                                      <div class="panel-body">
+
+                                          <div>
+
+                                              <div class="row">
+                                              <div class="col-md-12">
+                                                  <!-- Nav tabs -->
+                                                  <ul class="nav nav-tabs" role="tablist">
+                                                      <li role="presentation" class="active"><a href="#main" aria-controls="home" role="tab" data-toggle="tab">{{ trans('site.PostMain') }}</a></li>
+                                                      <li role="presentation"><a href="#popular" aria-controls="profile" role="tab" data-toggle="tab">{{ trans('site.PostPopular') }}</a></li>
+                                                  </ul>
+                                              </div>
+                                              </div>
+
+                                              <div class="tab-content">
+                                                  <div role="tabpanel" class="tab-pane fade in active" id="main">
+                                                      @foreach($topArticles as $post)
+
+                                                          <div class="media">
+
+                                                              <div class="media-body">
+                                                                  <div class="extra">
+                                                                      <span class="e-datetime">{{ $post->getDay() }} {{ $post->getMonthRu() }}</span>           
+                                                                      @if($madaniyatProjects)
+                                                                      @foreach($madaniyatProjects as $project)
+                                                                      <a class="e-cat text-uppercase" href="{{ route('madaniyat.projects', $project) }}">
+                                                                        <span>
+                                                                          @if($project->id == $post->madaniyatProgram)
+                                                                          {{ ($project->getName()) }}
+                                                                          @endif
+                                                                        </span>
+                                                                      </a>
+                                                                      @endforeach
+                                                                      @endif
+                                                                      <span class="e-views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
+                                                                  </div>
+                                                                  <a class="media-heading" href="{{ route('madaniyat.news', [$post, $lc]) }}">
+                                                                      {{ $post->getTitleRuOrKg() }}
+                                                                      @if($post->getIsVideo() == 'yes')<i class="fa fa-video-camera"></i> @endif
+                                                                      @if($post->getIsPhoto() == 'yes')<i class="fa fa-camera"></i> @endif
+                                                                  </a>
+                                                              </div>
+
+                                                          </div>
+
+                                                      @endforeach
+                                                  </div>
+                                                  <div role="tabpanel" class="tab-pane fade" id="popular">
+                                                      @foreach($popArticles as $post)
+                                                          <div class="media">
+                                                              <div class="media-body">
+                                                                  <div class="extra">
+                                                                      <span class="e-datetime">{{ $post->getDay() }} {{ $post->getMonthRu() }}</span>
+                                                                      @if($madaniyatProjects)
+                                                                      @foreach($madaniyatProjects as $project)
+                                                                      <a class="e-cat text-uppercase" href="{{ route('madaniyat.projects', $project) }}">
+                                                                        <span>
+                                                                          @if($project->id == $post->madaniyatProgram)
+                                                                          {{ ($project->getName()) }}
+                                                                          @endif
+                                                                        </span>
+                                                                      </a>
+                                                                      @endforeach
+                                                                      @endif
+                                                                      <span class="e-views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
+                                                                  </div>
+                                                                  <a class="media-heading" href="{{ route('madaniyat.news', [$post, $lc]) }}">{{ $post->getTitleRuOrKg() }}</a>
+                                                              </div>
+                                                          </div>
+                                                      @endforeach
+                                                  </div>
+                                              </div>
+                                          </div>
+
+                                      </div>
+                                  </div>
+
+                              @endif
+
+                          </div>
+                          <footer>
+                             <a href="{{ route('madaniyat.allnews') }}">
+                             <span>{{ trans('radiopages.Morenews')}}<i class="fa fa-arrow-circle-right"></i></span>
+                             </a>
+                          </footer>
+                       </div>
+                    </div> 
+                  </div>
+              </div>
+            </div>
+          </div>          
+        </div>
+        <div class="col-md-12 panel-avi">
+          <div class="row">
+            <div class="panel panel-default panel-anons-video">
+              <div class="panel-body no-padding">
                   <div class="col-md-6 no-padding">
                     <div class="panel panel-default">
                         <div class="panel-heading madaniyatcolor">
-                          <h3 class="panel-title"><span>Скоро в эфире</span></h3>
+                          <h3 class="panel-title"><span>{{ trans('radiopages.SoonLive')}}</span></h3>
                         </div>
                         <div class="panel-body">
                           <div class="slider-anons">
                             @if($anons->first())
                               @foreach($anons as $row)
                               <div>
-                                  <img src="{{asset($row->thumbnail)}}" alt="{{ $row->getNameOne() }}">
+                                  <a href="{{$row->getUrl()}}">
+                                      <div class="anons-box">
+                                          <img src="{{asset($row->thumbnail)}}" alt="{{ $row->getNameOne() }}">
+                                          <div class="anons-date">
+                                            <span>{{$row->getTime()}}</span>
+                                          </div>
+                                          <div class="anons-title">
+                                            <span>{{$row->getNameOne()}}</span>
+                                          </div>
+                                      </div>
+                                  </a>
                               </div>
                               @endforeach
                             @endif
@@ -48,23 +209,59 @@
                           <div class="tele-programma">                          
                               <div class="panel">
                               <h2>Телепрограмма</h2>
-                                  <div class="panel-padding">                              
-                                    <div class="col-md-3 t-padding">
-                                        <div class="programm"></div>
-                                    </div>
-                                    <div class="col-md-3 t-padding">
-                                        <div class="programm"></div>
-                                    </div>
-                                    <div class="col-md-3 t-padding">
-                                        <div class="programm"></div>
-                                    </div>
-                                    <div class="col-md-3 t-padding">
-                                        <div class="programm"></div>
-                                    </div>
+                                  <div class="panel-padding t-padding">  
+                                    @if($program)
+                                      @foreach($program as $key => $row)
+                                        @if(($key<(count($program)-1)) && (strtotime($program[$key]->time) <= strtotime($currentTime)) && (strtotime($currentTime) < strtotime($program[$key+1]->time)) )
+                                          <div class="col-md-3 no-padding programma-list">
+                                              <div class="programm live">
+                                                @if($lc == 'kg')
+                                                <span id="bcLive" class="bcLive"><i class="fa fa-circle"></i>азыр эфирде</span>
+                                                @elseif($lc == 'ru')
+                                                <span id="bcLive" class="bcLive"><i class="fa fa-circle"></i>сейчас в эфире</span>
+                                                @endif
+                                                  <span class="date">{{ $row->time }}</span>
+                                                  <span class="title">{{ $row->name }}</span>
+                                              </div>
+                                          </div>
+                                          @if($key == count($program)-2)
+                                             <div class="col-md-3 no-padding programma-list">
+                                                  <div class="programm">
+                                                      <span class="date">{{ $program[$key+1]->time }}</span>
+                                                      <span class="title">{{ $program[$key+1]->name }}</span>
+                                                  </div>
+                                              </div> 
+                                          @elseif($key == count($program)-3)
+                                             <div class="col-md-3 no-padding programma-list">
+                                                  <div class="programm">
+                                                      <span class="date">{{ $program[$key+1]->time }}</span>
+                                                      <span class="title">{{ $program[$key+1]->name }}</span>
+                                                  </div>
+                                              </div> 
+                                             <div class="col-md-3 no-padding programma-list">
+                                                  <div class="programm">
+                                                      <span class="date">{{ $program[$key+2]->time }}</span>
+                                                      <span class="title">{{ $program[$key+2]->name }}</span>
+                                                  </div>
+                                              </div> 
+                                          @else
+                                             @for($i=1;$i<4;$i++)
+                                               <div class="col-md-3 no-padding programma-list">
+                                                    <div class="programm">
+                                                        <span class="date">{{ $program[$key+$i]->time }}</span>
+                                                        <span class="title">{{ $program[$key+$i]->name }}</span>
+                                                    </div>
+                                                </div> 
+                                             @endfor
+                                          @endif
+                                          
+                                        @endif
+                                      @endforeach
+                                    @endif                                   
                                   </div>
                                   <footer>
-                                    <a href="#">
-                                        <span>Вся телепрограмма<i class="fa fa-arrow-circle-right"></i></span>
+                                    <a href="{{ route('madaniyat.teleprogram')}}">
+                                        <span>{{ trans('radiopages.SeeMore')}}<i class="fa fa-arrow-circle-right"></i></span>
                                     </a>
                                 </footer>                            
                               </div>
@@ -75,79 +272,42 @@
                   <div class="col-md-6 no-padding">
                       <div class="panel panel-default">
                         <div class="panel-heading madaniyatcolor">
-                          <h3 class="panel-title"><span>Новые видео</span></h3>
+                          <h3 class="panel-title"><span>{{ trans('radiopages.NewsShows') }}</span></h3>
                         </div>
                         <div class="panel-body panel-promo m-promo">                     
                             <div class="main-video">
                                 <div class="slider slider-for">
+                                  @if($videonumbers)
+                                    @foreach($videonumbers as $video)
                                     <div> <!-- video1 -->
                                         <div class="embed-youtube embed-responsive embed-responsive-16by9 slider-text">
-                                            <iframe class="embed-responsive-item" src="//www.youtube.com/embed/AlMUcmmZ_zE?enablejsapi=1&version=3&playerapiid=ytplayer&rel=0&showinfo=0"></iframe>
+                                            <iframe class="embed-responsive-item" src="//www.youtube.com/embed/@if($video){{$video->getUrl()}}@else{{$defaultVideo}}@endif?enablejsapi=1&version=3&playerapiid=ytplayer&rel=0&showinfo=0" allowfullscreen=""></iframe>
                                         </div>
                                         <div class="slick-text">
-                                            <a href="#">
-                                                <h2>Alicia Keys at Champions League final opening ceremony</h2>
+                                            <a href="{{ route('madaniyat.media.video', $video) }}">
+                                                <h2>@if($video){{ $video->getName() }} @else {{ trans('site.FrontPostDaysNews') }} @endif</h2>
                                             </a>
                                         </div>
                                     </div>
-                                    <div> <!-- video2 -->
-                                        <div class="embed-youtube embed-responsive embed-responsive-16by9 slider-text">
-                                            <iframe class="embed-responsive-item" src="//www.youtube.com/embed/AlMUcmmZ_zE?enablejsapi=1&version=3&playerapiid=ytplayer&rel=0&showinfo=0"></iframe>
-                                        </div>
-                                        <div class="slick-text">
-                                            <a href="#">
-                                                <h2>Alicia Keys at Champions League final opening ceremony</h2>
-                                            </a>
-                                        </div>
-                                    </div>
+                                    @endforeach
+                                  @endif
 
-                                    <div> <!-- video3 -->
-                                        <div class="embed-youtube embed-responsive embed-responsive-16by9 slider-text">
-                                            <iframe class="embed-responsive-item" src="//www.youtube.com/embed/AlMUcmmZ_zE?enablejsapi=1&version=3&playerapiid=ytplayer&rel=0&showinfo=0"></iframe>
-                                        </div>
-                                        <div class="slick-text">
-                                            <a href="#">
-                                                <h2>Alicia Keys at Champions League final opening ceremony</h2>
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                    <div> <!-- video4 -->
-                                        <div class="embed-youtube embed-responsive embed-responsive-16by9 slider-text">
-                                            <iframe class="embed-responsive-item" src="//www.youtube.com/embed/AlMUcmmZ_zE?enablejsapi=1&version=3&playerapiid=ytplayer&rel=0&showinfo=0"></iframe>
-                                        </div>
-                                        <div class="slick-text">
-                                            <a href="#">
-                                                <h2>Alicia Keys at Champions League final opening ceremony</h2>
-                                            </a>
-                                        </div>
-                                    </div>
 
                                 </div>
                                 <div class="slider slider-nav">
+                                  @if($videonumbers)
+                                    @foreach($videonumbers as $video)
                                     <div>
                                         <span class="videoTitle hidden">{{ trans('site.FrontPostDaysNews') }}</span>
-                                        <img src="https://i.ytimg.com/vi/MPzYhb3O4Hc/hqdefault.jpg" alt="" />
-                                   
-                                    </div>
-                                    <div>
-                                        <span class="videoTitle hidden">{{ trans('site.FrontPostDaysEpisode') }}</span>
-                                        <img src="https://i.ytimg.com/vi/MPzYhb3O4Hc/hqdefault.jpg" alt="" />
-                                       
-                                    </div>
-                                    <div>
-                                        <span class="videoTitle hidden">{{ trans('site.FrontPostDaysAnons') }}</span>
-                                        <img src="https://i.ytimg.com/vi/MPzYhb3O4Hc/hqdefault.jpg" alt="" />
-                                    </div>
+                                        <img src="http://img.youtube.com/vi/@if($video){{$video->getUrl()}}@else{{$defaultVideo}}@endif/mqdefault.jpg" alt="" />                                   
+                                    </div> 
+                                    @endforeach
+                                  @endif            
 
-                                    <div>
-                                        <span class="videoTitle hidden">{{ trans('site.FrontPostDaysMaanai') }}</span>
-                                        <img src="https://i.ytimg.com/vi/MPzYhb3O4Hc/hqdefault.jpg" alt="" />
-                                    </div>
                                 </div>
 
                                 <footer>
-                                    <a href="#">
+                                    <a href="{{ route('madaniyat.media.all')}}">
                                         <span>{{ trans('site.FrontVideoAll') }} <i class="fa fa-arrow-circle-right"></i></span>
                                     </a>
                                 </footer>
@@ -160,86 +320,91 @@
             </div>
           </div>          
         </div>
-        <div class="col-md-12 no-padding">
-            <div class="panel panel-default">
-               <div class="panel-heading madaniyatcolor">
-                  <h3 class="panel-title"><span>Жаңылыктар</span></h3>
-               </div>
-               <div class="panel-body panel-news">
-                 <div class="row">
-                    @if($postAll)
-                    @foreach($postAll as $post)
-                    <article class="col-md-3 no-padding">
-                      <div class="col-md-12">                
-                       <a href="{{ route('madaniyat.news', [$post, $lc]) }}">
-                          <img src="{{ asset($post->getFile()) }}" alt="">
-                          <div class="more">
-                          <div class="dates"><i class="fa fa-calendar"></i>
-                              {{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</div>
-                              <div class="view"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</div>                      
-                          </div>
-                          <span class="pn-title">{{ $post->getTitleRuOrKg() }}</span>                          
-                          <span class="mb_substr pn-substr" style="display: block;">
-                            {{$post->getShortDescription()}}
-                          </span>
-                        </a>
-                      </div>                    
-                    </article>                    
-                    @endforeach
-                    @endif
-                  </div>
-                  <footer>
-                     <a href="{{ route('madaniyat.allnews') }}">
-                     <span>Баардык жаңылыктар<i class="fa fa-arrow-circle-right"></i></span>
-                     </a>
-                  </footer>
-               </div>
-            </div>
-        </div>
         <div class="col-md-12 video-block">          
             <div class="panel panel-default ctg-panel">
                <div class="panel-heading madaniyatcolor">
-                  <h3 class="panel-title"><span>{{ trans('radiopages.NewKorsotuu') }}</span></h3>
+                  <h3 class="panel-title"><span>{{ trans('radiopages.PopularVideos') }}</span></h3>
                </div>
                <div class="panel-body">
-                  <div class="col-md-3 no-padding">       
-                      <ul class="list-group">
-                        @foreach($projectList as $project)
-                        <li class="list-group-item">
-                          <a href="{{ route('madaniyat.media.project', $project) }}">{{ $project->getNameOne() }}</a>
-                        </li>
-                        @endforeach
-                      </ul>
-                  </div>
-                  <div class="col-md-9 panel-videos no-padding">
-
-                      @if($media)
-                        @foreach($media as $media)
-                          <article class="col-md-4" data-cat="all-videos">
-                            <div class="img">
-                              <a href="{{ route('madaniyat.media.video', $media) }}">
-                                <img src="@if($media->thumbnail_big) {{ asset($media->thumbnail) }} @else http://img.youtube.com/vi/{{ $media->getUrl() }}/hqdefault.jpg @endif" alt="">
-                                <div class="overlay">
-                                  <i class="fa-view"></i>
-                                  <span class="media-view">{{ $media->viewed }}</span>
-                                     @if(($media->getProgramName()))
-                                          <span class="media-project">
-                                              {{ $media->getProgramName() }}
-                                          </span>
-                                       @endif
-                                  <span class="media-date">{{ $media->getDateFormatted() }}</span>
+                  <div class="col-md-12 panel-videos no-padding">
+                    <div class="row">
+                      <div class="col-md-6 panel-main-video">
+                          @if($mediaone)
+                            @foreach($mediaone as $media)
+                              <article class="col-md-12 panel-no-padding" data-cat="all-videos">
+                                <div class="img">
+                                  <a href="{{ route('madaniyat.media.video', $media) }}">
+                                    <img src="@if($media->thumbnail_big) {{ asset($media->thumbnail) }} @else http://img.youtube.com/vi/{{ $media->getUrl() }}/hqdefault.jpg @endif" alt="">
+                                    <i class="fa-video"></i>
+                                  </a>
                                 </div>
-                                <i class="fa-video"></i>
-                              </a>
-                            </div>
-                            <div class="media-title">
-                              <a href="{{ route('madaniyat.media.video', $media) }}">
-                                <h4>{{ $media->getName() }}</h4>
-                              </a>
-                            </div>
-                          </article>
-                        @endforeach
-                      @endif
+                                <div class="media-header">
+                                  <div class="media-category">
+                                    @if(($media->getProgramName()))
+                                    <span class="media-project">
+                                    <a href="{{ route('madaniyat.media.project', $media->program) }}">
+                                      {{ $media->getProgramName() }} <i class="fa fa-caret-right" aria-hidden="true"></i>
+                                      </a>
+                                    </span>
+                                    @endif
+                                  </div> 
+                                  <div class="media-views">
+                                    <i class="fa-view"></i>
+                                    <span class="media-view">{{ $media->viewed }}</span>                          
+                                  </div>
+                                  <span class="media-date">
+                                    {{ $media->getDateFormatted() }}
+                                  </span>
+                                </div>
+                                <div class="media-title">
+                                  <a href="{{ route('madaniyat.media.video', $media) }}">
+                                    <h4>{{ $media->getName() }}</h4>
+                                  </a>
+                                </div>
+                              </article>
+                            @endforeach
+                          @endif
+                      </div>
+                      <div class="col-md-6 no-padding panel-four-video">
+                          @if($mediathree)
+                            @foreach($mediathree as $media)
+                              <article class="col-md-6 " data-cat="all-videos">
+                                <div class="img">
+                                  <a href="{{ route('madaniyat.media.video', $media) }}">
+                                    <img src="@if($media->thumbnail_big) {{ asset($media->thumbnail) }} @else http://img.youtube.com/vi/{{ $media->getUrl() }}/hqdefault.jpg @endif" alt="">
+                                    <i class="fa-video"></i>
+                                  </a>
+                                </div>
+                                <div class="media-top-header">
+                                  <span class="media-date">
+                                    {{ $media->getDateFormatted() }}
+                                  </span>
+                                  <div class="media-views">
+                                    <i class="fa-view"></i>
+                                    <span class="media-view">{{ $media->viewed }}</span>                          
+                                  </div>
+                                </div>
+                                <div class="media-header">
+                                  <div class="media-category">
+                                    @if(($media->getProgramName()))
+                                    <span class="media-project">
+                                    <a href="{{ route('madaniyat.media.project', $media->program) }}">
+                                      {{ $media->getProgramName() }} <i class="fa fa-caret-right" aria-hidden="true"></i>
+                                      </a>
+                                    </span>
+                                    @endif
+                                  </div> 
+                                </div>
+                                <div class="media-title">
+                                  <a href="{{ route('madaniyat.media.video', $media) }}">
+                                    <h4>{{ $media->getName() }}</h4>
+                                  </a>
+                                </div>
+                              </article>
+                            @endforeach
+                          @endif
+                      </div>
+                    </div>
                   </div>
                   <footer>
                      <a href="{{ route('madaniyat.media.all') }}">
@@ -249,7 +414,7 @@
                </div>
             </div>    
         </div>
-        <div class="col-md-12 mgallery">
+        <div class="col-md-12 mgallery homemgallery" style="margin-top: -30px;">
             <div class="panel panel-default">
                <div class="panel-heading madaniyatcolor">
                   <h3 class="panel-title"><span>{{ trans('radiopages.Photos') }}</span></h3>
@@ -259,19 +424,28 @@
                      <div class="carousel-slick">
                       @if($photoGalleries)
                           @foreach($photoGalleries as $photoGallery)
-                            <div class="col-md-4">
-                               <a href="{{ route('madaniyat.photos', $photoGallery) }}">
-                                  <img src="{{ asset($photoGallery->thumbnail_big) }}" alt=""/>
+                            <div class="row g-row">
+                              <div class="col-md-4">
                                   <div class="main-back">
                                     <div class="g-extra">
                                         <span class="datetime"><i class="fa fa-calendar"></i> {{ $photoGallery->getDay() }} {{ $photoGallery->getMonthRu() }}, {{ $photoGallery->getTime() }}</span>
                                         <span class="view"><i class="fa fa-eye"></i>{{ $photoGallery->viewed }}</span>
                                      </div>
                                     <div class="g-title">
-                                      {{ $photoGallery->getName() }}
+                                      <a href="{{ route('madaniyat.photos', $photoGallery) }}">
+                                        {{ $photoGallery->getName() }}
+                                      </a>
                                     </div>
-                                  </div>
-                               </a>
+                                    <div class="gdesc">
+                                      {!! $photoGallery->getDescription() !!}
+                                    </div>
+                                  </div>                              
+                              </div>
+                              <div class="col-md-8">
+                                 <a href="{{ route('madaniyat.photos', $photoGallery) }}">
+                                    <img src="{{ asset($photoGallery->thumbnail_big) }}" alt=""/>
+                                 </a>
+                              </div>
                             </div>
                           @endforeach
                       @endif
@@ -282,6 +456,49 @@
                      <span>{{ trans('radiopages.AllPhotoReports') }}<i class="fa fa-arrow-circle-right"></i></span>
                      </a>
                   </footer>
+               </div>
+            </div>
+        </div>
+        <div class="col-md-12 mgallery" style="margin-top: -30px;">
+            <div class="panel panel-default">
+               <div class="panel-heading madaniyatcolor">
+                  <h3 class="panel-title"><span>{{ trans('radiopages.Wearesocial')}}</span></h3>
+               </div>
+               <div class="panel-body" style="padding-bottom: 30px;">
+                  <div class="row">
+                    <div class="col-md-3">
+                      <div class="fb-page" style="height: 455px;overflow: hidden;" data-href="https://www.facebook.com/madaniyatkg" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                         <div class="fb-xfbml-parse-ignore">
+                            <blockquote cite="https://www.facebook.com/madaniyatkg"><a href="https://www.facebook.com/madaniyatkg/">Маданият.Тарых.Тил</a></blockquote>
+                         </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                        <a class="twitter-timeline" data-height="460" href="https://twitter.com/Madaniat2016">Tweets by Madaniat2016</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    </div>
+                    <div class="col-md-3">
+                      <div id="ok_group_widget"></div>
+                      <script>
+                         !function (d, id, did, st) {
+                           var js = d.createElement("script");
+                           js.src = "https://connect.ok.ru/connect.js";
+                           js.onload = js.onreadystatechange = function () {
+                             if (!this.readyState || this.readyState == "loaded" || this.readyState == "complete") {
+                               if (!this.executed) {
+                                 this.executed = true;
+                                 setTimeout(function () {
+                                   OK.CONNECT.insertGroupWidget(id,did,st);
+                                 }, 0);
+                               }
+                             }}
+                           d.documentElement.appendChild(js);
+                         }(document,"ok_group_widget","54021149884512","{width:263,height:460}");
+                      </script>
+                    </div>
+                    <div class="col-md-3">
+                        <iframe src="{{asset('images/channels/madaniyat/inwidget/index.php?height=460&inline=3')}}" scrolling='no' frameborder='no' style='border:none;width:263px;height:455px;overflow:hidden;'></iframe>
+                    </div>
+                  </div>
                </div>
             </div>
         </div>
@@ -300,6 +517,8 @@
         $('.slider-nav').slick({
             slidesToShow: 4,
             asNavFor: '.slider-for',
+            arrows: false,
+            autoplay:false,
             focusOnSelect: true
         });
         $('.m-promo .slider-nav .slick-slide').each(function () {
@@ -319,7 +538,7 @@
         });
         $('.carousel-slick').slick({
           infinite: true,
-          slidesToShow: 3,
+          slidesToShow: 1,
           slidesToScroll: 1
       
         });
@@ -344,7 +563,7 @@
       if ($(window).width() < 768) {
         $('.carousel-slick').slick({
           infinite: true,
-          slidesToShow: 2,
+          slidesToShow: 1,
           slidesToScroll: 1
       
         });
@@ -354,7 +573,7 @@
         dots: false,
         infinite: true,
         speed: 300,
-        slidesToShow: 1,
+        slidesToShow: 2,
         adaptiveHeight: true,
         autoplay: true,
         autoplaySpeed: 3500,
@@ -435,5 +654,39 @@
         filterList.init();
       });
     </script>
-  
+
+  <script type="text/javascript">
+    jQuery(document).ready(function ($) {
+      $('#tabs').tab();
+
+      blink($('#bcLive'), -1, 500);
+
+      function blink(elem, times, speed) {
+        if (times > 0 || times < 0) {
+          if ($(elem).hasClass("blink"))
+            $(elem).removeClass("blink");
+          else
+            $(elem).addClass("blink");
+        }
+        clearTimeout(function () {
+          blink(elem, times, speed);
+        });
+        if (times > 0 || times < 0) {
+          setTimeout(function () {
+            blink(elem, times, speed);
+          }, speed);
+          times -= .5;
+        }
+      }
+    });
+  </script>
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) return;
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.5";
+     fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>  
    @stop

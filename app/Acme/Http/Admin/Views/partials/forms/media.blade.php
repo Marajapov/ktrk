@@ -356,6 +356,18 @@
                                     </label>
                                 </div>
                             </div>
+                            <nav class="noneliststyle">
+                                <ul>    
+                                    <li>
+                                        <div class="form-group">
+                                            <label for="channel_id" class="col-sm-2 control-label"></label>
+                                            <div class="col-sm-10" style="padding: 0px;">
+                                                {!! Form::select('videonumber', ['1'=>'1','2'=>'2','3'=>'3','4'=>'4'], null, ["class" => "selectpicker","data-live-search"=>"true", "title" => "-- На главном --"]) !!}
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </nav>
                         </div>
                     </div>
                 </div>

@@ -66,7 +66,7 @@ class AnonsController extends Controller
                 }
             } elseif($request->channel == 5) {
                 if($request->madaniyatsoon == 1){
-                    Image::make($_FILES['thumbnail']['tmp_name'])->fit(555, 250)->save($dir.'/'.$name);
+                    Image::make($_FILES['thumbnail']['tmp_name'])->fit(278, 250)->save($dir.'/'.$name);
                 }else{
                     Image::make($_FILES['thumbnail']['tmp_name'])->fit(710, 353)->save($dir.'/'.$name);
                 }                
@@ -161,7 +161,7 @@ class AnonsController extends Controller
                 }
             } elseif($request->channel == 5) {
                 if($request->madaniyatsoon == 1){
-                    Image::make($_FILES['thumbnail']['tmp_name'])->fit(555, 250)->save($dir.'/'.$name);
+                    Image::make($_FILES['thumbnail']['tmp_name'])->fit(278, 250)->save($dir.'/'.$name);
                 }else{
                     Image::make($_FILES['thumbnail']['tmp_name'])->fit(710, 353)->save($dir.'/'.$name);
                 } 

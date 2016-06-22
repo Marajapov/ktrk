@@ -64,6 +64,16 @@ class ModelName extends Model
         return $this->thumbnail;
     }
 
+    public function getTime()
+    {
+        return $this->time;
+    }
+
+    public function getUrl()
+    {
+        return $this->url;
+    }
+
     public function getDateFormatted()
     {
         $fullDate = $this->created_at;

@@ -46,8 +46,15 @@ class MediaController extends Controller
 
         $mainBanner = \Model\Background\ModelName::where('name','=','main')->first();
         $categories = \Model\Category\ModelName::all();
-        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
-        $projectList = \Model\Project\ModelName::where('extracolumn','=','1')->orderBy('id','desc')->get();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','2')->first();
+
+
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            $projectList = \Model\Project\ModelName::where('extracolumn','=','1')->orderBy('name','asc')->get();
+        }else{
+            $projectList = \Model\Project\ModelName::where('extracolumn','=','1')->orderBy('nameRu','asc')->get();
+        }
 
         $anons = \Model\Anons\ModelName::where('channel','=','2')->where('published','=','1')->get();
 
@@ -69,6 +76,7 @@ class MediaController extends Controller
             'positionCenter' => $this->positionCenter,
             'positionBottom' => $this->positionBottom,
             'positionLeft' => $this->positionLeft,
+            'lc' => $lc
             ]);
     }
 
@@ -127,12 +135,17 @@ class MediaController extends Controller
 
         $MediaCategories = \Model\MediaCategory\ModelName::get();
 
-        $projectList = \Model\Project\ModelName::where('extracolumn','=','1')->orderBy('id','desc')->get();
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            $projectList = \Model\Project\ModelName::where('extracolumn','=','1')->orderBy('name','asc')->get();
+        }else{
+            $projectList = \Model\Project\ModelName::where('extracolumn','=','1')->orderBy('nameRu','asc')->get();
+        }
 
         $mediaAll = \Model\Media\ModelName::where('published','=','1')->orderBy('id','desc')->get();
 
         $mainBanner = \Model\Background\ModelName::where('name','=','main')->first();
-        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','2')->first();
 
         return view('Front::media.video',[
             'video' => $video,
@@ -154,17 +167,24 @@ class MediaController extends Controller
             'positionCenter' => $this->positionCenter,
             'positionBottom' => $this->positionBottom,
             'positionLeft' => $this->positionLeft,
+
+            'lc' => $lc
         ]);
     }
 
     public function project(\Model\Project\ModelName $project)
     {
-        $projectList = \Model\Project\ModelName::where('extracolumn','=','1')->orderBy('id','desc')->get();
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            $projectList = \Model\Project\ModelName::where('extracolumn','=','1')->orderBy('name','asc')->get();
+        }else{
+            $projectList = \Model\Project\ModelName::where('extracolumn','=','1')->orderBy('nameRu','asc')->get();
+        }
 //        $MediaCategory = \Model\MediaCategory\ModelName::get();
         $mediaAll = \Model\Media\ModelName::where('published','=','1')->orderBy('id','desc')->get();
 
         $mainBanner = \Model\Background\ModelName::where('name','=','main')->first();
-        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','2')->first();
 
         $relatedVideos = \Model\Media\ModelName::where('published','=','1')->where('program','=',$project->id)->orderBy('id','desc')->get();
 
@@ -184,15 +204,23 @@ class MediaController extends Controller
                 'positionBottom' => $this->positionBottom,
                 'positionLeft' => $this->positionLeft,
 
+                'lc' => $lc
+
             ]
         );
     }
 
     public function allVideos()
     {
-        $projectList = \Model\Project\ModelName::where('extracolumn','=','1')->orderBy('id','desc')->get();
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            $projectList = \Model\Project\ModelName::where('extracolumn','=','1')->orderBy('name','asc')->get();
+        }else{
+            $projectList = \Model\Project\ModelName::where('extracolumn','=','1')->orderBy('nameRu','asc')->get();
+        }
+
         $mainBanner = \Model\Background\ModelName::where('name','=','main')->first();
-        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','2')->first();
         $perPage = 15;
 
         $allVideos = \Model\Media\ModelName::where('published','=','1')->orderBy('id','desc')->paginate($perPage);
@@ -209,14 +237,21 @@ class MediaController extends Controller
             'positionCenter' => $this->positionCenter,
             'positionBottom' => $this->positionBottom,
             'positionLeft' => $this->positionLeft,
+
+            'lc' => $lc
         ]);
     }
 
     public function categoryVideos($mediaCategory)
     {
-        $projectList = \Model\Project\ModelName::where('extracolumn','=','1')->orderBy('id','desc')->get();
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            $projectList = \Model\Project\ModelName::where('extracolumn','=','1')->orderBy('name','asc')->get();
+        }else{
+            $projectList = \Model\Project\ModelName::where('extracolumn','=','1')->orderBy('nameRu','asc')->get();
+        }
         $mainBanner = \Model\Background\ModelName::where('name','=','main')->first();
-        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','2')->first();
         $perPage = 15;
 
         $allVideos = \Model\Media\ModelName::where('published','=','1')->where('videoType','=',$mediaCategory->videoType)->orderBy('id','desc')->paginate($perPage);
@@ -234,6 +269,8 @@ class MediaController extends Controller
             'positionCenter' => $this->positionCenter,
             'positionBottom' => $this->positionBottom,
             'positionLeft' => $this->positionLeft,
+
+            'lc' => $lc
         ]);
     }
 

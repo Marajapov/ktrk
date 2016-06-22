@@ -74,8 +74,9 @@ Route::group(['domain' => 'ktrk.dev', 'prefix' => '/madaniyat', 'namespace' => '
     Route::get('/news/{post}/{locale}', ['as' => 'madaniyat.news',   'uses' => 'MadaniyatController@news']);
     Route::get('/allnews', ['as' => 'madaniyat.allnews',   'uses' => 'MadaniyatController@allnews']);    
     Route::get('/projects/{project}', ['as' => 'madaniyat.projects',   'uses' => 'MadaniyatController@projects']);
-
+    Route::get('/teleprogram', ['as' => 'madaniyat.teleprogram',   'uses' => 'MadaniyatController@teleprogram']);
 });
+    
 Route::group(['domain' => 'ktrk.dev', 'prefix' => '/madaniyat/', 'namespace' => 'Front\Controllers'], function() {
     Route::get('media', ['as' => 'madaniyat.media.index', 'uses' => 'MadaniyatController@mediaIndex']); // List of videos
     Route::get('media/project/{project}', ['as' => 'madaniyat.media.project', 'uses' => 'MadaniyatController@project']); // Show Page

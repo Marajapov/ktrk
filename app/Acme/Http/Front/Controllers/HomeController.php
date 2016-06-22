@@ -32,7 +32,7 @@ class HomeController extends Controller
 
         $channel = \Model\Channel\ModelName::general();
 
-        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','2')->first();
 
         return view('Front::live', [
             'lc' =>$lc,
@@ -55,7 +55,7 @@ class HomeController extends Controller
         date_default_timezone_set("Asia/Bishkek");
         $today = date('d.m.Y H:i');
 
-        if(($today >= '12.06.2016 22:20') && ($today <= '13.06.2016 03:00')){
+        if(($today >= '19.06.2016 01:00') && ($today <= '19.06.2016 03:00')){
             $array_ip_5 = array('217.29','185.88','185.66','185.54','185.53','185.53','185.48','185.29','185.20','185.91.132','212.97','212.42','195.54','195.38','109.71','95.215','77.235','46.251','46.235','46.226','37.218','31.192','31.186','83.229','85.113','85.115','94.143','93.171','93.170','93.170','92.245','91.229','91.229','91.228','91.213','91.207','91.205','91.192','89.237');
 
             $array_ip_6 = array('178.217','178.216','176.126','176.123','158.181','158.181','109.201','185.117','185.138','213.145','212.241','212.112','195.216','195.114','194.176','194.158','194.152','193.106','185.138');
@@ -192,7 +192,7 @@ class HomeController extends Controller
             $dayVideo4 = '';
         }
 
-        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','2')->first();
         $peopleReporters = \Model\PeopleReporter\ModelName::where('published','=',true)->get();
 
         // Photo Gallery
@@ -395,7 +395,7 @@ class HomeController extends Controller
             $dayVideo4 = '';
         }
 
-        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','2')->first();
         $peopleReporters = \Model\PeopleReporter\ModelName::where('published','=',true)->get();
 
         // Photo Gallery
@@ -461,7 +461,7 @@ class HomeController extends Controller
 
         app()->setlocale($lc);
         $categories = \Model\Category\ModelName::where('general','=','1')->get();
-        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','2')->first();
         $parent = \Model\PhotoParent\ModelName::where('id','=',$post->parentId)->first();
         if($parent){
             $images = json_decode($parent->images);   
@@ -755,7 +755,7 @@ class HomeController extends Controller
 
         $categories = \Model\Category\ModelName::where('general','=','1')->where('published','=','1')->where('order','>','0')->orderBy('order','asc')->get();
 
-        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','2')->first();
         $leftCategories = array();
         $middleCategories = array();
         $rightCategories = array();
@@ -835,7 +835,7 @@ class HomeController extends Controller
     public function Balastan()
     {
         $channel = \Model\Channel\ModelName::name('balastan')->first();
-        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','2')->first();
 
         return view('Front::channel.balastan.index', [
             'channel' => $channel,
@@ -880,7 +880,7 @@ class HomeController extends Controller
         $searchKey = $request->input('search');
 
         $categories = \Model\Category\ModelName::where('general','=','1')->get();
-        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','2')->first();
 
         if($lc == 'kg'){
             $topArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->where('number','=','88')->orderBy('updated_at','desc')->take(6)->get();
@@ -980,7 +980,7 @@ class HomeController extends Controller
         }
 
         $categories = \Model\Category\ModelName::where('general','=','1')->get();
-        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','2')->first();
 
         return view('Front::category.index',[
             'perPage'=> $perPage,
@@ -1012,7 +1012,7 @@ class HomeController extends Controller
 
         $mainBanner = \Model\Background\ModelName::where('name','=','main')->first();
         $categories = \Model\Category\ModelName::where('general','=','1')->get();
-        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','2')->first();
 
         $mediaPop = \Model\Media\ModelName::where()->get();
 
@@ -1044,7 +1044,7 @@ class HomeController extends Controller
         $perPage = 10;
 
         $categories = \Model\Category\ModelName::where('general','=','1')->get();
-        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','2')->first();
 
         if($lc == 'kg'){
             $topArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->where('number','=','88')->orderBy('updated_at','desc')->take(6)->get();
@@ -1124,7 +1124,7 @@ class HomeController extends Controller
         $perPage = 10;
         
         $categories = \Model\Category\ModelName::where('general','=','1')->get();
-        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','2')->first();
 
         if($lc == 'kg'){
             $topArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->where('number','=','88')->orderBy('updated_at','desc')->take(6)->get();
@@ -1195,7 +1195,7 @@ class HomeController extends Controller
     {
         $lc = app()->getlocale();
         $perPage = 15;
-        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','2')->first();
 
         $galleries = \Model\PhotoParent\ModelName::where('extracolumn','=','1')->where('published','=',true)->orderBy('id','desc')->paginate($perPage);
 
@@ -1220,7 +1220,7 @@ class HomeController extends Controller
         $gallery->incrementViewed();
         $images = json_decode($gallery->images);
 
-        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','2')->first();
 
         return view('Front::gallery.gallery',[
             'lc' => $lc,
@@ -1238,7 +1238,7 @@ class HomeController extends Controller
     public function Reporter()
     {
         $lc = app()->getlocale();
-        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','2')->first();
 
 //        $galleries = \Model\PhotoParent\ModelName::where('extracolumn','=','1')->where('published','=',true)->orderBy('id','desc')->get();
 
@@ -1256,7 +1256,7 @@ class HomeController extends Controller
     public function ReporterAdd(Request $request)
     {
         $lc = app()->getlocale();
-        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','2')->first();
 
         $reporter = \Model\PeopleReporter\ModelName::create($request->except('images','video','q'));
 

@@ -60,6 +60,7 @@
       $('#editKg, #editRu').froalaEditor({
         language: 'ru',
         height: 300,
+        toolbarSticky: false,
         placeholderText: '{{ trans('site.AdminPostEnterText') }}',
 
         imageUploadParam: 'file',
