@@ -73,19 +73,16 @@
                                             <li><a href="{{ route('madaniyat.test') }}"><i class="fa fa-home"></i>{{ trans('radiopages.Home') }}</a></li>
                                             <li><a href="{{ route('madaniyat.about') }}"><i class="fa fa-info"></i>{{ trans('radiopages.Mabout') }}</a></li>
                                             <li class="dropdown">
-                                                <a href="{{ route('madaniyat.allnews') }}" class="dropdown-toggle" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-television"></i>{{ trans('radiopages.Korsotuu') }}<span class="caret"></span></a>
+                                                <a href="{{ route('madaniyat.media.all') }}" class="dropdown-toggle" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-television"></i>{{ trans('radiopages.Korsotuu') }}<span class="caret"></span></a>
                                                 <ul class="dropdown-menu">
-                                                    @if($madaniyatProjects)
-                                                    @foreach($madaniyatProjects as $key=> $project)
+                                                    @foreach($projectList as $project)
                                                     <li>
-                                                        <a href="{{ route('madaniyat.projects', $project) }}">{{ $project->getName() }}</a>
+                                                        <a href="{{ route('madaniyat.media.project', $project) }}">{{ $project->getName() }}</a>
                                                     </li>
                                                     @endforeach
-                                                    @endif
                                                 </ul>
                                             </li>
                                             <li><a href="{{ route('madaniyat.allphotos') }}"><i class="fa fa-picture-o"></i>{{ trans('radiopages.Photos') }}</a></li>
-                                            <li><a href="{{ route('madaniyat.media.all') }}"><i class="fa fa-play"></i>Видео</a></li>
                                         </ul>
                                     </div>
                                 </div>

@@ -5,7 +5,7 @@
 @section('content')
 <body class="madaniyat">
    @include('Front::channel.madaniyat.nav')
-   <div class="container">
+   <div class="container" style="margin-top: 140px;">
       <div class="row">
          <section class="content clearfix">
             <div class="col-md-12" style="padding:10px 0px;">

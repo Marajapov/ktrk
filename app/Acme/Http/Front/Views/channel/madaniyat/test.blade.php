@@ -33,8 +33,8 @@
               <div class="panel-body no-padding">
                   <div class="col-md-8 no-padding">
                     <div class="panel panel-default">
-                       <div class="panel-heading madaniyatcolor" style="margin-top: 10px;">
-                          <h3 class="panel-title"><span>{{ trans('site.BaikoochuKeneshNews') }}</span></h3>
+                       <div class="panel-heading madaniyatcolor">
+                          <h3 class="panel-title"><span>{{ trans('radiopages.MadaniyatNews') }}</span></h3>
                        </div>
                        <div class="panel-body panel-news">
                          <div class="row">
@@ -47,22 +47,10 @@
                                     <div class="carousel-caption">{{ $post->getTitleRuOrKg() }}</div>
                                       <img class="img-responsive" src="{{ asset($post->getFileBig()) }}" alt="">
                                     <div class="overlay"></div>
-                                    <div class="overlay-info">
-                                      <div class="cat">
-                                        <p class="cat-data"><span class="ion-model-s"></span>Test</p>
-                                      </div>
-                                      <div class="info">
-                                        <p><span class="ion-android-data"></span>{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}   <span class="news-eye">
-                                          <i class="fa fa-eye"></i>{{ $post->getViewed() }}
-                                        </span>
-                                        <div class="title-name">
-                                         {{ $post->getTitleRuOrKg() }}
-                                        </div>
-                                        <div class="desc-name">
-                                          {{$post->getShortDescription()}}
-                                        </div>
-                                        </p>                                     
-                                      </div>
+                                    <div class="info">
+                                      <p>
+                                        {{ $post->getDay() }} {{ $post->getMonthRu() }}, {{ $post->getTime()}}                                        
+                                      </p>                                     
                                     </div>
                                   </div>
                                 </a>
@@ -140,13 +128,15 @@
                                                                       <span class="e-datetime">{{ $post->getDay() }} {{ $post->getMonthRu() }}</span>
                                                                       @if($madaniyatProjects)
                                                                       @foreach($madaniyatProjects as $project)
+                                                                      @if($project->id == $post->madaniyatProgram)
                                                                       <a class="e-cat text-uppercase" href="{{ route('madaniyat.projects', $project) }}">
                                                                         <span>
-                                                                          @if($project->id == $post->madaniyatProgram)
+                                                                          
                                                                           {{ ($project->getName()) }}
-                                                                          @endif
+                                                                          
                                                                         </span>
                                                                       </a>
+                                                                      @endif
                                                                       @endforeach
                                                                       @endif
                                                                       <span class="e-views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
@@ -179,7 +169,7 @@
         </div>
         <div class="col-md-12 panel-avi">
           <div class="row">
-            <div class="panel panel-default panel-anons-video">
+            <div class="panel panel-default panel-anons-video panel-soonnew">
               <div class="panel-body no-padding">
                   <div class="col-md-6 no-padding">
                     <div class="panel panel-default">
@@ -198,7 +188,9 @@
                                             <span>{{$row->getTime()}}</span>
                                           </div>
                                           <div class="anons-title">
-                                            <span>{{$row->getNameOne()}}</span>
+                                            <div class="anons-inner">
+                                              <span>{{$row->getNameOne()}}</span>
+                                            </div>
                                           </div>
                                       </div>
                                   </a>
@@ -322,7 +314,7 @@
         </div>
         <div class="col-md-12 video-block">          
             <div class="panel panel-default ctg-panel">
-               <div class="panel-heading madaniyatcolor">
+               <div class="panel-heading">
                   <h3 class="panel-title"><span>{{ trans('radiopages.PopularVideos') }}</span></h3>
                </div>
                <div class="panel-body">
@@ -414,7 +406,7 @@
                </div>
             </div>    
         </div>
-        <div class="col-md-12 mgallery homemgallery" style="margin-top: -30px;">
+        <div class="col-md-12 mgallery homemgallery">
             <div class="panel panel-default">
                <div class="panel-heading madaniyatcolor">
                   <h3 class="panel-title"><span>{{ trans('radiopages.Photos') }}</span></h3>
@@ -459,7 +451,7 @@
                </div>
             </div>
         </div>
-        <div class="col-md-12 mgallery" style="margin-top: -30px;">
+        <div class="col-md-12 mgallery">
             <div class="panel panel-default">
                <div class="panel-heading madaniyatcolor">
                   <h3 class="panel-title"><span>{{ trans('radiopages.Wearesocial')}}</span></h3>
@@ -575,7 +567,7 @@
         speed: 300,
         slidesToShow: 2,
         adaptiveHeight: true,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 3500,
       });
    </script>

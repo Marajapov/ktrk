@@ -6,7 +6,7 @@
 @section('content')
 <body class="madaniyat">
    @include('Front::channel.madaniyat.nav')
-   <div class="container">
+   <div class="container" style="margin-top: 140px;">
       <div class="row">
         <div class="col-md-12">
           <div class="row">
@@ -91,7 +91,7 @@
                   <div class="col-md-3 no-padding">
                       <div class="panel panel-default">
                         <div class="panel-heading madaniyatcolor">
-                          <h3 class="panel-title"><span>{{ trans('radiopages.Peredachi') }}</span></h3>
+                          <h3 class="panel-title"><span>{{ trans('radiopages.Korsotuu') }}</span></h3>
                         </div>
                         <div class="panel-body ctg-panel">
                           <ul class="list-group">

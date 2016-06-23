@@ -142,6 +142,8 @@ return [
 		// Madniyat
 		'SoonLive'=> 'Скоро в эфире',
 		'Liveer'=> '',
-		'SeeMore'=> 'Полный список',			
+		'SeeMore'=> 'Полный список',
+		'MadaniyatNews'=> 'Новости культуры',
+
 	
 ];

@@ -26,7 +26,7 @@
 <body class="madaniyat">
    @include('Front::channel.madaniyat.nav')
 
-    <div class="container main-wrapper m-footer">
+    <div class="container main-wrapper m-footer" style="margin-top: 160px;">
 
         <div class="row">
 
@@ -110,7 +110,7 @@
                             <div class="panel-body" id="relatedVideos">
                                 @foreach($relatedVideos as $relatedVideo)
                                     <div class="col-md-4 block">
-                                        <a href="{{ route('front.media.video', $relatedVideo) }}" class="video-thumb">
+                                        <a href="{{ route('madaniyat.media.video', $relatedVideo) }}" class="video-thumb">
                                             <img src="http://img.youtube.com/vi/{{ $relatedVideo->getUrl() }}/mqdefault.jpg" alt=""/>
                                             <div class="overlay">
                                                 <i class="fa-view"></i>
@@ -125,7 +125,7 @@
                                             <i class="fa-video"></i>
                                         </a>
                                         <div class="video-title">
-                                            <a href="{{ route('front.media.video', $relatedVideo) }}">
+                                            <a href="{{ route('madaniyat.media.video', $relatedVideo) }}">
                                                 {{ $relatedVideo->getName() }}
                                             </a>
                                         </div>
@@ -145,7 +145,7 @@
                     <div class="col-md-3 no-padding">
                       <div class="panel panel-default">
                         <div class="panel-heading madaniyatcolor">
-                          <h3 class="panel-title"><span>{{ trans('radiopages.Peredachi') }}</span></h3>
+                          <h3 class="panel-title"><span>{{ trans('radiopages.Korsotuu') }}</span></h3>
                         </div>
                         <div class="panel-body ctg-panel">
                           <ul class="list-group">
