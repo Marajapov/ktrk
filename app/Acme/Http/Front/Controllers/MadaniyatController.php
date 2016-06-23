@@ -302,14 +302,13 @@ class MadaniyatController extends Controller
                 $videoProject = '';
             }
             
-            
             $result1 = \Model\MediaCategory\ModelName::where('videoType','=',$videoType)->first();    
             $getVideoTypeName = $result1->getName();
 
             if($projectId > 0){
-                $relatedVideos = \Model\Media\ModelName::where('published','=','1')->where('madaniyat','=','1')->where('id','<>',$video->id)->where('program','=',$projectId)->orderBy('id','desc')->get();
+                $relatedVideos = \Model\Media\ModelName::where('published','=','1')->where('id','<>',$video->id)->where('program','=',$projectId)->orderBy('id','desc')->get();
             } elseif($projectId  == 0) {
-                $relatedVideos = \Model\Media\ModelName::where('published','=','1')->where('madaniyat','=','1')->where('id','<>',$video->id)->where('videoType','=',$videoType)->orderBy('id','desc')->get();
+                $relatedVideos = \Model\Media\ModelName::where('published','=','1')->where('id','<>',$video->id)->where('videoType','=',$videoType)->orderBy('id','desc')->get();
             }
 
 
@@ -325,9 +324,9 @@ class MadaniyatController extends Controller
             $getVideoTypeName = $result->getNameRu();
 
             if($projectId > 0){
-                $relatedVideos = \Model\Media\ModelName::where('published','=','1')->where('madaniyat','=','1')->where('id','<>',$video->id)->where('program','=',$projectId)->orderBy('id','desc')->get();
+                $relatedVideos = \Model\Media\ModelName::where('published','=','1')->where('id','<>',$video->id)->where('program','=',$projectId)->orderBy('id','desc')->get();
             } else {
-                $relatedVideos = \Model\Media\ModelName::where('published','=','1')->where('madaniyat','=','1')->where('id','<>',$video->id)->where('videoType','=',$videoType)->orderBy('id','desc')->get();
+                $relatedVideos = \Model\Media\ModelName::where('published','=','1')->where('id','<>',$video->id)->where('videoType','=',$videoType)->orderBy('id','desc')->get();
             }
 
         }

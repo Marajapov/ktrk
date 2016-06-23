@@ -28,7 +28,7 @@
                               </div>
                               <div class="media-body">
                                  <div class="extra">
-                                    <span class="datetime">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
+                                    <span class="datetime">{{ $post->getDay() }}, {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
                                     <span class="views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
                                  </div>
                                  <a class="media-heading " href="{{ route('madaniyat.news', [$post, $lc]) }}">{{ $post->getTitleRuOrKg() }}</a>
@@ -77,7 +77,7 @@
                                 <div class="media-body">
                                     <div class="extra">
                                         <span class="datetime">{{ $post->getDay() }} {{ $post->getMonthRu() }}</span>
-                                        <a class="cat" href="#"><span>{{ $post->category('category_id')->first()->getTitle() }}</span></a>
+                                        <a class="cat" href="#"><span>&nbsp;</span></a>
                                         <span class="views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
                                     </div>
                                     <a class="media-heading" href="{{ route('madaniyat.news', [$post, $lc]) }}">{{ $post->getTitleRuOrKg() }}</a>
@@ -85,24 +85,6 @@
                             </div>
                             @endforeach 
                             @endif                                    
-                        </div>
-                      </div>
-                  </div>
-                  <div class="col-md-3 no-padding">
-                      <div class="panel panel-default">
-                        <div class="panel-heading madaniyatcolor">
-                          <h3 class="panel-title"><span>{{ trans('radiopages.Korsotuu') }}</span></h3>
-                        </div>
-                        <div class="panel-body ctg-panel">
-                          <ul class="list-group">
-                              @if($madaniyatProjects) 
-                                @foreach($madaniyatProjects as $key=> $project)
-                                <li class="list-group-item">
-                                   <a href="{{ route('madaniyat.projects', $project) }}">{{ $project->getName() }}</a>
-                                </li>
-                                @endforeach
-                                @endif
-                          </ul>                                
                         </div>
                       </div>
                   </div>
