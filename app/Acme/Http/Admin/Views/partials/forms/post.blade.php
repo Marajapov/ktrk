@@ -342,9 +342,9 @@
                             </div>
                             <!-- Madaniyat Programm -->
                             <div class="form-group">
-                                <label for="madaniyatProgram" class="col-sm-3 control-label" style="float: left !important;">Передачи</label>
+                                <label for="madaniyatProgram" class="col-sm-3 control-label" style="float: left !important;">Главные новости</label>
                                 <div class="col-sm-9">
-                                    {!! Form::select('madaniyatProgram', ['0'=>'-- Выберите --']+$madaniyatProgramList, null, ["class" => "selectpicker", "data-live-search"=>"true", "title" => "-- Выберите --"]) !!}
+                                    {!! Form::select('madaniyatProgram', ['1'=>' 1 ','2'=>' 2 '], null, ["class" => "selectpicker", "data-live-search"=>"true", "title" => "-- Выберите --"]) !!}
                                 </div>
                             </div>
                         </div>

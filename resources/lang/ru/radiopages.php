@@ -145,7 +145,7 @@ return [
 		// Madniyat
 		'SoonLive'=> 'Скоро в эфире',
 		'Liveer'=> '',
-		'SeeMore'=> 'Полный список',
+		'TeleSeeMore'=> 'Телепрограмма на неделю',
 		'MadaniyatNews'=> 'Новости культуры',
 
 	

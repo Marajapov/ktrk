@@ -24,19 +24,18 @@
                 <div class="top-header clearfix">
                     <div class="col-md-12 logo-block">
                         <div class="row">
-                            <a class="logo" href="{{ route('madaniyat.test') }}">
-                                <img src="{{ asset('images/channels/madaniyat_white_notext.png')}}" alt=""/>
+                            <a class="logo" href="{{ route('madaniyat.home') }}">
+                                <div class="logo-img"><img id="slidecaption" src="{{ asset('images/channels/madaniyat/logo-no-text.png')}}" alt=""/></div>
                             </a>
                             <nav class="top-nav clearfix">
                                 <ul class="clearfix">
                                     <li><a href="{{ route('front.home') }}">КТРК</a></li>
-                                    <li>/</l>                                
+                                    <li>/</li>
                                     <li><a href="{{ route('muzkanal.home') }}">Музыка</a></li>
-                                    <li>/</l>                                
-                                    <li><a href="{{ route('madaniyat.home') }}">Маданият Тарых-Тил</a></li>
-                                    <li>/</l>                                
+                                    <li>/</li>
+                                    <li><a href="{{ route('madaniyat.home') }}">Маданият Тарых Тил</a></li>
+                                    <li>/</li>
                                     <li><a href="{{ route('balastan.home') }}">Баластан</a></li>
-                                    <li>/</l>
                                 </ul>
                             </nav>
 
@@ -70,7 +69,7 @@
                                 <div class="container-fluid">
                                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                         <ul class="nav navbar-nav">
-                                            <li><a href="{{ route('madaniyat.test') }}"><i class="fa fa-home"></i>{{ trans('radiopages.Home') }}</a></li>
+                                            <li><a href="{{ route('madaniyat.home') }}"><i class="fa fa-home"></i>{{ trans('radiopages.Home') }}</a></li>
                                             <li><a href="{{ route('madaniyat.about') }}"><i class="fa fa-info"></i>{{ trans('radiopages.Mabout') }}</a></li>
                                             <li class="dropdown">
                                                 <a href="{{ route('madaniyat.media.all') }}" class="dropdown-toggle" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-television"></i>{{ trans('radiopages.Korsotuu') }}<span class="caret"></span></a>

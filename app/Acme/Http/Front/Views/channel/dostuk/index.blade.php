@@ -78,7 +78,9 @@
                   <div>
                   <div class="col-md-12 ukturuu">
                         <div class="media-info">
-                           <img class="media-object" src="@if(!($project->getFile())) {{ asset('images/project_default.png') }} @else {{ asset($project->getFile()) }} @endif" alt="{{ $project->getNameOne() }}">
+                            <a href="{{route('dostuk.project', $project)}}">
+                                <img class="media-object" src="@if(!($project->getFile())) {{ asset('images/project_default.png') }} @else {{ asset($project->getFile()) }} @endif" alt="{{ $project->getNameOne() }}">
+                            </a>
                         </div>
                      </div>
                   </div>

@@ -80,7 +80,7 @@
                                             <a class="cat" href="{{ route('birinchi.category', $post->category) }}"><span>{{ $post->category('category_id')->first()->getTitle() }}</span></a>
                                             <span class="views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
                                         </div>
-                                        <a class="media-heading" href="{{ route('birinchi.news', $post) }}">{{ $post->getTitleRuOrKg() }}</a>
+                                        <a class="media-heading" href="{{ route('birinchi.news', [$post, $lc]) }}">{{ $post->getTitleRuOrKg() }}</a>
                                     </div>
 
                                 </div>

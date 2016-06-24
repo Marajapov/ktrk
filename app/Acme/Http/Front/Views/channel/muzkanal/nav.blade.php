@@ -30,8 +30,8 @@
                     </li>
                     <li class="sitemenu" id="site-channel1">
                         <a href="{{ route('madaniyat.home') }}">
-                            <img src="{{ asset('images/channels/madaniyat_white_notext.png')}}"><span>Маданият</span>
-                            <h4>Маданият</h4>
+                            <img src="{{ asset('images/channels/madaniyat_white_notext.png')}}"><span>Маданият Тарых Тил</span>
+                            <h4>Маданият Тарых Тил</h4>
                         </a>
                     </li>
                     <li class="sitemenu" id="site-channel1">

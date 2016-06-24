@@ -51,7 +51,7 @@ class AjaxController extends Controller
         $storage->makeDirectory($dir);
 
         if($id == 2){
-        	$upload_success = Image::make($file)->heighten(600)->insert('http://ktrk.kg/images/wm_ktrk.png', 'bottom-right', 0, 0)->save($dir.'/'.$name);
+        	$upload_success = Image::make($file)->heighten(600)->insert('http://ktrk.kg/images/wm_ktrk.png', 'center', 0, 0)->save($dir.'/'.$name);
         } elseif($id == 3){
         	$upload_success = Image::make($file)->heighten(600)->insert('http://ktrk.kg/images/wm_music.png', 'bottom-right',10, 10)->save($dir.'/'.$name);
         } elseif($id == 4){
