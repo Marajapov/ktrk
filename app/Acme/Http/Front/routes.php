@@ -60,6 +60,10 @@ Route::group(['domain' => 'ktrk.dev', 'prefix' => '/', 'namespace' => 'Front\Con
 
 });
 
+Route::group(['domain' => 'ktrk.dev', 'prefix' => '/sport', 'namespace' =>'Front\Controllers'], function(){
+    Route::get('/', ['as' => 'sport.home', 'uses' => 'SportController@Home']);
+});
+
 
 Route::group(['domain' => 'ktrk.dev', 'prefix' => '/madaniyat', 'namespace' => 'Front\Controllers'], function() {
 
