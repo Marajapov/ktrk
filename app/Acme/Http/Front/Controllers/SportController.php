@@ -11,18 +11,629 @@ class SportController extends Controller
 
     public function Home(Request $request)
     {
-
+        $lc = app()->getlocale();
         $channel = \Model\Channel\ModelName::where('name','=','sport')->first();
-
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','11')->first();
+        $anons = \Model\Anons\ModelName::where('channel','=','11')->where('published','=','1')->orderBy('id','=','desc')->take(3)->get();
+        $anonsbottom = \Model\Anons\ModelName::where('channel','=','11')->where('published','=','1')->orderBy('id','=','desc')->take(3)->get();
+        $topVideos1 = \Model\Media\ModelName::where('published','=','1')->where('videoType','=','sport')->where('sport','<=',1)->orderBy('id','desc')->skip('0')->take('1')->get();
+        $topVideos2 = \Model\Media\ModelName::where('published','=','1')->where('videoType','=','sport')->where('sport','<=',1)->orderBy('id','desc')->skip('1')->take('2')->get();
+        $topVideos3 = \Model\Media\ModelName::where('published','=','1')->where('videoType','=','sport')->where('sport','<=',1)->orderBy('id','desc')->skip('3')->take('3')->get();
+
+        if($lc == 'kg'){
+            $postAll = \Model\Post\ModelName::where('published','=',true)->where('sport','=','1')->where('title','<>','')->take('7')->get();
+        }else{
+            $postAll = \Model\Post\ModelName::where('published','=',true)->where('sport','=','1')->where('titleRu','<>','')->take('7')->get();
+        }
+        
+        $photoGalleries1 = \Model\PhotoParent\ModelName::where('sport','=','1')->where('published','=',true)->orderBy('id','desc')->skip('0')->take('1')->get();
+        $photoGalleries2 = \Model\PhotoParent\ModelName::where('sport','=','1')->where('published','=',true)->orderBy('id','desc')->skip('1')->take('4')->get();
+
+       date_default_timezone_set('Asia/Bishkek');
+        $now = date("d-m-Y H:i");
+        $currentDate = date('d-m-Y');
+        $currentTime = date('H:i');
+        $weekDay = date('N', strtotime($now));
+
+        if($channel){
+            $schedule = \Model\Schedule\ModelName::where('channel_id','=',$channel->id)->where('date','=',$currentDate)->first();
+            if($schedule){
+                $program = json_decode($schedule->program);
+            }else{
+                $program = '';
+            }
+        }
 
         return view('Front::channel.sport.index', [
+            'lc' => $lc,
             'channel' => $channel,
             'backgroundMain' => $backgroundMain,
+            'anons' => $anons,
+            'anonsbottom' => $anonsbottom,
+            'topVideos1' => $topVideos1,
+            'topVideos2' => $topVideos2,
+            'topVideos3' => $topVideos3,
+            'postAll' => $postAll,
+            'photoGalleries1' => $photoGalleries1,
+            'photoGalleries2' => $photoGalleries2,
+            'program' => $program,
+            'currentDate' => $currentDate,
+            'currentTime' => $currentTime,
         ]);
     }
 
-    
+   public function allnews()
+    {
+        $channel = \Model\Channel\ModelName::name('sport')->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','11')->first();
+        $perPage = 10;
+        $lc = app()->getlocale();
+        $weekFromNow = date('Y-m-d', strtotime('-10 days'));
+        if($lc == 'kg'){
+            $postAll = \Model\Post\ModelName::where('published','=',true)->where('sport','=','1')->where('title','<>','')->paginate($perPage);
+            $popArticles = \Model\Post\ModelName::where('sport','=','1')->where('created_at','>',$weekFromNow)->languagekg()->orderBy('viewed','desc')->get();
+        }else{
+            $postAll = \Model\Post\ModelName::where('published','=',true)->where('sport','=','1')->where('titleRu','<>','')->paginate($perPage);
+            $popArticles = \Model\Post\ModelName::where('sport','=','1')->where('created_at','>',$weekFromNow)->languageru()->orderBy('viewed','desc')->get();
+        }
+        if(count($popArticles) > 0){
+            $popArticles = $popArticles;
+        }else{
+            $popArticles = null;
+        }
 
+        return view('Front::channel.sport.allnews', [
+            'lc' => $lc,
+            'channel' => $channel,
+            'backgroundMain' => $backgroundMain,
+            'perPage' => $perPage,
+            'postAll' => $postAll,
+            'popArticles' => $popArticles
+
+        ]);
+    }
+public function news(\Model\Post\ModelName $post)
+    {
+        $post->incrementViewed();
+
+        $lc = app()->getlocale();
+
+        if($lc == 'kg')
+        {
+            if($post->title == '')
+            {
+                app()->setlocale('ru');
+                $lc = 'ru';
+            }
+            else
+            {
+                app()->setlocale('kg');
+                $lc = 'kg';
+            }
+        }
+        elseif($lc == 'ru')
+        {
+            if($post->titleRu == '')
+            {
+                app()->setlocale('kg');
+                $lc = 'kg';
+            }
+            else
+            {
+                app()->setlocale('ru');
+                $lc = 'ru';
+            }
+        }
+
+        if($lc == 'kg' && ($post->title != '')){
+        }elseif($lc == 'ru' && ($post->titleRu != '')){
+        }else{
+            return redirect()->route('sport.home');
+        }
+
+        $channel = \Model\Channel\ModelName::name('sport')->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','11')->first();
+        $weekFromNow = date('Y-m-d', strtotime('-10 days'));
+
+        if($lc == 'kg'){
+            $sportProjects = \Model\Project\ModelName::where('published','=',true)->where('sport','=',1)->where('name','<>','' )->orderBy('name','asc')->get();
+            $popArticles = \Model\Post\ModelName::where('sport','=','1')->where('created_at','>',$weekFromNow)->languagekg()->orderBy('viewed','desc')->get();
+        }else{
+            $sportProjects = \Model\Project\ModelName::where('published','=',true)->where('sport','=',1)->where('nameRu','<>','' )->orderBy('nameRu','asc')->get();
+            $popArticles = \Model\Post\ModelName::where('sport','=','1')->where('created_at','>',$weekFromNow)->languageru()->orderBy('viewed','desc')->get();
+        }
+
+        $parent = \Model\PhotoParent\ModelName::where('id','=',$post->parentId)->first();
+
+        if($parent != null){
+            $images = json_decode($parent->images);
+        }else{
+            $images = null;
+        }
+
+        if($lc == 'kg'){
+
+            $contentOriginal = $post->getContent();
+
+
+            $contentFinal = $contentOriginal;
+
+            if($post->related1)
+            {
+                if(strpos($contentFinal, 'POST1LEFT') != false)
+                {
+                    $post1Pos = strripos($contentFinal, 'POST1LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionLeft($post->related1), $post1Pos, 9);
+                }
+                elseif(strpos($contentFinal, 'POST1RIGHT') != false)
+                {
+                    $post1Pos = strripos($contentFinal, 'POST1RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionRight($post->related1), $post1Pos, 10);
+                }
+            }
+
+            if($post->related2)
+            {
+                if(strpos($contentFinal, 'POST2LEFT') != false)
+                {
+                    $post2Pos = strripos($contentFinal, 'POST2LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionLeft($post->related2), $post2Pos, 9);
+                }
+                elseif(strpos($contentFinal, 'POST2RIGHT') != false)
+                {
+                    $post2Pos = strripos($contentFinal, 'POST2RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionRight($post->related2), $post2Pos, 10);
+                }
+            }
+
+            if($post->related3)
+            {
+                if(strpos($contentFinal, 'POST3LEFT') != false)
+                {
+                    $post3Pos = strripos($contentFinal, 'POST3LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionLeft($post->related3), $post3Pos, 9);
+                }
+                elseif(strpos($contentFinal, 'POST3RIGHT') != false)
+                {
+                    $post3Pos = strripos($contentFinal, 'POST3RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionRight($post->related3), $post3Pos, 10);
+                }
+            }
+
+            if($post->relatedMedia1)
+            {
+                if(strpos($contentFinal, 'MEDIA1LEFT') != false)
+                {
+                    $media1Pos = strripos($contentFinal, 'MEDIA1LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionLeft($post->relatedMedia1), $media1Pos, 10);
+                }
+                elseif(strpos($contentFinal, 'MEDIA1RIGHT') != false)
+                {
+                    $media1Pos = strripos($contentFinal, 'MEDIA1RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionRight($post->relatedMedia1), $media1Pos, 11);
+                }
+            }
+
+            if($post->relatedMedia2)
+            {
+                if(strpos($contentFinal, 'MEDIA2LEFT') != false)
+                {
+                    $media2Pos = strripos($contentFinal, 'MEDIA2LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionLeft($post->relatedMedia2), $media2Pos, 10);
+                }
+                elseif(strpos($contentFinal, 'MEDIA2RIGHT') != false)
+                {
+                    $media2Pos = strripos($contentFinal, 'MEDIA2RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionRight($post->relatedMedia2), $media2Pos, 11);
+                }
+            }
+
+            if($post->relatedMedia3)
+            {
+                if(strpos($contentFinal, 'MEDIA3LEFT') != false)
+                {
+                    $media3Pos = strripos($contentFinal, 'MEDIA3LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionLeft($post->relatedMedia3), $media3Pos, 10);
+                }
+                elseif(strpos($contentFinal, 'MEDIA3RIGHT') != false)
+                {
+                    $media3Pos = strripos($contentFinal, 'MEDIA3RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionRight($post->relatedMedia3), $media3Pos, 11);
+                }
+            }
+
+        }elseif($lc == 'ru'){
+            $contentOriginal = $post->getContent();
+
+            $contentFinal = $contentOriginal;
+            if($post->relatedRu1)
+            {
+                if(strpos($contentFinal, 'POST1LEFT') != false)
+                {
+                    $post1Pos = strripos($contentFinal, 'POST1LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionLeft($post->relatedRu1), $post1Pos, 9);
+                }
+                elseif(strpos($contentFinal, 'POST1RIGHT') != false)
+                {
+                    $post1Pos = strripos($contentFinal, 'POST1RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionRight($post->relatedRu1), $post1Pos, 10);
+                }
+            }
+
+            if($post->relatedRu2)
+            {
+                if(strpos($contentFinal, 'POST2LEFT') != false)
+                {
+                    $post2Pos = strripos($contentFinal, 'POST2LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionLeft($post->relatedRu2), $post2Pos, 9);
+                }
+                elseif(strpos($contentFinal, 'POST2RIGHT') != false)
+                {
+                    $post2Pos = strripos($contentFinal, 'POST2RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionRight($post->relatedRu2), $post2Pos, 10);
+                }
+            }
+
+            if($post->relatedRu3)
+            {
+                if(strpos($contentFinal, 'POST3LEFT') != false)
+                {
+                    $post3Pos = strripos($contentFinal, 'POST3LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionLeft($post->relatedRu3), $post3Pos, 9);
+                }
+                elseif(strpos($contentFinal, 'POST3RIGHT') != false)
+                {
+                    $post3Pos = strripos($contentFinal, 'POST3RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionRight($post->relatedRu3), $post3Pos, 10);
+                }
+            }
+
+            if($post->relatedMediaRu1)
+            {
+                if(strpos($contentFinal, 'MEDIA1LEFT') != false)
+                {
+                    $media1Pos = strripos($contentFinal, 'MEDIA1LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionLeft($post->relatedMediaRu1), $media1Pos, 10);
+                }
+                elseif(strpos($contentFinal, 'MEDIA1RIGHT') != false)
+                {
+                    $media1Pos = strripos($contentFinal, 'MEDIA1RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionRight($post->relatedMediaRu1), $media1Pos, 11);
+                }
+            }
+
+            if($post->relatedMediaRu2)
+            {
+                if(strpos($contentFinal, 'MEDIA2LEFT') != false)
+                {
+                    $media2Pos = strripos($contentFinal, 'MEDIA2LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionLeft($post->relatedMediaRu2), $media2Pos, 10);
+                }
+                elseif(strpos($contentFinal, 'MEDIA2RIGHT') != false)
+                {
+                    $media2Pos = strripos($contentFinal, 'MEDIA2RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionRight($post->relatedMediaRu2), $media2Pos, 11);
+                }
+            }
+
+            if($post->relatedMediaRu3)
+            {
+                if(strpos($contentFinal, 'MEDIA3LEFT') != false)
+                {
+                    $media3Pos = strripos($contentFinal, 'MEDIA3LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionLeft($post->relatedMediaRu3), $media3Pos, 10);
+                }
+                elseif(strpos($contentFinal, 'MEDIA3RIGHT') != false)
+                {
+                    $media3Pos = strripos($contentFinal, 'MEDIA3RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionRight($post->relatedMediaRu3), $media3Pos, 11);
+                }
+            }
+
+        }
+
+        if(count($popArticles) > 0){
+            $popArticles = $popArticles;
+        }else{
+            $popArticles = null;
+        }
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            $projectList = \Model\Project\ModelName::where('sport','=','1')->orderBy('name','asc')->get();
+        }else{
+            $projectList = \Model\Project\ModelName::where('sport','=','1')->orderBy('nameRu','asc')->get();
+        }
+
+        return view('Front::channel.sport.news', [
+            'channel' => $channel,
+            'post' => $post,
+            'backgroundMain' => $backgroundMain,
+            'sportProjects' => $sportProjects,
+            'content' => $contentFinal,
+            'images' => $images,
+            'popArticles' => $popArticles,
+            'lc' => $lc,
+            'projectList' => $projectList,
+        ]);
+    }
+    
+    public function allvideos()
+    {
+        $perPage = 16;
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','11')->first();
+        $allVideos = \Model\Media\ModelName::where('published','=','1')->where('videoType','=','sport')->where('sport','<=',1)->orderBy('id','desc')->paginate($perPage);
+
+        return view('Front::channel.sport.all',[
+            'perPage' => $perPage,
+            'backgroundMain' => $backgroundMain,
+            'allVideos' => $allVideos
+        ]);
+    }
+
+    public function videos()
+    {
+
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            $projectList = \Model\Project\ModelName::where('sport','=','1')->orderBy('name','asc')->get();
+        }else{
+            $projectList = \Model\Project\ModelName::where('sport','=','1')->orderBy('nameRu','asc')->get();
+        }
+        $mainBanner = \Model\Background\ModelName::where('name','=','main')->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','11')->first();
+
+        $weekFromNow = date('Y-m-d H:i', strtotime('-100 days'));
+
+        $topVideos1 = \Model\Media\ModelName::where('published','=','1')->where('videoType','=','sport')->where('sport','<=',1)->where('created_at','>',$weekFromNow)->orderBy('viewed','desc')->skip('0')->take('1')->get();
+        $topVideos2 = \Model\Media\ModelName::where('published','=','1')->where('videoType','=','sport')->where('sport','<=',1)->where('created_at','>',$weekFromNow)->orderBy('viewed','desc')->skip('1')->take('2')->get();
+        $topVideos3 = \Model\Media\ModelName::where('published','=','1')->where('videoType','=','sport')->where('sport','<=',1)->where('created_at','>',$weekFromNow)->orderBy('viewed','desc')->skip('3')->take('2')->get();
+        $allVideos = \Model\Media\ModelName::where('published','=','1')->where('videoType','=','sport')->where('sport','<=',1)->orderBy('id','desc')->take('8')->get();
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            $sportProjects = \Model\Project\ModelName::where('published','=',true)->where('sport','=',1)->where('name','<>','' )->orderBy('name','asc')->get();
+        }else{
+            $sportProjects = \Model\Project\ModelName::where('published','=',true)->where('sport','=',1)->where('nameRu','<>','' )->orderBy('nameRu','asc')->get();
+        }
+
+        return view('Front::channel.sport.videos',[
+            'mainBanner'   => $mainBanner,
+            'projectList' => $projectList,
+            'backgroundMain' => $backgroundMain,
+            'allVideos' => $allVideos,
+            'topVideos1' => $topVideos1,
+            'topVideos2' => $topVideos2,
+            'topVideos3' => $topVideos3,
+            'sportProjects' => $sportProjects,
+        ]);
+    }
+
+
+    public function video($media)
+    {
+        $lc = app()->getlocale();
+
+        $video = \Model\Media\ModelName::where('id','=',$media)->first(); // full video array
+
+        $video->incrementViewed();
+
+        $projectId = $video->program; // 0
+
+        $videoType = $video->videoType; // serials
+        $videoName = $video->name;
+
+        $MediaCategory = \Model\MediaCategory\ModelName::where('videoType','=',$videoType)->first();
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            $sportProjects = \Model\Project\ModelName::where('published','=',true)->where('sport','=',1)->where('name','<>','' )->orderBy('name','asc')->get();
+        }else{
+            $sportProjects = \Model\Project\ModelName::where('published','=',true)->where('sport','=',1)->where('nameRu','<>','' )->orderBy('nameRu','asc')->get();
+        }
+
+        if($lc == 'kg'){
+            $result = \Model\Project\ModelName::where('id','=',$projectId)->first();
+            if($result){
+                $videoProject = $result->getName();
+            }else{
+                $videoProject = '';
+            }
+
+            $result1 = \Model\MediaCategory\ModelName::where('videoType','=',$videoType)->first();
+            $getVideoTypeName = $result1->getName();
+
+            if($projectId > 0){
+                $relatedVideos = \Model\Media\ModelName::where('published','=','1')->where('id','<>',$video->id)->where('program','=',$projectId)->orderBy('id','desc')->get();
+            } elseif($projectId  == 0) {
+                $relatedVideos = \Model\Media\ModelName::where('published','=','1')->where('id','<>',$video->id)->where('videoType','=',$videoType)->orderBy('id','desc')->get();
+            }
+
+
+        }elseif($lc == 'ru'){
+            $result = \Model\Project\ModelName::where('id','=',$projectId)->first();
+            if($result != null){
+                $videoProject = $result->getNameRu();
+            }else{
+                $videoProject = '';
+            }
+
+            $result = \Model\MediaCategory\ModelName::where('videoType','=',$videoType)->first();
+            $getVideoTypeName = $result->getNameRu();
+
+            if($projectId > 0){
+                $relatedVideos = \Model\Media\ModelName::where('published','=','1')->where('id','<>',$video->id)->where('program','=',$projectId)->orderBy('id','desc')->get();
+            } else {
+                $relatedVideos = \Model\Media\ModelName::where('published','=','1')->where('id','<>',$video->id)->where('videoType','=',$videoType)->orderBy('id','desc')->get();
+            }
+
+        }
+
+        $MediaCategories = \Model\MediaCategory\ModelName::get();
+
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            $projectList = \Model\Project\ModelName::where('sport','=','1')->orderBy('name','asc')->get();
+        }else{
+            $projectList = \Model\Project\ModelName::where('sport','=','1')->orderBy('nameRu','asc')->get();
+        }
+
+        $mediaAll = \Model\Media\ModelName::where('published','=','1')->orderBy('id','desc')->get();
+
+        $mainBanner = \Model\Background\ModelName::where('name','=','main')->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','11')->first();
+
+        return view('Front::channel.sport.video',[
+            'video' => $video,
+            'videoName' => $videoName,
+            'videoProject' => $videoProject,
+            'getVideoTypeName'=> $getVideoTypeName,
+            'relatedVideos' => $relatedVideos,
+
+            'mediaAll' => $mediaAll,
+            'MediaCategories' => $MediaCategories,
+            'MediaCategory' => $MediaCategory,
+
+            'mainBanner'   => $mainBanner,
+            'projectList' => $projectList,
+            'backgroundMain' => $backgroundMain,
+            'sportProjects' => $sportProjects
+        ]);
+    }
+
+    public function photos(Request $request, $galleryId)
+    {
+
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','11')->first();
+
+        $gallery = \Model\PhotoParent\ModelName::where('sport','=','1')->where('id','=',$galleryId)->first();
+        $gallery->incrementViewed();
+        if($gallery != null){
+
+            $images = json_decode($gallery->images);
+        }else{
+            $images = null;
+        }
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            $sportProjects = \Model\Project\ModelName::where('published','=',true)->where('sport','=',1)->where('name','<>','' )->orderBy('name','asc')->get();
+        }else{
+            $sportProjects = \Model\Project\ModelName::where('published','=',true)->where('sport','=',1)->where('nameRu','<>','' )->orderBy('nameRu','asc')->get();
+        }
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            $projectList = \Model\Project\ModelName::where('sport','=','1')->orderBy('name','asc')->get();
+        }else{
+            $projectList = \Model\Project\ModelName::where('sport','=','1')->orderBy('nameRu','asc')->get();
+        }
+
+        return view('Front::channel.sport.photos',[
+            'images' => $images,
+            'backgroundMain' => $backgroundMain,
+            'gallery' => $gallery,
+            'sportProjects' => $sportProjects,
+            'projectList' => $projectList,
+        ]);
+    }
+    public function gallery()
+    {
+        $channel = \Model\Channel\ModelName::name('sport')->first();
+        $perPage = 12;
+
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','11')->first();
+
+        $postAll = \Model\Media\ModelName::where('published','=',true)->where('sport','=','1')->orderBy('id', 'desc')->paginate($perPage);
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            $sportProjects = \Model\Project\ModelName::where('published','=',true)->where('sport','=',1)->where('name','<>','' )->orderBy('name','asc')->get();
+        }else{
+            $sportProjects = \Model\Project\ModelName::where('published','=',true)->where('sport','=',1)->where('nameRu','<>','' )->orderBy('nameRu','asc')->get();
+        }
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            $projectList = \Model\Project\ModelName::where('sport','=','1')->orderBy('name','asc')->get();
+        }else{
+            $projectList = \Model\Project\ModelName::where('sport','=','1')->orderBy('nameRu','asc')->get();
+        }
+        // Photo Gallery
+        $photoGalleries = \Model\PhotoParent\ModelName::where('sport','=','1')->where('published','=',true)->take('10')->orderBy('id','desc')->paginate($perPage);
+        return view('Front::channel.sport.gallery', [
+            'channel' => $channel,
+            'backgroundMain' => $backgroundMain,
+            'photoGalleries' => $photoGalleries,
+            'postAll' => $postAll,
+            'perPage' => $perPage,
+            'sportProjects' => $sportProjects,
+            'projectList' => $projectList
+        ]);
+    }
+
+public function teleprogram(Request $request)
+    {
+        $channel = \Model\Channel\ModelName::where('name','=','sport')->first();
+        $lc = app()->getlocale();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','11')->first();
+
+        date_default_timezone_set('Asia/Bishkek');
+        $now = date("d-m-Y H:i");
+        $currentDate = date('d-m-Y');
+        $currentTime = date('H:i');
+        $weekDay = date('N', strtotime($now));
+
+        if($channel){
+            $schedules = \Model\Schedule\ModelName::where('channel_id','=',$channel->id)->orderBy('date', 'desc')->get();
+
+            for($i=1; $i<=7; $i++){
+                if($i < $weekDay){
+                    $weekDayNew = date('d-m-Y', strtotime('-'.($weekDay - $i).' day'));
+                    $week[] = $weekDayNew;
+                } elseif ($i > $weekDay) {
+                    $weekDayNew = date('d-m-Y', strtotime('+'.($i - $weekDay).' day'));
+                    $week[] = $weekDayNew;
+                } else {
+                    $weekDayNew = date('d-m-Y', strtotime($now));
+                    $week[] = $weekDayNew;
+                }
+            }
+            if(!empty($schedules)){
+                $programs = array();
+                foreach($schedules as $schedule){
+                    $scheduleWeek = date('N',strtotime($schedule->date));
+                    for($j=0; $j<count($week);$j++){;
+                        if(strtotime($week[$j]) == strtotime($schedule->date)){
+                            $program = json_decode($schedule->program);
+                            $programNew = array_add($program, 'date', $schedule->date);
+                            $programs[] =$programNew;
+                        }
+                    }
+                }
+                $programs = array_reverse($programs);
+            }
+        }
+
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            $sportProjects = \Model\Project\ModelName::where('published','=',true)->where('sport','=',1)->where('name','<>','' )->orderBy('name','asc')->get();
+        }else{
+            $sportProjects = \Model\Project\ModelName::where('published','=',true)->where('sport','=',1)->where('nameRu','<>','' )->orderBy('nameRu','asc')->get();
+        }
+//        dd($programs);
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            $projectList = \Model\Project\ModelName::where('sport','=','1')->orderBy('name','asc')->get();
+        }else{
+            $projectList = \Model\Project\ModelName::where('sport','=','1')->orderBy('nameRu','asc')->get();
+        }
+
+        return view('Front::channel.sport.teleprogram', [
+            'lc' => $lc,
+            'currentDate' => $currentDate,
+            'currentTime' => $currentTime,
+            'backgroundMain' => $backgroundMain,
+            'schedules' => $schedules,
+            'programs' => $programs,
+            'week' => $week,
+            'sportProjects' => $sportProjects,
+            'projectList' => $projectList,
+
+        ]);
+    }
 
 }

@@ -2,6 +2,7 @@
 <html lang="ру">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <title>
         @yield('title')
     </title>
@@ -21,6 +22,17 @@
     @yield('styles')
 
     <script src="{{ asset('js/jquery-1.11.2.min.js') }}"></script>
+    
+    <style>
+        body{
+            @if($backgroundMain != null) background: url('{{ asset($backgroundMain->getFile()) }}') no-repeat;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            @endif
+        }
+    </style>
 
 </head>
 <body class="sport">

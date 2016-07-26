@@ -1,5 +1,6 @@
 @extends('Front::channel.madaniyat.default')
-@section('title', $gallery->getName())
+
+
 @section('styles')
     <meta name="csrf-token" content="{{ csrf_token() }}">
 

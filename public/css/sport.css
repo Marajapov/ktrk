@@ -26,7 +26,7 @@
 
 
 body{
-	background-image: url(../images/channels/sport/2.png);
+	background: rgba(0, 0, 0, 0) url(../images/channels/sport/2.png) 50% 50% no-repeat fixed;
 	background-size: cover;
 }
 
@@ -44,10 +44,20 @@ header{
 .margin-with-bottom2{
 	margin-bottom: 15px;
 }
+.white{
+	background: #fff;
+}
 .heading-title{
     padding: 15px 0;
 }
 .heading-title a{
+	color: #222;
+    font-size: 16px;
+    line-height: 20px;    
+    text-transform: uppercase;
+    font-family: 'robotobold';
+}
+.heading-title span{
 	color: #222;
     font-size: 16px;
     line-height: 20px;    
@@ -70,6 +80,22 @@ header{
     margin-top:5px;
     width: 90px;
 }
+.panel .panel-heading {
+	padding: 0 15px;	
+}
+.panel{
+	margin-bottom: inherit;
+	box-shadow: none;
+}
+.panel-body{
+    padding: 0 15px;
+}
+.morelink{
+    position: relative;
+    display: block;
+    border-top: none;
+}
+.morelink a{}
 /* For all style*/
 
 /*Additional style for navbar*/
@@ -83,33 +109,90 @@ header{
 	background-color: rgba(46, 204, 113, 0.52);
 }
 .all-channels{
-    padding-left: 105px;
+    /*padding-left: 105px;*/
     /*background: #2ecc71;*/
 }
+@media (max-width:970px) {
+    .all-channels {
+        position: relative;
+        display: block;
+        margin: 0 auto;
+        text-align: center
+    }
+    .social-buttons{
+        position: relative;
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .lang{
+        position: absolute !important;
+        top: 10px;
+        left: 35% !important;
+    }
+    .sport-nav{
+        left: 0;
+    }
+    .main-video .video-three{
+        padding-right: 15px !important;
+        padding-left: 15px !important;
+    }
+    .video-box{
+        margin-bottom: 15px;
+    }
+    .figure.effect-roxy h2 span{
+
+    }
+    .figure.effect-roxy figcaption{
+
+    }
+    .photos .photo-item-main{
+        margin: 0px 10px 0px 0px;
+    }
+}
+
 .navbar-brand {
-    position: absolute;
+    position: relative;
     display: block;
-    top: -46px;
-    left: 25px;
-    height: 95px;
-    width: 95px;
+    height: auto;
+    width: 90px;
     padding: 10px;
-    background: #2ecc71;
-    border-radius: 50% !important;
+    /*background: #29b965;*/
 }
 
 .navbar-brand img{
 
 
 }
-
+.lang{
+    position: relative;
+    display: block;
+    left: 10px;
+}
+.lang li{
+    line-height: 18px;
+}
+.lang li a{
+    color: #fff;
+    font-family: 'robotobold', sans-serif;
+}
+.lang li.active a{
+    color: #444343;
+}
+.navbar-toggle .icon-bar {
+    background: #fff;
+}
 /*Additional style for navbar*/
 
 /* BEGIN TOP HEADER */
+.main-header-top{
+    background: #fff;
+}
+
 .main-header,
 .top-header{
 	background-color: none;
-	background: none;
 }
 .all-channels>li>a {
 	color: #fff;
@@ -127,7 +210,7 @@ header{
 .main-header .navbar-sport{
 	/*background-color: rgba(0, 0, 0, 0.3);*/
 	background-color: #2ecc71;
-	margin: 0;
+	margin: 0 15px;
 }
 .navbar-sport{
 	border: none;
@@ -137,10 +220,46 @@ header{
 }
 .navbar-sport .nav>li>a:focus,
 .navbar-sport .nav>li>a:hover{
-	background: #ffeb3b;
-	color: #222;
+	background: none;
 }
 
+.navbar-sport .sport-nav{
+    position: relative;
+    display: block;
+    right: 20px;
+}
+.sport-nav a{
+    font-family: 'robotobold', sans-serif;
+    text-transform: uppercase;
+}
+.sport-nav a::after{
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 40px;
+    height: 3px;
+    background: rgba(255,255,255,0.75);
+    content: '';
+    opacity: 0;
+    -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+    -moz-transition: opacity 0.3s, -moz-transform 0.3s;
+    transition: opacity 0.3s, transform 0.3s;
+    -webkit-transform: translateY(5px);
+    -moz-transform: translateY(5px);
+    transform: translateY(5px);
+}
+.sport-nav a:hover::after{
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    transform: translateY(0px);
+}
+.sport-nav{
+    padding: 20px 0;
+}
+.sport-nav 
 .social-buttons {
     position: relative;
     margin-right: auto;
@@ -175,6 +294,10 @@ header{
 
 /* BEGIN SECTION SLIDER*/
 
+#slider{
+	padding-top: 15px;
+	background: #fff;
+}
 .slider-top{
 	/*padding: 0 15px;*/
 	margin: 0;
@@ -269,6 +392,7 @@ header{
 }
 .box-slider .slider-title span{
     position: relative;
+    margin-bottom: 15px;
     display: block;
     width: 500px;
     padding: 10px 15px;
@@ -288,7 +412,7 @@ header{
     position: relative;
     display: inline-block;
     padding: 25px 80px;
-    margin: 15px 0;
+    /*margin: 15px 0;*/
     
     cursor: pointer;
     border: none;
@@ -541,6 +665,10 @@ header{
 	display: block;
 	margin-bottom: 30px;
 }
+.sport-tv{
+    padding: 10px 15px 0px 15px;
+    background: #fff;
+}
 .sport-tv .main{
     height: 50px;
     padding: 5px 15px;
@@ -567,7 +695,6 @@ header{
 	display: table-cell;
     height: 50px;
     padding: 5px 10px;
-    max-width: 450px;
     border-right: #BDC3C7 solid 1px;
 
     -webkit-transition: all 0.5s;
@@ -588,17 +715,43 @@ header{
     padding-right: 5px;
     font-size: 1.3rem;
    	font-family: 'robotobold';
-    color: #0065A4;
+    color: #229c4d;
 }
 .tele-item .name{
     position: relative;
 	font-family: 'Roboto Condensed';
+    white-space: nowrap;
 }
 .live{
 	background: #ECF0F1;
+    min-width: 90px;
+    max-width: 100%;
 }
 .live .name{}
 .live .time{}
+.tele-programma ul{
+	overflow: hidden;
+}
+.tele-programma .live .bcLive{
+    position: absolute;
+    display: inline-table;
+    top: 4px;
+    left: 35px;
+    height: 10px;
+    color: #cc3333;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    line-height: 10px;
+    text-align: right;
+    text-transform: uppercase;
+}
+.tele-programma .live .bcLive i{
+    padding-right: 5px;
+    padding-left: 2px;
+}
+.tele-programma .live .bcLive.blink i{
+    opacity: 0;
+}
 /* END MIDDLE-INFO*/
 
 /* BEGIN Home page video block */
@@ -619,6 +772,172 @@ header{
 	display: block;
 	overflow: hidden;
 }
+/* VIDEOS PAGE*/
+.panel-top-videos{
+	padding-bottom: 15px;
+	border-bottom: 1px solid #BDC3C7;
+}
+.video-all .video-three{
+    padding: 0 10px;
+}
+.video-all .video-three .youtube-img{
+    height: 158px;
+    width: 100%;
+}
+@media (max-width:970px) {
+    .video-all .video-three .youtube-img {
+        display: block;
+        margin: 0 auto;
+        height: 100%;
+        width: auto;
+    }
+}
+.video-all .video-three .eye{
+	margin-left: 10px;
+}
+.video-all .video-three .eye i{
+	color: #fff;
+	padding-right: 5px;
+}
+.video-all .box-info{
+	position: relative;
+	top: 5px;
+	padding: 0 15px;
+    color: #777;
+    font-size: 14px;
+}
+
+.box-info .date{
+	margin-right: 10px;
+}
+.box-info .eye i{
+	opacity: 0.7;
+}
+.video-all .media-title{
+    position: relative;
+    display: block;
+    height: 80px;
+    margin: 5px 0;
+    padding: 0 15px;
+}
+
+.video-all .media-title a{
+	color: #34495E;
+    font-size: 16px;
+    line-height: 20px;
+    /*text-transform: uppercase;*/
+    font-family: 'robotobold';
+}
+.video-all .media-title a:hover,
+.video-all .media-title a:active,
+.video-all .media-title a:focus{
+	text-decoration: underline;
+}
+
+.panel-video .panel-body{
+	padding: 0 15px;
+}
+.panel-related-videos {
+	border-top: 1px solid #F1F4F9;
+	border-right: 1px solid #F1F4F9 !important;
+}
+
+.panel-videos .box-video {
+    background: #ECF0F1;
+}
+.panel-videos .box-video, .box-video .img{
+	position: relative;
+	display: block;
+	overflow: hidden;
+	cursor: pointer;
+
+}
+.box-video .img img{
+	border-radius: 3px 3px  0 0 !important
+}
+
+.panel-video{
+	border-right: 1px solid #F1F4F9 !important;
+}
+
+.panel-top-videos .video-three img{
+    -webkit-transform: inherit;
+    transform: inherit;
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    transition: transform .3s;
+    -moz-transform: inherit;
+    -moz-transform-origin: 50% 50%;
+    -webkit-transform: inherit;
+    -webkit-transform-origin: 50% 50%;
+    -webkit-transition: -webkit-transform .3s;
+}
+.panel-top-videos .video-three:hover img{
+	-webkit-transform: scale(1.1) translate3d(0, 0, 0);
+    transform: scale(1.1) translate3d(0, 0, 0);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    transition: transform .3s;
+    -moz-transform: scale(1.1) translate3d(0, 0, 0);
+    -moz-transform-origin: 50% 50%;
+    -webkit-transform: scale(1.1) translate3d(0, 0, 0);
+    -webkit-transform-origin: 50% 50%;
+    -webkit-transition: -webkit-transform .3s
+}
+
+.box-video .overlay-button{
+    color: transparent;
+    font: 0/0 a;
+    text-shadow: none;
+    background-size: 48px auto;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1000030;
+}
+.box-video .overlay-button:hover:before {
+    opacity: 1
+}
+.box-video .overlay-button:before{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    left: 50%;
+    top: 50%;
+    margin-top: -25px;
+    margin-left: -25px;
+    -moz-transition: all .25s ease-in-out;
+    -o-transition: all .25s ease-in-out;
+    -webkit-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out;
+    /*background-color: #000;*/
+    background-image: url("../images/channels/sport/play.svg");
+    background-position: 60% center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    border: 4px #fff solid;
+    border-radius: 50px;
+    content: '';
+    display: block;
+    opacity: .5;
+}
+
+.video-item{
+	margin-bottom: 20px;
+    padding: 0 10px;
+}
+
+.videos-padding{
+	padding: 0 5px;
+}
+
+/*PHOTOS*/
+
 /*---------------*/
 /***** Roxy *****/
 /*---------------*/
@@ -626,29 +945,25 @@ header{
 	opacity: 1;
 }
 figure img {
-	position: absolute;
-    display: block;
-    min-height: 100%;
+	/*position: absolute;*/
+    /*display: block;*/
+/*    min-height: 100%;
     opacity: 0.8;
     width: auto;
     height: inherit;
     top: 0;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%);*/
 }
 .photo-item figure.effect-roxy{
 	background: none;
 }
 figure.effect-roxy {
+    position: relative;
+    display: block;
+    max-height: 315px;
+    min-height: 100%;
     height: 315px;
-	background: rgba(0,0,0,1);
-	background: -moz-linear-gradient(left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
-	background: -webkit-gradient(left top, right top, color-stop(0%, rgba(0,0,0,1)), color-stop(100%, rgba(0,0,0,0)));
-	background: -webkit-linear-gradient(left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
-	background: -o-linear-gradient(left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
-	background: -ms-linear-gradient(left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
-	background: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=1 );
 }
 .photo-item figure.effect-roxy img{
 		-webkit-transition: opacity 0s, 
@@ -657,14 +972,16 @@ figure.effect-roxy {
 		transform 0s;
 }
 figure.effect-roxy img {
-	-webkit-transition: opacity 0.35s, 
-		-webkit-transform 0.35s;
-	transition: opacity 0.35s, 
-		transform 0.35s;
+    height: inherit;
+    width: inherit;
+	transform 0.35s;
+    -webkit-transition: opacity 0.35s, 
+        -webkit-transform 0.35s;
+    transition: opacity 0.35s, 
 }
 
 figure.effect-roxy figcaption::before {
-	position: absolute;
+/*	position: absolute;
 	top: 30px;
 	right: 30px;
 	bottom: 30px;
@@ -675,11 +992,12 @@ figure.effect-roxy figcaption::before {
 	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
 	transition: opacity 0.35s, transform 0.35s;
 	-webkit-transform: translate3d(-20px,0,0);
-	transform: translate3d(-20px,0,0);
+	transform: translate3d(-20px,0,0);*/
 }
 
 figure.effect-roxy figcaption {
-	position: relative;
+	position: absolute;
+	bottom: 0;
 	padding: 0em 3em 3em;
 	text-align: left;
 }
@@ -688,10 +1006,20 @@ figure.effect-roxy h2 {
 	padding: 30% 0 10px 0;
 	margin: 0;
 }
+figure.effect-roxy h2 span.datetime{
+	display: block;
+    font-size: 12px;
+    opacity: 0.6;
+}
+figure.effect-roxy h2 span.datetime i{
+	padding-right: 5px;
+}
 figure.effect-roxy h2 span{
 	color: #fff;
     font-family: 'robotobold';
+    text-shadow: 1px 1px 2px black, 0 0 1em #131313;
 }
+
 figure.effect-roxy p {
 	opacity: 0;
 	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
@@ -701,14 +1029,10 @@ figure.effect-roxy p {
     color: #fff
 }
 .photo-item figure.effect-roxy:hover img{
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
     opacity: 1
 }
 figure.effect-roxy:hover img {
 	opacity: 0.7;
-    -webkit-transform: translateX(-55%);
-    transform: translateX(-55%);
 }
 
 figure.effect-roxy:hover figcaption::before,
@@ -732,7 +1056,7 @@ figure.effect-roxy:hover p {
     transition: all 0.5s;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4);
+    background: linear-gradient(-180deg, rgba(0,0,0,0) 50%,rgba(0,0,0,0.65) 90%);
 }
 .video-box .video-info{
 	position: absolute;
@@ -747,9 +1071,11 @@ figure.effect-roxy:hover p {
     font-size: 16px;
     font-family: 'robotobold';
     line-height: 16px;
+    text-shadow: 1px 1px 2px black, 0 0 1em #131313;
 }
 .video-box .video-info span.date{
     font-size: 12px;
+    opacity: 0.6;
 }
 .main-video .video-three{
 	padding-right: 0;
@@ -764,15 +1090,7 @@ figure.effect-roxy:hover p {
 	width: auto;
 }
 .main-video .video-three .imgsize img{
-	position: absolute;
-    width: auto;
-    height: 100%;
-    top: 0;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
-    transform: translateX(-50%);
+    height: inherit
 }
 
 /* END Home page video block */
@@ -801,6 +1119,7 @@ figure.effect-roxy:hover p {
 }
 .sidebar .datetime{
     font-size: 12px;
+	color: #a6a9ab;
 }
 .sidebar .side-post .media	 img{
     display: block;
@@ -824,7 +1143,7 @@ figure.effect-roxy:hover p {
 	box-shadow: none;
 }
 .photo-top{
-	margin-top: -25px;
+	margin-top: -15px;
 }
 .photo-left-right{
 	padding: 5px
@@ -838,6 +1157,8 @@ figure.effect-roxy:hover p {
 .photos .photo-item-main {
     margin-top: 8px;
     margin-left: 10px;
+    padding: 0;
+    padding-bottom: 17px;
 }
 
 .photos .photo-item-main img{
@@ -871,10 +1192,11 @@ figure.effect-roxy:hover p {
     transition: all 0.5s;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4);
+    background: linear-gradient(-180deg, rgba(0,0,0,0) 50%,rgba(0,0,0,0.65) 90%);
 }
 .item-box .datetime{
     font-size: 12px;
+    opacity: 0.6;
 }
 .item-box .datetime i{
 	padding-right: 5px;
@@ -885,9 +1207,57 @@ figure.effect-roxy:hover p {
     font-size: 16px;
     font-family: 'robotobold';
     line-height: 16px;
+    text-shadow: 1px 1px 2px black, 0 0 1em #131313;
 }
 .photo-item:hover .titlename{
 	color:#ffeb3b; 
+}
+
+/* All photos page*/
+
+.panel-photos{
+	position: relative;
+	display: block;
+}
+.panel-photos .photos-item{
+	margin-bottom: 15px;
+	-webkit-box-shadow: 0px 0px 5px 0px rgba(228, 228, 228, 0.92);
+	-moz-box-shadow: 0px 0px 5px 0px rgba(228, 228, 228, 0.92);
+	box-shadow: 0px 0px 5px 0px rgba(228, 228, 228, 0.92);
+}
+.panel-photos .g-extra{
+    font-size: 14px;
+    color: #777;
+    padding: 5px 10px;
+}
+.panel-photos .g-extra .datetime{}
+.panel-photos .g-extra .view{
+	float: right;
+}
+.panel-photos .g-extra .view i{
+	padding-right: 5px;
+}
+.panel-photos .g-title{
+	padding: 0 10px;
+    height: 100px;
+    max-height: 100%;
+	font-family: 'robotobold';
+	font-size: 16px;
+	color: #4e4c4c;
+    overflow: hidden;
+}
+.panel-photos .g-title:hover{
+	color: #278c4a;
+}
+
+.panel-onephoto{}
+.panel-onephoto .show-extra{
+	position: relative;
+    float: left;
+    margin-left: 5px;
+}
+.panel-onephoto .show-extra .show-date{
+	color: #222;
 }
 /* END PHOTOS BLOCK*/
 
@@ -912,3 +1282,77 @@ figure.effect-roxy:hover p {
 }
 /* END FOOTER */
 
+/* BEGIN NEWS PAGES*/
+
+.panel .news-info{
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 20px 20px 0px;
+	margin-top: inherit;
+}
+.panel .panel-allnews .newstitle{
+	margin-top: 0;
+}
+.panel .panel-allnews .panel-body{
+	padding: 0px 15px;
+}
+.panel-allnews .allnewsfooter{
+	border-top: none;
+} 
+.panel-allnews .allnewsfooter .pagination li a{
+	font-family: 'robotobold';
+	font-size: 12px;
+}
+.panel-allnews .allnewsfooter .pagination .btn-default.active{
+	background: #2ecc71;
+} 
+.panel-allnews .blockallnews{
+    padding-bottom: 10px;
+	font-family: 'robotobold';
+    border-bottom: 1px dotted #E3D1C7;
+
+}
+.panel-allnews .blockallnews:last-child{
+	border-bottom: none;
+}
+.panel-allnews .blockallnews .extra .views{
+	color: #777;
+    font-weight: normal;
+    font-size: 13px;
+    font-family: 'Fira Sans Medium';
+}
+
+.panel-allnews .blockallnews .extra .datetime {
+    font-family: 'Fira Sans Medium';
+	color: #777;
+    font-weight: normal;
+    font-size: 13px;
+}
+.panel-allnews .blockallnews .media-heading{
+	color: #4c4949;
+}
+.panel-allnews .popular .media{
+	margin-top: 0;
+}
+.panel-allnews .popular .media-heading{
+	font-family: 'robotobold';
+	color: #4c4949;
+}
+.panel-allnews .popular .views,
+.panel-allnews .popular .datetime{
+	color: #777;
+    font-weight: normal;
+    font-size: 13px;
+    font-family: 'Fira Sans Medium';
+}
+/* END NEWS PAGES*/
+
+/* BEGIN BANNER */
+.banner-top{
+    background: #fff;
+}
+.banner-top img{
+    padding: 10px 15px;
+}
+/* END BANNER */

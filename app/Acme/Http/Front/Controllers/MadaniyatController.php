@@ -57,14 +57,14 @@ class MadaniyatController extends Controller
             $madaniyatProjects = \Model\Project\ModelName::where('published','=',true)->where('madaniyat','=',1)->where('name','<>','' )->orderBy('name','asc')->get();
             $topArticles = \Model\Post\ModelName::where('madaniyat','=','1')->where('title','<>','')->where('madaniyatProgram','=','99')->where('created_at','>',$weekFromNow)->orderBy('madaniyatProgram','asc')->take(5)->get();
             $popArticles = \Model\Post\ModelName::where('madaniyat','=','1')->where('created_at','>',$weekFromNow)->languagekg()->orderBy('viewed','desc')->take(5)->get();
-            $anons = \Model\Anons\ModelName::where('channel','=','5')->where('published','=','1')->where('madaniyatsoon','=','1')->where('name','<>','' )->orderBy('id','=','desc')->take(5)->get();
+            $anons = \Model\Anons\ModelName::where('channel','=','5')->where('published','=','1')->where('madaniyatsoon','=','1')->where('name','<>','' )->orderBy('id','=','desc')->take(4)->get();
         }else{
             $weekFromNow = date('Y-m-d H:i', strtotime('-10 days'));
             $postAll = \Model\Post\ModelName::where('published','=',true)->where('madaniyat','=','1')->where('titleRu','<>','')->where('madaniyatProgram','>','0')->where('madaniyatProgram','<','3')->orderBy('updated_at','desc')->take(2)->get();
             $madaniyatProjects = \Model\Project\ModelName::where('published','=',true)->where('madaniyat','=',1)->where('nameRu','<>','' )->orderBy('nameRu','asc')->get();
             $topArticles = \Model\Post\ModelName::where('madaniyat','=','1')->where('titleRu','<>','')->where('madaniyatProgram','=','99')->where('created_at','>',$weekFromNow)->orderBy('madaniyatProgram','asc')->take(5)->get();
             $popArticles = \Model\Post\ModelName::where('madaniyat','=','1')->where('created_at','>',$weekFromNow)->languageru()->orderBy('viewed','desc')->take(5)->get();
-            $anons = \Model\Anons\ModelName::where('channel','=','5')->where('published','=','1')->where('madaniyatsoon','=','1')->where('nameRu','<>','' )->orderBy('id','=','desc')->take(5)->get();
+            $anons = \Model\Anons\ModelName::where('channel','=','5')->where('published','=','1')->where('madaniyatsoon','=','1')->where('nameRu','<>','' )->orderBy('id','=','desc')->take(4)->get();
         }
 
         $photoGalleries = \Model\PhotoParent\ModelName::where('madaniyat','=','1')->where('published','=',true)->orderBy('id','desc')->take(3)->get();
@@ -79,7 +79,7 @@ class MadaniyatController extends Controller
         }else{
             $projectList = \Model\Project\ModelName::where('madaniyat','=','1')->orderBy('nameRu','asc')->get();
         }
-        $videonumbers = \Model\Media\ModelName::where('madaniyat','=','1')->where('videonumber','>=','1')->orderBy('videonumber','asc')->get();
+        $videonumbers = \Model\Media\ModelName::where('madaniyat','=','1')->where('videonumber','>=','1')->orderBy('id','desc')->take('4')->get();
 
 
         date_default_timezone_set('Asia/Bishkek');

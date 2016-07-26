@@ -340,9 +340,9 @@
                                                         <i class="fa-view"></i>
                                                         <span class="media-view">{{ $media->viewed }}</span>
                                                     </div>
-                                  <span class="media-date">
-                                    {{ $media->getDateFormatted() }}
-                                  </span>
+                                                      <span class="media-date">
+                                                        {{ $media->getDateFormatted() }}
+                                                      </span>
                                                 </div>
                                                 <div class="media-title">
                                                     <a href="{{ route('madaniyat.media.video', $media) }}">

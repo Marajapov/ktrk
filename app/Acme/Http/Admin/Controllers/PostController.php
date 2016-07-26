@@ -178,7 +178,7 @@ class PostController extends Controller
 
         if($request->input('madaniyatProgram') == 1){
             if($request->input('title')){
-                $allPosts = Post::where('madaniyat','=','1')->where('id','<>',$post->id)->where('published','=',true)->where('title','<>','')->where('madaniyatProgram','=','1')->get();
+                $allPosts = Post::where('madaniyat','=','1')->where('id','<>',$post->id)->where('published','=',true)->where('title','<>','')->where('madaniyatProgram','=','2')->get();
                 foreach ($allPosts as $onePost) {
                     $onePost->madaniyatProgram = 99;
                     $onePost->save();
@@ -193,7 +193,7 @@ class PostController extends Controller
             }
         } elseif ($request->input('madaniyatProgram') == 2){
             if($request->input('title')){
-                $allPosts = Post::where('madaniyat','=','1')->where('id','<>',$post->id)->where('published','=',true)->where('title','<>','')->where('madaniyatProgram','=','2')->get();
+                $allPosts = Post::where('madaniyat','=','1')->where('id','<>',$post->id)->where('published','=',true)->where('title','<>','')->where('madaniyatProgram','=','1')->get();
                 foreach ($allPosts as $onePost) {
                     $onePost->madaniyatProgram = 99;
                     $onePost->save();
