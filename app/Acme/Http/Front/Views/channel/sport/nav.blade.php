@@ -1,6 +1,10 @@
 		<header>
-			<div class="top-header clearfix">
-				<div class="container">
+			<div class="container">
+				<div class="banner-top">
+					<img src="{{asset('images/channels/sport/banner.jpg')}}" alt="">
+				</div>
+				<div class="col-sm-12 top-header">			
+				<div class="clearfix">
 					<div class="header-top clearfix">					
 						<ul class="nav navbar-nav all-channels">
 							<li class="dropdown">
@@ -13,23 +17,25 @@
 								</ul>
 							</li>
 						</ul>
+                        <ul class="nav navbar-nav lang">
+                            <li @if(app()->getlocale() == 'kg') class="active" @endif><a href="/locale/kg">кырг <span></span></a></li>
+                            <li @if(app()->getlocale() == 'ru') class="active" @endif><a href="/locale/ru">рус <span></span></a></li>
+                        </ul>
 						<ul class="nav navbar-nav navbar-right social-buttons">
 							<li class="tw"><a href="#"><i class="fa fa-twitter"></i></a></li>
 							<li class="fb"><a href="#"><i class="fa fa-facebook"></i></a></li>
 							<li class="ok"><a href="#"><i class="fa fa-odnoklassniki"></i></a></li>
 							<li class="in"><a href="#"><i class="fa fa-instagram"></i></a></li>
-							<button class="btn btn-3 btn-l icon-tv btn-top"><span>{{ trans('radiopages.Live') }}</span></button>
+			
+							<!-- Split button -->
+							
+							  <button class="btn-sport btn-danger"><span>{{ trans('radiopages.Live') }}</span><span id="soon" class="soon">{{ trans('radiopages.Soon') }}</span></button>
+							
 						</ul>
 					</div>
 				</div>
-			</div>
-
-			<div class="container">
-				<div class="banner-top">
-					<img src="{{asset('images/channels/sport/banner.png')}}" alt="">
 				</div>
 			</div>
-
 			<div class="container">
 				<div class="main-header main-header-top">
 					<nav class="navbar navbar-sport">
@@ -54,10 +60,6 @@
 									<li><a href="{{ route('sport.videos') }}">Видео</a></li>
 									<li><a href="{{ route('sport.gallery') }}">{{ trans('radiopages.PhotoReporter') }}</a></li>
 								</ul>
-	                            <ul class="lang">
-	                                <li @if(app()->getlocale() == 'kg') class="active" @endif><a href="/locale/kg">кырг <span></span></a></li>
-	                                <li @if(app()->getlocale() == 'ru') class="active" @endif><a href="/locale/ru">рус <span></span></a></li>
-	                            </ul>
 							</div>
 						</div>
 					</nav>

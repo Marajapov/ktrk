@@ -21,13 +21,15 @@ class SportController extends Controller
         $topVideos3 = \Model\Media\ModelName::where('published','=','1')->where('videoType','=','sport')->where('sport','<=',1)->orderBy('id','desc')->skip('3')->take('3')->get();
 
         if($lc == 'kg'){
-            $postAll = \Model\Post\ModelName::where('published','=',true)->where('sport','=','1')->where('title','<>','')->take('7')->get();
+            $postAll = \Model\Post\ModelName::where('published','=',true)->where('sport','=','1')->where('title','<>','')->take('8')->get();
+            $photoGalleries1 = \Model\PhotoParent\ModelName::where('sport','=','1')->where('published','=',true)->where('name','<>','')->orderBy('id','desc')->skip('0')->take('1')->get();
+            $photoGalleries2 = \Model\PhotoParent\ModelName::where('sport','=','1')->where('published','=',true)->where('name','<>','')->orderBy('id','desc')->skip('1')->take('4')->get();
         }else{
-            $postAll = \Model\Post\ModelName::where('published','=',true)->where('sport','=','1')->where('titleRu','<>','')->take('7')->get();
+            $postAll = \Model\Post\ModelName::where('published','=',true)->where('sport','=','1')->where('titleRu','<>','')->take('8')->get();
+            $photoGalleries1 = \Model\PhotoParent\ModelName::where('sport','=','1')->where('published','=',true)->where('nameRu','<>','')->orderBy('id','desc')->skip('0')->take('1')->get();
+            $photoGalleries2 = \Model\PhotoParent\ModelName::where('sport','=','1')->where('published','=',true)->where('nameRu','<>','')->orderBy('id','desc')->skip('1')->take('4')->get();
         }
         
-        $photoGalleries1 = \Model\PhotoParent\ModelName::where('sport','=','1')->where('published','=',true)->orderBy('id','desc')->skip('0')->take('1')->get();
-        $photoGalleries2 = \Model\PhotoParent\ModelName::where('sport','=','1')->where('published','=',true)->orderBy('id','desc')->skip('1')->take('4')->get();
 
        date_default_timezone_set('Asia/Bishkek');
         $now = date("d-m-Y H:i");
@@ -39,8 +41,10 @@ class SportController extends Controller
             $schedule = \Model\Schedule\ModelName::where('channel_id','=',$channel->id)->where('date','=',$currentDate)->first();
             if($schedule){
                 $program = json_decode($schedule->program);
+                $count = count($program);
             }else{
                 $program = '';
+                $count = 1;
             }
         }
 
@@ -57,6 +61,7 @@ class SportController extends Controller
             'photoGalleries1' => $photoGalleries1,
             'photoGalleries2' => $photoGalleries2,
             'program' => $program,
+            'count' => $count = ($count) ? $count : 1,
             'currentDate' => $currentDate,
             'currentTime' => $currentTime,
         ]);
@@ -340,8 +345,10 @@ public function news(\Model\Post\ModelName $post)
         $lc = app()->getlocale();
         if($lc == 'kg'){
             $projectList = \Model\Project\ModelName::where('sport','=','1')->orderBy('name','asc')->get();
+            $relatedNews = \Model\Post\ModelName::where('published','=',true)->where('birinchi','=','1')->languagekg()->where('category_id','=',$post->category_id)->orderBy('id','desc')->take(8)->get();
         }else{
             $projectList = \Model\Project\ModelName::where('sport','=','1')->orderBy('nameRu','asc')->get();
+            $relatedNews = \Model\Post\ModelName::where('published','=',true)->where('birinchi','=','1')->languageru()->where('category_id','=',$post->category_id)->orderBy('id','desc')->take(8)->get();
         }
 
         return view('Front::channel.sport.news', [
@@ -354,6 +361,7 @@ public function news(\Model\Post\ModelName $post)
             'popArticles' => $popArticles,
             'lc' => $lc,
             'projectList' => $projectList,
+            'relatedNews' => $relatedNews,
         ]);
     }
     
@@ -549,11 +557,13 @@ public function news(\Model\Post\ModelName $post)
         $lc = app()->getlocale();
         if($lc == 'kg'){
             $projectList = \Model\Project\ModelName::where('sport','=','1')->orderBy('name','asc')->get();
+            $photoGalleries = \Model\PhotoParent\ModelName::where('sport','=','1')->where('published','=',true)->where('name','<>','')->take('10')->orderBy('id','desc')->paginate($perPage);
         }else{
             $projectList = \Model\Project\ModelName::where('sport','=','1')->orderBy('nameRu','asc')->get();
+            $photoGalleries = \Model\PhotoParent\ModelName::where('sport','=','1')->where('published','=',true)->where('nameRu','<>','')->take('10')->orderBy('id','desc')->paginate($perPage);
         }
         // Photo Gallery
-        $photoGalleries = \Model\PhotoParent\ModelName::where('sport','=','1')->where('published','=',true)->take('10')->orderBy('id','desc')->paginate($perPage);
+        
         return view('Front::channel.sport.gallery', [
             'channel' => $channel,
             'backgroundMain' => $backgroundMain,

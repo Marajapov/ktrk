@@ -9,6 +9,19 @@
 <script type="text/javascript" src="{{ asset('js/jquery-migrate-1.2.1.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('slick/slick.min.js') }}"></script>
 
+<script type="text/javascript">
+	$(function () {
+	    var flag = false;
+	    $("#soon").css("color", "#CB363F");
+	    setTimeout(function () {
+	        $("#soon").css("color", "#CB363F");
+	        setInterval(function () {
+	            $("#soon").css("color", flag? "#CB363F":"#fff");
+	            flag = !flag;
+	        }, 500)
+	    }, 3000);
+	});
+</script>
 
 @yield('footerscript2')
 

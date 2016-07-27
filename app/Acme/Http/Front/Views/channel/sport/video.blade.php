@@ -91,7 +91,7 @@
             <div class="panel panel-default panel-related-videos ">
                 <div class="panel-heading madaniyatcolor">
                     <div class="heading-title">
-                       <span class="name">Тектеш чыгаруулар</span>
+                       <span class="name">{{ trans('site.MatpoTeme') }}</span>
                        <div class="border"></div>
                     </div>
                 </div>

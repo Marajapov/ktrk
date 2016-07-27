@@ -6,7 +6,7 @@
  @include('Front::channel.sport.nav')
 		<div class="container">
 			<div class="sport-tv clearfix">
-			    <a class="main" href="#">Телепрограмма <span>21 июль, четверг</span></a>
+			    <a class="main" href="#">Телепрограмма <span>{{ date("Y:m:d")}}</span></a>
 			    <div class="tele-programma">
 			    	<ul>
 					@if($program)
@@ -25,7 +25,8 @@
 					            	<span class="name">{{ $program[$key+1]->name }}</span>				            
 					            </li>
                                 @else
-                                 	@for($i=1;$i<8;$i++)
+                                
+                                 	@for($i=1;$i<$last = ($count-($key+1)) +1;$i++)
 								<li class="tele-item">
 				                	<span class="time">{{ $program[$key+$i]->time }}</span>
 				            		<span class="name">{{ $program[$key+$i]->name }}</span>				            
@@ -133,6 +134,9 @@
 						</div>
 						@endforeach
 						@endif						
+					</div>
+					<div class="row banner-middle">
+						<img src="{{asset('images/channels/sport/banner-middle.png')}}" alt="">
 					</div>
 				</div>
 				<div class="col-md-4 sidebar">

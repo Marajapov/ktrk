@@ -103,12 +103,38 @@
                               </a>
                           </footer>
                       </div>
+                      <div class="col-md-12">
+                        <div class="row">
+                           <div class="col-md-12">
+                              <h3 class="title">{{ trans('site.MatpoTeme') }}</h3>
+                           </div>                    
+                           @foreach($relatedNews as $post)                
+                           <div class="blocknews col-md-3 col-sm-4 col-xs-12">
+                                <article>
+                                    <a href="{{ route('birinchi.news', [$post, $lc]) }}" class="image-link">
+                                        <img src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif" title="{{ $post->getTitleRuOrKg() }}">
+                                        <div class="card-info">
+                                             <span class="date ">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
+                                             <span class="view"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
+                                        </div>
+                                    </a>
+                                    <h3 class="name headline">
+                                        <a href="{{ route('birinchi.news', [$post, $lc]) }}" title="">
+                                            {{ $post->getTitleRuOrKg() }}
+                                        </a>
+                                    </h3>
+                                </article>
+                           </div>            
+                           @endforeach                          
+                        </div>
+                     </div>
                   </div>
+
                   <div class="col-md-3 no-padding">
                     <div class="panel panel-default">
                      <div class="panel-heading">
                       <div class="heading-title">
-                      <span class="name">{{ trans('site.PostPopular') }}</span>
+                        <span class="name">{{ trans('site.PostPopular') }}</span>
                         <div class="border"></div>
                       </div>
                     </div>
@@ -130,7 +156,7 @@
                         </div>
                       </div>
                       @endforeach
-                      @endif
+                      @endif                      
                     </div>
                   </div>
                 </div>

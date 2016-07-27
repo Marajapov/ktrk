@@ -106,7 +106,7 @@ header{
 .header-top{
 	position: relative;
 	display: block;
-	background-color: rgba(46, 204, 113, 0.52);
+	background-color: none;
 }
 .all-channels{
     /*padding-left: 105px;*/
@@ -173,12 +173,19 @@ header{
 .lang li{
     line-height: 18px;
 }
+.lang li a:focus,
+.lang li a:hover
+{
+    text-decoration: underline;
+    background: none;
+}
 .lang li a{
-    color: #fff;
+    padding: 15px 5px;
+    color: #494a49;
     font-family: 'robotobold', sans-serif;
 }
 .lang li.active a{
-    color: #444343;
+    color: #148a46;
 }
 .navbar-toggle .icon-bar {
     background: #fff;
@@ -192,10 +199,13 @@ header{
 
 .main-header,
 .top-header{
-	background-color: none;
+	background: #fff;
 }
 .all-channels>li>a {
-	color: #fff;
+    color: #494a49;
+    font-weight: normal;
+    font-family: 'robotobold', sans-serif;
+    text-transform: uppercase;
 }
 .all-channels>li>a:hover {
 	color: #222;
@@ -272,14 +282,15 @@ header{
 }
 .social-buttons li a {
     display: block;
+    padding: 15px 10px;
     color: #ffffff;
     font-size: 20px;
     line-height: 1;
 	background-color: transparent !important;
 }
 .social-buttons li a i{
-    color: #fff;
-    opacity: 0.5;
+    color: #2ecc71;
+    opacity: 0.8;
     position: relative
 }
 .social-buttons li a i:hover{
@@ -289,6 +300,17 @@ header{
 
 .social-buttons li:hover a {
     background: rgba(0, 0, 0, 0.5);
+}
+
+.social-buttons li a i.fa-instagram:hover{
+    color: #833ab4;
+}
+.social-buttons li a i.fa-twitter:hover{
+    color: #55acee;
+}.social-buttons li a i.fa-facebook:hover{
+    color: #3b5998;
+}.social-buttons li a i.fa-odnoklassniki:hover{
+    color: #ed812b;
 }
 /* END TOP HEADER */
 
@@ -421,7 +443,6 @@ header{
     font-size: inherit;
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-weight: 700;
     background: none;
     transition: all 0.3s;
     	-webkit-transition: all 0.3s;
@@ -598,6 +619,50 @@ header{
     -moz-transition: all 0.3s;
     transition: all 0.3s;
 }
+.btn-sport .soon{
+    font-size: 12px;
+    line-height: 16px;
+    margin: -3px 5px 0;
+    color: #CB363F;
+    padding: 0 3px;
+    cursor: pointer;
+    position: relative;
+    display: block;
+    float: right;
+}
+.btn-sport:hover .soon,
+.btn-sport .soon:hover{
+    background-color: none;
+    color: #fff;
+}
+.btn-sport{
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background: none;
+    border:2px solid #d9534f;
+    color: #d9534f;
+    margin-top: 6px;
+}
+.btn-sport:hover{
+    border-color: #c9302c;
+}
 .slider-bottom{
 	position: relative;
 	display: block;
@@ -696,6 +761,7 @@ header{
     height: 50px;
     padding: 5px 10px;
     border-right: #BDC3C7 solid 1px;
+    background: #ecf0f1;
 
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -703,7 +769,7 @@ header{
     transition: all 0.5s;
 }
 .tele-item:hover{
-	background: #ECF0F1;
+	background: #e1e7e8;
 }
 .tele-item .timename{
     white-space: nowrap;
@@ -752,6 +818,12 @@ header{
 .tele-programma .live .bcLive.blink i{
     opacity: 0;
 }
+.teletabs{
+    margin-top: 0 !important;
+}
+.teleprogramm .panel-body{
+    padding: 0;
+}
 /* END MIDDLE-INFO*/
 
 /* BEGIN Home page video block */
@@ -760,7 +832,6 @@ header{
 	display: block;
 	background: #fff;
 	padding-bottom: 20px;
-	border-bottom: 1px solid #BDC3C7;
 }
 .main-video{
 	position: relative;
@@ -936,6 +1007,14 @@ header{
 	padding: 0 5px;
 }
 
+.panel-related-videos .loadMore {
+    display: block;
+    background: #4CAF50;
+    color: #222;
+}
+.panel-related-videos .loadMore:hover{
+    
+}
 /*PHOTOS*/
 
 /*---------------*/
@@ -1346,13 +1425,21 @@ figure.effect-roxy:hover p {
     font-size: 13px;
     font-family: 'Fira Sans Medium';
 }
+.card-info .view{
+    color: #949494;
+    float: right;
+}
 /* END NEWS PAGES*/
 
 /* BEGIN BANNER */
-.banner-top{
+.banner-top,
+.banner-middle{
     background: #fff;
 }
 .banner-top img{
-    padding: 10px 15px;
+    padding: 0px 15px;
+}
+.banner-middle img{
+    padding:0px 0px 0 15px
 }
 /* END BANNER */
