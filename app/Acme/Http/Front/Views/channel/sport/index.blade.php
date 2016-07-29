@@ -3,10 +3,10 @@
 @section('styles')
 @endsection
 @section('content')
- @include('Front::channel.sport.nav')
+@include('Front::channel.sport.nav')
 		<div class="container">
 			<div class="sport-tv clearfix">
-			    <a class="main" href="#">Телепрограмма <span>{{ date("Y:m:d")}}</span></a>
+			    <a class="main" href="{{ route('sport.teleprogram') }}">Телепрограмма <span>{{ date("Y:m:d")}}</span></a>
 			    <div class="tele-programma">
 			    	<ul>
 					@if($program)
@@ -42,6 +42,7 @@
 			</div>
 		</div>
 		<div class="container">
+
 			<section class="slider col-sm-12" id="slider">
 				<div class="slider-top">
 					@if($anons)
@@ -59,21 +60,119 @@
 					@endif  
 				</div>
 				<div class="slider-bottom">
-					@if($anonsbottom)
-					@foreach($anonsbottom as $anonsbottom)
+					@if($anonsbottom1)
+					@foreach($anonsbottom1 as $anonsbottom)
 					<div>
 						<div class="slider-preview">
-							<img src="{{asset($anonsbottom->thumbnail)}}" alt="{{ $anonsbottom->getNameOne() }}">
-							<div class="overlay"></div>	
-							<div class="preview-title">
-								<span>{{$anonsbottom->getNameOne()}}</span>
-							</div>													
+							<a data-toggle="modal" data-toggle="modal" data-target="#myModal">
+								<img src="{{asset($anonsbottom->thumbnail_big)}}" alt="{{ $anonsbottom->getName() }}">
+								<div class="overlay"></div>	
+								<div class="preview-title">
+									<span>{{$anonsbottom->getName()}}</span>
+								</div>													
+							</a>
 						</div>
 					</div>					
 					@endforeach
-					@endif  
+					@endif
+					@if($anonsbottom2)
+					@foreach($anonsbottom2 as $anonsbottom)
+					<div>
+						<div class="slider-preview">
+							<a data-toggle="modal" data-toggle="modal" data-target="#myModal2">
+								<img src="{{asset($anonsbottom->thumbnail_big)}}" alt="{{ $anonsbottom->getName() }}">
+								<div class="overlay"></div>	
+								<div class="preview-title">
+									<span>{{$anonsbottom->getName()}}</span>
+								</div>
+							</a>													
+						</div>
+					</div>					
+					@endforeach
+					@endif 
+					@if($anonsbottom3)
+					@foreach($anonsbottom3 as $anonsbottom)
+					<div>
+						<div class="slider-preview">
+							<a data-toggle="modal" data-toggle="modal" data-target="#myModal3">
+								<img src="{{asset($anonsbottom->thumbnail_big)}}" alt="{{ $anonsbottom->getName() }}">
+								<div class="overlay"></div>	
+								<div class="preview-title">
+									<span>{{$anonsbottom->getName()}}</span>
+								</div>
+							</a>													
+						</div>
+					</div>					
+					@endforeach
+					@endif   
 				</div>
 			</section>
+			@if($anonsbottom1)
+			@foreach($anonsbottom1 as $anonsbottom1)
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			        <h4 class="modal-title" id="myModalLabel">{{$anonsbottom1->getName()}}</h4>
+			      </div>
+			      <div class="modal-body">
+			         {!! $anonsbottom1->getContent()!!}
+			         <div class="embed-responsive embed-responsive-16by9 show-video">
+			            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ $anonsbottom1->getUrl()}}"></iframe>
+			         </div>
+			      </div>
+			      <div class="modal-footer">
+			      </div>
+			    </div>
+			  </div>
+			</div>
+			@endforeach
+			@endif
+			@if($anonsbottom2)
+			@foreach($anonsbottom2 as $anonsbottom2)
+			<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			        <h4 class="modal-title" id="myModalLabel">{{$anonsbottom2->getName()}}</h4>
+			      </div>
+			      <div class="modal-body">
+			         {!! $anonsbottom2->getContent()!!}
+			         <div class="embed-responsive embed-responsive-16by9 show-video">
+			            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ $anonsbottom2->getUrl()}}"></iframe>
+			         </div>
+			      </div>
+			      <div class="modal-footer">
+			      </div>
+			    </div>
+			  </div>
+			</div>
+			@endforeach
+			@endif
+			@if($anonsbottom3)
+			@foreach($anonsbottom3 as $anonsbottom3)
+			<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			        <h4 class="modal-title" id="myModalLabel">{{$anonsbottom3->getName()}}</h4>
+			      </div>
+			      <div class="modal-body">
+			         {!! $anonsbottom3->getContent()!!}
+			         <div class="embed-responsive embed-responsive-16by9 show-video">
+			            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ $anonsbottom3->getUrl()}}"></iframe>
+			         </div>
+			      </div>
+			      <div class="modal-footer">
+			      </div>
+			    </div>
+			  </div>
+			</div>
+			@endforeach
+			@endif
 		</div>
 		<div class="container">
 			<div class="video clearfix">
@@ -136,7 +235,9 @@
 						@endif						
 					</div>
 					<div class="row banner-middle">
-						<img src="{{asset('images/channels/sport/banner-middle.png')}}" alt="">
+						<a href="@if($positionCenter) {{ $positionCenter->linkTo }} @else # @endif">
+						    <img src="@if(!empty($positionCenter->file)) {{ asset($positionCenter->file) }} @else {{asset('images/channels/sport/banner-middle.png')}} @endif" alt=""/>
+						</a>
 					</div>
 				</div>
 				<div class="col-md-4 sidebar">
@@ -174,7 +275,7 @@
 				<div class="panel">	
 					<div class="panel-title">				
 						<div class="heading-title">
-							<span class="name">{{ trans('radiopages.PhotoReporter') }}</span>
+							<span class="name">{{ trans('radiopages.SurotBayan') }}</span>
 							<div class="border"></div>
 							<a href="{{route('sport.gallery')}}" class="link-top">{{ trans('radiopages.toAll') }}</a>
 						</div>
@@ -237,13 +338,13 @@
 		arrows: true,
 		fade: true,
 		dots: true,
-		asNavFor: '.slider-bottom'
+		mobileFirst: true
 	});
 	$('.slider-bottom').slick({
 		slidesToShow: 3,
-		slidesToScroll: 1,
-		asNavFor: '.slider-top',
+		slidesToScroll: 1
 		dots: false,
+		mobileFirst: false,
 		centerMode: true,
 		arrows: false,
 		focusOnSelect: true
@@ -253,6 +354,43 @@
 		  slidesToShow: 4,
 		  slidesToScroll: 1
 	});
+</script>
+<script>
+   $(function(){
+       var url = $('#myModal iframe').attr('src');
+       $('.modal').click(function() {
+           $('#myModal iframe').show();
+           $('#myModal iframe').attr('src', url);
+       });
+       $('button.close').click(function() {
+           $('#myModal').hide();
+           $('#myModal').attr('src', '');
+       });
+   });
+   
+   $(function(){
+       var url = $('#myModal2 iframe').attr('src');
+       $('.modal').click(function() {
+           $('#myModal2 iframe').show();
+           $('#myModal2 iframe').attr('src', url);
+       });
+       $('button.close').click(function() {
+           $('#myModal2').hide();
+           $('#myModal2').attr('src', '');
+       });
+   });
+   
+   $(function(){
+       var url = $('#myModal3 iframe').attr('src');
+       $('.modal').click(function() {
+           $('#myModal3 iframe').show();
+           $('#myModal3 iframe').attr('src', url);
+       });
+       $('button.close').click(function() {
+           $('#myModal3').hide();
+           $('#myModal3').attr('src', '');
+       });
+   });
 </script>
 <script type="text/javascript">
     jQuery(document).ready(function ($) {

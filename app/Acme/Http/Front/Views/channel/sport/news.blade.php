@@ -111,7 +111,7 @@
                            @foreach($relatedNews as $post)                
                            <div class="blocknews col-md-3 col-sm-4 col-xs-12">
                                 <article>
-                                    <a href="{{ route('birinchi.news', [$post, $lc]) }}" class="image-link">
+                                    <a href="{{ route('sport.news', [$post, $lc]) }}" class="image-link">
                                         <img src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif" title="{{ $post->getTitleRuOrKg() }}">
                                         <div class="card-info">
                                              <span class="date ">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
@@ -119,7 +119,7 @@
                                         </div>
                                     </a>
                                     <h3 class="name headline">
-                                        <a href="{{ route('birinchi.news', [$post, $lc]) }}" title="">
+                                        <a href="{{ route('sport.news', [$post, $lc]) }}" title="">
                                             {{ $post->getTitleRuOrKg() }}
                                         </a>
                                     </h3>

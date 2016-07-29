@@ -104,9 +104,9 @@ header{
 	margin-right: 0;
 }
 .header-top{
-	position: relative;
-	display: block;
-	background-color: none;
+    position: relative;
+    display: block;
+    /*background-color: rgba(46, 204, 113, 0.52);*/
 }
 .all-channels{
     /*padding-left: 105px;*/
@@ -128,8 +128,19 @@ header{
     }
     .lang{
         position: absolute !important;
+        display: table;
         top: 10px;
-        left: 35% !important;
+        left: 0 !important;
+        margin: 0;
+        padding: 0;
+        text-align: left;
+        float: right;
+    }
+    .lang>li>a{
+        padding: 0 !important;
+    }
+    .navbar-toggle{
+        margin: 25px 10px;
     }
     .sport-nav{
         left: 0;
@@ -150,14 +161,50 @@ header{
     .photos .photo-item-main{
         margin: 0px 10px 0px 0px;
     }
+    .box-slider .slider-title{
+
+    }
+    .box-slider .slider-title span{
+        display: inline !important;
+        padding: 0 !Important;
+        width: 100% !Important;
+    }
+    .box-slider .slider-title span a{
+        font-size: 12px !important;
+    }
+    .slider-top .slick-prev{
+        height: 40px !important;
+        left: 5px !important;
+    }
+    .slider-top .slick-next{
+        height: 40px !important;
+        right: -85px !important;
+    }
+    .slider-top .slick-dots{
+        display: none !important;
+    }
+    .btn-more{
+        top: 6px;
+        padding: 1px 50px 1px 15px !important;
+    }
+    .btn-more:before{
+        top: 3px !important;
+        color: #2ECC71 !important;
+    }
+    .btn-more:after{
+        background: none !important; 
+    }
+    .slider-bottom{
+        display: none !important;
+    }
 }
 
 .navbar-brand {
     position: relative;
     display: block;
     height: auto;
-    width: 90px;
-    padding: 10px;
+    width: 260px;
+    padding: 5px 0px 0px 0px;
     /*background: #29b965;*/
 }
 
@@ -181,11 +228,11 @@ header{
 }
 .lang li a{
     padding: 15px 5px;
-    color: #494a49;
+    color: #fff;
     font-family: 'robotobold', sans-serif;
 }
 .lang li.active a{
-    color: #148a46;
+    color: #ffeb3b;
 }
 .navbar-toggle .icon-bar {
     background: #fff;
@@ -199,13 +246,16 @@ header{
 
 .main-header,
 .top-header{
-	background: #fff;
+    /*background: #fff;*/
+}
+.top-header {
+    background: rgba(28, 142, 76, 0.58);
 }
 .all-channels>li>a {
-    color: #494a49;
+    color: #fff;
     font-weight: normal;
     font-family: 'robotobold', sans-serif;
-    text-transform: uppercase;
+    font-size: 16px;
 }
 .all-channels>li>a:hover {
 	color: #222;
@@ -219,7 +269,7 @@ header{
 }
 .main-header .navbar-sport{
 	/*background-color: rgba(0, 0, 0, 0.3);*/
-	background-color: #2ecc71;
+	background-color: #197942;
 	margin: 0 15px;
 }
 .navbar-sport{
@@ -236,7 +286,7 @@ header{
 .navbar-sport .sport-nav{
     position: relative;
     display: block;
-    right: 20px;
+    right: 40px;
 }
 .sport-nav a{
     font-family: 'robotobold', sans-serif;
@@ -289,7 +339,7 @@ header{
 	background-color: transparent !important;
 }
 .social-buttons li a i{
-    color: #2ecc71;
+    color: #fff;
     opacity: 0.8;
     position: relative
 }
@@ -621,24 +671,27 @@ header{
 }
 .btn-sport .soon{
     font-size: 12px;
-    line-height: 16px;
-    margin: -3px 5px 0;
+    margin: 1px 0 0 5px;
     color: #CB363F;
     padding: 0 3px;
     cursor: pointer;
     position: relative;
     display: block;
     float: right;
+    border: 1px solid #CB363F;
 }
 .btn-sport:hover .soon,
 .btn-sport .soon:hover{
     background-color: none;
-    color: #fff;
+    color: #1c8e4c;
 }
 .btn-sport{
     display: inline-block;
     padding: 6px 12px;
     margin-bottom: 0;
+    margin-top: 6px;
+    margin-left: 10px;
+    color: #1c8e4c;
     font-size: 14px;
     font-weight: 700;
     line-height: 1.42857143;
@@ -652,16 +705,17 @@ header{
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    background-image: none;
     border: 1px solid transparent;
     border-radius: 4px;
-    background: none;
-    border:2px solid #d9534f;
-    color: #d9534f;
-    margin-top: 6px;
+    background-image: none;
+    background: #ffeb3b;
+    border: 2px solid #ffeb3b;
+
 }
 .btn-sport:hover{
-    border-color: #c9302c;
+    border-color: #ffeb3b;
+    background: #f5dc02;
+    color: #1c8e4c;
 }
 .slider-bottom{
 	position: relative;
@@ -800,7 +854,7 @@ header{
 }
 .tele-programma .live .bcLive{
     position: absolute;
-    display: inline-table;
+    display: flex;
     top: 4px;
     left: 35px;
     height: 10px;
@@ -822,7 +876,7 @@ header{
     margin-top: 0 !important;
 }
 .teleprogramm .panel-body{
-    padding: 0;
+    padding: 0px 15px !important;
 }
 /* END MIDDLE-INFO*/
 
@@ -1409,7 +1463,14 @@ figure.effect-roxy:hover p {
     font-size: 13px;
 }
 .panel-allnews .blockallnews .media-heading{
-	color: #4c4949;
+    color: #222;;
+}
+.panel-allnews .blockallnews .mb_substr{
+    position: relative;
+    display: block;
+    margin-top: 5px;
+    color: #6d6d6d;
+    font-family: 'Roboto';
 }
 .panel-allnews .popular .media{
 	margin-top: 0;
@@ -1431,15 +1492,60 @@ figure.effect-roxy:hover p {
 }
 /* END NEWS PAGES*/
 
+/* BEGIN VIDEOS PAGE*/
+.panel-cat{
+
+}
+.panel-cat .heading-title{
+    float: left;
+}
+.video-cat{}
+.video-cat .navbar-cat{
+    padding: 5px 0;
+    margin: 15px 0 10px 0;
+}
+.video-cat .navbar-cat a::after{
+    opacity: 0;
+}
+.video-cat .navbar-cat>li{
+
+}
+.video-cat .navbar-cat>li>a{
+    padding: 0px 10px;
+    font-size: 14px;
+    color: #2C3E50;
+    border-right: 1px solid #6b7c8c;
+}
+
+/* END VIDEOS PAGE*/
+
 /* BEGIN BANNER */
 .banner-top,
 .banner-middle{
     background: #fff;
 }
 .banner-top img{
-    padding: 0px 15px;
+    padding: 10px 15px;
 }
 .banner-middle img{
-    padding:0px 0px 0 15px
+    padding: 0px 0px 0 15px
+}
+.banner-right{
+    margin-top: 15px;
 }
 /* END BANNER */
+
+/* MODAL */
+
+.modal-header{
+    background: #197942;
+    color: #fff;
+}
+.modal-title {
+    padding: 5px 10px;   
+    font-family: 'robotobold', serif;
+    text-transform: none;
+    border-bottom: none; 
+}
+
+/* MODAL */

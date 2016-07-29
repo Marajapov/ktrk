@@ -56,6 +56,7 @@ class CreateMediaTable extends Migration
             $table->string('minkiyal');
             $table->string('dostuk');
             $table->string('sport');
+            $table->string('sportanons');
             $table->string('extracolumn');
 
             $table->string('program');

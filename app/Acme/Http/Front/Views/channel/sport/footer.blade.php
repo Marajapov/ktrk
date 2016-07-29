@@ -9,6 +9,11 @@
 <script type="text/javascript" src="{{ asset('js/jquery-migrate-1.2.1.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('slick/slick.min.js') }}"></script>
 
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover(); 
+});
+</script>
 <script type="text/javascript">
 	$(function () {
 	    var flag = false;
@@ -16,7 +21,7 @@
 	    setTimeout(function () {
 	        $("#soon").css("color", "#CB363F");
 	        setInterval(function () {
-	            $("#soon").css("color", flag? "#CB363F":"#fff");
+	            $("#soon").css("color", flag? "#CB363F":"#222");
 	            flag = !flag;
 	        }, 500)
 	    }, 3000);

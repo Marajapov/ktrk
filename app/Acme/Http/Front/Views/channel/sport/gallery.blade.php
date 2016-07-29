@@ -1,5 +1,5 @@
 @extends('Front::channel.sport.default')
-@section('title', trans('radiopages.Photos'))
+@section('title', trans('radiopages.SurotBayan'))
 @section('styles')
 
 @endsection
@@ -9,7 +9,7 @@
         <div class="panel panel-default panel-photos">
            <div class="panel-heading">
                 <div class="heading-title">
-                    <span class="name">{{ trans('radiopages.Photos') }}</span>
+                    <span class="name">{{ trans('radiopages.SurotBayan') }}</span>
                     <div class="border"></div>
                 </div>
            </div>

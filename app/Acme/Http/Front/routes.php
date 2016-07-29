@@ -66,6 +66,7 @@ Route::group(['domain' => 'ktrk.dev', 'prefix' => '/sport', 'namespace' =>'Front
     Route::get('/videos', ['as' => 'sport.videos', 'uses' => 'SportController@videos']);
     Route::get('/video/{video}', ['as' => 'sport.video', 'uses' => 'SportController@video']);
     Route::get('/videos/all', ['as' => 'sport.videos.all', 'uses' => 'SportController@allvideos']);
+    Route::get('/videos/project/{project}', ['as' => 'sport.videos.project', 'uses' => 'SportController@project']);
     Route::get('/photos/{gallery}', ['as' => 'sport.photos', 'uses' => 'SportController@photos']);
     Route::get('/gallery', ['as' => 'sport.gallery', 'uses' => 'SportController@gallery']);
     Route::get('/teleprogram', ['as' => 'sport.teleprogram', 'uses' => 'SportController@teleprogram']);

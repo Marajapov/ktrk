@@ -4,8 +4,15 @@ use Illuminate\Http\Request;
 use \Model\MediaCategory\ModelName as MediaCategory;
 class SportController extends Controller
 {
+    protected $positionTop, $positionRight, $positionCenter, $positionBottom, $positionLeft;
+    
     public function __construct()
     {
+        $this->positionTop = \Model\Banner\ModelName::where('positionTop','=','1')->where('channel_id','=','11')->first();
+        $this->positionRight = \Model\Banner\ModelName::where('positionRight','=','1')->where('channel_id','=','11')->first();
+        $this->positionLeft = \Model\Banner\ModelName::where('positionLeft','=','1')->where('channel_id','=','11')->first();
+        $this->positionCenter = \Model\Banner\ModelName::where('positionCenter','=','1')->where('channel_id','=','11')->first();
+        $this->positionBottom = \Model\Banner\ModelName::where('positionBottom','=','1')->where('channel_id','=','11')->first();
     }
 
 
@@ -15,17 +22,19 @@ class SportController extends Controller
         $channel = \Model\Channel\ModelName::where('name','=','sport')->first();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','11')->first();
         $anons = \Model\Anons\ModelName::where('channel','=','11')->where('published','=','1')->orderBy('id','=','desc')->take(3)->get();
-        $anonsbottom = \Model\Anons\ModelName::where('channel','=','11')->where('published','=','1')->orderBy('id','=','desc')->take(3)->get();
-        $topVideos1 = \Model\Media\ModelName::where('published','=','1')->where('videoType','=','sport')->where('sport','<=',1)->orderBy('id','desc')->skip('0')->take('1')->get();
-        $topVideos2 = \Model\Media\ModelName::where('published','=','1')->where('videoType','=','sport')->where('sport','<=',1)->orderBy('id','desc')->skip('1')->take('2')->get();
-        $topVideos3 = \Model\Media\ModelName::where('published','=','1')->where('videoType','=','sport')->where('sport','<=',1)->orderBy('id','desc')->skip('3')->take('3')->get();
+        $anonsbottom1 = \Model\Media\ModelName::where('sport','=','1')->where('published','=',true)->where('sportanons','=','1')->orderBy('id','desc')->take('1')->get();
+        $anonsbottom2 = \Model\Media\ModelName::where('sport','=','1')->where('published','=',true)->where('sportanons','=','2')->orderBy('id','desc')->take('1')->get();
+        $anonsbottom3 = \Model\Media\ModelName::where('sport','=','1')->where('published','=',true)->where('sportanons','=','3')->orderBy('id','desc')->take('1')->get();
+        $topVideos1 = \Model\Media\ModelName::where('published','=','1')->where('videoType','=','sport')->where('sport','<=',1)->where('sportanons','<=','1')->orderBy('id','desc')->skip('0')->take('1')->get();
+        $topVideos2 = \Model\Media\ModelName::where('published','=','1')->where('videoType','=','sport')->where('sport','<=',1)->where('sportanons','<=','1')->orderBy('id','desc')->skip('1')->take('2')->get();
+        $topVideos3 = \Model\Media\ModelName::where('published','=','1')->where('videoType','=','sport')->where('sport','<=',1)->where('sportanons','<=','1')->orderBy('id','desc')->skip('3')->take('3')->get();
 
         if($lc == 'kg'){
-            $postAll = \Model\Post\ModelName::where('published','=',true)->where('sport','=','1')->where('title','<>','')->take('8')->get();
+            $postAll = \Model\Post\ModelName::where('published','=',true)->where('sport','=','1')->where('title','<>','')->orderBy('id','desc')->take('8')->get();
             $photoGalleries1 = \Model\PhotoParent\ModelName::where('sport','=','1')->where('published','=',true)->where('name','<>','')->orderBy('id','desc')->skip('0')->take('1')->get();
             $photoGalleries2 = \Model\PhotoParent\ModelName::where('sport','=','1')->where('published','=',true)->where('name','<>','')->orderBy('id','desc')->skip('1')->take('4')->get();
         }else{
-            $postAll = \Model\Post\ModelName::where('published','=',true)->where('sport','=','1')->where('titleRu','<>','')->take('8')->get();
+            $postAll = \Model\Post\ModelName::where('published','=',true)->where('sport','=','1')->where('titleRu','<>','')->orderBy('id','desc')->take('8')->get();
             $photoGalleries1 = \Model\PhotoParent\ModelName::where('sport','=','1')->where('published','=',true)->where('nameRu','<>','')->orderBy('id','desc')->skip('0')->take('1')->get();
             $photoGalleries2 = \Model\PhotoParent\ModelName::where('sport','=','1')->where('published','=',true)->where('nameRu','<>','')->orderBy('id','desc')->skip('1')->take('4')->get();
         }
@@ -53,7 +62,9 @@ class SportController extends Controller
             'channel' => $channel,
             'backgroundMain' => $backgroundMain,
             'anons' => $anons,
-            'anonsbottom' => $anonsbottom,
+            'anonsbottom1' => $anonsbottom1,
+            'anonsbottom2' => $anonsbottom2,
+            'anonsbottom3' => $anonsbottom3,
             'topVideos1' => $topVideos1,
             'topVideos2' => $topVideos2,
             'topVideos3' => $topVideos3,
@@ -64,6 +75,12 @@ class SportController extends Controller
             'count' => $count = ($count) ? $count : 1,
             'currentDate' => $currentDate,
             'currentTime' => $currentTime,
+
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionLeft'  => $this->positionLeft,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
         ]);
     }
 
@@ -75,10 +92,10 @@ class SportController extends Controller
         $lc = app()->getlocale();
         $weekFromNow = date('Y-m-d', strtotime('-10 days'));
         if($lc == 'kg'){
-            $postAll = \Model\Post\ModelName::where('published','=',true)->where('sport','=','1')->where('title','<>','')->paginate($perPage);
+            $postAll = \Model\Post\ModelName::where('published','=',true)->where('sport','=','1')->where('title','<>','')->orderBy('id','desc')->paginate($perPage);
             $popArticles = \Model\Post\ModelName::where('sport','=','1')->where('created_at','>',$weekFromNow)->languagekg()->orderBy('viewed','desc')->get();
         }else{
-            $postAll = \Model\Post\ModelName::where('published','=',true)->where('sport','=','1')->where('titleRu','<>','')->paginate($perPage);
+            $postAll = \Model\Post\ModelName::where('published','=',true)->where('sport','=','1')->where('titleRu','<>','')->orderBy('id','desc')->paginate($perPage);
             $popArticles = \Model\Post\ModelName::where('sport','=','1')->where('created_at','>',$weekFromNow)->languageru()->orderBy('viewed','desc')->get();
         }
         if(count($popArticles) > 0){
@@ -93,7 +110,13 @@ class SportController extends Controller
             'backgroundMain' => $backgroundMain,
             'perPage' => $perPage,
             'postAll' => $postAll,
-            'popArticles' => $popArticles
+            'popArticles' => $popArticles,
+
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionLeft'  => $this->positionLeft,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
 
         ]);
     }
@@ -362,6 +385,12 @@ public function news(\Model\Post\ModelName $post)
             'lc' => $lc,
             'projectList' => $projectList,
             'relatedNews' => $relatedNews,
+
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionLeft'  => $this->positionLeft,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
         ]);
     }
     
@@ -369,12 +398,18 @@ public function news(\Model\Post\ModelName $post)
     {
         $perPage = 16;
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','11')->first();
-        $allVideos = \Model\Media\ModelName::where('published','=','1')->where('videoType','=','sport')->where('sport','<=',1)->orderBy('id','desc')->paginate($perPage);
+        $allVideos = \Model\Media\ModelName::where('published','=','1')->where('videoType','=','sport')->where('sport','<=',1)->where('sportanons','<=','1')->orderBy('id','desc')->paginate($perPage);
 
         return view('Front::channel.sport.all',[
             'perPage' => $perPage,
             'backgroundMain' => $backgroundMain,
-            'allVideos' => $allVideos
+            'allVideos' => $allVideos,
+
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionLeft'  => $this->positionLeft,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
         ]);
     }
 
@@ -392,10 +427,10 @@ public function news(\Model\Post\ModelName $post)
 
         $weekFromNow = date('Y-m-d H:i', strtotime('-100 days'));
 
-        $topVideos1 = \Model\Media\ModelName::where('published','=','1')->where('videoType','=','sport')->where('sport','<=',1)->where('created_at','>',$weekFromNow)->orderBy('viewed','desc')->skip('0')->take('1')->get();
-        $topVideos2 = \Model\Media\ModelName::where('published','=','1')->where('videoType','=','sport')->where('sport','<=',1)->where('created_at','>',$weekFromNow)->orderBy('viewed','desc')->skip('1')->take('2')->get();
-        $topVideos3 = \Model\Media\ModelName::where('published','=','1')->where('videoType','=','sport')->where('sport','<=',1)->where('created_at','>',$weekFromNow)->orderBy('viewed','desc')->skip('3')->take('2')->get();
-        $allVideos = \Model\Media\ModelName::where('published','=','1')->where('videoType','=','sport')->where('sport','<=',1)->orderBy('id','desc')->take('8')->get();
+        $topVideos1 = \Model\Media\ModelName::where('published','=','1')->where('videoType','=','sport')->where('sport','<=',1)->where('sportanons','<=','1')->where('created_at','>',$weekFromNow)->orderBy('viewed','desc')->skip('0')->take('1')->get();
+        $topVideos2 = \Model\Media\ModelName::where('published','=','1')->where('videoType','=','sport')->where('sport','<=',1)->where('sportanons','<=','1')->where('created_at','>',$weekFromNow)->orderBy('viewed','desc')->skip('1')->take('2')->get();
+        $topVideos3 = \Model\Media\ModelName::where('published','=','1')->where('videoType','=','sport')->where('sport','<=',1)->where('sportanons','<=','1')->where('created_at','>',$weekFromNow)->orderBy('viewed','desc')->skip('3')->take('2')->get();
+        $allVideos = \Model\Media\ModelName::where('published','=','1')->where('videoType','=','sport')->where('sport','<=',1)->where('sportanons','<=','1')->orderBy('id','desc')->take('8')->get();
         $lc = app()->getlocale();
         if($lc == 'kg'){
             $sportProjects = \Model\Project\ModelName::where('published','=',true)->where('sport','=',1)->where('name','<>','' )->orderBy('name','asc')->get();
@@ -412,7 +447,55 @@ public function news(\Model\Post\ModelName $post)
             'topVideos2' => $topVideos2,
             'topVideos3' => $topVideos3,
             'sportProjects' => $sportProjects,
+
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionLeft'  => $this->positionLeft,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
         ]);
+    }
+
+    public function project(\Model\Project\ModelName $project)
+    {
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            $projectList = \Model\Project\ModelName::where('sport','=','1')->orderBy('name','asc')->get();
+        }else{
+            $projectList = \Model\Project\ModelName::where('sport','=','1')->orderBy('nameRu','asc')->get();
+        }
+
+        $mainBanner = \Model\Background\ModelName::where('name','=','main')->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','11')->first();
+        $perPage = 16;
+        $allVideos = \Model\Media\ModelName::where('published','=','1')->where('program','=',$project->id)->orderBy('id','desc')->paginate($perPage);
+       
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            $sportProjects = \Model\Project\ModelName::where('published','=',true)->where('sport','=',1)->where('name','<>','' )->orderBy('name','asc')->get();
+        }else{
+            $sportProjects = \Model\Project\ModelName::where('published','=',true)->where('sport','=',1)->where('nameRu','<>','' )->orderBy('nameRu','asc')->get();
+        }
+
+
+        return view('Front::channel.sport.project',[
+
+            'project' => $project,
+            'perPage' => $perPage,
+            'mainBanner'   => $mainBanner,
+            'projectList' => $projectList,
+            'backgroundMain' => $backgroundMain,
+            'allVideos' => $allVideos,
+            'sportProjects' => $sportProjects,
+
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionLeft'  => $this->positionLeft,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
+
+            ]
+        );
     }
 
 
@@ -502,7 +585,13 @@ public function news(\Model\Post\ModelName $post)
             'mainBanner'   => $mainBanner,
             'projectList' => $projectList,
             'backgroundMain' => $backgroundMain,
-            'sportProjects' => $sportProjects
+            'sportProjects' => $sportProjects,
+
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionLeft'  => $this->positionLeft,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
         ]);
     }
 
@@ -538,6 +627,12 @@ public function news(\Model\Post\ModelName $post)
             'gallery' => $gallery,
             'sportProjects' => $sportProjects,
             'projectList' => $projectList,
+
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionLeft'  => $this->positionLeft,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
         ]);
     }
     public function gallery()
@@ -571,7 +666,13 @@ public function news(\Model\Post\ModelName $post)
             'postAll' => $postAll,
             'perPage' => $perPage,
             'sportProjects' => $sportProjects,
-            'projectList' => $projectList
+            'projectList' => $projectList,
+
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionLeft'  => $this->positionLeft,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
         ]);
     }
 
@@ -642,6 +743,12 @@ public function teleprogram(Request $request)
             'week' => $week,
             'sportProjects' => $sportProjects,
             'projectList' => $projectList,
+
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionLeft'  => $this->positionLeft,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
 
         ]);
     }

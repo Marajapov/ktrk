@@ -11,10 +11,17 @@
             <div class="panel-body no-padding">
                <div class="col-md-12 col-sm-12 panel-videos no-padding">
                   <div class="panel panel-default panel-top-videos">
-                     <div class="panel-heading">
+                     <div class="panel-heading panel-cat clearfix">
                         <div class="heading-title">
                            <span class="name">{{ trans('site.TopVideos') }}</span>
                            <div class="border"></div>
+                        </div>
+                        <div class="video-cat">
+                          <ul class="nav navbar-nav navbar-right sport-nav navbar-cat">
+                              @foreach($projectList as $project)
+                              <li><a href="{{ route('sport.videos.project', $project) }}">{{ $project->getNameOne() }}</a></li>
+                              @endforeach
+                          </ul>
                         </div>
                      </div>
                      <div class="clearfix videos-padding">
@@ -78,7 +85,9 @@
                   </div>
                </div>              
               <div class="banner-top">
-                <img src="{{asset('images/channels/sport/banner.png')}}" alt="">
+                <a href="@if($positionBottom) {{ $positionBottom->linkTo }} @else # @endif">
+                <img src="@if(!empty($positionBottom->file)) {{ asset($positionBottom->file) }} @else {{asset('images/channels/sport/banner.png')}} @endif" alt=""/>
+                </a>
               </div>
                <div class="col-md-12 col-sm-12 panel-videos no-padding">
                   <div class="panel panel-default">
