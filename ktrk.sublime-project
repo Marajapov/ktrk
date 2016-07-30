@@ -18,6 +18,10 @@
 		},
 		{
 			"path": "app\\Acme\\Models"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "C:\\xampp\\htdocs\\ktrk.dev\\public\\images"
 		}
 	]
 }

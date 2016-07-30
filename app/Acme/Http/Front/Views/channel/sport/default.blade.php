@@ -22,7 +22,12 @@
     @yield('styles')
 
     <script src="{{ asset('js/jquery-1.11.2.min.js') }}"></script>
-    
+    <script type="text/javascript" src="{{ asset('js/jquery.sticky.js') }}"></script>
+    <script>
+        $(window).load(function(){
+            $("#header").sticky({ topSpacing: 0 });
+        });
+    </script>
     <style>
         body{
             @if($backgroundMain != null) background: url('{{ asset($backgroundMain->getFile()) }}') no-repeat;

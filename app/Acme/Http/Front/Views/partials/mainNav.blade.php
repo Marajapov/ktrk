@@ -18,6 +18,11 @@
                 <img src="{{ asset('images/channels/balastan.png') }}" alt=""/>
             </a>
         </li>
+        <li>
+            <a href="{{ route('sport.home') }}">
+                <img src="{{ asset('images/channels/sport-channel-main.png') }}" alt=""/>
+            </a>
+        </li>
     </ul>
     <ul class="radios_ul">
         <li>

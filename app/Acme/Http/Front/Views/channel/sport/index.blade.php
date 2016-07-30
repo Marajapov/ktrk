@@ -59,10 +59,11 @@
 					@endforeach
 					@endif  
 				</div>
-				<div class="slider-bottom">
+				<div class="anonses">
+					<a href="{{ route('sport.anons') }}" class="anons-link"><span>{{ trans('radiopages.AllAnons') }} <i class="fa fa-arrow-circle-right"></i></span></a>
 					@if($anonsbottom1)
 					@foreach($anonsbottom1 as $anonsbottom)
-					<div>
+					<div class="col-md-4 no-padding">
 						<div class="slider-preview">
 							<a data-toggle="modal" data-toggle="modal" data-target="#myModal">
 								<img src="{{asset($anonsbottom->thumbnail_big)}}" alt="{{ $anonsbottom->getName() }}">
@@ -77,7 +78,7 @@
 					@endif
 					@if($anonsbottom2)
 					@foreach($anonsbottom2 as $anonsbottom)
-					<div>
+					<div class="col-md-4 no-padding">
 						<div class="slider-preview">
 							<a data-toggle="modal" data-toggle="modal" data-target="#myModal2">
 								<img src="{{asset($anonsbottom->thumbnail_big)}}" alt="{{ $anonsbottom->getName() }}">
@@ -92,7 +93,7 @@
 					@endif 
 					@if($anonsbottom3)
 					@foreach($anonsbottom3 as $anonsbottom)
-					<div>
+					<div class="col-md-4 no-padding">
 						<div class="slider-preview">
 							<a data-toggle="modal" data-toggle="modal" data-target="#myModal3">
 								<img src="{{asset($anonsbottom->thumbnail_big)}}" alt="{{ $anonsbottom->getName() }}">
@@ -275,7 +276,7 @@
 				<div class="panel">	
 					<div class="panel-title">				
 						<div class="heading-title">
-							<span class="name">{{ trans('radiopages.SurotBayan') }}</span>
+							<span class="name" style="text-transform: capitalize;font-size: 18px;">{{ trans('radiopages.SurotBayan') }}</span>
 							<div class="border"></div>
 							<a href="{{route('sport.gallery')}}" class="link-top">{{ trans('radiopages.toAll') }}</a>
 						</div>
@@ -327,6 +328,55 @@
 				</div>
 			</div>
 		</div>
+		<div class="container">
+      <div class="col-md-12 no-padding">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <div class="heading-title">
+              <span class="name">{{ trans('radiopages.Wearesocial')}}</span>
+              <div class="border"></div>
+            </div>
+          </div>
+          <div class="panel-body popular">
+            <div class="col-sm-3 no-padding">
+              <div class="fb-page" style="height: 460px;overflow: hidden;" data-href="https://www.facebook.com/KTRKSport" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                  <div class="fb-xfbml-parse-ignore">
+                    <blockquote cite="https://www.facebook.com/KTRKSport"><a href="https://www.facebook.com/KTRKSport/">КТРК СПОРТ</a></blockquote>
+                  </div>
+              </div>  
+            </div>
+            <div class="col-sm-3">
+                <a class="twitter-timeline" data-height="460" href="https://twitter.com/ktrksport">Твиты Ktrksport</a> 
+                <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>              
+            </div>
+            <div class="col-sm-3">
+                <div id="ok_group_widget"></div>
+                <script>
+                    !function (d, id, did, st) {
+                        var js = d.createElement("script");
+                        js.src = "https://connect.ok.ru/connect.js";
+                        js.onload = js.onreadystatechange = function () {
+                            if (!this.readyState || this.readyState == "loaded" || this.readyState == "complete") {
+                                if (!this.executed) {
+                                    this.executed = true;
+                                    setTimeout(function () {
+                                        OK.CONNECT.insertGroupWidget(id,did,st);
+                                    }, 0);
+                                }
+                            }}
+                        d.documentElement.appendChild(js);
+                    }(document,"ok_group_widget","52921979764889","{width:263,height:460}");
+                </script>
+            </div>
+            <div class="col-sm-3">
+              <iframe src="{{asset('images/channels/sport/inwidget/index.php?height=460&inline=3')}}" scrolling='no' frameborder='no' style='border:none;width:263px;height:455px;overflow:hidden;'></iframe>
+            </div>
+
+          </div>
+          <br>
+        </div>
+      </div>
+		</div>	
 		<div class="margin-with-bottom"></div>
 
 @stop
@@ -337,17 +387,7 @@
 		slidesToScroll: 1,
 		arrows: true,
 		fade: true,
-		dots: true,
-		mobileFirst: true
-	});
-	$('.slider-bottom').slick({
-		slidesToShow: 3,
-		slidesToScroll: 1
-		dots: false,
-		mobileFirst: false,
-		centerMode: true,
-		arrows: false,
-		focusOnSelect: true
+		dots: true
 	});
 	$('.slider-photo').slick({
 		  infinite: true,
@@ -417,4 +457,14 @@
         }
     });
 </script>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.5";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+
 @endsection

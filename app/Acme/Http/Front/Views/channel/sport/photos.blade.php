@@ -89,7 +89,7 @@
    </div>
 @stop
 @section('footerscript2')
-<script src="{{asset('js/goodshare.js')}}"></script>
+    <script src="{{asset('js/goodshare.js')}}"></script>
     <script>
         $(window).load(function(){
             $('.goodshare').each(function(){
@@ -101,9 +101,7 @@
             });
         });
     </script>
-    <script src="{{ asset('js/jquery-1.11.2.min.js') }}"></script>
-    <script src="{{ asset('js/jquery-migrate-1.2.1.min.js') }}"></script>
-    <script src="{{ asset('slick/slick.min.js') }}"></script>
+
     <script src="{{ asset('js/lightslider.js') }}"></script>
     <script src="{{ asset('js/lightgallery/picturefill.min.js') }}"></script>
     <script src="{{ asset('js/lightgallery/lightgallery.js') }}"></script>

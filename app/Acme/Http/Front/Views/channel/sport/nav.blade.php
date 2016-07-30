@@ -19,10 +19,11 @@
 	                            <li @if(app()->getlocale() == 'ru') class="active" @endif><a href="/locale/ru">рус <span></span></a></li>
 	                        </ul>
 							<ul class="nav navbar-nav navbar-right social-buttons">
-								<li class="tw"><a href="#"><i class="fa fa-twitter"></i></a></li>
-								<li class="fb"><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li class="ok"><a href="#"><i class="fa fa-odnoklassniki"></i></a></li>
-								<li class="in"><a href="#"><i class="fa fa-instagram"></i></a></li>
+								<li class="tw"><a href="//twitter.com/ktrksport"><i class="fa fa-twitter"></i></a></li>
+								<li class="fb"><a href="//www.facebook.com/KTRKSport/"><i class="fa fa-facebook"></i></a></li>
+								<li class="ok"><a href="//ok.ru/profile/573048081049"><i class="fa fa-odnoklassniki"></i></a></li>
+								<li class="in"><a href="//www.instagram.com/ktrksport/"><i class="fa fa-instagram"></i></a></li>
+								<li class="in"><a href="//www.youtube.com/channel/UC5jPZDWHWxKnuy_jMDzlrlA"><i class="fa fa-youtube"></i></a></li>
 								<button type="button" class="btn-sport" id="popover" data-container="body" data-toggle="popover" data-placement="bottom" data-content="{{ trans('radiopages.Soon') }}"><span>{{ trans('radiopages.Live') }}</span><span id="soon" class="soon">{{ trans('radiopages.Soon') }}</span></button>
 								
 							</ul>
@@ -38,7 +39,7 @@
 				</div>
 			</div>
 			<div class="container">
-				<div class="main-header main-header-top">
+				<div id="header" class="main-header main-header-top">
 					<nav class="navbar navbar-sport">
 						<div class="container">
 							<div class="navbar-header">
@@ -55,7 +56,7 @@
 							<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 								<ul class="nav navbar-nav navbar-right sport-nav">
 									<li><a href="{{ route('sport.home') }}">{{ trans('radiopages.Home') }}</a></li>
-									<li><a href="#">{{ trans('radiopages.aboutChannel') }}</a></li>
+									<li><a href="{{ route('sport.about') }}">{{ trans('radiopages.aboutChannel') }}</a></li>
 									<li><a href="{{ route('sport.teleprogram') }}">Телепрограмма</a></li>
 									<li><a href="{{ route('sport.allnews') }}">{{ trans('site.RedKeneshNews') }}</a></li>
 									<li><a href="{{ route('sport.videos') }}">Видео</a></li>

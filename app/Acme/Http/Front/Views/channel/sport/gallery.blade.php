@@ -9,12 +9,30 @@
         <div class="panel panel-default panel-photos">
            <div class="panel-heading">
                 <div class="heading-title">
-                    <span class="name">{{ trans('radiopages.SurotBayan') }}</span>
+                    <span class="name" style="text-transform: capitalize;font-size: 18px;">{{ trans('radiopages.SurotBayan') }}</span>
                     <div class="border"></div>
                 </div>
            </div>
            <div class="panel-body">
               <div class="row">
+               @if($photoGalleriesTop)
+                  @foreach($photoGalleriesTop as $photoGalleryTop)
+                  <div class="col-md-6 col-sm-12">
+                    <div class="photos-item">
+                       <a href="{{ route('sport.photos', $photoGalleryTop) }}">
+                          <img src="{{ asset($photoGalleryTop->thumbnail_big) }}" alt=""/>
+                          <div class="g-extra">
+                              <span class="datetime"><i class="fa fa-calendar"></i> {{ $photoGalleryTop->getDay() }} {{ $photoGalleryTop->getMonthRu() }}, {{ $photoGalleryTop->getTime() }}</span>
+                              <span class="view"><i class="fa fa-eye"></i>{{ $photoGalleryTop->viewed }}</span>
+                           </div>
+                          <div class="g-title">
+                            {{ $photoGalleryTop->getName() }}
+                          </div>
+                       </a>
+                     </div>
+                  </div>
+                  @endforeach
+                @endif 
                 @if($photoGalleries)
                   @foreach($photoGalleries as $photoGallery)
                   <div class="col-md-4">

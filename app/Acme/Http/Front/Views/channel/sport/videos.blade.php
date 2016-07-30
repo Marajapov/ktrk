@@ -85,8 +85,8 @@
                   </div>
                </div>              
               <div class="banner-top">
-                <a href="@if($positionBottom) {{ $positionBottom->linkTo }} @else # @endif">
-                <img src="@if(!empty($positionBottom->file)) {{ asset($positionBottom->file) }} @else {{asset('images/channels/sport/banner.png')}} @endif" alt=""/>
+                <a href="@if($positionCenter) {{ $positionCenter->linkTo }} @else # @endif">
+                <img src="@if(!empty($positionCenter->file)) {{ asset($positionCenter->file) }} @else {{asset('images/channels/sport/banner.png')}} @endif" alt=""/>
                 </a>
               </div>
                <div class="col-md-12 col-sm-12 panel-videos no-padding">

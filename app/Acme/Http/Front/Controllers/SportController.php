@@ -25,9 +25,9 @@ class SportController extends Controller
         $anonsbottom1 = \Model\Media\ModelName::where('sport','=','1')->where('published','=',true)->where('sportanons','=','1')->orderBy('id','desc')->take('1')->get();
         $anonsbottom2 = \Model\Media\ModelName::where('sport','=','1')->where('published','=',true)->where('sportanons','=','2')->orderBy('id','desc')->take('1')->get();
         $anonsbottom3 = \Model\Media\ModelName::where('sport','=','1')->where('published','=',true)->where('sportanons','=','3')->orderBy('id','desc')->take('1')->get();
-        $topVideos1 = \Model\Media\ModelName::where('published','=','1')->where('videoType','=','sport')->where('sport','<=',1)->where('sportanons','<=','1')->orderBy('id','desc')->skip('0')->take('1')->get();
-        $topVideos2 = \Model\Media\ModelName::where('published','=','1')->where('videoType','=','sport')->where('sport','<=',1)->where('sportanons','<=','1')->orderBy('id','desc')->skip('1')->take('2')->get();
-        $topVideos3 = \Model\Media\ModelName::where('published','=','1')->where('videoType','=','sport')->where('sport','<=',1)->where('sportanons','<=','1')->orderBy('id','desc')->skip('3')->take('3')->get();
+        $topVideos1 = \Model\Media\ModelName::where('published','=','1')->where('videoType','=','sport')->where('sport','<=',1)->where('sportanons','<>','1')->where('sportanons','<>','2')->where('sportanons','<>','3')->orderBy('id','desc')->skip('0')->take('1')->get();
+        $topVideos2 = \Model\Media\ModelName::where('published','=','1')->where('videoType','=','sport')->where('sport','<=',1)->where('sportanons','<>','1')->where('sportanons','<>','2')->where('sportanons','<>','3')->orderBy('id','desc')->skip('1')->take('2')->get();
+        $topVideos3 = \Model\Media\ModelName::where('published','=','1')->where('videoType','=','sport')->where('sport','<=',1)->where('sportanons','<>','1')->where('sportanons','<>','2')->where('sportanons','<>','3')->orderBy('id','desc')->skip('3')->take('3')->get();
 
         if($lc == 'kg'){
             $postAll = \Model\Post\ModelName::where('published','=',true)->where('sport','=','1')->where('title','<>','')->orderBy('id','desc')->take('8')->get();
@@ -398,7 +398,7 @@ public function news(\Model\Post\ModelName $post)
     {
         $perPage = 16;
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','11')->first();
-        $allVideos = \Model\Media\ModelName::where('published','=','1')->where('videoType','=','sport')->where('sport','<=',1)->where('sportanons','<=','1')->orderBy('id','desc')->paginate($perPage);
+        $allVideos = \Model\Media\ModelName::where('published','=','1')->where('videoType','=','sport')->where('sport','<=',1)->where('sportanons','<>','1')->where('sportanons','<>','2')->where('sportanons','<>','3')->orderBy('id','desc')->paginate($perPage);
 
         return view('Front::channel.sport.all',[
             'perPage' => $perPage,
@@ -427,10 +427,10 @@ public function news(\Model\Post\ModelName $post)
 
         $weekFromNow = date('Y-m-d H:i', strtotime('-100 days'));
 
-        $topVideos1 = \Model\Media\ModelName::where('published','=','1')->where('videoType','=','sport')->where('sport','<=',1)->where('sportanons','<=','1')->where('created_at','>',$weekFromNow)->orderBy('viewed','desc')->skip('0')->take('1')->get();
-        $topVideos2 = \Model\Media\ModelName::where('published','=','1')->where('videoType','=','sport')->where('sport','<=',1)->where('sportanons','<=','1')->where('created_at','>',$weekFromNow)->orderBy('viewed','desc')->skip('1')->take('2')->get();
-        $topVideos3 = \Model\Media\ModelName::where('published','=','1')->where('videoType','=','sport')->where('sport','<=',1)->where('sportanons','<=','1')->where('created_at','>',$weekFromNow)->orderBy('viewed','desc')->skip('3')->take('2')->get();
-        $allVideos = \Model\Media\ModelName::where('published','=','1')->where('videoType','=','sport')->where('sport','<=',1)->where('sportanons','<=','1')->orderBy('id','desc')->take('8')->get();
+        $topVideos1 = \Model\Media\ModelName::where('published','=','1')->where('videoType','=','sport')->where('sport','<=',1)->where('sportanons','<>','1')->where('sportanons','<>','2')->where('sportanons','<>','3')->where('created_at','>',$weekFromNow)->orderBy('viewed','desc')->skip('0')->take('1')->get();
+        $topVideos2 = \Model\Media\ModelName::where('published','=','1')->where('videoType','=','sport')->where('sport','<=',1)->where('sportanons','<>','1')->where('sportanons','<>','2')->where('sportanons','<>','3')->where('created_at','>',$weekFromNow)->orderBy('viewed','desc')->skip('1')->take('2')->get();
+        $topVideos3 = \Model\Media\ModelName::where('published','=','1')->where('videoType','=','sport')->where('sport','<=',1)->where('sportanons','<>','1')->where('sportanons','<>','2')->where('sportanons','<>','3')->where('created_at','>',$weekFromNow)->orderBy('viewed','desc')->skip('3')->take('2')->get();
+        $allVideos = \Model\Media\ModelName::where('published','=','1')->where('videoType','=','sport')->where('sport','<=',1)->where('sportanons','<>','1')->where('sportanons','<>','2')->where('sportanons','<>','3')->orderBy('id','desc')->take('8')->get();
         $lc = app()->getlocale();
         if($lc == 'kg'){
             $sportProjects = \Model\Project\ModelName::where('published','=',true)->where('sport','=',1)->where('name','<>','' )->orderBy('name','asc')->get();
@@ -652,16 +652,19 @@ public function news(\Model\Post\ModelName $post)
         $lc = app()->getlocale();
         if($lc == 'kg'){
             $projectList = \Model\Project\ModelName::where('sport','=','1')->orderBy('name','asc')->get();
-            $photoGalleries = \Model\PhotoParent\ModelName::where('sport','=','1')->where('published','=',true)->where('name','<>','')->take('10')->orderBy('id','desc')->paginate($perPage);
+            $photoGalleriesTop = \Model\PhotoParent\ModelName::where('sport','=','1')->where('published','=',true)->where('name','<>','')->take('10')->orderBy('id','desc')->skip('0')->take('2')->get();
+            $photoGalleries = \Model\PhotoParent\ModelName::where('sport','=','1')->where('published','=',true)->where('name','<>','')->take('10')->orderBy('id','desc')->skip('2')->paginate($perPage);
         }else{
             $projectList = \Model\Project\ModelName::where('sport','=','1')->orderBy('nameRu','asc')->get();
-            $photoGalleries = \Model\PhotoParent\ModelName::where('sport','=','1')->where('published','=',true)->where('nameRu','<>','')->take('10')->orderBy('id','desc')->paginate($perPage);
+            $photoGalleriesTop = \Model\PhotoParent\ModelName::where('sport','=','1')->where('published','=',true)->where('nameRu','<>','')->take('10')->orderBy('id','desc')->take('2')->get();
+            $photoGalleries = \Model\PhotoParent\ModelName::where('sport','=','1')->where('published','=',true)->where('nameRu','<>','')->take('10')->orderBy('id','desc')->skip('2')->paginate($perPage);
         }
         // Photo Gallery
         
         return view('Front::channel.sport.gallery', [
             'channel' => $channel,
             'backgroundMain' => $backgroundMain,
+            'photoGalleriesTop' => $photoGalleriesTop,
             'photoGalleries' => $photoGalleries,
             'postAll' => $postAll,
             'perPage' => $perPage,
@@ -752,5 +755,51 @@ public function teleprogram(Request $request)
 
         ]);
     }
+
+    public function about()
+    {
+        $channel = \Model\Channel\ModelName::name('sport')->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','11')->first();
+        $lc = app()->getlocale();
+       
+        return view('Front::channel.sport.about', [
+            'lc' => $lc,
+            'channel' => $channel,
+            'backgroundMain' => $backgroundMain,
+
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionLeft'  => $this->positionLeft,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
+
+        ]);
+    }
+
+    public function anons()
+    {
+        $perPage = 10;
+        $channel = \Model\Channel\ModelName::name('sport')->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','11')->first();
+        $lc = app()->getlocale();
+
+        $anons = \Model\Media\ModelName::where('sport','=','1')->where('published','=',true)->where('sportanons','>=','1')->paginate($perPage);
+       
+        return view('Front::channel.sport.anons', [
+            'perPage' => $perPage,
+            'lc' => $lc,
+            'channel' => $channel,
+            'backgroundMain' => $backgroundMain,
+            'anons' => $anons,
+
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionLeft'  => $this->positionLeft,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
+
+        ]);
+    }
+
 
 }

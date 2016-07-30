@@ -22,12 +22,19 @@
     <div class="clearfix white">
         <div class="col-md-12 no-padding">
             <div class="panel panel-default panel-video">
-                <div class="panel-heading ">
-                    <div class="heading-title">
-                       <span class="name">{{ $videoProject}}</span>
-                       <div class="border"></div>
-                    </div>
+                <div class="panel-heading panel-cat clearfix">
+                  <div class="heading-title">
+                   <span class="name">{{ $videoProject}}</span>
+                   <div class="border"></div>
+                 </div>
+                 <div class="video-cat">
+                  <ul class="nav navbar-nav navbar-right sport-nav navbar-cat">
+                    @foreach($projectList as $project)
+                    <li><a href="{{ route('sport.videos.project', $project) }}">{{ $project->getNameOne() }}</a></li>
+                    @endforeach
+                  </ul>
                 </div>
+              </div>
                 <div class="panel-body">
                     <article data-cat="all-videos">
                         <h4 class="show-title">          
