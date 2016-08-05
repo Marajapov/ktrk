@@ -425,7 +425,7 @@ public function news(\Model\Post\ModelName $post)
         $mainBanner = \Model\Background\ModelName::where('name','=','main')->first();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','11')->first();
 
-        $weekFromNow = date('Y-m-d H:i', strtotime('-100 days'));
+        $weekFromNow = date('Y-m-d H:i', strtotime('-10 days'));
 
         $topVideos1 = \Model\Media\ModelName::where('published','=','1')->where('videoType','=','sport')->where('sport','<=',1)->where('sportanons','<>','1')->where('sportanons','<>','2')->where('sportanons','<>','3')->where('created_at','>',$weekFromNow)->orderBy('viewed','desc')->skip('0')->take('1')->get();
         $topVideos2 = \Model\Media\ModelName::where('published','=','1')->where('videoType','=','sport')->where('sport','<=',1)->where('sportanons','<>','1')->where('sportanons','<>','2')->where('sportanons','<>','3')->where('created_at','>',$weekFromNow)->orderBy('viewed','desc')->skip('1')->take('2')->get();
@@ -776,16 +776,16 @@ public function teleprogram(Request $request)
         ]);
     }
 
-    public function anons()
+    public function announcements()
     {
         $perPage = 10;
         $channel = \Model\Channel\ModelName::name('sport')->first();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','11')->first();
         $lc = app()->getlocale();
 
-        $anons = \Model\Media\ModelName::where('sport','=','1')->where('published','=',true)->where('sportanons','>=','1')->paginate($perPage);
+        $anons = \Model\Media\ModelName::where('sport','=','1')->where('published','=',true)->where('sportanons','>=','1')->orderBy('id','desc')->paginate($perPage);
        
-        return view('Front::channel.sport.anons', [
+        return view('Front::channel.sport.announcements', [
             'perPage' => $perPage,
             'lc' => $lc,
             'channel' => $channel,
@@ -798,6 +798,102 @@ public function teleprogram(Request $request)
             'positionCenter' => $this->positionCenter,
             'positionBottom' => $this->positionBottom,
 
+        ]);
+    }
+
+    public function announcement($media)
+    {
+        $lc = app()->getlocale();
+
+        $announcement = \Model\Media\ModelName::where('id','=',$media)->first(); // full video array
+
+        $announcement->incrementViewed();
+
+        $projectId = $announcement->program; // 0
+
+        $videoType = $announcement->videoType; // serials
+        $videoName = $announcement->name;
+
+        $MediaCategory = \Model\MediaCategory\ModelName::where('videoType','=',$videoType)->first();
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            $sportProjects = \Model\Project\ModelName::where('published','=',true)->where('sport','=',1)->where('name','<>','' )->orderBy('name','asc')->get();
+        }else{
+            $sportProjects = \Model\Project\ModelName::where('published','=',true)->where('sport','=',1)->where('nameRu','<>','' )->orderBy('nameRu','asc')->get();
+        }
+
+        if($lc == 'kg'){
+            $result = \Model\Project\ModelName::where('id','=',$projectId)->first();
+            if($result){
+                $videoProject = $result->getName();
+            }else{
+                $videoProject = '';
+            }
+
+            $result1 = \Model\MediaCategory\ModelName::where('videoType','=',$videoType)->first();
+            $getVideoTypeName = $result1->getName();
+
+            if($projectId > 0){
+                $relatedVideos = \Model\Media\ModelName::where('published','=','1')->where('id','<>',$announcement->id)->where('program','=',$projectId)->orderBy('id','desc')->get();
+            } elseif($projectId  == 0) {
+                $relatedVideos = \Model\Media\ModelName::where('published','=','1')->where('id','<>',$announcement->id)->where('videoType','=',$videoType)->orderBy('id','desc')->get();
+            }
+
+
+        }elseif($lc == 'ru'){
+            $result = \Model\Project\ModelName::where('id','=',$projectId)->first();
+            if($result != null){
+                $videoProject = $result->getNameRu();
+            }else{
+                $videoProject = '';
+            }
+
+            $result = \Model\MediaCategory\ModelName::where('videoType','=',$videoType)->first();
+            $getVideoTypeName = $result->getNameRu();
+
+            if($projectId > 0){
+                $relatedVideos = \Model\Media\ModelName::where('published','=','1')->where('id','<>',$announcement->id)->where('program','=',$projectId)->orderBy('id','desc')->get();
+            } else {
+                $relatedVideos = \Model\Media\ModelName::where('published','=','1')->where('id','<>',$announcement->id)->where('videoType','=',$videoType)->orderBy('id','desc')->get();
+            }
+
+        }
+
+        $MediaCategories = \Model\MediaCategory\ModelName::get();
+
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            $projectList = \Model\Project\ModelName::where('sport','=','1')->orderBy('name','asc')->get();
+        }else{
+            $projectList = \Model\Project\ModelName::where('sport','=','1')->orderBy('nameRu','asc')->get();
+        }
+
+        $mediaAll = \Model\Media\ModelName::where('published','=','1')->orderBy('id','desc')->get();
+
+        $mainBanner = \Model\Background\ModelName::where('name','=','main')->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','11')->first();
+
+        return view('Front::channel.sport.announcement',[
+            'announcement' => $announcement,
+            'videoName' => $videoName,
+            'videoProject' => $videoProject,
+            'getVideoTypeName'=> $getVideoTypeName,
+            'relatedVideos' => $relatedVideos,
+
+            'mediaAll' => $mediaAll,
+            'MediaCategories' => $MediaCategories,
+            'MediaCategory' => $MediaCategory,
+
+            'mainBanner'   => $mainBanner,
+            'projectList' => $projectList,
+            'backgroundMain' => $backgroundMain,
+            'sportProjects' => $sportProjects,
+
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionLeft'  => $this->positionLeft,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
         ]);
     }
 

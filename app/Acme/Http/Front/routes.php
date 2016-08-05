@@ -62,7 +62,8 @@ Route::group(['domain' => 'ktrk.dev', 'prefix' => '/', 'namespace' => 'Front\Con
 Route::group(['domain' => 'ktrk.dev', 'prefix' => '/sport', 'namespace' =>'Front\Controllers'], function(){
     Route::get('/', ['as' => 'sport.home', 'uses' => 'SportController@Home']);
     Route::get('/about', ['as' => 'sport.about', 'uses' => 'SportController@about']);
-    Route::get('/anons', ['as' => 'sport.anons', 'uses' => 'SportController@anons']);
+    Route::get('/announcements', ['as' => 'sport.announcements', 'uses' => 'SportController@announcements']);
+    Route::get('/announcement/{announcement}', ['as' => 'sport.announcement', 'uses' => 'SportController@announcement']);
     Route::get('/allnews', ['as' => 'sport.allnews', 'uses' => 'SportController@allnews']);
     Route::get('/news{post}/{locale}', ['as' => 'sport.news', 'uses' => 'SportController@news']);
     Route::get('/videos', ['as' => 'sport.videos', 'uses' => 'SportController@videos']);

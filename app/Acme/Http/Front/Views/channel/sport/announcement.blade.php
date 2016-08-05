@@ -1,15 +1,15 @@
 @extends('Front::channel.sport.default')
-@section('title', $videoName)
+@section('title', trans('radiopages.AllVideos'))
 @section('styles')
     <meta property="og:url"                content="{{ Request::url()}}" />
     <meta property="og:site_name"          content="{{ trans('site.TradeMark') }}" />
     <meta property="og:type"               content="article" />
     <meta property="og:title"              content="{{ $videoName }}" />
     <meta property="og:description"        content="" />
-    @if($video->thumbnail_big)
-        <meta property="og:image"              content="{{ asset($video->thumbnail_big) }}" />
+    @if($announcement->thumbnail_big)
+        <meta property="og:image"              content="{{ asset($announcement->thumbnail_big) }}" />
     @else
-        <meta property="og:image"              content="http://img.youtube.com/vi/{{ $video->getUrl() }}" />
+        <meta property="og:image"              content="http://img.youtube.com/vi/{{ $announcement->getUrl() }}" />
     @endif
 
     <link rel="stylesheet" href="{{ asset('css/videoportal.css') }}"/>
@@ -24,16 +24,9 @@
             <div class="panel panel-default panel-video">
                 <div class="panel-heading panel-cat clearfix">
                   <div class="heading-title">
-                   <span class="name">{{ $videoProject}}</span>
-                   <div class="border"></div>
+                    <span class="name">{{ $videoProject}}</span>
+                    <div class="border"></div>
                  </div>
-                 <div class="video-cat">
-                  <ul class="nav navbar-nav navbar-right sport-nav navbar-cat">
-                    @foreach($projectList as $project)
-                    <li><a href="{{ route('sport.videos.project', $project) }}">{{ $project->getNameOne() }}</a></li>
-                    @endforeach
-                  </ul>
-                </div>
               </div>
                 <div class="panel-body">
                     <article data-cat="all-videos">
@@ -41,24 +34,24 @@
                             <span>{{ $videoName }}</span>
 
                             <span class="show-extra">
-                                <span class="show-date">{{ $video->getDay() }} {{ $video->getMonthRu() }}, {{ $video->getYear() }}</span>
+                                <span class="show-date">{{ $announcement->getDay() }} {{ $announcement->getMonthRu() }}, {{ $announcement->getYear() }}</span>
                                 <span class="show-view">
-                                    <i class="fa-view"></i>{{ $video->viewed }}
+                                    <i class="fa-view"></i>{{ $announcement->viewed }}
                                 </span>
                             </span>
                         </h4>
                         <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ $video->getUrl()}}?rel=0&amp;showinfo=0" allowfullscreen></iframe>
+                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ $announcement->getUrl()}}?rel=0&amp;showinfo=0" allowfullscreen></iframe>
                         </div>
                         <p class="video-desc">
-                            {!! $video->getContent()!!}
+                            {!! $announcement->getContent()!!}
                         </p>
                     </article>
 
                     <footer class="with-share">
 
                         @if(auth()->user())
-                            <a class="post-edit" href="{{ route('admin.media.edit', $video) }}" target="_blank">
+                            <a class="post-edit" href="{{ route('admin.media.edit', $announcement) }}" target="_blank">
                                 <i class="fa fa-pencil"></i>
                                 {{ trans('site.AdminPostEdit') }}
                             </a>
@@ -88,7 +81,7 @@
                             </button>
                         </div>
 
-                        <a href="{{ route('sport.videos') }}">
+                        <a href="{{ route('sport.announcements') }}">
                             <span>{{ trans('site.AllVideos') }}<i class="fa fa-arrow-circle-right"></i></span>
                         </a>
                     </footer>
@@ -106,7 +99,7 @@
                   <div class="row">
                       @foreach($relatedVideos as $relatedVideo)
                           <div class="col-md-4 block">
-                              <a href="{{ route('sport.video', $relatedVideo) }}" class="video-thumb">
+                              <a href="{{ route('sport.announcement', $relatedVideo) }}" class="video-thumb">
                                   <img src="http://img.youtube.com/vi/{{ $relatedVideo->getUrl() }}/mqdefault.jpg" alt=""/>
                                   <div class="overlay">
                                       <i class="fa-view"></i>
@@ -121,7 +114,7 @@
                                   <i class="fa-video"></i>
                               </a>
                               <div class="video-title">
-                                  <a href="{{ route('sport.video', $relatedVideo) }}">
+                                  <a href="{{ route('sport.announcement', $relatedVideo) }}">
                                       {{ $relatedVideo->getName() }}
                                   </a>
                               </div>

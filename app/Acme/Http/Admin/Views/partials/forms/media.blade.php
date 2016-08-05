@@ -387,7 +387,7 @@
                                         <div class="form-group">
                                             <label for="channel_id" class="col-sm-2 control-label"></label>
                                             <div class="col-sm-10" style="padding: 0px;">
-                                                {!! Form::select('sportanons', ['1'=>'1','2'=>'2','3'=>'3'], null, ["class" => "selectpicker","data-live-search"=>"true", "title" => "-- Не выбрано --"]) !!}
+                                                {!! Form::select('sportanons', ['0'=>'Не выбрано', '1'=>'1','2'=>'2','3'=>'3'], null, ["class" => "selectpicker","data-live-search"=>"true", "title" => "-- Не выбрано --"]) !!}
                                             </div>
                                         </div>
                                     </li>

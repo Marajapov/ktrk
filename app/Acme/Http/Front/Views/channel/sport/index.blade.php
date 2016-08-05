@@ -60,11 +60,12 @@
 					@endif  
 				</div>
 				<div class="anonses">
-					<a href="{{ route('sport.anons') }}" class="anons-link"><span>{{ trans('radiopages.AllAnons') }} <i class="fa fa-arrow-circle-right"></i></span></a>
+					<a href="{{ route('sport.announcements') }}" class="anons-link"><span>{{ trans('site.AllVideos') }}<i class="fa fa-arrow-circle-right"></i></span></a>
 					@if($anonsbottom1)
 					@foreach($anonsbottom1 as $anonsbottom)
 					<div class="col-md-4 no-padding">
 						<div class="slider-preview">
+							<!-- <span class="dates-a">{{ $anonsbottom->getDateFormatted() }}</span> -->
 							<a data-toggle="modal" data-toggle="modal" data-target="#myModal">
 								<img src="{{asset($anonsbottom->thumbnail_big)}}" alt="{{ $anonsbottom->getName() }}">
 								<div class="overlay"></div>	
@@ -80,6 +81,7 @@
 					@foreach($anonsbottom2 as $anonsbottom)
 					<div class="col-md-4 no-padding">
 						<div class="slider-preview">
+							<!-- <span class="dates-a">{{ $anonsbottom->getDateFormatted() }}</span> -->
 							<a data-toggle="modal" data-toggle="modal" data-target="#myModal2">
 								<img src="{{asset($anonsbottom->thumbnail_big)}}" alt="{{ $anonsbottom->getName() }}">
 								<div class="overlay"></div>	
@@ -95,6 +97,7 @@
 					@foreach($anonsbottom3 as $anonsbottom)
 					<div class="col-md-4 no-padding">
 						<div class="slider-preview">
+							<!-- <span class="dates-a">{{ $anonsbottom->getDateFormatted() }}</span> -->
 							<a data-toggle="modal" data-toggle="modal" data-target="#myModal3">
 								<img src="{{asset($anonsbottom->thumbnail_big)}}" alt="{{ $anonsbottom->getName() }}">
 								<div class="overlay"></div>	
@@ -117,13 +120,14 @@
 			        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 			        <h4 class="modal-title" id="myModalLabel">{{$anonsbottom1->getName()}}</h4>
 			      </div>
-			      <div class="modal-body">
-			         {!! $anonsbottom1->getContent()!!}
-			         <div class="embed-responsive embed-responsive-16by9 show-video">
-			            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ $anonsbottom1->getUrl()}}"></iframe>
-			         </div>
+			      <div class="modal-body">		      	
+			         	{!! $anonsbottom1->getContent()!!}
+			         	<div class="embed-responsive embed-responsive-16by9 show-video">
+			            	<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ $anonsbottom1->getUrl()}}"></iframe>
+			         	</div>
 			      </div>
 			      <div class="modal-footer">
+			      		<span class="date"><i class="fa fa-clock-o" aria-hidden="true"></i>{{ $anonsbottom1->getDay() }} {{ $anonsbottom1->getMonthRu() }}, {{ $anonsbottom1->getTime() }}</span>
 			      </div>
 			    </div>
 			  </div>
@@ -139,13 +143,14 @@
 			        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 			        <h4 class="modal-title" id="myModalLabel">{{$anonsbottom2->getName()}}</h4>
 			      </div>
-			      <div class="modal-body">
-			         {!! $anonsbottom2->getContent()!!}
-			         <div class="embed-responsive embed-responsive-16by9 show-video">
-			            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ $anonsbottom2->getUrl()}}"></iframe>
-			         </div>
+			      <div class="modal-body">		        
+			         	{!! $anonsbottom2->getContent()!!}
+			         	<div class="embed-responsive embed-responsive-16by9 show-video">
+			            	<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ $anonsbottom2->getUrl()}}"></iframe>
+			         	</div>
 			      </div>
 			      <div class="modal-footer">
+			      		<span class="date"><i class="fa fa-clock-o" aria-hidden="true"></i>{{ $anonsbottom2->getDay() }} {{ $anonsbottom2->getMonthRu() }}, {{ $anonsbottom2->getTime() }}</span>
 			      </div>
 			    </div>
 			  </div>
@@ -162,12 +167,13 @@
 			        <h4 class="modal-title" id="myModalLabel">{{$anonsbottom3->getName()}}</h4>
 			      </div>
 			      <div class="modal-body">
-			         {!! $anonsbottom3->getContent()!!}
-			         <div class="embed-responsive embed-responsive-16by9 show-video">
-			            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ $anonsbottom3->getUrl()}}"></iframe>
-			         </div>
-			      </div>
-			      <div class="modal-footer">
+		         	{!! $anonsbottom3->getContent()!!}
+		         	<div class="embed-responsive embed-responsive-16by9 show-video">
+		            	<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ $anonsbottom3->getUrl()}}"></iframe>
+		         	</div>			      		
+			      	</div>
+			      <div class="modal-footer">			      	
+                    <span class="date"><i class="fa fa-clock-o" aria-hidden="true"></i>{{ $anonsbottom3->getDay() }} {{ $anonsbottom3->getMonthRu() }}, {{ $anonsbottom3->getTime() }}</span>
 			      </div>
 			    </div>
 			  </div>
