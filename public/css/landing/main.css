@@ -1342,10 +1342,10 @@ ul.nostyle i {
 }
 #services .panel-body {
   padding: 0px;
-height: 325px;
+  height: 325px;
 }
 #services .panel-articles .extra, #allnews .panel-articles .extra {
-  margin: -9px 0px -4px 0px;
+  margin: -5px 0px -4px 0px;
 }
 #services .panel-articles .media-heading, #allnews .panel-articles .media-heading {
   line-height: 20px;
