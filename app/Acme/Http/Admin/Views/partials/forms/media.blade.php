@@ -369,6 +369,31 @@
                                 </ul>
                             </nav>
                         </div>
+                        <!-- sport -->
+                        <div class="form-group" style="margin:0px;">
+                            <label for="parentId" class="col-sm-2 control-label"></label>
+                            <div class="col-sm-10">
+                                <div class="checkbox checkbox-primary ">
+                                    {!! Form::hidden('sport', 0) !!}
+                                    {!! Form::checkbox('sport', 1, null, ["id" => "sport", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
+                                    <label for="sport">
+                                        Спорт
+                                    </label>
+                                </div>
+                            </div>
+                            <nav class="noneliststyle">
+                                <ul>    
+                                    <li>
+                                        <div class="form-group">
+                                            <label for="channel_id" class="col-sm-2 control-label"></label>
+                                            <div class="col-sm-10" style="padding: 0px;">
+                                                {!! Form::select('sportanons', ['0'=>'Не выбрано', '1'=>'1','2'=>'2','3'=>'3'], null, ["class" => "selectpicker","data-live-search"=>"true", "title" => "-- Не выбрано --"]) !!}
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
                     </div>
                 </div>
             </div>

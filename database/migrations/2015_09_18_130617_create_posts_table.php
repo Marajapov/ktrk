@@ -63,6 +63,7 @@ class CreatePostsTable extends Migration
             $table->string('minkiyal');
             $table->string('dostuk');
             $table->string('dostukProgram');
+            $table->string('sport');
             
             $table->string('reporter');
             $table->string('extracolumn');

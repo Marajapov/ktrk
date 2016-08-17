@@ -52,12 +52,27 @@ Route::group(['domain' => 'www.ktrk.kg', 'prefix' => '/music', 'namespace' => 'F
 
 });
 
-
 Route::group(['domain' => 'www.ktrk.kg', 'prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
 
   Route::get('/', ['as' => 'ktr.home',   'uses' => 'HomeController@Ktr']);
   Route::get('/posts', ['as' => 'ktr.posts',   'uses' => 'KtrController@posts']);
 
+});
+
+Route::group(['domain' => 'www.ktrk.kg', 'prefix' => '/sport', 'namespace' =>'Front\Controllers'], function(){
+    Route::get('/', ['as' => 'sport.home', 'uses' => 'SportController@Home']);
+    Route::get('/about', ['as' => 'sport.about', 'uses' => 'SportController@about']);
+    Route::get('/announcements', ['as' => 'sport.announcements', 'uses' => 'SportController@announcements']);
+    Route::get('/announcement/{announcement}', ['as' => 'sport.announcement', 'uses' => 'SportController@announcement']);
+    Route::get('/allnews', ['as' => 'sport.allnews', 'uses' => 'SportController@allnews']);
+    Route::get('/news{post}/{locale}', ['as' => 'sport.news', 'uses' => 'SportController@news']);
+    Route::get('/videos', ['as' => 'sport.videos', 'uses' => 'SportController@videos']);
+    Route::get('/video/{video}', ['as' => 'sport.video', 'uses' => 'SportController@video']);
+    Route::get('/videos/all', ['as' => 'sport.videos.all', 'uses' => 'SportController@allvideos']);
+    Route::get('/videos/project/{project}', ['as' => 'sport.videos.project', 'uses' => 'SportController@project']); 
+    Route::get('/photos/{gallery}', ['as' => 'sport.photos', 'uses' => 'SportController@photos']);
+    Route::get('/gallery', ['as' => 'sport.gallery', 'uses' => 'SportController@gallery']);
+    Route::get('/teleprogram', ['as' => 'sport.teleprogram', 'uses' => 'SportController@teleprogram']);
 });
 
 

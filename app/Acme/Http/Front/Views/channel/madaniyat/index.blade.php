@@ -340,9 +340,9 @@
                                                         <i class="fa-view"></i>
                                                         <span class="media-view">{{ $media->viewed }}</span>
                                                     </div>
-                                  <span class="media-date">
-                                    {{ $media->getDateFormatted() }}
-                                  </span>
+                                                      <span class="media-date">
+                                                        {{ $media->getDateFormatted() }}
+                                                      </span>
                                                 </div>
                                                 <div class="media-title">
                                                     <a href="{{ route('madaniyat.media.video', $media) }}">
@@ -483,7 +483,7 @@
                                                 }
                                             }}
                                         d.documentElement.appendChild(js);
-                                    }(document,"ok_group_widget","54021149884512","{width:263,height:460}");
+                                    }(document,"ok_group_widget","573048081049","{width:263,height:460}");
                                 </script>
                             </div>
                             <div class="col-md-3">

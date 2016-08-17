@@ -1,0 +1,27 @@
+{
+	"folders":
+	[
+		{
+			"path": "."
+		},
+		{
+			"path": "app\\Acme\\Http\\Admin"
+		},
+		{
+			"path": "app\\Acme\\Http\\Front"
+		},
+		{
+			"path": "public\\css"
+		},
+		{
+			"path": "public"
+		},
+		{
+			"path": "app\\Acme\\Models"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "C:\\xampp\\htdocs\\ktrk.dev\\public\\images"
+		}
+	]
+}

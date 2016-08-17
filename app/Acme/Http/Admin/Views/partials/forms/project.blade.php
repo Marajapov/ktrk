@@ -220,7 +220,21 @@
             </label>
           </div>
         </div>
-      </div>      
+      </div>  
+
+      <!-- Sport -->
+      <div class="form-group">
+        <label for="parentId" class="col-sm-2 control-label"></label>
+        <div class="col-sm-10">
+          <div class="checkbox checkbox-primary ">
+            {!! Form::hidden('sport', 0) !!}
+            {!! Form::checkbox('sport', 1, null, ["id" => "sport", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
+            <label for="sport">
+              Спорт
+            </label>
+          </div>
+        </div>
+      </div>   
 
   </div>
 </div>

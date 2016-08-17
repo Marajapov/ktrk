@@ -19,10 +19,18 @@ return [
 		'PhotoReports' => 'Сүрөтбаяндар',
 		'AllPhotoReports' => 'Баардык сүрөт баяндар',
 		'AllAnons' => 'Баардык анонстор',
+		'toAll' => 'Баардыгы',
+		'toWatch' => 'Көрүү',
+		'PhotoReporter' => 'Сүрөт репортаждар',
+		'AllChannels' => 'Баардык каналдар',
+		'aboutChannel' => 'Канал жөнүндө',
+		'sportmore' => 'Кененирээк',
 
 		//Header 
 		'Live' => 'Түз эфир',
+		'Soon' => 'Жакында',
 		'Issyk' => 'Ысык-Көл',
+		'SurotBayan' => 'Сүрөт баяндама',
 		'' => '',
 		'' => '',
 		'' => '',

@@ -29,7 +29,7 @@
 
 /*Muz Channel styles*/
 @font-face {
-    font-family: 'Noto Serif', serif;
+    font-family: 'Noto Serif';
     src: url('fonts/Noto_Serif/NotoSerif-Bold.ttf'), url('fonts/Noto_Serif/NotoSerif-BoldItalic.ttf'), url('fonts/Noto_Serif/NotoSerif-Italic.ttf'), url('fonts/Noto_Serif/NotoSerif-Regular.ttf');
     font-weight: bold;
     font-style: normal;

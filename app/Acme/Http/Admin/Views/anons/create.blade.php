@@ -139,6 +139,7 @@
                             $('#publish').show();
                         } 
 
+
                         // madaniyat
                         else if(data == 5) {
                             $('#balastanAnons').hide(); 
@@ -246,6 +247,23 @@
                             $('#thumbForm').show();
                             $('#publish').show();
                         } 
+                        // sport
+                        else if(data == 11){
+                            $('#balastanAnons').hide();                        
+                            $('#madaniyatAnons').hide();
+                            $('#minkiyalAnons').hide();
+                            $('#kyrgyzradioanons').hide();
+                            $('#dostukAnons').hide();
+                            $('#nameKg').show();
+                            $('#nameRu').show();
+                            $('#editorTextArea').hide();
+                            $('#linkArea').show();
+                            $('#weekDayKg').hide();
+                            $('#weekDayRu').hide();
+                            $('#timeArea').hide();
+                            $('#thumbForm').show();
+                            $('#publish').show();
+                        }
 
                         else {
                             $('#balastanAnons').hide();  

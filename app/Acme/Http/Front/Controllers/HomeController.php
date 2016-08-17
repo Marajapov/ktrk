@@ -14,11 +14,11 @@ class HomeController extends Controller
     
     public function __construct()
     {
-        $this->positionTop = \Model\Banner\ModelName::where('positionTop','=','1')->take(2)->get();
-        $this->positionRight = \Model\Banner\ModelName::where('positionRight','=','1')->first();
-        $this->positionLeft = \Model\Banner\ModelName::where('positionLeft','=','1')->first();
-        $this->positionCenter = \Model\Banner\ModelName::where('positionCenter','=','1')->first();
-        $this->positionBottom = \Model\Banner\ModelName::where('positionBottom','=','1')->first();
+        $this->positionTop = \Model\Banner\ModelName::where('positionTop','=','1')->where('channel_id','=','2')->first();
+        $this->positionRight = \Model\Banner\ModelName::where('positionRight','=','1')->where('channel_id','=','2')->first();
+        $this->positionLeft = \Model\Banner\ModelName::where('positionLeft','=','1')->where('channel_id','=','2')->first();
+        $this->positionCenter = \Model\Banner\ModelName::where('positionCenter','=','1')->where('channel_id','=','2')->first();
+        $this->positionBottom = \Model\Banner\ModelName::where('positionBottom','=','1')->where('channel_id','=','2')->first();
     }
     /**
      * Show the application dashboard to the user.
@@ -55,7 +55,7 @@ class HomeController extends Controller
         date_default_timezone_set("Asia/Bishkek");
         $today = date('d.m.Y H:i');
 
-        if(($today >= '19.06.2016 01:00') && ($today <= '19.06.2016 03:00')){
+        if(($today >= '21.06.2016 22:00') && ($today <= '22.06.2016 03:00')){
             $array_ip_5 = array('217.29','185.88','185.66','185.54','185.53','185.53','185.48','185.29','185.20','185.91.132','212.97','212.42','195.54','195.38','109.71','95.215','77.235','46.251','46.235','46.226','37.218','31.192','31.186','83.229','85.113','85.115','94.143','93.171','93.170','93.170','92.245','91.229','91.229','91.228','91.213','91.207','91.205','91.192','89.237');
 
             $array_ip_6 = array('178.217','178.216','176.126','176.123','158.181','158.181','109.201','185.117','185.138','213.145','212.241','212.112','195.216','195.114','194.176','194.158','194.152','193.106','185.138');
