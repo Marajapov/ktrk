@@ -564,6 +564,13 @@ class HomeController extends Controller
                 }
             }
 
+            if($post->live){
+                $contentForLive = $post->getContent();
+                $liveStream = $post->live;
+
+                $contentFinal = substr_replace($contentForLive, $post->liveForRtmp(), 0, 0);
+            }
+
             $topArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->where('number','=','88')->orderBy('updated_at','desc')->take(6)->get();
 
             if(count($topArticles) > 0){

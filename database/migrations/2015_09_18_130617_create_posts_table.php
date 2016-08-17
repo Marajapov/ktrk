@@ -71,7 +71,8 @@ class CreatePostsTable extends Migration
             $table->string('number');
             $table->string('numberRu');
             $table->string('audio');
-            
+            $table->string('live');
+
             $table->smallInteger('viewed')->default(0);
             $table->timestamps();
 

@@ -282,4 +282,11 @@ trait ModelHelpers
         ';
 
     }
+
+    public function liveForRtmp()
+    {
+        return '
+            <div id="liveStream"></div>
+        ';
+    }
 }

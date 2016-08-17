@@ -97,7 +97,7 @@
 
     <a href="#" class="text-center ads ads-300x250 hidden">
 
-        <img src="{{ asset('img/banner/2.jpg') }}" alt=""/>
+        <img src="{{ asset('images/banner_300x250.png') }}" alt=""/>
     </a>
 
 </div><!-- end of left categories -->

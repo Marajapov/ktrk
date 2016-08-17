@@ -352,6 +352,27 @@
 @stop
 
 @section('footerScript')
+
+    {{--Live Stream--}}
+    <script>
+        var playerInstance = jwplayer("liveStream");
+
+        playerInstance.setup({
+            playlist: [{
+                sources: [{
+                    file: "{{$post->live}}"
+                }]
+            }],
+            width: "100%",
+            aspectratio: "16:9",
+            primary: "flash",
+            skin: {
+                name: "five"
+            },
+            stretching: "exactfit"
+        });
+    </script>
+
     {{-- Google reCaptcha --}}
     <script src='https://www.google.com/recaptcha/api.js'></script>
 

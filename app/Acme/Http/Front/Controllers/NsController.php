@@ -53,6 +53,11 @@ class NsController extends Controller
         return view('Front::ns.team',[
             'lc' => $lc,
             'backgroundMain' => $backgroundMain,
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
+            'positionLeft' => $this->positionLeft,
         ]);
     }
 

@@ -45,9 +45,9 @@
                                                 <a href="{{ route('birinchi.news', [$generalPost1, $lc]) }}">
                                                     {{ $generalPost1->getTitleRuOrKg() }}
                                                 </a>
-                                            @elseif($generalPost2->director == 1)
+                                            @elseif($generalPost1->director == 1)
                                                 <a href="{{ route('front.pages.directorPost', [$generalPost1, $lc]) }}">
-                                                    {{ $generalPost2->getTitleRuOrKg() }}
+                                                    {{ $generalPost1->getTitleRuOrKg() }}
                                                 </a>
                                             @else                                                
                                                 <a href="{{ route('front.post', [$generalPost1, $lc]) }}">
