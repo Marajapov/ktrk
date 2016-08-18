@@ -61,10 +61,10 @@
             $('#editKg').froalaEditor({
                 language: 'ru',
                 height: 300,
-
+                toolbarSticky: false,
                 imageUploadParam: 'file',
                 imageUploadURL: "{{ asset('froala/upload_image.php') }}",
-
+                
                 imageManagerLoadURL: "{{ asset('froala/load_images.php') }}"
 
             });
@@ -76,7 +76,7 @@
             $('#editRu').froalaEditor({
                 language: 'ru',
                 height: 300,
-
+                toolbarSticky: false,
                 imageUploadParam: 'file',
                 imageUploadURL: "{{ asset('froala/upload_image.php') }}",
 
