@@ -45,9 +45,9 @@
                                                 <a href="{{ route('birinchi.news', [$generalPost1, $lc]) }}">
                                                     {{ $generalPost1->getTitleRuOrKg() }}
                                                 </a>
-                                            @elseif($generalPost1->director == 1)
+                                            @elseif($generalPost2->director == 1)
                                                 <a href="{{ route('front.pages.directorPost', [$generalPost1, $lc]) }}">
-                                                    {{ $generalPost1->getTitleRuOrKg() }}
+                                                    {{ $generalPost2->getTitleRuOrKg() }}
                                                 </a>
                                             @else                                                
                                                 <a href="{{ route('front.post', [$generalPost1, $lc]) }}">
@@ -760,6 +760,18 @@
                     $(this)[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
                 });
             });
+        });
+    </script>
+    <script>
+        $('.banner-ads').slick({
+          dots: false,
+          infinite: true,
+          arrows: false,
+          speed: 500,
+          fade: true,
+          autoplay: true,
+          autoplaySpeed: 3500,
+          cssEase: 'linear'
         });
     </script>
 @endsection

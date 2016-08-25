@@ -19,7 +19,6 @@ $(document).ready(function(){
 
 <script src="{{ asset('jwplayer/jwplayer.js') }}"></script>
 <script>jwplayer.key="tmEO2SU8NzqLBoHr2Vq6nV13XCyfo8xbdiCb/Q==";</script>
-
 <script type="text/javascript">
 
     var playerInstance = jwplayer("player");
@@ -43,7 +42,6 @@ $(document).ready(function(){
         height: "360",
         aspectratio: "",
         primary: "flash",
- 		hlshtml: "true",
         skin: {
             name: "glow"
         },
@@ -51,7 +49,16 @@ $(document).ready(function(){
     });
 </script>
 
-
+<script src="{{ asset('js/sweetalert.min.js') }}"></script>
+<!-- @if(session('flag2') == 0)
+    <script>
+        $(document).ready(function(){
+            $('#btnLive').click(function(){
+                swal("", "Трансляция заблокирована в Вашей стране!", "error");
+            });
+        });
+    </script>
+@endif -->
 <script type="text/javascript">
 	$(function () {
 	    var flag = false;

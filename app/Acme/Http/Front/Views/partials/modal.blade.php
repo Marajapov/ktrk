@@ -1,3 +1,4 @@
+{{-- @if (session('flag1') == 0 ) --}}
 <div class="modal fade" id="liveModal" tabindex="-1" role="dialog" aria-labelledby="liveModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -15,3 +16,4 @@
         </div>
     </div>
 </div>
+{{-- @endif --}}

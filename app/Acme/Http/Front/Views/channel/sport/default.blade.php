@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="{{ asset('css/gallery.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/sport.css') }}"/>
 
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/sweetalert.css') }}">
+
 
     @yield('styles')
 

@@ -24,7 +24,7 @@
 								<li class="ok"><a href="//ok.ru/profile/573048081049"><i class="fa fa-odnoklassniki"></i></a></li>
 								<li class="in"><a href="//www.instagram.com/ktrksport/"><i class="fa fa-instagram"></i></a></li>
 								<li class="in"><a href="//www.youtube.com/channel/UC5jPZDWHWxKnuy_jMDzlrlA"><i class="fa fa-youtube"></i></a></li>
-								<button type="button" class="btn-sport" data-toggle="modal" data-target="#liveModal" id="popover" data-container="body" data-toggle="popover" data-placement="bottom" data-content="{{ trans('radiopages.Soon') }}"><span>{{ trans('radiopages.Live') }}</span></button>
+								<button id="btnLive" type="button" class="btn-sport" data-toggle="modal" data-target="#liveModal" id="popover" data-container="body" data-toggle="popover" data-placement="bottom" data-content="{{ trans('radiopages.Soon') }}"><span>{{ trans('radiopages.Live') }}</span></button>
 								
 							</ul>
 						</div>
@@ -68,21 +68,22 @@
 				</div>
 			</div>
 		</header>
-
-<div class="modal fade" id="liveModal" tabindex="-1" role="dialog" aria-labelledby="liveModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button id="playerStop" type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="liveModalLabel">{{ trans('radiopages.Live') }} - КТРК СПОРТ</h4>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-12 modal-block">
-                      <div id="player"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+		{{-- @if (session('flag2') == 1 ) --}}
+		<div class="modal fade" id="liveModal" tabindex="-1" role="dialog" aria-labelledby="liveModalLabel">
+		    <div class="modal-dialog" role="document">
+		        <div class="modal-content">
+		            <div class="modal-header">
+		                <button id="playerStop" type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		                <h4 class="modal-title" id="liveModalLabel">{{ trans('radiopages.Live') }} - КТРК СПОРТ</h4>
+		            </div>
+		            <div class="modal-body">
+		                <div class="row">
+		                    <div class="col-md-12 modal-block">
+		                      <div id="player"></div>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+	{{--	@endif --}}
