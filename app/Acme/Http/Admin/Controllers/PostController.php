@@ -21,6 +21,9 @@ class PostController extends Controller
     {
         $perPage = 10;
         $posts = Post::orderBy('id', 'desc')->where('fbpost','<>','1')->paginate($perPage);
+//        $posts = Post::orderBy('id', 'desc')->where('madaniyat',true)->where('fbpost','<>','1')->paginate($perPage);
+
+//        dd($posts);
         
         return view('Admin::post.index', [
             'posts' => $posts,

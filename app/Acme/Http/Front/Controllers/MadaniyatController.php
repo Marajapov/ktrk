@@ -60,7 +60,7 @@ class MadaniyatController extends Controller
             $anons = \Model\Anons\ModelName::where('channel','=','5')->where('published','=','1')->where('madaniyatsoon','=','1')->where('name','<>','' )->orderBy('id','=','desc')->take(4)->get();
         }else{
             $weekFromNow = date('Y-m-d H:i', strtotime('-10 days'));
-            $postAll = \Model\Post\ModelName::where('published','=',true)->where('madaniyat','=','1')->where('titleRu','<>','')->where('madaniyatProgram','>','0')->where('madaniyatProgram','<','3')->orderBy('updated_at','desc')->take(2)->get();
+            $postAll = \Model\Post\ModelName::where('published','=',true)->where('madaniyat','=','1')->where('titleRu','<>','')->where('madaniyatProgram','>','0')->where('madaniyatProgram','<>','99')->orderBy('updated_at','desc')->take(2)->get();
             $madaniyatProjects = \Model\Project\ModelName::where('published','=',true)->where('madaniyat','=',1)->where('nameRu','<>','' )->orderBy('nameRu','asc')->get();
             $topArticles = \Model\Post\ModelName::where('madaniyat','=','1')->where('titleRu','<>','')->where('madaniyatProgram','=','99')->where('created_at','>',$weekFromNow)->orderBy('madaniyatProgram','asc')->take(5)->get();
             $popArticles = \Model\Post\ModelName::where('madaniyat','=','1')->where('created_at','>',$weekFromNow)->languageru()->orderBy('viewed','desc')->take(5)->get();
