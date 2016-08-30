@@ -55,7 +55,7 @@
                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                      <h4 class="modal-title" id="myModalLabel">{{$anons1->getName()}}</h4>
                   </div>
-                  <div class="modal-body">
+                  <div class="modal-body" style="padding-bottom: 15px;">
                      {!! $anons1->getContent()!!}
                      <div class="embed-responsive embed-responsive-16by9 show-video">
                         <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ $anons1->getUrl()}}"></iframe>
@@ -92,7 +92,7 @@
                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                      <h4 class="modal-title" id="myModalLabel">{{$anons2->getName()}}</h4>
                   </div>
-                  <div class="modal-body">
+                  <div class="modal-body" style="padding-bottom: 15px;">
                      {!!$anons2->getContent()!!}
                      <div class="embed-responsive embed-responsive-16by9 show-video">
                         <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ $anons2->getUrl()}}"></iframe>
@@ -108,12 +108,12 @@
       @endif
       @if($anons3)
       <div class="col-xs-4 rowfix" >
-         <a href="#" data-toggle="modal" data-target="#myModal2" class="dkp-anonce dkp-anonce-small  dkp-border" data-id="12269">
+         <a href="#" data-toggle="modal" data-target="#myModal3" class="dkp-anonce dkp-anonce-small  dkp-border" data-id="12269">
             <img class="modalpromo" src="{{asset($anons3->thumbnail_big)}}" alt="{{$anons3->getName()}}"/>
             <div class="dkp-3now-item-wrapper">
                <div class="dkp-3now-item-time">
                   <span>
-                  <span>{{$anons3->getAnonsTime2()}}</span>
+                  <span>{{$anons3->getAnonsTime3()}}</span>
                   </span>
                </div>
                <div class="dkp-3now-item-title">
@@ -122,14 +122,14 @@
             </div>
          </a>
          <!-- Анонс Модал-->
-         <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+         <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
                <div class="modal-content">
                   <div class="modal-header">
                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                      <h4 class="modal-title" id="myModalLabel">{{$anons3->getName()}}</h4>
                   </div>
-                  <div class="modal-body">
+                  <div class="modal-body" style="padding-bottom: 15px;">
                      {!!$anons3->getContent()!!}
                      <div class="embed-responsive embed-responsive-16by9 show-video">
                         <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ $anons3->getUrl()}}"></iframe>
@@ -288,14 +288,14 @@
                      <a class="clear" href="{{ route('muzkanal.video', $hit)}}">
                      <span>{{ $hit->getName() }}</span>
                      </a>
-                     <div>
+<!--                      <div>
                         <div class="vote">
                            <div class="dislike" data-dislikes="10"><i class="fa fa-thumbs-down"></i></div>
                         </div>
                         <div class="vote">
                            <div class="like" data-likes="10"><i class="fa fa-thumbs-up"></i></div>
                         </div>
-                     </div>
+                     </div> -->
                      <span class="numeric">{{ $hit->hitnumber }}</span>
                   </li>
                   @endforeach
