@@ -40,6 +40,12 @@
                             <h4>Баластан</h4>
                         </a>
                     </li>
+                    <li class="sitemenu" id="site-channel1">
+                        <a href="{{ route('sport.home') }}">
+                            <img src="{{ asset('images/channels/sport-channel.png') }}"><span>Спорт</span>
+                            <h4>Спорт</h4>
+                        </a>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

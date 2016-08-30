@@ -137,7 +137,7 @@
             <div class="col-md-6">
               <div class="price row" style="width: inherit;padding: 0;">
                 <p>Өнөктөштөргө коммерциялык сунуштама</p>
-                <a target="_blank" href="{{ asset('static/banner/commercial.docx') }}">
+                <a target="_blank" href="{{ asset('static/banner/commercial-kg.docx') }}">
                   <i class="fa fa-file-pdf-o"></i>
                   <span>
                     Жүктөө

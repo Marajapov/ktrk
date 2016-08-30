@@ -417,7 +417,7 @@ a:hover{ text-decoration: underline; }
 }
 .x_content .table img{
     height: auto;
-    width: 500px;
+    /*width: 500px;*/
 }
 .x_content .table-img{
     width: 250px;

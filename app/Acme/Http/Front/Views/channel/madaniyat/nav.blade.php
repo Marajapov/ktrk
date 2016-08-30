@@ -36,6 +36,8 @@
                                     <li><a href="{{ route('madaniyat.home') }}">Маданият Тарых Тил</a></li>
                                     <li>/</li>
                                     <li><a href="{{ route('balastan.home') }}">Баластан</a></li>
+                                    <li>/</li>
+                                    <li><a href="{{ route('sport.home') }}">Спорт</a></li>
                                 </ul>
                             </nav>
 
