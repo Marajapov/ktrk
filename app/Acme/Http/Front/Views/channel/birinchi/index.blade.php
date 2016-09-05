@@ -5,7 +5,7 @@
 @section('content')
     <div class="birinchiradio">
         @include('Front::channel.birinchi.nav')
-        <div class="container homepage">
+        <div class="container homepage b-maincolor">
             <div class="row">
                 <div class="col-md-8">
                     <div class="row">

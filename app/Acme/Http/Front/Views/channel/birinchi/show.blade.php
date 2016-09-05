@@ -77,7 +77,7 @@
 @section('content')
 <div class="birinchiradio">
    @include('Front::channel.birinchi.nav')
-   <div class="container">
+   <div class="container b-maincolor">
       <div class="row broadcastpost">
          <div class="col-md-12">
             <div class="row">
@@ -177,7 +177,7 @@
                                     <div class="media-body">
                                         <div class="extra">
                                             <span class="datetime">{{ $post->getDay() }} {{ $post->getMonthRu() }}</span>
-                                            <a class="cat" href="{{ route('birinchi.projects', $post->project) }}"><span> @if($birinchiProjects) 
+                                            <a class="cat" href="{{ route('birinchi.category', $post->category) }}"><span> @if($birinchiProjects) 
                                                @foreach($birinchiProjects as $project)   
                                                  @if($project->id == $post->birinchiProgram)
                                                   {{ ($project->getName()) }}

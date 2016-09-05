@@ -34,6 +34,14 @@
 
     @yield('styles')
 
+    <style>
+       body{
+         @if($backgroundMain != null) 
+         background: rgba(0, 0, 0, 0) url('{{ asset($backgroundMain->getFile()) }}') 50% 50% no-repeat fixed;         
+         @endif
+       }
+     </style>
+
 </head>
 <body id="kyrgyzradio">
 

@@ -4,8 +4,7 @@ body {
   font-weight: 400;
   color: #64686d;
   line-height: 26px;
-}
-#kyrgyzradio{
+
     position: relative;
     background: url('../../images/channels/kyrgyzradio/6.jpg');
     /*background: #f1edea;*/
@@ -15,8 +14,8 @@ body {
     background-size: cover;
     background-attachment: fixed;
     background-position: center center;   
-
 }
+
 #header {
       -webkit-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     -moz-box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);

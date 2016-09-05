@@ -23,15 +23,16 @@
 
     <script src="{{ asset('js/jquery-1.11.2.min.js') }}"></script>
 
-    <style>
-        body{
-
-            background: #fff6f1;
-        }
-    </style>
+   <style>
+       #birinchiradio{
+         @if($backgroundMain != null) 
+         background: rgba(0, 0, 0, 0) url('{{ asset($backgroundMain->getFile()) }}') 50% 50% no-repeat fixed;         
+         @endif
+       }
+     </style>
 
 </head>
-<body>
+<body id="birinchiradio">
 
 
     @yield('content')

@@ -100,9 +100,18 @@
 }
 
 /* Birinchi Radio page styles*/
+#birinchiradio{
+    background: #fff6f1;
+}
+.birinchiradio .b-maincolor{
+    background: #fff6f1;
+}
 .birinchiradio {
     font-family: 'Roboto Regular';
-    background: #fff6f1;
+    /*background: #fff6f1;*/
+}
+.birinchiradio .sociallinks{
+    padding-bottom: 30px;
 }
 
 .birinchiradio header.top-menu{

@@ -16,7 +16,7 @@ class KyrgyzradioController extends Controller
 
         $channel = \Model\Channel\ModelName::where('name','=','kyrgyzradio')->first();
 
-        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','6')->first();
         
          // Photo Gallery
         $photoGalleries = \Model\PhotoParent\ModelName::where('kyrgyzradio','=','1')->where('published','=',true)->take('6')->orderBy('id','desc')->get();
@@ -104,7 +104,7 @@ class KyrgyzradioController extends Controller
 
         $mainBanner = \Model\Background\ModelName::where('name','=','main')->first();
         $categories = \Model\Category\ModelName::all();
-        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','6')->first();
 
         $relatedNews = \Model\Project\ModelName::where('published','=',true)->where('kyrgyzradio','=',$project->id)->get();
 
@@ -128,7 +128,7 @@ class KyrgyzradioController extends Controller
     public function anons()
     {
       $lc = app()->getlocale();
-      $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+      $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','6')->first();
       $kyrgyzradioProjects = \Model\Project\ModelName::where('published','=',true)->where('kyrgyzradio', '=', 1)->get();
       $kyrgyzradiotop = \Model\Anons\ModelName::where('channel','=','6')->where('kyrgyzradiotop','=','1')->where('published','=','1')->orderBy('id','=','desc')->get();
       $perPage = 24;
@@ -146,7 +146,7 @@ class KyrgyzradioController extends Controller
     public function anonses()
     {
       $lc = app()->getlocale();
-      $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+      $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','6')->first();
       $kyrgyzradioProjects = \Model\Project\ModelName::where('published','=',true)->where('kyrgyzradio', '=', 1)->get();
       $kyrgyzradiotop = \Model\Anons\ModelName::where('channel','=','6')->where('kyrgyzradiotop','=','1')->where('published','=','1')->orderBy('id','=','desc')->get();
       $perPage = 24;
@@ -216,7 +216,7 @@ class KyrgyzradioController extends Controller
         }
 
         $channel = \Model\Channel\ModelName::name('kyrgyzradio')->first();
-        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','6')->first();
         
         $kyrgyzradioProjects = \Model\Project\ModelName::where('published','=',true)->where('kyrgyzradio', '=', 1)->get();
 
@@ -432,7 +432,7 @@ class KyrgyzradioController extends Controller
     {
         
         $channel = \Model\Channel\ModelName::name('kyrgyzradio')->first();
-        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();       
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','6')->first();       
         
         $perPage = 10;  
         
@@ -455,7 +455,7 @@ class KyrgyzradioController extends Controller
         $channel = \Model\Channel\ModelName::name('kyrgyzradio')->first();
         $perPage = 24;
 
-        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','6')->first();
 
         $postAll = \Model\Media\ModelName::where('published','=',true)->where('kyrgyzradio','=','1')->orderBy('id', 'desc')->paginate($perPage);        
 
@@ -482,7 +482,7 @@ class KyrgyzradioController extends Controller
         $gallery->incrementViewed();
         $images = json_decode($gallery->images);
 
-        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','6')->first();
 
         $kyrgyzradioProjects = \Model\Project\ModelName::where('published','=',true)->where('kyrgyzradio', '=', 1)->get();
 
