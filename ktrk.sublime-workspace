@@ -520,26 +520,18 @@
 	"buffers":
 	[
 		{
-			"file": "app/Acme/Http/Front/Views/channel/muzkanal/nav.blade.php",
+			"file": "app/Acme/Http/Front/Views/channel/sport/index.blade.php",
 			"settings":
 			{
-				"buffer_size": 8784,
+				"buffer_size": 19897,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "app/Acme/Http/Front/Views/channel/madaniyat/nav.blade.php",
+			"file": "app/Acme/Http/Front/Controllers/SportController.php",
 			"settings":
 			{
-				"buffer_size": 6143,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/Acme/Http/Front/Views/channel/balastan/default.blade.php",
-			"settings":
-			{
-				"buffer_size": 3828,
+				"buffer_size": 44255,
 				"line_ending": "Windows"
 			}
 		}
@@ -683,16 +675,44 @@
 	[
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Admin",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front",
+		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Controllers",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel",
-		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/balastan",
-		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/muzkanal",
-		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/partials",
-		"/C/xampp/htdocs/ktrk.dev/public/css/admin",
-		"/C/xampp/htdocs/ktrk.dev/app/Acme/Models/Media"
+		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/sport",
+		"/C/xampp/htdocs/ktrk.dev/public/css",
+		"/C/xampp/htdocs/ktrk.dev/public/css/landing"
 	],
 	"file_history":
 	[
+		"/C/xampp/htdocs/ktrk.dev/public/css/radios.css",
+		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/birinchi/default.blade.php",
+		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/kyrgyzradio/default.blade.php",
+		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Controllers/BirinchiController.php",
+		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/sport/default.blade.php",
+		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Controllers/KyrgyzradioController.php",
+		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/birinchi/allphotos.blade.php",
+		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/birinchi/show.blade.php",
+		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/birinchi/projects.blade.php",
+		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/birinchi/photos.blade.php",
+		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/birinchi/news.blade.php",
+		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/birinchi/nav.blade.php",
+		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/birinchi/index.blade.php",
+		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/birinchi/footer.blade.php",
+		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/birinchi/shows.blade.php",
+		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/birinchi/category.blade.php",
+		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/birinchi/broadcastsprogramm.blade.php",
+		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/birinchi/allnews.blade.php",
+		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/birinchi/about.blade.php",
+		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/birinchi/vertex.blade.php",
+		"/C/xampp/htdocs/ktrk.dev/public/css/style2.css",
+		"/C/xampp/htdocs/ktrk.dev/public/css/style.css",
+		"/C/xampp/htdocs/ktrk.dev/public/css/landing/main.css",
+		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Controllers/HomeController.php",
+		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/layouts/defaultnew.blade.php",
+		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/muzkanal/nav.blade.php",
+		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/madaniyat/nav.blade.php",
+		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/balastan/default.blade.php",
+		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Controllers/SportController.php",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Controllers/MuzkanalController.php",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/muzkanal/index.blade.php",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/pages/contacts.blade.php",
@@ -700,8 +720,6 @@
 		"/C/xampp/htdocs/ktrk.dev/public/css/admin/style.css",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Models/Media/ModelName.php",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/partials/modal.blade.php",
-		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Controllers/HomeController.php",
-		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Controllers/SportController.php",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/sport/footer.blade.php",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/sport/index.blade.php",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/partials/footer.blade.php",
@@ -711,7 +729,6 @@
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/sport/test.blade.php",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/sport/stream.blade.php",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/partials/header.blade.php",
-		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/sport/default.blade.php",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Admin/Views/media/edit.blade.php",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Admin/Views/media/create.blade.php",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Admin/Views/post/edit.blade.php",
@@ -719,7 +736,6 @@
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/sport/announcements.blade.php",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/sport/announcement.blade.php",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/sport/video.blade.php",
-		"/C/xampp/htdocs/ktrk.dev/public/css/landing/main.css",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/routes.php",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/routesKtrk.php",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/sport/all.blade.php",
@@ -729,7 +745,6 @@
 		"/C/Users/Abakan/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
 		"/C/Users/Abakan/AppData/Roaming/Sublime Text 3/Packages/ColorPicker/ColorPicker.sublime-settings",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/sport/photos.blade.php",
-		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/birinchi/photos.blade.php",
 		"/D/Eldos/Плагины/garand-sticky-1.0.3-18-g8d501be/garand-sticky-8d501be/example-header.html",
 		"/C/Users/Abakan/AppData/Roaming/Sublime Text 3/Packages/BracketHighlighter/bh_wrapping.sublime-settings",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/partials/mainNav.blade.php",
@@ -747,9 +762,7 @@
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/madaniyat/project.blade.php",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/sport/project.blade.php",
 		"/C/xampp/htdocs/ktrk.dev/database/migrations/2015_09_26_081024_create_media_table.php",
-		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/birinchi/default.blade.php",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/sport/news.blade.php",
-		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Controllers/BirinchiController.php",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Admin/Views/partials/forms/project.blade.php",
 		"/C/xampp/htdocs/ktrk.dev/database/migrations/2015_11_18_113338_create_projects_table.php",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Admin/Controllers/PostController.php",
@@ -758,7 +771,6 @@
 		"/C/xampp/htdocs/ktrk.dev/database/migrations/2015_10_25_173329_create_photo_parent.php",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/sport/teleprogram.blade.php",
 		"/C/Users/Abakan/Desktop/base.swf",
-		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/layouts/defaultnew.blade.php",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/balastan/about.blade.php",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/balastan/world.blade.php",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/balastan/videos.blade.php",
@@ -775,11 +787,9 @@
 		"/D/Old_local_D/workD/form/form_style.css",
 		"/D/Eldos/Codrops/HoverEffectIdeas/HoverEffectIdeas/css/set1.css",
 		"/C/Users/Abakan/Downloads/webfontkit-20160701-061327/stylesheet.css",
-		"/C/xampp/htdocs/ktrk.dev/public/css/style.css",
 		"//AIBEK-ПК/shared/Eldos/fonts.css",
 		"//AIBEK-ПК/shared/Eldos/style.css",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/madaniyat/test.blade.php",
-		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/madaniyat/nav.blade.php",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/madaniyat/video.blade.php",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/madaniyat/all.blade.php",
 		"/C/xampp/htdocs/ktrk.dev/public/css/madaniyat.css",
@@ -801,26 +811,7 @@
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Controllers/MediaController.php",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/pages/teleprogram.blade.php",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/muzkanal/teleprogram.blade.php",
-		"/C/xampp/htdocs/ktrk.dev/public/css/pages.css",
-		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Controllers/PageController.php",
-		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/kyrgyzradio/index.blade.php",
-		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/home.blade.php",
-		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Admin/Views/home.blade.php",
-		"/C/xampp/htdocs/ktrk.dev/app/Acme/Models/Anons/ModelName.php",
-		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/minkiyal/navs.blade.php",
-		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/minkiyal/index.blade.php",
-		"/C/xampp/htdocs/ktrk.dev/app/Acme/Models/Project/ModelRelationships.php",
-		"/C/xampp/htdocs/ModelRelationships.php",
-		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/balastan/video.blade.php",
-		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Controllers/BalastanController.php",
-		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/media/all.blade.php",
-		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/media/video.blade.php",
-		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Admin/Controllers/MediaController.php",
-		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Controllers/CommonController.php",
-		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/birinchi/projects.blade.php",
-		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/birinchi/shows.blade.php",
-		"/C/xampp/htdocs/ktrk.dev/database/migrations/2016_01_20_153103_create_anons_table.php",
-		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/birinchi/show.blade.php"
+		"/C/xampp/htdocs/ktrk.dev/public/css/pages.css"
 	],
 	"find":
 	{
@@ -839,6 +830,12 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"#birinchiradio",
+			"$backgroundMain = \\Model\\Background\\ModelName::where('published','=',true)->first();",
+			"birinchiradio",
+			"body{",
+			"body",
+			"$backgroundMain = \\Model\\Background\\ModelName::where('published','=',true)->first();",
 			"Өнөктөштөргө ",
 			"advertisement",
 			"Ала-Тоо",
@@ -960,13 +957,7 @@
 			"positionTop",
 			"teleprogram",
 			"photoGalleries",
-			"photos",
-			"Gallery",
-			"madan",
-			"video",
-			".video",
-			"video",
-			".all"
+			"photos"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -991,24 +982,24 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/Acme/Http/Front/Views/channel/muzkanal/nav.blade.php",
+					"file": "app/Acme/Http/Front/Views/channel/sport/index.blade.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8784,
+						"buffer_size": 19897,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2543,
-								2510
+								1751,
+								1404
 							]
 						],
 						"settings":
@@ -1018,27 +1009,12 @@
 							{
 								"close":
 								{
-									"1":
-									[
-										2544,
-										2545
-									]
 								},
 								"icon":
 								{
-									"1":
-									[
-										"Packages/BracketHighlighter/icons/round_bracket.png",
-										"brackethighlighter.default"
-									]
 								},
 								"open":
 								{
-									"1":
-									[
-										2508,
-										2509
-									]
 								},
 								"unmatched":
 								{
@@ -1046,46 +1022,41 @@
 							},
 							"bracket_highlighter.regions":
 							[
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
 								"bh_c_define",
 								"bh_c_define_center",
 								"bh_c_define_open",
 								"bh_c_define_close",
 								"bh_c_define_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
 								"bh_single_quote",
 								"bh_single_quote_center",
 								"bh_single_quote_open",
 								"bh_single_quote_close",
 								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
 								"bh_angle",
 								"bh_angle_center",
 								"bh_angle_open",
 								"bh_angle_close",
 								"bh_angle_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
 								"bh_round",
 								"bh_round_center",
 								"bh_round_open",
@@ -1096,18 +1067,22 @@
 								"bh_default_open",
 								"bh_default_close",
 								"bh_default_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content"
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content"
 							],
 							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 90.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -1115,19 +1090,19 @@
 				},
 				{
 					"buffer": 1,
-					"file": "app/Acme/Http/Front/Views/channel/madaniyat/nav.blade.php",
+					"file": "app/Acme/Http/Front/Controllers/SportController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6143,
+						"buffer_size": 44255,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1807,
-								1807
+								6049,
+								6049
 							]
 						],
 						"settings":
@@ -1139,15 +1114,15 @@
 								{
 									"1":
 									[
-										1804,
-										1806
+										6063,
+										6064
 									]
 								},
 								"icon":
 								{
 									"1":
 									[
-										"Packages/BracketHighlighter/icons/tag.png",
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
 										"brackethighlighter.default"
 									]
 								},
@@ -1155,8 +1130,8 @@
 								{
 									"1":
 									[
-										1798,
-										1800
+										5990,
+										5991
 									]
 								},
 								"unmatched":
@@ -1165,21 +1140,6 @@
 							},
 							"bracket_highlighter.regions":
 							[
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
 								"bh_c_define",
 								"bh_c_define_center",
 								"bh_c_define_open",
@@ -1190,162 +1150,58 @@
 								"bh_curly_open",
 								"bh_curly_close",
 								"bh_curly_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
 								"bh_angle",
 								"bh_angle_center",
 								"bh_angle_open",
 								"bh_angle_close",
 								"bh_angle_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
 								"bh_square_close",
-								"bh_square_content"
-							],
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 270.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/Acme/Http/Front/Views/channel/balastan/default.blade.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3828,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3552,
-								3552
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-									"1":
-									[
-										3557,
-										3558
-									]
-								},
-								"icon":
-								{
-									"1":
-									[
-										"Packages/BracketHighlighter/icons/round_bracket.png",
-										"brackethighlighter.default"
-									]
-								},
-								"open":
-								{
-									"1":
-									[
-										3516,
-										3517
-									]
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
+								"bh_square_content",
 								"bh_double_quote",
 								"bh_double_quote_center",
 								"bh_double_quote_open",
 								"bh_double_quote_close",
 								"bh_double_quote_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
 								"bh_regex",
 								"bh_regex_center",
 								"bh_regex_open",
 								"bh_regex_close",
 								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
 								"bh_round",
 								"bh_round_center",
 								"bh_round_open",
 								"bh_round_close",
 								"bh_round_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
 								"bh_default",
 								"bh_default_center",
 								"bh_default_open",
 								"bh_default_close",
-								"bh_default_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content"
+								"bh_default_content"
 							],
 							"syntax": "Packages/PHP/PHP.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 585.0,
+						"translation.y": 1080.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -1435,7 +1291,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 389.0,
+	"side_bar_width": 317.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

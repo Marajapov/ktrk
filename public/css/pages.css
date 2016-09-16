@@ -1126,6 +1126,9 @@
   margin-bottom: 20px;
   margin-top: 160px;
 }
+.panel-article.panel-kenesh .slider-for2{
+  margin-top: 0;
+}
 .panel-kenesh .slider-for2 .slick-slide {
   top: 0;
   bottom: 0;

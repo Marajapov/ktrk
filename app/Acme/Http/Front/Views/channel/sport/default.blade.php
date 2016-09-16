@@ -31,14 +31,11 @@
         });
     </script>
     <style>
-        body{
-            @if($backgroundMain != null) background: url('{{ asset($backgroundMain->getFile()) }}') no-repeat;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-position: center;
-            background-size: cover;
-            @endif
-        }
+       body{
+         @if($backgroundMain != null) 
+         background: rgba(0, 0, 0, 0) url('{{ asset($backgroundMain->getFile()) }}') 50% 50% no-repeat fixed;         
+         @endif
+       }
     </style>
 
 </head>
