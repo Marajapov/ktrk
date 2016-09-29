@@ -520,18 +520,18 @@
 	"buffers":
 	[
 		{
-			"file": "app/Acme/Http/Front/Views/channel/sport/index.blade.php",
+			"file": "app/Acme/Http/Front/Views/ns/team.blade.php",
 			"settings":
 			{
-				"buffer_size": 19897,
+				"buffer_size": 30001,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "app/Acme/Http/Front/Controllers/SportController.php",
+			"file": "public/css/pages.css",
 			"settings":
 			{
-				"buffer_size": 44255,
+				"buffer_size": 31319,
 				"line_ending": "Windows"
 			}
 		}
@@ -675,15 +675,14 @@
 	[
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Admin",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front",
-		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Controllers",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views",
-		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel",
-		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/sport",
-		"/C/xampp/htdocs/ktrk.dev/public/css",
-		"/C/xampp/htdocs/ktrk.dev/public/css/landing"
+		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/ns",
+		"/C/xampp/htdocs/ktrk.dev/public/css"
 	],
 	"file_history":
 	[
+		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/sport/index.blade.php",
+		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Controllers/SportController.php",
 		"/C/xampp/htdocs/ktrk.dev/public/css/radios.css",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/birinchi/default.blade.php",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/kyrgyzradio/default.blade.php",
@@ -712,7 +711,6 @@
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/muzkanal/nav.blade.php",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/madaniyat/nav.blade.php",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/balastan/default.blade.php",
-		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Controllers/SportController.php",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Controllers/MuzkanalController.php",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/muzkanal/index.blade.php",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/pages/contacts.blade.php",
@@ -721,7 +719,6 @@
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Models/Media/ModelName.php",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/partials/modal.blade.php",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/sport/footer.blade.php",
-		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/sport/index.blade.php",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/partials/footer.blade.php",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/sport/nav.blade.php",
 		"/C/xampp/htdocs/ktrk.dev/public/stream.php",
@@ -830,6 +827,7 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"Бакаш",
 			"#birinchiradio",
 			"$backgroundMain = \\Model\\Background\\ModelName::where('published','=',true)->first();",
 			"birinchiradio",
@@ -956,8 +954,7 @@
 			"video",
 			"positionTop",
 			"teleprogram",
-			"photoGalleries",
-			"photos"
+			"photoGalleries"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -982,24 +979,24 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/Acme/Http/Front/Views/channel/sport/index.blade.php",
+					"file": "app/Acme/Http/Front/Views/ns/team.blade.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 19897,
+						"buffer_size": 30001,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1751,
-								1404
+								1648,
+								1648
 							]
 						],
 						"settings":
@@ -1009,12 +1006,27 @@
 							{
 								"close":
 								{
+									"1":
+									[
+										1653,
+										1654
+									]
 								},
 								"icon":
 								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/round_bracket.png",
+										"brackethighlighter.default"
+									]
 								},
 								"open":
 								{
+									"1":
+									[
+										1624,
+										1625
+									]
 								},
 								"unmatched":
 								{
@@ -1022,16 +1034,16 @@
 							},
 							"bracket_highlighter.regions":
 							[
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
 								"bh_single_quote",
 								"bh_single_quote_center",
 								"bh_single_quote_open",
@@ -1042,21 +1054,16 @@
 								"bh_curly_open",
 								"bh_curly_close",
 								"bh_curly_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
 								"bh_round",
 								"bh_round_center",
 								"bh_round_open",
@@ -1072,37 +1079,43 @@
 								"bh_unmatched_open",
 								"bh_unmatched_close",
 								"bh_unmatched_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content"
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content"
 							],
 							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 172.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "app/Acme/Http/Front/Controllers/SportController.php",
+					"file": "public/css/pages.css",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 44255,
+						"buffer_size": 31319,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6049,
-								6049
+								21112,
+								21112
 							]
 						],
 						"settings":
@@ -1112,27 +1125,12 @@
 							{
 								"close":
 								{
-									"1":
-									[
-										6063,
-										6064
-									]
 								},
 								"icon":
 								{
-									"1":
-									[
-										"Packages/BracketHighlighter/icons/curly_bracket.png",
-										"brackethighlighter.default"
-									]
 								},
 								"open":
 								{
-									"1":
-									[
-										5990,
-										5991
-									]
 								},
 								"unmatched":
 								{
@@ -1140,72 +1138,78 @@
 							},
 							"bracket_highlighter.regions":
 							[
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
 								"bh_tag_close",
 								"bh_tag_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
 								"bh_single_quote",
 								"bh_single_quote_center",
 								"bh_single_quote_open",
 								"bh_single_quote_close",
 								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
 								"bh_unmatched_close",
 								"bh_unmatched_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content"
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content"
 							],
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1080.0,
+						"translation.y": 16550.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
+				},
+				{
+					"file": "/C/Users/Abakan/Pictures/exif.jpg",
+					"semi_transient": false,
+					"stack_index": 0,
+					"type": "image"
 				}
 			]
 		}

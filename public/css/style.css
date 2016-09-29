@@ -2170,8 +2170,13 @@ Author: Eldos;
 }
 
 /*VOTE SYSTEM*/
+
+.hit-parad button{
+    border: none;
+    background: none;
+}
 .hit-parad  .vote {
-    width: 35px;
+    width: inherit;
     height: 35px;
     text-align: center;
     transition: all .4s ease;
@@ -2184,12 +2189,13 @@ Author: Eldos;
 }
 
 .hit-parad .like{
-    color: #27A0B1;
+    color: #607d8b;
     line-height: 40px;
-    font-size: 18px;
+    font-size: 16px;
     transition: all .4s ease;
     cursor: pointer;
     margin: auto;
+    margin-right: 5px;
     top: 0;
     bottom: 0;
     right: 0;
@@ -2198,12 +2204,22 @@ Author: Eldos;
 }
 
 .hit-parad .like:hover{
-    color: red;
+    color: #ef6b6b;
+}
+.hit-parad .like .fa,
+.hit-parad .dislike .fa{
+    margin-right: 2px;
+    color: #c3c3c3;
+
+}
+.hit-parad .like .fa:hover,
+.hit-parad .dislike .fa:hover {
+    color: #607d8b;
 }
 .hit-parad .dislike {
     color: #607D8B;
     line-height: 40px;
-    font-size: 18px;
+    font-size: 16px;
     transition: all .4s ease;
     cursor: pointer;
     margin: auto;
@@ -2214,7 +2230,7 @@ Author: Eldos;
     z-index: -10;
 }
 .hit-parad .dislike:hover{
-    color: #795548;
+    color: #632626;
 }
 .hit-parad .like:after {
      content: attr(data-likes);

@@ -58,6 +58,10 @@ class CreateMediaTable extends Migration
             $table->string('sport');
             $table->string('sportanons');
             $table->string('extracolumn');
+            $table->integer('like');
+            $table->integer('unlike');
+            $table->string('today');
+            $table->string('ip');
 
             $table->string('program');
             $table->timestamps();

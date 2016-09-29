@@ -288,14 +288,28 @@
                      <a class="clear" href="{{ route('muzkanal.video', $hit)}}">
                      <span>{{ $hit->getName() }}</span>
                      </a>
-<!--                      <div>
+                     <div>
+
                         <div class="vote">
-                           <div class="dislike" data-dislikes="10"><i class="fa fa-thumbs-down"></i></div>
+                        {!! Form::open(['route' => ['muzkanal.unlike', $hit], 'method' => 'GET']) !!}
+                           <input type="hidden" value="1" name="unlike">
+                           <button type="submit">
+                              <div class="dislike" data-dislikes=""><i class="fa fa-thumbs-down"></i>{{$hit->unlike}}                              
+                              </div>
+                           </button>
+                        {!! Form::close() !!}
                         </div>
+
                         <div class="vote">
-                           <div class="like" data-likes="10"><i class="fa fa-thumbs-up"></i></div>
+                        {!! Form::open(['route' => ['muzkanal.like', $hit], 'method' => 'GET']) !!}
+                           <input type="hidden" value="1" name="like">
+                           <button type="submit">
+                              <div class="like" data-likes=""><i class="fa fa-thumbs-up"></i>{{$hit->like}}</div>
+                           </button>
+                        {!! Form::close() !!}
                         </div>
-                     </div> -->
+
+                     </div>
                      <span class="numeric">{{ $hit->hitnumber }}</span>
                   </li>
                   @endforeach
@@ -610,7 +624,7 @@
        Page.init();
    });
 </script>
-
+<!--
 <script>
     $(document).ready(function() {
         var likes = 12;
@@ -642,4 +656,5 @@
         })
     })
 </script>
+-->
 @stop

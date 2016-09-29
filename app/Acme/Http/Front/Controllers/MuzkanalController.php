@@ -432,4 +432,52 @@ class MuzkanalController extends Controller
     ]);
   }
 
+  public function like(Request $request, $like)
+    {
+        $ip = $_SERVER['REMOTE_ADDR'];
+        $today = date('Y-m-d');
+        $id = $like;
+        $one = 1;
+
+        $row = \Model\Media\ModelName::where('id','=',$id)->first();
+        $rowtoday = $row->today;
+        $rtoday = date('Y-m-d',strtotime($rowtoday));
+        
+        if(($rtoday == $today) && ($row->ip == $ip))
+        {
+            return redirect()->route('muzkanal.home');   
+        }else{
+            $row->like +=1;
+            $row->ip = $ip;
+            $row->today= $today;
+            $row->save();
+            return redirect()->route('muzkanal.home');
+        }
+    }
+
+    public function unlike(Request $request, $unlike)
+    {
+        $ip = $_SERVER['REMOTE_ADDR'];
+        $today = date('Y-m-d');
+        $id = $unlike;
+        $one = 1;
+        $row = \Model\Media\ModelName::where('id','=',$id)->first();
+        $rowtoday = $row->today;
+        $rtoday = date('Y-m-d',strtotime($rowtoday));
+        
+        if(($today == $rtoday) && ($ip ==$row->ip))
+        {
+            return redirect()->route('muzkanal.home');   
+        }else{
+            $row->like +=1;
+            $row->ip = $ip;
+            $row->today= $today;
+            $row->save();
+            return redirect()->route('muzkanal.home');
+        }
+
+        $row->unlike +=1;
+        $row->save();
+        return redirect()->route('muzkanal.home');
+    }
 }
