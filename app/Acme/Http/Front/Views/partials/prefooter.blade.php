@@ -27,6 +27,11 @@
                 </a>
             </li>
             <li>
+                <a href="{{ route('sport.home') }}">
+                    <img src="{{ asset('images/channels/sport-channel-main.png') }}" alt=""/>
+                </a>
+            </li>
+            <li>
                 <a href="{{ route('kyrgyzradio.home') }}">
                     <img src="{{ asset('images/channels/small/5.png') }}" alt=""/>
                 </a>
