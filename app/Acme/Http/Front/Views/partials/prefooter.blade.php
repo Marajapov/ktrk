@@ -61,7 +61,7 @@
             </p>
             <ul>
                 <li>
-                    <a href="https://play.google.com/store/apps/details?id=ktrk.kg.app">
+                    <a href="https://play.google.com/store/apps/details?id=kg.ktrk">
                         <img src="{{ asset('images/android.png') }}" alt="ktrk_adnroid"/>
                     </a>
                 </li>

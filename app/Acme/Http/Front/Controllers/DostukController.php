@@ -105,7 +105,7 @@ class DostukController extends Controller
         $post->incrementViewed();
         $lc = app()->getlocale();
 
-if($lc == 'kg')
+        if($lc == 'kg')
         {
             if($post->title == '')
             {
@@ -365,29 +365,30 @@ if($lc == 'kg')
     
     public function project(\Model\Project\ModelName $project)
     {
-        $projectList = \Model\Project\ModelName::get();
         $lc = app()->getlocale();
+        $perPage = 12;
+        $projectList = \Model\Project\ModelName::get();
 //        $MediaCategory = \Model\MediaCategory\ModelName::get();
-        $mediaAll = \Model\Media\ModelName::get();
+        // $mediaAll = \Model\Media\ModelName::get();
 
         $mainBanner = \Model\Background\ModelName::where('name','=','main')->first();
         $categories = \Model\Category\ModelName::all();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 
-        $relatedNews = \Model\Project\ModelName::where('published','=',true)->where('dostuk','=',$project->id)->get();
-
+        $relatedNews = \Model\Post\ModelName::where('dostukProgram',$project->id)->where('published','=',true)->where('dostuk',1)->paginate($perPage);
         $dostukProjects = \Model\Project\ModelName::where('published','=',true)->where('dostuk', '=', 1)->get();
 
 
         return view('Front::channel.dostuk.project',[
                 
+            'perPage' => $perPage,
+            'relatedNews' => $relatedNews,
             'project' => $project,
     //      'MediaCategories'       => $MediaCategories,
             'mainBanner'   => $mainBanner,
             'categories'=>$categories,
             'projectList' => $projectList,
             'backgroundMain' => $backgroundMain,
-            'relatedNews' => $relatedNews,
             'dostukProjects' => $dostukProjects,                
             'lc' => $lc,                
 
@@ -406,12 +407,12 @@ if($lc == 'kg')
           
             $dostukProjects = \Model\Project\ModelName::where('published','=',true)->where('dostuk','=',1)->where('name','<>','' )->get();
             $postAll = \Model\Post\ModelName::where('published','=',true)->where('dostuk','=','1')->where('title','<>','')->where('dostukProgram','>',0)->paginate($perPage);
-            $popArticles = \Model\Post\ModelName::where('dostuk','=','1')->where('created_at','>',$weekFromNow)->languagekg()->where('dostukProgram','>',0)->orderBy('viewed','desc')->get();   
+            $popArticles = \Model\Post\ModelName::where('dostuk','=','1')->where('created_at','>',$weekFromNow)->languagekg()->where('dostukProgram','>',0)->orderBy('viewed','desc')->take(6)->get();   
         }else{
 
             $dostukProjects = \Model\Project\ModelName::where('published','=',true)->where('dostuk','=',1)->where('nameRu','<>','' )->get();
             $postAll = \Model\Post\ModelName::where('published','=',true)->where('dostuk','=','1')->where('titleRu','<>','')->where('dostukProgram','>',0)->paginate($perPage); 
-            $popArticles = \Model\Post\ModelName::where('dostuk','=','1')->where('created_at','>',$weekFromNow)->languageru()->where('dostukProgram','>',0)->orderBy('viewed','desc')->get();    
+            $popArticles = \Model\Post\ModelName::where('dostuk','=','1')->where('created_at','>',$weekFromNow)->languageru()->where('dostukProgram','>',0)->orderBy('viewed','desc')->take(6)->get();    
         }
 
         if(count($popArticles) > 0){

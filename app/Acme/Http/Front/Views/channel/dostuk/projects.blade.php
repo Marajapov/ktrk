@@ -36,31 +36,33 @@
                         </div>
                         @endforeach
                         @endif
-                        <footer class="allnewsfooter">
-                           <nav>
-                               <ul class="pagination">
-                                   <li>
-                                       <a href="{{ route('dostuk.projects', ['page' => 1]) }}" class="btn btn-default @if($postAll->currentPage() == 1) disabled @endif">{{ trans('site.Start') }}</a>
-                                   </li>
-                                   <li>
-                                       <a href="{{ $postAll->previousPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span></a>
-                                   </li>
-                                   @for($i = 0, $j = 1; $i < $postAll->total(); $i+=$perPage)
-                                       <li class="@if(($j > $postAll->currentPage()+10) || ($j < $postAll->currentPage()-10)) hidden @endif">
-                                           <a href="{{ route('dostuk.projects', ['page' => $j]) }}" class="btn btn-default @if($postAll->currentPage() == $j) active @endif">
-                                               {{ $j++ }}
-                                           </a>
-                                       </li>
-                                   @endfor
-                                   <li>
-                                       <a href="{{ $postAll->nextPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-right"></span></a>
-                                   </li>
-                                   <li>
-                                       <a href="{{ route('dostuk.projects', ['page' => ceil($postAll->total()/$perPage)]) }}" class="btn btn-default @if($postAll->currentPage() == ceil($postAll->total()/$perPage)) disabled @endif">{{ trans('site.End') }}</a>
-                                   </li>
+                        <footer class="allnewsfooter">                          
+                          <nav>
+                            <ul class="pagination">
+                                <li>
+                                    <a href="{{ route('dostuk.projects', ['page' => 1]) }}" class="btn btn-default @if($postAll->currentPage() == 1) disabled @endif">{{ trans('site.Start') }}</a>
+                                </li>
+                                <li>
+                                    <a href="{{ $postAll->previousPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                                </li>
 
-                               </ul>
-                           </nav>
+                                @for($i = 0, $j = 1; $i < $postAll->total(); $i+=$perPage)
+                                    <li class="@if(($j > $postAll->currentPage()+3) || ($j < $postAll->currentPage()-3)) hidden @endif">
+                                        <a href="{{ route('dostuk.projects', ['page' => $j]) }}" class="btn btn-default @if($postAll->currentPage() == $j) active @endif">
+                                            {{ $j++ }}
+                                        </a>
+                                    </li>
+                                @endfor
+
+                                <li>
+                                    <a href="{{ $postAll->nextPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                                </li>
+
+                                <li>
+                                    <a href="{{ route('dostuk.projects', ['page' => ceil($postAll->total()/$perPage)]) }}" class="btn btn-default @if($postAll->currentPage() == ceil($postAll->total()/$perPage)) disabled @endif">{{ trans('site.End') }}</a>
+                                </li>
+                            </ul>
+                          </nav>
                         </footer>
                      </div>
                   </div>

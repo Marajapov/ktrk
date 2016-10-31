@@ -99,6 +99,7 @@ class KyrgyzradioController extends Controller
     public function project(\Model\Project\ModelName $project)
     {
         $projectList = \Model\Project\ModelName::get();
+        $perPage = 12;
 //        $MediaCategory = \Model\MediaCategory\ModelName::get();
         $mediaAll = \Model\Media\ModelName::get();
 
@@ -106,14 +107,14 @@ class KyrgyzradioController extends Controller
         $categories = \Model\Category\ModelName::all();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','6')->first();
 
-        $relatedNews = \Model\Project\ModelName::where('published','=',true)->where('kyrgyzradio','=',$project->id)->get();
-
+        $relatedNews = \Model\Post\ModelName::where('kyrgyzradioProgram',$project->id)->where('published','=',true)->where('kyrgyzradio',1)->paginate($perPage);
         $kyrgyzradioProjects = \Model\Project\ModelName::where('published','=',true)->where('kyrgyzradio', '=', 1)->get();
 
 
         return view('Front::channel.kyrgyzradio.project',[
                 
             'project' => $project,
+            'perPage' => $perPage,
     //      'MediaCategories'       => $MediaCategories,
             'mainBanner'   => $mainBanner,
             'categories'=>$categories,

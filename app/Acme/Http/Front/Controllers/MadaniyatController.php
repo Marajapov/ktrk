@@ -52,17 +52,17 @@ class MadaniyatController extends Controller
 
         $lc = app()->getlocale();
         if($lc == 'kg'){
-            $weekFromNow = date('Y-m-d H:i', strtotime('-10 days'));
+            $weekFromNow = date('Y-m-d H:i', strtotime('-21 days'));
             $postAll = \Model\Post\ModelName::where('published','=',true)->where('madaniyat','=','1')->where('title','<>','')->where('madaniyatProgram','>','0')->where('madaniyatProgram','<>','99')->orderBy('updated_at','desc')->take(2)->get();
             $madaniyatProjects = \Model\Project\ModelName::where('published','=',true)->where('madaniyat','=',1)->where('name','<>','' )->orderBy('name','asc')->get();
-            $topArticles = \Model\Post\ModelName::where('madaniyat','=','1')->where('title','<>','')->where('madaniyatProgram','=','99')->where('created_at','>',$weekFromNow)->orderBy('madaniyatProgram','asc')->take(5)->get();
+            $topArticles = \Model\Post\ModelName::where('madaniyat','=','1')->where('title','<>','')->where('created_at','>',$weekFromNow)->orderBy('id','desc')->take(5)->get();
             $popArticles = \Model\Post\ModelName::where('madaniyat','=','1')->where('created_at','>',$weekFromNow)->languagekg()->orderBy('viewed','desc')->take(5)->get();
             $anons = \Model\Anons\ModelName::where('channel','=','5')->where('published','=','1')->where('madaniyatsoon','=','1')->where('name','<>','' )->orderBy('id','=','desc')->take(4)->get();
         }else{
-            $weekFromNow = date('Y-m-d H:i', strtotime('-10 days'));
+            $weekFromNow = date('Y-m-d H:i', strtotime('-21 days'));
             $postAll = \Model\Post\ModelName::where('published','=',true)->where('madaniyat','=','1')->where('titleRu','<>','')->where('madaniyatProgram','>','0')->where('madaniyatProgram','<>','99')->orderBy('updated_at','desc')->take(2)->get();
             $madaniyatProjects = \Model\Project\ModelName::where('published','=',true)->where('madaniyat','=',1)->where('nameRu','<>','' )->orderBy('nameRu','asc')->get();
-            $topArticles = \Model\Post\ModelName::where('madaniyat','=','1')->where('titleRu','<>','')->where('madaniyatProgram','=','99')->where('created_at','>',$weekFromNow)->orderBy('madaniyatProgram','asc')->take(5)->get();
+            $topArticles = \Model\Post\ModelName::where('madaniyat','=','1')->where('titleRu','<>','')->where('created_at','>',$weekFromNow)->orderBy('id','desc')->take(5)->get();
             $popArticles = \Model\Post\ModelName::where('madaniyat','=','1')->where('created_at','>',$weekFromNow)->languageru()->orderBy('viewed','desc')->take(5)->get();
             $anons = \Model\Anons\ModelName::where('channel','=','5')->where('published','=','1')->where('madaniyatsoon','=','1')->where('nameRu','<>','' )->orderBy('id','=','desc')->take(4)->get();
         }
@@ -712,12 +712,12 @@ class MadaniyatController extends Controller
         if($lc == 'kg'){
 
             $madaniyatProjects = \Model\Project\ModelName::where('published','=',true)->where('madaniyat','=',1)->where('name','<>','' )->orderBy('name','asc')->get();
-            $postAll = \Model\Post\ModelName::where('published','=',true)->where('madaniyat','=','1')->where('title','<>','')->paginate($perPage);
+            $postAll = \Model\Post\ModelName::where('published','=',true)->where('madaniyat','=','1')->where('title','<>','')->orderBy('id','desc')->paginate($perPage);
             $popArticles = \Model\Post\ModelName::where('madaniyat','=','1')->where('created_at','>',$weekFromNow)->languagekg()->orderBy('viewed','desc')->get();
         }else{
 
             $madaniyatProjects = \Model\Project\ModelName::where('published','=',true)->where('madaniyat','=',1)->where('nameRu','<>','' )->orderBy('nameRu','asc')->get();
-            $postAll = \Model\Post\ModelName::where('published','=',true)->where('madaniyat','=','1')->where('titleRu','<>','')->paginate($perPage);
+            $postAll = \Model\Post\ModelName::where('published','=',true)->where('madaniyat','=','1')->where('titleRu','<>','')->orderBy('id','desc')->paginate($perPage);
             $popArticles = \Model\Post\ModelName::where('madaniyat','=','1')->where('created_at','>',$weekFromNow)->languageru()->orderBy('viewed','desc')->get();
         }
         if(count($popArticles) > 0){

@@ -726,7 +726,7 @@ class BirinchiController extends Controller
         }else{
             return redirect()->route('birinchi.home');
         }
-
+        $perPage = 12;
         $projectList = \Model\Project\ModelName::get();
 //        $MediaCategory = \Model\MediaCategory\ModelName::get();
         $mediaAll = \Model\Media\ModelName::get();
@@ -735,15 +735,14 @@ class BirinchiController extends Controller
         $categories = \Model\Category\ModelName::all();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','7')->first();
 
-        $relatedNews = \Model\Post\ModelName::where('published','=',true)->where('birinchi','=','1')->where('birinchiProgram','=',$project->id)->get();
-
-        // dd($relatedNews);
-
+        
         $lc = app()->getlocale();
         if($lc == 'kg'){
-            $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('name','<>','' )->get();    
+            $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('name','<>','' )->get();
+            $relatedNews = \Model\Post\ModelName::where('published','=',true)->where('birinchi','=','1')->where('birinchiProgram','=',$project->id)->where('title','<>','' )->paginate($perPage);    
         }else{
             $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('nameRu','<>','' )->get();
+            $relatedNews = \Model\Post\ModelName::where('published','=',true)->where('birinchi','=','1')->where('birinchiProgram','=',$project->id)->where('titleRu','<>','' )->paginate($perPage); 
         }
 
 
@@ -751,6 +750,7 @@ class BirinchiController extends Controller
         return view('Front::channel.birinchi.shows',[
             'lc' => $lc,                
             'project' => $project,
+            'perPage' => $perPage,
     //      'MediaCategories'       => $MediaCategories,
             'mainBanner'   => $mainBanner,
             'categories'=>$categories,

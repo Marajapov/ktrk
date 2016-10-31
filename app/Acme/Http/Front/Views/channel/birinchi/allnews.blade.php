@@ -30,7 +30,7 @@
                            </div>
                            <a class="media-heading " href="{{ route('birinchi.news', [$post, $lc]) }}">{{ $post->getTitleRuOrKg() }}</a>
                            <span class="mb_substr">
-                              {!! mb_substr($post->getContent(), 0, 290, "UTF-8") !!}
+                               {{ $post->description }}
                            </span>
                         </div>
                      </div>
@@ -38,26 +38,31 @@
                      @endif
                      <footer class="allnewsfooter">
                         <nav>
-                           <ul class="pagination">
-                              <li>
-                                 <a href="{{ route('birinchi.allnews', ['page' => 1]) }}" class="btn btn-default @if($postAll->currentPage() == 1) disabled @endif">{{ trans('site.Start') }}</a>
-                              </li>
-                              <li>
-                                 <a href="{{ $postAll->previousPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span></a>
-                              </li>
-                              <li>
-                                 <a href="{{ $postAll->nextPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-right"></span></a>
-                              </li>
-                              @for($i = 0, $j = 1; $i < $postAll->total(); $i+=$perPage)
-                              <li>
-                                 <a href="{{ route('birinchi.allnews', ['page' => $j]) }}" class="btn btn-default @if($postAll->currentPage() == $j) active @endif">{{ $j++ }}</a>
-                              </li>
-                              @endfor
-                              <li>
-                                 <a href="{{ route('birinchi.allnews', ['page' => ceil($postAll->total()/$perPage)]) }}" class="btn btn-default @if($postAll->currentPage() == ceil($postAll->total()/$perPage)) disabled @endif">{{ trans('site.End') }}</a>
-                              </li>
-                           </ul>
-                        </nav>
+                            <ul class="pagination">
+                                <li>
+                                    <a href="{{ route('birinchi.allnews', ['page' => 1]) }}" class="btn btn-default @if($postAll->currentPage() == 1) disabled @endif">{{ trans('site.Start') }}</a>
+                                </li>
+                                <li>
+                                    <a href="{{ $postAll->previousPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                                </li>
+
+                                @for($i = 0, $j = 1; $i < $postAll->total(); $i+=$perPage)
+                                    <li class="@if(($j > $postAll->currentPage()+3) || ($j < $postAll->currentPage()-3)) hidden @endif">
+                                        <a href="{{ route('birinchi.allnews', ['page' => $j]) }}" class="btn btn-default @if($postAll->currentPage() == $j) active @endif">
+                                            {{ $j++ }}
+                                        </a>
+                                    </li>
+                                @endfor
+
+                                <li>
+                                    <a href="{{ $postAll->nextPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                                </li>
+
+                                <li>
+                                    <a href="{{ route('birinchi.allnews', ['page' => ceil($postAll->total()/$perPage)]) }}" class="btn btn-default @if($postAll->currentPage() == ceil($postAll->total()/$perPage)) disabled @endif">{{ trans('site.End') }}</a>
+                                </li>
+                            </ul>
+                          </nav>
                      </footer>
                      </div>                   
                   </div>

@@ -559,68 +559,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="channel-radio clearfix"> 
-                                <div class="text-center">
-                                    <h3>Достук радиосу</h3>
-                                </div>
-                                <hr>
-                                <div class="variants clearfix">
-                                    <div class="col-md-4 main-logo">
-                                        <img src="{{asset('images/logo/dostuk/dostuk.png')}}" alt="Достук радиосу" style="">  
-                                        <span>Достук радиосу эн белгиси</span>                                       
-                                    </div>
-                                    <div class="col-md-8 second form-icon">
-                                        <div class="col-md-3 form-icon">                                        
-                                            <a href="{{asset('images/logo/dostuk/dostuk.ai')}}">           
-                                                <img src="{{asset('images/logo/ai.jpg')}}" alt="AI">
-                                                <span>AI</span>                                  
-                                            </a>
-                                        </div>
-                                        <div class="col-md-3 form-icon">
-                                             <a href="{{asset('images/logo/dostuk/dostuk.bmp')}}">           
-                                                <img src="{{asset('images/logo/BMP.png')}}" alt="BMP">
-                                                <span>BMP</span>                                  
-                                            </a>
-                                        </div>
-                                        <div class="col-md-3 form-icon">
-                                             <a href="{{asset('images/logo/dostuk/dostuk.eps')}}">           
-                                                <img src="{{asset('images/logo/eps.jpg')}}" alt="EPS">
-                                                <span>EPS</span>                                  
-                                            </a>
-                                        </div>                                        
-                                        <div class="col-md-3 form-icon">
-                                             <a href="{{asset('images/logo/dostuk/dostuk.jpg')}}">           
-                                                <img src="{{asset('images/logo/jpeg.jpg')}}" alt="JPEG">
-                                                <span>JPEG</span>                                  
-                                            </a>
-                                        </div>                                    
-                                        <div class="col-md-3 form-icon">
-                                             <a href="{{asset('images/logo/dostuk/dostuk.pdf')}}">           
-                                                <img src="{{asset('images/logo/pdf.jpg')}}" alt="PDF">
-                                                <span>PDF</span>                                  
-                                            </a>
-                                        </div>
-                                        <div class="col-md-3 form-icon">
-                                             <a href="{{asset('images/logo/dostuk/dostuk.png')}}">           
-                                                <img src="{{asset('images/logo/png.jpg')}}" alt="PNG">
-                                                <span>PNG</span>                                  
-                                            </a>
-                                        </div>
-                                        <div class="col-md-3 form-icon">
-                                             <a href="{{asset('images/logo/dostuk/dostuk.psd')}}">           
-                                                <img src="{{asset('images/logo/psd.jpg')}}" alt="PSD">
-                                                <span>PSD</span>                                  
-                                            </a>
-                                        </div>
-                                        <div class="col-md-3 form-icon">
-                                             <a href="{{asset('images/logo/dostuk/dostuk.tif')}}">           
-                                                <img src="{{asset('images/logo/tif.jpg')}}" alt="TIF">
-                                                <span>TIF</span>                                  
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                            <div class="channel-radio clearfix"> 
                                 <div class="text-center">
                                     <h3>Миң кыял FM </h3>
@@ -683,7 +621,69 @@
                                     </div>
                                 </div>
                             </div>
-                           <div class="channel-radio clearfix"> 
+                            <div class="channel-radio clearfix"> 
+                                <div class="text-center">
+                                    <h3>Достук радиосу</h3>
+                                </div>
+                                <hr>
+                                <div class="variants clearfix">
+                                    <div class="col-md-4 main-logo">
+                                        <img src="{{asset('images/logo/dostuk/dostuk.png')}}" alt="Достук радиосу" style="">  
+                                        <span>Достук радиосу эн белгиси</span>                                       
+                                    </div>
+                                    <div class="col-md-8 second form-icon">
+                                        <div class="col-md-3 form-icon">                                        
+                                            <a href="{{asset('images/logo/dostuk/dostuk.ai')}}">           
+                                                <img src="{{asset('images/logo/ai.jpg')}}" alt="AI">
+                                                <span>AI</span>                                  
+                                            </a>
+                                        </div>
+                                        <div class="col-md-3 form-icon">
+                                             <a href="{{asset('images/logo/dostuk/dostuk.bmp')}}">           
+                                                <img src="{{asset('images/logo/BMP.png')}}" alt="BMP">
+                                                <span>BMP</span>                                  
+                                            </a>
+                                        </div>
+                                        <div class="col-md-3 form-icon">
+                                             <a href="{{asset('images/logo/dostuk/dostuk.eps')}}">           
+                                                <img src="{{asset('images/logo/eps.jpg')}}" alt="EPS">
+                                                <span>EPS</span>                                  
+                                            </a>
+                                        </div>                                        
+                                        <div class="col-md-3 form-icon">
+                                             <a href="{{asset('images/logo/dostuk/dostuk.jpg')}}">           
+                                                <img src="{{asset('images/logo/jpeg.jpg')}}" alt="JPEG">
+                                                <span>JPEG</span>                                  
+                                            </a>
+                                        </div>                                    
+                                        <div class="col-md-3 form-icon">
+                                             <a href="{{asset('images/logo/dostuk/dostuk.pdf')}}">           
+                                                <img src="{{asset('images/logo/pdf.jpg')}}" alt="PDF">
+                                                <span>PDF</span>                                  
+                                            </a>
+                                        </div>
+                                        <div class="col-md-3 form-icon">
+                                             <a href="{{asset('images/logo/dostuk/dostuk.png')}}">           
+                                                <img src="{{asset('images/logo/png.jpg')}}" alt="PNG">
+                                                <span>PNG</span>                                  
+                                            </a>
+                                        </div>
+                                        <div class="col-md-3 form-icon">
+                                             <a href="{{asset('images/logo/dostuk/dostuk.psd')}}">           
+                                                <img src="{{asset('images/logo/psd.jpg')}}" alt="PSD">
+                                                <span>PSD</span>                                  
+                                            </a>
+                                        </div>
+                                        <div class="col-md-3 form-icon">
+                                             <a href="{{asset('images/logo/dostuk/dostuk.tif')}}">           
+                                                <img src="{{asset('images/logo/tif.jpg')}}" alt="TIF">
+                                                <span>TIF</span>                                  
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="channel-radio clearfix"> 
                                 <div class="text-center">
                                     <h3>Балдар FM</h3>
                                 </div>
@@ -1298,68 +1298,6 @@
                             </div>
                             <div class="channel-radio clearfix"> 
                                 <div class="text-center">
-                                    <h3>Достук радиосу</h3>
-                                </div>
-                                <hr>
-                                <div class="variants clearfix">
-                                    <div class="col-md-4 main-logo">
-                                        <img src="{{asset('images/logo/dostuk/dostuk.png')}}" alt="Достук радиосу" style="">  
-                                        <span>Логотип радиостанции Достук радиосу</span>                                       
-                                    </div>
-                                    <div class="col-md-8 second form-icon">
-                                        <div class="col-md-3 form-icon">                                        
-                                            <a href="{{asset('images/logo/dostuk/dostuk.ai')}}">           
-                                                <img src="{{asset('images/logo/ai.jpg')}}" alt="AI">
-                                                <span>AI</span>                                  
-                                            </a>
-                                        </div>
-                                        <div class="col-md-3 form-icon">
-                                             <a href="{{asset('images/logo/dostuk/dostuk.bmp')}}">           
-                                                <img src="{{asset('images/logo/BMP.png')}}" alt="BMP">
-                                                <span>BMP</span>                                  
-                                            </a>
-                                        </div>
-                                        <div class="col-md-3 form-icon">
-                                             <a href="{{asset('images/logo/dostuk/dostuk.eps')}}">           
-                                                <img src="{{asset('images/logo/eps.jpg')}}" alt="EPS">
-                                                <span>EPS</span>                                  
-                                            </a>
-                                        </div>                                        
-                                        <div class="col-md-3 form-icon">
-                                             <a href="{{asset('images/logo/dostuk/dostuk.jpg')}}">           
-                                                <img src="{{asset('images/logo/jpeg.jpg')}}" alt="JPEG">
-                                                <span>JPEG</span>                                  
-                                            </a>
-                                        </div>                                    
-                                        <div class="col-md-3 form-icon">
-                                             <a href="{{asset('images/logo/dostuk/dostuk.pdf')}}">           
-                                                <img src="{{asset('images/logo/pdf.jpg')}}" alt="PDF">
-                                                <span>PDF</span>                                  
-                                            </a>
-                                        </div>
-                                        <div class="col-md-3 form-icon">
-                                             <a href="{{asset('images/logo/dostuk/dostuk.png')}}">           
-                                                <img src="{{asset('images/logo/png.jpg')}}" alt="PNG">
-                                                <span>PNG</span>                                  
-                                            </a>
-                                        </div>
-                                        <div class="col-md-3 form-icon">
-                                             <a href="{{asset('images/logo/dostuk/dostuk.psd')}}">           
-                                                <img src="{{asset('images/logo/psd.jpg')}}" alt="PSD">
-                                                <span>PSD</span>                                  
-                                            </a>
-                                        </div>
-                                        <div class="col-md-3 form-icon">
-                                             <a href="{{asset('images/logo/dostuk/dostuk.tif')}}">           
-                                                <img src="{{asset('images/logo/tif.jpg')}}" alt="TIF">
-                                                <span>TIF</span>                                  
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="channel-radio clearfix"> 
-                                <div class="text-center">
                                     <h3>Миң кыял FM </h3>
                                 </div>
                                 <hr>
@@ -1413,6 +1351,68 @@
                                         </div>
                                         <div class="col-md-3 form-icon">
                                              <a href="{{asset('images/logo/minkyalfm/minkyalfm.tif')}}">           
+                                                <img src="{{asset('images/logo/tif.jpg')}}" alt="TIF">
+                                                <span>TIF</span>                                  
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="channel-radio clearfix"> 
+                                <div class="text-center">
+                                    <h3>Достук радиосу</h3>
+                                </div>
+                                <hr>
+                                <div class="variants clearfix">
+                                    <div class="col-md-4 main-logo">
+                                        <img src="{{asset('images/logo/dostuk/dostuk.png')}}" alt="Достук радиосу" style="">  
+                                        <span>Логотип радиостанции Достук радиосу</span>                                       
+                                    </div>
+                                    <div class="col-md-8 second form-icon">
+                                        <div class="col-md-3 form-icon">                                        
+                                            <a href="{{asset('images/logo/dostuk/dostuk.ai')}}">           
+                                                <img src="{{asset('images/logo/ai.jpg')}}" alt="AI">
+                                                <span>AI</span>                                  
+                                            </a>
+                                        </div>
+                                        <div class="col-md-3 form-icon">
+                                             <a href="{{asset('images/logo/dostuk/dostuk.bmp')}}">           
+                                                <img src="{{asset('images/logo/BMP.png')}}" alt="BMP">
+                                                <span>BMP</span>                                  
+                                            </a>
+                                        </div>
+                                        <div class="col-md-3 form-icon">
+                                             <a href="{{asset('images/logo/dostuk/dostuk.eps')}}">           
+                                                <img src="{{asset('images/logo/eps.jpg')}}" alt="EPS">
+                                                <span>EPS</span>                                  
+                                            </a>
+                                        </div>                                        
+                                        <div class="col-md-3 form-icon">
+                                             <a href="{{asset('images/logo/dostuk/dostuk.jpg')}}">           
+                                                <img src="{{asset('images/logo/jpeg.jpg')}}" alt="JPEG">
+                                                <span>JPEG</span>                                  
+                                            </a>
+                                        </div>                                    
+                                        <div class="col-md-3 form-icon">
+                                             <a href="{{asset('images/logo/dostuk/dostuk.pdf')}}">           
+                                                <img src="{{asset('images/logo/pdf.jpg')}}" alt="PDF">
+                                                <span>PDF</span>                                  
+                                            </a>
+                                        </div>
+                                        <div class="col-md-3 form-icon">
+                                             <a href="{{asset('images/logo/dostuk/dostuk.png')}}">           
+                                                <img src="{{asset('images/logo/png.jpg')}}" alt="PNG">
+                                                <span>PNG</span>                                  
+                                            </a>
+                                        </div>
+                                        <div class="col-md-3 form-icon">
+                                             <a href="{{asset('images/logo/dostuk/dostuk.psd')}}">           
+                                                <img src="{{asset('images/logo/psd.jpg')}}" alt="PSD">
+                                                <span>PSD</span>                                  
+                                            </a>
+                                        </div>
+                                        <div class="col-md-3 form-icon">
+                                             <a href="{{asset('images/logo/dostuk/dostuk.tif')}}">           
                                                 <img src="{{asset('images/logo/tif.jpg')}}" alt="TIF">
                                                 <span>TIF</span>                                  
                                             </a>

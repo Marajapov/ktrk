@@ -155,7 +155,17 @@
             <div class="panel-heading">
                <h3 class="panel-title"><span> - {{ trans('radiopages.Live') }}- </span></h3>
             </div>
+            @if (session('flag3') == 1 )
             <div id="player"></div>
+            @else
+            <div class="row">
+                             <div class="col-md-12">
+                               <div style="height: 200px; width: 100%; text-align: center; padding-top: 100px;">
+                                   Трансляция заблокирована в Вашей стране!
+                               </div>
+                             </div>
+                         </div>
+            @endif
          </div>
       </div>
       <div class="col-md-4 promo">
@@ -279,35 +289,41 @@
       <div class="col-md-4 hittop">
          <div class="panel panel-default hit-parad">
             <div class="panel-heading">
-               <h3 class="panel-title"><span> {{ trans('radiopages.WeekSelect') }} </span></h3>
-
+               <h3 class="panel-title"><span> - Хит парад - </span></h3>
             </div>
             <div class="panel-body">
                <ul class="list-group" >
                   @if($hitNumbers)
-                  @foreach($hitNumbers as $key => $hit)
+                  @foreach($hitNumbers as $hit)
                   <li class="list-group-item clearfix">
-                  <span class="numeric">{{ $key+1 }}</span>
                      <!--  <a href="#" class="pull-right"> <i class="glyphicon glyphicon-play"></i> </a> -->
                      <a href="{{ route('muzkanal.video', $hit)}}" class="pull-left"> <img src="http://img.youtube.com/vi/{{ $hit->getUrl()}}/hqdefault.jpg" class="hitimg"> </a>
                      <a class="clear" href="{{ route('muzkanal.video', $hit)}}">
-                     <span class="song-name">{{ $hit->getName() }}</span>
+                     <span>{{ $hit->getName() }}</span>
                      </a>
                      <div>
-                        
-                        <div class="vote toplike">
-                        {!! Form::open(['route' => ['muzkanal.like', $hit], 'method' => 'GET']) !!}                         
+
+                        <div class="vote">
+                        {!! Form::open(['route' => ['muzkanal.unlike', $hit], 'method' => 'GET']) !!}
+                           <input type="hidden" value="1" name="unlike">
+                           <button type="submit">
+                              <div class="dislike" data-dislikes=""><i class="fa fa-thumbs-down"></i>{{$hit->unlike}}                              
+                              </div>
+                           </button>
+                        {!! Form::close() !!}
+                        </div>
+
+                        <div class="vote">
+                        {!! Form::open(['route' => ['muzkanal.like', $hit], 'method' => 'GET']) !!}
                            <input type="hidden" value="1" name="like">
-                           <span class="topcounts">{{$hit->like}}</span>
-                           <button type="submit" class="like-button" data-container="body" data-toggle="popover" data-placement="left" data-content="{{ trans('radiopages.VoteYes') }} ">
-                              <i class="fa fa-star red-tooltip" ></i> 
-                              <!-- data-toggle="tooltip" data-placement="right" title="Like"                            -->
+                           <button type="submit">
+                              <div class="like" data-likes=""><i class="fa fa-thumbs-up"></i>{{$hit->like}}</div>
                            </button>
                         {!! Form::close() !!}
                         </div>
 
                      </div>
-                     
+                     <span class="numeric">{{ $hit->hitnumber }}</span>
                   </li>
                   @endforeach
                   @endif
@@ -486,12 +502,6 @@
        });
    });
 </script>
-
-<script>
-   function like() {
-       alert("Clik");
-   }
-</script>
 <script type ="text/javascript" src ="{{ asset('js/script.js') }}"></script>
 <!-- Fixed Sticky header -->
 <!-- Programm title Anima -->
@@ -626,12 +636,6 @@
        })();
        Page.init();
    });
-</script>
-
-<script>
-  $(document).ready(function(){
-      $('[data-toggle="popover"]').popover();
-  });
 </script>
 <!--
 <script>
