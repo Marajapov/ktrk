@@ -28,11 +28,11 @@ class MuzkanalController extends Controller
                 $row->save();
             } // end foreach
         }
-        
+
         // $table = \Model\Media\ModelName::where('hitnumber','<>',0)->get();
         // foreach ($table as $key => $row) {
         //     $row->like = 0;
-        //     $row->unlike = 0;
+        //     $row->unlike = 0;    
         //     $row->save();
         // }
         
