@@ -296,7 +296,7 @@
 								<div class="photo-item-main photo-item">
 									<figure class="effect-roxy">
 										<img src="{{ asset($photoGallery->thumbnail_big) }}" alt="" />
-										<div class="overlay"></div>
+										<div class="overlay" style="top: 18px;"></div>
 										<figcaption>
 											<h2>
 												<span class="datetime"><i class="fa fa-calendar"></i>{{ $photoGallery->getDay() }} {{ $photoGallery->getMonthRu() }}, {{ $photoGallery->getTime() }}</span>
@@ -335,53 +335,53 @@
 			</div>
 		</div>
 		<div class="container">
-      <div class="col-md-12 no-padding">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <div class="heading-title">
-              <span class="name">{{ trans('radiopages.Wearesocial')}}</span>
-              <div class="border"></div>
-            </div>
-          </div>
-          <div class="panel-body popular">
-            <div class="col-sm-3 no-padding">
-              <div class="fb-page" style="height: 460px;overflow: hidden;" data-href="https://www.facebook.com/KTRKSport" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
-                  <div class="fb-xfbml-parse-ignore">
-                    <blockquote cite="https://www.facebook.com/KTRKSport"><a href="https://www.facebook.com/KTRKSport/">КТРК СПОРТ</a></blockquote>
-                  </div>
-              </div>  
-            </div>
-            <div class="col-sm-3">
-                <a class="twitter-timeline" data-height="460" href="https://twitter.com/ktrksport">Твиты Ktrksport</a> 
-                <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>              
-            </div>
-            <div class="col-sm-3">
-                <div id="ok_group_widget"></div>
-                <script>
-                    !function (d, id, did, st) {
-                        var js = d.createElement("script");
-                        js.src = "https://connect.ok.ru/connect.js";
-                        js.onload = js.onreadystatechange = function () {
-                            if (!this.readyState || this.readyState == "loaded" || this.readyState == "complete") {
-                                if (!this.executed) {
-                                    this.executed = true;
-                                    setTimeout(function () {
-                                        OK.CONNECT.insertGroupWidget(id,did,st);
-                                    }, 0);
-                                }
-                            }}
-                        d.documentElement.appendChild(js);
-                    }(document,"ok_group_widget","52921979764889","{width:263,height:460}");
-                </script>
-            </div>
-            <div class="col-sm-3">
-              <iframe src="{{asset('images/channels/sport/inwidget/index.php?height=460&inline=3')}}" scrolling='no' frameborder='no' style='border:none;width:263px;height:455px;overflow:hidden;'></iframe>
-            </div>
+	      <div class="col-md-12 no-padding">
+	        <div class="panel panel-default">
+	          <div class="panel-heading">
+	            <div class="heading-title">
+	              <span class="name">{{ trans('radiopages.Wearesocial')}}</span>
+	              <div class="border"></div>
+	            </div>
+	          </div>
+	          <div class="panel-body popular">
+	            <div class="col-sm-3 no-padding">
+	              <div class="fb-page" style="height: 460px;overflow: hidden;" data-href="https://www.facebook.com/KTRKSport" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+	                  <div class="fb-xfbml-parse-ignore">
+	                    <blockquote cite="https://www.facebook.com/KTRKSport"><a href="https://www.facebook.com/KTRKSport/">КТРК СПОРТ</a></blockquote>
+	                  </div>
+	              </div>  
+	            </div>
+	            <div class="col-sm-3">
+	                <a class="twitter-timeline" data-height="460" href="https://twitter.com/ktrksport">Твиты Ktrksport</a> 
+	                <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>              
+	            </div>
+	            <div class="col-sm-3">
+	                <div id="ok_group_widget"></div>
+	                <script>
+	                    !function (d, id, did, st) {
+	                        var js = d.createElement("script");
+	                        js.src = "https://connect.ok.ru/connect.js";
+	                        js.onload = js.onreadystatechange = function () {
+	                            if (!this.readyState || this.readyState == "loaded" || this.readyState == "complete") {
+	                                if (!this.executed) {
+	                                    this.executed = true;
+	                                    setTimeout(function () {
+	                                        OK.CONNECT.insertGroupWidget(id,did,st);
+	                                    }, 0);
+	                                }
+	                            }}
+	                        d.documentElement.appendChild(js);
+	                    }(document,"ok_group_widget","52921979764889","{width:263,height:460}");
+	                </script>
+	            </div>
+	            <div class="col-sm-3">
+	              <iframe src="{{asset('images/channels/sport/inwidget/index.php?height=460&inline=3')}}" scrolling='no' frameborder='no' style='border:none;width:263px;height:455px;overflow:hidden;'></iframe>
+	            </div>
 
-          </div>
-          <br>
-        </div>
-      </div>
+	          </div>
+	          <br>
+	        </div>
+	      </div>
 		</div>	
 		<div class="margin-with-bottom"></div>
 

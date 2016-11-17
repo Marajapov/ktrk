@@ -38,7 +38,6 @@ class BackgroundController extends Controller
     public function store(Request $request)
     {
         $background = Background::create($request->except('file','q'));
-
         if($request->hasFile('file'))
         {
             $file = $request->file('file');

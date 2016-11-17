@@ -35,7 +35,7 @@ $(document).ready(function(){
         playlist: [{
             image: "{{-- asset('images/live_bg.png') --}}",
             sources: [{
-                file: "http://212.112.97.18/live/7001.flv"
+                file: "http://85.113.29.234/live/7001.flv"
             }]
         }],
         width: "640",

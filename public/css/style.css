@@ -2844,6 +2844,15 @@ display: block;
 .newvideos .slick-slide {
     height: 130px;
 }
+.music-youtube{
+    background: url('../images/channels/muzkanal/music-youtube.jpg');
+    height: 420px;
+}
+
+.social-muschannel{
+    padding-bottom: 20px;
+}
+
 .switch {
     background: rgba(0, 0, 0, 0.24);
     width: 100%;

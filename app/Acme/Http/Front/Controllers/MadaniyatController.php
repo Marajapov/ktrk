@@ -4,8 +4,13 @@ use Illuminate\Http\Request;
 use \Model\MediaCategory\ModelName as MediaCategory;
 class MadaniyatController extends Controller
 {
-    public function __construct()
+   public function __construct()
     {
+        $this->positionTop = \Model\Banner\ModelName::where('positionTop','=','1')->where('channel_id','=','5')->first();
+        $this->positionRight = \Model\Banner\ModelName::where('positionRight','=','1')->where('channel_id','=','5')->first();
+        $this->positionLeft = \Model\Banner\ModelName::where('positionLeft','=','1')->where('channel_id','=','5')->first();
+        $this->positionCenter = \Model\Banner\ModelName::where('positionCenter','=','1')->where('channel_id','=','5')->first();
+        $this->positionBottom = \Model\Banner\ModelName::where('positionBottom','=','1')->where('channel_id','=','5')->first();
     }
 
 
@@ -30,6 +35,11 @@ class MadaniyatController extends Controller
             'backgroundMain' => $backgroundMain,
             'lc' => $lc,
             'postAll' => $postAll,
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionLeft'  => $this->positionLeft,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
         ]);
     }
 
@@ -55,15 +65,15 @@ class MadaniyatController extends Controller
             $weekFromNow = date('Y-m-d H:i', strtotime('-21 days'));
             $postAll = \Model\Post\ModelName::where('published','=',true)->where('madaniyat','=','1')->where('title','<>','')->where('madaniyatProgram','>','0')->where('madaniyatProgram','<>','99')->orderBy('updated_at','desc')->take(2)->get();
             $madaniyatProjects = \Model\Project\ModelName::where('published','=',true)->where('madaniyat','=',1)->where('name','<>','' )->orderBy('name','asc')->get();
-            $topArticles = \Model\Post\ModelName::where('madaniyat','=','1')->where('title','<>','')->where('created_at','>',$weekFromNow)->orderBy('id','desc')->take(5)->get();
-            $popArticles = \Model\Post\ModelName::where('madaniyat','=','1')->where('created_at','>',$weekFromNow)->languagekg()->orderBy('viewed','desc')->take(5)->get();
+            $topArticles = \Model\Post\ModelName::where('madaniyat','=','1')->where('title','<>','')->where('created_at','>',$weekFromNow)->orderBy('id','desc')->take(6)->get();
+            $popArticles = \Model\Post\ModelName::where('madaniyat','=','1')->where('created_at','>',$weekFromNow)->languagekg()->orderBy('viewed','desc')->take(6)->get();
             $anons = \Model\Anons\ModelName::where('channel','=','5')->where('published','=','1')->where('madaniyatsoon','=','1')->where('name','<>','' )->orderBy('id','=','desc')->take(4)->get();
         }else{
             $weekFromNow = date('Y-m-d H:i', strtotime('-21 days'));
             $postAll = \Model\Post\ModelName::where('published','=',true)->where('madaniyat','=','1')->where('titleRu','<>','')->where('madaniyatProgram','>','0')->where('madaniyatProgram','<>','99')->orderBy('updated_at','desc')->take(2)->get();
             $madaniyatProjects = \Model\Project\ModelName::where('published','=',true)->where('madaniyat','=',1)->where('nameRu','<>','' )->orderBy('nameRu','asc')->get();
-            $topArticles = \Model\Post\ModelName::where('madaniyat','=','1')->where('titleRu','<>','')->where('created_at','>',$weekFromNow)->orderBy('id','desc')->take(5)->get();
-            $popArticles = \Model\Post\ModelName::where('madaniyat','=','1')->where('created_at','>',$weekFromNow)->languageru()->orderBy('viewed','desc')->take(5)->get();
+            $topArticles = \Model\Post\ModelName::where('madaniyat','=','1')->where('titleRu','<>','')->where('created_at','>',$weekFromNow)->orderBy('id','desc')->take(6)->get();
+            $popArticles = \Model\Post\ModelName::where('madaniyat','=','1')->where('created_at','>',$weekFromNow)->languageru()->orderBy('viewed','desc')->take(6)->get();
             $anons = \Model\Anons\ModelName::where('channel','=','5')->where('published','=','1')->where('madaniyatsoon','=','1')->where('nameRu','<>','' )->orderBy('id','=','desc')->take(4)->get();
         }
 
@@ -115,7 +125,12 @@ class MadaniyatController extends Controller
             'videonumbers' =>$videonumbers,
             'currentDate' => $currentDate,
             'currentTime' => $currentTime,
-            'program' => $program
+            'program' => $program,
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionLeft'  => $this->positionLeft,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
         ]);
     }
 
@@ -150,6 +165,11 @@ class MadaniyatController extends Controller
             'backgroundMain' => $backgroundMain,
             'madaniyatProjects' => $madaniyatProjects,
             'projectList' => $projectList,
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionLeft'  => $this->positionLeft,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
         ]);
     }
     public function photos()
@@ -176,7 +196,12 @@ class MadaniyatController extends Controller
             'channel' => $channel,
             'backgroundMain' => $backgroundMain,
             'madaniyatProjects' => $madaniyatProjects,
-            'projectList' => $projectList
+            'projectList' => $projectList,
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionLeft'  => $this->positionLeft,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
         ]);
     }
     public function broadcasts()
@@ -188,6 +213,11 @@ class MadaniyatController extends Controller
         return view('Front::channel.madaniyat.broadcasts', [
             'channel' => $channel,
             'backgroundMain' => $backgroundMain,
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionLeft'  => $this->positionLeft,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
         ]);
     }
 
@@ -195,7 +225,7 @@ class MadaniyatController extends Controller
     {
         $lc = app()->getlocale();
         return view('Front::channel.madaniyat.comingsoon',[
-            'lc' => $lc
+            'lc' => $lc,
         ]);
     }
 
@@ -228,7 +258,12 @@ class MadaniyatController extends Controller
             'postAll' => $postAll,
             'perPage' => $perPage,
             'madaniyatProjects' => $madaniyatProjects,
-            'projectList' => $projectList
+            'projectList' => $projectList,
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionLeft'  => $this->positionLeft,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
         ]);
     }
 
@@ -264,6 +299,11 @@ class MadaniyatController extends Controller
             'gallery' => $gallery,
             'madaniyatProjects' => $madaniyatProjects,
             'projectList' => $projectList,
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionLeft'  => $this->positionLeft,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
         ]);
     }
 
@@ -276,6 +316,11 @@ class MadaniyatController extends Controller
         return view('Front::channel.madaniyat.videos', [
             'channel' => $channel,
             'backgroundMain' => $backgroundMain,
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionLeft'  => $this->positionLeft,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
         ]);
     }
 
@@ -365,7 +410,12 @@ class MadaniyatController extends Controller
             'mainBanner'   => $mainBanner,
             'projectList' => $projectList,
             'backgroundMain' => $backgroundMain,
-            'madaniyatProjects' => $madaniyatProjects
+            'madaniyatProjects' => $madaniyatProjects,
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionLeft'  => $this->positionLeft,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
         ]);
     }
 
@@ -398,6 +448,11 @@ class MadaniyatController extends Controller
             'backgroundMain' => $backgroundMain,
             'allVideos' => $allVideos,
             'madaniyatProjects' => $madaniyatProjects,
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionLeft'  => $this->positionLeft,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
         ]);
     }
 
@@ -426,12 +481,17 @@ class MadaniyatController extends Controller
 
         return view('Front::channel.madaniyat.project',[
 
-                'project' => $project,
-                'mainBanner'   => $mainBanner,
-                'projectList' => $projectList,
-                'backgroundMain' => $backgroundMain,
-                'relatedVideos' => $relatedVideos,
-                'madaniyatProjects' => $madaniyatProjects,
+            'project' => $project,
+            'mainBanner'   => $mainBanner,
+            'projectList' => $projectList,
+            'backgroundMain' => $backgroundMain,
+            'relatedVideos' => $relatedVideos,
+            'madaniyatProjects' => $madaniyatProjects,
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionLeft'  => $this->positionLeft,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
 
             ]
         );
@@ -699,6 +759,11 @@ class MadaniyatController extends Controller
             'popArticles' => $popArticles,
             'lc' => $lc,
             'projectList' => $projectList,
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionLeft'  => $this->positionLeft,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
         ]);
     }
 
@@ -741,6 +806,11 @@ class MadaniyatController extends Controller
             'popArticles' => $popArticles,
             'lc' => $lc,
             'projectList' => $projectList,
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionLeft'  => $this->positionLeft,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
 
         ]);
     }
@@ -782,15 +852,20 @@ class MadaniyatController extends Controller
 
         return view('Front::channel.madaniyat.projects',[
 
-                'project' => $project,
-                //      'MediaCategories'       => $MediaCategories,
-                'mainBanner'   => $mainBanner,
-                'categories'=>$categories,
-                'projectList' => $projectList,
-                'backgroundMain' => $backgroundMain,
-                'relatedNews' => $relatedNews,
-                'madaniyatProjects' => $madaniyatProjects,
-                'lc' => $lc
+            'project' => $project,
+            //      'MediaCategories'       => $MediaCategories,
+            'mainBanner'   => $mainBanner,
+            'categories'=>$categories,
+            'projectList' => $projectList,
+            'backgroundMain' => $backgroundMain,
+            'relatedNews' => $relatedNews,
+            'madaniyatProjects' => $madaniyatProjects,
+            'lc' => $lc,
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionLeft'  => $this->positionLeft,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
 
             ]
         );
@@ -863,6 +938,11 @@ class MadaniyatController extends Controller
             'week' => $week,
             'madaniyatProjects' => $madaniyatProjects,
             'projectList' => $projectList,
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionLeft'  => $this->positionLeft,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
 
         ]);
     }

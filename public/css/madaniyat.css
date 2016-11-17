@@ -975,6 +975,7 @@ ul.social-share li a:hover {
 }
 
 .news-top{
+    padding: 0px 1px 0 15px;
 }
 
 .news-top .box {
@@ -1330,3 +1331,15 @@ ul.social-share li a:hover {
 
 
 /*LOGO Animated*/
+
+/* BANNER BEGIN*/
+.madaniyat .panel-default > .panel-heading {
+    padding: 15px 0px 0px 15px;
+}
+.banner-middle img {
+    padding: 0px 1px 0 15px;
+}
+.banner-middle {
+    padding-bottom: 15px;
+}
+/* BANNER END*/

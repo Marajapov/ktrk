@@ -444,6 +444,56 @@
       </div>
    </div>
    <!-- END GALLERY -->
+   <!-- BEGIN SOCIAL -->
+   <div class="row">
+      <div class="col-md-12">
+         <div class="row imgmuz">
+            <div class="panel panel-default">
+               <div class="panel-heading">
+                  <h3 class="panel-title"><span> - {{ trans('radiopages.Wearesocial')}} - </span></h3>
+               </div>
+               <div class="panel-body social-muschannel">
+                  <div class="col-sm-3">
+                    <div class="fb-page" style="height: 460px;overflow: hidden;" data-href="https://www.facebook.com/ktrkmuzyka" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                        <div class="fb-xfbml-parse-ignore">
+                          <blockquote cite="https://www.facebook.com/ktrkmuzyka"><a href="https://www.facebook.com/ktrkmuzyka/">КТРК Музыка</a></blockquote>
+                        </div>
+                    </div>  
+                  </div>
+                  <div class="col-sm-3">
+                      <script src="https://apis.google.com/js/platform.js"></script>
+
+<div class="g-ytsubscribe" data-channelid="UCPYuDx0G3WgGH3SR86VUnlA" data-layout="full" data-count="default"></div>           
+                     <div class="music-youtube"></div>
+                  </div>
+                  <div class="col-sm-3">
+                      <div id="ok_group_widget"></div>
+                      <script>
+                          !function (d, id, did, st) {
+                              var js = d.createElement("script");
+                              js.src = "https://connect.ok.ru/connect.js";
+                              js.onload = js.onreadystatechange = function () {
+                                  if (!this.readyState || this.readyState == "loaded" || this.readyState == "complete") {
+                                      if (!this.executed) {
+                                          this.executed = true;
+                                          setTimeout(function () {
+                                              OK.CONNECT.insertGroupWidget(id,did,st);
+                                          }, 0);
+                                      }
+                                  }}
+                              d.documentElement.appendChild(js);
+                          }(document,"ok_group_widget","52901559140520","{width:263,height:460}");
+                      </script>
+                  </div>
+                  <div class="col-sm-3">
+                    <iframe src="{{asset('images/channels/muzkanal/inwidget/index.php?height=460&inline=3')}}" scrolling='no' frameborder='no' style='border:none;width:263px;height:455px;overflow:hidden;'></iframe>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- END SOCIAL -->
 </div>
 @stop
 @section('footerScript')
@@ -528,7 +578,7 @@
        playlist: [{
            image: "{{ asset('images/channels/muzkanal/online.jpg') }} ",
            sources: [{
-               file: "http://212.112.97.18:80/live/4002.flv"
+               file: "http://85.113.29.234:80/live/4002.flv"
            }]
        }],
        width: "100%",

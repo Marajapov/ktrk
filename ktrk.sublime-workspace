@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"pad",
+				"padding-bottom"
+			],
+			[
 				"for",
 				"foreach\tforeach …"
 			],
@@ -58,10 +62,6 @@
 			[
 				"z",
 				"z-index"
-			],
-			[
-				"pad",
-				"padding-right"
 			],
 			[
 				"border",
@@ -520,21 +520,29 @@
 	"buffers":
 	[
 		{
-			"contents": "Package Control Messages\n========================\n\nBracketHighlighter\n------------------\n\n  # BracketHighlighter 2.22.0\n  \n  New release!\n  \n  Please see `Preferences->Package Settings->BracketHighlighter->Changelog`  \n  for more info about the release.\n\n\nMaterial Theme\n--------------\n\n  ## Material Theme for Sublime Text 3\n  \n  For more information on the Material Theme: https://github.com/equinusocio/material-theme\n  \n  **********************************************************************************************\n  \n  # Activate the theme\n  \n  You can active this theme from:\n  - Command palette `Tools > Command Palette` (or <kbd>cmd/ctrl</kbd>+ <kbd>↑</kbd>+<kbd>p</\n  kbd>) by typing `Material Theme: Activate theme`. \n  - Context menu (Right click on the editor) and choose `Material Theme > Activate Material Theme`\n  - `Preferences > Packages Settings` and choose `Material Theme > Activate Material Theme`\n  \n  You can also manually activate this theme by adding these lines to your user settings (**Preferences > Settings - User**):\n  \n  ```json\n  \"color_scheme\": \"Packages/Material Theme/schemes/Material-Theme.tmTheme\",\n  \"theme\": \"Material-Theme.sublime-theme\",\n  ```\n  ```\n  \n  ## File icons\n  To enable file type icons you have to install an additional package, search for `zz File Icons` on Package Control, after install restart Sublime Text.\n  \n  **********************************************************************************************\n  \n  ### Other available theme options:\n  \n  ```json\n  \"material_theme_accent_acid-lime\"         : true , // Set acid-lime accent color\n  \"material_theme_accent_blue\"              : true , // Set blue accent color\n  \"material_theme_accent_brba\"              : true , // Set Breaking Bad green accent color\n  \"material_theme_accent_bright-teal\"       : true , // Set bright-teal accent color\n  \"material_theme_accent_cyan\"              : true , // Set cyan accent color\n  \"material_theme_accent_graphite\"          : true , // Set graphite accent color\n  \"material_theme_accent_indigo\"            : true , // Set indigo accent color\n  \"material_theme_accent_lime\"              : true , // Set lime green accent color\n  \"material_theme_accent_orange\"            : true , // Set orange accent color\n  \"material_theme_accent_pink\"              : true , // Set pink accent color\n  \"material_theme_accent_purple\"            : true , // Set purple accent color\n  \"material_theme_accent_red\"               : true , // Set pale red accent color\n  \"material_theme_accent_sky\"               : true , // Set bright-cyan accent color\n  \"material_theme_accent_tomato\"            : true , // Set tomato red accent color\n  \"material_theme_accent_yellow\"            : true , // Set yellow accent color\n  \"material_theme_bold_tab\"                 : true , // Make the tab labels bolder\n  \"material_theme_compact_panel\"            : true , // Set minimal padding for the search panel\n  \"material_theme_compact_sidebar\"          : true , // Set compact side bar\n  \"material_theme_contrast_mode\"            : true , // Enable sidebar and panels contrast mode\n  \"material_theme_disable_fileicons\"        : true , // Hide sidebar file type icons\n  \"material_theme_arrow_folders\"            : true , // Replace folder icons with arrows\n  \"material_theme_big_fileicons\"            : true , // Show bigger file type icons\n  \"material_theme_disable_folder_animation\" : true , // Disable folder animation\n  \"material_theme_disable_tree_indicator\"   : true , // Disable sidebar file indicator\n  \"material_theme_bullet_tree_indicator\"    : true , // Set a bullet as active tree indicator\n  \"material_theme_panel_separator\"          : true , // Show bottom panel separator\n  \"material_theme_small_statusbar\"          : true , // Set small status bar\n  \"material_theme_small_tab\"                : true , // Set small tabs\n  \"material_theme_bright_scrollbars\"        : true , // Bright scrollbars puck color\n  \"material_theme_accent_scrollbars\"        : true , // Enable accent color for scrollbars\n  \"material_theme_tabs_autowidth\"           : true , // Enable autowidth for tabs\n  \"material_theme_tabs_separator\"           : true , // Show tabs separator, this disables tab hover \n  \n  // If you use Material Theme - Appbar addon you can use additional settings:\n  \"material_theme_tree_headings\"            : true , // Show sidebar headings\n  ```\n  \n  **********************************************************************************************\n  \n  ### Recommended UI and font settings for a better experience:\n  \n  ```json\n  {\n    \"overlay_scroll_bars\": \"enabled\",\n    \"line_padding_top\": 3,\n    \"line_padding_bottom\": 3,\n    \"always_show_minimap_viewport\": true,\n    \"bold_folder_labels\": true,\n    \"indent_guide_options\": [ \"draw_normal\", \"draw_active\" ],   // Highlight active indent\n    \"font_options\": [ \"gray_antialias\" ],                       // For retina Mac\n  }\n  ```\n\n\nTheme - Spacegray\n-----------------\n\n  Thanks for installing Spacegray!\n  \n  \n  How to activate\n  ===============\n  \n  Activate the UI theme and color scheme by modifying your user preferences file, which you can find using the menu item `Sublime Text -> Preferences -> Settings - User` (⌘+, on Mac).\n  \n  Spacegray comes in different flavors, based on Base16 color schemes. You can choose whichever flavor you like, but don't forget to change *both* color scheme and UI theme so they match.\n  \n  *Note: Don't forget to restart Sublime Text after activating the theme.*\n  \n  \n  Spacegray\n  ---------\n  \n  Default flavor based on Base16 Ocean Dark color scheme.\n  \n  *Example settings*\n  \n      {\n        \"theme\": \"Spacegray.sublime-theme\",\n        \"color_scheme\": \"Packages/Theme - Spacegray/base16-ocean.dark.tmTheme\"\n      }\n  \n  \n  Spacegray Light\n  ---------------\n  \n  Light variation based on Base16 Ocean Light color scheme.\n  \n  *Example settings*\n  \n      {\n        \"theme\": \"Spacegray Light.sublime-theme\",\n        \"color_scheme\": \"Packages/Theme - Spacegray/base16-ocean.light.tmTheme\"\n      }\n  \n  \n  Spacegray Eighties\n  ------------------\n  \n  A variation based on Base16 Eighties Dark color scheme.\n  \n  *Example settings*\n  \n      {\n        \"theme\": \"Spacegray Eighties.sublime-theme\",\n        \"color_scheme\": \"Packages/Theme - Spacegray/base16-eighties.dark.tmTheme\"\n      }\n  \n  \n  *Note: Don't forget to restart Sublime Text after activating the theme.*\n",
+			"file": "app/Acme/Http/Admin/Controllers/BackgroundController.php",
 			"settings":
 			{
-				"buffer_size": 6392,
-				"line_ending": "Windows",
-				"name": "Package Control Messages",
-				"read_only": true,
-				"scratch": true
+				"buffer_size": 3238,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/Acme/Http/Front/Controllers/MuzkanalController.php",
+			"file": "app/Acme/Http/Front/Views/pages/contacts.blade.php",
 			"settings":
 			{
-				"buffer_size": 26801,
+				"buffer_size": 40530,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/Acme/Http/Admin/Views/background/create.blade.php",
+			"settings":
+			{
+				"buffer_size": 1651,
+				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		}
@@ -676,18 +684,25 @@
 	},
 	"expanded_folders":
 	[
-		"/C/xampp/htdocs/ktrk.dev",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front",
+		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views",
+		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/pages",
 		"/C/xampp/htdocs/ktrk.dev/public/css"
 	],
 	"file_history":
 	[
+		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Controllers/MadaniyatController.php",
+		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/madaniyat/index.blade.php",
+		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Controllers/SportController.php",
+		"/C/xampp/htdocs/ktrk.dev/public/css/madaniyat.css",
+		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Admin/Views/layouts/default.blade.php",
+		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Controllers/MuzkanalController.php",
+		"/C/xampp/htdocs/ktrk.dev/.gitignore",
 		"/C/Users/Abakan/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/C/Users/Abakan/Desktop/ky_KY.po",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/muzkanal/index.blade.php",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/routesKtrk.php",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/routes.php",
-		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Controllers/MuzkanalController.php",
 		"/C/xampp/htdocs/ktrk.dev/resources/lang/kg/radiopages.php",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/muzkanal/default.blade.php",
 		"/C/xampp/htdocs/ktrk.dev/resources/lang/ru/radiopages.php",
@@ -696,10 +711,7 @@
 		"/C/xampp/htdocs/ktrk.dev/public/css/style.css",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/partials/prefooter.blade.php",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/muzkanal/index10-16-16.blade.php",
-		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Controllers/MadaniyatController.php",
-		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/madaniyat/index.blade.php",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/sport/nav.blade.php",
-		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Controllers/SportController.php",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Controllers/HomeController.php",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/partials/footer.blade.php",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/partials/modal.blade.php",
@@ -711,7 +723,6 @@
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/birinchi/allnews.blade.php",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/dostuk/projects.blade.php",
 		"/C/xampp/htdocs/ktrk.dev/public/css/pages.css",
-		"/C/xampp/htdocs/ktrk.dev/.gitignore",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/dostuk/project.blade.php",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Controllers/KyrgyzradioController.php",
 		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/kyrgyzradio/projects.blade.php",
@@ -807,13 +818,11 @@
 		"/D/Old_local_D/workD/form/form_style.css",
 		"/D/Eldos/Codrops/HoverEffectIdeas/HoverEffectIdeas/css/set1.css",
 		"/C/Users/Abakan/Downloads/webfontkit-20160701-061327/stylesheet.css",
-		"//AIBEK-ПК/shared/Eldos/fonts.css",
-		"//AIBEK-ПК/shared/Eldos/style.css",
-		"/C/xampp/htdocs/ktrk.dev/app/Acme/Http/Front/Views/channel/madaniyat/test.blade.php"
+		"//AIBEK-ПК/shared/Eldos/fonts.css"
 	],
 	"find":
 	{
-		"height": 34.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -828,6 +837,10 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"Ала-Тоо",
+			"topArticles",
+			"END",
+			"banner",
 			"week",
 			"\"\n",
 			"---\"\n",
@@ -951,11 +964,7 @@
 			"подроб",
 			"Баардыгы",
 			"Баарды",
-			"date",
-			"teleprogram",
-			"madan",
-			"teleprogram",
-			"morelink"
+			"date"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -989,124 +998,19 @@
 			[
 				{
 					"buffer": 0,
+					"file": "app/Acme/Http/Admin/Controllers/BackgroundController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6392,
+						"buffer_size": 3238,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1180,
-								1063
-							]
-						],
-						"settings":
-						{
-							"auto_indent": false,
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content"
-							],
-							"default_dir": "C:\\xampp\\htdocs\\ktrk.dev",
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_width": 2,
-							"word_wrap": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/Acme/Http/Front/Controllers/MuzkanalController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 26801,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1060,
-								1060
+								987,
+								987
 							]
 						],
 						"settings":
@@ -1118,8 +1022,8 @@
 								{
 									"1":
 									[
-										1044,
-										1045
+										1529,
+										1530
 									]
 								},
 								"icon":
@@ -1134,8 +1038,8 @@
 								{
 									"1":
 									[
-										934,
-										935
+										905,
+										906
 									]
 								},
 								"unmatched":
@@ -1144,6 +1048,21 @@
 							},
 							"bracket_highlighter.regions":
 							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
 								"bh_single_quote",
 								"bh_single_quote_center",
 								"bh_single_quote_open",
@@ -1154,26 +1073,110 @@
 								"bh_c_define_open",
 								"bh_c_define_close",
 								"bh_c_define_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
 								"bh_double_quote",
 								"bh_double_quote_center",
 								"bh_double_quote_open",
 								"bh_double_quote_close",
 								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 456.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/Acme/Http/Front/Views/pages/contacts.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 40530,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7043,
+								7043
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										7045,
+										7046
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/tag.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										7019,
+										7020
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
 								"bh_square_close",
 								"bh_square_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
 								"bh_round",
 								"bh_round_center",
 								"bh_round_open",
@@ -1184,11 +1187,11 @@
 								"bh_default_open",
 								"bh_default_close",
 								"bh_default_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
 								"bh_curly",
 								"bh_curly_center",
 								"bh_curly_open",
@@ -1198,7 +1201,146 @@
 								"bh_angle_center",
 								"bh_angle_open",
 								"bh_angle_close",
-								"bh_angle_content"
+								"bh_angle_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2078.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/Acme/Http/Admin/Views/background/create.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1651,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								35,
+								35
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										36,
+										40
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/tag.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										36,
+										40
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
 							],
 							"syntax": "Packages/PHP/PHP.sublime-syntax",
 							"tab_size": 4,
@@ -1208,7 +1350,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]

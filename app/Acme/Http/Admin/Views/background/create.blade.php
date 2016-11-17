@@ -1,4 +1,5 @@
 @extends('Admin::layouts.default')
+<meta type="Content-Type:image/jpeg">
 @section('title', $background->getName())
 
 @section('content')

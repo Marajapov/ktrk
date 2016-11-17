@@ -501,4 +501,13 @@ class PostController extends Controller
         $row->save();
         return redirect()->route('admin.post.index');
     }
+
+    public function search(Request $request)
+    {
+        $key = $request->get('key');
+        $row = Post::search($key)->orderBy('id','desc')->get();
+        return view('Admin::post.searchResult', [
+            'posts' => $row,
+            ]);
+    }
 }
