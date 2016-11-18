@@ -60,6 +60,11 @@
                                             @endif
                                         </div>
                                     </div>
+                                    <div class="banner-middle">
+                                        <a href="@if($positionCenter) {{ $positionCenter->linkTo }} @else # @endif">
+                                            <img src="@if(!empty($positionCenter->file)) {{ asset($positionCenter->file) }} @else {{asset('images/channels/sport/banner-middle.png')}} @endif" alt=""/>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-md-4 no-padding">

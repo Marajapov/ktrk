@@ -16,9 +16,11 @@ class MediaController extends Controller
      */
     public function index()
     {
-        $medias = Media::orderby('id','desc')->get();
+        $perPage = 10;
 
-        return view('Admin::media.index', ['medias' => $medias]);
+        $medias = Media::orderby('id','desc')->paginate($perPage);
+
+        return view('Admin::media.index', ['medias' => $medias,'perPage'=>$perPage]);
     }
 
     /**
@@ -389,5 +391,14 @@ class MediaController extends Controller
         $row->number = 99;
         $row->save();
         return redirect()->route('admin.media.index');
+    }
+
+    public function search(Request $request)
+    {
+        $key = $request->get('key');
+        $row = Media::search($key)->orderBy('id','desc')->get();
+        return view('Admin::media.searchResult', [
+            'medias' => $row,
+            ]);
     }
 }

@@ -50,6 +50,11 @@ Route::group(['domain' => 'www.ktrk.kg', 'prefix' => '/music', 'namespace' => 'F
   Route::get('/allphotos',['as' => 'muzkanal.allphotos','uses'=> 'MuzkanalController@allphotos'] );
   Route::get('/photos/{gallery}',['as' => 'muzkanal.photos','uses'=> 'MuzkanalController@Gallery'] );
 
+  // Routes for likes unlikes
+  Route::get('/like/{like}', ['as' => 'muzkanal.like', 'uses' => 'MuzkanalController@like']);
+  Route::get('/unlike/{unlike}', ['as' => 'muzkanal.unlike', 'uses' => 'MuzkanalController@unlike']);    
+  Route::get('/likehp/{likehp}', ['as' => 'muzkanal.likehp', 'uses' => 'MuzkanalController@likehp']);
+
 });
 
 Route::group(['domain' => 'www.ktrk.kg', 'prefix' => '/', 'namespace' => 'Front\Controllers'], function() {

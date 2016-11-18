@@ -48,6 +48,14 @@
         });
     </script>
 
+    <style>
+       body{
+         @if($backgroundMain != null) 
+         background: rgba(0, 0, 0, 0) url('{{ asset($backgroundMain->getFile()) }}') 50% 50% no-repeat fixed !important;         
+         @endif
+       }
+    </style>
+
 </head>
 <body class="music">
 

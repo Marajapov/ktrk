@@ -99,13 +99,13 @@
                      <span class="view"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
                   </div>
                   <h2>{{ $post->getTitle() }}</h2>
-<!--                  <div class="post-thumb radioimg">
+                 <div class="post-thumb radioimg">
                    <a id="post-thumb" href="@if(empty($post->thumbnail_big)){{  asset($post->thumbnail) }}@else{{ asset($post->thumbnail_big) }}@endif">
                      <img class="left" src="@if(empty($post->thumbnail_big)) {{  asset($post->thumbnail) }} @else {{  asset($post->thumbnail_big) }} @endif" alt="image">
                    </a>
                    @if($post->thumb_desc || $post->thumb_desc_ru)<span class="thumb_desc">{{ $post->getThumbnailDesc() }}</span>@endif
                    @if($post->thumb_author)<span class="thumb_author"> Фото: {{ $post->thumb_author }}</span>@endif
-                 </div> -->
+                 </div>
                  <div class="sound-frame">
                    <h2>{{ $post->getAudio() }}</h2>
                  </div>

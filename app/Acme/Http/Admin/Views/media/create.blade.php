@@ -60,8 +60,10 @@
                 height: 300,
                 toolbarSticky: false,
                 placeholderText: '{{ trans('site.AdminPostEnterText') }}',
+
                 imageUploadParam: 'file',
                 imageUploadURL: "{{ asset('froala/upload_image.php') }}",
+
                 imageManagerLoadURL: "{{ asset('froala/load_images.php') }}"
 
             });

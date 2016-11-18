@@ -27,6 +27,11 @@
                 </a>
             </li>
             <li>
+                <a href="{{ route('sport.home') }}">
+                    <img src="{{ asset('images/channels/sport-channel-main.png') }}" alt=""/>
+                </a>
+            </li>
+            <li>
                 <a href="{{ route('kyrgyzradio.home') }}">
                     <img src="{{ asset('images/channels/small/5.png') }}" alt=""/>
                 </a>
@@ -56,7 +61,7 @@
             </p>
             <ul>
                 <li>
-                    <a href="https://play.google.com/store/apps/details?id=ktrk.kg.app">
+                    <a href="https://play.google.com/store/apps/details?id=kg.ktrk">
                         <img src="{{ asset('images/android.png') }}" alt="ktrk_adnroid"/>
                     </a>
                 </li>

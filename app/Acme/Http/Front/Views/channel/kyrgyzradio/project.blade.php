@@ -43,7 +43,7 @@
                   </div>
                   <div class="panel-body">
                      @if($relatedNews)
-                     @foreach($project->kgprogram()->get() as $post)
+                     @foreach($relatedNews as $post)
                      <div class="media">
                         <div class="media-left">
                            <a href="{{ route('kyrgyzradio.show', $post) }}">
@@ -59,10 +59,37 @@
                         </div>
                      </div>
                      @endforeach
-                     @endif
                      <footer>
-                        <a href="{{ route('kyrgyzradio.projects') }}">Башка жаңылыктар</a>
+                        <nav>
+                            <ul class="pagination">
+
+                                <li>
+                                    <a href="{{ route('kyrgyzradio.project', ['project' => $project, 'page' => 1]) }}" class="btn btn-default @if($relatedNews->currentPage() == 1) disabled @endif">{{ trans('site.Start') }}</a>
+                                </li>
+                                <li>
+                                    <a href="{{ $relatedNews->previousPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                                </li>
+
+                                @for($i = 0, $j = 1; $i < $relatedNews->total(); $i+=$perPage)
+                                    <li class="@if(($j > $relatedNews->currentPage()+3) || ($j < $relatedNews->currentPage()-3)) hidden @endif">
+                                        <a href="{{ route('kyrgyzradio.project', ['project' => $project, 'page' => $j]) }}" class="btn btn-default @if($relatedNews->currentPage() == $j) active @endif">
+                                            {{ $j++ }}
+                                        </a>
+                                    </li>
+                                @endfor
+
+                                <li>
+                                    <a href="{{ $relatedNews->nextPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                                </li>
+
+                                <li>
+                                    <a href="{{ route('kyrgyzradio.project', ['project' => $project, 'page' => ceil($relatedNews->total()/$perPage)]) }}" class="btn btn-default @if($relatedNews->currentPage() == ceil($relatedNews->total()/$perPage)) disabled @endif">{{ trans('site.End') }}</a>
+                                </li>
+
+                            </ul>
+                        </nav>
                      </footer>
+                     @endif
                   </div>
                </div>
             </div>

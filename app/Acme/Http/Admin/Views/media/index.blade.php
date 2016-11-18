@@ -19,11 +19,27 @@
                     </a>
                 </div>
 
+                <div class="row">
+                    <div class="col-xs-offset-9 col-xs-3">
+                        <div class="form">
+                            {!! Form::open(['route' => ['admin.media.search'], 'method' => 'GET']) !!}
+                            <div class="input-group" style="text-align:right; ">
+                              <input name="key" required="required" style="width:100%;" type="text" class="form-control">
+                              <span class="input-group-btn">
+                              <button type="submit" class="btn btn-primary">Поиск</button>
+                              </span>
+                            </div>
+                            {!! Form::close() !!}
+                        </div>
+                    </div>
+                </div>
+                
                 <div class="x_content">
 
                     <table id="example" class="table table-bordered table-striped" data-order='[[ 4, "desc" ]]' data-page-length='10'>
                         <thead>
                         <tr>
+                            <th>ID</th>
                             <th>Миниатюра</th>
                             <th>{{ trans('site.Title') }}</th>
                             {{--<th>{{ trans('site.TitleRU') }}</th>--}}
@@ -36,6 +52,7 @@
                         <tbody>
                         @foreach($medias as $key => $media)
                             <tr class="@if($media->published == 1) success @elseif($media->published == 0) danger @endif">
+                                <td class="table-id">{{ $media->id}}</td>
                                 <td class="table-img">
                                     @if($media->isImage())
                                         <img src="http://img.youtube.com/vi/{{ $media->getUrl() }}/sddefault.jpg" class="img-responsive">
@@ -114,6 +131,35 @@
                         </tbody>
                     </table>
 
+            <nav>
+              <ul class="pagination">
+
+                  <li>
+                      <a href="{{ route('admin.media.index', ['page' => 1]) }}" class="btn btn-default @if($medias->currentPage() == 1) disabled @endif">{{ trans('site.Start') }}</a>
+                  </li>
+                  <li>
+                      <a href="{{ $medias->previousPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                  </li>
+
+                  @for($i = 0, $j = 1; $i < $medias->total(); $i+=$perPage)
+                      <li class="@if(($j > $medias->currentPage()+10) || ($j < $medias->currentPage()-10)) hidden @endif">
+                          <a href="{{ route('admin.media.index', ['page' => $j]) }}" class="btn btn-default @if($medias->currentPage() == $j) active @endif">
+                              {{ $j++ }}
+                          </a>
+                      </li>
+                  @endfor
+
+                  <li>
+                      <a href="{{ $medias->nextPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                  </li>
+
+                  <li>
+                      <a href="{{ route('admin.media.index', ['page' => ceil($medias->total()/$perPage)]) }}" class="btn btn-default @if($medias->currentPage() == ceil($medias->total()/$perPage)) disabled @endif">{{ trans('site.End') }}</a>
+                  </li>
+
+              </ul>
+            </nav>
+
                 </div>
             </div>
         </div>
@@ -122,7 +168,7 @@
 @stop
 
 @section('scripts')
-    <script src="{{ asset('js/admin/jquery.dataTables.js') }}"></script>
+   <!--  <script src="{{ asset('js/admin/jquery.dataTables.js') }}"></script>
     <script src="{{ asset('js/admin/dataTables.bootstrap.js') }}"></script>
 
     <script>
@@ -149,6 +195,6 @@
                 ]
             });
         } );
-    </script>
+    </script> -->
 @endsection
 

@@ -2112,7 +2112,6 @@ Author: Eldos;
     width: 40px;
     height: 40px;
     float: left;
-    margin-left: 45px;
 }
 .hit-parad .singerrate {
     padding-left: 5px;
@@ -2131,6 +2130,9 @@ Author: Eldos;
     width: 58%;
     line-height: 18px;
 }
+.hit-parad .song-name{
+    color: #34495E;
+}
 .hit-parad .glyphicon-play {
     font-size: 30px;
     margin-top: 5px;
@@ -2140,15 +2142,14 @@ Author: Eldos;
     color: #F44336;
 }
 .hit-parad .numeric {
-    font-size: 35px;
-    font-weight: bold;
-    text-align: left;
-    position: absolute;
-    display: inherit;
-    color: #EF6B6B;
-    margin-top: -4px;
+    display: block;
+    position: relative;
+    float: left;
     width: 40px;
-    text-align: right;
+    color: #EF6B6B;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
 }
 .hit-parad .vote {
     /*margin-right: 5px;*/
@@ -2186,8 +2187,17 @@ Author: Eldos;
     right: 0;
     left: 0;
     cursor: pointer;
+    line-height: 35px;
 }
-
+.hit-parad  .vote .like-button i {
+    margin-top: 0px;
+    padding-left: 10px;
+    font-size: 1.6em;
+    padding-top: 7px;
+}
+.hit-parad  .vote .topcounts{
+    font-size: 14px;
+}
 .hit-parad .like{
     color: #607d8b;
     line-height: 40px;
@@ -2834,6 +2844,15 @@ display: block;
 .newvideos .slick-slide {
     height: 130px;
 }
+.music-youtube{
+    background: url('../images/channels/muzkanal/music-youtube.jpg');
+    height: 420px;
+}
+
+.social-muschannel{
+    padding-bottom: 20px;
+}
+
 .switch {
     background: rgba(0, 0, 0, 0.24);
     width: 100%;
@@ -3674,10 +3693,24 @@ display: block;
 .videofix {
     padding: 0px;
 }
+.panel-hitparad{
+    margin-top: 10px;
+}
+
 .topchart {
     padding: 0px 5px 0px 0px;
-    margin-top: 10px;
+    /*margin-top: 10px;*/
     font-family: 'Roboto Condensed';
+}
+.topchart-fix{
+    padding: 0;
+}
+.topchart-top{
+    padding: 0;
+    border-right: 1px solid #eee;
+}
+.hit-nedeli{
+    padding: 15px;
 }
 .topchart .panel-heading {
     z-index: 999;
@@ -3704,13 +3737,36 @@ display: block;
 .topchart .show-title span {
     color: #fff;
 }
+.topchart .tandoo{
+    font-size: 18px;
+    color: #53495e;
+}
+
+.topchart .tandoo .t-title{
+    text-align: center;
+    border-bottom: 1px solid #e3e3e3;
+    display: block;
+    font-weight: bold;
+    color: #E91E63;
+}
+.topchart .tandoo .t-body{
+    position: relative;
+    display: block;
+    margin-top: 10px;
+    color: #0e6dad;
+}
+ .topchart .tandoo .t-body .btn-whatsapp{
+    border-radius: 2px !important;
+ }
 .topnumber h2 {
-    display: inherit;
-    margin-top: 6px;
-    font-size: 30px;
+    display: table-cell;
+    height: 50px;
+    width: inherit;
+    font-size: 2em;
     font-weight: bold;
     text-align: center;
-    color: #F44336
+    color: #F44336;
+    vertical-align: middle;
 }
 .toppozition {
     border-left: 2px solid #fff;
@@ -3738,49 +3794,72 @@ display: block;
 }
 .topimg {
     padding: 0px;
-    border-left: 2px solid #fff;
+    /*border-left: 2px solid #fff;*/
 }
 .topimg img {
     height: 50px;
     background-position: center center;
 }
 .topartist {
+    height: 50px;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    line-height: 50px;
     border-left: 2px solid #fff;
 }
 .topartist:hover{
-    background: #F44336;
-    cursor: pointer;
+    /*background: #F44336;*/
+    cursor:text;
 }
 .topartist h3 {
-    float: left;
-    margin-top: 13px;
-    color: #3F51B5;
-    font-size: 22px;
+    height: 50px;
+    display: table-cell;
+    color: #34495e;
+    font-size: 18px;
+    vertical-align: middle;
 }
 .topborder a:hover, .topborder a:focus{
     color: #F7F7F7;
 }
 .topartist h3:hover{
-    float: left;
+/*    float: left;
     margin-top: 13px;
     color: #F7F7F7;
-    font-size: 22px;
+    font-size: 22px;*/
 }
 .topborder {
-    border: 2px solid #fff;
-    margin: 0px;
-    background: #ECECEC;
+    position: relative;
+    padding: 3px;
+    border-bottom: 1px solid #ECECEC;
+}
+.topborder:last-child{
+    border-bottom: none;
 }
 .topmainimg {
     box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .topclip {
-    padding-top: 3px;
-    font-size: 32px;
-    border-left: 2px solid #fff;
+    height: 50px;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    line-height: 45px;
+    /*border-left: 1px solid #fff;*/
+    /*border-right: 1px solid #fff;*/
 }
 .topclip i {
-    color: #F44336;
+    position: relative;
+    display: inline-block;
+    height: 35px;
+    width: 35px;
+    padding-left: 4px;
+    border-radius: 100% !important;
+    border: 1px solid #f09891;
+    color: #f44336;
+    text-align: center;
+    line-height: 30px;
+    vertical-align: middle;
 }
 .topclip i:hover{
     color:red;
@@ -3788,6 +3867,43 @@ display: block;
 
 .topclip a:hover{
     color: #F44336;
+}
+
+.toplike{
+    height: 50px;
+    line-height: 50px;
+    max-width: 100%;
+    padding: 0px;
+}
+.toplike .like-button{
+    border: none;
+    background: none;
+    float: right;
+}
+
+
+.toplike  .red-tooltip + .tooltip > .tooltip-inner {background-color: #f44336;}
+
+.toplike  .red-tooltip + .tooltip > .tooltip-arrow { border-left-color:#f44336; }
+
+.toplike .like-button i{
+    position: relative;
+    font-size: 1.9em;
+    padding-top: 6px;
+    margin-top: 7px;
+    color: #3498DB;
+}
+.toplike .like-button i:hover{
+    color: #f44336;
+}
+.toplike .topcounts{
+    display: block;
+    width: 15px;
+    font-size: 16px;
+    /*font-weight: 600;*/
+    float: left;
+    color: #34495E;
+    text-align: right;
 }
 @media (max-width:650px) {
     .topnumber h2 {

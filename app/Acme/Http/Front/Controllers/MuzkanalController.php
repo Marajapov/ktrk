@@ -15,10 +15,65 @@ class MuzkanalController extends Controller
 
     public function Home(Request $request)
     {
+        // counter to nulling
+        $today = date('Y-m-d');
+        $date = date('Y-m-d');
+        $sunday = strtotime( "next monday");
+        $deadDate = date('Y-m-d',$sunday);
+        if($today == $deadDate){
+            $table = \Model\Media\ModelName::where('hitnumber','<>',0)->get();
+            foreach ($table as $key => $row) {
+                $row->like = 0;
+                $row->unlike = 0;
+                $row->save();
+            } // end foreach
+        }
+
+        // $table = \Model\Media\ModelName::where('hitnumber','<>',0)->get();
+        // foreach ($table as $key => $row) {
+        //     $row->like = 0;
+        //     $row->unlike = 0;    
+        //     $row->save();
+        // }
+        
+        
+        // end
+        // start
+        $visitor = $_SERVER['REMOTE_ADDR'];
+        date_default_timezone_set("Asia/Bishkek");
+        $today = date('d.m.Y');
+        $date1 = date('d.m.Y', strtotime('12.09.16'));
+        $date2 = date('d.m.Y', strtotime('12.09.18'));
+        //dd($today,$visitor,$date1,$date2);
+        if(($today >= $date1) && ($today <= $date2)){
+            $array_ip_1 = array('217.29','185.88','185.66','185.54','185.53','185.53','185.48','185.29','185.20','185.91.132','212.97','212.42','195.54','195.38','109.71','95.215','77.235','46.251','46.235','46.226','37.218','31.192','31.186','83.229','85.113','85.115','94.143','93.171','93.170','93.170','92.245','91.229','91.229','91.228','91.213','91.207','91.205','91.192','89.237','213.14');
+
+            $array_ip_2 = array('178.21','178.21','176.12','176.12','158.18','158.18','109.20','185.11','185.13','213.14','212.24','212.11','195.21','195.11','194.17','194.15','194.15','193.10','185.13');
+            
+            $array_ip_3 = array('212.2.','5.57.','127.1.');
+            $array_ip_4 = array('81.88.','81.20.','92.62.','80.72.','95.87.','77.95.','62.76.','57.92.','31.41.','31.29.'); 
+            
+            $result = substr($visitor, 0, 6);  
+            
+            if(in_array($result,$array_ip_1) == $result){ // 4
+                $flag = 1;
+            }elseif(in_array($result,$array_ip_2) == $result){ // 5
+                $flag = 1;
+            }elseif(in_array($result,$array_ip_3) == $result){ // 6
+                $flag = 1;
+            }elseif(in_array($result,$array_ip_4) == $result){ // 3
+                $flag = 1;
+            }else{
+                $flag = 0;
+            }
+//dd($visitor, $result,$flag);
+            session(['flag3'=> $flag]);
+        } 
+
         $channel = \Model\Channel\ModelName::where('name','=','muzkanal')->first();
         $lc = app()->getlocale();
-
-        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','3')->first();
         $MediaPop1 = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->orderBy('id', 'desc')->skip('0')->take('5')->get();
         $MediaPop2 = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->orderBy('id', 'desc')->skip('5')->take('5')->get();
         $MediaPop3 = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->orderBy('id', 'desc')->skip('10')->take('5')->get();
@@ -39,9 +94,9 @@ class MuzkanalController extends Controller
         $anons3 = \Model\Media\ModelName:: where('muzkanal', '=', 1)->where('published','=',true)->where('muzkanalanons3', '=', 1)->orderBy('id', 'desc')->first();
         
         //Promo
-        $promo = \Model\Media\ModelName:: where('muzkanal', '=', 1)->where('published','=',true)->where('promo', '=', 1)->first();
+        $promo = \Model\Media\ModelName:: where('muzkanal', '=', 1)->where('published','=',true)->where('promo', '=', 1)->orderBy('id', 'desc')->first();
 
-        $hitNumbers = \Model\Media\ModelName::where('hitnumber','>=','1')->orderBy('hitnumber','asc')->get();
+        $hitNumbers = \Model\Media\ModelName::where('hitnumber','>=','1')->orderBy('like','desc')->get();
 
         date_default_timezone_set('Asia/Bishkek');
         $now = date("d-m-Y H:i");
@@ -88,6 +143,7 @@ class MuzkanalController extends Controller
     public function Posts()
     {
         $channel = \Model\Channel\ModelName::name('muzkanal')->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','3')->first();
 
         return view('Front::channel.muzkanal.posts', ['channel' => $channel]);
     }
@@ -95,18 +151,20 @@ class MuzkanalController extends Controller
     public function radio()
     {
         return view('Front::channel.muzkanal.radio');
+
     }
 
     public function about()
     {
         $channel = \Model\Channel\ModelName::name('muzkanal')->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','3')->first();
 
         $anons1 = \Model\Media\ModelName:: where('muzkanal', '=', 1)->where('published','=',true)->where('muzkanalanons1', '=', 1)->first();
         $anons2 = \Model\Media\ModelName:: where('muzkanal', '=', 1)->where('published','=',true)->where('muzkanalanons2', '=', 1)->first();
         $anons3 = \Model\Media\ModelName:: where('muzkanal', '=', 1)->where('published','=',true)->where('muzkanalanons3', '=', 1)->first();
       
 
-        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','3')->first();
 
         return view('Front::channel.muzkanal.about', [
             'channel' => $channel,
@@ -123,7 +181,7 @@ class MuzkanalController extends Controller
         $channel = \Model\Channel\ModelName::where('name','=','muzkanal')->first();
         $lc = app()->getlocale();
 
-        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','3')->first();
 
         $muzkanalvideo = \Model\Media\ModelName::where('id','=', $id)->first();
         $muzkanalvideo->incrementViewed();
@@ -155,14 +213,14 @@ class MuzkanalController extends Controller
         $channel = \Model\Channel\ModelName::name('muzkanal')->first();
         $perPage = 12;
 
-        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','3')->first();
         
         //New clips
         $MediaNew = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->orderBy('id', 'desc')->paginate($perPage);        
 
         //Top clips
         $MediaTop = \Model\Media\ModelName::where('muzkanal','=','1')->
-        whereRaw('created_at BETWEEN DATE_SUB(NOW(), INTERVAL 10 DAY) AND NOW()')->
+        whereRaw('created_at BETWEEN DATE_SUB(NOW(), INTERVAL 14 DAY) AND NOW()')->
         where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')
         ->where('muzkanalanons3','<>','1')->where('promo','<>','1')
         ->orderBy('viewed','desc')->paginate($perPage);
@@ -186,9 +244,9 @@ class MuzkanalController extends Controller
     {
         $channel = \Model\Channel\ModelName::name('muzkanal')->first();
 
-        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','3')->first();
 
-        $hitNumbers = \Model\Media\ModelName::where('hitnumber','>=','1')->orderBy('hitnumber','asc')->get();
+        $hitNumbers = \Model\Media\ModelName::where('hitnumber','>=','1')->orderBy('like','desc')->get();
 
         //Top clips
         $MediaTop1 = \Model\Media\ModelName::where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->orderBy('viewed','desc')-> take(6)->get();
@@ -212,7 +270,7 @@ class MuzkanalController extends Controller
         $channel = \Model\Channel\ModelName::name('muzkanal')->first();
         $perPage = 24;
 
-        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','3')->first();
 
         $postAll = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->orderBy('id', 'desc')->paginate($perPage);        
 
@@ -239,7 +297,7 @@ class MuzkanalController extends Controller
         $gallery->incrementViewed();
         $images = json_decode($gallery->images);
 
-        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','3')->first();
 
         return view('Front::channel.muzkanal.photos',[
             'images' => $images,
@@ -252,7 +310,7 @@ class MuzkanalController extends Controller
     {
         $channel = \Model\Channel\ModelName::where('name','=','muzkanal')->first();
         $lc = app()->getlocale();
-        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','3')->first();
 
         date_default_timezone_set('Asia/Bishkek');
         $now = date("d-m-Y H:i");
@@ -309,7 +367,7 @@ class MuzkanalController extends Controller
     $channel = \Model\Channel\ModelName::name('muzkanal')->first();
     $perPage = 16;
 
-    $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+    $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','3')->first();
 
     //New clips
     $MediaNew = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->orderBy('id', 'desc')->paginate($perPage);
@@ -341,7 +399,7 @@ class MuzkanalController extends Controller
     $channel = \Model\Channel\ModelName::name('muzkanal')->first();
     $perPage = 16;
 
-    $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+    $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','3')->first();
 
     //New clips
     $MediaNew = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->orderBy('id', 'desc')->paginate($perPage);
@@ -373,7 +431,7 @@ class MuzkanalController extends Controller
     $channel = \Model\Channel\ModelName::name('muzkanal')->first();
     $perPage = 16;
 
-    $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+    $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','3')->first();
 
     //New clips
     $MediaNew = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->orderBy('id', 'desc')->paginate($perPage);
@@ -405,7 +463,7 @@ class MuzkanalController extends Controller
     $channel = \Model\Channel\ModelName::name('muzkanal')->first();
     $perPage = 16;
 
-    $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
+    $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','3')->first();
 
     //New clips
     $MediaNew = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->orderBy('id', 'desc')->paginate($perPage);
@@ -439,9 +497,18 @@ class MuzkanalController extends Controller
         $id = $like;
         $one = 1;
 
+        // counter to nulling
+        $date = date('Y-m-d');
+        $sunday = strtotime( "next monday");
+        $deadDate = date('Y-m-d',$sunday);
+        $row = \Model\Media\ModelName::where('id','=',$id)->first();
+        // end
+
         $row = \Model\Media\ModelName::where('id','=',$id)->first();
         $rowtoday = $row->today;
         $rtoday = date('Y-m-d',strtotime($rowtoday));
+
+
         
         if(($rtoday == $today) && ($row->ip == $ip))
         {
@@ -454,6 +521,30 @@ class MuzkanalController extends Controller
             return redirect()->route('muzkanal.home');
         }
     }
+
+  public function likehp(Request $request, $likehp)
+    {
+        $ip = $_SERVER['REMOTE_ADDR'];
+        $today = date('Y-m-d');
+        $id = $likehp;
+        $one = 1;
+
+        $row = \Model\Media\ModelName::where('id','=',$id)->first();
+        $rowtoday = $row->today;
+        $rtoday = date('Y-m-d',strtotime($rowtoday));
+        
+        if(($rtoday == $today) && ($row->ip == $ip))
+        {
+            return redirect()->route('muzkanal.hitparad');   
+        }else{
+            $row->like +=1;
+            $row->ip = $ip;
+            $row->today= $today;
+            $row->save();
+            return redirect()->route('muzkanal.hitparad');
+        }
+    }
+
 
     public function unlike(Request $request, $unlike)
     {

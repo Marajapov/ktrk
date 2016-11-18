@@ -18,6 +18,21 @@
         </a>
       </div>
 
+      <div class="row">
+          <div class="col-xs-offset-9 col-xs-3">
+              <div class="form">
+                  {!! Form::open(['route' => ['admin.post.search'], 'method' => 'GET']) !!}
+                  <div class="input-group" style="text-align:right; ">
+                    <input name="key" required="required" style="width:100%;" type="text" class="form-control">
+                    <span class="input-group-btn">
+                    <button type="submit" class="btn btn-primary">Поиск</button>
+                    </span>
+                  </div>
+                  {!! Form::close() !!}
+              </div>
+          </div>
+      </div>
+
       <div class="x_content clearfix">
 
         <table id="example" class="table table-striped table-bordered" data-order='[[ 0, "desc" ]]' data-page-length='10'>

@@ -173,11 +173,11 @@
 </script>
 
 <script src="{{ asset('js/sweetalert.min.js') }}"></script>
-@if(session('flag') == 1)
+@if(session('flag') == 0)
     <script>
         $(document).ready(function(){
             $('#btnLive').click(function(){
-                swal("", "Трансляция Олимпийских игр 2016 заблокирована в Вашей стране!", "error");
+                swal("", "Трансляция заблокирована в Вашей стране!", "error");
             });
         });
     </script>

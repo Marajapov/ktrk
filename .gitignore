@@ -16,5 +16,6 @@ tests/_output/*
 /config/ide-helper.php
 /config/debugbar.php
 /config/laravel-localization-helpers.php
-/public/froala/uploads
-/public/images/anons
+/public/froala/uploads/*
+/public/images/anons/*
+/public/images/logo/*
