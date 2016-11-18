@@ -13,8 +13,11 @@
       <div class="wrapper">
          <ul id="sb-slider" class="sb-slider">
             <li>
-               <a href="#" target="_blank"><img src="{{ asset('images/anons/muz.png')}}" alt="image1"/></a>
+               <a href="#" target="_blank"><img src="{{ asset('images/anons/ak-terek.jpg')}}" alt="image1"/></a>
             </li>
+             <li>
+                 <a href="#" target="_blank"><img src="{{ asset('images/anons/muz.png')}}" alt="image3"/></a>
+             </li>
             <li>
                <a href="#" target="_blank"><img src="{{ asset('images/anons/hit-parad.jpg')}}" alt="image2"/></a>
             </li>
