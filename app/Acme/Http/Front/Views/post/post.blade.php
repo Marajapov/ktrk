@@ -116,7 +116,9 @@
                                         @if($post->thumb_desc || $post->thumb_desc_ru)<span class="thumb_desc">{{ $post->getThumbnailDesc() }}</span>@endif
                                         {{--@if($post->thumb_author)<span class="thumb_author"> Фото: {{ $post->thumb_author }}</span>@endif--}}
                                     </p>
-
+                                <div>                                    
+                                    {!! $post->getEmbed() !!}                                    
+                                </div>
                                     {!! $content !!}
                                     @if($images)                                     
                                         <div class="slider-for">

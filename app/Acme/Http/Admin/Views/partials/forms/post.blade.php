@@ -96,12 +96,18 @@
         </div>
 
         <!-- Audio -->
-<!--         <div class="form-group">
-            <label for="audio" class="col-sm-2 control-label">Аудио:(Из soundcloud.com)</label>
-            <div class="col-sm-2">
-                {!! Form::text('audio', null, ["class" => "form-control", "id" => "audio", "title" => ""]) !!}
+        <div class="form-group">
+            <label for="embedKg" class="col-sm-2 control-label">Embed KG:</label>
+            <div class="col-sm-10">
+                {!! Form::text('embedKg', null, ["class" => "form-control", "id" => "embedKg", "title" => ""]) !!}
             </div>
-        </div> -->
+        </div>
+        <div class="form-group">
+            <label for="embedRu" class="col-sm-2 control-label">Embed RU:</label>
+            <div class="col-sm-10">
+                {!! Form::text('embedRu', null, ["class" => "form-control", "id" => "embedRu", "title" => ""]) !!}
+            </div>
+        </div>
 
         <!-- Datepicker -->
         <div class="form-group">
@@ -393,12 +399,12 @@
             </div>
         </div>
 
-        <div class="form-group">
+<!--         <div class="form-group">
             <label for="live" class="col-sm-2 control-label">Live</label>
             <div class="col-sm-10">
                 {!! Form::text('live', null, ["class" => "form-control"]) !!}
             </div>
-        </div>
+        </div> -->
 
         <div class="form-group">
             <label for="channel_id" class="col-sm-2 control-label">{{ trans('site.TextKG') }}</label>

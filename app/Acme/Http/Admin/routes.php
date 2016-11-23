@@ -32,6 +32,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'access:admin', 'namespace' =
     Route::get('media.dayVideo3',['as' => 'admin.media.dayVideo3', 'uses' => 'MediaController@dayVideo3']);
     Route::get('media.dayVideo4',['as' => 'admin.media.dayVideo4', 'uses' => 'MediaController@dayVideo4']);
     Route::get('media.dayVideoRu1',['as' => 'admin.media.dayVideoRu1', 'uses' => 'MediaController@dayVideoRu1']);
+    Route::get('media.search', ['as' => 'admin.media.search', 'uses' => 'MediaController@search']);
     
     Route::resource('banner', 'BannerController');
     Route::resource('page', 'PageController');
@@ -43,6 +44,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'access:admin', 'namespace' =
     Route::get('photoParent.destroyChild', ['as' => 'admin.photoParent.destroyChild', 'uses' => 'PhotoParentController@destroyChild']);
     Route::get('photoParent.photodelete', ['as' => 'admin.photoParent.photodelete', 'uses' => 'PhotoParentController@photodelete']);
     Route::get('photoParent.publish', ['as' => 'admin.photoParent.publish', 'uses' => 'PhotoParentController@publish']); // publish the Gallery
+
     Route::get('photoParent.unpublish', ['as' => 'admin.photoParent.unpublish', 'uses' => 'PhotoParentController@unpublish']); // unpublish the Gallery
 
     Route::post('photoParent/uploadFiles', ['as' => 'admin.photoParent.uploadFiles', 'uses' => 'AjaxController@uploadFiles']);
@@ -70,6 +72,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'access:admin', 'namespace' =
     // added for latest post in main window last 6 posts
     Route::get('post/number/{number}', ['as' => 'admin.post.number', 'uses' => 'PostController@number']);
     Route::get('post/unnumber/{number}', ['as' => 'admin.post.unnumber', 'uses' => 'PostController@unnumber']);
+    Route::get('post.search', ['as' => 'admin.post.search', 'uses' => 'PostController@search']);
 
     // added for latest Media in Muzkanal
     Route::get('media/number/{number}', ['as' => 'admin.media.number', 'uses' => 'MediaController@number']);
