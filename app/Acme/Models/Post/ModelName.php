@@ -90,6 +90,16 @@ class ModelName extends Model
         }
     }
     // Connexxification
+    public function getEmbed()
+    {
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            return $this->embedKg;
+        }else{
+            return $this->embedRu;
+        }
+    }
+
     public function getContentKG()
     {
         $lc = app()->getlocale();

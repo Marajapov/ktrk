@@ -71,7 +71,8 @@ class CreatePostsTable extends Migration
             // Add locally
             $table->string('number');
             $table->string('numberRu');
-            $table->string('audio');
+            $table->string('emdbedKg');
+            $table->string('emdbedRu');
             $table->string('live');
 
             $table->smallInteger('viewed')->default(0);
