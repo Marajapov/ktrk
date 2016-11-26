@@ -275,7 +275,7 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
   Route::post('/orphus', ['as'=>'front.orphus', 'uses'=>'CommentController@orphus']);
 
 //    Test
-  Route::get('/test',['as'=>'front.test', 'uses'=>"HomeController@Test"]);
+  Route::get('/vertex',['as'=>'front.vertex', 'uses'=>"HomeController@Test"]);
   Route::get('/live',['as'=>'front.live', 'uses'=>"HomeController@Live"]);
 
 // Poll Vote

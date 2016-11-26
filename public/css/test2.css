@@ -1,0 +1,60 @@
+
+@font-face {
+    font-family: 'Roboto Bold';
+    src: url('fonts/roboto/roboto-bold.eot');
+    src: url('fonts/roboto/roboto-bold.eot?#iefix') format('embedded-opentype'),
+    url('fonts/roboto/roboto-bold.woff2') format('woff2'),
+    url('fonts/roboto/roboto-bold.woff') format('woff'),
+    url('fonts/roboto/roboto-bold.ttf') format('truetype'),
+    url('fonts/roboto/roboto-bold.svg#robotobold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+.panel-default > .panel-heading{
+    padding: 0;
+}
+.panel-heading h3 {
+    position: relative;
+    border: none;
+    padding: 15px;
+    margin-bottom: 5px;
+    background: #c42026;
+    color: #fafafa;
+    font-family: 'Roboto Bold', Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+.gallery .panel-heading h3{
+    color: #fafafa;
+}
+.latest-news .panel-heading h3{
+    border: none;
+}
+.videoportal{
+    border-top: 0;
+}
+
+.carousel-news{
+    position: relative;
+}
+.panel-top-news .slider-nav{
+    position: absolute;
+    bottom: 15px;
+    margin-bottom: 0;
+    padding: 0 15px;
+}
+.panel-top-news .slider-nav .slick-slide{
+    height: 100px;
+    margin: 0 5px;
+    overflow: hidden;
+    cursor: pointer;
+    text-align: center;
+    opacity: 0.5;
+}
+.panel-top-news .slider-nav .slick-slide.slick-current {
+    opacity: 1;
+}
+.panel-top-news .slider-nav .slick-slide img {
+    height: 100%;
+    width: auto;
+}
