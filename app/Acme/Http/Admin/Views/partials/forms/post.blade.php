@@ -145,6 +145,14 @@
                     </label>
                 </div>
 
+                <div class="checkbox checkbox-primary col-sm-2">
+                    {!! Form::hidden('extracolumn', 0) !!}
+                    {!! Form::checkbox('extracolumn', 1, null, ["id" => "extracolumn", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
+                    <label for="extracolumn">
+                        Шайлоо
+                    </label>
+                </div>
+
             </div>
         </div>
 

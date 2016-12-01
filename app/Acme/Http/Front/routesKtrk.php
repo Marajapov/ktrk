@@ -275,12 +275,18 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
   Route::post('/orphus', ['as'=>'front.orphus', 'uses'=>'CommentController@orphus']);
 
 //    Test
-  Route::get('/test',['as'=>'front.test', 'uses'=>"HomeController@Test"]);
+  Route::get('/vertex',['as'=>'front.vertex', 'uses'=>"HomeController@Test"]);
   Route::get('/live',['as'=>'front.live', 'uses'=>"HomeController@Live"]);
 
 // Poll Vote
   Route::post('/poll_vote', ['as'=>'front.poll_vote', 'uses'=>'AjaxNsController@pollVote']);
 
   Route::get('locale/{locale?}',   ['as' => 'locale',   'uses' => 'CommonController@setLocale']);
+
+//  Shailoo
+    Route::get('/shailoo',['as'=>'front.shailoo', 'uses'=>"ShailooController@index"]);
+    Route::get('/shailoo/all',['as'=>'front.shailoo.all', 'uses'=>"ShailooController@all"]);
+    Route::get('/shailoo/party/{category}',['as'=>'front.shailoo.party', 'uses'=>"ShailooController@party"]);
+    Route::post('/shailoo_poll_vote', ['as'=>'front.shailoo_poll_vote', 'uses'=>'AjaxController@shailooPollVote']);
 
 });

@@ -11,7 +11,7 @@
       </div>
 
 			<div class="x_content">
-				{!! Form::model($category, ['route' => 'admin.category.store', 'class'=>'form-horizontal']) !!}
+				{!! Form::model($category, ['route' => 'admin.category.store', 'enctype' => 'multipart/form-data', 'class'=>'form-horizontal']) !!}
 				  @include('Admin::partials.forms.category', $category)
 				{!! Form::close() !!}
 			</div>

@@ -24,7 +24,7 @@ class MediaController extends Controller
 
     public function mediaIndex(Request $request) // list of videos
     {
-        $MediaCategories = \Model\MediaCategory\ModelName::get();
+        $MediaCategories = \Model\MediaCategory\ModelName::where('published',true)->get();
         $mediaAll = \Model\Media\ModelName::get();
 
         $categoriesVideos = array();
@@ -93,7 +93,7 @@ class MediaController extends Controller
         $videoType = $video->videoType; // serials
         $videoName = $video->name;
 
-        $MediaCategory = \Model\MediaCategory\ModelName::where('videoType','=',$videoType)->first();
+        $MediaCategory = \Model\MediaCategory\ModelName::where('videoType','=',$videoType)->where('published',true)->first();
 
         if($lc == 'kg'){
             $result = \Model\Project\ModelName::where('id','=',$projectId)->first();
@@ -104,7 +104,7 @@ class MediaController extends Controller
             }
             
             
-            $result1 = \Model\MediaCategory\ModelName::where('videoType','=',$videoType)->first();    
+            $result1 = \Model\MediaCategory\ModelName::where('videoType','=',$videoType)->where('published',true)->first();
             $getVideoTypeName = $result1->getName();
 
             if($projectId > 0){
@@ -122,7 +122,7 @@ class MediaController extends Controller
                 $videoProject = '';
             }
 
-            $result = \Model\MediaCategory\ModelName::where('videoType','=',$videoType)->first();
+            $result = \Model\MediaCategory\ModelName::where('videoType','=',$videoType)->where('published',true)->first();
             $getVideoTypeName = $result->getNameRu();
 
             if($projectId > 0){
@@ -133,7 +133,7 @@ class MediaController extends Controller
 
         }
 
-        $MediaCategories = \Model\MediaCategory\ModelName::get();
+        $MediaCategories = \Model\MediaCategory\ModelName::where('published',true)->get();
 
         $lc = app()->getlocale();
         if($lc == 'kg'){
