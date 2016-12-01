@@ -201,8 +201,6 @@ class ModelName extends Model
     {
         $fullDate = $this->created_at;
         $MonthRu = date('m', strtotime($fullDate));
-        $January = 'үчтун айы';
-        $February = 'Бирдин айы';
         
         $JanuaryRu = 'Янв';
         $FebruaryRu = 'Фев';
@@ -243,7 +241,53 @@ class ModelName extends Model
             $MonthRu = $DecemberRu;
         }
         return $MonthRu;
-    }   
+    }
+
+    public function getFullMonth()
+    {
+        $fullDate = $this->created_at;
+        $MonthRu = date('m', strtotime($fullDate));
+
+        $JanuaryRu = 'Январь';
+        $FebruaryRu = 'Февраль';
+        $MarchRu = 'Март';
+        $AprilRu = 'Апрель';
+        $MayRU = 'Май';
+        $JuneRU = 'Июнь';
+        $JulyRu = 'Июль';
+        $AugustRU = 'Август';
+        $SeptemberRU = 'Сентябрь';
+        $OctoberRu = 'Октябрь';
+        $NovemberRu = 'Ноябрь';
+        $DecemberRu = 'Декабрь';
+
+        if($MonthRu == 1){
+            $MonthRu = $JanuaryRu;
+        }elseif($MonthRu == 2){
+            $MonthRu = $FebruaryRu;
+        }elseif($MonthRu == 3){
+            $MonthRu = $MarchRu;
+        }elseif($MonthRu == 4){
+            $MonthRu = $AprilRu;
+        }elseif($MonthRu == 5){
+            $MonthRu = $MayRU;
+        }elseif($MonthRu == 6){
+            $MonthRu = $JuneRU;
+        }elseif($MonthRu == 7){
+            $MonthRu = $JulyRu;
+        }elseif($MonthRu == 8){
+            $MonthRu = $AugustRU;
+        }elseif($MonthRu == 9){
+            $MonthRu = $SeptemberRU;
+        }elseif($MonthRu == 10){
+            $MonthRu = $OctoberRu;
+        }elseif($MonthRu == 11){
+            $MonthRu = $NovemberRu;
+        }elseif($MonthRu == 12){
+            $MonthRu = $DecemberRu;
+        }
+        return $MonthRu;
+    }
 
     public function getDate()
     {

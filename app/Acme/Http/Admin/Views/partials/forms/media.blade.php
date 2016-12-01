@@ -43,7 +43,7 @@
         <div class="form-group">
             <label for="channel_id" class="col-sm-2 control-label">Категория</label>
             <div class="col-sm-10">
-                {!! Form::select('videoType', \Model\MediaCategory\ModelName::lists('name', 'videoType')->toArray(), null, ["class" => "selectpicker","data-live-search"=>"true", "required" => true, "title" => "-- Выберите --"]) !!}
+                {!! Form::select('videoType', \Model\MediaCategory\ModelName::lists('name', 'videoType')->toArray(), null, ["class" => "selectpicker","data-live-search"=>"true", "title" => "-- Выберите --"]) !!}
             </div>
         </div>
 
@@ -160,6 +160,20 @@
                                     {!! Form::checkbox('director', 1, null, ["id" => "director", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
                                     <label for="director">
                                         Страница Ген. директора
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- director -->
+                        <div class="form-group">
+                            <label for="parentId" class="col-sm-2 control-label"></label>
+                            <div class="col-sm-10">
+                                <div class="checkbox checkbox-primary ">
+                                    {!! Form::hidden('extracolumn', 0) !!}
+                                    {!! Form::checkbox('extracolumn', 1, null, ["id" => "shailoo", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
+                                    <label for="shailoo">
+                                        Шайлоо
                                     </label>
                                 </div>
                             </div>

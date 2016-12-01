@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 
 use Model\Category\ModelName as Category;
+use Intervention\Image\ImageManagerStatic as Image;
 use PhpParser\Comment;
 
 class CategoryController extends Controller
@@ -53,7 +54,24 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        Category::create($request->except('q'));
+        $row = Category::create($request->except('q', 'description'));
+
+        if($request->hasFile('description'))
+        {
+            $file = $request->file('description');
+            $dir  = 'images/shailoo/party';
+            $btw = time();
+
+            $name = $btw.'.'.$file->getClientOriginalExtension();
+
+            $storage = \Storage::disk('public');
+            $storage->makeDirectory($dir);
+
+            Image::make($_FILES['description']['tmp_name'])->heighten(300)->save($dir.'/'.$name);
+
+            $row->description = $dir.'/'.$name;
+            $row->save();
+        }
 
         return redirect()->route('admin.category.index');
     }
@@ -93,7 +111,24 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        $category->update($request->except('q'));
+        $category->update($request->except('q', 'description'));
+
+        if($request->hasFile('description'))
+        {
+            $file = $request->file('description');
+            $dir  = 'images/shailoo/party';
+            $btw = time();
+
+            $name = $btw.'.'.$file->getClientOriginalExtension();
+
+            $storage = \Storage::disk('public');
+            $storage->makeDirectory($dir);
+
+            Image::make($_FILES['description']['tmp_name'])->heighten(300)->save($dir.'/'.$name);
+
+            $category->description = $dir.'/'.$name;
+            $category->save();
+        }
 
         return redirect()->route('admin.category.show', $category);
     }

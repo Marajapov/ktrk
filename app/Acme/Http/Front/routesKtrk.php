@@ -283,4 +283,10 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
 
   Route::get('locale/{locale?}',   ['as' => 'locale',   'uses' => 'CommonController@setLocale']);
 
+//  Shailoo
+    Route::get('/shailoo',['as'=>'front.shailoo', 'uses'=>"ShailooController@index"]);
+    Route::get('/shailoo/all',['as'=>'front.shailoo.all', 'uses'=>"ShailooController@all"]);
+    Route::get('/shailoo/party/{category}',['as'=>'front.shailoo.party', 'uses'=>"ShailooController@party"]);
+    Route::post('/shailoo_poll_vote', ['as'=>'front.shailoo_poll_vote', 'uses'=>'AjaxController@shailooPollVote']);
+
 });

@@ -169,6 +169,44 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="col-sm-4  panel-success">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Шайлоо</h3>
+                        </div>
+                        <!-- muzkanal -->
+                        <div class="form-group">
+                            <label for="parentId" class="col-sm-2 control-label"></label>
+                            <div class="col-sm-10">
+                                <div class="checkbox checkbox-primary ">
+                                    {!! Form::hidden('ns', 0) !!}
+                                    {!! Form::checkbox('ns', 1, null, ["id" => "shailoo", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
+                                    <label for="shailoo">
+                                        Шайлоо
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Thumb -->
+                        <div class="form-group">
+                            <div class="col-sm-10">
+                                <div class="fileinput fileinput-new" data-provides="fileinput">
+                                    <div class="fileinput-new thumbnail" style="width: 250px; height: 150px;">
+                                    </div>
+                                    <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 250px; max-height: 150px;"></div>
+                                    <div>
+                                        <span class="btn btn-default btn-file">
+                                            <span class="fileinput-new">{{ trans('site.AdminBackgroundSelect') }}</span>
+                                            <span class="fileinput-exists">{{ trans('site.Change') }}</span>
+                                            {!! Form::file('description', null, ["class" => "form-control"]) !!}
+                                        </span>
+                                        <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">{{ trans('site.Delete') }}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
