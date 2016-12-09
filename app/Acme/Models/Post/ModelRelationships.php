@@ -7,6 +7,11 @@ trait ModelRelationships
     {
         return $this->belongsTo(\Model\Category\ModelName::class, 'category_id');
     }
+    public function comments()
+    {
+        $comments = \Model\Comment\ModelName::where('resourceId', $this->id)->where('approved', true)->get();
+        return $comments;
+    }
 
     public function owner()
     {

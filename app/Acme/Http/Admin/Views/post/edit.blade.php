@@ -57,13 +57,26 @@
 
     <!-- Initialize the editor. -->
     <script>
+
+        $.ajaxSetup({
+            headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
+        });
+
+        var send = XMLHttpRequest.prototype.send,
+            token = $('meta[name=_token]').attr('content');
+        XMLHttpRequest.prototype.send = function(data) {
+            this.setRequestHeader('X-CSRF-Token', token);
+            return send.apply(this, arguments);
+        };
+
         $(function() {
+
             $('#editKg').froalaEditor({
                 language: 'ru',
                 height: 300,
                 toolbarSticky: false,
                 imageUploadParam: 'file',
-                imageUploadURL: "{{ asset('froala/upload_image.php') }}",
+                imageUploadURL: "{{route('admin.post.watermark')}}",
                 
                 imageManagerLoadURL: "{{ asset('froala/load_images.php') }}"
 
@@ -78,7 +91,7 @@
                 height: 300,
                 toolbarSticky: false,
                 imageUploadParam: 'file',
-                imageUploadURL: "{{ asset('froala/upload_image.php') }}",
+                imageUploadURL: "{{route('admin.post.watermark')}}",
 
                 imageManagerLoadURL: "{{ asset('froala/load_images.php') }}"
             })

@@ -42,10 +42,14 @@
                                                     <a href="{{route('front.shailoo.party', $post->category)}}" class="">{{$post->category->getTitle()}}</a>
                                                     <span class="news-time"> {{$post->getDay().' '.$post->getFullMonth().', '.$post->getTime()}}</span>
                                                 </div>
-                                                <a href="{{route('front.shailoo.post',$post)}}">
-                                                    <h4 class="media-heading">
+                                                <a href="{{route('front.shailoo.post',[$post, '#respond'])}}">
+                                                    <div class="media-heading">
                                                         {!!$post->getContentKG()!!}
-                                                    </h4>
+                                                    </div>
+
+                                                    <span class="leave-comment">
+                                                        <i class="fa fa-comment"></i> ({{count($post->comments())}}) {{trans('site.Reply')}}
+                                                    </span>
                                                 </a>
                                             </div>
                                         </div>

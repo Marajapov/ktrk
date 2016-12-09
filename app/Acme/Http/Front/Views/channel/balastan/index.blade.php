@@ -8,18 +8,18 @@
    <div class="row">
       <div class="shows-slider">
          <div class="shows-carousel container">
-            <div>
+            <div class="custom-slide">
                <article>
                   <div class="show-info">
-                     <h1 class="show-name">Баарын билгим келет</h1>
-                     <span class="show-day">{{ trans('site.Monday') }} - {{ trans('site.Friday') }}</span>
-                     <span class="show-time">19:30 / 21:30</span>
+                     <h1 class="show-name">Баластан шоу</h1>
+                     <span class="show-day">{{ trans('site.Saturday') }} - {{ trans('site.Sunday') }}</span>
+                     {{--<span class="show-time">19:30 / 21:30</span>--}}
 <!--                      <a class="show-btn" href="#">
                      Подробнее
                      </a> -->
                   </div>
                   <div class="show-img">
-                     <img src="{{ asset('images/channels/balastan/slider/1.png') }}" alt="" draggable="false" style="width: 80%;">
+                     <img src="{{ asset('images/channels/balastan/slider/1.png') }}" alt="" draggable="false">
                   </div>
                </article>
             </div>

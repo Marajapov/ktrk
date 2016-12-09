@@ -17,7 +17,7 @@
             <div class="panel-body">
                <div class="row">
 				<div class="col-sm-4">
-					<img class="d-img" src="{{asset('images/channels/minkiyal/vj/1.png')}}" alt="">			
+					<img class="d-img" src="{{asset('old_1.png')}}" alt="">
 				</div>
 				<div class="person-info col-sm-8">
 				<ul>

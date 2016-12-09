@@ -68,4 +68,37 @@ class AjaxController extends Controller
             return Response::json('error', 400);
         }
     }
+
+    public function postWatermark() {
+
+            $input = Input::all();
+
+            $rules = array(
+                'file' => 'image|max:100000',
+            );
+            $validation = Validator::make($input, $rules);
+
+            if ($validation->fails()) {
+                return Response::make($validation->messages());
+            }
+
+            $file = $_FILES['file'];
+
+            $path = $_FILES['file']['name'];
+            $ext = pathinfo($path, PATHINFO_EXTENSION);
+
+            $time = time();
+            $name = $time.'.'.$ext;
+
+            $dir  = 'froala/uploads';
+            $storage = \Storage::disk('public');
+            $storage->makeDirectory($dir);
+
+            $upload_success = Image::make($_FILES['file']['tmp_name'])->heighten(600)->insert('http://ktrk.kg/images/wm_ktrk.png', 'center', 0, 0)->save($dir.'/'.$name);
+            if ($upload_success) {
+                return $name;
+            } else {
+                return Response::json('error', 400);
+            }
+    }
 }
