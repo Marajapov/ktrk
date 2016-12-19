@@ -80,7 +80,7 @@
     background: #Fafafa;
 }
 .shailoo *{
-    line-height: 1.618;
+    /*line-height: 1.618;*/
 }
 .shailoo .panel-body{
     padding: 15px;
@@ -151,7 +151,15 @@
     color: #333333;
     font-size: 14px;
 }
-
+.shailoo .leave-comment{
+    float: right;
+    color: #858F97;
+    font-size: 10px;
+    text-transform: uppercase;
+}
+.shailoo .leave-comment i{
+    padding-right: 5px;
+}
 /*Panels*/
 .top-right-block .panel-body h4{
     font-family: 'Roboto Bold', Arial, Helvetica, sans-serif;
@@ -225,5 +233,195 @@
     letter-spacing: 0.05em;
     line-height: 1.618;
     text-transform: uppercase;
+}
 
+/*PANEL COMMENTS*/
+.panel-comments{
+    border-top: 2px solid #F1F4F9;
+    border-right: 2px solid #F1F4F9;
+
+    background: #ffffff;
+}
+.panel-comments .panel-title{
+    position: relative;
+}
+.panel-comments .panel-title{
+    border-color: #ffffff;
+}
+.panel-comments .commentadd{
+    position: absolute;
+    right: 0;
+    bottom: 6px;
+    line-height: 20px;
+}
+.panel-comments .commentadd,
+#respond form .submit{
+    padding: 7px 10px;
+    color: #ffffff;
+    font-size: 13px;
+
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+#respond form .submit{
+    background: #48A6D8;
+}
+#respond form .submit:hover{
+    background: #237dac;
+}
+.commentlist {
+    margin: 0;
+    padding: 0;
+    clear: both;
+    overflow: hidden;
+}
+.comment{
+    font-family: 'Open Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+}
+.comment,.comment-meta .commentthumb{
+    margin: 10px 0 10px 40px;
+    padding: 4px;
+    border: 1px solid #f4f4f4;
+    background-color: #fff;
+    list-style: none;
+}
+.comment article{
+    position: relative;
+}
+.comment .comment-meta {
+    position: relative;
+    border: none;
+    padding: 0;
+    padding-left: 45px;
+    min-height: 37px;
+    height: auto;
+    background: #f1f5f8;
+    line-height: 37px;
+    text-align: left;
+}
+.comment-meta .commentthumb{
+    position: absolute;
+    top: 10px;
+    left: -40px;
+    display: block;
+    margin: 0;
+}
+.comment-meta .commentthumb img {
+    width: 60px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+.commentauthorname {
+    color: #4e5e6a;
+    font-weight: bold;
+}
+.comment .commenttime {
+    display: inline;
+    float: right;
+    margin-right: 10px;
+    color: #9DA8B0;
+    /*text-transform: uppercase;*/
+    white-space: nowrap;
+    font-family: 'Roboto Regular', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: inherit;
+    /*font-weight: bold;*/
+}
+.commentcontent {
+    position: relative;
+    padding: 20px 55px 20px 45px;
+    color: #333333;
+    line-height: 1.5;
+}
+
+.commentreply a {
+    position: absolute;
+    right: 12px;
+    bottom: 3px;
+    display: block;
+    text-transform: uppercase;
+    white-space: nowrap;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/*COMMENT FORM*/
+.comment-block {
+    clear: both;
+    min-height: 40px;
+}
+#respond {
+    padding: 0;
+    margin: 0;
+    padding-top: 90px;
+}
+#respond h3{
+    border-top: 3px solid #333333;
+    margin: 0 0 30px;
+    padding: 15px 0 10px 0;
+    color: #333333;
+    font-family: 'Roboto Condensed', serif;
+    font-size: 16px;
+    line-height: 1;
+    text-transform: uppercase;
+}
+#respond form {
+    position: relative;
+    clear: both;
+    padding: 0 10px;
+    padding-bottom: 65px;
+    width: 100%;
+}
+#respond form p,#respond form .captcha {
+    clear: both;
+    margin: 10px 0;
+}
+#respond form label,.g-recaptcha {
+    position: relative;
+    float: left;
+    padding-right: 15px;
+    width: 15%;
+    color: #9DA8B0;
+    text-align: right;
+    font-weight: normal;
+}
+#respond form .required {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    color: #9DA8B0;
+}
+#respond form input[type="text"],#respond form textarea {
+    float: left;
+    padding: 5px 10px;
+    outline-color: #e2eaed;
+    border: 1px solid #d2dadd;
+    background: #fff;
+    width: auto;
+    color: #3a3a3a;
+    font-size: 13px;
+}
+#respond form textarea {
+    display: inline-block;
+    float: none;
+    clear: both;
+    resize: vertical;
+    width: 85%;
+}
+#respond form p.form-submit {
+    float: right;
+}
+#respond form .submit{
+    display: inline-block;
+    padding: 8px 20px;
+    border: none;
+    text-decoration: none;
+    text-shadow: none;
+    font-size: 14px;
+    line-height: 20px;
+    cursor: pointer;
 }

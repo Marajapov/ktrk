@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use \Model\Category\ModelName as Category;
 use \Model\Post\ModelName as Post;
 use \Model\Media\ModelName as Media;
+use \Model\Comment\ModelName as Comment;
 
 class ShailooController extends Controller
 {
@@ -93,6 +94,8 @@ class ShailooController extends Controller
     {
         $lc = app()->getlocale();
 
+        $comments = Comment::where('resourceType','=','post')->where('resourceId','=',$post->id)->where('approved','=','1')->orderBy('id','desc')->get();
+
         $allPosts = Post::where('extracolumn', true)->orderBy('created_at','desc')->get();
 
         $categories = Category::where('ns', true)->published()->get();
@@ -103,6 +106,7 @@ class ShailooController extends Controller
         $promoVideo = Media::where('extracolumn',true)->where('published',true)->orderBy('id','desc')->first();
 
         return view('Front::shailoo.post',[
+            'comments' => $comments,
             'categories' => $categories,
             'allCategories' => $allCategories,
             'post' => $post,

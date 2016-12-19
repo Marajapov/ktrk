@@ -96,7 +96,7 @@ class ChannelTableSeeder extends Seeder
             'id'        => 11,
             'name'      => 'sport',
             'display'   => 'Спорт',
-            'file'      => 'img/icons/11.png',
+            'file'      => 'img/icons/1.png',
             'published' => true,
         ]);
     }

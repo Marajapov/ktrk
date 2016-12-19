@@ -1,6 +1,8 @@
 @include('Front::messages.flash')
 
 @section('styles')
+    <meta name="_token" content="{!! csrf_token() !!}"/>
+
     <!-- Include Editor style. -->
     <link href="{{ asset('froala/css/froala_editor.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('froala/css/froala_style.min.css') }}" rel="stylesheet" type="text/css" />

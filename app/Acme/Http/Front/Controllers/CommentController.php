@@ -16,9 +16,10 @@ class CommentController extends Controller
     public function store(Request $request)
     {
         $data = array(
-            'secret' => '6LcBGBUTAAAAAIMMSwe-ebmOhgMO3c-vmXn_Yyfb',
+            'secret' => '6Ld0jQ0UAAAAADUlKCo_lw4A1Fd7XoLXQrqkHoP4',
             'response' => $_POST['g-recaptcha-response']
         );
+
         # Create a connection
         $url = 'https://www.google.com/recaptcha/api/siteverify';
         $ch = curl_init($url);
@@ -32,15 +33,15 @@ class CommentController extends Controller
         $response = curl_exec($ch);
         curl_close($ch);
 
-        if(!$response)
+        if($response)
         {
-            Comment::create($request->except('g-recaptcha-response','q'));
+            $comment = Comment::create($request->except('g-recaptcha-response','q'));
 
-            return redirect()->route('front.post',$request->resourceId)->with('success','true');
+            return redirect()->route('front.shailoo.post',$request->resourceId)->with('success','true');
         }
         else
         {
-            return redirect()->route('front.post',$request->resourceId)->with('success','false');
+            return redirect()->route('front.shailoo.post',$request->resourceId)->with('success','false');
         }
 
     }

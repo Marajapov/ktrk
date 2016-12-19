@@ -14,6 +14,7 @@
 
 Route::group(['prefix' => 'admin', 'middleware' => 'access:admin', 'namespace' => 'Admin\Controllers'], function(){
     Route::get('/',     ['as' => 'admin.home', 'uses' => 'HomeController@Home']);
+    Route::get('/weekMedias',     ['as' => 'admin.weekMedias', 'uses' => 'WeekMediaController@index']);
 
     // User routes
     Route::resource('user', 'UserController');
@@ -93,4 +94,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'access:admin', 'namespace' =
 
     //Quote
     Route::resource('quote','QuotesController');
+    Route::get('/weekMedias/{from_date}/{to_date}', ['as' => 'admin.media.weekMediaSearch', 'uses' => 'WeekMediaController@weekMediaSearch']);
+
+//    Watermark
+    Route::post('post/watermark/',['as'=>'admin.post.watermark','uses'=>'PostController@watermark']);
+    Route::post('post/postWatermark','AjaxController@postWatermark');
 });

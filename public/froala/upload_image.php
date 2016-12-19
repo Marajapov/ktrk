@@ -29,6 +29,7 @@ if ((($mime == "image/gif")
     // Generate response.
     $response = new StdClass;
     $response->link = "http://www.ktrk.kg/froala/uploads/" . $name;
+//    $response->link = "http://www.ktrk.dev/froala/uploads/" . $name;
     $response->file_name = $name;
     echo stripslashes(json_encode($response));
 }

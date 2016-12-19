@@ -10,7 +10,7 @@
         <ul>
             <li>
                 <a href="{{ route('front.home') }}">
-                    <img src="{{ asset('images/channels/small/1.png') }}" alt=""/>
+                    <img src="{{ asset('old_1.png') }}" alt=""/>
                 </a>
             </li>
             <li>

@@ -510,4 +510,26 @@ class PostController extends Controller
             'posts' => $row,
             ]);
     }
+
+    public function watermark(Request $request)
+    {
+        $file = $request->file;
+
+        $btw = time();
+        $name = $btw.'.'.$file->getClientOriginalExtension();
+
+        $dir  = 'froala/uploads';
+        $storage = \Storage::disk('public');
+        $storage->makeDirectory($dir);
+
+        $upload_success = Image::make($_FILES['file']['tmp_name'])->heighten(600)->insert('http://ktrk.kg/images/wm_ktrk.png', 'center', 0, 0)->save($dir.'/'.$name);
+        if ($upload_success) {
+            $response = new \stdClass();
+            $response->link = url()."/froala/uploads/" . $name;
+            $response->file_name = $name;
+            return stripslashes(json_encode($response));
+        } else {
+            return Response::json('error', 400);
+        }
+    }
 }
