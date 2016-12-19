@@ -91,14 +91,30 @@
                     </div>
                     <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 132px; max-height: 100px;"></div>
                     <div>
-              <span class="btn btn-default btn-file">
-                <span class="fileinput-new">{{ trans('site.AdminBackgroundSelect') }}</span>
-                <span class="fileinput-exists">{{ trans('site.Change') }}</span>
-                {!! Form::file('thumbnail', null, ["class" => "form-control"]) !!}
-              </span>
+                      <span class="btn btn-default btn-file">
+                        <span class="fileinput-new">{{ trans('site.AdminBackgroundSelect') }}</span>
+                        <span class="fileinput-exists">{{ trans('site.Change') }}</span>
+                        {!! Form::file('thumbnail', null, ["class" => "form-control"]) !!}
+                      </span>
                         <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">{{ trans('site.Delete') }}</a>
                     </div>
                 </div>
+            </div>
+        </div>
+        
+        <!-- Datepicker -->
+        <div class="form-group">
+            <label for="created_at" class="col-sm-2 control-label">Дата <i class="fa fa-calendar"></i></label>
+            <div class="col-sm-2">
+                {!! Form::text('created_at', null, ["class" => "form-control", "id" => "date", "title" => ""]) !!}
+            </div>
+        </div>
+
+        <!-- Timepicker -->
+        <div class="form-group">
+            <label for="created_at" class="col-sm-2 control-label">Время<i class="fa fa-clock-o"></i></label>
+            <div class="col-sm-2">
+                {!! Form::text('time', null, ["class" => "form-control", "id" => "time", "title" => ""]) !!}
             </div>
         </div>
 

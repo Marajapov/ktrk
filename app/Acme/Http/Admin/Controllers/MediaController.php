@@ -50,7 +50,7 @@ class MediaController extends Controller
     public function store(Request $request)
     {
 
-        $media = Media::create($request->except('tag_kg','tag_ru','q', 'thumbnail','hitnumber'));
+        $media = Media::create($request->except('tag_kg','tag_ru','q', 'thumbnail','hitnumber', 'created_at','time' ));
 
         if($request->input('hitnumber')){
             $hitnumber = $request->input('hitnumber');
@@ -125,6 +125,24 @@ class MediaController extends Controller
             $media->save();
         }
 
+        if($request->input('created_at') != null){
+            if($request->input('time')){
+                $time = $request->input('time');
+            } else
+            {
+                $time = date('H:i:s');
+            }
+            $postDate = $request->input('created_at');
+            $timeToSave = date('H:i:s', strtotime($time));
+            $saveDate = date('Y-m-d', strtotime($postDate));
+            $result = $saveDate.' '.$timeToSave;
+            $media->created_at = $result;
+            $media->save();
+        }else{
+            $media->created_at = date('Y-m-d H:i:s');
+            $media->save();
+        }
+
         return redirect()->route('admin.media.index');
     }
 
@@ -188,7 +206,7 @@ class MediaController extends Controller
      */
     public function update(Request $request, Media $media)
     {
-        $media->update($request->except('tag_kg','tag_ru','q', 'thumbnail','hitnumber'));
+        $media->update($request->except('tag_kg','tag_ru','q', 'thumbnail','hitnumber','channel_id','time'));
 
         $tag_kg_string = $request->input('tag_kg');
         $tags = explode("; ",$tag_kg_string);
@@ -265,6 +283,27 @@ class MediaController extends Controller
 
             $media->thumbnail = $dir.'/'.$name;
             $media->thumbnail_big = $dir.'/'.$name2;
+            $media->save();
+        }
+        if($request->input('created_at') != null){
+
+            if($request->input('time')){
+                $time = $request->input('time');
+            } else
+            {
+                $time = date('H:i:s');
+            }
+            
+            $postDate = $request->input('created_at');
+            $timeToSave = date('H:i:s', strtotime($time));
+            $saveDate = date('Y-m-d', strtotime($postDate));
+            $result = $saveDate.' '.$timeToSave;
+            $media->created_at = $result;
+            $media->save();
+        }else{
+            $today = date('Y-m-d H:i:s');
+            dd($today);
+            $media->created_at = date('Y-m-d H:i:s');
             $media->save();
         }
         return redirect()->route('admin.media.show', $media);
