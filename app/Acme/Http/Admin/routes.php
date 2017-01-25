@@ -45,6 +45,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'access:admin', 'namespace' =
     Route::get('photoParent.destroyChild', ['as' => 'admin.photoParent.destroyChild', 'uses' => 'PhotoParentController@destroyChild']);
     Route::get('photoParent.photodelete', ['as' => 'admin.photoParent.photodelete', 'uses' => 'PhotoParentController@photodelete']);
     Route::get('photoParent.publish', ['as' => 'admin.photoParent.publish', 'uses' => 'PhotoParentController@publish']); // publish the Gallery
+    Route::post('photoParent/addImages/{photoParent}', ['as' => 'admin.photoParent.addImages', 'uses' => 'PhotoParentController@addImages']); // add images
 
     Route::get('photoParent.unpublish', ['as' => 'admin.photoParent.unpublish', 'uses' => 'PhotoParentController@unpublish']); // unpublish the Gallery
 

@@ -690,7 +690,7 @@ header{
 }
 .btn-sport:hover .soon,
 .btn-sport .soon:hover{
-    background-color: none;
+    background: none;
     color: #1c8e4c;
 }
 .btn-sport{
@@ -891,20 +891,50 @@ position: relative;
     background: #fff;
 }
 .tele-item{
+    position: relative;
 	display: table-cell;
     height: 50px;
-    padding: 5px 10px;
-    border-right: #BDC3C7 solid 1px;
-    background: #ecf0f1;
+    padding: 5px 30px 5px 10px;
+    /*border-right: #BDC3C7 solid 1px;*/
+    background: #2ECC71;
 
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
     transition: all 0.5s;
 }
-.tele-item:hover{
-	background: #e1e7e8;
+.tele-item::before,
+.tele-item::after{
+    content: '';
+    position: absolute;
 }
+.tele-item::before{
+    top: -5px;
+    right: 0;
+    z-index: 100;
+
+    height: 60px;
+    width: 30px;
+
+    border-left: 30px solid #ffffff;
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+}
+.tele-item::after{
+    top: 0;
+    right: 5px;
+    z-index: 101;
+
+    height: 50px;
+    width: 25px;
+
+    border-left: 25px solid #2ECC71;
+    border-top: 25px solid transparent;
+    border-bottom: 25px solid transparent;
+}
+/*.tele-item:hover{*/
+	/*background: #e1e7e8;*/
+/*}*/
 .tele-item .timename{
     white-space: nowrap;
 }
@@ -914,8 +944,7 @@ position: relative;
     display: flex;
     padding-right: 5px;
     font-size: 1.3rem;
-    font-family: 'robotobold';
-    color: #229c4d;
+    color: #ffffff;
     white-space: nowrap;
 }
 .tele-item .name{
@@ -924,7 +953,7 @@ position: relative;
     white-space: nowrap;
 }
 .live{
-	background: #ECF0F1;
+	background: #2ECC71;
     min-width: 90px;
     max-width: 100%;
 }
@@ -1189,10 +1218,9 @@ figure.effect-roxy {
 figure.effect-roxy img {
     height: inherit;
     width: inherit;
-	transform 0.35s;
     -webkit-transition: opacity 0.35s, 
         -webkit-transform 0.35s;
-    transition: opacity 0.35s, 
+    transition: opacity 0.35s;
 }
 
 figure.effect-roxy figcaption::before {

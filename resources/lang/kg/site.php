@@ -153,6 +153,7 @@ return [
     'Teleprogram' => 'Көрсөтүүлөр программасы',
     'Contacts' => 'Байланыш',
     'Ads' => 'Жарнак',
+    'LiveProgram' => 'Алдыда',
 
 
     // Admin panel translate
