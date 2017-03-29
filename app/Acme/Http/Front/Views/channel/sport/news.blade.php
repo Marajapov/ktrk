@@ -42,8 +42,63 @@
                                   {{--@if($post->thumb_author)<span class="thumb_author"> Фото: {{ $post->thumb_author }}</span>@endif--}}
                               </p>
                               <article>
-                                  <!-- {!! $post->getContent() !!} -->
+                                <div>                                    
+                                    {!! $post->getEmbed() !!}                                    
+                                </div>
                                   {!! $content !!}
+                                      @if($images)                                     
+                                        <div class="slider-for">
+                                            @if($images)   
+                                                @foreach($images as $image)
+                                                    <div>
+                                                        <a href="#">
+                                                            <img src="{{ asset('froala/uploads/'.$image->name) }}" alt=""/>
+                                                        </a>
+                                                    </div>
+                                                @endforeach
+                                            @endif
+                                        </div>
+                                        <div class="slider-nav col-md-12">
+                                            @if($images)
+                                                @if($images)
+                                                    @foreach($images as $image)
+                                                        <div>
+                                                            <img class="img" src="{{ asset('froala/uploads/'.$image->name) }}" alt=""/>
+                                                        </div>
+                                                    @endforeach
+                                                @endif
+                                            @endif
+                                        </div>
+                                    @endif
+
+                                    @if($images2)
+                                        <div class="slider-for2">
+
+                                            @if($images2)
+
+                                                @foreach($images2 as $image2)
+
+                                                    <div>
+                                                        <a href="#">
+                                                            <img src="{{ asset('froala/uploads/'.$image2->name) }}" alt=""/>
+                                                        </a>
+                                                    </div>
+                                                @endforeach
+                                            @endif
+                                        </div>
+
+                                        <div class="slider-nav2 col-md-12">
+                                            @if($images2)
+                                                @if($images2)
+                                                    @foreach($images2 as $image2)
+                                                        <div>
+                                                            <img class="img" src="{{ asset('froala/uploads/'.$image2->name) }}" alt=""/>
+                                                        </div>
+                                                    @endforeach
+                                                @endif
+                                            @endif
+                                        </div>
+                                    @endif
                               </article>
                               <p>
                                   <a href="http://orphus.ru" id="orphus" class="hidden" target="_blank"><img alt="Система Orphus" src="{{ asset('js/orphus.gif') }}" border="0" width="240" height="80" /></a>

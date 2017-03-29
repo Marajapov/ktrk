@@ -49,6 +49,42 @@ $(document).ready(function(){
     });
 </script>
 
+<script type="text/javascript" src="{{ asset('js/jquery-migrate-1.2.1.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('slick/slick.min.js') }}"></script>
+
+<script>
+
+    $('.slider-for').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        fade: true,
+        asNavFor: '.slider-nav'
+    });
+    $('.slider-nav').slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        asNavFor: '.slider-for',
+        centerMode: true,
+        focusOnSelect: true,
+        variableWidth: true
+    });
+
+    $('.slider-for2').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        fade: true,
+        asNavFor: '.slider-nav2'
+    });
+    $('.slider-nav2').slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        asNavFor: '.slider-for2',
+        centerMode: true,
+        focusOnSelect: true,
+        variableWidth: true
+    });    
+</script>
+
 <script src="{{ asset('js/sweetalert.min.js') }}"></script>
 <!-- @if(session('flag2') == 0)
     <script>

@@ -61,7 +61,7 @@
                                    <a href="{{ $allVideos->nextPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-right"></span></a>
                                 </li>
                                 <li>
-                                   <a href="{{ route('sport.videos', ['page' => ceil($allVideos->total()/$perPage)]) }}" class="btn btn-default @if($allVideos->currentPage() == ceil($allVideos->total()/$perPage)) disabled @endif">{{ trans('site.End') }}</a>
+                                   <a href="{{ route('sport.videos.all', ['page' => ceil($allVideos->total()/$perPage)]) }}" class="btn btn-default @if($allVideos->currentPage() == ceil($allVideos->total()/$perPage)) disabled @endif">{{ trans('site.End') }}</a>
                                 </li>
                              </ul>
                           </nav>

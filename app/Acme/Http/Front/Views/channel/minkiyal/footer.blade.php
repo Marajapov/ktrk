@@ -10,7 +10,7 @@
         <ul>
             <li>
                 <a href="{{ route('front.home') }}">
-                    <img src="{{ asset('old_1.png') }}" alt=""/>
+                    <img src="{{ asset('images/channels/small/1.png') }}" alt=""/>
                 </a>
             </li>
             <li>
@@ -126,6 +126,42 @@
 <script src="{{ asset('js/landing/wow.min.js') }}"></script>
 <script src="{{ asset('js/landing/main.js') }}"></script>
 <script src="{{ asset('js/landing/fixed.js') }}"></script>
+
+<script type="text/javascript" src="{{ asset('js/jquery-migrate-1.2.1.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('slick/slick.min.js') }}"></script>
+
+<script>
+
+    $('.slider-for').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        fade: true,
+        asNavFor: '.slider-nav'
+    });
+    $('.slider-nav').slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        asNavFor: '.slider-for',
+        centerMode: true,
+        focusOnSelect: true,
+        variableWidth: true
+    });
+
+    $('.slider-for2').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        fade: true,
+        asNavFor: '.slider-nav2'
+    });
+    $('.slider-nav2').slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        asNavFor: '.slider-for2',
+        centerMode: true,
+        focusOnSelect: true,
+        variableWidth: true
+    });    
+</script>
 
 @yield('footerScript')
 

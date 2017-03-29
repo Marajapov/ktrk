@@ -125,7 +125,7 @@
            <div>
                <div class="col-md-12">
                   <div class="hexagon">
-                     <img class="d-img" src="{{asset('old_1.png')}}" alt="">
+                     <img class="d-img" src="{{asset('images/channels/minkiyal/vj/1.png')}}" alt="">          
                   </div>
                    <div class="d-info">
                      <span class="name"><a href="{{route('minkiyal.dj.jazgyl')}}">Жазгүл Жолдубай кызы</a></span>

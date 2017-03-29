@@ -29,7 +29,6 @@
                       <h3 class="panel-title"><span>{{ trans('site.Top news') }}</span></h3>
                     </div>
                     <div class="panel-body second-panel-body">
-
                       {{--@include('Front::ns.lastPosts')--}}
                       @foreach($popPosts as $pop)
 

@@ -105,6 +105,9 @@
                            <img src="@if(empty($post->getFile()))images/2.jpg @else {{  asset($post->getFile()) }} @endif" alt="" data-toggle="tooltip" data-placement="top" title="Бул жөн гана сүрөт эмес">
                         </div>
                         <article>
+                            <div>                                    
+                                {!! $post->getEmbed() !!}                                    
+                            </div>
                             {!! $content !!}
                         </article>
                         <p>

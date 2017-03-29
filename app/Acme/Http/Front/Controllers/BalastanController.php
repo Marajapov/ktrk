@@ -30,7 +30,7 @@ class BalastanController extends Controller
         if(count($firstMedia)){ $firstMedia = $firstMedia;
         }else{ $firstMedia = null; }
 
-        $anons = \Model\Anons\ModelName::where('channel','=','4')->where('published','=','1')->orderBy('id','=','desc')->take(2)->get();
+        $anons = \Model\Anons\ModelName::where('channel','=','4')->where('balastansoon','!=','1')->where('published','=','1')->orderBy('id','=','desc')->take(3)->get();
 
         $anonssoon= \Model\Anons\ModelName::where('channel','=','4')->where('balastansoon','=','1')->where('published','=','1')->orderBy('id','=','desc')->take(2)->get();
 

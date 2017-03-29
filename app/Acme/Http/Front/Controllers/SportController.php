@@ -408,6 +408,20 @@ public function news(\Model\Post\ModelName $post)
             $relatedNews = \Model\Post\ModelName::where('published','=',true)->where('birinchi','=','1')->languageru()->where('category_id','=',$post->category_id)->orderBy('id','desc')->take(8)->get();
         }
 
+        $parent = \Model\PhotoParent\ModelName::where('id','=',$post->parentId)->first();
+        if($parent){
+            $images = json_decode($parent->images);   
+        }else{
+            $images = null;
+        }
+
+        $parent2 = \Model\PhotoParent\ModelName::where('id','=',$post->parentId2)->first();
+        if($parent2){
+            $images2 = json_decode($parent2->images);    
+        }else{
+            $images2 = null;
+        } 
+
         return view('Front::channel.sport.news', [
             'channel' => $channel,
             'post' => $post,
@@ -425,6 +439,9 @@ public function news(\Model\Post\ModelName $post)
             'positionLeft'  => $this->positionLeft,
             'positionCenter' => $this->positionCenter,
             'positionBottom' => $this->positionBottom,
+
+            'images' => $images,
+            'images2' => $images2  
         ]);
     }
     

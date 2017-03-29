@@ -2170,3 +2170,109 @@ padding: 20px 10px 0px 15px;
 .newsstream .media-heading:hover{
     color: #fff;
 }
+
+
+#kyrgyzradio .slider-for
+{
+  padding: 0;
+}
+
+#kyrgyzradio .slider-nav
+{
+  padding: 0 30px;
+}
+
+#kyrgyzradio .slider-for
+{
+  margin-bottom: 20px;
+}
+
+#kyrgyzradio .slider-for .slick-slide
+ {
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+  height: 500px;
+  width: auto;
+  margin: auto;
+}
+
+#kyrgyzradio .slider-for .slick-slide img
+ {
+  height: 500px;
+  margin: 0 auto;
+  width: auto;
+}
+
+#kyrgyzradio.slide-caption
+ {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  background: rgba(0, 0, 0, 0.5);
+  display: block;
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 60px;
+  text-align: center;
+}
+
+#kyrgyzradio .slider-for .slick-prev, #kyrgyzradio .slider-for .slick-next
+{
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+#kyrgyzradio .slider-for .slick-prev 
+{
+  left: 0px;
+  z-index: 1000;
+}
+
+#kyrgyzradio .slider-for .slick-next 
+{
+  right: 0px;
+  z-index: 1000;
+}
+
+#kyrgyzradio .slider-for .slick-next::before, #kyrgyzradio .slider-for .slick-prev::before
+ {
+  color: #ffffff !important;
+  font-size: 24px;
+}
+
+#kyrgyzradio .slider-nav .slick-slide 
+{
+  height: 100px;
+  margin: 0 5px;
+  overflow: hidden;
+  cursor: pointer;
+  text-align: center;
+
+  opacity: 0.5;
+}
+
+#kyrgyzradio .slider-nav .slick-slide.slick-current
+{
+  opacity: 1;
+}
+
+#kyrgyzradio .slider-nav .slick-slide img 
+{
+  height: 100%;
+  width: auto;
+}
+
+#kyrgyzradio .slider-nav .slick-prev
+{
+  left: 0px;
+}
+
+#kyrgyzradio .slider-nav .slick-next
+{
+  right: 0px;
+}

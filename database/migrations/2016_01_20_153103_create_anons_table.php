@@ -30,6 +30,7 @@ class CreateAnonsTable extends Migration
             $table->string('minkiyalbottom');
             $table->string('kyrgyzradiotop');
             $table->string('dostuktop');
+            $table->string('musictop');
             $table->integer('media');
             $table->integer('published');
             $table->integer('owner_id');

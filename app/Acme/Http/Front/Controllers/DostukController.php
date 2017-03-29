@@ -40,8 +40,7 @@ class DostukController extends Controller
             'allPost' => $allPost,
             'dostukProjects' => $dostukProjects,
             'dostuktop' => $dostuktop,
-            'project' => $project,
-
+            'project' => $project  
             ]);
     }
 
@@ -348,6 +347,20 @@ class DostukController extends Controller
                 $popArticles = null;
             }
         }
+
+        $parent = \Model\PhotoParent\ModelName::where('id','=',$post->parentId)->first();
+        if($parent){
+            $images = json_decode($parent->images);   
+        }else{
+            $images = null;
+        }
+
+        $parent2 = \Model\PhotoParent\ModelName::where('id','=',$post->parentId2)->first();
+        if($parent2){
+            $images2 = json_decode($parent2->images);    
+        }else{
+            $images2 = null;
+        }
         
            return view('Front::channel.dostuk.news', [
             'channel' => $channel,
@@ -360,6 +373,8 @@ class DostukController extends Controller
             'relatedNews' => $relatedNews,
             'lc' => $lc,
             'popArticles' => $popArticles,
+            'images' => $images,
+            'images2' => $images2  
             ]);
     }
     
