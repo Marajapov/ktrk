@@ -9,7 +9,7 @@
 
   <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}"/>
   <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}"/>
-  <link rel="stylesheet" href="{{ asset('css/admin/jasny/jasny-bootstrap.min.css') }}"/>
+  <link rel="stylesheet" href="{{ asset('css/jasny-bootstrap.css') }}"/>
 
   {{--<link rel="stylesheet" href="{{ asset('css/admin/awesome-bootstrap-checkbox.min.css') }}"/>--}}
   <link rel="stylesheet" href="{{ asset('css/bootstrap-datetimepicker.css') }}">
@@ -25,7 +25,7 @@
   <!-- JS scripts forom admin page -->
   <script src="{{ asset('js/jquery-1.11.2.min.js') }}"></script>
   <script src="{{ asset('js/bootstrap.js') }}"></script>
-  <script src="{{ asset('js/admin/jasny/jasny-bootstrap.min.js') }}"></script>
+  <script src="{{ asset('js/jasny-bootstrap.js') }}"></script>
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>

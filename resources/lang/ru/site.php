@@ -159,6 +159,7 @@ return [
     'Teleprogram' => 'Программа передач',
     'Contacts' => 'Контакты',
     'Ads' => 'Реклама',
+    'LiveProgram' => 'Далее в эфире',
 
     // Admin panel translate
     'AdminHomeTitle' => 'Главная',

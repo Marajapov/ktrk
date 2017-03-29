@@ -245,9 +245,13 @@ class PhotoParentController extends Controller
 
         $key = array_has($files, $photoDeleteId);
 
+        $dir  = 'froala/uploads/';
+        $storage = \Storage::disk('public');
+        $storage->makeDirectory($dir);
+
         if($key !== false) {
 
-            $storage = \Storage::delete('/img/gallery/'.$name);
+            $storage = \Storage::delete($dir.$name);
         }
 
         unset($files[$photoDeleteId-1]);
@@ -287,6 +291,65 @@ class PhotoParentController extends Controller
         $photoParentId = $request->photoParentId;
         $photoChild->delete();
         $photoParent = \Model\PhotoParent\ModelName::where('id','=',$photoParentId)->first();
+
+        return redirect()->route('admin.photoParent.show', $photoParent);
+    }
+
+    public function addImages(Request $request, PhotoParent $photoParent)
+    {
+        $files = $request->file('images');
+
+        if($files){
+
+            $images = json_decode($photoParent->images);
+            $count = count($images);
+
+            $uploadcount = 0;
+
+            foreach($files as $key=>$file) {
+
+                $storage = \Storage::disk('public');
+                $destinationPath = 'froala/uploads';
+                $storage->makeDirectory($destinationPath);
+
+                $extension = $file->getClientOriginalExtension();
+                $time = time();
+                $name = rand(11111, 99999).$time.'.'.$extension;
+
+                if($photoParent->watermark == 2){
+                    Image::make($file)->heighten(600)->insert('http://ktrk.kg/images/wm_ktrk.png', 'center', 0, 0)->save($destinationPath.'/'.$name);
+                } elseif($photoParent->watermark == 3){
+                    Image::make($file)->heighten(600)->insert('http://ktrk.kg/images/wm_music.png', 'bottom-right', 10, 10)->save($destinationPath.'/'.$name);
+                } elseif($photoParent->watermark == 4){
+                    Image::make($file)->heighten(600)->insert('http://ktrk.kg/images/wm_balastan.png', 'bottom-right', 10, 10)->save($destinationPath.'/'.$name);
+                } elseif($photoParent->watermark == 7){
+                    Image::make($file)->heighten(600)->insert('http://ktrk.kg/images/wm_1radio.png', 'bottom-right', 10, 10)->save($destinationPath.'/'.$name);
+                } else{
+                    Image::make($file)->heighten(600)->save($destinationPath.'/'.$name);
+                }
+
+                $file_array = array();
+                $file_array = array_collapse([$file_array, [
+                    'id' => $count+$key+1,
+                    'name' => $name
+                ]]);
+
+                $images = array_add($images, $count+$key , $file_array);
+
+
+                PhotoChild::create([
+                    'file'=> $destinationPath.'/'.$file,
+                    'parentId' => $photoParent->id
+                ]);
+
+                $uploadcount ++;
+            }
+
+            $jsonresult = json_encode($images);
+
+            $photoParent->images = $jsonresult;
+            $photoParent->save();
+        }
 
         return redirect()->route('admin.photoParent.show', $photoParent);
     }

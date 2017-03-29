@@ -20,7 +20,6 @@
 @stop
 
 @section('scripts')
-<script type="text/javascript" src="{{ asset('js/bootstrap-select.js') }}"></script>
 
 <!-- Include JS files. -->
 <script src="{{ asset('froala/js/froala_editor.min.js') }}"></script>

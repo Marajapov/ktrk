@@ -2,6 +2,8 @@
 @section('title', $photoParent->getName())
 
 @section('styles')
+    <meta name="_token" content="{!! csrf_token() !!}"/>
+
     <link href="{{ asset('froala/css/froala_style.min.css') }}" rel="stylesheet" type="text/css" />
 @endsection
 
@@ -13,7 +15,7 @@
 
                 <div class="x_title clearfix">
 
-                    <h4>{{ trans('site.Info') }}</h4>
+                    <h4>{{ trans('site.Info') }} - {{count($images)}} файл</h4>
 
                     <a href="{{ route('admin.photoParent.index') }}" class="btn btn-default pull-right btn-back">{{ trans('site.Back') }}</a>
 
@@ -75,8 +77,8 @@
                             </p>
                         </li>
                         <li class="list-group-item photos">
-                            <p class="header">{{ trans('site.Images') }}</p>
-                            <div class="body images">
+                            <p class="header" style="min-width: 200px;">{{ trans('site.Images') }}</p>
+                            <div class="body images" style="width: 10000px;">
                                 @if($images != null)
                                     @foreach($images as $row)
                                         <div class="photo-child">
@@ -90,27 +92,32 @@
                                         </div>
                                     @endforeach
                                 @endif
-                            </div>
-                        </li>
+                                <form style="margin-top: 15px;" action="{{route('admin.photoParent.addImages', $photoParent)}}" enctype="multipart/form-data" method="POST">
 
-                        <li class="list-group-item photos hidden">
-                            <p class="header">{{ trans('site.Images') }}</p>
-                            <div class="body images">
-                                @if($photoChildren)
-                                    @foreach($photoChildren as $photoChild)
-                                        <div class="photo-child">
-                                            <img src="{{ asset($photoChild->file) }} " alt="">
-                                            <a class="edit" href="{{ route('admin.photoChild.edit', $photoChild) }}">
-                                                <i class="fa fa-pencil"></i>
-                                            </a>
-                                            {!! Form::open(['route' => ['admin.photoParent.destroyChild', $photoChild], 'method' => 'get', 'onsubmit' => "return confirm('Вы уверены ?')"]) !!}
-                                            <input type="hidden" value="{{ $photoChild->id }}" name="photoDeleteId">
-                                            <input type="hidden" value="{{ $photoParent->id }}" name="photoParentId">
-                                            <button type="submit"><i class="fa fa-times"></i></button>
-                                            {!! Form::close() !!}
+                                    <input name="_token" hidden value="{!! csrf_token() !!}" />
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="fileinput fileinput-new input-group" data-provides="fileinput">
+                                                <div class="form-control" data-trigger="fileinput">
+                                                    <i class="glyphicon glyphicon-file fileinput-exists"></i>
+                                                    <span class="fileinput-filename"></span>
+                                                </div>
+                                                <span class="input-group-addon btn btn-default btn-file" style="padding: 6px 12px;">
+                                                    <span class="fileinput-new">Выберите файлы</span>
+                                                    <input id="images" type="file" name="images[]" multiple>
+                                                </span>
+                                                <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Удалить</a>
+                                            </div>
                                         </div>
-                                    @endforeach
-                                @endif
+
+                                        <div class="col-md-6">
+                                            <button type="submit" class="btn btn-primary">Добавить</button>
+                                        </div>
+
+                                    </div>
+
+                                </form>
                             </div>
                         </li>
                     </ul>
@@ -122,4 +129,3 @@
         </div>
     </div>
 @stop
-
