@@ -44,6 +44,12 @@
             <div class="col-md-12 no-padding" style="margin-top: 15px;">
               <span class="content">{!! $muzkanalvideo->getContent() !!}</span>
 
+                <span class="show-extra">
+                  <span class="show-date">{{ $muzkanalvideo->getDay() }} {{ $muzkanalvideo->getMonthRu() }}, {{ $muzkanalvideo->getYear() }}</span>
+                  <span class="show-view">
+                      <i class="fa-view"></i>{{ $muzkanalvideo->viewed }}
+                  </span>
+                </span>
               <div class="col-md-12 no-padding" style="margin-bottom: 30px">
 
                 @if(auth()->user())
@@ -52,12 +58,6 @@
                     @endif
                   </span>
 
-                <span class="show-extra">
-                  <span class="show-date">{{ $muzkanalvideo->getDay() }} {{ $muzkanalvideo->getMonthRu() }}, {{ $muzkanalvideo->getYear() }}</span>
-                  <span class="show-view">
-                      <i class="fa-view"></i>{{ $muzkanalvideo->viewed }}
-                  </span>
-                </span>
               </div>
 
               <footer style="text-align: center">

@@ -1,0 +1,51 @@
+#stream{
+	margin-bottom: 30px;
+}
+
+#stream .playlist {
+	position: relative;
+	display: block;
+}
+#stream .playlist .stream:not(:last-child){
+	border-bottom: 1px solid #d9dfe8;
+}
+#stream .playlist .stream a{
+	display: block;
+	padding: 15px;
+	background: #fff;
+}
+
+#stream .playlist .stream img{
+	height: 60px;
+	width: auto;
+	margin-right: 10px;
+}
+
+#stream .playlist .stream img,
+#stream .playlist .stream h4{
+	display: inline-block;
+    vertical-align: middle;
+    font-size: 16px;
+}
+#stream .playlist .stream{
+	font-size: 16px;
+}
+
+#stream .playlist .stream a:hover{
+	background: #f8f8f9;
+}
+
+#stream .playlist .stream a h4{
+	color: #23527c;
+}
+
+.no-padding{
+	padding: 0;
+}
+
+#stream .playlist .stream a.current{
+	background: #f1f4f9;
+}
+#stream .panel-body{
+    padding: 15px !important;
+}

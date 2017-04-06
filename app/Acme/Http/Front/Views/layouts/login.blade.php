@@ -22,7 +22,6 @@
 
 </head>
 <body class="login">
-
     @yield('content')
   
 </body>

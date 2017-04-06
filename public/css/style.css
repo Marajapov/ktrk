@@ -357,7 +357,6 @@ header {
     color: #ffffff;
     text-transform: uppercase;
     font-size: 11px;
-    line-height: 1em;
 }
 .dropdown-menu {
     border: 0;
@@ -2427,7 +2426,7 @@ display: block;
 /* nt-example1 */
 #nt-example1 {
     width: 100%;
-    height: 130px !important;
+    height: 115px !important;
     padding: 0px 5px;
     margin-top: 10px;
 }
@@ -2671,7 +2670,7 @@ display: block;
     font-size: 15px;
 }
 .topvideos {
-    margin-top: 5px;
+    margin-top: 15px;
 }
 .topvideos .panel-carousel {
     background: #fff;
@@ -2752,7 +2751,7 @@ display: block;
     margin-top: 15px;
 }
 .newvideos .panel-body footer {
-    padding: 5px;
+    padding: 6px 6px 7px 6px
 }
 .hittop {
     padding: 0px;
@@ -4558,4 +4557,12 @@ background-size: cover;
         height: auto;
         width: 100%;
     }
+}
+
+.music .panel-body footer {
+    border: none;
+}
+
+.music .show-title span{
+    font-weight: normal;
 }

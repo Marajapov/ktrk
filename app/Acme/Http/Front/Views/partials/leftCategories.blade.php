@@ -43,7 +43,9 @@
                         </div>
                         <div role="tabpanel" class="tab-pane fade" id="popular">
                             @foreach($popArticles as $post)
+
                                 <div class="media">
+
                                     <div class="media-body">
                                         <div class="extra">
                                             <span class="e-datetime">{{ $post->getDay() }} {{ $post->getMonthRu() }}</span>
@@ -56,6 +58,7 @@
                             @endforeach
                         </div>
                     </div>
+
                 </div>
 
                 <footer>
@@ -97,7 +100,7 @@
 
     <a href="#" class="text-center ads ads-300x250 hidden">
 
-        <img src="{{ asset('images/banner_300x250.png') }}" alt=""/>
+        <img src="{{ asset('img/banner/2.jpg') }}" alt=""/>
     </a>
 
 </div><!-- end of left categories -->

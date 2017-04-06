@@ -30,7 +30,7 @@
 
                             <nav class="top-nav clearfix">
                                 <ul class="clearfix">
-                                    @foreach(\Model\Menu\ModelName::code('main')->parent()->get() as $menu)
+                                    @foreach(\Model\Menu\ModelName::code('main')->parent()->get() as $key=>$menu)
                                         @if(count($menu->submenus) > 0)
                                             <li>
                                                 <a href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="100" data-close-others="false" role="button" aria-expanded="false">
@@ -48,13 +48,16 @@
                                             </li>
                                             <li> / </li>
                                         @else
-                                            <li><a href="{{ $menu->getUrl() }}">
+                                            <li>
+                                                <a href="{{ $menu->getUrl() }}">
                                                     @if(app()->getlocale() == 'kg')
                                                         {{ $menu->getName() }}
                                                     @else
                                                         {{ $menu->getNameRu() }}
                                                     @endif
-                                                </a></li> <li> / </li>
+                                                </a>
+                                            </li>
+                                            @if($key+1 != count(\Model\Menu\ModelName::code('main')->parent()->get()))<li> / </li>@endif
                                         @endif
                                     @endforeach
                                 </ul>
@@ -88,7 +91,7 @@
                                 </button>
                             </form>
 
-                            <button class="btn btn-danger btn-live" data-toggle="modal" data-target="#liveModal">
+                            <button id="btnLive" class="btn btn-danger btn-live" data-toggle="modal" data-target="#liveModal">
                                 <i class="fa fa-dot-circle-o"></i>
                                 {{ trans('site.Live') }}
                             </button>

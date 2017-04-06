@@ -100,4 +100,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'access:admin', 'namespace' =
 //    Watermark
     Route::post('post/watermark/',['as'=>'admin.post.watermark','uses'=>'PostController@watermark']);
     Route::post('post/postWatermark','AjaxController@postWatermark');
+ 
+    // Stream
+    Route::resource('stream','StreamController');
 });
