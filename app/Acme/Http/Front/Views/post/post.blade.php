@@ -102,23 +102,32 @@
                                 <div class="col-md-12 block news-block">
                                     <span class="hidden" id="postId">{{ $post->id }}</span>
                                     <span class="hidden" id="orphusAction">{{ route('front.orphus') }}</span>
-                                    <h4 class="news-title">
-                                        {{ $post->getTitleRuOrKg() }}
-                                        <div class="extra">
-                                            <span class="art-date"><i class="fa fa-calendar"></i>{{ $post->getDay() }} {{ $post->getMonthRu() }}, {{ $post->getYear() }}</span>
-                                            <span class="art-view"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
-                                        </div>
-                                    </h4>
                                     <p class="post-thumb" href="{{ route('front.post', $post) }}">
+                                        <span class="post-title">
+                                            @foreach($words as $word)
+                                                <span>{{$word}}</span>
+                                            @endforeach
+
+                                            {{--{{ $post->getTitleRuOrKg() }}--}}
+                                            {{--<span class="extra">--}}
+                                                {{--<span class="art-date">{{ $post->getDay() }} {{ $post->getMonthRu() }}, {{ $post->getYear() }}</span>--}}
+                                                {{--<span class="art-view"><i class="fa-view"></i>{{ $post->getViewed() }}</span>--}}
+                                            {{--</span>--}}
+                                        </span>
                                         <a id="post-thumb" href="@if(empty($post->thumbnail_big)){{  asset($post->thumbnail) }}@else{{ asset($post->thumbnail_big) }}@endif">
                                             <img class="left" src="@if(empty($post->thumbnail_big)) {{  asset($post->thumbnail) }} @else {{  asset($post->thumbnail_big) }} @endif" alt="image">
                                         </a>
-                                        @if($post->thumb_desc || $post->thumb_desc_ru)<span class="thumb_desc">{{ $post->getThumbnailDesc() }}</span>@endif
-                                        {{--@if($post->thumb_author)<span class="thumb_author"> Фото: {{ $post->thumb_author }}</span>@endif--}}
+                                        {{--@if($post->thumb_desc || $post->thumb_desc_ru)<span class="thumb_desc">{{ $post->getThumbnailDesc() }}</span>@endif--}}
+                                        @if($post->thumb_author)<span class="thumb_author"> Фото: {{ $post->thumb_author }}</span>@endif
                                     </p>
-                                <div>                                    
-                                    {!! $post->getEmbed() !!}                                    
-                                </div>
+
+                                    <div class="extra">
+                                        <span class="art-date">{{ $post->getDay() }} {{ $post->getMonthRu() }}, {{ $post->getYear() }}</span>
+                                        <span class="art-view"><i class="fa-view"></i>{{ $post->getViewed() }}</span>
+                                    </div>
+                                    <div>
+                                        {!! $post->getEmbed() !!}
+                                    </div>
                                     {!! $content !!}
                                     @if($images)                                     
                                         <div class="slider-for">

@@ -66,6 +66,13 @@
               Удовлетворительно
             </label>
           </div>
+	<div class="radio">
+            <input type="radio" name="vote4" id="radio4" value="4" onclick="getVote(this.value)">
+            <label for="radio4">
+              Плохо
+            </label>
+          </div>
+
         </form>
       </div>
 

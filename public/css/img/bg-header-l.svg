@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="10px" height="151px" viewBox="0 0 10 151" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.1 (35376) - http://www.bohemiancoding.com/sketch -->
+    <title>left</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M1440.66982,193 L2200.5,193 L2200.5,4 L0,0 L88.7125761,178.349241 C103.723438,167.973616 121.73415,161.301668 137.990048,161.211445 L1385.31178,154.288555 C1409.64769,154.153486 1432.17471,170.628221 1440.66982,193 Z" id="path-1"></path>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="15" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.515420653   0 0 0 0 0.558496856   0 0 0 0 0.599569515  0 0 0 0.317312047 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="FIRST-OF-ALL" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="main-mor" transform="translate(-1179.000000, 0.000000)">
+            <g id="Group-3" transform="translate(-180.000000, -74.000000)">
+                <g id="Combined-Shape">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#0e73c5" fill-rule="evenodd" xlink:href="#path-1"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

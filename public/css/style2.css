@@ -1,6 +1,6 @@
 body{
-    background: #eff3fa;
-    background: url("../images/bg/ny_bg.png") repeat;
+    background: #ffffff;
+    /*background: url("../images/bg/ny_bg.png") repeat;*/
     /*-webkit-background-size: cover;*/
     /*background-size: cover;*/
     /*background-position: center center;*/
@@ -153,7 +153,6 @@ header.top-menu,.logo-block{
 }
 .top-header{
     height: 100%;
-    padding: 0 10px;
 }
 .logo-block{
     height: 100%;
@@ -166,7 +165,6 @@ header.top-menu,.logo-block{
     left: 0;
 
     float: left;
-    padding: 0 10px;
 }
 .logo img{
     height: 80px;

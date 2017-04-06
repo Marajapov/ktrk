@@ -1,171 +1,180 @@
 @extends('Front::channel.minkiyal.default')
 @section('title', "Миң Кыял Фм")
 @section('styles')
-      <meta name="csrf-token" content="{{ csrf_token() }}">
-      <meta property="og:url"                content="{{ Request::url()}}" />
-      <meta property="og:site_name"          content="{{ trans('site.TradeMark') }}" />
-      <meta property="og:type"               content="article" />
-      <meta property="og:title"              content="{{ $post->getTitleRuOrKg()}}" />
-      <meta property="og:description"        content="{{ $post->getShortDescription() }}" />
-      <meta property="og:image"              content="{{ asset($post->thumbnail_big) }}" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta property="og:url"                content="{{ Request::url()}}" />
+    <meta property="og:site_name"          content="{{ trans('site.TradeMark') }}" />
+    <meta property="og:type"               content="article" />
+    <meta property="og:title"              content="{{ $post->getTitleRuOrKg()}}" />
+    <meta property="og:description"        content="{{ $post->getShortDescription() }}" />
+    <meta property="og:image"              content="{{ asset($post->thumbnail_big) }}" />
 
-      <link rel="stylesheet" href="{{asset('css/goodshare.css')}}">
-      <link rel="stylesheet" href="{{asset('css/articles.css')}}">
-      <link rel="stylesheet" type="text/css" href="{{ asset('css/sweetalert.css') }}">
-      <link href="{{ asset('froala/css/froala_style.min.css') }}" rel="stylesheet" type="text/css" />
-      <link rel="stylesheet" href="{{ asset('css/magnific-popup.css')}}"/>
+    <link rel="stylesheet" href="{{asset('css/goodshare.css')}}">
+    <link rel="stylesheet" href="{{asset('css/articles.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/sweetalert.css') }}">
+    <link href="{{ asset('froala/css/froala_style.min.css') }}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('css/magnific-popup.css')}}"/>
 @endsection
 @section('content')
-@include('Front::channel.minkiyal.nav')
-@include('Front::channel.minkiyal.navs')
+    @include('Front::channel.minkiyal.nav')
+    @include('Front::channel.minkiyal.navs')
 
-<div class="container minkiyal_news">
+    <div class="container minkiyal_news">
 
-      <div class="col-md-9">
-         <div class="row minkiyal_post">
-            <div class="col-md-12">              
-               <h3 class="title">Шоу-бизнес жанылыктары</h3>               
-            </div>
-            <div class="panel panel-article">
-               <div class="panel-body">
-                  <div class="news-info">
-                     <span class="date"><i class="fa fa-calendar"></i>{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
-                     <span class="view"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
-                  </div>
-                  <h3 class="newstitle">{{ $post->getTitle() }}</h3>
-                  <p class="post-thumb" href="{{ route('front.post', $post) }}">
-                     <a id="post-thumb" href="@if(empty($post->thumbnail_big)){{  asset($post->thumbnail) }}@else{{ asset($post->thumbnail_big) }}@endif">
-                     <img class="left" src="@if(empty($post->thumbnail_big)) {{  asset($post->thumbnail) }} @else {{  asset($post->thumbnail_big) }} @endif" alt="image">
-                     </a>
-                     @if($post->thumb_desc || $post->thumb_desc_ru)<span class="thumb_desc">{{ $post->getThumbnailDesc() }}</span>@endif
-                     {{--@if($post->thumb_author)<span class="thumb_author"> Фото: {{ $post->thumb_author }}</span>@endif--}}
-                  </p>
-                  <article>
-                     {!! $post->getContentKG() !!}
-                  </article>
-                  <p>
-                     <a href="http://orphus.ru" id="orphus" class="hidden" target="_blank"><img alt="Система Orphus" src="{{ asset('js/orphus.gif') }}" border="0" width="240" height="80" /></a>
-                  </p>
-                  <div class="panel-body">
-                    <span style="top: 10px; position: relative;"><span style="color: #444242;font-weight: bold;">Категория:</span> {{ $post->category('category_id')->first()->title }}</span>
-                  </div>
-                  <div class="orphus-mistake pull-right" style="width: initial;">
-                      <div class="media">
-                        <div class="media-body media-middle">
-                           <h4>
-                              @if(app()->getlocale()=='kg')
-                              Эгерде ката тапсаңыз, текстти белгилеп Ctrl+Enter басыңыз
-                              @elseif(app()->getlocale() == 'ru')
-                              Если вы обнаружили ошибку, выделите текст и нажмите Ctrl+Enter
-                              @endif
-                           </h4>
+        <div class="col-md-9">
+            <div class="row minkiyal_post">
+                <div class="col-md-12">
+                    <h3 class="title">Шоу-бизнес жанылыктары</h3>
+                </div>
+                <div class="panel panel-article">
+                    <div class="panel-body">
+
+                        <div class="col-md-12 block news-block">
+                            <p class="post-thumb" href="{{ route('front.post', $post) }}">
+                                <span class="post-title">
+                                    {{ $post->getTitle() }}
+                                </span>
+                                <a id="post-thumb" href="@if(empty($post->thumbnail_big)){{  asset($post->thumbnail) }}@else{{ asset($post->thumbnail_big) }}@endif">
+                                    <img class="left" src="@if(empty($post->thumbnail_big)) {{  asset($post->thumbnail) }} @else {{  asset($post->thumbnail_big) }} @endif" alt="image">
+                                </a>
+                                {{--@if($post->thumb_desc || $post->thumb_desc_ru)<span class="thumb_desc">{{ $post->getThumbnailDesc() }}</span>@endif--}}
+                                @if($post->thumb_author)<span class="thumb_author"> Фото: {{ $post->thumb_author }}</span>@endif
+                            </p>
+
+                            <div class="extra">
+                                <span class="art-date">{{ $post->getDay() }} {{ $post->getMonthRu() }}, {{ $post->getYear() }}</span>
+                                <span class="art-view"><i class="fa-view"></i>{{ $post->getViewed() }}</span>
+                            </div>
+
+                            <article>
+                                {!! $post->getContentKG() !!}
+                            </article>
+                            <p>
+                                <span style="top: 10px; position: relative;"><span style="color: #444242;font-weight: bold;">Категория:</span> {{ $post->category('category_id')->first()->title }}</span>
+                            </p>
                         </div>
-                        <div class="media-right media-middle">
+
+                        <p>
+                            <a href="http://orphus.ru" id="orphus" class="hidden" target="_blank"><img alt="Система Orphus" src="{{ asset('js/orphus.gif') }}" border="0" width="240" height="80" /></a>
+                        </p>
+
+                        <div class="orphus-mistake pull-right">
+                            <div class="media">
+                                <div class="media-body media-middle">
+                                    <h4>
+                                        @if(app()->getlocale()=='kg')
+                                            Эгерде ката тапсаңыз, текстти белгилеп Ctrl+Enter басыңыз
+                                        @elseif(app()->getlocale() == 'ru')
+                                            Если вы обнаружили ошибку, выделите текст и нажмите Ctrl+Enter
+                                        @endif
+                                    </h4>
+                                </div>
+                                <div class="media-right media-middle">
                            <span class="media-object">
                            <i class="fa fa-exclamation-circle"></i>
                            </span>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-
-            </div>
-            <div class="col-md-12">
-               <footer class="with-share">
-                  @if(auth()->user())
-                  <a class="post-edit" href="{{ route('admin.post.edit', $post) }}" target="_blank"><i class="fa fa-pencil"></i>{{ trans('site.AdminPostEdit') }}</a>
-                  @endif
-                  <div class="pluso share-buttons">
-                     <button class="goodshare btn-fb" data-type="fb">
-                     <i class="fa fa-facebook"></i><span data-counter="fb"></span>
-                     <!-- Button with share to Facebook & share counter -->
-                     <button class="goodshare btn-vk" data-type="vk">
-                     <i class="fa fa-vk"></i><span data-counter="vk"></span></button>
-                     <button class="goodshare btn-ok" data-type="ok">
-                     <i class="fa fa-odnoklassniki"></i><span data-counter="ok"></span></button>
-                     <button class="goodshare btn-gp" data-type="gp">
-                     <i class="fa fa-google-plus"></i><span data-counter="gp"></span></button>
-                     <button class="goodshare btn-tw" data-type="tw"><i class="fa fa-twitter"></i></button>
-                  </div>
-                  <a href="{{ route('minkiyal.allnews') }}">
-                  <span>{{ trans('site.PostAllNews') }}<i class="fa fa-arrow-circle-right"></i></span>
-                  </a>
-               </footer>
-            </div>
-         </div>
-      </div>
-      <div class="col-md-3">
-        <div class="row">
-           <div class="col-md-12">
-              <div class="row popular">
-                 <div class="col-md-12">
-                    <h3 class="title">Көп окумдуу</h3>
-                    </br>
-                 </div>                     
-                    <div class="col-md-12"> 
-                        @if($popArticles) 
-                        @foreach($popArticles as $post)
-                        <div class="media">
-                            <div class="media-body">
-                                <div class="extra" style="width: 100%; float: right;">
-                                    <span class="datetime">{{ $post->getDay() }} {{ $post->getMonthRu() }}</span>                          
-                                    <span class="views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
                                 </div>
-                                <a class="media-heading" href="{{ route('minkiyal.news', $post) }}">{{ $post->getTitle() }}</a>
                             </div>
                         </div>
-                        @endforeach 
-                        @endif                                                
-                   </div>                    
-              </div>
-           </div>
-        </div>
-      </div>
-      <div class="col-md-12">
-        <div class="row">
-           <div class="col-md-12">
-              <h3 class="title">Тектеш жанылыктар</h3>
-              </br>
-           </div>
-          
-           @foreach($relatedNews as $post)
-            <div class="blocknews col-md-3 col-sm-4 col-xs-12">
-                <article>
-                    <a href="{{ route('minkiyal.news', $post) }}" class="image-link">
-                        <img src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif" title="{{ $post->getTitle() }}">
-                        <div class="card-info">
-                             <span class="date ">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
-                             <span class="view"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
+                    </div>
+
+                </div>
+                <div class="col-md-12">
+                    <footer class="with-share">
+                        @if(auth()->user())
+                            <a class="post-edit" href="{{ route('admin.post.edit', $post) }}" target="_blank"><i class="fa fa-pencil"></i>{{ trans('site.AdminPostEdit') }}</a>
+                        @endif
+                        <div class="pluso share-buttons">
+                            <button class="goodshare btn-fb" data-type="fb">
+                                <i class="fa fa-facebook"></i><span data-counter="fb"></span>
+                                <!-- Button with share to Facebook & share counter -->
+                                <button class="goodshare btn-vk" data-type="vk">
+                                    <i class="fa fa-vk"></i><span data-counter="vk"></span></button>
+                                <button class="goodshare btn-ok" data-type="ok">
+                                    <i class="fa fa-odnoklassniki"></i><span data-counter="ok"></span></button>
+                                <button class="goodshare btn-gp" data-type="gp">
+                                    <i class="fa fa-google-plus"></i><span data-counter="gp"></span></button>
+                                <button class="goodshare btn-tw" data-type="tw"><i class="fa fa-twitter"></i></button>
                         </div>
-                    </a>
-                    <h3 class="name headline">
-                        <a href="{{ route('minkiyal.news', $post) }}" title="">
-                            {{ $post->getTitle() }}
+                        <a href="{{ route('minkiyal.allnews') }}">
+                            <span>{{ trans('site.PostAllNews') }}<i class="fa fa-arrow-circle-right"></i></span>
                         </a>
-                    </h3>
-                </article>
-           </div>  
-
-           @endforeach
-
-                
+                    </footer>
+                </div>
+            </div>
         </div>
-      </div>
-</div>
+        <div class="col-md-3">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row popular">
+                        <div class="col-md-12">
+                            <h3 class="title">Көп окумдуу</h3>
+                            </br>
+                        </div>
+                        <div class="col-md-12">
+                            @if($popArticles)
+                                @foreach($popArticles as $post)
+                                    <div class="media">
+                                        <div class="media-body">
+                                            <div class="extra" style="width: 100%; float: right;">
+                                                <span class="datetime">{{ $post->getDay() }} {{ $post->getMonthRu() }}</span>
+                                                <span class="views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
+                                            </div>
+                                            <a class="media-heading" href="{{ route('minkiyal.news', $post) }}">{{ $post->getTitle() }}</a>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            @endif
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="title">Тектеш жанылыктар</h3>
+                    </br>
+                </div>
+
+                @foreach($relatedNews as $post)
+                    <div class="blocknews col-md-3 col-sm-4 col-xs-12">
+                        <article>
+                            <a href="{{ route('minkiyal.news', $post) }}" class="image-link">
+                                <img src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif" title="{{ $post->getTitle() }}">
+                                <div class="card-info">
+                                    <span class="date ">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
+                                    <span class="view"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
+                                </div>
+                            </a>
+                            <h3 class="name headline">
+                                <a href="{{ route('minkiyal.news', $post) }}" title="">
+                                    {{ $post->getTitle() }}
+                                </a>
+                            </h3>
+                        </article>
+                    </div>
+
+                @endforeach
+
+
+            </div>
+        </div>
+    </div>
 @stop
 @section('footerScript')
-<script src="{{asset('js/goodshare.js')}}"></script>
-   <script>
-      $(window).load(function(){
-          $('.goodshare').each(function(){
-              var span = $(this).children('span');
-              var counter = span.text();
-              if((counter==0) || (counter=='')){
-                  $(this).addClass('empty');
-              }
-          });
-      });
-   </script>
+    <script src="{{asset('js/goodshare.js')}}"></script>
+    <script>
+        $(window).load(function(){
+            $('.goodshare').each(function(){
+                var span = $(this).children('span');
+                var counter = span.text();
+                if((counter==0) || (counter=='')){
+                    $(this).addClass('empty');
+                }
+            });
+        });
+    </script>
 
 
     {{--MAGNIFIC POPUP--}}
@@ -215,7 +224,7 @@
 
     @if(session('send') == 'true')
         <script>
-        swal("Спасибо!", "В ближайшее время ошибка будет устранена!", "success");
+            swal("Спасибо!", "В ближайшее время ошибка будет устранена!", "success");
         </script>
     @endif
 

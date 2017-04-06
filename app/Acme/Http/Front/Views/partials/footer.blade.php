@@ -173,16 +173,6 @@
 </script>
 
 <script src="{{ asset('js/sweetalert.min.js') }}"></script>
-@if(session('flag') == 0)
-    <script>
-        $(document).ready(function(){
-            $('#btnLive').click(function(){
-                swal("", "Трансляция заблокирована в Вашей стране!", "error");
-            });
-        });
-    </script>
-@endif
-
 @yield('footerScript')
 
 @yield('footerscript2')

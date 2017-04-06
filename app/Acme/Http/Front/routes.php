@@ -46,6 +46,7 @@ Route::group(['domain' => '', 'prefix' => '/music', 'namespace' => 'Front\Contro
     Route::get('/videos/exclusive', ['as' => 'muzkanal.videos.exclusive',   'uses' => 'MuzkanalController@exclusive']);
     Route::get('/videos/concert', ['as' => 'muzkanal.videos.concert',   'uses' => 'MuzkanalController@concert']);
     Route::get('/hitparad', ['as' => 'muzkanal.hitparad',   'uses' => 'MuzkanalController@hitparad']);
+    Route::get('/week', ['as' => 'muzkanal.week',   'uses' => 'MuzkanalController@weekMediaSearch']);
 
     Route::get('/allphotos',['as' => 'muzkanal.allphotos','uses'=> 'MuzkanalController@allphotos'] );
     Route::get('/photos/{gallery}',['as' => 'muzkanal.photos','uses'=> 'MuzkanalController@Gallery'] );
@@ -279,7 +280,7 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
     Route::get('/live',['as'=>'front.live', 'uses'=>"HomeController@Live"]);
 
 // Poll Vote
-    Route::post('/poll_vote', ['as'=>'front.poll_vote', 'uses'=>'AjaxController@pollVote']);
+    Route::post('/poll_vote', ['as'=>'front.poll_vote', 'uses'=>'AjaxNsController@pollVote']);
 
     Route::get('locale/{locale?}',   ['as' => 'locale',   'uses' => 'CommonController@setLocale']);
 

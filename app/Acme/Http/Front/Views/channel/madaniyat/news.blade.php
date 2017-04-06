@@ -34,22 +34,27 @@
                                         </h3>
                                     </div>
                                     <div class="panel-body">
-                                        <div class="news-info">
-                                            <span class="date"><i class="fa fa-calendar"></i>{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
-                                            <span class="view"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
-                                        </div>
-                                        <h3 class="newstitle">{{ $post->getTitleRuOrKg() }}</h3>
-                                        <p class="post-thumb" href="{{ route('front.post', $post) }}">
-                                            <a id="post-thumb" href="@if(empty($post->thumbnail_big)){{  asset($post->thumbnail) }}@else{{ asset($post->thumbnail_big) }}@endif">
-                                                <img class="left" src="@if(empty($post->thumbnail_big)) {{  asset($post->thumbnail) }} @else {{  asset($post->thumbnail_big) }} @endif" alt="image">
-                                            </a>
-                                            @if($post->thumb_desc || $post->thumb_desc_ru)<span class="thumb_desc">{{ $post->getThumbnailDesc() }}</span>@endif
-                                            {{--@if($post->thumb_author)<span class="thumb_author"> Фото: {{ $post->thumb_author }}</span>@endif--}}
-                                        </p>
-                                        <article>
+                                        <div class="col-md-12 block news-block">
+                                            <p class="post-thumb" href="{{ route('front.post', $post) }}">
+                                                <span class="post-title">
+                                                    {{ $post->getTitleRuOrKg() }}
+                                                </span>
+                                                <a id="post-thumb" href="@if(empty($post->thumbnail_big)){{  asset($post->thumbnail) }}@else{{ asset($post->thumbnail_big) }}@endif">
+                                                    <img class="left" src="@if(empty($post->thumbnail_big)) {{  asset($post->thumbnail) }} @else {{  asset($post->thumbnail_big) }} @endif" alt="image">
+                                                </a>
+                                                {{--@if($post->thumb_desc || $post->thumb_desc_ru)<span class="thumb_desc">{{ $post->getThumbnailDesc() }}</span>@endif--}}
+                                                @if($post->thumb_author)<span class="thumb_author"> Фото: {{ $post->thumb_author }}</span>@endif
+                                            </p>
+
+                                            <div class="extra">
+                                                <span class="art-date">{{ $post->getDay() }} {{ $post->getMonthRu() }}, {{ $post->getYear() }}</span>
+                                                <span class="art-view"><i class="fa-view"></i>{{ $post->getViewed() }}</span>
+                                            </div>
+                                            <article>
                                             <!-- {!! $post->getContent() !!} -->
-                                            {!! $content !!}
-                                        </article>
+                                                {!! $content !!}
+                                            </article>
+                                        </div>
                                         <p>
                                             <a href="http://orphus.ru" id="orphus" class="hidden" target="_blank"><img alt="Система Orphus" src="{{ asset('js/orphus.gif') }}" border="0" width="240" height="80" /></a>
                                         </p>

@@ -15,7 +15,22 @@
 @font-face {
     font-family: 'Roboto Regular';
     src: url('fonts/roboto/roboto-regular.eot');
-    src: url('fonts/roboto/roboto-regular.eot?#iefix') format('embedded-opentype'), url('fonts/roboto/roboto-regular.woff2') format('woff2'), url('fonts/roboto/roboto-regular.woff') format('woff'), url('fonts/roboto/roboto-regular.ttf') format('truetype'), url('fonts/roboto/roboto-regular.svg#robotoregular') format('svg');
+    src: url('fonts/roboto/roboto-regular.eot?#iefix') format('embedded-opentype'),
+         url('fonts/roboto/roboto-regular.woff2') format('woff2'),
+         url('fonts/roboto/roboto-regular.woff') format('woff'),
+         url('fonts/roboto/roboto-regular.ttf') format('truetype'),
+         url('fonts/roboto/roboto-regular.svg#robotoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Roboto Bold';
+    src: url('fonts/roboto/roboto-bold.eot');
+    src: url('fonts/roboto/roboto-bold.eot?#iefix') format('embedded-opentype'),
+         url('fonts/roboto/roboto-bold.woff2') format('woff2'),
+         url('fonts/roboto/roboto-bold.woff') format('woff'),
+         url('fonts/roboto/roboto-bold.ttf') format('truetype'),
+         url('fonts/roboto/roboto-bold.svg#robotobold') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -342,7 +357,6 @@ header {
     color: #ffffff;
     text-transform: uppercase;
     font-size: 11px;
-    line-height: 1em;
 }
 .dropdown-menu {
     border: 0;
@@ -2340,11 +2354,27 @@ display: block;
     padding: 0px 5px 0px 0px;
     margin-top: 10px;
 }
+
+/* Header backgroun image */
+.onairmuz .panel-heading,
+.promo .panel-heading,
+.fixedheader>.navbar,
+.newvideos .panel-heading,
+.topvideos .panel-heading,
+.topchart .panel-heading,
+.videopage .panel-heading,
+.videoonepage,
+.aboutmuz .panel-heading,
+.imgmuz .panel-heading
+ {
+    background-image: url(../images/back.png);
+}
+
+
 .onairmuz .panel-heading {
-    background-image: url(../images/back.jpg);
     z-index: 999;
     overflow: visible;
-    padding: 5px;
+    padding: 10px 15px;
 }
 .onairmuz .panel-heading h3 {
     border: none;
@@ -2364,7 +2394,7 @@ display: block;
     height: 260px;
 }
 .promo .panel-heading {
-    padding: 5px;
+    padding: 10px 15px;
 }
 .promo .panel-heading h3 {
     border: none;
@@ -2374,7 +2404,6 @@ display: block;
     text-align: center;
 }
 .promo .panel-heading {
-    background-image: url(../images/back.jpg);
     z-index: 999;
     overflow: visible;
 }
@@ -2402,8 +2431,7 @@ display: block;
     margin-top: 10px;
 }
 #nt-example1 span {
-    font-weight: bold;
-    font-size: 20px;
+    font-size: 16px;
     float: left;
     display: inline-table;
     color: #03A9F4;
@@ -2428,6 +2456,8 @@ display: block;
     display: table-cell;
     float: none;
     padding-left: 5px;
+    font-size: 16px;
+    padding-top: 2px;
 }
 #nt-example1-container {
     text-align: center;
@@ -2443,7 +2473,7 @@ display: block;
     transition: all 0.1s ease-in-out;
     position: absolute;
     right: 5px;
-    margin-top: -29px;
+    margin-top: -35px;
     color: #fff;
 }
 #nt-example1-container i:hover {
@@ -2482,7 +2512,6 @@ display: block;
 .fixedheader {
 }
 .fixedheader>.navbar {
-    background-image: url(../images/back.jpg);
     margin-bottom: 0px;
     z-index: 11;
     background-position: top center;
@@ -2622,7 +2651,6 @@ display: block;
     background: #fff;
 }
 .newvideos .panel-heading {
-    background-image: url(../images/back.jpg);
     z-index: 999;
     overflow: visible;
 }
@@ -2648,7 +2676,6 @@ display: block;
     background: #fff;
 }
 .topvideos .panel-heading {
-    background-image: url(../images/back.jpg);
     z-index: 999;
     overflow: visible;
 }
@@ -2745,7 +2772,6 @@ display: block;
     text-align: center;
 }
 .hittop .panel-heading {
-    background-image: url(../images/back.jpg);
     z-index: 999;
     overflow: visible;
 }
@@ -2760,7 +2786,6 @@ display: block;
     color: #fff;
 }
 .imgmuz .panel-heading {
-    background-image: url(../images/back.jpg);
     z-index: 999;
     overflow: visible;
 }
@@ -2780,16 +2805,14 @@ display: block;
     box-shadow: 1px 1px 0 #000;
 }
 .topvideos .ishit {
-    color: #fff;
-    background: #F44336;
-    border-radius: 10px;
-    font-size: 12px;
     position: absolute;
     top: 5px;
     right: 5px;
     padding: 3px 7px;
-    text-shadow: 1px 1px 0 #000;
-    box-shadow: 1px 1px 0 #000;
+    color: #fff;
+    background: #F44336;
+    border-radius: 10px;
+    font-size: 12px;
 }
 
 .righttopvideo .ishit {
@@ -2805,22 +2828,18 @@ display: block;
     box-shadow: 1px 1px 0 #000;
 }
 .topvideos .views {
+    position: absolute;
     top: 5px;
     left: -5px;
-    position: absolute;
-    color: #fff;
+    padding: 1px 5px;
     margin-left: 5px;
-    background: rgba(0, 0, 0, 0.63);
-    padding: 1px 3px
+    color: #fff;
+    background: rgba(0, 0, 0, 0.50);
+    font-size: 12px;
 }
 
 .topvideos .views i{
-    position: initial;
-    z-index: 3;
-    color: #fff;
-    font-size: 20px;
-    float: right;
-    margin-left: 3px;
+    padding-right: 5px;
 }
 .topvideos .item-desc {
     overflow: hidden;
@@ -3153,7 +3172,6 @@ display: block;
     transition: opacity 0.2s ease;
 }
 .search-toggle:hover {
-    color: #ffffff;
     opacity: 0.8;
 }
 .logo-block.search-show .search-toggle {
@@ -3414,7 +3432,6 @@ display: block;
     z-index: 999;
     overflow: visible;
     padding: 5px;
-    background-image: url(../images/back.jpg);
 }
 .aboutmuz .media-body {
     padding: 0px 5px;
@@ -3590,7 +3607,6 @@ display: block;
 
 .videoonepage{
     position: absolute;
-    background-image: url(../images/back.jpg);
     width: 100%;
     height: 50px;
     padding: 0;
@@ -3633,7 +3649,6 @@ display: block;
     z-index: 999;
     overflow: visible;
     padding: 5px;
-    background-image: url(../images/back.jpg);
 }
 .videopage .panel-heading h3 {
     border: none;
@@ -3683,7 +3698,7 @@ display: block;
     height: initial;
 }
 .music .topvideos .panel-carousel .slick-slide {
-    height: 150px;
+    height: 180px;
 }
 
 .music .muzpaginate {
@@ -3719,7 +3734,6 @@ display: block;
     z-index: 999;
     overflow: visible;
     padding: 5px;
-    background-image: url(../images/back.jpg);
 }
 .topchart .panel-heading h3 {
     border: none;

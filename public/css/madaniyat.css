@@ -914,7 +914,7 @@ ul.social-share li a:hover {
     text-align: left;
 }
 .panel-main-video article,
-.panel-four-video article,
+.panel-four-video article
 {
     padding: 0 !important;
     height: inherit;

@@ -10,197 +10,205 @@
     <meta property="og:description"        content="{{ $post->getShortDescription() }}" />
     <meta property="og:image"              content="{{ asset($post->thumbnail_big) }}" />
 
-<link rel="stylesheet" href="{{asset('css/goodshare.css')}}">
-<link rel="stylesheet" href="{{asset('css/articles.css')}}">
-<link rel="stylesheet" href="{{ asset('css/magnific-popup.css')}}"/>
+    <link rel="stylesheet" href="{{asset('css/goodshare.css')}}">
+    <link rel="stylesheet" href="{{asset('css/articles.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/magnific-popup.css')}}"/>
 @endsection
 @section('content')
-<style>
-  .t-info{
-    background: #4E7486 !important;
-  }
-</style>
-<div class="birinchiradio">
-   @include('Front::channel.birinchi.nav')
-   <div class="container b-maincolor">
-      <div class="row">
-         <div class="col-md-9">
-            <div class="row onenews">
-               <div class="col-md-12">
-                  <div class="row">
-                     <div class="col-md-12">
-                        <h3 class="title">{{ $post->category('category_id')->first()->getTitle() }}</h3>
-                     </div>
-                     <div class="panel panel-article">
-
-                        <div class="panel-body">
-                           <div class="news-info">
-                              <span class="date"><i class="fa fa-calendar"></i>{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
-                              <span class="view"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
-                           </div>
-                           <h3 class="newstitle">{{ $post->getTitleRuOrKg() }}</h3>
-                             <p class="post-thumb" href="{{ route('front.post', $post) }}">
-                              <a id="post-thumb" href="@if(empty($post->thumbnail_big)){{  asset($post->thumbnail) }}@else{{ asset($post->thumbnail_big) }}@endif">
-                                <img class="left" src="@if(empty($post->thumbnail_big)) {{  asset($post->thumbnail) }} @else {{  asset($post->thumbnail_big) }} @endif" alt="image">
-                              </a>
-                              @if($post->thumb_desc || $post->thumb_desc_ru)<span class="thumb_desc">{{ $post->getThumbnailDesc() }}</span>@endif
-                              {{--@if($post->thumb_author)<span class="thumb_author"> Фото: {{ $post->thumb_author }}</span>@endif--}}
-                            </p>
-                           <article>
-                              <!-- {!! $post->getContent() !!} -->
-                              {!! $content !!}
-                           </article>
-                          <p>
-                              <a href="http://orphus.ru" id="orphus" class="hidden" target="_blank"><img alt="Система Orphus" src="{{ asset('js/orphus.gif') }}" border="0" width="240" height="80" /></a>
-                          </p>
-
-                          <div class="orphus-mistake pull-right">
-                              <div class="media">
-                                  <div class="media-body media-middle">
-                                      <h4>
-                                          @if(app()->getlocale()=='kg')
-                                              Эгерде ката тапсаңыз, текстти белгилеп Ctrl+Enter басыңыз
-                                          @elseif(app()->getlocale() == 'ru')
-                                              Если вы обнаружили ошибку, выделите текст и нажмите Ctrl+Enter
-                                          @endif
-                                      </h4>
-                                  </div>
-                                  <div class="media-right media-middle">
-                                      <span class="media-object">
-                                          <i class="fa fa-exclamation-circle"></i>
-                                      </span>
-                                  </div>
-                              </div>
-                          </div>
-                        </div>
-                     </div>
-                     <div class="col-md-12">
-                       <footer class="with-share">
-                           @if(auth()->user())
-                               <a class="post-edit" href="{{ route('admin.post.edit', $post) }}" target="_blank"><i class="fa fa-pencil"></i>{{ trans('site.AdminPostEdit') }}</a>
-                           @endif
-
-                           <div class="pluso share-buttons">
-                               <button class="goodshare btn-fb" data-type="fb">
-                                   <i class="fa fa-facebook"></i>
-                                   <span data-counter="fb"></span>
-                               </button>
-                               <!-- Button with share to Facebook & share counter -->
-                               <button class="goodshare btn-vk" data-type="vk">
-                                   <i class="fa fa-vk"></i>
-                                   <span data-counter="vk"></span>
-                               </button>
-                               <button class="goodshare btn-ok" data-type="ok">
-                                   <i class="fa fa-odnoklassniki"></i>
-                                   <span data-counter="ok"></span>
-                               </button>
-                               <button class="goodshare btn-gp" data-type="gp">
-                                   <i class="fa fa-google-plus"></i>
-                                   <span data-counter="gp"></span>
-                               </button>
-                               <button class="goodshare btn-tw" data-type="tw">
-                                   <i class="fa fa-twitter"></i>
-                                   {{--<span data-counter="tw"></span>--}}
-                               </button>
-                           </div>
-
-                           <a href="{{ route('birinchi.allnews') }}">
-                               <span>{{ trans('site.PostAllNews') }}<i class="fa fa-arrow-circle-right"></i></span>
-                           </a>
-                       </footer>
-                     </div>
-                  </div>
-               </div>
-
-               <div class="col-md-12">
-                  <div class="row">
-                     <div class="col-md-12">
-                        <h3 class="title">{{ trans('site.MatpoTeme') }}</h3>
-                     </div>
-                    
-                     @foreach($relatedNews as $post)
-
-                
-                     <div class="blocknews col-md-3 col-sm-4 col-xs-12">
-                          <article>
-                              <a href="{{ route('birinchi.news', [$post, $lc]) }}" class="image-link">
-                                  <img src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif" title="{{ $post->getTitleRuOrKg() }}">
-                                  <div class="card-info">
-                                       <span class="date ">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
-                                       <span class="view"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
-                                  </div>
-                              </a>
-                              <h3 class="name headline">
-                                  <a href="{{ route('birinchi.news', [$post, $lc]) }}" title="">
-                                      {{ $post->getTitleRuOrKg() }}
-                                  </a>
-                              </h3>
-                          </article>
-                     </div>  
-           
-                     @endforeach
-
-                          
-                  </div>
-               </div>
-
-            </div>
-         </div>
-         <div class="col-md-3">
+    <style>
+        .t-info{
+            background: #4E7486 !important;
+        }
+    </style>
+    <div class="birinchiradio">
+        @include('Front::channel.birinchi.nav')
+        <div class="container b-maincolor">
             <div class="row">
-               <div class="col-md-12">
-                  <div class="row popular">
-                     <div class="col-md-12">
-                        <h3 class="title">{{ trans('site.PostPopular') }}</h3>
-                     </div>                     
-                     <div class="col-md-12"> 
-                           @if($popArticles) 
-                           @foreach($popArticles as $post)
-                          <div class="media">
+                <div class="col-md-9">
+                    <div class="row onenews">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h3 class="title">{{ $post->category('category_id')->first()->getTitle() }}</h3>
+                                </div>
+                                <div class="panel panel-article">
 
-                              <div class="media-body">
-                                  <div class="extra">
-                                      <span class="datetime">{{ $post->getDay() }} {{ $post->getMonthRu() }}</span>
-                                      <a class="cat" href="{{ route('birinchi.category', $post->category) }}"><span>{{ $post->category('category_id')->first()->getTitle() }}</span></a>
-                                      <span class="views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
-                                  </div>
-                                  <a class="media-heading" href="{{ route('birinchi.news', [$post, $lc]) }}">{{ $post->getTitleRuOrKg() }}</a>
-                              </div>
+                                    <div class="panel-body">
 
-                          </div>
-                          @endforeach 
-                          @endif                                                
-                     </div>                    
-                  </div>
-               </div>
+                                        <div class="col-md-12 block news-block">
+                                            <p class="post-thumb" href="{{ route('front.post', $post) }}">
+                                                <span class="post-title">
+                                                    {{ $post->getTitle() }}
+                                                </span>
+                                                <a id="post-thumb" href="@if(empty($post->thumbnail_big)){{  asset($post->thumbnail) }}@else{{ asset($post->thumbnail_big) }}@endif">
+                                                    <img class="left" src="@if(empty($post->thumbnail_big)) {{  asset($post->thumbnail) }} @else {{  asset($post->thumbnail_big) }} @endif" alt="image">
+                                                </a>
+                                                {{--@if($post->thumb_desc || $post->thumb_desc_ru)<span class="thumb_desc">{{ $post->getThumbnailDesc() }}</span>@endif--}}
+                                                @if($post->thumb_author)<span class="thumb_author"> Фото: {{ $post->thumb_author }}</span>@endif
+                                            </p>
+
+                                            <div class="extra">
+                                                <span class="art-date">{{ $post->getDay() }} {{ $post->getMonthRu() }}, {{ $post->getYear() }}</span>
+                                                <span class="art-view"><i class="fa-view"></i>{{ $post->getViewed() }}</span>
+                                            </div>
+
+                                            <article>
+                                            <!-- {!! $post->getContent() !!} -->
+                                                {!! $content !!}
+                                            </article>
+                                            <p>
+                                                <a href="http://orphus.ru" id="orphus" class="hidden" target="_blank"><img alt="Система Orphus" src="{{ asset('js/orphus.gif') }}" border="0" width="240" height="80" /></a>
+                                            </p>
+
+                                            <div class="orphus-mistake pull-right">
+                                                <div class="media">
+                                                    <div class="media-body media-middle">
+                                                        <h4>
+                                                            @if(app()->getlocale()=='kg')
+                                                                Эгерде ката тапсаңыз, текстти белгилеп Ctrl+Enter басыңыз
+                                                            @elseif(app()->getlocale() == 'ru')
+                                                                Если вы обнаружили ошибку, выделите текст и нажмите Ctrl+Enter
+                                                            @endif
+                                                        </h4>
+                                                    </div>
+                                                    <div class="media-right media-middle">
+                                                    <span class="media-object">
+                                                        <i class="fa fa-exclamation-circle"></i>
+                                                    </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <footer class="with-share">
+                                        @if(auth()->user())
+                                            <a class="post-edit" href="{{ route('admin.post.edit', $post) }}" target="_blank"><i class="fa fa-pencil"></i>{{ trans('site.AdminPostEdit') }}</a>
+                                        @endif
+
+                                        <div class="pluso share-buttons">
+                                            <button class="goodshare btn-fb" data-type="fb">
+                                                <i class="fa fa-facebook"></i>
+                                                <span data-counter="fb"></span>
+                                            </button>
+                                            <!-- Button with share to Facebook & share counter -->
+                                            <button class="goodshare btn-vk" data-type="vk">
+                                                <i class="fa fa-vk"></i>
+                                                <span data-counter="vk"></span>
+                                            </button>
+                                            <button class="goodshare btn-ok" data-type="ok">
+                                                <i class="fa fa-odnoklassniki"></i>
+                                                <span data-counter="ok"></span>
+                                            </button>
+                                            <button class="goodshare btn-gp" data-type="gp">
+                                                <i class="fa fa-google-plus"></i>
+                                                <span data-counter="gp"></span>
+                                            </button>
+                                            <button class="goodshare btn-tw" data-type="tw">
+                                                <i class="fa fa-twitter"></i>
+                                                {{--<span data-counter="tw"></span>--}}
+                                            </button>
+                                        </div>
+
+                                        <a href="{{ route('birinchi.allnews') }}">
+                                            <span>{{ trans('site.PostAllNews') }}<i class="fa fa-arrow-circle-right"></i></span>
+                                        </a>
+                                    </footer>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h3 class="title">{{ trans('site.MatpoTeme') }}</h3>
+                                </div>
+
+                                @foreach($relatedNews as $post)
+
+
+                                    <div class="blocknews col-md-3 col-sm-4 col-xs-12">
+                                        <article>
+                                            <a href="{{ route('birinchi.news', [$post, $lc]) }}" class="image-link">
+                                                <img src="@if(!($post->getFile()))images/live_bg.png @else {{ asset($post->getFile()) }} @endif" title="{{ $post->getTitleRuOrKg() }}">
+                                                <div class="card-info">
+                                                    <span class="date ">{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
+                                                    <span class="view"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
+                                                </div>
+                                            </a>
+                                            <h3 class="name headline">
+                                                <a href="{{ route('birinchi.news', [$post, $lc]) }}" title="">
+                                                    {{ $post->getTitleRuOrKg() }}
+                                                </a>
+                                            </h3>
+                                        </article>
+                                    </div>
+
+                                @endforeach
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row popular">
+                                <div class="col-md-12">
+                                    <h3 class="title">{{ trans('site.PostPopular') }}</h3>
+                                </div>
+                                <div class="col-md-12">
+                                    @if($popArticles)
+                                        @foreach($popArticles as $post)
+                                            <div class="media">
+
+                                                <div class="media-body">
+                                                    <div class="extra">
+                                                        <span class="datetime">{{ $post->getDay() }} {{ $post->getMonthRu() }}</span>
+                                                        <a class="cat" href="{{ route('birinchi.category', $post->category) }}"><span>{{ $post->category('category_id')->first()->getTitle() }}</span></a>
+                                                        <span class="views"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
+                                                    </div>
+                                                    <a class="media-heading" href="{{ route('birinchi.news', [$post, $lc]) }}">{{ $post->getTitleRuOrKg() }}</a>
+                                                </div>
+
+                                            </div>
+                                        @endforeach
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="row onenews">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h3 class="title">{{ trans('radiopages.Categories') }}</h3>
+                                </div>
+                                <div class="col-md-12 ctg-panel">
+                                    <ul class="list-group">
+                                        @foreach($categories as $category)
+                                            <li class="list-group-item">
+                                                <a href="{{ route('birinchi.category', $category) }}">{{ $category->getTitle() }}</a>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-         </div>
-         <div class="col-md-3">
-            <div class="row onenews">
-               <div class="col-md-12">
-                  <div class="row">
-                     <div class="col-md-12">
-                        <h3 class="title">{{ trans('radiopages.Categories') }}</h3>
-                     </div>                     
-                     <div class="col-md-12 ctg-panel">                          
-                        <ul class="list-group">
-                           @foreach($categories as $category)
-                           <li class="list-group-item">
-                              <a href="{{ route('birinchi.category', $category) }}">{{ $category->getTitle() }}</a>
-                           </li>
-                           @endforeach
-                        </ul>                          
-                     </div>                    
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-</div>
+        </div>
+    </div>
 @stop
 @section('footerscript2')
-<script src="{{asset('js/goodshare.js')}}"></script>
+    <script src="{{asset('js/goodshare.js')}}"></script>
     <script>
         $(window).load(function(){
             $('.goodshare').each(function(){
@@ -214,10 +222,10 @@
     </script>
     @if(session('send') == 'true')
         <script>
-        swal("Спасибо!", "В ближайшее время ошибка будет устранена!", "success");
+            swal("Спасибо!", "В ближайшее время ошибка будет устранена!", "success");
         </script>
     @endif
-        {{--MAGNIFIC POPUP--}}
+    {{--MAGNIFIC POPUP--}}
     <script src="{{ asset('js/jquery.magnific-popup.js') }}"></script>
     <script>
         $('#post-thumb').magnificPopup({

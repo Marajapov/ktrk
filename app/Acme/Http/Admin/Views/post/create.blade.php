@@ -64,7 +64,7 @@
 
             var send = XMLHttpRequest.prototype.send,
                 token = $('meta[name=_token]').attr('content');
-            XMLHttpRequest.prototype.send = function(data) {
+                XMLHttpRequest.prototype.send = function(data) {
                 this.setRequestHeader('X-CSRF-Token', token);
                 return send.apply(this, arguments);
             };
