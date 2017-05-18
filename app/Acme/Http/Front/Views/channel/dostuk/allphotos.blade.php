@@ -41,8 +41,7 @@
                         @endif
 
                       </section>
-                     </div>
-                      <div class="col-md-12">
+<div class="col-md-12">
                         <nav>
                             <ul class="pagination">
                                 <li>
@@ -68,6 +67,8 @@
                             </ul>
                         </nav>
                     </div>
+                     </div>
+                      
                   </div>
                </div>
         </div><!--/.container-->

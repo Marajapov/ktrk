@@ -18,7 +18,7 @@ class MediaController extends Controller
     {
         $perPage = 10;
 
-        $medias = Media::orderby('id','desc')->paginate($perPage);
+        $medias = Media::orderby('created_at','desc')->paginate($perPage);
 
         return view('Admin::media.index', ['medias' => $medias,'perPage'=>$perPage]);
     }

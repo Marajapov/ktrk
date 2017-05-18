@@ -125,9 +125,9 @@
                                         <span class="art-date">{{ $post->getDay() }} {{ $post->getMonthRu() }}, {{ $post->getYear() }}</span>
                                         <span class="art-view"><i class="fa-view"></i>{{ $post->getViewed() }}</span>
                                     </div>
-                                    <div>
-                                        {!! $post->getEmbed() !!}
-                                    </div>
+                                <div>                                    
+                                    {!! $post->getEmbed() !!}                                    
+                                </div>
                                     {!! $content !!}
                                     @if($images)                                     
                                         <div class="slider-for">

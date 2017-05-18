@@ -140,6 +140,24 @@
                         </div>
                     </div>
                 </div>
+                <div id="musicAnons" class="col-sm-4 panel-success display-none">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Музыка</h3>
+                    </div>
+                    <!-- bir -->
+                    <div class="form-group">
+                        <label for="parentId" class="col-sm-2 control-label"></label>
+                        <div class="col-sm-12">
+                            <div class="checkbox checkbox-primary ">
+                                {!! Form::hidden('musictop', 0) !!}
+                                {!! Form::checkbox('musictop', 1, null, ["id" => "musictop", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
+                                <label for="musictop">
+                                    Анонс
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
 

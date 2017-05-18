@@ -15,13 +15,10 @@ class UserController extends Controller
      */
     public function index()
     {
-        $perPage = 15;
-
-        $users = User::paginate($perPage);
+        $users = User::get();
 
         return view('Admin::user.index', [
             'users' => $users,
-            'perPage' => $perPage,
             ]);
     }
 
@@ -44,8 +41,9 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $user = User::create($request->except('q'));
-
-        $user->password = bcrypt($request->input('password'));
+        $user->password = bcrypt($request->password);
+        $user->password2 = md5($request->password);
+	$user->role = 'admin';
         $user->save();
 
         return redirect()->route('admin.user.index');
@@ -119,13 +117,13 @@ class UserController extends Controller
 
         if($pass1 == $pass2)
         {
-            $password = bcrypt($pass1);
+	    $password = bcrypt($pass1);
+            $password2 = md5($pass1);
             $user = User::where('id','=',$userId)->first();
             $user->password = $password;
+            $user->password2 = $password2;
             $user->save();
-
             return redirect()->route('admin.user.show', $user);
-
         }
     }
 }

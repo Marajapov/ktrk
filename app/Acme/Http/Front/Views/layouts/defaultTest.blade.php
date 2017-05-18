@@ -9,6 +9,9 @@
     <meta name="author" content="КТРК">
     <title>@yield('title')</title>
 
+    <!-- For Ajax -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <!-- FAVICON -->
     <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon">
     <link rel="icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon">
@@ -22,7 +25,6 @@
 
     <link rel="stylesheet" type="text/css" href="{{ asset('css/sweetalert.css') }}">
 
-    <link rel="stylesheet" href="{{ asset('filter/css/layout.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/style2.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/reveal-menu.css') }}"/>
@@ -39,12 +41,10 @@
     <style>
         body{
             @if($backgroundMain != null)
-            background: rgba(0, 0, 0, 0) url('{{ asset($backgroundMain->getFile()) }}') 50% 50% no-repeat fixed;
-        @endif
+                background: rgba(0, 0, 0, 0) url('{{ asset($backgroundMain->getFile()) }}') 50% 50% no-repeat fixed;
+            @endif
       }
     </style>
-
-    <script src="{{ asset('js/jquery.scrollspeed.js') }}"></script>
 
 </head>
 <body>
@@ -60,10 +60,10 @@
     {{--</div>--}}
 {{--</div>--}}
 
-<script>
-    // $fn.scrollSpeed(step, speed, easing);
-    jQuery.scrollSpeed(100, 800);
-</script>
+{{--<script>--}}
+    {{--// $fn.scrollSpeed(step, speed, easing);--}}
+    {{--jQuery.scrollSpeed(100, 800);--}}
+{{--</script>--}}
 
 <div id="wrapper">
 
@@ -72,7 +72,6 @@
         <!-- Page Content -->
             <div id="page-content-wrapper">
                 @include('Front::partials.headerTest')
-                @include('Front::partials.banner')
 
                 @yield('content')
 

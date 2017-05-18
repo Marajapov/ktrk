@@ -15,7 +15,7 @@
         </div>
         <div class="x_content">
           {!! Form::model($user, ['route' => 'admin.user.store', 'enctype' => 'multipart/form-data', 'class'=>'form-horizontal']) !!}
-          @include('Admin::partials.forms.user', $user)
+          @include('Admin::user.form', $user)
           {!! Form::close() !!}
         </div>
       </div>

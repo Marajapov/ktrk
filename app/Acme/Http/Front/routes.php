@@ -198,6 +198,7 @@ Route::group(['domain' => '', 'prefix' => '/baldar', 'namespace' => 'Front\Contr
 Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
 
     Route::get('/post/{post}/{locale}', ['as' => 'front.post', 'uses' => 'HomeController@Post']);
+    Route::get('/vertex/post/{post}/{locale}', ['as' => 'front.vertex.post', 'uses' => 'HomeController@PostTest']);
     Route::get('/page/{page}', ['as' => 'front.page',   'uses' => 'HomeController@Page']);
     Route::get('login', ['as' => 'front.login',   'uses' => 'AuthController@Login']);
     Route::post('login', ['as' => 'front.login',   'uses' => 'AuthController@postLogin']);
@@ -278,6 +279,7 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
 //    Test
     Route::get('/vertex',['as'=>'front.vertex', 'uses'=>"HomeController@Test"]);
     Route::get('/live',['as'=>'front.live', 'uses'=>"HomeController@Live"]);
+    Route::get('/streams',['as'=>'front.stream', 'uses'=>"StreamController@stream"]);
 
 // Poll Vote
     Route::post('/poll_vote', ['as'=>'front.poll_vote', 'uses'=>'AjaxNsController@pollVote']);
@@ -290,5 +292,8 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
     Route::get('/shailoo/post/{post}',['as'=>'front.shailoo.post', 'uses'=>"ShailooController@post"]);
     Route::get('/shailoo/party/{category}',['as'=>'front.shailoo.party', 'uses'=>"ShailooController@party"]);
     Route::post('/shailoo_poll_vote', ['as'=>'front.shailoo_poll_vote', 'uses'=>'AjaxController@shailooPollVote']);
+
+//  Videoportal Ajax    
+    Route::post('/homeVideoportal', ['as'=>'front.homeVideoportal', 'uses'=>'AjaxController@homeVideoportal']);
 
 });

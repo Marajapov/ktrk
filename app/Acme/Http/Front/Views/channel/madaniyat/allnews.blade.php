@@ -1,5 +1,5 @@
 @extends('Front::channel.madaniyat.default')
-@section('title', trans('radiopages.Morenews'))
+@section('title', trans('radiopages.Homepage'))
 @section('styles')
 <link rel="stylesheet" type="text/css" href="{{ asset('css/radios.css') }}">
 @endsection

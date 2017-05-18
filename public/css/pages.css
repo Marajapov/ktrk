@@ -568,6 +568,10 @@
   font-weight: bold;
   text-transform: uppercase;
 }
+.teletabs li.active>a, .teletabs li.active>a:hover{
+    color: #fff;
+    background-color: #2d3e4a;
+}
 .teleprogramm .tab-pane.active{
   padding: 0;
 }

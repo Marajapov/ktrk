@@ -125,7 +125,7 @@
            <div>
                <div class="col-md-12">
                   <div class="hexagon">
-                     <img class="d-img" src="{{asset('old_1.png')}}" alt="">
+                     <img class="d-img" src="{{asset('images/channels/minkiyal/vj/1.png')}}" alt="">          
                   </div>
                    <div class="d-info">
                      <span class="name"><a href="{{route('minkiyal.dj.jazgyl')}}">Жазгүл Жолдубай кызы</a></span>
@@ -388,7 +388,7 @@
                <h3><i class="fa fa-phone"></i> Байланыш телефон:</h3>
                <ul>
                   <li><i class="fa fa-microphone"></i> Түз эфир: 0312 65 37 14</li>
-                  <li><i class="fa fa-commenting-o"></i> sms-портал: 10 00</li>
+                  <li><i class="fa fa-commenting-o"></i> sms-портал: 20 00</li>
                </ul>
             </div>
             <div class="col-md-4 address">

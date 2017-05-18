@@ -80,6 +80,64 @@ class MediaController extends Controller
             ]);
     }
 
+    public function mediaIndexTest(Request $request) // list of videos
+    {
+        $MediaCategories = \Model\MediaCategory\ModelName::where('published',true)->get();
+        $mediaAll = \Model\Media\ModelName::get();
+
+        $categoriesVideos = array();
+        $topCategoriesVideos = array();
+
+        foreach($MediaCategories as $MediaCategory){
+
+            $CategoryVideos = \Model\Media\ModelName::where('published','=','1')->where('videoType','=',$MediaCategory->videoType)->orderBy('id','desc')->take(9)->get();
+            $TopCategoryVideos = \Model\Media\ModelName::where('published','=','1')->where('videoType','=',$MediaCategory->videoType)->orderBy('viewed','desc')->take(9)->get();
+
+            $categoriesVideos = array_add($categoriesVideos, $MediaCategory->videoType, $CategoryVideos);
+            $topCategoriesVideos = array_add($topCategoriesVideos, $MediaCategory->videoType, $TopCategoryVideos);
+        }
+//        dd($topCategoriesVideos);
+
+        $mediaLastVideos = \Model\Media\ModelName::where('published','=','1')->orderBy('id','desc')->take(9)->get();
+
+        $mediaPops = \Model\Media\ModelName::where('published','=','1')->orderBy('viewed','desc')->take(9)->get();
+
+        $mainBanner = \Model\Background\ModelName::where('name','=','main')->first();
+        $categories = \Model\Category\ModelName::all();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','2')->first();
+
+
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            $projectList = \Model\Project\ModelName::where('extracolumn','=','1')->orderBy('name','asc')->get();
+        }else{
+            $projectList = \Model\Project\ModelName::where('extracolumn','=','1')->orderBy('nameRu','asc')->get();
+        }
+
+        $anons = \Model\Anons\ModelName::where('channel','=','2')->where('published','=','1')->get();
+
+        return view('Front::media.indexTest',[
+            'mediaAll' => $mediaAll,
+            'anons' => $anons,
+            'mediaLastVideos' => $mediaLastVideos,
+            'MediaCategories' => $MediaCategories,
+            'mainBanner'   => $mainBanner,
+            'projectList' => $projectList,
+            'mediaCategories'=>$MediaCategories,
+            'backgroundMain' => $backgroundMain,
+            'categoriesVideos' => $categoriesVideos,
+            'topCategoriesVideos' => $topCategoriesVideos,
+            'mediaPops' => $mediaPops,
+
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
+            'positionLeft' => $this->positionLeft,
+            'lc' => $lc
+            ]);
+    }
+
     public function video($media)
     {
         $lc = app()->getlocale();

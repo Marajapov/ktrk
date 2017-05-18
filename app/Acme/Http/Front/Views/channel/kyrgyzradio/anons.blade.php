@@ -16,7 +16,7 @@
          <div class="info">
             @foreach($kyrgyzradiotop as $key=> $row)
             <div class="col-md-4 col-sm-12 postshow">
-               <a href="{{ route('kyrgyzradio.anonses') }}" data-toggle="modal" data-target="">
+               <a href="#" data-toggle="modal" data-target="#{{ $key+99 }}">
                   <img src="{{asset($row->thumbnail)}}" class="img-responsive" alt="">
                   <h3>{{$row->name}}</h3>
                </a>

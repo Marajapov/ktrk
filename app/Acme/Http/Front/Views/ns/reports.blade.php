@@ -83,6 +83,34 @@
                             </ul>
                           </li>
 
+                          <li class="list-group-item col-md-6">
+                            <a target="_blank" href="{{ asset('static/files/ns/report-2015-kg.pdf') }}">2015 жылдын отчету менен танышуу</a>
+                            <ul class="list-group second-level">
+                              <li class="list-group-item">
+                                <div class="media">
+                                  <div class="media-body">
+                                    <a target="_blank" href="{{ asset('static/files/ns/report-2015-kg.pdf') }}" class="btn btn-default"><i class="fa fa-file-pdf-o"></i></a>
+                                    {{--<a target="_blank" class="otchet" href="{{ asset('static/files/report/tender.pdf') }}"> Республикалык радиотелеборбордун 2012-жылдагы тендердин жеңүүчүлөрү тууралуу маалымдама</a>--}}
+                                  </div>
+                                </div>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li class="list-group-item col-md-6">
+                            <a target="_blank" href="{{ asset('static/files/ns/report-2016-kg.pdf') }}">2016 жылдын отчету менен танышуу</a>
+                            <ul class="list-group second-level">
+                              <li class="list-group-item">
+                                <div class="media">
+                                  <div class="media-body">
+                                    <a target="_blank" href="{{ asset('static/files/ns/report-2016-kg.pdf') }}" class="btn btn-default"><i class="fa fa-file-pdf-o"></i></a>
+                                    {{--<a target="_blank" class="otchet" href="{{ asset('static/files/report/tender.pdf') }}"> Республикалык радиотелеборбордун 2012-жылдагы тендердин жеңүүчүлөрү тууралуу маалымдама</a>--}}
+                                  </div>
+                                </div>
+                              </li>
+                            </ul>
+                          </li>
+
 
                         @elseif($lc == 'ru')
 
@@ -127,6 +155,34 @@
                                 <div class="media">
                                   <div class="media-body">
                                     <a target="_blank" href="{{ asset('static/files/ns/report-2014-nsRu.pdf') }}" class="btn btn-default"><i class="fa fa-file-pdf-o"></i></a>
+                                    {{--<a target="_blank" class="otchet" href="{{ asset('static/files/report/tender.pdf') }}"> Республикалык радиотелеборбордун 2012-жылдагы тендердин жеңүүчүлөрү тууралуу маалымдама</a>--}}
+                                  </div>
+                                </div>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li class="list-group-item col-md-6">
+                            <a target="_blank" href="{{ asset('static/files/ns/report-2015-ru.pdf') }}">Отчет НС за 2015 год</a>
+                            <ul class="list-group second-level">
+                              <li class="list-group-item">
+                                <div class="media">
+                                  <div class="media-body">
+                                    <a target="_blank" href="{{ asset('static/files/ns/report-2015-ru.pdf') }}" class="btn btn-default"><i class="fa fa-file-pdf-o"></i></a>
+                                    {{--<a target="_blank" class="otchet" href="{{ asset('static/files/report/tender.pdf') }}"> Республикалык радиотелеборбордун 2012-жылдагы тендердин жеңүүчүлөрү тууралуу маалымдама</a>--}}
+                                  </div>
+                                </div>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li class="list-group-item col-md-6">
+                            <a target="_blank" href="{{ asset('static/files/ns/report-2016-ru.pdf') }}">Отчет НС за 2016 год</a>
+                            <ul class="list-group second-level">
+                              <li class="list-group-item">
+                                <div class="media">
+                                  <div class="media-body">
+                                    <a target="_blank" href="{{ asset('static/files/ns/report-2016-ru.pdf') }}" class="btn btn-default"><i class="fa fa-file-pdf-o"></i></a>
                                     {{--<a target="_blank" class="otchet" href="{{ asset('static/files/report/tender.pdf') }}"> Республикалык радиотелеборбордун 2012-жылдагы тендердин жеңүүчүлөрү тууралуу маалымдама</a>--}}
                                   </div>
                                 </div>

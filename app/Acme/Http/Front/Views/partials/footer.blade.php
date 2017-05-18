@@ -119,7 +119,9 @@
         playlist: [{
             image: "{{-- asset('images/live_bg.png') --}}",
             sources: [{
-                file: "rtmp://85.113.29.233:1936/live/ktrk.stream"
+                  file:"http://85.113.29.234:80/live/5001.flv"
+//                file: "rtmp://85.113.29.233:1936/live/ktrk.stream"
+//		  file: "rtsp://85.113.29.245:8000/live"
             }]
         }],
         width: "640",

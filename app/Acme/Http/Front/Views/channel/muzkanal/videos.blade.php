@@ -40,12 +40,28 @@
                                         @endforeach
                                     @endif
                                 </div>
+                                <nav class="muzpaginate">
+                                    <ul class="pagination">
+                                        <li>
+                                            <a href="{{ route('muzkanal.videos', ['page' => 1]) }}" class="btn btn-default @if($MediaNew->currentPage() == 1) disabled @endif">{{ trans('site.Start') }}</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ $MediaNew->previousPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ $MediaNew->nextPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                                        </li>
+                                        @for($i = 0, $j = 1; $i < $MediaNew->total(); $i+=$perPage)
+                                            <li>
+                                                <a href="{{ route('muzkanal.videos', ['page' => $j]) }}" class="btn btn-default @if($MediaNew->currentPage() == $j) active @endif">{{ $j++ }}</a>
+                                            </li>
+                                        @endfor
+                                        <li>
+                                            <a href="{{ route('muzkanal.videos', ['page' => ceil($MediaNew->total()/$perPage)]) }}" class="btn btn-default @if($MediaNew->currentPage() == ceil($MediaNew->total()/$perPage)) disabled @endif">{{ trans('site.End') }}</a>
+                                        </li>
+                                    </ul>
+                                </nav>
                             </div>
-                          <footer>
-                            <a href="{{ route('muzkanal.videos.newvideos')}}">
-                              <span>{{ trans('radiopages.AllVideos') }} <i class="fa fa-arrow-circle-right"></i></span>
-                            </a>
-                          </footer>
                         </div>
                     </div>
                 </div>
@@ -81,12 +97,28 @@
                                         @endforeach
                                     @endif
                                 </div>
+                                <nav class="muzpaginate">
+                                    <ul class="pagination">
+                                        <li>
+                                            <a href="{{ route('muzkanal.videos', ['topPage' => 1]) }}" class="btn btn-default @if($MediaTop->currentPage() == 1) disabled @endif">{{ trans('site.Start') }}</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ $MediaTop->previousPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ $MediaTop->nextPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                                        </li>
+                                        @for($i = 0, $j = 1; $i < $MediaTop->total(); $i+=$perPage)
+                                            <li>
+                                                <a href="{{ route('muzkanal.videos', ['topPage' => $j]) }}" class="btn btn-default @if($MediaTop->currentPage() == $j) active @endif">{{ $j++ }}</a>
+                                            </li>
+                                        @endfor
+                                        <li>
+                                            <a href="{{ route('muzkanal.videos', ['topPage' => ceil($MediaTop->total()/$perPage)]) }}" class="btn btn-default @if($MediaTop->currentPage() == ceil($MediaTop->total()/$perPage)) disabled @endif">{{ trans('site.End') }}</a>
+                                        </li>
+                                    </ul>
+                                </nav>
                             </div>
-                          <footer>
-                            <a href="{{ route('muzkanal.videos.popular')}}">
-                              <span>{{ trans('radiopages.AllVideos') }} <i class="fa fa-arrow-circle-right"></i></span>
-                            </a>
-                          </footer>
                         </div>
                     </div>
                 </div>
@@ -119,11 +151,27 @@
                                         @endforeach
                                     @endif
                                 </div>
-                              <footer>
-                                <a href="{{ route('muzkanal.videos.exclusive')}}">
-                                  <span>{{ trans('radiopages.AllVideos') }} <i class="fa fa-arrow-circle-right"></i></span>
-                                </a>
-                              </footer>
+                                <nav class="muzpaginate">
+                                    <ul class="pagination">
+                                        <li>
+                                            <a href="{{ route('muzkanal.videos', ['page' => 1]) }}" class="btn btn-default @if($MediaLive->currentPage() == 1) disabled @endif">{{ trans('site.Start') }}</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ $MediaLive->previousPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ $MediaLive->nextPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                                        </li>
+                                        @for($i = 0, $j = 1; $i < $MediaLive->total(); $i+=$perPage)
+                                            <li>
+                                                <a href="{{ route('muzkanal.videos', ['page' => $j]) }}" class="btn btn-default @if($MediaLive->currentPage() == $j) active @endif">{{ $j++ }}</a>
+                                            </li>
+                                        @endfor
+                                        <li>
+                                            <a href="{{ route('muzkanal.videos', ['page' => ceil($MediaLive->total()/$perPage)]) }}" class="btn btn-default @if($MediaLive->currentPage() == ceil($MediaLive->total()/$perPage)) disabled @endif">{{ trans('site.End') }}</a>
+                                        </li>
+                                    </ul>
+                                </nav>
                             </div>
                         </div>
                     </div>
@@ -157,11 +205,27 @@
                                         @endforeach
                                     @endif
                                 </div>
-                              <footer>
-                                <a href="{{ route('muzkanal.videos.concert')}}">
-                                  <span>{{ trans('radiopages.AllVideos') }} <i class="fa fa-arrow-circle-right"></i></span>
-                                </a>
-                              </footer>
+                                <nav class="muzpaginate">
+                                    <ul class="pagination">
+                                        <li>
+                                            <a href="{{ route('muzkanal.videos', ['page' => 1]) }}" class="btn btn-default @if($Concert->currentPage() == 1) disabled @endif">{{ trans('site.Start') }}</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ $Concert->previousPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ $Concert->nextPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                                        </li>
+                                        @for($i = 0, $j = 1; $i < $Concert->total(); $i+=$perPage)
+                                            <li>
+                                                <a href="{{ route('muzkanal.videos', ['page' => $j]) }}" class="btn btn-default @if($Concert->currentPage() == $j) active @endif">{{ $j++ }}</a>
+                                            </li>
+                                        @endfor
+                                        <li>
+                                            <a href="{{ route('muzkanal.videos', ['page' => ceil($Concert->total()/$perPage)]) }}" class="btn btn-default @if($Concert->currentPage() == ceil($Concert->total()/$perPage)) disabled @endif">{{ trans('site.End') }}</a>
+                                        </li>
+                                    </ul>
+                                </nav>
                             </div>
                         </div>
                     </div>

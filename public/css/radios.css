@@ -750,7 +750,7 @@
 .hoverslider .slick-list{
     height: 333px;
 }
-.hoverslider .slider-nav{
+.hoverslider .slider-nav3{
     position: absolute;
 
     right: 30px;
@@ -2580,4 +2580,154 @@ background: #75E022;
 }
 #minkiyal .onetime .btn span{
     color:#fff;
+}
+
+
+.birinchiradio .slider-for,
+.sport .slider-for,
+.madaniyat .slider-for,
+.minkiyal_news .slider-for,
+#dostuk .slider-for
+{
+  padding: 0;
+}
+.birinchiradio .slider-nav,
+.sport .slider-nav,
+.madaniyat .slider-nav,
+.minkiyal_news .slider-nav,
+#dostuk .slider-nav
+{
+  padding: 0 30px;
+}
+.birinchiradio .slider-for,
+.sport .slider-for,
+.madaniyat .slider-for,
+.minkiyal_news .slider-for,
+#dostuk .slider-for
+{
+  margin-bottom: 20px;
+}
+.birinchiradio .slider-for .slick-slide,
+.sport .slider-for .slick-slide,
+.madaniyat .slider-for .slick-slide,
+.minkiyal_news .slider-for .slick-slide,
+#dostuk .slider-for .slick-slide
+ {
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+  height: 500px;
+  width: auto;
+  margin: auto;
+}
+.birinchiradio .slider-for .slick-slide img,
+.sport .slider-for .slick-slide img,
+.madaniyat .slider-for .slick-slide img,
+.minkiyal_news .slider-for .slick-slide img,
+#dostuk .slider-for .slick-slide img
+ {
+  height: 500px;
+  margin: 0 auto;
+  width: auto;
+}
+.birinchiradio .slide-caption,
+.sport .slide-caption,
+.madaniyat .slide-caption,
+.minkiyal_news .slide-caption,
+#dostuk .slide-caption
+ {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  background: rgba(0, 0, 0, 0.5);
+  display: block;
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 60px;
+  text-align: center;
+}
+.birinchiradio .slider-for .slick-prev, .birinchiradio .slider-for .slick-next,
+.sport .slider-for .slick-prev, .sport .slider-for .slick-next,
+.madaniyat .slider-for .slick-prev, .madaniyat .slider-for .slick-next,
+.minkiyal_news .slider-for .slick-prev, .minkiyal_news .slider-for .slick-next,
+#dostuk .slider-for .slick-prev, #dostuk .slider-for .slick-next
+{
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+.birinchiradio .slider-for .slick-prev,
+.sport .slider-for .slick-prev, 
+.madaniyat .slider-for .slick-prev, 
+.minkiyal_news .slider-for .slick-prev,
+#dostuk .slider-for .slick-prev 
+{
+  left: 0px;
+  z-index: 1000;
+}
+.birinchiradio .slider-for .slick-next, 
+.sport .slider-for .slick-next,
+#dostuk .slider-for .slick-next 
+{
+  right: 0px;
+  z-index: 1000;
+}
+.birinchiradio .slider-for .slick-next::before, .birinchiradio .slider-for .slick-prev::before,
+.sport .slider-for .slick-next::before, .sport .slider-for .slick-prev::before,
+.madaniyat .slider-for .slick-next::before, .madaniyat .slider-for .slick-prev::before,
+.minkiyal_news .slider-for .slick-next::before, .minkiyal_news .slider-for .slick-prev::before,
+#dostuk .slider-for .slick-next::before, #dostuk .slider-for .slick-prev::before
+ {
+  color: #ffffff !important;
+  font-size: 24px;
+}
+.birinchiradio .slider-nav .slick-slide, 
+.sport .slider-nav .slick-slide, 
+.madaniyat .slider-nav .slick-slide, 
+.minkiyal_news .slider-nav .slick-slide, 
+#dostuk .slider-nav .slick-slide 
+{
+  height: 100px;
+  margin: 0 5px;
+  overflow: hidden;
+  cursor: pointer;
+  text-align: center;
+
+  opacity: 0.5;
+}
+.birinchiradio .slider-nav .slick-slide.slick-current,
+.sport .slider-nav .slick-slide.slick-current,
+.madaniyat .slider-nav .slick-slide.slick-current,
+.minkiyal_news .slider-nav .slick-slide.slick-current,
+#dostuk .slider-nav .slick-slide.slick-current
+{
+  opacity: 1;
+}
+.birinchiradio .slider-nav .slick-slide img,
+.sport .slider-nav .slick-slide img, 
+.madaniyat .slider-nav .slick-slide img, 
+.minkiyal_news .slider-nav .slick-slide img, 
+#dostuk .slider-nav .slick-slide img 
+{
+  height: 100%;
+  width: auto;
+}
+.birinchiradio .slider-nav .slick-prev,
+.sport .slider-nav .slick-prev,
+.madaniyat .slider-nav .slick-prev,
+.minkiyal_news .slider-nav .slick-prev,
+#dostuk .slider-nav .slick-prev
+{
+  left: 0px;
+}
+.birinchiradio .slider-nav .slick-next, 
+.sport .slider-nav .slick-next,
+.madaniyat .slider-nav .slick-next,
+.minkiyal_news .slider-nav .slick-next,
+#dostuk .slider-nav .slick-next
+{
+  right: 0px;
 }

@@ -128,6 +128,7 @@
                             $('#minkiyalAnons').hide();
                             $('#kyrgyzradioanons').hide();
                             $('#dostukAnons').hide();
+                            $('#musicAnons').hide();
                             $('#nameKg').show();
                             $('#nameRu').show();
                             $('#editorTextArea').hide();
@@ -147,6 +148,7 @@
                             $('#minkiyalAnons').hide();
                             $('#kyrgyzradioanons').hide();
                             $('#dostukAnons').hide();
+                            $('#musicAnons').hide();
                             $('#nameKg').show();
                             $('#nameRu').show();
                             $('#editorTextArea').hide();
@@ -165,6 +167,7 @@
                             $('#minkiyalAnons').show();
                             $('#kyrgyzradioanons').hide();
                             $('#dostukAnons').hide();
+                            $('#musicAnons').hide();
                             $('#nameKg').show();
                             $('#nameRu').hide();
                             $('#editorTextArea').show();
@@ -183,6 +186,7 @@
                             $('#minkiyalAnons').hide();
                             $('#kyrgyzradioanons').hide();
                             $('#dostukAnons').hide();
+                            $('#musicAnons').hide();
                             $('#nameKg').show();
                             $('#nameRu').show();
                             $('#editorTextArea').hide();
@@ -201,6 +205,7 @@
                             $('#minkiyalAnons').hide();
                             $('#kyrgyzradioanons').hide();
                             $('#dostukAnons').hide();
+                            $('#musicAnons').show();
                             $('#nameKg').show();
                             $('#nameRu').show();
                             $('#editorTextArea').hide();
@@ -219,6 +224,7 @@
                             $('#minkiyalAnons').hide();
                             $('#kyrgyzradioanons').show();
                             $('#dostukAnons').hide();
+                            $('#musicAnons').hide();
                             $('#nameKg').show();
                             $('#nameRu').hide();
                             $('#editorTextArea').show();
@@ -237,6 +243,7 @@
                             $('#minkiyalAnons').hide();
                             $('#kyrgyzradioanons').hide();
                             $('#dostukAnons').show();
+                            $('#musicAnons').hide();
                             $('#nameKg').show();
                             $('#nameRu').show();
                             $('#editorTextArea').show();
@@ -254,6 +261,7 @@
                             $('#minkiyalAnons').hide();
                             $('#kyrgyzradioanons').hide();
                             $('#dostukAnons').hide();
+                            $('#musicAnons').hide();
                             $('#nameKg').show();
                             $('#nameRu').show();
                             $('#editorTextArea').hide();
@@ -271,6 +279,7 @@
                             $('#minkiyalAnons').hide();
                             $('#kyrgyzradioanons').hide();
                             $('#dostukAnons').hide();
+                            $('#musicAnons').hide();
                             $('#nameKg').hide();
                             $('#nameRu').hide();
                             $('#editorTextArea').hide();

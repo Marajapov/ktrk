@@ -14,24 +14,7 @@
 
 <body id="home" class="homepage">
 <div class="container">   
-    
-<script type="text/javascript" src="http://radioheart.ru/tools/player.js"></script>
-<div id="player"></div>
-<script type="text/javascript">
-    // Укажите ссылку на ваш поток
-     var stream = 'http://s3.radioheart.ru:8005/nonstop';
-     var autostart = 'false';
-    // DO NOT EDIT ANYTHING BELOW THIS POINT
-     var so = new SWFObject('http://www.fastserv.com/player/player.swf','mpl','470','20','9');
-     so.addParam('allowscriptaccess','always');
-     so.addParam('allowfullscreen','false');
-     so.addVariable('autostart', autostart);
-     so.addVariable('file', stream+'%3Ftype%3D.flv');
-     so.write('player');
-</script>
-<div id="metadata">
-  <p> <!-- Здесь появится название песни --> </p>
-</div>    
+        
 
 </div>  
     

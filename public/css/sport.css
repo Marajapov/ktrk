@@ -1573,7 +1573,9 @@ figure.effect-roxy:hover p {
     font-size: 13px;
 }
 .panel-allnews .blockallnews .media-heading{
-    color: #222;;
+    display: block;
+    margin-top: 5px;
+    color: #222;
 }
 .panel-allnews .blockallnews .mb_substr{
     position: relative;
@@ -1581,18 +1583,23 @@ figure.effect-roxy:hover p {
     margin-top: 5px;
     color: #6d6d6d;
 }
+.panel-allnews .popular .media:first-child{
+    padding: 0px 0px 10px 0px;
+}
 .panel-allnews .popular .media{
 	margin-top: 0;
+    padding: 10px 0px 10px 0px;
 }
 .panel-allnews .popular .media-heading{
 	font-family: 'robotobold';
-	color: #4c4949;
+    font-size: 12px;
+    color: #4c4949;
 }
 .panel-allnews .popular .views,
 .panel-allnews .popular .datetime{
 	color: #777;
     font-weight: normal;
-    font-size: 13px;
+    font-size: 12px;
     font-family: 'Fira Sans Medium';
 }
 .card-info .view{
@@ -1605,31 +1612,30 @@ figure.effect-roxy:hover p {
 .panel-cat{
 
 }
-.panel-cat .heading-title{
-    float: left;
-}
-.video-cat{
+.panel-cat .heading-title, .video-cat{
     position: relative;
     display: block;
-    float: left;
+}
+.video-cat{
+
 }
 .video-cat .navbar-cat{
-    padding: 0;
-    margin: 0;
+    padding: 0 0px 10px 0;
     margin-bottom: 20px;
+    text-align: center;
+    border-bottom: 1px solid #d6d6d6;
 }
 .video-cat .navbar-cat a::after{
     opacity: 0;
 }
 .video-cat .navbar-cat>li{
-
+    display: inline-block;
+    float: none;
 }
 .video-cat .navbar-cat>li>a{
-    padding: 0px 5px 0 5px;
-    font-size: 16px;
+    padding: 0 5px 5px 5px;
+    font-size: 14px;
     color: #197942;
-    border-right: 1px solid #afbac3;
-    text-transform: capitalize;
 }
 .video-cat .navbar-cat>li>a:hover{
     text-decoration: underline;

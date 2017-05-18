@@ -27,7 +27,7 @@
                   </div>
                   <div class="row">
                      <div class="col-xs-12 hoverslider">
-                        <div class="slider-for col-xs-9">
+                        <div class="slider-for3 col-xs-9">
                            @if($generalPosts)
                            @foreach($generalPosts as $post)
                            <div>
@@ -42,7 +42,7 @@
                            @endforeach
                            @endif
                         </div>
-                        <div class="slider-nav col-xs-3">
+                        <div class="slider-nav3 col-xs-3">
                            @if($generalPosts)
                            @foreach($generalPosts as $post)
                            <div>
@@ -137,13 +137,13 @@
          @endforeach
          <div class="clearfix">
             <div class="col-md-12 text-center ads top-ad hidden-xs">
-               <a href="@if(!empty($positionCenter->linkTo)){{ $positionCenter->linkTo }} @else # @endif" target="_blank">
-               <img src="@if(!empty($positionTop->file)) {{ asset($positionCenter->file) }} @else {{ asset('images/banner_default_728x90.png') }} @endif" alt="phot1"/>
+               <a href="@if(!empty($positionTop->linkTo)){{ $positionTop->linkTo }} @else # @endif" target="_blank">
+                  <img src="@if(!empty($positionTop->file)) {{ asset($positionTop->file) }} @else {{ asset('images/banner_default_728x90.png') }} @endif" alt="phot1"/>
                </a>
             </div>
             <div class="col-xs-12 top-ad visible-xs">
-               <a href="@if(!empty($positionCenter->linkTo)){{ $positionCenter->linkTo }} @else # @endif" target="_blank">
-               <img src="@if(!empty($positionCenter->file)) {{ asset($positionCenter->file) }} @else {{ asset('images/banner_default_728x90.png') }} @endif" alt="phot1"/>
+               <a href="@if(!empty($positionTop->linkTo)){{ $positionTop->linkTo }} @else # @endif" target="_blank">
+               <img src="@if(!empty($positionTop->file)) {{ asset($positionTop->file) }} @else {{ asset('images/banner_default_728x90.png') }} @endif" alt="phot1"/>
                </a>
             </div>
          </div>
@@ -299,55 +299,58 @@
 </div>
 @stop
 @section('footerscript2')
-<script>
-   $('.slider-for').slick({
-       slidesToShow: 1,
-       slidesToScroll: 1,
-       arrows: false,
-       infinite: true,
-       speed: 500,
-       fade: true,
-       cssEase: 'linear',
-       asNavFor: '.slider-nav'
-   });
-   $('.slider-nav').slick({
-       slidesToShow: 3,
-       slidesToScroll: 1,
-       asNavFor: '.slider-for',
-       dots: true,
-       focusOnSelect: true,
-       vertical:true,
-       arrows:false
-   });
-</script>
-<script src="{{ asset('js/audio/jquery.newsTicker.js')}}"></script> 
-<script>
-   var nt_example1 = $('#newsticker').newsTicker({
-       row_height: 50,
-       max_rows:6,
-       duration: 2500,
-       direction:'up',
-       pauseOnHover: 1,
-       autostart: 1,
-       prevButton: $('#newsticker-prev'),
-       nextButton: $('#newsticker-next')
-   });
-</script>
-<script>
-   $('.slider-nav').on('mouseenter', '.slick-slide', function (e) {
-       var $currTarget = $(e.currentTarget),
-           index = $currTarget.data('slick-index'),
-           slickObj = $('.slider-for').slick('getSlick');
-       slickObj.slickGoTo(index);
-   });
-</script>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-   var js, fjs = d.getElementsByTagName(s)[0];
-   if (d.getElementById(id)) return;
-   js = d.createElement(s); js.id = id;
-   js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.5";
-   fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
+    <script>
+        $('.slider-for3').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            infinite: true,
+            speed: 500,
+            fade: true,
+            cssEase: 'linear',
+            asNavFor: '.slider-nav3'
+        });
+        $('.slider-nav3').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            asNavFor: '.slider-for3',
+            dots: true,
+            focusOnSelect: true,
+            vertical:true,
+            arrows:false
+        });
+    </script>
+    <script src="{{ asset('js/audio/jquery.newsTicker.js')}}"></script> 
+    <script>
+        var nt_example1 = $('#newsticker').newsTicker({
+            row_height: 50,
+            max_rows:6,
+            duration: 2500,
+            direction:'up',
+            pauseOnHover: 1,
+            autostart: 1,
+            prevButton: $('#newsticker-prev'),
+            nextButton: $('#newsticker-next')
+        });
+    </script>
+
+    <script>
+        $('.slider-nav3').on('mouseenter', '.slick-slide', function (e) {
+            var $currTarget = $(e.currentTarget),
+                index = $currTarget.data('slick-index'),
+                slickObj = $('.slider-for3').slick('getSlick');
+            slickObj.slickGoTo(index);
+        });
+    </script>
+
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) return;
+       js = d.createElement(s); js.id = id;
+       js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.5";
+       fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
+
 @endsection

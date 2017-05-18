@@ -58,7 +58,12 @@ trait ModelHelpers
                                 <a class="js-dh" href="'. route('front.post', [$postId, $lc]) .'">'.$relatedPost->getTitleRuOrKg() .'</a>
                                 <div class="t-extra clearfix">
                                     <div class="t-date">'.$relatedPost->getDay().' '.$relatedPost->getMonthRu().', '.$relatedPost->getYear().'</div>
-                                    <div class="t-view"><i class="fa fa-eye"></i>'.$relatedPost->getViewed().'</div>
+                                    <div class="t-view"><svg class="fa-view" x="0px" y="0px" viewBox="0 0 22 14" xml:space="preserve">
+                                                                <g>
+                                                                    <path d="M17.7,2.3C15.5,0.7,12.9,0,11,0S6.5,0.7,4.3,2.3C1.9,4.2,0,6.4,0,7s1.9,2.8,4.3,4.7C6.5,13.3,9.1,14,11,14s4.5-0.7,6.7-2.3
+                                                                        C20.1,9.8,22,7.6,22,7S20.1,4.2,17.7,2.3z M11,10c-1.7,0-3-1.3-3-3s1.3-3,3-3s3,1.3,3,3S12.7,10,11,10z"/>
+                                                                </g>
+                                                            </svg>'.$relatedPost->getViewed().'</div>
                                 </div>
                             </div>
                         </div>
@@ -98,7 +103,12 @@ trait ModelHelpers
                                 <a class="js-dh" href="'. route('front.post', [$postId, $lc]) .'">'.$relatedPost->getTitleRuOrKg() .'</a>
                                 <div class="t-extra clearfix">
                                     <div class="t-date">'.$relatedPost->getDay().' '.$relatedPost->getMonthRu().', '.$relatedPost->getYear().'</div>
-                                    <div class="t-view"><i class="fa fa-eye"></i>'.$relatedPost->getViewed().'</div>
+                                    <div class="t-view"><svg class="fa-view" x="0px" y="0px" viewBox="0 0 22 14" xml:space="preserve">
+                                                                <g>
+                                                                    <path d="M17.7,2.3C15.5,0.7,12.9,0,11,0S6.5,0.7,4.3,2.3C1.9,4.2,0,6.4,0,7s1.9,2.8,4.3,4.7C6.5,13.3,9.1,14,11,14s4.5-0.7,6.7-2.3
+                                                                        C20.1,9.8,22,7.6,22,7S20.1,4.2,17.7,2.3z M11,10c-1.7,0-3-1.3-3-3s1.3-3,3-3s3,1.3,3,3S12.7,10,11,10z"/>
+                                                                </g>
+                                                            </svg>'.$relatedPost->getViewed().'</div>
                                 </div>
                             </div>
                         </div>
@@ -123,15 +133,46 @@ trait ModelHelpers
                                 <div class="topic clearfix">
                                     <a class="t-thumb" href="'. route('front.media.video', $relatedMedia) .'">
                                         <img alt="alt photo text" src="'. asset($relatedMedia->thumbnail_big) .'">
-                                        <div class="overlay">
-                                        </div>
-                                        <i class="fa-video"></i>
+                                        <svg class="play-button" x="0px" y="0px" viewBox="0 0 81 100" xml:space="preserve">
+                                                                    <g>
+                                                                        <g>
+                                                                            <g>
+                                                                                <g>
+                                                                                    <g>
+                                                                                        <g>
+                                                                                            <g>
+                                                                                                <g>
+                                                                                                    <g>
+                                                                                                        <g>
+                                                                                                            <g>
+                                                                                                                <g>
+                                                                                                                    <g>
+                                                                                                                        <path d="M7,12.6L67.7,50L7,87.4V12.6 M0,0v100l81-50L0,0L0,0z"/>
+                                                                                                                    </g>
+                                                                                                                </g>
+                                                                                                            </g>
+                                                                                                        </g>
+                                                                                                    </g>
+                                                                                                </g>
+                                                                                            </g>
+                                                                                        </g>
+                                                                                    </g>
+                                                                                </g>
+                                                                            </g>
+                                                                        </g>
+                                                                    </g>
+                                                                </svg>
                                     </a>
                                     <div class="t-info clearfix">
                                         <a class="js-dh" href="'. route('front.media.video', $relatedMedia) .'">'.$relatedMedia->getName() .'</a>
                                         <div class="t-extra clearfix">
                                             <div class="t-date">'.$relatedMedia->getDay().' '.$relatedMedia->getMonthRu().', '.$relatedMedia->getYear().'</div>
-                                            <div class="t-view"><i class="fa fa-eye"></i>'.$relatedMedia->getViewed().'</div>
+                                            <div class="t-view"><svg class="fa-view" x="0px" y="0px" viewBox="0 0 22 14" xml:space="preserve">
+                                                                <g>
+                                                                    <path d="M17.7,2.3C15.5,0.7,12.9,0,11,0S6.5,0.7,4.3,2.3C1.9,4.2,0,6.4,0,7s1.9,2.8,4.3,4.7C6.5,13.3,9.1,14,11,14s4.5-0.7,6.7-2.3
+                                                                        C20.1,9.8,22,7.6,22,7S20.1,4.2,17.7,2.3z M11,10c-1.7,0-3-1.3-3-3s1.3-3,3-3s3,1.3,3,3S12.7,10,11,10z"/>
+                                                                </g>
+                                                            </svg></i>'.$relatedMedia->getViewed().'</div>
                                         </div>
                                     </div>
                                 </div>
@@ -149,15 +190,46 @@ trait ModelHelpers
                                 <div class="topic clearfix">
                                     <a class="t-thumb" href="'. route('front.media.video', $relatedMedia) .'">
                                         <img src="http://img.youtube.com/vi/'.$relatedMedia->getUrl().'/mqdefault.jpg" alt="'.$relatedMedia->getName().'">
-                                        <div class="overlay">
-                                        </div>
-                                        <i class="fa-video"></i>
+                                        <svg class="play-button" x="0px" y="0px" viewBox="0 0 81 100" xml:space="preserve">
+                                                                    <g>
+                                                                        <g>
+                                                                            <g>
+                                                                                <g>
+                                                                                    <g>
+                                                                                        <g>
+                                                                                            <g>
+                                                                                                <g>
+                                                                                                    <g>
+                                                                                                        <g>
+                                                                                                            <g>
+                                                                                                                <g>
+                                                                                                                    <g>
+                                                                                                                        <path d="M7,12.6L67.7,50L7,87.4V12.6 M0,0v100l81-50L0,0L0,0z"/>
+                                                                                                                    </g>
+                                                                                                                </g>
+                                                                                                            </g>
+                                                                                                        </g>
+                                                                                                    </g>
+                                                                                                </g>
+                                                                                            </g>
+                                                                                        </g>
+                                                                                    </g>
+                                                                                </g>
+                                                                            </g>
+                                                                        </g>
+                                                                    </g>
+                                                                </svg>
                                     </a>
                                     <div class="t-info clearfix">
                                         <a class="js-dh" href="'. route('front.media.video', $relatedMedia) .'">'.$relatedMedia->getName() .'</a>
                                         <div class="t-extra clearfix">
                                         <div class="t-date">'.$relatedMedia->getDay().' '.$relatedMedia->getMonthRu().', '.$relatedMedia->getYear().'</div>
-                                        <div class="t-view"><i class="fa fa-eye"></i>'.$relatedMedia->getViewed().'</div>
+                                        <div class="t-view"><svg class="fa-view" x="0px" y="0px" viewBox="0 0 22 14" xml:space="preserve">
+                                                                <g>
+                                                                    <path d="M17.7,2.3C15.5,0.7,12.9,0,11,0S6.5,0.7,4.3,2.3C1.9,4.2,0,6.4,0,7s1.9,2.8,4.3,4.7C6.5,13.3,9.1,14,11,14s4.5-0.7,6.7-2.3
+                                                                        C20.1,9.8,22,7.6,22,7S20.1,4.2,17.7,2.3z M11,10c-1.7,0-3-1.3-3-3s1.3-3,3-3s3,1.3,3,3S12.7,10,11,10z"/>
+                                                                </g>
+                                                            </svg>'.$relatedMedia->getViewed().'</div>
                                     </div>
                                     </div>
                                 </div>
@@ -185,15 +257,46 @@ trait ModelHelpers
                                 <div class="topic clearfix">
                                     <a class="t-thumb" href="'. route('front.media.video', $relatedMedia) .'">
                                         <img alt="alt photo text" src="'. asset($relatedMedia->thumbnail_big) .'">
-                                        <div class="overlay">
-                                        </div>
-                                        <i class="fa-video"></i>
+                                        <svg class="play-button" x="0px" y="0px" viewBox="0 0 81 100" xml:space="preserve">
+                                                                    <g>
+                                                                        <g>
+                                                                            <g>
+                                                                                <g>
+                                                                                    <g>
+                                                                                        <g>
+                                                                                            <g>
+                                                                                                <g>
+                                                                                                    <g>
+                                                                                                        <g>
+                                                                                                            <g>
+                                                                                                                <g>
+                                                                                                                    <g>
+                                                                                                                        <path d="M7,12.6L67.7,50L7,87.4V12.6 M0,0v100l81-50L0,0L0,0z"/>
+                                                                                                                    </g>
+                                                                                                                </g>
+                                                                                                            </g>
+                                                                                                        </g>
+                                                                                                    </g>
+                                                                                                </g>
+                                                                                            </g>
+                                                                                        </g>
+                                                                                    </g>
+                                                                                </g>
+                                                                            </g>
+                                                                        </g>
+                                                                    </g>
+                                                                </svg>
                                     </a>
                                     <div class="t-info clearfix">
                                         <a class="js-dh" href="'. route('front.media.video', $relatedMedia) .'">'.$relatedMedia->getName() .'</a>
                                         <div class="t-extra clearfix">
                                             <div class="t-date">'.$relatedMedia->getDay().' '.$relatedMedia->getMonthRu().', '.$relatedMedia->getYear().'</div>
-                                            <div class="t-view"><i class="fa fa-eye"></i>'.$relatedMedia->getViewed().'</div>
+                                            <div class="t-view"><svg class="fa-view" x="0px" y="0px" viewBox="0 0 22 14" xml:space="preserve">
+                                                                <g>
+                                                                    <path d="M17.7,2.3C15.5,0.7,12.9,0,11,0S6.5,0.7,4.3,2.3C1.9,4.2,0,6.4,0,7s1.9,2.8,4.3,4.7C6.5,13.3,9.1,14,11,14s4.5-0.7,6.7-2.3
+                                                                        C20.1,9.8,22,7.6,22,7S20.1,4.2,17.7,2.3z M11,10c-1.7,0-3-1.3-3-3s1.3-3,3-3s3,1.3,3,3S12.7,10,11,10z"/>
+                                                                </g>
+                                                            </svg>'.$relatedMedia->getViewed().'</div>
                                         </div>
                                     </div>
                                 </div>
@@ -211,15 +314,46 @@ trait ModelHelpers
                                 <div class="topic clearfix">
                                     <a class="t-thumb" href="'. route('front.media.video', $relatedMedia) .'">
                                         <img src="http://img.youtube.com/vi/'.$relatedMedia->getUrl().'/mqdefault.jpg" alt="'.$relatedMedia->getName().'">
-                                        <div class="overlay">
-                                        </div>
-                                        <i class="fa-video"></i>
+                                        <svg class="play-button" x="0px" y="0px" viewBox="0 0 81 100" xml:space="preserve">
+                                                                    <g>
+                                                                        <g>
+                                                                            <g>
+                                                                                <g>
+                                                                                    <g>
+                                                                                        <g>
+                                                                                            <g>
+                                                                                                <g>
+                                                                                                    <g>
+                                                                                                        <g>
+                                                                                                            <g>
+                                                                                                                <g>
+                                                                                                                    <g>
+                                                                                                                        <path d="M7,12.6L67.7,50L7,87.4V12.6 M0,0v100l81-50L0,0L0,0z"/>
+                                                                                                                    </g>
+                                                                                                                </g>
+                                                                                                            </g>
+                                                                                                        </g>
+                                                                                                    </g>
+                                                                                                </g>
+                                                                                            </g>
+                                                                                        </g>
+                                                                                    </g>
+                                                                                </g>
+                                                                            </g>
+                                                                        </g>
+                                                                    </g>
+                                                                </svg>
                                     </a>
                                     <div class="t-info clearfix">
                                         <a class="js-dh" href="'. route('front.media.video', $relatedMedia) .'">'.$relatedMedia->getName() .'</a>
                                         <div class="t-extra clearfix">
                                         <div class="t-date">'.$relatedMedia->getDay().' '.$relatedMedia->getMonthRu().', '.$relatedMedia->getYear().'</div>
-                                        <div class="t-view"><i class="fa fa-eye"></i>'.$relatedMedia->getViewed().'</div>
+                                        <div class="t-view"><svg class="fa-view" x="0px" y="0px" viewBox="0 0 22 14" xml:space="preserve">
+                                                                <g>
+                                                                    <path d="M17.7,2.3C15.5,0.7,12.9,0,11,0S6.5,0.7,4.3,2.3C1.9,4.2,0,6.4,0,7s1.9,2.8,4.3,4.7C6.5,13.3,9.1,14,11,14s4.5-0.7,6.7-2.3
+                                                                        C20.1,9.8,22,7.6,22,7S20.1,4.2,17.7,2.3z M11,10c-1.7,0-3-1.3-3-3s1.3-3,3-3s3,1.3,3,3S12.7,10,11,10z"/>
+                                                                </g>
+                                                            </svg>'.$relatedMedia->getViewed().'</div>
                                     </div>
                                     </div>
                                 </div>

@@ -56,8 +56,8 @@
               </table>
 
               <div class="price">
-                <p>Жарнамалык маалыматты эфирге берүү боюнча баалар 2016 ж.</p>
-                <a target="_blank" href="{{ asset('static/files/reklama/price2016.pdf') }}">
+                <p>Жарнамалык маалыматты эфирге берүү боюнча баалар 2017 ж.</p>
+                <a target="_blank" href="{{ asset('static/files/reklama/price2017.pdf') }}">
                   <i class="fa fa-file-pdf-o"></i>
                   <span>
                     Прайс-баракты жүктөө
@@ -105,8 +105,8 @@
               </table>
 
               <div class="price">
-                <p>Прайс-лист на размещение рекламно-информационных материалов на 2016 год</p>
-                <a target="_blank" href="{{ asset('static/files/reklama/price2016.pdf') }}">
+                <p>Прайс-лист на размещение рекламно-информационных материалов на 2017 год</p>
+                <a target="_blank" href="{{ asset('static/files/reklama/price2017.pdf') }}">
                   <i class="fa fa-file-pdf-o"></i>
                   <span>
                     Загрузить Прайс-лист

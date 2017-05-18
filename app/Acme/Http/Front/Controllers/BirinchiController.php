@@ -3,8 +3,15 @@ namespace Front\Controllers;
 use Illuminate\Http\Request;
 class BirinchiController extends Controller
 {
+    protected $positionTop, $positionRight, $positionCenter, $positionBottom, $positionLeft;
+    
     public function __construct()
     {
+        $this->positionTop = \Model\Banner\ModelName::where('positionTop','=','1')->where('channel_id','=','7')->first();
+        $this->positionRight = \Model\Banner\ModelName::where('positionRight','=','1')->where('channel_id','=','7')->first();
+        $this->positionLeft = \Model\Banner\ModelName::where('positionLeft','=','1')->where('channel_id','=','7')->first();
+        $this->positionCenter = \Model\Banner\ModelName::where('positionCenter','=','1')->where('channel_id','=','7')->first();
+        $this->positionBottom = \Model\Banner\ModelName::where('positionBottom','=','1')->where('channel_id','=','7')->first();
     }
 
 
@@ -66,6 +73,12 @@ class BirinchiController extends Controller
             'posts' => $posts,
             'topCategories' => $topCategories,
             'bottomCategories' => $bottomCategories,
+
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionLeft'  => $this->positionLeft,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
         ]);
     }
 
@@ -79,12 +92,12 @@ class BirinchiController extends Controller
         if($lc == 'kg'){
           
             $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('name','<>','' )->get();
-            $postAll = \Model\Post\ModelName::where('published','=',true)->where('birinchi','=','1')->where('title','<>','')->where('birinchiProgram','>',0)->paginate($perPage);
+            $postAll = \Model\Post\ModelName::where('published','=',true)->where('birinchi','=','1')->where('title','<>','')->where('birinchiProgram','>',0)->orderBy('id','desc')->paginate($perPage);
             $popArticles = \Model\Post\ModelName::where('birinchi','=','1')->where('created_at','>',$weekFromNow)->languagekg()->where('birinchiProgram','>',0)->orderBy('viewed','desc')->get();   
         }else{
 
             $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('nameRu','<>','' )->get();
-            $postAll = \Model\Post\ModelName::where('published','=',true)->where('birinchi','=','1')->where('titleRu','<>','')->where('birinchiProgram','>',0)->paginate($perPage); 
+            $postAll = \Model\Post\ModelName::where('published','=',true)->where('birinchi','=','1')->where('titleRu','<>','')->where('birinchiProgram','>',0)->orderBy('id','desc')->paginate($perPage); 
             $popArticles = \Model\Post\ModelName::where('birinchi','=','1')->where('created_at','>',$weekFromNow)->languageru()->where('birinchiProgram','>',0)->orderBy('viewed','desc')->get();    
         }
 
@@ -365,7 +378,21 @@ class BirinchiController extends Controller
         }
                 // dd($relatedNews);
 
-        $categories = \Model\Category\ModelName::where('birinchi','=','1')->get();            
+        $categories = \Model\Category\ModelName::where('birinchi','=','1')->get();     
+
+        $parent = \Model\PhotoParent\ModelName::where('id','=',$post->parentId)->first();
+        if($parent){
+            $images = json_decode($parent->images);   
+        }else{
+            $images = null;
+        }
+
+        $parent2 = \Model\PhotoParent\ModelName::where('id','=',$post->parentId2)->first();
+        if($parent2){
+            $images2 = json_decode($parent2->images);    
+        }else{
+            $images2 = null;
+        }       
 
            return view('Front::channel.birinchi.news', [
             'lc' =>$lc,
@@ -376,7 +403,9 @@ class BirinchiController extends Controller
             'birinchiProjects' => $birinchiProjects,
             'categories'=>$categories,
             'relatedNews' => $relatedNews,            
-            'popArticles' => $popArticles,            
+            'popArticles' => $popArticles,  
+            'images' => $images,
+            'images2' => $images2        
             ]);
     }
 

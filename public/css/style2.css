@@ -474,10 +474,6 @@ header.top-menu,.logo-block{
     -moz-box-shadow: none;
     box-shadow: none;
 }
-.panel.latest-news .panel-body{
-    padding-top: 25px;
-    padding-bottom: 10px;
-}
 .panel.latest-news .panel-body footer{
     border-top-color: #ffffff;
 }
@@ -513,14 +509,10 @@ header.top-menu,.logo-block{
 .director-text{
     padding-left: 10px;
     width: 65%;
-    font-size: 24px;
 }
 .carousel-director{
     margin: 0;
     margin-bottom: 20px;
-}
-.carousel-director a{
-    color: #4e5e6a;
 }
 .carousel-director img{
     margin-bottom: 10px;

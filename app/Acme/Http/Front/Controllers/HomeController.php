@@ -84,7 +84,6 @@ class HomeController extends Controller
             session_start();
             session(['flag'=> $flag]);
         } 
-//dd($visitor, $result,$flag);
         $lc = app()->getlocale();
         $channel = \Model\Channel\ModelName::general();
         $channels = \Model\Channel\ModelName::take(8)->skip(1)->get();
@@ -387,9 +386,9 @@ class HomeController extends Controller
         }
 
         if($lc == 'kg'){
-            $latestPosts = \Model\Post\ModelName::general($channel)->published()->having('number','=','99')->where('general','=','1')->where('fbpost','<>','1')->languagekg()->take(6)->skip(0)->orderBy('created_at','desc')->get();
+            $latestPosts = \Model\Post\ModelName::general($channel)->published()->having('number','=','99')->where('general','=','1')->where('fbpost','<>','1')->languagekg()->take(6)->orderBy('created_at','desc')->get();
         }elseif($lc == 'ru'){
-            $latestPosts = \Model\Post\ModelName::general($channel)->published()->having('numberRu','=','99')->where('general','=','1')->where('fbpost','<>','1')->languageru()->take(6)->skip(0)->orderBy('created_at','desc')->get();
+            $latestPosts = \Model\Post\ModelName::general($channel)->published()->having('numberRu','=','99')->where('general','=','1')->where('fbpost','<>','1')->languageru()->take(6)->orderBy('created_at','desc')->get();
         }
 
         $dayVideos = array();
@@ -431,10 +430,11 @@ class HomeController extends Controller
         $peopleReporters = \Model\PeopleReporter\ModelName::where('published','=',true)->get();
 
         // Photo Gallery
-        $photoGalleries = \Model\PhotoParent\ModelName::where('extracolumn','=','1')->where('published','=',true)->take('10')->orderBy('id','desc')->get();
+        $photoGalleryFirst = \Model\PhotoParent\ModelName::where('extracolumn','=','1')->where('published','=',true)->orderBy('created_at','desc')->first();
+        $photoGalleries = \Model\PhotoParent\ModelName::where('extracolumn','=','1')->where('published','=',true)->orderBy('created_at','desc')->take(4)->skip(1)->get();
 
         $MediaCategories = \Model\MediaCategory\ModelName::orderBy('id','asc')->get();
-        $mediaPosts = \Model\Media\ModelName::orderBy('id','desc')->get();
+        $mediaPosts = \Model\Media\ModelName::orderBy('created_at','desc')->get();
 
         $categoriesVideos = array();
 
@@ -443,7 +443,7 @@ class HomeController extends Controller
             $categoriesVideos = array_add($categoriesVideos, $MediaCategory->videoType, $CategoryVideos);
         }
 
-        $mediaLastVideos = \Model\Media\ModelName::where('published','=','1')->orderBy('id','desc')->take(9)->get();
+        $mediaLastVideos = \Model\Media\ModelName::where('published','=','1')->orderBy('created_at','desc')->take(12)->get();
 
         $defaultVideo = 'rjXSurFi8uQ';
 
@@ -473,6 +473,7 @@ class HomeController extends Controller
             'positionBottom' => $this->positionBottom,
             'peopleReporters' => $peopleReporters,
             'photoGalleries' => $photoGalleries,
+            'photoGalleryFirst' => $photoGalleryFirst,
 
             'backgroundMain' => $backgroundMain,
             'MediaCategories' => $MediaCategories,
@@ -493,7 +494,7 @@ class HomeController extends Controller
         $lc = in_array($locale, ['kg', 'ru'])? $locale : 'kg';
 
         app()->setlocale($lc);
-        $categories = \Model\Category\ModelName::where('general','=','1')->get();
+        $categories = \Model\Category\ModelName::where('general','=','1')->published()->get();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','2')->first();
         $parent = \Model\PhotoParent\ModelName::where('id','=',$post->parentId)->first();
         if($parent){
@@ -597,7 +598,8 @@ class HomeController extends Controller
                 }
             }
 
-            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->where('number','=','88')->orderBy('updated_at','desc')->take(6)->get();
+            $weekFromNow = date('Y-m-d H:i', strtotime('-7 days'));
+            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->where('number','=','88')->where('created_at','>',$weekFromNow)->orderBy('updated_at','desc')->take(6)->get();
 
             if(count($topArticles) > 0){
                 $topArticles = $topArticles;   
@@ -605,7 +607,6 @@ class HomeController extends Controller
                 $topArticles = null;
             }
 
-            $weekFromNow = date('Y-m-d', strtotime('-7 days'));
             $popArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->where('created_at','>',$weekFromNow)->orderBy('viewed','desc')->take(6)->get();
             if(count($popArticles) > 0){
                 $popArticles = $popArticles;
@@ -701,14 +702,14 @@ class HomeController extends Controller
                 }
             }
 
-            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->where('numberRu','=','88')->orderBy('updated_at','desc')->take(6)->get();
+            $weekFromNow = date('Y-m-d H:i', strtotime('-7 days'));
+            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->where('created_at','>',$weekFromNow)->where('numberRu','=','88')->orderBy('updated_at','desc')->take(6)->get();
             if(count($topArticles) > 0){
                 $topArticles = $topArticles;   
             }else{
                 $topArticles = null;
             }
 
-            $weekFromNow = date('Y-m-d H:i', strtotime('-7 days'));
             $popArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->where('created_at','>',$weekFromNow)->orderBy('viewed','desc')->take(6)->get();
             if(count($popArticles) > 0){
                 $popArticles = $popArticles;
@@ -726,6 +727,269 @@ class HomeController extends Controller
         }
 
         return view('Front::post.post',[
+            'lc' => $lc,
+            'post' => $post,
+            'words' => $words,
+            'topArticles' => $topArticles,
+            'popArticles' => $popArticles,
+
+            'relatedPosts' => $relatedPosts,
+
+            'images' => $images,
+            'images2' => $images2,
+            'content' => $contentFinal,
+            'comments' => $comments,
+
+            'categories'=>$categories,
+            'backgroundMain' => $backgroundMain,
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
+            'positionLeft'  => $this->positionLeft,
+            ]);
+
+    }
+
+    public function PostTest(Post $post, $locale="kg", $title = "")
+    {
+        $post->incrementViewed();
+        $lc = in_array($locale, ['kg', 'ru'])? $locale : 'kg';
+
+        app()->setlocale($lc);
+        $categories = \Model\Category\ModelName::where('general','=','1')->published()->get();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','2')->first();
+        $parent = \Model\PhotoParent\ModelName::where('id','=',$post->parentId)->first();
+        if($parent){
+            $images = json_decode($parent->images);   
+        }else{
+            $images = null;
+        }
+
+        $parent2 = \Model\PhotoParent\ModelName::where('id','=',$post->parentId2)->first();
+        if($parent2){
+            $images2 = json_decode($parent2->images);    
+        }else{
+            $images2 = null;
+        }
+
+        if($lc == 'kg'){
+            $contentOriginal = $post->getContent();
+            $relatedPosts = \Model\Post\ModelName::where('category_id','=',$post->category_id)->where('general','=','1')->languagekg()->take(7)->skip(0)->orderBy('id', 'desc')->get();
+            $contentFinal = $contentOriginal;
+            if($post->related1)
+            {
+                if(strpos($contentFinal, 'POST1LEFT') != false)
+                {
+                    $post1Pos = strripos($contentFinal, 'POST1LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionLeft($post->related1), $post1Pos, 9);
+                }
+                elseif(strpos($contentFinal, 'POST1RIGHT') != false)
+                {
+                    $post1Pos = strripos($contentFinal, 'POST1RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionRight($post->related1), $post1Pos, 10);
+                }
+            }
+
+            if($post->related2)
+            {
+                if(strpos($contentFinal, 'POST2LEFT') != false)
+                {
+                    $post2Pos = strripos($contentFinal, 'POST2LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionLeft($post->related2), $post2Pos, 9);
+                }
+                elseif(strpos($contentFinal, 'POST2RIGHT') != false)
+                {
+                    $post2Pos = strripos($contentFinal, 'POST2RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionRight($post->related2), $post2Pos, 10);
+                }
+            }
+
+            if($post->related3)
+            {
+                if(strpos($contentFinal, 'POST3LEFT') != false)
+                {
+                    $post3Pos = strripos($contentFinal, 'POST3LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionLeft($post->related3), $post3Pos, 9);
+                }
+                elseif(strpos($contentFinal, 'POST3RIGHT') != false)
+                {
+                    $post3Pos = strripos($contentFinal, 'POST3RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionRight($post->related3), $post3Pos, 10);
+                }
+            }
+
+            if($post->relatedMedia1)
+            {
+                if(strpos($contentFinal, 'MEDIA1LEFT') != false)
+                {
+                    $media1Pos = strripos($contentFinal, 'MEDIA1LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionLeft($post->relatedMedia1), $media1Pos, 10);
+                }
+                elseif(strpos($contentFinal, 'MEDIA1RIGHT') != false)
+                {
+                    $media1Pos = strripos($contentFinal, 'MEDIA1RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionRight($post->relatedMedia1), $media1Pos, 11);
+                }
+            }
+
+            if($post->relatedMedia2)
+            {
+                if(strpos($contentFinal, 'MEDIA2LEFT') != false)
+                {
+                    $media2Pos = strripos($contentFinal, 'MEDIA2LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionLeft($post->relatedMedia2), $media2Pos, 10);
+                }
+                elseif(strpos($contentFinal, 'MEDIA2RIGHT') != false)
+                {
+                    $media2Pos = strripos($contentFinal, 'MEDIA2RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionRight($post->relatedMedia2), $media2Pos, 11);
+                }
+            }
+
+            if($post->relatedMedia3)
+            {
+                if(strpos($contentFinal, 'MEDIA3LEFT') != false)
+                {
+                    $media3Pos = strripos($contentFinal, 'MEDIA3LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionLeft($post->relatedMedia3), $media3Pos, 10);
+                }
+                elseif(strpos($contentFinal, 'MEDIA3RIGHT') != false)
+                {
+                    $media3Pos = strripos($contentFinal, 'MEDIA3RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionRight($post->relatedMedia3), $media3Pos, 11);
+                }
+            }
+
+            $weekFromNow = date('Y-m-d H:i', strtotime('-7 days'));
+            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->where('number','=','88')->where('created_at','>',$weekFromNow)->orderBy('updated_at','desc')->take(6)->get();
+
+            if(count($topArticles) > 0){
+                $topArticles = $topArticles;   
+            }else{
+                $topArticles = null;
+            }
+
+            $popArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->where('created_at','>',$weekFromNow)->orderBy('viewed','desc')->take(6)->get();
+            if(count($popArticles) > 0){
+                $popArticles = $popArticles;
+            }else{
+                $popArticles = null;
+            }
+
+        }elseif($lc == 'ru'){
+            $contentOriginal = $post->getContent();
+            $relatedPosts = \Model\Post\ModelName::where('category_id','=',$post->category_id)->where('general','=','1')->languageru()->take(7)->skip(0)->orderBy('id', 'desc')->get();
+            $contentFinal = $contentOriginal;
+            if($post->relatedRu1)
+            {
+                if(strpos($contentFinal, 'POST1LEFT') != false)
+                {
+                    $post1Pos = strripos($contentFinal, 'POST1LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionLeft($post->relatedRu1), $post1Pos, 9);
+                }
+                elseif(strpos($contentFinal, 'POST1RIGHT') != false)
+                {
+                    $post1Pos = strripos($contentFinal, 'POST1RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionRight($post->relatedRu1), $post1Pos, 10);
+                }
+            }
+
+            if($post->relatedRu2)
+            {
+                if(strpos($contentFinal, 'POST2LEFT') != false)
+                {
+                    $post2Pos = strripos($contentFinal, 'POST2LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionLeft($post->relatedRu2), $post2Pos, 9);
+                }
+                elseif(strpos($contentFinal, 'POST2RIGHT') != false)
+                {
+                    $post2Pos = strripos($contentFinal, 'POST2RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionRight($post->relatedRu2), $post2Pos, 10);
+                }
+            }
+
+            if($post->relatedRu3)
+            {
+                if(strpos($contentFinal, 'POST3LEFT') != false)
+                {
+                    $post3Pos = strripos($contentFinal, 'POST3LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionLeft($post->relatedRu3), $post3Pos, 9);
+                }
+                elseif(strpos($contentFinal, 'POST3RIGHT') != false)
+                {
+                    $post3Pos = strripos($contentFinal, 'POST3RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionRight($post->relatedRu3), $post3Pos, 10);
+                }
+            }
+
+            if($post->relatedMediaRu1)
+            {
+                if(strpos($contentFinal, 'MEDIA1LEFT') != false)
+                {
+                    $media1Pos = strripos($contentFinal, 'MEDIA1LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionLeft($post->relatedMediaRu1), $media1Pos, 10);
+                }
+                elseif(strpos($contentFinal, 'MEDIA1RIGHT') != false)
+                {
+                    $media1Pos = strripos($contentFinal, 'MEDIA1RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionRight($post->relatedMediaRu1), $media1Pos, 11);
+                }
+            }
+
+            if($post->relatedMediaRu2)
+            {
+                if(strpos($contentFinal, 'MEDIA2LEFT') != false)
+                {
+                    $media2Pos = strripos($contentFinal, 'MEDIA2LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionLeft($post->relatedMediaRu2), $media2Pos, 10);
+                }
+                elseif(strpos($contentFinal, 'MEDIA2RIGHT') != false)
+                {
+                    $media2Pos = strripos($contentFinal, 'MEDIA2RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionRight($post->relatedMediaRu2), $media2Pos, 11);
+                }
+            }
+
+            if($post->relatedMediaRu3)
+            {
+                if(strpos($contentFinal, 'MEDIA3LEFT') != false)
+                {
+                    $media3Pos = strripos($contentFinal, 'MEDIA3LEFT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionLeft($post->relatedMediaRu3), $media3Pos, 10);
+                }
+                elseif(strpos($contentFinal, 'MEDIA3RIGHT') != false)
+                {
+                    $media3Pos = strripos($contentFinal, 'MEDIA3RIGHT');
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionRight($post->relatedMediaRu3), $media3Pos, 11);
+                }
+            }
+
+            $weekFromNow = date('Y-m-d H:i', strtotime('-7 days'));
+            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->where('created_at','>',$weekFromNow)->where('numberRu','=','88')->orderBy('updated_at','desc')->take(6)->get();
+            if(count($topArticles) > 0){
+                $topArticles = $topArticles;   
+            }else{
+                $topArticles = null;
+            }
+
+            $popArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->where('created_at','>',$weekFromNow)->orderBy('viewed','desc')->take(6)->get();
+            if(count($popArticles) > 0){
+                $popArticles = $popArticles;
+            }else{
+                $popArticles = null;
+            }
+        }
+
+        $comments = Comment::where('resourceType','=','post')->where('resourceId','=',$post->id)->where('approved','=','1')->orderBy('id','desc')->get();
+
+        if($lc == 'kg') {
+            $words = explode(" ", $post->title);
+        } else {
+            $words = explode(" ", $post->titleRu);
+        }
+
+        return view('Front::post.postTest',[
             'lc' => $lc,
             'post' => $post,
             'words' => $words,

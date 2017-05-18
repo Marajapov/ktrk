@@ -366,7 +366,7 @@
                     <div class="row">
 
                         <a href="@if(!empty($positionLeft->file)) {{ $positionLeft->linkTo }} @else # @endif" class="text-center ads middle-ad">
-                            <img src="@if(!empty($positionLeft->file)) {{ asset($positionLeft->file) }} @else {{ asset('images/banner_default_728x90.png') }} @endif" alt=""/>
+                            <img src="@if(!empty($positionLeft->file)) {{ asset($positionLeft->file) }} @else {{ asset('images/banner_default_728x90.png') }} @endif" alt="3"/>
                         </a>
 
                         <div class="panel panel-default panel-carousel peoplereporter">
@@ -625,7 +625,7 @@
                     </div>
 
                     <a target="_blank" href="@if(!empty($positionCenter)) {{ $positionCenter->linkTo }} @else # @endif" class="text-center ads">
-                        <img src="@if(!empty($positionCenter->file)) {{ asset($positionCenter->file) }} @else {{ asset('images/banner_default_728x90.png') }} @endif" alt=""/>
+                        <img src="@if(!empty($positionCenter->file)) {{ asset($positionCenter->file) }} @else {{ asset('images/banner_default_728x90.png') }} @endif" alt="123"/>
                     </a>
 
                     <div class="panel panel-default panel-carousel gallery">

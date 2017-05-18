@@ -347,7 +347,7 @@ class PageController extends Controller
 
     $post->incrementViewed();
 
-    $categories = \Model\Category\ModelName::all();
+    $categories = \Model\Category\ModelName::where('general',true)->published()->get();
     $positionTop = \Model\Banner\ModelName::top()->first();
     $backgroundMain = \Model\Background\ModelName::where('published','=',true)->first();
 

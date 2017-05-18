@@ -6,24 +6,18 @@
 @endsection
 @section('content')
 @include('Front::channel.muzkanal.nav')
-
 <div class="container">
    <!-- BEGIN Main slider slicebox-->
    <div class="row">
       <div class="wrapper">
          <ul id="sb-slider" class="sb-slider">
+         @if($anonsslide->first()) 
+            @foreach($anonsslide as $anons)
             <li>
-               <a href="#" target="_blank"><img src="{{ asset('images/anons/ak-terek.jpg')}}" alt="image1"/></a>
+               <a href="{{ $anons->getUrl() }}" target="_blank"><img src="{{asset($anons->thumbnail)}}" alt="{{ $anons->getNameOne() }}"/></a>
             </li>
-             <li>
-                 <a href="#" target="_blank"><img src="{{ asset('images/anons/muz.png')}}" alt="image3"/></a>
-             </li>
-            <li>
-               <a href="#" target="_blank"><img src="{{ asset('images/anons/hit-parad.jpg')}}" alt="image2"/></a>
-            </li>
-            <li>
-               <a href="#" target="_blank"><img src="{{ asset('images/anons/muz_ru.png')}}" alt="image3"/></a>
-            </li>
+            @endforeach
+         @endif
          </ul>
          <div id="nav-arrows" class="nav-arrows">
             <a href="#">Next</a>
@@ -153,7 +147,7 @@
       <div class="col-md-8 onairmuz">
          <div class="panel">
             <div class="panel-heading">
-               <h3 class="panel-title"><span> - {{ trans('radiopages.Live') }}- </span></h3>
+               <h3 class="panel-title"><span>{{ trans('radiopages.Live') }}</span></h3>
             </div>
             <div id="player"></div>
          </div>
@@ -171,7 +165,7 @@
          </div>
          <div class="panel panel-default programtitle">
             <div class="panel-heading">
-               <h3 class="panel-title"><span> - {{ trans('radiopages.KorsotuuList') }} - </span></h3>
+               <h3 class="panel-title"><span>{{ trans('radiopages.KorsotuuList') }}</span></h3>
             </div>
             @if($program)
             <div class="centered">
@@ -279,35 +273,31 @@
       <div class="col-md-4 hittop">
          <div class="panel panel-default hit-parad">
             <div class="panel-heading">
-               <h3 class="panel-title"><span> {{ trans('radiopages.WeekSelect') }} </span></h3>
-
+               <h3 class="panel-title"><span>{{ trans('radiopages.WeekSelect') }}</span></h3>
             </div>
             <div class="panel-body">
                <ul class="list-group" >
                   @if($hitNumbers)
                   @foreach($hitNumbers as $key => $hit)
                   <li class="list-group-item clearfix">
-                  <span class="numeric">{{ $key+1 }}</span>
+                     <span class="numeric">{{ $key+1 }}</span>
                      <!--  <a href="#" class="pull-right"> <i class="glyphicon glyphicon-play"></i> </a> -->
                      <a href="{{ route('muzkanal.video', $hit)}}" class="pull-left"> <img src="http://img.youtube.com/vi/{{ $hit->getUrl()}}/hqdefault.jpg" class="hitimg"> </a>
                      <a class="clear" href="{{ route('muzkanal.video', $hit)}}">
                      <span class="song-name">{{ $hit->getName() }}</span>
                      </a>
                      <div>
-                        
                         <div class="vote toplike">
-                        {!! Form::open(['route' => ['muzkanal.like', $hit], 'method' => 'GET']) !!}                         
+                           {!! Form::open(['route' => ['muzkanal.like', $hit], 'method' => 'GET']) !!}                         
                            <input type="hidden" value="1" name="like">
                            <span class="topcounts">{{$hit->like}}</span>
                            <button type="submit" class="like-button" data-container="body" data-toggle="popover" data-placement="left" data-content="{{ trans('radiopages.VoteYes') }} ">
                               <i class="fa fa-star red-tooltip" ></i> 
                               <!-- data-toggle="tooltip" data-placement="right" title="Like"                            -->
                            </button>
-                        {!! Form::close() !!}
+                           {!! Form::close() !!}
                         </div>
-
                      </div>
-                     
                   </li>
                   @endforeach
                   @endif
@@ -425,7 +415,7 @@
          <div class="row imgmuz">
             <div class="panel panel-default">
                <div class="panel-heading">
-                  <h3 class="panel-title"><span> - {{ trans('radiopages.Photos') }} - </span></h3>
+                  <h3 class="panel-title"><span>{{ trans('radiopages.Photos') }}</span></h3>
                </div>
                <div class="ia-container">
                   @if($photoGalleries != null)
@@ -450,43 +440,42 @@
          <div class="row imgmuz">
             <div class="panel panel-default">
                <div class="panel-heading">
-                  <h3 class="panel-title"><span> - {{ trans('radiopages.Wearesocial')}} - </span></h3>
+                  <h3 class="panel-title"><span>{{ trans('radiopages.Wearesocial')}}</span></h3>
                </div>
                <div class="panel-body social-muschannel">
                   <div class="col-sm-3">
-                    <div class="fb-page" style="height: 460px;overflow: hidden;" data-href="https://www.facebook.com/ktrkmuzyka" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                     <div class="fb-page" style="height: 460px;overflow: hidden;" data-href="https://www.facebook.com/ktrkmuzyka" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
                         <div class="fb-xfbml-parse-ignore">
-                          <blockquote cite="https://www.facebook.com/ktrkmuzyka"><a href="https://www.facebook.com/ktrkmuzyka/">КТРК Музыка</a></blockquote>
+                           <blockquote cite="https://www.facebook.com/ktrkmuzyka"><a href="https://www.facebook.com/ktrkmuzyka/">КТРК Музыка</a></blockquote>
                         </div>
-                    </div>  
+                     </div>
                   </div>
                   <div class="col-sm-3">
-                      <script src="https://apis.google.com/js/platform.js"></script>
-
-<div class="g-ytsubscribe" data-channelid="UCPYuDx0G3WgGH3SR86VUnlA" data-layout="full" data-count="default"></div>           
+                     <script src="https://apis.google.com/js/platform.js"></script>
+                     <div class="g-ytsubscribe" data-channelid="UCPYuDx0G3WgGH3SR86VUnlA" data-layout="full" data-count="default"></div>
                      <div class="music-youtube"></div>
                   </div>
                   <div class="col-sm-3">
-                      <div id="ok_group_widget"></div>
-                      <script>
-                          !function (d, id, did, st) {
-                              var js = d.createElement("script");
-                              js.src = "https://connect.ok.ru/connect.js";
-                              js.onload = js.onreadystatechange = function () {
-                                  if (!this.readyState || this.readyState == "loaded" || this.readyState == "complete") {
-                                      if (!this.executed) {
-                                          this.executed = true;
-                                          setTimeout(function () {
-                                              OK.CONNECT.insertGroupWidget(id,did,st);
-                                          }, 0);
-                                      }
-                                  }}
-                              d.documentElement.appendChild(js);
-                          }(document,"ok_group_widget","52901559140520","{width:263,height:460}");
-                      </script>
+                     <div id="ok_group_widget"></div>
+                     <script>
+                        !function (d, id, did, st) {
+                            var js = d.createElement("script");
+                            js.src = "https://connect.ok.ru/connect.js";
+                            js.onload = js.onreadystatechange = function () {
+                                if (!this.readyState || this.readyState == "loaded" || this.readyState == "complete") {
+                                    if (!this.executed) {
+                                        this.executed = true;
+                                        setTimeout(function () {
+                                            OK.CONNECT.insertGroupWidget(id,did,st);
+                                        }, 0);
+                                    }
+                                }}
+                            d.documentElement.appendChild(js);
+                        }(document,"ok_group_widget","52901559140520","{width:263,height:460}");
+                     </script>
                   </div>
                   <div class="col-sm-3">
-                    <iframe src="{{asset('images/channels/muzkanal/inwidget/index.php?height=460&inline=3')}}" scrolling='no' frameborder='no' style='border:none;width:263px;height:455px;overflow:hidden;'></iframe>
+                     <iframe src="{{asset('images/channels/muzkanal/inwidget/index.php?height=460&inline=3')}}" scrolling='no' frameborder='no' style='border:none;width:263px;height:455px;overflow:hidden;'></iframe>
                   </div>
                </div>
             </div>
@@ -536,7 +525,6 @@
        });
    });
 </script>
-
 <script>
    function like() {
        alert("Clik");
@@ -677,43 +665,9 @@
        Page.init();
    });
 </script>
-
 <script>
-  $(document).ready(function(){
-      $('[data-toggle="popover"]').popover();
-  });
+   $(document).ready(function(){
+       $('[data-toggle="popover"]').popover();
+   });
 </script>
-<!--
-<script>
-    $(document).ready(function() {
-        var likes = 12;
-        var dislikes = 6;
-        $('.like').attr('data-likes', likes);
-        $('.dislike').attr('data-dislikes', dislikes);
-        $('.text').click(function() {
-            $('.like').toggleClass('like_active');
-            $('.dislike').toggleClass('dislike_active');
-            if ($('.text').text() == 'Vote') {
-                $('.text').text('Cancel');
-            } else {
-                $('.text').text('Vote');
-            }
-        })
-        $('.like').click(function() {
-            likes++;
-            $('.like').attr('data-likes', likes);
-            $('.like').removeClass('like_active');
-            $('.dislike').removeClass('dislike_active');
-            $('.text').text('Vote');
-        })
-        $('.dislike').click(function() {
-            dislikes++;
-            $('.dislike').attr('data-dislikes', dislikes);
-            $('.like').removeClass('like_active');
-            $('.dislike').removeClass('dislike_active');
-            $('.text').text('Vote');
-        })
-    })
-</script>
--->
 @stop

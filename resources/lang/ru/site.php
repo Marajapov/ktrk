@@ -17,9 +17,10 @@ return [
     'AdminPostThemeRu' => 'Материалы по теме',
     'Top news' => 'Актуально',
     'All news' => 'Все новости',
+    'News' => 'Новости',
 
     'Ktrk' => 'Общественная телерадиовещательная корпорация',
-    'KtrkApp' => 'Мобильное приложение КТРК',
+    'KtrkApp' => 'Мобильные приложения КТРК',
     'Developed' => 'Разработка сайта',
     
     'shortDescriptionKg' => 'Короткое описание на кыргызском',
@@ -46,7 +47,7 @@ return [
     'BaikoochuKeneshBase' => 'Нормативная база',
     'BaikoochuKeneshReglament' => 'Регламент',
     'BaikoochuKeneshReports' => 'Отчеты',
-    'BaikoochuKeneshGallery' => 'Фотогалерея',
+    'BaikoochuKeneshGallery' => 'Фоторепортажи',
     'BaikoochuKeneshContacts' => 'Контакты',
     'BaikoochuKeneshContactsFull' => 'Контактная информация',
     'BaikoochuKeneshContactsAdres' => 'Наш адрес',
@@ -72,7 +73,7 @@ return [
     'RadioCenterFull' => 'Республиканский радиотелецентр',
     'RadioCenterHistory' => 'История РРТЦ',
 
-    'ReportFull' => 'Отчет о деятельности Общественной телерадиовещательной корпорации Кыргызской Республики за 2010-2014гг.',
+    'ReportFull' => 'Отчет о деятельности Общественной телерадиовещательной корпорации Кыргызской Республики за 2010-2016гг.',
 
     'Strategy' => 'Стратегия развития',
 
@@ -86,7 +87,7 @@ return [
     'TradeMarkAddress' => 'Адрес: г.Бишкек, блв.Молодой Гвардии, 59',
     'TradeMarkTel' => 'Тел/факс: +996 312 39 20 59, +996 312 39 24 04',
     'TradeMarkEmail' => 'Эл.почта: public@ktrk.kg',
-    'TradeMarkPart' => 'Отдел по поддержке сайта www.ktrk.kg: +996 312 39 22 38',
+    'TradeMarkPart' => 'Отдел по поддержке сайта: +996 312 39 22 38',
     'TradeMarkKtrk' => 'Эл.почта: ktrksite@gmail.com',
 
 
@@ -319,7 +320,8 @@ return [
     //Home page
     'FrontPostAll' => 'Все новости',    
     'FrontPostLastNews' => 'Лента новостей',
-    'FrontPostDaysVideo' => 'Видео дня',    
+    'FrontLastNews' => 'Последние новости',
+    'FrontPostDaysVideo' => 'Видео дня',
     'FrontPostDaysNews' => 'Выпуск новостей',
     'FrontPostDaysEpisode' => 'Телепроект',
     'FrontPostDaysAnons' => 'Анонс',
@@ -327,7 +329,7 @@ return [
     'FrontPostLastDays' => 'Прошедшие дни',
     'FrontDirectorPage' => 'Страница генерального директора',    
     'FrontVideoAll' => 'Перейти на видеопортал',
-    'FrontGalleryAll' => 'Все галереи',
+    'FrontGalleryAll' => 'Все фоторепортажи',
     'FrontToDirectorPage' => 'Перейти на страницу',
     'FrontTeleprogrammChoose' => 'Выберите канал',
     '' => '',

@@ -637,7 +637,7 @@
     position: relative;
     overflow: hidden;
 
-    height: 600px;
+    height: 580px;
     margin: 0;
 
     background: none;
@@ -653,16 +653,22 @@
     overflow: hidden;
 }
 .show-info, .show-img{
-    position: relative;
+/*    position: relative;
     display: table-cell;
     vertical-align: middle;
     width: 49%;
     height: 600px;
-    max-width: 50%;
+    max-width: 50%;*/
+    position: absolute;
+    top: 0;
 }
 .show-info{
+    position: absolute;
+    top: 25%;
+    z-index: 2;
     width: 50%;
     color: #ffffff;
+
 }
 .show-name{
     margin: 0;
@@ -1207,9 +1213,15 @@ display: block;
 /*---- Genral classes end -------*/
 
 .social-icons{
-    position: relative;
-    display: inline;
+    position: absolute;
     float: right;
+    right: 0;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    z-index: 3;
 }
 
 /*Change icons size here*/
@@ -1269,3 +1281,8 @@ display: block;
 .social-icons .fa-instagram{background-color:#F50053;}
 .social-icons .fa-odnoklassniki{background-color:#FF9800;}
 .social-icons .fa-youtube,.social-icons .fa-youtube-play,.social-icons .fa-youtube-square{background-color:#C52F30;}
+
+.balastan-slider .show-img img{
+    height: 80%;
+    width: initial;
+}

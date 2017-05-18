@@ -1,6 +1,7 @@
 <?php
 namespace Front\Controllers;
 use Illuminate\Http\Request;
+use \Model\WeekMedias\ModelName as WeekMedias;
 
 class MuzkanalController extends Controller
 {
@@ -16,26 +17,27 @@ class MuzkanalController extends Controller
     public function Home(Request $request)
     {
         // counter to nulling
+        $dayofweek = date('w', strtotime(date('Y-m-d')));
         $today = date('Y-m-d');
-        $date = date('Y-m-d');
-        $sunday = strtotime( "next monday");
-        $deadDate = date('Y-m-d',$sunday);
-        if($today == $deadDate){
+        $from_date = date('Y-m-d', strtotime(' -7 day'));
+
+        if($dayofweek == 1){
             $table = \Model\Media\ModelName::where('hitnumber','<>',0)->get();
             foreach ($table as $key => $row) {
+                $updateTable = WeekMedias::create();
+                $updateTable->media_id = $row->id;
+                $updateTable->media_name = $row->name;
+                $updateTable->media_url = $row->url;
+                $updateTable->like_count = $row->like;
+                $updateTable->from_date = $today;
+                $updateTable->to_date = $from_date;
+                $updateTable->save();
                 $row->like = 0;
                 $row->unlike = 0;
                 $row->save();
             } // end foreach
-        }
 
-        // $table = \Model\Media\ModelName::where('hitnumber','<>',0)->get();
-        // foreach ($table as $key => $row) {
-        //     $row->like = 0;
-        //     $row->unlike = 0;    
-        //     $row->save();
-        // }
-        
+        }
         
         // end
         // start
@@ -78,9 +80,9 @@ class MuzkanalController extends Controller
         $MediaPop2 = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->orderBy('id', 'desc')->skip('5')->take('5')->get();
         $MediaPop3 = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->orderBy('id', 'desc')->skip('10')->take('5')->get();
         
-        //Top clips
-        $MediaTop1 = \Model\Media\ModelName::where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->orderBy('viewed','desc')-> take(6)->get();
-        $MediaTop2 = \Model\Media\ModelName::where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->orderBy('viewed','desc')->skip(6)->take(6)->get();
+        $weekFromNow = date('Y-m-d H:i', strtotime('-7 days'));
+        $MediaTop1 = \Model\Media\ModelName::where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->orderBy('viewed','desc')->where('created_at','>',$weekFromNow)-> take(8)->get();
+        $MediaTop2 = \Model\Media\ModelName::where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->orderBy('viewed','desc')->where('created_at','>',$weekFromNow)->skip(8)->take(6)->get();
 
         // Concert
         $Concert = \Model\Media\ModelName::where('published','=',true)->where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->where('concert','=', 1)->orderBy('id', 'desc')->take(8)->get();
@@ -92,6 +94,8 @@ class MuzkanalController extends Controller
         $anons1 = \Model\Media\ModelName:: where('muzkanal', '=', 1)->where('published','=',true)->where('muzkanalanons1', '=', 1)->orderBy('id', 'desc')->first();
         $anons2 = \Model\Media\ModelName:: where('muzkanal', '=', 1)->where('published','=',true)->where('muzkanalanons2', '=', 1)->orderBy('id', 'desc')->first();
         $anons3 = \Model\Media\ModelName:: where('muzkanal', '=', 1)->where('published','=',true)->where('muzkanalanons3', '=', 1)->orderBy('id', 'desc')->first();
+
+        $anonsslide = \Model\Anons\ModelName::where('channel','=','3')->where('published','=','1')->where('musictop','=','1')->orderBy('id','=','desc')->take(4)->get();
         
         //Promo
         $promo = \Model\Media\ModelName:: where('muzkanal', '=', 1)->where('published','=',true)->where('promo', '=', 1)->orderBy('id', 'desc')->first();
@@ -132,6 +136,7 @@ class MuzkanalController extends Controller
             'anons3' => $anons3,
             'promo' => $promo,
             'hitNumbers' => $hitNumbers,
+            'anonsslide' => $anonsslide,
 
             'lc' => $lc,            
             'currentDate' => $currentDate,
@@ -186,7 +191,8 @@ class MuzkanalController extends Controller
         $muzkanalvideo = \Model\Media\ModelName::where('id','=', $id)->first();
         $muzkanalvideo->incrementViewed();
 
-        $MediaTop1 = \Model\Media\ModelName::where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->orderBy('viewed','desc')-> take(3)->get();
+        $weekFromNow = date('Y-m-d H:i', strtotime('-7 days'));
+        $MediaTop1 = \Model\Media\ModelName::where('muzkanal','=','1')->where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->where('created_at','>',$weekFromNow)->orderBy('viewed','desc')-> take(3)->get();
        
 
         //Related Videos
@@ -570,5 +576,31 @@ class MuzkanalController extends Controller
         $row->unlike +=1;
         $row->save();
         return redirect()->route('muzkanal.home');
+    }
+
+    public function weekMediaSearch(Request $request)
+    {
+        $perPage = 10;
+        $hitNumbers = WeekMedias::orderBy('like_count','desc')->paginate($perPage);
+
+        $channel = \Model\Channel\ModelName::name('muzkanal')->first();
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','3')->first();
+        //Top clips
+        $MediaTop1 = \Model\Media\ModelName::where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->orderBy('viewed','desc')-> take(6)->get();
+        $MediaTop2 = \Model\Media\ModelName::where('muzkanalanons1','<>','1')->where('muzkanalanons2','<>','1')->where('muzkanalanons3','<>','1')->where('promo','<>','1')->orderBy('viewed','desc')->skip('6')->take(6)->get();
+
+        //Promo
+        $promo = \Model\Media\ModelName:: where('muzkanal', '=', 1)->where('published','=',true)->where('promo', '=', 1)->first();
+
+        return view('Front::channel.muzkanal.week', [
+            'perPage'=> $perPage,
+            'channel' => $channel,
+            'backgroundMain' => $backgroundMain,
+            'hitNumbers' => $hitNumbers,
+            'MediaTop1' => $MediaTop1,
+            'MediaTop2' => $MediaTop2,
+            'promo' => $promo,
+            ]);
+
     }
 }

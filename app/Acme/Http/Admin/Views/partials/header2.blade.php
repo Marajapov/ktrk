@@ -4,6 +4,7 @@
         <div class="divider"></div>
         <ul class="nav side-menu">
             <li><a href="{{ route('admin.home') }}"><i class="fa fa-home"></i>{{ trans('site.AdminHomeTitle') }} </a></li>
+            <li><a href="{{ route('admin.weekMedias') }}"><i class="fa fa-star-o"></i> Хит парад </a></li>
             <li><a href="{{ route('admin.photoParent.index') }}"><i class="fa fa-image"></i>Фотогалерея </a></li>
             <li><a href="{{ route('admin.photoChild.index') }}"><i class="fa fa-download"></i>{{ trans('site.AdminPhotoUploadTitle') }}</a></li>
 
@@ -32,7 +33,8 @@
             <li><a href="{{ route('admin.user.index') }}"><i class="fa fa-user"></i>{{ trans('site.AdminUsersTitle') }}</a></li>
 
             <li><a href="{{ route('admin.background.index') }}"><i class="fa fa-backward"></i>{{ trans('site.AdminBackgroundTitle') }}</a></li>
-            <li><a href="{{ route('admin.peopleReporter.index') }}"><i class="fa fa-users"></i>Элдик репортер</a></li>
+            <li><a href="{{ route('admin.peopleReporter.index') }}"><i class="fa fa-users"></i>Элдик репортер</a></li>            
+            <li><a href="{{ route('admin.stream.index') }}"><i class="fa fa-video-camera" aria-hidden="true"></i>Стрим</a></li>
             <li><a href="{{ route('admin.comment.index') }}"><i class="fa fa-comments"></i>{{ trans('site.Comments') }}</a></li>
         </ul>
         <div class="menu_section">

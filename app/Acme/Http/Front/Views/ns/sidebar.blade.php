@@ -16,7 +16,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
             <li><a href="{{ route('front.ns.index') }}">{{ trans('site.BaikoochuKeneshMain') }}</a></li>
-            <li><a href="{{ route('front.ns.team') }}">{{ trans('site.BaikoochuKeneshTeam') }} </a></li>
+            <!-- <li><a href="{{ route('front.ns.team') }}">{{ trans('site.BaikoochuKeneshTeam') }} </a></li> -->
             <li><a href="{{ route('front.ns.posts') }}">{{ trans('site.BaikoochuKeneshNews') }}</a></li>
             <li>
               <a data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample" class="collapsed">

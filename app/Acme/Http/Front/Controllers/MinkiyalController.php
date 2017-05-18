@@ -90,6 +90,20 @@ class MinkiyalController extends Controller
             $popArticles = null;
         }
 
+        $parent = \Model\PhotoParent\ModelName::where('id','=',$post->parentId)->first();
+        if($parent){
+            $images = json_decode($parent->images);   
+        }else{
+            $images = null;
+        }
+
+        $parent2 = \Model\PhotoParent\ModelName::where('id','=',$post->parentId2)->first();
+        if($parent2){
+            $images2 = json_decode($parent2->images);    
+        }else{
+            $images2 = null;
+        } 
+
         return view('Front::channel.minkiyal.news', [
             'channel' => $channel,
             'post' => $post,
@@ -97,7 +111,9 @@ class MinkiyalController extends Controller
             'minkiyalProjects' => $minkiyalProjects,
             'images' => $images,
             'popArticles' => $popArticles,  
-            'relatedNews' => $popArticles  
+            'relatedNews' => $popArticles,
+            'images' => $images,
+            'images2' => $images2   
             ]);
     }
 

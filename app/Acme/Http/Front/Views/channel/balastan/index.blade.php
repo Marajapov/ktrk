@@ -8,48 +8,25 @@
    <div class="row">
       <div class="shows-slider">
          <div class="shows-carousel container">
-            <div class="custom-slide">
+          @if($anons->first())
+            @foreach($anons as $row)
+            <div class="balastan-slider">
                <article>
                   <div class="show-info">
-                     <h1 class="show-name">Баластан шоу</h1>
-                     <span class="show-day">{{ trans('site.Saturday') }} - {{ trans('site.Sunday') }}</span>
-                     {{--<span class="show-time">19:30 / 21:30</span>--}}
+                     <h1 class="show-name">{{ $row->getNameOne() }}</h1>
+                     <span class="show-day">{{ $row->getWeekDayOne() }}</span>
+                      <span class="show-time">{{ $row->getTime() }}</span>
 <!--                      <a class="show-btn" href="#">
                      Подробнее
                      </a> -->
                   </div>
                   <div class="show-img">
-                     <img src="{{ asset('images/channels/balastan/slider/1.png') }}" alt="" draggable="false">
+                    <img src="{{asset($row->thumbnail)}}" alt="" draggable="false">
                   </div>
                </article>
             </div>
-            <div>
-               <article>
-                  <div class="show-info">
-                     <h1 class="show-name">Таалимтай</h1>
-                     <span class="show-day">{{ trans('site.Saturday') }} - {{ trans('site.Sunday') }}</span>
-                     <span class="show-time">9:45 / 10:35</span>                    
-                  </div>
-                  <div class="show-img">
-                     <img src="{{ asset('images/channels/balastan/slider/taalim.png') }}" alt="" draggable="false">
-                  </div>
-               </article>
-            </div>
-            <div>
-               <article>
-                  <div class="show-info">
-                     <h1 class="show-name">Бирге окуйбуз</h1>
-                     <span class="show-day">{{ trans('site.Wednesday') }}</span>
-                     <span class="show-time">17:30</span>
- <!--                     <a class="show-btn" href="#">
-                     Подробнее
-                     </a> -->
-                  </div>
-                  <div class="show-img">
-                     <img src="{{ asset('images/channels/balastan/slider/birge.png') }}" alt="" draggable="false"style="height: 80%;width: initial;">
-                  </div>
-               </article>
-            </div>
+            @endforeach
+          @endif            
          </div>
       </div>
    </div>
