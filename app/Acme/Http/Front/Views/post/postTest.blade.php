@@ -12,6 +12,7 @@
 
     <link rel="stylesheet" href="{{ asset('css/articles.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/test2.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/test3.css') }}"/>
 
     <link rel="stylesheet" type="text/css" href="{{ asset('css/sweetalert.css') }}">
     <link href="{{ asset('froala/css/froala_style.min.css') }}" rel="stylesheet" type="text/css" />
@@ -21,212 +22,210 @@
 
     @include('Front::partials.bannerTest')
 
-    <div class="main-wrapper">
+    <div class="section light-section post-section">
         <div class="container">
             
             <div class="row">
-                <section class="content clearfix">
-                    <div class="clearfix">
-                        <div class="article-block col-md-9">
-                            <div class="panel panel-default panel-article">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">
-                                        {{ trans('site.News') }} <span class="divider"><i class="fa fa-circle"></i></span>
-                                        <a href="{{ route('front.category', $post->category) }}">
-                                            <span class="ctg">
-                                                @if(app()->getlocale() == 'kg')
-                                                    {{ $post->category('category_id')->first()->title }}
-                                                @else
-                                                    {{ $post->category('category_id')->first()->titleRu }}
-                                                @endif
-                                            </span>
-                                        </a>
-                                    </h3>
-                                </div>
-                                <div class="panel-body clearfix">
-                                    <div class="main-news-item">
-                                        <span class="hidden" id="postId">{{ $post->id }}</span>
-                                        <span class="hidden" id="orphusAction">{{ route('front.orphus') }}</span>
-                                        <figure>
-                                            <div class="main-news-thumb">
-                                                <img src="{{ asset($post->thumbnail_big) }}" alt="{{ asset($post->getTitleRuOrKg()) }}">
-                                            </div>
-                                            <figcaption>
-                                                <div class="inner">
-                                                    <p class="main-news-title">
-                                                        {{$post->getTitleRuOrKg()}}
-                                                    </p>
-                                                    <div class="main-news-extra clearfix">
-                                                        <span class="main-news-date">{{ $post->getDay() }} {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
-                                                        <span class="main-news-views">
-                                                            <svg class="fa-view" x="0px" y="0px" viewBox="0 0 22 14" xml:space="preserve">
-                                                                <g>
-                                                                    <path d="M17.7,2.3C15.5,0.7,12.9,0,11,0S6.5,0.7,4.3,2.3C1.9,4.2,0,6.4,0,7s1.9,2.8,4.3,4.7C6.5,13.3,9.1,14,11,14s4.5-0.7,6.7-2.3
-                                                                        C20.1,9.8,22,7.6,22,7S20.1,4.2,17.7,2.3z M11,10c-1.7,0-3-1.3-3-3s1.3-3,3-3s3,1.3,3,3S12.7,10,11,10z"/>
-                                                                </g>
-                                                            </svg>
-                                                            {{ $post->getViewed() }}
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </figcaption>
-                                        </figure>
 
-                                        <div class="article-extra clearfix">
-                                            <div class="pluso share-buttons pull-left">
-                                                <button class="goodshare btn-fb" data-type="fb">
-                                                    <i class="fa fa-facebook"></i>
-                                                    <span data-counter="fb"></span>
-                                                </button>
-                                                <!-- Button with share to Facebook & share counter -->
-                                                <button class="goodshare btn-vk" data-type="vk">
-                                                    <i class="fa fa-vk"></i>
-                                                    <span data-counter="vk"></span>
-                                                </button>
-                                                <button class="goodshare btn-ok" data-type="ok">
-                                                    <i class="fa fa-odnoklassniki"></i>
-                                                    <span data-counter="ok"></span>
-                                                </button>
-                                                <button class="goodshare btn-gp" data-type="gp">
-                                                    <i class="fa fa-google-plus"></i>
-                                                    <span data-counter="gp"></span>
-                                                </button>
-                                                <button class="goodshare btn-tw" data-type="tw">
-                                                    <i class="fa fa-twitter"></i>
-                                                    {{--<span data-counter="tw"></span>--}}
-                                                </button>
-                                            </div>
-                                            <div class="orphus-mistake pull-right">
-                                                <h4>
-                                                    @if($lc=='kg')
-                                                        Эгерде ката тапсаңыз, текстти белгилеп Ctrl+Enter басыңыз
-                                                    @elseif($lc == 'ru')
-                                                        <span>Нашли опечатку?</span>
-                                                        <span>Нажмите Ctrl+Enter</span>
-                                                    @endif
-                                                </h4>
-                                                <svg x="0px" y="0px" viewBox="0 0 32 32" xml:space="preserve">
-                                                    <g>
-                                                        <path d="M16,32C7.1,32,0,24.9,0,16S7.1,0,16,0s16,7.1,16,16S24.9,32,16,32z M16,1.4C7.9,1.4,1.4,7.9,1.4,16S7.9,30.6,16,30.6
-                                                            S30.6,24.1,30.6,16S24.1,1.4,16,1.4z"/>
+                <div class="post-left-section col-md-9">                    
+                    <div class="section article-section">
+                        <div class="section-title">
+                            <h4>
+                                {{ trans('site.News') }} <span class="divider"><i class="fa fa-circle"></i></span>
+                                <a href="{{ route('front.category', $post->category) }}">
+                                    @if(app()->getlocale() == 'kg')
+                                        {{ $post->category('category_id')->first()->title }}
+                                    @else
+                                        {{ $post->category('category_id')->first()->titleRu }}
+                                    @endif
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div class="section-body">                        
+                            <div class="main-news-item">
+                                <span class="hidden" id="postId">{{ $post->id }}</span>
+                                <span class="hidden" id="orphusAction">{{ route('front.orphus') }}</span>
+                                <figure>
+                                    <div class="main-news-thumb">
+                                        <img src="{{ asset($post->thumbnail_big) }}" alt="{{ asset($post->getTitleRuOrKg()) }}">
+                                    </div>
+                                    <figcaption>
+                                        <div class="inner">
+                                            <p class="main-news-title">
+                                                {{$post->getTitleRuOrKg()}}
+                                            </p>
+                                            <div class="main-news-extra clearfix">
+                                                <span class="main-news-date">{{ $post->getDay() }} {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
+                                                <span class="main-news-views">
+                                                    <svg class="fa-view" x="0px" y="0px" viewBox="0 0 22 14" xml:space="preserve">
                                                         <g>
-                                                            <path d="M15.4,20l-0.6-8.5V8h2.5v3.5L16.7,20H15.4z M14.8,24v-2.2h2.2V24H14.8z"/>
+                                                            <path d="M17.7,2.3C15.5,0.7,12.9,0,11,0S6.5,0.7,4.3,2.3C1.9,4.2,0,6.4,0,7s1.9,2.8,4.3,4.7C6.5,13.3,9.1,14,11,14s4.5-0.7,6.7-2.3
+                                                                C20.1,9.8,22,7.6,22,7S20.1,4.2,17.7,2.3z M11,10c-1.7,0-3-1.3-3-3s1.3-3,3-3s3,1.3,3,3S12.7,10,11,10z"/>
                                                         </g>
-                                                    </g>
-                                                </svg>
+                                                    </svg>
+                                                    {{ $post->getViewed() }}
+                                                </span>
                                             </div>
                                         </div>
+                                    </figcaption>
+                                </figure>
 
-                                        <section class="clearfix">
-                                            
-                                            <div>                                    
-                                                {!! $post->getEmbed() !!}                                    
-                                            </div>
-
-                                            {!! $content !!}
-
-                                            @if($images)                                     
-                                                <div class="slider-for">
-                                                    @if($images)   
-                                                        @foreach($images as $image)
-                                                            <div>
-                                                                <a href="#">
-                                                                    <img src="{{ asset('froala/uploads/'.$image->name) }}" alt=""/>
-                                                                </a>
-                                                            </div>
-                                                        @endforeach
-                                                    @endif
-                                                </div>
-                                                <div class="slider-nav col-md-12">
-                                                    @if($images)
-                                                        @if($images)
-                                                            @foreach($images as $image)
-                                                                <div>
-                                                                    <img class="img" src="{{ asset('froala/uploads/'.$image->name) }}" alt=""/>
-                                                                </div>
-                                                            @endforeach
-                                                        @endif
-                                                    @endif
-                                                </div>
+                                <div class="article-extra clearfix">
+                                    <div class="pluso share-buttons pull-left">
+                                        <button class="goodshare btn-fb" data-type="fb">
+                                            <i class="fa fa-facebook"></i>
+                                            <span data-counter="fb"></span>
+                                        </button>
+                                        <!-- Button with share to Facebook & share counter -->
+                                        <button class="goodshare btn-vk" data-type="vk">
+                                            <i class="fa fa-vk"></i>
+                                            <span data-counter="vk"></span>
+                                        </button>
+                                        <button class="goodshare btn-ok" data-type="ok">
+                                            <i class="fa fa-odnoklassniki"></i>
+                                            <span data-counter="ok"></span>
+                                        </button>
+                                        <button class="goodshare btn-gp" data-type="gp">
+                                            <i class="fa fa-google-plus"></i>
+                                            <span data-counter="gp"></span>
+                                        </button>
+                                        <button class="goodshare btn-tw" data-type="tw">
+                                            <i class="fa fa-twitter"></i>
+                                            {{--<span data-counter="tw"></span>--}}
+                                        </button>
+                                    </div>
+                                    <div class="orphus-mistake pull-right">
+                                        <h4>
+                                            @if($lc=='kg')
+                                                Эгерде ката тапсаңыз, текстти белгилеп Ctrl+Enter басыңыз
+                                            @elseif($lc == 'ru')
+                                                <span>Нашли опечатку?</span>
+                                                <span>Нажмите Ctrl+Enter</span>
                                             @endif
+                                        </h4>
+                                        <svg x="0px" y="0px" viewBox="0 0 32 32" xml:space="preserve">
+                                            <g>
+                                                <path d="M16,32C7.1,32,0,24.9,0,16S7.1,0,16,0s16,7.1,16,16S24.9,32,16,32z M16,1.4C7.9,1.4,1.4,7.9,1.4,16S7.9,30.6,16,30.6
+                                                    S30.6,24.1,30.6,16S24.1,1.4,16,1.4z"/>
+                                                <g>
+                                                    <path d="M15.4,20l-0.6-8.5V8h2.5v3.5L16.7,20H15.4z M14.8,24v-2.2h2.2V24H14.8z"/>
+                                                </g>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                </div>
 
-                                            @if($images2)
-                                                <div class="slider-for2">
-
-                                                    @if($images2)
-
-                                                        @foreach($images2 as $image2)
-
-                                                            <div>
-                                                                <a href="#">
-                                                                    <img src="{{ asset('froala/uploads/'.$image2->name) }}" alt=""/>
-                                                                </a>
-                                                            </div>
-                                                        @endforeach
-                                                    @endif
-                                                </div>
-
-                                                <div class="slider-nav2 col-md-12">
-                                                    @if($images2)
-                                                        @if($images2)
-                                                            @foreach($images2 as $image2)
-                                                                <div>
-                                                                    <img class="img" src="{{ asset('froala/uploads/'.$image2->name) }}" alt=""/>
-                                                                </div>
-                                                            @endforeach
-                                                        @endif
-                                                    @endif
-                                                </div>
-                                            @endif
-                                            
-                                        </section>
+                                <section class="clearfix">
+                                    
+                                    <div>                                    
+                                        {!! $post->getEmbed() !!}                                    
                                     </div>
 
-                                    <p>
-                                        <a href="http://orphus.ru" id="orphus" class="hidden" target="_blank"><img alt="Система Orphus" src="{{ asset('js/orphus.gif') }}" border="0" width="240" height="80" /></a>
-                                    </p>
+                                    {!! $content !!}
 
-                                    <footer class="with-share">
-                                        @if(auth()->user())
-                                            <a class="post-edit pull-left" href="{{ route('admin.post.edit', $post) }}" target="_blank"><i class="fa fa-pencil"></i>{{ trans('site.AdminPostEdit') }}</a>
-                                        @endif
+                                    @if($images)                                     
+                                        <div class="slider-for">
+                                            @if($images)   
+                                                @foreach($images as $image)
+                                                    <div>
+                                                        <a href="#">
+                                                            <img src="{{ asset('froala/uploads/'.$image->name) }}" alt=""/>
+                                                        </a>
+                                                    </div>
+                                                @endforeach
+                                            @endif
+                                        </div>
+                                        <div class="slider-nav col-md-12">
+                                            @if($images)
+                                                @if($images)
+                                                    @foreach($images as $image)
+                                                        <div>
+                                                            <img class="img" src="{{ asset('froala/uploads/'.$image->name) }}" alt=""/>
+                                                        </div>
+                                                    @endforeach
+                                                @endif
+                                            @endif
+                                        </div>
+                                    @endif
 
-                                        <a href="{{ route('front.general') }}">
-                                            <span>{{ trans('site.PostAllNews') }}</span>
-                                        </a>
-                                    </footer>
-                                </div>
+                                    @if($images2)
+                                        <div class="slider-for2">
+
+                                            @if($images2)
+
+                                                @foreach($images2 as $image2)
+
+                                                    <div>
+                                                        <a href="#">
+                                                            <img src="{{ asset('froala/uploads/'.$image2->name) }}" alt=""/>
+                                                        </a>
+                                                    </div>
+                                                @endforeach
+                                            @endif
+                                        </div>
+
+                                        <div class="slider-nav2 col-md-12">
+                                            @if($images2)
+                                                @if($images2)
+                                                    @foreach($images2 as $image2)
+                                                        <div>
+                                                            <img class="img" src="{{ asset('froala/uploads/'.$image2->name) }}" alt=""/>
+                                                        </div>
+                                                    @endforeach
+                                                @endif
+                                            @endif
+                                        </div>
+                                    @endif
+                                    
+                                </section>
                             </div>
 
-                            @include('Front::partials.postBanner')
+                            <p>
+                                <a href="http://orphus.ru" id="orphus" class="hidden" target="_blank"><img alt="Система Orphus" src="{{ asset('js/orphus.gif') }}" border="0" width="240" height="80" /></a>
+                            </p>
 
-                            <div class="panel panel-default panel-related">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">
-                                        {{ trans('site.TekteshNews') }}
-                                    </h3>
-                                </div>
-                                <div class="panel-body">
-                                    @foreach($relatedPosts as $relatedPost)
-                                        @if($relatedPost->id == $post->id)
-                                        @else
-                                            <div class="block">
-                                                <a href="{{ route('front.vertex.post', [$relatedPost, $lc]) }}" class="news-thumb">
-                                                    <img src="{{ asset($relatedPost->getFile()) }}" alt=""/>
-                                                </a>
-                                                <a class="related-title" href="{{ route('front.vertex.post', [$relatedPost, $lc]) }}">
-                                                    {{ $relatedPost->getTitleRuOrKg() }}
-                                                </a>
-                                            </div>
-                                        @endif
-                                    @endforeach
-                                </div>
-                            </div>
+                            <footer>
+                                @if(auth()->user())
+                                    <a class="post-edit pull-left" href="{{ route('admin.post.edit', $post) }}" target="_blank"><i class="fa fa-pencil"></i>{{ trans('site.AdminPostEdit') }}</a>
+                                @endif
 
+                                <a href="{{ route('front.general') }}">
+                                    <span>{{ trans('site.PostAllNews') }}</span>
+                                </a>
+                            </footer>                  
                         </div>
-                        @include('Front::partials.leftCategoriesTest')
                     </div>
-                </section>
+
+                    @include('Front::partials.postBanner')
+
+                    <div class="section related-section">
+                        <div class="section-title">
+                            <h4>                                
+                                {{ trans('site.TekteshNews') }}
+                            </h4>
+                        </div>
+
+                        <div class="section-body">
+                            @foreach($relatedPosts as $relatedPost)
+                                @if($relatedPost->id == $post->id)
+                                @else
+                                    <div class="block">
+                                        <a href="{{ route('front.vertex.post', [$relatedPost, $lc]) }}" class="news-thumb">
+                                            <img src="{{ asset($relatedPost->getFile()) }}" alt=""/>
+                                        </a>
+                                        <a class="related-title" href="{{ route('front.vertex.post', [$relatedPost, $lc]) }}">
+                                            {{ $relatedPost->getTitleRuOrKg() }}
+                                        </a>
+                                    </div>
+                                @endif
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+
+                @include('Front::post.rightSection')
+                
             </div>
         </div>
     </div>

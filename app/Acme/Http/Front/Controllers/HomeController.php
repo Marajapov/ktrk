@@ -219,7 +219,6 @@ class HomeController extends Controller
         
 
         return view('Front::home', [
-//        return view('Front::test', [
             
             'lc' =>$lc,
 
@@ -511,8 +510,17 @@ class HomeController extends Controller
         }
 
         if($lc == 'kg'){
+            $relatedPosts = array();
+            $postTagsKg= $post->getTagListAttributeRu();
+            if($postTagsKg){
+                foreach ($postTagsKg as $key => $postTagKg) {
+                    $postTagPostsKg = $postTagKg->posts()->where('id','<>',$post->id)->orderBy('created_at','desc')->get();
+                    $relatedPosts = $postTagPostsKg->merge($relatedPosts);
+                }
+                $relatedPosts = $relatedPosts->sortByDesc('created_at')->take(6);
+            }
+
             $contentOriginal = $post->getContent();
-            $relatedPosts = \Model\Post\ModelName::where('category_id','=',$post->category_id)->where('general','=','1')->languagekg()->take(7)->skip(0)->orderBy('id', 'desc')->get();
             $contentFinal = $contentOriginal;
             if($post->related1)
             {
@@ -615,8 +623,16 @@ class HomeController extends Controller
             }
 
         }elseif($lc == 'ru'){
+            $relatedPosts = array();
+            $postTagsRu = $post->getTagListAttributeRu();
+            if($postTagsRu){
+                foreach ($postTagsRu as $key => $postTagRu) {
+                    $postTagPostsRu = $postTagRu->posts()->where('id','<>',$post->id)->orderBy('created_at','desc')->get();
+                    $relatedPosts = $postTagPostsRu->merge($relatedPosts);
+                }
+                $relatedPosts = $relatedPosts->sortByDesc('created_at')->take(6);
+            }
             $contentOriginal = $post->getContent();
-            $relatedPosts = \Model\Post\ModelName::where('category_id','=',$post->category_id)->where('general','=','1')->languageru()->take(7)->skip(0)->orderBy('id', 'desc')->get();
             $contentFinal = $contentOriginal;
             if($post->relatedRu1)
             {
@@ -774,20 +790,29 @@ class HomeController extends Controller
         }
 
         if($lc == 'kg'){
+            $relatedPosts = array();
+            $postTagsKg = $post->getTagListAttributeRu();
+            if($postTagsKg){
+                foreach ($postTagsKg as $key => $postTagKg) {
+                    $postTagPostsKg = $postTagKg->posts()->where('id','<>',$post->id)->orderBy('created_at','desc')->get();
+                    $relatedPosts = $postTagPostsKg->merge($relatedPosts);
+                }
+                $relatedPosts = $relatedPosts->sortByDesc('created_at')->take(6);
+            }
+
             $contentOriginal = $post->getContent();
-            $relatedPosts = \Model\Post\ModelName::where('category_id','=',$post->category_id)->where('general','=','1')->languagekg()->take(7)->skip(0)->orderBy('id', 'desc')->get();
             $contentFinal = $contentOriginal;
             if($post->related1)
             {
                 if(strpos($contentFinal, 'POST1LEFT') != false)
                 {
                     $post1Pos = strripos($contentFinal, 'POST1LEFT');
-                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionLeft($post->related1), $post1Pos, 9);
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionLeftTest($post->related1), $post1Pos, 9);
                 }
                 elseif(strpos($contentFinal, 'POST1RIGHT') != false)
                 {
                     $post1Pos = strripos($contentFinal, 'POST1RIGHT');
-                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionRight($post->related1), $post1Pos, 10);
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionRightTest($post->related1), $post1Pos, 10);
                 }
             }
 
@@ -796,12 +821,12 @@ class HomeController extends Controller
                 if(strpos($contentFinal, 'POST2LEFT') != false)
                 {
                     $post2Pos = strripos($contentFinal, 'POST2LEFT');
-                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionLeft($post->related2), $post2Pos, 9);
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionLeftTest($post->related2), $post2Pos, 9);
                 }
                 elseif(strpos($contentFinal, 'POST2RIGHT') != false)
                 {
                     $post2Pos = strripos($contentFinal, 'POST2RIGHT');
-                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionRight($post->related2), $post2Pos, 10);
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionRightTest($post->related2), $post2Pos, 10);
                 }
             }
 
@@ -810,12 +835,12 @@ class HomeController extends Controller
                 if(strpos($contentFinal, 'POST3LEFT') != false)
                 {
                     $post3Pos = strripos($contentFinal, 'POST3LEFT');
-                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionLeft($post->related3), $post3Pos, 9);
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionLeftTest($post->related3), $post3Pos, 9);
                 }
                 elseif(strpos($contentFinal, 'POST3RIGHT') != false)
                 {
                     $post3Pos = strripos($contentFinal, 'POST3RIGHT');
-                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionRight($post->related3), $post3Pos, 10);
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionRightTest($post->related3), $post3Pos, 10);
                 }
             }
 
@@ -824,12 +849,12 @@ class HomeController extends Controller
                 if(strpos($contentFinal, 'MEDIA1LEFT') != false)
                 {
                     $media1Pos = strripos($contentFinal, 'MEDIA1LEFT');
-                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionLeft($post->relatedMedia1), $media1Pos, 10);
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionLeftTest($post->relatedMedia1), $media1Pos, 10);
                 }
                 elseif(strpos($contentFinal, 'MEDIA1RIGHT') != false)
                 {
                     $media1Pos = strripos($contentFinal, 'MEDIA1RIGHT');
-                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionRight($post->relatedMedia1), $media1Pos, 11);
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionRightTest($post->relatedMedia1), $media1Pos, 11);
                 }
             }
 
@@ -838,12 +863,12 @@ class HomeController extends Controller
                 if(strpos($contentFinal, 'MEDIA2LEFT') != false)
                 {
                     $media2Pos = strripos($contentFinal, 'MEDIA2LEFT');
-                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionLeft($post->relatedMedia2), $media2Pos, 10);
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionLeftTest($post->relatedMedia2), $media2Pos, 10);
                 }
                 elseif(strpos($contentFinal, 'MEDIA2RIGHT') != false)
                 {
                     $media2Pos = strripos($contentFinal, 'MEDIA2RIGHT');
-                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionRight($post->relatedMedia2), $media2Pos, 11);
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionRightTest($post->relatedMedia2), $media2Pos, 11);
                 }
             }
 
@@ -852,12 +877,12 @@ class HomeController extends Controller
                 if(strpos($contentFinal, 'MEDIA3LEFT') != false)
                 {
                     $media3Pos = strripos($contentFinal, 'MEDIA3LEFT');
-                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionLeft($post->relatedMedia3), $media3Pos, 10);
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionLeftTest($post->relatedMedia3), $media3Pos, 10);
                 }
                 elseif(strpos($contentFinal, 'MEDIA3RIGHT') != false)
                 {
                     $media3Pos = strripos($contentFinal, 'MEDIA3RIGHT');
-                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionRight($post->relatedMedia3), $media3Pos, 11);
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionRightTest($post->relatedMedia3), $media3Pos, 11);
                 }
             }
 
@@ -878,20 +903,29 @@ class HomeController extends Controller
             }
 
         }elseif($lc == 'ru'){
+            $relatedPosts = array();
+            $postTagsRu = $post->getTagListAttributeRu();
+            if($postTagsRu){
+                foreach ($postTagsRu as $key => $postTagRu) {
+                    $postTagPostsRu = $postTagRu->posts()->where('id','<>',$post->id)->orderBy('created_at','desc')->get();
+                    $relatedPosts = $postTagPostsRu->merge($relatedPosts);
+                }
+                $relatedPosts = $relatedPosts->sortByDesc('created_at')->take(6);
+            }
+           
             $contentOriginal = $post->getContent();
-            $relatedPosts = \Model\Post\ModelName::where('category_id','=',$post->category_id)->where('general','=','1')->languageru()->take(7)->skip(0)->orderBy('id', 'desc')->get();
             $contentFinal = $contentOriginal;
             if($post->relatedRu1)
             {
                 if(strpos($contentFinal, 'POST1LEFT') != false)
                 {
                     $post1Pos = strripos($contentFinal, 'POST1LEFT');
-                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionLeft($post->relatedRu1), $post1Pos, 9);
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionLeftTest($post->relatedRu1), $post1Pos, 9);
                 }
                 elseif(strpos($contentFinal, 'POST1RIGHT') != false)
                 {
                     $post1Pos = strripos($contentFinal, 'POST1RIGHT');
-                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionRight($post->relatedRu1), $post1Pos, 10);
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionRightTest($post->relatedRu1), $post1Pos, 10);
                 }
             }
 
@@ -900,12 +934,12 @@ class HomeController extends Controller
                 if(strpos($contentFinal, 'POST2LEFT') != false)
                 {
                     $post2Pos = strripos($contentFinal, 'POST2LEFT');
-                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionLeft($post->relatedRu2), $post2Pos, 9);
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionLeftTest($post->relatedRu2), $post2Pos, 9);
                 }
                 elseif(strpos($contentFinal, 'POST2RIGHT') != false)
                 {
                     $post2Pos = strripos($contentFinal, 'POST2RIGHT');
-                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionRight($post->relatedRu2), $post2Pos, 10);
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionRightTest($post->relatedRu2), $post2Pos, 10);
                 }
             }
 
@@ -914,12 +948,12 @@ class HomeController extends Controller
                 if(strpos($contentFinal, 'POST3LEFT') != false)
                 {
                     $post3Pos = strripos($contentFinal, 'POST3LEFT');
-                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionLeft($post->relatedRu3), $post3Pos, 9);
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionLeftTest($post->relatedRu3), $post3Pos, 9);
                 }
                 elseif(strpos($contentFinal, 'POST3RIGHT') != false)
                 {
                     $post3Pos = strripos($contentFinal, 'POST3RIGHT');
-                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionRight($post->relatedRu3), $post3Pos, 10);
+                    $contentFinal = substr_replace($contentFinal, $post->relatedFunctionRightTest($post->relatedRu3), $post3Pos, 10);
                 }
             }
 
@@ -928,12 +962,12 @@ class HomeController extends Controller
                 if(strpos($contentFinal, 'MEDIA1LEFT') != false)
                 {
                     $media1Pos = strripos($contentFinal, 'MEDIA1LEFT');
-                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionLeft($post->relatedMediaRu1), $media1Pos, 10);
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionLeftTest($post->relatedMediaRu1), $media1Pos, 10);
                 }
                 elseif(strpos($contentFinal, 'MEDIA1RIGHT') != false)
                 {
                     $media1Pos = strripos($contentFinal, 'MEDIA1RIGHT');
-                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionRight($post->relatedMediaRu1), $media1Pos, 11);
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionRightTest($post->relatedMediaRu1), $media1Pos, 11);
                 }
             }
 
@@ -942,12 +976,12 @@ class HomeController extends Controller
                 if(strpos($contentFinal, 'MEDIA2LEFT') != false)
                 {
                     $media2Pos = strripos($contentFinal, 'MEDIA2LEFT');
-                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionLeft($post->relatedMediaRu2), $media2Pos, 10);
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionLeftTest($post->relatedMediaRu2), $media2Pos, 10);
                 }
                 elseif(strpos($contentFinal, 'MEDIA2RIGHT') != false)
                 {
                     $media2Pos = strripos($contentFinal, 'MEDIA2RIGHT');
-                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionRight($post->relatedMediaRu2), $media2Pos, 11);
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionRightTest($post->relatedMediaRu2), $media2Pos, 11);
                 }
             }
 
@@ -956,12 +990,12 @@ class HomeController extends Controller
                 if(strpos($contentFinal, 'MEDIA3LEFT') != false)
                 {
                     $media3Pos = strripos($contentFinal, 'MEDIA3LEFT');
-                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionLeft($post->relatedMediaRu3), $media3Pos, 10);
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionLeftTest($post->relatedMediaRu3), $media3Pos, 10);
                 }
                 elseif(strpos($contentFinal, 'MEDIA3RIGHT') != false)
                 {
                     $media3Pos = strripos($contentFinal, 'MEDIA3RIGHT');
-                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionRight($post->relatedMediaRu3), $media3Pos, 11);
+                    $contentFinal = substr_replace($contentFinal, $post->relatedMediaFunctionRightTest($post->relatedMediaRu3), $media3Pos, 11);
                 }
             }
 

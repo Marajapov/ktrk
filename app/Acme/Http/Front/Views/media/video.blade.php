@@ -13,6 +13,8 @@
     <meta property="og:description"        content="" />
     @if($video->thumbnail_big)
         <meta property="og:image"              content="{{ asset($video->thumbnail_big) }}" />
+        <meta property="og:image:width"        content="1000"/>
+        <meta property="og:image:height"       content="600"/>
     @else
         <meta property="og:image"              content="http://img.youtube.com/vi/{{ $video->getUrl() }}" />
     @endif

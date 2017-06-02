@@ -105,7 +105,7 @@ return [
     //Post page
     'MatpoTeme' => 'Материалы по теме',
     'PostAllNews' => 'Все новости',
-    'TekteshNews' => 'Похожие новости',
+    'TekteshNews' => 'Новости по теме',
     '' => '',
     '' => '',
     '' => '',

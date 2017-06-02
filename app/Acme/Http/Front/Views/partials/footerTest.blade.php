@@ -1,61 +1,6 @@
 <div class="prefooter clearfix">
     <div class="container">
-        <div class="row">
-            <div class="footer-channels">
-                <div class="carousel-channels">
-                    <div class="channel-slide">
-                        <a href="{{ route('front.home') }}">
-                            <img src="{{ asset('images/channels/small/1.png') }}" alt=""/>
-                        </a>
-                    </div>
-                    <div class="channel-slide">
-                        <a href="{{ route('muzkanal.home') }}">
-                            <img src="{{ asset('images/channels/small/2.png') }}" alt=""/>
-                        </a>
-                    </div>
-                    <div class="channel-slide">
-                        <a href="{{ route('balastan.home') }}">
-                            <img src="{{ asset('images/channels/small/3.png') }}" alt=""/>
-                        </a>
-                    </div>
-                    <div class="channel-slide">
-                        <a href="{{ route('madaniyat.home') }}">
-                            <img src="{{ asset('images/channels/small/4.png') }}" alt=""/>
-                        </a>
-                    </div>
-                    <div class="channel-slide">
-                        <a href="{{ route('sport.home') }}">
-                            <img src="{{ asset('images/channels/small/10.png') }}" alt=""/>
-                        </a>
-                    </div>
-                    <div class="channel-slide">
-                        <a href="#">
-                            <img src="{{ asset('images/channels/small/9.png') }}" alt=""/>
-                        </a>
-                    </div>
-                    <div class="channel-slide">
-                        <a href="{{ route('kyrgyzradio.home') }}">
-                            <img src="{{ asset('images/channels/small/5.png') }}" alt=""/>
-                        </a>
-                    </div>
-                    <div class="channel-slide">
-                        <a href="{{ route('birinchi.home') }}">
-                            <img src="{{ asset('images/channels/small/6.png') }}" alt=""/>
-                        </a>
-                    </div>
-                    <div class="channel-slide">
-                        <a href="{{ route('dostuk.home') }}">
-                            <img src="{{ asset('images/channels/small/7.png') }}" alt=""/>
-                        </a>
-                    </div>
-                    <div class="channel-slide">
-                        <a href="{{ route('minkiyal.home') }}">
-                            <img src="{{ asset('images/channels/small/8.png') }}" alt=""/>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
+        <div class="row">            
             <div class="footer-info clearfix">
 
                 <div class="col-md-12 footer-menu">
@@ -387,6 +332,14 @@
 
 <script>
     $(document).ready(function(){
+        // Ajax setup
+        $.ajaxSetup({
+            headers: { 'X-CSRF-Token' : $('meta[name=csrf-token]').attr('content') }
+        });
+
+        console.log($('meta[name=csrf-token]').attr('content'));
+
+
         $(".search-toggle").click(function(){
             $(".logo-block").addClass("search-show");
             $(".form-search").addClass("visible");
@@ -423,7 +376,9 @@
         $('.carousel-channels').slick({
             infinite: true,
             slidesToShow: 7,
-            slidesToScroll: 1
+            slidesToScroll: 1,
+            prevArrow: '<button class="slick-arrow arrow-prev"><svg x="0px" y="0px" viewBox="0 0 32 32" xml:space="preserve"><g><path d="M13.7,26.8c0-0.4-0.1-0.7-0.4-1L5,17.5h25.6c0.8,0,1.5-0.7,1.5-1.5s-0.7-1.5-1.5-1.5H5l8.3-8.3c0.3-0.3,0.4-0.7,0.4-1c0-0.4-0.1-0.7-0.4-1c-0.6-0.6-1.5-0.6-2,0L0.4,14.9c-0.6,0.6-0.6,1.5,0,2l10.8,10.9c0.6,0.6,1.5,0.6,2,0C13.6,27.6,13.7,27.3,13.7,26.8z"/></g></svg></button>',
+            nextArrow: '<button class="slick-arrow arrow-next"><svg x="0px" y="0px" viewBox="0 0 32 32" xml:space="preserve"><g><path d="M18.3,5.2c0,0.4,0.1,0.7,0.4,1l8.3,8.3H1.5C0.7,14.6,0,15.2,0,16c0,0.8,0.7,1.5,1.5,1.5H27l-8.3,8.3c-0.3,0.3-0.4,0.7-0.4,1c0,0.4,0.1,0.7,0.4,1c0.6,0.6,1.5,0.6,2,0l10.8-10.8c0.6-0.6,0.6-1.5,0-2L20.7,4.1c-0.6-0.6-1.5-0.6-2,0C18.4,4.4,18.3,4.8,18.3,5.2z"/></g></svg></button>'
         });
     });
 

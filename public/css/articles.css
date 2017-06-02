@@ -263,8 +263,10 @@
 .top-left-block .news-block h4{
     line-height: 1.5;
 }
-.top-left-block .news-block p{
-    font-size: 16px;
+.post-content,
+.top-left-block .news-block .post-content p,
+.top-left-block .news-block .post-content p > *{
+    font-size: 18px !important;
 }
 .related-title{
     display: table-cell;

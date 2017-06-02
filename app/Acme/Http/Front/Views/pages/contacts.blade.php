@@ -125,7 +125,7 @@
                                     <td>"Ала-Тоо" маалымат программасы</td>
                                     <td>Телефон:+996 312 39 15 65
                                     <p>Факс:+996 312 39 15 65</p>
-                                        <p>Е-mail: <a href="mailto:alatoo@ntrk.kg">alatoo@ntrk.kg</a></p>
+                                        <p>Е-mail: <a href="mailto:alatoo@ktrk.kg">alatoo@ktrk.kg</a></p>
                                     </td>
                                     <td></td>
                                 </tr>

@@ -18,7 +18,7 @@ class TagController extends Controller
 
     public function Tags(Request $request)
     {
-        $tags = \Model\Tag\Tag::where('name', 'LIKE', $request->input('tag').'%')->select('id','name as text')->take(10)->get();
+        $tags = \Model\Tag\Tag::where('name', 'LIKE', $request->input('tag').'%')->select('id','name as text')->get();
         return response()->json($tags);
     }
 

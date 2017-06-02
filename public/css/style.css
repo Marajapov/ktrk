@@ -824,12 +824,12 @@ header {
     -webkit-transition-delay: .05s;
             transition-delay: .05s;
 }
-.panel-top-news figure:hover figcaption,
+/* .panel-top-news figure:hover figcaption,
 .panel-top-news figure:hover figcaption h2,
 .panel-top-news figure:hover figcaption p.icon-links a {
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
-}
+} */
 .panel-top-news .description {
     font-family: 'Roboto Condensed', Arial, 'Helvetica Neue', Helvetica, sans-serif;
     font-size: 12px;

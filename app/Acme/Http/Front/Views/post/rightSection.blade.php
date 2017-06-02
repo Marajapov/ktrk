@@ -1,12 +1,13 @@
-<div class="top-right-block col-md-3 @if($topArticles) with-top-articles @endif">
-
+<div class="post-right-section col-md-3">
     @if($topArticles)
-
-        <div class="panel panel-default latest-news">
-            <div class="panel-heading main-heading">
-                <h3 class="panel-title"><span>{{ trans('site.PostAktualno') }}</span></h3>
+        <div class="section last-news-section top-articles-section">
+            <div class="section-title">
+                <h4>                                
+                    {{ trans('site.PostAktualno') }}
+                </h4>
             </div>
-            <div class="panel-body">
+
+            <div class="section-body">
                 <ul class="list-group">
                     @foreach($topArticles as $post)
                         <li class="list-group-item news-item">
@@ -66,19 +67,23 @@
                     @endforeach
 
                 </ul>
-
             </div>
-        </div> 
+        </div>
+    @endif
 
-        <a target="_blank" href="#" class="text-center ads ads-300x250 middle-ad">
-            <img src="{{ asset('images/banner_240x400.png') }}" alt="phot1"/>
-        </a>
+    <a class="ad-block" target="_blank" href="#" class="text-center ads ads-300x250 middle-ad">
+        <img src="{{ asset('images/banner_240x400.png') }}" alt="ad-banner"/>
+    </a>
 
-        <div class="panel panel-default latest-news">
-            <div class="panel-heading">
-                <h3 class="panel-title"><span>{{ trans('site.PostPopular') }}</span></h3>
+    @if($popArticles)
+        <div class="section last-news-section pop-articles-section">
+            <div class="section-title">
+                <h4>                                
+                    {{ trans('site.PostPopular') }}
+                </h4>
             </div>
-            <div class="panel-body">
+
+            <div class="section-body">
                 <ul class="list-group">
                     @foreach($popArticles as $post)
                         <li class="list-group-item news-item">
@@ -138,10 +143,8 @@
                     @endforeach
 
                 </ul>
-
             </div>
         </div>
-
     @endif
-    
-</div><!-- end of left categories -->
+
+</div>

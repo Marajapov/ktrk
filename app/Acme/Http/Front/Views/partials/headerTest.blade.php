@@ -1,20 +1,20 @@
-<div class="main-header-xs visible-xs">
-    <a href="{{ route('front.home') }}">
-        <img src="{{ asset('images/ktrk_last.svg') }}" alt="Logo"/>
-    </a>
-    <a href="{{ route('front.live') }}" class="mobile-btn-live">
-        <i class="fa fa-dot-circle-o"></i>
-        {{ trans('site.Live') }}
-    </a>
+<div class="header-test">
+    <div class="container">
+        <div class="row">
+            <div class="header-left">
+                <a class="header-logo" href="#">
+                    <img src="{{asset('images/logo-text.svg')}}">
+                </a>
+
+                <ul class="header-nav">
+                    <li>
+                        <a href="#">Новости</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
-
-<button type="button" class="hamburger is-closed visible-xs" data-toggle="offcanvas">
-    <span class="hamb-top"></span>
-    <span class="hamb-middle"></span>
-    <span class="hamb-bottom"></span>
-</button>
-
-{{--<div class="bottom-bg"></div>--}}
 
 <div class="header">
     <div class="page-header-i ">
@@ -102,5 +102,3 @@
 
     </div>
 </div>
-
-@include ("Front::partials.mainNavTest")

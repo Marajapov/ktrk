@@ -9,73 +9,14 @@
     <meta property="og:title"              content="{{ $post->getTitleRuOrKg()}}" />
     <meta property="og:description"        content="{{ $post->getShortDescription() }}" />
     <meta property="og:image"              content="{{ asset($post->thumbnail_big) }}" />
+    <meta property="og:image:width"        content="1000"/>
+    <meta property="og:image:height"       content="600"/>
 
     <link rel="stylesheet" href="{{ asset('css/articles.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/pages.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/sweetalert.css') }}">
     <link href="{{ asset('froala/css/froala_style.min.css') }}" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="{{ asset('css/goodshare.css') }}"/>
-
-    <link rel="stylesheet" href="{{ asset('css/magnific-popup.css')}}"/>
-    <style>
-        .mfp-ready .mfp-figure {
-            opacity: 0;
-        }
-
-        .mfp-zoom-in {
-            /* start state */
-            /* animate in */
-            /* animate out */
-        }
-        .mfp-zoom-in .mfp-figure {
-            opacity: 0;
-            transition: all 0.3s ease-out;
-            transform: scale(0.9);
-        }
-        .mfp-zoom-in.mfp-bg,
-        .mfp-zoom-in .mfp-preloader {
-            opacity: 0;
-            transition: all 0.3s ease-out;
-        }
-        .mfp-zoom-in.mfp-image-loaded .mfp-figure {
-            opacity: 1;
-            transform: scale(1);
-        }
-        .mfp-zoom-in.mfp-ready.mfp-bg,
-        .mfp-zoom-in.mfp-ready .mfp-preloader {
-            opacity: 0.8;
-        }
-        .mfp-zoom-in.mfp-removing .mfp-figure {
-            transform: scale(0.9);
-            opacity: 0;
-        }
-        .mfp-zoom-in.mfp-removing.mfp-bg,
-        .mfp-zoom-in.mfp-removing .mfp-preloader {
-            opacity: 0;
-        }
-
-        /* CSS-based preloader */
-        .mfp-preloader {
-            width: 30px;
-            height: 30px;
-            background-color: #FFF;
-            opacity: 0.65;
-            margin: 0 auto;
-            animation: rotateplane 1.2s infinite ease-in-out;
-        }
-
-        @keyframes rotateplane {
-            0% {
-                transform: perspective(120px) rotateX(0deg) rotateY(0deg);
-            }
-            50% {
-                transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
-            }
-            100% {
-                transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
-            }
-        }
-    </style>
 @endsection()
 @section('content')
     <div class="container main-wrapper">
@@ -128,7 +69,9 @@
                                 <div>                                    
                                     {!! $post->getEmbed() !!}                                    
                                 </div>
-                                    {!! $content !!}
+                                    <div class="post-content">
+                                        {!! $content !!}
+                                    </div>
                                     @if($images)                                     
                                         <div class="slider-for">
                                             @if($images)   
