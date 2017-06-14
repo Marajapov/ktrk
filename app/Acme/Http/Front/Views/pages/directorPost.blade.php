@@ -31,10 +31,6 @@
                                         <span class="post-title">
 
                                             {{ $post->getTitleRuOrKg() }}
-                                            {{--<span class="extra">--}}
-                                                {{--<span class="art-date">{{ $post->getDay() }} {{ $post->getMonthRu() }}, {{ $post->getYear() }}</span>--}}
-                                                {{--<span class="art-view"><i class="fa-view"></i>{{ $post->getViewed() }}</span>--}}
-                                            {{--</span>--}}
                                         </span>
                                         <a id="post-thumb" href="@if(empty($post->thumbnail_big)){{  asset($post->thumbnail) }}@else{{ asset($post->thumbnail_big) }}@endif">
                                             <img class="left" src="@if(empty($post->thumbnail_big)) {{  asset($post->thumbnail) }} @else {{  asset($post->thumbnail_big) }} @endif" alt="image">
@@ -50,7 +46,7 @@
                                 <div>                                    
                                     {!! $post->getEmbed() !!}                                    
                                 </div>
-                                    {!! $post->content !!}                                   
+                                    {!! $post->getContent() !!}                                   
 
                                 </div>
 

@@ -54,10 +54,10 @@
 <div id="wrapper">
 
     <div id="overlay"></div>
-        @include('Front::partials.sidebar')
+        <!-- include('Front::partials.sidebar') -->
         <!-- Page Content -->
             <div id="page-content-wrapper">
-                <!-- include('Front::partials.headerTest') -->
+                @include('Front::partials.headerTest')
 
                 @yield('content')
 

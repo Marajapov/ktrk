@@ -97,11 +97,12 @@
                                     </div>
                                     <div class="orphus-mistake pull-right">
                                         <h4>
-                                            @if($lc=='kg')
-                                                Эгерде ката тапсаңыз, текстти белгилеп Ctrl+Enter басыңыз
+                                            @if($lc=='kg')                                            
+                                                <span>Эгерде текстте ката тапсаңыз,</span>
+                                                <span>белгилеп Ctrl+Enter басыңыз</span>
                                             @elseif($lc == 'ru')
-                                                <span>Нашли опечатку?</span>
-                                                <span>Нажмите Ctrl+Enter</span>
+                                                <span>Обнаружили опечатку в тексте?</span>
+                                                <span>Выделите и нажмите Ctrl+Enter</span>
                                             @endif
                                         </h4>
                                         <svg x="0px" y="0px" viewBox="0 0 32 32" xml:space="preserve">
@@ -129,14 +130,12 @@
                                             @if($images)   
                                                 @foreach($images as $image)
                                                     <div>
-                                                        <a href="#">
-                                                            <img src="{{ asset('froala/uploads/'.$image->name) }}" alt=""/>
-                                                        </a>
+                                                        <img src="{{ asset('froala/uploads/'.$image->name) }}" alt=""/>
                                                     </div>
                                                 @endforeach
                                             @endif
                                         </div>
-                                        <div class="slider-nav col-md-12">
+                                        <div class="slider-nav">
                                             @if($images)
                                                 @if($images)
                                                     @foreach($images as $image)
@@ -157,9 +156,7 @@
                                                 @foreach($images2 as $image2)
 
                                                     <div>
-                                                        <a href="#">
-                                                            <img src="{{ asset('froala/uploads/'.$image2->name) }}" alt=""/>
-                                                        </a>
+                                                        <img src="{{ asset('froala/uploads/'.$image2->name) }}" alt=""/>
                                                     </div>
                                                 @endforeach
                                             @endif
@@ -266,7 +263,8 @@
             slidesToShow: 1,
             slidesToScroll: 1,
             fade: true,
-            asNavFor: '.slider-nav'
+            asNavFor: '.slider-nav',
+            arrows: false
         });
         $('.slider-nav').slick({
             slidesToShow: 4,
@@ -274,7 +272,8 @@
             asNavFor: '.slider-for',
             centerMode: true,
             focusOnSelect: true,
-            variableWidth: true
+            variableWidth: true,
+            arrows: false
         });
     </script>
     <script>

@@ -193,12 +193,18 @@
                                                 {{ $generalPost5->category('category_id')->first()->getTitle() }}
                                             </a>
                                             <span>
-                                                @if($generalPost5->getIsVideo() == 'yes')<i class="fa fa-video-camera"></i> @endif
-                                                @if($generalPost5->getIsPhoto() == 'yes') <i class="fa fa-camera"></i> @endif
+                                                @if($generalPost5->getIsVideo() == 'yes')
+                                                    <i class="fa fa-video-camera"></i> 
+                                                @endif
+                                                @if($generalPost5->getIsPhoto() == 'yes')
+                                                    <i class="fa fa-camera"></i> 
+                                                @endif
                                                 @if($generalPost5->birinchi == 1)
-                                                <img class="linktopage" src="{{ asset('images/channels/1-radio-notext.png')}}">@endif
+                                                    <img class="linktopage" src="{{ asset('images/channels/1-radio-notext.png')}}">
+                                                @endif
                                                 @if($generalPost5->director == 1)
-                                                <i class="directorlink fa fa-pencil-square-o" aria-hidden="true"></i>@endif
+                                                    <i class="directorlink fa fa-pencil-square-o" aria-hidden="true"></i>
+                                                @endif
                                             </span>
                                         </p>
                                         <div class="news-title">
@@ -208,7 +214,7 @@
                                                 </a>
                                             @elseif($generalPost5->director == 1)
                                                 <a href="{{ route('front.pages.directorPost', [$generalPost5, $lc]) }}">
-                                                    {{ $generalPost2->getTitleRuOrKg() }}
+                                                    {{ $generalPost5->getTitleRuOrKg() }}
                                                 </a>
                                             @else                                                
                                                 <a href="{{ route('front.post', [$generalPost5, $lc]) }}">

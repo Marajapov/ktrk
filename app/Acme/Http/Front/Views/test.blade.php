@@ -57,36 +57,15 @@
                 nextArrow: '<button class="slick-arrow arrow-next"><svg x="0px" y="0px" viewBox="0 0 32 32" xml:space="preserve"><g><path d="M18.3,5.2c0,0.4,0.1,0.7,0.4,1l8.3,8.3H1.5C0.7,14.6,0,15.2,0,16c0,0.8,0.7,1.5,1.5,1.5H27l-8.3,8.3c-0.3,0.3-0.4,0.7-0.4,1c0,0.4,0.1,0.7,0.4,1c0.6,0.6,1.5,0.6,2,0l10.8-10.8c0.6-0.6,0.6-1.5,0-2L20.7,4.1c-0.6-0.6-1.5-0.6-2,0C18.4,4.4,18.3,4.8,18.3,5.2z"/></g></svg></button>'
             });
 
-            $('.main-slider-2').slick({
-                dots: true,
-                infinite: true,
-                speed: 500,
-                fade: true,
-                cssEase: 'linear',
-                arrows: false,
-
-                appendArrows: '.slider-control',
-                prevArrow: '<button class="slick-arrow arrow-prev"><svg x="0px" y="0px" viewBox="0 0 32 32" xml:space="preserve"><g><path d="M13.7,26.8c0-0.4-0.1-0.7-0.4-1L5,17.5h25.6c0.8,0,1.5-0.7,1.5-1.5s-0.7-1.5-1.5-1.5H5l8.3-8.3c0.3-0.3,0.4-0.7,0.4-1c0-0.4-0.1-0.7-0.4-1c-0.6-0.6-1.5-0.6-2,0L0.4,14.9c-0.6,0.6-0.6,1.5,0,2l10.8,10.9c0.6,0.6,1.5,0.6,2,0C13.6,27.6,13.7,27.3,13.7,26.8z"/></g></svg></button>',
-                nextArrow: '<button class="slick-arrow arrow-next"><svg x="0px" y="0px" viewBox="0 0 32 32" xml:space="preserve"><g><path d="M18.3,5.2c0,0.4,0.1,0.7,0.4,1l8.3,8.3H1.5C0.7,14.6,0,15.2,0,16c0,0.8,0.7,1.5,1.5,1.5H27l-8.3,8.3c-0.3,0.3-0.4,0.7-0.4,1c0,0.4,0.1,0.7,0.4,1c0.6,0.6,1.5,0.6,2,0l10.8-10.8c0.6-0.6,0.6-1.5,0-2L20.7,4.1c-0.6-0.6-1.5-0.6-2,0C18.4,4.4,18.3,4.8,18.3,5.2z"/></g></svg></button>'
-            });
-
-            $('.main-slider-for').slick({
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                arrows: false,
-                fade: true,
-                asNavFor: '.main-slider-nav'
-            });
-            $('.main-slider-nav').slick({
-                slidesToShow: 5,
-                slidesToScroll: 1,
-                centerPadding: '30px',
-                asNavFor: '.main-slider-for',
-                dots: false,
-                arrows: false,
+            $('.main-slider').slick({
                 centerMode: true,
-                focusOnSelect: true
-            });           
+                centerPadding: '0',
+                slidesToShow: 1,
+
+                // appendArrows: '.slider-control',
+                prevArrow: '<button class="slick-arrow arrow-prev"><svg x="0px" y="0px" viewBox="0 0 64 64" xml:space="preserve"><g transform="translate(0,-952.36218)"><path d="M16,984.4c0-1.2,0.4-1.6,0.7-2c8.8-9.2,19-19.4,28.9-29.7c0.6-0.6,1.4-0.5,1.9,0.2c0.5,0.7,0.6,1.9,0.3,2.8l-11,28.6c3.4,8.9,7.7,19.4,11.2,29.7c0,0.8-0.3,1.5-0.7,1.9c-0.7,0.4-1,0.5-1.7-0.1c-8.9-9.1-19-19.6-28.9-29.7C16.3,985.8,16,985.1,16,984.4z"/></g></svg></button>',
+                nextArrow: '<button class="slick-arrow arrow-next"><svg x="0px" y="0px" viewBox="0 0 64 64" xml:space="preserve"><g transform="translate(0,-952.36218)"><path d="M48,984.4c0,1.2-0.4,1.6-0.7,2c-8.8,9.2-19,19.4-28.9,29.7c-0.6,0.6-1.4,0.5-1.9-0.2c-0.5-0.7-0.6-1.9-0.3-2.8l11-28.6c-3.4-8.9-7.7-19.4-11.2-29.7c0-0.8,0.3-1.5,0.7-1.9c0.7-0.4,1-0.5,1.7,0.1c8.9,9.1,19,19.6,28.9,29.7C47.7,982.9,48,983.6,48,984.4z"/></g></svg></button>'
+            });
 
             // Videoportal filter
             $('.filter').click(function(){

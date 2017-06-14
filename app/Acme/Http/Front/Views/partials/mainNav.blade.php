@@ -23,6 +23,11 @@
                 <img src="{{ asset('images/channels/sport-channel-main.png') }}" alt=""/>
             </a>
         </li>
+        <li>
+            <a href="https://www.youtube.com/watch?v=O7nAKLMUuSo" target="_blank">
+                <img src="{{ asset('images/channels/alatoo.jpg') }}" alt=""/>
+            </a>
+        </li>
     </ul>
     <ul class="radios_ul">
         <li>

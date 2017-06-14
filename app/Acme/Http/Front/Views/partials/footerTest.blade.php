@@ -183,7 +183,7 @@
                                     </li>
                                     <li class="app-android">
                                         <a href="https://play.google.com/store/apps/details?id=kg.ktrk">
-                                            <svg version="1.0" id="Layer_1" xmlns:x="&amp;ns_extend;" xmlns:i="&amp;ns_ai;" xmlns:graph="&amp;ns_graphs;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px" width="120px" height="40px" viewBox="0 0 120 40" enable-background="new 0 0 120 40" xml:space="preserve">
+                                            <svg x="0px" y="0px" viewBox="0 0 120 40" xml:space="preserve">
                                                 <path d="M114.057,39.999H5.945C2.667,39.999,0,37.345,0,34.083V5.915C0,2.653,2.667,0,5.945,0h108.111
                                                     C117.334,0,120,2.654,120,5.915v28.169C120.001,37.346,117.334,39.999,114.057,39.999z M5.945,1.397
                                                     c-2.503,0-4.541,2.027-4.541,4.518v28.169c0,2.491,2.037,4.518,4.541,4.518h108.111c2.503,0,4.54-2.027,4.54-4.518V5.915
@@ -332,47 +332,25 @@
 
 <script>
     $(document).ready(function(){
+        var form = $('#searchForm, #searchForm input, #searchForm button, #searchForm svg, #searchForm path');
+        var body = $('body');
+        var searchButton = $('#searchToggle, #searchToggle svg, #searchToggle path');
+
+        $(document).click(function (e) {
+            var target = $(e.target);
+            console.log(target);
+            if(target.is(searchButton)){
+                form.addClass('translated');
+            } else if(!target.is(form)) {
+                form.removeClass('translated');
+            }
+        });
+
         // Ajax setup
         $.ajaxSetup({
             headers: { 'X-CSRF-Token' : $('meta[name=csrf-token]').attr('content') }
         });
 
-        console.log($('meta[name=csrf-token]').attr('content'));
-
-
-        $(".search-toggle").click(function(){
-            $(".logo-block").addClass("search-show");
-            $(".form-search").addClass("visible");
-        });
-        $(".close-search").click(function(){
-            $(".logo-block").removeClass("search-show");
-            $(".form-search").removeClass("visible");
-        });
-
-        var header = $('#videoTitle span');
-        $('.main-video .slider-nav .slick-slide').each(function(){
-            var videoTitle = $(this).children('.videoTitle').text();
-            $(this).click(function () {
-                header.text(videoTitle);
-            });
-        });
-
-        // header search form
-        var searchForm = $('#searchForm');
-        var searchToggle = $('#searchToggle');
-        var searchClose = $('#searchClose');
-
-        searchToggle.click(function (e) {
-            $(this).addClass('hidden');
-            searchForm.removeClass('hidden');
-        });
-        searchClose.click(function (e) {
-            if(searchToggle.hasClass('hidden')){
-                searchForm.addClass('hidden');
-                searchToggle.removeClass('hidden');
-            }
-        });
-        
         $('.carousel-channels').slick({
             infinite: true,
             slidesToShow: 7,
@@ -382,14 +360,24 @@
         });
     });
 
-    function headerResize(){
-        var containerWidth = $('.container').outerWidth();
-        var windowWidth = $(window).width();
-
-        $('.header-decor-r').css('margin-left',-(370+(windowWidth-containerWidth)/2));
-        $('.header-decor-l').css('right',460+(windowWidth-containerWidth)/2);
+    function blink(elem, times, speed) {
+        if (times > 0 || times < 0) {
+            if ($(elem).hasClass("blink"))
+                $(elem).removeClass("blink");
+            else
+                $(elem).addClass("blink");
+        }
+        clearTimeout(function () {
+            blink(elem, times, speed);
+        });
+        if (times > 0 || times < 0) {
+            setTimeout(function () {
+                blink(elem, times, speed);
+            }, speed);
+            times -= .5;
+        }
     }
-    headerResize();
+    blink($('#blinkLive'), -1, 750);
 </script>
 
 <script type="text/javascript" src="{{ asset('filter/js/jquery.easing.min.js') }}"></script>
@@ -397,37 +385,6 @@
 
 <script type="text/javascript" src="{{ asset('js/jquery-migrate-1.2.1.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('slick/slick.min.js') }}"></script>
-
-<script>
-    $(document).ready(function () {
-        var trigger = $('.hamburger'),
-            overlay = $('.overlay'),
-            isClosed = false;
-
-        trigger.click(function () {
-            hamburger_cross();
-        });
-
-        function hamburger_cross() {
-
-            if (isClosed == true) {
-                overlay.hide();
-                trigger.removeClass('is-open');
-                trigger.addClass('is-closed');
-                isClosed = false;
-            } else {
-                overlay.show();
-                trigger.removeClass('is-closed');
-                trigger.addClass('is-open');
-                isClosed = true;
-            }
-        }
-
-        $('[data-toggle="offcanvas"]').click(function () {
-            $('#wrapper').toggleClass('toggled');
-        });
-    });
-</script>
 
 <script src="{{ asset('js/sweetalert.min.js') }}"></script>
 @yield('footerScript')

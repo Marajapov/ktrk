@@ -279,7 +279,7 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
 //    Test
     Route::get('/vertex',['as'=>'front.vertex', 'uses'=>"HomeController@Test"]);
     Route::get('/live',['as'=>'front.live', 'uses'=>"HomeController@Live"]);
-    Route::get('/streams',['as'=>'front.stream', 'uses'=>"StreamController@stream"]);
+    Route::get('/streams',['as'=>'front.streams', 'uses'=>"StreamController@stream"]);
 
 // Poll Vote
     Route::post('/poll_vote', ['as'=>'front.poll_vote', 'uses'=>'AjaxNsController@pollVote']);
