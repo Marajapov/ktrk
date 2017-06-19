@@ -64,6 +64,9 @@ class ModelName extends Model
     public function getNameOne()
     {
         $lc = app()->getlocale();
+        if($this->name && $this->nameRu){
+
+        }
         if($lc == 'kg'){
             return $this->name;
         }else{

@@ -303,37 +303,37 @@ class HomeController extends Controller
             if($generalPost1 == null){
                 $generalPost1 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(32)->first();
             }
-            $generalPosts[] = $generalPost1;
+            if($generalPost1) $generalPosts[] = $generalPost1;
 
             $generalPost2 = \Model\Post\ModelName::general($channel)->published()->having('number','=',2)->languagekg()->first();
             if($generalPost2 == null){
                 $generalPost2 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(17)->first();
             }
-            $generalPosts[] = $generalPost2;
+            if($generalPost2) $generalPosts[] = $generalPost2;
 
             $generalPost3 = \Model\Post\ModelName::general($channel)->published()->having('number','=',3)->languagekg()->first();
             if($generalPost3 == null){
                 $generalPost3 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(22)->first();
             }
-            $generalPosts[] = $generalPost3;
+            if($generalPost3) $generalPosts[] = $generalPost3;
 
             $generalPost4 = \Model\Post\ModelName::general($channel)->published()->having('number','=',4)->languagekg()->first();
             if($generalPost4 == null){
                 $generalPost4 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(33)->first();
             }
-            $generalPosts[] = $generalPost4;
+            if($generalPost4) $generalPosts[] = $generalPost4;
 
             $generalPost5 = \Model\Post\ModelName::general($channel)->published()->having('number','=',5)->languagekg()->first();
             if($generalPost5 == null){
                 $generalPost5 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(44)->first();
             }
-            $generalPosts[] = $generalPost5;
+            if($generalPost5) $generalPosts[] = $generalPost5;
 
             $generalPost6 = \Model\Post\ModelName::general($channel)->published()->having('number','=',6)->languagekg()->first();
             if($generalPost6 == null){
                 $generalPost6 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(51)->first();
             }
-            $generalPosts[] = $generalPost6;
+            if($generalPost6) $generalPosts[] = $generalPost6;
 
             $projects = \Model\Project\ModelName::having('name','<>','')->get();
             $directorPosts = \Model\Post\ModelName::where('director','=','1')->orderBy('id','desc')->take(3)->languagekg()->get();
@@ -347,37 +347,37 @@ class HomeController extends Controller
             if($generalPost1 == null){
                 $generalPost1 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languageru()->orderBy('id','desc')->take(1)->skip(32)->first();
             }
-            $generalPosts[] = $generalPost1;
+            if($generalPost1) $generalPosts[] = $generalPost1;
 
             $generalPost2 = \Model\Post\ModelName::general($channel)->published()->having('numberRu','=',2)->languageru()->first();
             if($generalPost2 == null){
                 $generalPost2 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languageru()->orderBy('id','desc')->take(1)->skip(17)->first();
             }
-            $generalPosts[] = $generalPost2;
+            if($generalPost2) $generalPosts[] = $generalPost2;
 
             $generalPost3 = \Model\Post\ModelName::general($channel)->published()->having('numberRu','=',3)->languageru()->first();
             if($generalPost3 == null){
                 $generalPost3 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languageru()->orderBy('id','desc')->take(1)->skip(22)->first();
             }
-            $generalPosts[] = $generalPost3;
+            if($generalPost3) $generalPosts[] = $generalPost3;
 
             $generalPost4 = \Model\Post\ModelName::general($channel)->published()->having('numberRu','=',4)->languageru()->first();
             if($generalPost4 == null){
                 $generalPost4 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languageru()->orderBy('id','desc')->take(1)->skip(33)->first();
             }
-            $generalPosts[] = $generalPost4;
+            if($generalPost4) $generalPosts[] = $generalPost4;
 
             $generalPost5 = \Model\Post\ModelName::general($channel)->published()->having('numberRu','=',5)->languageru()->first();
             if($generalPost5 == null){
                 $generalPost5 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languageru()->orderBy('id','desc')->take(1)->skip(44)->first();
             }
-            $generalPosts[] = $generalPost5;
+            if($generalPost5) $generalPosts[] = $generalPost5;
 
             $generalPost6 = \Model\Post\ModelName::general($channel)->published()->having('numberRu','=',6)->languageru()->first();
             if($generalPost6 == null){
                 $generalPost6 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languageru()->orderBy('id','desc')->take(1)->skip(51)->first();
             }
-            $generalPosts[] = $generalPost6;
+            if($generalPost6) $generalPosts[] = $generalPost6;
 
             $projects = \Model\Project\ModelName::where('nameRu','<>','')->get();
             $directorPosts = \Model\Post\ModelName::where('director','=','1')->orderBy('id','desc')->take(3)->languageru()->get();

@@ -338,7 +338,6 @@
 
         $(document).click(function (e) {
             var target = $(e.target);
-            console.log(target);
             if(target.is(searchButton)){
                 form.addClass('translated');
             } else if(!target.is(form)) {

@@ -25,11 +25,6 @@
 
     <link rel="stylesheet" type="text/css" href="{{ asset('css/sweetalert.css') }}">
 
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('css/style2.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('css/reveal-menu.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('css/test.css') }}"/>
-
     <!-- GLOBAL SCRIPTS -->
     <script src="{{ asset('js/jquery-1.11.2.min.js') }}"></script>
     <script src="{{ asset('js/jasny-bootstrap.js') }}"></script>
