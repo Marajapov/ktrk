@@ -93,7 +93,7 @@
 
         <div id="overlay"></div>
         @include('Front::partials.sidebar')
-    @include('Front::partials.modal')
+    <!-- @include('Front::partials.modal') -->
         <!-- Page Content -->
         <div id="page-content-wrapper">
             @include('Front::partials.header')

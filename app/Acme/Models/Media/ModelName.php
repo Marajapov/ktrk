@@ -3,10 +3,11 @@ namespace Model\Media;
 
 use Illuminate\Database\Eloquent\Model;
 use Model\Post\ModelAttributes;
+use Nicolaslopezj\Searchable\SearchableTrait;
 
 class ModelName extends Model
 {
-    use ModelHelpers, ModelRelationships, ModelScopes, ModelAttributes;
+    use ModelHelpers, ModelRelationships, ModelScopes, ModelAttributes,SearchableTrait;
     /**
      * The database table used by the model.
      *
@@ -19,6 +20,15 @@ class ModelName extends Model
      * @var array
      */
     protected $guarded = ['id'];
+    // protected $fillable = [];
+
+    protected $searchable = [
+        'columns' => [
+            'name'   => 10, // order of search, title will be first in listing
+            'nameRu'   => 9, // order of search, title will be first in listing
+            'description' => 8,
+        ],
+    ];
 
     public static function boot()
     {

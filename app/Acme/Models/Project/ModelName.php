@@ -65,11 +65,14 @@ class ModelName extends Model
     {
         $lc = app()->getlocale();
         if($this->name && $this->nameRu){
-
-        }
-        if($lc == 'kg'){
+            if($lc == 'kg'){
+                return $this->name;
+            }else{
+                return $this->nameRu;
+            }
+        } elseif($this->name) {
             return $this->name;
-        }else{
+        } else {
             return $this->nameRu;
         }
     }
@@ -87,5 +90,15 @@ class ModelName extends Model
     public function getFile()
     {
         return $this->thumbnail;
+    }
+
+    public function getStatus()
+    {
+        $status = $this->status;
+        if($status){
+            return 'актуально';
+        } else {
+            return 'архив';
+        }
     }
 }

@@ -100,40 +100,6 @@
         });
     </script>
 
-<script src="{{ asset('jwplayer/jwplayer.js') }}"></script>
-<script>jwplayer.key="tmEO2SU8NzqLBoHr2Vq6nV13XCyfo8xbdiCb/Q==";</script>
-
-<script type="text/javascript">
-
-    var playerInstance = jwplayer("player");
-
-//    $('#playerPlay').click(function(){
-//        playerInstance.play();
-//    });
-    $('#playerStop').click(function(){
-        playerInstance.stop();
-    });
-
-    playerInstance.setup({
-        autostart: true,
-        playlist: [{
-            image: "{{-- asset('images/live_bg.png') --}}",
-            sources: [{
-                  file:"http://85.113.29.234:80/live/5001.flv"
-//                file: "rtmp://85.113.29.233:1936/live/ktrk.stream"
-//		  file: "rtsp://85.113.29.245:8000/live"
-            }]
-        }],
-        width: "640",
-        height: "360",
-        aspectratio: "",
-        primary: "flash",
-        skin: {
-            name: "five"
-        },
-        stretching: "exactfit"
-    });
-</script>
 
 <script>
     var toggleSlide = function(){

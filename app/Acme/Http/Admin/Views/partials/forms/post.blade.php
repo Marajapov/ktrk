@@ -37,7 +37,7 @@
         <div class="form-group">
             <label for="category_id" class="col-sm-2 control-label">Категория</label>
             <div class="col-sm-10">
-                {!! Form::select('category_id', $categoryList, null, ["class" => "selectpicker", "data-live-search"=>"true", "required" => true, "title" => "-- Выберите --"]) !!}
+                {!! Form::select('category_id', $categoryList, null, ["class" => "selectpicker", "required"=>"true", "data-live-search"=>"true", "title" => "-- Выберите --"]) !!}
             </div>
         </div>
 
@@ -152,6 +152,14 @@
                     {!! Form::checkbox('extracolumn', 1, null, ["id" => "extracolumn", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
                     <label for="extracolumn">
                         Шайлоо
+                    </label>
+                </div>
+
+                <div class="checkbox checkbox-primary col-sm-2">
+                    {!! Form::hidden('live', 0) !!}
+                    {!! Form::checkbox('live', 1, null, ["id" => "live", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
+                    <label for="live">
+                        Трансляция
                     </label>
                 </div>
 
@@ -409,13 +417,6 @@
             </div>
         </div>
 
-<!--         <div class="form-group">
-            <label for="live" class="col-sm-2 control-label">Live</label>
-            <div class="col-sm-10">
-                {!! Form::text('live', null, ["class" => "form-control"]) !!}
-            </div>
-        </div> -->
-
         <div class="form-group">
             <label for="channel_id" class="col-sm-2 control-label">{{ trans('site.TextKG') }}</label>
             <div class="col-sm-10">
@@ -427,6 +428,13 @@
             <label for="channel_id" class="col-sm-2 control-label">{{ trans('site.TagsKG') }}</label>
             <div class="col-sm-10">
                 {!! Form::text('tag_kg', null, ["class" => "form-control", "id" => "tag_kg"]) !!}
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="tildaKg" class="col-sm-2 control-label">Tilda (кыргызча)</label>
+            <div class="col-sm-10">
+                {!! Form::text('tildaKg', null, ["class" => "form-control", "id" => "tildaKg"]) !!}
             </div>
         </div>
 
@@ -508,6 +516,13 @@
             <label for="channel_id" class="col-sm-2 control-label">{{ trans('site.TagsRU') }}</label>
             <div class="col-sm-10">
                 {!! Form::text('tag_ru', null, ["class" => "form-control", "id" => "tag_ru"]) !!}
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="tildaRu" class="col-sm-2 control-label">Tilda (русский)</label>
+            <div class="col-sm-10">
+                {!! Form::text('tildaRu', null, ["class" => "form-control", "id" => "tildaRu"]) !!}
             </div>
         </div>
 

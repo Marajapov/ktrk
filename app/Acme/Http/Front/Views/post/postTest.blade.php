@@ -10,19 +10,27 @@
     <meta property="og:description"        content="{{ $post->getShortDescription() }}" />
     <meta property="og:image"              content="{{ asset($post->thumbnail_big) }}" />
 
-    <link rel="stylesheet" href="{{ asset('css/articles.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('css/test2.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/test3.css') }}"/>
 
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/sweetalert.css') }}">
-    <link href="{{ asset('froala/css/froala_style.min.css') }}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('froala/css/froala_style.min.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/goodshare.css') }}"/>
 @endsection()
 @section('content')
 
-    @include('Front::partials.bannerTest')
-
     <div class="section light-section post-section">
+    
+        @include('Front::partials.bannerTest')
+
+        @if($post->getTilda())
+            <div class="post-tilda" id="postTilda">
+                <a class="tilda-logo" href="{{route('front.vertex')}}">
+                    <svg x="0px" y="0px" viewBox="0 0 32 32" xml:space="preserve"><g><path d="M13.7,26.8c0-0.4-0.1-0.7-0.4-1L5,17.5h25.6c0.8,0,1.5-0.7,1.5-1.5s-0.7-1.5-1.5-1.5H5l8.3-8.3c0.3-0.3,0.4-0.7,0.4-1c0-0.4-0.1-0.7-0.4-1c-0.6-0.6-1.5-0.6-2,0L0.4,14.9c-0.6,0.6-0.6,1.5,0,2l10.8,10.9c0.6,0.6,1.5,0.6,2,0C13.6,27.6,13.7,27.3,13.7,26.8z"/></g></svg>
+                    {{ trans('site.Back') }}
+                </a>
+                <iframe src="{{$post->getTilda()}}">Browser not compatible.</iframe>
+            </div>
+        @else
+
         <div class="container">
             
             <div class="row">
@@ -31,7 +39,10 @@
                     <div class="section article-section">
                         <div class="section-title">
                             <h4>
-                                {{ trans('site.News') }} <span class="divider"><i class="fa fa-circle"></i></span>
+                                <a href="{{route('front.vertex.general')}}">
+                                    {{ trans('site.News') }} 
+                                </a>
+                                <span class="divider"><i class="fa fa-circle"></i></span>
                                 <a href="{{ route('front.category', $post->category) }}">
                                     @if(app()->getlocale() == 'kg')
                                         {{ $post->category('category_id')->first()->title }}
@@ -225,6 +236,7 @@
                 
             </div>
         </div>
+    @endif
     </div>
 @stop
 
@@ -234,9 +246,9 @@
     <script src='https://www.google.com/recaptcha/api.js'></script>
 
     <!-- Share buttons -->
-    <script src="{{ asset('js/goodshare.js') }}"></script>
+    <script src="{{ asset('js/goodshare.min.js') }}"></script>
     <script>
-        $(window).load(function(){
+        $(document).ready(function(){
             $('.goodshare').each(function(){
                 var span = $(this).children('span');
                 var counter = span.text();
@@ -245,15 +257,18 @@
                 }
             });
         });
+
+        @if($post->getTilda())
+            $('body').addClass('post-with-tilda');
+        @endif
     </script>
 
     <!-- Sweet Alert -->
-    <script src="{{ asset('js/sweetalert.min.js') }}"></script>
     <script>
         @if(session('success') == 'true')
-        swal("Спасибо!", "Ваш комментарий принят на модерацию!", "success");
+            swal("Спасибо!", "Ваш комментарий принят на модерацию!", "success");
         @elseif(session('success') == 'false')
-        swal("", "Где то произошла ошибка!", "error");
+            swal("", "Где то произошла ошибка!", "error");
         @endif
     </script>
 

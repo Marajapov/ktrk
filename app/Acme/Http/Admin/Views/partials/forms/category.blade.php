@@ -42,6 +42,20 @@
             </div>
         </div>
 
+        <div class="form-group">
+            <label for="order" class="col-sm-3 control-label" style="float: left !important;">Порядок</label>
+            <div class="col-sm-9">
+                <select id="order" name="order" class="selectpicker" data-live-search="true" title="-- Выберите --">
+                    @foreach($categories as $key=>$num)
+                        <option @if($category->order == $key+1) selected @endif value="{{ $key+1 }}">{{ $key+1 }}</option>
+                    @endforeach
+                    @if(!$category)
+                        <option value="{{ count($birinchiCategories)+1 }}">{{ count($categories)+1 }}</option>                        
+                    @endif
+                </select>
+            </div>
+        </div>
+
         <div class="row">
             <div class="col-sm-12" style="margin-top: 10px;">
                 <div class="row morepages">

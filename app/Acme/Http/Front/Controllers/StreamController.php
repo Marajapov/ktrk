@@ -3,10 +3,14 @@ namespace Front\Controllers;
 //use Illuminate\Http\Request;
 use Illuminate\Http\Request;
 use Input;
+use View;
 use Intervention\Image\ImageManagerStatic as Image;
 use Illuminate\Support\Facades\Validator;
+
 use \Model\Comment\ModelName as Comment;
 use \Model\Post\ModelName as Post;
+use \Model\Category\ModelName as Category;
+use \Model\Project\ModelName as Project;
 
 class StreamController extends Controller
 {
@@ -19,6 +23,45 @@ class StreamController extends Controller
         $this->positionLeft = \Model\Banner\ModelName::where('positionLeft','=','1')->where('channel_id','=','2')->first();
         $this->positionCenter = \Model\Banner\ModelName::where('positionCenter','=','1')->where('channel_id','=','2')->first();
         $this->positionBottom = \Model\Banner\ModelName::where('positionBottom','=','1')->where('channel_id','=','2')->first();
+
+        $categoriesNews = Category::where('general','=','1')->where('published','=','1')->where('order','>','0')->orderBy('order','asc')->get();
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            $activeProjects = Project::where('extracolumn',true)->where('published',true)->where('status', true)->orderBy('name','asc')->orderBy('nameRu','asc')->get();
+        }else{
+            $activeProjects = Project::where('extracolumn',true)->where('published',true)->where('status', true)->orderBy('name','asc')->orderBy('nameRu','asc')->get();
+        }
+
+        // Current program
+        date_default_timezone_set('Asia/Bishkek');
+        $now = date("d-m-Y H:i");
+        $currentDate = date('d-m-Y');
+        $currentTime = date('H:i');
+        $weekDay = date('N', strtotime($now));
+
+        $currentProgram = '';
+        $nextProgram = '';
+
+        $schedule = \Model\Schedule\ModelName::where('channel_id',2)->where('date',$currentDate)->first();
+
+        if($schedule){
+            $program = array();
+            $program = json_decode($schedule->program);
+            foreach ($program as $key => $row) {
+                if($key < count($program)-1){
+                    if( (strtotime($row->time) <= strtotime($currentTime)) && (strtotime($currentTime) < strtotime($program[$key+1]->time)) ){
+                        $currentProgram = $row;
+                        $nextProgram = $program[$key+1];
+                    }
+                }
+                
+            }
+        }
+
+        View::share('categoriesNews', $categoriesNews);
+        View::share('activeProjects', $activeProjects);
+        View::share('currentProgram', $currentProgram);
+        View::share('nextProgram', $nextProgram);
     }
     /**
      * Show the application dashboard to the user.

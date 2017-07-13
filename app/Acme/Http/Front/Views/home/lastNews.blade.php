@@ -1,5 +1,5 @@
 <div class="middle-left-section col-md-4">
-    <div class="section last-news-section">
+    <div class="section last-news-section section-footer">
         <div class="section-title">
             <h4>{{ trans('site.FrontLastNews') }}</h4>
         </div>
@@ -67,7 +67,7 @@
             </ul>
 
             <footer>
-                <a href="{{ route('front.general') }}">
+                <a href="{{ route('front.vertex.general') }}">
                     <span>{{ trans('site.FrontPostAll') }}</span>
                 </a>
             </footer>

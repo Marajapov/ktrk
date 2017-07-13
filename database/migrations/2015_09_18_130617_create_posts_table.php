@@ -24,7 +24,6 @@ class CreatePostsTable extends Migration
             $table->integer('category_id')->nullable()->unsigned()->default(null);
             $table->integer('owner_id')->nullable()->unsigned()->default(null);
             $table->integer('parentId')->nullable();
-            $table->integer('parentId2')->nullable();
             $table->string('thumbnail');
             $table->string('thumbnail_big');
             $table->string('thumb_desc');
@@ -59,11 +58,9 @@ class CreatePostsTable extends Migration
             $table->string('birinchiProgram');
             $table->string('balastan');
             $table->string('madaniyat');
-            $table->string('madaniyatProgram');
             $table->string('minkiyal');
             $table->string('dostuk');
             $table->string('dostukProgram');
-            $table->string('sport');
             
             $table->string('reporter');
             $table->string('extracolumn');
@@ -71,10 +68,8 @@ class CreatePostsTable extends Migration
             // Add locally
             $table->string('number');
             $table->string('numberRu');
-            $table->string('embedKg');
-            $table->string('embedRu');
-            $table->string('live');
-
+            $table->string('audio');
+            
             $table->smallInteger('viewed')->default(0);
             $table->timestamps();
 

@@ -32,6 +32,13 @@
     </div>
 </div>
 
+ <div class="col-md-8 col-sm-12">
+    <div class="form-group">
+        <label class="control-label">{{ trans('site.TitleRu') }}</label>
+        {!! Form::text('nameRu', null, ["class" => "form-control", "required" => true, "title" => ""]) !!}
+    </div>
+</div>
+
 <div class="col-md-8 col-sm-12">
     <div class="form-group">
         <label class="control-label">url</label>

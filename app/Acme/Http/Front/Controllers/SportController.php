@@ -1,7 +1,11 @@
 <?php
 namespace Front\Controllers;
 use Illuminate\Http\Request;
+
 use \Model\MediaCategory\ModelName as MediaCategory;
+use \Model\Category\ModelName as Category;
+use \Model\Project\ModelName as Project;
+
 class SportController extends Controller
 {
     protected $positionTop, $positionRight, $positionCenter, $positionBottom, $positionLeft;

@@ -17,297 +17,337 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/sweetalert.css') }}">
     <link href="{{ asset('froala/css/froala_style.min.css') }}" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="{{ asset('css/goodshare.css') }}"/>
+
+    <style>    
+        .post-with-tilda{
+            overflow: hidden;
+        }
+        .post-with-tilda #page-content-wrapper{
+            padding: 0;
+            margin: 0;
+        }
+        .post-with-tilda .bottom-bg,
+        .post-with-tilda .ad-block,
+        .post-with-tilda .prefooter,
+        .post-with-tilda .main-header{
+            display: none;
+        }
+        .post-with-tilda iframe{
+            height: 100vh;
+            width: 100%;
+        }
+        .tilda-logo{
+            position: absolute;
+            left: 30px;
+            top: 30px;
+            text-decoration: underline;
+            color: #fff;
+        }
+        .tilda-logo:hover,
+        .tilda-logo:focus{
+            color: rgba(255,255,255,0.75);
+        }
+    </style>
 @endsection()
 @section('content')
-    <div class="container main-wrapper">
-        <div class="row">
-            <section class="content clearfix">
-                <div class="clearfix">
-                    <div class="top-left-block col-md-9">
-                        <div class="panel panel-default panel-article panel-kenesh">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">
-                                    {{ trans('site.Top news') }} <span class="divider"><i class="fa fa-circle"></i></span>
-                                    <a href="{{ route('front.category', $post->category) }}">
-                                        <span class="ctg">
-                                            @if(app()->getlocale() == 'kg')
-                                                {{ $post->category('category_id')->first()->title }}
-                                            @else
-                                                {{ $post->category('category_id')->first()->titleRu }}
-                                            @endif
-                                        </span>
-                                    </a>
-                                </h3>
-                            </div>
-                            <div class="panel-body clearfix">
-                                <div class="col-md-12 block news-block">
-                                    <span class="hidden" id="postId">{{ $post->id }}</span>
-                                    <span class="hidden" id="orphusAction">{{ route('front.orphus') }}</span>
-                                    <p class="post-thumb" href="{{ route('front.post', $post) }}">
-                                        <span class="post-title">
-                                            @foreach($words as $word)
-                                                <span>{{$word}}</span>
-                                            @endforeach
 
-                                            {{--{{ $post->getTitleRuOrKg() }}--}}
-                                            {{--<span class="extra">--}}
-                                                {{--<span class="art-date">{{ $post->getDay() }} {{ $post->getMonthRu() }}, {{ $post->getYear() }}</span>--}}
-                                                {{--<span class="art-view"><i class="fa-view"></i>{{ $post->getViewed() }}</span>--}}
-                                            {{--</span>--}}
-                                        </span>
-                                        <a id="post-thumb" href="@if(empty($post->thumbnail_big)){{  asset($post->thumbnail) }}@else{{ asset($post->thumbnail_big) }}@endif">
-                                            <img class="left" src="@if(empty($post->thumbnail_big)) {{  asset($post->thumbnail) }} @else {{  asset($post->thumbnail_big) }} @endif" alt="image">
+    @if($post->getTilda())
+        <div class="post-tilda" id="postTilda">
+            <a class="tilda-logo" href="{{route('front.home')}}">
+                {{ trans('site.Back') }}
+            </a>
+            <iframe src="{{$post->getTilda()}}">Browser not compatible.</iframe>
+        </div>
+    @else
+        <div class="container main-wrapper">
+            <div class="row">
+                <section class="content clearfix">
+                    <div class="clearfix">
+                        <div class="top-left-block col-md-9">
+                            <div class="panel panel-default panel-article panel-kenesh">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">
+                                        {{ trans('site.Top news') }} <span class="divider"><i class="fa fa-circle"></i></span>
+                                        <a href="{{ route('front.category', $post->category) }}">
+                                            <span class="ctg">
+                                                @if(app()->getlocale() == 'kg')
+                                                    {{ $post->category('category_id')->first()->title }}
+                                                @else
+                                                    {{ $post->category('category_id')->first()->titleRu }}
+                                                @endif
+                                            </span>
                                         </a>
-                                        {{--@if($post->thumb_desc || $post->thumb_desc_ru)<span class="thumb_desc">{{ $post->getThumbnailDesc() }}</span>@endif--}}
-                                        @if($post->thumb_author)<span class="thumb_author"> Фото: {{ $post->thumb_author }}</span>@endif
-                                    </p>
-
-                                    <div class="extra">
-                                        <span class="art-date">{{ $post->getDay() }} {{ $post->getMonthRu() }}, {{ $post->getYear() }}</span>
-                                        <span class="art-view"><i class="fa-view"></i>{{ $post->getViewed() }}</span>
-                                    </div>
-                                <div>                                    
-                                    {!! $post->getEmbed() !!}                                    
+                                    </h3>
                                 </div>
-                                    <div class="post-content">
-                                        {!! $content !!}
-                                    </div>
-                                    @if($images)                                     
-                                        <div class="slider-for">
-                                            @if($images)   
-                                                @foreach($images as $image)
-                                                    <div>
-                                                        <a href="#">
-                                                            <img src="{{ asset('froala/uploads/'.$image->name) }}" alt=""/>
-                                                        </a>
-                                                    </div>
+                                <div class="panel-body clearfix">
+                                    <div class="col-md-12 block news-block">
+                                        <span class="hidden" id="postId">{{ $post->id }}</span>
+                                        <span class="hidden" id="orphusAction">{{ route('front.orphus') }}</span>
+                                        <p class="post-thumb" href="{{ route('front.post', $post) }}">
+                                            <span class="post-title">
+                                                @foreach($words as $word)
+                                                    <span>{{$word}}</span>
                                                 @endforeach
-                                            @endif
+
+                                                {{--{{ $post->getTitleRuOrKg() }}--}}
+                                                {{--<span class="extra">--}}
+                                                    {{--<span class="art-date">{{ $post->getDay() }} {{ $post->getMonthRu() }}, {{ $post->getYear() }}</span>--}}
+                                                    {{--<span class="art-view"><i class="fa-view"></i>{{ $post->getViewed() }}</span>--}}
+                                                {{--</span>--}}
+                                            </span>
+                                            <a id="post-thumb" href="@if(empty($post->thumbnail_big)){{  asset($post->thumbnail) }}@else{{ asset($post->thumbnail_big) }}@endif">
+                                                <img class="left" src="@if(empty($post->thumbnail_big)) {{  asset($post->thumbnail) }} @else {{  asset($post->thumbnail_big) }} @endif" alt="image">
+                                            </a>
+                                            {{--@if($post->thumb_desc || $post->thumb_desc_ru)<span class="thumb_desc">{{ $post->getThumbnailDesc() }}</span>@endif--}}
+                                            @if($post->thumb_author)<span class="thumb_author"> Фото: {{ $post->thumb_author }}</span>@endif
+                                        </p>
+
+                                        <div class="extra">
+                                            <span class="art-date">{{ $post->getDay() }} {{ $post->getMonthRu() }}, {{ $post->getYear() }}</span>
+                                            <span class="art-view"><i class="fa-view"></i>{{ $post->getViewed() }}</span>
                                         </div>
-                                        <div class="slider-nav col-md-12">
-                                            @if($images)
-                                                @if($images)
+                                    <div>                                    
+                                        {!! $post->getEmbed() !!}                                    
+                                    </div>
+                                        <div class="post-content">
+                                            {!! $content !!}
+                                        </div>
+                                        @if($images)                                     
+                                            <div class="slider-for">
+                                                @if($images)   
                                                     @foreach($images as $image)
                                                         <div>
-                                                            <img class="img" src="{{ asset('froala/uploads/'.$image->name) }}" alt=""/>
+                                                            <a href="#">
+                                                                <img src="{{ asset('froala/uploads/'.$image->name) }}" alt=""/>
+                                                            </a>
                                                         </div>
                                                     @endforeach
                                                 @endif
-                                            @endif
-                                        </div>
-                                    @endif
+                                            </div>
+                                            <div class="slider-nav col-md-12">
+                                                @if($images)
+                                                    @if($images)
+                                                        @foreach($images as $image)
+                                                            <div>
+                                                                <img class="img" src="{{ asset('froala/uploads/'.$image->name) }}" alt=""/>
+                                                            </div>
+                                                        @endforeach
+                                                    @endif
+                                                @endif
+                                            </div>
+                                        @endif
 
-                                    @if($images2)
-                                        <div class="slider-for2">
+                                        @if($images2)
+                                            <div class="slider-for2">
 
-                                            @if($images2)
-
-                                                @foreach($images2 as $image2)
-
-                                                    <div>
-                                                        <a href="#">
-                                                            <img src="{{ asset('froala/uploads/'.$image2->name) }}" alt=""/>
-                                                        </a>
-                                                    </div>
-                                                @endforeach
-                                            @endif
-                                        </div>
-
-                                        <div class="slider-nav2 col-md-12">
-                                            @if($images2)
                                                 @if($images2)
+
                                                     @foreach($images2 as $image2)
+
                                                         <div>
-                                                            <img class="img" src="{{ asset('froala/uploads/'.$image2->name) }}" alt=""/>
+                                                            <a href="#">
+                                                                <img src="{{ asset('froala/uploads/'.$image2->name) }}" alt=""/>
+                                                            </a>
                                                         </div>
                                                     @endforeach
                                                 @endif
-                                            @endif
-                                        </div>
-                                    @endif
+                                            </div>
 
-                                </div>
-
-                                <p>
-                                    <a href="http://orphus.ru" id="orphus" class="hidden" target="_blank"><img alt="Система Orphus" src="{{ asset('js/orphus.gif') }}" border="0" width="240" height="80" /></a>
-                                </p>
-
-                                <div class="orphus-mistake pull-right">
-                                    <div class="media">
-                                        <div class="media-body media-middle">
-                                            <h4>
-                                                @if($lc=='kg')
-                                                    Эгерде ката тапсаңыз, текстти белгилеп Ctrl+Enter басыңыз
-                                                @elseif($lc == 'ru')
-                                                    Если вы обнаружили ошибку, выделите текст и нажмите Ctrl+Enter
+                                            <div class="slider-nav2 col-md-12">
+                                                @if($images2)
+                                                    @if($images2)
+                                                        @foreach($images2 as $image2)
+                                                            <div>
+                                                                <img class="img" src="{{ asset('froala/uploads/'.$image2->name) }}" alt=""/>
+                                                            </div>
+                                                        @endforeach
+                                                    @endif
                                                 @endif
-                                            </h4>
-                                        </div>
-                                        <div class="media-right media-middle">
-                                            <span class="media-object">
-                                                <i class="fa fa-exclamation-circle"></i>
-                                            </span>
+                                            </div>
+                                        @endif
+
+                                    </div>
+
+                                    <p>
+                                        <a href="http://orphus.ru" id="orphus" class="hidden" target="_blank"><img alt="Система Orphus" src="{{ asset('js/orphus.gif') }}" border="0" width="240" height="80" /></a>
+                                    </p>
+
+                                    <div class="orphus-mistake pull-right">
+                                        <div class="media">
+                                            <div class="media-body media-middle">
+                                                <h4>
+                                                    @if($lc=='kg')
+                                                        Эгерде ката тапсаңыз, текстти белгилеп Ctrl+Enter басыңыз
+                                                    @elseif($lc == 'ru')
+                                                        Если вы обнаружили ошибку, выделите текст и нажмите Ctrl+Enter
+                                                    @endif
+                                                </h4>
+                                            </div>
+                                            <div class="media-right media-middle">
+                                                <span class="media-object">
+                                                    <i class="fa fa-exclamation-circle"></i>
+                                                </span>
+                                            </div>
                                         </div>
                                     </div>
+
+                                    <footer class="with-share">
+                                        @if(auth()->user())
+                                            <a class="post-edit" href="{{ route('admin.post.edit', $post) }}" target="_blank"><i class="fa fa-pencil"></i>{{ trans('site.AdminPostEdit') }}</a>
+                                        @endif
+
+                                        <div class="pluso share-buttons">
+                                            <button class="goodshare btn-fb" data-type="fb">
+                                                <i class="fa fa-facebook"></i>
+                                                <span data-counter="fb"></span>
+                                            </button>
+                                            <!-- Button with share to Facebook & share counter -->
+                                            <button class="goodshare btn-vk" data-type="vk">
+                                                <i class="fa fa-vk"></i>
+                                                <span data-counter="vk"></span>
+                                            </button>
+                                            <button class="goodshare btn-ok" data-type="ok">
+                                                <i class="fa fa-odnoklassniki"></i>
+                                                <span data-counter="ok"></span>
+                                            </button>
+                                            <button class="goodshare btn-gp" data-type="gp">
+                                                <i class="fa fa-google-plus"></i>
+                                                <span data-counter="gp"></span>
+                                            </button>
+                                            <button class="goodshare btn-tw" data-type="tw">
+                                                <i class="fa fa-twitter"></i>
+                                                {{--<span data-counter="tw"></span>--}}
+                                            </button>
+                                        </div>
+
+                                        <a href="{{ route('front.general') }}">
+                                            <span>{{ trans('site.PostAllNews') }}<i class="fa fa-arrow-circle-right"></i></span>
+                                        </a>
+                                    </footer>
                                 </div>
-
-                                <footer class="with-share">
-                                    @if(auth()->user())
-                                        <a class="post-edit" href="{{ route('admin.post.edit', $post) }}" target="_blank"><i class="fa fa-pencil"></i>{{ trans('site.AdminPostEdit') }}</a>
-                                    @endif
-
-                                    <div class="pluso share-buttons">
-                                        <button class="goodshare btn-fb" data-type="fb">
-                                            <i class="fa fa-facebook"></i>
-                                            <span data-counter="fb"></span>
-                                        </button>
-                                        <!-- Button with share to Facebook & share counter -->
-                                        <button class="goodshare btn-vk" data-type="vk">
-                                            <i class="fa fa-vk"></i>
-                                            <span data-counter="vk"></span>
-                                        </button>
-                                        <button class="goodshare btn-ok" data-type="ok">
-                                            <i class="fa fa-odnoklassniki"></i>
-                                            <span data-counter="ok"></span>
-                                        </button>
-                                        <button class="goodshare btn-gp" data-type="gp">
-                                            <i class="fa fa-google-plus"></i>
-                                            <span data-counter="gp"></span>
-                                        </button>
-                                        <button class="goodshare btn-tw" data-type="tw">
-                                            <i class="fa fa-twitter"></i>
-                                            {{--<span data-counter="tw"></span>--}}
-                                        </button>
-                                    </div>
-
-                                    <a href="{{ route('front.general') }}">
-                                        <span>{{ trans('site.PostAllNews') }}<i class="fa fa-arrow-circle-right"></i></span>
-                                    </a>
-                                </footer>
                             </div>
-                        </div>
 
-                        @include('Front::partials.postBanner')
+                            @include('Front::partials.postBanner')
 
-                        <div class="panel panel-default panel-related">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">
-                                    {{ trans('site.TekteshNews') }}
-                                </h3>
-                            </div>
-                            <div class="panel-body">
-                                @foreach($relatedPosts as $relatedPost)
-                                    @if($relatedPost->id == $post->id)
-                                    @else
-                                        <div class="col-md-4 block">
-                                            <a href="{{ route('front.post', [$relatedPost, $lc]) }}" class="news-thumb">
-                                                <img src="@if(($relatedPost->getFileBig())) {{ asset($relatedPost->getFileBig() )}} @else {{ asset($relatedPost->getFile()) }} @endif" alt=""/>
-                                                <div class="extrarel">
-                                                    <span class="art-date"><i class="fa fa-calendar"></i>{{ $relatedPost->getDay() }} {{ $relatedPost->getMonthRu() }}, {{ $relatedPost->getYear() }}</span>
-                                                </div>
-                                            </a>
-                                            <a class="related-title" href="{{ route('front.post', [$relatedPost, $lc]) }}">
-                                                {{ $relatedPost->getTitleRuOrKg() }}
-                                            </a>
-                                        </div>
-                                    @endif
-                                @endforeach
-                            </div>
-                        </div>
-
-                        <div id="comments" class="panel panel-default panel-comments hidden">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">
-                                    {{ trans('site.Comments') }}
-                                    <a class="commentadd" href="#respond">Оставить комментарий</a>
-                                </h3>
-                            </div>
-                            <div class="panel-body">
-
-                                <ul class="comment-list">
-                                    @foreach($comments as $key=>$comment)
-                                        <li class="comment">
-                                            <article>
-
-                                                <footer class="comment-meta">
-                                                    <div class="comment-author">
-								                    <span class="commentthumb">
-									                    <img alt="" src="@if($key%2==0){{ asset('images/extra/profile.png') }}@else{{ asset('images/extra/profile-2.png') }}@endif" class="avatar">
-                                                    </span>
-                                                        <span class="commentauthorname">{{ $comment->author }}</span>
-                                                        <p href="#" class="commenttime">
-                                                            <span>{{ $comment->getDay() }} {{ $comment->getMonth() }}, {{ $comment->getYear() }} {{ $comment->getTime() }}</span>
-                                                        </p>
+                            <div class="panel panel-default panel-related">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">
+                                        {{ trans('site.TekteshNews') }}
+                                    </h3>
+                                </div>
+                                <div class="panel-body">
+                                    @foreach($relatedPosts as $relatedPost)
+                                        @if($relatedPost->id == $post->id)
+                                        @else
+                                            <div class="col-md-4 block">
+                                                <a href="{{ route('front.post', [$relatedPost, $lc]) }}" class="news-thumb">
+                                                    <img src="@if(($relatedPost->getFileBig())) {{ asset($relatedPost->getFileBig() )}} @else {{ asset($relatedPost->getFile()) }} @endif" alt=""/>
+                                                    <div class="extrarel">
+                                                        <span class="art-date"><i class="fa fa-calendar"></i>{{ $relatedPost->getDay() }} {{ $relatedPost->getMonthRu() }}, {{ $relatedPost->getYear() }}</span>
                                                     </div>
-                                                </footer>
-
-                                                <div class="commentcontent">
-                                                    {{ $comment->text }}
-                                                </div>
-
-                                                <div class="commentreply hidden">
-                                                    <a class="comment-reply-link" href="#" aria-label="Reply to Author Name">Ответить</a>
-                                                </div>
-
-                                            </article>
-                                        </li>
+                                                </a>
+                                                <a class="related-title" href="{{ route('front.post', [$relatedPost, $lc]) }}">
+                                                    {{ $relatedPost->getTitleRuOrKg() }}
+                                                </a>
+                                            </div>
+                                        @endif
                                     @endforeach
-
-                                </ul>
-
-                            </div>
-                            <div class="panel-heading">
-                                <h3 class="panel-title">
-                                    Оставить комментарий
-                                </h3>
-                            </div>
-                            <div class="panel-body">
-
-                                <div class="comment-block">
-                                    <div id="respond" class="comment-respond">
-                                        {!! Form::open(array('route' => 'front.comment', 'method' => 'post', 'id'=>'commentform', 'enctype' => 'multipart/form-data', 'class'=>'comment-form')) !!}
-                                        <p class="comment-form-author">
-                                            <label for="author">Имя <span class="required">*</span></label>
-                                            <input id="author" name="author" type="text" value="" size="30" aria-required="true" required="required">
-                                        </p>
-                                        <p class="comment-form-email">
-                                            <label for="email">Email <span class="required">*</span></label>
-                                            <input id="email" name="email" type="text" value="" size="30" aria-required="true" required="required">
-                                        </p>
-                                        <p class="comment-form-comment">
-                                            <label for="comment">Комментарий</label>
-                                            <textarea id="comment" name="text" cols="45" rows="8" aria-required="true" required="required"></textarea>
-                                        </p>
-                                        <div class="captcha">
-                                            <label for="comment">&nbsp;</label>
-                                            <div class="g-recaptcha" data-sitekey="6LcBGBUTAAAAAIuKMiXH16edZGH4hRR58GJgqeDq"></div>
-                                        </div>
-                                        <div class="hidden">
-                                            <input type="hidden" name="resourceId" value="{{ $post->id }}"/>
-                                            <input type="hidden" name="resourceType" value="post"/>
-                                        </div>
-                                        <p class="form-submit">
-                                            <input type="submit" id="submit" class="submit" value="Отправить">
-                                        </p>
-                                        {!! Form::close() !!}
-                                    </div><!-- #respond -->
-                                    <div class="clr"></div>
                                 </div>
-
                             </div>
-                        </div>
 
+                            <div id="comments" class="panel panel-default panel-comments hidden">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">
+                                        {{ trans('site.Comments') }}
+                                        <a class="commentadd" href="#respond">Оставить комментарий</a>
+                                    </h3>
+                                </div>
+                                <div class="panel-body">
+
+                                    <ul class="comment-list">
+                                        @foreach($comments as $key=>$comment)
+                                            <li class="comment">
+                                                <article>
+
+                                                    <footer class="comment-meta">
+                                                        <div class="comment-author">
+                                                        <span class="commentthumb">
+                                                            <img alt="" src="@if($key%2==0){{ asset('images/extra/profile.png') }}@else{{ asset('images/extra/profile-2.png') }}@endif" class="avatar">
+                                                        </span>
+                                                            <span class="commentauthorname">{{ $comment->author }}</span>
+                                                            <p href="#" class="commenttime">
+                                                                <span>{{ $comment->getDay() }} {{ $comment->getMonth() }}, {{ $comment->getYear() }} {{ $comment->getTime() }}</span>
+                                                            </p>
+                                                        </div>
+                                                    </footer>
+
+                                                    <div class="commentcontent">
+                                                        {{ $comment->text }}
+                                                    </div>
+
+                                                    <div class="commentreply hidden">
+                                                        <a class="comment-reply-link" href="#" aria-label="Reply to Author Name">Ответить</a>
+                                                    </div>
+
+                                                </article>
+                                            </li>
+                                        @endforeach
+
+                                    </ul>
+
+                                </div>
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">
+                                        Оставить комментарий
+                                    </h3>
+                                </div>
+                                <div class="panel-body">
+
+                                    <div class="comment-block">
+                                        <div id="respond" class="comment-respond">
+                                            {!! Form::open(array('route' => 'front.comment', 'method' => 'post', 'id'=>'commentform', 'enctype' => 'multipart/form-data', 'class'=>'comment-form')) !!}
+                                            <p class="comment-form-author">
+                                                <label for="author">Имя <span class="required">*</span></label>
+                                                <input id="author" name="author" type="text" value="" size="30" aria-required="true" required="required">
+                                            </p>
+                                            <p class="comment-form-email">
+                                                <label for="email">Email <span class="required">*</span></label>
+                                                <input id="email" name="email" type="text" value="" size="30" aria-required="true" required="required">
+                                            </p>
+                                            <p class="comment-form-comment">
+                                                <label for="comment">Комментарий</label>
+                                                <textarea id="comment" name="text" cols="45" rows="8" aria-required="true" required="required"></textarea>
+                                            </p>
+                                            <div class="captcha">
+                                                <label for="comment">&nbsp;</label>
+                                                <div class="g-recaptcha" data-sitekey="6LcBGBUTAAAAAIuKMiXH16edZGH4hRR58GJgqeDq"></div>
+                                            </div>
+                                            <div class="hidden">
+                                                <input type="hidden" name="resourceId" value="{{ $post->id }}"/>
+                                                <input type="hidden" name="resourceType" value="post"/>
+                                            </div>
+                                            <p class="form-submit">
+                                                <input type="submit" id="submit" class="submit" value="Отправить">
+                                            </p>
+                                            {!! Form::close() !!}
+                                        </div><!-- #respond -->
+                                        <div class="clr"></div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        @include('Front::partials.leftCategories')
                     </div>
-                    @include('Front::partials.leftCategories')
-                </div>
-            </section>
+                </section>
+            </div>
         </div>
-    </div>
+    @endif
 @stop
 
 @section('footerScript')
 
-    {{--Live Stream--}}
     <script>
         var playerInstance = jwplayer("liveStream");
 
@@ -327,10 +367,8 @@
         });
     </script>
 
-    {{-- Google reCaptcha --}}
     <script src='https://www.google.com/recaptcha/api.js'></script>
 
-    {{--MAGNIFIC POPUP--}}
     <script src="{{ asset('js/jquery.magnific-popup.js') }}"></script>
     <script>
         $('#post-thumb').magnificPopup({
@@ -377,6 +415,11 @@
                 }
             });
         });
+
+
+        @if($post->getTilda())
+            $('body').addClass('post-with-tilda');
+        @endif
     </script>
 
     {{-- Sweet Alert --}}

@@ -79,8 +79,6 @@ class ModelName extends Model
             return $this->titleRu;
         }
     }
-    // end title
-
     public function getContent()
     {
         $lc = app()->getlocale();
@@ -90,7 +88,16 @@ class ModelName extends Model
             return $this->contentRu;
         }
     }
-    // Connexxification
+
+    public function getTilda()
+    {
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            return $this->tildaKg;
+        }else{
+            return $this->tildaRu;
+        }
+    }
     public function getEmbed()
     {
         $lc = app()->getlocale();

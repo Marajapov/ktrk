@@ -2,10 +2,11 @@
 namespace Model\Anons;
 
 use Illuminate\Database\Eloquent\Model;
+use Nicolaslopezj\Searchable\SearchableTrait;
 
 class ModelName extends Model
 {
-    use ModelHelpers,ModelRelationships;
+    use ModelHelpers,ModelRelationships, ModelScopes, SearchableTrait;
     /**
      * The database table used by the model.
      *
@@ -19,6 +20,16 @@ class ModelName extends Model
      */
     protected $guarded = ['id'];
     // protected $fillable = [];
+
+    protected $searchable = [
+        'columns' => [
+            'id'    => 10,
+            'name'   => 10, // order of search, title will be first in listing
+            'nameRu'   => 10, // order of search, title will be first in listing
+            'description' => 9,
+            'descriptionRu' => 9,
+        ],
+    ];
 
     public static function boot()
     {
@@ -45,7 +56,13 @@ class ModelName extends Model
 
     public function getDesc()
     {
-        return $this->description;
+        $lc = app()->getlocale();
+
+        if($lc == 'kg'){
+            return $this->description;
+        } else {
+            return $this->descriptionRu;
+        }
     }
 
     public function getWeekDayOne()

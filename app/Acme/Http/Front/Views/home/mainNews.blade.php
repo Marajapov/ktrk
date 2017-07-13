@@ -11,7 +11,7 @@
                     @if($generalPosts)
                         @foreach($generalPosts as $key=>$post)
                             @if($post)
-                                @if($key == 0)
+                                @if($livePost && $key == 0)
                                     <div class="main-news-item main-news-live">
                                         <figure>
                                             <a href="{{ route('front.vertex.post', [$post, $lc]) }}" class="main-news-thumb">
@@ -89,10 +89,11 @@
                 </div>            
             </div>
            
-            <a href="@if(!empty($positionLeft->file)) {{ $positionLeft->linkTo }} @else # @endif" target="_blank" class="ad-block">
-                <!-- <img src="@if(!empty($positionLeft->file)) {{ asset($positionLeft->file) }} @else {{ asset('images/banner_default_728x90.png') }} @endif"/> -->
-                <img src="{{asset('images/test-banner.gif')}}"/>
-            </a>
+            <div class="col-md-12 ad-block">
+                <a href="@if($positionLeft) {{ $positionLeft->linkTo }} @else # @endif" target="_blank">
+                    <img src="@if($positionLeft) {{ asset($positionLeft->file) }} @else {{ asset('images/banner_default_728x90.png') }} @endif"/>
+                </a>
+            </div>
         </div>
     </div>
 </div>

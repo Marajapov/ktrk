@@ -1,28 +1,34 @@
 <div class="section light-section slider-section">
 	<div class="main-slider container">
-		@if($generalPosts)
-            @foreach($generalPosts as $key=>$post)
+		@if($sliderProjects)
+            @foreach($sliderProjects as $key=>$row)
                 <div class="slide">
                     <figure>
-                        <img src="{{asset($post->thumbnail_big)}}">
+                        <img src="{{asset($row->getThumbnail())}}">
                         <figcaption>
                             <div class="inner">
-                                <a class="slide-title" href="{{ route('front.vertex.post', [$post, $lc]) }}">
-                                    Миллионер болгуң келеби?
+                                <span class="slide-datetime">
+                                    <span class="slide-date">
+                                        @if($row->getWeekDayOne())
+                                            {{$row->getWeekDayOne()}}
+                                        @else
+                                            &nbsp;
+                                        @endif
+                                    </span>
+                                    <span class="slide-time">{{$row->getTime()}}</span>
+                                </span>
+                                <a class="slide-title" href="{{$row->getUrl()}}">
+                                    {{$row->getNameOne()}}
                                 </a>
                                 <div class="slide-extra clearfix">
                                     <span class="slide-desc">
-                                        Коомдук телерадиоберүү корпорациясынын жаңы “Миллионер болгуң келеби?” теледолбооруна катышып, 1 миллион сом утуңуз. Өз күчүнүзгө, билимиңизге ишенсеңиз, аталган долбоордун катышуучусу болуңуз.
-                                    </span>
-                                    <span class="slide-datetime">
-                                        <span class="slide-date">{{ trans('site.Sunday') }}</span>
-                                        <span class="slide-time">21:55</span>
+                                        {!! str_limit($row->getDesc(), 220, ' ...')!!}
                                     </span>
                                 </div>
                             </div>                                  
                         </figcaption>
                     </figure>
-                </div>
+                </div>                
             @endforeach
         @endif
 	</div>	

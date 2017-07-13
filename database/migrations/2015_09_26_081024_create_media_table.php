@@ -52,16 +52,9 @@ class CreateMediaTable extends Migration
             $table->string('birinchi');
             $table->string('balastan');
             $table->string('madaniyat');
-            $table->string('videonumber');
             $table->string('minkiyal');
             $table->string('dostuk');
-            $table->string('sport');
-            $table->string('sportanons');
             $table->string('extracolumn');
-            $table->integer('like');
-            $table->integer('unlike');
-            $table->string('today');
-            $table->string('ip');
 
             $table->string('program');
             $table->timestamps();

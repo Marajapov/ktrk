@@ -57,7 +57,7 @@
     <!-- Initialize the editor. -->
     <script>
         $(function() {
-            $('#editKg').froalaEditor({
+            $('#editKg, #editRu').froalaEditor({
                 language: 'ru',
                 height: 300,
                 toolbarSticky: false,
@@ -93,6 +93,7 @@
                         $('#nameKg').show();
                         $('#nameRu').show();
                         $('#editorTextArea').hide();
+                        $('#editorTextAreaRu').hide();
                         $('#linkArea').show();
                         $('#weekDayKg').show();
                         $('#weekDayRu').show();
@@ -112,6 +113,7 @@
                         $('#nameKg').show();
                         $('#nameRu').show();
                         $('#editorTextArea').hide();
+                        $('#editorTextAreaRu').hide();
                         $('#linkArea').show();
                         $('#weekDayKg').show();
                         $('#weekDayRu').show();
@@ -131,6 +133,7 @@
                         $('#nameKg').show();
                         $('#nameRu').hide();
                         $('#editorTextArea').show();
+                        $('#editorTextAreaRu').hide();
                         $('#linkArea').show();
                         $('#weekDayKg').hide();
                         $('#weekDayRu').hide();
@@ -149,7 +152,8 @@
                         $('#musicAnons').hide();
                         $('#nameKg').show();
                         $('#nameRu').show();
-                        $('#editorTextArea').hide();
+                        $('#editorTextArea').show();
+                        $('#editorTextAreaRu').show();
                         $('#linkArea').show();
                         $('#weekDayKg').show();
                         $('#weekDayRu').show();
@@ -169,6 +173,7 @@
                         $('#nameKg').show();
                         $('#nameRu').show();
                         $('#editorTextArea').hide();
+                        $('#editorTextAreaRu').hide();
                         $('#linkArea').show();
                         $('#weekDayKg').show();
                         $('#weekDayRu').show();
@@ -188,6 +193,7 @@
                         $('#nameKg').show();
                         $('#nameRu').hide();
                         $('#editorTextArea').show();
+                        $('#editorTextAreaRu').hide();
                         $('#linkArea').hide();
                         $('#weekDayKg').hide();
                         $('#weekDayRu').hide();
@@ -207,6 +213,7 @@
                         $('#nameKg').show();
                         $('#nameRu').show();
                         $('#editorTextArea').show();
+                        $('#editorTextAreaRu').hide();
                         $('#linkArea').hide();
                         $('#weekDayKg').hide();
                         $('#weekDayRu').hide();
@@ -225,6 +232,7 @@
                         $('#nameKg').show();
                         $('#nameRu').show();
                         $('#editorTextArea').hide();
+                        $('#editorTextAreaRu').hide();
                         $('#linkArea').show();
                         $('#weekDayKg').hide();
                         $('#weekDayRu').hide();
@@ -243,6 +251,7 @@
                         $('#nameKg').hide();
                         $('#nameRu').hide();
                         $('#editorTextArea').hide();
+                        $('#editorTextAreaRu').hide();
                         $('#linkArea').hide();
                         $('#weekDayKg').hide();
                         $('#weekDayRu').hide();

@@ -18,6 +18,21 @@
                     </a>
                 </div>
 
+                <div class="row">
+                    <div class="col-xs-offset-9 col-xs-3">
+                        <div class="form">
+                            {!! Form::open(['route' => ['admin.anons.search'], 'method' => 'GET']) !!}
+                                <div class="input-group" style="text-align:right; ">
+                                    <input name="key" required="required" style="width:100%;" type="text" class="form-control">
+                                    <span class="input-group-btn">
+                                    <button type="submit" class="btn btn-primary">Поиск</button>
+                                    </span>
+                                </div>
+                            {!! Form::close() !!}
+                        </div>
+                    </div>
+              </div>
+
                 <div class="x_content">
 
                     <table id="example" class="table table-bordered table-striped" data-order='[[ 0, "desc" ]]' data-page-length='10'>
@@ -52,7 +67,11 @@
                                         </a>
                                     </td>
                                     <td>
-                                        {{ $row->channel()->first()->getNameOne() }}
+                                        @if($row->channel)
+                                            {{ $row->channel()->first()->getNameOne() }}
+                                        @else
+                                            не определен
+                                        @endif
                                     </td>
                                     <td>
                                         <a class="btn btn-default" href="{{ route('admin.anons.show', $row) }}">
@@ -77,6 +96,35 @@
 
                     </table>
 
+                    <nav>
+                      <ul class="pagination">
+
+                          <li>
+                              <a href="{{ route('admin.anons.index', ['page' => 1]) }}" class="btn btn-default @if($anons->currentPage() == 1) disabled @endif">{{ trans('site.Start') }}</a>
+                          </li>
+                          <li>
+                              <a href="{{ $anons->previousPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                          </li>
+
+                          @for($i = 0, $j = 1; $i < $anons->total(); $i+=$perPage)
+                              <li class="@if(($j > $anons->currentPage()+10) || ($j < $anons->currentPage()-10)) hidden @endif">
+                                  <a href="{{ route('admin.anons.index', ['page' => $j]) }}" class="btn btn-default @if($anons->currentPage() == $j) active @endif">
+                                      {{ $j++ }}
+                                  </a>
+                              </li>
+                          @endfor
+
+                          <li>
+                              <a href="{{ $anons->nextPageUrl() }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                          </li>
+
+                          <li>
+                              <a href="{{ route('admin.anons.index', ['page' => ceil($anons->total()/$perPage)]) }}" class="btn btn-default @if($anons->currentPage() == ceil($anons->total()/$perPage)) disabled @endif">{{ trans('site.End') }}</a>
+                          </li>
+
+                      </ul>
+                  </nav>
+
                 </div>
             </div>
         </div>
@@ -84,7 +132,7 @@
 @stop
 
 @section('scripts')
-    <script src="{{ asset('js/admin/jquery.dataTables.js') }}"></script>
+    <!-- <script src="{{ asset('js/admin/jquery.dataTables.js') }}"></script>
     <script src="{{ asset('js/admin/dataTables.bootstrap.js') }}"></script>
 
     <script>
@@ -111,5 +159,5 @@
                 ]
             });
         } );
-    </script>
+    </script> -->
 @endsection

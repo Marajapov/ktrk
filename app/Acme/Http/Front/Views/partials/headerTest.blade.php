@@ -1,9 +1,9 @@
-<div class="header-test">
+<div class="header">
     <div class="container">
         <div class="row">
             <div class="header-top clearfix">
                 <div class="header-left">
-                    <a class="header-logo" href="#">
+                    <a class="header-logo" href="{{route('front.vertex')}}">
                         <img src="{{asset('images/logo-text.svg')}}">
                     </a>
                 </div>
@@ -35,12 +35,8 @@
                             </a>
                         </li>
                         <li class="lang-switch">
-                            <a href="/locale/kg">
-                                Кырг
-                            </a>
-                            <a href="/locale/кг">
-                                Рус
-                            </a>
+                            <a @if(app()->getlocale() == 'kg') class="active" @endif href="/locale/kg">Кырг</a>
+                            <a @if(app()->getlocale() == 'ru') class="active" @endif href="/locale/ru">Рус</a>
                         </li>
                         <li>
                             <a id="searchToggle">
@@ -79,83 +75,160 @@
                         </form>
                     </div>
                 </div>
+                <div class="header-middle">
+                    <ul>
+                        <li>
+                            <a href="{{route('front.pages.teleprogram', 2)}}" class="now-live">
+                                <div class="now-live-info clearfix">      
+                                    <div class="now-live-text us-headline clip">
+                                        <span class="us-words-wrapper">
+                                            <b class="is-visible" data-project="project-1">{{trans('site.NowLive')}}</b>
+                                            <b data-project="project-2">{{trans('site.AfterLive')}}</b>
+                                        </span>
+                                    </div> 
+                                </div>                      
+                                <div class="now-live-title">
+                                    <span id="project-1" class="is-visible">@if($currentProgram) {{$currentProgram->name}} @endif</span>
+                                    <span id="project-2">@if($nextProgram) {{$nextProgram->name}} @endif</span>                                   
+                                </div>    
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
             <ul class="header-nav clearfix">
                 <li>
-                    <a href="#">КТРК</a>
+                    <a href="#">{{trans('site.NavAbout')}}</a>
+                    <div class="inner-nav text-nav">
+                        <div>
+                            <ul class="clearfix">
+                                <li>
+                                    <a href="{{route('front.history')}}">{{trans('site.NavAboutHistory')}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{route('front.pages.leaders')}}">{{trans('site.NavAboutAdministration')}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{route('front.ns.index')}}">{{trans('site.NavAboutNS')}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{route('front.rs.index')}}">{{trans('site.NavAboutRS')}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{route('front.pages.strategy')}}">{{trans('site.NavAboutStrategy')}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{route('front.pages.report')}}">{{trans('site.NavAboutReport')}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{route('front.pages.normalbase')}}">{{trans('site.NavAboutBase')}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{route('front.pages.logo')}}">{{trans('site.NavAboutBranding')}}</a>
+                                </li>
+                                <li>
+                                    <a href="{{route('front.pages.rrts')}}">{{trans('site.NavAboutRTC')}}</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">{{trans('site.NavNews')}}</a>
+                    <div class="inner-nav text-nav">
+                        <ul class="clearfix">
+                            <li class="nav-all">
+                                <a href="{{route('front.vertex.general')}}">Все новости</a>
+                            </li>
+                            @foreach($categoriesNews as $row)
+                                <li>
+                                    <a href="{{ route('front.category', $row) }}">{{$row->getTitle()}}</a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">Видеопортал</a>
+                    <div class="inner-nav text-nav">
+                        <ul class="clearfix">
+                            <li class="nav-all">
+                                <a href="{{route('front.media.index')}}">Все проекты</a>
+                            </li>
+                            @foreach($activeProjects as $row)
+                                <li>
+                                    <a href="{{ route('front.media.project', $row) }}">{{ $row->getNameOne() }}</a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">{{trans('site.NavTeleprogram')}}</a>
                     <div class="inner-nav text-nav">
                         <ul class="clearfix">
                             <li>
-                                <a href="#">История</a>
+                                <a href="{{route('front.pages.teleprogram', 2)}}">{{trans('site.NavTeleprogramKtrk')}}</a>
                             </li>
                             <li>
-                                <a href="#">Руководство</a>
+                                <a href="{{route('front.pages.teleprogram', 3)}}">{{trans('site.NavTeleprogramMusic')}}</a>
                             </li>
                             <li>
-                                <a href="#">Наблюдательный совет</a>
+                                <a href="{{route('front.pages.teleprogram', 4)}}">{{trans('site.NavTeleprogramMadaniyat')}}</a>
                             </li>
                             <li>
-                                <a href="#">Редакционный советник</a>
+                                <a href="{{route('front.pages.teleprogram', 5)}}">{{trans('site.NavTeleprogramBalastan')}}</a>
                             </li>
                             <li>
-                                <a href="#">Стратегия</a>
+                                <a href="{{route('front.pages.teleprogram', 11)}}">{{trans('site.NavTeleprogramSport')}}</a>
                             </li>
                             <li>
-                                <a href="#">Отчеты</a>
+                                <a href="{{route('front.pages.teleprogram', 6)}}">{{trans('site.NavTeleprogramKgRadio')}}</a>
                             </li>
                             <li>
-                                <a href="#">Нормативная база</a>
+                                <a href="{{route('front.pages.teleprogram', 7)}}">{{trans('site.NavTeleprogramBirinchi')}}</a>
                             </li>
                             <li>
-                                <a href="#">Брендинг</a>
-                            </li>
-                            <li>
-                                <a href="#">Республиканский телецентр</a>
+                                <a href="{{route('front.pages.teleprogram', 8)}}">{{trans('site.NavTeleprogramMinkiyal')}}</a>
                             </li>
                         </ul>
                     </div>
                 </li>
                 <li>
-                    <a href="#">Новости</a>
-                </li>
-                <li>
-                    <a href="#">Видеопортал</a>
-                </li>
-                <li>
-                    <a href="#">Телепрограмма</a>
-                </li>
-                <li>
                     <a href="#">ТВ</a>
                     <div class="inner-nav header-channels">
                         <ul class="clearfix">
+                            <h4>
+                                {{trans('site.SelectTV')}}
+                            </h4>
                             <li>
-                                <a href="#">
-                                    <img src="{{ asset('images/channels/small/1.png') }}" alt="КТРК">
+                                <a href="{{route('front.vertex')}}">
+                                    <img src="{{ asset('images/channels/nav/ktrk.png') }}" alt="КТРК">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{route('muzkanal.home')}}">
+                                    <img src="{{ asset('images/channels/small/music.png') }}" alt="Музыка">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{route('balastan.home')}}">
+                                    <img src="{{ asset('images/channels/nav/balastan.png') }}" alt="Баластан">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{route('madaniyat.home')}}">
+                                    <img src="{{ asset('images/channels/nav/mtt.png') }}" alt="Маданият">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{route('sport.home')}}">
+                                    <img src="{{ asset('images/channels/nav/sport.png') }}" alt="КТРК Спорт">
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="{{ asset('images/channels/small/2.png') }}" alt="Музыка">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="{{ asset('images/channels/small/3.png') }}" alt="Баластан">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="{{ asset('images/channels/small/4.png') }}" alt="Маданият">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="{{ asset('images/channels/small/10.png') }}" alt="КТРК Спорт">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="{{ asset('images/channels/small/9.png') }}" alt="Ала-Т00 24">
+                                    <img src="{{ asset('images/channels/nav/alatoo.png') }}" alt="Ала-Т00 24">
                                 </a>
                             </li>
                         </ul>
@@ -165,24 +238,27 @@
                     <a href="#">Радио</a>
                     <div class="inner-nav header-channels header-radios">
                         <ul class="clearfix">
+                            <h4>
+                                {{trans('site.SelectRadio')}}
+                            </h4>
                             <li>
-                                <a href="#">
-                                    <img src="{{ asset('images/channels/small/5.png') }}" alt="КТРК">
+                                <a href="{{route('kyrgyzradio.home')}}">
+                                    <img src="{{ asset('images/channels/nav/kyrgyz.png') }}" alt="{{trans('site.NavTeleprogramKgRadio')}}">
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
-                                    <img src="{{ asset('images/channels/small/6.png') }}" alt="Музыка">
+                                <a href="{{route('birinchi.home')}}">
+                                    <img src="{{ asset('images/channels/nav/birinchi.png') }}" alt="{{trans('site.NavTeleprogramBirinchi')}}">
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
-                                    <img src="{{ asset('images/channels/small/7.png') }}" alt="Баластан">
+                                <a href="{{route('dostuk.home')}}">
+                                    <img src="{{ asset('images/channels/nav/dostuk.png') }}" alt="{{trans('site.NavTeleprogramDostuk')}}">
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
-                                    <img src="{{ asset('images/channels/small/8.png') }}" alt="Маданият">
+                                <a href="{{route('minkiyal.home')}}">
+                                    <img src="{{ asset('images/channels/nav/minkiyal.png') }}" alt="{{trans('site.NavTeleprogramMinkiyal')}}">
                                 </a>
                             </li>
                         </ul>
@@ -190,8 +266,10 @@
                 </li>
                 <li class="nav-live">
                     <a href="#">
-                        <span id="blinkLive"></span>
-                        Прямой эфир
+                        <span class="own-btn own-btn-pink">
+                            <span id="blinkLive"></span>
+                            Live
+                        </span>
                     </a>
                 </li>
             </ul>

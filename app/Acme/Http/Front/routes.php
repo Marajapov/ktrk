@@ -1,14 +1,7 @@
 <?php
 
 /*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
+Баластан Routes
 */
 
 Route::group(['domain' => '', 'prefix' => '/balastan', 'namespace' => 'Front\Controllers'], function() {
@@ -17,20 +10,18 @@ Route::group(['domain' => '', 'prefix' => '/balastan', 'namespace' => 'Front\Con
     Route::get('posts', ['as' => 'balastan.posts',   'uses' => 'BalastanController@posts']);
     Route::get('world', ['as' => 'balastan.world',   'uses' => 'BalastanController@world']);
     Route::get('about', ['as' => 'balastan.about',   'uses' => 'BalastanController@about']);
-    //New page video
     Route::get('video',['as' => 'balastan.video','uses'=> 'BalastanController@video'] );
     Route::get('videos',['as' => 'balastan.videos','uses'=> 'BalastanController@videos'] );
     Route::get('video/{video}',['as' => 'balastan.video','uses'=> 'BalastanController@video'] );
     Route::get('videos/{project}',['as' => 'balastan.project.videos','uses'=> 'BalastanController@projectVideos'] );
-
-    // Balastan photos one gallery page
-
     Route::get('/allphotos',['as' => 'balastan.allphotos','uses'=> 'BalastanController@allphotos'] );
     Route::get('/photos/{gallery}',['as' => 'balastan.photos','uses'=> 'BalastanController@Gallery'] );
 
 });
 
-
+/*
+Музыка Routes
+*/
 
 Route::group(['domain' => '', 'prefix' => '/music', 'namespace' => 'Front\Controllers'], function() {
 
@@ -50,20 +41,15 @@ Route::group(['domain' => '', 'prefix' => '/music', 'namespace' => 'Front\Contro
 
     Route::get('/allphotos',['as' => 'muzkanal.allphotos','uses'=> 'MuzkanalController@allphotos'] );
     Route::get('/photos/{gallery}',['as' => 'muzkanal.photos','uses'=> 'MuzkanalController@Gallery'] );
-
-    // Routes for likes unlikes
     Route::get('/like/{like}', ['as' => 'muzkanal.like', 'uses' => 'MuzkanalController@like']);
     Route::get('/unlike/{unlike}', ['as' => 'muzkanal.unlike', 'uses' => 'MuzkanalController@unlike']);
     Route::get('/likehp/{likehp}', ['as' => 'muzkanal.likehp', 'uses' => 'MuzkanalController@likehp']);
 
 });
 
-Route::group(['domain' => '', 'prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
-
-    Route::get('/', ['as' => 'ktr.home',   'uses' => 'HomeController@Ktr']);
-    Route::get('/posts', ['as' => 'ktr.posts',   'uses' => 'KtrController@posts']);
-
-});
+/*
+КТРК Спорт Routes
+*/
 
 Route::group(['domain' => '', 'prefix' => '/sport', 'namespace' =>'Front\Controllers'], function(){
     Route::get('/', ['as' => 'sport.home', 'uses' => 'SportController@Home']);
@@ -81,6 +67,9 @@ Route::group(['domain' => '', 'prefix' => '/sport', 'namespace' =>'Front\Control
     Route::get('/teleprogram', ['as' => 'sport.teleprogram', 'uses' => 'SportController@teleprogram']);
 });
 
+/*
+Маданият Routes
+*/
 
 Route::group(['domain' => '', 'prefix' => '/madaniyat', 'namespace' => 'Front\Controllers'], function() {
 
@@ -96,9 +85,6 @@ Route::group(['domain' => '', 'prefix' => '/madaniyat', 'namespace' => 'Front\Co
     Route::get('/allnews', ['as' => 'madaniyat.allnews',   'uses' => 'MadaniyatController@allnews']);
     Route::get('/projects/{project}', ['as' => 'madaniyat.projects',   'uses' => 'MadaniyatController@projects']);
     Route::get('/teleprogram', ['as' => 'madaniyat.teleprogram',   'uses' => 'MadaniyatController@teleprogram']);
-});
-
-Route::group(['domain' => '', 'prefix' => '/madaniyat/', 'namespace' => 'Front\Controllers'], function() {
     Route::get('media', ['as' => 'madaniyat.media.index', 'uses' => 'MadaniyatController@mediaIndex']); // List of videos
     Route::get('media/project/{project}', ['as' => 'madaniyat.media.project', 'uses' => 'MadaniyatController@project']); // Show Page
     Route::get('media/video/{video}', ['as' => 'madaniyat.media.video', 'uses' => 'MadaniyatController@video']); // Show Video
@@ -106,14 +92,9 @@ Route::group(['domain' => '', 'prefix' => '/madaniyat/', 'namespace' => 'Front\C
     Route::get('media/category/{mediaCategory}', ['as' => 'madaniyat.media.category', 'uses' => 'MadaniyatController@categoryVideos']); // All Videos
 });
 
-Route::group(['domain' => '', 'prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
-
-    Route::get('/', ['as' => 'front.home',   'uses' => 'HomeController@Home']);
-    Route::get('/posts/general', ['as' => 'front.general',   'uses' => 'HomeController@Posts']);
-    Route::get('posts/general/filterResult', ['as' => 'front.filterResult', 'uses' => 'HomeController@filterResult']);
-
-});
-
+/*
+Кыргыз Радио Routes
+*/
 
 Route::group(['domain' => '', 'prefix' => '/kyrgyzradio', 'namespace' => 'Front\Controllers'], function() {
 
@@ -132,6 +113,10 @@ Route::group(['domain' => '', 'prefix' => '/kyrgyzradio', 'namespace' => 'Front\
 
 });
 
+/*
+Биринчи Радио Routes
+*/
+
 Route::group(['domain' => '', 'prefix' => '/birinchi', 'namespace' => 'Front\Controllers'], function() {
 
     Route::get('/', ['as' => 'birinchi.home',   'uses' => 'BirinchiController@Home']);
@@ -149,6 +134,10 @@ Route::group(['domain' => '', 'prefix' => '/birinchi', 'namespace' => 'Front\Con
 
 });
 
+/*
+Достук Routes
+*/
+
 Route::group(['domain' => '', 'prefix' => '/dostuk', 'namespace' => 'Front\Controllers'], function() {
 
     Route::get('/', ['as' => 'dostuk.home',   'uses' => 'DostukController@Home']);
@@ -165,6 +154,10 @@ Route::group(['domain' => '', 'prefix' => '/dostuk', 'namespace' => 'Front\Contr
     Route::get('/category/{category}', ['as' => 'dostuk.category',   'uses' => 'DostukController@categoryPage']);
 
 });
+
+/*
+Миң кыял Routes
+*/
 
 Route::group(['domain' => '', 'prefix' => '/minkiyal', 'namespace' => 'Front\Controllers'], function() {
 
@@ -187,6 +180,10 @@ Route::group(['domain' => '', 'prefix' => '/minkiyal', 'namespace' => 'Front\Con
 
 });
 
+/*
+Балдар Routes
+*/
+
 Route::group(['domain' => '', 'prefix' => '/baldar', 'namespace' => 'Front\Controllers'], function() {
 
     Route::get('/', ['as' => 'baldar.home',   'uses' => 'BaldarController@Home']);
@@ -194,47 +191,83 @@ Route::group(['domain' => '', 'prefix' => '/baldar', 'namespace' => 'Front\Contr
 
 });
 
+/*
+КТРК Routes
+*/
 
 Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
 
-    Route::get('/post/{post}/{locale}', ['as' => 'front.post', 'uses' => 'HomeController@Post']);
-    Route::get('/vertex/post/{post}/{locale}', ['as' => 'front.vertex.post', 'uses' => 'HomeController@PostTest']);
-    Route::get('/page/{page}', ['as' => 'front.page',   'uses' => 'HomeController@Page']);
+    # GENERAL
+
+    Route::get('/', ['as' => 'front.home',   'uses' => 'HomeController@Home']);
+    Route::get('/vertex',['as'=>'front.vertex', 'uses'=>"HomeController@Test"]);
+    Route::get('locale/{locale?}',   ['as' => 'locale',   'uses' => 'CommonController@setLocale']);
+
+
+    # LOGIN/LOGOUT
+
     Route::get('login', ['as' => 'front.login',   'uses' => 'AuthController@Login']);
     Route::post('login', ['as' => 'front.login',   'uses' => 'AuthController@postLogin']);
     Route::post('logout', ['as' => 'front.logout',   'uses' => 'AuthController@postLogout']);
-    Route::get('media', ['as' => 'front.media',     'uses' => 'HomeController@getMedia']);
-    Route::get('search', ['as' => 'front.search', 'uses' => 'HomeController@searchResult']);
+    
 
+    # NAVIGATION
+    
+    // О КТРК    
+    Route::get('history', ['as' => 'front.history', 'uses' => 'PageController@historyPage']);
+    Route::get('leaders', ['as' => 'front.pages.leaders', 'uses' => 'PageController@leadersPage']);
+    Route::get('ns', ['as' => 'front.ns.index', 'uses' => 'NsController@index']);
+    Route::get('rs', ['as' => 'front.rs.index', 'uses' => 'RsController@index']);
+    Route::get('strategy', ['as' => 'front.pages.strategy', 'uses' => 'PageController@strategyPage']);
+    Route::get('report', ['as' => 'front.pages.report', 'uses' => 'PageController@reportPage']);
+    Route::get('normalbase', ['as' => 'front.pages.normalbase', 'uses' => 'PageController@normalbasePage']);
+    Route::get('logo', ['as' => 'front.pages.logo', 'uses' => 'PageController@logoPage']);
+    Route::get('rrts', ['as' => 'front.pages.rrts', 'uses' => 'PageController@rrtsPage']);
+
+
+    # POSTS
+
+    Route::get('/posts/general', ['as' => 'front.general',   'uses' => 'HomeController@Posts']);
+    Route::get('/vertex/posts/general', ['as' => 'front.vertex.general',   'uses' => 'HomeController@PostsTest']);
+    Route::get('posts/general/filterResult', ['as' => 'front.filterResult', 'uses' => 'HomeController@filterResult']);
+    Route::get('/post/{post}/{locale}', ['as' => 'front.post', 'uses' => 'HomeController@Post']);
+    Route::get('/vertex/post/{post}/{locale}', ['as' => 'front.vertex.post', 'uses' => 'HomeController@PostTest']);
     Route::get('category/{category}', ['as' => 'front.category', 'uses' => 'HomeController@categoryPage']);
+    Route::get('vertex/category/{category}', ['as' => 'front.vertex.category', 'uses' => 'PostController@categoryPage']);
     Route::get('category/{category}/filterResult', ['as' => 'front.filterResultCategory', 'uses' => 'HomeController@filterResultCategory']);
 
-    Route::get('media', ['as' => 'front.media.index', 'uses' => 'MediaController@mediaIndex']); // List of videos
-    Route::get('media/project/{project}', ['as' => 'front.media.project', 'uses' => 'MediaController@project']); // Show Page
-    Route::get('media/video/{video}', ['as' => 'front.media.video', 'uses' => 'MediaController@video']); // Show Video
-    Route::get('media/all', ['as' => 'front.media.all', 'uses' => 'MediaController@allVideos']); // All Videos
-    Route::get('media/category/{mediaCategory}', ['as' => 'front.media.category', 'uses' => 'MediaController@categoryVideos']); // All Videos
 
-    Route::get('history', ['as' => 'front.history', 'uses' => 'PageController@historyPage']);
-//  Director routes
+    # MEDIA
+
+    Route::get('media', ['as' => 'front.media.index', 'uses' => 'MediaController@mediaIndex']);
+    Route::get('media/project/{project}', ['as' => 'front.media.project', 'uses' => 'MediaController@project']);
+    Route::get('media/video/{video}', ['as' => 'front.media.video', 'uses' => 'MediaController@video']);
+    Route::get('media/all', ['as' => 'front.media.all', 'uses' => 'MediaController@allVideos']);
+    Route::get('media/category/{mediaCategory}', ['as' => 'front.media.category', 'uses' => 'MediaController@categoryVideos']);
+
+
+    # GALLERY
+
+    Route::get('/gallery/{gallery}',['as' => 'front.gallery','uses'=> 'HomeController@Gallery'] );
+    Route::get('/galleries',['as' => 'front.gallery.galleries','uses'=> 'HomeController@Galleries']);
+
+
+    # DIRECTOR
+
     Route::get('director', ['as' => 'front.pages.director', 'uses' => 'PageController@directorPage']);
     Route::get('director/post/{post}/{locale}', ['as' => 'front.pages.directorPost', 'uses' => 'PageController@directorPost']);
 
-    Route::get('leaders', ['as' => 'front.pages.leaders', 'uses' => 'PageController@leadersPage']);
-//    Route::get('leader/{leader}', ['as' => 'front.pages.leader', 'uses' => 'PageController@leaderPage']);
-    Route::get('strategy', ['as' => 'front.pages.strategy', 'uses' => 'PageController@strategyPage']);
-    Route::get('normalbase', ['as' => 'front.pages.normalbase', 'uses' => 'PageController@normalbasePage']);
-    Route::get('rrts', ['as' => 'front.pages.rrts', 'uses' => 'PageController@rrtsPage']);
-    Route::get('report', ['as' => 'front.pages.report', 'uses' => 'PageController@reportPage']);
+
+    # TELEPROGRAM
+
     Route::get('teleprogram', ['as' => 'front.pages.teleprogram', 'uses' => 'PageController@teleprogramPage']);
     Route::post('teleprogram/changeChannel', ['as' => 'front.changeChannel', 'uses' => 'AjaxController@teleprogramChangeChannel']);
     Route::get('program', ['as' => 'front.pages.program', 'uses' => 'PageController@teleprogramPage']);
     Route::get('teleprogram/{channel}', ['as' => 'front.pages.teleprogram', 'uses' => 'PageController@ChannelTeleprogram']);
-    Route::get('editionkenesh', ['as' => 'front.pages.editionkenesh', 'uses' => 'PageController@editionkeneshPage']);
-    Route::get('logo', ['as' => 'front.pages.logo', 'uses' => 'PageController@logoPage']);
 
-//    BaikoochuKenesh
-    Route::get('ns', ['as' => 'front.ns.index', 'uses' => 'NsController@index']);
+
+    # НАБЛЮДАТЕЛЬНЫЙ СОВЕТ
+
     Route::get('ns/team', ['as' => 'front.ns.team', 'uses' => 'NsController@team']);
     Route::get('ns/posts', ['as' => 'front.ns.posts', 'uses' => 'NsController@posts']);
     Route::get('ns/post/{post}', ['as' => 'front.ns.post', 'uses' => 'NsController@post']);
@@ -243,8 +276,9 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
     Route::get('ns/reports', ['as' => 'front.ns.reports', 'uses' => 'NsController@reports']);
     Route::get('ns/contacts', ['as' => 'front.ns.contacts', 'uses' => 'NsController@contacts']);
 
-//    RedakciyaKenesh
-    Route::get('rs', ['as' => 'front.rs.index', 'uses' => 'RsController@index']);
+
+    # РЕДАКЦИОННЫЙ СОВЕТНИК
+
     Route::get('rs/about', ['as' => 'front.rs.about', 'uses' => 'RsController@about']);
     Route::get('rs/person/{person}', ['as' => 'front.rs.person', 'uses' => 'RsController@person']);
     Route::get('rs/faq', ['as' => 'front.rs.faq', 'uses' => 'RsController@faq']);
@@ -253,47 +287,51 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
     Route::get('rs/procedure', ['as' => 'front.rs.procedure', 'uses' => 'RsController@procedure']);
     Route::get('rs/contacts', ['as' => 'front.rs.contacts', 'uses' => 'RsController@contacts']);
 
-    // Gallery page
-    Route::get('/gallery/{gallery}',['as' => 'front.gallery','uses'=> 'HomeController@Gallery'] );
-    Route::get('/galleries',['as' => 'front.gallery.galleries','uses'=> 'HomeController@Galleries']);
 
-//    Народный репортер
+    # REPORTER
+
     Route::get('/reporter',['as'=>'front.reporter','uses'=>'HomeController@Reporter']);
     Route::post('reporter.add',['as'=>'front.reporter.add','uses'=>'HomeController@ReporterAdd']);
 
-    // Reklama
+
+    # ADDITIONAL PAGES
+
     Route::get('/advertisement',['as'=>'front.pages.reklama', 'uses'=>'PageController@Reklama']);
-
-    //Contacts
     Route::get('/contacts',['as'=>'front.pages.contacts', 'uses'=>'PageController@Contacts']);
-
-//    AJAX CALL
-    Route::get('/ajax_program', 'PageController@AjaxProgram');
-
-//    COMMENTS
-    Route::post('/comment', ['as'=>'front.comment', 'uses'=> 'CommentController@store']);
-
-//    Orphus
-    Route::post('/orphus', ['as'=>'front.orphus', 'uses'=>'CommentController@orphus']);
-
-//    Test
-    Route::get('/vertex',['as'=>'front.vertex', 'uses'=>"HomeController@Test"]);
     Route::get('/live',['as'=>'front.live', 'uses'=>"HomeController@Live"]);
     Route::get('/streams',['as'=>'front.streams', 'uses'=>"StreamController@stream"]);
 
-// Poll Vote
-    Route::post('/poll_vote', ['as'=>'front.poll_vote', 'uses'=>'AjaxNsController@pollVote']);
 
-    Route::get('locale/{locale?}',   ['as' => 'locale',   'uses' => 'CommonController@setLocale']);
+    # EXTRA
 
-//  Shailoo
+    Route::get('/page/{page}', ['as' => 'front.page',   'uses' => 'HomeController@Page']);
+    Route::get('search', ['as' => 'front.search', 'uses' => 'HomeController@searchResult']);
+    Route::post('/orphus', ['as'=>'front.orphus', 'uses'=>'CommentController@orphus']);
+
+
+    # UNDEFINED
+
+    Route::get('editionkenesh', ['as' => 'front.pages.editionkenesh', 'uses' => 'PageController@editionkeneshPage']);
+
+
+    # COMMENTS
+
+    Route::post('/comment', ['as'=>'front.comment', 'uses'=> 'CommentController@store']);
+
+
+    # SHAILOO
+
     Route::get('/shailoo',['as'=>'front.shailoo', 'uses'=>"ShailooController@index"]);
     Route::get('/shailoo/all',['as'=>'front.shailoo.all', 'uses'=>"ShailooController@all"]);
     Route::get('/shailoo/post/{post}',['as'=>'front.shailoo.post', 'uses'=>"ShailooController@post"]);
     Route::get('/shailoo/party/{category}',['as'=>'front.shailoo.party', 'uses'=>"ShailooController@party"]);
     Route::post('/shailoo_poll_vote', ['as'=>'front.shailoo_poll_vote', 'uses'=>'AjaxController@shailooPollVote']);
 
-//  Videoportal Ajax    
+
+    # AJAX
+
+    Route::get('/ajax_program', 'PageController@AjaxProgram');
+    Route::post('/poll_vote', ['as'=>'front.poll_vote', 'uses'=>'AjaxNsController@pollVote']);
     Route::post('/homeVideoportal', ['as'=>'front.homeVideoportal', 'uses'=>'AjaxController@homeVideoportal']);
 
 });

@@ -143,12 +143,12 @@ class PostController extends Controller
             $storage = \Storage::disk('public');
             $storage->makeDirectory($dir);
 
-            Image::make($_FILES['thumbnail']['tmp_name'])->fit(250, 150)->save($dir.'/'.$name);
+            Image::make($file)->fit(250, 150)->save($dir.'/'.$name);
 
             if($request->input('thumb_author')){
-                Image::make($_FILES['thumbnail']['tmp_name'])->fit(1000, 600)->insert('http://www.ktrk.kg/stringtoimg.php?string='.urlencode($thumb_author).'&font_size=4&R=FF&G=FF&B=FF', 'bottom-right', 0, 0)->save($dir.'/'.$name2);
+                Image::make($file)->fit(1000, 600)->insert('http://www.ktrk.kg/stringtoimg.php?string='.urlencode($thumb_author).'&font_size=4&R=FF&G=FF&B=FF', 'bottom-right', 0, 0)->save($dir.'/'.$name2);
             } else {
-                Image::make($_FILES['thumbnail']['tmp_name'])->fit(1000, 600)->save($dir.'/'.$name2);
+                Image::make($file)->fit(1000, 600)->save($dir.'/'.$name2);
             }
 
             $post->thumbnail = $dir.'/'.$name;
@@ -339,11 +339,11 @@ class PostController extends Controller
             $storage = \Storage::disk('public');
             $storage->makeDirectory($dir);
 
-            Image::make($_FILES['thumbnail']['tmp_name'])->fit(250, 150)->save($dir.'/'.$name);
+            Image::make($file)->fit(250, 150)->save($dir.'/'.$name);
             if($request->input('thumb_author')){
-                Image::make($_FILES['thumbnail']['tmp_name'])->fit(1000, 600)->insert('http://www.ktrk.kg/stringtoimg.php?string='.urlencode($thumb_author).'&font_size=4&R=FF&G=FF&B=FF', 'bottom-right', 0, 0)->save($dir.'/'.$name2);
+                Image::make($file)->fit(1000, 600)->insert('http://www.ktrk.kg/stringtoimg.php?string='.urlencode($thumb_author).'&font_size=4&R=FF&G=FF&B=FF', 'bottom-right', 0, 0)->save($dir.'/'.$name2);
             } else {
-                Image::make($_FILES['thumbnail']['tmp_name'])->fit(1000, 600)->save($dir.'/'.$name2);
+                Image::make($file)->fit(1000, 600)->save($dir.'/'.$name2);
             }
 
             $post->thumbnail = $dir.'/'.$name;

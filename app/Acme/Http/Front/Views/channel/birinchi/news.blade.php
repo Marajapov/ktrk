@@ -24,7 +24,7 @@
    @include('Front::channel.birinchi.nav')
    <div class="container b-maincolor">
       <div class="row">
-         <div class="col-md-9">
+         <div class="top-left-block col-md-9">
             <div class="row onenews">
                <div class="col-md-12">
                   <div class="row">
@@ -33,19 +33,34 @@
                      </div>
                      <div class="panel panel-article">
 
-                        <div class="panel-body">
-                           <div class="news-info">
-                              <span class="date"><i class="fa fa-calendar"></i>{{ $post->getDay() }} , {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
-                              <span class="view"><i class="fa fa-eye"></i>{{ $post->getViewed() }}</span>
-                           </div>
-                           <h3 class="newstitle">{{ $post->getTitleRuOrKg() }}</h3>
-                             <p class="post-thumb" href="{{ route('front.post', $post) }}">
-                              <a id="post-thumb" href="@if(empty($post->thumbnail_big)){{  asset($post->thumbnail) }}@else{{ asset($post->thumbnail_big) }}@endif">
-                                <img class="left" src="@if(empty($post->thumbnail_big)) {{  asset($post->thumbnail) }} @else {{  asset($post->thumbnail_big) }} @endif" alt="image">
-                              </a>
-                              @if($post->thumb_desc || $post->thumb_desc_ru)<span class="thumb_desc">{{ $post->getThumbnailDesc() }}</span>@endif
-                              {{--@if($post->thumb_author)<span class="thumb_author"> Фото: {{ $post->thumb_author }}</span>@endif--}}
-                            </p>
+                        <div class="panel-body clearfix">
+                          <div class="col-md-12 block news-block" style="padding: 0;">
+                              <span class="hidden" id="postId">{{ $post->id }}</span>
+                              <span class="hidden" id="orphusAction">{{ route('front.orphus') }}</span>
+                              <p class="post-thumb" href="{{ route('front.post', $post) }}">
+                                  <span class="post-title">
+                                      @foreach($words as $word)
+                                          <span>{{$word}}</span>
+                                      @endforeach
+
+                                      {{--{{ $post->getTitleRuOrKg() }}--}}
+                                      {{--<span class="extra">--}}
+                                          {{--<span class="art-date">{{ $post->getDay() }} {{ $post->getMonthRu() }}, {{ $post->getYear() }}</span>--}}
+                                          {{--<span class="art-view"><i class="fa-view"></i>{{ $post->getViewed() }}</span>--}}
+                                      {{--</span>--}}
+                                  </span>
+                                  <a id="post-thumb" href="@if(empty($post->thumbnail_big)){{  asset($post->thumbnail) }}@else{{ asset($post->thumbnail_big) }}@endif">
+                                      <img class="left" src="@if(empty($post->thumbnail_big)) {{  asset($post->thumbnail) }} @else {{  asset($post->thumbnail_big) }} @endif" alt="image">
+                                  </a>
+                                  {{--@if($post->thumb_desc || $post->thumb_desc_ru)<span class="thumb_desc">{{ $post->getThumbnailDesc() }}</span>@endif--}}
+                                  @if($post->thumb_author)<span class="thumb_author"> Фото: {{ $post->thumb_author }}</span>@endif
+                              </p>
+
+                              <div class="extra">
+                                  <span class="art-date">{{ $post->getDay() }} {{ $post->getMonthRu() }}, {{ $post->getYear() }}</span>
+                                  <span class="art-view"><i class="fa-view"></i>{{ $post->getViewed() }}</span>
+                              </div>
+                          </div>
                            <article>
                               <div>                                    
                                   {!! $post->getEmbed() !!}                                    

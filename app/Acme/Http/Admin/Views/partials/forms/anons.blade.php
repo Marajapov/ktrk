@@ -178,9 +178,16 @@
         </div>
 
         <div id="editorTextArea" class="form-group display-none">
-            <label for="channel_id" class="col-sm-2 control-label">{{ trans('site.Content') }}</label>
+            <label for="channel_id" class="col-sm-2 control-label">{{ trans('site.TextKG') }}</label>
             <div class="col-sm-10">
                 {!! Form::textarea('description', null, ["class" => "form-control", "title" => "","id" => "editKg"]) !!}
+            </div>
+        </div>
+
+        <div id="editorTextAreaRu" class="form-group display-none">
+            <label for="channel_id" class="col-sm-2 control-label">{{ trans('site.TextRU') }}</label>
+            <div class="col-sm-10">
+                {!! Form::textarea('descriptionRu', null, ["class" => "form-control", "title" => "","id" => "editRu"]) !!}
             </div>
         </div>
 

@@ -79,7 +79,7 @@
     <!-- Initialize the editor. -->
     <script>
         $(function() {
-            $('#editKg').froalaEditor({
+            $('#editKg, #editRu').froalaEditor({
                 language: 'ru',
                 height: 300,
                 toolbarSticky: false,
@@ -181,15 +181,16 @@
 
                         // ktrk videoportal
                         else if(data == 2){
-                            $('#balastanAnons').hide();
-                            $('#madaniyatAnons').hide();                        
+                            $('#balastanAnons').hide();   
+                            $('#madaniyatAnons').hide();                       
                             $('#minkiyalAnons').hide();
                             $('#kyrgyzradioanons').hide();
                             $('#dostukAnons').hide();
                             $('#musicAnons').hide();
                             $('#nameKg').show();
                             $('#nameRu').show();
-                            $('#editorTextArea').hide();
+                            $('#editorTextArea').show();
+                            $('#editorTextAreaRu').show();
                             $('#linkArea').show();
                             $('#weekDayKg').show();
                             $('#weekDayRu').show();

@@ -91,10 +91,10 @@
                                 </button>
                             </form>
 
-                            <button id="btnLive" class="btn btn-danger btn-live" data-toggle="modal" data-target="#liveModal">
+                            <a href="{{ route('front.streams') }}" id="btnLive" class="btn btn-danger btn-live">
                                 <i class="fa fa-dot-circle-o"></i>
                                 {{ trans('site.Live') }}
-                            </button>
+                            </a>
 
                             @include ("Front::partials.mainNav")
 

@@ -13,6 +13,34 @@ return [
     |
     */
 
+    // Nav
+    'NavAbout'  =>  'О КТРК',
+    'NavAboutHistory'  =>  'История',
+    'NavAboutAdministration'  =>  'Руководство',
+    'NavAboutNS'  =>  'Наблюдательный совет',
+    'NavAboutRS'  =>  'Редакционный советник',
+    'NavAboutStrategy'  =>  'Стратегия',
+    'NavAboutReport'  =>  'Отчеты',
+    'NavAboutBase'  =>  'Нормативная база',
+    'NavAboutBranding'  =>  'Брендинг',
+    'NavAboutRTC'  =>  'Республиканский телецентр',
+
+    'NavNews'  =>  'Новости',
+
+    'NavTeleprogram'  =>  'Программа передач',
+    'NavTeleprogramKtrk'  =>  'Общественный первый Канал',
+    'NavTeleprogramMusic'  =>  'Телеканал Музыка',
+    'NavTeleprogramMadaniyat'  =>  'Телеканал Маданият Тарых Тил',
+    'NavTeleprogramBalastan'  =>  'Телеканал Баластан',
+    'NavTeleprogramSport'  =>  'Телеканал КТРК Спорт',
+    'NavTeleprogramKgRadio'  =>  'Кыргыз радиосу',
+    'NavTeleprogramBirinchi'  =>  'Биринчи радио',
+    'NavTeleprogramDostuk'  =>  'Радио Достук',
+    'NavTeleprogramMinkiyal'  =>  'Радио Миң-Кыял FM',
+
+    'SelectTV'  =>  'Выбрать телеканал',
+    'SelectRadio'  =>  'Выбрать радиостанцию',
+
     // abakan added
     'AdminPostThemeRu' => 'Материалы по теме',
     'Top news' => 'Актуально',
@@ -35,6 +63,8 @@ return [
     'All' => 'Все',
 
 //    'Homepage' => '',
+    'NowLive' => 'Сейчас в эфире',
+    'AfterLive' => 'Далее в эфире',
 
     //Header Footer titles
     'Homepage' => 'Главная страница',

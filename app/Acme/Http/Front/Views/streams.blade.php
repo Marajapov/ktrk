@@ -1,11 +1,11 @@
-@extends('Front::layouts.defaultTest')
+@extends('Front::layouts.defaultnew')
 @section('title', "Стрим")
 
 @section('styles')    
     <link rel="stylesheet" href="{{ asset('filter/css/layout.css') }}">
     <link rel="stylesheet" href="{{ asset('css/jasny-bootstrap.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/fileinput.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('css/test2.css') }}"/>
+    <!-- <link rel="stylesheet" href="{{ asset('css/test2.css') }}"/> -->
     <link rel="stylesheet" href="{{ asset('css/vertex.css') }}">
 @endsection
 
@@ -26,7 +26,7 @@
                         <ul class="playlist">
                             @foreach($streams as $key=> $stream)
                             <li class="stream">
-                                <a href="javascript:playStream('{{ $stream->getStreamUrl()}}', '../{{ $stream->getFileBig()}}')" onClick="return dataContent({{$key+99}})">
+                                <a href="javascript:playStream('{{ $stream->getStreamUrl()}}', '../{{ $stream->getFileBig()}}')" onClick="return dataContent({{$key+99}})" >
                                     <img src='../{{ $stream->getFile()}}' />
                                     <h4>{{ $stream->getTitleOne()}}</h4>
                                 </a>
@@ -48,12 +48,8 @@
 
     var playerInstance = jwplayer("player");
 
-    $('#playerStop').click(function(){
-        playerInstance.stop();
-    });
-
     playerInstance.setup({
-        autostart: false,
+        autostart: true,
         playlist: [{
             image: "{{ asset('images/live_bg.png')}}",
             title: "КТРК",
@@ -78,7 +74,7 @@
         file: video,
         image: thumb
       }]);
-      playerInstance.play();
+      // playerInstance.play();
     }
 </script>
 

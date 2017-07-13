@@ -12,10 +12,12 @@ class AnonsController extends Controller
 {
     public function index()
     {
-        $anons = Anons::get();
+        $perPage = 10;
+        $anons = Anons::orderBy('created_at', 'desc')->paginate($perPage);
 
         return view('Admin::anons.index', [
             'anons' => $anons,
+            'perPage' => $perPage,
         ]);
     }
 
@@ -41,6 +43,7 @@ class AnonsController extends Controller
 
     public function store(Request $request)
     {
+        // dd($request);
         $anons = Anons::create($request->except('thumbnail','owner_id','q'));
 
         if($request->hasFile('thumbnail'))
@@ -55,7 +58,7 @@ class AnonsController extends Controller
             $storage->makeDirectory($dir);
 
             if($request->channel == 2){
-                Image::make($_FILES['thumbnail']['tmp_name'])->fit(1170, 400)->save($dir.'/'.$name);
+                Image::make($_FILES['thumbnail']['tmp_name'])->fit(1170, 480)->save($dir.'/'.$name);
             } elseif($request->channel == 3) {
                 Image::make($_FILES['thumbnail']['tmp_name'])->fit(1170, 360)->save($dir.'/'.$name);
             } elseif($request->channel == 11) {
@@ -152,7 +155,7 @@ class AnonsController extends Controller
             $storage->makeDirectory($dir);
 
             if($request->channel == 2){
-                Image::make($_FILES['thumbnail']['tmp_name'])->fit(1170, 400)->save($dir.'/'.$name);
+                Image::make($_FILES['thumbnail']['tmp_name'])->fit(1170, 480)->save($dir.'/'.$name);
             } elseif($request->channel == 3) {
                 Image::make($_FILES['thumbnail']['tmp_name'])->fit(1170, 360)->save($dir.'/'.$name);
             } elseif($request->channel == 11) {
@@ -209,5 +212,14 @@ class AnonsController extends Controller
         $anons->delete();
 
         return redirect()->route('admin.anons.index');
+    }
+
+    public function search(Request $request)
+    {
+        $key = $request->get('key');
+        $row = Anons::search($key)->orderBy('created_at','desc')->get();
+        return view('Admin::anons.searchResult', [
+            'anons' => $row,
+            ]);
     }
 }

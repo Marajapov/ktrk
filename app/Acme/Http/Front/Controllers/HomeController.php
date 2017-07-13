@@ -1,12 +1,17 @@
 <?php
 namespace Front\Controllers;
-//use Illuminate\Http\Request;
+
 use Illuminate\Http\Request;
 use Input;
+use View;
 use Intervention\Image\ImageManagerStatic as Image;
 use Illuminate\Support\Facades\Validator;
+
 use \Model\Comment\ModelName as Comment;
 use \Model\Post\ModelName as Post;
+use \Model\Category\ModelName as Category;
+use \Model\Project\ModelName as Project;
+use \Model\Anons\ModelName as Anons;
 
 class HomeController extends Controller
 {
@@ -19,12 +24,46 @@ class HomeController extends Controller
         $this->positionLeft = \Model\Banner\ModelName::where('positionLeft','=','1')->where('channel_id','=','2')->first();
         $this->positionCenter = \Model\Banner\ModelName::where('positionCenter','=','1')->where('channel_id','=','2')->first();
         $this->positionBottom = \Model\Banner\ModelName::where('positionBottom','=','1')->where('channel_id','=','2')->first();
+
+        $categoriesNews = Category::where('general','=','1')->where('published','=','1')->where('order','>','0')->orderBy('order','asc')->get();
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            $activeProjects = Project::where('extracolumn',true)->where('published',true)->where('status', true)->orderBy('name','asc')->orderBy('nameRu','asc')->get();
+        }else{
+            $activeProjects = Project::where('extracolumn',true)->where('published',true)->where('status', true)->orderBy('name','asc')->orderBy('nameRu','asc')->get();
+        }
+
+        // Current program
+        date_default_timezone_set('Asia/Bishkek');
+        $now = date("d-m-Y H:i");
+        $currentDate = date('d-m-Y');
+        $currentTime = date('H:i');
+        $weekDay = date('N', strtotime($now));
+
+        $currentProgram = '';
+        $nextProgram = '';
+
+        $schedule = \Model\Schedule\ModelName::where('channel_id',2)->where('date',$currentDate)->first();
+
+        if($schedule){
+            $program = array();
+            $program = json_decode($schedule->program);
+            foreach ($program as $key => $row) {
+                if($key < count($program)-1){
+                    if( (strtotime($row->time) <= strtotime($currentTime)) && (strtotime($currentTime) < strtotime($program[$key+1]->time)) ){
+                        $currentProgram = $row;
+                        $nextProgram = $program[$key+1];
+                    }
+                }
+                
+            }
+        }
+
+        View::share('categoriesNews', $categoriesNews);
+        View::share('activeProjects', $activeProjects);
+        View::share('currentProgram', $currentProgram);
+        View::share('nextProgram', $nextProgram);
     }
-    /**
-     * Show the application dashboard to the user.
-     *
-     * @return Response
-     */
 
     public function Live(){
             
@@ -162,9 +201,9 @@ class HomeController extends Controller
         }
 
         if($lc == 'kg'){
-            $latestPosts = \Model\Post\ModelName::general($channel)->published()->having('number','=','99')->where('general','=','1')->where('fbpost','<>','1')->languagekg()->take(6)->skip(0)->orderBy('created_at','desc')->get();
+            $latestPosts = \Model\Post\ModelName::where('general',true)->where('live','<>','1')->published()->having('number','=','99')->where('general','=','1')->where('fbpost','<>','1')->languagekg()->take(6)->orderBy('created_at','desc')->get();
         }elseif($lc == 'ru'){
-            $latestPosts = \Model\Post\ModelName::general($channel)->published()->having('numberRu','=','99')->where('general','=','1')->where('fbpost','<>','1')->languageru()->take(6)->skip(0)->orderBy('created_at','desc')->get();
+            $latestPosts = \Model\Post\ModelName::where('general',true)->where('live','<>','1')->published()->having('numberRu','=','99')->where('general','=','1')->where('fbpost','<>','1')->languageru()->take(6)->orderBy('created_at','desc')->get();
         }
 
         $dayVideo1 = \Model\Media\ModelName::where('dayVideo','=','1')->first();
@@ -215,8 +254,6 @@ class HomeController extends Controller
         $mediaLastVideos = \Model\Media\ModelName::where('published','=','1')->orderBy('id','desc')->take(9)->get();
 
         $defaultVideo = 'rjXSurFi8uQ';
-
-        
 
         return view('Front::home', [
             
@@ -297,97 +334,131 @@ class HomeController extends Controller
 
         if($lc == 'kg'){
 
+            $livePost = Post::where('general',true)->where('live',true)->where('published',true)->languagekg()->first();
+
             $generalPosts = array();
 
-            $generalPost1 = \Model\Post\ModelName::general($channel)->published()->having('number','=',1)->languagekg()->first();
-            if($generalPost1 == null){
-                $generalPost1 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(32)->first();
+            if($livePost){
+                $generalPosts[] = $livePost;
+            } else {
+                $generalPost1 = \Model\Post\ModelName::general($channel)->published()->having('number','=',1)->languagekg()->first();
+                if($generalPost1 == null){
+                    $generalPost1 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('created_at','desc')->take(1)->skip(32)->first();
+                }
+                if($generalPost1) $generalPosts[] = $generalPost1;
             }
-            if($generalPost1) $generalPosts[] = $generalPost1;
 
             $generalPost2 = \Model\Post\ModelName::general($channel)->published()->having('number','=',2)->languagekg()->first();
             if($generalPost2 == null){
-                $generalPost2 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(17)->first();
+                $generalPost2 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('created_at','desc')->take(1)->skip(17)->first();
             }
             if($generalPost2) $generalPosts[] = $generalPost2;
 
             $generalPost3 = \Model\Post\ModelName::general($channel)->published()->having('number','=',3)->languagekg()->first();
             if($generalPost3 == null){
-                $generalPost3 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(22)->first();
+                $generalPost3 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('created_at','desc')->take(1)->skip(22)->first();
             }
             if($generalPost3) $generalPosts[] = $generalPost3;
 
             $generalPost4 = \Model\Post\ModelName::general($channel)->published()->having('number','=',4)->languagekg()->first();
             if($generalPost4 == null){
-                $generalPost4 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(33)->first();
+                $generalPost4 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('created_at','desc')->take(1)->skip(33)->first();
             }
             if($generalPost4) $generalPosts[] = $generalPost4;
 
             $generalPost5 = \Model\Post\ModelName::general($channel)->published()->having('number','=',5)->languagekg()->first();
             if($generalPost5 == null){
-                $generalPost5 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(44)->first();
+                $generalPost5 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('created_at','desc')->take(1)->skip(44)->first();
             }
             if($generalPost5) $generalPosts[] = $generalPost5;
 
             $generalPost6 = \Model\Post\ModelName::general($channel)->published()->having('number','=',6)->languagekg()->first();
             if($generalPost6 == null){
-                $generalPost6 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('id','desc')->take(1)->skip(51)->first();
+                $generalPost6 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('created_at','desc')->take(1)->skip(51)->first();
             }
             if($generalPost6) $generalPosts[] = $generalPost6;
 
             $projects = \Model\Project\ModelName::having('name','<>','')->get();
-            $directorPosts = \Model\Post\ModelName::where('director','=','1')->orderBy('id','desc')->take(3)->languagekg()->get();
-            $reporterPosts = \Model\Post\ModelName::where('reporter','=','1')->orderBy('id','desc')->take(15)->languagekg()->get();
+            $directorPosts = \Model\Post\ModelName::where('director','=','1')->orderBy('created_at','desc')->take(3)->languagekg()->get();
+            $reporterPosts = \Model\Post\ModelName::where('reporter','=','1')->orderBy('created_at','desc')->take(15)->languagekg()->get();
+            $multimedia = Category::where('title','Мультимедиа')->first();
+            if($multimedia){
+                $multimediaPosts = \Model\Post\ModelName::where('category_id',$multimedia->id)->orderBy('created_at','desc')->take(8)->languagekg()->get();    
+            } else {
+                $multimediaPosts = null;
+            }
+
+            //Slider Projects
+            $sliderProjects = Anons::where('channel','2')->desckg()->languagekg()->published()->orderBy('created_at','desc')->get();          
 
         } elseif($lc == 'ru'){
 
+            $livePost = Post::where('general',true)->where('live',true)->where('published',true)->languageru()->first();
+
             $generalPosts = array();
 
-            $generalPost1 = \Model\Post\ModelName::general($channel)->published()->having('numberRu','=',1)->languageru()->first();
-            if($generalPost1 == null){
-                $generalPost1 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languageru()->orderBy('id','desc')->take(1)->skip(32)->first();
+            if($livePost){
+                $generalPosts[] = $livePost;
+            } else {
+                $generalPost1 = \Model\Post\ModelName::general($channel)->published()->having('numberRu','=',1)->languageru()->first();
+                if($generalPost1 == null){
+                    $generalPost1 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languageru()->orderBy('created_at','desc')->take(1)->skip(32)->first();
+                }
+                if($generalPost1) $generalPosts[] = $generalPost1;
             }
-            if($generalPost1) $generalPosts[] = $generalPost1;
 
             $generalPost2 = \Model\Post\ModelName::general($channel)->published()->having('numberRu','=',2)->languageru()->first();
             if($generalPost2 == null){
-                $generalPost2 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languageru()->orderBy('id','desc')->take(1)->skip(17)->first();
+                $generalPost2 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languageru()->orderBy('created_at','desc')->take(1)->skip(17)->first();
             }
             if($generalPost2) $generalPosts[] = $generalPost2;
 
             $generalPost3 = \Model\Post\ModelName::general($channel)->published()->having('numberRu','=',3)->languageru()->first();
             if($generalPost3 == null){
-                $generalPost3 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languageru()->orderBy('id','desc')->take(1)->skip(22)->first();
+                $generalPost3 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languageru()->orderBy('created_at','desc')->take(1)->skip(22)->first();
             }
             if($generalPost3) $generalPosts[] = $generalPost3;
 
             $generalPost4 = \Model\Post\ModelName::general($channel)->published()->having('numberRu','=',4)->languageru()->first();
             if($generalPost4 == null){
-                $generalPost4 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languageru()->orderBy('id','desc')->take(1)->skip(33)->first();
+                $generalPost4 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languageru()->orderBy('created_at','desc')->take(1)->skip(33)->first();
             }
             if($generalPost4) $generalPosts[] = $generalPost4;
 
             $generalPost5 = \Model\Post\ModelName::general($channel)->published()->having('numberRu','=',5)->languageru()->first();
             if($generalPost5 == null){
-                $generalPost5 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languageru()->orderBy('id','desc')->take(1)->skip(44)->first();
+                $generalPost5 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languageru()->orderBy('created_at','desc')->take(1)->skip(44)->first();
             }
             if($generalPost5) $generalPosts[] = $generalPost5;
 
             $generalPost6 = \Model\Post\ModelName::general($channel)->published()->having('numberRu','=',6)->languageru()->first();
             if($generalPost6 == null){
-                $generalPost6 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languageru()->orderBy('id','desc')->take(1)->skip(51)->first();
+                $generalPost6 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languageru()->orderBy('created_at','desc')->take(1)->skip(51)->first();
             }
             if($generalPost6) $generalPosts[] = $generalPost6;
 
             $projects = \Model\Project\ModelName::where('nameRu','<>','')->get();
-            $directorPosts = \Model\Post\ModelName::where('director','=','1')->orderBy('id','desc')->take(3)->languageru()->get();
-            $reporterPosts = \Model\Post\ModelName::where('reporter','=','1')->orderBy('id','desc')->take(15)->languageru()->get();
+            $directorPosts = \Model\Post\ModelName::where('director','=','1')->orderBy('created_at','desc')->take(3)->languageru()->get();
+            $reporterPosts = \Model\Post\ModelName::where('reporter','=','1')->orderBy('created_at','desc')->take(15)->languageru()->get();
+
+            $multimedia = Category::where('titleRu','Мультимедиа')->first();            
+            $multimedia = Category::where('title','Мультимедиа')->first();
+            if($multimedia){
+                $multimediaPosts = \Model\Post\ModelName::where('category_id',$multimedia->id)->orderBy('created_at','desc')->take(8)->languageru()->get();    
+            } else {
+                $multimediaPosts = null;
+                // $multimediaPosts = \Model\Post\ModelName::orderBy('created_at','desc')->take(8)->languageru()->get(); 
+            }            
+
+            //Slider Projects
+            $sliderProjects = Anons::where('channel','2')->descru()->languageru()->published()->orderBy('created_at','desc')->get();
+
         }
 
         if($lc == 'kg'){
-            $latestPosts = \Model\Post\ModelName::general($channel)->published()->having('number','=','99')->where('general','=','1')->where('fbpost','<>','1')->languagekg()->take(6)->orderBy('created_at','desc')->get();
+            $latestPosts = \Model\Post\ModelName::where('general',true)->where('live','<>','1')->published()->having('number','=','99')->where('general','=','1')->where('fbpost','<>','1')->languagekg()->take(6)->orderBy('created_at','desc')->get();
         }elseif($lc == 'ru'){
-            $latestPosts = \Model\Post\ModelName::general($channel)->published()->having('numberRu','=','99')->where('general','=','1')->where('fbpost','<>','1')->languageru()->take(6)->orderBy('created_at','desc')->get();
+            $latestPosts = \Model\Post\ModelName::where('general',true)->where('live','<>','1')->published()->having('numberRu','=','99')->where('general','=','1')->where('fbpost','<>','1')->languageru()->take(6)->orderBy('created_at','desc')->get();
         }
 
         $dayVideos = array();
@@ -432,13 +503,13 @@ class HomeController extends Controller
         $photoGalleryFirst = \Model\PhotoParent\ModelName::where('extracolumn','=','1')->where('published','=',true)->orderBy('created_at','desc')->first();
         $photoGalleries = \Model\PhotoParent\ModelName::where('extracolumn','=','1')->where('published','=',true)->orderBy('created_at','desc')->take(4)->skip(1)->get();
 
-        $MediaCategories = \Model\MediaCategory\ModelName::orderBy('id','asc')->get();
+        $MediaCategories = \Model\MediaCategory\ModelName::orderBy('created_at','asc')->get();
         $mediaPosts = \Model\Media\ModelName::orderBy('created_at','desc')->get();
 
         $categoriesVideos = array();
 
         foreach($MediaCategories as $MediaCategory){
-            $CategoryVideos = \Model\Media\ModelName::where('videoType','=',$MediaCategory->videoType)->where('published','=','1')->orderBy('id','desc')->take(9)->get();
+            $CategoryVideos = \Model\Media\ModelName::where('videoType','=',$MediaCategory->videoType)->where('published','=','1')->orderBy('created_at','desc')->take(9)->get();
             $categoriesVideos = array_add($categoriesVideos, $MediaCategory->videoType, $CategoryVideos);
         }
 
@@ -446,16 +517,64 @@ class HomeController extends Controller
 
         $defaultVideo = 'rjXSurFi8uQ';
 
+        // News
+        $categories = \Model\Category\ModelName::where('general','=','1')->where('published','=','1')->where('order','>','0')->orderBy('order','asc')->take(9)->get();
+
+        $leftCategories = $middleCategories = $rightCategories = $posts = $headerPosts = array();
+
+        foreach($categories as $key=>$category){
+
+            if($lc == 'kg'){
+
+                $categoryHeaderPosts = \Model\Post\ModelName::where('general','=','1')->where('live',false)->where('category_id','=',$category->id)->where('published','=','1')->where('title','<>','')->orderBy('created_at','desc')->take(1)->get();
+                foreach($categoryHeaderPosts as $categoryHeaderPost){
+                    $headerPosts[] = $categoryHeaderPost;
+                }
+                if(count($categoryHeaderPosts) == 0 ){
+                    unset($categories[$key]);
+                }
+
+                $categoryPosts = \Model\Post\ModelName::where('general','=','1')->where('live',false)->where('category_id','=',$category->id)->where('published','=','1')->where('title','<>','')->orderBy('created_at','desc')->take(1)->skip(1)->get();
+                foreach($categoryPosts as $categoryPost){
+                    $posts[] = $categoryPost;
+                }
+
+            } elseif($lc == 'ru') {
+
+                $categoryHeaderPosts = \Model\Post\ModelName::where('general','=','1')->where('live',false)->where('category_id','=',$category->id)->where('published','=','1')->where('titleRu','<>','')->orderBy('created_at','desc')->take(1)->get();
+                foreach($categoryHeaderPosts as $categoryHeaderPost){
+                    $headerPosts[] = $categoryHeaderPost;
+                }
+                if(count($categoryHeaderPosts) == 0 ){
+                    unset($categories[$key]);
+                }
+
+                $categoryPosts = \Model\Post\ModelName::where('general','=','1')->where('live',false)->where('category_id','=',$category->id)->where('published','=','1')->where('titleRu','<>','')->orderBy('created_at','desc')->take(1)->skip(1)->get();
+                foreach($categoryPosts as $categoryPost){
+                    $posts[] = $categoryPost;
+                }
+
+            }
+        }
+
+        session(['categories'=>$categories]);
+
+        foreach (session('categories') as $key1=>$category1) {
+            $key1 = $key1+1;
+            if($key1 % 3 == 1){
+                $leftCategories[] = $category1;
+            } else if($key1 % 3 == 2){
+                $middleCategories[] = $category1;
+            } else if($key1 % 3 == 0){
+                $rightCategories[] = $category1;
+            }
+        }
+
         return view('Front::test', [
 
             'lc' =>$lc,
 
-            'generalPost1'   => $generalPost1,
-            'generalPost2'   => $generalPost2,
-            'generalPost3'   => $generalPost3,
-            'generalPost4'   => $generalPost4,
-            'generalPost5'   => $generalPost5,
-            'generalPost6'   => $generalPost6,
+            'livePost'   => $livePost,
             'generalPosts'   => $generalPosts,
 
             'dayVideo1'      => $dayVideo1,
@@ -482,6 +601,16 @@ class HomeController extends Controller
             'directorPosts' => $directorPosts,
             'reporterPosts' => $reporterPosts,
             'latestPosts' => $latestPosts,
+            'multimediaPosts' => $multimediaPosts,
+
+            'headerPosts' => $headerPosts,
+            'posts' => $posts,
+            'categories' => $categories,
+            'leftCategories'=>$leftCategories,
+            'middleCategories'=>$middleCategories,
+            'rightCategories'=>$rightCategories,
+
+            'sliderProjects'=>$sliderProjects,
 
             'channels' => $channels,
         ]);
@@ -490,6 +619,12 @@ class HomeController extends Controller
     public function Post(Post $post, $locale="kg", $title = "")
     {
         $post->incrementViewed();
+        
+        if($post->getTilda()){
+            echo file_get_contents($post->getTilda());
+            dd();
+        }
+
         $lc = in_array($locale, ['kg', 'ru'])? $locale : 'kg';
 
         app()->setlocale($lc);
@@ -514,7 +649,7 @@ class HomeController extends Controller
             $postTagsKg= $post->getTagListAttributeRu();
             if($postTagsKg){
                 foreach ($postTagsKg as $key => $postTagKg) {
-                    $postTagPostsKg = $postTagKg->posts()->where('id','<>',$post->id)->orderBy('created_at','desc')->get();
+                    $postTagPostsKg = $postTagKg->posts()->where('id','<>',$post->id)->where('live',false)->orderBy('created_at','desc')->get();
                     $relatedPosts = $postTagPostsKg->merge($relatedPosts);
                 }
                 $relatedPosts = $relatedPosts->sortByDesc('created_at')->take(6);
@@ -607,7 +742,7 @@ class HomeController extends Controller
             }
 
             $weekFromNow = date('Y-m-d H:i', strtotime('-7 days'));
-            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->where('number','=','88')->where('created_at','>',$weekFromNow)->orderBy('updated_at','desc')->take(6)->get();
+            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('live',false)->where('title','<>','')->where('number','=','88')->where('created_at','>',$weekFromNow)->orderBy('updated_at','desc')->take(6)->get();
 
             if(count($topArticles) > 0){
                 $topArticles = $topArticles;   
@@ -615,7 +750,7 @@ class HomeController extends Controller
                 $topArticles = null;
             }
 
-            $popArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->where('created_at','>',$weekFromNow)->orderBy('viewed','desc')->take(6)->get();
+            $popArticles = \Model\Post\ModelName::where('general','=','1')->where('live',false)->where('title','<>','')->where('created_at','>',$weekFromNow)->orderBy('viewed','desc')->take(6)->get();
             if(count($popArticles) > 0){
                 $popArticles = $popArticles;
             }else{
@@ -627,7 +762,7 @@ class HomeController extends Controller
             $postTagsRu = $post->getTagListAttributeRu();
             if($postTagsRu){
                 foreach ($postTagsRu as $key => $postTagRu) {
-                    $postTagPostsRu = $postTagRu->posts()->where('id','<>',$post->id)->orderBy('created_at','desc')->get();
+                    $postTagPostsRu = $postTagRu->posts()->where('id','<>',$post->id)->where('live',false)->orderBy('created_at','desc')->get();
                     $relatedPosts = $postTagPostsRu->merge($relatedPosts);
                 }
                 $relatedPosts = $relatedPosts->sortByDesc('created_at')->take(6);
@@ -719,14 +854,14 @@ class HomeController extends Controller
             }
 
             $weekFromNow = date('Y-m-d H:i', strtotime('-7 days'));
-            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->where('created_at','>',$weekFromNow)->where('numberRu','=','88')->orderBy('updated_at','desc')->take(6)->get();
+            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('live',false)->where('titleRu','<>','')->where('created_at','>',$weekFromNow)->where('numberRu','=','88')->orderBy('updated_at','desc')->take(6)->get();
             if(count($topArticles) > 0){
                 $topArticles = $topArticles;   
             }else{
                 $topArticles = null;
             }
 
-            $popArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->where('created_at','>',$weekFromNow)->orderBy('viewed','desc')->take(6)->get();
+            $popArticles = \Model\Post\ModelName::where('general','=','1')->where('live',false)->where('titleRu','<>','')->where('created_at','>',$weekFromNow)->orderBy('viewed','desc')->take(6)->get();
             if(count($popArticles) > 0){
                 $popArticles = $popArticles;
             }else{
@@ -770,6 +905,12 @@ class HomeController extends Controller
     public function PostTest(Post $post, $locale="kg", $title = "")
     {
         $post->incrementViewed();
+        
+        if($post->getTilda()){
+            echo file_get_contents($post->getTilda());
+            dd();
+        }
+
         $lc = in_array($locale, ['kg', 'ru'])? $locale : 'kg';
 
         app()->setlocale($lc);
@@ -794,7 +935,7 @@ class HomeController extends Controller
             $postTagsKg = $post->getTagListAttributeRu();
             if($postTagsKg){
                 foreach ($postTagsKg as $key => $postTagKg) {
-                    $postTagPostsKg = $postTagKg->posts()->where('id','<>',$post->id)->orderBy('created_at','desc')->get();
+                    $postTagPostsKg = $postTagKg->posts()->where('id','<>',$post->id)->where('live',false)->orderBy('created_at','desc')->get();
                     $relatedPosts = $postTagPostsKg->merge($relatedPosts);
                 }
                 $relatedPosts = $relatedPosts->sortByDesc('created_at')->take(6);
@@ -887,7 +1028,7 @@ class HomeController extends Controller
             }
 
             $weekFromNow = date('Y-m-d H:i', strtotime('-7 days'));
-            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->where('number','=','88')->where('created_at','>',$weekFromNow)->orderBy('updated_at','desc')->take(6)->get();
+            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('live',false)->where('title','<>','')->where('number','=','88')->where('created_at','>',$weekFromNow)->orderBy('updated_at','desc')->take(6)->get();
 
             if(count($topArticles) > 0){
                 $topArticles = $topArticles;   
@@ -895,7 +1036,7 @@ class HomeController extends Controller
                 $topArticles = null;
             }
 
-            $popArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->where('created_at','>',$weekFromNow)->orderBy('viewed','desc')->take(6)->get();
+            $popArticles = \Model\Post\ModelName::where('general','=','1')->where('live',false)->where('title','<>','')->where('created_at','>',$weekFromNow)->orderBy('viewed','desc')->take(6)->get();
             if(count($popArticles) > 0){
                 $popArticles = $popArticles;
             }else{
@@ -907,7 +1048,7 @@ class HomeController extends Controller
             $postTagsRu = $post->getTagListAttributeRu();
             if($postTagsRu){
                 foreach ($postTagsRu as $key => $postTagRu) {
-                    $postTagPostsRu = $postTagRu->posts()->where('id','<>',$post->id)->orderBy('created_at','desc')->get();
+                    $postTagPostsRu = $postTagRu->posts()->where('id','<>',$post->id)->where('live',false)->orderBy('created_at','desc')->get();
                     $relatedPosts = $postTagPostsRu->merge($relatedPosts);
                 }
                 $relatedPosts = $relatedPosts->sortByDesc('created_at')->take(6);
@@ -1000,14 +1141,14 @@ class HomeController extends Controller
             }
 
             $weekFromNow = date('Y-m-d H:i', strtotime('-7 days'));
-            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->where('created_at','>',$weekFromNow)->where('numberRu','=','88')->orderBy('updated_at','desc')->take(6)->get();
+            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('live',false)->where('titleRu','<>','')->where('created_at','>',$weekFromNow)->where('numberRu','=','88')->orderBy('updated_at','desc')->take(6)->get();
             if(count($topArticles) > 0){
                 $topArticles = $topArticles;   
             }else{
                 $topArticles = null;
             }
 
-            $popArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->where('created_at','>',$weekFromNow)->orderBy('viewed','desc')->take(6)->get();
+            $popArticles = \Model\Post\ModelName::where('general','=','1')->where('live',false)->where('titleRu','<>','')->where('created_at','>',$weekFromNow)->orderBy('viewed','desc')->take(6)->get();
             if(count($popArticles) > 0){
                 $popArticles = $popArticles;
             }else{
@@ -1052,14 +1193,14 @@ class HomeController extends Controller
     {        
         $lc = app()->getlocale();
         if($lc == 'kg'){
-            $postAll = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->orderBy('id','desc')->get();
+            $postAll = \Model\Post\ModelName::where('general','=','1')->where('live',false)->where('title','<>','')->orderBy('id','desc')->get();
 
         }elseif($lc == 'ru'){
-            $postAll = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->orderBy('id','desc')->get();
+            $postAll = \Model\Post\ModelName::where('general','=','1')->where('live',false)->where('titleRu','<>','')->orderBy('id','desc')->get();
         }
 
         if($lc == 'kg'){
-            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->where('number','=','88')->orderBy('updated_at','desc')->take(6)->get();
+            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('live',false)->where('title','<>','')->where('number','=','88')->orderBy('updated_at','desc')->take(6)->get();
             if(count($topArticles) > 0){
                 $topArticles = $topArticles;   
             }else{
@@ -1067,7 +1208,7 @@ class HomeController extends Controller
             }
 
             $weekFromNow = date('Y-m-d H:i', strtotime('-7 days'));
-            $popArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->where('created_at','>',$weekFromNow)->orderBy('viewed','desc')->take(6)->get();
+            $popArticles = \Model\Post\ModelName::where('general','=','1')->where('live',false)->where('title','<>','')->where('created_at','>',$weekFromNow)->orderBy('viewed','desc')->take(6)->get();
             if(count($popArticles) > 0){
                 $popArticles = $popArticles;
             }else{
@@ -1075,7 +1216,7 @@ class HomeController extends Controller
             }
 
         }elseif($lc == 'ru'){
-            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->where('numberRu','=','88')->orderBy('updated_at','desc')->take(6)->get();
+            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('live',false)->where('titleRu','<>','')->where('numberRu','=','88')->orderBy('updated_at','desc')->take(6)->get();
             if(count($topArticles) > 0){
                 $topArticles = $topArticles;   
             }else{
@@ -1083,7 +1224,7 @@ class HomeController extends Controller
             }
 
             $weekFromNow = date('Y-m-d H:i', strtotime('-7 days'));
-            $popArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->where('created_at','>',$weekFromNow)->orderBy('viewed','desc')->take(6)->get();
+            $popArticles = \Model\Post\ModelName::where('general','=','1')->where('live',false)->where('titleRu','<>','')->where('created_at','>',$weekFromNow)->orderBy('viewed','desc')->take(6)->get();
             if(count($popArticles) > 0){
                 $popArticles = $popArticles;
             }else{
@@ -1104,7 +1245,7 @@ class HomeController extends Controller
 
             if($lc == 'kg'){
 
-                $categoryHeaderPosts = \Model\Post\ModelName::where('general','=','1')->where('category_id','=',$category->id)->where('published','=','1')->where('title','<>','')->orderBy('id','desc')->take(1)->get();
+                $categoryHeaderPosts = \Model\Post\ModelName::where('general','=','1')->where('live',false)->where('category_id','=',$category->id)->where('published','=','1')->where('title','<>','')->orderBy('id','desc')->take(1)->get();
                 foreach($categoryHeaderPosts as $categoryHeaderPost){
                     $headerPosts[] = $categoryHeaderPost;
                 }
@@ -1112,14 +1253,14 @@ class HomeController extends Controller
                     unset($categories[$key]);
                 }
 
-                $categoryPosts = \Model\Post\ModelName::where('general','=','1')->where('category_id','=',$category->id)->where('published','=','1')->where('title','<>','')->orderBy('id','desc')->take(2)->skip(1)->get();
+                $categoryPosts = \Model\Post\ModelName::where('general','=','1')->where('live',false)->where('category_id','=',$category->id)->where('published','=','1')->where('title','<>','')->orderBy('id','desc')->take(2)->skip(1)->get();
                 foreach($categoryPosts as $categoryPost){
                     $posts[] = $categoryPost;
                 }
 
             } elseif($lc == 'ru') {
 
-                $categoryHeaderPosts = \Model\Post\ModelName::where('general','=','1')->where('category_id','=',$category->id)->where('published','=','1')->where('titleRu','<>','')->orderBy('id','desc')->take(1)->get();
+                $categoryHeaderPosts = \Model\Post\ModelName::where('general','=','1')->where('live',false)->where('category_id','=',$category->id)->where('published','=','1')->where('titleRu','<>','')->orderBy('id','desc')->take(1)->get();
                 foreach($categoryHeaderPosts as $categoryHeaderPost){
                     $headerPosts[] = $categoryHeaderPost;
                 }
@@ -1127,7 +1268,7 @@ class HomeController extends Controller
                     unset($categories[$key]);
                 }
 
-                $categoryPosts = \Model\Post\ModelName::where('general','=','1')->where('category_id','=',$category->id)->where('published','=','1')->where('titleRu','<>','')->orderBy('id','desc')->take(2)->skip(1)->get();
+                $categoryPosts = \Model\Post\ModelName::where('general','=','1')->where('live',false)->where('category_id','=',$category->id)->where('published','=','1')->where('titleRu','<>','')->orderBy('id','desc')->take(2)->skip(1)->get();
                 foreach($categoryPosts as $categoryPost){
                     $posts[] = $categoryPost;
                 }
@@ -1149,6 +1290,133 @@ class HomeController extends Controller
         }
 
         return view('Front::post.posts',[
+            'postAll' => $postAll,
+            'headerPosts' => $headerPosts,
+            'posts' => $posts,
+            'topArticles' => $topArticles,
+            'popArticles' => $popArticles,
+            'categories'=>$categories,
+            'leftCategories'=>$leftCategories,
+            'middleCategories'=>$middleCategories,
+            'rightCategories'=>$rightCategories,
+            'backgroundMain' => $backgroundMain,
+            'positionTop'    => $this->positionTop,
+            'positionRight'  => $this->positionRight,
+            'positionCenter' => $this->positionCenter,
+            'positionBottom' => $this->positionBottom,
+            'positionLeft'  => $this->positionLeft,
+            'lc' => $lc,
+            ]);
+
+    }
+
+     public function PostsTest()
+    {        
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            $postAll = \Model\Post\ModelName::where('general','=','1')->where('live',false)->where('title','<>','')->orderBy('id','desc')->get();
+
+        }elseif($lc == 'ru'){
+            $postAll = \Model\Post\ModelName::where('general','=','1')->where('live',false)->where('titleRu','<>','')->orderBy('id','desc')->get();
+        }
+
+        if($lc == 'kg'){
+            $weekFromNow = date('Y-m-d H:i', strtotime('-7 days'));
+            
+            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('live',false)->where('title','<>','')->where('number','=','88')->where('created_at','>',$weekFromNow)->orderBy('updated_at','desc')->take(6)->get();
+
+            if(count($topArticles) > 0){
+                $topArticles = $topArticles;   
+            }else{
+                $topArticles = null;
+            }
+
+            $popArticles = \Model\Post\ModelName::where('general','=','1')->where('live',false)->where('title','<>','')->where('created_at','>',$weekFromNow)->orderBy('viewed','desc')->take(6)->get();
+            
+            if(count($popArticles) > 0){
+                $popArticles = $popArticles;
+            }else{
+                $popArticles = null;
+            }
+
+        }elseif($lc == 'ru'){
+            $weekFromNow = date('Y-m-d H:i', strtotime('-7 days'));
+            
+            $topArticles = \Model\Post\ModelName::where('general','=','1')->where('live',false)->where('titleRu','<>','')->where('numberRu','=','88')->where('created_at','>',$weekFromNow)->orderBy('updated_at','desc')->take(6)->get();
+
+            if(count($topArticles) > 0){
+                $topArticles = $topArticles;   
+            }else{
+                $topArticles = null;
+            }
+
+            $popArticles = \Model\Post\ModelName::where('general','=','1')->where('live',false)->where('titleRu','<>','')->where('created_at','>',$weekFromNow)->orderBy('viewed','desc')->take(6)->get();
+
+            if(count($popArticles) > 0){
+                $popArticles = $popArticles;
+            }else{
+                $popArticles = null;
+            }
+        }
+
+        $categories = \Model\Category\ModelName::where('general','=','1')->where('published','=','1')->where('order','>','0')->orderBy('order','asc')->get();
+
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','2')->first();
+        $leftCategories = array();
+        $middleCategories = array();
+        $rightCategories = array();
+        $posts = array();
+        $headerPosts = array();
+
+        foreach($categories as $key=>$category){
+
+            if($lc == 'kg'){
+
+                $categoryHeaderPosts = \Model\Post\ModelName::where('general','=','1')->where('live',false)->where('category_id','=',$category->id)->where('published','=','1')->where('title','<>','')->orderBy('id','desc')->take(1)->get();
+                foreach($categoryHeaderPosts as $categoryHeaderPost){
+                    $headerPosts[] = $categoryHeaderPost;
+                }
+                if(count($categoryHeaderPosts) == 0 ){
+                    unset($categories[$key]);
+                }
+
+                $categoryPosts = \Model\Post\ModelName::where('general','=','1')->where('live',false)->where('category_id','=',$category->id)->where('published','=','1')->where('title','<>','')->orderBy('id','desc')->take(2)->skip(1)->get();
+                foreach($categoryPosts as $categoryPost){
+                    $posts[] = $categoryPost;
+                }
+
+            } elseif($lc == 'ru') {
+
+                $categoryHeaderPosts = \Model\Post\ModelName::where('general','=','1')->where('live',false)->where('category_id','=',$category->id)->where('published','=','1')->where('titleRu','<>','')->orderBy('id','desc')->take(1)->get();
+                foreach($categoryHeaderPosts as $categoryHeaderPost){
+                    $headerPosts[] = $categoryHeaderPost;
+                }
+                if(count($categoryHeaderPosts) == 0 ){
+                    unset($categories[$key]);
+                }
+
+                $categoryPosts = \Model\Post\ModelName::where('general','=','1')->where('live',false)->where('category_id','=',$category->id)->where('published','=','1')->where('titleRu','<>','')->orderBy('id','desc')->take(2)->skip(1)->get();
+                foreach($categoryPosts as $categoryPost){
+                    $posts[] = $categoryPost;
+                }
+
+            }
+        }
+
+        session(['categories'=>$categories]);
+
+        foreach (session('categories') as $key1=>$category1) {
+            $key1 = $key1+1;
+            if($key1 % 3 == 1){
+                $leftCategories[] = $category1;
+            } else if($key1 % 3 == 2){
+                $middleCategories[] = $category1;
+            } else if($key1 % 3 == 0){
+                $rightCategories[] = $category1;
+            }
+        }
+
+        return view('Front::post.postsTest',[
             'postAll' => $postAll,
             'headerPosts' => $headerPosts,
             'posts' => $posts,

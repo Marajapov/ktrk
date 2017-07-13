@@ -71,9 +71,11 @@
         </div>
     @endif
 
-    <a class="ad-block" target="_blank" href="#" class="text-center ads ads-300x250 middle-ad">
-        <img src="{{ asset('images/banner_240x400.png') }}" alt="ad-banner"/>
-    </a>
+    <div class="ad-block">
+        <a target="_blank" href="#" class="text-center ads ads-300x250 middle-ad">
+            <img src="{{ asset('images/banner_240x400.png') }}" alt="ad-banner"/>
+        </a>
+    </div>
 
     @if($popArticles)
         <div class="section last-news-section pop-articles-section">

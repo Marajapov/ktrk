@@ -78,7 +78,7 @@
                                 <h4>{{ trans('site.KtrkApp') }}</h4>
                                 <ul>
                                     <li class="app-ios">
-                                        <a href="https://itunes.apple.com/kg/app/ktrk-official/id1004194204">
+                                        <a href="https://itunes.apple.com/us/app/%D0%BA%D1%82%D1%80%D0%BA/id1202157965">
                                             <svg x="0px" y="0px" width="113px" height="40px" viewBox="0 0 113 40" xml:space="preserve">
                                                 <path d="M15.406,10.453h2.113c0.138,0,0.251-0.114,0.251-0.245c0-0.139-0.113-0.252-0.251-0.252h-2.113
                                                     c-0.134,0-0.249,0.112-0.249,0.252C15.157,10.34,15.272,10.453,15.406,10.453z M16.462,28.884c-0.605,0-1.098,0.492-1.098,1.096
@@ -311,9 +311,9 @@
                             <h4 class="copyrightSide">{{ trans('site.TradeMarkAddress') }}</h4>
                             <h4 class="copyrightSide">{{ trans('site.TradeMarkTel') }} </h4>
                             <h4 class="copyrightSide">{{ trans('site.TradeMarkPart') }} </h4>
-                            <h4 class="copyrightSide">{{ trans('site.TradeMarkEmail') }} </h4>            
+                            <h4 class="copyrightSide">{{ trans('site.TradeMarkEmail') }} </h4>
                             <h4 class="copyrightSide">{{ trans('site.TradeMarkKtrk') }} </h4>
-                            <h4 class="copyrightSide"><p class="text-right" style="margin: 5px 0 0; font-size: 14px;">{{ trans('site.Developed') }} <a href="http://ulut.kg/" target="_blank">Улут Софт</a></p> </h4>
+                            <h4 class="copyrightSide">{{ trans('site.Developed') }}: <a href="http://ulut.kg/" target="_blank">Улут Софт</a></h4>
                         </div>
                     </div>
                 </div>
@@ -329,6 +329,8 @@
 
 <script type="text/javascript" src="{{ asset('js/bootstrap.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/bootstrap-hover-dropdown.js') }}"></script>
+
+<script type="text/javascript" src="{{asset('js/script.js')}}"></script>
 
 <script>
     $(document).ready(function(){

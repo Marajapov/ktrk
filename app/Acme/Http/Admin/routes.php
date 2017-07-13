@@ -92,6 +92,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'access:admin', 'namespace' =
     //Anons
     Route::resource('anons','AnonsController');
     Route::post('anons/create', 'AjaxController@selectChange');
+    Route::get('anons.search', ['as' => 'admin.anons.search', 'uses' => 'AnonsController@search']);
 
     //Quote
     Route::resource('quote','QuotesController');
@@ -103,4 +104,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'access:admin', 'namespace' =
  
     // Stream
     Route::resource('stream','StreamController');
+
+    // Vacancy
+    Route::resource('vacancy','VacancyController');   
+    Route::resource('vacancynews','VacancyNewsController');   
 });

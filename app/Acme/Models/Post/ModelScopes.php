@@ -28,6 +28,10 @@ trait ModelScopes {
         }        
     }
 
+    public function scopeNotLive($query){
+        return $query->where('live',true);
+    }
+
     public function scopeType($query, $type = "post")
     {
         $type = in_array($type, ['post', 'post'])? $type : "post";

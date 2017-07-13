@@ -109,7 +109,8 @@ Route::group(['domain' => 'www.ktrk.kg', 'prefix' => '/madaniyat/', 'namespace' 
 Route::group(['domain' => 'www.ktrk.kg', 'prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
 
     Route::get('/', ['as' => 'front.home',   'uses' => 'HomeController@Home']);
-    Route::get('/posts/general', ['as' => 'front.general',   'uses' => 'HomeController@Posts']);
+    Route::get('/posts/general', ['as' => 'front.general',   'uses' => 'HomeController@Posts']);    
+    Route::get('/vertex/posts/general', ['as' => 'front.vertex.general',   'uses' => 'HomeController@PostsTest']);
     Route::get('posts/general/filterResult', ['as' => 'front.filterResult', 'uses' => 'HomeController@filterResult']);
 
 });

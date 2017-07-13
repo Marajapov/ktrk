@@ -2,7 +2,11 @@
 namespace Front\Controllers;
 //use Illuminate\Http\Request;
 use Illuminate\Http\Request;
+use View;
+
 use \Model\MediaCategory\ModelName as MediaCategory;
+use \Model\Category\ModelName as Category;
+use \Model\Project\ModelName as Project;
 
 class MediaController extends Controller
 {
@@ -15,6 +19,45 @@ class MediaController extends Controller
         $this->positionleft = \Model\Banner\ModelName::where('positionLeft','=','1')->first();
         $this->positionCenter = \Model\Banner\ModelName::where('positionCenter','=','1')->first();
         $this->positionBottom = \Model\Banner\ModelName::where('positionBottom','=','1')->first();
+
+        $categoriesNews = Category::where('general','=','1')->where('published','=','1')->where('order','>','0')->orderBy('order','asc')->get();
+        $lc = app()->getlocale();
+        if($lc == 'kg'){
+            $activeProjects = Project::where('extracolumn',true)->where('published',true)->where('status', true)->orderBy('name','asc')->orderBy('nameRu','asc')->get();
+        }else{
+            $activeProjects = Project::where('extracolumn',true)->where('published',true)->where('status', true)->orderBy('name','asc')->orderBy('nameRu','asc')->get();
+        }
+
+        // Current program
+        date_default_timezone_set('Asia/Bishkek');
+        $now = date("d-m-Y H:i");
+        $currentDate = date('d-m-Y');
+        $currentTime = date('H:i');
+        $weekDay = date('N', strtotime($now));
+
+        $currentProgram = '';
+        $nextProgram = '';
+
+        $schedule = \Model\Schedule\ModelName::where('channel_id',2)->where('date',$currentDate)->first();
+
+        if($schedule){
+            $program = array();
+            $program = json_decode($schedule->program);
+            foreach ($program as $key => $row) {
+                if($key < count($program)-1){
+                    if( (strtotime($row->time) <= strtotime($currentTime)) && (strtotime($currentTime) < strtotime($program[$key+1]->time)) ){
+                        $currentProgram = $row;
+                        $nextProgram = $program[$key+1];
+                    }
+                }
+                
+            }
+        }
+
+        View::share('categoriesNews', $categoriesNews);
+        View::share('activeProjects', $activeProjects);
+        View::share('currentProgram', $currentProgram);
+        View::share('nextProgram', $nextProgram);
     }
     /**
      * Show the application dashboard to the user.
@@ -56,7 +99,7 @@ class MediaController extends Controller
             $projectList = \Model\Project\ModelName::where('extracolumn','=','1')->orderBy('nameRu','asc')->get();
         }
 
-        $anons = \Model\Anons\ModelName::where('channel','=','2')->where('published','=','1')->get();
+        $anons = \Model\Anons\ModelName::where('channel','=','2')->where('description','')->where('descriptionRu','')->where('published','=','1')->get();
 
         return view('Front::media.index',[
             'mediaAll' => $mediaAll,

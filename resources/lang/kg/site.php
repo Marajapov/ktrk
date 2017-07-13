@@ -12,6 +12,35 @@ return [
     | these language lines according to your application's requirements.
     |
     */
+
+    // Nav
+    'NavAbout'  =>  'КТРК жөнүндө',
+    'NavAboutHistory'  =>  'Тарых',
+    'NavAboutAdministration'  =>  'Жетекчилер',
+    'NavAboutNS'  =>  'Байкоочу кеңеш',
+    'NavAboutRS'  =>  'Редакциялык кеңеши',
+    'NavAboutStrategy'  =>  'Стратегия',
+    'NavAboutReport'  =>  'Отчеттор',
+    'NavAboutBase'  =>  'Нормативдик база',
+    'NavAboutBranding'  =>  'КТРКнын эн белгиси',
+    'NavAboutRTC'  =>  'Республикалык Радиотелеборбор',
+
+    'NavNews'  =>  'Жаңылыктар',
+
+    'NavTeleprogram'  =>  'Көрсөтүүлөр программасы',
+    'NavTeleprogramKtrk'  =>  'Коомдук биринчи канал',
+    'NavTeleprogramMusic'  =>  'Музыка телеканалы',
+    'NavTeleprogramMadaniyat'  =>  'Маданият Тарых Тил телеканалы',
+    'NavTeleprogramBalastan'  =>  'Баластан телеканалы',
+    'NavTeleprogramSport'  =>  'КТРК Спорт телеканалы',
+    'NavTeleprogramKgRadio'  =>  'Кыргыз радиосу',
+    'NavTeleprogramBirinchi'  =>  'Биринчи радио',
+    'NavTeleprogramDostuk'  =>  'Достук радиосу',
+    'NavTeleprogramMinkiyal'  =>  'Миң-Кыял FM радиосу',
+
+    'SelectTV'  =>  'Телеканал тандоо',
+    'SelectRadio'  =>  'Радиону тандоо',
+    ''  =>  '',
     
     'Top news' => 'Маанилүү',
     'All news' => 'Бардык',
@@ -35,6 +64,8 @@ return [
     'LoadMore' => 'Дагы жүктөө',
     'All' => 'Бардыгы',
 
+    'NowLive' => 'Азыр эфирде',
+    'AfterLive' => 'Алдыда',
 
     //Header Footer titles
     'Homepage' => 'Башкы бет',

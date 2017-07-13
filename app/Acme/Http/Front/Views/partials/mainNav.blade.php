@@ -24,7 +24,7 @@
             </a>
         </li>
         <li>
-            <a href="https://www.youtube.com/watch?v=O7nAKLMUuSo" target="_blank">
+            <a href="https://www.youtube.com/watch?v=0Ih1XSBUE_8" target="_blank">
                 <img src="{{ asset('images/channels/alatoo.jpg') }}" alt=""/>
             </a>
         </li>

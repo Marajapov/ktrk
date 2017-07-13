@@ -5,52 +5,52 @@
                 <div class="carousel-channels">
                     <div class="channel-slide">
                         <a href="{{ route('front.home') }}">
-                            <img src="{{ asset('images/channels/small/1.png') }}" alt=""/>
+                            <img src="{{ asset('images/channels/nav/ktrk.png') }}" alt=""/>
                         </a>
                     </div>
                     <div class="channel-slide">
                         <a href="{{ route('muzkanal.home') }}">
-                            <img src="{{ asset('images/channels/small/2.png') }}" alt=""/>
+                            <img src="{{ asset('images/channels/nav/music.png') }}" alt=""/>
                         </a>
                     </div>
                     <div class="channel-slide">
                         <a href="{{ route('balastan.home') }}">
-                            <img src="{{ asset('images/channels/small/3.png') }}" alt=""/>
+                            <img src="{{ asset('images/channels/nav/balastan.png') }}" alt=""/>
                         </a>
                     </div>
                     <div class="channel-slide">
                         <a href="{{ route('madaniyat.home') }}">
-                            <img src="{{ asset('images/channels/small/4.png') }}" alt=""/>
+                            <img src="{{ asset('images/channels/nav/mtt.png') }}" alt=""/>
                         </a>
                     </div>
                     <div class="channel-slide">
                         <a href="{{ route('sport.home') }}">
-                            <img src="{{ asset('images/channels/small/10.png') }}" alt=""/>
+                            <img src="{{ asset('images/channels/nav/sport.png') }}" alt=""/>
                         </a>
                     </div>
                     <div class="channel-slide">
                         <a href="#">
-                            <img src="{{ asset('images/channels/small/9.png') }}" alt=""/>
+                            <img src="{{ asset('images/channels/nav/alatoo.png') }}" alt=""/>
                         </a>
                     </div>
                     <div class="channel-slide">
                         <a href="{{ route('kyrgyzradio.home') }}">
-                            <img src="{{ asset('images/channels/small/5.png') }}" alt=""/>
+                            <img src="{{ asset('images/channels/nav/kyrgyz.png') }}" alt=""/>
                         </a>
                     </div>
                     <div class="channel-slide">
                         <a href="{{ route('birinchi.home') }}">
-                            <img src="{{ asset('images/channels/small/6.png') }}" alt=""/>
+                            <img src="{{ asset('images/channels/nav/birinchi.png') }}" alt=""/>
                         </a>
                     </div>
                     <div class="channel-slide">
                         <a href="{{ route('dostuk.home') }}">
-                            <img src="{{ asset('images/channels/small/7.png') }}" alt=""/>
+                            <img src="{{ asset('images/channels/nav/dostuk.png') }}" alt=""/>
                         </a>
                     </div>
                     <div class="channel-slide">
                         <a href="{{ route('minkiyal.home') }}">
-                            <img src="{{ asset('images/channels/small/8.png') }}" alt=""/>
+                            <img src="{{ asset('images/channels/nav/minkiyal.png') }}" alt=""/>
                         </a>
                     </div>
                 </div>

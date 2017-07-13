@@ -7,8 +7,6 @@
 
 @endsection
 
-@section('title', 'Жаңылыктар')
-
 @section('content')
 
     <div class="container main-wrapper">

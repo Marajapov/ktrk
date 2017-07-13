@@ -122,7 +122,7 @@
                </ul>
 
                <ul class="nav navbar-nav navbar-right logo-block onesearch">            
-                        <li class="tw"><a href="https://twitter.com/BirinchiRadio" title="Twitter"><i class="fa fa-twitter"></i> </a></li>
+                        <li class="tw"><a href="https://twitter.com/KTRK_kg" title="Twitter"><i class="fa fa-twitter"></i> </a></li>
                        <li class="fb"><a href="https://www.facebook.com/1Radiokg/" title="Facebook"><i class="fa fa-facebook"></i></a></li>
                        <li class="ok"><a href="http://ok.ru/birinchiradio" title="Odnoklassniki"><i class="fa fa-odnoklassniki"></i></a></li>
                        <li class="yt"><a href="https://soundcloud.com/medet-ok/sets/mmcdadp3y1rt" title="Soundcloud"><i class="fa fa-soundcloud" aria-hidden="true"></i></a></li>         
