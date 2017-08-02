@@ -41,6 +41,36 @@ return [
     'SelectTV'  =>  'Выбрать телеканал',
     'SelectRadio'  =>  'Выбрать радиостанцию',
 
+    # Director Page
+    'DirBio' => 'Биография',
+    '' => '',
+    '' => '',
+    '' => '',
+
+    # Post Page
+    'PostByDate' => 'Новости по дате',
+    'NewsForDate' => 'Новости за',
+
+    # Media
+    'Projects' => 'Телепроекты',
+    'RelatedMedia' => 'Видео по теме',
+    'MediaMaterials' => 'Видеоматериалы',
+
+    # Gallery
+    '' => '',
+    '' => '',
+
+    # Search
+    'Search' => 'Поиск',
+    'DataResult' => 'Результаты по запросу',
+    'DataResultTag' => 'Результаты по тегам',
+    'DataResultPost' => 'Результаты по названиям новостей',
+    'DataResultShows' => 'Результаты по видеоматериалам',
+    '' => '',
+
+
+
+
     // abakan added
     'AdminPostThemeRu' => 'Материалы по теме',
     'Top news' => 'Актуально',
@@ -391,10 +421,6 @@ return [
     'DataTablePreviousPage' => 'Пред.',
 
     //Search page
-    'DataResult' => 'Результаты по запросу',
-    'DataResultTag' => 'Результат по тегу новостей',
-    'DataResultPost' => 'Результат по названию новостей',
-    'DataResultShows' => 'Результат по телепередачам',
 
 //    Post
     'PostAktualno'=>'Актуально',

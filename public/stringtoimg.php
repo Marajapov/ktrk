@@ -9,7 +9,8 @@ $string = urldecode($_GET['string']);
 $string2 = iconv('UTF-8', 'cp1251', $string);
 
 //Get the size of the string
-$width = strlen($string2)*8;
+$width = strlen($string2)*12;
+// $width = 200;
 $height = 15;
 
 //Create the image

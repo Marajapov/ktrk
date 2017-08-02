@@ -1,0 +1,41 @@
+*{
+	outline: 0;
+}
+html{
+	font-family: sans-serif;
+	line-height: 1.5;
+}
+body{
+	margin: 0;
+	font-size: 0.9rem;
+	font-weight: 500;
+
+	color: #333;
+}
+ul{
+	list-style: none;
+}
+img{
+	width: 100%;
+	display: inline-block;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+	margin-top: 0;
+	margin-bottom: 1rem;
+}
+p{
+	margin: 0;
+	margin-bottom: 1rem;
+}
+textarea{
+	resize: vertical;
+}
+input{
+	background: #fff;
+	border: 1px solid #ccc;
+}

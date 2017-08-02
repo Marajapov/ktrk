@@ -10,28 +10,58 @@ class PostController extends Controller
 {
     public function __construct() {}
 
-    public function PostsKg()
+    public function PostsKg(Request $request)
     {
-        $posts = Post::
+        $total = $request->total;
+
+        if($request->perPage){
+            $perPage = $request->perPage;
+            $postsBeforePaginate = Post::
                     where('title','<>','')->
                     where('general',true)->
                     where('published', true)->
                     orderBy('created_at','desc')->
-                    take(50)-> //optional
+                    take($total)->
                     get();
+
+            $posts = Post::customPaginate($postsBeforePaginate, $perPage);
+        } else {
+            $posts = Post::
+                    where('title','<>','')->
+                    where('general',true)->
+                    where('published', true)->
+                    orderBy('created_at','desc')->
+                    take($total)->
+                    get();
+        }
 
         return response()->json($posts, 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
     }
 
-    public function PostsRu()
+    public function PostsRu(Request $request)
     {
-        $posts = Post::
+        $total = $request->total;
+
+        if($request->perPage){
+            $perPage = $request->perPage;
+            $postsBeforePaginate = Post::
                     where('titleRu','<>','')->
                     where('general',true)->
                     where('published', true)->
                     orderBy('created_at','desc')->
-                    take(50)-> //optional
+                    take($total)->
                     get();
+
+            $posts = Post::customPaginate($postsBeforePaginate, $perPage);
+        } else {
+            $posts = Post::
+                    where('titleRu','<>','')->
+                    where('general',true)->
+                    where('published', true)->
+                    orderBy('created_at','desc')->
+                    take($total)->
+                    get();
+        }
 
         return response()->json($posts, 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
     }
@@ -52,60 +82,125 @@ class PostController extends Controller
             return 'Информация доступна только на кыргызском языке.';
     }
 
-    public function CategoryPostsKg(Category $category)
+    public function CategoryPostsKg(Category $category, Request $request)
     {
-        $posts = Post::
+        $total = $request->total;
+
+        if($request->perPage){
+            $perPage = $request->perPage;
+            $postsBeforePaginate = Post::
                     where('category_id',$category->id)->
                     where('title','<>','')->
                     where('general',true)->
                     where('published', true)->
                     orderBy('created_at','desc')->
-                    // take(50)-> //optional
+                    take($total)->
                     get();
+
+            $posts = Post::customPaginate($postsBeforePaginate, $perPage);
+        } else {
+            $posts = Post::
+                    where('category_id',$category->id)->
+                    where('title','<>','')->
+                    where('general',true)->
+                    where('published', true)->
+                    orderBy('created_at','desc')->
+                    take($total)->
+                    get();
+        }
 
         return response()->json($posts, 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
     }
 
-    public function CategoryPostsRu(Category $category)
+    public function CategoryPostsRu(Category $category, Request $request)
     {
-        $posts = Post::
+        $total = $request->total;
+
+        if($request->perPage){
+            $perPage = $request->perPage;
+            $postsBeforePaginate = Post::
                     where('category_id',$category->id)->
                     where('titleRu','<>','')->
                     where('general',true)->
                     where('published', true)->
                     orderBy('created_at','desc')->
-                    // take(50)-> //optional
+                    take($total)->
                     get();
+
+            $posts = Post::customPaginate($postsBeforePaginate, $perPage);
+        } else {
+            $posts = Post::
+                    where('category_id',$category->id)->
+                    where('titleRu','<>','')->
+                    where('general',true)->
+                    where('published', true)->
+                    orderBy('created_at','desc')->
+                    take($total)->
+                    get();
+        }
 
         return response()->json($posts, 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
     }
 
-    public function PopularPostsKg()
+    public function PopularPostsKg(Request $request)
     {
         $weekFromNow = date('Y-m-d H:i', strtotime('-7 days'));
-        $posts = Post::
+
+        $total = $request->total;
+
+        if($request->perPage){
+            $perPage = $request->perPage;
+            $postsBeforePaginate = Post::
                     where('title','<>','')->
                     where('general',true)->
                     where('published', true)->
                     where('created_at','>',$weekFromNow)->
                     orderBy('viewed','desc')->
-                    // take(20)-> //optional
+                    take($total)->
                     get();
+
+            $posts = Post::customPaginate($postsBeforePaginate, $perPage);
+        } else {
+            $posts = Post::
+                    where('title','<>','')->
+                    where('general',true)->
+                    where('published', true)->
+                    orderBy('created_at','desc')->
+                    take($total)->
+                    get();
+        }
 
         return response()->json($posts, 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
     }
 
-    public function PopularPostsRu()
+    public function PopularPostsRu(Request $request)
     {
         $weekFromNow = date('Y-m-d H:i', strtotime('-7 days'));
-        $posts = Post::
+
+        $total = $request->total;
+
+        if($request->perPage){
+            $perPage = $request->perPage;
+            $postsBeforePaginate = Post::
                     where('titleRu','<>','')->
                     where('general',true)->
                     where('published', true)->
                     where('created_at','>',$weekFromNow)->
                     orderBy('viewed','desc')->
-                    // take(20)-> //optional
+                    take($total)->
                     get();
+
+            $posts = Post::customPaginate($postsBeforePaginate, $perPage);
+        } else {
+            $posts = Post::
+                    where('titleRu','<>','')->
+                    where('general',true)->
+                    where('published', true)->
+                    where('created_at','>',$weekFromNow)->
+                    orderBy('viewed','desc')->
+                    take($total)->
+                    get();
+        }
 
         return response()->json($posts, 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
     }

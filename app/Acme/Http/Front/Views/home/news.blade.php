@@ -9,7 +9,7 @@
                 @foreach($leftCategories as $category)
                     <div class="category">
 
-                        <a href="{{ route('front.vertex.category', $category) }}" class="cat-title">
+                        <a href="{{ route('front.category', $category) }}" class="cat-title">
                             {{ $category->getTitle() }}
                         </a>
 
@@ -62,8 +62,8 @@
                                                 {{ $headerPost->getViewed() }}
                                             </span>                                                    
                                         </div>
-                                        <a class="post-title" href="{{ route('front.vertex.post', [$headerPost, $lc]) }}">
-                                            <img src="@if($headerPost->thumbnail_big) {{ asset($headerPost->thumbnail_big) }} @else {{ asset($headerPost->thumbnail) }}  @endif" alt=""/>
+                                        <a class="post-title" href="{{ route('front.post', [$headerPost, $lc]) }}">
+                                            <img src="@if($headerPost->thumbnail) {{ asset($headerPost->thumbnail) }} @else {{ asset($headerPost->thumbnail) }}  @endif" alt=""/>
                                             {{ $headerPost->getTitleRuOrKg() }}
                                         </a>
                                     </div>
@@ -117,7 +117,7 @@
                                                 {{ $post->getViewed() }}
                                             </span>                                                    
                                         </div>
-                                        <a class="post-title" href="{{ route('front.vertex.post', [$post, $lc]) }}">
+                                        <a class="post-title" href="{{ route('front.post', [$post, $lc]) }}">
                                             {{ $post->getTitleRuOrKg() }}
                                         </a>
                                     </div>
@@ -132,7 +132,7 @@
                 @foreach($middleCategories as $category)
                     <div class="category">
 
-                        <a href="{{ route('front.vertex.category', $category) }}" class="cat-title">
+                        <a href="{{ route('front.category', $category) }}" class="cat-title">
                             {{ $category->getTitle() }}
                         </a>
 
@@ -185,8 +185,8 @@
                                                 {{ $headerPost->getViewed() }}
                                             </span>                                                    
                                         </div>
-                                        <a class="post-title" href="{{ route('front.vertex.post', [$headerPost, $lc]) }}">
-                                            <img src="@if($headerPost->thumbnail_big) {{ asset($headerPost->thumbnail_big) }} @else {{ asset($headerPost->thumbnail) }}  @endif" alt=""/>
+                                        <a class="post-title" href="{{ route('front.post', [$headerPost, $lc]) }}">
+                                            <img src="@if($headerPost->thumbnail) {{ asset($headerPost->thumbnail) }} @else {{ asset($headerPost->thumbnail) }}  @endif" alt=""/>
                                             {{ $headerPost->getTitleRuOrKg() }}
                                         </a>
                                     </div>
@@ -240,7 +240,7 @@
                                                 {{ $post->getViewed() }}
                                             </span>                                                    
                                         </div>
-                                        <a class="post-title" href="{{ route('front.vertex.post', [$post, $lc]) }}">
+                                        <a class="post-title" href="{{ route('front.post', [$post, $lc]) }}">
                                             {{ $post->getTitleRuOrKg() }}
                                         </a>
                                     </div>
@@ -255,7 +255,7 @@
                 @foreach($rightCategories as $category)
                     <div class="category">
 
-                        <a href="{{ route('front.vertex.category', $category) }}" class="cat-title">
+                        <a href="{{ route('front.category', $category) }}" class="cat-title">
                             {{ $category->getTitle() }}
                         </a>
 
@@ -308,8 +308,8 @@
                                                 {{ $headerPost->getViewed() }}
                                             </span>                                                    
                                         </div>
-                                        <a class="post-title" href="{{ route('front.vertex.post', [$headerPost, $lc]) }}">
-                                            <img src="@if($headerPost->thumbnail_big) {{ asset($headerPost->thumbnail_big) }} @else {{ asset($headerPost->thumbnail) }}  @endif" alt=""/>
+                                        <a class="post-title" href="{{ route('front.post', [$headerPost, $lc]) }}">
+                                            <img src="@if($headerPost->thumbnail) {{ asset($headerPost->thumbnail) }} @else {{ asset($headerPost->thumbnail) }}  @endif" alt=""/>
                                             {{ $headerPost->getTitleRuOrKg() }}
                                         </a>
                                     </div>
@@ -363,7 +363,7 @@
                                                 {{ $post->getViewed() }}
                                             </span>                                                    
                                         </div>
-                                        <a class="post-title" href="{{ route('front.vertex.post', [$post, $lc]) }}">
+                                        <a class="post-title" href="{{ route('front.post', [$post, $lc]) }}">
                                             {{ $post->getTitleRuOrKg() }}
                                         </a>
                                     </div>
@@ -375,7 +375,7 @@
             </div>  
             
             <footer>
-                <a href="{{ route('front.vertex.general') }}">
+                <a href="{{ route('front.general') }}">
                     <span>{{ trans('site.FrontPostAll') }}</span>
                 </a>
             </footer>

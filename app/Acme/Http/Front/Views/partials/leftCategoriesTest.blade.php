@@ -58,7 +58,7 @@
                                         {{ $post->getViewed() }}
                                     </span>                                    
                                 </div>
-                                <a class="post-title" href="{{ route('front.vertex.post', [$post, $lc]) }}">
+                                <a class="post-title" href="{{ route('front.post', [$post, $lc]) }}">
                                     {{ $post->getTitleRuOrKg() }}
                                 </a>
                             </div>
@@ -130,7 +130,7 @@
                                         {{ $post->getViewed() }}
                                     </span>                                    
                                 </div>
-                                <a class="post-title" href="{{ route('front.vertex.post', [$post, $lc]) }}">
+                                <a class="post-title" href="{{ route('front.post', [$post, $lc]) }}">
                                     {{ $post->getTitleRuOrKg() }}
                                 </a>
                             </div>

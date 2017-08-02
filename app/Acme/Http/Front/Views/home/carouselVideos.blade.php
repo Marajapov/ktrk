@@ -11,12 +11,12 @@
         <!-- Day Video 1 -->
         @if($dayVideo1)
             <div class="video-item">
-                <div class="embed-youtube embed-responsive embed-responsive-16by9">
+                <div class="embed-youtube embed-responsive embed-responsive-16by9 video-player">
                     <figure>
                         <iframe class="embed-responsive-item" src="//www.youtube.com/embed/@if($dayVideo1){{$dayVideo1->getUrl()}}@else{{$defaultVideo}}@endif?enablejsapi=1&version=3&playerapiid=ytplayer&rel=0&showinfo=0" allowfullscreen=""></iframe>
                         <figcaption>
                             <div class="post-extra clearfix">
-                                <span class="post-date">{{ $photoGalleryFirst->getDay() }} {{ $photoGalleryFirst->getMonthRu() }}, {{ $photoGalleryFirst->getTime()}}</span>
+                                <span class="post-date">{{ $dayVideo1->getDay() }} {{ $dayVideo1->getMonthRu() }}, {{ $dayVideo1->getTime()}}</span>
                                 <span class="post-views">                                                        
                                     <svg class="fa-view" x="0px" y="0px" viewBox="0 0 22 14" xml:space="preserve">
                                         <g>
@@ -24,7 +24,7 @@
                                                 C20.1,9.8,22,7.6,22,7S20.1,4.2,17.7,2.3z M11,10c-1.7,0-3-1.3-3-3s1.3-3,3-3s3,1.3,3,3S12.7,10,11,10z"/>
                                         </g>
                                     </svg>
-                                    {{ $photoGalleryFirst->viewed }}
+                                    {{ $dayVideo1->viewed }}
                                 </span>                                                    
                             </div>
                             <div class="video-thumb">
@@ -58,13 +58,13 @@
         <!-- Day Video 2 -->
         @if($dayVideo2)
             <div class="video-item">
-                <div class="embed-youtube embed-responsive embed-responsive-16by9">
+                <div class="embed-youtube embed-responsive embed-responsive-16by9 video-player">
                     <figure>
                         <iframe class="embed-responsive-item" src="//www.youtube.com/embed/@if($dayVideo2){{$dayVideo2->getUrl()}}@else{{$defaultVideo}}@endif?enablejsapi=1&version=3&playerapiid=ytplayer&rel=0&showinfo=0" allowfullscreen=""></iframe>
                         <figcaption>
 
                             <div class="post-extra clearfix">
-                                <span class="post-date">{{ $photoGalleryFirst->getDay() }} {{ $photoGalleryFirst->getMonthRu() }}, {{ $photoGalleryFirst->getTime()}}</span>
+                                <span class="post-date">{{ $dayVideo2->getDay() }} {{ $dayVideo2->getMonthRu() }}, {{ $dayVideo2->getTime()}}</span>
                                 <span class="post-views">                                                        
                                     <svg class="fa-view" x="0px" y="0px" viewBox="0 0 22 14" xml:space="preserve">
                                         <g>
@@ -72,7 +72,7 @@
                                                 C20.1,9.8,22,7.6,22,7S20.1,4.2,17.7,2.3z M11,10c-1.7,0-3-1.3-3-3s1.3-3,3-3s3,1.3,3,3S12.7,10,11,10z"/>
                                         </g>
                                     </svg>
-                                    {{ $photoGalleryFirst->viewed }}
+                                    {{ $dayVideo2->viewed }}
                                 </span>                                                    
                             </div>
                             <div class="video-thumb">
@@ -106,12 +106,12 @@
         <!-- Day Video 3 -->
         @if($dayVideo3)
             <div class="video-item">
-                <div class="embed-youtube embed-responsive embed-responsive-16by9">
+                <div class="embed-youtube embed-responsive embed-responsive-16by9 video-player">
                     <figure>
                         <iframe class="embed-responsive-item" src="//www.youtube.com/embed/@if($dayVideo3){{$dayVideo3->getUrl()}}@else{{$defaultVideo}}@endif?enablejsapi=1&version=3&playerapiid=ytplayer&rel=0&showinfo=0" allowfullscreen=""></iframe>
                         <figcaption>
                             <div class="post-extra clearfix">
-                                <span class="post-date">{{ $photoGalleryFirst->getDay() }} {{ $photoGalleryFirst->getMonthRu() }}, {{ $photoGalleryFirst->getTime()}}</span>
+                                <span class="post-date">{{ $dayVideo3->getDay() }} {{ $dayVideo3->getMonthRu() }}, {{ $dayVideo3->getTime()}}</span>
                                 <span class="post-views">                                                        
                                     <svg class="fa-view" x="0px" y="0px" viewBox="0 0 22 14" xml:space="preserve">
                                         <g>
@@ -119,7 +119,7 @@
                                                 C20.1,9.8,22,7.6,22,7S20.1,4.2,17.7,2.3z M11,10c-1.7,0-3-1.3-3-3s1.3-3,3-3s3,1.3,3,3S12.7,10,11,10z"/>
                                         </g>
                                     </svg>
-                                    {{ $photoGalleryFirst->viewed }}
+                                    {{ $dayVideo3->viewed }}
                                 </span>                                                    
                             </div>
                             <div class="video-thumb">
@@ -153,12 +153,12 @@
         <!-- Day Video 4 -->
         @if($dayVideo4)
             <div class="video-item">
-                <div class="embed-youtube embed-responsive embed-responsive-16by9">
+                <div class="embed-youtube embed-responsive embed-responsive-16by9 video-player">
                     <figure>
                         <iframe class="embed-responsive-item" src="//www.youtube.com/embed/@if($dayVideo4){{$dayVideo4->getUrl()}}@else{{$defaultVideo}}@endif?enablejsapi=1&version=3&playerapiid=ytplayer&rel=0&showinfo=0" allowfullscreen=""></iframe>
                         <figcaption>
                             <div class="post-extra clearfix">
-                                <span class="post-date">{{ $photoGalleryFirst->getDay() }} {{ $photoGalleryFirst->getMonthRu() }}, {{ $photoGalleryFirst->getTime()}}</span>
+                                <span class="post-date">{{ $dayVideo4->getDay() }} {{ $dayVideo4->getMonthRu() }}, {{ $dayVideo4->getTime()}}</span>
                                 <span class="post-views">                                                        
                                     <svg class="fa-view" x="0px" y="0px" viewBox="0 0 22 14" xml:space="preserve">
                                         <g>
@@ -166,7 +166,7 @@
                                                 C20.1,9.8,22,7.6,22,7S20.1,4.2,17.7,2.3z M11,10c-1.7,0-3-1.3-3-3s1.3-3,3-3s3,1.3,3,3S12.7,10,11,10z"/>
                                         </g>
                                     </svg>
-                                    {{ $photoGalleryFirst->viewed }}
+                                    {{ $dayVideo4->viewed }}
                                 </span>                                                    
                             </div>
                             <div class="video-thumb">
@@ -200,7 +200,7 @@
     </div>
 
     <div class="section-footer">
-        <a href="#">
+        <a href="{{ route('front.media.index') }}">
             {{trans('site.FrontVideoAll')}}
         </a>
     </div>

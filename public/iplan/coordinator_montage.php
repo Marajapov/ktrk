@@ -3,6 +3,7 @@
 <html>
    <head>
       <?php include 'content_header.php'; ?>
+	  <script src="printThis.js"></script>
    </head>
    <body>
       <div class="all-wrapper">
@@ -225,13 +226,25 @@
 							  
                               <div class="element-box">
 							  
-                                 <div class="table-responsive table-main">
+                                 <div id="fullMontage" class="table-responsive table-main">
                                     <table class="table table-lightborder">
                                        <thead>
                                           
 										  <tr>
                                              <td colspan="8"><b><?php echo $this_montage['name'];?></b><br/> С <?php echo date("d.m.Y", strtotime($search_date_from));?> по <?php echo date("d.m.Y", strtotime($search_date_to));?>
-											 <span style="float:right"><a href="2print_montage.php?search_date_from=<?php echo $search_date_from; ?>&search_date_to=<?php echo $search_date_to; ?>&montage_room=<?php echo $montage_room; ?>" target="_blank" title="Экспорт в Excel"><img height="20px" src='img/printer.png'></a></span>
+											 		<span style="float:right">
+											 			<a id="printer_link" class="print-hide" href ="#">
+															<svg x="0px" y="0px" viewBox="0 0 24 24" xml:space="preserve">
+																<path d="M22.2,5V1c0-0.4-0.3-0.7-0.7-0.7h-19C2.1,0.3,1.8,0.6,1.8,1v4C0.8,5.1,0,5.9,0,7v8.8c0,1.1,0.9,2,2,2h2.4V23
+																c0,0.4,0.3,0.7,0.7,0.7h14.3c0.4,0,0.7-0.3,0.7-0.7v-5.3H22c1.1,0,2-0.9,2-2V7C24,5.9,23.2,5.1,22.2,5z M3.1,1.6h17.7V5H3.1V1.6z
+																 M18.6,22.4h-13V15h13V22.4z M22.7,15.7c0,0.4-0.3,0.7-0.7,0.7h-2.1V15h0.5c0.4,0,0.7-0.3,0.7-0.7s-0.3-0.7-0.7-0.7H3.6
+																C3.2,13.7,3,14,3,14.3S3.2,15,3.6,15h0.7v1.4H2c-0.4,0-0.7-0.3-0.7-0.7V7c0-0.4,0.3-0.7,0.7-0.7H22c0.4,0,0.7,0.3,0.7,0.7V15.7z
+																 M7.8,18.2h8.3c0.4,0,0.7-0.3,0.7-0.7s-0.3-0.7-0.7-0.7H7.8c-0.4,0-0.7,0.3-0.7,0.7S7.5,18.2,7.8,18.2z M7.8,21h8.3
+																c0.4,0,0.7-0.3,0.7-0.7s-0.3-0.7-0.7-0.7H7.8c-0.4,0-0.7,0.3-0.7,0.7S7.5,21,7.8,21z M20.4,8h-4.8C15.2,8,15,8.3,15,8.7v2.4
+																c0,0.4,0.3,0.7,0.7,0.7h4.8c0.4,0,0.7-0.3,0.7-0.7V8.7C21,8.3,20.8,8,20.4,8z M19.7,10.4h-3.5V9.3h3.5V10.4z"/>
+															</svg>
+														</a>
+											 		</span>
 											 </td>
                                           </tr>
 										  
@@ -243,7 +256,7 @@
 											  <th>Ответственный</th>
                                              <th>Хрон на выхода</th>
                                              <th>Заложено часов</th>
-											  <th></th>
+											  				<th class="print-hide"></th>
                                           </tr>
                                        </thead>
                                        <tbody>
@@ -274,7 +287,7 @@
 												}
 											 ?></td>         
 
-											 <td class="nowrap"><div style="float:right"><a href="?act=edit&id=<?php echo $p['id'];?>">Редактировать</a> <a href="?act=delete&id=<?php echo $p['id'];?>" onclick="return confirm('Вы уверены что хотите удалить эту запись из базы?')">Удалить</a><div></td>											 
+											 <td class="nowrap print-hide"><div style="float:right"><a href="?act=edit&id=<?php echo $p['id'];?>">Редактировать</a> <a href="?act=delete&id=<?php echo $p['id'];?>" onclick="return confirm('Вы уверены что хотите удалить эту запись из базы?')">Удалить</a><div></td>											 
                                           </tr>		
 												
 										  
@@ -358,5 +371,14 @@
          </div>
       </div>
 	  <?php include 'include.js.php';?>
+
+      <script>
+		$('#printer_link').click(function(){
+			$('#fullMontage').printThis({
+				header: "<h1><?php echo 'КООРДИНАЦИЯ МОНТАЖНЫХ СТУДИЙ';?></h1>" 
+			});
+			return false;
+		});
+	  </script>
    </body>
 </html>

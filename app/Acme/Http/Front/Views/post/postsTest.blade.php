@@ -3,6 +3,7 @@
 @section('title', trans('site.PostAllNews'))
 
 @section('styles')
+    <link rel="stylesheet" href="{{ asset('css/bootstrap-datetimepicker.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/test3.css') }}"/>
 
     <link rel="stylesheet" href="{{ asset('froala/css/froala_style.min.css') }}"/>
@@ -405,7 +406,7 @@
 
                 </div>
 
-                @include('Front::post.rightSection')
+                @include('Front::post.rightSectionGeneral')
                 
             </div>
         </div>
@@ -423,13 +424,23 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
-            $('#datetimepicker1').datetimepicker({
+            $('#inlineCalendar').datetimepicker({
                 locale: 'ru',
-                format: 'L'
-            });
-            $('#datetimepicker2').datetimepicker({
-                locale: 'ru',
-                format: 'L'
+                format: 'L',
+                inline: true,
+            sideBySide: true,
+            icons: {
+                previous: 'fa fa-angle-left',
+                next: 'fa fa-angle-right'               
+            },
+            maxDate: moment().format('YYYY-MM-DD'),
+                @if($date)
+                    defaultDate: moment('{{$date}}').format('YYYY-MM-DD')
+                @endif      
+            }).on('dp.change', function(e) {
+                var date = moment(e.date).format('YYYY-MM-DD');
+                $('input[name=d]').val(date);
+                $('#changeDate').submit();
             });
         });
     </script>

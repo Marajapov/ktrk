@@ -83,7 +83,7 @@ class PostController extends Controller
     {
 
         $post = Post::create($request->except('tag_kg','tag_ru','thumbnail','q','channel_id','created_at','number','time'));
-        $thumb_author = ($request->input('thumb_author'));
+        $thumb_author = $request->input('thumb_author');
 
         $post->number = 99;
         $post->numberRu = 99;
@@ -282,7 +282,7 @@ class PostController extends Controller
     public function update(Request $request, Post $post)
     {
         $post->update($request->except('tag_kg','tag_ru','thumbnail','q','channel_id','created_at','time'));
-        $thumb_author = ($request->input('thumb_author'));
+        $thumb_author = $request->input('thumb_author');
 
         $tag_kg_string = $request->input('tag_kg');
         $tags = explode("; ",$tag_kg_string);

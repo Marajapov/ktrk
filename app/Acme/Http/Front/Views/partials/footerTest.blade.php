@@ -10,31 +10,31 @@
                             <h4>О Компании</h4>
                             <ul class="second-level clearfix">
                                 <li>
-                                    <a href="#">История</a>
+                                    <a href="{{route('front.history')}}">{{trans('site.NavAboutHistory')}}</a>
                                 </li>
                                 <li>
-                                    <a href="#">Руководство</a>
+                                    <a href="{{route('front.pages.leaders')}}">{{trans('site.NavAboutAdministration')}}</a>
                                 </li>
                                 <li>
-                                    <a href="#">Наблюдательный совет</a>
+                                    <a href="{{route('front.ns.index')}}">{{trans('site.NavAboutNS')}}</a>
                                 </li>
                                 <li>
-                                    <a href="#">Редакционный советник</a>
+                                    <a href="{{route('front.rs.index')}}">{{trans('site.NavAboutRS')}}</a>
                                 </li>
                                 <li>
-                                    <a href="#">Стратегия</a>
+                                    <a href="{{route('front.pages.strategy')}}">{{trans('site.NavAboutStrategy')}}</a>
                                 </li>
                                 <li>
-                                    <a href="#">Отчеты</a>
+                                    <a href="{{route('front.pages.report')}}">{{trans('site.NavAboutReport')}}</a>
                                 </li>
                                 <li>
-                                    <a href="#">Нормативная база</a>
+                                    <a href="{{route('front.pages.normalbase')}}">{{trans('site.NavAboutBase')}}</a>
                                 </li>
                                 <li>
-                                    <a href="#">Брендинг</a>
+                                    <a href="{{route('front.pages.logo')}}">{{trans('site.NavAboutBranding')}}</a>
                                 </li>
                                 <li>
-                                    <a href="#">Республиканский радиотелецентр</a>
+                                    <a href="{{route('front.pages.rrts')}}">{{trans('site.NavAboutRTC')}}</a>
                                 </li>
                             </ul>
                         </li>
@@ -42,25 +42,25 @@
                             <h4>Разделы</h4>
                             <ul class="second-level clearfix">
                                 <li>
-                                    <a href="#">Новости</a>
+                                    <a href="{{route('front.general')}}">Новости</a>
                                 </li>
                                 <li>
-                                    <a href="#">Видеопортал</a>
+                                    <a href="{{route('front.media.index')}}">Видеопортал</a>
                                 </li>
                                 <li>
-                                    <a href="#">Программа передач</a>
+                                    <a href="{{route('front.pages.teleprogram', 2)}}">Программа передач</a>
                                 </li>
                                 <li>
-                                    <a href="#">Фоторепортажи</a>
+                                    <a href="{{ route('front.gallery.galleries') }}">Фоторепортажи</a>
                                 </li>
-                                <li>
+                                <!-- <li>
                                     <a href="#">Вакансии</a>
-                                </li>
-                                <li>
+                                </li> -->
+                                <!-- <li>
                                     <a href="#">Народный репортер</a>
-                                </li>
+                                </li> -->
                                 <li>
-                                    <a href="#">Реклама</a>
+                                    <a href="{{ route('front.pages.reklama') }}">Реклама</a>
                                 </li>
                             </ul>
                         </li>
@@ -68,11 +68,11 @@
                             <h4>Контактная информация</h4>
                             <ul class="second-level clearfix">
                                 <li>
-                                    <a href="#">Контакты</a>
+                                    <a href="{{ route('front.pages.contacts') }}">Контакты</a>
                                 </li>
-                                <li>
+                                <!-- <li>
                                     <a href="#">Обратная связь</a>
-                                </li>
+                                </li> -->
                             </ul>
                             <div class="apps">
                                 <h4>{{ trans('site.KtrkApp') }}</h4>

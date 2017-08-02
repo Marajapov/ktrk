@@ -22,7 +22,7 @@
                 <div class="row">
                   <div class="media media-director">
                     <div class="media-left media-middle text-center">
-                      <img src="{{ asset('images/manager_main.jpg') }}" class="">
+                      <img src="{{ asset('images/manager_main_2.jpg') }}" class="">
                     </div>
                     <div class="media-body media-middle">
                       <ul class="list-group">

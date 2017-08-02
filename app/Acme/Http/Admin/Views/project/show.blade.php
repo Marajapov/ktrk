@@ -60,6 +60,12 @@
                 {{ $project->descriptionRu }}
               </p>
             </li>
+            <li class="list-group-item">
+              <p class="header">Статус</p>
+              <p class="body">
+                {{ $project->getStatus() }}
+              </p>
+            </li>
 
           </ul>
 

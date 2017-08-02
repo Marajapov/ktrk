@@ -26,6 +26,23 @@
 }
 
 
+/* ID styles */
+.form-extra > *{
+    vertical-align: middle;
+}
+#printer_link {
+    display: inline-block;
+    padding-left: 1rem;
+    svg {
+        display: block;
+
+        height: 1.5rem;
+
+        fill: #5d77bc;
+    }
+}
+
+
 /* Menu */
 .menu-w {
     position: relative;
@@ -608,26 +625,27 @@
 
 
 /* Element Box */
-.el-tablo{
-    .form-buttons-w{
+.el-tablo {
+    .form-buttons-w {
         margin-top: 0;
         padding-top: 2rem;
     }
-    .el-buttons-list{
+    .el-buttons-list {
         text-align: center;
-        a{
+        a {
             display: inline-block;
-            margin: 0 0.5rem;
 
-            svg{
+            margin: 0 .5rem;
+            svg {
                 display: block;
-                margin: 0 auto;
+
                 height: 1.5rem;
+                margin: 0 auto;
+
                 fill: $vice-font-color;
             }
-
-            &:hover{
-                svg{
+            &:hover {
+                svg {
                     fill: $blue;
                 }
             }
@@ -641,6 +659,7 @@
         line-height: 2rem;
 
         display: block;
+
         padding: 2rem 0;
 
         text-align: center;
@@ -655,11 +674,11 @@
         }
     }
 }
-.el-tablo-small{
-    .el-title{
-        a{
+.el-tablo-small {
+    .el-title {
+        a {
             font-size: 1.25rem;
-            span{
+            span {
                 display: block;
             }
         }

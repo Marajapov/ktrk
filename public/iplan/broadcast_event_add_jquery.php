@@ -1,5 +1,4 @@
-<?php include_once 'usercontrol.php'; ?>
-<?
+<?php include_once 'usercontrol.php';
 	 if (isset($_POST['brodcast_id'])) {
 		 
 		 $user = $_SESSION["user_id"];

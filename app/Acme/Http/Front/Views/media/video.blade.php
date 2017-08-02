@@ -43,7 +43,7 @@
 
                                 <article data-cat="all-videos">
                                     <h4 class="show-title">
-                                        <a href="{{ route('front.media.project', $video->program) }}">{{ $videoProject}}</a>
+                                        <a href="{{ route('front.media.project', $video->program) }}">{{$videoProject}}</a>
                                         @if($videoProject)
                                             <i class="fa fa-circle"></i>
                                         @endif

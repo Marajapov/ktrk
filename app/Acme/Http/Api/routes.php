@@ -18,17 +18,18 @@ Route::group(['prefix' => 'api', 'namespace' => 'Api\Controllers'], function(){
 
 	//post
 	Route::get('kg/posts', 'PostController@PostsKg');
+	Route::get('kg/postsPaginated/{}', 'PostController@PostsKgPaginated');
 	Route::get('kg/post/{post}', 'PostController@PostKg');
-	Route::get('kg/category/{category}/posts', 'PostController@CategoryPostsKg');
+	Route::get('kg/category/{category}', 'PostController@CategoryPostsKg');
 	Route::get('kg/popularPosts', 'PostController@PopularPostsKg');
 
 	#RU Routes
 
 	//ru
-	Route::get('ru/posts', 'PostController@PostsKg');
-	Route::get('ru/post/{post}', 'PostController@PostKg');
-	Route::get('ru/category/{category}/posts', 'PostController@CategoryPostsKg');
-	Route::get('ru/popularPosts', 'PostController@PopularPostsKg');
+	Route::get('ru/posts', 'PostController@PostsRu');
+	Route::get('ru/post/{post}', 'PostController@PostRu');
+	Route::get('ru/category/{category}', 'PostController@CategoryPostsRu');
+	Route::get('ru/popularPosts', 'PostController@PopularPostsRu');
 
 	#Common Routes
 	Route::get('post/categories', 'PostController@Categories');

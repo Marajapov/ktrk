@@ -109,6 +109,12 @@
                 </div>
 
             </div>
+            
+            <footer>
+                <a href="{{ route('front.general') }}">
+                    <span>{{ trans('site.FrontGalleryAll') }}</span>
+                </a>
+            </footer>
         </div>
     </div>
 

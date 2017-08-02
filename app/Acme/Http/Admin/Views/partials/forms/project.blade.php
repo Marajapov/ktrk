@@ -68,6 +68,19 @@
       </div>
     </div>
 
+    <div class="form-group">
+      <label for="parentId" class="col-sm-2 control-label"></label>
+      <div class="col-sm-10">
+        <div class="checkbox checkbox-primary ">
+          {!! Form::hidden('status', 0) !!}
+          {!! Form::checkbox('status', 1, null, ["id" => "status", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
+          <label for="status">
+            Актуально
+          </label>
+        </div>
+      </div>
+    </div>
+
      <!-- extracolumn For main window of media (Videoportal) -->
       <div class="form-group">
         <label for="parentId" class="col-sm-2 control-label"></label>

@@ -23,48 +23,52 @@
           <table id="example" class="table table-bordered table-striped" data-order='[[ 1, "asc" ]]' data-page-length='10'>
 
             <thead>
-              <tr>
-                <th>Миниатюра</th>
-                <th>{{ trans('site.TitleKG') }}</th>
-                <th>{{ trans('site.TitleRU') }}</th>
-                <th>Действия</th>
-              </tr>
+            <tr>
+              <th>Миниатюра</th>
+              <th>{{ trans('site.TitleKG') }}</th>
+              <th>{{ trans('site.TitleRU') }}</th>
+              <th>Статус</th>
+              <th>Действия</th>
+            </tr>
             </thead>
 
             <tbody>
-              @foreach($projects as $project)
-                <tr>
-                  <td class="table-img text-center">
-                    <img src="{{ asset($project->thumbnail) }}" alt=""/>
-                  </td>
-                  <td class="table-title">
-                    <a href="{{ route('admin.project.show', $project) }}">
-                      {{ $project->getTitle() }}
-                    </a>
-                  </td>
-                  <td class="table-title">
-                    <a href="{{ route('admin.project.show', $project) }}">
-                      {{ $project->getTitleRu() }}
-                    </a>
-                  </td>
-                  <td>
-                    <a class="btn btn-default" href="{{ route('admin.project.show', $project) }}">
-                      {{--<span class="glyphicon glyphicon-eye-open"></span>--}}
-                      <i class="fa fa-eye"></i>
-                    </a>
-                    <a class="btn btn-default" href="{{ route('admin.project.edit', $project) }}">
-                      {{--<span class="glyphicon glyphicon-pencil"></span>--}}
-                      <i class="fa fa-pencil"></i>
-                    </a>
-                    {!! Form::open(['route' => ['admin.project.destroy', $project], 'method' => 'DELETE', 'onsubmit' => "return confirm('Вы уверены ?')"]) !!}
-                    <button type="submit" class="btn btn-default">
-                      {{--<span class="glyphicon glyphicon-trash"></span>--}}
-                      <i class="fa fa-trash"></i>
-                    </button>
-                    {!! Form::close() !!}
-                  </td>
-                </tr>
-              @endforeach
+            @foreach($projects as $project)
+              <tr>
+                <td class="table-img text-center">
+                  <img src="{{ asset($project->thumbnail) }}" alt="" style="height: 50px;"/>
+                </td>
+                <td class="table-title">
+                  <a href="{{ route('admin.project.show', $project) }}">
+                    {{ $project->getTitle() }}
+                  </a>
+                </td>
+                <td class="table-title">
+                  <a href="{{ route('admin.project.show', $project) }}">
+                    {{ $project->getTitleRu() }}
+                  </a>
+                </td>
+                <td>
+                  {{$project->getStatus()}}
+                </td>
+                <td>
+                  <a class="btn btn-default" href="{{ route('admin.project.show', $project) }}">
+                    {{--<span class="glyphicon glyphicon-eye-open"></span>--}}
+                    <i class="fa fa-eye"></i>
+                  </a>
+                  <a class="btn btn-default" href="{{ route('admin.project.edit', $project) }}">
+                    {{--<span class="glyphicon glyphicon-pencil"></span>--}}
+                    <i class="fa fa-pencil"></i>
+                  </a>
+                  {!! Form::open(['route' => ['admin.project.destroy', $project], 'method' => 'DELETE', 'onsubmit' => "return confirm('Вы уверены ?')"]) !!}
+                  <button type="submit" class="btn btn-default">
+                    {{--<span class="glyphicon glyphicon-trash"></span>--}}
+                    <i class="fa fa-trash"></i>
+                  </button>
+                  {!! Form::close() !!}
+                </td>
+              </tr>
+            @endforeach
             </tbody>
 
           </table>
@@ -80,29 +84,29 @@
   <script src="{{ asset('js/admin/dataTables.bootstrap.js') }}"></script>
 
   <script>
-    $(document).ready(function() {
-      $('#example').DataTable({
-        "language": {
-          "info": "_START_ - _END_ : {{ trans('site.DataTableTotal') }} _TOTAL_ ",
-          "lengthMenu" : "_MENU_ ",
-          "search" : "{{ trans('site.DataTableSearch') }} ",
-          "zeroRecords" : "{{ trans('site.DataTableNoResult') }}",
-          "infoEmpty" : "0-0: {{ trans('site.DataTableTotal') }} 0",
-          "infoFiltered" : "",
+      $(document).ready(function() {
+          $('#example').DataTable({
+              "language": {
+                  "info": "_START_ - _END_ : {{ trans('site.DataTableTotal') }} _TOTAL_ ",
+                  "lengthMenu" : "_MENU_ ",
+                  "search" : "{{ trans('site.DataTableSearch') }} ",
+                  "zeroRecords" : "{{ trans('site.DataTableNoResult') }}",
+                  "infoEmpty" : "0-0: {{ trans('site.DataTableTotal') }} 0",
+                  "infoFiltered" : "",
 
-          "paginate": {
-            "first": "{{ trans('site.DataTableFirstPage') }}",
-            "last": "{{ trans('site.DataTableLastPage') }}",
-            "next": "{{ trans('site.DataTableNextPage') }}",
-            "previous": "{{ trans('site.DataTablePreviousPage') }}"
-          }
-        },
-        "columnDefs": [
-          { "orderable": false, "targets": 0 },
-          { "orderable": false, "targets": 3 }
-        ]
-      });
-    } );
+                  "paginate": {
+                      "first": "{{ trans('site.DataTableFirstPage') }}",
+                      "last": "{{ trans('site.DataTableLastPage') }}",
+                      "next": "{{ trans('site.DataTableNextPage') }}",
+                      "previous": "{{ trans('site.DataTablePreviousPage') }}"
+                  }
+              },
+              "columnDefs": [
+                  { "orderable": false, "targets": 0 },
+                  { "orderable": false, "targets": 3 }
+              ]
+          });
+      } );
   </script>
 @endsection
 

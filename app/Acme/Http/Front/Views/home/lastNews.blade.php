@@ -1,5 +1,5 @@
 <div class="middle-left-section col-md-4">
-    <div class="section last-news-section section-footer">
+    <div class="section last-news-section">
         <div class="section-title">
             <h4>{{ trans('site.FrontLastNews') }}</h4>
         </div>
@@ -56,7 +56,7 @@
                                         {{ $post->getViewed() }}
                                     </span>                                                    
                                 </div>
-                                <a class="post-title" href="{{ route('front.vertex.post', [$post, $lc]) }}">
+                                <a class="post-title" href="{{ route('front.post', [$post, $lc]) }}">
                                     {{ $post->getTitleRuOrKg() }}
                                 </a>
                             </div>
@@ -67,7 +67,7 @@
             </ul>
 
             <footer>
-                <a href="{{ route('front.vertex.general') }}">
+                <a href="{{ route('front.general') }}">
                     <span>{{ trans('site.FrontPostAll') }}</span>
                 </a>
             </footer>
@@ -77,7 +77,7 @@
         <div class="section-title">
             <h4>
                 <a class="director-img" href="{{ route('front.pages.director') }}">
-                    <img src="{{ asset('images/manager.png') }}" alt="директор"/>
+                    <img src="{{ asset('images/manager-2.png') }}" alt="директор"/>
                 </a>
                 <a class="director-text" href="{{ route('front.pages.director') }}">{{ trans('site.FrontDirectorPage') }}</a>
             </h4>

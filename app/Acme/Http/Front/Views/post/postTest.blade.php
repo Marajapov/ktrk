@@ -23,7 +23,7 @@
 
         @if($post->getTilda())
             <div class="post-tilda" id="postTilda">
-                <a class="tilda-logo" href="{{route('front.vertex')}}">
+                <a class="tilda-logo" href="{{route('front.home')}}">
                     <svg x="0px" y="0px" viewBox="0 0 32 32" xml:space="preserve"><g><path d="M13.7,26.8c0-0.4-0.1-0.7-0.4-1L5,17.5h25.6c0.8,0,1.5-0.7,1.5-1.5s-0.7-1.5-1.5-1.5H5l8.3-8.3c0.3-0.3,0.4-0.7,0.4-1c0-0.4-0.1-0.7-0.4-1c-0.6-0.6-1.5-0.6-2,0L0.4,14.9c-0.6,0.6-0.6,1.5,0,2l10.8,10.9c0.6,0.6,1.5,0.6,2,0C13.6,27.6,13.7,27.3,13.7,26.8z"/></g></svg>
                     {{ trans('site.Back') }}
                 </a>
@@ -39,7 +39,7 @@
                     <div class="section article-section">
                         <div class="section-title">
                             <h4>
-                                <a href="{{route('front.vertex.general')}}">
+                                <a href="{{route('front.general')}}">
                                     {{ trans('site.News') }} 
                                 </a>
                                 <span class="divider"><i class="fa fa-circle"></i></span>
@@ -161,18 +161,15 @@
 
                                     @if($images2)
                                         <div class="slider-for2">
-
                                             @if($images2)
 
                                                 @foreach($images2 as $image2)
-
                                                     <div>
                                                         <img src="{{ asset('froala/uploads/'.$image2->name) }}" alt=""/>
                                                     </div>
                                                 @endforeach
                                             @endif
                                         </div>
-
                                         <div class="slider-nav2 col-md-12">
                                             @if($images2)
                                                 @if($images2)
@@ -219,10 +216,10 @@
                                 @if($relatedPost->id == $post->id)
                                 @else
                                     <div class="block">
-                                        <a href="{{ route('front.vertex.post', [$relatedPost, $lc]) }}" class="news-thumb">
+                                        <a href="{{ route('front.post', [$relatedPost, $lc]) }}" class="news-thumb">
                                             <img src="{{ asset($relatedPost->getFile()) }}" alt=""/>
                                         </a>
-                                        <a class="related-title" href="{{ route('front.vertex.post', [$relatedPost, $lc]) }}">
+                                        <a class="related-title" href="{{ route('front.post', [$relatedPost, $lc]) }}">
                                             {{ $relatedPost->getTitleRuOrKg() }}
                                         </a>
                                     </div>
@@ -246,7 +243,7 @@
     <script src='https://www.google.com/recaptcha/api.js'></script>
 
     <!-- Share buttons -->
-    <script src="{{ asset('js/goodshare.min.js') }}"></script>
+    <script src="{{ asset('js/goodshare.js') }}"></script>
     <script>
         $(document).ready(function(){
             $('.goodshare').each(function(){
@@ -279,7 +276,9 @@
             slidesToScroll: 1,
             fade: true,
             asNavFor: '.slider-nav',
-            arrows: false
+            arrows: true,
+            prevArrow: '<button class="slick-arrow arrow-prev"><svg x="0px" y="0px" viewBox="0 0 32 32" xml:space="preserve"><g><path d="M13.7,26.8c0-0.4-0.1-0.7-0.4-1L5,17.5h25.6c0.8,0,1.5-0.7,1.5-1.5s-0.7-1.5-1.5-1.5H5l8.3-8.3c0.3-0.3,0.4-0.7,0.4-1c0-0.4-0.1-0.7-0.4-1c-0.6-0.6-1.5-0.6-2,0L0.4,14.9c-0.6,0.6-0.6,1.5,0,2l10.8,10.9c0.6,0.6,1.5,0.6,2,0C13.6,27.6,13.7,27.3,13.7,26.8z"/></g></svg></button>',
+            nextArrow: '<button class="slick-arrow arrow-next"><svg x="0px" y="0px" viewBox="0 0 32 32" xml:space="preserve"><g><path d="M18.3,5.2c0,0.4,0.1,0.7,0.4,1l8.3,8.3H1.5C0.7,14.6,0,15.2,0,16c0,0.8,0.7,1.5,1.5,1.5H27l-8.3,8.3c-0.3,0.3-0.4,0.7-0.4,1c0,0.4,0.1,0.7,0.4,1c0.6,0.6,1.5,0.6,2,0l10.8-10.8c0.6-0.6,0.6-1.5,0-2L20.7,4.1c-0.6-0.6-1.5-0.6-2,0C18.4,4.4,18.3,4.8,18.3,5.2z"/></g></svg></button>'
         });
         $('.slider-nav').slick({
             slidesToShow: 4,
@@ -290,13 +289,14 @@
             variableWidth: true,
             arrows: false
         });
-    </script>
-    <script>
         $('.slider-for2').slick({
             slidesToShow: 1,
             slidesToScroll: 1,
             fade: true,
-            asNavFor: '.slider-nav2'
+            asNavFor: '.slider-nav2',
+            arrows: true,
+            prevArrow: '<button class="slick-arrow arrow-prev"><svg x="0px" y="0px" viewBox="0 0 32 32" xml:space="preserve"><g><path d="M13.7,26.8c0-0.4-0.1-0.7-0.4-1L5,17.5h25.6c0.8,0,1.5-0.7,1.5-1.5s-0.7-1.5-1.5-1.5H5l8.3-8.3c0.3-0.3,0.4-0.7,0.4-1c0-0.4-0.1-0.7-0.4-1c-0.6-0.6-1.5-0.6-2,0L0.4,14.9c-0.6,0.6-0.6,1.5,0,2l10.8,10.9c0.6,0.6,1.5,0.6,2,0C13.6,27.6,13.7,27.3,13.7,26.8z"/></g></svg></button>',
+            nextArrow: '<button class="slick-arrow arrow-next"><svg x="0px" y="0px" viewBox="0 0 32 32" xml:space="preserve"><g><path d="M18.3,5.2c0,0.4,0.1,0.7,0.4,1l8.3,8.3H1.5C0.7,14.6,0,15.2,0,16c0,0.8,0.7,1.5,1.5,1.5H27l-8.3,8.3c-0.3,0.3-0.4,0.7-0.4,1c0,0.4,0.1,0.7,0.4,1c0.6,0.6,1.5,0.6,2,0l10.8-10.8c0.6-0.6,0.6-1.5,0-2L20.7,4.1c-0.6-0.6-1.5-0.6-2,0C18.4,4.4,18.3,4.8,18.3,5.2z"/></g></svg></button>'           
         });
         $('.slider-nav2').slick({
             slidesToShow: 4,
@@ -342,11 +342,9 @@
                 name:       "\u0421\u0438\u0441\u0442\u0435\u043C\u0430 Orphus",
                 author:     "\u0410\u0432\u0442\u043E\u0440: \u0414\u043C\u0438\u0442\u0440\u0438\u0439 \u041A\u043E\u0442\u0435\u0440\u043E\u0432.",
                 to:         "\u041F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044C Orphus",
-// 5.0
                 send:       "\u041E\u0442\u043F\u0440\u0430\u0432\u0438\u0442\u044C",
                 cancel:     "\u041E\u0442\u043C\u0435\u043D\u0430",
                 entercmnt:  "\u041A\u043E\u043C\u043C\u0435\u043D\u0442\u0430\u0440\u0438\u0439 \u0434\u043B\u044F \u0430\u0432\u0442\u043E\u0440\u0430 (\u043D\u0435\u043E\u0431\u044F\u0437\u0430\u0442\u0435\u043B\u044C\u043D\u043E):"
-// Dmitry Koterov
 
             };
             var _9="css";
@@ -412,8 +410,7 @@
                 var w=550;
                 if(w>b.clientWidth-10){w=b.clientWidth-10;}div.style.zIndex="10001";
                 div.innerHTML=""+"<div class=\"orphus clearfix\" style=\"width:"+w+"px; z-index:10001; \">"+"<a href=\"javascript:void(0)\" onclick=\"return closeForm();\" class=\"sprite_close\"><i class=\"fa fa-close\"></i></a>"+"<div class=\"header\">"+_8.intextmsg+"</div>"+"<div class=\"item\">&laquo;&#133;"+_36.replace(_4,"<u style=\"color:red\">").replace(_5,"</u>")+"&#133;&raquo;</div>"+"<div class=\"message\">"+_8.ifsendmsg.replace(/\n/,"<br/>")+"</div>"+"<form id=\"orphus\" method=\"post\" action=\""+formAction+"\"><input name=\"comment\" placeholder=\"Комментарий для автора (необязательно)\" type=\"text\"/><input name=\"message\" value=\""+_36+"\" type=\"hidden\"/>"+"<div class=\"buttons\">"+"<input name=\"submit\" type=\"submit\" value=\""+_8.send+"\">"+"<input type=\"button\" value=\""+_8.cancel+"\" class=\"cancel\"><input type=\"hidden\" name=\"_token\" value=\""+_token+"\"/><input type=\"hidden\" name=\"url\" value=\""+url+"\"/><input type=\"hidden\" name=\"postId\" value=\""+postId+"\"/>"+"</div>"+"</form>"+"</div>"+"";
-//
-//                div.innerHTML=""+"<div class=\"orphus clearfix\" style=\"width:"+w+"px; z-index:10001;\">"+"<div class=\"header\">"+_8.intextmsg+"</div>"+"<div class=\"item\">&laquo;&#133;"+_36.replace(_4,"<u style=\"color:red\">").replace(_5,"</u>")+"&#133;&raquo;</div>"+"<div class=\"message\">"+_8.ifsendmsg.replace(/\n/,"<br/>")+"</div>"+"<form action=\""+formAction+"\" id=\"orphus\" method=\"post\">"+"<input name=\"comment\" placeholder=\"Комментарий для автора (необязательно)\" type=\"text\"/>"+"<div class=\"buttons\">"+"<input name=\"submit\" type=\"submit\" value=\""+_8.send+"\">"+"<input class=\"cancel\" type=\"button\" value=\""+_8.cancel+"\">"+"<input name=\"message\" value=\""+_36+"\" type=\"hidden\"/>"+"<input type=\"hidden\" name=\"_token\" value=\""+_token+"\"/>"+"<input type=\"hidden\" name=\"url\" value=\""+url+"\"/>"+"<input type=\"hidden\" name=\"postId\" value=\""+postId+"\"/>"+"</div>"+"</form>"+"</div>";
+
                 _1b(div);
                 var _3a=div.getElementsByTagName("input");
                 var _3b=div.getElementsByTagName("form");

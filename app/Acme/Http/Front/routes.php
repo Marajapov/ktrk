@@ -199,8 +199,8 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
 
     # GENERAL
 
-    Route::get('/', ['as' => 'front.home',   'uses' => 'HomeController@Home']);
-    Route::get('/vertex',['as'=>'front.vertex', 'uses'=>"HomeController@Test"]);
+    // Route::get('/', ['as' => 'front.home',   'uses' => 'HomeController@Home']);
+    Route::get('/',['as'=>'front.home', 'uses'=>"HomeController@Test"]);
     Route::get('locale/{locale?}',   ['as' => 'locale',   'uses' => 'CommonController@setLocale']);
 
 
@@ -227,21 +227,23 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
 
     # POSTS
 
-    Route::get('/posts/general', ['as' => 'front.general',   'uses' => 'HomeController@Posts']);
-    Route::get('/vertex/posts/general', ['as' => 'front.vertex.general',   'uses' => 'HomeController@PostsTest']);
+    Route::get('/posts/general', ['as' => 'front.general',   'uses' => 'PostController@all']);
     Route::get('posts/general/filterResult', ['as' => 'front.filterResult', 'uses' => 'HomeController@filterResult']);
-    Route::get('/post/{post}/{locale}', ['as' => 'front.post', 'uses' => 'HomeController@Post']);
-    Route::get('/vertex/post/{post}/{locale}', ['as' => 'front.vertex.post', 'uses' => 'HomeController@PostTest']);
-    Route::get('category/{category}', ['as' => 'front.category', 'uses' => 'HomeController@categoryPage']);
-    Route::get('vertex/category/{category}', ['as' => 'front.vertex.category', 'uses' => 'PostController@categoryPage']);
+    Route::get('/post/{post}/{locale}', ['as' => 'front.post', 'uses' => 'PostController@post']);
+    Route::get('category/{category}', ['as' => 'front.category', 'uses' => 'PostController@categoryPage']);
     Route::get('category/{category}/filterResult', ['as' => 'front.filterResultCategory', 'uses' => 'HomeController@filterResultCategory']);
+
+    Route::get('posts/general/date', ['as' => 'front.general.filterDate', 'uses' => 'PostController@filterDateGeneral']);
+    Route::get('category/{category}/date', ['as' => 'front.category.filterDate', 'uses' => 'PostController@filterDateCategory']);
 
 
     # MEDIA
 
     Route::get('media', ['as' => 'front.media.index', 'uses' => 'MediaController@mediaIndex']);
+    Route::get('vertex/media', ['as' => 'front.media.vertex', 'uses' => 'MediaController@mediaIndexTest']);
     Route::get('media/project/{project}', ['as' => 'front.media.project', 'uses' => 'MediaController@project']);
     Route::get('media/video/{video}', ['as' => 'front.media.video', 'uses' => 'MediaController@video']);
+    Route::get('vertex/media/video/{media}', ['as' => 'front.media.vertex.video', 'uses' => 'MediaController@videoTest']);
     Route::get('media/all', ['as' => 'front.media.all', 'uses' => 'MediaController@allVideos']);
     Route::get('media/category/{mediaCategory}', ['as' => 'front.media.category', 'uses' => 'MediaController@categoryVideos']);
 
@@ -249,12 +251,14 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
     # GALLERY
 
     Route::get('/gallery/{gallery}',['as' => 'front.gallery','uses'=> 'HomeController@Gallery'] );
+    Route::get('/vertex/gallery/{gallery}',['as' => 'front.vertex.gallery','uses'=> 'HomeController@Gallery'] );
     Route::get('/galleries',['as' => 'front.gallery.galleries','uses'=> 'HomeController@Galleries']);
 
 
     # DIRECTOR
 
-    Route::get('director', ['as' => 'front.pages.director', 'uses' => 'PageController@directorPage']);
+    // Route::get('director', ['as' => 'front.pages.director', 'uses' => 'PageController@directorPage']);
+    Route::get('director', ['as' => 'front.pages.director', 'uses' => 'DirectorController@index']);
     Route::get('director/post/{post}/{locale}', ['as' => 'front.pages.directorPost', 'uses' => 'PageController@directorPost']);
 
 
@@ -306,6 +310,7 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
 
     Route::get('/page/{page}', ['as' => 'front.page',   'uses' => 'HomeController@Page']);
     Route::get('search', ['as' => 'front.search', 'uses' => 'HomeController@searchResult']);
+    Route::get('vertex/search', ['as' => 'front.vertex.search', 'uses' => 'HomeController@search']);
     Route::post('/orphus', ['as'=>'front.orphus', 'uses'=>'CommentController@orphus']);
 
 
@@ -332,6 +337,7 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
 
     Route::get('/ajax_program', 'PageController@AjaxProgram');
     Route::post('/poll_vote', ['as'=>'front.poll_vote', 'uses'=>'AjaxNsController@pollVote']);
+    Route::post('/searchPgNews', ['as'=>'front.searchPgNews', 'uses'=>'AjaxController@searchPgNews']);
     Route::post('/homeVideoportal', ['as'=>'front.homeVideoportal', 'uses'=>'AjaxController@homeVideoportal']);
 
 });

@@ -91,7 +91,7 @@ class PageController extends Controller
 	 }else{
 		$directorPosts = \Model\Post\ModelName::where('director','=','1')->languageru()->orderBy('id','desc')->get();
 	 }
-	 $fbpost = \Model\Post\ModelName::where('director','<>','1')->where('fbpost','=','1')->orderBy('id','desc')->get();
+	 $fbpost = \Model\Post\ModelName::where('director','<>','1')->where('fbpost','=','1')->orderBy('id','desc')->take(5)->get();
 	 if($fbpost){
 		$fbpost = $fbpost;
 	 }else {

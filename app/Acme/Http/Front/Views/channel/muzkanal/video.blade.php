@@ -11,7 +11,7 @@
   @if($muzkanalvideo->thumbnail_big)
     <meta property="og:image"              content="{{ asset($muzkanalvideo->thumbnail_big) }}" />
   @else
-    <meta property="og:image"              content="http://img.youtube.com/vi/{{ $muzkanalvideo->getUrl() }}" />
+    <meta property="og:image"              content="http://img.youtube.com/vi/{{ $muzkanalvideo->getUrl() }}/hqdefault.jpg" />
   @endif
 
   <link rel="stylesheet" href="{{asset('css/goodshare.css')}}">

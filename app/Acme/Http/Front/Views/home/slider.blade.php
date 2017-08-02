@@ -4,7 +4,9 @@
             @foreach($sliderProjects as $key=>$row)
                 <div class="slide">
                     <figure>
-                        <img src="{{asset($row->getThumbnail())}}">
+                        <a href="#">
+                            <img src="{{asset($row->getThumbnail())}}">
+                        </a>
                         <figcaption>
                             <div class="inner">
                                 <span class="slide-datetime">

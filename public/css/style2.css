@@ -90,6 +90,7 @@ body::after{
     -moz-backface-visibility: hidden;
     -ms-backface-visibility: hidden;
     backface-visibility: hidden;
+    display: none;
 }
 .main-header.smaller::before,.main-header.smaller::after{
     height: 80px;

@@ -40,7 +40,36 @@ return [
 
     'SelectTV'  =>  'Телеканал тандоо',
     'SelectRadio'  =>  'Радиону тандоо',
-    ''  =>  '',
+
+    # Director Page
+    'DirBio' => 'Өмүр баяны',
+    '' => '',
+    '' => '',
+    '' => '',
+
+    # Post Page
+    'PostByDate' => 'Новости по дате',
+    'NewsForDate' => 'Новости за',
+
+    # Media
+    'Projects' => 'Телепроекттер',
+    'RelatedMedia' => 'Тектеш видеолор',
+    'MediaMaterials' => 'Видеоматериалдар',
+
+    # Gallery
+    '' => '',
+    '' => '',
+
+    # Search
+    'Search' => 'Издөө',
+    'DataResult' => 'боюнча издөөнүн жыйынтыгы',
+    'DataResultTag' => 'Тэг боюнча издөөнүн жыйынтыгы',
+    'DataResultPost' => 'Макаланын аталышы боюнча издөөнүн жыйынтыгы',
+    'DataResultShows' => 'Телеберүүлөр боюнча издөөнүн жыйынтыгы',
+    '' => '',
+
+
+
     
     'Top news' => 'Маанилүү',
     'All news' => 'Бардык',
