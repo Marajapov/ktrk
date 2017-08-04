@@ -381,13 +381,31 @@
 											</a>
 										</li>
 
-										@for($i = 0, $j = 1; $i < $posts->total(); $i+=$perPage)
-											<li class="@if(($j > $posts->currentPage()+3) || ($j < $posts->currentPage()-3)) hidden @endif">
-												<a href="{{ route('front.category', ['category' => $category, 'page' => $j]) }}" class="@if($posts->currentPage() == $j) active @endif">
-													{{ $j++ }}
-												</a>
-											</li>
-										@endfor
+										@if($posts->currentPage() < 3)
+											@for($i = 1; $i <= 5; $i++)
+												<li>
+													<a href="{{ route('front.category', ['category' => $category, 'page' => $i]) }}" class="@if($posts->currentPage() == $i) active @endif">
+														{{ $i }}
+													</a>
+												</li>
+											@endfor
+										@elseif(ceil($posts->total()/$perPage) - $posts->currentPage() < 2)
+											@for($i = ceil($posts->total()/$perPage)-4; $i <= ceil($posts->total()/$perPage); $i++)
+												<li>
+													<a href="{{ route('front.category', ['category' => $category, 'page' => $i]) }}" class="@if($posts->currentPage() == $i) active @endif">
+														{{ $i }}
+													</a>
+												</li>
+											@endfor
+										@else
+											@for($i = $posts->currentPage()-2; $i <= $posts->currentPage()+2; $i++)
+												<li>
+													<a href="{{ route('front.category', ['category' => $category, 'page' => $i]) }}" class="@if($posts->currentPage() == $i) active @endif">
+														{{ $i }}
+													</a>
+												</li>
+											@endfor											
+										@endif
 
 										<li>
 											<a href="{{ $posts->nextPageUrl() }}" class="slick-arrow arrow-next @if($posts->currentPage() == ceil($posts->total()/$perPage)) disabled @endif">

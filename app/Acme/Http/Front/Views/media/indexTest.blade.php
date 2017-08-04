@@ -36,7 +36,7 @@
                                                 <img src="@if($media->thumbnail_big) {{ asset($media->thumbnail_big)  }} @else http://img.youtube.com/vi/{{ $media->getUrl() }}/hqdefault.jpg @endif" alt="{{ $media->getName() }}" />
                                                 <div class="overlay">
                                                     <div class="media-extra">
-                                                        <span class="media-date">{{ $media->getDay() }} {{ $media->getMonthRu() }}, {{ $media->getTime()}}</span>
+                                                        <span class="media-date">{{ $media->getDay() }} {{ $media->getMonthRu() }} @if(date('Y') != $media->getYear()) {{ $media->getYear() }} @endif, {{ $media->getTime()}}</span>
                                                         <svg class="fa-view" x="0px" y="0px" viewBox="0 0 22 14" xml:space="preserve">
                                                             <g>
                                                                 <path d="M17.7,2.3C15.5,0.7,12.9,0,11,0S6.5,0.7,4.3,2.3C1.9,4.2,0,6.4,0,7s1.9,2.8,4.3,4.7C6.5,13.3,9.1,14,11,14s4.5-0.7,6.7-2.3

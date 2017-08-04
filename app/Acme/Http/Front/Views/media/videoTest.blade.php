@@ -29,15 +29,19 @@
             <div class="row">
                 <div class="left-section col-md-9">
                     <div class="section video-section">
-                        @if($videoProject)  
-                            <div class="section-title">
-                                <h4>                                                              
+                        <div class="section-title">
+                            <h4>
+                                <a href="{{route('front.media.vertex')}}">
+                                    Видеопортал
+                                </a>
+                                <span class="divider"><i class="fa fa-circle"></i></span>
+                                @if($videoProject)                                                              
                                     <a href="{{ route('front.media.project', $video->program) }}">
                                         {{$videoProject}}
-                                    </a>
-                                </h4>
-                            </div> 
-                        @endif
+                                    </a> 
+                                @endif
+                            </h4>
+                        </div>
                         <div class="section-body">
                             <div class="embed-responsive embed-responsive-16by9 video-emded">
                                 <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ $video->getUrl()}}?rel=0&amp;showinfo=0" allowfullscreen></iframe>

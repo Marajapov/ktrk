@@ -57,7 +57,7 @@ return [
     'MediaMaterials' => 'Видеоматериалы',
 
     # Gallery
-    '' => '',
+    'Galleries' => 'Фоторепортажи',
     '' => '',
 
     # Search

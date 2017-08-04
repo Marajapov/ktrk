@@ -25,7 +25,7 @@ class ModelName extends Model
     protected $searchable = [
         'columns' => [
             'name'   => 10, // order of search, title will be first in listing
-            'nameRu'   => 9, // order of search, title will be first in listing
+            'nameRu'   =>  10,// order of search, title will be first in listing
             'description' => 8,
         ],
     ];

@@ -251,8 +251,9 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
     # GALLERY
 
     Route::get('/gallery/{gallery}',['as' => 'front.gallery','uses'=> 'HomeController@Gallery'] );
-    Route::get('/vertex/gallery/{gallery}',['as' => 'front.vertex.gallery','uses'=> 'HomeController@Gallery'] );
+    Route::get('/vertex/gallery/{photoParent}',['as' => 'front.vertex.gallery','uses'=> 'GalleryController@single'] );
     Route::get('/galleries',['as' => 'front.gallery.galleries','uses'=> 'HomeController@Galleries']);
+    Route::get('/vertex/galleries',['as' => 'front.vertex.galleries','uses'=> 'GalleryController@index']);
 
 
     # DIRECTOR
@@ -309,8 +310,8 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
     # EXTRA
 
     Route::get('/page/{page}', ['as' => 'front.page',   'uses' => 'HomeController@Page']);
-    Route::get('search', ['as' => 'front.search', 'uses' => 'HomeController@searchResult']);
-    Route::get('vertex/search', ['as' => 'front.vertex.search', 'uses' => 'HomeController@search']);
+    // Route::get('search', ['as' => 'front.search', 'uses' => 'HomeController@searchResult']);
+    Route::get('search', ['as' => 'front.search', 'uses' => 'HomeController@search']);
     Route::post('/orphus', ['as'=>'front.orphus', 'uses'=>'CommentController@orphus']);
 
 
@@ -338,6 +339,7 @@ Route::group(['prefix' => '/', 'namespace' => 'Front\Controllers'], function() {
     Route::get('/ajax_program', 'PageController@AjaxProgram');
     Route::post('/poll_vote', ['as'=>'front.poll_vote', 'uses'=>'AjaxNsController@pollVote']);
     Route::post('/searchPgNews', ['as'=>'front.searchPgNews', 'uses'=>'AjaxController@searchPgNews']);
+    Route::post('/searchPgMedia', ['as'=>'front.searchPgMedia', 'uses'=>'AjaxController@searchPgMedia']);
     Route::post('/homeVideoportal', ['as'=>'front.homeVideoportal', 'uses'=>'AjaxController@homeVideoportal']);
 
 });

@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Validator;
 
 use \Model\Comment\ModelName as Comment;
 use \Model\Post\ModelName as Post;
+use \Model\Media\ModelName as Media;
 use \Model\Category\ModelName as Category;
 use \Model\Project\ModelName as Project;
 use \Model\Anons\ModelName as Anons;
@@ -468,75 +469,6 @@ class HomeController extends Controller
 		return view('Front::page',['page' => $page]);
 	}
 
-	public function searchResult(Request $request)
-	{
-		$lc = app()->getlocale();
-		$key = $request->input('search');
-
-		$perPage = 15;
-
-		$tag = \Model\Tag\Tag::where('name', '=', $key)->first();
-		$posts = \Model\Post\ModelName::search($key)->orderBy('created_at','desc')->get();
-		$programs = \Model\Project\ModelName::search($key)->orderBy('id','desc')->get();
-		
-		$searchKey = $request->input('search');
-
-		$categories = \Model\Category\ModelName::where('general','=','1')->get();
-		$backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','2')->first();
-
-		if($lc == 'kg'){
-			$topArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->where('number','=','88')->orderBy('updated_at','desc')->take(6)->get();
-
-			if(count($topArticles) > 0){
-				$topArticles = $topArticles;
-			}else{
-				$topArticles = null;
-			}
-			$weekFromNow = date('Y-m-d H:i', strtotime('-7 days'));
-			$popArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->where('created_at','>',$weekFromNow)->orderBy('viewed','desc')->take(6)->get();
-			if(count($popArticles) > 0){
-				$popArticles = $popArticles;
-			}else{
-				$popArticles = null;
-			}
-
-		} else {
-			$topArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->where('numberRu','=','88')->orderBy('updated_at','desc')->take(6)->get();
-
-			if(count($topArticles) > 0){
-				$topArticles = $topArticles;
-			}else{
-				$topArticles = null;
-			}
-			$weekFromNow = date('Y-m-d H:i', strtotime('-7 days'));
-			$popArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->where('created_at','>',$weekFromNow)->orderBy('viewed','desc')->take(6)->get();
-			if(count($popArticles) > 0){
-				$popArticles = $popArticles;
-			}else{
-				$popArticles = null;
-			}
-		}
-
-		return view('Front::result', [
-			'posts' => $posts,
-			'tag' => $tag,
-			'perPage' => $perPage,
-			'programs' => $programs,
-			'searchKey'=>$searchKey,
-
-			'topArticles' =>$topArticles,
-			'popArticles' =>$popArticles,
-			'categories'=>$categories,
-			'backgroundMain' => $backgroundMain,
-			'positionTop'    => $this->positionTop,
-			'positionRight'  => $this->positionRight,
-			'positionCenter' => $this->positionCenter,
-			'positionBottom' => $this->positionBottom,
-			'positionLeft'  => $this->positionLeft,
-			'lc' => $lc,
-			]);
-	}
-
 	public function search(Request $request)
 	{
 		$lc = app()->getlocale();
@@ -556,19 +488,22 @@ class HomeController extends Controller
 
 		if($lc == 'kg'){
 			$tagPosts = $tag->posts()->where('title','<>','')->orderBy('created_at','desc')->get();
-			$posts = Post::search($searchKey)->where('title','<>','')->orderBy('created_at','desc')->get();
+			$namePosts = Post::search($searchKey)->where('title','<>','')->orderBy('created_at','desc')->get();
 
-			$mergedPosts = $posts->merge($tagPosts)->sortByDesc('created_at')->paginate($perPage);
+			$posts = $tagPosts->merge($namePosts);
 
-			foreach ($mergedPosts as $key => $row) {
+			$mergedPosts = $posts->sortByDesc('created_at')->forPage($currentPage, $perPage);
+			$totalPostsPages = ceil(count($posts)/$perPage);
+
+		  	foreach ($mergedPosts as $key => $row) {
 				if($key % 3 == 0){
 				  	$leftPosts[] = $row;
 				} elseif ($key % 3 == 1) {
 				  	$middlePosts[] = $row;
 				} else {
-				  	$rightPosts[] = $row;       
+				  	$rightPosts[] = $row;      
 				}
-			}
+		  	}
 
 			$topArticles = Post::where('general','=','1')->where('live',false)->where('title','<>','')->where('created_at','>',$weekFromNow)->where('number','=','88')->orderBy('created_at','desc')->take(6)->get();
 			if(count($topArticles) > 0){
@@ -617,13 +552,22 @@ class HomeController extends Controller
 		 	}
 		}
 
+	  	$medias = Media::search($searchKey)->orderBy('created_at','desc')->get();
+
+	  	$mergedMedias = collect($medias);
+
+	  	$mergedMedias = $mergedMedias->forPage($currentPage, $perPage);
+		$totalMediaPages = ceil(count($medias)/$perPage);
+
 		return view('Front::resultTest', [
 			'posts' => $posts,
+			'medias' => $mergedMedias,
 			'tag' => $tag,
 
 			'perPage' => $perPage,
 			'currentPage' => $currentPage,
 			'totalPostsPages' => $totalPostsPages,
+			'totalMediaPages' => $totalMediaPages,
 
 			'programs' => $programs,			
 			'searchKey'=>$searchKey,
@@ -637,72 +581,6 @@ class HomeController extends Controller
 			'topArticles' =>$topArticles,
 			'popArticles' =>$popArticles,
 			]);
-	}
-
-	public function categoryPage(\Model\Category\ModelName $category)
-	{
-		$lc = app()->getlocale();
-		$perPage = 10;
-		$category_id = $category->id;
-
-		if($lc == 'kg'){
-			$posts = \Model\Post\ModelName::where('general','=','1')->where('published','=','1')->where('category_id','=',$category_id)->where('title','<>','')->orderBy('id','desc')->paginate($perPage);
-		}else{
-			$posts = \Model\Post\ModelName::where('general','=','1')->where('published','=','1')->where('category_id','=',$category_id)->where('titleRu','<>','')->orderBy('id','desc')->paginate($perPage);
-		}
-
-		if($lc == 'kg'){
-			$topArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->where('number','=','88')->orderBy('updated_at','desc')->take(6)->get();
-			if(count($topArticles) > 0){
-				$topArticles = $topArticles;   
-			}else{
-				$topArticles = null;
-			}
-			$weekFromNow = date('Y-m-d H:i', strtotime('-7 days'));
-			$popArticles = \Model\Post\ModelName::where('general','=','1')->where('title','<>','')->where('created_at','>',$weekFromNow)->orderBy('viewed','desc')->take(6)->get();
-			if(count($popArticles) > 0){
-				$popArticles = $popArticles;
-			}else{
-				$popArticles = null;
-			}
-		}elseif($lc == 'ru'){
-			$topArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->where('numberRu','=','88')->orderBy('updated_at','desc')->take(6)->get();
-			if(count($topArticles) > 0){
-				$topArticles = $topArticles;   
-			}else{
-				$topArticles = null;
-			}
-			$weekFromNow = date('Y-m-d H:i', strtotime('-7 days'));
-			$popArticles = \Model\Post\ModelName::where('general','=','1')->where('titleRu','<>','')->where('created_at','>',$weekFromNow)->orderBy('viewed','desc')->take(6)->get();
-			if(count($popArticles) > 0){
-				$popArticles = $popArticles;
-			}else{
-				$popArticles = null;
-			}
-		}
-
-		$categories = \Model\Category\ModelName::where('general','=','1')->get();
-		$backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','2')->first();
-
-		return view('Front::category.index',[
-			'perPage'=> $perPage,
-			'posts' => $posts,
-			'category' => $category,
-			'topArticles' => $topArticles,
-			'popArticles' => $popArticles,
-
-			'categories'=>$categories,
-			'backgroundMain' => $backgroundMain,
-			'positionTop'    => $this->positionTop,
-			'positionRight'  => $this->positionRight,
-			'positionCenter' => $this->positionCenter,
-			'positionBottom' => $this->positionBottom,
-			'positionLeft'  => $this->positionLeft,
-			'lc' => $lc,
-		]);
-
-
-		
 	}
 
 	public function mediaPage(\Model\Media\ModelName $media)
