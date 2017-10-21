@@ -281,6 +281,11 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
+        if($request->input('thumb_author') != $post->thumb_author){
+            $thumb_a = true;
+        } else {
+            $thumb_a = false;
+        }
         $post->update($request->except('tag_kg','tag_ru','thumbnail','q','channel_id','created_at','time'));
         $thumb_author = $request->input('thumb_author');
 

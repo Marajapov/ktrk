@@ -163,6 +163,14 @@
                     </label>
                 </div>
 
+                <div class="checkbox checkbox-primary col-sm-2">
+                    {!! Form::hidden('alatoo24', 0) !!}
+                    {!! Form::checkbox('alatoo24', 1, null, ["id" => "alatoo24", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
+                    <label for="alatoo24">
+                        Ала-Тоо 24
+                    </label>
+                </div>
+
             </div>
         </div>
 

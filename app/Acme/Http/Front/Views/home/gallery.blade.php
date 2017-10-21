@@ -16,7 +16,7 @@
                                 <img src="{{ asset($photoGalleryFirst->thumbnail_big) }}" alt=""/>
                                 <figcaption>
                                     <div class="post-extra clearfix">
-                                        <span class="post-date">{{ $photoGalleryFirst->getDay() }} {{ $photoGalleryFirst->getMonthRu() }}, {{ $photoGalleryFirst->getTime()}}</span>
+                                        <span class="post-date">{{ $photoGalleryFirst->getDay() }} {{ $photoGalleryFirst->getMonthRu() }} @if(date('Y') != $photoGalleryFirst->getYear()) {{ $photoGalleryFirst->getYear() }} @endif, {{ $photoGalleryFirst->getTime()}}</span>
                                         <span class="post-views">                                                        
                                             <svg class="fa-view" x="0px" y="0px" viewBox="0 0 22 14" xml:space="preserve">
                                                 <g>
@@ -66,7 +66,7 @@
                                             <img src="{{ asset($photoGallery->thumbnail_big) }}" alt=""/>
                                             <figcaption>
                                                 <div class="post-extra clearfix">
-                                                    <span class="post-date">{{ $photoGallery->getDay() }} {{ $photoGallery->getMonthRu() }}, {{ $photoGallery->getTime()}}</span>
+                                                    <span class="post-date">{{ $photoGallery->getDay() }} {{ $photoGallery->getMonthRu() }} @if(date('Y') != $photoGallery->getYear()) {{ $photoGallery->getYear() }} @endif, {{ $photoGallery->getTime()}}</span>
                                                     <span class="post-views">                                                        
                                                         <svg class="fa-view" x="0px" y="0px" viewBox="0 0 22 14" xml:space="preserve">
                                                             <g>

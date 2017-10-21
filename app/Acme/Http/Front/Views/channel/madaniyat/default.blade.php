@@ -54,7 +54,7 @@
 </head>
 <body>
 <body>
-<div id="wrapper">
+<div id="wrapper" style="padding-top: 160px">
 <div id="overlay"></div>
 
 @include('Front::partials.sidebar')

@@ -435,9 +435,10 @@ class MediaController extends Controller
     public function search(Request $request)
     {
         $key = $request->get('key');
-        $row = Media::search($key)->orderBy('id','desc')->get();
+        $medias = Media::search($key)->orderBy('id','desc')->get();
+        
         return view('Admin::media.searchResult', [
-            'medias' => $row,
-            ]);
+            'medias' => $medias,
+        ]);
     }
 }

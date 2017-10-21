@@ -9,7 +9,9 @@ Allow from all
 
 
     # Redirect Trailing Slashes...
-    RewriteRule ^(.*)/$ /$1 [L,R=301]
+    RewriteCond %{HTTP_HOST} !^(.+)\.(.+)\.(.+)
+    RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [L,R=301]
+    
 
     # Handle Front Controller...
     RewriteCond %{REQUEST_FILENAME} !-d

@@ -1,4 +1,10 @@
-<?php include_once 'usercontrol.php'; ?>
+<?php 
+$document_db = "broadcasts";
+$document_type_only = 1;
+$document_read = $document_write = $document_execute = $document_delete = 0;
+include_once 'usercontrol.php'; 
+if ($document_execute || $document_delete){} else {echo "У вас нет разрешения на доступ к этой странице. Обратитесь к администратору."; die();}
+?>
 <!DOCTYPE html>
 <html>
    <head>
@@ -33,17 +39,17 @@
 					  $act = getget('act');
 					  if ($act=='a'){
 						  $last_dt = date("Y/m/d H:i:s");
-						  $db->update("broadcasts", array("status"=>2, "last_dt"=>$last_dt), "id='".$id."'");
+						  if ($document_execute) $db->update("broadcasts", array("status"=>2, "last_dt"=>$last_dt), "id='".$id."'");
 						  redirect("broadcasts.php","js");
 					  }
 					  if ($act=='d'){
-						  $db->update("broadcasts", array("status"=>0), "id='".$id."'");
+						  if ($document_delete) $db->update("broadcasts", array("status"=>0), "id='".$id."'");
 						  redirect("broadcasts.php","js");
 					  }
 				  }
 
 								  
-				  
+				  if (!$document_execute){ echo "У вас нет разрешения на доступ к этой странице. Обратитесь к администратору."; die(); }
 				  if (isset($_POST['id'])){
 					   					   
 					  $last_dt = date("Y/m/d H:i:s");

@@ -1,16 +1,15 @@
 @extends('Front::channel.muzkanal.default')
 @section('title', trans('radiopages.Mabout'))
 @section('styles')
-<link rel="stylesheet" href="{{ asset('css/audio/muzslider.css') }}"/>
 @endsection
 @section('content')
 @include('Front::channel.muzkanal.nav')
 
    <!-- Main slider -->
    <div class="container">
-      <div class="row">
+      <div class="row mb20">
          <div class="col-md-12 aboutmuz">
-            <div class="panel panel-default ">
+            <div class="panel panel-default">
                <div class="panel-heading">
                   <h3 class="panel-title"><span>{{ trans('radiopages.AboutMusic') }}</span></h3>
                </div>

@@ -1,4 +1,9 @@
-<?php include_once 'usercontrol.php'; ?>
+<?php 
+$document_db = "tool_event";
+$document_read = $document_write = $document_execute = $document_delete = 0;
+include_once 'usercontrol.php'; 
+if (!$document_read) {echo "У вас нет разрешения на доступ к этой странице. Обратитесь к администратору."; die();}
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -44,7 +49,8 @@
 								$date_to_tool = $tool_date_to_date ." ".$tt;
 							 
 							 $ins_montage_event = array("broadcast"=>$broadcast, "episode"=>$episode, "date_from"=>$date_from_tool, "date_to"=>$date_to_tool, "show_type"=>$show_type, "main_tool"=>$main_tool, "lightning"=>$lightning, "where"=>$where);
-							 $db->insert($table, $ins_montage_event);
+							 $this_id = $db->insert($table, $ins_montage_event);
+							 if ($this_id>0) redirect("coordinator_tools.php?act=edit&id=".$this_id, "js");
 						}
 						
 						if (isset($_POST['act']) && $_POST['act']=='edit') {
@@ -84,6 +90,13 @@
 						 
 						 
 						 $search_date_from = $search_date_to = 0 ;
+						 
+						 $day_work = false;
+						 if (isset($_GET['day'])) {
+							 $search_date_from = date("Y/m/d H:i", strtotime(getget("day")." 00:00"));
+							 $search_date_to = date("Y/m/d H:i", strtotime(getget("day")." 23:59"));
+							 $day_work = true;
+						 }
 						 if (isset($_GET['search_date_from'])) $search_date_from = date("Y/m/d", strtotime(getget("search_date_from")));
 						 if (isset($_GET['search_date_to'])) $search_date_to = date("Y/m/d", strtotime(getget("search_date_to")));
 						 
@@ -91,7 +104,7 @@
 						 if (!$search_date_to) $search_date_to = date("Y/m/d", strtotime("+7 days"));
 
 						 $sql = "select * from tool_event where date_from >= '".$search_date_from."' AND date_from <= '".$search_date_to."' order by date_from";
-						 
+						 //echo $sql; 
 						 $tools = array();
 						 
 						 $tool_list_1 = $db->select('tools', "type=0");
@@ -295,6 +308,10 @@
 													</thead>
 													<tbody>
 														<?php
+											
+											$tool_counter = array();
+											$live_efir = 0;
+											
 											foreach($tool_event_list as $p) {
 												$c1 = $p['camera1'];
 												$c2 = $p['camera2'];
@@ -302,9 +319,17 @@
 												$cc2 = $p['camera_count2'];
 												$mt = $p['main_tool'];
 												$result_tech = '';
-												if ($c1 > 0 && $cc1 > 0) $result_tech = $tools[$c1]." (".$cc1."шт.)<br/> ";
-												if ($c2 > 0 && $cc2 > 0) $result_tech .= $tools[$c2]." (".$cc2."шт.)<br/> ";
-												if ($mt > 0) $result_tech .= $tools[$mt].", ";
+												if ($c1 > 0 && $cc1 > 0) { 
+													if (isset($tool_counter[$c1])) $tool_counter[$c1]+=$cc1; else $tool_counter[$c1] = $cc1;
+													$result_tech = $tools[$c1]." (".$cc1."шт.)<br/> ";
+												}
+												if ($c2 > 0 && $cc2 > 0) {
+													if (isset($tool_counter[$c2])) $tool_counter[$c2]+=$cc2; else $tool_counter[$c2] = $cc2;
+													$result_tech .= $tools[$c2]." (".$cc2."шт.)<br/> ";
+												}
+												if ($mt > 0) {
+													if (isset($tool_counter[$mt])) $tool_counter[$mt]++; else $tool_counter[$mt] = 1;
+													$result_tech .= $tools[$mt].", ";}
 												$result_tech =  substr($result_tech, 0, -2);
 												
 												$result_extra_tech = '';
@@ -315,11 +340,13 @@
 												if ($p['drone'] > 0) $result_extra_tech .= "Дрон, ";
 												$result_extra_tech =  substr($result_extra_tech, 0, -2);
 												
-												?>
+												if ($p['show_type']=='live') $live_efir++;
 												
+												?>
+										<script>function tdclick<?php echo $p['id']?>(){ window.location = "coordinator_tools.php?day=<?php echo date("d.m.Y", strtotime($p['date_from']));?>"; }</script>		
 										<tr>
-															<td class="nowrap" <?php if ($p['show_type']=='live' || $p['show_type']=='Съемки с выездом (командировка)') echo 'style="background:red;color:white"';?>><?php echo date("d.m.Y", strtotime($p['date_from']));?></td>         
-															<td class="nowrap" <?php if ($p['show_type']=='live' || $p['show_type']=='Съемки с выездом (командировка)') echo 'style="background:red;color:white"';?>><?php echo date("H:i", strtotime($p['date_from']));?></td>
+											<td onclick='tdclick<?php echo $p['id']?>()' class="nowrap" <?php if ($p['show_type']=='live' || $p['show_type']=='Съемки с выездом (командировка)') echo 'style="background:red;color:white"';?>><?php echo date("d.m.Y", strtotime($p['date_from']));?></td>         
+											<td class="nowrap" <?php if ($p['show_type']=='live' || $p['show_type']=='Съемки с выездом (командировка)') echo 'style="background:red;color:white"';?>><?php echo date("H:i", strtotime($p['date_from']));?></td>
 											 <td class="nowrap" <?php if ($p['show_type']=='live' || $p['show_type']=='Съемки с выездом (командировка)') echo 'style="background:red;color:white"';?>><?php echo date("H:i", strtotime($p['date_to']));?></td>
 											 <td class="nowrap" <?php if ($p['show_type']=='live' || $p['show_type']=='Съемки с выездом (командировка)') echo 'style="background:red;color:white"';?>><?php echo $p['broadcast'];?></td>
 											 <td class="nowrap" <?php if ($p['show_type']=='live' || $p['show_type']=='Съемки с выездом (командировка)') echo 'style="background:red;color:white"';?>><?php echo $p['where'];?></td>
@@ -329,13 +356,41 @@
 							
 													  
 
-											 <td class="nowrap print-hide"><div style="float:right"><a href="?act=edit&id=<?php echo $p['id'];?>">Редактировать</a> <a href="?act=delete&id=<?php echo $p['id'];?>" onclick="return confirm('Вы уверены что хотите удалить эту запись из базы?')">Удалить</a><div></td>											 
-														</tr>		
+											 <td class="nowrap"><div style="float:right">
+											 
+											 <?php if ($document_execute) { ?><a href="?act=edit&id=<?php echo $p['id'];?>">Редактировать</a><?php } ?>
+											 
+											 <?php if ($document_delete) { ?><a href="?act=delete&id=<?php echo $p['id'];?>" onclick="return confirm('Вы уверены что хотите удалить эту запись из базы?')">Удалить</a><?php } ?>
+											 
+											 <div></td>
+											 
+											</tr>		
 												
 										  
 											
 										<?php } ?>	
-								
+										<?php if ($day_work) {?>
+										<tr>
+											<td colspan="9">
+											Прямых эфиров: <?php echo $live_efir;?><br/><br/>
+											Основное оборудование:<br/>
+											<?php $all_tools = $db->select("tools", "type='0'");
+											foreach($all_tools as $t){
+												
+												$t_id = $t['id'];
+												$left = $t['amount'];
+												$need = isset($tool_counter[$t_id]) ? $tool_counter[$t_id] : 0;
+												
+												$left -= $need;
+												if ($left<0) $left = "Не хватает ".$left." шт.";
+												else $left = "Доступно - ".$left." шт.";
+												echo $t['name']." (количество требуемых - ".$need.") " .$left."<br/>";
+											}
+											?>
+											
+											</td>         
+											</tr>	
+											<?php } ?>	
 													</tbody>
 												</table>
 											</div>                                 
@@ -380,7 +435,7 @@
 				  
 
 					 
-					 
+					 <?php if ($document_write) { ?>
 					 <div class="element-wrapper">
 								<h6 class="element-header">Действия</h6>
 								<div class="element-box-tp">
@@ -395,7 +450,7 @@
 							
 								</div>
 							</div>
-							
+					 <?php } ?>		
 						</div>
 					</div>
 				 <?php } ?>

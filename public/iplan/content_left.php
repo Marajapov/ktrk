@@ -43,7 +43,17 @@
                            <span>Главная</span>
                         </a>
                      </li>
-                     <li>
+                     
+					 <?php
+					 $show_this = false;
+					 if ($_SESSION['user_status'] > 4) $show_this = true;
+					 else {
+						 foreach($_SESSION['user_access'] as $ua) if ($ua['module_db'] == 'films') { $show_this = true; break;} 
+					 }
+					 if ($show_this) {
+					 ?>
+					 
+					 <li>
                         <a href="films.php">
                            <div class="icon-w">
                               <svg x="0px" y="0px" viewBox="0 0 24 24" xml:space="preserve">
@@ -58,7 +68,16 @@
                            <span>Фильмотека</span>
                         </a>
                      </li>
-                     <li>
+                     <?php } ?>
+					 <?php
+					 $show_this = false;
+					 if ($_SESSION['user_status'] > 4) $show_this = true;
+					 else {
+						 foreach($_SESSION['user_access'] as $ua) if ($ua['module_db'] == 'broadcasts' && $ua['type'] == '1') { $show_this = true; break;} 
+					 }
+					 if ($show_this) {
+					 ?>
+					 <li>
                         <a href="broadcasts.php">
                            <div class="icon-w">
                               <svg x="0px" y="0px" viewBox="0 0 24 24" xml:space="preserve">
@@ -73,6 +92,15 @@
                            <span>Передачи</span>
                         </a>
                      </li>
+					 <?php } ?>
+					 <?php
+					 $show_this = false;
+					 if ($_SESSION['user_status'] > 4) $show_this = true;
+					 else {
+						 foreach($_SESSION['user_access'] as $ua) if ($ua['module_db'] == 'channels') { $show_this = true; break;} 
+					 }
+					 if ($show_this) {
+					 ?>
                      <li>
                         <a href="channels.php">
                            <div class="icon-w">
@@ -90,6 +118,15 @@
                            <span>Каналы</span>
                         </a>
                      </li>
+					 <?php } ?>
+					 <?php
+					 $show_this = false;
+					 if ($_SESSION['user_status'] > 4) $show_this = true;
+					 else {
+						 foreach($_SESSION['user_access'] as $ua) if ($ua['module_db'] == 'studios') { $show_this = true; break;} 
+					 }
+					 if ($show_this) {
+					 ?>
                      <li>
                         <a href="studios.php">
                            <div class="icon-w">
@@ -106,6 +143,15 @@
                            <span>Студии / Редакции</span>
                         </a>
                      </li>
+					 <?php } ?>
+					 <?php
+					 $show_this = false;
+					 if ($_SESSION['user_status'] > 4) $show_this = true;
+					 else {
+						 foreach($_SESSION['user_access'] as $ua) if ($ua['module_db'] == 'tools') { $show_this = true; break;} 
+					 }
+					 if ($show_this) {
+					 ?>
                      <li>
                         <a href="tools.php">
                            <div class="icon-w">
@@ -137,6 +183,15 @@
                            <span>Тех.оборудование</span>
                         </a>
                      </li>
+					 <?php } ?>
+					 <?php
+					 $show_this = false;
+					 if ($_SESSION['user_status'] > 4) $show_this = true;
+					 else {
+						 foreach($_SESSION['user_access'] as $ua) if ($ua['module_db'] == 'genres') { $show_this = true; break;} 
+					 }
+					 if ($show_this) {
+					 ?>
                      <li>
                         <a href="genres.php">
                            <div class="icon-w">
@@ -157,6 +212,15 @@
                            <span>Жанры</span>
                         </a>
                      </li>
+					 <?php } ?>
+					 <?php
+					 $show_this = false;
+					 if ($_SESSION['user_status'] > 4) $show_this = true;
+					 else {
+						 foreach($_SESSION['user_access'] as $ua) if ($ua['module_db'] == 'languages') { $show_this = true; break;} 
+					 }
+					 if ($show_this) {
+					 ?>
                      <li class="active">
                         <a href="languages.php">
                            <div class="icon-w">
@@ -175,6 +239,15 @@
                            <span>Языки</span>
                         </a>
                      </li>
+					 <?php } ?>
+					 <?php
+					 $show_this = false;
+					 if ($_SESSION['user_status'] > 4) $show_this = true;
+					 else {
+						 foreach($_SESSION['user_access'] as $ua) if ($ua['module_db'] == 'tags') { $show_this = true; break;} 
+					 }
+					 if ($show_this) {
+					 ?>
                      <li>
                         <a href="tags.php">
                            <div class="icon-w">
@@ -190,6 +263,15 @@
                            <span>Теги</span>
                         </a>
                      </li>
+					 <?php } ?>
+					 <?php
+					 $show_this = false;
+					 if ($_SESSION['user_status'] > 4) $show_this = true;
+					 else {
+						 foreach($_SESSION['user_access'] as $ua) if ($ua['module_db'] == 'place') { $show_this = true; break;} 
+					 }
+					 if ($show_this) {
+					 ?>
                      <li>
                         <a href="place.php">
                            <div class="icon-w">
@@ -207,6 +289,15 @@
                            <span>Эфирные студии</span>
                         </a>
                      </li>
+					 <?php } ?>
+					 <?php
+					 $show_this = false;
+					 if ($_SESSION['user_status'] > 4) $show_this = true;
+					 else {
+						 foreach($_SESSION['user_access'] as $ua) if ($ua['module_db'] == 'montage') { $show_this = true; break;} 
+					 }
+					 if ($show_this) {
+					 ?>
                      <li>
                         <a href="montage.php">
                            <div class="icon-w">
@@ -225,6 +316,15 @@
                            <span>Монтажные студии</span>
                         </a>
                      </li>
+					 <?php } ?>
+					 <?php
+					 $show_this = false;
+					 if ($_SESSION['user_status'] > 4) $show_this = true;
+					 else {
+						 foreach($_SESSION['user_access'] as $ua) if ($ua['module_db'] == 'users') { $show_this = true; break;} 
+					 }
+					 if ($show_this) {
+					 ?>
                      <li>
                         <a href="users.php">
                            <div class="icon-w">
@@ -240,7 +340,16 @@
                            </div>
                            <span>Пользователи</span>
                         </a>
-                     </li>  
+                     </li> 
+					<?php } ?>
+					 <?php
+					 $show_this = false;
+					 if ($_SESSION['user_status'] > 4) $show_this = true;
+					 else {
+						 foreach($_SESSION['user_access'] as $ua) if ($ua['module_db'] == 'log') { $show_this = true; break;} 
+					 }
+					 if ($show_this) {
+					 ?>					 
                      <li>
                         <a href="logs.php">
                            <div class="icon-w">
@@ -256,6 +365,8 @@
                            </div>
                            <span>Логи</span>
                         </a>
-                     </li>                    
+                     </li>  
+					<?php } ?>
+									 
                   </ul>
                </div>

@@ -1,4 +1,9 @@
-<?php include_once 'usercontrol.php'; ?>
+<?php 
+$document_db = "languages";
+$document_read = $document_write = $document_execute = $document_delete = 0;
+include_once 'usercontrol.php'; 
+if (!$document_read) {echo "У вас нет разрешения на доступ к этой странице. Обратитесь к администратору."; die();}
+?>
 <!DOCTYPE html>
 <html>
    <head>
@@ -110,7 +115,14 @@
 											foreach($ps as $p) {
 												?>
 										  <tr>
-                                             <td class="nowrap"><?php echo $p['name'];?> <div style="float:right"><a href="?act=edit&id=<?php echo $p['id'];?>">Редактировать</a> <a href="?act=delete&id=<?php echo $p['id'];?>" onclick="return confirm('Вы уверены что хотите удалить эту запись из базы?')">Удалить</a><div></td>
+                                             <td class="nowrap"><?php echo $p['name'];?> 
+											 <div style="float:right">
+											 
+											 <?php if ($document_execute) { ?><a href="?act=edit&id=<?php echo $p['id'];?>">Редактировать</a><?php } ?>
+											 
+											 <?php if ($document_delete) { ?><a href="?act=delete&id=<?php echo $p['id'];?>" onclick="return confirm('Вы уверены что хотите удалить эту запись из базы?')">Удалить</a><?php } ?>
+											 
+											 <div></td>
                                           </tr> 
 											
 										<?php } ?>	
@@ -123,7 +135,8 @@
                         </div>
                      </div>
                   </div>
-                  <div class="content-panel">
+                   <?php if ($document_write) { ?>
+				  <div class="content-panel">
                      <div class="element-wrapper">
                         <h6 class="element-header">Действия</h6>
                         <div class="element-box-tp">
@@ -137,6 +150,8 @@
                      </div>
                      
                   </div>
+				  <?php } ?>	
+				  
                </div>
             </div>
          </div>

@@ -1,17 +1,23 @@
 <?php
 namespace Front\Controllers;
 use Illuminate\Http\Request;
+use View;
+
+use \Model\Banner\ModelName as Banner;
+
 class BirinchiController extends Controller
 {
-    protected $positionTop, $positionRight, $positionCenter, $positionBottom, $positionLeft;
+    protected $birinchiTop, $birinchiBottom, $birinchiRight;
     
     public function __construct()
     {
-        $this->positionTop = \Model\Banner\ModelName::where('positionTop','=','1')->where('channel_id','=','7')->first();
-        $this->positionRight = \Model\Banner\ModelName::where('positionRight','=','1')->where('channel_id','=','7')->first();
-        $this->positionLeft = \Model\Banner\ModelName::where('positionLeft','=','1')->where('channel_id','=','7')->first();
-        $this->positionCenter = \Model\Banner\ModelName::where('positionCenter','=','1')->where('channel_id','=','7')->first();
-        $this->positionBottom = \Model\Banner\ModelName::where('positionBottom','=','1')->where('channel_id','=','7')->first();
+        $this->birinchiTop = \Model\Banner\ModelName::where('birinchiTop','=','1')->where('channel_id','=','7')->first();
+        $this->birinchiBottom = \Model\Banner\ModelName::where('birinchiBottom','=','1')->where('channel_id','=','7')->first();
+        $this->birinchiRight = \Model\Banner\ModelName::where('birinchiRight','=','1')->where('channel_id','=','7')->first();
+
+        View::share('birinchiTop', $this->birinchiTop);
+        View::share('birinchiBottom', $this->birinchiBottom);
+        View::share('birinchiRight', $this->birinchiRight);
     }
 
 
@@ -73,12 +79,6 @@ class BirinchiController extends Controller
             'posts' => $posts,
             'topCategories' => $topCategories,
             'bottomCategories' => $bottomCategories,
-
-            'positionTop'    => $this->positionTop,
-            'positionRight'  => $this->positionRight,
-            'positionLeft'  => $this->positionLeft,
-            'positionCenter' => $this->positionCenter,
-            'positionBottom' => $this->positionBottom,
         ]);
     }
 
@@ -392,7 +392,13 @@ class BirinchiController extends Controller
             $images2 = json_decode($parent2->images);    
         }else{
             $images2 = null;
-        }       
+        } 
+
+        if($lc == 'kg') {
+            $words = explode(" ", $post->title);
+        } else {
+            $words = explode(" ", $post->titleRu);
+        }      
 
            return view('Front::channel.birinchi.news', [
             'lc' =>$lc,
@@ -405,7 +411,8 @@ class BirinchiController extends Controller
             'relatedNews' => $relatedNews,            
             'popArticles' => $popArticles,  
             'images' => $images,
-            'images2' => $images2        
+            'images2' => $images2,        
+            'words' => $words        
             ]);
     }
 
@@ -768,10 +775,10 @@ class BirinchiController extends Controller
         $lc = app()->getlocale();
         if($lc == 'kg'){
             $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('name','<>','' )->get();
-            $relatedNews = \Model\Post\ModelName::where('published','=',true)->where('birinchi','=','1')->where('birinchiProgram','=',$project->id)->where('title','<>','' )->paginate($perPage);    
+            $relatedNews = \Model\Post\ModelName::where('published','=',true)->where('birinchi','=','1')->where('birinchiProgram','=',$project->id)->where('title','<>','' )->orderBy('created_at', 'desc')->paginate($perPage);    
         }else{
             $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi','=',1)->where('nameRu','<>','' )->get();
-            $relatedNews = \Model\Post\ModelName::where('published','=',true)->where('birinchi','=','1')->where('birinchiProgram','=',$project->id)->where('titleRu','<>','' )->paginate($perPage); 
+            $relatedNews = \Model\Post\ModelName::where('published','=',true)->where('birinchi','=','1')->where('birinchiProgram','=',$project->id)->where('titleRu','<>','' )->orderBy('created_at', 'desc')->paginate($perPage); 
         }
 
 
@@ -943,9 +950,11 @@ class BirinchiController extends Controller
         if($gallery != null){
 
         $images = json_decode($gallery->images);
-    }else{
-        $images = null;
-    }
+        }else{
+            $images = null;
+        }
+
+        $photoGalleries = \Model\PhotoParent\ModelName::where('id','<>',$galleryId)->where('birinchi','=','1')->where('published','=',true)->take('6')->orderBy('created_at','desc')->get(); 
         $birinchiProjects = \Model\Project\ModelName::where('published','=',true)->where('birinchi', '=', 1)->get();
         $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','7')->first();
 
@@ -954,6 +963,7 @@ class BirinchiController extends Controller
             'backgroundMain' => $backgroundMain,
             'gallery' => $gallery,
             'birinchiProjects' => $birinchiProjects,
+            'photoGalleries' => $photoGalleries,
             ]);
     }
 

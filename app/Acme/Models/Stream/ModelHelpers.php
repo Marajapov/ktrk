@@ -12,5 +12,10 @@ trait ModelHelpers
         return in_array($type, ['image/png', 'image/jpg', 'image/jpeg', 'image/gif', 'image/svg+xml']);
     }
 
+    public function incrementViewed($step = 1)
+    {
+        $this->viewed += $step;
+        $this->save();
+    }
     
 }

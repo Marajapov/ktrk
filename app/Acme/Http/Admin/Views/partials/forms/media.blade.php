@@ -120,12 +120,21 @@
 
         <div class="form-group">
             <label for="parentId" class="col-sm-2 control-label"></label>
-            <div class="col-sm-10">
+            <div class="col-sm-2">
                 <div class="checkbox checkbox-primary ">
                     {!! Form::hidden('published', 0) !!}
                     {!! Form::checkbox('published', 1, null, ["id" => "checkboxPublished", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
                     <label for="checkboxPublished">
                         {{ trans('site.Publish') }}
+                    </label>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="checkbox checkbox-primary ">
+                    {!! Form::hidden('alatoo24', 0) !!}
+                    {!! Form::checkbox('alatoo24', 1, null, ["id" => "alatoo24", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
+                    <label for="alatoo24">
+                        Ала-Тоо 24
                     </label>
                 </div>
             </div>

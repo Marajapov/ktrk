@@ -42,7 +42,7 @@ function Main($addr, $error){
    <body class="auth-wrapper">
       <div class="all-wrapper with-pattern">
          <div class="auth-box-w">
-            <div class="logo-w"><a href="index.html"><img alt="" src="img/logo-big.png"></a></div>
+            <div class="logo-w"><img alt="" src="img/logo-big.png"></div>
             <h4 class="auth-header">Авторизация</h4>
             <form action="?a=login" method="post" id="loginForm">
                <?php if ($error) {?>
@@ -51,7 +51,8 @@ function Main($addr, $error){
                </div>
 			   <?php }?>
 			   <div class="form-group">
-                  <label for="">Имя пользователя</label><input class="form-control" name="username">
+                  <label for="">Имя пользователя</label>
+                  <input class="form-control" name="username">
                   <svg x="0px" y="0px" viewBox="0 0 24 24" xml:space="preserve">
                      <g id="user">
                         <g>
@@ -63,7 +64,8 @@ function Main($addr, $error){
                   </svg>               
                </div>
                <div class="form-group">
-                  <label for="">Пароль</label><input class="form-control" type="password" name="password">
+                  <label for="">Пароль</label>
+                  <input class="form-control" type="password" name="password">
                   <svg x="0px" y="0px" viewBox="0 0 24 24" xml:space="preserve">
                      <g id="key">
                         <g>
@@ -93,6 +95,7 @@ function Logout()
 {
 	$_SESSION['auth'] = "";
 	$_SESSION['name'] = "";
+	$_SESSION['user_access'] = '';
 	session_destroy();
 
 	if(isset($_SERVER['HTTP_REFERER']))
@@ -111,6 +114,7 @@ function Logout()
 function Login(){
 	global $session;
 	global $db;
+	$_SESSION['user_access'] = Null;
         try {
 			$username = trim(getpost('username'));
 			$password = trim(getpost('password'));
@@ -126,6 +130,9 @@ function Login(){
 							$action = "Вход пользователя";
 							$ins = array("user"=>$user_id, "ip"=>$ip, "action"=>$action);
 							$db->insert("log", $ins);
+							
+							$_SESSION['user_access'] =  $db->select("user_module", "user='".$user_id."'");
+							
 							
 							$pos = strpos($_SERVER['HTTP_REFERER'], "login.php");
 							if(isset($_SERVER['HTTP_REFERER']) && ($pos === false)){

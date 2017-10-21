@@ -1,149 +1,98 @@
 @extends('Front::channel.muzkanal.default')
 @section('title', trans('radiopages.Homepage') .' | Музыка')
 @section('styles')
-<link rel="stylesheet" href="css/audio/muzslider.css">
-<link rel="stylesheet" href="css/slicebox.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.0/css/iziModal.min.css">
 @endsection
 @section('content')
 @include('Front::channel.muzkanal.nav')
-<div class="container">
+<div class="container newmusic">
    <!-- BEGIN Main slider slicebox-->
-   <div class="row">
-      <div class="wrapper">
-         <ul id="sb-slider" class="sb-slider">
-         @if($anonsslide->first()) 
-            @foreach($anonsslide as $anons)
-            <li>
-               <a href="{{ $anons->getUrl() }}" target="_blank"><img src="{{asset($anons->thumbnail)}}" alt="{{ $anons->getNameOne() }}"/></a>
-            </li>
-            @endforeach
-         @endif
-         </ul>
-         <div id="nav-arrows" class="nav-arrows">
-            <a href="#">Next</a>
-            <a href="#">Previous</a>
-         </div>
+   <div class="row mb20">
+      <div class="slick-projects">
+         @foreach($anonsslide as $row)
+            <div class="slick-project">
+               <a href="{{ $row->getUrl() }}" target="_blank">
+                  <img src="{{asset($row->thumbnail)}}" alt="{{ $row->getNameOne() }}"/>
+               </a>
+            </div>
+         @endforeach
       </div>
-      <!-- /wrapper -->
    </div>
    <!-- END Main slider slicebox-->
-   <!-- BEGIN ANONS-->
-   <div class="row dkp-big-3now ">
+
+   <!-- BEGIN ANONS-->  
+   <div class="row anons-blocks mb20">
       @if($anons1)
-      <div class="col-xs-4 rowfix" >
-         <a href="#" data-toggle="modal" data-target="#myModal" class="dkp-anonce dkp-anonce-small  dkp-border">
-            <img class="modalpromo" src="{{asset($anons1->thumbnail_big)}}" alt="{{$anons1->getName()}}"/>        
-            <div class="dkp-3now-item-wrapper">
-               <div class="dkp-3now-item-time">
-                  <span>
-                  <span>{{$anons1->getAnonsTime1()}}</span>
-                  </span>
+      <div class="col-xs-4 anons-block" >
+         <figure class="trigger-anons1">
+            <img src="{{asset($anons1->thumbnail_big)}}" alt="{{$anons1->getName()}}"/>
+            <figcaption>
+               <div class="anons-time">
+                  {{$anons1->getAnonsTime2()}}
                </div>
-               <div class="dkp-3now-item-title">
-                  <span>{{$anons1->getName()}}</span>
+               <div class="anons-title">
+                  {{$anons1->getName()}}
                </div>
-            </div>
-         </a>
-         <!-- Анонс Модал-->
-         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-               <div class="modal-content">
-                  <div class="modal-header">
-                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                     <h4 class="modal-title" id="myModalLabel">{{$anons1->getName()}}</h4>
-                  </div>
-                  <div class="modal-body" style="padding-bottom: 15px;">
-                     {!! $anons1->getContent()!!}
-                     <div class="embed-responsive embed-responsive-16by9 show-video">
-                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ $anons1->getUrl()}}"></iframe>
-                     </div>
-                  </div>
-                  <div class="modal-footer">
-                     <button type="button" class="btn btn-default" data-dismiss="modal">{{ trans('radiopages.Close') }}</button>
-                  </div>
-               </div>
-            </div>
-         </div>
+               <svg  class="play-button" x="0px" y="0px" viewBox="0 0 32 32" xml:space="preserve">
+                        <g transform="translate(0,-952.36218)">
+                            <path d="M16,952.4c-8.8,0-16,7.2-16,16s7.2,16,16,16s16-7.2,16-16C32,959.5,24.8,952.4,16,952.4L16,952.4z M16,954.7
+                                c7.6,0,13.7,6.1,13.7,13.7c0,7.6-6.1,13.7-13.7,13.7s-13.7-6.1-13.7-13.7S8.4,954.7,16,954.7L16,954.7z M11.7,961.3v14l11.7-7
+                                L11.7,961.3z"/>
+                        </g>
+                    </svg>
+            </figcaption>
+         </figure>
       </div>
       @endif
       @if($anons2)
-      <div class="col-xs-4 rowfix" >
-         <a href="#" data-toggle="modal" data-target="#myModal2" class="dkp-anonce dkp-anonce-small  dkp-border" data-id="12269">
-            <img class="modalpromo" src="{{asset($anons2->thumbnail_big)}}" alt="{{$anons2->getName()}}"/>
-            <div class="dkp-3now-item-wrapper">
-               <div class="dkp-3now-item-time">
-                  <span>
-                  <span>{{$anons2->getAnonsTime2()}}</span>
-                  </span>
+      <div class="col-xs-4 anons-block" >
+         <figure class="trigger-anons2">
+            <img src="{{asset($anons2->thumbnail_big)}}" alt="{{$anons2->getName()}}"/>
+            <figcaption>
+               <div class="anons-time">
+                  {{$anons2->getAnonsTime2()}}
                </div>
-               <div class="dkp-3now-item-title">
-                  <span>{{$anons2->getName()}}</span>
+               <div class="anons-title">
+                  {{$anons2->getName()}}
                </div>
-            </div>
-         </a>
-         <!-- Анонс Модал-->
-         <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-               <div class="modal-content">
-                  <div class="modal-header">
-                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                     <h4 class="modal-title" id="myModalLabel">{{$anons2->getName()}}</h4>
-                  </div>
-                  <div class="modal-body" style="padding-bottom: 15px;">
-                     {!!$anons2->getContent()!!}
-                     <div class="embed-responsive embed-responsive-16by9 show-video">
-                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ $anons2->getUrl()}}"></iframe>
-                     </div>
-                  </div>
-                  <div class="modal-footer">
-                     <button type="button" class="btn btn-default" data-dismiss="modal">{{ trans('radiopages.Close') }}</button>
-                  </div>
-               </div>
-            </div>
-         </div>
+               <svg class="play-button" x="0px" y="0px" viewBox="0 0 32 32" xml:space="preserve">
+                        <g transform="translate(0,-952.36218)">
+                            <path d="M16,952.4c-8.8,0-16,7.2-16,16s7.2,16,16,16s16-7.2,16-16C32,959.5,24.8,952.4,16,952.4L16,952.4z M16,954.7
+                                c7.6,0,13.7,6.1,13.7,13.7c0,7.6-6.1,13.7-13.7,13.7s-13.7-6.1-13.7-13.7S8.4,954.7,16,954.7L16,954.7z M11.7,961.3v14l11.7-7
+                                L11.7,961.3z"/>
+                        </g>
+                    </svg>
+            </figcaption>
+         </figure>
       </div>
       @endif
       @if($anons3)
-      <div class="col-xs-4 rowfix" >
-         <a href="#" data-toggle="modal" data-target="#myModal3" class="dkp-anonce dkp-anonce-small  dkp-border" data-id="12269">
-            <img class="modalpromo" src="{{asset($anons3->thumbnail_big)}}" alt="{{$anons3->getName()}}"/>
-            <div class="dkp-3now-item-wrapper">
-               <div class="dkp-3now-item-time">
-                  <span>
-                  <span>{{$anons3->getAnonsTime3()}}</span>
-                  </span>
+      <div class="col-xs-4 anons-block" >
+         <figure class="trigger-anons3">
+            <img src="{{asset($anons3->thumbnail_big)}}" alt="{{$anons3->getName()}}"/>
+            <figcaption>
+               <div class="anons-time">
+                  {{$anons3->getAnonsTime2()}}
                </div>
-               <div class="dkp-3now-item-title">
-                  <span>{{$anons3->getName()}}</span>
+               <div class="anons-title">
+                  {{$anons3->getName()}}
                </div>
-            </div>
-         </a>
-         <!-- Анонс Модал-->
-         <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-               <div class="modal-content">
-                  <div class="modal-header">
-                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                     <h4 class="modal-title" id="myModalLabel">{{$anons3->getName()}}</h4>
-                  </div>
-                  <div class="modal-body" style="padding-bottom: 15px;">
-                     {!!$anons3->getContent()!!}
-                     <div class="embed-responsive embed-responsive-16by9 show-video">
-                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ $anons3->getUrl()}}"></iframe>
-                     </div>
-                  </div>
-                  <div class="modal-footer">
-                     <button type="button" class="btn btn-default" data-dismiss="modal">{{ trans('radiopages.Close') }}</button>
-                  </div>
-               </div>
-            </div>
-         </div>
+               <svg class="play-button" x="0px" y="0px" viewBox="0 0 32 32" xml:space="preserve">
+                        <g transform="translate(0,-952.36218)">
+                            <path d="M16,952.4c-8.8,0-16,7.2-16,16s7.2,16,16,16s16-7.2,16-16C32,959.5,24.8,952.4,16,952.4L16,952.4z M16,954.7
+                                c7.6,0,13.7,6.1,13.7,13.7c0,7.6-6.1,13.7-13.7,13.7s-13.7-6.1-13.7-13.7S8.4,954.7,16,954.7L16,954.7z M11.7,961.3v14l11.7-7
+                                L11.7,961.3z"/>
+                        </g>
+                    </svg>
+            </figcaption>
+         </figure>
       </div>
       @endif
    </div>
    <!-- END ANONS-->
+
    <!-- BEGIN LIVE AND PROGRAMM-->
-   <div class="row">
+   <div class="row mb20">
       <div class="col-md-8 onairmuz">
          <div class="panel">
             <div class="panel-heading">
@@ -189,83 +138,54 @@
       </div>
    </div>
    <!-- END LIVE AND PROGRAMM-->
+
    <!-- BEGIN NEW CLIPS AND TOP-CHART-->
-   <div class="row">
+   <div class="row mb20">
       <div class="col-md-8">
-         <div class="row newvideos">
+         <div class="row m-blocks l-blocks newvideos">
             <div class="panel panel-default panel-carousel">
                <div class="panel-heading">
                   <h3 class="panel-title"><span>{{ trans('radiopages.NewClips') }}</span></h3>
                </div>
                <div class="panel-body">
-                  <div class="col-md-12">
-                     <div class="newclips">
-                        @if($MediaPop1)
-                        @foreach($MediaPop1 as $pop1)
-                        <div class="col-md-4 col-xs-12">
-                           <a href="{{ route('muzkanal.video', $pop1)}}">
-                           <img src="http://img.youtube.com/vi/{{ $pop1->getUrl()}}/hqdefault.jpg" alt=""/></a>
-                           <div class="item-desc">
-                              <ul>
-                                 <a href="{{ route('muzkanal.video', $pop1)}}">
-                                    <li class="item-artist">{{ $pop1->getName() }}</li>
-                                 </a>
-                              </ul>
-                           </div>
-                           @if($pop1->exclusive == 1)
-                           <div class="ishit">Эксклюзив!</div>
-                           @endif
-                           <div class="views"><i class="fa fa-eye"></i>{{ $pop1->getViewed() }}</div>
-                        </div>
-                        @endforeach
-                        @endif
-                     </div>
-                     <div class="newclips videosfix">
-                        @if($MediaPop2)
-                        @foreach($MediaPop2 as $pop2)
-                        <div class="col-md-4">
-                           <a href="{{ route('muzkanal.video', $pop2)}}"><img src="http://img.youtube.com/vi/{{ $pop2->getUrl()}}/hqdefault.jpg" alt=""/></a>
-                           <div class="item-desc">
-                              <ul>
-                                 <a href="{{ route('muzkanal.video', $pop2)}}">
-                                    <li class="item-artist">{{ $pop2->getName() }}</li>
-                                 </a>
-                              </ul>
-                           </div>
-                           @if($pop2->exclusive == 1)
-                           <div class="ishit">Эксклюзив!</div>
-                           @endif
-                           <div class="views"><i class="fa fa-eye"></i>{{ $pop2->getViewed() }}</div>
-                        </div>
-                        @endforeach
-                        @endif
-                     </div>
-                     <div class="newclips videosfix">
-                        @if($MediaPop3)
-                        @foreach($MediaPop3 as $pop3)
-                        <div class="col-md-4">
-                           <a href="{{ route('muzkanal.video', $pop3)}}"><img src="http://img.youtube.com/vi/{{ $pop3->getUrl()}}/hqdefault.jpg" alt=""/></a>
-                           <div class="item-desc">
-                              <ul>
-                                 <a href="{{ route('muzkanal.video', $pop3)}}">
-                                    <li class="item-artist">{{ $pop3->getName() }}</li>
-                                 </a>
-                              </ul>
-                           </div>
-                           @if($pop3->exclusive == 1)
-                           <div class="ishit">Эксклюзив!</div>
-                           @endif
-                           <div class="views"><i class="fa fa-eye"></i>{{ $pop3->getViewed() }}</div>
-                        </div>
-                        @endforeach
-                        @endif
-                     </div>
-                     <footer>
-                        <a href="{{ route('muzkanal.videos') }}">
-                        <span>{{ trans('radiopages.AllVideos') }} <i class="fa fa-arrow-circle-right"></i></span>
+                  @if($lastVideos)
+                     @foreach($lastVideos as $pop1)
+                     <div class="m-block l-block">
+                        <a class="m-thumb l-thumb" href="{{ route('muzkanal.video', $pop1)}}">
+                           <img src="http://img.youtube.com/vi/{{ $pop1->getUrl()}}/mqdefault.jpg" alt="{{ $pop1->getName() }}"/>
                         </a>
-                     </footer>
-                  </div>
+                        <div class="m-extra l-extra clearfix">
+                           @if($pop1->program)
+                                <a class="m-project p-project" href="{{route('muzkanal.project', $pop1->hasProject)}}">
+                                    {{$pop1->hasProject->getNameOne()}}
+                                </a>
+                            @endif                               
+                           @if($pop1->exclusive == 1)
+                              <div class="m-hit l-hit">Эксклюзив</div>
+                           @endif
+                           <div class="m-view l-view">
+                              <svg class="view" x="0px" y="0px" viewBox="0 0 22 14" xml:space="preserve">
+                                   <g>
+                                       <path d="M17.7,2.3C15.5,0.7,12.9,0,11,0S6.5,0.7,4.3,2.3C1.9,4.2,0,6.4,0,7s1.9,2.8,4.3,4.7C6.5,13.3,9.1,14,11,14s4.5-0.7,6.7-2.3
+                                           C20.1,9.8,22,7.6,22,7S20.1,4.2,17.7,2.3z M11,10c-1.7,0-3-1.3-3-3s1.3-3,3-3s3,1.3,3,3S12.7,10,11,10z"/>
+                                   </g>
+                               </svg>
+                              {{ $pop1->getViewed() }}
+                           </div>
+                        </div>
+                        <div class="m-title l-title">
+                           <a href="{{ route('muzkanal.video', $pop1)}}">
+                              {{ $pop1->getName() }}
+                           </a>
+                        </div>
+                     </div>
+                     @endforeach
+                  @endif
+                  <footer>
+                     <a class="m-btn" href="{{ route('muzkanal.videos') }}">
+                        {{ trans('radiopages.AllVideos') }}
+                     </a>
+                  </footer>
                </div>
             </div>
          </div>
@@ -278,28 +198,32 @@
             <div class="panel-body">
                <ul class="list-group" >
                   @if($hitNumbers)
-                  @foreach($hitNumbers as $key => $hit)
-                  <li class="list-group-item clearfix">
-                     <span class="numeric">{{ $key+1 }}</span>
-                     <!--  <a href="#" class="pull-right"> <i class="glyphicon glyphicon-play"></i> </a> -->
-                     <a href="{{ route('muzkanal.video', $hit)}}" class="pull-left"> <img src="http://img.youtube.com/vi/{{ $hit->getUrl()}}/hqdefault.jpg" class="hitimg"> </a>
-                     <a class="clear" href="{{ route('muzkanal.video', $hit)}}">
-                     <span class="song-name">{{ $hit->getName() }}</span>
-                     </a>
-                     <div>
-                        <div class="vote toplike">
-                           {!! Form::open(['route' => ['muzkanal.like', $hit], 'method' => 'GET']) !!}                         
-                           <input type="hidden" value="1" name="like">
-                           <span class="topcounts">{{$hit->like}}</span>
-                           <button type="submit" class="like-button" data-container="body" data-toggle="popover" data-placement="left" data-content="{{ trans('radiopages.VoteYes') }} ">
-                              <i class="fa fa-star red-tooltip" ></i> 
-                              <!-- data-toggle="tooltip" data-placement="right" title="Like"                            -->
-                           </button>
-                           {!! Form::close() !!}
+                     @foreach($hitNumbers as $key => $hit)
+                     <li class="hit-block list-group-item clearfix">
+                        <div class="media">
+                           <div class="media-left media-middle">
+                              <a class="hit-thumb" href="{{ route('muzkanal.video', $hit)}}">
+                                 <img src="http://img.youtube.com/vi/{{ $hit->getUrl()}}/mqdefault.jpg">
+                              </a>
+                           </div>
+                           <div class="media-body media-middle">
+                              <span class="hit-position">{{ $key+1 }}</span>
+                              <a class="hit-title" href="{{ route('muzkanal.video', $hit)}}">
+                                 {{ $hit->getName() }}
+                              </a>
+                           </div>
+                           <div class="media-right media-middle">
+                              {!! Form::open(['route' => ['muzkanal.like', $hit], 'method' => 'GET', 'class' => 'clearfix']) !!}                         
+                                 <input type="hidden" value="1" name="like">
+                                 <!-- <span class="hit-counts">{{$hit->like}}</span> -->
+                                 <button type="submit" class="hit-button" data-container="body" data-toggle="popover" data-placement="left" data-content="{{ trans('radiopages.VoteYes') }} ">
+                                    <i class="fa fa-star hit-star" ></i>
+                                 </button>
+                              {!! Form::close() !!}
+                           </div>
                         </div>
-                     </div>
-                  </li>
-                  @endforeach
+                     </li>
+                     @endforeach
                   @endif
                </ul>
             </div>
@@ -307,135 +231,178 @@
       </div>
    </div>
    <!-- END NEW CLIPS AND TOP-CHART-->
+
    <!-- BEGIN TOP CLIPS-->
-   <div class="row">
+   <div class="row mb20">
       <div class="col-md-12">
-         <div class="row topvideos">
+         <div class="row p-blocks topvideos">
             <div class="panel panel-default panel-carousel">
-               <div class="panel-heading">
-                  <h3 class="panel-title"><span>{{ trans('radiopages.TopCLips') }}</span></h3>
-               </div>
                <div class="panel-body">
-                  <div class="col-md-12">
+                  <div class="panel-subbody">
+                     <div class="panel-subheading clearfix">
+                        <span>{{ trans('radiopages.TopCLips') }}</span>
+                     </div>
                      <div class="topclips">
                         @if($MediaTop1)
-                        @foreach($MediaTop1 as $top1)
-                        <div class="col-md-4">
-                           <a href="{{ route('muzkanal.video', $top1)}}">
-                           <img src="http://img.youtube.com/vi/{{ $top1->getUrl() }}/hqdefault.jpg" alt=""/></a>
-                           <div class="item-desc">
-                              <ul>
-                                 <a href="{{ route('muzkanal.video', $top1)}}">
-                                    <li class="item-artist">{{ $top1->getName() }}</li>
-                                 </a>
-                              </ul>
+                           @foreach($MediaTop1 as $top1)
+                           <div class="m-block p-block">
+                              <a class="m-thumb p-thumb" href="{{ route('muzkanal.video', $top1)}}">
+                                 <img src="http://img.youtube.com/vi/{{ $top1->getUrl() }}/mqdefault.jpg" alt=""/>
+                              </a>
+                              <div class="m-desc p-desc">
+                                 <div class="m-extra p-extra clearfix">
+                                    @if($pop1->program)
+                                       <a class="m-project p-project" href="{{route('muzkanal.project', $pop1->hasProject)}}">
+                                          {{$pop1->hasProject->getNameOne()}}
+                                       </a>
+                                    @endif 
+                                    @if($top1->exclusive == 1)
+                                       <div class="m-hit p-hit">Эксклюзив!</div>
+                                    @endif
+                                    <div class="m-view p-view">
+                                       <svg class="view" x="0px" y="0px" viewBox="0 0 22 14" xml:space="preserve">
+                                          <g>
+                                             <path d="M17.7,2.3C15.5,0.7,12.9,0,11,0S6.5,0.7,4.3,2.3C1.9,4.2,0,6.4,0,7s1.9,2.8,4.3,4.7C6.5,13.3,9.1,14,11,14s4.5-0.7,6.7-2.3
+                                                    C20.1,9.8,22,7.6,22,7S20.1,4.2,17.7,2.3z M11,10c-1.7,0-3-1.3-3-3s1.3-3,3-3s3,1.3,3,3S12.7,10,11,10z"/>
+                                          </g>
+                                       </svg>
+                                       {{ $top1->getViewed() }}
+                                    </div>
+                                 </div>
+                                 <div class="m-title p-title">
+                                    <a href="{{ route('muzkanal.video', $top1)}}">
+                                       {{ $top1->getName() }}
+                                    </a>
+                                 </div>
+                              </div>
                            </div>
-                           @if($top1->exclusive == 1)
-                           <div class="ishit">Эксклюзив!</div>
-                           @endif
-                           <div class="views"><i class="fa fa-eye"></i>{{ $top1->getViewed() }}</div>
-                        </div>
-                        @endforeach
+                           @endforeach
                         @endif
                      </div>
-                     <div class="topclips videosfix">
-                        @if($MediaTop2)
-                        @foreach($MediaTop2 as $top2)
-                        <div class="col-md-4">
-                           <a href="{{ route('muzkanal.video', $top2)}}"><img src="http://img.youtube.com/vi/{{ $top2->getUrl() }}/hqdefault.jpg" alt=""/></a>
-                           <div class="item-desc">
-                              <ul>
-                                 <a href="{{ route('muzkanal.video', $top2)}}">
-                                    <li class="item-artist">{{ $top2->getName() }}</li>
-                                 </a>
-                              </ul>
-                           </div>
-                           @if($top2->exclusive == 1)
-                           <div class="ishit">Эксклюзив!</div>
-                           @endif
-                           <div class="views"><i class="fa fa-eye"></i>{{ $top2->getViewed() }}</div>
-                        </div>
-                        @endforeach
-                        @endif
-                     </div>
-                     <footer>
-                        <a href="{{ route('muzkanal.videos')}}">
-                        <span>{{ trans('radiopages.AllVideos') }} <i class="fa fa-arrow-circle-right"></i></span>
-                        </a>
-                     </footer>
                   </div>
+                  <div class="panel-subbody">
+                     <div class="panel-subheading clearfix">
+                        <span>{{ trans('site.Projects') }}</span>
+                     </div>
+                     <div class="topclips">
+                        @if($projectVideos)
+                           @foreach($projectVideos as $row)
+                           <div class="m-block p-block">
+                              <a class="m-thumb p-thumb" href="{{ route('muzkanal.video', $row)}}">
+                                 <img src="http://img.youtube.com/vi/{{ $row->getUrl() }}/mqdefault.jpg" alt=""/>
+                              </a>
+                              <div class="m-desc p-desc">
+                                 <div class="m-extra clearfix">
+                                    @if($pop1->program)
+                                       <a class="m-project p-project" href="{{route('muzkanal.project', $pop1->hasProject)}}">
+                                          {{$pop1->hasProject->getNameOne()}}
+                                       </a>
+                                    @endif
+                                 </div>
+                                 <div class="m-title p-title">
+                                    <a href="{{ route('muzkanal.video', $row)}}">
+                                       {{ $row->getName() }}
+                                    </a>
+                                 </div>
+                              </div>
+                           </div>
+                           @endforeach
+                        @endif
+                     </div>
+                  </div>
+
+                  <div class="panel-subbody">
+                     <div class="panel-subheading clearfix">
+                        <span>{{ trans('site.Concerts') }}</span>
+                     </div>
+                     <div class="topclips">
+                        @if($Concert)
+                           @foreach($Concert as $show)
+                           <div class="m-block p-block">
+                              <a class="m-thumb p-thumb" href="{{ route('muzkanal.video', $show)}}">
+                                 <img src="http://img.youtube.com/vi/{{ $show->getUrl() }}/mqdefault.jpg" alt=""/>
+                              </a>
+                              <div class="m-desc p-desc">
+                                 <div class="m-title p-title">
+                                    <a href="{{ route('muzkanal.video', $show)}}">
+                                       {{ $show->getName() }}
+                                    </a>
+                                 </div>
+                              </div>
+                           </div>
+                           @endforeach
+                        @endif
+                     </div>
+                  </div>
+                  <footer>
+                     <a class="m-btn" href="{{ route('muzkanal.videos')}}">
+                        {{ trans('radiopages.AllVideos') }}
+                     </a>
+                  </footer>
                </div>
             </div>
          </div>
       </div>
    </div>
    <!-- END TOP CLIPS-->
-   <!-- BEGIN CONCERT-->
-   <div class="row">
-      <div class="col-md-12">
-         <div class="row topvideos">
-            <div class="panel panel-default panel-carousel">
-               <div class="panel-heading">
-                  <h3 class="panel-title"><span>Концерт</span></h3>
-               </div>
-               <div class="panel-body">
-                  <div class="col-md-12">
-                     <div class="concert">
-                        @if($Concert)
-                        @foreach($Concert as $show)
-                        <div class="col-md-4">
-                           <a href="{{ route('muzkanal.video', $show)}}">
-                           <img src="http://img.youtube.com/vi/{{ $show->getUrl() }}/hqdefault.jpg" alt=""/></a>
-                           <div class="item-desc">
-                              <ul>
-                                 <a href="{{ route('muzkanal.video', $show)}}">
-                                    <li class="item-artist">{{ $show->getName() }}</li>
-                                 </a>
-                              </ul>
-                           </div>
-                        </div>
-                        @endforeach
-                        @endif
-                     </div>
-                     <footer>
-                        <a href="{{ route('muzkanal.videos')}}">
-                        <span>{{ trans('radiopages.AllVideos') }} <i class="fa fa-arrow-circle-right"></i></span>
-                        </a>
-                     </footer>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-   <!-- END CONCERT-->
+
    <!-- BEGIN GALLERY-->
-   <div class="row">
-      <div class="col-md-12 ">
-         <div class="row imgmuz">
+   <div class="row mb20">
+      <div class="col-md-12">
+         <div class="row g-blocks imgmuz">
             <div class="panel panel-default">
                <div class="panel-heading">
-                  <h3 class="panel-title"><span>{{ trans('radiopages.Photos') }}</span></h3>
+                  <h3 class="panel-title"><span>{{ trans('site.Galleries') }}</span></h3>
                </div>
-               <div class="ia-container">
+               <div class="panel-body">
                   @if($photoGalleries != null)
-                  @foreach($photoGalleries as $key=>$photoGallery)
-                  <figure>
-                     <img src="{{ asset($photoGallery->thumbnail_big) }}" />
-                     <input type="radio" name="radio-set" @if($key == 0) checked="checked" @endif/>
-                     <figcaption><a href="{{ route('muzkanal.photos', $photoGallery) }}"><span>{{ $photoGallery->getName() }}</span></a></figcaption>
+                     @foreach($photoGalleries as $key=>$photoGallery)
+                        <figure class="m-block g-block">
+                           <a class="m-thumb g-thumb" href="{{ route('muzkanal.photos', $photoGallery) }}">
+                              <img src="{{ asset($photoGallery->thumbnail_big) }}" />
+                           </a>
+                           <figcaption class="m-extra g-extra">
+                              <svg class="gallery-button" x="0px" y="0px" viewBox="0 0 32 32" xml:space="preserve">
+                                            <g>
+                                                <g transform="translate(-428.000000, -532.000000)">
+                                                    <g transform="translate(428.000000, 532.000000)">
+                                                        <g>
+                                                            <path d="M16,0C7.2,0,0,7.2,0,16s7.2,16,16,16s16-7.2,16-16S24.8,0,16,0L16,0z M26.8,20.8c-0.8,0.2-1.7-0.2-2.5-0.9
+                                                                c-1.6-1.4-4-5.9-4-5.9c-0.4-0.7-1-0.7-1.4,0c0,0-1.2,2-1.8,3c-0.9,1.4-2.9,4-2.9,4c-0.1,0.2-0.4,0.2-0.5,0c0,0-1.1-1-1.5-1.6
+                                                                C11.8,19,11.1,18,11.1,18c-0.2-0.3-0.6-0.3-0.9,0c0,0-0.9,1.2-2,2.5c-1.1,1.3-1.9,1.9-2.7,1.8c-0.7-0.1-1.2-0.5-1.6-1.2
+                                                                c-0.6-1.5-1-3.2-1-5C2.9,8.8,8.8,2.9,16,2.9c7.2,0,13.1,5.9,13.1,13.1c0,0.8-0.1,1.6-0.2,2.3C28.6,19.5,27.9,20.4,26.8,20.8
+                                                                L26.8,20.8z M25.1,24.6c-0.6,0.8-1.8,1.3-2.5,0.8c-0.7-0.5,0.2-1.2,0.9-1.9c0.8-0.9,1.3-1.1,1.7-0.9
+                                                                C25.7,22.9,25.5,24,25.1,24.6 M21.1,27c-0.6,0.4-1.4,0.5-1.8,0.1c-0.4-0.5,0.4-0.7,0.9-1.1c0.7-0.5,1-0.5,1.3-0.3
+                                                                C21.8,26,21.5,26.7,21.1,27L21.1,27z M8,8.6C7.3,9.5,7.1,11,7.9,11.5c0.6,0.3,1.4,0.1,2.5-1.2c0.9-1,2.2-2,1.2-2.7
+                                                                C10.6,6.8,8.9,7.4,8,8.6L8,8.6z"/>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </svg>
+                              <div class="m-title g-title">
+                                 <a href="{{ route('muzkanal.photos', $photoGallery) }}">
+                                    {{ $photoGallery->getName() }}
+                                 </a>
+                              </div>
+                           </figcaption>
+                        </figure>                        
                      @endforeach
-                     @endif
-                  </figure>
+                  @endif
+                  <footer>
+                     <a class="m-btn" href="{{ route('muzkanal.allphotos')}}">
+                        {{ trans('site.AllGalleries') }}
+                     </a>
+                  </footer>
                </div>
-               <!-- ia-container -->
             </div>
          </div>
       </div>
    </div>
    <!-- END GALLERY -->
+
    <!-- BEGIN SOCIAL -->
-   <div class="row">
+   <div class="row mb20">
       <div class="col-md-12">
          <div class="row imgmuz">
             <div class="panel panel-default">
@@ -445,9 +412,7 @@
                <div class="panel-body social-muschannel">
                   <div class="col-sm-3">
                      <div class="fb-page" style="height: 460px;overflow: hidden;" data-href="https://www.facebook.com/ktrkmuzyka" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
-                        <div class="fb-xfbml-parse-ignore">
-                           <blockquote cite="https://www.facebook.com/ktrkmuzyka"><a href="https://www.facebook.com/ktrkmuzyka/">КТРК Музыка</a></blockquote>
-                        </div>
+                        
                      </div>
                   </div>
                   <div class="col-sm-3">
@@ -484,54 +449,54 @@
    </div>
    <!-- END SOCIAL -->
 </div>
+
 @stop
 @section('footerScript')
-<script type="text/javascript" src="{{ asset('js/jquery.slicebox.js') }}"></script>
+
+
+<!-- Anons Modals -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.0/js/iziModal.min.js" type="text/javascript"></script>
+<script>
+   @if($anons1)
+      $("#modal-anons1").iziModal({
+          overlayClose: true,
+          iframe : true,
+          iframeURL: 'https://www.youtube.com/embed/{{ $anons1->getUrl()}}?autoplay=1'
+      });
+   @endif
+   @if($anons2)
+      $("#modal-anons2").iziModal({
+          overlayClose: true,
+          iframe : true,
+          iframeURL: 'https://www.youtube.com/embed/{{ $anons2->getUrl()}}?autoplay=1'
+      });
+   @endif
+   @if($anons3)
+      $("#modal-anons3").iziModal({
+          overlayClose: true,
+          iframe : true,
+          iframeURL: 'https://www.youtube.com/embed/{{ $anons3->getUrl()}}?autoplay=1'
+      });
+   @endif
+   
+   $(document).on('click', '.trigger-anons1', function (event) {
+       event.preventDefault();
+       $("#modal-anons1").iziModal('open', event);
+   });   
+   $(document).on('click', '.trigger-anons2', function (event) {
+       event.preventDefault();
+       $("#modal-anons2").iziModal('open', event);
+   });   
+   $(document).on('click', '.trigger-anons3', function (event) {
+       event.preventDefault();
+       $("#modal-anons3").iziModal('open', event);
+   });
+</script>
+
 <!-- Fixed Sticky header -->
-<script>
-   $(function(){
-       var url = $('#myModal iframe').attr('src');
-       $('.modal').click(function() {
-           $('#myModal iframe').show();
-           $('#myModal iframe').attr('src', url);
-       });
-       $('button.close').click(function() {
-           $('#myModal').hide();
-           $('#myModal').attr('src', '');
-       });
-   });
-   
-   $(function(){
-       var url = $('#myModal2 iframe').attr('src');
-       $('.modal').click(function() {
-           $('#myModal2 iframe').show();
-           $('#myModal2 iframe').attr('src', url);
-       });
-       $('button.close').click(function() {
-           $('#myModal2').hide();
-           $('#myModal2').attr('src', '');
-       });
-   });
-   
-   $(function(){
-       var url = $('#myModal3 iframe').attr('src');
-       $('.modal').click(function() {
-           $('#myModal3 iframe').show();
-           $('#myModal3 iframe').attr('src', url);
-       });
-       $('button.close').click(function() {
-           $('#myModal3').hide();
-           $('#myModal3').attr('src', '');
-       });
-   });
-</script>
-<script>
-   function like() {
-       alert("Clik");
-   }
-</script>
 <script type ="text/javascript" src ="{{ asset('js/script.js') }}"></script>
 <!-- Fixed Sticky header -->
+
 <!-- Programm title Anima -->
 <script src="{{ asset('js/audio/jquery.newsTicker.js') }}"></script>
 <script>
@@ -557,9 +522,9 @@
 <script type="text/javascript">
    var playerInstance = jwplayer("player");
    
-   //    $('#playerPlay').click(function(){
-   //        playerInstance.play();
-   //    });
+      $('#playerPlay').click(function(){
+          playerInstance.play();
+      });
    
    playerInstance.setup({
        autostart: true,
@@ -581,17 +546,21 @@
 </script>
 <!--Carousel-->
 <script>
+   $(function(){
+      $('.slick-projects').slick({
+         infinite: true,
+         slidesToShow: 1,
+         slidesToScroll: 1,
+         autoplay: false,
+         autoplaySpeed: 4500,
+         fade: true,
+         cssEase: 'linear'
+      });
+   });
    if ($(window).width() > 768) {
-       $('.newclips').slick({
-           infinite: true,
-           slidesToShow: 3,
-           slidesToScroll: 1,
-           autoplay: false,
-           autoplaySpeed: 4500
-       });
        $('.topclips').slick({
            infinite: true,
-           slidesToShow: 4,
+           slidesToShow: 3,
            slidesToScroll: 1,
            autoplay: false,
            autoplaySpeed: 4500
@@ -606,13 +575,6 @@
    }
    
    if ($(window).width() < 768) {
-       $('.newclips').slick({
-           infinite: true,
-           slidesToShow: 2,
-           slidesToScroll: 1,
-           autoplay: false,
-           autoplaySpeed: 4500
-       });
        $('.topclips').slick({
            infinite: true,
            slidesToShow: 2,
@@ -629,41 +591,6 @@
        });
    }
    
-</script>
-<script type="text/javascript">
-   $(function() {
-       var Page = (function() {
-           var $navArrows = $( '#nav-arrows' ).hide(),
-               $shadow = $( '#shadow' ).hide(),
-               slicebox = $( '#sb-slider' ).slicebox( {
-                   onReady : function() {
-                       $navArrows.show();
-                       $shadow.show();
-                   },
-                   orientation : 'r',
-                   cuboidsRandom : true,
-                   disperseFactor : 30,
-                   autoplay : true,
-                   interval: 5000
-               } ),
-               init = function() {
-                   initEvents();
-               },
-               initEvents = function() {
-                   // add navigation events
-                   $navArrows.children( ':first' ).on( 'click', function() {
-                       slicebox.next();
-                       return false;
-                   } );
-                   $navArrows.children( ':last' ).on( 'click', function() {
-                       slicebox.previous();
-                       return false;
-                   } );
-               };
-           return { init : init };
-       })();
-       Page.init();
-   });
 </script>
 <script>
    $(document).ready(function(){

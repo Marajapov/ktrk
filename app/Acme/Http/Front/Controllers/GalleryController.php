@@ -99,11 +99,15 @@ class GalleryController extends Controller
 
     public function single(PhotoParent $gallery)
     {
+        $gallery->incrementViewed();
         $images = json_decode($gallery->images);
+
+        $galleries = PhotoParent::where('extracolumn','=','1')->where('published','=',true)->where('id','<>',$gallery->id)->orderBy('id','desc')->take(6)->get();
 
         return view('Front::gallery.single',[
             'images' => $images,
             'gallery' => $gallery,
+            'galleries' => $galleries,
         ]);
     }
 

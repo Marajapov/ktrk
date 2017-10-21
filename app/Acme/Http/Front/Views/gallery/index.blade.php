@@ -2,9 +2,6 @@
 @section('title', trans('site.Galleries').' | КТРК')
 
 @section('styles')
-    <link rel="stylesheet" href="{{ asset('css/articles.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('css/pages.css') }}"/>
-
     <link rel="stylesheet" href="{{ asset('css/test3.css') }}"/>
 @stop
 
@@ -29,7 +26,9 @@
                                                 <img src="{{ asset($photoGallery->thumbnail_big) }}" alt=""/>
                                                 <figcaption>
                                                     <div class="post-extra clearfix">
-                                                        <span class="post-date">{{ $photoGallery->getDay() }} {{ $photoGallery->getMonthRu() }}, {{ $photoGallery->getTime()}}</span>
+                                                        <span class="post-date">
+                                                            {{ $photoGallery->getDay() }} {{ $photoGallery->getMonthRu() }} @if(date('Y') != $photoGallery->getYear()) {{ $photoGallery->getYear() }} @endif, {{ $photoGallery->getTime()}}
+                                                        </span>
                                                         <span class="post-views">                                                        
                                                             <svg class="fa-view" x="0px" y="0px" viewBox="0 0 22 14" xml:space="preserve">
                                                                 <g>
@@ -73,7 +72,7 @@
                             <nav class="pagination-nav">
                                 <ul class="pagination">
                                     <li class="pagination-auto">
-                                        <a href="{{ route('front.vertex.galleries', ['page' => 1]) }}" class="@if($galleries->currentPage() == 1) disabled @endif">{{ trans('site.Start') }}</a>
+                                        <a href="{{ route('front.gallery.galleries', ['page' => 1]) }}" class="@if($galleries->currentPage() == 1) disabled @endif">{{ trans('site.Start') }}</a>
                                     </li>
                                     <li>
                                         <a href="{{ $galleries->previousPageUrl() }}" class="slick-arrow arrow-prev @if($galleries->currentPage() == 1) disabled @endif">
@@ -84,7 +83,7 @@
                                     @if($galleries->currentPage() < 3)
                                         @for($i = 1; $i <= 5; $i++)
                                             <li>
-                                                <a href="{{ route('front.vertex.galleries', ['page' => $i]) }}" class="@if($galleries->currentPage() == $i) active @endif">
+                                                <a href="{{ route('front.gallery.galleries', ['page' => $i]) }}" class="@if($galleries->currentPage() == $i) active @endif">
                                                     {{ $i }}
                                                 </a>
                                             </li>
@@ -92,7 +91,7 @@
                                     @elseif(ceil($galleries->total()/$perPage) - $galleries->currentPage() < 2)
                                         @for($i = ceil($galleries->total()/$perPage)-4; $i <= ceil($galleries->total()/$perPage); $i++)
                                             <li>
-                                                <a href="{{ route('front.vertex.galleries', ['page' => $i]) }}" class="@if($galleries->currentPage() == $i) active @endif">
+                                                <a href="{{ route('front.gallery.galleries', ['page' => $i]) }}" class="@if($galleries->currentPage() == $i) active @endif">
                                                     {{ $i }}
                                                 </a>
                                             </li>
@@ -100,7 +99,7 @@
                                     @else
                                         @for($i = $galleries->currentPage()-2; $i <= $galleries->currentPage()+2; $i++)
                                             <li>
-                                                <a href="{{ route('front.vertex.galleries', ['page' => $i]) }}" class="@if($galleries->currentPage() == $i) active @endif">
+                                                <a href="{{ route('front.gallery.galleries', ['page' => $i]) }}" class="@if($galleries->currentPage() == $i) active @endif">
                                                     {{ $i }}
                                                 </a>
                                             </li>
@@ -114,7 +113,7 @@
                                     </li>
 
                                     <li class="pagination-auto">
-                                        <a href="{{ route('front.vertex.galleries', ['page' => ceil($galleries->total()/$perPage)]) }}" class="@if($galleries->currentPage() == ceil($galleries->total()/$perPage)) disabled @endif">{{ trans('site.End') }}</a>
+                                        <a href="{{ route('front.gallery.galleries', ['page' => ceil($galleries->total()/$perPage)]) }}" class="@if($galleries->currentPage() == ceil($galleries->total()/$perPage)) disabled @endif">{{ trans('site.End') }}</a>
                                     </li>
 
                                 </ul>

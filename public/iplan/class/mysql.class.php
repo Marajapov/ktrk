@@ -65,27 +65,46 @@ class db_mysql {
         return $this->query_id;           
     }  
     
- #** just delete selected *********************************************************************************   
-    public function delete($table, $where) {
-        $sql = "DELETE FROM " . $table . " WHERE " . $where . ";";
-        $this->run($sql);
-    }
 # log action ********************************************************************************************  
-     public function logaction($table, $sql, $where) {
+
+	public function getRealIpAddress()
+	{
+		if (!empty($_SERVER['HTTP_CLIENT_IP']))   //check ip from share internet
+		{
+		  $ip=$_SERVER['HTTP_CLIENT_IP'];
+		}
+		elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR']))   //to check ip is pass from proxy
+		{
+		  $ip=$_SERVER['HTTP_X_FORWARDED_FOR'];
+		}
+		else
+		{
+		  $ip=$_SERVER['REMOTE_ADDR'];
+		}
+		return $ip;
+	}
+
+     public function logaction($table, $sql, $action) {
 		$ptt = "/'/";
 		$rpl = "`*`";
 		$sql = preg_replace($ptt,$rpl, $sql);
-		if(isset($_SESSION["userid"]) && $_SESSION["userid"]>0){
-			$insert = array(
-				"user_id" => $_SESSION["userid"],
-				"sql" => $sql,
-				"table" => $table,
-				"where" => $where
-				);
-			if($this->insert("logdb", $insert)) return true; else return false;
-		}
-		return true;
-      }    
+		$table_name = $this->select_one("modules", "db like '".$table."'");
+		$tbl = isset($table_name['db']) && strlen($table_name['db'])>0 ? $table_name['name']:$table;
+		$user_id = $_SESSION['user_id'];
+		$ip = $this->getRealIpAddress();
+							
+		$insert = array("user"=>$user_id, "ip"=>$ip, "action"=>$action, "query"=>$sql, "action"=>$action, "tbl"=>$tbl );
+		
+		$this->insert("log", $insert);
+      } 
+	  
+	#** just delete selected *********************************************************************************   
+    public function delete($table, $where) {
+        $sql = "DELETE FROM " . $table . " WHERE " . $where . ";";
+		$this->logaction($table, $sql, 'Удаление');
+        $this->run($sql);
+    }
+   
 # look for liveFlag ********************************************************************************************  
      public function checkliveFlag($table, $where="") {
 		return $where;
@@ -144,11 +163,12 @@ class db_mysql {
        $q .= "(". rtrim($n, ', ') .") VALUES (". rtrim($v, ', ') .");";
 	   //echo $q;
 	   //die($q);
-	if($this->run($q)){           
-        return mysql_insert_id($this->link_id);
-    } else{
-        return 0; 
-    }    
+	   if ($table!='log') $this->logaction($table, $q, 'Добавление');
+		if($this->run($q)){           
+			return mysql_insert_id($this->link_id);
+		} else{
+			return 0; 
+		}    
  }
 
  #** update from array and id***********************************************************************************
@@ -165,12 +185,8 @@ class db_mysql {
             }  
                $sql = rtrim($sql, ', ') . ' WHERE '.$where.';';
               //echo $sql;
-			  if($this->run($sql)){
-				 if ($this->logaction($table, $sql, $where));
-                 return 1; 
-              }else{
-                 return 0; 
-              }
+			  $this->logaction($table, $sql, 'Редактирование');
+			  if($this->run($sql)) return 1;
             
         }catch(Exception $e){
             return 0;

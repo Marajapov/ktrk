@@ -36,6 +36,7 @@ class AuthController extends Controller
             }else{
                 return redirect()->route('front.home');
             }
+
         }
 
         return redirect()->route('front.login')->with('danger-message', 'Email же сырсөз туура эмес');

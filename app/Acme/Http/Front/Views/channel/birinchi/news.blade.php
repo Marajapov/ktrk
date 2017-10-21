@@ -244,6 +244,9 @@
                   </div>
                </div>
             </div>
+          <a target="_blank" href="@if(!empty($birinchiRight->linkTo)){{ $birinchiRight->linkTo }} @else # @endif" class="text-center ads ads-300x250 middle-ad">
+              <img src="@if(!empty($birinchiRight->file)) {{ asset($birinchiRight->file) }} @else {{ asset('images/banner_240x400.png') }} @endif" alt="ad"/>
+          </a>
          </div>
          <div class="col-md-3">
             <div class="row onenews">

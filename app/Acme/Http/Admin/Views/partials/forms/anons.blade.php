@@ -219,6 +219,13 @@
             </div>
         </div>
 
+        <div id="media" class="form-group display-none">
+            <label class="col-sm-2 control-label">Порядок</label>
+            <div class="col-sm-4">
+                {!! Form::text('media', null, ["class" => "form-control"]) !!}
+            </div>
+        </div>
+
         <!-- Thumb -->
         <div id="thumbForm" class="form-group display-none">
             <label for="parentId" class="col-sm-2 control-label">Файл</label>

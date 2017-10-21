@@ -33,8 +33,8 @@
 			</div>
 			<div class="container">
 				<div class="banner-top">
-					 <a href="@if($positionTop) {{ $positionTop->linkTo }} @else # @endif">
-					    <img src="@if(!empty($positionTop->file)) {{ asset($positionTop->file) }} @else {{asset('images/channels/sport/banner.png')}} @endif" alt=""/>
+					 <a href="@if($sportTop) {{ $sportTop->linkTo }} @else # @endif">
+					    <img src="@if(!empty($sportTop->file)) {{ asset($sportTop->file) }} @else {{asset('images/channels/sport/banner.png')}} @endif" alt=""/>
 					</a>
 				</div>
 			</div>

@@ -67,6 +67,7 @@ class CommentController extends Controller
             function($message)
             {
                 $message->to('ktrksite@gmail.com', 'KTRK.KG')->subject('Ошибка в материале '.Input::get('url'));
+//                $message->to('kendirbaev.aibek@gmail.com', 'Aibek Kendirbaev')->subject('Ошибка в материале '.Input::get('url'));
                 $message->from('ktrkkg@yandex.ru', 'KTRK.KG - Общественная Телерадиовещательная корпорация Кыргызской Республики');
             }
         );

@@ -53,11 +53,16 @@ return [
 
     # Media
     'Projects' => 'Телепроекты',
+    'ProjectsArchive' => 'Архив телепроектов',
     'RelatedMedia' => 'Видео по теме',
     'MediaMaterials' => 'Видеоматериалы',
+    'AboutProject' => 'О проекте',
+    'AllProject' => 'Все проекты',
 
     # Gallery
     'Galleries' => 'Фоторепортажи',
+    'LastGalleries' => 'Последние фоторепортажи',
+    'AllGalleries' => 'Все фоторепортажи',
     '' => '',
 
     # Search
@@ -67,6 +72,43 @@ return [
     'DataResultPost' => 'Результаты по названиям новостей',
     'DataResultShows' => 'Результаты по видеоматериалам',
     '' => '',
+
+    # Multimedia
+    'AllMaterials' => 'Все материалы',
+    '' => '',
+
+    # Banners
+    'HomeUnderMainNews' => 'Главная(под "Актуально")',
+    'HomeUnderNews' => 'Главная(под "Новости")',
+    'HomeNearMultimedia' => 'Главная(рядом с "Мультимедиа")',
+    'InnerPagesHorizontalTop' => 'Внутренние(верхнее горизонтальное)',
+    'InnerPagesHorizontalBottom' => 'Внутренние(нижнее горизонтальное)',
+    'InnerPagesVertical' => 'Внутренние(в правой колонке)',
+
+    'SportTop' => 'Спорт(верхнее)',
+    'SportUnderVideo' => 'Спорт(под "Видео")',
+
+    'BirinchiTop' => 'Биринчи Радио(верхнее)',
+    'BirinchiBottom' => 'Биринчи Радио(нижнее)',
+    'BirinchiRight' => 'Биринчи Радио(в правой колонке)',
+    '' => '',
+
+    # KTRK extra
+    'LiveWarning' => 'Если ваш плеер не проигрывается, обновите флеш-плеер, пройдя по ссылке.',
+    '' => '',
+    '' => '',
+
+    # Music
+    'Concerts' => 'Концерты',
+    '' => '',
+    '' => '',
+
+    # Footer Nav
+    'FooterNavSections'	=>	'Разделы',
+    'FooterNavContactInfo'	=>	'Контактная информация',
+    'FooterNavContacts'	=>	'Контакты',
+    'FooterNavAds'	=>	'Реклама',
+    ''	=>	'',
 
 
 
@@ -192,6 +234,8 @@ return [
     'Left' => 'Налево',
     'Right' => 'Направо',
     'Bottom' => 'Внизу',
+    'InnerPages' => 'Внутренние страницы',
+
     'Content' => 'Содержание',
     'TitleKG' => 'Название на кыргызском',
     'TitleRU' => 'Название на русском',
@@ -386,6 +430,7 @@ return [
     'FrontPostDaysEpisode' => 'Телепроект',
     'FrontPostDaysAnons' => 'Анонс',
     'FrontPostDaysMaanai' => 'Маанайшат',
+    'FrontPostDaysInteresting' => 'Самое интересное',
     'FrontPostLastDays' => 'Прошедшие дни',
     'FrontDirectorPage' => 'Страница генерального директора',    
     'FrontVideoAll' => 'Перейти на видеопортал',

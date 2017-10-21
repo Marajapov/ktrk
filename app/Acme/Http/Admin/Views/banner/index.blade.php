@@ -39,18 +39,24 @@
 		            		</td>
 		            		<td class="table-img text-center">
 		            			<a href="{{ route('admin.banner.show', $banner) }}">
-				                  <img src="{{ asset($banner->file) }}" alt=""/>
+				                  <img src="{{ asset($banner->file) }}" alt="" style="max-height: 200px; max-width: 250px;"/>
 				                </a>
 		            		</td>
 		            		<td>
 				                {{ $banner->created_at }}
 				            </td>
 				            <td>
-				            	@if($banner->positionTop == 1) Сверху 
-				            	@elseif($banner->positionCenter == 1) По центру 
-				            	@elseif($banner->positionRight == 1) Справа 
-				            	@elseif($banner->positionLeft == 1) Слева 
-				            	@elseif($banner->positionBottom == 1) Снизу 
+				            	@if($banner->positionTop == 1) {{ trans('site.InnerPagesHorizontalTop') }} 
+				            	@elseif($banner->positionCenter == 1) {{ trans('site.HomeUnderNews') }}
+				            	@elseif($banner->positionRight == 1) {{ trans('site.HomeNearMultimedia') }} 
+				            	@elseif($banner->positionLeft == 1) {{ trans('site.HomeUnderMainNews') }} 
+				            	@elseif($banner->positionBottom == 1) {{ trans('site.InnerPagesHorizontalBottom') }} 
+				            	@elseif($banner->extracolumn == 1) {{ trans('site.InnerPagesVertical') }}
+				            	@elseif($banner->sportTop == 1) {{ trans('site.SportTop') }}
+				            	@elseif($banner->sportBottom == 1) {{ trans('site.SportUnderVideo') }}
+				            	@elseif($banner->birinchiTop == 1) {{ trans('site.BirinchiTop') }}
+				            	@elseif($banner->birinchiBottom == 1) {{ trans('site.BirinchiBottom') }}
+				            	@elseif($banner->birinchiRight == 1) {{ trans('site.BirinchiRight') }}
 				            	@endif
 				            </td>
 				            <td>

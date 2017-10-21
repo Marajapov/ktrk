@@ -7,7 +7,7 @@
 
                     <ul class="first-level clearfix">
                         <li>
-                            <h4>О Компании</h4>
+                            <h4>{{trans('site.NavAbout')}}</h4>
                             <ul class="second-level clearfix">
                                 <li>
                                     <a href="{{route('front.history')}}">{{trans('site.NavAboutHistory')}}</a>
@@ -39,19 +39,19 @@
                             </ul>
                         </li>
                         <li>
-                            <h4>Разделы</h4>
+                            <h4>{{trans('site.FooterNavSections')}}</h4>
                             <ul class="second-level clearfix">
                                 <li>
-                                    <a href="{{route('front.general')}}">Новости</a>
+                                    <a href="{{route('front.general')}}">{{trans('site.NavNews')}}</a>
                                 </li>
                                 <li>
                                     <a href="{{route('front.media.index')}}">Видеопортал</a>
                                 </li>
                                 <li>
-                                    <a href="{{route('front.pages.teleprogram', 2)}}">Программа передач</a>
+                                    <a href="{{route('front.pages.teleprogram', 2)}}">{{trans('site.NavTeleprogram')}}</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('front.gallery.galleries') }}">Фоторепортажи</a>
+                                    <a href="{{ route('front.gallery.galleries') }}">{{trans('site.Galleries')}}</a>
                                 </li>
                                 <!-- <li>
                                     <a href="#">Вакансии</a>
@@ -60,15 +60,15 @@
                                     <a href="#">Народный репортер</a>
                                 </li> -->
                                 <li>
-                                    <a href="{{ route('front.pages.reklama') }}">Реклама</a>
+                                    <a href="{{ route('front.pages.reklama') }}">{{trans('site.FooterNavAds')}}</a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <h4>Контактная информация</h4>
+                            <h4>{{trans('site.FooterNavContactInfo')}}</h4>
                             <ul class="second-level clearfix">
                                 <li>
-                                    <a href="{{ route('front.pages.contacts') }}">Контакты</a>
+                                    <a href="{{ route('front.pages.contacts') }}">{{trans('site.FooterNavContacts')}}</a>
                                 </li>
                                 <!-- <li>
                                     <a href="#">Обратная связь</a>
@@ -301,7 +301,7 @@
                 <div class="col-md-12 footer-trademark">
                     <div class="row">
                         <div class="col-md-8">
-                            <h4 class="copyright"><i class="fa fa-copyright"></i>{{ trans('site.TradeMark') }}, 2010-<?php echo date("Y"); ?>. {{ trans('site.TradeMarkAll') }} </h4>
+                            <h4 class="copyright"><i class="fa fa-copyright"></i> {{ trans('site.TradeMark') }}, 2010-<?php echo date("Y"); ?>. {{ trans('site.TradeMarkAll') }} </h4>
                             <h4 class="copyright">{{ trans('site.TradeMarkRegulations') }} </h4>   
                             <h4 class="copyright">{{ trans('site.TradeMarkRegulations2') }} </h4>   
                             <h4 class="copyright">{{ trans('site.TradeMarkRegulations3') }} </h4>                    
@@ -313,7 +313,7 @@
                             <h4 class="copyrightSide">{{ trans('site.TradeMarkPart') }} </h4>
                             <h4 class="copyrightSide">{{ trans('site.TradeMarkEmail') }} </h4>
                             <h4 class="copyrightSide">{{ trans('site.TradeMarkKtrk') }} </h4>
-                            <h4 class="copyrightSide">{{ trans('site.Developed') }}: <a href="http://ulut.kg/" target="_blank">Улут Софт</a></h4>
+                            <h4 class="copyrightSide">{{ trans('site.Developed') }}: <a class="ulut-link" href="http://ulut.kg/" target="_blank">Улут Софт</a></h4>
                         </div>
                     </div>
                 </div>
@@ -379,6 +379,8 @@
         }
     }
     blink($('#blinkLive'), -1, 750);
+    blink($('#blinkLive1'), -1, 750);
+    blink($('#blinkLive2'), -1, 750);
 </script>
 
 <script type="text/javascript" src="{{ asset('filter/js/jquery.easing.min.js') }}"></script>

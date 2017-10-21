@@ -1,4 +1,9 @@
-<?php include_once 'usercontrol.php'; ?>
+<?php 
+$document_db = "place_event";
+$document_read = $document_write = $document_execute = $document_delete = 0;
+include_once 'usercontrol.php'; 
+if (!$document_read) {echo "У вас нет разрешения на доступ к этой странице. Обратитесь к администратору."; die();}
+?>
 <?php
 	$place_id = 0;
 	if (isset($_GET['place_id'])) $place_id = getget('place_id');
@@ -44,6 +49,8 @@
 														  </select>
 													   </div>
 													</div>
+													
+													<?php if ($document_write) { ?>
 													<div class="col-sm-2">
 													   <div class="form-group form-extra form-extra-calendar">
 													   	<button id="add-New-Event" class="btn btn-primary" type="submit">Добавить</button>
@@ -60,7 +67,7 @@
 									              		</a>                 
 													   </div>
 													</div>
-													
+													<?php } ?>
 													
 													
 						</div>
@@ -161,8 +168,10 @@
 				  <input id="modal_event_id" type="hidden" value="0">
 				  <input id="modal_place_studio_id" type="hidden" value="<?php echo $place_id;?>">
                   <button id="button-modal-save" class="btn btn-primary" type="submit">Сохранить</button>
-                  <button id="button-modal-delete" class="btn btn-default">Удалить</button>
-                  <button class="btn btn-default btn-close close">Отмена</button>
+                  <?php if ($document_delete) { ?>
+				  <button id="button-modal-delete" class="btn btn-default">Удалить</button>
+                  <?php } ?>
+				  <button class="btn btn-default btn-close close">Отмена</button>
                </div>
             
          </div>
@@ -255,9 +264,11 @@
 				},<?php } ?>
                   
                ],
-               eventClick: function(event, element) {
+               <?php if ($document_execute) { ?>
+			   eventClick: function(event, element) {
                      calendarModal(event);
                }
+			   <?php } ?>
             });
 		});
 	  </script>

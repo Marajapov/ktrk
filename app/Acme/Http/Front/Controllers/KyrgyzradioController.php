@@ -41,14 +41,12 @@ class KyrgyzradioController extends Controller
 
             if(!empty($schedule)){
                 $program = json_decode($schedule->program);
-                // dd($program);
                 $programNew = array_add($program, 'date', $schedule->date);
             }else{
                 $program = '';
             }
         }
 
-     // dd($program);
         return view('Front::channel.kyrgyzradio.index', [
             'channel' => $channel,
             'anons' => $anons,

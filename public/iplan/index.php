@@ -20,52 +20,105 @@
                   <div class="content-box">
 					 		<div class="row">
 
-					 			<div class="col-sm-12">
+					 			<?php 
+								$show_this = false;
+								 if ($_SESSION['user_status'] > 4) $show_this = true;
+								 else {
+									 foreach($_SESSION['user_access'] as $ua) if ($ua['module_db'] == 'place_event' || $ua['module_db'] == 'montage_event' || $ua['module_db'] == 'tool_event') { $show_this = true; break;} 
+								 }
+								 if ($show_this){ 
+								 ?>
+								<div class="col-sm-12">
 					 				<div class="element-wrapper">
 							 			<h6 class="element-header">Координация</h6>
 							 			<div class="row">
+											
+											<?php 
+												$show_this = false;
+												 if ($_SESSION['user_status'] > 4) $show_this = true;
+												 else {
+													 foreach($_SESSION['user_access'] as $ua) if ($ua['module_db'] == 'montage_event') { $show_this = true; break;} 
+												 }
+												 if ($show_this){ 
+											 ?>
+										
 							 				<div class="col-sm-3">
 							 					<div class="element-box">
-		                                 <div class="el-tablo el-tablo-small">
-		                                 	<div class="el-title">
-		                                 		<a href="coordinator_montage.php">
-		                                 			<span>Координация</span>
-		                              				<span>монтажных студий</span>
-															</a>
-		                                 	</div>
-		                              	</div>                                 
-		                           	</div>
+													 <div class="el-tablo el-tablo-small">
+														<div class="el-title">
+															<a href="coordinator_montage.php">
+																<span>Координация</span>
+																<span>монтажных студий</span>
+																		</a>
+														</div>
+													</div>                                 
+												</div>
 							 				</div>
+												 <?php } ?>
+												<?php 
+													$show_this = false;
+													 if ($_SESSION['user_status'] > 4) $show_this = true;
+													 else {
+														 foreach($_SESSION['user_access'] as $ua) if ($ua['module_db'] == 'place_event') { $show_this = true; break;} 
+													 }
+													 if ($show_this){ 
+												 ?>
+											
 							 				<div class="col-sm-3">
 							 					<div class="element-box">
-		                                 <div class="el-tablo el-tablo-small">
-		                                 	<div class="el-title">
-		                                 		<a href="coordinator_place.php">
-		                                 			<span>Координация</span>
-		                              				<span>эфирных студий</span>
-															</a>
-		                                 	</div>
-		                              	</div>                                 
-		                           	</div>
+													 <div class="el-tablo el-tablo-small">
+														<div class="el-title">
+															<a href="coordinator_place.php">
+																<span>Координация</span>
+																<span>эфирных студий</span>
+																		</a>
+														</div>
+													</div>                                 
+												</div>
 							 				</div>
+											
+											 <?php } ?>
+												<?php 
+													$show_this = false;
+													 if ($_SESSION['user_status'] > 4) $show_this = true;
+													 else {
+														 foreach($_SESSION['user_access'] as $ua) if ($ua['module_db'] == 'tool_event') { $show_this = true; break;} 
+													 }
+													 if ($show_this){ 
+												 ?>
+											
 							 				<div class="col-sm-3">
 							 					<div class="element-box">
-		                                 <div class="el-tablo el-tablo-small">
-		                                 	<div class="el-title">
-		                                 		<a href="coordinator_tools.php">
-		                                 			<span>Координация</span>
-		                              				<span>технических средств</span>
-															</a>
-		                                 	</div>
-		                              	</div>                                 
-		                           	</div>
+													 <div class="el-tablo el-tablo-small">
+														<div class="el-title">
+															<a href="coordinator_tools.php">
+																<span>Координация</span>
+																<span>технических средств</span>
+																		</a>
+														</div>
+													</div>                                 
+												</div>
 							 				</div>
+											 <?php } ?>
+											
+											
 							 			</div>
 							 		</div>
-					 			</div>	
+					 			</div>
+
+								<?php } ?>
                      
 					 
-							 	<?php $channels = make_channels_list($auth_user);
+							 	<?php 
+								
+													$show_this = false;
+													 if ($_SESSION['user_status'] > 4) $show_this = true;
+													 else {
+														 foreach($_SESSION['user_access'] as $ua) if ($ua['module_db'] == 'calendar_event') { $show_this = true; break;} 
+													 }
+													
+								if ($show_this){ 
+								$channels = make_channels_list($auth_user);
 							 	$first = strtotime("next Monday");
 							 	foreach($channels as $ch){
 							 	?>
@@ -151,7 +204,7 @@
 	                           </div>
 	                        </div>
 								 
-							 	<?php } ?>
+							 	<?php } } ?>
                      </div>
 
                      

@@ -10,7 +10,7 @@
           <div class="col-md-12 allgallery">
               <div class="row">
                   <div class="col-md-12">
-                      <h3 class="title">{{ trans('radiopages.Photos') }}</h3>
+                      <h3 class="title">{{ trans('site.Galleries') }}</h3>
                   </div>
                   @if($photoGalleries)
                       @foreach($photoGalleries as $photoGallery)

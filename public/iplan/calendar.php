@@ -1,4 +1,12 @@
-<?php include_once 'usercontrol.php'; ?>
+<?php 
+$document_db = "calendar_event";
+$document_type_count=3;
+$document_read = $document_write = $document_execute = $document_delete = 0;
+$document_type2_read = $document_type2_write = $document_type2_execute = $document_type2_delete = 0;
+$document_type3_read = $document_type3_write = $document_type3_execute = $document_type3_delete = 0;
+include_once 'usercontrol.php'; 
+if (!$document_read) {echo "У вас нет разрешения на доступ к этой странице. Обратитесь к администратору."; die();}
+?>
 <?php
 $ch=0;
 $dt = 0;
@@ -72,7 +80,9 @@ $start = strtotime("+".$left." day");
 												<li><a href="#tabs-6">Пятница</a></li>
 												<li><a href="#tabs-7">Суббота</a></li>
 												<li><a href="#tabs-8">Воскресенье</a></li>
+												<?php if ($document_type2_read) { ?>
 												<li><a href="#tabs-9">Перспективный план</a></li>
+												<?php } ?>
 											</ul>
 											  
 											<div id="tabs-1">
@@ -85,7 +95,9 @@ $start = strtotime("+".$left." day");
 											<div id="tabs-6"><div class="timeline" id="timeline4" name="п"></div></div>
 											<div id="tabs-7"><div class="timeline" id="timeline5" name="с"></div></div>
 											<div id="tabs-8"><div class="timeline" id="timeline6" name="в"></div></div>
+											<?php if ($document_type2_read) { ?>
 											<div id="tabs-9"><?php include 'calendar_monthly.php'; ?></div>
+											<?php } ?>
 										</div>	
 
 										<?php include 'calendar_modal.php'; ?> 
@@ -94,11 +106,14 @@ $start = strtotime("+".$left." day");
 					 		</div>
 					 	</div>                 
          		</div>
-               <div class="content-panel calendar-catalog">
+               
+			   <?php if ($document_write) { ?>
+			   <div class="content-panel calendar-catalog">
                   	<div class="element-wrapper">
                      	<?php include 'calendar_catalog.php'; ?>
                     </div>
                </div>
+			   <?php } ?>
          	</div>
       	</div>
    	</div>

@@ -23,7 +23,7 @@ class HomeController extends Controller
 	
 	public function __construct()
 	{
-		$lc = app()->getlocale();
+        $lc = app()->getlocale();
 		View::share('lc', $lc);
 
 		# Background
@@ -39,11 +39,13 @@ class HomeController extends Controller
 		$this->positionLeft = Banner::where('positionLeft','=','1')->where('channel_id','=','2')->first();
 		$this->positionCenter = Banner::where('positionCenter','=','1')->where('channel_id','=','2')->first();
 		$this->positionBottom = Banner::where('positionBottom','=','1')->where('channel_id','=','2')->first();
+		$this->innerPages = Banner::where('extracolumn','=','1')->where('channel_id','=','2')->first();
 		View::share('positionTop', $this->positionTop);
 		View::share('positionRight', $this->positionRight);
 		View::share('positionLeft', $this->positionLeft);
 		View::share('positionCenter', $this->positionCenter);
 		View::share('positionBottom', $this->positionBottom);
+		View::share('innerPages', $this->innerPages);
 
 
 		# News categories
@@ -114,7 +116,7 @@ class HomeController extends Controller
 		
 	}
 
-	public function Test()
+	public function Home()
 	{
 		// start
 		$visitor = $_SERVER['REMOTE_ADDR'];
@@ -210,7 +212,7 @@ class HomeController extends Controller
 			}
 
 			//Slider Projects
-			$sliderProjects = Anons::where('channel','2')->desckg()->languagekg()->published()->orderBy('created_at','desc')->get();          
+			$sliderProjects = Anons::where('channel','2')->desckg()->languagekg()->published()->orderBy('media','asc')->get();
 
 		} elseif($lc == 'ru'){
 
@@ -268,10 +270,10 @@ class HomeController extends Controller
 				$multimediaPosts = \Model\Post\ModelName::where('category_id',$multimedia->id)->orderBy('created_at','desc')->take(8)->languageru()->get();    
 			} else {
 				$multimediaPosts = null;
-			}            
+			}
 
 			//Slider Projects
-			$sliderProjects = Anons::where('channel','2')->descru()->languageru()->published()->orderBy('created_at','desc')->get();
+			$sliderProjects = Anons::where('channel','2')->descru()->languageru()->published()->orderBy('media','asc')->get();
 
 		}
 
@@ -390,7 +392,7 @@ class HomeController extends Controller
 			}
 		}
 
-		return view('Front::test', [
+		return view('Front::home', [
 
 			'lc' =>$lc,
 
@@ -404,16 +406,324 @@ class HomeController extends Controller
 			'defaultVideo'   => $defaultVideo,
 			'dayVideos'   => $dayVideos,
 
-			'positionTop'    => $this->positionTop,
-			'positionRight'  => $this->positionRight,
-			'positionLeft'  => $this->positionLeft,
-			'positionCenter' => $this->positionCenter,
-			'positionBottom' => $this->positionBottom,
 			'peopleReporters' => $peopleReporters,
 			'photoGalleries' => $photoGalleries,
 			'photoGalleryFirst' => $photoGalleryFirst,
 
-			'backgroundMain' => $backgroundMain,
+			'MediaCategories' => $MediaCategories,
+			'categoriesVideos' => $categoriesVideos,
+			'mediaLastVideos' => $mediaLastVideos,
+			'projects' => $projects,
+			'directorPosts' => $directorPosts,
+			'reporterPosts' => $reporterPosts,
+			'latestPosts' => $latestPosts,
+			'multimediaPosts' => $multimediaPosts,
+
+			'headerPosts' => $headerPosts,
+			'posts' => $posts,
+			'categories' => $categories,
+			'leftCategories'=>$leftCategories,
+			'middleCategories'=>$middleCategories,
+			'rightCategories'=>$rightCategories,
+
+			'sliderProjects'=>$sliderProjects,
+
+			'channels' => $channels,
+		]);
+	}	public function HomeVertex()
+	{
+		// start
+		$visitor = $_SERVER['REMOTE_ADDR'];
+		date_default_timezone_set("Asia/Bishkek");
+		$today = date('d.m.Y');
+		$date1 = date('d.m.Y', strtotime('12.09.16'));
+		$date2 = date('d.m.Y', strtotime('12.09.18'));
+
+		if(($today >= $date1) && ($today <= $date2)){
+			$array_ip_1 = array('217.29','185.88','185.66','185.54','185.53','185.53','185.48','185.29','185.20','185.91.132','212.97','212.42','195.54','195.38','109.71','95.215','77.235','46.251','46.235','46.226','37.218','31.192','31.186','83.229','85.113','85.115','94.143','93.171','93.170','93.170','92.245','91.229','91.229','91.228','91.213','91.207','91.205','91.192','89.237','213.14');
+
+			$array_ip_2 = array('178.21','178.21','176.12','176.12','158.18','158.181','109.20','185.11','185.13','213.14','212.24','212.11','195.21','195.11','194.17','194.15','194.15','193.10','185.13');
+
+			//$array_ip_3 = array('212.2.','5.57.','127.0.');
+			$array_ip_3 = array('212.2.','5.57.','127.0.');
+			$array_ip_4 = array('81.88.','81.20.','92.62.','80.72.','95.87.','77.95.','62.76.','57.92.','31.41.','31.29.');
+
+			$result = substr($visitor, 0, 6);
+
+			if(in_array($result,$array_ip_1) == $result){ // 4
+				$flag = 1;
+			}elseif(in_array($result,$array_ip_2) == $result){ // 5
+				$flag = 1;
+			}elseif(in_array($result,$array_ip_3) == $result){ // 6
+				$flag = 1;
+			}elseif(in_array($result,$array_ip_4) == $result){ // 3
+				$flag = 1;
+			}else{
+				$flag = 1; // else 1 for kg zone : 0 for all zones;
+			}
+			session_start();
+			session(['flag'=> $flag]);
+		}
+
+		$lc = app()->getlocale();
+		$channel = \Model\Channel\ModelName::general();
+		$channels = \Model\Channel\ModelName::take(8)->skip(1)->get();
+
+		if($lc == 'kg'){
+
+			$livePost = Post::where('general',true)->where('live',true)->where('published',true)->languagekg()->first();
+
+			$generalPosts = array();
+
+			if($livePost){
+				$generalPosts[] = $livePost;
+			} else {
+				$generalPost1 = \Model\Post\ModelName::general($channel)->published()->having('number','=',1)->languagekg()->first();
+				if($generalPost1 == null){
+					$generalPost1 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('created_at','desc')->take(1)->skip(32)->first();
+				}
+				if($generalPost1) $generalPosts[] = $generalPost1;
+			}
+
+			$generalPost2 = \Model\Post\ModelName::general($channel)->published()->having('number','=',2)->languagekg()->first();
+			if($generalPost2 == null){
+				$generalPost2 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('created_at','desc')->take(1)->skip(17)->first();
+			}
+			if($generalPost2) $generalPosts[] = $generalPost2;
+
+			$generalPost3 = \Model\Post\ModelName::general($channel)->published()->having('number','=',3)->languagekg()->first();
+			if($generalPost3 == null){
+				$generalPost3 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('created_at','desc')->take(1)->skip(22)->first();
+			}
+			if($generalPost3) $generalPosts[] = $generalPost3;
+
+			$generalPost4 = \Model\Post\ModelName::general($channel)->published()->having('number','=',4)->languagekg()->first();
+			if($generalPost4 == null){
+				$generalPost4 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('created_at','desc')->take(1)->skip(33)->first();
+			}
+			if($generalPost4) $generalPosts[] = $generalPost4;
+
+			$generalPost5 = \Model\Post\ModelName::general($channel)->published()->having('number','=',5)->languagekg()->first();
+			if($generalPost5 == null){
+				$generalPost5 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('created_at','desc')->take(1)->skip(44)->first();
+			}
+			if($generalPost5) $generalPosts[] = $generalPost5;
+
+			$generalPost6 = \Model\Post\ModelName::general($channel)->published()->having('number','=',6)->languagekg()->first();
+			if($generalPost6 == null){
+				$generalPost6 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languagekg()->orderBy('created_at','desc')->take(1)->skip(51)->first();
+			}
+			if($generalPost6) $generalPosts[] = $generalPost6;
+
+			$projects = \Model\Project\ModelName::having('name','<>','')->get();
+			$directorPosts = \Model\Post\ModelName::where('director','=','1')->orderBy('created_at','desc')->take(3)->languagekg()->get();
+			$reporterPosts = \Model\Post\ModelName::where('reporter','=','1')->orderBy('created_at','desc')->take(15)->languagekg()->get();
+			$multimedia = Category::where('title','Мультимедиа')->first();
+			if($multimedia){
+				$multimediaPosts = \Model\Post\ModelName::where('category_id',$multimedia->id)->orderBy('created_at','desc')->take(8)->languagekg()->get();    
+			} else {
+				$multimediaPosts = null;
+			}
+
+			//Slider Projects
+			$sliderProjects = Anons::where('channel','2')->desckg()->languagekg()->published()->orderBy('media','asc')->get();
+
+		} elseif($lc == 'ru'){
+
+			$livePost = Post::where('general',true)->where('live',true)->where('published',true)->languageru()->first();
+
+			$generalPosts = array();
+
+			if($livePost){
+				$generalPosts[] = $livePost;
+			} else {
+				$generalPost1 = \Model\Post\ModelName::general($channel)->published()->having('numberRu','=',1)->languageru()->first();
+				if($generalPost1 == null){
+					$generalPost1 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languageru()->orderBy('created_at','desc')->take(1)->skip(32)->first();
+				}
+				if($generalPost1) $generalPosts[] = $generalPost1;
+			}
+
+			$generalPost2 = \Model\Post\ModelName::general($channel)->published()->having('numberRu','=',2)->languageru()->first();
+			if($generalPost2 == null){
+				$generalPost2 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languageru()->orderBy('created_at','desc')->take(1)->skip(17)->first();
+			}
+			if($generalPost2) $generalPosts[] = $generalPost2;
+
+			$generalPost3 = \Model\Post\ModelName::general($channel)->published()->having('numberRu','=',3)->languageru()->first();
+			if($generalPost3 == null){
+				$generalPost3 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languageru()->orderBy('created_at','desc')->take(1)->skip(22)->first();
+			}
+			if($generalPost3) $generalPosts[] = $generalPost3;
+
+			$generalPost4 = \Model\Post\ModelName::general($channel)->published()->having('numberRu','=',4)->languageru()->first();
+			if($generalPost4 == null){
+				$generalPost4 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languageru()->orderBy('created_at','desc')->take(1)->skip(33)->first();
+			}
+			if($generalPost4) $generalPosts[] = $generalPost4;
+
+			$generalPost5 = \Model\Post\ModelName::general($channel)->published()->having('numberRu','=',5)->languageru()->first();
+			if($generalPost5 == null){
+				$generalPost5 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languageru()->orderBy('created_at','desc')->take(1)->skip(44)->first();
+			}
+			if($generalPost5) $generalPosts[] = $generalPost5;
+
+			$generalPost6 = \Model\Post\ModelName::general($channel)->published()->having('numberRu','=',6)->languageru()->first();
+			if($generalPost6 == null){
+				$generalPost6 = \Model\Post\ModelName::general($channel)->published()->where('general','=','1')->languageru()->orderBy('created_at','desc')->take(1)->skip(51)->first();
+			}
+			if($generalPost6) $generalPosts[] = $generalPost6;
+
+			$projects = \Model\Project\ModelName::where('nameRu','<>','')->get();
+			$directorPosts = \Model\Post\ModelName::where('director','=','1')->orderBy('created_at','desc')->take(3)->languageru()->get();
+			$reporterPosts = \Model\Post\ModelName::where('reporter','=','1')->orderBy('created_at','desc')->take(15)->languageru()->get();
+
+			$multimedia = Category::where('titleRu','Мультимедиа')->first();            
+			$multimedia = Category::where('title','Мультимедиа')->first();
+			if($multimedia){
+				$multimediaPosts = \Model\Post\ModelName::where('category_id',$multimedia->id)->orderBy('created_at','desc')->take(8)->languageru()->get();    
+			} else {
+				$multimediaPosts = null;
+			}
+
+			//Slider Projects
+			$sliderProjects = Anons::where('channel','2')->descru()->languageru()->published()->orderBy('media','asc')->get();
+
+		}
+
+		if($lc == 'kg'){
+			$latestPosts = \Model\Post\ModelName::where('general',true)->where('live','<>','1')->published()->having('number','=','99')->where('general','=','1')->where('fbpost','<>','1')->languagekg()->take(6)->orderBy('created_at','desc')->get();
+		}elseif($lc == 'ru'){
+			$latestPosts = \Model\Post\ModelName::where('general',true)->where('live','<>','1')->published()->having('numberRu','=','99')->where('general','=','1')->where('fbpost','<>','1')->languageru()->take(6)->orderBy('created_at','desc')->get();
+		}
+
+		$dayVideos = array();
+		$dayVideo1 = \Model\Media\ModelName::where('dayVideo','=','1')->first();
+		$dayVideoRu1 = \Model\Media\ModelName::where('dayVideo','=','11')->first();
+		$dayVideo2 = \Model\Media\ModelName::where('dayVideo','=','2')->first();
+		$dayVideo3 = \Model\Media\ModelName::where('dayVideo','=','3')->first();
+		$dayVideo4 = \Model\Media\ModelName::where('dayVideo','=','4')->first();
+
+		if($dayVideo1 && $lc=='kg'){
+			$dayVideo1 = $dayVideo1;
+			$dayVideos[] = $dayVideo1;
+		} elseif($dayVideoRu1 && $lc=='ru') {
+			$dayVideo1 = $dayVideoRu1;
+			$dayVideos[] = $dayVideoRu1;
+		} else {
+			$dayVideo1 = '';
+		}
+		if($dayVideo2){
+			$dayVideo2 = $dayVideo2;
+			$dayVideos[] = $dayVideo2;
+		} else {
+			$dayVideo2 = '';
+		}
+		if($dayVideo3){
+			$dayVideo3 = $dayVideo3;
+			$dayVideos[] = $dayVideo3;
+		} else {
+			$dayVideo3 = '';
+		}
+		if($dayVideo4){
+			$dayVideo4 = $dayVideo4;
+			$dayVideos[] = $dayVideo4;
+		} else {
+			$dayVideo4 = '';
+		}
+
+		$backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','2')->first();
+		$peopleReporters = \Model\PeopleReporter\ModelName::where('published','=',true)->get();
+
+		// Photo Gallery
+		$photoGalleryFirst = \Model\PhotoParent\ModelName::where('extracolumn','=','1')->where('published','=',true)->orderBy('created_at','desc')->first();
+		$photoGalleries = \Model\PhotoParent\ModelName::where('extracolumn','=','1')->where('published','=',true)->orderBy('created_at','desc')->take(4)->skip(1)->get();
+
+		$MediaCategories = \Model\MediaCategory\ModelName::orderBy('created_at','asc')->get();
+		$mediaPosts = \Model\Media\ModelName::orderBy('created_at','desc')->get();
+
+		$categoriesVideos = array();
+
+		foreach($MediaCategories as $MediaCategory){
+			$CategoryVideos = \Model\Media\ModelName::where('videoType','=',$MediaCategory->videoType)->where('published','=','1')->orderBy('created_at','desc')->take(9)->get();
+			$categoriesVideos = array_add($categoriesVideos, $MediaCategory->videoType, $CategoryVideos);
+		}
+
+		$mediaLastVideos = \Model\Media\ModelName::where('published','=','1')->orderBy('created_at','desc')->take(12)->get();
+
+		$defaultVideo = 'rjXSurFi8uQ';
+
+		// News
+		$categories = \Model\Category\ModelName::where('general','=','1')->where('published','=','1')->where('order','>','0')->orderBy('order','asc')->take(9)->get();
+
+		$leftCategories = $middleCategories = $rightCategories = $posts = $headerPosts = array();
+
+		foreach($categories as $key=>$category){
+
+			if($lc == 'kg'){
+
+				$categoryHeaderPosts = \Model\Post\ModelName::where('general','=','1')->where('live',false)->where('category_id','=',$category->id)->where('published','=','1')->where('title','<>','')->orderBy('created_at','desc')->take(1)->get();
+				foreach($categoryHeaderPosts as $categoryHeaderPost){
+					$headerPosts[] = $categoryHeaderPost;
+				}
+				if(count($categoryHeaderPosts) == 0 ){
+					unset($categories[$key]);
+				}
+
+				$categoryPosts = \Model\Post\ModelName::where('general','=','1')->where('live',false)->where('category_id','=',$category->id)->where('published','=','1')->where('title','<>','')->orderBy('created_at','desc')->take(1)->skip(1)->get();
+				foreach($categoryPosts as $categoryPost){
+					$posts[] = $categoryPost;
+				}
+
+			} elseif($lc == 'ru') {
+
+				$categoryHeaderPosts = \Model\Post\ModelName::where('general','=','1')->where('live',false)->where('category_id','=',$category->id)->where('published','=','1')->where('titleRu','<>','')->orderBy('created_at','desc')->take(1)->get();
+				foreach($categoryHeaderPosts as $categoryHeaderPost){
+					$headerPosts[] = $categoryHeaderPost;
+				}
+				if(count($categoryHeaderPosts) == 0 ){
+					unset($categories[$key]);
+				}
+
+				$categoryPosts = \Model\Post\ModelName::where('general','=','1')->where('live',false)->where('category_id','=',$category->id)->where('published','=','1')->where('titleRu','<>','')->orderBy('created_at','desc')->take(1)->skip(1)->get();
+				foreach($categoryPosts as $categoryPost){
+					$posts[] = $categoryPost;
+				}
+
+			}
+		}
+
+		session(['categories'=>$categories]);
+
+		foreach (session('categories') as $key1=>$category1) {
+			$key1 = $key1+1;
+			if($key1 % 3 == 1){
+				$leftCategories[] = $category1;
+			} else if($key1 % 3 == 2){
+				$middleCategories[] = $category1;
+			} else if($key1 % 3 == 0){
+				$rightCategories[] = $category1;
+			}
+		}
+
+		return view('Front::home2', [
+
+			'lc' =>$lc,
+
+			'livePost'   => $livePost,
+			'generalPosts'   => $generalPosts,
+
+			'dayVideo1'      => $dayVideo1,
+			'dayVideo2'      => $dayVideo2,
+			'dayVideo3'      => $dayVideo3,
+			'dayVideo4'      => $dayVideo4,
+			'defaultVideo'   => $defaultVideo,
+			'dayVideos'   => $dayVideos,
+
+			'peopleReporters' => $peopleReporters,
+			'photoGalleries' => $photoGalleries,
+			'photoGalleryFirst' => $photoGalleryFirst,
+
 			'MediaCategories' => $MediaCategories,
 			'categoriesVideos' => $categoriesVideos,
 			'mediaLastVideos' => $mediaLastVideos,
@@ -487,7 +797,11 @@ class HomeController extends Controller
 	 	$weekFromNow = date('Y-m-d H:i', strtotime('-7 days'));
 
 		if($lc == 'kg'){
-			$tagPosts = $tag->posts()->where('title','<>','')->orderBy('created_at','desc')->get();
+			if($tag){
+				$tagPosts = $tag->posts()->where('title','<>','')->orderBy('created_at','desc')->get();
+			} else {
+				$tagPosts = collect();
+			}
 			$namePosts = Post::search($searchKey)->where('title','<>','')->orderBy('created_at','desc')->get();
 
 			$posts = $tagPosts->merge($namePosts);
@@ -519,7 +833,11 @@ class HomeController extends Controller
 				$popArticles = null;
 			}
 		}else{
-			$tagPosts = $tag->posts()->where('titleRu','<>','')->orderBy('created_at','desc')->get();
+			if($tag){
+				$tagPosts = $tag->posts()->where('title','<>','')->orderBy('created_at','desc')->get();
+			} else {
+				$tagPosts = collect();
+			}
 			$namePosts = Post::search($searchKey)->where('titleRu','<>','')->orderBy('created_at','desc')->get();
 
 			$posts = $tagPosts->merge($namePosts);
@@ -559,7 +877,7 @@ class HomeController extends Controller
 	  	$mergedMedias = $mergedMedias->forPage($currentPage, $perPage);
 		$totalMediaPages = ceil(count($medias)/$perPage);
 
-		return view('Front::resultTest', [
+		return view('Front::result', [
 			'posts' => $posts,
 			'medias' => $mergedMedias,
 			'tag' => $tag,

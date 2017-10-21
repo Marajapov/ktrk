@@ -4,6 +4,9 @@ namespace Front\Controllers;
 use Illuminate\Http\Request;
 use View;
 
+use \Model\Banner\ModelName as Banner;
+use \Model\Schedule\ModelName as Schedule;
+
 use \Model\MediaCategory\ModelName as MediaCategory;
 use \Model\Category\ModelName as Category;
 use \Model\Project\ModelName as Project;
@@ -15,21 +18,49 @@ class MediaController extends Controller
 
     public function __construct()
     {
-        $this->positionTop = \Model\Banner\ModelName::where('positionTop','=','1')->first();
-        $this->positionRight = \Model\Banner\ModelName::where('positionRight','=','1')->first();
-        $this->positionleft = \Model\Banner\ModelName::where('positionLeft','=','1')->first();
-        $this->positionCenter = \Model\Banner\ModelName::where('positionCenter','=','1')->first();
-        $this->positionBottom = \Model\Banner\ModelName::where('positionBottom','=','1')->first();
+        $lc = app()->getlocale();
+        View::share('lc', $lc);
+
+        # Background
+
+        $backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','2')->first();
+        View::share('backgroundMain', $backgroundMain);
+
+
+        # Banners        
+
+        $this->positionTop = Banner::where('positionTop','=','1')->where('channel_id','=','2')->first();
+        $this->positionRight = Banner::where('positionRight','=','1')->where('channel_id','=','2')->first();
+        $this->positionLeft = Banner::where('positionLeft','=','1')->where('channel_id','=','2')->first();
+        $this->positionCenter = Banner::where('positionCenter','=','1')->where('channel_id','=','2')->first();
+        $this->positionBottom = Banner::where('positionBottom','=','1')->where('channel_id','=','2')->first();
+        $this->innerPages = Banner::where('extracolumn','=','1')->where('channel_id','=','2')->first();
+        View::share('positionTop', $this->positionTop);
+        View::share('positionRight', $this->positionRight);
+        View::share('positionLeft', $this->positionLeft);
+        View::share('positionCenter', $this->positionCenter);
+        View::share('positionBottom', $this->positionBottom);
+        View::share('innerPages', $this->innerPages);
+
+
+        # News categories
 
         $categoriesNews = Category::where('general','=','1')->where('published','=','1')->where('order','>','0')->orderBy('order','asc')->get();
-        $lc = app()->getlocale();
-        if($lc == 'kg'){
-            $activeProjects = Project::where('extracolumn',true)->where('published',true)->where('status', true)->orderBy('name','asc')->orderBy('nameRu','asc')->get();
-        }else{
-            $activeProjects = Project::where('extracolumn',true)->where('published',true)->where('status', true)->orderBy('name','asc')->orderBy('nameRu','asc')->get();
-        }
+        View::share('categoriesNews', $categoriesNews);
 
-        // Current program
+
+        # Active Projects
+
+        if($lc == 'kg'){
+          $activeProjects = Project::where('extracolumn',true)->where('published',true)->where('status', true)->orderBy('name','asc')->orderBy('nameRu','asc')->get();
+        }else{
+          $activeProjects = Project::where('extracolumn',true)->where('published',true)->where('status', true)->orderBy('name','asc')->orderBy('nameRu','asc')->get();
+        }
+        View::share('activeProjects', $activeProjects);
+
+
+        # Live and next
+
         date_default_timezone_set('Asia/Bishkek');
         $now = date("d-m-Y H:i");
         $currentDate = date('d-m-Y');
@@ -39,24 +70,21 @@ class MediaController extends Controller
         $currentProgram = '';
         $nextProgram = '';
 
-        $schedule = \Model\Schedule\ModelName::where('channel_id',2)->where('date',$currentDate)->first();
+        $schedule = Schedule::where('channel_id',2)->where('date',$currentDate)->first();
 
         if($schedule){
-            $program = array();
-            $program = json_decode($schedule->program);
-            foreach ($program as $key => $row) {
-                if($key < count($program)-1){
-                    if( (strtotime($row->time) <= strtotime($currentTime)) && (strtotime($currentTime) < strtotime($program[$key+1]->time)) ){
-                        $currentProgram = $row;
-                        $nextProgram = $program[$key+1];
-                    }
-                }
-                
+          $program = array();
+          $program = json_decode($schedule->program);
+          foreach ($program as $key => $row) {
+            if($key < count($program)-1){
+              if( (strtotime($row->time) <= strtotime($currentTime)) && (strtotime($currentTime) < strtotime($program[$key+1]->time)) ){
+                $currentProgram = $row;
+                $nextProgram = $program[$key+1];
+              }
             }
+            
+          }
         }
-
-        View::share('categoriesNews', $categoriesNews);
-        View::share('activeProjects', $activeProjects);
         View::share('currentProgram', $currentProgram);
         View::share('nextProgram', $nextProgram);
     }
@@ -358,7 +386,6 @@ class MediaController extends Controller
         }else{
             $projectList = \Model\Project\ModelName::where('extracolumn','=','1')->orderBy('nameRu','asc')->get();
         }
-//        $MediaCategory = \Model\MediaCategory\ModelName::get();
         $mediaAll = \Model\Media\ModelName::where('published','=','1')->orderBy('id','desc')->get();
 
         $mainBanner = \Model\Background\ModelName::where('name','=','main')->first();
@@ -386,6 +413,21 @@ class MediaController extends Controller
 
             ]
         );
+    }
+
+    public function projectTest(Project $project)
+    {
+        $lc = app()->getlocale();
+        $perPage = 16;
+
+        $allVideos = \Model\Media\ModelName::where('published','=','1')->where('program','=',$project->id)->orderBy('id','desc')->paginate($perPage);
+
+
+        return view('Front::media.projectTest',[
+            'perPage'=> $perPage,                
+            'project' => $project,
+            'allVideos' => $allVideos,
+        ]);
     }
 
     public function allVideos()
@@ -420,6 +462,19 @@ class MediaController extends Controller
         ]);
     }
 
+    public function allVideosTest()
+    {
+        $lc = app()->getlocale();
+        $perPage = 24;
+        $allVideos = \Model\Media\ModelName::where('published','=','1')->orderBy('id','desc')->paginate($perPage);
+
+        return view('Front::media.allTest',[
+            'perPage'=> $perPage,
+            'allVideos' => $allVideos,
+            'lc' => $lc
+        ]);
+    }
+
     public function categoryVideos($mediaCategory)
     {
         $lc = app()->getlocale();
@@ -449,6 +504,41 @@ class MediaController extends Controller
             'positionLeft' => $this->positionLeft,
 
             'lc' => $lc
+        ]);
+    }
+
+    public function archive()
+    {
+        $lc = app()->getlocale();
+        $leftProjects = $middleProjects = $rightProjects = $activeLetters = array();
+
+        if($lc == 'kg'){
+            $letters = ['а','б','в','г','д','е','ж','з','и','к','л','м','н','о','ө','п','р','с','т','у','үfirstLetter','ф','ц','х','ч','ш','ы','э','ю','я'];
+            $projectList = Project::where('extracolumn','=','1')->where('published',true)->orderBy('name','asc')->get();
+            foreach ($projectList as $key => $row) {
+                $firstLetter = mb_strtolower(mb_substr($row->name, 0, 1));
+                foreach ($letters as $key => $value) {
+                    if($firstLetter == $value)
+                        $activeLetters[] = $value;
+                }
+            }
+            $activeLetters = array_unique($activeLetters);
+        }else{
+            $letters = ['а','б','в','г','д','е','ж','з','и','к','л','м','н','о','п','р','с','т','у','ф','ц','х','ч','ш','щ','ы','э','ю','я', ''];
+            $projectList = Project::where('extracolumn','=','1')->where('published',true)->orderBy('nameRu','asc')->orderBy('name','asc')->get();
+            foreach ($projectList as $key => $row) {
+                $firstLetter = mb_strtolower(mb_substr($row->nameRu, 0, 1));
+                foreach ($letters as $key => $value) {
+                    if($firstLetter == $value)
+                        $activeLetters[] = $value;
+                }
+            }
+            $activeLetters = array_unique($activeLetters);
+        }
+
+        return view('Front::media.archive',[
+            'projectList'=> $projectList,
+            'activeLetters'=> $activeLetters,
         ]);
     }
 

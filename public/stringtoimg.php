@@ -8,6 +8,8 @@ $string = urldecode($_GET['string']);
 //$string2 = urldecode(base64_decode($_GET['string']));
 $string2 = iconv('UTF-8', 'cp1251', $string);
 
+// die($string);
+
 //Get the size of the string
 $width = strlen($string2)*12;
 // $width = 200;

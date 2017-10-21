@@ -35,8 +35,8 @@
 						</div>
 			  		</div>
 			  		<div class="col-sm-6">
-			  			<div class="form-group" id="leftsets">
-							<input type="hidden" id="title" placeholder="title">
+			  			<div class="form-group" id="leftsets-kapanmaz">
+							<input type="hidden" id="title" placeholder="title" />
 							<div>
 								<label>Хронометраж: </label>						
 								<div>
@@ -46,7 +46,7 @@
 										<?php } ?>
 									</select>
 									<select class="form-control" id="calendar-modal-durationMinute">
-										<?php for($i=0; $i<59; $i++){ ?>
+										<?php for($i=0; $i<60; $i++){ ?>
 										<option value="<?php echo $i;?>"><?php echo $i<10? "0".$i:$i;?></option>
 										<?php } ?>
 									</select>

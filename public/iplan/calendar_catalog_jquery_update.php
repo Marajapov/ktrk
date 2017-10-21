@@ -1,5 +1,10 @@
-<?php include_once 'usercontrol.php'; ?>
-<?php
+<?php 
+$document_db = "calendar_event";
+$document_type_only = 1;
+$document_read = $document_write = $document_execute = $document_delete = 0;
+include_once 'usercontrol.php'; 
+if (!$document_execute) {echo "0"; die();}
+
 $data = json_decode($_POST['data']);
 	
 	$start_date = sanitize($data->calendar_start_date);

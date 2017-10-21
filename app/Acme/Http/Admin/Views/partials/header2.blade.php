@@ -35,6 +35,12 @@
             <li><a href="{{ route('admin.background.index') }}"><i class="fa fa-backward"></i>{{ trans('site.AdminBackgroundTitle') }}</a></li>
             <li><a href="{{ route('admin.peopleReporter.index') }}"><i class="fa fa-users"></i>Элдик репортер</a></li>            
             <li><a href="{{ route('admin.stream.index') }}"><i class="fa fa-video-camera" aria-hidden="true"></i>Стрим</a></li>
+            <li><a href="#"><i class="fa fa-hand-o-right" aria-hidden="true"></i>Вакансия<span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu" style="display: none">
+                    <li><a href="{{ route('admin.vacancy.index') }}">Вакансиялар</a></li>
+                    <li><a href="{{ route('admin.vacancynews.index') }}">Жаңылыктар</a></li>
+                </ul>
+            </li>
             <li><a href="{{ route('admin.comment.index') }}"><i class="fa fa-comments"></i>{{ trans('site.Comments') }}</a></li>
         </ul>
         <div class="menu_section">

@@ -63,7 +63,13 @@
                                             {{ $media->getName() }}
                                         </a>
                                     </td>
-                                    <td class="hidden-xs">{{ $media->owner()->first()->name }}</td>
+                                    <td class="hidden-xs">
+                                        @if($media->owner()->first())
+                                            {{ $media->owner()->first()->name }}
+                                        @else
+                                            неизвестно
+                                        @endif
+                                    </td>
                                     <td class="hidden-xs">{{ $media->getDateFormatted() }} </td>
                                     <td class="hidden-xs">
                                         @if($media->published == '1')

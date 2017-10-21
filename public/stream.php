@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Stream</title>
+<style>body{margin:0;}</style>
 </head>
 <body>
 
@@ -21,12 +22,12 @@
         playlist: [{
             image: "{{-- asset('images/live_bg.png') --}}",
             sources: [{
-                file: "http://212.112.97.18/live/7001.flv"
+                file: "rtmp://85.113.29.234:80/live"
             }]
         }],
-        width: "640",
+        width: "55%",
         height: "360",
-        aspectratio: "",
+        aspectratio: "16:9",
         primary: "flash",
         skin: {
             name: "glow"

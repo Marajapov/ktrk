@@ -282,6 +282,40 @@
     @endif
         {{--MAGNIFIC POPUP--}}
     <script src="{{ asset('js/jquery.magnific-popup.js') }}"></script>
+    
+
+<script>
+
+    $('.slider-for').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        fade: true,
+        asNavFor: '.slider-nav'
+    });
+    $('.slider-nav').slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        asNavFor: '.slider-for',
+        centerMode: true,
+        focusOnSelect: true,
+        variableWidth: true
+    });
+
+    $('.slider-for2').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        fade: true,
+        asNavFor: '.slider-nav2'
+    });
+    $('.slider-nav2').slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        asNavFor: '.slider-for2',
+        centerMode: true,
+        focusOnSelect: true,
+        variableWidth: true
+    });    
+</script>
     <script>
         $('#post-thumb').magnificPopup({
             type: 'image',

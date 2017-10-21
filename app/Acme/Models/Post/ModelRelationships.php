@@ -5,9 +5,6 @@ trait ModelRelationships
 {
     public function category()
     {
-        $category_id = $this->category_id;
-        $category = \Model\Category\ModelName::where('id',$category_id)->first();
-        
         return $this->belongsTo(\Model\Category\ModelName::class, 'category_id');
     }
     public function comments()

@@ -242,8 +242,8 @@
                     @endif
                 </div>
                 <div class="row banner-middle">
-                    <a href="@if($positionCenter) {{ $positionCenter->linkTo }} @else # @endif">
-                        <img src="@if(!empty($positionCenter->file)) {{ asset($positionCenter->file) }} @else {{asset('images/channels/sport/banner-middle.png')}} @endif" alt=""/>
+                    <a href="@if($sportBottom) {{ $sportBottom->linkTo }} @else # @endif">
+                        <img src="@if(!empty($sportBottom->file)) {{ asset($sportBottom->file) }} @else {{asset('images/channels/sport/banner-middle.png')}} @endif" alt=""/>
                     </a>
                 </div>
             </div>

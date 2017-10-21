@@ -1,22 +1,25 @@
 <?php
 namespace Front\Controllers;
 use Illuminate\Http\Request;
+use View;
 
 use \Model\MediaCategory\ModelName as MediaCategory;
 use \Model\Category\ModelName as Category;
 use \Model\Project\ModelName as Project;
+use \Model\Banner\ModelName as Banner;
 
 class SportController extends Controller
 {
-    protected $positionTop, $positionRight, $positionCenter, $positionBottom, $positionLeft;
+    protected $sportTop, $sportBottom;
     
     public function __construct()
     {
-        $this->positionTop = \Model\Banner\ModelName::where('positionTop','=','1')->where('channel_id','=','11')->first();
-        $this->positionRight = \Model\Banner\ModelName::where('positionRight','=','1')->where('channel_id','=','11')->first();
-        $this->positionLeft = \Model\Banner\ModelName::where('positionLeft','=','1')->where('channel_id','=','11')->first();
-        $this->positionCenter = \Model\Banner\ModelName::where('positionCenter','=','1')->where('channel_id','=','11')->first();
-        $this->positionBottom = \Model\Banner\ModelName::where('positionBottom','=','1')->where('channel_id','=','11')->first();
+        # Banners
+     
+        $this->sportTop = Banner::where('sportTop',true)->where('channel_id','=','11')->first();
+        $this->sportBottom = Banner::where('sportBottom',true)->where('channel_id','=','11')->first();
+        View::share('sportTop', $this->sportTop);
+        View::share('sportBottom', $this->sportBottom);
     }
 
 
@@ -113,12 +116,6 @@ class SportController extends Controller
             'count' => $count = ($count) ? $count : 1,
             'currentDate' => $currentDate,
             'currentTime' => $currentTime,
-
-            'positionTop'    => $this->positionTop,
-            'positionRight'  => $this->positionRight,
-            'positionLeft'  => $this->positionLeft,
-            'positionCenter' => $this->positionCenter,
-            'positionBottom' => $this->positionBottom,
         ]);
     }
 
@@ -149,12 +146,6 @@ class SportController extends Controller
             'perPage' => $perPage,
             'postAll' => $postAll,
             'popArticles' => $popArticles,
-
-            'positionTop'    => $this->positionTop,
-            'positionRight'  => $this->positionRight,
-            'positionLeft'  => $this->positionLeft,
-            'positionCenter' => $this->positionCenter,
-            'positionBottom' => $this->positionBottom,
 
         ]);
     }
@@ -438,12 +429,6 @@ public function news(\Model\Post\ModelName $post)
             'projectList' => $projectList,
             'relatedNews' => $relatedNews,
 
-            'positionTop'    => $this->positionTop,
-            'positionRight'  => $this->positionRight,
-            'positionLeft'  => $this->positionLeft,
-            'positionCenter' => $this->positionCenter,
-            'positionBottom' => $this->positionBottom,
-
             'images' => $images,
             'images2' => $images2  
         ]);
@@ -459,12 +444,6 @@ public function news(\Model\Post\ModelName $post)
             'perPage' => $perPage,
             'backgroundMain' => $backgroundMain,
             'allVideos' => $allVideos,
-
-            'positionTop'    => $this->positionTop,
-            'positionRight'  => $this->positionRight,
-            'positionLeft'  => $this->positionLeft,
-            'positionCenter' => $this->positionCenter,
-            'positionBottom' => $this->positionBottom,
         ]);
     }
 
@@ -502,12 +481,6 @@ public function news(\Model\Post\ModelName $post)
             'topVideos2' => $topVideos2,
             'topVideos3' => $topVideos3,
             'sportProjects' => $sportProjects,
-
-            'positionTop'    => $this->positionTop,
-            'positionRight'  => $this->positionRight,
-            'positionLeft'  => $this->positionLeft,
-            'positionCenter' => $this->positionCenter,
-            'positionBottom' => $this->positionBottom,
         ]);
     }
 
@@ -542,12 +515,6 @@ public function news(\Model\Post\ModelName $post)
             'backgroundMain' => $backgroundMain,
             'allVideos' => $allVideos,
             'sportProjects' => $sportProjects,
-
-            'positionTop'    => $this->positionTop,
-            'positionRight'  => $this->positionRight,
-            'positionLeft'  => $this->positionLeft,
-            'positionCenter' => $this->positionCenter,
-            'positionBottom' => $this->positionBottom,
 
             ]
         );
@@ -641,12 +608,6 @@ public function news(\Model\Post\ModelName $post)
             'projectList' => $projectList,
             'backgroundMain' => $backgroundMain,
             'sportProjects' => $sportProjects,
-
-            'positionTop'    => $this->positionTop,
-            'positionRight'  => $this->positionRight,
-            'positionLeft'  => $this->positionLeft,
-            'positionCenter' => $this->positionCenter,
-            'positionBottom' => $this->positionBottom,
         ]);
     }
 
@@ -682,12 +643,6 @@ public function news(\Model\Post\ModelName $post)
             'gallery' => $gallery,
             'sportProjects' => $sportProjects,
             'projectList' => $projectList,
-
-            'positionTop'    => $this->positionTop,
-            'positionRight'  => $this->positionRight,
-            'positionLeft'  => $this->positionLeft,
-            'positionCenter' => $this->positionCenter,
-            'positionBottom' => $this->positionBottom,
         ]);
     }
     public function gallery()
@@ -725,12 +680,6 @@ public function news(\Model\Post\ModelName $post)
             'perPage' => $perPage,
             'sportProjects' => $sportProjects,
             'projectList' => $projectList,
-
-            'positionTop'    => $this->positionTop,
-            'positionRight'  => $this->positionRight,
-            'positionLeft'  => $this->positionLeft,
-            'positionCenter' => $this->positionCenter,
-            'positionBottom' => $this->positionBottom,
         ]);
     }
 
@@ -802,12 +751,6 @@ public function teleprogram(Request $request)
             'sportProjects' => $sportProjects,
             'projectList' => $projectList,
 
-            'positionTop'    => $this->positionTop,
-            'positionRight'  => $this->positionRight,
-            'positionLeft'  => $this->positionLeft,
-            'positionCenter' => $this->positionCenter,
-            'positionBottom' => $this->positionBottom,
-
         ]);
     }
 
@@ -821,12 +764,6 @@ public function teleprogram(Request $request)
             'lc' => $lc,
             'channel' => $channel,
             'backgroundMain' => $backgroundMain,
-
-            'positionTop'    => $this->positionTop,
-            'positionRight'  => $this->positionRight,
-            'positionLeft'  => $this->positionLeft,
-            'positionCenter' => $this->positionCenter,
-            'positionBottom' => $this->positionBottom,
 
         ]);
     }
@@ -846,12 +783,6 @@ public function teleprogram(Request $request)
             'channel' => $channel,
             'backgroundMain' => $backgroundMain,
             'anons' => $anons,
-
-            'positionTop'    => $this->positionTop,
-            'positionRight'  => $this->positionRight,
-            'positionLeft'  => $this->positionLeft,
-            'positionCenter' => $this->positionCenter,
-            'positionBottom' => $this->positionBottom,
 
         ]);
     }
@@ -943,12 +874,6 @@ public function teleprogram(Request $request)
             'projectList' => $projectList,
             'backgroundMain' => $backgroundMain,
             'sportProjects' => $sportProjects,
-
-            'positionTop'    => $this->positionTop,
-            'positionRight'  => $this->positionRight,
-            'positionLeft'  => $this->positionLeft,
-            'positionCenter' => $this->positionCenter,
-            'positionBottom' => $this->positionBottom,
         ]);
     }
 

@@ -1,4 +1,25 @@
 <div class="post-right-section col-md-3">
+    <div class="section calendar-section">        
+        <div class="section-title">
+            <h4>                                
+                {{ trans('site.PostByDate') }}
+            </h4>
+        </div>
+        <div class="section-body">
+            <form id="changeDate" action="{{route('front.general.filterDate')}}" method="GET">
+                <div class="form-group">
+                    <input type="hidden" name="d">
+                    <div id="inlineCalendar"></div>
+                </div>
+            </form>
+
+            <footer>
+             <a href="{{ route('front.general') }}">
+                 <span>{{ trans('site.FrontPostAll') }}</span>
+             </a>
+         </footer>
+        </div>
+    </div>
     @if($topArticles)
         <div class="section last-news-section top-articles-section">
             <div class="section-title">
@@ -72,8 +93,8 @@
     @endif
 
     <div class="ad-block">
-        <a target="_blank" href="#" class="text-center ads ads-300x250 middle-ad">
-            <img src="{{ asset('images/banner_240x400.png') }}" alt="ad-banner"/>
+        <a target="_blank" href="@if($innerPages) {{ $innerPages->linkTo }} @else # @endif" class="text-center ads ads-300x250 middle-ad">
+            <img src="@if($innerPages) {{ asset($innerPages->file) }} @else {{ asset('images/banner_240x400.png') }} @endif" alt="@if($innerPages) {{$innerPages->name}} @endif"/>
         </a>
     </div>
 

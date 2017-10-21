@@ -51,7 +51,7 @@
             <!-- /.navbar-collapse -->
         </nav>
     </div>
-    <div class="container main-header">
+    <div class="container main-header mb20">
         <div class="row">
             <div class="col-md-12">
                 <div class="row fixedheader">

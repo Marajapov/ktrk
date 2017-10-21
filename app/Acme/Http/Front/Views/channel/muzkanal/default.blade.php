@@ -16,12 +16,12 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('slick/slick-theme.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/test3.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/goodshare.css') }}"/>
 
 
     <link rel="stylesheet" type="text/css" href="{{ asset('css/custombox.css') }}"/>
-    <link rel="stylesheet"  href="{{ asset('css/lightslider.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('css/gallery.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/audio/muzslider.css') }}"/>
 
     <script src="{{ asset('js/jquery-1.11.2.min.js') }}"></script>
     <script src="{{ asset('js/modernizr-2.6.2.min.js') }}"></script>

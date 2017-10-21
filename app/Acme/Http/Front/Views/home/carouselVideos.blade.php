@@ -16,7 +16,7 @@
                         <iframe class="embed-responsive-item" src="//www.youtube.com/embed/@if($dayVideo1){{$dayVideo1->getUrl()}}@else{{$defaultVideo}}@endif?enablejsapi=1&version=3&playerapiid=ytplayer&rel=0&showinfo=0" allowfullscreen=""></iframe>
                         <figcaption>
                             <div class="post-extra clearfix">
-                                <span class="post-date">{{ $dayVideo1->getDay() }} {{ $dayVideo1->getMonthRu() }}, {{ $dayVideo1->getTime()}}</span>
+                                <span class="post-date">{{ $dayVideo1->getDay() }} {{ $dayVideo1->getMonthRu() }} @if(date('Y') != $dayVideo1->getYear()) {{ $dayVideo1->getYear() }} @endif, {{ $dayVideo1->getTime()}}</span>
                                 <span class="post-views">                                                        
                                     <svg class="fa-view" x="0px" y="0px" viewBox="0 0 22 14" xml:space="preserve">
                                         <g>
@@ -64,7 +64,7 @@
                         <figcaption>
 
                             <div class="post-extra clearfix">
-                                <span class="post-date">{{ $dayVideo2->getDay() }} {{ $dayVideo2->getMonthRu() }}, {{ $dayVideo2->getTime()}}</span>
+                                <span class="post-date">{{ $dayVideo2->getDay() }} {{ $dayVideo2->getMonthRu() }} @if(date('Y') != $dayVideo2->getYear()) {{ $dayVideo2->getYear() }} @endif, {{ $dayVideo2->getTime()}}</span>
                                 <span class="post-views">                                                        
                                     <svg class="fa-view" x="0px" y="0px" viewBox="0 0 22 14" xml:space="preserve">
                                         <g>
@@ -111,7 +111,7 @@
                         <iframe class="embed-responsive-item" src="//www.youtube.com/embed/@if($dayVideo3){{$dayVideo3->getUrl()}}@else{{$defaultVideo}}@endif?enablejsapi=1&version=3&playerapiid=ytplayer&rel=0&showinfo=0" allowfullscreen=""></iframe>
                         <figcaption>
                             <div class="post-extra clearfix">
-                                <span class="post-date">{{ $dayVideo3->getDay() }} {{ $dayVideo3->getMonthRu() }}, {{ $dayVideo3->getTime()}}</span>
+                                <span class="post-date">{{ $dayVideo3->getDay() }} {{ $dayVideo3->getMonthRu() }} @if(date('Y') != $dayVideo3->getYear()) {{ $dayVideo3->getYear() }} @endif, {{ $dayVideo3->getTime()}}</span>
                                 <span class="post-views">                                                        
                                     <svg class="fa-view" x="0px" y="0px" viewBox="0 0 22 14" xml:space="preserve">
                                         <g>
@@ -158,7 +158,7 @@
                         <iframe class="embed-responsive-item" src="//www.youtube.com/embed/@if($dayVideo4){{$dayVideo4->getUrl()}}@else{{$defaultVideo}}@endif?enablejsapi=1&version=3&playerapiid=ytplayer&rel=0&showinfo=0" allowfullscreen=""></iframe>
                         <figcaption>
                             <div class="post-extra clearfix">
-                                <span class="post-date">{{ $dayVideo4->getDay() }} {{ $dayVideo4->getMonthRu() }}, {{ $dayVideo4->getTime()}}</span>
+                                <span class="post-date">{{ $dayVideo4->getDay() }} {{ $dayVideo4->getMonthRu() }} @if(date('Y') != $dayVideo4->getYear()) {{ $dayVideo4->getYear() }} @endif, {{ $dayVideo4->getTime()}}</span>
                                 <span class="post-views">                                                        
                                     <svg class="fa-view" x="0px" y="0px" viewBox="0 0 22 14" xml:space="preserve">
                                         <g>
@@ -174,7 +174,7 @@
                             </div>
                             <div class="video-type">
                                 <h3 id="videoTitle">
-                                    <span>{{ trans('site.FrontPostDaysMaanai') }}</span>
+                                    <span>{{ trans('site.FrontPostDaysInteresting') }}</span>
                                 </h3>
                             </div>
                             <div class="video-info">

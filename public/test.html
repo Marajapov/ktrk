@@ -2,9 +2,36 @@
 <html>
 <head>
 	<title></title>
+
+	<link rel="stylesheet" href="//releases.flowplayer.org/7.0.4/skin/skin.css">
+	<link rel="stylesheet" href="http://demos.flowplayer.org/media/css/demo.css">
+	<link rel="stylesheet" href="http://demos.flowplayer.org/media/css/pygments.css">
+
+	<script src="//code.jquery.com/jquery-1.12.4.min.js"></script>
+	<!-- Flowplayer library -->
+	<script src="//releases.flowplayer.org/7.1.2/flowplayer.min.js"></script>
+	<!-- Flowplayer hlsjs engine (light) -->
+	<script src="//releases.flowplayer.org/hlsjs/flowplayer.hlsjs.light.min.js"></script>
+
+	<style>
+		.flowplayer {
+  			background-color: #00abcd;
+		}
+.flowplayer .fp-color-play {
+  fill: #eee;
+}
+	</style>
 </head>
 <body>
-<iframe src="http://project269404.tilda.ws/">
-</iframe>
+
+<div data-live="true" data-ratio="0.5625" data-share="false" class="flowplayer">
+ 
+   <video data-title="Live stream">
+<source type="application/x-mpegurl"
+        src="http://wms.shared.streamshow.it/carinatv/carinatv/playlist.m3u8">
+   </video>
+ 
+</div>
+
 </body>
 </html>

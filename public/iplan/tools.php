@@ -1,4 +1,9 @@
-<?php include_once 'usercontrol.php'; ?>
+<?php 
+$document_db = "tools";
+$document_read = $document_write = $document_execute = $document_delete = 0;
+include_once 'usercontrol.php'; 
+if (!$document_read) {echo "У вас нет разрешения на доступ к этой странице. Обратитесь к администратору."; die();}
+?>
 <!DOCTYPE html>
 <html>
    <head>
@@ -168,8 +173,14 @@
                                              <td class="nowrap"><?php echo $p['code'];?></td>         
                                              <td class="nowrap"><?php echo $p['name'];?></td>
 											 <td class="nowrap"><?php echo $p['amount'];?></td>
-											 <td class="nowrap"><div style="float:right"><a href="?act=edit&id=<?php echo $p['id'];?>">Редактировать</a> <a href="?act=delete&id=<?php echo $p['id'];?>" onclick="return confirm('Вы уверены что хотите удалить эту запись из базы?')">Удалить</a><div></td>											 
-                                          </tr>		
+											 <td class="nowrap"><div style="float:right">
+											 
+											 <?php if ($document_execute) { ?><a href="?act=edit&id=<?php echo $p['id'];?>">Редактировать</a><?php } ?>
+											 
+											 <?php if ($document_delete) { ?><a href="?act=delete&id=<?php echo $p['id'];?>" onclick="return confirm('Вы уверены что хотите удалить эту запись из базы?')">Удалить</a><?php } ?>
+											 
+											 <div></td>
+										  </tr>		
 												
 										  
 											
@@ -209,8 +220,14 @@
                                              <td class="nowrap"><?php echo $p['code'];?></td>         
                                              <td class="nowrap"><?php echo $p['name'];?></td>
 											 <td class="nowrap"><?php echo $p['amount'];?></td>
-											 <td class="nowrap"><div style="float:right"><a href="?act=edit&id=<?php echo $p['id'];?>">Редактировать</a> <a href="?act=delete&id=<?php echo $p['id'];?>" onclick="return confirm('Вы уверены что хотите удалить эту запись из базы?')">Удалить</a><div></td>											 
-                                          </tr>		
+											 <td class="nowrap"><div style="float:right">
+											 
+											 <?php if ($document_execute) { ?><a href="?act=edit&id=<?php echo $p['id'];?>">Редактировать</a><?php } ?>
+											 
+											 <?php if ($document_delete) { ?><a href="?act=delete&id=<?php echo $p['id'];?>" onclick="return confirm('Вы уверены что хотите удалить эту запись из базы?')">Удалить</a><?php } ?>
+											 
+											 <div></td>
+										  </tr>		
 												
 										  
 											
@@ -224,6 +241,8 @@
                         </div>
                      </div>
 				  </div>
+				  
+				   <?php if ($document_write) { ?>
                   <div class="content-panel">
                      <div class="element-wrapper">
                         <h6 class="element-header">Действия</h6>
@@ -235,25 +254,13 @@
                               
                            </div>
                         </div>
-						<div class="element-box-tp">
-                           <div class="el-buttons-list full-width">
-                              <a class="btn btn-default" href="place.php">
-                                 <span>Студии</span>
-                              </a>
-                              
-                           </div>
-                        </div>
-						<div class="element-box-tp">
-                           <div class="el-buttons-list full-width">
-                              <a class="btn btn-default" href="montage.php">
-                                 <span>Монтаж студии</span>
-                              </a>
-                              
-                           </div>
-                        </div>
+						
+						
                      </div>
                      
                   </div>
+				  
+				  <?php } ?>	
                </div>
 			    <?php } ?>
             </div>

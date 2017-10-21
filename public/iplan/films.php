@@ -1,4 +1,9 @@
-<?php include_once 'usercontrol.php'; ?>
+<?php 
+$document_db = "films";
+$document_read = $document_write = $document_execute = $document_delete = 0;
+include_once 'usercontrol.php'; 
+if (!$document_read) {echo "У вас нет разрешения на доступ к этой странице. Обратитесь к администратору."; die();}
+?>
 <!DOCTYPE html>
 <html>
    <head>
@@ -238,16 +243,21 @@
                         <h6 class="element-header">Действия</h6>
                         <div class="element-box-tp">
                            <div class="el-buttons-list full-width">
-                              <a class="btn btn-default" href="film_add.php">
+                              <?php if ($document_write) { ?>
+							  <a class="btn btn-default" href="film_add.php">
                                  <span>Добавить</span>
                               </a>
-                              <a id="btn_edit_broadcast" class="btn btn-default"  style="display:none" onclick="go(1)" href="javascript:void(0);">
+                              <?php } ?>
+							  <?php if ($document_execute) { ?>
+							  <a id="btn_edit_broadcast" class="btn btn-default"  style="display:none" onclick="go(1)" href="javascript:void(0);">
                                  <span>Редактировать</span>
                               </a>
+							   <?php } ?>
+							   <?php if ($document_delete) { ?>
                               <a id="btn_delete_broadcast" class="btn btn-default" style="display:none" onclick="go(2)" href="javascript:void(0);" >
                                  <span>Удалить</span>
                               </a>
-                              
+                               <?php } ?>
                            </div>
                         </div>
                      </div>

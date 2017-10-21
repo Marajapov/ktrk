@@ -1,4 +1,9 @@
-<?php include_once 'usercontrol.php'; ?>
+<?php 
+$document_db = "episodes";
+$document_read = $document_write = $document_execute = $document_delete = 0;
+include_once 'usercontrol.php'; 
+if (!$document_write) {echo "У вас нет разрешения на доступ к этой странице. Обратитесь к администратору."; die();}
+?>
 <!DOCTYPE html>
 <html>
    <head>
@@ -252,7 +257,7 @@
                                           <div class="row">
                                              <div class="col-sm-4">
                                                 <div class="form-group">
-                                                   <label for="">Жанр<?php echo $br['genre'];?></label>
+                                                   <label for="">Жанр</label>
                                                    <select name="genre" class="form-control selectpicker" required>
                                                       <option><?php $g = $br['genre']; echo $broadcast_genre[$g][0];?></option>
                                                      

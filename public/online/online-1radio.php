@@ -2,16 +2,37 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Ынтымак радио</title>
+    <title>Биринчи радио</title>
 
     <link rel="stylesheet" href="../css/radios.css">
     <link rel="stylesheet" href="../css/bootstrap.css">
 </head>
 <body>
-Ынтымак Радио
-<dl class="mensaje-module"><div class="logo"><img src="http://yntymak.kg//templates/sj_financial/images/online-radio.png" alt=""></div>
-<script type="text/javascript" src="http://yntymak.kg//modules/mod_rar_radio/tmpl/player/swfobject.js"></script><div name="mediaspace" id="mediaspace"><embed type="application/x-shockwave-flash" src="http://yntymak.kg//modules/mod_rar_radio/tmpl/player/player.swf" width="100%" height="16" style="undefined" id="mpl" name="mpl" quality="high" allowscriptaccess="always" allowfullscreen="false" allownetworking="all" flashvars="file=http://213.145.136.210:88/broadwave.mp3?src=1&amp;rate=1&amp;ref=?type=flash&amp;type=mp3&amp;showdigits=true&amp;autostart=0"></div>
-<script type="text/javascript">var so=new SWFObject('http://yntymak.kg//modules/mod_rar_radio/tmpl/player/player.swf','mpl','100%','16','9');so.addParam('allowscriptaccess','always');so.addParam('allowfullscreen','false');so.addParam('allownetworking','all');so.addParam('flashvars','file=http://213.145.136.210:88/broadwave.mp3?src=1&rate=1&ref=?type=flash&type=mp3&showdigits=true&autostart=0');so.write('mediaspace');</script></dl>
+<div class="media widget-radio">
+    <div class="media-left">
+        <img class="media-object widget-radio-image" src="../images/channels/1-radio-notext.png" alt="Radio">
+    </div>
+    <div class="media-body media-middle">
+        <h3 class="media-heading widget-radio-name">Биринчи радио</h3>
+        <h5 class="widget-radio-desc">Бишкек-104.1, Иссык-Куль-102.4, Нарын-100.5, Ош-100.7, Баткен-104.2, Жалал-Абад-104.7, Талас-102.0</h5>
+    </div>
+</div>
+
+<table border="0" width="400" height="70" cellspacing="0" cellpadding="0">
+    <tbody>
+    <tr>
+        <td style="background: black;">
+            <object id="videoplayer367" width="400" height="70" data="http://www.ktrk.kg/online/uppod.swf">
+                <param name="bgcolor" value="#ffffff" />
+                <param name="allowFullScreen" value="true" />
+                <param name="allowScriptAccess" value="always" />
+                <param name="movie" value="http://www.ktrk.kg/online/uppod.swf" />
+                <param name="flashvars" value="comment=KTRK&amp;st=03AEEZykN3Q3Q3QH3zkOk1mwXRWNvz3b1XAxYTtj1mzC5kA2uyb1kOk1mwXRWNvhzdwf9vwjzC5k=jQZi6jNf1kOk1mwXRWHNXzBGDY31X=jOkZ2sN6HsQfzC5kev0kttj1vL2NXzC5k1sQE3Q2GkTCGfFdGJTCHwXpvQXeWNhHm0X1hsNkTWwWTSUhTd0kNtj1JTWwf9vwnY31DX1CYLex5W=jaktjR1i6W0kbSal1C0V9Rv1XAuaTtj1tzC5kb42Qi63Gktj1ozfUrd&amp;file=http://85.113.29.232:8080&amp;auto=play" />
+            </object>
+        </td>
+    </tr>
+    </tbody>
+</table>
 
 
 <script src="../js/jquery-1.11.2.min.js"></script>

@@ -31,11 +31,11 @@
                     <div class="section video-section">
                         <div class="section-title">
                             <h4>
-                                <a href="{{route('front.media.vertex')}}">
+                                <a href="{{route('front.media.index')}}">
                                     Видеопортал
                                 </a>
-                                <span class="divider"><i class="fa fa-circle"></i></span>
-                                @if($videoProject)                                                              
+                                @if($videoProject)   
+                                    <span class="divider"><i class="fa fa-circle"></i></span>                                                           
                                     <a href="{{ route('front.media.project', $video->program) }}">
                                         {{$videoProject}}
                                     </a> 
@@ -43,9 +43,6 @@
                             </h4>
                         </div>
                         <div class="section-body">
-                            <div class="embed-responsive embed-responsive-16by9 video-emded">
-                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ $video->getUrl()}}?rel=0&amp;showinfo=0" allowfullscreen></iframe>
-                            </div>
                             <div class="media-info">
                                 <h4 class="media-title">
                                     {{$video->name}}                                    
@@ -87,6 +84,9 @@
                                         </span>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="embed-responsive embed-responsive-16by9 video-emded">
+                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ $video->getUrl()}}?rel=0&amp;showinfo=0" allowfullscreen></iframe>
                             </div>
                             @if($video->getContent())
                                 <div class="media-content">

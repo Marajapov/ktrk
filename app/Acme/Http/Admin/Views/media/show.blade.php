@@ -95,7 +95,11 @@
                         <li class="list-group-item">
                             <p class="header">Автор</p>
                             <p class="body tags">
-                                {{ $media->owner()->first()->name }}
+                                @if($media->owner()->first())
+                                            {{ $media->owner()->first()->name }}
+                                        @else
+                                            неизвестно
+                                        @endif
                             </p>
                         </li>
                         <li class="list-group-item">

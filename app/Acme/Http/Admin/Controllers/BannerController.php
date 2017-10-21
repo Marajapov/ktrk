@@ -15,7 +15,7 @@ class BannerController extends Controller
      */
     public function index()
     {
-        $banners = Banner::get();
+        $banners = Banner::orderBy('updated_at', 'desc')->get();
 
         return view('Admin::banner.index', ['banners' => $banners]);
     }

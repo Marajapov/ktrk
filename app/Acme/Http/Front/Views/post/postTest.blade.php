@@ -10,6 +10,7 @@
     <meta property="og:description"        content="{{ $post->getShortDescription() }}" />
     <meta property="og:image"              content="{{ asset($post->thumbnail_big) }}" />
 
+    <link rel="stylesheet" href="{{ asset('css/bootstrap-datetimepicker.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/test3.css') }}"/>
 
     <link rel="stylesheet" href="{{ asset('froala/css/froala_style.min.css') }}"/>
@@ -67,7 +68,9 @@
                                                 {{$post->getTitleRuOrKg()}}
                                             </p>
                                             <div class="main-news-extra clearfix">
-                                                <span class="main-news-date">{{ $post->getDay() }} {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
+                                                <span class="main-news-date">
+                                                    {{ $post->getDay() }} {{ $post->getMonthRu() }} @if(date('Y') != $post->getYear()) {{ $post->getYear() }} @endif, {{ $post->getTime()}}
+                                                </span>
                                                 <span class="main-news-views">
                                                     <svg class="fa-view" x="0px" y="0px" viewBox="0 0 22 14" xml:space="preserve">
                                                         <g>
@@ -238,6 +241,36 @@
 @stop
 
 @section('footerScript')
+
+    <script type="text/javascript" src="{{ asset('js/moment.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/ru.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/transition.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/collapse.js') }}"></script>
+
+    <script src="{{ asset('js/bootstrap-datetimepicker.js') }}"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#inlineCalendar').datetimepicker({
+                locale: 'ru',
+                format: 'L',
+                inline: true,
+            sideBySide: true,
+            icons: {
+                previous: 'fa fa-angle-left',
+                next: 'fa fa-angle-right'               
+            },
+            maxDate: moment().format('YYYY-MM-DD'),
+                @if($date)
+                    defaultDate: moment('{{$date}}').format('YYYY-MM-DD')
+                @endif      
+            }).on('dp.change', function(e) {
+                var date = moment(e.date).format('YYYY-MM-DD');
+                $('input[name=d]').val(date);
+                $('#changeDate').submit();
+            });
+        });
+    </script>
 
     <!-- Google reCaptcha -->
     <script src='https://www.google.com/recaptcha/api.js'></script>

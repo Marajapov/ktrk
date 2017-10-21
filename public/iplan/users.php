@@ -1,4 +1,9 @@
-<?php include_once 'usercontrol.php'; ?>
+<?php 
+$document_db = "users";
+$document_read = $document_write = $document_execute = $document_delete = 0;
+include_once 'usercontrol.php'; 
+if (!$document_read) {echo "У вас нет разрешения на доступ к этой странице. Обратитесь к администратору."; die();}
+?>
 <!DOCTYPE html>
 <html>
    <head>
@@ -23,9 +28,9 @@
 						 $table = "users";
 						 $error = "";
 						 
-						 if (isset($_GET['act'])) { if ($_GET['act']=='add') $act=1; else if ($_GET['act']=='edit') $act=2; else if ($_GET['act']=='delete') $act=3; }
+						 if (isset($_GET['act'])) { if ($_GET['act']=="add") $act=1; else if ($_GET['act']=="edit") $act=2; else if ($_GET['act']=="delete") $act=3; }
 
-						if (isset($_POST['act']) && $_POST['act']=='add') {
+						if ($document_write) if (isset($_POST['act']) && $_POST['act']=="add") {
 							 $name = getpost('name');
 							 $username = getpost('username');
 							 $p1 = getpost('p1');
@@ -35,17 +40,18 @@
 							 if (strlen($username)<1) $error = "Заполните обязательное поле: Логин";
 							 if (strlen($p1)<1)  $error = "Заполните обязательное поле: Пароль";
 							 if ($p1 != $p2) $error = "Пароли не совпадают. Пожалуйста, проверьте.";
-							 $blocked = isset($_GET['blocked']) ? getpost('blocked'):0;
+							 $blocked = isset($_POST['blocked']) ? getpost('blocked'):0;
 							 if ($blocked!=1) $blocked = 0; 
 							 $ins = array("name"=>$name, "username"=>$username, "password"=>md5($p1), "blocked"=>$blocked, "status"=>$status);
 							 if (strlen($error)==0) $db->insert($table, $ins);
 						}
 						
-						if (isset($_POST['act']) && $_POST['act']=='edit') {
+						if ($document_execute)
+						if (isset($_POST['act']) && $_POST['act']=="edit") {
 							 $id = (int)getpost('id');
 							 $name = getpost('name');
 							 $username = getpost('username');
-							 $blocked = getpost('blocked');
+							$blocked = isset($_POST['blocked']) ? getpost('blocked'):0;
 							 if ($blocked!=1) $blocked = 0; 
 							 $status = getpost('status');
 							 if (strlen($username)<1) $error = "Заполните обязательное поле: Логин";
@@ -53,6 +59,7 @@
 							 if (strlen($error)==0) $db->update($table, $ins, "id = '".$id."'");
 						}
 						
+						if ($document_delete)
 						if ($act==3){
 							 $id = (int)getget('id');
 							 $db->update($table, array("status"=>0), "id = '".$id."'");
@@ -64,14 +71,14 @@
 						 }
 						
 					 ?>
-					 <?php if ($act==2 || $act==1) {?>
+					 <?php if ($act==2 || $act==1) { if ($document_write || $document_execute) { ?>
 					 <div class="content-box">
                      <div class="row">
                         <div class="col-sm-12">
                            <div class="element-wrapper">
                               <h6 class="element-header"><?php if ($act==1) echo "Добавить пользователя"; else if ($act==2) echo "Редактировать"; ?></h6>
                                <div class="element-box">
-                                 <form action="" id='myForm' method="POST">
+                                 <form action="" id="myForm" method="POST">
                                     <fieldset class="form-group">         
                                        <?php if (strlen($error)>0) {?>
 									    <div class="row">
@@ -99,7 +106,7 @@
                                           </div>                                       
                                        </div>
 									   
-									   <?if ($act==1) {?>
+									   <?php if ($act==1) {?>
 									   
 									   <div class="row">
                                           <div class="col-sm-6">
@@ -157,7 +164,9 @@
                         </div>
                      </div>
                   </div>
-					 <?php } else { ?>
+					 <?php }} else { ?>
+			   
+			   
                   <div class="content-box">
                      <div class="row">
                         <div class="col-sm-12">
@@ -187,9 +196,14 @@
 											 <td class="nowrap"><?php $st = $p['status']; echo $user_status[$st]; ?></td>
 											 <td class="nowrap"><div style="float:right">
 											 
-											 <a href="?act=edit&id=<?php echo $p['id'];?>">Редактировать</a> 
-											 <a href="user_access.php?&id=<?php echo $p['id'];?>">Доступ</a> 
-											 <a href="?act=delete&id=<?php echo $p['id'];?>" onclick="return confirm('Вы уверены что хотите удалить эту запись из базы?')">Удалить</a><div></td>											 
+											 <?php if ($p['status']<5 && $document_execute) { ?><a href="user_access.php?&id=<?php echo $p['id'];?>">Доступ</a> <?php } ?> &nbsp;&nbsp;&nbsp;
+											 
+											 <?php if ($document_execute) { ?><a href="?act=edit&id=<?php echo $p['id'];?>">Редактировать</a><?php } ?>
+											 
+											 
+											 <?php if ($document_delete) { ?><a href="?act=delete&id=<?php echo $p['id'];?>" onclick="return confirm('Вы уверены что хотите удалить эту запись из базы?')">Удалить</a>
+											 <?php } ?>
+											 <div></td>											 
                                           </tr>		
 												
 										  
@@ -204,6 +218,8 @@
                         </div>
                      </div>
                   </div>
+				  
+				  <?php if ($document_write) { ?>
                   <div class="content-panel">
                      <div class="element-wrapper">
                         <h6 class="element-header">Действия</h6>
@@ -216,9 +232,13 @@
                         </div>
                      </div>
                   </div>
+				   <?php } ?>
+				  
+				  
                </div>
 			    <?php } ?>
             </div>
+					
          </div>
       </div>
 	  <?php include 'include.js.php';?>

@@ -1,4 +1,13 @@
-<?php include_once 'usercontrol.php'; ?>
+<?php 
+$document_db = "broadcasts";
+$document_type_count=4;
+$document_read = $document_write = $document_execute = $document_delete = 0;
+$document_type2_read = $document_type2_write = $document_type2_execute = $document_type2_delete = 0;
+$document_type3_read = $document_type3_write = $document_type3_execute = $document_type3_delete = 0;
+$document_type4_read = $document_type4_write = $document_type4_execute = $document_type4_delete = 0;
+include_once 'usercontrol.php'; 
+if (!$document_read) {echo "У вас нет разрешения на доступ к этой странице. Обратитесь к администратору."; die();}
+?>
 <!DOCTYPE html>
 <html>
    <head>
@@ -251,9 +260,12 @@
                         <h6 class="element-header">Действия</h6>
                         <div class="element-box-tp">
                            <div class="el-buttons-list full-width">
-                              <a class="btn btn-default" href="broadcast_add.php">
+                              
+							  <?php if ($document_write) { ?>
+							  <a class="btn btn-default" href="broadcast_add.php">
                                  <span>Добавить передачу</span>
                               </a>
+							  <?php } ?>
 							  <script>
 								
 								function go(t){
@@ -266,18 +278,27 @@
 								}
 								
 							  </script>
+							  
+							  
                               <a class="btn btn-default" id="btn_add_show" href="#" onclick="go(1)" style="display:none">
                                  <span>Добавить выпуск</span>
                               </a>
+							  
+							  <?php if ($document_execute) { ?>
                               <a class="btn btn-default" id="btn_edit_broadcast" href="#" onclick="go(2)">
                                  <span>Редактировать</span>
                               </a>
+							  <?php } ?>
+							  <?php if ($document_execute) { ?>
                               <a class="btn btn-default" id="btn_send_archive" href="#" onclick="go(3)">
                                  <span>В архив</span>
                               </a>
-                              <a class="btn btn-default" id="btn_delete_broadcast" href="#" href="#" onclick="go(3)">
+							  <?php } ?>
+							  <?php if ($document_delete) { ?>
+                              <a class="btn btn-default" id="btn_delete_broadcast" href="#" href="#" onclick="go(4)">
                                  <span>Удалить</span>
                               </a>
+							  <?php } ?>
                               <!--
 							  <a class="btn btn-default" id="btn_add_show" href="#">
                                  <span>Настройки</span>

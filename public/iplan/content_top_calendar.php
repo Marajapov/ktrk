@@ -15,9 +15,11 @@
          </button>  
       </div>     
    </form>
+   <?php if ($document_type3_read) { ?>
    <div class="top-actions">
-      <button class="btn btn-default">Экспорт в Excel</button>
+      <button class="btn btn-default" onclick="location.href = 'efir_putevka.php?dt=<?php echo $dt; ?>&ch=<?php echo $ch; ?>';">Эфирная путевка</button>
    </div>
+   <?php } ?>
    <ul>
       <li>
          <a href="profile.php">

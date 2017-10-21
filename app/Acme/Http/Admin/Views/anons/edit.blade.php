@@ -160,6 +160,7 @@
                         $('#timeArea').show();
                         $('#thumbForm').show();
                         $('#publish').show();
+                        $('#media').show();
                     }                     
 
                     // music

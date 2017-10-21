@@ -139,7 +139,7 @@
 						<div>
 							<ul class="clearfix">
 								<li class="nav-all">
-									<a href="{{route('front.general')}}">Все новости</a>
+									<a href="{{route('front.general')}}">{{trans('site.PostAllNews')}}</a>
 								</li>
 								@foreach($categoriesNews as $row)
 									<li>
@@ -156,7 +156,7 @@
 						<div>
 							<ul class="clearfix">
 								<li class="nav-all">
-									<a href="{{route('front.media.index')}}">Все проекты</a>
+									<a href="{{route('front.media.archive')}}">{{trans('site.AllProject')}}</a>
 								</li>
 								@foreach($activeProjects as $row)
 									<li>
@@ -234,7 +234,7 @@
 									</a>
 								</li>
 								<li>
-									<a href="#">
+									<a href="{{route('front.streams')}}">
 										<img src="{{ asset('images/channels/nav/alatoo.png') }}" alt="Ала-Т00 24">
 									</a>
 								</li>

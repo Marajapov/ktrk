@@ -1,4 +1,9 @@
-<?php include_once 'usercontrol.php'; ?>
+<?php 
+$document_db = "films";
+$document_read = $document_write = $document_execute = $document_delete = 0;
+include_once 'usercontrol.php'; 
+if ($document_execute || $document_delete){} else {echo "У вас нет разрешения на доступ к этой странице. Обратитесь к администратору."; die();}
+?>
 <!DOCTYPE html>
 <html>
    <head>
@@ -33,7 +38,7 @@
 				  if (isset($_GET['act'])) {
 					  $act = getget('act');
 					  if ($act=='d'){
-						  $db->delete("films",  "id='".$id."'");
+						  if ($document_delete) $db->delete("films",  "id='".$id."'");
 						  redirect("films.php","js");
 					  }
 				  }
@@ -64,12 +69,13 @@
 					  $description = getpost('description');
 					  
 					  $ins = array("name"=>$name, "genre"=>$genre, "duration"=>$duration, "durationMinute"=>$durationMinute, "language"=>$language, "country"=>$country, "company"=>$company, "director"=>$director, "serverpath"=>$serverpath, "other"=>$other, "number"=>$number, "description"=>$description);
-					  if ($db->update("films", $ins, "id='".$id."'")!=0){$error_fl = 1;
-						  $error_msg = "Вы успешно обновили данные";
-					  }
-					  else {$error_fl = 2; $error_msg = "Ошибка!";}
-					  
-				  }
+						if ($document_execute){  
+							if ($db->update("films", $ins, "id='".$id."'")!=0){$error_fl = 1;
+								$error_msg = "Вы успешно обновили данные";
+							}
+							else {$error_fl = 2; $error_msg = "Ошибка!";}
+						}
+					}
 				  
 				  $film = $db->select_one("films", "id='".$id."'");
 				  if (!$film) die();

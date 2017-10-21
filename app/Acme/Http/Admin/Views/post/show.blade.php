@@ -81,8 +81,12 @@
         </li>
         <li class="list-group-item">
           <p class="header">Автор</p>
-          <p class="body tags">
-            {{ $post->owner()->first()->name }}
+          <p class="body tags">            
+              @if($post->owner()->first())
+                  {{ $post->owner()->first()->name }}
+              @else
+                  неизвестно
+              @endif
           </p>
         </li>
         <li class="list-group-item">

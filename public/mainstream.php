@@ -1,1 +1,41 @@
-<iframe src="http://ktrk.kg/stream.php" scrolling='no' frameborder='no' style='border:none;width:100%;height:455px;overflow:hidden;'></iframe>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title>Stream</title>
+<style>body{margin:0;}</style>
+</head>
+<body>
+
+<div id="player"></div>
+
+<script src="jwplayer/jwplayer.js"></script>
+<script>jwplayer.key="tmEO2SU8NzqLBoHr2Vq6nV13XCyfo8xbdiCb/Q==";</script>
+<script type="text/javascript">
+
+    var playerInstance = jwplayer("player");
+
+
+
+    playerInstance.setup({
+        autostart: true,
+        playlist: [{
+            image: "{{-- asset('images/live_bg.png') --}}",
+            sources: [{
+                // file: "rtmp://85.113.29.233:1936/live/ktrk.stream"
+                file: "rtmp://85.113.29.234:80/live"
+            }]
+        }],
+        width: "100%",
+        height: "360",
+        aspectratio: "16:9",
+        primary: "flash",
+        skin: {
+            name: "glow"
+        },
+        stretching: "exactfit"
+    });
+</script>
+
+</body>
+</html>

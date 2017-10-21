@@ -7,10 +7,14 @@
 header('Content-type: text/html; charset=UTF-8');
 
 $db_host="localhost";
-$db_user="i_plan_kg";
 $db_pass="Wdd90_@@11";
-$db_name="i_plan_kg";
 define('ROOT_URL', "http://192.168.0.13");
+
+$db_user="i_plan_kg";
+$db_name="i_plan_kg";
+
+//$db_user="i_plan_01";
+//$db_name="i_plan_01";
 
 define('SITE_TITLE', "iPlan");
 define('SITE_ADDR', "iPlan");

@@ -22,7 +22,7 @@
                                                     <a class="main-news-title" href="{{ route('front.post', [$post, $lc]) }}">
                                                         {{$post->getTitleRuOrKg()}}
                                                     </a>
-                                                    <div class="main-news-category clearfix">
+                                                    <div id="blinkLive1" class="main-news-category clearfix">
                                                         <svg x="0px" y="0px" viewBox="0 0 205 105.1" xml:space="preserve">
                                                             <style type="text/css">
                                                                 .st0{fill:none;stroke:#ffffff;stroke-width:5;stroke-miterlimit:10;}
@@ -33,7 +33,6 @@
                                                             <g>
                                                                 <path class="st0" d="M152.5,2.6c27.6,0,50,22.4,50,50c0,27.6-22.4,50-50,50"/>
                                                                 <path class="st0" d="M52.5,102.6c-27.6,0-50-22.4-50-50c0-27.6,22.4-50,50-50"/>
-                                                                <line class="st1" x1="52.5" y1="62.6" x2="52.5" y2="42.6"/>
                                                                 <line class="st2" x1="152.5" y1="102.6" x2="52.5" y2="102.6"/>
                                                                 <line class="st2" x1="152.5" y1="2.6" x2="52.5" y2="2.6"/>
                                                                 <g>
@@ -42,7 +41,7 @@
                                                                     <path class="st3" d="M122,67.2l-9.4-29.1h8.1l5.7,20l5.7-20h8.1l-9.4,29.1H122z"/>
                                                                     <path class="st3" d="M150,60.2h11.3v7h-18.7V38.1h18.5v6.9H150v4h10V56h-10V60.2z"/>
                                                                 </g>
-                                                                <circle class="st3" cx="52.5" cy="53.7" r="12.5"/>
+                                                                <circle class="st3 blinkCircle" cx="52.5" cy="53.7" r="12.5"/>
                                                             </g>
                                                         </svg>
                                                     </div>
@@ -100,7 +99,7 @@
                                                                 @endif
                                                             </span>
                                                         @endif
-                                                        <span class="main-news-date">{{ $post->getDay() }} {{ $post->getMonthRu() }}, {{ $post->getTime()}}</span>
+                                                        <span class="main-news-date">{{ $post->getDay() }} {{ $post->getMonthRu() }} @if(date('Y') != $post->getYear()) {{ $post->getYear() }} @endif, {{ $post->getTime()}}</span>
                                                         <span class="main-news-views">                                                                    
                                                             <svg class="fa-view" x="0px" y="0px" viewBox="0 0 22 14" xml:space="preserve">
                                                                 <g>

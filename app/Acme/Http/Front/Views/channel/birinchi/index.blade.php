@@ -5,18 +5,7 @@
 @section('content')              
 <div class="birinchiradio">
    @include('Front::channel.birinchi.nav')
-   <div class="clearfix">
-      <div class="col-md-12 text-center ads top-ad hidden-xs">
-         <a href="@if(!empty($positionTop->linkTo)){{ $positionTop->linkTo }} @else # @endif" target="_blank">
-         <img src="@if(!empty($positionTop->file)) {{ asset($positionTop->file) }} @else {{ asset('images/banner_default_728x90.png') }} @endif" alt="phot1"/>
-         </a>
-      </div>
-      <div class="col-xs-12 top-ad visible-xs">
-         <a href="@if(!empty($positionTop->linkTo)){{ $positionTop->linkTo }} @else # @endif" target="_blank">
-         <img src="@if(!empty($positionTop->file)) {{ asset($positionTop->file) }} @else {{ asset('images/banner_default_728x90.png') }} @endif" alt="phot1"/>
-         </a>
-      </div>
-   </div>
+   
    <div class="container homepage b-maincolor">
       <div class="row">
          <div class="col-md-8">
@@ -137,13 +126,13 @@
          @endforeach
          <div class="clearfix">
             <div class="col-md-12 text-center ads top-ad hidden-xs">
-               <a href="@if(!empty($positionCenter->linkTo)){{ $positionCenter->linkTo }} @else # @endif" target="_blank">
-                  <img src="@if(!empty($positionCenter->file)) {{ asset($positionCenter->file) }} @else {{ asset('images/banner_default_728x90.png') }} @endif" alt="phot1"/>
+               <a href="@if(!empty($birinchiBottom->linkTo)){{ $birinchiBottom->linkTo }} @else # @endif" target="_blank">
+                  <img src="@if(!empty($birinchiBottom->file)) {{ asset($birinchiBottom->file) }} @else {{ asset('images/banner_default_728x90.png') }} @endif" alt="phot1"/>
                </a>
             </div>
             <div class="col-xs-12 top-ad visible-xs">
-               <a href="@if(!empty($positionCenter->linkTo)){{ $positionCenter->linkTo }} @else # @endif" target="_blank">
-               <img src="@if(!empty($positionCenter->file)) {{ asset($positionCenter->file) }} @else {{ asset('images/banner_default_728x90.png') }} @endif" alt="phot1"/>
+               <a href="@if(!empty($birinchiBottom->linkTo)){{ $birinchiBottom->linkTo }} @else # @endif" target="_blank">
+               <img src="@if(!empty($birinchiBottom->file)) {{ asset($birinchiBottom->file) }} @else {{ asset('images/banner_default_728x90.png') }} @endif" alt="phot1"/>
                </a>
             </div>
          </div>

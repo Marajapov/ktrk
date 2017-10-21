@@ -68,7 +68,13 @@
                     {{ $post->getTitleRu() }}
                   </a>
                 </td>
-                <td class="hidden-xs">{{ $post->owner()->first()->name }}</td>
+                <td class="hidden-xs">                  
+                  @if($post->owner()->first())
+                      {{ $post->owner()->first()->name }}
+                  @else
+                      неизвестно
+                  @endif
+                </td>
                 <td class="hidden-xs">{{ $post->getTime().', '.$post->getDateFormatted() }} </td>
                 <td>
                   @if(($post->number) > 0 && ($post->number) != 99 && ($post->number) != 88)

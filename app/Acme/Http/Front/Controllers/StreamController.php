@@ -11,6 +11,8 @@ use \Model\Comment\ModelName as Comment;
 use \Model\Post\ModelName as Post;
 use \Model\Category\ModelName as Category;
 use \Model\Project\ModelName as Project;
+use \Model\Banner\ModelName as Banner;
+use \Model\Stream\ModelName as Stream;
 
 class StreamController extends Controller
 {
@@ -18,11 +20,19 @@ class StreamController extends Controller
     
     public function __construct()
     {
-        $this->positionTop = \Model\Banner\ModelName::where('positionTop','=','1')->where('channel_id','=','2')->first();
-        $this->positionRight = \Model\Banner\ModelName::where('positionRight','=','1')->where('channel_id','=','2')->first();
-        $this->positionLeft = \Model\Banner\ModelName::where('positionLeft','=','1')->where('channel_id','=','2')->first();
-        $this->positionCenter = \Model\Banner\ModelName::where('positionCenter','=','1')->where('channel_id','=','2')->first();
-        $this->positionBottom = \Model\Banner\ModelName::where('positionBottom','=','1')->where('channel_id','=','2')->first();
+
+        $this->positionTop = Banner::where('positionTop','=','1')->where('channel_id','=','2')->first();
+        $this->positionRight = Banner::where('positionRight','=','1')->where('channel_id','=','2')->first();
+        $this->positionLeft = Banner::where('positionLeft','=','1')->where('channel_id','=','2')->first();
+        $this->positionCenter = Banner::where('positionCenter','=','1')->where('channel_id','=','2')->first();
+        $this->positionBottom = Banner::where('positionBottom','=','1')->where('channel_id','=','2')->first();
+        $this->innerPages = Banner::where('extracolumn','=','1')->where('channel_id','=','2')->first();
+        View::share('positionTop', $this->positionTop);
+        View::share('positionRight', $this->positionRight);
+        View::share('positionLeft', $this->positionLeft);
+        View::share('positionCenter', $this->positionCenter);
+        View::share('positionBottom', $this->positionBottom);
+        View::share('innerPages', $this->innerPages);
 
         $categoriesNews = Category::where('general','=','1')->where('published','=','1')->where('order','>','0')->orderBy('order','asc')->get();
         $lc = app()->getlocale();
@@ -69,8 +79,10 @@ class StreamController extends Controller
      * @return Response
      */
 
-    public function stream(){
-            
+    public function stream()
+    {
+        $streamKTRK = Stream::where('id',5)->first()->incrementViewed();
+        
         $lc = app()->getlocale();
         if($lc == 'kg'){
             $streams = \Model\Stream\ModelName::where('published','=','1')->where('title','<>','')->orderBy('id', 'desc')->get();

@@ -90,8 +90,8 @@
             @endforeach
             @endif
             <div class="banner-right">
-              <a href="@if($positionRight) {{ $positionRight->linkTo }} @else # @endif" class="text-center ads ads-300x250 middle-ad">
-                <img src="@if(!empty($positionRight->file)) {{ asset($positionRight->file) }} @else {{ asset('images/banner_240x400.png') }} @endif" alt=""/>
+              <a href="@if($sportBottom) {{ $sportBottom->linkTo }} @else # @endif" class="text-center ads ads-300x250 middle-ad">
+                <img src="@if(!empty($sportBottom->file)) {{ asset($sportBottom->file) }} @else {{ asset('images/banner_240x400.png') }} @endif" alt=""/>
               </a>
             </div>
           </div>

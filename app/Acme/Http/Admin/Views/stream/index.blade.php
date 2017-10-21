@@ -26,6 +26,7 @@
                         <tr>
                             <th>Миниатюра</th>
                             <th>{{ trans('site.Title') }}</th>
+                            <th>Просмотры</th>
                             <th>Действия</th>
                         </tr>
                         </thead>
@@ -41,6 +42,9 @@
                                         {{ $stream->getTitleOne() }}
                                     </a>
                                     <h6 style="text-transform: none; font-style: italic;">{{ $stream->streamUrl }}</h6>
+                                </td>
+                                <td>
+                                    {{$stream->viewed}}
                                 </td>
                                 <td>
                                     <a class="btn btn-default" href="{{ route('admin.stream.show', $stream) }}">

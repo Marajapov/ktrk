@@ -61,6 +61,18 @@ function make_channels_list($auth_user){
 	else return $db->select("channels", "id in (".$auth_user['channels'].")");
 }
 
+function get_user_access_only_one($user_access_db, $access){
+	foreach($_SESSION['user_access'] as $document_user_access) if ($document_user_access['module_db'] == $user_access_db) {
+						if ($access==1) return true;
+						$document_user_access_value = $document_user_access['access'];
+						if ($document_user_access_value > 7) { if ($access==8) return true; $document_user_access_value-=8; }
+						if ($document_user_access_value > 3) { if ($access==4) return true; $document_user_access_value-=4; }
+						if ($document_user_access_value > 1) if ($access==2) return true;
+						break;
+	}
+	return false;
+}
+
 function make_broadcast_list($auth_user){
 	// broadcast-status : 0 - delete 1 - actual 2- archive 3-concert 4 - news
 	global $db;

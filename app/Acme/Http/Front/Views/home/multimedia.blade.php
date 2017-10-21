@@ -20,7 +20,9 @@
                                             <div class="overlay">
                                                 <span class="rep-name">{{ $post->getTitleRuOrKg() }}</span>
                                                 <div class="post-extra clearfix">
-                                                    <span class="post-date">{{ $photoGalleryFirst->getDay() }} {{ $photoGalleryFirst->getMonthRu() }}, {{ $photoGalleryFirst->getTime()}}</span>
+                                                    <span class="post-date">
+                                                        {{ $post->getDay() }} {{ $post->getMonthRu() }} @if(date('Y') != $post->getYear()) {{ $post->getYear() }} @endif, {{ $post->getTime()}}
+                                                    </span>
                                                     <span class="post-views">                                                        
                                                         <svg class="fa-view" x="0px" y="0px" viewBox="0 0 22 14" xml:space="preserve">
                                                             <g>
@@ -37,6 +39,12 @@
                                 @endforeach
                             @endif
                         </div>
+            
+                        <footer>
+                            <a href="{{ route('front.category', 48) }}">
+                                <span>{{ trans('site.AllMaterials') }}</span>
+                            </a>
+                        </footer>
 
                     </div>
                 </div>

@@ -32,6 +32,13 @@ class PostController extends Controller
 		$this->positionLeft = Banner::where('positionLeft','=','1')->where('channel_id','=','2')->first();
 		$this->positionCenter = Banner::where('positionCenter','=','1')->where('channel_id','=','2')->first();
 		$this->positionBottom = Banner::where('positionBottom','=','1')->where('channel_id','=','2')->first();
+		$this->innerPages = Banner::where('extracolumn','=','1')->where('channel_id','=','2')->first();
+		View::share('positionTop', $this->positionTop);
+		View::share('positionRight', $this->positionRight);
+		View::share('positionLeft', $this->positionLeft);
+		View::share('positionCenter', $this->positionCenter);
+		View::share('positionBottom', $this->positionBottom);
+		View::share('innerPages', $this->innerPages);
 
 
 		# News categories
@@ -222,7 +229,7 @@ class PostController extends Controller
 		 }
 	  }
 
-	  return view('Front::post.postsTest',[
+	  return view('Front::post.index',[
 	  'postAll' => $postAll,
 	  'headerPosts' => $headerPosts,
 	  'posts' => $posts,
@@ -247,6 +254,7 @@ class PostController extends Controller
   public function post(Post $post, $locale="kg", $title = "")
 	{
 		$post->incrementViewed();
+		$date = null;
 		
 		if($post->getTilda()){
 			echo file_get_contents($post->getTilda());
@@ -506,8 +514,15 @@ class PostController extends Controller
 			$words = explode(" ", $post->titleRu);
 		}
 
-		return view('Front::post.postTest',[
+		if($post->shortDescription == 'alatoo'){
+			$stream = 'http://85.113.29.234:80/live/6001.flv';
+		} else {
+			$stream = 'http://85.113.29.234:80/live/6001.flv';			
+		}
+
+		return view('Front::post.post',[
 			'lc' => $lc,
+			'stream' => $stream,
 			'post' => $post,
 			'words' => $words,
 			'topArticles' => $topArticles,
@@ -519,6 +534,7 @@ class PostController extends Controller
 			'images2' => $images2,
 			'content' => $contentFinal,
 			'comments' => $comments,
+			'date' => $date,
 
 			'categories'=>$categories,
 			'backgroundMain' => $backgroundMain,
@@ -696,7 +712,7 @@ class PostController extends Controller
 	$categories = \Model\Category\ModelName::where('general','=','1')->get();
 	$backgroundMain = \Model\Background\ModelName::where('published','=',true)->where('channel_id','=','2')->first();
 
-	return view('Front::category.indexTest',[
+	return view('Front::category.index',[
 	  'perPage'=> $perPage,
 	  'date'=> $date,
 
@@ -792,7 +808,7 @@ class PostController extends Controller
 		 }
 	}
 
-	return view('Front::category.indexTest',[
+	return view('Front::category.index',[
 	  'perPage'=> $perPage,
 	  'date'=> $date,
 	  'sectionDesc'=> $sectionDesc,

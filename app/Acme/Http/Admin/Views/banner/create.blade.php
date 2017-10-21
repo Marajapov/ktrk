@@ -33,6 +33,34 @@
     <script type="text/javascript" src="{{ asset('js/bootstrap-select.js') }}"></script>
     <script src="{{ asset('js/admin/bootstrap-tokenfield.js') }}"></script>
 
+    <script>
+    	var homeTop = $('#positionLeft'),
+    		homeBottom = $('#positionCenter'),
+    		homeRight = $('#positionRight'),
+    		innerTop = $('#positionTop'),
+    		innerBottom = $('#positionBottom'),
+    		innerRight = $('#extracolumn'),
+            sportTop = $('#sportTop'),
+            sportBottom = $('#sportBottom'),
+            birinchiTop = $('#birinchiTop'),
+    		birinchiBottom = $('#birinchiBottom'),
+    		birinchiRight = $('#birinchiRight');
+
+    	$('.positions').hide();
+	    function hideCheckboxes(...cbx){
+	    	$('.positions').show();
+	    	$('.positions').children().show();
+	    	for(var i=0; i<cbx.length; i++){
+	    		cbx[i].parent().parent().parent().hide();
+	    	}
+	    }
+    	$('[name=channel_id]').change(function(){
+    		var id = $(this).val();
+    		if(id==2)			{ hideCheckboxes(sportTop, sportBottom, birinchiTop, birinchiBottom, birinchiRight); }
+    		else if(id==11) 	{ hideCheckboxes(homeTop, homeBottom, homeRight, innerTop, innerBottom, innerRight, birinchiTop, birinchiBottom, birinchiRight); }
+    		else if(id==7) 		{ hideCheckboxes(homeTop, homeBottom, homeRight, innerTop, innerBottom, innerRight, sportTop, sportBottom); }
+    	});
+    </script>
 @stop
 
 

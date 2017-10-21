@@ -12,27 +12,54 @@ class PostController extends Controller
 
     public function PostsKg(Request $request)
     {
+        $image = $video = false;
         $total = $request->total;
 
         if($request->perPage){
             $perPage = $request->perPage;
             $postsBeforePaginate = Post::
                     where('title','<>','')->
-                    where('general',true)->
+                    where('alatoo24',true)->
                     where('published', true)->
                     orderBy('created_at','desc')->
                     take($total)->
                     get();
 
             $posts = Post::customPaginate($postsBeforePaginate, $perPage);
+            foreach ($posts as $key => $post) {
+                $postArray = $post->toArray();
+
+                if (stripos($post->content, "<img")) {
+                    $image = true;
+                }
+
+                if (stripos($post->content, "www.youtube.com")) {
+                    $video = true;
+                }
+                $post->setImage($image);
+                $post->setVideo($video);
+            }
         } else {
             $posts = Post::
                     where('title','<>','')->
-                    where('general',true)->
+                    where('alatoo24',true)->
                     where('published', true)->
                     orderBy('created_at','desc')->
                     take($total)->
                     get();
+            foreach ($posts as $key => $post) {
+                $postArray = $post->toArray();
+
+                if (stripos($post->content, "<img")) {
+                    $image = true;
+                }
+
+                if (stripos($post->content, "www.youtube.com")) {
+                    $video = true;
+                }
+                $post->setImage($image);
+                $post->setVideo($video);
+            }
         }
 
         return response()->json($posts, 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
@@ -40,27 +67,54 @@ class PostController extends Controller
 
     public function PostsRu(Request $request)
     {
+        $image = $video = false;
         $total = $request->total;
 
         if($request->perPage){
             $perPage = $request->perPage;
             $postsBeforePaginate = Post::
                     where('titleRu','<>','')->
-                    where('general',true)->
+                    where('alatoo24',true)->
                     where('published', true)->
                     orderBy('created_at','desc')->
                     take($total)->
                     get();
 
             $posts = Post::customPaginate($postsBeforePaginate, $perPage);
+            foreach ($posts as $key => $post) {
+                $postArray = $post->toArray();
+
+                if (stripos($post->contentRu, "<img")) {
+                    $image = true;
+                }
+
+                if (stripos($post->contentRu, "www.youtube.com")) {
+                    $video = true;
+                }
+                $post->setImage($image);
+                $post->setVideo($video);
+            }
         } else {
             $posts = Post::
                     where('titleRu','<>','')->
-                    where('general',true)->
+                    where('alatoo24',true)->
                     where('published', true)->
                     orderBy('created_at','desc')->
                     take($total)->
                     get();
+            foreach ($posts as $key => $post) {
+                $postArray = $post->toArray();
+
+                if (stripos($post->contentRu, "<img")) {
+                    $image = true;
+                }
+
+                if (stripos($post->contentRu, "www.youtube.com")) {
+                    $video = true;
+                }
+                $post->setImage($image);
+                $post->setVideo($video);
+            }
         }
 
         return response()->json($posts, 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
@@ -68,18 +122,62 @@ class PostController extends Controller
 
     public function PostKg(Post $post)
     {
-        if($post->title)
-            return response()->json($post, 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
-        else
+        $image = $video = false;
+        $postArray = $post->toArray();
+
+        if (stripos($post->content, "<img")) {
+            $image = true;
+        }
+
+        if (stripos($post->content, "www.youtube.com")) {
+            $video = true;
+        }
+
+        if($post->title){
+            $result = array_merge($postArray, array('image' => $image, 'video' => $video));
+            return response()->json($result, 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
+        } else
             return 'Маалымат орус тилинде гана жеткиликтүү.';
     }
 
+    // public function PostKgTest(Post $post)
+    // {
+    //     $image = $video = false;
+    //     $postArray = $post->toArray();
+
+    //     if (stripos($post->content, "<img")) {
+    //         $image = true;
+    //     }
+
+    //     if (stripos($post->content, "www.youtube.com")) {
+    //         $video = true;
+    //     }
+
+    //     if($post->title){
+    //         $result = array_merge($postArray, array('image' => $image, 'video' => $video));
+    //         return response()->json($result, 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
+    //     } else
+    //         return 'Маалымат орус тилинде гана жеткиликтүү.';
+    // }
+
     public function PostRu(Post $post)
     {
-        if($post->titleRu)
-            return response()->json($post, 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
-        else
-            return 'Информация доступна только на кыргызском языке.';
+        $image = $video = false;
+        $postArray = $post->toArray();
+
+        if (stripos($post->contentRu, "<img")) {
+            $image = true;
+        }
+
+        if (stripos($post->contentRu, "www.youtube.com")) {
+            $video = true;
+        }
+
+        if($post->titleRu){
+            $result = array_merge($postArray, array('image' => $image, 'video' => $video));
+            return response()->json($result, 200, array('Content-Type' => 'application/json;charset=utf8'), JSON_UNESCAPED_UNICODE);
+        } else
+            return 'Информация доступна только на кыргызском языке.';            
     }
 
     public function CategoryPostsKg(Category $category, Request $request)
@@ -102,7 +200,7 @@ class PostController extends Controller
             $posts = Post::
                     where('category_id',$category->id)->
                     where('title','<>','')->
-                    where('general',true)->
+                    where('alatoo24',true)->
                     where('published', true)->
                     orderBy('created_at','desc')->
                     take($total)->
@@ -132,7 +230,7 @@ class PostController extends Controller
             $posts = Post::
                     where('category_id',$category->id)->
                     where('titleRu','<>','')->
-                    where('general',true)->
+                    where('alatoo24',true)->
                     where('published', true)->
                     orderBy('created_at','desc')->
                     take($total)->
@@ -152,7 +250,7 @@ class PostController extends Controller
             $perPage = $request->perPage;
             $postsBeforePaginate = Post::
                     where('title','<>','')->
-                    where('general',true)->
+                    where('alatoo24',true)->
                     where('published', true)->
                     where('created_at','>',$weekFromNow)->
                     orderBy('viewed','desc')->
@@ -163,7 +261,7 @@ class PostController extends Controller
         } else {
             $posts = Post::
                     where('title','<>','')->
-                    where('general',true)->
+                    where('alatoo24',true)->
                     where('published', true)->
                     orderBy('created_at','desc')->
                     take($total)->
@@ -183,7 +281,7 @@ class PostController extends Controller
             $perPage = $request->perPage;
             $postsBeforePaginate = Post::
                     where('titleRu','<>','')->
-                    where('general',true)->
+                    where('alatoo24',true)->
                     where('published', true)->
                     where('created_at','>',$weekFromNow)->
                     orderBy('viewed','desc')->
@@ -194,7 +292,7 @@ class PostController extends Controller
         } else {
             $posts = Post::
                     where('titleRu','<>','')->
-                    where('general',true)->
+                    where('alatoo24',true)->
                     where('published', true)->
                     where('created_at','>',$weekFromNow)->
                     orderBy('viewed','desc')->

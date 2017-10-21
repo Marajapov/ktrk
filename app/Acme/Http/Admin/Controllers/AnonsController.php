@@ -43,7 +43,6 @@ class AnonsController extends Controller
 
     public function store(Request $request)
     {
-        // dd($request);
         $anons = Anons::create($request->except('thumbnail','owner_id','q'));
 
         if($request->hasFile('thumbnail'))

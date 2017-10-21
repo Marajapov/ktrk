@@ -22,4 +22,8 @@ trait ModelRelationships
         
         return $this->hasMany(\Model\Post\ModelName::class, 'madaniyatProgram');
     }
+    public function medias()
+    {
+        return $this->hasMany(\Model\Media\ModelName::class, 'program');
+    }
 }

@@ -18,7 +18,7 @@ Route::group(['prefix' => 'api', 'namespace' => 'Api\Controllers'], function(){
 
 	//post
 	Route::get('kg/posts', 'PostController@PostsKg');
-	Route::get('kg/postsPaginated/{}', 'PostController@PostsKgPaginated');
+	// Route::get('test/kg/posts', 'PostController@TestPostsKg');
 	Route::get('kg/post/{post}', 'PostController@PostKg');
 	Route::get('kg/category/{category}', 'PostController@CategoryPostsKg');
 	Route::get('kg/popularPosts', 'PostController@PopularPostsKg');

@@ -62,4 +62,9 @@ trait ModelAttributes
         return isset($this->id) ? $this->tags->lists('name')->toArray() : [];
     }
 
+    public function getTagList()
+    {
+        return isset($this->id) ? $this->tags->get() : [];
+    }
+
 }

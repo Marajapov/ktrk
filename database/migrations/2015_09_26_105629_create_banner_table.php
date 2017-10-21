@@ -29,6 +29,11 @@ class CreateBannerTable extends Migration
             $table->boolean('positionRight')->nullable()->default(false);
             $table->boolean('positionLeft')->nullable()->default(false);
             $table->boolean('positionBottom')->nullable()->default(false);
+            $table->boolean('sport_top')->nullable()->default(false);
+            $table->boolean('sport_bottom')->nullable()->default(false);
+            $table->boolean('birinchiTop')->nullable()->default(false);
+            $table->boolean('birinchiBottom')->nullable()->default(false);
+            $table->boolean('birinchiRight')->nullable()->default(false);
 
             $table->string('director');
             $table->string('ns');

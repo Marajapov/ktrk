@@ -1,4 +1,9 @@
-<?php include_once 'usercontrol.php'; ?>
+<?php 
+$document_db = "log";
+$document_read = $document_write = $document_execute = $document_delete = 0;
+include_once 'usercontrol.php'; 
+if (!$document_read) {echo "У вас нет разрешения на доступ к этой странице. Обратитесь к администратору."; die();}
+?>
 <!DOCTYPE html>
 <html>
    <head>
@@ -150,7 +155,7 @@
 												}
 												$user_list_string = implode(',', $user_list_ar);
 												
-												$my_sql = "select u.name, log.* from users as u inner join log ON u.id = log.user where user in (".$user_list_string.") " .$date_sql;
+												$my_sql = "select u.name, log.* from users as u inner join log ON u.id = log.user where user in (".$user_list_string.") " .$date_sql. " order by log.id desc";
 												//echo $my_sql;
 												$result = $db->selectpuresql($my_sql);
 											foreach($result as $r){
@@ -160,7 +165,7 @@
                                              <td class="nowrap"><?php echo $r['dt'];?></td>         
                                              <td class="nowrap"><?php echo $r['name'];?></td>         
                                              <td class="nowrap"><?php echo $r['action'];?></td>         
-                                             <td></td>
+                                             <td class="nowrap"><?php echo $r['tbl'];?></td>         
                                              <td></td>
                                           </tr> 
 											<?php }} ?>

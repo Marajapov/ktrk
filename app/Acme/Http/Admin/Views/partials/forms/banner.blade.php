@@ -53,93 +53,163 @@
                 </div>
             </div>
         </div>
-      
-        <div class="row col-md-12">
-            <div class="clearfix"></div>
-            <div class="form-group col-md-2">
-              <label for="parentId" class="col-sm-2 control-label"></label>
-              <div class="col-sm-10">
-                <div class="checkbox checkbox-primary ">
-                  {!! Form::hidden('published', 0) !!}
-                  {!! Form::checkbox('published', 1, null, ["id" => "checkboxPublished", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
-                  <label for="checkboxPublished">
-                    {{ trans('site.Publish') }}
-                  </label>
-                </div>
-              </div>
+
+        <div class="form-group">
+          <label for="parentId" class="col-sm-2 control-label">&nbsp;</label>
+          <div class="col-sm-10">
+            <div class="checkbox checkbox-primary ">
+              {!! Form::hidden('published', 0) !!}
+              {!! Form::checkbox('published', 1, null, ["id" => "checkboxPublished", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
+              <label for="checkboxPublished">
+                {{ trans('site.Publish') }}
+              </label>
             </div>
+          </div>
+        </div>
 
-
-            <div class="form-group col-md-2">
-                <label for="parentId" class="col-sm-2 control-label"></label>
-                <div class="col-sm-10">
-                    <div class="checkbox checkbox-primary ">
-                        {!! Form::hidden('positionTop', 0) !!}
-                        {!! Form::checkbox('positionTop', 1, null, ["id" => "positionTop", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
-                        <label for="positionTop">
-                            {{ trans('site.Top') }}
-                        </label>
-                        <div class="topbanner"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group col-md-2">
-                <label for="parentId" class="col-sm-2 control-label"></label>
-                <div class="col-sm-10">
-                    <div class="checkbox checkbox-primary ">
-                        {!! Form::hidden('positionCenter', 0) !!}
-                        {!! Form::checkbox('positionCenter', 1, null, ["id" => "positionCenter", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
-                        <label for="positionCenter">
-                            {{ trans('site.Center') }}
-                        </label>
-                        <div class="centerbanner"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group col-md-2">
-                <label for="parentId" class="col-sm-2 control-label"></label>
-                <div class="col-sm-10">
-                    <div class="checkbox checkbox-primary ">
-                        {!! Form::hidden('positionRight', 0) !!}
-                        {!! Form::checkbox('positionRight', 1, null, ["id" => "positionRight", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
-                        <label for="positionRight">
-                            {{ trans('site.Right') }}
-                        </label>
-                        <div class="rightbanner"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group col-md-2">
+        <div class="positions">
+            <div class="form-group">
                 <label for="parentId" class="col-sm-2 control-label"></label>
                 <div class="col-sm-10">
                     <div class="checkbox checkbox-primary ">
                         {!! Form::hidden('positionLeft', 0) !!}
                         {!! Form::checkbox('positionLeft', 1, null, ["id" => "positionLeft", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
                         <label for="positionLeft">
-                            {{ trans('site.Left') }}
+                            {{ trans('site.HomeUnderMainNews') }}
                         </label>
-                        <div class="leftbanner"></div>
                     </div>
                 </div>
             </div>
 
-            <div class="form-group col-md-2">
+            <div class="form-group">
+                <label for="parentId" class="col-sm-2 control-label"></label>
+                <div class="col-sm-10">
+                    <div class="checkbox checkbox-primary ">
+                        {!! Form::hidden('positionCenter', 0) !!}
+                        {!! Form::checkbox('positionCenter', 1, null, ["id" => "positionCenter", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
+                        <label for="positionCenter">
+                            {{ trans('site.HomeUnderNews') }}
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="parentId" class="col-sm-2 control-label"></label>
+                <div class="col-sm-10">
+                    <div class="checkbox checkbox-primary ">
+                        {!! Form::hidden('positionRight', 0) !!}
+                        {!! Form::checkbox('positionRight', 1, null, ["id" => "positionRight", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
+                        <label for="positionRight">
+                            {{ trans('site.HomeNearMultimedia') }}
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="parentId" class="col-sm-2 control-label"></label>
+                <div class="col-sm-10">
+                    <div class="checkbox checkbox-primary ">
+                        {!! Form::hidden('positionTop', 0) !!}
+                        {!! Form::checkbox('positionTop', 1, null, ["id" => "positionTop", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
+                        <label for="positionTop">
+                            {{ trans('site.InnerPagesHorizontalTop') }}
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
                 <label for="parentId" class="col-sm-2 control-label"></label>
                 <div class="col-sm-10">
                     <div class="checkbox checkbox-primary ">
                         {!! Form::hidden('positionBottom', 0) !!}
                         {!! Form::checkbox('positionBottom', 1, null, ["id" => "positionBottom", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
                         <label for="positionBottom">
-                            {{ trans('site.Bottom') }}
-                        </label>
-                        <div class="bottombanner"></div>
+                            {{ trans('site.InnerPagesHorizontalBottom') }}
+                        </label>                    
                     </div>
                 </div>
             </div>
 
+            <div class="form-group">
+                <label for="parentId" class="col-sm-2 control-label"></label>
+                <div class="col-sm-10">
+                    <div class="checkbox checkbox-primary ">
+                        {!! Form::hidden('extracolumn', 0) !!}
+                        {!! Form::checkbox('extracolumn', 1, null, ["id" => "extracolumn", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
+                        <label for="extracolumn">
+                            {{ trans('site.InnerPagesVertical') }}
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="parentId" class="col-sm-2 control-label"></label>
+                <div class="col-sm-10">
+                    <div class="checkbox checkbox-primary ">
+                        {!! Form::hidden('sportTop', 0) !!}
+                        {!! Form::checkbox('sportTop', 1, null, ["id" => "sportTop", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
+                        <label for="sportTop">
+                            {{ trans('site.SportTop') }}
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="parentId" class="col-sm-2 control-label"></label>
+                <div class="col-sm-10">
+                    <div class="checkbox checkbox-primary ">
+                        {!! Form::hidden('sportBottom', 0) !!}
+                        {!! Form::checkbox('sportBottom', 1, null, ["id" => "sportBottom", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
+                        <label for="sportBottom">
+                            {{ trans('site.SportUnderVideo') }}
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="parentId" class="col-sm-2 control-label"></label>
+                <div class="col-sm-10">
+                    <div class="checkbox checkbox-primary ">
+                        {!! Form::hidden('birinchiTop', 0) !!}
+                        {!! Form::checkbox('birinchiTop', 1, null, ["id" => "birinchiTop", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
+                        <label for="birinchiTop">
+                            {{ trans('site.BirinchiTop') }}
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="parentId" class="col-sm-2 control-label"></label>
+                <div class="col-sm-10">
+                    <div class="checkbox checkbox-primary ">
+                        {!! Form::hidden('birinchiBottom', 0) !!}
+                        {!! Form::checkbox('birinchiBottom', 1, null, ["id" => "birinchiBottom", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
+                        <label for="birinchiBottom">
+                            {{ trans('site.BirinchiBottom') }}
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="parentId" class="col-sm-2 control-label"></label>
+                <div class="col-sm-10">
+                    <div class="checkbox checkbox-primary ">
+                        {!! Form::hidden('birinchiRight', 0) !!}
+                        {!! Form::checkbox('birinchiRight', 1, null, ["id" => "birinchiRight", "class" => "form-control styled", "style" => "width: 34px; margin: 0"]) !!}
+                        <label for="birinchiRight">
+                            {{ trans('site.BirinchiRight') }}
+                        </label>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

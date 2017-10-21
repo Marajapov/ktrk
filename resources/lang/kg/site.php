@@ -52,12 +52,17 @@ return [
     'NewsForDate' => 'Новости за',
 
     # Media
-    'Projects' => 'Телепроекттер',
+    'Projects' => 'Теледолбоорлор',
+    'ProjectsArchive' => 'Теледолбоорлор архиви',
     'RelatedMedia' => 'Тектеш видеолор',
     'MediaMaterials' => 'Видеоматериалдар',
+    'AboutProject' => 'Теледолбоор жөнүндө',
+    'AllProject' => 'Бардык теледолбоорлор',
 
     # Gallery
     'Galleries' => 'Фоторепортаждар',
+    'LastGalleries' => 'Акыркы фоторепортаждар',
+    'AllGalleries' => 'Бардык фоторепортаждар',
     '' => '',
 
     # Search
@@ -68,6 +73,43 @@ return [
     'DataResultShows' => 'Телеберүүлөр боюнча издөөнүн жыйынтыгы',
     '' => '',
 
+    # Multimedia
+    'AllMaterials' => 'Бардык материалдар',
+    '' => '',
+
+    # Banners
+    'HomeUnderMainNews' => 'Башкы бет("Маанилүү" бөлүмүнөн кийин)',
+    'HomeUnderNews' => 'Башкы бет("Жаңылыктар" бөлүмүнөн кийин)',
+    'HomeNearMultimedia' => 'Башкы бет("Мультимедиа" бөлүмдүн жанында)',
+    'InnerPagesHorizontalTop' => 'Ички беттер(жогорку туурасынан)',
+    'InnerPagesHorizontalBottom' => 'Ички беттер(төмөнкү туурасынан)',
+    'InnerPagesVertical' => 'Ички беттер(оң колонкадагы)',
+
+    'SportTop' => 'Спорт(жогорку)',
+    'SportUnderVideo' => 'Спорт("Видео" бөлүмүнөн кийин)',
+
+    'BirinchiTop' => 'Биринчи Радио(жогорку)',
+    'BirinchiBottom' => 'Биринчи Радио(төмөнкү)',
+    'BirinchiRight' => 'Биринчи Радио(оң колонкадагы)',
+    '' => '',
+    '' => '',
+    '' => '',
+
+    # KTRK extra
+    'LiveWarning' => 'Эгер сиздин плеериңиз иштебей жатса, анда төмөндөгү шилтемеге кирип, флеш-плеериңизди жаңылап көчүрүп алыңыз.',
+    '' => '',
+    '' => '',
+
+    # Music
+    'Concerts' => 'Концерттер',
+    '' => '',
+    '' => '',
+
+    # Footer Nav
+    'FooterNavSections'	=>	'Бөлүмдөр	',
+    'FooterNavContactInfo'	=>	'Байланыш маалыматы',
+    'FooterNavContacts'	=>	'Байланыш',
+    'FooterNavAds'	=>	'Жарнама',
 
 
     
@@ -187,6 +229,8 @@ return [
     'Left' => 'Сол жагында',
     'Right' => 'Оң жагында',
     'Bottom' => 'Ылдый жагында',
+    'InnerPages' => 'Внутренние страницы',
+    
     'Content' => 'Мазмуну',
     'TitleKG' => 'Аталышы Кыргызча',
     'TitleRU' => 'Аталышы Орусча',
@@ -384,6 +428,7 @@ return [
     'FrontPostDaysEpisode' => 'Телеберүү',
     'FrontPostDaysAnons' => 'Анонс',
     'FrontPostDaysMaanai' => 'Маанайшат',
+    'FrontPostDaysInteresting' => 'Кызыктуулар',
     'FrontPostLastDays' => 'Өткөн күндөр',
     'FrontDirectorPage' => 'Башкы директордун баракчасы',    
     'FrontVideoAll' => 'Видеопорталга өтүү',

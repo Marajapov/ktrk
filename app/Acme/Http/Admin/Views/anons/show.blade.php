@@ -61,6 +61,11 @@
                         </li>
 
                         <li class="list-group-item">
+                            <p class="header">Порядок</p>
+                            <p class="body">{{ $anons->media }}</p>
+                        </li>
+
+                        <li class="list-group-item">
                             <p class="header">{{ trans('site.AdminAnonsTime') }}</p>
                             <p class="body">{{ $anons->time }}</p>
                         </li>

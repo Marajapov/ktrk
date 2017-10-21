@@ -6,7 +6,7 @@ use Nicolaslopezj\Searchable\SearchableTrait;
 
 class ModelName extends Model
 {
-    use ModelHelpers, ModelScopes, ModelRelationships, ModelAttributes, SearchableTrait;
+    use ModelHelpers, ModelScopes, ModelRelationships, ModelAttributes, SearchableTrait, ModelSetters;
     /**
      * The database table used by the model.
      *

@@ -44,7 +44,7 @@ trait ModelHelpers
         $perPage = $perPage;
 
         //Slice the collection to get the items to display in current page
-        $currentPageSearchResults = $collection->slice($currentPage * $perPage, $perPage)->all();
+        $currentPageSearchResults = $collection->slice(($currentPage-1) * $perPage, $perPage)->all();
 
         //Create our paginator and pass it to the view
         $paginatedSearchResults = new LengthAwarePaginator($currentPageSearchResults, count($collection), $perPage);

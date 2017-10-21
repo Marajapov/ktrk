@@ -44,6 +44,7 @@
                             <th>{{ trans('site.TitleKG') }}</th>
                             <th>{{ trans('site.TitleRU') }}</th>
                             <th>Канал</th>
+                            <th>Порядок</th>
                             <th>Действия</th>
                         </tr>
                         </thead>
@@ -72,6 +73,9 @@
                                         @else
                                             не определен
                                         @endif
+                                    </td>
+                                    <td>
+                                        {{$row->media}}
                                     </td>
                                     <td>
                                         <a class="btn btn-default" href="{{ route('admin.anons.show', $row) }}">
