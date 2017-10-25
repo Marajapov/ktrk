@@ -9,7 +9,7 @@
 					<a class="header-logo" href="{{route('front.home')}}">
 						<img src="{{asset('images/logo-text.svg')}}">
 					</a>
-					<ul class="nav navbar-nav navbar-right langs visible-xs">
+					<ul class="nav navbar-nav navbar-right langs">
                       <li class="dropdown">
                           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{$lc}}</a>
                           <ul class="dropdown-menu">

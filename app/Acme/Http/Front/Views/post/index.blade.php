@@ -21,7 +21,7 @@
             <div class="row">
 
                 <div class="post-left-section col-md-9">                    
-                    <div class="section article-section">
+                    <div class="section article-section articles-section">
                         <div class="section-title">
                             <h4>
                                 {{ trans('site.News') }}

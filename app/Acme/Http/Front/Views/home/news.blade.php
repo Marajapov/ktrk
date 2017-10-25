@@ -1,4 +1,4 @@
-<div class="middle-right-section col-md-8">
+<div class="middle-right-section col-md-8 col-sm-8">
     <div class="section videoportal-section">
         <div class="section-title">
             <h4>{{trans('site.News')}}</h4>

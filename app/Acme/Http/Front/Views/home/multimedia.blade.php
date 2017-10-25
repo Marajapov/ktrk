@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             
-            <div class="bottom-left-section col-md-8">
+            <div class="bottom-left-section col-md-8 col-sm-8">
                 <div class="section reporter-section">
                     <div class="section-title">
                         <h4>Мультимедиа</h4>
@@ -50,7 +50,7 @@
                 </div>
             </div>
 
-            <div class="bottom-right-section col-md-4">
+            <div class="bottom-right-section col-md-4 col-sm-4 clearfix">
                 <a target="_blank" href="@if($positionRight) {{ $positionRight->linkTo }} @else # @endif" class="ad-block">
                     <img src="@if(!empty($positionRight->file)) {{ asset($positionRight->file) }} @else {{ asset('images/banner_300x250.png') }} @endif" alt="phot1"/>
                 </a>

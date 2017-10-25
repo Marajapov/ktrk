@@ -245,32 +245,33 @@
 @stop
 
 @section('footerScript')
+		@if($post->live)
+	    <script src="{{ asset('jwplayer/jwplayer.js') }}"></script>
+	    <script>jwplayer.key="tmEO2SU8NzqLBoHr2Vq6nV13XCyfo8xbdiCb/Q==";</script>
+	    <script type="text/javascript">
 
-    <script src="{{ asset('jwplayer/jwplayer.js') }}"></script>
-    <script>jwplayer.key="tmEO2SU8NzqLBoHr2Vq6nV13XCyfo8xbdiCb/Q==";</script>
-    <script type="text/javascript">
+	        var playerInstance = jwplayer("player");
 
-        var playerInstance = jwplayer("player");
-
-        playerInstance.setup({
-            autostart: true,
-            playlist: [{
-                image: "{{ asset('images/live_bg.png')}}",
-                title: "КТРК",
-                sources: [{
-                      file:"{{$stream}}"
-                }]
-            }],
-            primary: "flash",
-            skin: "seven",
-            stretching: "exactfit",
-            height: 460,
-            width: "100%",
-            sharing: {
-                sites: ["facebook","twitter"]
-              }
-            });
-    </script>
+	        playerInstance.setup({
+	            autostart: true,
+	            playlist: [{
+	                image: "{{ asset('images/live_bg.png')}}",
+	                title: "КТРК",
+	                sources: [{
+	                      file:"{{$stream}}"
+	                }]
+	            }],
+	            primary: "flash",
+	            skin: "seven",
+	            stretching: "exactfit",
+	            height: 460,
+	            width: "100%",
+	            sharing: {
+	                sites: ["facebook","twitter"]
+	              }
+	            });
+	    </script>
+    @endif
 
     <script type="text/javascript" src="{{ asset('js/moment.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/ru.js') }}"></script>
@@ -316,6 +317,14 @@
                     $(this).addClass('empty');
                 }
             });
+
+            var iframe = $('.article-section section .fr-video iframe'),
+            		iframeW = iframe.width(),
+            		iframeH = iframe.height();
+
+        		iframe.height(iframeW*9/16);
+
+        		console.log(iframeW, iframeH, iframeW*9/16);
         });
 
         @if($post->getTilda())

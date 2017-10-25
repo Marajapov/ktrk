@@ -1,4 +1,4 @@
-<div class="middle-left-section col-md-4">
+<div class="middle-left-section col-md-4 col-sm-4">
     <div class="section last-news-section">
         <div class="section-title">
             <h4>{{ trans('site.FrontLastNews') }}</h4>

@@ -300,14 +300,14 @@
                 
                 <div class="col-md-12 footer-trademark">
                     <div class="row">
-                        <div class="col-md-8">
+                        <div class="col-md-8 col-sm-8 col-xs-12">
                             <h4 class="copyright"><i class="fa fa-copyright"></i> {{ trans('site.TradeMark') }}, 2010-<?php echo date("Y"); ?>. {{ trans('site.TradeMarkAll') }} </h4>
                             <h4 class="copyright">{{ trans('site.TradeMarkRegulations') }} </h4>   
                             <h4 class="copyright">{{ trans('site.TradeMarkRegulations2') }} </h4>   
                             <h4 class="copyright">{{ trans('site.TradeMarkRegulations3') }} </h4>                    
                             <h4 class="copyright">{{ trans('site.TradeMarkRegulations4') }} </h4>                    
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4 col-sm-4 col-xs-12">
                             <h4 class="copyrightSide">{{ trans('site.TradeMarkAddress') }}</h4>
                             <h4 class="copyrightSide">{{ trans('site.TradeMarkTel') }} </h4>
                             <h4 class="copyrightSide">{{ trans('site.TradeMarkPart') }} </h4>
@@ -331,6 +331,7 @@
 <script type="text/javascript" src="{{ asset('js/bootstrap-hover-dropdown.js') }}"></script>
 
 <script type="text/javascript" src="{{asset('js/script.js')}}"></script>
+	<script src="{{asset('js/mobile-nav.js')}}"></script>
 
 <script>
     $(document).ready(function(){
@@ -357,7 +358,15 @@
             slidesToShow: 7,
             slidesToScroll: 1,
             prevArrow: '<button class="slick-arrow arrow-prev"><svg x="0px" y="0px" viewBox="0 0 32 32" xml:space="preserve"><g><path d="M13.7,26.8c0-0.4-0.1-0.7-0.4-1L5,17.5h25.6c0.8,0,1.5-0.7,1.5-1.5s-0.7-1.5-1.5-1.5H5l8.3-8.3c0.3-0.3,0.4-0.7,0.4-1c0-0.4-0.1-0.7-0.4-1c-0.6-0.6-1.5-0.6-2,0L0.4,14.9c-0.6,0.6-0.6,1.5,0,2l10.8,10.9c0.6,0.6,1.5,0.6,2,0C13.6,27.6,13.7,27.3,13.7,26.8z"/></g></svg></button>',
-            nextArrow: '<button class="slick-arrow arrow-next"><svg x="0px" y="0px" viewBox="0 0 32 32" xml:space="preserve"><g><path d="M18.3,5.2c0,0.4,0.1,0.7,0.4,1l8.3,8.3H1.5C0.7,14.6,0,15.2,0,16c0,0.8,0.7,1.5,1.5,1.5H27l-8.3,8.3c-0.3,0.3-0.4,0.7-0.4,1c0,0.4,0.1,0.7,0.4,1c0.6,0.6,1.5,0.6,2,0l10.8-10.8c0.6-0.6,0.6-1.5,0-2L20.7,4.1c-0.6-0.6-1.5-0.6-2,0C18.4,4.4,18.3,4.8,18.3,5.2z"/></g></svg></button>'
+            nextArrow: '<button class="slick-arrow arrow-next"><svg x="0px" y="0px" viewBox="0 0 32 32" xml:space="preserve"><g><path d="M18.3,5.2c0,0.4,0.1,0.7,0.4,1l8.3,8.3H1.5C0.7,14.6,0,15.2,0,16c0,0.8,0.7,1.5,1.5,1.5H27l-8.3,8.3c-0.3,0.3-0.4,0.7-0.4,1c0,0.4,0.1,0.7,0.4,1c0.6,0.6,1.5,0.6,2,0l10.8-10.8c0.6-0.6,0.6-1.5,0-2L20.7,4.1c-0.6-0.6-1.5-0.6-2,0C18.4,4.4,18.3,4.8,18.3,5.2z"/></g></svg></button>',
+            responsive: [
+            	{
+            		breakpoint: 768,
+            		settings: {
+            			slidesToShow: 3
+            		}
+            	}
+            ]
         });
     });
 

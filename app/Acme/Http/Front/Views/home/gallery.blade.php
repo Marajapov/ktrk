@@ -59,7 +59,7 @@
                 <div class="row">
                     @if($photoGalleries)
                         @foreach($photoGalleries as $photoGallery)
-                            <div class="col-md-6">
+                            <div class="col-md-6 col-sm-6 col-xs-6">
                                 <div class="row">
                                     <a class="gallery-item" href="{{ route('front.gallery', $photoGallery) }}">
                                         <figure>

@@ -23,7 +23,7 @@
                 @include('Front::home.lastNews')
                 @include('Front::home.news')
 
-                <div class="col-md-12 ad-block">
+                <div class="col-md-12 col-sm-12 ad-block">
                     <a target="_blank" href="@if(!empty($positionCenter)) {{ $positionCenter->linkTo }} @else # @endif">
                         <img src="@if(!empty($positionCenter->file)) {{ asset($positionCenter->file) }} @else {{ asset('images/banner_default_728x90.png') }} @endif" alt="123"/>
                     </a>
@@ -66,7 +66,7 @@
                 centerMode: true,
                 centerPadding: '0',
                 slidesToShow: 1,
-                autoplay: true,
+                // autoplay: true,
                 autoplaySpeed: 3000,
 
                 // appendArrows: '.slider-control',
